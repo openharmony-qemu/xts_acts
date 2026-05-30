@@ -453,7 +453,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0100
      * @tc.name testClassCreateInstance001
-     * @tc.desc Verify ClassCreateInstance case 001: createInstance with no args succeeds
+     * @tc.desc Verify ClassCreateInstance case 001: Class.from<MyClass001>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,7 +468,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0200
      * @tc.name testClassCreateInstance002
-     * @tc.desc Verify ClassCreateInstance case 002: extra createInstance args throw or assertFail
+     * @tc.desc Verify ClassCreateInstance case 002: invalid input throws ClassCastError, Class.from<MyClass002>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -486,7 +486,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0300
      * @tc.name testClassCreateInstance003
-     * @tc.desc Verify ClassCreateInstance case 003: call createInstance
+     * @tc.desc Verify ClassCreateInstance case 003: Class.from<NormalClass003>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -500,7 +500,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0400
      * @tc.name testClassCreateInstance004
-     * @tc.desc Verify ClassCreateInstance case 004: final call createInstance
+     * @tc.desc Verify ClassCreateInstance case 004: Class.from<FinalClass004>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -514,7 +514,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0500
      * @tc.name testClassCreateInstance005
-     * @tc.desc Verify ClassCreateInstance case 005: generic call createInstance
+     * @tc.desc Verify ClassCreateInstance case 005: Class.from<GenericClass005<string>>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -528,7 +528,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0600
      * @tc.name testClassCreateInstance006
-     * @tc.desc Verify ClassCreateInstance case 006: inheritance call createInstance
+     * @tc.desc Verify ClassCreateInstance case 006: Class.from<ChildClass006>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -543,7 +543,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0700
      * @tc.name testClassCreateInstance007
-     * @tc.desc Verify ClassCreateInstance case 007: return instance object
+     * @tc.desc Verify ClassCreateInstance case 007: Class.from<MyClass007>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -560,7 +560,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0800
      * @tc.name testClassCreateInstance008
-     * @tc.desc Verify ClassCreateInstance case 008: createInstance return value is object type
+     * @tc.desc Verify ClassCreateInstance case 008: Class.from<MyClass008>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -575,7 +575,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0900
      * @tc.name testClassCreateInstance009
-     * @tc.desc Verify ClassCreateInstance case 009: two createInstance calls return distinct instances
+     * @tc.desc Verify ClassCreateInstance case 009: Class.from<MyClass009>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -590,7 +590,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1000
      * @tc.name testClassCreateInstance010
-     * @tc.desc Verify ClassCreateInstance case 010: verify field
+     * @tc.desc Verify ClassCreateInstance case 010: Class.from<MyClass010>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -607,7 +607,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1100
      * @tc.name testClassCreateInstance011
-     * @tc.desc Verify ClassCreateInstance case 011: verify type field
+     * @tc.desc Verify ClassCreateInstance case 011: Class.from<MyClass011>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -625,7 +625,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1200
      * @tc.name testClassCreateInstance012
-     * @tc.desc Verify ClassCreateInstance case 012: instanceof confirms created instance type
+     * @tc.desc Verify ClassCreateInstance case 012: Class.from<MyClass012>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +640,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1300
      * @tc.name testClassCreateInstance013
-     * @tc.desc Verify ClassCreateInstance case 013: Class.of on instance matches Class.from
+     * @tc.desc Verify ClassCreateInstance case 013: Class.from<MyClass013>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -656,7 +656,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1400
      * @tc.name testClassCreateInstance014
-     * @tc.desc Verify ClassCreateInstance case 014: LargeClass014 instance fields field1 and field100
+     * @tc.desc Verify ClassCreateInstance case 014: Class.from<LargeClass014>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -671,7 +671,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1500
      * @tc.name testClassCreateInstance015
-     * @tc.desc Verify ClassCreateInstance case 015: OuterClass015 nested inner and outer fields
+     * @tc.desc Verify ClassCreateInstance case 015: Class.from<OuterClass015>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -687,7 +687,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1600
      * @tc.name testClassCreateInstance016
-     * @tc.desc Verify ClassCreateInstance case 016: abstract class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 016: invalid call throws Error, Class.from<AbstractClass016>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -705,7 +705,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1700
      * @tc.name testClassCreateInstance017
-     * @tc.desc Verify ClassCreateInstance case 017: interface Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 017: invalid call throws Error, Class.from<MyInterface017>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -723,7 +723,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1800
      * @tc.name testClassCreateInstance018
-     * @tc.desc Verify ClassCreateInstance case 018: enum Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 018: invalid call throws Error, Class.from<TestEnum018>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -741,7 +741,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1900
      * @tc.name testClassCreateInstance019
-     * @tc.desc Verify ClassCreateInstance case 019: union type Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 019: invalid call throws Error, Class.from<int | string>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -759,7 +759,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2000
      * @tc.name testClassCreateInstance020
-     * @tc.desc Verify ClassCreateInstance case 020: no default constructor createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 020: invalid call throws Error, Class.from<NoDefaultConstructor020>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -777,7 +777,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2100
      * @tc.name testClassCreateInstance021
-     * @tc.desc Verify ClassCreateInstance case 021: private constructor createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 021: invalid call throws Error, Class.from<PrivateConstructor021>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -795,7 +795,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2200
      * @tc.name testClassCreateInstance022
-     * @tc.desc Verify ClassCreateInstance case 022: protected constructor createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 022: invalid call throws Error, Class.from<ProtectedConstructor022>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -813,7 +813,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2300
      * @tc.name testClassCreateInstance023
-     * @tc.desc Verify ClassCreateInstance case 023: static field init failure createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 023: invalid call throws Error, Class.from<InitFailClass023>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -831,7 +831,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2400
      * @tc.name testClassCreateInstance024
-     * @tc.desc Verify ClassCreateInstance case 024: static block failure createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 024: invalid call throws Error, Class.from<StaticInitFailClass024>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +849,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2500
      * @tc.name testClassCreateInstance025
-     * @tc.desc Verify ClassCreateInstance case 025: constructor throws Error with message
+     * @tc.desc Verify ClassCreateInstance case 025: invalid call throws Error, Class.from<ConstructorErrorClass025>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -868,7 +868,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2600
      * @tc.name testClassCreateInstance026
-     * @tc.desc Verify ClassCreateInstance case 026: constructor throws CustomError026 with errorCode
+     * @tc.desc Verify ClassCreateInstance case 026: invalid call throws Error, Class.from<CustomConstructorError026>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -887,7 +887,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2700
      * @tc.name testClassCreateInstance027
-     * @tc.desc Verify ClassCreateInstance case 027: conditional constructor throws when flag set
+     * @tc.desc Verify ClassCreateInstance case 027: invalid call throws Error, Class.from<ConditionalConstructorError027>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -905,7 +905,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2800
      * @tc.name testClassCreateInstance028
-     * @tc.desc Verify ClassCreateInstance case 028: constructor throws on createInstance
+     * @tc.desc Verify ClassCreateInstance case 028: invalid call throws Error, Class.from<LargeMemoryClass028>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -923,7 +923,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2900
      * @tc.name testClassCreateInstance029
-     * @tc.desc Verify ClassCreateInstance case 029: failing constructor createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 029: invalid call throws Error, Class.from<HugeClass029>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -941,7 +941,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3000
      * @tc.name testClassCreateInstance030
-     * @tc.desc Verify ClassCreateInstance case 030: deprecated class createInstance succeeds
+     * @tc.desc Verify ClassCreateInstance case 030: Class.from<DeprecatedClass030>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -956,7 +956,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3100
      * @tc.name testClassCreateInstance031
-     * @tc.desc Verify ClassCreateInstance case 031: annotated class createInstance succeeds
+     * @tc.desc Verify ClassCreateInstance case 031: Class.from<AnnotatedClass031>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -970,7 +970,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3200
      * @tc.name testClassCreateInstance032
-     * @tc.desc Verify ClassCreateInstance case 032: PRIMITIVE_BOOLEAN createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 032: invalid call throws Error, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -988,7 +988,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3300
      * @tc.name testClassCreateInstance033
-     * @tc.desc Verify ClassCreateInstance case 033: PRIMITIVE_INT createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 033: invalid call throws Error, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1006,7 +1006,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3400
      * @tc.name testClassCreateInstance034
-     * @tc.desc Verify ClassCreateInstance case 034: PRIMITIVE_VOID createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 034: invalid call throws Error, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1024,7 +1024,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3500
      * @tc.name testClassCreateInstance035
-     * @tc.desc Verify ClassCreateInstance case 035: FixedArray type Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 035: invalid call throws Error, Class.from<FixedArray<int>>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1042,7 +1042,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3600
      * @tc.name testClassCreateInstance036
-     * @tc.desc Verify ClassCreateInstance case 036: Map type Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 036: invalid call throws Error, Class.from<Map<int, string>>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1060,7 +1060,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3700
      * @tc.name testClassCreateInstance037
-     * @tc.desc Verify ClassCreateInstance case 037: Set type Class createInstance throws Error
+     * @tc.desc Verify ClassCreateInstance case 037: invalid call throws Error, Class.from<Set<int>>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1078,7 +1078,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3800
      * @tc.name testClassCreateInstance038
-     * @tc.desc Verify ClassCreateInstance case 038: two instances from same Class are independent
+     * @tc.desc Verify ClassCreateInstance case 038: Class.from<ConcurrentClass038>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1096,7 +1096,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3900
      * @tc.name testClassCreateInstance039
-     * @tc.desc Verify ClassCreateInstance case 039: empty class createInstance returns instance
+     * @tc.desc Verify ClassCreateInstance case 039: Class.from<EmptyClass039>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1111,7 +1111,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4000
      * @tc.name testClassCreateInstance040
-     * @tc.desc Verify ClassCreateInstance case 040: readonly and normal instance fields after createInstance
+     * @tc.desc Verify ClassCreateInstance case 040: Class.from<ReadonlyFieldsClass040>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1126,7 +1126,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4100
      * @tc.name testClassCreateInstance041
-     * @tc.desc Verify ClassCreateInstance case 041: instance and static fields after createInstance
+     * @tc.desc Verify ClassCreateInstance case 041: Class.from<StaticFieldsClass041>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1141,7 +1141,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4200
      * @tc.name testClassCreateInstance042
-     * @tc.desc Verify ClassCreateInstance case 042: special character field names on instance
+     * @tc.desc Verify ClassCreateInstance case 042: Class.from<SpecialCharClass042>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1157,7 +1157,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4300
      * @tc.name testClassCreateInstance043
-     * @tc.desc Verify ClassCreateInstance case 043: Class.from name then createInstance field
+     * @tc.desc Verify ClassCreateInstance case 043: Class.from<TestClass043>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1172,7 +1172,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4400
      * @tc.name testClassCreateInstance044
-     * @tc.desc Verify ClassCreateInstance case 044: initialize then createInstance after static init flag
+     * @tc.desc Verify ClassCreateInstance case 044: Class.from<TestClass044>(), createInstance succeeds, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1188,7 +1188,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4500
      * @tc.name testClassCreateInstance045
-     * @tc.desc Verify ClassCreateInstance case 045: createInstance without prior initialize sets value
+     * @tc.desc Verify ClassCreateInstance case 045: Class.from<TestClass045>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1202,7 +1202,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4600
      * @tc.name testClassCreateInstance046
-     * @tc.desc Verify ClassCreateInstance case 046: child createInstance has parent and child fields
+     * @tc.desc Verify ClassCreateInstance case 046: Class.from<ChildClass046>(), isSubtypeOf relationship verified, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1219,7 +1219,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4700
      * @tc.name testClassCreateInstance047
-     * @tc.desc Verify ClassCreateInstance case 047: child getSuper matches parent Class name
+     * @tc.desc Verify ClassCreateInstance case 047: Class.from<ChildClass047>(), getSuper returns expected parent Class, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1236,7 +1236,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4800
      * @tc.name testClassCreateInstance048
-     * @tc.desc Verify ClassCreateInstance case 048: createInstance 10000 calls performance log only
+     * @tc.desc Verify ClassCreateInstance case 048: Class.from<PerformanceTest048>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1257,7 +1257,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4900
      * @tc.name testClassCreateInstance049
-     * @tc.desc Verify ClassCreateInstance case 049: create 1000 instances each with data array length 5
+     * @tc.desc Verify ClassCreateInstance case 049: Class.from<MemoryTest049>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1277,7 +1277,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5000
      * @tc.name testClassCreateInstance050
-     * @tc.desc Verify ClassCreateInstance case 050: Factory050 generic createProduct for two types
+     * @tc.desc Verify ClassCreateInstance case 050: Class.from<ProductA050>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1292,7 +1292,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5100
      * @tc.name testClassCreateInstance051
-     * @tc.desc Verify ClassCreateInstance case 051: Controller051 createInstance execute returns message
+     * @tc.desc Verify ClassCreateInstance case 051: Class.from<Controller051>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1306,7 +1306,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5200
      * @tc.name testClassCreateInstance052
-     * @tc.desc Verify ClassCreateInstance case 052: PluginManager052 loadPlugin via createInstance
+     * @tc.desc Verify ClassCreateInstance case 052: Class.from<MyPlugin052>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1319,7 +1319,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5300
      * @tc.name testClassCreateInstance053
-     * @tc.desc Verify ClassCreateInstance case 053: TypedClass053 createInstance typed field value
+     * @tc.desc Verify ClassCreateInstance case 053: Class.from<TypedClass053>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1333,7 +1333,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5400
      * @tc.name testClassCreateInstance054
-     * @tc.desc Verify ClassCreateInstance case 054: ClassA054 instance cast to ClassB054 throws ClassCastError
+     * @tc.desc Verify ClassCreateInstance case 054: invalid input throws ClassCastError, Class.from<ClassA054>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1354,7 +1354,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5500
      * @tc.name testClassCreateInstance055
-     * @tc.desc Verify ClassCreateInstance case 055: AllFieldsClass055 all field types after createInstance
+     * @tc.desc Verify ClassCreateInstance case 055: Class.from<AllFieldsClass055>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1372,7 +1372,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5600
      * @tc.name testClassCreateInstance056
-     * @tc.desc Verify ClassCreateInstance case 056: MethodClass056 getter setter after createInstance
+     * @tc.desc Verify ClassCreateInstance case 056: Class.from<MethodClass056>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

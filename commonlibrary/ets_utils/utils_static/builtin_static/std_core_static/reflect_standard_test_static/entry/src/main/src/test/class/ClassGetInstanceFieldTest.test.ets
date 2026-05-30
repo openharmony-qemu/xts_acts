@@ -123,7 +123,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0100
      * @tc.name testClassGetInstanceField001
-     * @tc.desc Verify ClassGetInstanceField case 001: nameparameters in
+     * @tc.desc Verify ClassGetInstanceField case 001: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -137,7 +137,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0200
      * @tc.name testClassGetInstanceField002
-     * @tc.desc Verify ClassGetInstanceField case 002: not nameparameters should
+     * @tc.desc Verify ClassGetInstanceField case 002: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -155,7 +155,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0300
      * @tc.name testClassGetInstanceField003
-     * @tc.desc Verify ClassGetInstanceField case 003: parameters should
+     * @tc.desc Verify ClassGetInstanceField case 003: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -173,7 +173,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0400
      * @tc.name testClassGetInstanceField004
-     * @tc.desc Verify ClassGetInstanceField case 004: field string
+     * @tc.desc Verify ClassGetInstanceField case 004: Class.from<TestClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -190,7 +190,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0500
      * @tc.name testClassGetInstanceField005
-     * @tc.desc Verify ClassGetInstanceField case 005: empty string
+     * @tc.desc Verify ClassGetInstanceField case 005: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -204,7 +204,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0600
      * @tc.name testClassGetInstanceField006
-     * @tc.desc Verify ClassGetInstanceField case 006: field_name $ CJK and negative field-name query
+     * @tc.desc Verify ClassGetInstanceField case 006: Class.from<SpecialClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -229,7 +229,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0700
      * @tc.name testClassGetInstanceField007
-     * @tc.desc Verify ClassGetInstanceField case 007: Unicode field names
+     * @tc.desc Verify ClassGetInstanceField case 007: Class.from<UnicodeClass007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -252,7 +252,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0800
      * @tc.name testClassGetInstanceField008
-     * @tc.desc Verify ClassGetInstanceField case 008: null
+     * @tc.desc Verify ClassGetInstanceField case 008: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -270,7 +270,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0900
      * @tc.name testClassGetInstanceField009
-     * @tc.desc Verify ClassGetInstanceField case 009: undefined
+     * @tc.desc Verify ClassGetInstanceField case 009: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -288,7 +288,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1000
      * @tc.name testClassGetInstanceField010
-     * @tc.desc Verify ClassGetInstanceField case 010: string type
+     * @tc.desc Verify ClassGetInstanceField case 010: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -306,7 +306,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1100
      * @tc.name testClassGetInstanceField011
-     * @tc.desc Verify ClassGetInstanceField case 011: field
+     * @tc.desc Verify ClassGetInstanceField case 011: Class.from<CaseClass011>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -325,7 +325,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1200
      * @tc.name testClassGetInstanceField012
-     * @tc.desc Verify ClassGetInstanceField case 012: to field when return InstanceFieldobject
+     * @tc.desc Verify ClassGetInstanceField case 012: Class.from<TestClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +342,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1300
      * @tc.name testClassGetInstanceField013
-     * @tc.desc Verify ClassGetInstanceField case 013: return reflect.InstanceFieldtype
+     * @tc.desc Verify ClassGetInstanceField case 013: Class.from<TestClass012>(), isPublic flag verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -360,7 +360,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1400
      * @tc.name testClassGetInstanceField014
-     * @tc.desc Verify ClassGetInstanceField case 014: return InstanceField property
+     * @tc.desc Verify ClassGetInstanceField case 014: Class.from<CompleteTest014>(), isPrivate flag verified, isProtected flag verified, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -379,7 +379,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1500
      * @tc.name testClassGetInstanceField015
-     * @tc.desc Verify ClassGetInstanceField case 015: field not in when return undefined
+     * @tc.desc Verify ClassGetInstanceField case 015: Class.from<TestClass015>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -394,7 +394,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1600
      * @tc.name testClassGetInstanceField016
-     * @tc.desc Verify ClassGetInstanceField case 016: privatefield not
+     * @tc.desc Verify ClassGetInstanceField case 016: Class.from<PrivateTest016>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -411,7 +411,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1700
      * @tc.name testClassGetInstanceField017
-     * @tc.desc Verify ClassGetInstanceField case 017: protectedfield not
+     * @tc.desc Verify ClassGetInstanceField case 017: Class.from<ProtectedTest017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -425,7 +425,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1800
      * @tc.name testClassGetInstanceField018
-     * @tc.desc Verify ClassGetInstanceField case 018: field
+     * @tc.desc Verify ClassGetInstanceField case 018: Class.from<ChildClass018>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,7 +447,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1900
      * @tc.name testClassGetInstanceField019
-     * @tc.desc Verify ClassGetInstanceField case 019: inheritance field
+     * @tc.desc Verify ClassGetInstanceField case 019: Class.from<Child019>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -470,7 +470,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2000
      * @tc.name testClassGetInstanceField020
-     * @tc.desc Verify ClassGetInstanceField case 020: return InstanceField getType()
+     * @tc.desc Verify ClassGetInstanceField case 020: Class.from<TypedClass021>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -494,7 +494,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
      * @tc.name testClassGetInstanceField021
-     * @tc.desc Verify ClassGetInstanceField case 021: boolean as Object causes ClassCastError
+     * @tc.desc Verify ClassGetInstanceField case 021: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -512,7 +512,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2200
      * @tc.name testClassGetInstanceField022
-     * @tc.desc Verify ClassGetInstanceField case 022: Class call
+     * @tc.desc Verify ClassGetInstanceField case 022: Class.from<MyClass001>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -528,7 +528,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2300
      * @tc.name testClassGetInstanceField023
-     * @tc.desc Verify ClassGetInstanceField case 023: method is when
+     * @tc.desc Verify ClassGetInstanceField case 023: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -545,7 +545,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2400
      * @tc.name testClassGetInstanceField024
-     * @tc.desc Verify ClassGetInstanceField case 024: getInstanceField method
+     * @tc.desc Verify ClassGetInstanceField case 024: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -561,7 +561,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2500
      * @tc.name testClassGetInstanceField025
-     * @tc.desc Verify ClassGetInstanceField case 025: field
+     * @tc.desc Verify ClassGetInstanceField case 025: Class.from<LongName026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2600
      * @tc.name testClassGetInstanceField026
-     * @tc.desc Verify ClassGetInstanceField case 026: JavaScript is field
+     * @tc.desc Verify ClassGetInstanceField case 026: Class.from<KeywordName027>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -595,7 +595,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2700
      * @tc.name testClassGetInstanceField027
-     * @tc.desc Verify ClassGetInstanceField case 027: readonly public
+     * @tc.desc Verify ClassGetInstanceField case 027: Class.from<ModifierClass028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -615,7 +615,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2800
      * @tc.name testClassGetInstanceField028
-     * @tc.desc Verify ClassGetInstanceField case 028: field return same object
+     * @tc.desc Verify ClassGetInstanceField case 028: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

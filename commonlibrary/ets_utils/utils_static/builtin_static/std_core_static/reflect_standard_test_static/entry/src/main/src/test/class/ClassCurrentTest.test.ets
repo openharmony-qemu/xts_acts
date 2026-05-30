@@ -542,7 +542,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0100
      * @tc.name testClassCurrent001
-     * @tc.desc Verify ClassCurrent case 001: current() static method with no arguments
+     * @tc.desc Verify ClassCurrent case 001: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -556,7 +556,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0200
      * @tc.name testClassCurrent002
-     * @tc.desc Verify ClassCurrent case 002: in call current()
+     * @tc.desc Verify ClassCurrent case 002: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -569,7 +569,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0300
      * @tc.name testClassCurrent003
-     * @tc.desc Verify ClassCurrent case 003: in call return Class object
+     * @tc.desc Verify ClassCurrent case 003: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -584,7 +584,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
      * @tc.name testClassCurrent004
-     * @tc.desc Verify ClassCurrent case 004: verify return Classtype
+     * @tc.desc Verify ClassCurrent case 004: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -599,7 +599,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0500
      * @tc.name testClassCurrent005
-     * @tc.desc Verify ClassCurrent case 005: return Class object call method
+     * @tc.desc Verify ClassCurrent case 005: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -613,7 +613,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0600
      * @tc.name testClassCurrent006
-     * @tc.desc Verify ClassCurrent case 006: in method call current()return type
+     * @tc.desc Verify ClassCurrent case 006: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -626,7 +626,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0700
      * @tc.name testClassCurrent007
-     * @tc.desc Verify ClassCurrent case 007: method call current()return type
+     * @tc.desc Verify ClassCurrent case 007: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +640,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0800
      * @tc.name testClassCurrent008
-     * @tc.desc Verify ClassCurrent case 008: inheritance current()return call
+     * @tc.desc Verify ClassCurrent case 008: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -654,7 +654,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0900
      * @tc.name testClassCurrent009
-     * @tc.desc Verify ClassCurrent case 009: final call current()return Class object
+     * @tc.desc Verify ClassCurrent case 009: Class.from<FinalClass010>(), isFinal returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -669,7 +669,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1000
      * @tc.name testClassCurrent010
-     * @tc.desc Verify ClassCurrent case 010: abstract class call current()return abstract class Class object
+     * @tc.desc Verify ClassCurrent case 010: Class.from<AbstractClass011>(), isAbstract returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -684,7 +684,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1100
      * @tc.name testClassCurrent011
-     * @tc.desc Verify ClassCurrent case 011: generic call current()return Class object
+     * @tc.desc Verify ClassCurrent case 011: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -698,7 +698,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1200
      * @tc.name testClassCurrent012
-     * @tc.desc Verify ClassCurrent case 012: or call current()
+     * @tc.desc Verify ClassCurrent case 012: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -713,7 +713,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1300
      * @tc.name testClassCurrent013
-     * @tc.desc Verify ClassCurrent case 013: verify return Class object type
+     * @tc.desc Verify ClassCurrent case 013: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -726,7 +726,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1400
      * @tc.name testClassCurrent014
-     * @tc.desc Verify ClassCurrent case 014: verify current()return Class object
+     * @tc.desc Verify ClassCurrent case 014: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -740,7 +740,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1500
      * @tc.name testClassCurrent015
-     * @tc.desc Verify ClassCurrent case 015: call current() is
+     * @tc.desc Verify ClassCurrent case 015: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -754,7 +754,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1600
      * @tc.name testClassCurrent016
-     * @tc.desc Verify ClassCurrent case 016: static method call current()return Class object
+     * @tc.desc Verify ClassCurrent case 016: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -767,7 +767,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1700
      * @tc.name testClassCurrent017
-     * @tc.desc Verify ClassCurrent case 017: constructor call current()return in
+     * @tc.desc Verify ClassCurrent case 017: Class.from<TestClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -781,7 +781,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1800
      * @tc.name testClassCurrent018
-     * @tc.desc Verify ClassCurrent case 018: property call current()
+     * @tc.desc Verify ClassCurrent case 018: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -795,7 +795,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1900
      * @tc.name testClassCurrent019
-     * @tc.desc Verify ClassCurrent case 019: call current()return same object
+     * @tc.desc Verify ClassCurrent case 019: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -808,7 +808,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2000
      * @tc.name testClassCurrent020
-     * @tc.desc Verify ClassCurrent case 020: scenario current() is
+     * @tc.desc Verify ClassCurrent case 020: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -822,7 +822,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2100
      * @tc.name testClassCurrent021
-     * @tc.desc Verify ClassCurrent case 021: current()return
+     * @tc.desc Verify ClassCurrent case 021: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -835,7 +835,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2200
      * @tc.name testClassCurrent022
-     * @tc.desc Verify ClassCurrent case 022: of()return object instance
+     * @tc.desc Verify ClassCurrent case 022: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +849,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2300
      * @tc.name testClassCurrent023
-     * @tc.desc Verify ClassCurrent case 023: in instance method current() of(this)
+     * @tc.desc Verify ClassCurrent case 023: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -862,7 +862,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2400
      * @tc.name testClassCurrent024
-     * @tc.desc Verify ClassCurrent case 024: from() in not object get Class object
+     * @tc.desc Verify ClassCurrent case 024: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -874,7 +874,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2500
      * @tc.name testClassCurrent025
-     * @tc.desc Verify ClassCurrent case 025: current() in method or constructor call
+     * @tc.desc Verify ClassCurrent case 025: Class.from<TestClass026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -889,7 +889,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2600
      * @tc.name testClassCurrent026
-     * @tc.desc Verify ClassCurrent case 026: in method current() from< >()
+     * @tc.desc Verify ClassCurrent case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -902,7 +902,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2700
      * @tc.name testClassCurrent027
-     * @tc.desc Verify ClassCurrent case 027: scenario method
+     * @tc.desc Verify ClassCurrent case 027: Class.from<TestClass028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -916,7 +916,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2800
      * @tc.name testClassCurrent028
-     * @tc.desc Verify ClassCurrent case 028: scenario API
+     * @tc.desc Verify ClassCurrent case 028: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -931,7 +931,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2900
      * @tc.name testClassCurrent029
-     * @tc.desc Verify ClassCurrent case 029: current()not return type Class object
+     * @tc.desc Verify ClassCurrent case 029: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -944,7 +944,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3000
      * @tc.name testClassCurrent030
-     * @tc.desc Verify ClassCurrent case 030: in Number String current() is
+     * @tc.desc Verify ClassCurrent case 030: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -959,7 +959,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3100
      * @tc.name testClassCurrent031
-     * @tc.desc Verify ClassCurrent case 031: interface current()return interface
+     * @tc.desc Verify ClassCurrent case 031: isInterface returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -974,7 +974,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3200
      * @tc.name testClassCurrent032
-     * @tc.desc Verify ClassCurrent case 032: multiple interface when current()return
+     * @tc.desc Verify ClassCurrent case 032: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -990,7 +990,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3300
      * @tc.name testClassCurrent033
-     * @tc.desc Verify ClassCurrent case 033: type current() is
+     * @tc.desc Verify ClassCurrent case 033: Class.from<TestEnum034>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1003,7 +1003,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3400
      * @tc.name testClassCurrent034
-     * @tc.desc Verify ClassCurrent case 034: using from()get Class object and current()
+     * @tc.desc Verify ClassCurrent case 034: Class.from<TestEnum035>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1016,7 +1016,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3500
      * @tc.name testClassCurrent035
-     * @tc.desc Verify ClassCurrent case 035: getClass on union instance returns concrete UnionClass036 Class
+     * @tc.desc Verify ClassCurrent case 035: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1030,7 +1030,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3600
      * @tc.name testClassCurrent036
-     * @tc.desc Verify ClassCurrent case 036: Class.from union type isUnion is true not concrete class name
+     * @tc.desc Verify ClassCurrent case 036: Class.from<int | string>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1047,7 +1047,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3700
      * @tc.name testClassCurrent037
-     * @tc.desc Verify ClassCurrent case 037: array type current() is
+     * @tc.desc Verify ClassCurrent case 037: isFixedArray returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1065,7 +1065,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3800
      * @tc.name testClassCurrent038
-     * @tc.desc Verify ClassCurrent case 038: verify current() call completes without error
+     * @tc.desc Verify ClassCurrent case 038: Class.from<TestClass039>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1079,7 +1079,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3900
      * @tc.name testClassCurrent039
-     * @tc.desc Verify ClassCurrent case 039: current() of() from() calls complete without error
+     * @tc.desc Verify ClassCurrent case 039: Class.from<TestClass040>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1093,7 +1093,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4000
      * @tc.name testClassCurrent040
-     * @tc.desc Verify ClassCurrent case 040: current()return Class object instance
+     * @tc.desc Verify ClassCurrent case 040: Class.from<TestClass041>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1107,7 +1107,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4100
      * @tc.name testClassCurrent041
-     * @tc.desc Verify ClassCurrent case 041: verify call current()not
+     * @tc.desc Verify ClassCurrent case 041: Class.from<TestClass042>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1121,7 +1121,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4200
      * @tc.name testClassCurrent042
-     * @tc.desc Verify ClassCurrent case 042: scenario current()return
+     * @tc.desc Verify ClassCurrent case 042: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1135,7 +1135,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4300
      * @tc.name testClassCurrent043
-     * @tc.desc Verify ClassCurrent case 043: verify current() in API version
+     * @tc.desc Verify ClassCurrent case 043: Class.from<TestClass044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1149,7 +1149,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4400
      * @tc.name testClassCurrent044
-     * @tc.desc Verify ClassCurrent case 044: in call current()return
+     * @tc.desc Verify ClassCurrent case 044: Class.from<Module1Class045>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1163,7 +1163,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4500
      * @tc.name testClassCurrent045
-     * @tc.desc Verify ClassCurrent case 045: ORM via current()get
+     * @tc.desc Verify ClassCurrent case 045: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1178,7 +1178,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4600
      * @tc.name testClassCurrent046
-     * @tc.desc Verify ClassCurrent case 046: when via current()get type
+     * @tc.desc Verify ClassCurrent case 046: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1193,7 +1193,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4700
      * @tc.name testClassCurrent047
-     * @tc.desc Verify ClassCurrent case 047: via current()
+     * @tc.desc Verify ClassCurrent case 047: Class.from<Service048>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1207,7 +1207,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4800
      * @tc.name testClassCurrent048
-     * @tc.desc Verify ClassCurrent case 048: error via current()get error
+     * @tc.desc Verify ClassCurrent case 048: Class.from<ErrorHandler049>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1221,7 +1221,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4900
      * @tc.name testClassCurrent049
-     * @tc.desc Verify ClassCurrent case 049: via current()get Class object call
+     * @tc.desc Verify ClassCurrent case 049: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1234,7 +1234,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5000
      * @tc.name testClassCurrent050
-     * @tc.desc Verify ClassCurrent case 050: via current()get Class object field
+     * @tc.desc Verify ClassCurrent case 050: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1247,7 +1247,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5100
      * @tc.name testClassCurrent051
-     * @tc.desc Verify ClassCurrent case 051: in inheritance current() is
+     * @tc.desc Verify ClassCurrent case 051: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1261,7 +1261,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5200
      * @tc.name testClassCurrent052
-     * @tc.desc Verify ClassCurrent case 052: verify current() in inheritance
+     * @tc.desc Verify ClassCurrent case 052: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1275,7 +1275,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5300
      * @tc.name testClassCurrent053
-     * @tc.desc Verify ClassCurrent case 053: inheritance interface scenario
+     * @tc.desc Verify ClassCurrent case 053: getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1291,7 +1291,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5400
      * @tc.name testClassCurrent054
-     * @tc.desc Verify ClassCurrent case 054: verify
+     * @tc.desc Verify ClassCurrent case 054: Class.from<TestClass055>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1305,7 +1305,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5500
      * @tc.name testClassCurrent055
-     * @tc.desc Verify ClassCurrent case 055: verify API after current() is
+     * @tc.desc Verify ClassCurrent case 055: Class.from<TestClass056>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

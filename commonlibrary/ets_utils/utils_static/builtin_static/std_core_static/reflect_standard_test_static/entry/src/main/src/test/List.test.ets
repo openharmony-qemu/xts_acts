@@ -163,5 +163,4 @@ export default function testsuite(): void {
   InstanceFieldGetNameTest();
   InstanceFieldGetOwnerTest();
   InstanceFieldGetTypeTest();
-
 }

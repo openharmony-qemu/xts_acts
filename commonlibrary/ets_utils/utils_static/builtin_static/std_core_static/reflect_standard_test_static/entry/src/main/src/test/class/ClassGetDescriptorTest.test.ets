@@ -130,7 +130,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0100
      * @tc.name testClassGetDescriptor001
-     * @tc.desc Verify ClassGetDescriptor case 001: getDescriptor() with no arguments
+     * @tc.desc Verify ClassGetDescriptor case 001: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -144,7 +144,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0200
      * @tc.name testClassGetDescriptor002
-     * @tc.desc Verify ClassGetDescriptor case 002: via Classinstance call
+     * @tc.desc Verify ClassGetDescriptor case 002: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -158,7 +158,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0300
      * @tc.name testClassGetDescriptor003
-     * @tc.desc Verify ClassGetDescriptor case 003: in call using getDescriptor
+     * @tc.desc Verify ClassGetDescriptor case 003: Class.from<Map<int, string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -171,7 +171,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0400
      * @tc.name testClassGetDescriptor004
-     * @tc.desc Verify ClassGetDescriptor case 004: get
+     * @tc.desc Verify ClassGetDescriptor case 004: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -193,7 +193,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0500
      * @tc.name testClassGetDescriptor005
-     * @tc.desc Verify ClassGetDescriptor case 005: CustomClass descriptor format
+     * @tc.desc Verify ClassGetDescriptor case 005: Class.from<CustomClass>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -208,7 +208,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0600
      * @tc.name testClassGetDescriptor006
-     * @tc.desc Verify ClassGetDescriptor case 006: get
+     * @tc.desc Verify ClassGetDescriptor case 006: Class.from<MyClass007>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -224,7 +224,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0700
      * @tc.name testClassGetDescriptor007
-     * @tc.desc Verify ClassGetDescriptor case 007: get interface type
+     * @tc.desc Verify ClassGetDescriptor case 007: Class.from<ArrayLike<int>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,7 +239,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0800
      * @tc.name testClassGetDescriptor008
-     * @tc.desc Verify ClassGetDescriptor case 008: verify return JVM
+     * @tc.desc Verify ClassGetDescriptor case 008: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -253,7 +253,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0900
      * @tc.name testClassGetDescriptor009
-     * @tc.desc Verify ClassGetDescriptor case 009: verify using .
+     * @tc.desc Verify ClassGetDescriptor case 009: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -268,7 +268,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1000
      * @tc.name testClassGetDescriptor010
-     * @tc.desc Verify ClassGetDescriptor case 010: verify generic parameters not in
+     * @tc.desc Verify ClassGetDescriptor case 010: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -286,7 +286,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1100
      * @tc.name testClassGetDescriptor011
-     * @tc.desc Verify ClassGetDescriptor case 011: not should is empty string
+     * @tc.desc Verify ClassGetDescriptor case 011: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -301,7 +301,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1200
      * @tc.name testClassGetDescriptor012
-     * @tc.desc Verify ClassGetDescriptor case 012: different type should different
+     * @tc.desc Verify ClassGetDescriptor case 012: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -319,7 +319,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1300
      * @tc.name testClassGetDescriptor013
-     * @tc.desc Verify ClassGetDescriptor case 013: type call return same
+     * @tc.desc Verify ClassGetDescriptor case 013: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -337,7 +337,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1400
      * @tc.name testClassGetDescriptor014
-     * @tc.desc Verify ClassGetDescriptor case 014: verify array type
+     * @tc.desc Verify ClassGetDescriptor case 014: Class.of(instance), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -352,7 +352,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1500
      * @tc.name testClassGetDescriptor015
-     * @tc.desc Verify ClassGetDescriptor case 015: verify FixedArray
+     * @tc.desc Verify ClassGetDescriptor case 015: Class.of(instance), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -367,7 +367,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1600
      * @tc.name testClassGetDescriptor016
-     * @tc.desc Verify ClassGetDescriptor case 016: verify array
+     * @tc.desc Verify ClassGetDescriptor case 016: Class.of(instance), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -384,7 +384,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1700
      * @tc.name testClassGetDescriptor017
-     * @tc.desc Verify ClassGetDescriptor case 017: method not throw exception
+     * @tc.desc Verify ClassGetDescriptor case 017: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -398,7 +398,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1800
      * @tc.name testClassGetDescriptor018
-     * @tc.desc Verify ClassGetDescriptor case 018: call getDescriptor
+     * @tc.desc Verify ClassGetDescriptor case 018: Class.from<CustomClass>(), initialize() behavior verified, getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +416,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_1900
      * @tc.name testClassGetDescriptor019
-     * @tc.desc Verify ClassGetDescriptor case 019: get abstract class
+     * @tc.desc Verify ClassGetDescriptor case 019: Class.from<AbstractClass020>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -430,7 +430,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2000
      * @tc.name testClassGetDescriptor020
-     * @tc.desc Verify ClassGetDescriptor case 020: get final
+     * @tc.desc Verify ClassGetDescriptor case 020: Class.from<FinalClass021>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -444,7 +444,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2100
      * @tc.name testClassGetDescriptor021
-     * @tc.desc Verify ClassGetDescriptor case 021: get interface
+     * @tc.desc Verify ClassGetDescriptor case 021: Class.from<DescriptorJsonSerializable>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -459,7 +459,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2200
      * @tc.name testClassGetDescriptor022
-     * @tc.desc Verify ClassGetDescriptor case 022: get interface
+     * @tc.desc Verify ClassGetDescriptor case 022: Class.from<MyInterface023>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -473,7 +473,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2300
      * @tc.name testClassGetDescriptor023
-     * @tc.desc Verify ClassGetDescriptor case 023: get type should
+     * @tc.desc Verify ClassGetDescriptor case 023: Class.from<boolean>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -487,7 +487,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2400
      * @tc.name testClassGetDescriptor024
-     * @tc.desc Verify ClassGetDescriptor case 024: get PRIMITIVE_ static property
+     * @tc.desc Verify ClassGetDescriptor case 024: getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -505,7 +505,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2500
      * @tc.name testClassGetDescriptor025
-     * @tc.desc Verify ClassGetDescriptor case 025: verify generic in
+     * @tc.desc Verify ClassGetDescriptor case 025: Class.from<Array<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -526,7 +526,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2600
      * @tc.name testClassGetDescriptor026
-     * @tc.desc Verify ClassGetDescriptor case 026: generic type
+     * @tc.desc Verify ClassGetDescriptor case 026: Class.from<Map<string, Array<int>>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -540,7 +540,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2700
      * @tc.name testClassGetDescriptor027
-     * @tc.desc Verify ClassGetDescriptor case 027: type
+     * @tc.desc Verify ClassGetDescriptor case 027: Class.from<int | string>(), isUnion returns true, getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -555,7 +555,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2800
      * @tc.name testClassGetDescriptor028
-     * @tc.desc Verify ClassGetDescriptor case 028: get type
+     * @tc.desc Verify ClassGetDescriptor case 028: Class.from<TestEnum029>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -570,7 +570,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_2900
      * @tc.name testClassGetDescriptor029
-     * @tc.desc Verify ClassGetDescriptor case 029: Set not generic parameters
+     * @tc.desc Verify ClassGetDescriptor case 029: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -592,7 +592,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3000
      * @tc.name testClassGetDescriptor030
-     * @tc.desc Verify ClassGetDescriptor case 030: Map not generic parameters
+     * @tc.desc Verify ClassGetDescriptor case 030: Class.from<Map<string, int>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -614,7 +614,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3100
      * @tc.name testClassGetDescriptor031
-     * @tc.desc Verify ClassGetDescriptor case 031: Listtype
+     * @tc.desc Verify ClassGetDescriptor case 031: Class.from<Array<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -628,7 +628,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3200
      * @tc.name testClassGetDescriptor032
-     * @tc.desc Verify ClassGetDescriptor case 032: Arraytype
+     * @tc.desc Verify ClassGetDescriptor case 032: Class.from<Array<int>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -642,7 +642,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3300
      * @tc.name testClassGetDescriptor033
-     * @tc.desc Verify ClassGetDescriptor case 033: getDescriptorreturn getNamereturn
+     * @tc.desc Verify ClassGetDescriptor case 033: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -663,7 +663,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3400
      * @tc.name testClassGetDescriptor034
-     * @tc.desc Verify ClassGetDescriptor case 034: verify and name should
+     * @tc.desc Verify ClassGetDescriptor case 034: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -679,7 +679,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3500
      * @tc.name testClassGetDescriptor035
-     * @tc.desc Verify ClassGetDescriptor case 035: Class object call getDescriptorreturn same
+     * @tc.desc Verify ClassGetDescriptor case 035: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -698,7 +698,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3600
      * @tc.name testClassGetDescriptor036
-     * @tc.desc Verify ClassGetDescriptor case 036: type different Classinstance return same
+     * @tc.desc Verify ClassGetDescriptor case 036: Class.from<Map<int, string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -714,7 +714,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3700
      * @tc.name testClassGetDescriptor037
-     * @tc.desc Verify ClassGetDescriptor case 037: getDescriptor on class returns non-empty string
+     * @tc.desc Verify ClassGetDescriptor case 037: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -736,7 +736,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3800
      * @tc.name testClassGetDescriptor038
-     * @tc.desc Verify ClassGetDescriptor case 038: getDescriptorshould return not
+     * @tc.desc Verify ClassGetDescriptor case 038: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -759,7 +759,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3900
      * @tc.name testClassGetDescriptor039
-     * @tc.desc Verify ClassGetDescriptor case 039: call not should
+     * @tc.desc Verify ClassGetDescriptor case 039: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -777,7 +777,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4000
      * @tc.name testClassGetDescriptor040
-     * @tc.desc Verify ClassGetDescriptor case 040: getDescriptor returns non-empty descriptor string
+     * @tc.desc Verify ClassGetDescriptor case 040: Class.from<DescriptorTestMyClass041>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,7 +791,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4100
      * @tc.name testClassGetDescriptor041
-     * @tc.desc Verify ClassGetDescriptor case 041: getDescriptor repeated calls return same content
+     * @tc.desc Verify ClassGetDescriptor case 041: Class.from<OuterClass042Inner042>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -807,7 +807,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4200
      * @tc.name testClassGetDescriptor042
-     * @tc.desc Verify ClassGetDescriptor case 042: or
+     * @tc.desc Verify ClassGetDescriptor case 042: Class.of(instance), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -822,7 +822,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4300
      * @tc.name testClassGetDescriptor043
-     * @tc.desc Verify ClassGetDescriptor case 043: using is type
+     * @tc.desc Verify ClassGetDescriptor case 043: Class.from<Set<string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -836,7 +836,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4400
      * @tc.name testClassGetDescriptor044
-     * @tc.desc Verify ClassGetDescriptor case 044: using type
+     * @tc.desc Verify ClassGetDescriptor case 044: Class.from<Set<string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -852,7 +852,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4500
      * @tc.name testClassGetDescriptor045
-     * @tc.desc Verify ClassGetDescriptor case 045: JVMtype
+     * @tc.desc Verify ClassGetDescriptor case 045: Class.from<Set<string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -866,7 +866,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4600
      * @tc.name testClassGetDescriptor046
-     * @tc.desc Verify ClassGetDescriptor case 046: in different
+     * @tc.desc Verify ClassGetDescriptor case 046: Class.of(instance), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -881,7 +881,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4700
      * @tc.name testClassGetDescriptor047
-     * @tc.desc Verify ClassGetDescriptor case 047: in different
+     * @tc.desc Verify ClassGetDescriptor case 047: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

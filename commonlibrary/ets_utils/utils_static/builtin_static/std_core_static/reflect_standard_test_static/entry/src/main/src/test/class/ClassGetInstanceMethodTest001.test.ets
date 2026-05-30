@@ -45,7 +45,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0010
      * @tc.name testClassGetInstanceMethod001
-     * @tc.desc Verify ClassGetInstanceMethod case 001: nameparameters parameters signature
+     * @tc.desc Verify ClassGetInstanceMethod case 001: Class.from<MyClass001>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -60,7 +60,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0020
      * @tc.name testClassGetInstanceMethod002
-     * @tc.desc Verify ClassGetInstanceMethod case 002: name signature parameters
+     * @tc.desc Verify ClassGetInstanceMethod case 002: Class.from<MyClass002>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -75,7 +75,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0030
      * @tc.name testClassGetInstanceMethod003
-     * @tc.desc Verify ClassGetInstanceMethod case 003: using method name
+     * @tc.desc Verify ClassGetInstanceMethod case 003: Class.from<MyClass003>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -90,7 +90,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0040
      * @tc.name testClassGetInstanceMethod004
-     * @tc.desc Verify ClassGetInstanceMethod case 004: using method
+     * @tc.desc Verify ClassGetInstanceMethod case 004: Class.from<MyClass004>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -105,7 +105,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0050
      * @tc.name testClassGetInstanceMethod005
-     * @tc.desc Verify ClassGetInstanceMethod case 005: method
+     * @tc.desc Verify ClassGetInstanceMethod case 005: Class.from<MyClass005>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -123,7 +123,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0060
      * @tc.name testClassGetInstanceMethod006
-     * @tc.desc Verify ClassGetInstanceMethod case 006: using method
+     * @tc.desc Verify ClassGetInstanceMethod case 006: Class.from<MyClass006>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -138,7 +138,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0070
      * @tc.name testClassGetInstanceMethod007
-     * @tc.desc Verify ClassGetInstanceMethod case 007: using gettermethod get-property
+     * @tc.desc Verify ClassGetInstanceMethod case 007: Class.from<MyClass007>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -153,7 +153,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0080
      * @tc.name testClassGetInstanceMethod008
-     * @tc.desc Verify ClassGetInstanceMethod case 008: using settermethod set-property
+     * @tc.desc Verify ClassGetInstanceMethod case 008: Class.from<MyClass008>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -168,7 +168,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0090
      * @tc.name testClassGetInstanceMethod009
-     * @tc.desc Verify ClassGetInstanceMethod case 009: nameparameters is empty string
+     * @tc.desc Verify ClassGetInstanceMethod case 009: Class.from<MyClass009>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -182,7 +182,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0100
      * @tc.name testClassGetInstanceMethod010
-     * @tc.desc Verify ClassGetInstanceMethod case 010: nameparameters is
+     * @tc.desc Verify ClassGetInstanceMethod case 010: Class.from<MyClass010>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -197,7 +197,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0110
      * @tc.name testClassGetInstanceMethod011
-     * @tc.desc Verify ClassGetInstanceMethod case 011: using method
+     * @tc.desc Verify ClassGetInstanceMethod case 011: Class.from<MyClass011>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +213,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0120
      * @tc.name testClassGetInstanceMethod012
-     * @tc.desc Verify ClassGetInstanceMethod case 012: using Unicode method
+     * @tc.desc Verify ClassGetInstanceMethod case 012: Class.from<MyClass012>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,7 +231,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0130
      * @tc.name testClassGetInstanceMethod013
-     * @tc.desc Verify ClassGetInstanceMethod case 013: nameparameters empty u200B
+     * @tc.desc Verify ClassGetInstanceMethod case 013: Class.from<MyClass013>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -245,7 +245,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0140
      * @tc.name testClassGetInstanceMethod014
-     * @tc.desc Verify ClassGetInstanceMethod case 014: nameparameters
+     * @tc.desc Verify ClassGetInstanceMethod case 014: Class.from<MyClass014>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -263,7 +263,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0150
      * @tc.name testClassGetInstanceMethod015
-     * @tc.desc Verify ClassGetInstanceMethod case 015: nameparameters in XSS
+     * @tc.desc Verify ClassGetInstanceMethod case 015: Class.from<MyClass015>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -277,7 +277,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0160
      * @tc.name testClassGetInstanceMethod016
-     * @tc.desc Verify ClassGetInstanceMethod case 016: name parameters is null
+     * @tc.desc Verify ClassGetInstanceMethod case 016: invalid input throws ClassCastError, Class.from<MyClass016>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -295,7 +295,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0170
      * @tc.name testClassGetInstanceMethod017
-     * @tc.desc Verify ClassGetInstanceMethod case 017: name parameters is undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 017: invalid input throws ClassCastError, Class.from<MyClass017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -313,7 +313,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0180
      * @tc.name testClassGetInstanceMethod018
-     * @tc.desc Verify ClassGetInstanceMethod case 018: nameparameters type
+     * @tc.desc Verify ClassGetInstanceMethod case 018: invalid input throws ClassCastError, Class.from<MyClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -331,7 +331,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0190
      * @tc.name testClassGetInstanceMethod019
-     * @tc.desc Verify ClassGetInstanceMethod case 019: nameparameters object type
+     * @tc.desc Verify ClassGetInstanceMethod case 019: invalid input throws ClassCastError, Class.from<MyClass019>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0200
      * @tc.name testClassGetInstanceMethod020
-     * @tc.desc Verify ClassGetInstanceMethod case 020: nameparameters array type
+     * @tc.desc Verify ClassGetInstanceMethod case 020: invalid input throws ClassCastError, Class.from<MyClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -368,7 +368,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0210
      * @tc.name testClassGetInstanceMethod021
-     * @tc.desc Verify ClassGetInstanceMethod case 021: signature parameters type
+     * @tc.desc Verify ClassGetInstanceMethod case 021: Class.from<MyClass021>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -382,7 +382,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0220
      * @tc.name testClassGetInstanceMethod022
-     * @tc.desc Verify ClassGetInstanceMethod case 022: signature multiple parameters type
+     * @tc.desc Verify ClassGetInstanceMethod case 022: Class.from<MyClass022>(), getInstanceMethod resolves expected method, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -402,7 +402,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0230
      * @tc.name testClassGetInstanceMethod023
-     * @tc.desc Verify ClassGetInstanceMethod case 023: signature type
+     * @tc.desc Verify ClassGetInstanceMethod case 023: Class.from<MyClass023>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -422,7 +422,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0240
      * @tc.name testClassGetInstanceMethod024
-     * @tc.desc Verify ClassGetInstanceMethod case 024: signature object type
+     * @tc.desc Verify ClassGetInstanceMethod case 024: Class.from<MyClass024>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -437,7 +437,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0250
      * @tc.name testClassGetInstanceMethod025
-     * @tc.desc Verify ClassGetInstanceMethod case 025: signature is empty array no parameters method
+     * @tc.desc Verify ClassGetInstanceMethod case 025: Class.from<MyClass025>(), getInstanceMethod resolves expected method, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -452,7 +452,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0260
      * @tc.name testClassGetInstanceMethod026
-     * @tc.desc Verify ClassGetInstanceMethod case 026: signature parameters type method parameters
+     * @tc.desc Verify ClassGetInstanceMethod case 026: Class.from<MyClass026>(), getInstanceMethod resolves expected method, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +479,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0270
      * @tc.name testClassGetInstanceMethod027
-     * @tc.desc Verify ClassGetInstanceMethod case 027: signature generic type
+     * @tc.desc Verify ClassGetInstanceMethod case 027: Class.from<MyClass027>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -494,7 +494,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0280
      * @tc.name testClassGetInstanceMethod028
-     * @tc.desc Verify ClassGetInstanceMethod case 028: signature type
+     * @tc.desc Verify ClassGetInstanceMethod case 028: Class.from<MyClass028>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -508,7 +508,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0290
      * @tc.name testClassGetInstanceMethod029
-     * @tc.desc Verify ClassGetInstanceMethod case 029: signatureparameters is null
+     * @tc.desc Verify ClassGetInstanceMethod case 029: invalid input throws ClassCastError, Class.from<MyClass029>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -526,7 +526,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0300
      * @tc.name testClassGetInstanceMethod030
-     * @tc.desc Verify ClassGetInstanceMethod case 030: signatureparameters is undefined parameters
+     * @tc.desc Verify ClassGetInstanceMethod case 030: Class.from<MyClass030>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -540,7 +540,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0310
      * @tc.name testClassGetInstanceMethod031
-     * @tc.desc Verify ClassGetInstanceMethod case 031: signaturearray Class object
+     * @tc.desc Verify ClassGetInstanceMethod case 031: invalid input throws ClassCastError, Class.from<MyClass031>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -558,7 +558,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0320
      * @tc.name testClassGetInstanceMethod032
-     * @tc.desc Verify ClassGetInstanceMethod case 032: signatureparameters not array type
+     * @tc.desc Verify ClassGetInstanceMethod case 032: invalid input throws ClassCastError, Class.from<MyClass032>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0330
      * @tc.name testClassGetInstanceMethod033
-     * @tc.desc Verify ClassGetInstanceMethod case 033: signature parameters type not
+     * @tc.desc Verify ClassGetInstanceMethod case 033: Class.from<MyClass033>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -590,7 +590,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0340
      * @tc.name testClassGetInstanceMethod034
-     * @tc.desc Verify ClassGetInstanceMethod case 034: signature parameters and method not
+     * @tc.desc Verify ClassGetInstanceMethod case 034: Class.from<MyClass034>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -604,7 +604,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0350
      * @tc.name testClassGetInstanceMethod035
-     * @tc.desc Verify ClassGetInstanceMethod case 035: method
+     * @tc.desc Verify ClassGetInstanceMethod case 035: Class.from<MyClass035>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,7 +618,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0360
      * @tc.name testClassGetInstanceMethod036
-     * @tc.desc Verify ClassGetInstanceMethod case 036: in multiple when signature
+     * @tc.desc Verify ClassGetInstanceMethod case 036: Class.from<MyClass036>(), getInstanceMethod resolves expected method, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -639,7 +639,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0370
      * @tc.name testClassGetInstanceMethod037
-     * @tc.desc Verify ClassGetInstanceMethod case 037: in multiple when not signatureshould throw Error
+     * @tc.desc Verify ClassGetInstanceMethod case 037: ambiguous signature throws Error, Class.from<MyClass037>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -658,7 +658,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0380
      * @tc.name testClassGetInstanceMethod038
-     * @tc.desc Verify ClassGetInstanceMethod case 038: instance method
+     * @tc.desc Verify ClassGetInstanceMethod case 038: Class.from<MyClass038>(), getInstanceMethod resolves expected method, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -673,7 +673,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0390
      * @tc.name testClassGetInstanceMethod039
-     * @tc.desc Verify ClassGetInstanceMethod case 039: from interface inheritance publicinstance method
+     * @tc.desc Verify ClassGetInstanceMethod case 039: Class.from<MyClass039>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0400
      * @tc.name testClassGetInstanceMethod040
-     * @tc.desc Verify ClassGetInstanceMethod case 040: getInstanceMethodnot should return method
+     * @tc.desc Verify ClassGetInstanceMethod case 040: Class.from<MyClass040>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -704,7 +704,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0410
      * @tc.name testClassGetInstanceMethod041
-     * @tc.desc Verify ClassGetInstanceMethod case 041: multiple interface interface method
+     * @tc.desc Verify ClassGetInstanceMethod case 041: Class.from<MyClass041>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -720,7 +720,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0420
      * @tc.name testClassGetInstanceMethod042
-     * @tc.desc Verify ClassGetInstanceMethod case 042: publicinstance method
+     * @tc.desc Verify ClassGetInstanceMethod case 042: Class.from<MyClass042>(), getInstanceMethod resolves expected method, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -735,7 +735,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0430
      * @tc.name testClassGetInstanceMethod043
-     * @tc.desc Verify ClassGetInstanceMethod case 043: method not
+     * @tc.desc Verify ClassGetInstanceMethod case 043: Class.from<MyClass043>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -749,7 +749,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0440
      * @tc.name testClassGetInstanceMethod044
-     * @tc.desc Verify ClassGetInstanceMethod case 044: protectedmethod not
+     * @tc.desc Verify ClassGetInstanceMethod case 044: Class.from<MyClass044>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -763,7 +763,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0450
      * @tc.name testClassGetInstanceMethod045
-     * @tc.desc Verify ClassGetInstanceMethod case 045: internal method is
+     * @tc.desc Verify ClassGetInstanceMethod case 045: Class.from<MyClass045>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -777,7 +777,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0460
      * @tc.name testClassGetInstanceMethod046
-     * @tc.desc Verify ClassGetInstanceMethod case 046: getInstanceMethodnot should return static method
+     * @tc.desc Verify ClassGetInstanceMethod case 046: Class.from<MyClass046>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,7 +791,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0470
      * @tc.name testClassGetInstanceMethod047
-     * @tc.desc Verify ClassGetInstanceMethod case 047: constructor is
+     * @tc.desc Verify ClassGetInstanceMethod case 047: Class.from<MyClass047>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -806,7 +806,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0480
      * @tc.name testClassGetInstanceMethod048
-     * @tc.desc Verify ClassGetInstanceMethod case 048: native method
+     * @tc.desc Verify ClassGetInstanceMethod case 048: Class.from<MyClass048>(), getInstanceMethod resolves expected method, isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -821,7 +821,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0490
      * @tc.name testClassGetInstanceMethod049
-     * @tc.desc Verify ClassGetInstanceMethod case 049: final method
+     * @tc.desc Verify ClassGetInstanceMethod case 049: Class.from<MyClass049>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -836,7 +836,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0500
      * @tc.name testClassGetInstanceMethod050
-     * @tc.desc Verify ClassGetInstanceMethod case 050: async method
+     * @tc.desc Verify ClassGetInstanceMethod case 050: Class.from<MyClass050>(), getInstanceMethod resolves expected method, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -852,7 +852,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0510
      * @tc.name testClassGetInstanceMethod051
-     * @tc.desc Verify ClassGetInstanceMethod case 051: abstractmethod
+     * @tc.desc Verify ClassGetInstanceMethod case 051: Class.from<MyClass051>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -867,7 +867,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0520
      * @tc.name testClassGetInstanceMethod052
-     * @tc.desc Verify ClassGetInstanceMethod case 052: success to method when return InstanceMethodobject
+     * @tc.desc Verify ClassGetInstanceMethod case 052: Class.from<MyClass052>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -884,7 +884,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0530
      * @tc.name testClassGetInstanceMethod053
-     * @tc.desc Verify ClassGetInstanceMethod case 053: return InstanceMethodobject call getName()
+     * @tc.desc Verify ClassGetInstanceMethod case 053: Class.from<MyClass053>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -899,7 +899,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0540
      * @tc.name testClassGetInstanceMethod054
-     * @tc.desc Verify ClassGetInstanceMethod case 054: return InstanceMethodobject call getOwner()
+     * @tc.desc Verify ClassGetInstanceMethod case 054: Class.from<MyClass054>(), getInstanceMethod resolves expected method, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -914,7 +914,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0550
      * @tc.name testClassGetInstanceMethod055
-     * @tc.desc Verify ClassGetInstanceMethod case 055: return InstanceMethodobject call getReturnType()
+     * @tc.desc Verify ClassGetInstanceMethod case 055: Class.from<MyClass055>(), getInstanceMethod resolves expected method, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -929,7 +929,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0560
      * @tc.name testClassGetInstanceMethod056
-     * @tc.desc Verify ClassGetInstanceMethod case 056: return InstanceMethodobject call getParameterTypes()
+     * @tc.desc Verify ClassGetInstanceMethod case 056: Class.from<MyClass056>(), getInstanceMethod resolves expected method, parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +950,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0570
      * @tc.name testClassGetInstanceMethod057
-     * @tc.desc Verify ClassGetInstanceMethod case 057: return InstanceMethodobject call getParametersNum()
+     * @tc.desc Verify ClassGetInstanceMethod case 057: Class.from<MyClass057>(), getInstanceMethod resolves expected method, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -970,7 +970,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0580
      * @tc.name testClassGetInstanceMethod058
-     * @tc.desc Verify ClassGetInstanceMethod case 058: return InstanceMethodobject call invoke() method
+     * @tc.desc Verify ClassGetInstanceMethod case 058: Class.from<MyClass058>(), getInstanceMethod resolves expected method, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -987,7 +987,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0590
      * @tc.name testClassGetInstanceMethod059
-     * @tc.desc Verify ClassGetInstanceMethod case 059: not in method when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 059: Class.from<MyClass059>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1001,7 +1001,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0600
      * @tc.name testClassGetInstanceMethod060
-     * @tc.desc Verify ClassGetInstanceMethod case 060: method error when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 060: Class.from<MyClass060>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1015,7 +1015,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0610
      * @tc.name testClassGetInstanceMethod061
-     * @tc.desc Verify ClassGetInstanceMethod case 061: method not when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 061: Class.from<MyClass061>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1032,7 +1032,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0620
      * @tc.name testClassGetInstanceMethod062
-     * @tc.desc Verify ClassGetInstanceMethod case 062: method not when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 062: Class.from<MyClass062>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1046,7 +1046,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0630
      * @tc.name testClassGetInstanceMethod063
-     * @tc.desc Verify ClassGetInstanceMethod case 063: method when return undefined getInstanceMethod method
+     * @tc.desc Verify ClassGetInstanceMethod case 063: Class.from<MyClass063>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1060,7 +1060,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0640
      * @tc.name testClassGetInstanceMethod064
-     * @tc.desc Verify ClassGetInstanceMethod case 064: method when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 064: Class.from<MyClass064>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1074,7 +1074,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0650
      * @tc.name testClassGetInstanceMethod065
-     * @tc.desc Verify ClassGetInstanceMethod case 065: static method when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 065: Class.from<MyClass065>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1088,7 +1088,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0660
      * @tc.name testClassGetInstanceMethod066
-     * @tc.desc Verify ClassGetInstanceMethod case 066: verify return type is InstanceMethod
+     * @tc.desc Verify ClassGetInstanceMethod case 066: Class.from<MyClass066>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1104,7 +1104,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0670
      * @tc.name testClassGetInstanceMethod067
-     * @tc.desc Verify ClassGetInstanceMethod case 067: verify to method when return undefined
+     * @tc.desc Verify ClassGetInstanceMethod case 067: Class.from<MyClass067>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1120,7 +1120,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0680
      * @tc.name testClassGetInstanceMethod068
-     * @tc.desc Verify ClassGetInstanceMethod case 068: in method
+     * @tc.desc Verify ClassGetInstanceMethod case 068: Class.from<EmptyClass068>(), getInstanceMethod returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1134,7 +1134,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0690
      * @tc.name testClassGetInstanceMethod069
-     * @tc.desc Verify ClassGetInstanceMethod case 069: from interface type method
+     * @tc.desc Verify ClassGetInstanceMethod case 069: Class.from<MyClass069>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1148,7 +1148,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0700
      * @tc.name testClassGetInstanceMethod070
-     * @tc.desc Verify ClassGetInstanceMethod case 070: from abstract class method
+     * @tc.desc Verify ClassGetInstanceMethod case 070: Class.from<AbstractClass070>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1164,7 +1164,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0710
      * @tc.name testClassGetInstanceMethod071
-     * @tc.desc Verify ClassGetInstanceMethod case 071: from generic method
+     * @tc.desc Verify ClassGetInstanceMethod case 071: Class.from<GenericClass071<int>>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1178,7 +1178,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0720
      * @tc.name testClassGetInstanceMethod072
-     * @tc.desc Verify ClassGetInstanceMethod case 072: method not signature when throw Error
+     * @tc.desc Verify ClassGetInstanceMethod case 072: ambiguous signature throws Error, Class.from<MyClass072>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1197,7 +1197,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0730
      * @tc.name testClassGetInstanceMethod073
-     * @tc.desc Verify ClassGetInstanceMethod case 073: method multiple >2 not signature when throw Error
+     * @tc.desc Verify ClassGetInstanceMethod case 073: invalid call throws Error, Class.from<MyClass073>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1215,7 +1215,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0740
      * @tc.name testClassGetInstanceMethod074
-     * @tc.desc Verify ClassGetInstanceMethod case 074: verify throw Errorobject name messageproperty
+     * @tc.desc Verify ClassGetInstanceMethod case 074: invalid call throws Error, Class.from<MyClass074>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1235,7 +1235,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0750
      * @tc.name testClassGetInstanceMethod075
-     * @tc.desc Verify ClassGetInstanceMethod case 075: nameparameters type not when error
+     * @tc.desc Verify ClassGetInstanceMethod case 075: Class.from<MyClass075>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1250,7 +1250,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0760
      * @tc.name testClassGetInstanceMethod076
-     * @tc.desc Verify ClassGetInstanceMethod case 076: signatureparameters type not when error
+     * @tc.desc Verify ClassGetInstanceMethod case 076: invalid input throws ClassCastError, Class.from<MyClass076>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1268,7 +1268,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0770
      * @tc.name testClassGetInstanceMethod077
-     * @tc.desc Verify ClassGetInstanceMethod case 077: signaturearray Class object when error
+     * @tc.desc Verify ClassGetInstanceMethod case 077: invalid input throws ClassCastError, Class.from<MyClass077>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1286,7 +1286,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0780
      * @tc.name testClassGetInstanceMethod078
-     * @tc.desc Verify ClassGetInstanceMethod case 078: using try-catch error
+     * @tc.desc Verify ClassGetInstanceMethod case 078: invalid call throws Error, Class.from<MyClass078>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1304,7 +1304,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0790
      * @tc.name testClassGetInstanceMethod079
-     * @tc.desc Verify ClassGetInstanceMethod case 079: verify catch error type
+     * @tc.desc Verify ClassGetInstanceMethod case 079: invalid call throws Error, Class.from<MyClass079>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1323,7 +1323,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0800
      * @tc.name testClassGetInstanceMethod080
-     * @tc.desc Verify ClassGetInstanceMethod case 080: verify finally in throw exception when
+     * @tc.desc Verify ClassGetInstanceMethod case 080: invalid call throws Error, Class.from<MyClass080>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1345,7 +1345,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0810
      * @tc.name testClassGetInstanceMethod081
-     * @tc.desc Verify ClassGetInstanceMethod case 081: parameters
+     * @tc.desc Verify ClassGetInstanceMethod case 081: Class.from<MyClass081>(), getInstanceMethod resolves expected method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

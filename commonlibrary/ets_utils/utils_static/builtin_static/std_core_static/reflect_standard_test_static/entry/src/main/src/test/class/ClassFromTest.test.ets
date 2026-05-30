@@ -335,7 +335,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0010
      * @tc.name testClassFrom001
-     * @tc.desc Verify ClassFrom case 001: generic T is boolean type
+     * @tc.desc Verify ClassFrom case 001: Class.from<boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0020
      * @tc.name testClassFrom002
-     * @tc.desc Verify ClassFrom case 002: generic T is bytetype
+     * @tc.desc Verify ClassFrom case 002: Class.from<byte>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -363,7 +363,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0030
      * @tc.name testClassFrom003
-     * @tc.desc Verify ClassFrom case 003: generic T is chartype
+     * @tc.desc Verify ClassFrom case 003: Class.from<char>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -377,7 +377,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0040
      * @tc.name testClassFrom004
-     * @tc.desc Verify ClassFrom case 004: generic T is shorttype
+     * @tc.desc Verify ClassFrom case 004: Class.from<short>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +391,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0050
      * @tc.name testClassFrom005
-     * @tc.desc Verify ClassFrom case 005: generic T is int type
+     * @tc.desc Verify ClassFrom case 005: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0060
      * @tc.name testClassFrom006
-     * @tc.desc Verify ClassFrom case 006: generic T is longtype
+     * @tc.desc Verify ClassFrom case 006: Class.from<long>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -419,7 +419,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0070
      * @tc.name testClassFrom007
-     * @tc.desc Verify ClassFrom case 007: generic T is floattype
+     * @tc.desc Verify ClassFrom case 007: Class.from<float>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -433,7 +433,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0080
      * @tc.name testClassFrom008
-     * @tc.desc Verify ClassFrom case 008: generic T is doubletype
+     * @tc.desc Verify ClassFrom case 008: Class.from<double>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,7 +447,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0090
      * @tc.name testClassFrom009
-     * @tc.desc Verify ClassFrom case 009: generic T is number type
+     * @tc.desc Verify ClassFrom case 009: Class.from<number>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,7 +461,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0100
      * @tc.name testClassFrom010
-     * @tc.desc Verify ClassFrom case 010: generic T is void type
+     * @tc.desc Verify ClassFrom case 010: Class.from<void>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -475,7 +475,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0110
      * @tc.name testClassFrom011
-     * @tc.desc Verify ClassFrom case 011: generic T is string and String type
+     * @tc.desc Verify ClassFrom case 011: Class.from<string>(), getName returns "std.core.String"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -493,7 +493,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0120
      * @tc.name testClassFrom012
-     * @tc.desc Verify ClassFrom case 012: generic T is Array<int>type
+     * @tc.desc Verify ClassFrom case 012: Class.from<Array<int>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -507,7 +507,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0130
      * @tc.name testClassFrom013
-     * @tc.desc Verify ClassFrom case 013: generic T is Array<string>type
+     * @tc.desc Verify ClassFrom case 013: Class.from<Array<string>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -521,7 +521,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0140
      * @tc.name testClassFrom014
-     * @tc.desc Verify ClassFrom case 014: generic T is array type
+     * @tc.desc Verify ClassFrom case 014: Class.from<Array<Array<int>>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -535,7 +535,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0150
      * @tc.name testClassFrom015
-     * @tc.desc Verify ClassFrom case 015: generic T is FixedArray<int>type
+     * @tc.desc Verify ClassFrom case 015: Class.from<FixedArray<int>>(), isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -549,7 +549,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0160
      * @tc.name testClassFrom016
-     * @tc.desc Verify ClassFrom case 016: generic T is Map<int, string>type
+     * @tc.desc Verify ClassFrom case 016: Class.from<Map<int, string>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -563,7 +563,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0170
      * @tc.name testClassFrom017
-     * @tc.desc Verify ClassFrom case 017: generic T is Map<string, int>type generic parameters different
+     * @tc.desc Verify ClassFrom case 017: Class.from<Map<string, int>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -577,7 +577,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0180
      * @tc.name testClassFrom018
-     * @tc.desc Verify ClassFrom case 018: generic T is Set<int>type
+     * @tc.desc Verify ClassFrom case 018: Class.from<Set<int>>(), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -591,7 +591,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0190
      * @tc.name testClassFrom019
-     * @tc.desc Verify ClassFrom case 019: generic T is Set<string> type
+     * @tc.desc Verify ClassFrom case 019: Class.from<Set<string>>(), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -605,7 +605,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0200
      * @tc.name testClassFrom020
-     * @tc.desc Verify ClassFrom case 020: generic T is
+     * @tc.desc Verify ClassFrom case 020: Class.from<MyClass021>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -619,7 +619,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0210
      * @tc.name testClassFrom021
-     * @tc.desc Verify ClassFrom case 021: generic T is inheritance
+     * @tc.desc Verify ClassFrom case 021: Class.from<ChildClass022>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -633,7 +633,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0220
      * @tc.name testClassFrom022
-     * @tc.desc Verify ClassFrom case 022: generic T is single-type-parameter generic class
+     * @tc.desc Verify ClassFrom case 022: Class.from<GenericClass023<int>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -647,7 +647,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0230
      * @tc.name testClassFrom023
-     * @tc.desc Verify ClassFrom case 023: generic T is multi-generic type parameters class
+     * @tc.desc Verify ClassFrom case 023: Class.from<MultiGenericClass024<string, int>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -661,7 +661,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0240
      * @tc.name testClassFrom024
-     * @tc.desc Verify ClassFrom case 024: generic T is abstract class
+     * @tc.desc Verify ClassFrom case 024: Class.from<AbstractClass025>(), isAbstract returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -676,7 +676,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0250
      * @tc.name testClassFrom025
-     * @tc.desc Verify ClassFrom case 025: generic T is inheritance abstract class
+     * @tc.desc Verify ClassFrom case 025: Class.from<ConcreteClass026>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -690,7 +690,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0260
      * @tc.name testClassFrom026
-     * @tc.desc Verify ClassFrom case 026: generic T is final
+     * @tc.desc Verify ClassFrom case 026: Class.from<FinalClass027>(), isFinal returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -705,7 +705,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0270
      * @tc.name testClassFrom027
-     * @tc.desc Verify ClassFrom case 027: generic T is interface type
+     * @tc.desc Verify ClassFrom case 027: Class.from<MyInterface028>(), isInterface returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -720,7 +720,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0280
      * @tc.name testClassFrom028
-     * @tc.desc Verify ClassFrom case 028: generic T is generic interface
+     * @tc.desc Verify ClassFrom case 028: Class.from<GenericInterface029<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -734,7 +734,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0290
      * @tc.name testClassFrom029
-     * @tc.desc Verify ClassFrom case 029: generic T is ArrayLikeinterface
+     * @tc.desc Verify ClassFrom case 029: Class.from<ArrayLike<int>>(), isInterface returns true, getName returns "std.core.ArrayLike"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -749,7 +749,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0300
      * @tc.name testClassFrom030
-     * @tc.desc Verify ClassFrom case 030: generic T is JsonSerializableinterface
+     * @tc.desc Verify ClassFrom case 030: Class.from<JsonSerializable>(), isInterface returns true, getName returns "std.core.JsonSerializable"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -764,7 +764,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0310
      * @tc.name testClassFrom031
-     * @tc.desc Verify ClassFrom case 031: generic T is multiple interface
+     * @tc.desc Verify ClassFrom case 031: Class.from<MultiInterfaceClass032>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -779,7 +779,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0320
      * @tc.name testClassFrom032
-     * @tc.desc Verify ClassFrom case 032: generic T is type
+     * @tc.desc Verify ClassFrom case 032: Class.from<TestEnum033>(), isEnum returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -794,7 +794,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0330
      * @tc.name testClassFrom033
-     * @tc.desc Verify ClassFrom case 033: generic T is string
+     * @tc.desc Verify ClassFrom case 033: Class.from<StringEnum034>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -808,7 +808,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0340
      * @tc.name testClassFrom034
-     * @tc.desc Verify ClassFrom case 034: generic T is int string type
+     * @tc.desc Verify ClassFrom case 034: Class.from<int | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -826,7 +826,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0350
      * @tc.name testClassFrom035
-     * @tc.desc Verify ClassFrom case 035: generic T is type
+     * @tc.desc Verify ClassFrom case 035: Class.from<int | string | boolean>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -842,7 +842,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0360
      * @tc.name testClassFrom036
-     * @tc.desc Verify ClassFrom case 036: generic T is type
+     * @tc.desc Verify ClassFrom case 036: Class.from<TypeA037 | TypeB037>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -856,7 +856,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0370
      * @tc.name testClassFrom037
-     * @tc.desc Verify ClassFrom case 037: generic T is type
+     * @tc.desc Verify ClassFrom case 037: Class.from<Array<double> | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -872,7 +872,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0380
      * @tc.name testClassFrom038
-     * @tc.desc Verify ClassFrom case 038: generic T is generic type
+     * @tc.desc Verify ClassFrom case 038: Class.from<Map<int, Array<string>>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -886,7 +886,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0390
      * @tc.name testClassFrom039
-     * @tc.desc Verify ClassFrom case 039: generic T is array type
+     * @tc.desc Verify ClassFrom case 039: Class.from<Set<FixedArray<int>>>(), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -900,7 +900,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0400
      * @tc.name testClassFrom040
-     * @tc.desc Verify ClassFrom case 040: generic T is Objecttype
+     * @tc.desc Verify ClassFrom case 040: Class.from<Object>(), getName returns "std.core.Object"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -914,7 +914,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0410
      * @tc.name testClassFrom041
-     * @tc.desc Verify ClassFrom case 041: generic T is Anytype
+     * @tc.desc Verify ClassFrom case 041: Class.from<Any>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -927,7 +927,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0420
      * @tc.name testClassFrom042
-     * @tc.desc Verify ClassFrom case 042: call from
+     * @tc.desc Verify ClassFrom case 042: Class.from<UninitializedClass043>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -941,7 +941,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0430
      * @tc.name testClassFrom043
-     * @tc.desc Verify ClassFrom case 043: from type
+     * @tc.desc Verify ClassFrom case 043: Class.from<boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -954,7 +954,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0440
      * @tc.name testClassFrom044
-     * @tc.desc Verify ClassFrom case 044: type and type
+     * @tc.desc Verify ClassFrom case 044: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -969,7 +969,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0450
      * @tc.name testClassFrom045
-     * @tc.desc Verify ClassFrom case 045: generic T is
+     * @tc.desc Verify ClassFrom case 045: Class.from<Node046>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -983,7 +983,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0460
      * @tc.name testClassFrom046
-     * @tc.desc Verify ClassFrom case 046: generic T is generic
+     * @tc.desc Verify ClassFrom case 046: Class.from<ConstrainedClass047<Item047ForConstrained>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -997,7 +997,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0470
      * @tc.name testClassFrom047
-     * @tc.desc Verify ClassFrom case 047: generic T is empty type
+     * @tc.desc Verify ClassFrom case 047: Class.from<int | null>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1011,7 +1011,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0480
      * @tc.name testClassFrom048
-     * @tc.desc Verify ClassFrom case 048: generic T is empty object type
+     * @tc.desc Verify ClassFrom case 048: Class.from<MyClass049 | null>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1025,7 +1025,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0490
      * @tc.name testClassFrom049
-     * @tc.desc Verify ClassFrom case 049: frommethod return Classtype
+     * @tc.desc Verify ClassFrom case 049: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1039,7 +1039,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0500
      * @tc.name testClassFrom050
-     * @tc.desc Verify ClassFrom case 050: type call fromreturn same object
+     * @tc.desc Verify ClassFrom case 050: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1053,7 +1053,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0510
      * @tc.name testClassFrom051
-     * @tc.desc Verify ClassFrom case 051: return Class object call getName()
+     * @tc.desc Verify ClassFrom case 051: Class.from<Map<int, string>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1066,7 +1066,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0520
      * @tc.name testClassFrom052
-     * @tc.desc Verify ClassFrom case 052: return Class object call getSuper()
+     * @tc.desc Verify ClassFrom case 052: Class.from<ChildClass053>(), getSuper returns std.core.Object, getName returns "std.core.Object"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1081,7 +1081,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0530
      * @tc.name testClassFrom053
-     * @tc.desc Verify ClassFrom case 053: return Class object call isSubtypeOf()
+     * @tc.desc Verify ClassFrom case 053: Class.from<ChildClass054>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1095,7 +1095,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0540
      * @tc.name testClassFrom054
-     * @tc.desc Verify ClassFrom case 054: return Class object call getLinker()
+     * @tc.desc Verify ClassFrom case 054: Class.from<int>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1109,7 +1109,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0550
      * @tc.name testClassFrom055
-     * @tc.desc Verify ClassFrom case 055: return Class object call isInterface()
+     * @tc.desc Verify ClassFrom case 055: Class.from<MyInterface056>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1122,7 +1122,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0560
      * @tc.name testClassFrom056
-     * @tc.desc Verify ClassFrom case 056: return Class object call isEnum()
+     * @tc.desc Verify ClassFrom case 056: Class.from<TestEnum057>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1135,7 +1135,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0570
      * @tc.name testClassFrom057
-     * @tc.desc Verify ClassFrom case 057: return Class object call isPrimitive()
+     * @tc.desc Verify ClassFrom case 057: Class.from<int>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1149,7 +1149,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0580
      * @tc.name testClassFrom058
-     * @tc.desc Verify ClassFrom case 058: return Class object call isFinal()
+     * @tc.desc Verify ClassFrom case 058: Class.from<FinalClass059>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,7 +1162,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0590
      * @tc.name testClassFrom059
-     * @tc.desc Verify ClassFrom case 059: return Class object call isAbstract()
+     * @tc.desc Verify ClassFrom case 059: Class.from<AbstractClass060>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1175,7 +1175,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0600
      * @tc.name testClassFrom060
-     * @tc.desc Verify ClassFrom case 060: return Class object call isFixedArray()
+     * @tc.desc Verify ClassFrom case 060: Class.from<FixedArray<int>>(), isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1188,7 +1188,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0610
      * @tc.name testClassFrom061
-     * @tc.desc Verify ClassFrom case 061: byte|short union from() constituent Class names
+     * @tc.desc Verify ClassFrom case 061: Class.from<byte | short>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1205,7 +1205,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0620
      * @tc.name testClassFrom062
-     * @tc.desc Verify ClassFrom case 062: return Class object call getDescriptor()
+     * @tc.desc Verify ClassFrom case 062: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1218,7 +1218,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0630
      * @tc.name testClassFrom063
-     * @tc.desc Verify ClassFrom case 063: return Class object call createInstance()
+     * @tc.desc Verify ClassFrom case 063: Class.from<MyClass064>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1232,7 +1232,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0640
      * @tc.name testClassFrom064
-     * @tc.desc Verify ClassFrom case 064: return Class object call getInterfaces()
+     * @tc.desc Verify ClassFrom case 064: Class.from<MyClass065>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1246,7 +1246,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0650
      * @tc.name testClassFrom065
-     * @tc.desc Verify ClassFrom case 065: return Class object call getInstanceMethods()
+     * @tc.desc Verify ClassFrom case 065: Class.from<MyClass066>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1260,7 +1260,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0660
      * @tc.name testClassFrom066
-     * @tc.desc Verify ClassFrom case 066: return Class object call getStaticMethods()
+     * @tc.desc Verify ClassFrom case 066: Class.from<MyClass067>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1274,7 +1274,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0670
      * @tc.name testClassFrom067
-     * @tc.desc Verify ClassFrom case 067: return Class object call getInstanceFields()
+     * @tc.desc Verify ClassFrom case 067: Class.from<MyClass068>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1288,7 +1288,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0680
      * @tc.name testClassFrom068
-     * @tc.desc Verify ClassFrom case 068: return Class object call getStaticFields()
+     * @tc.desc Verify ClassFrom case 068: Class.from<MyClass069>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1302,7 +1302,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0690
      * @tc.name testClassFrom069
-     * @tc.desc Verify ClassFrom case 069: return Class object call getConstructors()
+     * @tc.desc Verify ClassFrom case 069: Class.from<MyClass070>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1316,7 +1316,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0700
      * @tc.name testClassFrom070
-     * @tc.desc Verify ClassFrom case 070: type Class object get type
+     * @tc.desc Verify ClassFrom case 070: Class.from<int | string | Array<double>>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1330,7 +1330,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0710
      * @tc.name testClassFrom071
-     * @tc.desc Verify ClassFrom case 071: Class.from Array type getName
+     * @tc.desc Verify ClassFrom case 071: Class.from<FixedArray<int>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1345,7 +1345,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0720
      * @tc.name testClassFrom072
-     * @tc.desc Verify ClassFrom case 072: interface not interface when
+     * @tc.desc Verify ClassFrom case 072: Class.from<MyInterface073>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1359,7 +1359,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0730
      * @tc.name testClassFrom073
-     * @tc.desc Verify ClassFrom case 073: generic T is type
+     * @tc.desc Verify ClassFrom case 073: Class.from<Map<int, Map<string, Map<int, string>>>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1372,7 +1372,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0740
      * @tc.name testClassFrom074
-     * @tc.desc Verify ClassFrom case 074: generic T is multiple generic parameters type
+     * @tc.desc Verify ClassFrom case 074: Class.from<MultiGeneric075<int, string, boolean, double, char>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1385,7 +1385,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0750
      * @tc.name testClassFrom075
-     * @tc.desc Verify ClassFrom case 075: from ofget type Classshould
+     * @tc.desc Verify ClassFrom case 075: Class.from<MyClass076>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1400,7 +1400,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0760
      * @tc.name testClassFrom076
-     * @tc.desc Verify ClassFrom case 076: type Class object
+     * @tc.desc Verify ClassFrom case 076: Class.from<ChildClass077>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1415,7 +1415,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0770
      * @tc.name testClassFrom077
-     * @tc.desc Verify ClassFrom case 077: and interface
+     * @tc.desc Verify ClassFrom case 077: Class.from<MyClass078>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1429,7 +1429,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0780
      * @tc.name testClassFrom078
-     * @tc.desc Verify ClassFrom case 078: type should type
+     * @tc.desc Verify ClassFrom case 078: Class.from<int>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1442,7 +1442,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0790
      * @tc.name testClassFrom079
-     * @tc.desc Verify ClassFrom case 079: abstract class type
+     * @tc.desc Verify ClassFrom case 079: invalid call throws Error, Class.from<AbstractClass080>(), isAbstract returns true, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1461,7 +1461,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0800
      * @tc.name testClassFrom080
-     * @tc.desc Verify ClassFrom case 080: final type
+     * @tc.desc Verify ClassFrom case 080: Class.from<FinalClass081>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1473,7 +1473,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0810
      * @tc.name testClassFrom081
-     * @tc.desc Verify ClassFrom case 081: void is type parameters
+     * @tc.desc Verify ClassFrom case 081: Class.from<Promise<void>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1487,7 +1487,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0820
      * @tc.name testClassFrom082
-     * @tc.desc Verify ClassFrom case 082: from
+     * @tc.desc Verify ClassFrom case 082: Class.from<LazyClass084>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1501,7 +1501,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0830
      * @tc.name testClassFrom083
-     * @tc.desc Verify ClassFrom case 083: static when from is
+     * @tc.desc Verify ClassFrom case 083: Class.from<StaticInitClass085>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1515,7 +1515,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0840
      * @tc.name testClassFrom084
-     * @tc.desc Verify ClassFrom case 084: generic T is never type
+     * @tc.desc Verify ClassFrom case 084: Class.from<never>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1528,7 +1528,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0850
      * @tc.name testClassFrom085
-     * @tc.desc Verify ClassFrom case 085: generic T is unknown type
+     * @tc.desc Verify ClassFrom case 085: Class.from<Object>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1541,7 +1541,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0860
      * @tc.name testClassFrom086
-     * @tc.desc Verify ClassFrom case 086: call fromget type
+     * @tc.desc Verify ClassFrom case 086: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1558,7 +1558,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0870
      * @tc.name testClassFrom087
-     * @tc.desc Verify ClassFrom case 087: when from different type
+     * @tc.desc Verify ClassFrom case 087: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1576,7 +1576,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0880
      * @tc.name testClassFrom088
-     * @tc.desc Verify ClassFrom case 088: Class object
+     * @tc.desc Verify ClassFrom case 088: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1593,7 +1593,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0890
      * @tc.name testClassFrom089
-     * @tc.desc Verify ClassFrom case 089: call from
+     * @tc.desc Verify ClassFrom case 089: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1607,7 +1607,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0900
      * @tc.name testClassFrom090
-     * @tc.desc Verify ClassFrom case 090: from and of
+     * @tc.desc Verify ClassFrom case 090: Class.from<MyClass092>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1626,7 +1626,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0910
      * @tc.name testClassFrom091
-     * @tc.desc Verify ClassFrom case 091: Class.from vs Class.ofAny same runtime type
+     * @tc.desc Verify ClassFrom case 091: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1646,7 +1646,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0920
      * @tc.name testClassFrom092
-     * @tc.desc Verify ClassFrom case 092: from type in different
+     * @tc.desc Verify ClassFrom case 092: Class.from<Set<string>>(), getName returns "std.core.Set", getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1661,7 +1661,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0930
      * @tc.name testClassFrom093
-     * @tc.desc Verify ClassFrom case 093: using fromget type
+     * @tc.desc Verify ClassFrom case 093: Class.from<MyClass095>(), getSuper returns expected parent Class, getName returns expected qualified name, instance fields result verified, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1690,7 +1690,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0940
      * @tc.name testClassFrom094
-     * @tc.desc Verify ClassFrom case 094: generic type
+     * @tc.desc Verify ClassFrom case 094: Class.from<GenericClass096<string, int>>(), getName returns expected qualified name, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1707,7 +1707,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0950
      * @tc.name testClassFrom095
-     * @tc.desc Verify ClassFrom case 095: using from type
+     * @tc.desc Verify ClassFrom case 095: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1720,7 +1720,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0960
      * @tc.name testClassFrom096
-     * @tc.desc Verify ClassFrom case 096: using from type
+     * @tc.desc Verify ClassFrom case 096: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1737,7 +1737,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0970
      * @tc.name testClassFrom097
-     * @tc.desc Verify ClassFrom case 097: using from
+     * @tc.desc Verify ClassFrom case 097: Class.from<PluginA099>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1752,7 +1752,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0980
      * @tc.name testClassFrom098
-     * @tc.desc Verify ClassFrom case 098: Class.from primitive type getName
+     * @tc.desc Verify ClassFrom case 098: Class.from<MyClass100>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1768,7 +1768,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0990
      * @tc.name testClassFrom099
-     * @tc.desc Verify ClassFrom case 099: from generic type
+     * @tc.desc Verify ClassFrom case 099: Class.from<Derived101>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1782,7 +1782,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1000
      * @tc.name testClassFrom100
-     * @tc.desc Verify ClassFrom case 100: Class.from createInstance returns valid instances
+     * @tc.desc Verify ClassFrom case 100: Class.from<MyClass102>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1799,7 +1799,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1010
      * @tc.name testClassFrom101
-     * @tc.desc Verify ClassFrom case 101: in from
+     * @tc.desc Verify ClassFrom case 101: Class.from<MyClass103>(), getName returns expected qualified name, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1820,7 +1820,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1020
      * @tc.name testClassFrom102
-     * @tc.desc Verify ClassFrom case 102: from ofget type
+     * @tc.desc Verify ClassFrom case 102: Class.from<MyClass104>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1837,7 +1837,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1030
      * @tc.name testClassFrom103
-     * @tc.desc Verify ClassFrom case 103: method in different scenario using
+     * @tc.desc Verify ClassFrom case 103: Class.from<MyClass105>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

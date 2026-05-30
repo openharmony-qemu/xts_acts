@@ -167,7 +167,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0100
      * @tc.name testClassGetName001
-     * @tc.desc Verify ClassGetName case 001: getName() with no arguments
+     * @tc.desc Verify ClassGetName case 001: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -180,7 +180,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0200
      * @tc.name testClassGetName002
-     * @tc.desc Verify ClassGetName case 002: get name
+     * @tc.desc Verify ClassGetName case 002: Class.from<MyClass003>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -195,7 +195,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0300
      * @tc.name testClassGetName003
-     * @tc.desc Verify ClassGetName case 003: via Class.ofget Class object after call getName
+     * @tc.desc Verify ClassGetName case 003: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -210,7 +210,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0400
      * @tc.name testClassGetName004
-     * @tc.desc Verify ClassGetName case 004: via Class.fromget Class object after call getName
+     * @tc.desc Verify ClassGetName case 004: Class.from<SampleClass005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -224,7 +224,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0500
      * @tc.name testClassGetName005
-     * @tc.desc Verify ClassGetName case 005: get generic name
+     * @tc.desc Verify ClassGetName case 005: Class.from<GenericClass006<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0600
      * @tc.name testClassGetName006
-     * @tc.desc Verify ClassGetName case 006: get name
+     * @tc.desc Verify ClassGetName case 006: Class.from<DerivedClass007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -255,7 +255,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0700
      * @tc.name testClassGetName007
-     * @tc.desc Verify ClassGetName case 007: get abstract class name
+     * @tc.desc Verify ClassGetName case 007: Class.from<AbstractClass008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -269,7 +269,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0800
      * @tc.name testClassGetName008
-     * @tc.desc Verify ClassGetName case 008: get final name
+     * @tc.desc Verify ClassGetName case 008: Class.from<FinalClass009>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -283,7 +283,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0900
      * @tc.name testClassGetName009
-     * @tc.desc Verify ClassGetName case 009: get interface Class object name
+     * @tc.desc Verify ClassGetName case 009: Class.from<MyInterface010>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,7 +297,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1000
      * @tc.name testClassGetName010
-     * @tc.desc Verify ClassGetName case 010: get type Class object name
+     * @tc.desc Verify ClassGetName case 010: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -319,7 +319,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1100
      * @tc.name testClassGetName011
-     * @tc.desc Verify ClassGetName case 011: get array type Class object name
+     * @tc.desc Verify ClassGetName case 011: Class.of(instance), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1200
      * @tc.name testClassGetName012
-     * @tc.desc Verify ClassGetName case 012: get Map type Class object name
+     * @tc.desc Verify ClassGetName case 012: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -347,7 +347,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1300
      * @tc.name testClassGetName013
-     * @tc.desc Verify ClassGetName case 013: get Settype Class object name
+     * @tc.desc Verify ClassGetName case 013: Class.of(instance), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -361,7 +361,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1400
      * @tc.name testClassGetName014
-     * @tc.desc Verify ClassGetName case 014: get empty name
+     * @tc.desc Verify ClassGetName case 014: Class.from<NestedClassForName015>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -375,7 +375,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1500
      * @tc.name testClassGetName015
-     * @tc.desc Verify ClassGetName case 015: get type Class object name
+     * @tc.desc Verify ClassGetName case 015: Class.from<int | string>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -390,7 +390,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1600
      * @tc.name testClassGetName016
-     * @tc.desc Verify ClassGetName case 016: get array type Class object name
+     * @tc.desc Verify ClassGetName case 016: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -404,7 +404,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1700
      * @tc.name testClassGetName017
-     * @tc.desc Verify ClassGetName case 017: Class object call getNamereturn same
+     * @tc.desc Verify ClassGetName case 017: Class.from<TestClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -421,7 +421,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1800
      * @tc.name testClassGetName018
-     * @tc.desc Verify ClassGetName case 018: different get Class object getNamereturn same
+     * @tc.desc Verify ClassGetName case 018: Class.from<SameClass019>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,7 +436,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1900
      * @tc.name testClassGetName019
-     * @tc.desc Verify ClassGetName case 019: verify return type is string
+     * @tc.desc Verify ClassGetName case 019: Class.from<TestClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -451,7 +451,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2000
      * @tc.name testClassGetName020
-     * @tc.desc Verify ClassGetName case 020: getNamenot should return null
+     * @tc.desc Verify ClassGetName case 020: Class.from<TestClass021>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,7 +466,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2100
      * @tc.name testClassGetName021
-     * @tc.desc Verify ClassGetName case 021: should 0
+     * @tc.desc Verify ClassGetName case 021: Class.from<TestClass022>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +479,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2200
      * @tc.name testClassGetName022
-     * @tc.desc Verify ClassGetName case 022: generic class getName contains type info
+     * @tc.desc Verify ClassGetName case 022: Class.from<A023>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -492,7 +492,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2300
      * @tc.name testClassGetName023
-     * @tc.desc Verify ClassGetName case 023: array type getName format
+     * @tc.desc Verify ClassGetName case 023: Class.from<_PrivateClass024>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -506,7 +506,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2400
      * @tc.name testClassGetName024
-     * @tc.desc Verify ClassGetName case 024: Unicode
+     * @tc.desc Verify ClassGetName case 024: Class.from<My类026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +520,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2500
      * @tc.name testClassGetName025
-     * @tc.desc Verify ClassGetName case 025: in
+     * @tc.desc Verify ClassGetName case 025: Class.from<UserService027>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -534,7 +534,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2600
      * @tc.name testClassGetName026
-     * @tc.desc Verify ClassGetName case 026: verify object is
+     * @tc.desc Verify ClassGetName case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -548,7 +548,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2700
      * @tc.name testClassGetName027
-     * @tc.desc Verify ClassGetName case 027: using
+     * @tc.desc Verify ClassGetName case 027: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -570,7 +570,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2800
      * @tc.name testClassGetName028
-     * @tc.desc Verify ClassGetName case 028: union type getName contains union marker
+     * @tc.desc Verify ClassGetName case 028: Class.from<Config030>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -586,7 +586,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2900
      * @tc.name testClassGetName029
-     * @tc.desc Verify ClassGetName case 029: in when
+     * @tc.desc Verify ClassGetName case 029: Class.from<TestData031>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -600,7 +600,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3000
      * @tc.name testClassGetName030
-     * @tc.desc Verify ClassGetName case 030: get performance
+     * @tc.desc Verify ClassGetName case 030: Class.from<MyClass033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,7 +618,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3100
      * @tc.name testClassGetName031
-     * @tc.desc Verify ClassGetName case 031: getName
+     * @tc.desc Verify ClassGetName case 031: Class.from<MyClass033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -636,7 +636,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3200
      * @tc.name testClassGetName032
-     * @tc.desc Verify ClassGetName case 032: with getName getSuperverify inheritance
+     * @tc.desc Verify ClassGetName case 032: Class.from<ChildClass034>(), getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -654,7 +654,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3300
      * @tc.name testClassGetName033
-     * @tc.desc Verify ClassGetName case 033: via getName isInterface interface
+     * @tc.desc Verify ClassGetName case 033: Class.from<MyInterface035>(), isInterface returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -671,7 +671,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3400
      * @tc.name testClassGetName034
-     * @tc.desc Verify ClassGetName case 034: via getName isPrimitive type
+     * @tc.desc Verify ClassGetName case 034: Class.from<MyClass036>(), isPrimitive returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3500
      * @tc.name testClassGetName035
-     * @tc.desc Verify ClassGetName case 035: getName getDescriptorreturn
+     * @tc.desc Verify ClassGetName case 035: Class.from<MyClass037>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

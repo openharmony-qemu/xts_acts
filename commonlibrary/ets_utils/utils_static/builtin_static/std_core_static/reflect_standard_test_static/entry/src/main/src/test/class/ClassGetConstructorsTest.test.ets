@@ -472,7 +472,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0100
      * @tc.name testClassGetConstructors001
-     * @tc.desc Verify ClassGetConstructors case 001: getConstructors() with no arguments
+     * @tc.desc Verify ClassGetConstructors case 001: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -485,7 +485,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0200
      * @tc.name testClassGetConstructors002
-     * @tc.desc Verify ClassGetConstructors case 002: return FixedArray<reflect.Constructor>type
+     * @tc.desc Verify ClassGetConstructors case 002: Class.from<MyClass003>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -499,7 +499,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0300
      * @tc.name testClassGetConstructors003
-     * @tc.desc Verify ClassGetConstructors case 003: publicconstructor when return empty array
+     * @tc.desc Verify ClassGetConstructors case 003: Class.from<AllPrivateConstructors004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -513,7 +513,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0400
      * @tc.name testClassGetConstructors004
-     * @tc.desc Verify ClassGetConstructors case 004: publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 004: Class.from<SingleConstructor005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -527,7 +527,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0500
      * @tc.name testClassGetConstructors005
-     * @tc.desc Verify ClassGetConstructors case 005: multiple publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 005: Class.from<MultipleConstructors006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -541,7 +541,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0600
      * @tc.name testClassGetConstructors006
-     * @tc.desc Verify ClassGetConstructors case 006: return Constructorobject method
+     * @tc.desc Verify ClassGetConstructors case 006: Class.from<TestClass007>(), parameter type verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -559,7 +559,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0700
      * @tc.name testClassGetConstructors007
-     * @tc.desc Verify ClassGetConstructors case 007: constructor name should is constructor
+     * @tc.desc Verify ClassGetConstructors case 007: Class.from<TestClass008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0800
      * @tc.name testClassGetConstructors008
-     * @tc.desc Verify ClassGetConstructors case 008: return should is void type
+     * @tc.desc Verify ClassGetConstructors case 008: Class.from<TestClass009>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -590,7 +590,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0900
      * @tc.name testClassGetConstructors009
-     * @tc.desc Verify ClassGetConstructors case 009: return array should is FixedArray type
+     * @tc.desc Verify ClassGetConstructors case 009: Class.from<TestClass010>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -604,7 +604,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1000
      * @tc.name testClassGetConstructors010
-     * @tc.desc Verify ClassGetConstructors case 010: constructor get
+     * @tc.desc Verify ClassGetConstructors case 010: Class.from<NormalClass011>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,7 +618,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1100
      * @tc.name testClassGetConstructors011
-     * @tc.desc Verify ClassGetConstructors case 011: abstract class publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 011: Class.from<AbstractClass012>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -633,7 +633,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1200
      * @tc.name testClassGetConstructors012
-     * @tc.desc Verify ClassGetConstructors case 012: final constructor get
+     * @tc.desc Verify ClassGetConstructors case 012: Class.from<FinalClass013>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -648,7 +648,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1300
      * @tc.name testClassGetConstructors013
-     * @tc.desc Verify ClassGetConstructors case 013: interface constructor
+     * @tc.desc Verify ClassGetConstructors case 013: Class.from<MyInterface014>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -662,7 +662,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1400
      * @tc.name testClassGetConstructors014
-     * @tc.desc Verify ClassGetConstructors case 014: type constructor
+     * @tc.desc Verify ClassGetConstructors case 014: Class.from<TestEnum015>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -676,7 +676,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1500
      * @tc.name testClassGetConstructors015
-     * @tc.desc Verify ClassGetConstructors case 015: type Class object constructor
+     * @tc.desc Verify ClassGetConstructors case 015: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -690,7 +690,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1600
      * @tc.name testClassGetConstructors016
-     * @tc.desc Verify ClassGetConstructors case 016: getConstructors return constructor not
+     * @tc.desc Verify ClassGetConstructors case 016: Class.from<ChildClass017>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -705,7 +705,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1700
      * @tc.name testClassGetConstructors017
-     * @tc.desc Verify ClassGetConstructors case 017: inheritance return constructor
+     * @tc.desc Verify ClassGetConstructors case 017: Class.from<Child018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -719,7 +719,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1800
      * @tc.name testClassGetConstructors018
-     * @tc.desc Verify ClassGetConstructors case 018: constructor when return constructor
+     * @tc.desc Verify ClassGetConstructors case 018: Class.from<Child019>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -733,7 +733,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1900
      * @tc.name testClassGetConstructors019
-     * @tc.desc Verify ClassGetConstructors case 019: publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 019: Class.from<PublicConstructor020>(), isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -748,7 +748,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2000
      * @tc.name testClassGetConstructors020
-     * @tc.desc Verify ClassGetConstructors case 020: publicconstructor return
+     * @tc.desc Verify ClassGetConstructors case 020: Class.from<MultiplePublic021>(), isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -765,7 +765,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2100
      * @tc.name testClassGetConstructors021
-     * @tc.desc Verify ClassGetConstructors case 021: privateconstructor not return empty array
+     * @tc.desc Verify ClassGetConstructors case 021: Class.from<OnlyPrivate022>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -779,7 +779,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2200
      * @tc.name testClassGetConstructors022
-     * @tc.desc Verify ClassGetConstructors case 022: return publicconstructor private
+     * @tc.desc Verify ClassGetConstructors case 022: Class.from<MixedAccess023>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -794,7 +794,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2300
      * @tc.name testClassGetConstructors023
-     * @tc.desc Verify ClassGetConstructors case 023: multiple privateconstructor not return
+     * @tc.desc Verify ClassGetConstructors case 023: Class.from<AllPrivate024>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -808,7 +808,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2400
      * @tc.name testClassGetConstructors024
-     * @tc.desc Verify ClassGetConstructors case 024: protectedconstructor not
+     * @tc.desc Verify ClassGetConstructors case 024: Class.from<ProtectedConstructor025>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -822,7 +822,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2500
      * @tc.name testClassGetConstructors025
-     * @tc.desc Verify ClassGetConstructors case 025: return publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 025: Class.from<MixedProtected026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -836,7 +836,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2600
      * @tc.name testClassGetConstructors026
-     * @tc.desc Verify ClassGetConstructors case 026: different parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 026: Class.from<OverloadByCount027>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -851,7 +851,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2700
      * @tc.name testClassGetConstructors027
-     * @tc.desc Verify ClassGetConstructors case 027: 3 different parameters
+     * @tc.desc Verify ClassGetConstructors case 027: Class.from<MultipleOverloads028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -865,7 +865,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2800
      * @tc.name testClassGetConstructors028
-     * @tc.desc Verify ClassGetConstructors case 028: parameters same type different
+     * @tc.desc Verify ClassGetConstructors case 028: Class.from<OverloadByType029>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -879,7 +879,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2900
      * @tc.name testClassGetConstructors029
-     * @tc.desc Verify ClassGetConstructors case 029: multiple parameters type
+     * @tc.desc Verify ClassGetConstructors case 029: Class.from<MixedTypes030>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,7 +893,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3000
      * @tc.name testClassGetConstructors030
-     * @tc.desc Verify ClassGetConstructors case 030: parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 030: Class.from<OptionalParams031>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -907,7 +907,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3100
      * @tc.name testClassGetConstructors031
-     * @tc.desc Verify ClassGetConstructors case 031: multiple parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 031: Class.from<MultipleOptional032>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -922,7 +922,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3200
      * @tc.name testClassGetConstructors032
-     * @tc.desc Verify ClassGetConstructors case 032: using ... parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 032: Class.from<VarArgsConstructor033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -936,7 +936,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3300
      * @tc.name testClassGetConstructors033
-     * @tc.desc Verify ClassGetConstructors case 033: constructor when return constructor
+     * @tc.desc Verify ClassGetConstructors case 033: Class.from<NoExplicitConstructor034>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +950,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3400
      * @tc.name testClassGetConstructors034
-     * @tc.desc Verify ClassGetConstructors case 034: constructor
+     * @tc.desc Verify ClassGetConstructors case 034: Class.from<Singleton035>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -964,7 +964,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3500
      * @tc.name testClassGetConstructors035
-     * @tc.desc Verify ClassGetConstructors case 035: protectedconstructor instance
+     * @tc.desc Verify ClassGetConstructors case 035: Class.from<ProtectedOnly036>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -978,7 +978,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3600
      * @tc.name testClassGetConstructors036
-     * @tc.desc Verify ClassGetConstructors case 036: constructor parameters is type
+     * @tc.desc Verify ClassGetConstructors case 036: Class.from<ComplexParams037>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -993,7 +993,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3700
      * @tc.name testClassGetConstructors037
-     * @tc.desc Verify ClassGetConstructors case 037: generic constructor
+     * @tc.desc Verify ClassGetConstructors case 037: Class.from<GenericClass038<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1007,7 +1007,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3800
      * @tc.name testClassGetConstructors038
-     * @tc.desc Verify ClassGetConstructors case 038: parameters type is type
+     * @tc.desc Verify ClassGetConstructors case 038: Class.from<UnionParamConstructor039>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1021,7 +1021,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3900
      * @tc.name testClassGetConstructors039
-     * @tc.desc Verify ClassGetConstructors case 039: constructor
+     * @tc.desc Verify ClassGetConstructors case 039: Class.from<ManyOverloads040>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1035,7 +1035,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4000
      * @tc.name testClassGetConstructors040
-     * @tc.desc Verify ClassGetConstructors case 040: return array
+     * @tc.desc Verify ClassGetConstructors case 040: Class.from<TestClass041>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1054,7 +1054,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4100
      * @tc.name testClassGetConstructors041
-     * @tc.desc Verify ClassGetConstructors case 041: when call getConstructors
+     * @tc.desc Verify ClassGetConstructors case 041: Class.from<UninitializedClass042>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1068,7 +1068,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4200
      * @tc.name testClassGetConstructors042
-     * @tc.desc Verify ClassGetConstructors case 042: constructor throw exception when
+     * @tc.desc Verify ClassGetConstructors case 042: invalid call throws Error, Class.from<InitFailClass043>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1089,7 +1089,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4300
      * @tc.name testClassGetConstructors043
-     * @tc.desc Verify ClassGetConstructors case 043: constructor getName()return constructor
+     * @tc.desc Verify ClassGetConstructors case 043: Class.from<TestClass044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1106,7 +1106,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4400
      * @tc.name testClassGetConstructors044
-     * @tc.desc Verify ClassGetConstructors case 044: getOwner()return constructor
+     * @tc.desc Verify ClassGetConstructors case 044: Class.from<TestClass045>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1120,7 +1120,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4500
      * @tc.name testClassGetConstructors045
-     * @tc.desc Verify ClassGetConstructors case 045: different constructor different owner
+     * @tc.desc Verify ClassGetConstructors case 045: Class.from<Child1046>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1138,7 +1138,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4600
      * @tc.name testClassGetConstructors046
-     * @tc.desc Verify ClassGetConstructors case 046: constructor return type is void
+     * @tc.desc Verify ClassGetConstructors case 046: Class.from<TestClass047>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1152,7 +1152,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4700
      * @tc.name testClassGetConstructors047
-     * @tc.desc Verify ClassGetConstructors case 047: return empty array
+     * @tc.desc Verify ClassGetConstructors case 047: Class.from<NoParams048>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1166,7 +1166,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4800
      * @tc.name testClassGetConstructors048
-     * @tc.desc Verify ClassGetConstructors case 048: return type array
+     * @tc.desc Verify ClassGetConstructors case 048: Class.from<OneParam049>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1181,7 +1181,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4900
      * @tc.name testClassGetConstructors049
-     * @tc.desc Verify ClassGetConstructors case 049: return multiple parameters type
+     * @tc.desc Verify ClassGetConstructors case 049: Class.from<MultiParams050>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1198,7 +1198,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5000
      * @tc.name testClassGetConstructors050
-     * @tc.desc Verify ClassGetConstructors case 050: parameters type is array object type
+     * @tc.desc Verify ClassGetConstructors case 050: Class.from<ComplexTypes051>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1212,7 +1212,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5100
      * @tc.name testClassGetConstructors051
-     * @tc.desc Verify ClassGetConstructors case 051: get parameters type
+     * @tc.desc Verify ClassGetConstructors case 051: Class.from<TestClass052>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1228,7 +1228,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5200
      * @tc.name testClassGetConstructors052
-     * @tc.desc Verify ClassGetConstructors case 052: get parameters type
+     * @tc.desc Verify ClassGetConstructors case 052: Class.from<TestClass053>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1244,7 +1244,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5300
      * @tc.name testClassGetConstructors053
-     * @tc.desc Verify ClassGetConstructors case 053: when return undefined
+     * @tc.desc Verify ClassGetConstructors case 053: invalid input throws TypeError, Class.from<TestClass054>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1263,7 +1263,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5400
      * @tc.name testClassGetConstructors054
-     * @tc.desc Verify ClassGetConstructors case 054: return undefined
+     * @tc.desc Verify ClassGetConstructors case 054: invalid input throws TypeError, Class.from<TestClass055>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1282,7 +1282,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5500
      * @tc.name testClassGetConstructors055
-     * @tc.desc Verify ClassGetConstructors case 055: return 0
+     * @tc.desc Verify ClassGetConstructors case 055: Class.from<NoParams056>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1296,7 +1296,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5600
      * @tc.name testClassGetConstructors056
-     * @tc.desc Verify ClassGetConstructors case 056: return 1
+     * @tc.desc Verify ClassGetConstructors case 056: Class.from<OneParam057>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1310,7 +1310,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5700
      * @tc.name testClassGetConstructors057
-     * @tc.desc Verify ClassGetConstructors case 057: return parameters
+     * @tc.desc Verify ClassGetConstructors case 057: Class.from<MultiParams058>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1324,7 +1324,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5800
      * @tc.name testClassGetConstructors058
-     * @tc.desc Verify ClassGetConstructors case 058: publicconstructor isPublic()return true
+     * @tc.desc Verify ClassGetConstructors case 058: Class.from<PublicCtor059>(), isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1338,7 +1338,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5900
      * @tc.name testClassGetConstructors059
-     * @tc.desc Verify ClassGetConstructors case 059: verify return constructor public
+     * @tc.desc Verify ClassGetConstructors case 059: Class.from<AllPublic060>(), isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1355,7 +1355,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6000
      * @tc.name testClassGetConstructors060
-     * @tc.desc Verify ClassGetConstructors case 060: publicconstructor isPrivate()return false
+     * @tc.desc Verify ClassGetConstructors case 060: Class.from<PublicCtor061>(), isPrivate flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1369,7 +1369,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6100
      * @tc.name testClassGetConstructors061
-     * @tc.desc Verify ClassGetConstructors case 061: publicconstructor isProtected()return false
+     * @tc.desc Verify ClassGetConstructors case 061: Class.from<PublicCtor062>(), isProtected flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1383,7 +1383,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6200
      * @tc.name testClassGetConstructors062
-     * @tc.desc Verify ClassGetConstructors case 062: constructor isNative()return false
+     * @tc.desc Verify ClassGetConstructors case 062: Class.from<UserDefined063>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1397,7 +1397,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6300
      * @tc.name testClassGetConstructors063
-     * @tc.desc Verify ClassGetConstructors case 063: using constructor instance
+     * @tc.desc Verify ClassGetConstructors case 063: Class.from<TestClass064>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1412,7 +1412,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6400
      * @tc.name testClassGetConstructors064
-     * @tc.desc Verify ClassGetConstructors case 064: using parameters constructor instance
+     * @tc.desc Verify ClassGetConstructors case 064: Class.from<TestClass065>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1427,7 +1427,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6500
      * @tc.name testClassGetConstructors065
-     * @tc.desc Verify ClassGetConstructors case 065: using parameters constructor instance
+     * @tc.desc Verify ClassGetConstructors case 065: Class.from<TestClass066>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1443,7 +1443,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6600
      * @tc.name testClassGetConstructors066
-     * @tc.desc Verify ClassGetConstructors case 066: using constructor instance
+     * @tc.desc Verify ClassGetConstructors case 066: Class.from<OverloadedClass067>(), createInstance succeeds, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1468,7 +1468,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6700
      * @tc.name testClassGetConstructors067
-     * @tc.desc Verify ClassGetConstructors case 067: get constructor equalsshould return true
+     * @tc.desc Verify ClassGetConstructors case 067: Class.from<TestClass068>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1483,7 +1483,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6800
      * @tc.name testClassGetConstructors068
-     * @tc.desc Verify ClassGetConstructors case 068: different constructor equalsshould return false
+     * @tc.desc Verify ClassGetConstructors case 068: Class.from<TestClass069>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1497,7 +1497,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6900
      * @tc.name testClassGetConstructors069
-     * @tc.desc Verify ClassGetConstructors case 069: equalsreturn true not
+     * @tc.desc Verify ClassGetConstructors case 069: Class.from<TestClass070>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1513,7 +1513,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7000
      * @tc.name testClassGetConstructors070
-     * @tc.desc Verify ClassGetConstructors case 070: get constructor performance
+     * @tc.desc Verify ClassGetConstructors case 070: Class.from<ManyConstructors071>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1531,7 +1531,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7100
      * @tc.name testClassGetConstructors071
-     * @tc.desc Verify ClassGetConstructors case 071: call getConstructors performance
+     * @tc.desc Verify ClassGetConstructors case 071: Class.from<TestClass072>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1552,7 +1552,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7200
      * @tc.name testClassGetConstructors072
-     * @tc.desc Verify ClassGetConstructors case 072: multiple when call getConstructors
+     * @tc.desc Verify ClassGetConstructors case 072: Class.from<TestClass073>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1572,7 +1572,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7300
      * @tc.name testClassGetConstructors073
-     * @tc.desc Verify ClassGetConstructors case 073: verify in API
+     * @tc.desc Verify ClassGetConstructors case 073: Class.from<TestClass074>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1586,7 +1586,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7400
      * @tc.name testClassGetConstructors074
-     * @tc.desc Verify ClassGetConstructors case 074: get constructor
+     * @tc.desc Verify ClassGetConstructors case 074: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1600,7 +1600,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7500
      * @tc.name testClassGetConstructors075
-     * @tc.desc Verify ClassGetConstructors case 075: get constructor
+     * @tc.desc Verify ClassGetConstructors case 075: Class.from<CustomClass076>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1614,7 +1614,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7600
      * @tc.name testClassGetConstructors076
-     * @tc.desc Verify ClassGetConstructors case 076: parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 076: Class.from<Service077>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1629,7 +1629,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7700
      * @tc.name testClassGetConstructors077
-     * @tc.desc Verify ClassGetConstructors case 077: type constructor
+     * @tc.desc Verify ClassGetConstructors case 077: Class.from<Serializable078>(), isSubtypeOf relationship verified, createInstance succeeds, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1654,7 +1654,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7800
      * @tc.name testClassGetConstructors078
-     * @tc.desc Verify ClassGetConstructors case 078: using different type instance
+     * @tc.desc Verify ClassGetConstructors case 078: Class.from<Product079>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

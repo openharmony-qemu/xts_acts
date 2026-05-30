@@ -534,7 +534,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0100
      * @tc.name testClassGetInstanceMethods001
-     * @tc.desc Verify ClassGetInstanceMethods case 001: method in different API is
+     * @tc.desc Verify ClassGetInstanceMethods case 001: Class.from<CompatClass061>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -549,7 +549,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0200
      * @tc.name testClassGetInstanceMethods002
-     * @tc.desc Verify ClassGetInstanceMethods case 002: get method
+     * @tc.desc Verify ClassGetInstanceMethods case 002: Class.from<ExternalClass>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -565,7 +565,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0300
      * @tc.name testClassGetInstanceMethods003
-     * @tc.desc Verify ClassGetInstanceMethods case 003: getInstanceMethods on class with one method
+     * @tc.desc Verify ClassGetInstanceMethods case 003: Class.from<ChildClass063>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -591,7 +591,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0400
      * @tc.name testClassGetInstanceMethods004
-     * @tc.desc Verify ClassGetInstanceMethods case 004: generic inheritance
+     * @tc.desc Verify ClassGetInstanceMethods case 004: Class.from<GenericClass064<int>>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -606,7 +606,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0500
      * @tc.name testClassGetInstanceMethods005
-     * @tc.desc Verify ClassGetInstanceMethods case 005: type
+     * @tc.desc Verify ClassGetInstanceMethods case 005: Class.from<CompleteClass065>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -621,7 +621,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0600
      * @tc.name testClassGetInstanceMethods006
-     * @tc.desc Verify ClassGetInstanceMethods case 006: getInstanceMethods includes inherited methods
+     * @tc.desc Verify ClassGetInstanceMethods case 006: Class.from<MyClass066>(), getSuper returns expected parent Class, getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -657,7 +657,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0700
      * @tc.name testClassGetInstanceMethods007
-     * @tc.desc Verify ClassGetInstanceMethods case 007: getInstanceMethods()
+     * @tc.desc Verify ClassGetInstanceMethods case 007: Class.from<Object>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

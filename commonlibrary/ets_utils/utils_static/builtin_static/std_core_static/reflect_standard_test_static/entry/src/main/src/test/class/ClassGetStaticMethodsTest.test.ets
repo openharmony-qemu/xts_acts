@@ -503,7 +503,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0100
      * @tc.name testClassGetStaticMethods001
-     * @tc.desc Verify ClassGetStaticMethods case 001: getStaticMethods() with no arguments
+     * @tc.desc Verify ClassGetStaticMethods case 001: Class.from<MyClass001>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -516,7 +516,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0200
      * @tc.name testClassGetStaticMethods002
-     * @tc.desc Verify ClassGetStaticMethods case 002: call getStaticMethods
+     * @tc.desc Verify ClassGetStaticMethods case 002: Class.from<MyClass003>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -530,7 +530,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0300
      * @tc.name testClassGetStaticMethods003
-     * @tc.desc Verify ClassGetStaticMethods case 003: interface static method
+     * @tc.desc Verify ClassGetStaticMethods case 003: Class.from<MyInterface004>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -544,7 +544,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0400
      * @tc.name testClassGetStaticMethods004
-     * @tc.desc Verify ClassGetStaticMethods case 004: abstract class static method
+     * @tc.desc Verify ClassGetStaticMethods case 004: Class.from<AbstractClass005>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -558,7 +558,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0500
      * @tc.name testClassGetStaticMethods005
-     * @tc.desc Verify ClassGetStaticMethods case 005: final static method
+     * @tc.desc Verify ClassGetStaticMethods case 005: Class.from<FinalClass006>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -572,7 +572,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0600
      * @tc.name testClassGetStaticMethods006
-     * @tc.desc Verify ClassGetStaticMethods case 006: generic static method
+     * @tc.desc Verify ClassGetStaticMethods case 006: Class.from<GenericClass007<string>>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -586,7 +586,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0700
      * @tc.name testClassGetStaticMethods007
-     * @tc.desc Verify ClassGetStaticMethods case 007: static method return empty array
+     * @tc.desc Verify ClassGetStaticMethods case 007: Class.from<NoStaticMethodClass009>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -600,7 +600,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0800
      * @tc.name testClassGetStaticMethods008
-     * @tc.desc Verify ClassGetStaticMethods case 008: class with two static methods returns both
+     * @tc.desc Verify ClassGetStaticMethods case 008: Class.from<MyClass008>(), getName returns "method1", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -620,7 +620,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0900
      * @tc.name testClassGetStaticMethods009
-     * @tc.desc Verify ClassGetStaticMethods case 009: return static method not
+     * @tc.desc Verify ClassGetStaticMethods case 009: Class.from<ChildClass010>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +640,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1000
      * @tc.name testClassGetStaticMethods010
-     * @tc.desc Verify ClassGetStaticMethods case 010: instance method not in static method
+     * @tc.desc Verify ClassGetStaticMethods case 010: Class.from<MixedClass011>(), getStaticMethods result verified, getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -658,7 +658,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1100
      * @tc.name testClassGetStaticMethods011
-     * @tc.desc Verify ClassGetStaticMethods case 011: call return array instance
+     * @tc.desc Verify ClassGetStaticMethods case 011: Class.from<MyClass012>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -674,7 +674,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1200
      * @tc.name testClassGetStaticMethods012
-     * @tc.desc Verify ClassGetStaticMethods case 012: return FixedArray type
+     * @tc.desc Verify ClassGetStaticMethods case 012: Class.from<MyClass013>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1300
      * @tc.name testClassGetStaticMethods013
-     * @tc.desc Verify ClassGetStaticMethods case 013: return publicstatic method
+     * @tc.desc Verify ClassGetStaticMethods case 013: Class.from<MixedAccessClass014>(), getName returns "publicMethod", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -715,7 +715,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1400
      * @tc.name testClassGetStaticMethods014
-     * @tc.desc Verify ClassGetStaticMethods case 014: privatestatic method not in method
+     * @tc.desc Verify ClassGetStaticMethods case 014: Class.from<PrivateStaticClass015>(), getName returns "publicMethod", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -732,7 +732,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1500
      * @tc.name testClassGetStaticMethods015
-     * @tc.desc Verify ClassGetStaticMethods case 015: static method return
+     * @tc.desc Verify ClassGetStaticMethods case 015: Class.from<OverloadClass016>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -758,7 +758,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1600
      * @tc.name testClassGetStaticMethods016
-     * @tc.desc Verify ClassGetStaticMethods case 016: call not throw exception
+     * @tc.desc Verify ClassGetStaticMethods case 016: Class.from<MyClass017>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -773,7 +773,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1700
      * @tc.name testClassGetStaticMethods017
-     * @tc.desc Verify ClassGetStaticMethods case 017: call getStaticMethods
+     * @tc.desc Verify ClassGetStaticMethods case 017: Class.from<MyClass018>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -790,7 +790,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1800
      * @tc.name testClassGetStaticMethods018
-     * @tc.desc Verify ClassGetStaticMethods case 018: static gettermethod not in return
+     * @tc.desc Verify ClassGetStaticMethods case 018: Class.from<ClassWithGetter019>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -811,7 +811,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1900
      * @tc.name testClassGetStaticMethods019
-     * @tc.desc Verify ClassGetStaticMethods case 019: static settermethod not in return
+     * @tc.desc Verify ClassGetStaticMethods case 019: Class.from<ClassWithSetter020>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -832,7 +832,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2000
      * @tc.name testClassGetStaticMethods020
-     * @tc.desc Verify ClassGetStaticMethods case 020: asyncstatic method
+     * @tc.desc Verify ClassGetStaticMethods case 020: Class.from<AsyncStaticClass021>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -860,7 +860,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2100
      * @tc.name testClassGetStaticMethods021
-     * @tc.desc Verify ClassGetStaticMethods case 021: generic static method
+     * @tc.desc Verify ClassGetStaticMethods case 021: Class.from<GenericStaticClass022>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -874,7 +874,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2200
      * @tc.name testClassGetStaticMethods022
-     * @tc.desc Verify ClassGetStaticMethods case 022: getStaticMethodsnot method
+     * @tc.desc Verify ClassGetStaticMethods case 022: Class.from<ChildClass023>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -894,7 +894,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2300
      * @tc.name testClassGetStaticMethods023
-     * @tc.desc Verify ClassGetStaticMethods case 023: using getSuperget static method
+     * @tc.desc Verify ClassGetStaticMethods case 023: Class.from<ChildClass024>(), getSuper returns expected parent Class, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -911,7 +911,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2400
      * @tc.name testClassGetStaticMethods024
-     * @tc.desc Verify ClassGetStaticMethods case 024: static method
+     * @tc.desc Verify ClassGetStaticMethods case 024: Class.from<ParentClass025>(), getStaticMethods result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -936,7 +936,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2500
      * @tc.name testClassGetStaticMethods025
-     * @tc.desc Verify ClassGetStaticMethods case 025: return StaticMethodobject getNamemethod
+     * @tc.desc Verify ClassGetStaticMethods case 025: Class.from<MyClass026>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -951,7 +951,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2600
      * @tc.name testClassGetStaticMethods026
-     * @tc.desc Verify ClassGetStaticMethods case 026: return StaticMethodobject getReturnTypemethod
+     * @tc.desc Verify ClassGetStaticMethods case 026: Class.from<MyClass027>(), getStaticMethods result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -971,7 +971,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2700
      * @tc.name testClassGetStaticMethods027
-     * @tc.desc Verify ClassGetStaticMethods case 027: return StaticMethodobject getParameterTypesmethod
+     * @tc.desc Verify ClassGetStaticMethods case 027: Class.from<MyClass028>(), getStaticMethods result verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -989,7 +989,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2800
      * @tc.name testClassGetStaticMethods028
-     * @tc.desc Verify ClassGetStaticMethods case 028: return StaticMethodobject invokemethod
+     * @tc.desc Verify ClassGetStaticMethods case 028: Class.from<MyClass029>(), getStaticMethods result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1013,7 +1013,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2900
      * @tc.name testClassGetStaticMethods029
-     * @tc.desc Verify ClassGetStaticMethods case 029: static method
+     * @tc.desc Verify ClassGetStaticMethods case 029: Class.from<ManyStaticMethodsClass030>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1027,7 +1027,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3000
      * @tc.name testClassGetStaticMethods030
-     * @tc.desc Verify ClassGetStaticMethods case 030: empty static method
+     * @tc.desc Verify ClassGetStaticMethods case 030: Class.from<EmptyClass031>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1041,7 +1041,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3100
      * @tc.name testClassGetStaticMethods031
-     * @tc.desc Verify ClassGetStaticMethods case 031: class with only instance methods returns empty static method array
+     * @tc.desc Verify ClassGetStaticMethods case 031: Class.from<OnlyInstanceMethodsClass032>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1055,7 +1055,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3200
      * @tc.name testClassGetStaticMethods032
-     * @tc.desc Verify ClassGetStaticMethods case 032: using call static method
+     * @tc.desc Verify ClassGetStaticMethods case 032: Class.from<MathUtils033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1069,7 +1069,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3300
      * @tc.name testClassGetStaticMethods033
-     * @tc.desc Verify ClassGetStaticMethods case 033: static method name
+     * @tc.desc Verify ClassGetStaticMethods case 033: Class.from<Utils034>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1085,7 +1085,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3400
      * @tc.name testClassGetStaticMethods034
-     * @tc.desc Verify ClassGetStaticMethods case 034: static method
+     * @tc.desc Verify ClassGetStaticMethods case 034: Class.from<Service035>(), getName returns "publicApi"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1100,7 +1100,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3500
      * @tc.name testClassGetStaticMethods035
-     * @tc.desc Verify ClassGetStaticMethods case 035: verify static method parameters type
+     * @tc.desc Verify ClassGetStaticMethods case 035: Class.from<MyService036>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1114,7 +1114,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3600
      * @tc.name testClassGetStaticMethods036
-     * @tc.desc Verify ClassGetStaticMethods case 036: static method performance
+     * @tc.desc Verify ClassGetStaticMethods case 036: Class.from<PerformanceTest037>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1135,7 +1135,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3700
      * @tc.name testClassGetStaticMethods037
-     * @tc.desc Verify ClassGetStaticMethods case 037: static method getOwner().getName() FQN
+     * @tc.desc Verify ClassGetStaticMethods case 037: Class.from<MixedClass038>(), getStaticMethods result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1152,7 +1152,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3800
      * @tc.name testClassGetStaticMethods038
-     * @tc.desc Verify ClassGetStaticMethods case 038: getStaticMethodsget method after getStaticMethod method
+     * @tc.desc Verify ClassGetStaticMethods case 038: Class.from<MyService039>(), getName returns "method2", getStaticMethod resolves expected method, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1169,7 +1169,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3900
      * @tc.name testClassGetStaticMethods039
-     * @tc.desc Verify ClassGetStaticMethods case 039: getStaticMethods and getStaticFields return method field
+     * @tc.desc Verify ClassGetStaticMethods case 039: Class.from<Config040>(), getStaticFields result verified, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1189,7 +1189,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_4000
      * @tc.name testClassGetStaticMethods040
-     * @tc.desc Verify ClassGetStaticMethods case 040: inheritance static method
+     * @tc.desc Verify ClassGetStaticMethods case 040: Class.from<A041>(), getName returns "methodA", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
