@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsIntlStaticTest.hap"
+            "ActsIntlCaseStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
