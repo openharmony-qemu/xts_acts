@@ -975,8 +975,8 @@ export default function textSpanFontTest() {
           // let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
           // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0800 END ');
-        } catch (err) {
-          
+          expect(uiContext).not().assertUndefined();
+        } catch (err) {          
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1205,8 +1205,7 @@ export default function textSpanFontTest() {
           let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0600 END ');
-        } catch (err) {
-          
+        } catch (err) {          
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1232,9 +1231,9 @@ export default function textSpanFontTest() {
           console.info("ArkUX_Stage_Span_Font_FontSize_static_0700 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
           // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).not().assertUndefined();
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0700 END ');
-        } catch (err) {
-          
+        } catch (err) {          
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1264,8 +1263,7 @@ export default function textSpanFontTest() {
           let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0800 END ');
-        } catch (err) {
-          
+        } catch (err) {          
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();

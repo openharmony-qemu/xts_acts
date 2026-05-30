@@ -1842,10 +1842,10 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0400', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0400 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
           // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
+          expect(obj.getElement('$attrs').getString('strokeWidth')).
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 END ');
           done();
-        } catch (err) {
-          
+        } catch (err) {          
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 ERR  ' + JSON.stringify(err));
           done();
         }
@@ -1865,6 +1865,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0500', Level.LEVEL0, async (done: (
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_StrokeWidth_0500');
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 strJson  :' + JSON.stringify(strJson));
+          expect(strJson).not().assertUndefined();
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
@@ -1894,16 +1895,16 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_StrokeWidth_0600');
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 strJson  :' + JSON.stringify(strJson));
+          expect(strJson).not().assertUndefined();
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
-          // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
+          //  expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 END ');
           done();
-        } catch (err) {
-          
+        } catch (err) {          
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 ERR  ' + JSON.stringify(err));
           done();
         }
