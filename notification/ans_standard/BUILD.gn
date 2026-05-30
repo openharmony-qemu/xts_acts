@@ -100,7 +100,8 @@ group("ans_standard") {
       "actsNotificationAnsNoDisplayedIconNoSystemTest:ActsNotificationAnsNoDisplayedIconNoSystemTest",
       "actsAnsNotificationDisableNotificationFeatureTest:ActsAnsNotificationDisableNotificationFeatureTest",
       "actsNotificationReminderMeLaterTest:ActsNotificationReminderMeLaterTest",
-      "actsNotificationReminderMeLaterTestStatic:ActsNotificationReminderMeLaterStaticTest"
+      "actsNotificationReminderMeLaterTestStatic:ActsNotificationReminderMeLaterStaticTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityLittleTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityLittleStaticTest"
     ]
   }
 }

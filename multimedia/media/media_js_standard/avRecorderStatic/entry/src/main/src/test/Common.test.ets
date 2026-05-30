@@ -2776,6 +2776,86 @@ export default class Commmon {
     }
   }
 
+  async avRecorderSetMetadataInIdleStateTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        let meta : Record<string, string> = {
+          'com.openharmony.deferredvideoenhanceflag':'10',
+          'com.openharmony.videoId':'20'
+        };
+        try {
+          avRecorder!.setMetadata(meta);
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(5400102);
+        }
+        await this.preparePromise(avRecorder, avConfig);
+        await this.startPromise(avRecorder, recorderTime);
+        await this.pausePromise(avRecorder);
+        await this.resumePromise(avRecorder);
+        await this.stopPromise(avRecorder);
+        await avRecorder!.reset().then(() => {
+          console.info('reset avRecorderSetMetadataInIdleStateTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataInIdleStateTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataInIdleStateTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
+  }
+
+  async avRecorderSetMetadataOversizedValueTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        let largeValue = 'a'.repeat(257);
+        let meta : Record<string, string> = {
+          'com.openharmony.deferredvideoenhanceflag':largeValue,
+        };
+        try {
+          avRecorder!.setMetadata(meta);
+        } catch (error) {
+          console.error(`Test exception: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(5400108);
+        }
+        await this.startPromise(avRecorder, recorderTime);
+        await this.pausePromise(avRecorder);
+        await this.resumePromise(avRecorder);
+        await this.stopPromise(avRecorder);
+        await avRecorder!.reset().then(() => {
+          console.info('reset avRecorderSetMetadataOversizedValueTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataOversizedValueTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
+  }
+
   async handleWaterMark(avRecorder: media.AVRecorder) {
     try {
       console.info('addWatermark: start');

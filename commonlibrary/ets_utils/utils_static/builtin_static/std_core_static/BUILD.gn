@@ -17,6 +17,7 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+
       "bigint_standard_test_static:ActsBigintStandardTest",
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
@@ -34,6 +35,7 @@ group("std_core_static") {
       "iterator_standard_test_static:ActsIteratorStaticTest",
       "method_standard_test_static:ActsMethodStaticTest",
       "object_standard_test_static:ActsObjectStaticTest",
+      "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
 
     ]
   }

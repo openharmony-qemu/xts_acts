@@ -20,6 +20,7 @@
 #include "list/listBackBehaviorTest.cpp"
 #include "inspectorLabel/InspectorLabelTest.cpp"
 #include "accessibilityFocusId/AccessibilityFocusIdTest.cpp"
+#include "hovered/HoveredTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -75,6 +76,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"AccessibilityDefaultFocusTest_001", nullptr, AccessibilityDefaultFocusTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"AccessibilityDefaultFocusTest_002", nullptr, AccessibilityDefaultFocusTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"Hovered_UI_STATE_HOVERED", nullptr, Hovered_UI_STATE_HOVERED, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
