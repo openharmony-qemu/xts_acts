@@ -817,7 +817,10 @@ export default function ClassFromTest(): void {
       let cls = Class.from<int | string>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
-      expect(cls.getName()).assertEqual(Class.from<int | string>().getName());
+      let constituents = cls.getUnionConstituentTypes()!;
+      expect(constituents.length).assertEqual(2);
+      expect(constituents[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(constituents[1].getName()).assertEqual(Class.from<string>().getName());
     });
 
     /**

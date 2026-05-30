@@ -1254,5 +1254,34 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       expect(fields.length).assertEqual(1);
       expect(fields[0].getName()).assertEqual("name");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4400
+     * @tc.name testGetInstanceFieldsRecursive044
+     * @tc.desc Verify primitive type class returns empty result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetInstanceFieldsRecursive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<int>();
+      let fields = reflect.getInstanceFieldsRecursive(cls);
+      expect(fields instanceof Array).assertTrue();
+      expect(fields.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4500
+     * @tc.name testGetInstanceFieldsRecursive045
+     * @tc.desc Verify Class.PRIMITIVE_INT returns empty result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetInstanceFieldsRecursive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.PRIMITIVE_INT;
+      let fields = reflect.getInstanceFieldsRecursive(cls);
+      expect(fields.length).assertEqual(0);
+    });
   });
 }

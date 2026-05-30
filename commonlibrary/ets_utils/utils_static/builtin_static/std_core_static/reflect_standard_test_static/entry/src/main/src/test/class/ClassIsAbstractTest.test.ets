@@ -348,8 +348,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsAbstract005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AbstractClass006>();
-      let result = cls.isAbstract();
+      let cls004 = Class.from<MyAbstractClass004>();
+      expect(cls004.isAbstract()).assertEqual(true);
+
+      let cls006 = Class.from<AbstractClass006>();
+      let result = cls006.isAbstract();
       expect(result).assertEqual(true);
       expect(typeof result).assertEqual("boolean");
     });

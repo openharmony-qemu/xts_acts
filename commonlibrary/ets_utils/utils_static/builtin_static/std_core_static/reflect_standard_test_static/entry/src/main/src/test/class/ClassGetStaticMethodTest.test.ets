@@ -844,8 +844,8 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       try {
-        let method = cls.getStaticMethod('test', null as FixedArray<Class>);
-        expect(method).assertNull();
+        cls.getStaticMethod('test', null as FixedArray<Class>);
+        expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('ClassCastError');
       }

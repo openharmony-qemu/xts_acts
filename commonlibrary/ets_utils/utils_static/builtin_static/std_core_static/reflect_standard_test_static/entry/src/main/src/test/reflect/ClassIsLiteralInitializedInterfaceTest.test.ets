@@ -170,7 +170,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0100
      * @tc.name testClassIsLiteralInitializedInterface001
-     * @tc.desc Verify isLiteralInitializedInterface case 001: required parameter
+     * @tc.desc Verify isLiteralInitializedInterface case 001: empty interface object literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,13 +183,13 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0200
      * @tc.name testClassIsLiteralInitializedInterface002
-     * @tc.desc Verify isLiteralInitializedInterface case 002: empty object literal
+     * @tc.desc Verify isLiteralInitializedInterface case 002: optional property interface literal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsLiteralInitializedInterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: EmptyOptionalInterface004 = {};
+      let obj: EmptyOptionalInterface004 = { name: 'Alice' };
       expect(reflect.isLiteralInitializedInterface(obj)).assertEqual(true);
     });
 
@@ -476,6 +476,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     it('testClassIsLiteralInitializedInterface023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: EmptyLiteralInterface001 = {};
       expect(typeof reflect.isLiteralInitializedInterface(obj)).assertEqual("boolean");
+      expect(reflect.isLiteralInitializedInterface(obj)).assertEqual(true);
     });
 
     /**

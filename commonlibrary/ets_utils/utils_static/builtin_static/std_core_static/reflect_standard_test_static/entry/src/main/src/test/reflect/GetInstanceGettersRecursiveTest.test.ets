@@ -1752,5 +1752,43 @@ export default function GetInstanceGettersRecursiveTest(): void {
       expect(json.indexOf('name:test') >= 0).assertEqual(true);
       expect(json.indexOf('active:true') >= 0).assertEqual(true);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6900
+     * @tc.name testGetInstanceGettersRecursive069
+     * @tc.desc Verify invoke with null target throws ClassCastError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetInstanceGettersRecursive069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<InvokeGetterClass>();
+      let getters = reflect.getInstanceGettersRecursive(cls);
+      try {
+        getters[0].invoke(null as Object);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_7000
+     * @tc.name testGetInstanceGettersRecursive070
+     * @tc.desc Verify invoke with undefined target throws ClassCastError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetInstanceGettersRecursive070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<InvokeGetterClass>();
+      let getters = reflect.getInstanceGettersRecursive(cls);
+      try {
+        getters[0].invoke(undefined as Object);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
   });
 }

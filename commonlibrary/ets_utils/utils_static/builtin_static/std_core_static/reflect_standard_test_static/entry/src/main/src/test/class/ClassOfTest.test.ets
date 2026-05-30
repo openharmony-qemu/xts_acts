@@ -332,8 +332,9 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj = new Map<int, string>();
+      expect(Class.of(obj) !== null).assertTrue();
       try {
-        let obj = new Map<int, string>();
         looseClassOf().of(obj, "extra" as Object);
         expect().assertFail();
       } catch (error) {
@@ -601,9 +602,10 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new MyClass010();
-      let cls = Class.of(obj);
-      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass010");
+      let infVal: double = 1.0 / 0.0;
+      let boxedInf: Object = infVal as Object;
+      let cls = Class.of(boxedInf);
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromDoubleFqn());
     });
 
     /**

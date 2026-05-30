@@ -471,15 +471,22 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1300
      * @tc.name testClassGetSuper013
-     * @tc.desc Verify ClassGetSuper case 013: boolean primitive Class getSuper
+     * @tc.desc Verify ClassGetSuper case 013: primitive Class getSuper returns absent, string Class returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let boolClass = Class.PRIMITIVE_BOOLEAN
-      let boolSuper = boolClass.getSuper()
-      expect(boolSuper !== null).assertTrue()
+      let intClass = Class.PRIMITIVE_INT;
+      expect(Utils.isAbsentReflectOptional(intClass.getSuper())).assertTrue();
+
+      let stringClass = Class.from<string>();
+      let stringSuper = stringClass.getSuper();
+      expect(stringSuper !== undefined && stringSuper !== null).assertTrue();
+      expect(stringSuper!.getName()).assertEqual("std.core.Object");
+
+      let boolClass = Class.PRIMITIVE_BOOLEAN;
+      expect(Utils.isAbsentReflectOptional(boolClass.getSuper())).assertTrue();
     });
 
     /**
@@ -892,16 +899,21 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3900
      * @tc.name testClassGetSuper039
-     * @tc.desc Verify ClassGetSuper case 039: Map type getSuper returns Object
+     * @tc.desc Verify ClassGetSuper case 039: Map and Array type getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let mapClazz = Class.from<Map<string, int>>()
-      let mapSuper = mapClazz.getSuper()
-      expect(mapSuper !== null).assertTrue()
-      expect(mapSuper!.getName()).assertEqual("std.core.Object")
+      let mapClazz = Class.from<Map<string, int>>();
+      let mapSuper = mapClazz.getSuper();
+      expect(mapSuper !== null).assertTrue();
+      expect(mapSuper!.getName()).assertEqual("std.core.Object");
+
+      let arrayClazz = Class.from<Array<int>>();
+      let arraySuper = arrayClazz.getSuper();
+      expect(arraySuper !== null).assertTrue();
+      expect(arraySuper!.getName()).assertEqual("std.core.Object");
     });
 
     /**

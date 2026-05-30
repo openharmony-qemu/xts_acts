@@ -402,8 +402,8 @@ export default function ConstructorEqualsTest(): void {
      * @tc.level Level 2
     */
     it('testConstructorEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctor1 = asCtorList(Class.from<NoArgCtor003>())[0];
-      let ctor2 = asCtorList(Class.from<IntCtor003>())[0];
+      let ctor1 = asCtorList(Class.from<MyClass010>())[0];
+      let ctor2 = asCtorList(Class.from<MyClass011>())[0];
       expect(ctor1.equals(ctor2)).assertFalse();
     });
 

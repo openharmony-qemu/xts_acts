@@ -264,15 +264,16 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0200
      * @tc.name testClassIsEnum002
-     * @tc.desc Verify ClassIsEnum case 002: enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 002: enum Class isEnum true and not interface or abstract
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassIsEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum003>();
-      let result = cls.isEnum();
-      expect(result).assertEqual(true);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isInterface()).assertEqual(false);
+      expect(cls.isAbstract()).assertEqual(false);
     });
 
     /**
@@ -681,7 +682,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3100
      * @tc.name testClassIsEnum031
-     * @tc.desc Verify ClassIsEnum case 031: abstract class isEnum false
+     * @tc.desc Verify ClassIsEnum case 031: enum class isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
