@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,39 +21,64 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const TAG = '[ImageCreator].queueImage';
 
 async function queueImagePromiseTest(done: () => void, testName: string, size: image.Size): Promise<void> {
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  const img: image.Image = await creator.dequeueImage();
-  const component: image.Component = await img.getComponent(image.ComponentType.JPEG);
-  expect(component != undefined).assertTrue();
-  let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
-  for (let i = 0; i < bufferArr.length; i += 4) {
-    bufferArr[i] = 0;
-    bufferArr[i + 1] = 0;
-    bufferArr[i + 2] = 255;
-    bufferArr[i + 3] = 255;
+  try {
+    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+    await creator.dequeueImage().then(async (img: image.Image) => {
+      //绘制图片。
+      await img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
+        let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 0; //B
+          bufferArr[i + 1] = 0; //G
+          bufferArr[i + 2] = 255; //R
+          bufferArr[i + 3] = 255; //A
+        }
+      })
+      await creator.queueImage(img).then(() => {
+        console.info('Succeeded promise in queuing the Image.');
+      }).catch((error: Error) => {
+        let error1 = error as BusinessError
+        console.error(`Failed to queue the Image.code ${error1.code},message is ${error1.message}`);
+        expect().assertFail();
+      })
+      done();
+    })
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+    expect().assertFail();
+    done();
   }
-  await creator.queueImage(img);
-  console.info(TAG, 'Succeeded in queuing the Image.');
-  await creator.release();
-  done();
 }
 
 async function queueImageCallbackTest(done: () => void, testName: string, size: image.Size): Promise<void> {
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  const img: image.Image = await creator.dequeueImage();
-  const component: image.Component = await img.getComponent(image.ComponentType.JPEG);
-  expect(component != undefined).assertTrue();
-  let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
-  for (let i = 0; i < bufferArr.length; i += 4) {
-    bufferArr[i] = 0;
-    bufferArr[i + 1] = 0;
-    bufferArr[i + 2] = 255;
-    bufferArr[i + 3] = 255;
+  try {
+    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+    await creator.dequeueImage().then(async (img: image.Image) => {
+      //绘制图片。
+      await img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
+        let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 0; //B
+          bufferArr[i + 1] = 0; //G
+          bufferArr[i + 2] = 255; //R
+          bufferArr[i + 3] = 255; //A
+        }
+      })
+      creator.queueImage(img, (err: BusinessError<void> | null) => {
+        if (err) {
+          console.error(`Failed to queue the Image.code ${err.code},message is ${err.message}`);
+          expect().assertFail();
+        } else {
+          console.info('Succeeded callback in queuing the Image.');
+        }
+        done();
+      })
+    })
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+    expect().assertFail();
+    done();
   }
-  await creator.queueImage(img);
-  console.info(TAG, 'Succeeded in queuing the Image.');
-  await creator.release();
-  done();
 }
 
 export default function ImageCreatorQueueImageTest(): void {

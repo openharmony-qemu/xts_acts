@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,35 +15,68 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../../../../hypium';
-import { BusinessError } from '@kit.BasicServicesKit';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  Level,
+  Hypium
+} from '../../../../../../hypium';
+import { BusinessError } from '@ohos.base';
 
-const TAG = '[Image_operation].release';
+const TAG = 'Image.Release'
 
 async function releasePromiseTest(done: () => void, testName: string): Promise<void> {
-  let size: image.Size = {
+  const creator: image.ImageCreator = await image.createImageCreator({
     height: 8192,
     width: 8
-  }
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  let img: image.Image = await creator.dequeueImage();
-  await img.release();
-  console.info(TAG, 'Succeeded in releasing the image instance.');
-  done();
+  }, image.ImageFormat.JPEG, 8);
+  creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
+    if (err) {
+      console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      img?.release().then(() => {
+        console.info(TAG, 'Succeeded in releasing the image instance.');
+        done();
+      }).catch((error: Error) => {
+        let error1 = error as BusinessError
+        console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+        expect().assertFail();
+        done();
+      })
+    }
+  })
 }
 
 async function releaseCallbackTest(done: () => void, testName: string): Promise<void> {
-  let size: image.Size = {
+  const creator: image.ImageCreator = await image.createImageCreator({
     height: 8192,
     width: 8
-  }
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  let img: image.Image = await creator.dequeueImage();
-  await img.release();
-  console.info(TAG, 'Succeeded in releasing the image instance.');
-  done();
+  }, image.ImageFormat.JPEG, 8);
+  creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
+    if (err) {
+      console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      img?.release((err: BusinessError | null) => {
+        if (err) {
+          console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
+          expect().assertFail();
+        } else {
+          console.info(TAG, 'Succeeded in releasing the image instance.');
+        }
+        done();
+      })
+    }
+  })
 }
-
 
 export default function ImageReleaseTest(): void {
   describe('ImageReleaseTest', () => {
@@ -64,20 +98,20 @@ export default function ImageReleaseTest(): void {
     });
 
     /**
-     * @tc.name   Image_release_promise_001
+     * @tc.name   Image_release_promise_static_0100
      * @tc.number IMAGE_RELEASE_001
      * @tc.desc   Image_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_release_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'imagePacker_release_promise_001';
+    it('Image_release_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'Image_release_promise_001';
       try {
         await releasePromiseTest(done, testName);
       } catch (error) {
-        let err = error as BusinessError;
-        console.error(TAG, `Failed. code ${err.code},message is ${err.message}`);
+        const err = error as BusinessError;
+        console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
       }
@@ -96,8 +130,8 @@ export default function ImageReleaseTest(): void {
       try {
         await releaseCallbackTest(done, testName);
       } catch (error) {
-        let err = error as BusinessError;
-        console.error(TAG, `Failed. code ${err.code},message is ${err.message}`);
+        const err = error as BusinessError;
+        console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
       }

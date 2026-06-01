@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,6 +62,7 @@ async function getImagePropertySync9(done: () => void, testContext: Context, tes
     if (imageSourceApi == null) {
       return;
     }
+    console.info(TAG, testName, "imageSourceApi : " + imageSourceApi);
     let propertyKeyName = imageSourceApi.getImagePropertySync(propertyKey);
     console.info(TAG, testName, "bits_per_sample : " + propertyKeyName);
     callback(propertyKeyName, undefined);
@@ -88,150 +90,256 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
       console.info('afterAll case');
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.ISO_SPEED,
+        'test_exif_empty_2.jpg', image.PropertyKey.ISO_SPEED,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.LIGHT_SOURCE,
+        'test_exif_empty_2.jpg', image.PropertyKey.LIGHT_SOURCE,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.FOCUS_MODE,
+        'test_exif_empty_2.jpg', image.PropertyKey.FOCUS_MODE,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.YCBCR_POSITIONING,
+        'test_exif_empty_2.jpg', image.PropertyKey.YCBCR_POSITIONING,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.FACE_VERSION,
+        'test_exif_empty_2.jpg', image.PropertyKey.FACE_VERSION,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.GPS_PROCESSING_METHOD,
+        'test_exif_empty_2.jpg', image.PropertyKey.GPS_PROCESSING_METHOD,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.DNG_VERSION,
+        'test_exif_empty_2.jpg', image.PropertyKey.DNG_VERSION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.GPS_AREA_INFORMATION,
+        'test_exif_empty_2.jpg', image.PropertyKey.GPS_AREA_INFORMATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.LENS_MODEL,
+        'test_exif_empty_2.jpg', image.PropertyKey.LENS_MODEL,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.LENS_SPECIFICATION,
+        'test_exif_empty_2.jpg', image.PropertyKey.LENS_SPECIFICATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.GPS_DATE_STAMP,
+        'test_exif_empty_2.jpg', image.PropertyKey.GPS_DATE_STAMP,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.FACE_RECT,
+        'test_exif_empty_2.jpg', image.PropertyKey.FACE_RECT,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.COMPONENTS_CONFIGURATION,
+        'test_exif_empty_2.jpg', image.PropertyKey.COMPONENTS_CONFIGURATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.COLOR_SPACE,
+        'test_exif_empty_2.jpg', image.PropertyKey.COLOR_SPACE,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();
         });
     });
 
+    /**
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150
+     * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150',
-        'test_exif_empty_2.jpg',
-        image.PropertyKey.DATE_TIME,
+        'test_exif_empty_2.jpg', image.PropertyKey.DATE_TIME,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
           done();

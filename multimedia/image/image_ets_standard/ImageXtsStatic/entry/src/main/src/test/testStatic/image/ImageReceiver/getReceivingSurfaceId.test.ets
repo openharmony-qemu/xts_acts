@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +15,65 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '../../../../../../hypium';
-import { BusinessError } from '@kit.BasicServicesKit';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  Level,
+  Hypium
+} from '../../../../../../hypium';
+import { BusinessError } from '@ohos.base';
 
-const TAG = '[ImageReceiver].getReceivingSurfaceId';
+const TAG = 'ImageReceiver.GetReceivingSurfaceId'
 
 async function getReceivingSurfaceIdPromiseTest(done: () => void, testName: string, size: image.Size): Promise<void> {
-  let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
-  if (receiver === undefined) {
-    console.info(TAG, 'receiver is undefined');
+  try {
+    const receiver: image.ImageReceiver | undefined = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+    await receiver?.getReceivingSurfaceId().then((id: string) => {
+      console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
+    }).catch((error: Error) => {
+      let error1 = error as BusinessError
+      console.error(TAG, `Failed to get the ReceivingSurfaceId.code ${error1.code},message is ${error1.message}`);
+      expect().assertFail();
+    });
+    receiver?.release();
+    done();
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
     expect().assertFail();
     done();
-    return;
   }
-  let id: string = await receiver.getReceivingSurfaceId();
-  console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
-  await receiver.release();
-  done();
+}
+
+async function getReceivingSurfaceIdCallbackTest(done: () => void, testName: string, size: image.Size): Promise<void> {
+  try {
+    const receiver: image.ImageReceiver | undefined = await image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
+    receiver?.getReceivingSurfaceId((err: BusinessError | null, id: string | undefined) => {
+      if (err) {
+        console.error(TAG, `Failed to get the ReceivingSurfaceId.code ${err.code},message is ${err.message}`);
+        expect().assertFail();
+      } else {
+        console.info(TAG, 'Succeeded in getting the ReceivingSurfaceId.');
+      }
+      receiver?.release((err: BusinessError | null) => {
+        if (err) {
+          console.error(`Failed to release the receiver.code ${err.code},message is ${err.message}`);
+          expect().assertFail();
+        } else {
+          console.info('Succeeded in releasing the receiver.');
+        }
+      })
+      done();
+    });
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+    expect().assertFail();
+    done();
+  }
 }
 
 export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
@@ -66,14 +109,7 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
         height: 8192,
         width: 8
       };
-      try {
-        await getReceivingSurfaceIdPromiseTest(done, testName, size);
-      } catch (error) {
-        let err = error as BusinessError;
-        console.info(TAG, `failed; error: ${err}, ${err.code}`, testName);
-        expect().assertFail();
-        done();
-      }
+      await getReceivingSurfaceIdPromiseTest(done, testName, size);
     })
 
     /**
@@ -90,14 +126,41 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
         height: 8,
         width: 8192
       };
-      try {
-        await getReceivingSurfaceIdPromiseTest(done, testName, size);
-      } catch (error) {
-        let err = error as BusinessError;
-        console.info(TAG, `failed; error: ${err}, ${err.code}`, testName);
-        expect().assertFail();
-        done();
-      }
+      await getReceivingSurfaceIdPromiseTest(done, testName, size);
+    })
+
+    /**
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_callback_001
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ImageReceiver_getReceivingSurfaceId_callback_001', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageReceiver_getReceivingSurfaceId_callback_001';
+      const size: image.Size = {
+        height: 8192,
+        width: 8
+      };
+      await getReceivingSurfaceIdCallbackTest(done, testName, size);
+    })
+
+    /**
+     * @tc.name   ImageReceiver_getReceivingSurfaceId_callback_002
+     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
+     * @tc.desc   ImageReceiver_getReceivingSurfaceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ImageReceiver_getReceivingSurfaceId_callback_002', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageReceiver_getReceivingSurfaceId_callback_002';
+      const size: image.Size = {
+        height: 8,
+        width: 8192
+      };
+      await getReceivingSurfaceIdCallbackTest(done, testName, size);
     })
   })
 }

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,11 +20,16 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = '[ImageCreator].dequeueImage';
 
-async function dequeueImagePromiseTest(done: () => void, testName: string, size: image.Size): Promise<void> {
+async function dequeueImagePromiseTest(done: () => void, testName: string,  size: image.Size): Promise<void> {
   const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  const img: image.Image = await creator.dequeueImage();
-  console.info(TAG, 'Succeeded in dequeuing the Image.');
-  await creator.release();
+  await creator.dequeueImage().then((img: image.Image) => {
+    creator.release();
+    console.info(TAG, 'Succeeded in dequeuing the Image.');
+  }).catch((error: Error) => {
+    let error1 = error as BusinessError
+    console.error(TAG, `Failed to dequeue the Image.code ${error1.code},message is ${error1.message}`);
+    expect().assertFail();
+  })
   done();
 }
 
@@ -36,8 +42,15 @@ async function dequeueImageCallbackTest(done: () => void, testName: string, size
     } else {
       console.info(TAG, 'Succeeded in dequeuing the Image.')
     }
-    creator.release();
-    done();
+    creator?.release((err: BusinessError | null) => {
+      if (err) {
+        console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
+        expect().assertFail();
+      } else {
+        console.info(TAG, 'Succeeded in releasing the image instance.');
+      }
+      done();
+    })
   });
 }
 
@@ -61,15 +74,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     });
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_promise_001
+     * @tc.name   ImageCreator_dequeueImage_promise_static_0100
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_001
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_promise_001';
+    it('ImageCreator_dequeueImage_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageCreator_dequeueImage_promise_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -85,15 +98,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_promise_002
+     * @tc.name   ImageCreator_dequeueImage_promise_static_0200
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_002
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_promise_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_promise_002';
+    it('ImageCreator_dequeueImage_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageCreator_dequeueImage_promise_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192
@@ -109,15 +122,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_callback_001
+     * @tc.name   ImageCreator_dequeueImage_callback_static_0100
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_003
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_callback_001';
+    it('ImageCreator_dequeueImage_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageCreator_dequeueImage_callback_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -133,15 +146,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_callback_002
+     * @tc.name   ImageCreator_dequeueImage_callback_static_0200
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_004
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_callback_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_callback_002';
+    it('ImageCreator_dequeueImage_callback_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'ImageCreator_dequeueImage_callback_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192

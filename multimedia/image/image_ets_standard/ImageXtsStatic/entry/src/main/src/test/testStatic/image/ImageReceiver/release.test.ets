@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,29 +21,61 @@ import { BusinessError } from '@kit.BasicServicesKit';
 const TAG = '[ImageReceiver].release';
 
 async function releasePromiseTest(done: () => void, testName: string): Promise<void> {
-  let size: image.Size = {
-    height: 8192,
-    width: 8
-  }
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  let img: image.Image = await creator.dequeueImage();
-  await img.release();
-  console.info(TAG, 'Succeeded in releasing the image instance.');
-  done();
+    let size: image.Size = {
+      height: 8192,
+      width: 8
+    }
+    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+    creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
+      if (err) {
+        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+        expect().assertFail();
+        done();
+      } else {
+        img?.release().then(() => {
+          console.info(TAG, 'Succeeded promise in releasing the image instance.');
+          done();
+        }).catch((error: Error) => {
+          let error1 = error as BusinessError
+          console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+          expect().assertFail();
+          done();
+        })
+      }
+    })
 }
 
 async function releaseCallbackTest(done: () => void, testName: string): Promise<void> {
-  let size: image.Size = {
-    height: 8192,
-    width: 8
+  try {
+    let size: image.Size = {
+      height: 8192,
+      width: 8
+    }
+    const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
+    creator.dequeueImage((err: BusinessError | null, img: image.Image | undefined) => {
+      if (err) {
+        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+        expect().assertFail();
+        done();
+      } else {
+        img?.release((error: Error | null) => {
+          if (error) {
+            let error1 = error as BusinessError;
+            console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+            expect().assertFail();
+          } else {
+            console.info(TAG, 'Succeeded callback in releasing the image instance.');
+          }
+          done();
+        })
+      }
+    })
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+    expect().assertFail();
+    done();
   }
-  const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
-  let img: image.Image = await creator.dequeueImage();
-  await img.release();
-  console.info(TAG, 'Succeeded in releasing the image instance.');
-  done();
 }
-
 
 export default function ImageReceiverReleaseTest(): void {
   describe('ImageReceiverReleaseTest', () => {
