@@ -32,6 +32,7 @@ import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
 import display from '@ohos.display';
 import { canIUse } from '@internal.full.global';
+import { ImageFit } from '@ohos.arkui.componet';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -780,7 +781,7 @@ it('testsetImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Le
             hilog.info(domain, tag, msgStr + 'Succeeded in creating pixelMap');
             try {
                 let promise = windowStage!.setImageForRecent(pixelMap, ImageFit.Fill);
-                promise.then((data: image.PixelMap) => {
+                promise.then(() => {
                     hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
                     expect(false).assertTrue();
                     done()
