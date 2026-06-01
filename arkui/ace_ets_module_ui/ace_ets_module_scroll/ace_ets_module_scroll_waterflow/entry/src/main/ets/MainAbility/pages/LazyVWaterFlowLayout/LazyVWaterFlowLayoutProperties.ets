@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { LengthMetrics, LazyVWaterFlowLayout, LazyVWaterFlowLayoutAttribute } from '@kit.ArkUI';
- 
+
 @Entry
 @Component
 struct LazyVWaterFlowLayoutProperties {
@@ -24,321 +24,345 @@ struct LazyVWaterFlowLayoutProperties {
       Scroll() {
         Column() {
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFE0B2')
-                .justifyContent(FlexAlign.Center)
-              })
-            }
-            .id('lazyVWaterFlow_columnsTemplate_default')
-            .width('30%')
-            .onVisibleIndexesChange((start: number, end: number) => {
-              AppStorage.setOrCreate('LazyVWaterFlowLayout_onVisible', 'success');
-              console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
-              // 滚动监听：即将触底时提前加载更多数据
-              if (end + 20 >= this.arr.totalCount()) {
-                // 添加100个新数据到数据源
-                let currentCount = this.arr.totalCount();
-                for (let i = currentCount; i < currentCount + 100; i++) {
-                  this.arr.pushData(i);
-                }
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFE0B2')
+                  .justifyContent(FlexAlign.Center)
+                })
               }
-            })
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#C8E6C9')
-                .justifyContent(FlexAlign.Center)
+              .id('lazyVWaterFlow_columnsTemplate_default')
+              .onVisibleIndexesChange((start: number, end: number) => {
+                AppStorage.setOrCreate('LazyVWaterFlowLayout_onVisible', 'success');
+                console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
               })
             }
-            .id('lazyVWaterFlow_columnsTemplate_string')
-            .columnsTemplate('1fr 1fr')
             .width('30%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#BBDEFB')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#C8E6C9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_string')
+              .columnsTemplate('1fr 1fr')
             }
-            .id('lazyVWaterFlow_columnsTemplate_itemFillPolicy')
-            .columnsTemplate({ fillType: PresetFillType.BREAKPOINT_DEFAULT } as ItemFillPolicy)
+            .width('30%')
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#BBDEFB')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_itemFillPolicy')
+              .columnsTemplate({ fillType: PresetFillType.BREAKPOINT_DEFAULT } as ItemFillPolicy)
+            }
             .width('30%')
           }
           .height('15%')
- 
+
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#F8BBD0')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#F8BBD0')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_string2')
+              .columnsTemplate('repeat(auto-fill, 100vp)')
             }
-            .id('lazyVWaterFlow_columnsTemplate_string2')
-            .columnsTemplate('repeat(auto-fill, 100vp)')
             .width('30%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#D1C4E9')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#D1C4E9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_undefined')
+              .columnsTemplate(undefined)
             }
-            .id('lazyVWaterFlow_columnsTemplate_undefined')
-            .columnsTemplate(undefined)
             .width('30%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFF9C4')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFF9C4')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsTemplate_null')
+              .columnsTemplate(null)
+              .onVisibleIndexesChange(null)
             }
-            .id('lazyVWaterFlow_columnsTemplate_null')
-            .columnsTemplate(null)
             .width('30%')
-            .onVisibleIndexesChange(null)
           }
           .height('15%')
- 
+
           Text('columnsGap 属性测试')
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#E1BEE7')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#E1BEE7')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsGap_default')
+              .columnsTemplate('1fr 1fr')
+              .onVisibleIndexesChange(undefined)
             }
-            .id('lazyVWaterFlow_columnsGap_default')
-            .columnsTemplate('1fr 1fr')
             .width('30%')
-            .onVisibleIndexesChange(undefined)
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFCCBC')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFCCBC')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsGap_vp')
+              .columnsTemplate('1fr 1fr')
+              .columnsGap(LengthMetrics.vp(10))
             }
-            .id('lazyVWaterFlow_columnsGap_vp')
-            .columnsTemplate('1fr 1fr')
-            .columnsGap(LengthMetrics.vp(10))
             .width('30%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#C5CAE9')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#C5CAE9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsGap_px')
+              .columnsTemplate('1fr 1fr')
+              .columnsGap(LengthMetrics.px(20))
             }
-            .id('lazyVWaterFlow_columnsGap_px')
-            .columnsTemplate('1fr 1fr')
-            .columnsGap(LengthMetrics.px(20))
             .width('30%')
           }
           .height('15%')
- 
+
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#B2DFDB')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#B2DFDB')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsGap_undefined')
+              .columnsTemplate('1fr 1fr')
+              .columnsGap(undefined)
             }
-            .id('lazyVWaterFlow_columnsGap_undefined')
-            .columnsTemplate('1fr 1fr')
-            .columnsGap(undefined)
             .width('40%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#DCEDC8')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#DCEDC8')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_columnsGap_null')
+              .columnsTemplate('1fr 1fr')
+              .columnsGap(null)
             }
-            .id('lazyVWaterFlow_columnsGap_null')
-            .columnsTemplate('1fr 1fr')
-            .columnsGap(null)
             .width('40%')
           }
           .height('15%')
- 
+
           Text('rowsGap 属性测试')
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFF9C4')
-                .justifyContent(FlexAlign.Center)
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFF9C4')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_rowsGap_default')
+              .columnsTemplate('1fr 1fr')
+              .onVisibleIndexesChange((start: number, end: number) => {
+                console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
               })
             }
-            .id('lazyVWaterFlow_rowsGap_default')
-            .columnsTemplate('1fr 1fr')
             .width('30%')
-            .onVisibleIndexesChange((start: number, end: number) => {
-              console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
-            })
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFECB3')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFECB3')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_rowsGap_vp')
+              .columnsTemplate('1fr 1fr')
+              .rowsGap(LengthMetrics.vp(10))
             }
-            .id('lazyVWaterFlow_rowsGap_vp')
-            .columnsTemplate('1fr 1fr')
-            .rowsGap(LengthMetrics.vp(10))
             .width('30%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFE0B2')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFE0B2')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_rowsGap_px')
+              .columnsTemplate('1fr 1fr')
+              .rowsGap(LengthMetrics.px(20))
             }
-            .id('lazyVWaterFlow_rowsGap_px')
-            .columnsTemplate('1fr 1fr')
-            .rowsGap(LengthMetrics.px(20))
             .width('30%')
           }
           .height('15%')
- 
+
           Row(){
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#D7CCC8')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#D7CCC8')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_rowsGap_undefined')
+              .columnsTemplate('1fr 1fr')
+              .rowsGap(undefined)
             }
-            .id('lazyVWaterFlow_rowsGap_undefined')
-            .columnsTemplate('1fr 1fr')
-            .rowsGap(undefined)
             .width('40%')
- 
-            LazyVWaterFlowLayout() {
-              ForEach([1, 2, 3, 4, 5], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#CFD8DC')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll(){
+              LazyVWaterFlowLayout() {
+                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#CFD8DC')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyVWaterFlow_rowsGap_null')
+              .columnsTemplate('1fr 1fr')
+              .rowsGap(null)
             }
-            .id('lazyVWaterFlow_rowsGap_null')
-            .columnsTemplate('1fr 1fr')
-            .rowsGap(null)
             .width('40%')
           }
           .height('15%')
- 
+
         }
       }
       .height('100%')

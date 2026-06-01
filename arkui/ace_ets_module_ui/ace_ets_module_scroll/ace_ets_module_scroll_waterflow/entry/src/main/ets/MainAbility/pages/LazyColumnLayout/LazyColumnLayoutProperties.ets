@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics, LazyColumnLayout } from '@kit.ArkUI';
- 
+import { LengthMetrics, LazyColumnLayout, LazyColumnLayoutAttribute } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct LazyColumnLayoutProperties {
@@ -24,226 +24,255 @@ struct LazyColumnLayoutProperties {
         Column() {
           Text('space 属性测试')
           Row(){
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFE0B2')
-                .justifyContent(FlexAlign.Center)
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFE0B2')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_default')
+              .onVisibleIndexesChange((start: number, end: number) => {
+                AppStorage.setOrCreate('LazyColumnLayout_onVisible', 'success');
+                console.info('LazyColumnLayout visible indexes: start: ' + start + ', end: ' + end);
               })
             }
-            .id('lazyColumn_space_default')
             .width('30%')
-            .onVisibleIndexesChange((start: number, end: number) => {
-              AppStorage.setOrCreate('LazyColumnLayout_onVisible', 'success');
-              console.info('LazyColumnLayout visible indexes: start: ' + start + ', end: ' + end);
-            })
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#C8E6C9')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#C8E6C9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_vp')
+              .space(LengthMetrics.vp(10))
             }
-            .id('lazyColumn_space_vp')
-            .space(LengthMetrics.vp(10))
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#BBDEFB')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#BBDEFB')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_px')
+              .space(LengthMetrics.px(20))
             }
-            .id('lazyColumn_space_px')
-            .space(LengthMetrics.px(20))
             .width('30%')
           }
           .height('20%')
- 
+
           Row(){
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#F8BBD0')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#F8BBD0')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_negative')
+              .space(LengthMetrics.vp(-10))
             }
-            .id('lazyColumn_space_negative')
-            .space(LengthMetrics.vp(-10))
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#D1C4E9')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#D1C4E9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_undefined')
+              .space(undefined)
             }
-            .id('lazyColumn_space_undefined')
-            .space(undefined)
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3, 4], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFF9C4')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3, 4], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFF9C4')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_space_null')
+              .space(null)
+              .onVisibleIndexesChange(null)
             }
-            .id('lazyColumn_space_null')
-            .space(null)
             .width('30%')
-            .onVisibleIndexesChange(null)
           }
           .height('20%')
- 
+
           Text('alignItems 属性测试')
           Row(){
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#E1BEE7')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll() {
+              LazyColumnLayout() {
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#E1BEE7')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_default')
+              .onVisibleIndexesChange(undefined)
             }
-            .id('lazyColumn_alignItems_default')
             .width('30%')
-            .onVisibleIndexesChange(undefined)
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFCCBC')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                Text('Start')
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFCCBC')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_start')
+              .alignItems(HorizontalAlign.Start)
             }
-            .id('lazyColumn_alignItems_start')
-            .alignItems(HorizontalAlign.Start)
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#C5CAE9')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                Text('Center')
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#C5CAE9')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_center')
+              .alignItems(HorizontalAlign.Center)
             }
-            .id('lazyColumn_alignItems_center')
-            .alignItems(HorizontalAlign.Center)
             .width('30%')
           }
           .height('20%')
- 
+
           Row(){
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#B2DFDB')
-                .justifyContent(FlexAlign.Center)
-              })
+            Scroll() {
+              LazyColumnLayout() {
+                Text('End')
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#B2DFDB')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_end')
+              .alignItems(HorizontalAlign.End)
             }
-            .id('lazyColumn_alignItems_end')
-            .alignItems(HorizontalAlign.End)
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#DCEDC8')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                Text('undefined')
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#DCEDC8')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_undefined')
+              .alignItems(undefined)
             }
-            .id('lazyColumn_alignItems_undefined')
-            .alignItems(undefined)
             .width('30%')
- 
-            LazyColumnLayout() {
-              ForEach([1, 2, 3], (item: number) => {
-                Column() {
-                  Text('item ' + item.toString())
-                    .fontSize(16)
-                    .fontColor(Color.Black)
-                }
-                .height('30%')
-                .width('100%')
-                .backgroundColor('#FFF9C4')
-                .justifyContent(FlexAlign.Center)
-              })
+
+            Scroll() {
+              LazyColumnLayout() {
+                Text('null')
+                ForEach([1, 2, 3], (item: number) => {
+                  Column() {
+                    Text('item ' + item.toString())
+                      .fontSize(16)
+                      .fontColor(Color.Black)
+                  }
+                  .height('30%')
+                  .width('100%')
+                  .backgroundColor('#FFF9C4')
+                  .justifyContent(FlexAlign.Center)
+                })
+              }
+              .id('lazyColumn_alignItems_null')
+              .alignItems(null)
             }
-            .id('lazyColumn_alignItems_null')
-            .alignItems(null)
             .width('30%')
           }
           .height('20%')
- 
+
         }
       }
       .height('100%')
