@@ -54,18 +54,18 @@ struct BindSheetPicker {
     this.photoSelectOptions = parameter?.photoSelectOptions;
   }
 
-  sendEvent(message: Object, eventId: long): void {
-    const eventData = events_emitter.EventData = {
+  sendEvent(message: Object, eventId: long) {
+    const eventData: events_emitter.EventData = {
       data: {
-        'msg': message
-      } as Record<String, RecordData>
+        'msg': message,
+      }  as Record<String, RecordData>
     }
 
     const event: events_emitter.InnerEvent = {
       eventId: eventId,
       priority: events_emitter.EventPriority.LOW
     }
-    events_emitter.emit(event, eventData);
+    events_emitter.emit(event, eventData)
   }
 
   build() {
