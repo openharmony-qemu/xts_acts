@@ -3005,6 +3005,36 @@ export default function geolocationTest_geo7() {
     })
 
     /**
+     * @tc.name   SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.number SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_GetCurrentLocation_errorcode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = {
+            'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+            'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+            'maxAccuracy': -1
+        };       
+        try {
+            await geolocationm.getCurrentLocation(currentLocationRequest).then((result) => {
+                console.info('[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
+                expect().assertFail();
+            }).catch(error => {
+                console.info('[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
+                expect(error.code).assertEqual(401);
+            })
+        } catch (error) {
+            console.info("[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise try err." + JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
      * @tc.name   SUB_HSS_mSendCommand_0300
      * @tc.number SUB_HSS_mSendCommand_0300
      * @tc.desc   Test sendCommand api .
