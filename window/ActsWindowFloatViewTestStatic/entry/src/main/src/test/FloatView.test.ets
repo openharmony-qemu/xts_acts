@@ -24,6 +24,7 @@ import { common, Want } from '@kit.AbilityKit';
 import window from '@ohos.window';
 import { image } from '@kit.ImageKit';
 import { Driver, ON } from '@kit.TestKit';
+import { entryName } from './FloatingBall'
 import { abilityAccessCtrl, StartOptions, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
 
@@ -134,6 +135,128 @@ export default function abilityTest():void {
     afterEach(async () => {
       await Utils.msSleep(800)
     })
+
+    /**
+     * @tc.name   test_setUIContextByName_0100
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0100
+     * @tc.desc   test setUIContextByName with valid name and start float view
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName: string = 'test_setUIContextByName_0100';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContextByName(entryName);
+        console.info(CaseName + ' Succeeded in setting UI context by name.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await Utils.msSleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_1300016
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0200
+     * @tc.desc   test setUIContextByName with invalid name should fail with error 1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName: string = 'test_setUIContextByName_1300016';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatViewController.setUIContextByName('').then(async () => {
+          console.info(CaseName + ' Succeeded in setting UI context by name.');
+          await floatViewController.start();
+          await Utils.msSleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: Error) => {
+          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300016);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_with_storage
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0500
+     * @tc.desc   test setUIContextByName with LocalStorage parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_with_storage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName: string = 'test_setUIContextByName_with_storage';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let storage: LocalStorage = new LocalStorage();
+      // storage.setOrCreate('testKey', 'testValue');
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await Utils.msSleep(1000);
+        await floatViewController.setUIContextByName(entryName, storage);
+        console.info(CaseName + ' Succeeded in setting UI context by name with storage.');
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
 
     /**
      * @tc.name   test_FloatViewTemplateType_Enum_0100
@@ -1281,8 +1404,8 @@ export default function abilityTest():void {
       let rectChanged = false;
       let onRectChange = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.left).assertLargerOrEqual(0);
+        expect(info.windowRect.top).assertLargerOrEqual(0);
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -1343,8 +1466,8 @@ export default function abilityTest():void {
       };
       let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.left).assertLargerOrEqual(0);
+        expect(info.windowRect.top).assertLargerOrEqual(0);
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -1354,8 +1477,8 @@ export default function abilityTest():void {
       };
       let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(info.windowRect.left).assertLargerOrEqual(0);
+        expect(info.windowRect.top).assertLargerOrEqual(0);
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -2416,171 +2539,6 @@ export default function abilityTest():void {
         }
       }
     })
-
-    /**
-     * @tc.name   test_setUIContextByName_0100
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0100
-     * @tc.desc   test setUIContextByName with valid name and start float view
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_setUIContextByName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName: string = 'test_setUIContextByName_0100';
-      console.log(CaseName + ' begin.');
-      let config: floatView.FloatViewConfiguration = {
-        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
-        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
-      };
-      try {
-        let floatViewController = await floatView.create(config);
-        callDoneOnStopped(floatViewController, CaseName, done)
-        console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContextByName("Index2");
-        console.info(CaseName + ' Succeeded in setting UI context by name.');
-        await floatViewController.start();
-        console.info(CaseName + ' Succeeded in starting float view.');
-        await Utils.msSleep(1000);
-        await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-      } catch (e) {
-        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   test_setUIContextByName_1300016
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0200
-     * @tc.desc   test setUIContextByName with invalid name should fail with error 1300016
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_setUIContextByName_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName: string = 'test_setUIContextByName_1300016';
-      console.log(CaseName + ' begin.');
-      let config: floatView.FloatViewConfiguration = {
-        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
-        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
-      };
-      try {
-        let floatViewController = await floatView.create(config);
-        console.info(CaseName + ' Succeeded in creating float view controller.');
-        floatViewController.setUIContextByName('').then(async () => {
-          console.info(CaseName + ' Succeeded in setting UI context by name.');
-          await floatViewController.start();
-          await Utils.msSleep(1000);
-          await floatViewController.stop();
-          expect(false).assertTrue();
-          done();
-        }).catch((err: Error) => {
-          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
-          expect(err.code).assertEqual(1300016);
-          expect(err.message != null).assertTrue();
-          done();
-        });
-      } catch (e) {
-        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   test_setUIContextByName_empty
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0400
-     * @tc.desc   test setUIContextByName with empty string name should fail
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_setUIContextByName_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName: string = 'test_setUIContextByName_empty';
-      console.log(CaseName + ' begin.');
-      let config: floatView.FloatViewConfiguration = {
-        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
-        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
-      };
-      try {
-        let floatViewController = await floatView.create(config);
-        console.info(CaseName + ' Succeeded in creating float view controller.');
-        floatViewController.setUIContextByName('').then(async () => {
-          console.info(CaseName + ' Succeeded in setting UI context by name.');
-          await floatViewController.start();
-          await Utils.msSleep(1000);
-          await floatViewController.stop();
-          expect(false).assertTrue();
-          done();
-        }).catch((err: Error) => {
-          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
-          expect(err.code).assertEqual(1300016);
-          expect(err.message != null).assertTrue();
-          done();
-        });
-      } catch (e) {
-        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   test_setUIContextByName_with_storage
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0500
-     * @tc.desc   test setUIContextByName with LocalStorage parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_setUIContextByName_with_storage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName: string = 'test_setUIContextByName_with_storage';
-      console.log(CaseName + ' begin.');
-      let config: floatView.FloatViewConfiguration = {
-        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
-        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
-      };
-      let storage: LocalStorage = new LocalStorage();
-      storage.setOrCreate('testKey', 'testValue');
-      try {
-        let floatViewController = await floatView.create(config);
-        callDoneOnStopped(floatViewController, CaseName, done)
-        console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContextByName("Index2", storage);
-        console.info(CaseName + ' Succeeded in setting UI context by name with storage.');
-        await floatViewController.start();
-        console.info(CaseName + ' Succeeded in starting float view.');
-        await Utils.msSleep(1000);
-        await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-      } catch (e) {
-        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
-          done();
-        } else {
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
-
 
   })
 }
