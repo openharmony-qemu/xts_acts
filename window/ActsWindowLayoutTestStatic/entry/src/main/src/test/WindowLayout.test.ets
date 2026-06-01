@@ -4990,7 +4990,7 @@ export default function WindowLayoutTest() {
                         await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
                         if (!isFreeWindowMode) {
                             hilog.info(domain, tag, msgStr + `Capability not supported, skip test. Cause code: ${err!.code}, message: ${err!.message}`);
