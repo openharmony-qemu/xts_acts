@@ -5853,8 +5853,8 @@ export default function WindowPropertiesTest() {
 
         try {
           let displayInfo = display.getDefaultDisplaySync();
-          let largeWidth = Math.floor(displayInfo.width * 0.8) as int;
-          let largeHeight = Math.floor(displayInfo.height * 0.6) as int;
+          let largeWidth = Double.toInt(Math.floor(displayInfo.width * 0.8));
+          let largeHeight = Double.toInt(Math.floor(displayInfo.height * 0.6));
           hilog.info(domain, tag, msgStr + ' largeWidth:' + largeWidth + ', largeHeight:' + largeHeight);
 
           await subWindow.resize(largeWidth, largeHeight);
