@@ -111,7 +111,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(201);
           done();
@@ -148,7 +148,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(16000001);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(16000001);
           done();
@@ -170,7 +170,7 @@ export default function startAbilityForResultTest() {
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
-        let nullWant: Want = null as Want;
+        let nullWant: Want = null as unknown as Want;
 
         try {
           await context.startAbilityForResult(nullWant).then((data: common.AbilityResult) => {
@@ -182,7 +182,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
           done();
@@ -204,7 +204,7 @@ export default function startAbilityForResultTest() {
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
-        let undefinedWant: Want = undefined as Want;
+        let undefinedWant: Want = undefined as unknown as Want;
 
         try {
           await context.startAbilityForResult(undefinedWant).then((data: common.AbilityResult) => {
@@ -216,7 +216,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
           done();
@@ -243,7 +243,7 @@ export default function startAbilityForResultTest() {
           abilityName: 'EntryAbility',
           parameters: { 'callType': 'forResult' }
         };
-        let nullOptions: StartOptions = null as StartOptions;
+        let nullOptions: StartOptions = null as unknown as StartOptions;
 
         try {
           await context.startAbilityForResult(want, nullOptions).then((data: common.AbilityResult) => {
@@ -255,7 +255,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
           done();
@@ -282,7 +282,7 @@ export default function startAbilityForResultTest() {
           abilityName: 'EntryAbility',
           parameters: { 'callType': 'forResult' }
         };
-        let undefinedOptions: StartOptions = undefined as StartOptions;
+        let undefinedOptions: StartOptions = undefined as unknown as StartOptions;
 
         try {
           await context.startAbilityForResult(want, undefinedOptions).then((data: common.AbilityResult) => {
@@ -294,7 +294,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
           done();
@@ -337,7 +337,7 @@ export default function startAbilityForResultTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(201);
           done();

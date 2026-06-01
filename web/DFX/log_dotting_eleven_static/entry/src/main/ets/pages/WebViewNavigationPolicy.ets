@@ -565,7 +565,7 @@ struct Index {
                   console.error('startAbilityForResult001 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260401);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult001 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260401);
               }
@@ -588,7 +588,7 @@ struct Index {
                   console.error('startAbilityForResult002 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260402);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult002 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260402);
               }
@@ -609,7 +609,7 @@ struct Index {
                   console.error('startAbilityForResult003 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260403);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult003 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260403);
               }
@@ -618,7 +618,7 @@ struct Index {
 
             case 'emitStartAbilityForResultStatic004': {
               let abilityContext = getContext(this) as common.UIAbilityContext;
-              let nullWant: Want = null as Want;
+              let nullWant: Want = null as unknown as Want;
               try {
                 abilityContext.startAbilityForResult(nullWant).then((data) => {
                   console.info('startAbilityForResult004 unexpected success');
@@ -627,7 +627,7 @@ struct Index {
                   console.error('startAbilityForResult004 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260404);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult004 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260404);
               }
@@ -636,7 +636,7 @@ struct Index {
 
             case 'emitStartAbilityForResultStatic005': {
               let abilityContext = getContext(this) as common.UIAbilityContext;
-              let undefinedWant: Want = undefined as Want;
+              let undefinedWant: Want = undefined as unknown as Want;
               try {
                 abilityContext.startAbilityForResult(undefinedWant).then((data) => {
                   console.info('startAbilityForResult005 unexpected success');
@@ -645,7 +645,7 @@ struct Index {
                   console.error('startAbilityForResult005 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260405);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult005 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260405);
               }
@@ -659,7 +659,7 @@ struct Index {
                 abilityName: 'EntryAbility',
                 parameters: { 'callType': 'forResult' }
               };
-              let nullOptions: StartOptions = null as StartOptions;
+              let nullOptions: StartOptions = null as unknown as StartOptions;
               try {
                 abilityContext.startAbilityForResult(abilityWant, nullOptions).then((data) => {
                   console.info('startAbilityForResult006 success resultCode: ' + data.resultCode);
@@ -668,7 +668,7 @@ struct Index {
                   console.error('startAbilityForResult006 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260406);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult006 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260406);
               }
@@ -682,7 +682,7 @@ struct Index {
                 abilityName: 'EntryAbility',
                 parameters: { 'callType': 'forResult' }
               };
-              let undefinedOptions: StartOptions = undefined as StartOptions;
+              let undefinedOptions: StartOptions = undefined as unknown as StartOptions;
               try {
                 abilityContext.startAbilityForResult(abilityWant, undefinedOptions).then((data) => {
                   console.info('startAbilityForResult007 success resultCode: ' + data.resultCode);
@@ -691,7 +691,7 @@ struct Index {
                   console.error('startAbilityForResult007 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260407);
                 });
-              } catch (err: BusinessError) {
+              } catch (err) {
                 console.error('startAbilityForResult007 catch code: ' + err.code);
                 Utils.emitEvent(err.code, 20260407);
               }
