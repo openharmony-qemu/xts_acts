@@ -523,27 +523,27 @@ export default function ErrormangerTest() {
     })
 
     /**
-     * @tc.name   testSetDefaultResourceUsageObserver_1500
+     * @tc.name   testSetDefaultResourceUsageObserver_1400Adapt001
      * @tc.number SUB_DFX_DFR_SetDefaultResourceUsageObserver_1500
      * @tc.desc   验证ResourceUsageObserver回调接收FD类型
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * * @tc.level  LEVEL0
      */
-    it('testSetDefaultResourceUsageObserver_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
-      console.info("====> testSetDefaultResourceUsageObserver_1400 start");
-      try {
-        let receivedType = -1;
-        let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
-          receivedType = resourceType;
-          console.info("ResourceType: " + resourceType);
-          console.info("ResourceSize: " + resourceSize);
-        };
-        originalObserver = errorManager.setDefaultResourceUsageObserver(observer);
-        expect(receivedType === -1 || receivedType === errorManager.ResourceType.FD).assertTrue();
-        console.info("====> testSetDefaultResourceUsageObserver_1400 end");
-      } catch (err) {
-        console.error(`====> testSetDefaultResourceUsageObserver_1400 catch > error code: ${err.code}, error msg: ${err.message}`);
+it('testSetDefaultResourceUsageObserver_1400Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
+       console.info("====> testSetDefaultResourceUsageObserver_1400Adapt001 start");
+       try {
+         let receivedType = -1;
+         let observer: errorManager.ResourceUsageObserver = (resourceType: errorManager.ResourceType, resourceSize: long, detailInfo?: Record<string, long>) => {
+           receivedType = resourceType;
+           console.info("ResourceType: " + resourceType);
+           console.info("ResourceSize: " + resourceSize);
+         };
+         originalObserver = errorManager.setDefaultResourceUsageObserver(observer);
+         expect(receivedType === -1 || receivedType === errorManager.ResourceType.FD).assertTrue();
+         console.info("====> testSetDefaultResourceUsageObserver_1400Adapt001 end");
+       } catch (err) {
+         console.error(`====> testSetDefaultResourceUsageObserver_1400Adapt001 catch > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
       }
     })

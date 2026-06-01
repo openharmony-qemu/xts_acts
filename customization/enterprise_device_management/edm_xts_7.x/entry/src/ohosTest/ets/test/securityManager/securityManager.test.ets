@@ -37,6 +37,7 @@ export default function securityManagerTest() {
     testAddAllowedPermissionBundle();
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
+    testGetWatermarkImageApps();
   })
 }
 
@@ -2346,6 +2347,194 @@ function testGetAllowedPermissionBundles() {
       let resultAfterRemove = securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, CURRENT_USER_ID);
       expect(Array.isArray(resultAfterRemove)).assertTrue();
       expect(resultAfterRemove.length === 0).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetWatermarkImageApps() {
+  /**
+   * @tc.name   test_get_watermark_image_apps_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0100
+   * @tc.desc   test securityManager getWatermarkImageApps without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0200
+   * @tc.desc   test securityManager getWatermarkImageApps with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0300
+   * @tc.desc   test securityManager getWatermarkImageApps with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(null, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0400
+   * @tc.desc   test securityManager getWatermarkImageApps with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(undefined, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0500
+   * @tc.desc   test securityManager getWatermarkImageApps with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(INVALID_WANT, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0600
+   * @tc.desc   test securityManager getWatermarkImageApps with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0700
+   * @tc.desc   test securityManager getWatermarkImageApps with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0800
+   * @tc.desc   test securityManager getWatermarkImageApps with invalid accountId -1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_0900
+   * @tc.desc   test securityManager getWatermarkImageApps success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_watermark_image_apps_0900", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(Array.isArray(result)).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

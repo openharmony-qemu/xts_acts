@@ -334,6 +334,7 @@ export default function securityManagerTest() {
     testAddAllowedPermissionBundle();
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
+    testGetWatermarkImageApps();
   })
 }
 
@@ -1115,6 +1116,29 @@ function testGetAllowedPermissionBundles() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       securityManager.getAllowedPermissionBundles(SELFWANT, TEST_PERMISSION_1, CURRENT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetWatermarkImageApps() {
+  /**
+   * @tc.name   test_get_watermark_image_apps_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getWatermarkImageApps with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 201).assertTrue();

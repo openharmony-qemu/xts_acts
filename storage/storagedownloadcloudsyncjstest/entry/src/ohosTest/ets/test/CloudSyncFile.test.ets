@@ -387,6 +387,7 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_001', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache();
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
@@ -407,6 +408,7 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_002', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
@@ -427,6 +429,7 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_003', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
         await fileCache.cleanFileCache()
