@@ -224,5 +224,30 @@ export default function accountManagerTest() {
       done();
       console.info(' --- getDomainAccountPolicy_test_001  -------- END --------');
     })
+
+    /**
+     * @tc.name   test_createNormalOsAccount_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_CREATENORMALOSACCOUNT_NO_PERMISSION_JS_0100
+     * @tc.desc   test createNormalOsAccount with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_createNormalOsAccount_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await accountManager.createNormalOsAccount(SELFWANT, 'test_name');
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }
