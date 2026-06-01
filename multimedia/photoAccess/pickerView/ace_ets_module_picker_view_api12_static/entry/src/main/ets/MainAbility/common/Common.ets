@@ -25,6 +25,7 @@ export enum EventType {
   SELECT_CLICKTYPE,
   RECENT_PHOTO_INFO,
   VIDEO_PLAY_STATE,
+  PICKER_SHEET_PAGE
 }
 
 export interface RouterOptionsParams {

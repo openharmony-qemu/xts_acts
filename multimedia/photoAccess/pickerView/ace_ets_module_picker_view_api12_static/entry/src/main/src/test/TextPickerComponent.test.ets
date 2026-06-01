@@ -1949,11 +1949,29 @@ export default function TextPicker(): void {
         extraVideoDuration: 10000
       }
 
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0032 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
+
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0032 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -1980,11 +1998,29 @@ export default function TextPicker(): void {
         extraFileSize: 1000000
       }
 
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0033 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
+
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0033 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -2010,11 +2046,29 @@ export default function TextPicker(): void {
         fileSize: 100000
       }
 
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0034 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
+
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0034 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -2039,12 +2093,29 @@ export default function TextPicker(): void {
         filterOperator: photoAccessHelper.FilterOperator.EQUAL_TO,
         fileSize: 10000
       }
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0035 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
 
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0035 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -2069,12 +2140,29 @@ export default function TextPicker(): void {
         filterOperator: photoAccessHelper.FilterOperator.NOT_EQUAL_TO,
         fileSize: 10000
       }
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0036 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
 
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0036 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -2100,11 +2188,29 @@ export default function TextPicker(): void {
         fileSize: 1000
       }
 
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0037 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
+
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0037 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 
@@ -2130,11 +2236,29 @@ export default function TextPicker(): void {
         fileSize: 100000
       }
 
+      const code: long = EventType.PICKER_SHEET_PAGE;
+      const callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is missing');
+          return;
+        }
+        const eventData = event.data as Record<string, RecordData>;
+        const result: photoAccessHelper.PhotoSelectResult = eventData['msg'] as photoAccessHelper.PhotoSelectResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0038 result is' + JSON.stringify(result));
+        expect(result).not().assertNull();
+      }
+      const event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback)
+
       await routerToSheetPage(photoSelectOptions);
       await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0038 finish');
       await Utils.msSleep(2000);
       routerInstance.back();
+      events_emitter.off(code);
       done();
     });
 

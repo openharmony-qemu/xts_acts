@@ -18,8 +18,10 @@ import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, Button, Margin, ClickEvent } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Context from 'application.Context';
-import { RouterSelectOptionsParams } from '../common/Common';
+import { RouterSelectOptionsParams, EventType } from '../common/Common';
 import { Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
+import events_emitter from '@ohos.events.emitter';
 
 const topMargin: number = 20;
 
@@ -52,6 +54,20 @@ struct BindSheetPicker {
     this.photoSelectOptions = parameter?.photoSelectOptions;
   }
 
+  sendEvent(message: Object, eventId: long): void {
+    const eventData = events_emitter.EventData = {
+      data: {
+        'msg': message
+      } as Record<String, RecordData>
+    }
+
+    const event: events_emitter.InnerEvent = {
+      eventId: eventId,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.emit(event, eventData);
+  }
+
   build() {
     Column() {
       Button('TEXT_DONE')
@@ -78,6 +94,7 @@ struct BindSheetPicker {
             .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
               console.info('PhotoViewPicker.select success, PhotoPickerResult uri: ' +
               JSON.stringify(photoSelectResult));
+              this.sendEvent(photoSelectResult, EventType.PICKER_SHEET_PAGE);
             }).catch((err: Error) => {
             console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
           });
