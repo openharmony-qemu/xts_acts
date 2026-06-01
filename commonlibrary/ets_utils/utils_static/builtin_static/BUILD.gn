@@ -47,6 +47,7 @@ group("builtin_static") {
       "sparsearray_standard_test_static:ActsSparseArrayStaticTest",
       "string_standard_test_static:ActsStringStaticTest",
       "std_core_static:std_core_static",
+	  "boolean_standard_test_static:ActsBooleanStaticTest",
     ]
   }
 }
