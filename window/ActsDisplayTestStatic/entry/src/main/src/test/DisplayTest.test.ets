@@ -231,8 +231,6 @@ export default function DisplayTest():void {
                 console.error(domain, tag, `Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
             }
         })
-
-        })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
          * @tc.name        tesGetAllDisplays_Promise_static_0100
