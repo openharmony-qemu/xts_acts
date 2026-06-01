@@ -30,7 +30,7 @@ struct RouterApiNullUndefined {
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/router/RouterTargetPage',
+                url: 'pages/Router2/RouterTargetPage',
                 params: { recoverable: true }
               });
               console.info('push with recoverable true success');
@@ -45,7 +45,7 @@ struct RouterApiNullUndefined {
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/router/RouterTargetPage',
+                url: 'pages/Router2/RouterTargetPage',
                 params: { recoverable: false }
               });
               console.info('push with recoverable false success');
@@ -63,7 +63,7 @@ struct RouterApiNullUndefined {
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/router/RouterTargetPage',
+                url: 'pages/Router2/RouterTargetPage',
                 params: null
               });
               console.info('push with params null success');
@@ -78,7 +78,7 @@ struct RouterApiNullUndefined {
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/router/RouterTargetPage',
+                url: 'pages/Router2/RouterTargetPage',
                 params: undefined
               });
               console.info('push with params undefined success');
@@ -141,7 +141,7 @@ struct RouterApiNullUndefined {
           .width('30%')
           .onClick(() => {
             router.back({
-              url: 'pages/router/RouterTargetPage',
+              url: 'pages/Router2/RouterTargetPage',
               params: { recoverable: true }
             });
           })
@@ -151,7 +151,7 @@ struct RouterApiNullUndefined {
           .width('30%')
           .onClick(() => {
             router.back({
-              url: 'pages/router/RouterTargetPage',
+              url: 'pages/Router2/RouterTargetPage',
               params: { recoverable: false }
             });
           })
