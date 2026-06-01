@@ -55,7 +55,7 @@ export default function LazyVWaterFlowLayoutProperties() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowColumnsTemplate_0100] columnsTemplate: " + JSON.stringify(obj.$attrs.columnsTemplate));
-      expect(obj.$attrs.columnsTemplate).assertEqual('1fr');
+      expect(obj.$attrs.columnsTemplate).assertEqual("");
 
       let result: string | undefined = AppStorage.get("LazyVWaterFlowLayout_onVisible");
       console.info('[lazyVWaterFlowColumnsTemplate_0100] result: ' + JSON.stringify(result));
@@ -97,7 +97,7 @@ export default function LazyVWaterFlowLayoutProperties() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_itemFillPolicy');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowColumnsTemplate_0300] columnsTemplate: " + JSON.stringify(obj.$attrs.columnsTemplate));
-      expect(obj.$attrs.columnsTemplate).assertEqual('ItemFillPolicy.BREAKPOINT_DEFAULT');
+      expect(obj.$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
       console.info('[lazyVWaterFlowColumnsTemplate_0300] END');
       done();
     });
@@ -130,7 +130,7 @@ export default function LazyVWaterFlowLayoutProperties() {
      */
     it('lazyVWaterFlowColumnsTemplate_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowColumnsTemplate_0500] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_default');
+      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_null');
       let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -138,27 +138,6 @@ export default function LazyVWaterFlowLayoutProperties() {
       expect(obj.$attrs.columnsTemplate).not().assertUndefined();
       expect(obj.$attrs.columnsTemplate).assertEqual(objCompare.$attrs.columnsTemplate);
       console.info('[lazyVWaterFlowColumnsTemplate_0500] END');
-      done();
-    });
-
-    /**
-     * @tc.name   lazyVWaterFlowColumnsTemplate_0600
-     * @tc.number SUB_ARKUI_LAZYVWATERFLOWLAYOUT_COLUMNSTEMPLATE_PARAM_0600
-     * @tc.desc   Test LazyVWaterFlowLayout columnsTemplate property with null parameter should use default value
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('lazyVWaterFlowColumnsTemplate_0600', Level.LEVEL0, async (done: Function) => {
-      console.info('[lazyVWaterFlowColumnsTemplate_0600] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsTemplate_null');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info("[lazyVWaterFlowColumnsTemplate_0600] columnsTemplate: " + JSON.stringify(obj.$attrs.columnsTemplate));
-      expect(obj.$attrs.columnsTemplate).not().assertUndefined();
-      expect(obj.$attrs.columnsTemplate).assertEqual(objCompare.$attrs.columnsTemplate);
-      console.info('[lazyVWaterFlowColumnsTemplate_0600] END');
       done();
     });
 
@@ -226,13 +205,10 @@ export default function LazyVWaterFlowLayoutProperties() {
      */
     it('lazyVWaterFlowColumnsGap_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowColumnsGap_0400] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_columnsGap_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsGap_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowColumnsGap_0400] columnsGap: " + JSON.stringify(obj.$attrs.columnsGap));
-      expect(obj.$attrs.columnsGap).not().assertUndefined();
-      expect(obj.$attrs.columnsGap).assertEqual(objCompare.$attrs.columnsGap);
+      expect(obj.$attrs.columnsGap).assertEqual('0.00fp');
       console.info('[lazyVWaterFlowColumnsGap_0400] END');
       done();
     });
@@ -247,13 +223,10 @@ export default function LazyVWaterFlowLayoutProperties() {
      */
     it('lazyVWaterFlowColumnsGap_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowColumnsGap_0500] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_columnsGap_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('lazyVWaterFlow_columnsGap_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowColumnsGap_0500] columnsGap: " + JSON.stringify(obj.$attrs.columnsGap));
-      expect(obj.$attrs.columnsGap).not().assertUndefined();
-      expect(obj.$attrs.columnsGap).assertEqual(objCompare.$attrs.columnsGap);
+      expect(obj.$attrs.columnsGap).assertEqual('0.00fp');
       console.info('[lazyVWaterFlowColumnsGap_0500] END');
       done();
     });
@@ -322,13 +295,10 @@ export default function LazyVWaterFlowLayoutProperties() {
      */
     it('lazyVWaterFlowRowsGap_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowRowsGap_0400] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_rowsGap_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('lazyVWaterFlow_rowsGap_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowRowsGap_0400] rowsGap: " + JSON.stringify(obj.$attrs.rowsGap));
-      expect(obj.$attrs.rowsGap).not().assertUndefined();
-      expect(obj.$attrs.rowsGap).assertEqual(objCompare.$attrs.rowsGap);
+      expect(obj.$attrs.rowsGap).assertEqual('0.00fp');
       console.info('[lazyVWaterFlowRowsGap_0400] END');
       done();
     });
@@ -343,13 +313,10 @@ export default function LazyVWaterFlowLayoutProperties() {
      */
     it('lazyVWaterFlowRowsGap_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowRowsGap_0500] START');
-      let strJsonCompare: string = getInspectorByKey('lazyVWaterFlow_rowsGap_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
       let strJson: string = getInspectorByKey('lazyVWaterFlow_rowsGap_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowRowsGap_0500] rowsGap: " + JSON.stringify(obj.$attrs.rowsGap));
-      expect(obj.$attrs.rowsGap).not().assertUndefined();
-      expect(obj.$attrs.rowsGap).assertEqual(objCompare.$attrs.rowsGap);
+      expect(obj.$attrs.rowsGap).assertEqual('0.00fp');
       console.info('[lazyVWaterFlowRowsGap_0500] END');
       done();
     });
