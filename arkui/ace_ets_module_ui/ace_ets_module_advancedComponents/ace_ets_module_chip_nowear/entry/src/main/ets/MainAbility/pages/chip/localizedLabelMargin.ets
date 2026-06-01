@@ -14,12 +14,12 @@ struct ChipPage {
       Button(this.mBtn)
         .id('LocalizedLabelMargin_start')
         .onClick(() => {
-          this.mBtn = 'start:' + JSON.stringify(this.mLocalizedLabelMargin.start)
+          this.mBtn = `start:{"unit":${this.mLocalizedLabelMargin.start!.unit},"value":${this.mLocalizedLabelMargin.start!.value}}`;
         })
       Button(this.mBtn2)
         .id('LocalizedLabelMargin_end')
         .onClick(() => {
-          this.mBtn2 = 'end:' + JSON.stringify(this.mLocalizedLabelMargin.end)
+          this.mBtn2 = `end:{"unit":${this.mLocalizedLabelMargin.end!.unit},"value":${this.mLocalizedLabelMargin.end!.value}}`;
         })
         .margin(20)
       Chip({
