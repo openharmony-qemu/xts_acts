@@ -733,6 +733,7 @@ export default function bluetoothBleCallbackTest() {
             }
             done();
         })
+        
         /**
          * @tc.number  readCharacteristicValueTest_callback_Parameter_003
          * @tc.name    readCharacteristicValueTest_callback_descriptorUuidEmpty
