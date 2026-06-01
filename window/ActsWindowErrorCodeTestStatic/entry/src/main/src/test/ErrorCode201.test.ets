@@ -728,7 +728,7 @@ it('testremoveImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST |
     console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
     try {
     let promise = windowStage!.removeImageForRecent();
-    promise.then(() => {
+    promise.then((data: image.PixelMap) => {
         hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
         expect(false).assertTrue();
         done()
