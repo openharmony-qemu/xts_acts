@@ -13,7 +13,26 @@
  * limitations under the License.
  */
 
-import { BreakpointOptions, ContainerReader, ContainerReaderAttribute } from '@kit.ArkUI';
+import { BreakpointOptions, ContainerReader, ContainerReaderAttribute, Size } from '@kit.ArkUI';
+
+export class MyContainerReaderModifier implements AttributeModifier<ContainerReaderAttribute> {
+  public isDark: boolean = false
+  constructor(dark?: boolean) {
+    this.isDark = dark ?? false
+  }
+
+  applyNormalAttribute(instance: ContainerReaderAttribute): void {
+    if (this.isDark) {
+      instance.backgroundColor('#707070')
+      instance.breakpointConfig({width:[100,200,300,400]})
+    } else {
+      instance.backgroundColor('#17A98D')
+        .borderColor('#707070')
+        .borderWidth(2)
+      instance.breakpointConfig({width:undefined,height:[1,3.2]})
+    }
+  }
+}
 
 @Entry
 @Component
@@ -21,9 +40,11 @@ struct ContainerReaderComponent {
   @State containerSize: Size|null|undefined = { width: 10, height: 10 };
   @State widthBp: WidthBreakpoint|undefined|null = WidthBreakpoint.WIDTH_XS;
   @State heightBp: HeightBreakpoint|undefined|null = HeightBreakpoint.HEIGHT_SM;
-  @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] }
-  @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined }
-  @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined
+  @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] };
+  @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined };
+  @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined;
+  @State modifier: MyContainerReaderModifier = new MyContainerReaderModifier(true)
+
   build() {
     Column({space:3}) {
       Row(){
@@ -41,6 +62,7 @@ struct ContainerReaderComponent {
           .onClick(()=>{
             this.widthBp = WidthBreakpoint.WIDTH_MD
             this.heightBp = HeightBreakpoint.HEIGHT_LG
+            this.modifier.isDark = !this.modifier.isDark
           })
           .width(68)
           .height(15)
@@ -111,6 +133,7 @@ struct ContainerReaderComponent {
       .height(130)
       .breakpointConfig(this.breakpointOptions)
       .backgroundColor('#F0FAFF')
+      .attributeModifier(this.modifier)
     }
     .height('100%')
     .width('100%')
