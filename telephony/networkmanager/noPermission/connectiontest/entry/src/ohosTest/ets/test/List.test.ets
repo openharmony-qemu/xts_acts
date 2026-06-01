@@ -14,7 +14,9 @@
  */
 
 import connectionWithoutPermissionTest from './ConnectionWithoutPermission.test';
+import StatisticsNoPermissionTest from './StatisticsWithoutPermission.test';
 
 export default function testsuite() {
   connectionWithoutPermissionTest();
+  statisticsNoPermissionTest();
 }
