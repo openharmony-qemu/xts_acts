@@ -3014,20 +3014,20 @@ export default function geolocationTest_geo7() {
      */
     it('SUB_Location_GetCurrentLocation_errorcode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         let currentLocationRequest = {
-            'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-            'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+            'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
+            'scenario': geolocationm.LocationRequestScenario.UNSET,
             'maxAccuracy': -1
         };       
         try {
             await geolocationm.getCurrentLocation(currentLocationRequest).then((result) => {
-                console.info('[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
+                console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
                 expect().assertFail();
             }).catch(error => {
-                console.info('[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
                 expect(error.code).assertEqual(401);
             })
         } catch (error) {
-            console.info("[lbs_js] null SUB_Location_GetCurrentLocation_errorcode_0300 promise try err." + JSON.stringify(error));
+            console.info("[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise try err." + JSON.stringify(error));
             expect(Number(error.code)).assertEqual(401);
         }
         await sleep(1000);
