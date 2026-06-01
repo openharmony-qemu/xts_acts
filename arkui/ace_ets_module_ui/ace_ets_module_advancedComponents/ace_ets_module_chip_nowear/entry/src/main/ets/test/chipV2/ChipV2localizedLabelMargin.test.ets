@@ -27,7 +27,7 @@ export default function ChipV2localizedLabelMargin() {
         router.clear();
         let pages = router.getState();
         console.info("get ChipV2localizedLabelMargin state pages: " + JSON.stringify(pages));
-        if (!("localizedLabelMargin" == pages.name)) {
+        if (!("ChipV2localizedLabelMargin" == pages.name)) {
           console.info("get ChipV2localizedLabelMargin state pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);

@@ -18,12 +18,12 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-export default function accessibilitySelectedTypeTestV2V2() {
+export default function accessibilitySelectedTypeTestV2() {
   describe('accessibilitySelectedTypeTestV2', () => {
     beforeEach(async (done: Function) => {
       console.info('accessibilitySelectedTypeTestV2 beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/chipV2/accessibilitySelectedTypeTestV2V2',
+        url: 'MainAbility/pages/chipV2/accessibilitySelectedTypeTestV2',
       }
       try {
         router.clear();
