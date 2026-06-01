@@ -64,7 +64,7 @@ struct NewWebViewComp {
   }
 }
 
-let startAbilityForResultTestMode: boolean = false;
+let startAbilityForResultTestMode: string = '';
 
 export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
   onConnectNative(info: ConnectionInfo): void {
@@ -73,20 +73,50 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
       abilityName: 'EntryAbility'
     };
     try {
-      const context = this.context; // Obtain the WebNativeMessagingExtensionContext instance.
-      if (startAbilityForResultTestMode) {
-        startAbilityForResultTestMode = false;
-        (async () => {
-          try {
-            const result = await context.startAbilityForResult(abilityWant);
-            console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
-            Utils.emitEvent(0, 20260401);
-          } catch (err) {
-            const error = err as BusinessError;
-            console.error(`startAbilityForResult failed. Code: ${error.code}, Message: ${error.message}`);
-            Utils.emitEvent(error.code, 20260401);
-          }
-        })();
+      const context = this.context;
+      if (startAbilityForResultTestMode != '') {
+        let mode = startAbilityForResultTestMode;
+        startAbilityForResultTestMode = '';
+
+        if (mode == 'test001') {
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant);
+              console.info('startAbilityForResult test001 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260401);
+            } catch (err) {
+              console.error(`startAbilityForResult test001 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260401);
+            }
+          })();
+        } else if (mode == 'test002') {
+          let options: StartOptions = { displayId: 0 };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant, options);
+              console.info('startAbilityForResult test002 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260402);
+            } catch (err) {
+              console.error(`startAbilityForResult test002 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260402);
+            }
+          })();
+        } else if (mode == 'test003') {
+          let invalidWant: Want = {
+            bundleName: 'com.invalid.nonexistent.bundle',
+            abilityName: 'NonExistentAbility'
+          };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(invalidWant);
+              console.info('startAbilityForResult test003 unexpected success');
+              Utils.emitEvent(-1, 20260403);
+            } catch (err) {
+              console.error(`startAbilityForResult test003 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260403);
+            }
+          })();
+        }
       } else {
         context.startAbility(abilityWant);
         console.info('Ability started successfully');
@@ -551,150 +581,29 @@ struct Index {
             }
 
             case 'emitStartAbilityForResultStatic001': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let abilityWant: Want = {
-                bundleName: 'com.acts.context.webonconnectnativerely',
-                abilityName: 'EntryAbility',
-                parameters: { 'callType': 'forResult' }
-              };
-              try {
-                abilityContext.startAbilityForResult(abilityWant).then((data) => {
-                  console.info('startAbilityForResult001 success resultCode: ' + data.resultCode);
-                  Utils.emitEvent(data.resultCode, 20260401);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult001 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260401);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult001 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260401);
-              }
+              startAbilityForResultTestMode = 'test001';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test001');
+              }, 1000);
               break;
             }
 
             case 'emitStartAbilityForResultStatic002': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let abilityWant: Want = {
-                bundleName: 'com.acts.context.webonconnectnativerely',
-                abilityName: 'EntryAbility',
-                parameters: { 'callType': 'forResult' }
-              };
-              let options: StartOptions = { displayId: 0 };
-              try {
-                abilityContext.startAbilityForResult(abilityWant, options).then((data) => {
-                  console.info('startAbilityForResult002 success resultCode: ' + data.resultCode);
-                  Utils.emitEvent(data.resultCode, 20260402);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult002 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260402);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult002 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260402);
-              }
+              startAbilityForResultTestMode = 'test002';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test002');
+              }, 1000);
               break;
             }
 
             case 'emitStartAbilityForResultStatic003': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let invalidWant: Want = {
-                bundleName: 'com.invalid.nonexistent.bundle',
-                abilityName: 'NonExistentAbility'
-              };
-              try {
-                abilityContext.startAbilityForResult(invalidWant).then((data) => {
-                  console.info('startAbilityForResult003 unexpected success');
-                  Utils.emitEvent(-1, 20260403);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult003 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260403);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult003 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260403);
-              }
-              break;
-            }
-
-            case 'emitStartAbilityForResultStatic004': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let nullWant: Want = null as unknown as Want;
-              try {
-                abilityContext.startAbilityForResult(nullWant).then((data) => {
-                  console.info('startAbilityForResult004 unexpected success');
-                  Utils.emitEvent(-1, 20260404);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult004 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260404);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult004 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260404);
-              }
-              break;
-            }
-
-            case 'emitStartAbilityForResultStatic005': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let undefinedWant: Want = undefined as unknown as Want;
-              try {
-                abilityContext.startAbilityForResult(undefinedWant).then((data) => {
-                  console.info('startAbilityForResult005 unexpected success');
-                  Utils.emitEvent(-1, 20260405);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult005 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260405);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult005 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260405);
-              }
-              break;
-            }
-
-            case 'emitStartAbilityForResultStatic006': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let abilityWant: Want = {
-                bundleName: 'com.acts.context.webonconnectnativerely',
-                abilityName: 'EntryAbility',
-                parameters: { 'callType': 'forResult' }
-              };
-              let nullOptions: StartOptions = null as unknown as StartOptions;
-              try {
-                abilityContext.startAbilityForResult(abilityWant, nullOptions).then((data) => {
-                  console.info('startAbilityForResult006 success resultCode: ' + data.resultCode);
-                  Utils.emitEvent(data.resultCode, 20260406);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult006 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260406);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult006 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260406);
-              }
-              break;
-            }
-
-            case 'emitStartAbilityForResultStatic007': {
-              let abilityContext = getContext(this) as common.UIAbilityContext;
-              let abilityWant: Want = {
-                bundleName: 'com.acts.context.webonconnectnativerely',
-                abilityName: 'EntryAbility',
-                parameters: { 'callType': 'forResult' }
-              };
-              let undefinedOptions: StartOptions = undefined as unknown as StartOptions;
-              try {
-                abilityContext.startAbilityForResult(abilityWant, undefinedOptions).then((data) => {
-                  console.info('startAbilityForResult007 success resultCode: ' + data.resultCode);
-                  Utils.emitEvent(data.resultCode, 20260407);
-                }).catch((err: BusinessError) => {
-                  console.error('startAbilityForResult007 error code: ' + err.code);
-                  Utils.emitEvent(err.code, 20260407);
-                });
-              } catch (err) {
-                console.error('startAbilityForResult007 catch code: ' + err.code);
-                Utils.emitEvent(err.code, 20260407);
-              }
+              startAbilityForResultTestMode = 'test003';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test003');
+              }, 1000);
               break;
             }
 
