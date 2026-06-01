@@ -1283,7 +1283,7 @@ export default function AVScreenCaptureRecorderTest() {
         // init
         mediaTestBase.INIT_EVENT,
         //addWatermark
-        mediaTestBase.ADDWATERMARK_EVENT
+        mediaTestBase.ADDWATERMARK_EVENT,
         mediaTestBase.SETONCALLBACK_EVENT,
         //setMicEnable
         mediaTestBase.SET_MIC_ENABLE_EVENT,
