@@ -170,10 +170,8 @@ export default function startAbilityForResultTest() {
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
-        let nullWant: Want = null as unknown as Want;
-
         try {
-          await context.startAbilityForResult(nullWant).then((data: common.AbilityResult) => {
+          await context.startAbilityForResult(null).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
@@ -204,10 +202,8 @@ export default function startAbilityForResultTest() {
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
-        let undefinedWant: Want = undefined as unknown as Want;
-
         try {
-          await context.startAbilityForResult(undefinedWant).then((data: common.AbilityResult) => {
+          await context.startAbilityForResult(undefined).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
@@ -243,10 +239,9 @@ export default function startAbilityForResultTest() {
           abilityName: 'EntryAbility',
           parameters: { 'callType': 'forResult' }
         };
-        let nullOptions: StartOptions = null as unknown as StartOptions;
 
         try {
-          await context.startAbilityForResult(want, nullOptions).then((data: common.AbilityResult) => {
+          await context.startAbilityForResult(want, null).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
             expect(data.resultCode).assertEqual(0);
             done();
@@ -282,10 +277,9 @@ export default function startAbilityForResultTest() {
           abilityName: 'EntryAbility',
           parameters: { 'callType': 'forResult' }
         };
-        let undefinedOptions: StartOptions = undefined as unknown as StartOptions;
 
         try {
-          await context.startAbilityForResult(want, undefinedOptions).then((data: common.AbilityResult) => {
+          await context.startAbilityForResult(want, undefined).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
             expect(data.resultCode).assertEqual(0);
             done();
