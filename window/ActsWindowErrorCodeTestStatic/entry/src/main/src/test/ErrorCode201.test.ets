@@ -31,6 +31,8 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
 import display from '@ohos.display';
+import { canIUse } from '@internal.full.global';
+import { ImageFit } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -709,6 +711,98 @@ export default function ErrorCode201(): void {
         }
         }
     });
+
+/**
+* @tc.number      SUB_BASIC_WMS_removeImageForRecent_static_0100
+* @tc.name        testremoveImageForRecent_static_0100
+* @tc.desc        testremoveImageForRecent_static_201
+* @tc.size        MediumTest
+* @tc.type        Function
+* @tc.level       Level 1
+*/
+it('testremoveImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testremoveImageForRecent_static_0100';
+    let msgStr: string = 'jsunittest ' + caseName + ' ';
+    hilog.info(domain, tag, msgStr + 'begin');
+    let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+    console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+    try {
+    let promise = windowStage!.removeImageForRecent();
+    promise.then(() => {
+        hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
+        expect(false).assertTrue();
+        done()
+    }).catch((err: Error): PromiseLike<void> | undefined => {
+        hilog.error(domain, tag, msgStr + `Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+        if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            done();
+        } else {
+            expect(err.code).assertEqual(201);
+            done();
+        }
+    });
+    } catch (exception) {
+        hilog.error(domain, tag, msgStr + 'Failed to remove image for recent.');
+        expect(false).assertTrue();
+        done()
+    }
+})
+
+
+/**
+ * @tc.number      SUB_BASIC_WMS_setImageForRecent_static_0100
+ * @tc.name        testsetImageForRecent_static_0100
+ * @tc.desc        testsetImageForRecent_static_201
+ * @tc.size        MediumTest
+ * @tc.type        Function
+ * @tc.level       Level 1
+ */
+it('testsetImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testsetImageForRecent_static_0100';
+    let msgStr: string = 'jsunittest ' + caseName + ' ';
+    hilog.info(domain, tag, msgStr + 'begin');
+    let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+    console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+        let color = new ArrayBuffer(512 * 512 * 4);
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i + 1] = 0;
+            bufferArr[i + 2] = 122;
+            bufferArr[i + 3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data: image.PixelMap) => {
+            pixelMap = data;
+            hilog.info(domain, tag, msgStr + 'Succeeded in creating pixelMap');
+            try {
+                let promise = windowStage!.setImageForRecent(pixelMap, ImageFit.Fill);
+                promise.then(() => {
+                    hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    if (!canIUseRes) {
+                    expect(err.code).assertEqual(801);
+                    done();
+                    } else {
+                    expect(err.code).assertEqual(201);
+                    done();
+                    }
+                });
+            } catch (exception) {
+                hilog.error(domain, tag, msgStr + 'Failed to set image for recent.');
+                expect(false).assertTrue();
+                done()
+            }
+        })
+})    
+
+
 
     })
 
