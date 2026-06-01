@@ -741,7 +741,6 @@ it('testremoveImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST |
             expect(err.code).assertEqual(201);
             done();
         }
-        done();
     });
     } catch (exception) {
         hilog.error(domain, tag, msgStr + 'Failed to remove image for recent.');
@@ -794,7 +793,6 @@ it('testsetImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Le
                     expect(err.code).assertEqual(201);
                     done();
                     }
-                    done();
                 });
             } catch (exception) {
                 hilog.error(domain, tag, msgStr + 'Failed to set image for recent.');
