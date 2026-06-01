@@ -110,7 +110,7 @@ export default function printExtensionTest() {
 
     /**
      * @tc.name   printExtension_function_0700
-     * @tc.number printExtension_function_0700
+     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0100
      * @tc.desc   check the printExtension context property existence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,8 +124,8 @@ export default function printExtensionTest() {
 
     /**
      * @tc.name   printExtension_function_0800
-     * @tc.number printExtension_function_0800
-     * @tc.desc   check the printExtension context currentHapModuleInfo property accessibility
+     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0200
+     * @tc.desc   check the printExtension context currentHapModuleInfo property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -138,8 +138,8 @@ export default function printExtensionTest() {
 
     /**
      * @tc.name   printExtension_function_0900
-     * @tc.number printExtension_function_0900
-     * @tc.desc   check the printExtension context config property accessibility
+     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0300
+     * @tc.desc   check the printExtension context config property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -152,8 +152,8 @@ export default function printExtensionTest() {
 
     /**
      * @tc.name   printExtension_function_1000
-     * @tc.number printExtension_function_1000
-     * @tc.desc   check the printExtension context extensionAbilityInfo property accessibility
+     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0400
+     * @tc.desc   check the printExtension context extensionAbilityInfo property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -163,5 +163,4 @@ export default function printExtensionTest() {
       expect(printExtension.context.extensionAbilityInfo).assertTrue();
       expect(typeof printExtension.context.extensionAbilityInfo).assertEqual('object');
     })
-  })
 }
