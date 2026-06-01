@@ -711,6 +711,40 @@ export default function ErrorCode201() {
         }
     });
 
+    /**
+     * @tc.name SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.number SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.desc SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        let mainWindow: window.Window = windowStage!.getMainWindowSync();
+        let activeColor: string = '#FF0000';
+        let inactiveColor: string = '#00FF00';
+        try {
+          mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+          hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 201) {
+            expect(exception.code).assertEqual(201);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          }
+        }
+      });
+
     })
 
 }

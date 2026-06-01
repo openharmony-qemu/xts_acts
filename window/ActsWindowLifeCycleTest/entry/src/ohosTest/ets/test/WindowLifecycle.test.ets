@@ -1216,13 +1216,15 @@ export default function WindowLifecycle() {
       console.log(msgStr + 'begin');
       let subWindow: window.Window;
       let promise = windowStage.createSubWindow('m1testWindow_on_WindowEvent_subWindow_shownySubWindow');
-      promise.then((data) => {
+      promise.then(async (data) => {
         subWindow = data;
         console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
         try {
+          await subWindow.setWindowFocusable(false);
+ 	        await sleep(300);
           subWindow.on('windowEvent', async (data) => {
             console.info(msgStr + 'Window event happened. Event:' + JSON.stringify(data));
-            expect(data).assertEqual(1);
+            expect(data).assertEqual(window.WindowEventType.WINDOW_SHOWN);
             subWindow.off('windowEvent');
             subWindow.destroyWindow();
             done();
