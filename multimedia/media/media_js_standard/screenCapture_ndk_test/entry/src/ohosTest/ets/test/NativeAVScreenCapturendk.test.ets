@@ -79,6 +79,20 @@ export default function nativeAVScreenCaptureNdkTest() {
       console.info('afterAll case');
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_AVBUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_AVBUFFER_0100
+     * @tc.desc   normalAVbufferTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_AVBUFFER_0100', Level.LEVEL0,async (done: Function) => {
+      console.info(Tag + "normalAVbufferTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVbufferTest();
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_CONFIGURE_0100
