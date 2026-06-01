@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+'use static';
+
 import { Entry, Component, Column, Row, Button, ClickEvent, Web,  OnPageVisibleEvent, OnPermissionRequestEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Utils from '../../src/test/Util.test';

@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+'use static';
+
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';

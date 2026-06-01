@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+'use static';
+
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 

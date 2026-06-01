@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+'use static';
+
 import ClearPrefetchedResourceTest from './ClearPrefetchedResourceTest.test'
 import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test'
 import SetBlanklessLoadingWithParams from "./SetBlanklessLoadingWithParams.test";

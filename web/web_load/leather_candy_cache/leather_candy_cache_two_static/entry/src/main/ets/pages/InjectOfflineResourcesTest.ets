@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+'use static';
+
 import {
   Entry,
   Component,
