@@ -16,8 +16,12 @@
 import RichEditorTest from './RichEditorTest/RichEditor.test';
 import RichEditorHorizontalScrollingTest from './RichEditorTest/RichEditorHorizontalScrolling.test';
 import RichTextSpanSymbolBatchTest from './RichTextSpanSymbolBatchTest/RichTextSpanSymbolBatch.test';
+import RichEditorShaderStyleTest from './RichEditor26Test/RichEditorShaderStyle.test';
+import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJoinStyle.test';
 
 export default function testsuite() {
   RichEditorTest();
   RichTextSpanSymbolBatchTest();
+  RichEditorShaderStyleTest();
+  RichEditorStrokeJoinStyleTest();
 }
