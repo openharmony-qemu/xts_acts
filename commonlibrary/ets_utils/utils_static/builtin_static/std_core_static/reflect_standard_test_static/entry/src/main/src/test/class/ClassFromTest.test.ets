@@ -335,7 +335,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0010
      * @tc.name testClassFrom001
-     * @tc.desc Verify ClassFrom case 001: generic T is boolean type
+     * @tc.desc Verify ClassFrom case 001: Class.from<boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0020
      * @tc.name testClassFrom002
-     * @tc.desc Verify ClassFrom case 002: generic T is bytetype
+     * @tc.desc Verify ClassFrom case 002: Class.from<byte>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -363,7 +363,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0030
      * @tc.name testClassFrom003
-     * @tc.desc Verify ClassFrom case 003: generic T is chartype
+     * @tc.desc Verify ClassFrom case 003: Class.from<char>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -377,7 +377,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0040
      * @tc.name testClassFrom004
-     * @tc.desc Verify ClassFrom case 004: generic T is shorttype
+     * @tc.desc Verify ClassFrom case 004: Class.from<short>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +391,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0050
      * @tc.name testClassFrom005
-     * @tc.desc Verify ClassFrom case 005: generic T is int type
+     * @tc.desc Verify ClassFrom case 005: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0060
      * @tc.name testClassFrom006
-     * @tc.desc Verify ClassFrom case 006: generic T is longtype
+     * @tc.desc Verify ClassFrom case 006: Class.from<long>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -419,7 +419,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0070
      * @tc.name testClassFrom007
-     * @tc.desc Verify ClassFrom case 007: generic T is floattype
+     * @tc.desc Verify ClassFrom case 007: Class.from<float>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -433,7 +433,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0080
      * @tc.name testClassFrom008
-     * @tc.desc Verify ClassFrom case 008: generic T is doubletype
+     * @tc.desc Verify ClassFrom case 008: Class.from<double>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,7 +447,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0090
      * @tc.name testClassFrom009
-     * @tc.desc Verify ClassFrom case 009: generic T is number type
+     * @tc.desc Verify ClassFrom case 009: Class.from<number>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,7 +461,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0100
      * @tc.name testClassFrom010
-     * @tc.desc Verify ClassFrom case 010: generic T is void type
+     * @tc.desc Verify ClassFrom case 010: Class.from<void>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -475,7 +475,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0110
      * @tc.name testClassFrom011
-     * @tc.desc Verify ClassFrom case 011: generic T is string type
+     * @tc.desc Verify ClassFrom case 011: Class.from<string>(), getName returns "std.core.String"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -484,32 +484,36 @@ export default function ClassFromTest(): void {
       let cls = Class.from<string>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.String");
+
+      let clsString = Class.from<String>();
+      expect(clsString !== null).assertTrue();
+      expect(clsString.getName()).assertEqual("std.core.String");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0120
      * @tc.name testClassFrom012
-     * @tc.desc Verify ClassFrom case 012: generic T is Stringtype
+     * @tc.desc Verify ClassFrom case 012: Class.from<Array<int>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<String>();
+      let cls = Class.from<Array<int>>();
       expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.String");
+      expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0130
      * @tc.name testClassFrom013
-     * @tc.desc Verify ClassFrom case 013: generic T is Array<int>type
+     * @tc.desc Verify ClassFrom case 013: Class.from<Array<string>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Array<int>>();
+      let cls = Class.from<Array<string>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Array");
     });
@@ -517,13 +521,13 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0140
      * @tc.name testClassFrom014
-     * @tc.desc Verify ClassFrom case 014: generic T is Array<string>type
+     * @tc.desc Verify ClassFrom case 014: Class.from<Array<Array<int>>>(), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Array<string>>();
+      let cls = Class.from<Array<Array<int>>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Array");
     });
@@ -531,69 +535,69 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0150
      * @tc.name testClassFrom015
-     * @tc.desc Verify ClassFrom case 015: generic T is array type
+     * @tc.desc Verify ClassFrom case 015: Class.from<FixedArray<int>>(), isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Array<Array<int>>>();
-      expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.Array");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0160
-     * @tc.name testClassFrom016
-     * @tc.desc Verify ClassFrom case 016: generic T is FixedArray<int>type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
       expect(cls !== null).assertTrue();
       expect(cls.isFixedArray()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0170
-     * @tc.name testClassFrom017
-     * @tc.desc Verify ClassFrom case 017: generic T is Map<int, string>type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0160
+     * @tc.name testClassFrom016
+     * @tc.desc Verify ClassFrom case 016: Class.from<Map<int, string>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, string>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0180
-     * @tc.name testClassFrom018
-     * @tc.desc Verify ClassFrom case 018: generic T is Map<string, int>type generic parameters different
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0170
+     * @tc.name testClassFrom017
+     * @tc.desc Verify ClassFrom case 017: Class.from<Map<string, int>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
       expect(cls !== null).assertTrue();
       expect(cls.getDescriptor()).assertEqual("Lstd/core/Map;");
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0180
+     * @tc.name testClassFrom018
+     * @tc.desc Verify ClassFrom case 018: Class.from<Set<int>>(), getName returns "std.core.Set"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassFrom018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<Set<int>>();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Set");
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0190
      * @tc.name testClassFrom019
-     * @tc.desc Verify ClassFrom case 019: generic T is Set<int>type
+     * @tc.desc Verify ClassFrom case 019: Class.from<Set<string>>(), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Set<int>>();
+      let cls = Class.from<Set<string>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Set");
     });
@@ -601,82 +605,68 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0200
      * @tc.name testClassFrom020
-     * @tc.desc Verify ClassFrom case 020: generic T is HashSet<int>type
+     * @tc.desc Verify ClassFrom case 020: Class.from<MyClass021>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Map<string, int>>();
-      expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.Map");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0210
-     * @tc.name testClassFrom021
-     * @tc.desc Verify ClassFrom case 021: generic T is
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass021>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass021");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0220
-     * @tc.name testClassFrom022
-     * @tc.desc Verify ClassFrom case 022: generic T is inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0210
+     * @tc.name testClassFrom021
+     * @tc.desc Verify ClassFrom case 021: Class.from<ChildClass022>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass022>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.ChildClass022");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0230
-     * @tc.name testClassFrom023
-     * @tc.desc Verify ClassFrom case 023: generic T is generic
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0220
+     * @tc.name testClassFrom022
+     * @tc.desc Verify ClassFrom case 022: Class.from<GenericClass023<int>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass023<int>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.GenericClass023");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0240
-     * @tc.name testClassFrom024
-     * @tc.desc Verify ClassFrom case 024: generic T is generic
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0230
+     * @tc.name testClassFrom023
+     * @tc.desc Verify ClassFrom case 023: Class.from<MultiGenericClass024<string, int>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiGenericClass024<string, int>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MultiGenericClass024");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0250
-     * @tc.name testClassFrom025
-     * @tc.desc Verify ClassFrom case 025: generic T is abstract class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0240
+     * @tc.name testClassFrom024
+     * @tc.desc Verify ClassFrom case 024: Class.from<AbstractClass025>(), isAbstract returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass025>();
       expect(cls !== null).assertTrue();
       expect(cls.isAbstract()).assertTrue();
@@ -684,28 +674,28 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0260
-     * @tc.name testClassFrom026
-     * @tc.desc Verify ClassFrom case 026: generic T is inheritance abstract class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0250
+     * @tc.name testClassFrom025
+     * @tc.desc Verify ClassFrom case 025: Class.from<ConcreteClass026>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass026>();
       expect(cls !== null).assertTrue();
       expect(cls.isAbstract()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0270
-     * @tc.name testClassFrom027
-     * @tc.desc Verify ClassFrom case 027: generic T is final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0260
+     * @tc.name testClassFrom026
+     * @tc.desc Verify ClassFrom case 026: Class.from<FinalClass027>(), isFinal returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass027>();
       expect(cls !== null).assertTrue();
       expect(cls.isFinal()).assertTrue();
@@ -713,14 +703,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0280
-     * @tc.name testClassFrom028
-     * @tc.desc Verify ClassFrom case 028: generic T is interface type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0270
+     * @tc.name testClassFrom027
+     * @tc.desc Verify ClassFrom case 027: Class.from<MyInterface028>(), isInterface returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface028>();
       expect(cls !== null).assertTrue();
       expect(cls.isInterface()).assertTrue();
@@ -728,28 +718,28 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0290
-     * @tc.name testClassFrom029
-     * @tc.desc Verify ClassFrom case 029: generic T is generic interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0280
+     * @tc.name testClassFrom028
+     * @tc.desc Verify ClassFrom case 028: Class.from<GenericInterface029<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericInterface029<int>>();
       expect(cls !== null).assertTrue();
       expect(cls.isInterface()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0300
-     * @tc.name testClassFrom030
-     * @tc.desc Verify ClassFrom case 030: generic T is ArrayLikeinterface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0290
+     * @tc.name testClassFrom029
+     * @tc.desc Verify ClassFrom case 029: Class.from<ArrayLike<int>>(), isInterface returns true, getName returns "std.core.ArrayLike"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
       expect(cls !== null).assertTrue();
       expect(cls.isInterface()).assertTrue();
@@ -757,14 +747,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0310
-     * @tc.name testClassFrom031
-     * @tc.desc Verify ClassFrom case 031: generic T is JsonSerializableinterface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0300
+     * @tc.name testClassFrom030
+     * @tc.desc Verify ClassFrom case 030: Class.from<JsonSerializable>(), isInterface returns true, getName returns "std.core.JsonSerializable"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<JsonSerializable>();
       expect(cls !== null).assertTrue();
       expect(cls.isInterface()).assertTrue();
@@ -772,14 +762,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0320
-     * @tc.name testClassFrom032
-     * @tc.desc Verify ClassFrom case 032: generic T is multiple interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0310
+     * @tc.name testClassFrom031
+     * @tc.desc Verify ClassFrom case 031: Class.from<MultiInterfaceClass032>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiInterfaceClass032>();
       expect(cls !== null).assertTrue();
       let interfaces = cls.getInterfaces();
@@ -787,14 +777,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0330
-     * @tc.name testClassFrom033
-     * @tc.desc Verify ClassFrom case 033: generic T is type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0320
+     * @tc.name testClassFrom032
+     * @tc.desc Verify ClassFrom case 032: Class.from<TestEnum033>(), isEnum returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum033>();
       expect(cls !== null).assertTrue();
       expect(cls.isEnum()).assertTrue();
@@ -802,43 +792,46 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0340
-     * @tc.name testClassFrom034
-     * @tc.desc Verify ClassFrom case 034: generic T is string
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0330
+     * @tc.name testClassFrom033
+     * @tc.desc Verify ClassFrom case 033: Class.from<StringEnum034>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StringEnum034>();
       expect(cls !== null).assertTrue();
       expect(cls.isEnum()).assertTrue();
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0340
+     * @tc.name testClassFrom034
+     * @tc.desc Verify ClassFrom case 034: Class.from<int | string>(), isUnion returns true, getUnionConstituentTypes() result verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassFrom034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<int | string>();
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
+      let constituents = cls.getUnionConstituentTypes()!;
+      expect(constituents.length).assertEqual(2);
+      expect(constituents[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(constituents[1].getName()).assertEqual(Class.from<string>().getName());
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0350
      * @tc.name testClassFrom035
-     * @tc.desc Verify ClassFrom case 035: generic T is int string type
+     * @tc.desc Verify ClassFrom case 035: Class.from<int | string | boolean>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-      expect(cls !== null).assertTrue();
-      expect(cls.isUnion()).assertTrue();
-      expect(cls.getName()).assertEqual(Class.from<int | string>().getName());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0360
-     * @tc.name testClassFrom036
-     * @tc.desc Verify ClassFrom case 036: generic T is type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | boolean>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
@@ -847,28 +840,28 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0370
-     * @tc.name testClassFrom037
-     * @tc.desc Verify ClassFrom case 037: generic T is type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0360
+     * @tc.name testClassFrom036
+     * @tc.desc Verify ClassFrom case 036: Class.from<TypeA037 | TypeB037>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypeA037 | TypeB037>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0380
-     * @tc.name testClassFrom038
-     * @tc.desc Verify ClassFrom case 038: generic T is type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0370
+     * @tc.name testClassFrom037
+     * @tc.desc Verify ClassFrom case 037: Class.from<Array<double> | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<double> | string>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
@@ -877,96 +870,96 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0390
-     * @tc.name testClassFrom039
-     * @tc.desc Verify ClassFrom case 039: generic T is generic type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0380
+     * @tc.name testClassFrom038
+     * @tc.desc Verify ClassFrom case 038: Class.from<Map<int, Array<string>>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, Array<string>>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0400
-     * @tc.name testClassFrom040
-     * @tc.desc Verify ClassFrom case 040: generic T is array type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0390
+     * @tc.name testClassFrom039
+     * @tc.desc Verify ClassFrom case 039: Class.from<Set<FixedArray<int>>>(), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<FixedArray<int>>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Set");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0410
-     * @tc.name testClassFrom041
-     * @tc.desc Verify ClassFrom case 041: generic T is Objecttype
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0400
+     * @tc.name testClassFrom040
+     * @tc.desc Verify ClassFrom case 040: Class.from<Object>(), getName returns "std.core.Object"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Object");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0420
-     * @tc.name testClassFrom042
-     * @tc.desc Verify ClassFrom case 042: generic T is Anytype
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0410
+     * @tc.name testClassFrom041
+     * @tc.desc Verify ClassFrom case 041: Class.from<Any>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Any>();
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0430
-     * @tc.name testClassFrom043
-     * @tc.desc Verify ClassFrom case 043: call from
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0420
+     * @tc.name testClassFrom042
+     * @tc.desc Verify ClassFrom case 042: Class.from<UninitializedClass043>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UninitializedClass043>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.UninitializedClass043");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0440
-     * @tc.name testClassFrom044
-     * @tc.desc Verify ClassFrom case 044: from type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0430
+     * @tc.name testClassFrom043
+     * @tc.desc Verify ClassFrom case 043: Class.from<boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0450
-     * @tc.name testClassFrom045
-     * @tc.desc Verify ClassFrom case 045: type and type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0440
+     * @tc.name testClassFrom044
+     * @tc.desc Verify ClassFrom case 044: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<boolean>();
       let cls2 = Class.PRIMITIVE_BOOLEAN;
       expect(cls1.isPrimitive()).assertFalse();
@@ -974,43 +967,57 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0460
-     * @tc.name testClassFrom046
-     * @tc.desc Verify ClassFrom case 046: generic T is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0450
+     * @tc.name testClassFrom045
+     * @tc.desc Verify ClassFrom case 045: Class.from<Node046>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node046>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.Node046");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0470
-     * @tc.name testClassFrom047
-     * @tc.desc Verify ClassFrom case 047: generic T is generic
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0460
+     * @tc.name testClassFrom046
+     * @tc.desc Verify ClassFrom case 046: Class.from<ConstrainedClass047<Item047ForConstrained>>(), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstrainedClass047<Item047ForConstrained>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.ConstrainedClass047");
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0470
+     * @tc.name testClassFrom047
+     * @tc.desc Verify ClassFrom case 047: Class.from<int | null>(), isUnion returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassFrom047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<int | null>();
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0480
      * @tc.name testClassFrom048
-     * @tc.desc Verify ClassFrom case 048: generic T is empty type
+     * @tc.desc Verify ClassFrom case 048: Class.from<MyClass049 | null>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | null>();
+      let cls = Class.from<MyClass049 | null>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
     });
@@ -1018,67 +1025,53 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0490
      * @tc.name testClassFrom049
-     * @tc.desc Verify ClassFrom case 049: generic T is empty object type
+     * @tc.desc Verify ClassFrom case 049: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass049 | null>();
-      expect(cls !== null).assertTrue();
-      expect(cls.isUnion()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0500
-     * @tc.name testClassFrom050
-     * @tc.desc Verify ClassFrom case 050: frommethod return Classtype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       expect(cls !== null).assertTrue();
       expect(typeof cls).assertEqual("object");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0510
-     * @tc.name testClassFrom051
-     * @tc.desc Verify ClassFrom case 051: type call fromreturn same object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0500
+     * @tc.name testClassFrom050
+     * @tc.desc Verify ClassFrom case 050: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<int>();
       let cls2 = Class.from<int>();
       expect(cls1 === cls2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0520
-     * @tc.name testClassFrom052
-     * @tc.desc Verify ClassFrom case 052: return Class object call getName()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0510
+     * @tc.name testClassFrom051
+     * @tc.desc Verify ClassFrom case 051: Class.from<Map<int, string>>(), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, string>>();
       expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0530
-     * @tc.name testClassFrom053
-     * @tc.desc Verify ClassFrom case 053: return Class object call getSuper()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0520
+     * @tc.name testClassFrom052
+     * @tc.desc Verify ClassFrom case 052: Class.from<ChildClass053>(), getSuper returns std.core.Object, getName returns "std.core.Object"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass053>();
       let superCls = cls.getSuper();
       expect(superCls !== null).assertTrue();
@@ -1086,121 +1079,121 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0540
-     * @tc.name testClassFrom054
-     * @tc.desc Verify ClassFrom case 054: return Class object call isSubtypeOf()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0530
+     * @tc.name testClassFrom053
+     * @tc.desc Verify ClassFrom case 053: Class.from<ChildClass054>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass054>();
       let parentCls = Class.from<ParentClass054>();
       expect(childCls.isSubtypeOf(parentCls)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0550
-     * @tc.name testClassFrom055
-     * @tc.desc Verify ClassFrom case 055: return Class object call getLinker()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0540
+     * @tc.name testClassFrom054
+     * @tc.desc Verify ClassFrom case 054: Class.from<int>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       let linker = cls.getLinker();
       expect(linker !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0560
-     * @tc.name testClassFrom056
-     * @tc.desc Verify ClassFrom case 056: return Class object call isInterface()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0550
+     * @tc.name testClassFrom055
+     * @tc.desc Verify ClassFrom case 055: Class.from<MyInterface056>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface056>();
       expect(cls.isInterface()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0570
-     * @tc.name testClassFrom057
-     * @tc.desc Verify ClassFrom case 057: return Class object call isEnum()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0560
+     * @tc.name testClassFrom056
+     * @tc.desc Verify ClassFrom case 056: Class.from<TestEnum057>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum057>();
       expect(cls.isEnum()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0580
-     * @tc.name testClassFrom058
-     * @tc.desc Verify ClassFrom case 058: return Class object call isPrimitive()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0570
+     * @tc.name testClassFrom057
+     * @tc.desc Verify ClassFrom case 057: Class.from<int>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       expect(cls.isPrimitive()).assertFalse();
       expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0590
-     * @tc.name testClassFrom059
-     * @tc.desc Verify ClassFrom case 059: return Class object call isFinal()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0580
+     * @tc.name testClassFrom058
+     * @tc.desc Verify ClassFrom case 058: Class.from<FinalClass059>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass059>();
       expect(cls.isFinal()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0600
-     * @tc.name testClassFrom060
-     * @tc.desc Verify ClassFrom case 060: return Class object call isAbstract()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0590
+     * @tc.name testClassFrom059
+     * @tc.desc Verify ClassFrom case 059: Class.from<AbstractClass060>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass060>();
       expect(cls.isAbstract()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0610
-     * @tc.name testClassFrom061
-     * @tc.desc Verify ClassFrom case 061: return Class object call isFixedArray()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0600
+     * @tc.name testClassFrom060
+     * @tc.desc Verify ClassFrom case 060: Class.from<FixedArray<int>>(), isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
       expect(cls.isFixedArray()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0620
-     * @tc.name testClassFrom062
-     * @tc.desc Verify ClassFrom case 062: byte|short union from() constituent Class names
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0610
+     * @tc.name testClassFrom061
+     * @tc.desc Verify ClassFrom case 061: Class.from<byte | short>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<byte | short>();
       expect(cls.isUnion()).assertTrue();
       let constituents = cls.getUnionConstituentTypes()!;
@@ -1210,139 +1203,139 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0630
-     * @tc.name testClassFrom063
-     * @tc.desc Verify ClassFrom case 063: return Class object call getDescriptor()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0620
+     * @tc.name testClassFrom062
+     * @tc.desc Verify ClassFrom case 062: Class.from<Set<string>>(), getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       expect(cls.getDescriptor()).assertEqual("Lstd/core/Set;");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0640
-     * @tc.name testClassFrom064
-     * @tc.desc Verify ClassFrom case 064: return Class object call createInstance()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0630
+     * @tc.name testClassFrom063
+     * @tc.desc Verify ClassFrom case 063: Class.from<MyClass064>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass064>();
       let obj = cls.createInstance() as MyClass064;
       expect(obj.name).assertEqual("test");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0650
-     * @tc.name testClassFrom065
-     * @tc.desc Verify ClassFrom case 065: return Class object call getInterfaces()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0640
+     * @tc.name testClassFrom064
+     * @tc.desc Verify ClassFrom case 064: Class.from<MyClass065>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass065>();
       let interfaces = cls.getInterfaces();
       expect(interfaces.length).assertLarger(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0660
-     * @tc.name testClassFrom066
-     * @tc.desc Verify ClassFrom case 066: return Class object call getInstanceMethods()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0650
+     * @tc.name testClassFrom065
+     * @tc.desc Verify ClassFrom case 065: Class.from<MyClass066>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass066>();
       let methods = cls.getInstanceMethods();
       expect(methods.length).assertLarger(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0670
-     * @tc.name testClassFrom067
-     * @tc.desc Verify ClassFrom case 067: return Class object call getStaticMethods()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0660
+     * @tc.name testClassFrom066
+     * @tc.desc Verify ClassFrom case 066: Class.from<MyClass067>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass067>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0680
-     * @tc.name testClassFrom068
-     * @tc.desc Verify ClassFrom case 068: return Class object call getInstanceFields()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0670
+     * @tc.name testClassFrom067
+     * @tc.desc Verify ClassFrom case 067: Class.from<MyClass068>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass068>();
       let fields = cls.getInstanceFields();
       expect(fields.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0690
-     * @tc.name testClassFrom069
-     * @tc.desc Verify ClassFrom case 069: return Class object call getStaticFields()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0680
+     * @tc.name testClassFrom068
+     * @tc.desc Verify ClassFrom case 068: Class.from<MyClass069>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass069>();
       let fields = cls.getStaticFields();
       expect(fields.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0700
-     * @tc.name testClassFrom070
-     * @tc.desc Verify ClassFrom case 070: return Class object call getConstructors()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0690
+     * @tc.name testClassFrom069
+     * @tc.desc Verify ClassFrom case 069: Class.from<MyClass070>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass070>();
       let constructors = cls.getConstructors();
       expect(constructors.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0710
-     * @tc.name testClassFrom071
-     * @tc.desc Verify ClassFrom case 071: type Class object get type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0700
+     * @tc.name testClassFrom070
+     * @tc.desc Verify ClassFrom case 070: Class.from<int | string | Array<double>>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | Array<double>>();
       let arr = cls.getUnionConstituentTypes()!;
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0720
-     * @tc.name testClassFrom072
-     * @tc.desc Verify ClassFrom case 072: Class.from Array type getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0710
+     * @tc.name testClassFrom071
+     * @tc.desc Verify ClassFrom case 071: Class.from<FixedArray<int>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
@@ -1350,54 +1343,54 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0730
-     * @tc.name testClassFrom073
-     * @tc.desc Verify ClassFrom case 073: interface not interface when
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0720
+     * @tc.name testClassFrom072
+     * @tc.desc Verify ClassFrom case 072: Class.from<MyInterface073>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface073>();
       let interfaces = cls.getInterfaces();
       expect(interfaces.length).assertEqual(0);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0730
+     * @tc.name testClassFrom073
+     * @tc.desc Verify ClassFrom case 073: Class.from<Map<int, Map<string, Map<int, string>>>>()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassFrom073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<Map<int, Map<string, Map<int, string>>>>();
+      expect(cls !== null).assertTrue();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0740
      * @tc.name testClassFrom074
-     * @tc.desc Verify ClassFrom case 074: generic T is type
+     * @tc.desc Verify ClassFrom case 074: Class.from<MultiGeneric075<int, string, boolean, double, char>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Map<int, Map<string, Map<int, string>>>>();
+      let cls = Class.from<MultiGeneric075<int, string, boolean, double, char>>();
       expect(cls !== null).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0750
      * @tc.name testClassFrom075
-     * @tc.desc Verify ClassFrom case 075: generic T is multiple generic parameters type
+     * @tc.desc Verify ClassFrom case 075: Class.from<MyClass076>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MultiGeneric075<int, string, boolean, double, char>>();
-      expect(cls !== null).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0760
-     * @tc.name testClassFrom076
-     * @tc.desc Verify ClassFrom case 076: from ofget type Classshould
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass076();
       let cls1 = Class.from<MyClass076>();
       let cls2 = Class.of(obj);
@@ -1405,14 +1398,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0770
-     * @tc.name testClassFrom077
-     * @tc.desc Verify ClassFrom case 077: type Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0760
+     * @tc.name testClassFrom076
+     * @tc.desc Verify ClassFrom case 076: Class.from<ChildClass077>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass077>();
       let parentCls = Class.from<ParentClass077>();
       expect(childCls.isSubtypeOf(parentCls)).assertTrue();
@@ -1420,141 +1413,140 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0780
-     * @tc.name testClassFrom078
-     * @tc.desc Verify ClassFrom case 078: and interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0770
+     * @tc.name testClassFrom077
+     * @tc.desc Verify ClassFrom case 077: Class.from<MyClass078>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass078>();
       let ifc = Class.from<MyInterface078>();
       expect(cls.isSubtypeOf(ifc)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0790
-     * @tc.name testClassFrom079
-     * @tc.desc Verify ClassFrom case 079: type should type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0780
+     * @tc.name testClassFrom078
+     * @tc.desc Verify ClassFrom case 078: Class.from<int>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       expect(cls.isSubtypeOf(cls)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0800
-     * @tc.name testClassFrom080
-     * @tc.desc Verify ClassFrom case 080: abstract class type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0790
+     * @tc.name testClassFrom079
+     * @tc.desc Verify ClassFrom case 079: invalid call throws Error, Class.from<AbstractClass080>(), isAbstract returns true, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass080>();
       expect(cls.isAbstract()).assertTrue();
       try {
         cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0800
+     * @tc.name testClassFrom080
+     * @tc.desc Verify ClassFrom case 080: Class.from<FinalClass081>(), isFinal returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassFrom080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<FinalClass081>();
+      expect(cls.isFinal()).assertTrue();
+    });
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0810
      * @tc.name testClassFrom081
-     * @tc.desc Verify ClassFrom case 081: final type
+     * @tc.desc Verify ClassFrom case 081: Class.from<Promise<void>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FinalClass081>();
-      expect(cls.isFinal()).assertTrue();
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0830
-     * @tc.name testClassFrom083
-     * @tc.desc Verify ClassFrom case 083: void is type parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassFrom083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Promise<void>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual(Class.from<Promise<void>>().getName());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0840
-     * @tc.name testClassFrom084
-     * @tc.desc Verify ClassFrom case 084: from
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0820
+     * @tc.name testClassFrom082
+     * @tc.desc Verify ClassFrom case 082: Class.from<LazyClass084>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LazyClass084>();
       expect(cls !== null).assertTrue();
       expect(LazyClass084.value).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0850
-     * @tc.name testClassFrom085
-     * @tc.desc Verify ClassFrom case 085: static when from is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0830
+     * @tc.name testClassFrom083
+     * @tc.desc Verify ClassFrom case 083: Class.from<StaticInitClass085>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticInitClass085>();
       expect(cls !== null).assertTrue();
       expect(StaticInitClass085.initialized).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0860
-     * @tc.name testClassFrom086
-     * @tc.desc Verify ClassFrom case 086: generic T is never type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0840
+     * @tc.name testClassFrom084
+     * @tc.desc Verify ClassFrom case 084: Class.from<never>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<never>();
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0870
-     * @tc.name testClassFrom087
-     * @tc.desc Verify ClassFrom case 087: generic T is unknown type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0850
+     * @tc.name testClassFrom085
+     * @tc.desc Verify ClassFrom case 085: Class.from<Object>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0880
-     * @tc.name testClassFrom088
-     * @tc.desc Verify ClassFrom case 088: call fromget type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0860
+     * @tc.name testClassFrom086
+     * @tc.desc Verify ClassFrom case 086: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class | null = null;
       for (let i = 0; i < 1000; i++) {
         cls = Class.from<int>();
@@ -1564,14 +1556,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0890
-     * @tc.name testClassFrom089
-     * @tc.desc Verify ClassFrom case 089: when from different type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0870
+     * @tc.name testClassFrom087
+     * @tc.desc Verify ClassFrom case 087: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<int>() !== null).assertTrue();
       expect(Class.from<string>() !== null).assertTrue();
       expect(Class.from<boolean>() !== null).assertTrue();
@@ -1582,14 +1574,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0900
-     * @tc.name testClassFrom090
-     * @tc.desc Verify ClassFrom case 090: Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0880
+     * @tc.name testClassFrom088
+     * @tc.desc Verify ClassFrom case 088: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first = Class.from<Array<int>>();
       let last = Class.from<Array<int>>();
       for (let i = 0; i < 10000; i++) {
@@ -1599,28 +1591,28 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0910
-     * @tc.name testClassFrom091
-     * @tc.desc Verify ClassFrom case 091: call from
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0890
+     * @tc.name testClassFrom089
+     * @tc.desc Verify ClassFrom case 089: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Map<int, string>>();
       let cls2 = Class.from<Map<int, string>>();
       expect(cls1 === cls2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0920
-     * @tc.name testClassFrom092
-     * @tc.desc Verify ClassFrom case 092: from and of
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0900
+     * @tc.name testClassFrom090
+     * @tc.desc Verify ClassFrom case 090: Class.from<MyClass092>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass092>();
       expect(cls1 !== null).assertTrue();
 
@@ -1632,14 +1624,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0930
-     * @tc.name testClassFrom093
-     * @tc.desc Verify ClassFrom case 093: Class.from vs Class.ofAny same runtime type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0910
+     * @tc.name testClassFrom091
+     * @tc.desc Verify ClassFrom case 091: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>();
 
       let cls1 = Class.ofAny(obj);
@@ -1652,14 +1644,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0940
-     * @tc.name testClassFrom094
-     * @tc.desc Verify ClassFrom case 094: from type in different
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0920
+     * @tc.name testClassFrom092
+     * @tc.desc Verify ClassFrom case 092: Class.from<Set<string>>(), getName returns "std.core.Set", getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Set");
@@ -1667,14 +1659,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0950
-     * @tc.name testClassFrom095
-     * @tc.desc Verify ClassFrom case 095: using fromget type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0930
+     * @tc.name testClassFrom093
+     * @tc.desc Verify ClassFrom case 093: Class.from<MyClass095>(), getSuper returns expected parent Class, getName returns expected qualified name, instance fields result verified, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass095>();
 
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass095");
@@ -1696,14 +1688,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0960
-     * @tc.name testClassFrom096
-     * @tc.desc Verify ClassFrom case 096: generic type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0940
+     * @tc.name testClassFrom094
+     * @tc.desc Verify ClassFrom case 094: Class.from<GenericClass096<string, int>>(), getName returns expected qualified name, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass096<string, int>>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.GenericClass096");
@@ -1713,27 +1705,27 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0970
-     * @tc.name testClassFrom097
-     * @tc.desc Verify ClassFrom case 097: using from type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0950
+     * @tc.name testClassFrom095
+     * @tc.desc Verify ClassFrom case 095: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let serviceB = new ServiceB097();
       expect(serviceB.call()).assertEqual("ServiceA097");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0980
-     * @tc.name testClassFrom098
-     * @tc.desc Verify ClassFrom case 098: using from type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0960
+     * @tc.name testClassFrom096
+     * @tc.desc Verify ClassFrom case 096: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new SerializableClass098();
       obj.id = 100;
       obj.name = "test";
@@ -1743,14 +1735,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0990
-     * @tc.name testClassFrom099
-     * @tc.desc Verify ClassFrom case 099: using from
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0970
+     * @tc.name testClassFrom097
+     * @tc.desc Verify ClassFrom case 097: Class.from<PluginA099>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let manager = new PluginManager099();
       manager.register<PluginA099>(Class.from<PluginA099>());
       manager.executeAll();
@@ -1758,14 +1750,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1000
-     * @tc.name testClassFrom100
-     * @tc.desc Verify ClassFrom case 100: Class.from primitive type getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0980
+     * @tc.name testClassFrom098
+     * @tc.desc Verify ClassFrom case 098: Class.from<MyClass100>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass100>();
       expect(cls !== null).assertTrue();
 
@@ -1774,28 +1766,28 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1010
-     * @tc.name testClassFrom101
-     * @tc.desc Verify ClassFrom case 101: from generic type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0990
+     * @tc.name testClassFrom099
+     * @tc.desc Verify ClassFrom case 099: Class.from<Derived101>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Derived101>();
       let instance = cls.createInstance() as Derived101;
       expect(instance.id).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1020
-     * @tc.name testClassFrom102
-     * @tc.desc Verify ClassFrom case 102: Class object performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1000
+     * @tc.name testClassFrom100
+     * @tc.desc Verify ClassFrom case 100: Class.from<MyClass102>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const MY_CLASS: Class = Class.from<MyClass102>();
 
       let obj1 = createInstance102();
@@ -1805,14 +1797,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1030
-     * @tc.name testClassFrom103
-     * @tc.desc Verify ClassFrom case 103: in from
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1010
+     * @tc.name testClassFrom101
+     * @tc.desc Verify ClassFrom case 101: Class.from<MyClass103>(), getName returns expected qualified name, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 100; i++) {
         let cls = Class.from<MyClass103>();
         expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass103");
@@ -1826,14 +1818,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1040
-     * @tc.name testClassFrom104
-     * @tc.desc Verify ClassFrom case 104: from ofget type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1020
+     * @tc.name testClassFrom102
+     * @tc.desc Verify ClassFrom case 102: Class.from<MyClass104>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass104>();
       let obj = new MyClass104();
       let cls2 = Class.of(obj);
@@ -1843,14 +1835,14 @@ export default function ClassFromTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1050
-     * @tc.name testClassFrom105
-     * @tc.desc Verify ClassFrom case 105: method in different scenario using
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1030
+     * @tc.name testClassFrom103
+     * @tc.desc Verify ClassFrom case 103: Class.from<MyClass105>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassFrom105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass105>();
       expect(cls1 !== null).assertTrue();
 

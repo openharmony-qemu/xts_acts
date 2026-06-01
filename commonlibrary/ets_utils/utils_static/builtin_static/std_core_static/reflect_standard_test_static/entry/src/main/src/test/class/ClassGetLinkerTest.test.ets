@@ -186,7 +186,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0100
      * @tc.name testClassGetLinker001
-     * @tc.desc Verify ClassGetLinker case 001: getLinker()method parameters
+     * @tc.desc Verify ClassGetLinker case 001: Class.from<MyClass001>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -200,7 +200,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0200
      * @tc.name testClassGetLinker002
-     * @tc.desc Verify ClassGetLinker case 002: parameters should compile error or runtime error
+     * @tc.desc Verify ClassGetLinker case 002: Class.from<MyClass002>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +213,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0300
      * @tc.name testClassGetLinker003
-     * @tc.desc Verify ClassGetLinker case 003: from get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 003: Class.from<MyClass003>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -228,7 +228,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0400
      * @tc.name testClassGetLinker004
-     * @tc.desc Verify ClassGetLinker case 004: from generic get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 004: Class.from<GenericClass004<int>>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -242,7 +242,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0500
      * @tc.name testClassGetLinker005
-     * @tc.desc Verify ClassGetLinker case 005: from interface Class object get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 005: Class.from<MyInterface005>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -256,7 +256,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0600
      * @tc.name testClassGetLinker006
-     * @tc.desc Verify ClassGetLinker case 006: from type Map Set get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 006: Class.from<Map<int, string>>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -278,7 +278,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0700
      * @tc.name testClassGetLinker007
-     * @tc.desc Verify ClassGetLinker case 007: from type PRIMITIVE_ static property get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 007: getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,7 +297,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0800
      * @tc.name testClassGetLinker008
-     * @tc.desc Verify ClassGetLinker case 008: from inheritance get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 008: Class.from<ParentClass008>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -316,7 +316,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0900
      * @tc.name testClassGetLinker009
-     * @tc.desc Verify ClassGetLinker case 009: from final get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 009: Class.from<FinalClass009>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -330,7 +330,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1000
      * @tc.name testClassGetLinker010
-     * @tc.desc Verify ClassGetLinker case 010: from abstract class get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 010: Class.from<AbstractClass010>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -344,7 +344,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1100
      * @tc.name testClassGetLinker011
-     * @tc.desc Verify ClassGetLinker case 011: from type get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 011: Class.from<TestEnum011>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -358,7 +358,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1200
      * @tc.name testClassGetLinker012
-     * @tc.desc Verify ClassGetLinker case 012: from type get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 012: Class.from<int | string | boolean>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -372,7 +372,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1300
      * @tc.name testClassGetLinker013
-     * @tc.desc Verify ClassGetLinker case 013: from FixedArray type get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 013: Class.of(instance), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -387,7 +387,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1400
      * @tc.name testClassGetLinker014
-     * @tc.desc Verify ClassGetLinker case 014: from Class.from()get Class object call getLinker
+     * @tc.desc Verify ClassGetLinker case 014: Class.from<TestClass014>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -401,7 +401,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1500
      * @tc.name testClassGetLinker015
-     * @tc.desc Verify ClassGetLinker case 015: from Class.of()get Class object call getLinker
+     * @tc.desc Verify ClassGetLinker case 015: Class.of(instance), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +416,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1600
      * @tc.name testClassGetLinker016
-     * @tc.desc Verify ClassGetLinker case 016: from Class.ofAny()get Class object call getLinker
+     * @tc.desc Verify ClassGetLinker case 016: getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -431,7 +431,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1700
      * @tc.name testClassGetLinker017
-     * @tc.desc Verify ClassGetLinker case 017: from Class.current()get Class object call getLinker
+     * @tc.desc Verify ClassGetLinker case 017: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -445,7 +445,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1800
      * @tc.name testClassGetLinker018
-     * @tc.desc Verify ClassGetLinker case 018: call return null RuntimeLinkerobject
+     * @tc.desc Verify ClassGetLinker case 018: Class.from<MyClass018>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -460,7 +460,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1900
      * @tc.name testClassGetLinker019
-     * @tc.desc Verify ClassGetLinker case 019: verify return RuntimeLinkertype
+     * @tc.desc Verify ClassGetLinker case 019: Class.from<MyClass019>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -474,7 +474,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2000
      * @tc.name testClassGetLinker020
-     * @tc.desc Verify ClassGetLinker case 020: Class object call getLinkerreturn same instance
+     * @tc.desc Verify ClassGetLinker case 020: Class.from<MyClass020>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -489,7 +489,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2100
      * @tc.name testClassGetLinker021
-     * @tc.desc Verify ClassGetLinker case 021: different RuntimeLinkerinstance
+     * @tc.desc Verify ClassGetLinker case 021: Class.from<Class1021>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -508,7 +508,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2200
      * @tc.name testClassGetLinker022
-     * @tc.desc Verify ClassGetLinker case 022: using return RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 022: Class.from<MyClass022>(), getName returns "std.core.Map", getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -524,7 +524,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2300
      * @tc.name testClassGetLinker023
-     * @tc.desc Verify ClassGetLinker case 023: using RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 023: Class.from<MyClass023>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +546,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2400
      * @tc.name testClassGetLinker024
-     * @tc.desc Verify ClassGetLinker case 024: using RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 024: Class.from<MyClass024>(), getName returns "std.core.Map", getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -563,7 +563,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2500
      * @tc.name testClassGetLinker025
-     * @tc.desc Verify ClassGetLinker case 025: loadClass non-existent class throws LinkerClassNotFoundError
+     * @tc.desc Verify ClassGetLinker case 025: invalid call throws Error, Class.from<MyClass025>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -575,15 +575,14 @@ export default function ClassGetLinkerTest(): void {
         linker.loadClass('non.existent.Class')
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('LinkerClassNotFoundError');
+        expect(error.name).assertEqual('LinkerClassNotFoundError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2600
      * @tc.name testClassGetLinker026
-     * @tc.desc Verify ClassGetLinker case 026: from PRIMITIVE_VOIDget RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 026: getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +595,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2700
      * @tc.name testClassGetLinker027
-     * @tc.desc Verify ClassGetLinker case 027: from different get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 027: Class.from<MyClass001>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -609,7 +608,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2800
      * @tc.name testClassGetLinker028
-     * @tc.desc Verify ClassGetLinker case 028: from null or undefinedobject get Class after call getLinker
+     * @tc.desc Verify ClassGetLinker case 028: Class.of(instance), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,7 +622,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2900
      * @tc.name testClassGetLinker029
-     * @tc.desc Verify ClassGetLinker case 029: from get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 029: Class.from<UninitializedClass029>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -637,7 +636,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3000
      * @tc.name testClassGetLinker030
-     * @tc.desc Verify ClassGetLinker case 030: from empty field method get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 030: Class.from<EmptyClass030>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -651,7 +650,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3100
      * @tc.name testClassGetLinker031
-     * @tc.desc Verify ClassGetLinker case 031: from get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 031: Class.from<PrivateOnlyClass031>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -665,7 +664,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3200
      * @tc.name testClassGetLinker032
-     * @tc.desc Verify ClassGetLinker case 032: from inheritance get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 032: Class.from<Child032>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -679,7 +678,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3300
      * @tc.name testClassGetLinker033
-     * @tc.desc Verify ClassGetLinker case 033: verify call getLinker performance
+     * @tc.desc Verify ClassGetLinker case 033: Class.from<MyClass033>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -697,7 +696,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3400
      * @tc.name testClassGetLinker034
-     * @tc.desc Verify ClassGetLinker case 034: from different get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 034: Class.from<DynamicClass034>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -713,7 +712,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3500
      * @tc.name testClassGetLinker035
-     * @tc.desc Verify ClassGetLinker case 035: in getLinker
+     * @tc.desc Verify ClassGetLinker case 035: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -727,7 +726,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3600
      * @tc.name testClassGetLinker036
-     * @tc.desc Verify ClassGetLinker case 036: getLinkerreturn RuntimeLinker verify
+     * @tc.desc Verify ClassGetLinker case 036: Class.from<MyClass036>(), getLinker() returns non-null linker, getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -743,7 +742,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3700
      * @tc.name testClassGetLinker037
-     * @tc.desc Verify ClassGetLinker case 037: using getLinker createInstance instance
+     * @tc.desc Verify ClassGetLinker case 037: Class.from<MyClass037>(), createInstance succeeds, getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -759,7 +758,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3800
      * @tc.name testClassGetLinker038
-     * @tc.desc Verify ClassGetLinker case 038: getLinker getInstanceMethodswith using
+     * @tc.desc Verify ClassGetLinker case 038: Class.from<MyClass038>(), getInstanceMethods result verified, getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -775,7 +774,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_3900
      * @tc.name testClassGetLinker039
-     * @tc.desc Verify ClassGetLinker case 039: using getLinkerreturn RuntimeLinker object
+     * @tc.desc Verify ClassGetLinker case 039: Class.from<Target039>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -793,7 +792,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_4000
      * @tc.name testClassGetLinker040
-     * @tc.desc Verify ClassGetLinker case 040: verify getLinker in API version
+     * @tc.desc Verify ClassGetLinker case 040: Class.from<MyClass040>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -807,7 +806,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_4100
      * @tc.name testClassGetLinker041
-     * @tc.desc Verify ClassGetLinker case 041: getLinker on Class returns non-null RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 041: Class.from<MyClass041>(), getName returns "std.core.Map", getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

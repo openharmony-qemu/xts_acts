@@ -245,7 +245,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0100
      * @tc.name testClassGetStaticFields001
-     * @tc.desc Verify ClassGetStaticFields case 001: getStaticFields() parameters
+     * @tc.desc Verify ClassGetStaticFields case 001: Class.from<MyClass001>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -259,7 +259,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0200
      * @tc.name testClassGetStaticFields002
-     * @tc.desc Verify ClassGetStaticFields case 002: getStaticFields() with no arguments
+     * @tc.desc Verify ClassGetStaticFields case 002: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -270,15 +270,14 @@ export default function ClassGetStaticFieldsTest(): void {
         let fields = looseReflect(cls as Object).getStaticFields('invalid');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0300
      * @tc.name testClassGetStaticFields003
-     * @tc.desc Verify ClassGetStaticFields case 003: return FixedArray<reflect.StaticField>
+     * @tc.desc Verify ClassGetStaticFields case 003: Class.from<TestClass003>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,7 +296,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0400
      * @tc.name testClassGetStaticFields004
-     * @tc.desc Verify ClassGetStaticFields case 004: array StaticFieldtype
+     * @tc.desc Verify ClassGetStaticFields case 004: Class.from<TestClass003>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -314,7 +313,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0500
      * @tc.name testClassGetStaticFields005
-     * @tc.desc Verify ClassGetStaticFields case 005: different type publicstatic field
+     * @tc.desc Verify ClassGetStaticFields case 005: Class.from<MixedTypes005>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -328,7 +327,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0600
      * @tc.name testClassGetStaticFields006
-     * @tc.desc Verify ClassGetStaticFields case 006: publicstatic field when return empty array
+     * @tc.desc Verify ClassGetStaticFields case 006: Class.from<EmptyClass006>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +341,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0700
      * @tc.name testClassGetStaticFields007
-     * @tc.desc Verify ClassGetStaticFields case 007: privatestatic field not
+     * @tc.desc Verify ClassGetStaticFields case 007: Class.from<PrivateOnly007>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -356,7 +355,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0800
      * @tc.name testClassGetStaticFields008
-     * @tc.desc Verify ClassGetStaticFields case 008: conststatic field
+     * @tc.desc Verify ClassGetStaticFields case 008: Class.from<ConstClass008>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -370,7 +369,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0900
      * @tc.name testClassGetStaticFields009
-     * @tc.desc Verify ClassGetStaticFields case 009: return static field not
+     * @tc.desc Verify ClassGetStaticFields case 009: Class.from<ChildClass009>(), getSuper returns expected parent Class, getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -387,7 +386,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1000
      * @tc.name testClassGetStaticFields010
-     * @tc.desc Verify ClassGetStaticFields case 010: inheritance static field get
+     * @tc.desc Verify ClassGetStaticFields case 010: Class.from<Child010>(), getSuper returns expected parent Class, getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -407,7 +406,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1100
      * @tc.name testClassGetStaticFields011
-     * @tc.desc Verify ClassGetStaticFields case 011: static field not instance
+     * @tc.desc Verify ClassGetStaticFields case 011: Class.from<Derived011>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -427,7 +426,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1200
      * @tc.name testClassGetStaticFields012
-     * @tc.desc Verify ClassGetStaticFields case 012: return StaticFieldobject property
+     * @tc.desc Verify ClassGetStaticFields case 012: Class.from<TestClass012>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -448,7 +447,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1300
      * @tc.name testClassGetStaticFields013
-     * @tc.desc Verify ClassGetStaticFields case 013: StaticField get static field
+     * @tc.desc Verify ClassGetStaticFields case 013: Class.from<ValueClass013>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,7 +465,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1400
      * @tc.name testClassGetStaticFields014
-     * @tc.desc Verify ClassGetStaticFields case 014: parameters when should throw error
+     * @tc.desc Verify ClassGetStaticFields case 014: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,15 +476,14 @@ export default function ClassGetStaticFieldsTest(): void {
         let fields = looseReflect(cls as Object).getStaticFields('extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1500
      * @tc.name testClassGetStaticFields015
-     * @tc.desc Verify ClassGetStaticFields case 015: call getStaticFields
+     * @tc.desc Verify ClassGetStaticFields case 015: Class.from<MyClass001>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -500,7 +498,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1600
      * @tc.name testClassGetStaticFields016
-     * @tc.desc Verify ClassGetStaticFields case 016: method is Deprecated
+     * @tc.desc Verify ClassGetStaticFields case 016: Class.from<MyClass001>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -516,7 +514,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1700
      * @tc.name testClassGetStaticFields017
-     * @tc.desc Verify ClassGetStaticFields case 017: getStaticFields method
+     * @tc.desc Verify ClassGetStaticFields case 017: Class.from<MyClass001>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +530,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1800
      * @tc.name testClassGetStaticFields018
-     * @tc.desc Verify ClassGetStaticFields case 018: publicstatic field
+     * @tc.desc Verify ClassGetStaticFields case 018: Class.from<LargeClass018>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +544,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_1900
      * @tc.name testClassGetStaticFields019
-     * @tc.desc Verify ClassGetStaticFields case 019: static field or Unicode
+     * @tc.desc Verify ClassGetStaticFields case 019: Class.from<SpecialNames019>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -580,7 +578,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_2000
      * @tc.name testClassGetStaticFields020
-     * @tc.desc Verify ClassGetStaticFields case 020: publicstatic field
+     * @tc.desc Verify ClassGetStaticFields case 020: Class.from<AccessTest020>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +594,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_2100
      * @tc.name testClassGetStaticFields021
-     * @tc.desc Verify ClassGetStaticFields case 021: readonlystatic field return
+     * @tc.desc Verify ClassGetStaticFields case 021: Class.from<ReadonlyTest021>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -620,7 +618,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_2200
      * @tc.name testClassGetStaticFields022
-     * @tc.desc Verify ClassGetStaticFields case 022: static field instance field
+     * @tc.desc Verify ClassGetStaticFields case 022: Class.from<MixedClass022>(), instance fields result verified, getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +638,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_2300
      * @tc.name testClassGetStaticFields023
-     * @tc.desc Verify ClassGetStaticFields case 023: call return same
+     * @tc.desc Verify ClassGetStaticFields case 023: Class.from<MyClass001>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -659,7 +657,7 @@ export default function ClassGetStaticFieldsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_2400
      * @tc.name testClassGetStaticFields024
-     * @tc.desc Verify ClassGetStaticFields case 024: static field
+     * @tc.desc Verify ClassGetStaticFields case 024: Class.from<InitClass024>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

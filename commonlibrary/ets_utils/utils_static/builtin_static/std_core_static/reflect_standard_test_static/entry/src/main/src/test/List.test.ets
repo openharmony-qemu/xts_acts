@@ -65,6 +65,12 @@ import ConstructorIsNativeTest from './constructor/ConstructorIsNativeTest.test'
 import ConstructorIsPrivateTest from './constructor/ConstructorIsPrivateTest.test';
 import ConstructorIsProtectedTest from './constructor/ConstructorIsProtectedTest.test';
 import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test';
+
+import ClassIsFuncObjAsyncTest from './reflect/ClassIsFuncObjAsyncTest.test';
+import ClassIsLiteralInitializedInterfaceTest from './reflect/ClassIsLiteralInitializedInterfaceTest.test';
+import GetInstanceFieldsRecursiveTest from './reflect/GetInstanceFieldsRecursiveTest.test';
+import GetInstanceGettersRecursiveTest from './reflect/GetInstanceGettersRecursiveTest.test';
+
 import StaticMethodEqualsTest from "./staticMethod/StaticMethodEqualsTest.test";
 import StaticMethodGetNameTest from "./staticMethod/StaticMethodGetNameTest.test";
 import StaticMethodGetOwnerTest from "./staticMethod/StaticMethodGetOwnerTest.test";
@@ -160,6 +166,11 @@ export default function testsuite(): void {
   StaticMethodIsPublicTest();
   StaticMethodIsSetterTest();
 
+  ClassIsFuncObjAsyncTest();
+  ClassIsLiteralInitializedInterfaceTest();
+  GetInstanceFieldsRecursiveTest();
+  GetInstanceGettersRecursiveTest();
+
   InstanceFieldSetValueTest();
   InstanceFieldGetValueTest();
   InstanceFieldIsReadonlyTest();
@@ -170,5 +181,4 @@ export default function testsuite(): void {
   InstanceFieldGetNameTest();
   InstanceFieldGetOwnerTest();
   InstanceFieldGetTypeTest();
-
 }
