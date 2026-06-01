@@ -80,7 +80,7 @@ export default function RegExpTaskpoolTest001() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(50);
     })
     afterEach(() => {
     })

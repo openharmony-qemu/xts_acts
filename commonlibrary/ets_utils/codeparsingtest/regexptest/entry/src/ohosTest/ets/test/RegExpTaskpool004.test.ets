@@ -46,7 +46,7 @@ export default function RegExpTaskpoolTest004() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(50);
     })
     afterEach(() => {
     })

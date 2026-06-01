@@ -26,7 +26,7 @@ export default function RegExpWorkerTest002() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(50);
     })
     afterEach(() => {
     })
