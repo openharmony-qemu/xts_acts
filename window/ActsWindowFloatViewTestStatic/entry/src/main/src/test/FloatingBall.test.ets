@@ -17,8 +17,8 @@
 import { Entry, Column, Component, Button, Scroller, BarState, Scroll, Flex, Alignment, ScrollDirection, EdgeEffect } from '@ohos.arkui.component'
 import fs from '@ohos.file.fs';
 
-export const entryName : string = "FloatingBall"
-@Entry({routeName: entryName, useSharedStorage: true})
+export const entryName : string = "FloatingBall";
+@Entry({routeName: "FloatingBall", useSharedStorage: true})
 @Component
 struct Index {
   scroller: Scroller = new Scroller();
