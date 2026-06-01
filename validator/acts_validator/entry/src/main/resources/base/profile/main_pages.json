@@ -143,6 +143,7 @@
     "pages/ArkUI/AccessibilityFocusDrawLevel",
     "entryembeddeduiextability/pages/EntryEmbeddedUIExtAbilityPage",
     "pages/ArkUI/AccessibilityNextFocusIdPage",
+    "pages/ArkUI/AccessibilityNextFocusId26Page",
     "pages/ArkUI/AccessibilityDefaultFocusPage",
     "pages/ArkUI/AccessibilityScrollTriggerablePage",
     "pages/ArkUI/EmbeddedComponentInstanceTest",

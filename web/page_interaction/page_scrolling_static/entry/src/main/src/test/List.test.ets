@@ -13,15 +13,14 @@
  * limitations under the License.
  */
 import scrollByTo from './scrollByTo.test';
-import webViewController from './webViewController.test'
 import scrollEvent from './scrollEvent.test';
 import webResourceResponseGet from './webResourceResponseGet.test';
-
+import webViewController from './webViewController.test'
 
 export default function testsuite() {
     scrollByTo();
-	webViewController();
     scrollEvent();
     webResourceResponseGet();
-  
+    webViewController();
+
 }
