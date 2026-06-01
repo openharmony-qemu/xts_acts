@@ -3007,7 +3007,7 @@ export default function geolocationTest_geo7() {
     /**
      * @tc.name   SUB_Location_GetCurrentLocation_errorcode_0300
      * @tc.number SUB_Location_GetCurrentLocation_errorcode_0300
-     * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+     * @tc.desc   Verify that calling getCurrentLocation with priority FIRST_FIX and scenario UNSET returns error code 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -3017,18 +3017,14 @@ export default function geolocationTest_geo7() {
             'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
             'scenario': geolocationm.LocationRequestScenario.UNSET,
             'maxAccuracy': -1
-        };       
+        };
         try {
-            await geolocationm.getCurrentLocation(currentLocationRequest).then((result) => {
-                console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
-                expect().assertFail();
-            }).catch(error => {
-                console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(401);
-            })
+            let result = await geolocationm.getCurrentLocation(currentLocationRequest);
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
+            expect().assertFail();
         } catch (error) {
-            console.info("[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise try err." + JSON.stringify(error));
-            expect(Number(error.code)).assertEqual(401);
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
+            expect(error.code).assertEqual(401);
         }
         await sleep(1000);
         done();
