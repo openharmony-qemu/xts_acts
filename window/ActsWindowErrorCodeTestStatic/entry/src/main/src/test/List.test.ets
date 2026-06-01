@@ -15,7 +15,7 @@
  */
 import ErrorCode201 from "./ErrorCode201.test";
 import ErrorCode1300002 from "./ErrorCode1300002.test";
-export default function testsuite() {
+export default function testsuite(): void {
   ErrorCode201();
   ErrorCode1300002();
 }

@@ -75,7 +75,7 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function ErrorCode201() {
+export default function ErrorCode201(): void  {
 
     describe("ErrorCode201", (): void => {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
