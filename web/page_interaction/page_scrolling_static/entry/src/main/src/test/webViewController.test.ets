@@ -258,8 +258,8 @@ export default function webViewController() {
 
     /**
      * @tc.name   emitonSwitchNextPage1
-     * @tc.number emitonSwitchNextPage1
-     * @tc.desc   emitonSwitchNextPage1
+     * @tc.number SUB_WEB_SWITCHNEXTPAGE_0700
+     * @tc.desc   test onOverScroll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
