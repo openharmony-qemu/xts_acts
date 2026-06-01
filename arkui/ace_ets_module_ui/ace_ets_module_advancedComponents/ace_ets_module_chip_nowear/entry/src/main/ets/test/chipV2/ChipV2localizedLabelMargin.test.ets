@@ -27,11 +27,11 @@ export default function ChipV2localizedLabelMargin() {
         router.clear();
         let pages = router.getState();
         console.info("get ChipV2localizedLabelMargin state pages: " + JSON.stringify(pages));
-        if (!("ChipV2localizedLabelMargin" == pages.name)) {
-          console.info("get ChipV2localizedLabelMargin state pages.name: " + JSON.stringify(pages.name));
+        if (!("ChipV2LocalizedLabelMargin" == pages.name)) {
+          console.info("get ChipV2LocalizedLabelMargin state pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info("push ChipV2localizedLabelMargin success: " + JSON.stringify(result));
+          console.info("push ChipV2LocalizedLabelMargin success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ChipV2localizedLabelMargin page error: " + err);
