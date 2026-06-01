@@ -542,7 +542,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0100
      * @tc.name testClassCurrent001
-     * @tc.desc Verify ClassCurrent case 001: current() static method with no arguments
+     * @tc.desc Verify ClassCurrent case 001: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -556,7 +556,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0200
      * @tc.name testClassCurrent002
-     * @tc.desc Verify ClassCurrent case 002: in call current()
+     * @tc.desc Verify ClassCurrent case 002: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -567,14 +567,14 @@ export default function ClassCurrentTest(): void {
       expect(result.getName()).assertEqual(Class.current().getName());
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
-     * @tc.name testClassCurrent004
-     * @tc.desc Verify ClassCurrent case 004: in call return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0300
+     * @tc.name testClassCurrent003
+     * @tc.desc Verify ClassCurrent case 003: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass004();
       let cls = obj.getClass();
       expect(cls !== null).assertTrue();
@@ -582,14 +582,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0500
-     * @tc.name testClassCurrent005
-     * @tc.desc Verify ClassCurrent case 005: verify return Classtype
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
+     * @tc.name testClassCurrent004
+     * @tc.desc Verify ClassCurrent case 004: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass005();
       let cls = obj.getAndVerifyType();
       expect(cls !== null).assertTrue();
@@ -597,69 +597,69 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0600
-     * @tc.name testClassCurrent006
-     * @tc.desc Verify ClassCurrent case 006: return Class object call method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0500
+     * @tc.name testClassCurrent005
+     * @tc.desc Verify ClassCurrent case 005: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass006();
       let name = obj.testChainCall();
       expect(name).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass006");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0700
-     * @tc.name testClassCurrent007
-     * @tc.desc Verify ClassCurrent case 007: in method call current()return type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0600
+     * @tc.name testClassCurrent006
+     * @tc.desc Verify ClassCurrent case 006: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new ChildClass007();
       expect(child.testParentCall()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ChildClass007");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0800
-     * @tc.name testClassCurrent008
-     * @tc.desc Verify ClassCurrent case 008: method call current()return type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0700
+     * @tc.name testClassCurrent007
+     * @tc.desc Verify ClassCurrent case 007: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new ChildClass008();
       let cls = child.getMyClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ChildClass008");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0900
-     * @tc.name testClassCurrent009
-     * @tc.desc Verify ClassCurrent case 009: inheritance current()return call
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0800
+     * @tc.name testClassCurrent008
+     * @tc.desc Verify ClassCurrent case 008: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Child009();
       let cls = obj.getClassInfo();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Child009");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1000
-     * @tc.name testClassCurrent010
-     * @tc.desc Verify ClassCurrent case 010: final call current()return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0900
+     * @tc.name testClassCurrent009
+     * @tc.desc Verify ClassCurrent case 009: Class.from<FinalClass010>(), isFinal returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new FinalClass010();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.FinalClass010");
@@ -667,14 +667,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1100
-     * @tc.name testClassCurrent011
-     * @tc.desc Verify ClassCurrent case 011: abstract class call current()return abstract class Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1000
+     * @tc.name testClassCurrent010
+     * @tc.desc Verify ClassCurrent case 010: Class.from<AbstractClass011>(), isAbstract returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConcreteClass011();
       let cls = obj.getAbstractClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.AbstractClass011");
@@ -682,28 +682,28 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1200
-     * @tc.name testClassCurrent012
-     * @tc.desc Verify ClassCurrent case 012: generic call current()return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1100
+     * @tc.name testClassCurrent011
+     * @tc.desc Verify ClassCurrent case 011: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new GenericClass012<int>();
       let cls = obj.getValue();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.GenericClass012");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1300
-     * @tc.name testClassCurrent013
-     * @tc.desc Verify ClassCurrent case 013: or call current()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1200
+     * @tc.name testClassCurrent012
+     * @tc.desc Verify ClassCurrent case 012: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outer = new OuterClass013();
       let inner = new InnerClass013();
       expect(outer.getClass().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.OuterClass013");
@@ -711,175 +711,175 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1400
-     * @tc.name testClassCurrent014
-     * @tc.desc Verify ClassCurrent case 014: verify return Class object type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1300
+     * @tc.name testClassCurrent013
+     * @tc.desc Verify ClassCurrent case 013: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass014();
       expect(obj.verifySubtype()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1500
-     * @tc.name testClassCurrent015
-     * @tc.desc Verify ClassCurrent case 015: verify current()return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1400
+     * @tc.name testClassCurrent014
+     * @tc.desc Verify ClassCurrent case 014: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass015();
       let superName = obj.testSuperClass();
       expect(superName.length > 0).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1600
-     * @tc.name testClassCurrent016
-     * @tc.desc Verify ClassCurrent case 016: call current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1500
+     * @tc.name testClassCurrent015
+     * @tc.desc Verify ClassCurrent case 015: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let globalClass = Class.current();
       expect(globalClass !== null).assertTrue();
       expect(globalClass.getName()).assertEqual(Class.current().getName());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1700
-     * @tc.name testClassCurrent017
-     * @tc.desc Verify ClassCurrent case 017: static method call current()return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1600
+     * @tc.name testClassCurrent016
+     * @tc.desc Verify ClassCurrent case 016: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = TestClass017.getStaticClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass017");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1800
-     * @tc.name testClassCurrent018
-     * @tc.desc Verify ClassCurrent case 018: constructor call current()return in
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1700
+     * @tc.name testClassCurrent017
+     * @tc.desc Verify ClassCurrent case 017: Class.from<TestClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass018();
       expect(obj !== null).assertTrue();
       expect(Class.from<TestClass018>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass018");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1900
-     * @tc.name testClassCurrent019
-     * @tc.desc Verify ClassCurrent case 019: property call current()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1800
+     * @tc.name testClassCurrent018
+     * @tc.desc Verify ClassCurrent case 018: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass019();
       obj.name = "n";
       expect(obj.name).assertEqual("n");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2000
-     * @tc.name testClassCurrent020
-     * @tc.desc Verify ClassCurrent case 020: call current()return same object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1900
+     * @tc.name testClassCurrent019
+     * @tc.desc Verify ClassCurrent case 019: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass020();
       expect(obj.testConsistency()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2100
-     * @tc.name testClassCurrent021
-     * @tc.desc Verify ClassCurrent case 021: scenario current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2000
+     * @tc.name testClassCurrent020
+     * @tc.desc Verify ClassCurrent case 020: Class.current() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let name1 = Class.current().getName();
       let name2 = Class.current().getName();
       expect(name1).assertEqual(name2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2200
-     * @tc.name testClassCurrent022
-     * @tc.desc Verify ClassCurrent case 022: current()return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2100
+     * @tc.name testClassCurrent021
+     * @tc.desc Verify ClassCurrent case 021: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass022();
       expect(obj.testCurrent()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass022");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2300
-     * @tc.name testClassCurrent023
-     * @tc.desc Verify ClassCurrent case 023: of()return object instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2200
+     * @tc.name testClassCurrent022
+     * @tc.desc Verify ClassCurrent case 022: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass023();
       let testObj = new TestClass023();
       expect(obj.testOf(testObj)).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass023");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2400
-     * @tc.name testClassCurrent024
-     * @tc.desc Verify ClassCurrent case 024: in instance method current() of(this)
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2300
+     * @tc.name testClassCurrent023
+     * @tc.desc Verify ClassCurrent case 023: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass024();
       expect(obj.compareCurrentAndOf()).assertTrue();
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2400
+     * @tc.name testClassCurrent024
+     * @tc.desc Verify ClassCurrent case 024: behavior verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassCurrent024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(TestClass025.testFrom()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass025");
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2500
      * @tc.name testClassCurrent025
-     * @tc.desc Verify ClassCurrent case 025: from() in not object get Class object
+     * @tc.desc Verify ClassCurrent case 025: Class.from<TestClass026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassCurrent025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(TestClass025.testFrom()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass025");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2600
-     * @tc.name testClassCurrent026
-     * @tc.desc Verify ClassCurrent case 026: current() in method or constructor call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassCurrent026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fromCls = Class.from<TestClass026>();
       let obj = new TestClass026();
       let currentCls = obj.testCurrent();
@@ -887,41 +887,41 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2700
-     * @tc.name testClassCurrent027
-     * @tc.desc Verify ClassCurrent case 027: in method current() from< >()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2600
+     * @tc.name testClassCurrent026
+     * @tc.desc Verify ClassCurrent case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass027();
       expect(obj.compareCurrentAndFrom()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2800
-     * @tc.name testClassCurrent028
-     * @tc.desc Verify ClassCurrent case 028: scenario method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2700
+     * @tc.name testClassCurrent027
+     * @tc.desc Verify ClassCurrent case 027: Class.from<TestClass028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass028();
       obj.compareAllMethods();
       expect(Class.from<TestClass028>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass028");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2900
-     * @tc.name testClassCurrent029
-     * @tc.desc Verify ClassCurrent case 029: scenario API
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2800
+     * @tc.name testClassCurrent028
+     * @tc.desc Verify ClassCurrent case 028: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass029();
       expect(obj.method1().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass029");
       expect(obj.method2(obj).getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass029");
@@ -929,27 +929,27 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3000
-     * @tc.name testClassCurrent030
-     * @tc.desc Verify ClassCurrent case 030: current()not return type Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2900
+     * @tc.name testClassCurrent029
+     * @tc.desc Verify ClassCurrent case 029: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass030();
       expect(obj.testNotPrimitive()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3100
-     * @tc.name testClassCurrent031
-     * @tc.desc Verify ClassCurrent case 031: in Number String current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3000
+     * @tc.name testClassCurrent030
+     * @tc.desc Verify ClassCurrent case 030: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let wrapper = new NumberWrapper031();
       let cls = wrapper.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.NumberWrapper031");
@@ -957,14 +957,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3200
-     * @tc.name testClassCurrent032
-     * @tc.desc Verify ClassCurrent case 032: interface current()return interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3100
+     * @tc.name testClassCurrent031
+     * @tc.desc Verify ClassCurrent case 031: isInterface returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: MyInterface032 = new TestClass032();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass032");
@@ -972,14 +972,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3300
-     * @tc.name testClassCurrent033
-     * @tc.desc Verify ClassCurrent case 033: multiple interface when current()return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3200
+     * @tc.name testClassCurrent032
+     * @tc.desc Verify ClassCurrent case 032: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass033();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass033");
@@ -988,54 +988,54 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3400
-     * @tc.name testClassCurrent034
-     * @tc.desc Verify ClassCurrent case 034: type current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3300
+     * @tc.name testClassCurrent033
+     * @tc.desc Verify ClassCurrent case 033: Class.from<TestEnum034>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<TestEnum034>().isEnum()).assertTrue();
       expect(Class.from<TestEnum034>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestEnum034");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3500
-     * @tc.name testClassCurrent035
-     * @tc.desc Verify ClassCurrent case 035: using from()get Class object and current()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3400
+     * @tc.name testClassCurrent034
+     * @tc.desc Verify ClassCurrent case 034: Class.from<TestEnum035>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls = Class.from<TestEnum035>();
       expect(enumCls.isEnum()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3600
-     * @tc.name testClassCurrent036
-     * @tc.desc Verify ClassCurrent case 036: getClass on union instance returns concrete UnionClass036 Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3500
+     * @tc.name testClassCurrent035
+     * @tc.desc Verify ClassCurrent case 035: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new UnionClass036();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.UnionClass036");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3700
-     * @tc.name testClassCurrent037
-     * @tc.desc Verify ClassCurrent case 037: Class.from union type isUnion is true not concrete class name
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3600
+     * @tc.name testClassCurrent036
+     * @tc.desc Verify ClassCurrent case 036: Class.from<int | string>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let unionCls = Class.from<int | string>();
       expect(unionCls.isUnion()).assertTrue();
 
@@ -1045,14 +1045,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3800
-     * @tc.name testClassCurrent038
-     * @tc.desc Verify ClassCurrent case 038: array type current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3700
+     * @tc.name testClassCurrent037
+     * @tc.desc Verify ClassCurrent case 037: isFixedArray returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new FixedArrayClass038();
       let currentCls = obj.getCurrentClass();
       expect(currentCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.FixedArrayClass038");
@@ -1063,112 +1063,112 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3900
-     * @tc.name testClassCurrent039
-     * @tc.desc Verify ClassCurrent case 039: verify current() call performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3800
+     * @tc.name testClassCurrent038
+     * @tc.desc Verify ClassCurrent case 038: Class.from<TestClass039>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass039();
       obj.performanceTest();
       expect(Class.from<TestClass039>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass039");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4000
-     * @tc.name testClassCurrent040
-     * @tc.desc Verify ClassCurrent case 040: current() and of() from() performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3900
+     * @tc.name testClassCurrent039
+     * @tc.desc Verify ClassCurrent case 039: Class.from<TestClass040>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass040();
       obj.comparePerformance();
       expect(Class.from<TestClass040>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass040");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4100
-     * @tc.name testClassCurrent041
-     * @tc.desc Verify ClassCurrent case 041: current()return Class object instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4000
+     * @tc.name testClassCurrent040
+     * @tc.desc Verify ClassCurrent case 040: Class.from<TestClass041>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass041();
       obj.testMemory();
       expect(Class.from<TestClass041>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass041");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4200
-     * @tc.name testClassCurrent042
-     * @tc.desc Verify ClassCurrent case 042: verify call current()not
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4100
+     * @tc.name testClassCurrent041
+     * @tc.desc Verify ClassCurrent case 041: Class.from<TestClass042>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass042();
       obj.memoryLeakTest();
       expect(Class.from<TestClass042>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass042");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4300
-     * @tc.name testClassCurrent043
-     * @tc.desc Verify ClassCurrent case 043: scenario current()return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4200
+     * @tc.name testClassCurrent042
+     * @tc.desc Verify ClassCurrent case 042: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass026();
       let currentCls = obj.testCurrent();
       expect(currentCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass026");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4400
-     * @tc.name testClassCurrent044
-     * @tc.desc Verify ClassCurrent case 044: verify current() in API version
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4300
+     * @tc.name testClassCurrent043
+     * @tc.desc Verify ClassCurrent case 043: Class.from<TestClass044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass044();
       obj.testAPIVersion();
       expect(Class.from<TestClass044>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass044");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4500
-     * @tc.name testClassCurrent045
-     * @tc.desc Verify ClassCurrent case 045: in call current()return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4400
+     * @tc.name testClassCurrent044
+     * @tc.desc Verify ClassCurrent case 044: Class.from<Module1Class045>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = new Module2Class045();
       m.testCrossModule();
       expect(Class.from<Module1Class045>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Module1Class045");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4600
-     * @tc.name testClassCurrent046
-     * @tc.desc Verify ClassCurrent case 046: ORM via current()get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4500
+     * @tc.name testClassCurrent045
+     * @tc.desc Verify ClassCurrent case 045: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const userFqn = "entry.src.main.src.test.class.ClassCurrentTest.test.User046";
       let user = new User046();
       expect(Class.of(user).getName()).assertEqual(userFqn);
@@ -1176,14 +1176,14 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4700
-     * @tc.name testClassCurrent047
-     * @tc.desc Verify ClassCurrent case 047: when via current()get type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4600
+     * @tc.name testClassCurrent046
+     * @tc.desc Verify ClassCurrent case 046: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const serializableFqn = "entry.src.main.src.test.class.ClassCurrentTest.test.Serializable047";
       let obj = new Serializable047();
       let json = obj.toJSON();
@@ -1191,96 +1191,96 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4800
-     * @tc.name testClassCurrent048
-     * @tc.desc Verify ClassCurrent case 048: via current()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4700
+     * @tc.name testClassCurrent047
+     * @tc.desc Verify ClassCurrent case 047: Class.from<Service048>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s = new Service048();
       s.doSomething();
       expect(Class.from<Service048>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Service048");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4900
-     * @tc.name testClassCurrent049
-     * @tc.desc Verify ClassCurrent case 049: error via current()get error
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4800
+     * @tc.name testClassCurrent048
+     * @tc.desc Verify ClassCurrent case 048: Class.from<ErrorHandler049>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let h = new ErrorHandler049();
       h.handleError(new Error("e"));
       expect(Class.from<ErrorHandler049>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ErrorHandler049");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5000
-     * @tc.name testClassCurrent050
-     * @tc.desc Verify ClassCurrent case 050: via current()get Class object call
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4900
+     * @tc.name testClassCurrent049
+     * @tc.desc Verify ClassCurrent case 049: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass050();
       expect(obj.testDynamicCall()).assertEqual("Hello World");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5100
-     * @tc.name testClassCurrent051
-     * @tc.desc Verify ClassCurrent case 051: via current()get Class object field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5000
+     * @tc.name testClassCurrent050
+     * @tc.desc Verify ClassCurrent case 050: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass051();
       expect(obj.testFieldAccess()).assertEqual("test");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5200
-     * @tc.name testClassCurrent052
-     * @tc.desc Verify ClassCurrent case 052: in inheritance current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5100
+     * @tc.name testClassCurrent051
+     * @tc.desc Verify ClassCurrent case 051: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Level5052();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Level5052");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5300
-     * @tc.name testClassCurrent053
-     * @tc.desc Verify ClassCurrent case 053: verify current() in inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5200
+     * @tc.name testClassCurrent052
+     * @tc.desc Verify ClassCurrent case 052: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new L3053();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.L3053");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5400
-     * @tc.name testClassCurrent054
-     * @tc.desc Verify ClassCurrent case 054: inheritance interface scenario
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5300
+     * @tc.name testClassCurrent053
+     * @tc.desc Verify ClassCurrent case 053: getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass054();
       let cls = obj.getClass();
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass054");
@@ -1289,28 +1289,28 @@ export default function ClassCurrentTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5500
-     * @tc.name testClassCurrent055
-     * @tc.desc Verify ClassCurrent case 055: verify
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5400
+     * @tc.name testClassCurrent054
+     * @tc.desc Verify ClassCurrent case 054: Class.from<TestClass055>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass055();
       obj.regressionTest();
       expect(Class.from<TestClass055>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass055");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5600
-     * @tc.name testClassCurrent056
-     * @tc.desc Verify ClassCurrent case 056: verify API after current() is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5500
+     * @tc.name testClassCurrent055
+     * @tc.desc Verify ClassCurrent case 055: Class.from<TestClass056>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassCurrent056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassCurrent055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass056();
       obj.testBackwardCompatibility();
       expect(Class.from<TestClass056>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass056");

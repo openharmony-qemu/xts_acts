@@ -292,7 +292,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0100
      * @tc.name testClassIsFinal001
-     * @tc.desc Verify ClassIsFinal case 001: isFinal() no parameters method
+     * @tc.desc Verify ClassIsFinal case 001: Class.from<FinalClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -306,7 +306,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0200
      * @tc.name testClassIsFinal002
-     * @tc.desc Verify ClassIsFinal case 002: using Class.from<T>()get object after call isFinal
+     * @tc.desc Verify ClassIsFinal case 002: Class.from<MyFinalClass002>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -319,7 +319,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0300
      * @tc.name testClassIsFinal003
-     * @tc.desc Verify ClassIsFinal case 003: using Class.of(obj)get object after call isFinal
+     * @tc.desc Verify ClassIsFinal case 003: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0400
      * @tc.name testClassIsFinal004
-     * @tc.desc Verify ClassIsFinal case 004: using Class.ofAny(obj)get object after call isFinal
+     * @tc.desc Verify ClassIsFinal case 004: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -347,7 +347,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0500
      * @tc.name testClassIsFinal005
-     * @tc.desc Verify ClassIsFinal case 005: in using Class.current()get after call isFinal
+     * @tc.desc Verify ClassIsFinal case 005: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -360,7 +360,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0600
      * @tc.name testClassIsFinal006
-     * @tc.desc Verify ClassIsFinal case 006: final should return true
+     * @tc.desc Verify ClassIsFinal case 006: Class.from<StandardFinalClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -373,7 +373,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0700
      * @tc.name testClassIsFinal007
-     * @tc.desc Verify ClassIsFinal case 007: constructor final should return true
+     * @tc.desc Verify ClassIsFinal case 007: Class.from<FinalWithConstructor007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -386,7 +386,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0800
      * @tc.name testClassIsFinal008
-     * @tc.desc Verify ClassIsFinal case 008: method final should return true
+     * @tc.desc Verify ClassIsFinal case 008: Class.from<FinalWithMethods008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -399,7 +399,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_0900
      * @tc.name testClassIsFinal009
-     * @tc.desc Verify ClassIsFinal case 009: final inheritance should return true
+     * @tc.desc Verify ClassIsFinal case 009: Class.from<FinalChild009>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -412,7 +412,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1000
      * @tc.name testClassIsFinal010
-     * @tc.desc Verify ClassIsFinal case 010: not finalmodifier should return false
+     * @tc.desc Verify ClassIsFinal case 010: Class.from<NormalClass010>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -425,7 +425,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1100
      * @tc.name testClassIsFinal011
-     * @tc.desc Verify ClassIsFinal case 011: abstract abstract class should return false
+     * @tc.desc Verify ClassIsFinal case 011: Class.from<AbstractClass011>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -438,7 +438,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1200
      * @tc.name testClassIsFinal012
-     * @tc.desc Verify ClassIsFinal case 012: inheritance should return false
+     * @tc.desc Verify ClassIsFinal case 012: Class.from<OpenClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -451,7 +451,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1300
      * @tc.name testClassIsFinal013
-     * @tc.desc Verify ClassIsFinal case 013: interface type Class object should return false
+     * @tc.desc Verify ClassIsFinal case 013: Class.from<MyInterface013>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -464,7 +464,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1400
      * @tc.name testClassIsFinal014
-     * @tc.desc Verify ClassIsFinal case 014: type Class object should return true
+     * @tc.desc Verify ClassIsFinal case 014: Class.from<string>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -478,7 +478,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1500
      * @tc.name testClassIsFinal015
-     * @tc.desc Verify ClassIsFinal case 015: array type Class object should return false
+     * @tc.desc Verify ClassIsFinal case 015: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -492,7 +492,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1600
      * @tc.name testClassIsFinal016
-     * @tc.desc Verify ClassIsFinal case 016: FixedArray type Class object should return true
+     * @tc.desc Verify ClassIsFinal case 016: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -506,7 +506,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1700
      * @tc.name testClassIsFinal017
-     * @tc.desc Verify ClassIsFinal case 017: type Class object should return false
+     * @tc.desc Verify ClassIsFinal case 017: Class.from<int | string>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -519,7 +519,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1800
      * @tc.name testClassIsFinal018
-     * @tc.desc Verify ClassIsFinal case 018: enum Class object should return true
+     * @tc.desc Verify ClassIsFinal case 018: Class.from<TestEnum018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +532,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1900
      * @tc.name testClassIsFinal019
-     * @tc.desc Verify ClassIsFinal case 019: verify isFinal()return type is boolean
+     * @tc.desc Verify ClassIsFinal case 019: Class.from<TestClass019>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +546,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2000
      * @tc.name testClassIsFinal020
-     * @tc.desc Verify ClassIsFinal case 020: verify return boolean
+     * @tc.desc Verify ClassIsFinal case 020: Class.from<TestClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -557,27 +557,27 @@ export default function ClassIsFinalTest(): void {
       expect(result).assertEqual(false)
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2200
-     * @tc.name testClassIsFinal022
-     * @tc.desc Verify ClassIsFinal case 022: final interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2100
+     * @tc.name testClassIsFinal021
+     * @tc.desc Verify ClassIsFinal case 021: Class.from<FinalImplementsInterface022>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalImplementsInterface022>()
       expect(cls.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2300
-     * @tc.name testClassIsFinal023
-     * @tc.desc Verify ClassIsFinal case 023: inheritance final isFinal modifier
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2200
+     * @tc.name testClassIsFinal022
+     * @tc.desc Verify ClassIsFinal case 022: Class.from<ParentClass023>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass023>()
       let childCls = Class.from<ChildClass023>()
       expect(parentCls.isFinal()).assertEqual(false)
@@ -585,14 +585,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2400
-     * @tc.name testClassIsFinal024
-     * @tc.desc Verify ClassIsFinal case 024: inheritance final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2300
+     * @tc.name testClassIsFinal023
+     * @tc.desc Verify ClassIsFinal case 023: Class.from<GrandParent024>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let grandCls = Class.from<GrandParent024>()
       let parentCls = Class.from<Parent024>()
       let childCls = Class.from<FinalChild024>()
@@ -602,14 +602,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2500
-     * @tc.name testClassIsFinal025
-     * @tc.desc Verify ClassIsFinal case 025: get final isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2400
+     * @tc.name testClassIsFinal024
+     * @tc.desc Verify ClassIsFinal case 024: Class.from<FinalDerived025>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finalCls = Class.from<FinalDerived025>()
       let baseCls = finalCls.getSuper()!
       expect(finalCls.isFinal()).assertEqual(true)
@@ -617,125 +617,125 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2600
-     * @tc.name testClassIsFinal026
-     * @tc.desc Verify ClassIsFinal case 026: get final isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2500
+     * @tc.name testClassIsFinal025
+     * @tc.desc Verify ClassIsFinal case 025: Class.from<Derived026>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let derivedCls = Class.from<Derived026>()
       let baseCls = derivedCls.getSuper()!
       expect(derivedCls.isFinal()).assertEqual(false)
       expect(baseCls.isFinal()).assertEqual(false)
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2800
-     * @tc.name testClassIsFinal028
-     * @tc.desc Verify ClassIsFinal case 028: final isAbstractshould is false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2600
+     * @tc.name testClassIsFinal026
+     * @tc.desc Verify ClassIsFinal case 026: Class.from<FinalClass028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass028>()
       expect(cls.isFinal()).assertEqual(true)
       expect(cls.isAbstract()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2900
-     * @tc.name testClassIsFinal029
-     * @tc.desc Verify ClassIsFinal case 029: final isInterfaceshould is false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2700
+     * @tc.name testClassIsFinal027
+     * @tc.desc Verify ClassIsFinal case 027: Class.from<FinalClass029>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass029>()
       expect(cls.isFinal()).assertEqual(true)
       expect(cls.isInterface()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3000
-     * @tc.name testClassIsFinal030
-     * @tc.desc Verify ClassIsFinal case 030: interface isFinalshould is false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2800
+     * @tc.name testClassIsFinal028
+     * @tc.desc Verify ClassIsFinal case 028: Class.from<MyInterface030>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface030>()
       expect(cls.isInterface()).assertEqual(true)
       expect(cls.isFinal()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3100
-     * @tc.name testClassIsFinal031
-     * @tc.desc Verify ClassIsFinal case 031: final isEnumshould is false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2900
+     * @tc.name testClassIsFinal029
+     * @tc.desc Verify ClassIsFinal case 029: Class.from<FinalClass031>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass031>()
       expect(cls.isFinal()).assertEqual(true)
       expect(cls.isEnum()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3200
-     * @tc.name testClassIsFinal032
-     * @tc.desc Verify ClassIsFinal case 032: enum isEnum true and isFinal true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3000
+     * @tc.name testClassIsFinal030
+     * @tc.desc Verify ClassIsFinal case 030: Class.from<TestEnum032>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum032>()
       expect(cls.isEnum()).assertEqual(true)
       expect(cls.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3300
-     * @tc.name testClassIsFinal033
-     * @tc.desc Verify ClassIsFinal case 033: final isPrimitiveshould is false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3100
+     * @tc.name testClassIsFinal031
+     * @tc.desc Verify ClassIsFinal case 031: Class.from<FinalClass033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass033>()
       expect(cls.isFinal()).assertEqual(true)
       expect(cls.isPrimitive()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3400
-     * @tc.name testClassIsFinal034
-     * @tc.desc Verify ClassIsFinal case 034: primitive isPrimitive true and isFinal true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3200
+     * @tc.name testClassIsFinal032
+     * @tc.desc Verify ClassIsFinal case 032: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isPrimitive()).assertEqual(true)
       expect(Class.PRIMITIVE_INT.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3500
-     * @tc.name testClassIsFinal035
-     * @tc.desc Verify ClassIsFinal case 035: verify final type inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3300
+     * @tc.name testClassIsFinal033
+     * @tc.desc Verify ClassIsFinal case 033: Class.from<Base035>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let baseCls = Class.from<Base035>()
       let childCls = Class.from<FinalChild035>()
       expect(childCls.isSubtypeOf(baseCls)).assertEqual(true)
@@ -744,40 +744,40 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3600
-     * @tc.name testClassIsFinal036
-     * @tc.desc Verify ClassIsFinal case 036: not final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3400
+     * @tc.name testClassIsFinal034
+     * @tc.desc Verify ClassIsFinal case 034: Class.from<EmptyFinalClass036>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyFinalClass036>()
       expect(cls.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3700
-     * @tc.name testClassIsFinal037
-     * @tc.desc Verify ClassIsFinal case 037: not
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3500
+     * @tc.name testClassIsFinal035
+     * @tc.desc Verify ClassIsFinal case 035: Class.from<EmptyClass037>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyClass037>()
       expect(cls.isFinal()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3800
-     * @tc.name testClassIsFinal038
-     * @tc.desc Verify ClassIsFinal case 038: multiple different final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3600
+     * @tc.name testClassIsFinal036
+     * @tc.desc Verify ClassIsFinal case 036: Class.from<FinalClass1038>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<FinalClass1038>()
       let cls2 = Class.from<FinalClass2038>()
       let cls3 = Class.from<FinalClass3038>()
@@ -787,14 +787,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3900
-     * @tc.name testClassIsFinal039
-     * @tc.desc Verify ClassIsFinal case 039: in final final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3700
+     * @tc.name testClassIsFinal037
+     * @tc.desc Verify ClassIsFinal case 037: Class.from<FinalClass039>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finalCls = Class.from<FinalClass039>()
       let normalCls = Class.from<NormalClass039>()
       expect(finalCls.isFinal()).assertEqual(true)
@@ -802,14 +802,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4000
-     * @tc.name testClassIsFinal040
-     * @tc.desc Verify ClassIsFinal case 040: final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3800
+     * @tc.name testClassIsFinal038
+     * @tc.desc Verify ClassIsFinal case 038: Class.from<OuterFinal040>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerCls = Class.from<OuterFinal040>()
       let innerCls = Class.from<InnerClass040>()
       expect(outerCls.isFinal()).assertEqual(true)
@@ -817,14 +817,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4100
-     * @tc.name testClassIsFinal041
-     * @tc.desc Verify ClassIsFinal case 041: generic final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3900
+     * @tc.name testClassIsFinal039
+     * @tc.desc Verify ClassIsFinal case 039: Class.from<GenericFinalClass041<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<GenericFinalClass041<int>>()
       let cls2 = Class.from<GenericFinalClass041<string>>()
       expect(cls1.isFinal()).assertEqual(true)
@@ -832,53 +832,53 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4200
-     * @tc.name testClassIsFinal042
-     * @tc.desc Verify ClassIsFinal case 042: generic final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4000
+     * @tc.name testClassIsFinal040
+     * @tc.desc Verify ClassIsFinal case 040: Class.from<GenericClass042<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass042<int>>()
       expect(cls.isFinal()).assertEqual(false)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4300
-     * @tc.name testClassIsFinal043
-     * @tc.desc Verify ClassIsFinal case 043: public final isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4100
+     * @tc.name testClassIsFinal041
+     * @tc.desc Verify ClassIsFinal case 041: Class.from<PublicFinalClass043>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicFinalClass043>()
       expect(cls.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4400
-     * @tc.name testClassIsFinal044
-     * @tc.desc Verify ClassIsFinal case 044: final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4200
+     * @tc.name testClassIsFinal042
+     * @tc.desc Verify ClassIsFinal case 042: Class.from<InternalFinalClass044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InternalFinalClass044>()
       expect(cls.isFinal()).assertEqual(true)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4500
-     * @tc.name testClassIsFinal045
-     * @tc.desc Verify ClassIsFinal case 045: verify call isFinalreturn
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4300
+     * @tc.name testClassIsFinal043
+     * @tc.desc Verify ClassIsFinal case 043: Class.from<TestClass045>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass045>()
       let result1 = cls.isFinal()
       let result2 = cls.isFinal()
@@ -889,14 +889,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4600
-     * @tc.name testClassIsFinal046
-     * @tc.desc Verify ClassIsFinal case 046: multiple isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4400
+     * @tc.name testClassIsFinal044
+     * @tc.desc Verify ClassIsFinal case 044: Class.from<Final1046>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Class[] = [
       Class.from<Final1046>(),
       Class.from<Final2046>(),
@@ -910,14 +910,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4700
-     * @tc.name testClassIsFinal047
-     * @tc.desc Verify ClassIsFinal case 047: in isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4500
+     * @tc.name testClassIsFinal045
+     * @tc.desc Verify ClassIsFinal case 045: Class.from<FinalClass001>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass001>();
       for (let i = 0; i < 50; i++) {
         expect(cls.isFinal()).assertTrue();
@@ -925,39 +925,39 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4800
-     * @tc.name testClassIsFinal048
-     * @tc.desc Verify ClassIsFinal case 048: type call isFinal is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4600
+     * @tc.name testClassIsFinal046
+     * @tc.desc Verify ClassIsFinal case 046: Class.from<TestClass020>(), isFinal returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<TestClass020>().isFinal()).assertFalse();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5000
-     * @tc.name testClassIsFinal050
-     * @tc.desc Verify ClassIsFinal case 050: final multiple interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4700
+     * @tc.name testClassIsFinal047
+     * @tc.desc Verify ClassIsFinal case 047: Class.from<FinalMultiInterface050>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalMultiInterface050>()
       expect(cls.isFinal()).assertEqual(true)
       expect(cls.getInterfaces().length).assertEqual(2)
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5100
-     * @tc.name testClassIsFinal051
-     * @tc.desc Verify ClassIsFinal case 051: canBeInherited by isFinal/isInterface per type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4800
+     * @tc.name testClassIsFinal048
+     * @tc.desc Verify ClassIsFinal case 048: Class.from<FinalClass051>(), isFinal returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finalCls = Class.from<FinalClass051>();
       expect(finalCls.isFinal()).assertEqual(true);
       expect(canBeInherited051(finalCls)).assertEqual(false);
@@ -971,14 +971,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5200
-     * @tc.name testClassIsFinal052
-     * @tc.desc Verify ClassIsFinal case 052: isFinal
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4900
+     * @tc.name testClassIsFinal049
+     * @tc.desc Verify ClassIsFinal case 049: Class.from<FinalClass052>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let code1 = generateClassCode052(Class.from<FinalClass052>())
       let code2 = generateClassCode052(Class.from<NormalClass052>())
 
@@ -987,14 +987,14 @@ export default function ClassIsFinalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5300
-     * @tc.name testClassIsFinal053
-     * @tc.desc Verify ClassIsFinal case 053: using isFinalverify
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5000
+     * @tc.name testClassIsFinal050
+     * @tc.desc Verify ClassIsFinal case 050: Class.from<AppConfig053>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassIsFinal053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassIsFinal050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(validateClassDesign053(Class.from<AppConfig053>(), true)).assertEqual(true)
       expect(validateClassDesign053(Class.from<StringUtils053>(), false)).assertEqual(true)
     });

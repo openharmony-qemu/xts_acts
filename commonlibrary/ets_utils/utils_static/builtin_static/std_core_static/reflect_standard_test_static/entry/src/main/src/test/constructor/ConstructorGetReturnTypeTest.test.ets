@@ -113,7 +113,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0100
      * @tc.name testConstructorGetReturnType001
-     * @tc.desc Verify ConstructorGetReturnType case 001: getReturnType()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorGetReturnType case 001: Class.from<MyClass001>(), getName returns "void", return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -128,7 +128,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0200
      * @tc.name testConstructorGetReturnType002
-     * @tc.desc Verify ConstructorGetReturnType case 002: parameters
+     * @tc.desc Verify ConstructorGetReturnType case 002: Class.from<MyClass003>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -141,7 +141,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0300
      * @tc.name testConstructorGetReturnType003
-     * @tc.desc Verify ConstructorGetReturnType case 003: constructor return void type
+     * @tc.desc Verify ConstructorGetReturnType case 003: Class.from<MyClass003>(), getName returns "void", return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -157,7 +157,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0400
      * @tc.name testConstructorGetReturnType004
-     * @tc.desc Verify ConstructorGetReturnType case 004: multiple constructor when return void
+     * @tc.desc Verify ConstructorGetReturnType case 004: Class.from<MyClass004>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -172,7 +172,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0500
      * @tc.name testConstructorGetReturnType005
-     * @tc.desc Verify ConstructorGetReturnType case 005: constructor return type is void
+     * @tc.desc Verify ConstructorGetReturnType case 005: Class.from<MyClass005>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -185,7 +185,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0600
      * @tc.name testConstructorGetReturnType006
-     * @tc.desc Verify ConstructorGetReturnType case 006: parameters constructor return type is void
+     * @tc.desc Verify ConstructorGetReturnType case 006: Class.from<MyClass006>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -198,7 +198,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0700
      * @tc.name testConstructorGetReturnType007
-     * @tc.desc Verify ConstructorGetReturnType case 007: parameters constructor return type is void
+     * @tc.desc Verify ConstructorGetReturnType case 007: Class.from<MyClass007>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -211,7 +211,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0800
      * @tc.name testConstructorGetReturnType008
-     * @tc.desc Verify ConstructorGetReturnType case 008: verify return type is Class
+     * @tc.desc Verify ConstructorGetReturnType case 008: Class.from<MyClass005>(), getName returns "void", return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -226,7 +226,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0900
      * @tc.name testConstructorGetReturnType009
-     * @tc.desc Verify ConstructorGetReturnType case 009: verify void type
+     * @tc.desc Verify ConstructorGetReturnType case 009: Class.from<MyClass005>(), isPrimitive returns true, getName returns "void", return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1000
      * @tc.name testConstructorGetReturnType010
-     * @tc.desc Verify ConstructorGetReturnType case 010: verify return Class object using method
+     * @tc.desc Verify ConstructorGetReturnType case 010: Class.from<MyClass005>(), isInterface returns false, isPrimitive returns true, isFinal returns true, getName returns "void"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,7 +258,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1100
      * @tc.name testConstructorGetReturnType011
-     * @tc.desc Verify ConstructorGetReturnType case 011: abstract class constructor return void
+     * @tc.desc Verify ConstructorGetReturnType case 011: Class.from<AbstractClass011>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -271,7 +271,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1200
      * @tc.name testConstructorGetReturnType012
-     * @tc.desc Verify ConstructorGetReturnType case 012: final constructor return void
+     * @tc.desc Verify ConstructorGetReturnType case 012: Class.from<FinalClass012>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -284,7 +284,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1300
      * @tc.name testConstructorGetReturnType013
-     * @tc.desc Verify ConstructorGetReturnType case 013: generic constructor return void
+     * @tc.desc Verify ConstructorGetReturnType case 013: Class.from<GenericClass013<int>>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -297,7 +297,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1400
      * @tc.name testConstructorGetReturnType014
-     * @tc.desc Verify ConstructorGetReturnType case 014: constructor return void
+     * @tc.desc Verify ConstructorGetReturnType case 014: Class.from<ParentClass014>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -312,7 +312,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1500
      * @tc.name testConstructorGetReturnType015
-     * @tc.desc Verify ConstructorGetReturnType case 015: getReturnType()method not throw exception
+     * @tc.desc Verify ConstructorGetReturnType case 015: Class.from<MyClass005>(), getName returns "void", return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -326,7 +326,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1600
      * @tc.name testConstructorGetReturnType016
-     * @tc.desc Verify ConstructorGetReturnType case 016: verify modifier constructor get return type
+     * @tc.desc Verify ConstructorGetReturnType case 016: Class.from<MyClass016>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +342,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1700
      * @tc.name testConstructorGetReturnType017
-     * @tc.desc Verify ConstructorGetReturnType case 017: verify different type constructor getReturnType()
+     * @tc.desc Verify ConstructorGetReturnType case 017: Class.from<AbstractClass017>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -359,7 +359,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1800
      * @tc.name testConstructorGetReturnType018
-     * @tc.desc Verify ConstructorGetReturnType case 018: verify constructor getReturnType()return void
+     * @tc.desc Verify ConstructorGetReturnType case 018: Class.from<MyClass018>(), return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -374,7 +374,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1900
      * @tc.name testConstructorGetReturnType019
-     * @tc.desc Verify ConstructorGetReturnType case 019: verify getReturnType() and getOwner()
+     * @tc.desc Verify ConstructorGetReturnType case 019: Class.from<MyClass019>(), return type verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -388,7 +388,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_2000
      * @tc.name testConstructorGetReturnType020
-     * @tc.desc Verify ConstructorGetReturnType case 020: constructor method return type
+     * @tc.desc Verify ConstructorGetReturnType case 020: Class.from<MyClass020>(), getStaticMethod resolves expected method, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_2100
      * @tc.name testConstructorGetReturnType021
-     * @tc.desc Verify ConstructorGetReturnType case 021: verify constructor return type
+     * @tc.desc Verify ConstructorGetReturnType case 021: Class.from<MyClass021>(), getName returns "constructor", constructor getName returns constructor, parameter count verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
