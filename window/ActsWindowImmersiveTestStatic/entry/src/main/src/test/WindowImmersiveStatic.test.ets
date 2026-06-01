@@ -23,6 +23,7 @@ import type { AsyncCallback, Callback } from '@ohos.base'
 import { ColorMetrics } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { display } from '@kit.ArkUI';
+import { canIUse } from '@internal.full.global';
 
 let domain: int = 0x0000;
 let tag: string = 'WindowImmersiveStaticTest';
