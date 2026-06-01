@@ -24,7 +24,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -33,7 +33,7 @@ export class StringFields {
 struct webResourceResponseGet {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   controllerone: webView.WebviewController = new webView.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields();
+  stringObj: StringFields  = new StringFields ();
   @State webdata: string = '<!DOCTYPE html>\n' +
     '<html>\n' +
     '<head>\n' +
@@ -143,7 +143,7 @@ struct webResourceResponseGet {
             case 'emitonSwitchNextPage3': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webViewController' })
+              router.pushUrl({ url: 'pages/scrollEvent' })
             }
           }
         })
