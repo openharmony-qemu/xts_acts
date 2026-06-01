@@ -24,7 +24,7 @@ import { common, Want } from '@kit.AbilityKit';
 import window from '@ohos.window';
 import { image } from '@kit.ImageKit';
 import { Driver, ON } from '@kit.TestKit';
-import { entryName } from './FloatingBall'
+import { entryName } from './FloatingBall.test'
 import { abilityAccessCtrl, StartOptions, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
 
