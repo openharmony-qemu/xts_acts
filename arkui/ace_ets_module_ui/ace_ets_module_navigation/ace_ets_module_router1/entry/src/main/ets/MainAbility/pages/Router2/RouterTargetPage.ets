@@ -14,8 +14,8 @@
  */
 import { router } from '@kit.ArkUI';
  
-class routerParams {
-  data1:string
+class RouterParams {
+  public data1:string
 
   constructor(data1:string) {
     this.data1 = data1
@@ -29,7 +29,7 @@ struct RouterTargetPage {
 
   aboutToAppear() {
     try {
-      this.params = (router.getParams() as routerParams).data1;
+      this.params = (router.getParams() as RouterParams).data1;
       console.info('RouterTargetPage params: ' + JSON.stringify(this.params));
     } catch (err) {
       console.error('RouterTargetPage getParams error: ' + JSON.stringify(err));
