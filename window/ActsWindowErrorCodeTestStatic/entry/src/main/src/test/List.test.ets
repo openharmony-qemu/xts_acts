@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,8 @@
  * limitations under the License.
  */
 import ErrorCode201 from "./ErrorCode201.test";
-export default function testsuite() {
+import ErrorCode1300002 from "./ErrorCode1300002.test";
+export default function testsuite(): void {
   ErrorCode201();
+  ErrorCode1300002();
 }

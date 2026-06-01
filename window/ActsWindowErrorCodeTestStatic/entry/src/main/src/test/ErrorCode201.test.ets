@@ -74,7 +74,7 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function ErrorCode201() {
+export default function ErrorCode201(): void {
 
     describe("ErrorCode201", (): void => {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
@@ -169,7 +169,7 @@ export default function ErrorCode201() {
 
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -203,7 +203,7 @@ export default function ErrorCode201() {
                     done();
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -241,7 +241,7 @@ export default function ErrorCode201() {
                     done();
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -275,7 +275,7 @@ export default function ErrorCode201() {
                     }
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 if (exception.code === 801) {
                     hilog.error(domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
                     done();
@@ -316,7 +316,7 @@ export default function ErrorCode201() {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
                 if (err!.code != 801) {
                     expect(err.message!=null).assertTrue();
@@ -356,7 +356,7 @@ export default function ErrorCode201() {
                     done();
                  })
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
                 
@@ -417,7 +417,7 @@ export default function ErrorCode201() {
                 expect(false).assertTrue()
                 done();
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if (isPCStatus == '') {
@@ -485,8 +485,7 @@ export default function ErrorCode201() {
   
           });
         } catch (error) {
-          let exception: BusinessError = error as BusinessError;
-          console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
+          console.error( CaseName+  `Failed. Cause:${error.code}, message:${error.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -520,7 +519,7 @@ export default function ErrorCode201() {
                 done()
             });
         } catch (exception) {
-            exception = exception as BusinessError;
+            
             hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
             expect(false).assertTrue();
             done()
@@ -550,7 +549,7 @@ export default function ErrorCode201() {
                 done();
             })
         } catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
             expect(err.code === 801).assertTrue();
             done();
@@ -582,7 +581,7 @@ export default function ErrorCode201() {
                 }
             })
         } catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
             if (err!.code === 801) {
                 done();
@@ -626,7 +625,7 @@ export default function ErrorCode201() {
             })().awaitSync()
         });
         } catch (err) {
-        err = err as BusinessError;
+        
         hilog.error(domain, tag, caseName + 'Failed2 to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
         await terminateAbility(caseName);
         if (err.code === 201) {
@@ -663,7 +662,7 @@ export default function ErrorCode201() {
         expect(false).assertTrue();
         done();
         } catch (err) {
-        err = err as BusinessError;
+        
         if (err.code === 201) {
             console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
             done();
@@ -699,7 +698,7 @@ export default function ErrorCode201() {
         expect(true).assertFail();
         done()
         } catch (err) {
-        err = err as BusinessError;
+        
         if (err.code === 201) {
             console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
             done();
