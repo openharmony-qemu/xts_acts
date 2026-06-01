@@ -130,6 +130,93 @@ export default class Utils {
     sendTouchEvent(upPoint)
     await Utils.sleep(500)
   }
+
+  static navigateInspectorPath(tag: string, indices: number[]): ESObject {
+    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+    return Utils.walkInspector(tag, root, indices);
+  }
+
+  static navigateFromNode(tag: string, start: ESObject, indices: number[]): ESObject {
+    return Utils.walkInspector(tag, start, indices);
+  }
+
+  static logInspectorRootOutline(tag: string, maxDepth: number): void {
+    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+    Utils.logNodeOutline(root, tag, 0, maxDepth, 'root');
+  }
+
+  private static walkInspector(tag: string, start: ESObject, indices: number[]): ESObject {
+    console.info(`[InspectorDebug][${tag}] start ${Utils.nodeBrief(start)}`);
+    let node: ESObject = start;
+    let pathStr = 'root';
+    for (let i = 0; i < indices.length; i++) {
+      const idx = indices[i];
+      const next = Utils.childAt(node, idx);
+      if (!next) {
+        console.error(
+          `[InspectorDebug][${tag}] FAIL step=${i} path=${pathStr} idx=${idx} len=${Utils.childCount(node)}`
+        );
+        Utils.logChildrenBrief(node, `${tag}_fail_step${i}`);
+        return node;
+      }
+      node = next;
+      pathStr += `.$children[${idx}]`;
+      console.info(`[InspectorDebug][${tag}] step ${i}: ${pathStr} ${Utils.nodeBrief(node)}`);
+    }
+    console.info(`[InspectorDebug][${tag}] target attrs=${JSON.stringify(node.$attrs ?? {})}`);
+    return node;
+  }
+
+  private static logNodeOutline(
+    node: ESObject, tag: string, depth: number, maxDepth: number, path: string
+  ): void {
+    if (depth > maxDepth) {
+      return;
+    }
+    console.info(`[InspectorDebug][${tag}] ${path} ${Utils.nodeBrief(node)}`);
+    const kids = node.$children as ESObject[] | undefined;
+    if (!kids) {
+      return;
+    }
+    for (let i = 0; i < kids.length; i++) {
+      Utils.logNodeOutline(kids[i], tag, depth + 1, maxDepth, `${path}.$children[${i}]`);
+    }
+  }
+
+  static childCount(node: ESObject): number {
+    if (!node.$children) {
+      return -1;
+    }
+    return (node.$children as ESObject[]).length;
+  }
+
+  private static childAt(node: ESObject, index: number): ESObject | null {
+    const kids = node.$children as ESObject[] | undefined;
+    if (!kids || index >= kids.length) {
+      return null;
+    }
+    return kids[index];
+  }
+
+  static nodeBrief(node: ESObject): string {
+    const id = node.$attrs?.id ?? '';
+    return `type=${node.$type ?? '?'} id=${id} children=${Utils.childCount(node)}`;
+  }
+
+  static logChildrenBrief(node: ESObject, tag: string): void {
+    const kids = node.$children as ESObject[] | undefined;
+    if (!kids) {
+      console.info(`[InspectorDebug][${tag}] no $children`);
+      return;
+    }
+    const limit = Math.min(kids.length, 12);
+    for (let i = 0; i < limit; i++) {
+      console.info(`[InspectorDebug][${tag}]   [${i}] ${Utils.nodeBrief(kids[i])}`);
+    }
+    if (kids.length > limit) {
+      console.info(`[InspectorDebug][${tag}]   ... +${kids.length - limit} more`);
+    }
+  }
 }
 
 

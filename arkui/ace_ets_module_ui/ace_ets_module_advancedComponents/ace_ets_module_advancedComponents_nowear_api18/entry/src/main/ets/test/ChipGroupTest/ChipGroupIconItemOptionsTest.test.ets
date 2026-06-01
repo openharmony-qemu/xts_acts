@@ -67,6 +67,7 @@ export default function ChipGroupIconItemOptionsTest() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[ChipGroupIconItemOptionsTest_001] component btn0.attrs.accessibilityDescription is: " + JSON.stringify(btn0.$attrs.accessibilityDescription));
       console.info("[ChipGroupIconItemOptionsTest_001] component btn0.attrs.accessibilityLevel is: " + JSON.stringify(btn0.$attrs.accessibilityLevel));
       expect(btn0.$attrs.accessibilityDescription).assertEqual('ChipGroupItem_accessibilityDescription');
@@ -80,11 +81,13 @@ export default function ChipGroupIconItemOptionsTest() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[1]
       console.info("[ChipGroupSymbolItemOptionsTest_001] component btn1.attrs.accessibilityLevel is: " + JSON.stringify(btn1.$attrs.accessibilityLevel));
       expect(btn1.$attrs.accessibilityLevel).assertEqual('no');
 
       let btn1_image: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -123,6 +126,7 @@ export default function ChipGroupIconItemOptionsTest() {
         .$children[0]
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]

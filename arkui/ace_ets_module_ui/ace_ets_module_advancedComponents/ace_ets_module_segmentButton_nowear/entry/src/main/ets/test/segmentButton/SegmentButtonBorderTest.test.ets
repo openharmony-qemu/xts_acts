@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonBorderTest() {
@@ -59,16 +60,7 @@ export default function SegmentButtonBorderTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[0]
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonBorderTest.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]);
       console.info("[SegmentButtonBorderTest_001_1] component obj is: " + JSON.stringify(obj));
       expect(JSON.stringify(obj.$attrs.borderRadius)).assertEqual(JSON.stringify({
         topLeft: "14.00vp",
@@ -77,18 +69,7 @@ export default function SegmentButtonBorderTest() {
         bottomRight: "14.00vp"
       }));
       await CommonFunc.sleep(1000);
-      let obj2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[1]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
+      let obj2: ESObject = Utils.navigateInspectorPath('SegmentButtonBorderTest.test_obj2_2', [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]);
       console.info("[SegmentButtonBorderTest_001_2]  component obj is: " + JSON.stringify(obj2));
       // expect(obj2.$attrs.borderRadius).assertEqual('12.00vp');
       expect(JSON.stringify(obj2.$attrs.borderRadius)).assertEqual(JSON.stringify({
@@ -114,16 +95,7 @@ export default function SegmentButtonBorderTest() {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let obj3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[3]
-        .$children[0]
-        .$children[0]
+      let obj3: ESObject = Utils.navigateInspectorPath('SegmentButtonBorderTest.test_obj3_3', [0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0]);
       console.info("[SegmentButtonBorderTest_002_1] component obj is: " + JSON.stringify(obj3));
       expect(JSON.stringify(obj3.$attrs.borderRadius)).assertEqual(JSON.stringify({
         topLeft: "20.00vp",
@@ -132,18 +104,7 @@ export default function SegmentButtonBorderTest() {
         bottomRight: "20.00vp"
       }));
       await CommonFunc.sleep(1000);
-      let obj4: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[3]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
+      let obj4: ESObject = Utils.navigateInspectorPath('SegmentButtonBorderTest.test_obj4_4', [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0]);
       console.info("[SegmentButtonBorderTest_002_2] component obj is: " + JSON.stringify(obj4));
       // expect(obj4.$attrs.borderRadius).assertEqual('20.00vp');
       expect(JSON.stringify(obj4.$attrs.borderRadius)).assertEqual(JSON.stringify({

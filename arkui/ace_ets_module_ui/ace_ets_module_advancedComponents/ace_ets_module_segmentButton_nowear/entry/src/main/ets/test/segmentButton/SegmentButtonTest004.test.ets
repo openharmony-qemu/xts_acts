@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonTest004() {
@@ -57,20 +58,7 @@ export default function SegmentButtonTest004() {
     it('SegmentButtonTest004_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest004_001] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonTest004.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]);
       console.info("[SegmentButtonTest004_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityText).assertEqual('notSelect');
       console.info('[SegmentButtonTest004_001] END');
@@ -88,20 +76,7 @@ export default function SegmentButtonTest004() {
     it('SegmentButtonTest004_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest004_002] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[1]
-        .$children[0]
-        .$children[0]
-        .$children[0]
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonTest004.test_obj_2', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0]);
       console.info("[SegmentButtonTest004_002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityText).assertEqual('select');
       console.info('[SegmentButtonTest004_002] END');
@@ -118,17 +93,7 @@ export default function SegmentButtonTest004() {
     it('SegmentButtonTest004_003', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest004_003] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[0]
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonTest004.test_obj_3', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0]);
       console.info("[SegmentButtonTest004_003] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityLevel).assertEqual('yes');
       console.info('[SegmentButtonTest004_003] END');
@@ -145,17 +110,7 @@ export default function SegmentButtonTest004() {
     it('SegmentButtonTest004_004', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest004_004] START');
       await CommonFunc.sleep(2000);
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[0]
-        .$children[2]
-        .$children[0]
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonTest004.test_obj_4', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0]);
       console.info("[SegmentButtonTest004_004] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityDescription).assertEqual('SegmentButtonIconTextItem');
       console.info('[SegmentButtonTest004_004] END');

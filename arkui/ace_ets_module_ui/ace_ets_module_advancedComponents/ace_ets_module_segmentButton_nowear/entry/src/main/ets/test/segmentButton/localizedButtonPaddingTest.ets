@@ -58,7 +58,8 @@ export default function localizedButtonPaddingTest() {
       await CommonFunc.sleep(1000);
       let mBtn = getInspectorByKey('localizedButtonPadding_start');
       console.info("[localizedButtonPaddingTest_0100] attrs is: " + JSON.stringify(JSON.parse(mBtn).$attrs));
-      expect(JSON.parse(mBtn).$attrs.label).assertEqual('start:{"unit":1,"value":20}');
+      expect(JSON.parse(mBtn).$attrs.label).assertEqual(
+        'start:{"autoRefresh_":false,"unit_":1,"value_":20}');
       console.info('[localizedButtonPaddingTest_0100] END');
       done();
     });
@@ -80,7 +81,8 @@ export default function localizedButtonPaddingTest() {
       await CommonFunc.sleep(1000);
       let mBtn2 = getInspectorByKey('localizedButtonPadding_end');
       console.info("[localizedButtonPaddingTest_0200] attrs is: " + JSON.stringify(JSON.parse(mBtn2).$attrs));
-      expect(JSON.parse(mBtn2).$attrs.label).assertEqual('end:{"unit":1,"value":10}');
+      expect(JSON.parse(mBtn2).$attrs.label).assertEqual(
+        'end:{"autoRefresh_":false,"unit_":1,"value_":10}');
       console.info('[localizedButtonPaddingTest_0200] END');
       done();
     });
