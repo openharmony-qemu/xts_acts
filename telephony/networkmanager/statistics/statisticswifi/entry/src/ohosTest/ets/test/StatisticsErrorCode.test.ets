@@ -136,7 +136,7 @@ export default function StatisticsErrorCodeTest() {
         done();
       }
     });
-    
+
     /**
      * @tc.name   testNetworkMgrStatisticsgetSockRxBytesErrCo0500
      * @tc.number SUB_NetworkMgr_Statistics_getSockRxBytes_ErrCo_0500
