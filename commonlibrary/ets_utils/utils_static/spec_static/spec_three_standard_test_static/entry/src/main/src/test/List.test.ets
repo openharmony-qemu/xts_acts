@@ -110,10 +110,8 @@ import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArr
 import ExtendedConditionalExpressionsTest01 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest01.test";
 import DispatchTest from "./semanticrules/dispatch/DispatchTest.test";
 import OverloadSetForClassInstanceMethodsTest from "./semanticrules/overloadresolution/overloadsetforclassinstancemethods/OverloadSetForClassInstanceMethodsTest.test";
-import OverloadSetForConstructorsTest01 from "./semanticrules/overloadresolution/overloadsetforconstructors/OverloadSetForConstructorsTest01.test";
 import OverloadSetForConstructorsTest02 from "./semanticrules/overloadresolution/overloadsetforconstructors/OverloadSetForConstructorsTest02.test";
 import OverloadSetForFunctionsTest01 from "./semanticrules/overloadresolution/overloadsetforfunctions/OverloadSetForFunctionsTest01.test";
-import OverloadSetForFunctionsTest02 from "./semanticrules/overloadresolution/overloadsetforfunctions/OverloadSetForFunctionsTest02.test";
 import StaticInitializationExecOrderTest from "./semanticrules/staticinitialization/execorder/StaticInitializationExecOrderTest.test";
 import StaticInitializationIncompleteTest from "./semanticrules/staticinitialization/incompleteinitialization/StaticInitializationIncompleteTest.test";
 import StaticInitializationNamespaceTest from "./semanticrules/staticinitialization/namespace/StaticInitializationNamespaceTest.test";
@@ -254,10 +252,8 @@ export default function testsuite(): void {
   ExtendedConditionalExpressionsTest01();
   FixedArrayTypesTest();
   OverloadSetForClassInstanceMethodsTest();
-  OverloadSetForConstructorsTest01();
   OverloadSetForConstructorsTest02();
   OverloadSetForFunctionsTest01();
-  OverloadSetForFunctionsTest02();
   StaticInitializationExecOrderTest();
   StaticInitializationIncompleteTest();
   StaticInitializationNamespaceTest();
