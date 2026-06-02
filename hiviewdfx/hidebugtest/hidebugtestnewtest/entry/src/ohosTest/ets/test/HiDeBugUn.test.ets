@@ -100,7 +100,7 @@ export default function HidebugTest() {
     it("HidebugTest_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0002 start");
       try{
-        hidebug.dumpHeapData(undefined);
+        await hidebug.dumpHeapData(undefined);
         console.info("====> HidebugTest_0002 dumpHeapData undefined");
         done();
       }catch(err){
