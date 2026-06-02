@@ -35,7 +35,7 @@ group("std_core_static") {
       "method_standard_test_static:ActsMethodStaticTest",
       "object_standard_test_static:ActsObjectStaticTest",
       "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
-      "set_standard_test_static:ActsSetTest",
+      "set_standard_test_static:ActsSetStaticTest",
     ]
   }
 }
