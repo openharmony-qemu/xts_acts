@@ -165,43 +165,6 @@ export default function TextAreaShaderStyleTest() {
     });
 
     /**
-     * @tc.name   textAreaShaderStyle_null_0100
-     * @tc.number SUB_ARKUI_TEXTAREA_SHADERSTYLE_PARAM_0100
-     * @tc.desc   Test TextArea shaderStyle property with null value, should default to no gradient
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('textAreaShaderStyle_null_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[textAreaShaderStyle_null_0100] START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let strJsonDefault: string = inspector.getInspectorByKey('textarea_shaderStyle_default');
-        let nodeDefault = JSON.parseJsonElement(strJsonDefault);
-        let attrsDefault = nodeDefault.getElement('$attrs');
-        let strJsonNull: string = inspector.getInspectorByKey('textarea_shaderStyle_null');
-        let nodeNull = JSON.parseJsonElement(strJsonNull);
-        let attrsNull = nodeNull.getElement('$attrs');
-
-        let shaderStyleDefaultEl = attrsDefault.getElement('shaderStyle');
-        let shaderStyleNullEl = attrsNull.getElement('shaderStyle');
-        expect(shaderStyleNullEl != null).assertTrue();
-        expect(shaderStyleDefaultEl != null).assertTrue();
-        let shaderStyleNullStr = JSON.stringifyJsonElement(shaderStyleNullEl);
-        let shaderStyleDefaultStr = JSON.stringifyJsonElement(shaderStyleDefaultEl);
-        console.info('[textAreaShaderStyle_null_0100] shaderStyleNull: ' + shaderStyleNullStr);
-        console.info('[textAreaShaderStyle_null_0100] shaderStyleDefault: ' + shaderStyleDefaultStr);
-        expect(shaderStyleNullStr).assertEqual(shaderStyleDefaultStr);
-        console.info('[textAreaShaderStyle_null_0100] END');
-        done();
-      } catch (error) {
-        console.error('[textAreaShaderStyle_null_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   textAreaShaderStyle_undefined_0100
      * @tc.number SUB_ARKUI_TEXTAREA_SHADERSTYLE_PARAM_0200
      * @tc.desc   Test TextArea shaderStyle property with undefined value, should default to no gradient

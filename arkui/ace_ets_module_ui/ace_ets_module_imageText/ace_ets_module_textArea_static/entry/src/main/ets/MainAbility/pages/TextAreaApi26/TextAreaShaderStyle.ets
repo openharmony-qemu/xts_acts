@@ -59,15 +59,17 @@ struct TextAreaShaderStyle {
     colors: [[Color.Red, 0.0], [Color.Green, 1.0]]
   };
 
-  private colorShaderStyle: ColorShaderStyle = {
-    color: Color.Blue
-  };
+  linearGradientStyle1:LinearGradientStyle = new LinearGradientStyle(this.linearGradientOptions)
 
-  private modifierLinearGradient: TextAreaShaderStyleModifier =
+  radialGradientStyle1:RadialGradientStyle = new RadialGradientStyle(this.radialGradientOptions)
+
+  colorShaderStyle:ColorShaderStyle = new ColorShaderStyle(Color.Blue);
+
+  modifierLinearGradient: TextAreaShaderStyleModifier =
     new TextAreaShaderStyleModifier(new LinearGradientStyle(this.linearGradientOptions));
-  private modifierRadialGradient: TextAreaShaderStyleModifier =
+  modifierRadialGradient: TextAreaShaderStyleModifier =
     new TextAreaShaderStyleModifier(new RadialGradientStyle(this.radialGradientOptions));
-  private modifierColorShader: TextAreaShaderStyleModifier =
+  modifierColorShader: TextAreaShaderStyleModifier =
     new TextAreaShaderStyleModifier(new ColorShaderStyle(Color.Blue));
 
   aboutToAppear() {
@@ -82,54 +84,48 @@ struct TextAreaShaderStyle {
   build() {
     Scroll() {
       Column() {
-        TextArea({ placeholder: 'TextArea shaderStyle LinearGradient' })
+        TextArea({ text: 'TextArea shaderStyle LinearGradient' })
           .key('textarea_shaderStyle_linear_gradient')
           .height('5%')
           .width('100%')
-          .shaderStyle(this.linearGradientOptions)
+          .shaderStyle(this.linearGradientStyle1)
 
-        TextArea({ placeholder: 'TextArea shaderStyle RadialGradient' })
+        TextArea({ text: 'TextArea shaderStyle RadialGradient' })
           .key('textarea_shaderStyle_radial_gradient')
           .height('5%')
           .width('100%')
-          .shaderStyle(this.radialGradientOptions)
+          .shaderStyle(this.radialGradientStyle1)
 
-        TextArea({ placeholder: 'TextArea shaderStyle ColorShader' })
+        TextArea({ text: 'TextArea shaderStyle ColorShader' })
           .key('textarea_shaderStyle_color_shader')
           .height('5%')
           .width('100%')
           .shaderStyle(this.colorShaderStyle)
 
-        TextArea({ placeholder: 'TextArea shaderStyle null' })
-          .key('textarea_shaderStyle_null')
-          .height('5%')
-          .width('100%')
-          .shaderStyle(null)
-
-        TextArea({ placeholder: 'TextArea shaderStyle undefined' })
+        TextArea({ text: 'TextArea shaderStyle undefined' })
           .key('textarea_shaderStyle_undefined')
           .height('5%')
           .width('100%')
           .shaderStyle(undefined)
 
-        TextArea({ placeholder: 'TextArea shaderStyle default' })
+        TextArea({ text: 'TextArea shaderStyle default' })
           .key('textarea_shaderStyle_default')
           .height('5%')
           .width('100%')
 
-        TextArea({ placeholder: 'TextArea shaderStyle modifier LinearGradient' })
+        TextArea({ text: 'TextArea shaderStyle modifier LinearGradient' })
           .key('textarea_shaderStyle_modifier_linear_gradient')
           .height('5%')
           .width('100%')
           .attributeModifier(this.modifierLinearGradient)
 
-        TextArea({ placeholder: 'TextArea shaderStyle modifier RadialGradient' })
+        TextArea({ text: 'TextArea shaderStyle modifier RadialGradient' })
           .key('textarea_shaderStyle_modifier_radial_gradient')
           .height('5%')
           .width('100%')
           .attributeModifier(this.modifierRadialGradient)
 
-        TextArea({ placeholder: 'TextArea shaderStyle modifier ColorShader' })
+        TextArea({ text: 'TextArea shaderStyle modifier ColorShader' })
           .key('textarea_shaderStyle_modifier_color_shader')
           .height('5%')
           .width('100%')

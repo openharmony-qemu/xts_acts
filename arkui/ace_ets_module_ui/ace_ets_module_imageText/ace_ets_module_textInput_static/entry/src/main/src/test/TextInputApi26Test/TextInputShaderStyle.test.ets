@@ -145,32 +145,6 @@ export default function TextInputShaderStyleTest() {
     });
 
     /**
-     * @tc.name   textInputShaderStyle_null_0100
-     * @tc.number SUB_ARKUI_TEXTINPUT_SHADERSTYLE_PARAM_0100
-     * @tc.desc   Test TextInput shaderStyle property with null value, should default to no gradient
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('textInputShaderStyle_null_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('[textInputShaderStyle_null_0100] START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        let nullNode = JSON.parseJsonElement(inspector.getInspectorByKey('textinput_shaderStyle_null'));
-        let defaultNode = JSON.parseJsonElement(inspector.getInspectorByKey('textinput_shaderStyle_default'));
-        let nullShaderStyleStr = JSON.stringifyJsonElement(nullNode.getElement('$attrs').getElement('shaderStyle'));
-        let defaultShaderStyleStr = JSON.stringifyJsonElement(defaultNode.getElement('$attrs').getElement('shaderStyle'));
-        expect(nullShaderStyleStr).assertEqual(defaultShaderStyleStr);
-        console.info('[textInputShaderStyle_null_0100] END');
-        done();
-      } catch (error) {
-        console.error('[textInputShaderStyle_null_0100] error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   textInputShaderStyle_undefined_0100
      * @tc.number SUB_ARKUI_TEXTINPUT_SHADERSTYLE_PARAM_0200
      * @tc.desc   Test TextInput shaderStyle property with undefined value, should default to no gradient

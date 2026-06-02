@@ -20,5 +20,7 @@ import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.tes
 
 export default function testsuite() {
   TextAreaAttributeTest();
+  TextAreaOnWillCopyTest();
+  TextAreaOnWillCutTest();
   TextAreaShaderStyleTest();
 }

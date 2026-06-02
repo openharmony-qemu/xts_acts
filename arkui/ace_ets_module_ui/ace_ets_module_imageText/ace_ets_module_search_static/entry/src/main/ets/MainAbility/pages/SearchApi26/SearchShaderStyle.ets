@@ -53,10 +53,11 @@ struct SearchShaderStyle {
     radius: 0.5,
     colors: [[Color.Red, 0.0], [Color.Green, 1.0]]
   };
+  linearGradientStyle1:LinearGradientStyle = new LinearGradientStyle(this.linearGradientOptions)
 
-  colorShaderStyle: ColorShaderStyle = {
-    color: Color.Blue
-  };
+  radialGradientStyle1:RadialGradientStyle = new RadialGradientStyle(this.radialGradientOptions)
+
+  colorShaderStyle:ColorShaderStyle = new ColorShaderStyle(Color.Blue);
 
   modifierLinearGradient: SearchShaderStyleModifier =
     new SearchShaderStyleModifier(new LinearGradientStyle(this.linearGradientOptions));
@@ -66,24 +67,24 @@ struct SearchShaderStyle {
     new SearchShaderStyleModifier(new ColorShaderStyle(Color.Blue));
 
   build() {
-    Column({ space: 5 }) {
+    Column() {
       Search({ value: 'Search shaderStyle LinearGradient' })
         .id('search_shaderStyle_linear_gradient')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.linearGradientOptions)
+        .shaderStyle(this.linearGradientStyle1  as ShaderStyle )
 
       Search({ value: 'Search shaderStyle RadialGradient' })
         .id('search_shaderStyle_radial_gradient')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.radialGradientOptions)
+        .shaderStyle(this.radialGradientStyle1 as ShaderStyle )
 
       Search({ value: 'Search shaderStyle ColorShader' })
         .id('search_shaderStyle_color_shader')
         .height('5%')
         .width('100%')
-        .shaderStyle(this.colorShaderStyle)
+        .shaderStyle(this.colorShaderStyle  as ShaderStyle )
 
       Search({ value: 'Search shaderStyle undefined' })
         .id('search_shaderStyle_undefined')

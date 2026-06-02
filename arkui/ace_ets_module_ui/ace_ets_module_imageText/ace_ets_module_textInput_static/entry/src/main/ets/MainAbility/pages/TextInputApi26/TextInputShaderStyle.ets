@@ -20,27 +20,26 @@ import {
   Scroll,
   TextInput,
   Color,
-  TextInputAttribute
-} from '@ohos.arkui.component';
-import { AttributeUpdater } from '@ohos.arkui.modifier';
-import {
+  AttributeModifier,
+  TextInputAttribute,
   LinearGradientOptions,
   RadialGradientOptions,
   ColorShaderStyle,
+  ShaderStyle,
   LinearGradientStyle,
   RadialGradientStyle
-} from '@kit.ArkUI';
+} from '@ohos.arkui.component';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-class TextInputShaderStyleUpdater extends AttributeUpdater<TextInputAttribute> {
+class TextInputShaderStyleUpdater implements AttributeModifier<TextInputAttribute> {
   public shaderStyleValue:ShaderStyle | undefined;
 
   constructor(value: ShaderStyle | undefined) {
     this.shaderStyleValue = value;
   }
 
-  initializeModifier(instance: TextInputAttribute): void {
+  applyNormalAttribute(instance: TextInputAttribute): void {
     instance.shaderStyle(this.shaderStyleValue);
   }
 }
@@ -58,12 +57,16 @@ struct TextInputShaderStyle {
     radius: 0.5,
     colors: [[Color.Red, 0.0], [Color.Green, 1.0]]
   };
+  linearGradientStyle1:LinearGradientStyle = new LinearGradientStyle(this.linearGradientOptions)
 
-  private modifierLinearGradient: TextInputShaderStyleUpdater =
+  radialGradientStyle1:RadialGradientStyle = new RadialGradientStyle(this.radialGradientOptions)
+
+  colorShaderStyle:ColorShaderStyle = new ColorShaderStyle(Color.Blue);
+  modifierLinearGradient: TextInputShaderStyleUpdater =
     new TextInputShaderStyleUpdater(new LinearGradientStyle(this.linearGradientOptions));
-  private modifierRadialGradient: TextInputShaderStyleUpdater =
+  modifierRadialGradient: TextInputShaderStyleUpdater =
     new TextInputShaderStyleUpdater(new RadialGradientStyle(this.radialGradientOptions));
-  private modifierColorShader: TextInputShaderStyleUpdater =
+  modifierColorShader: TextInputShaderStyleUpdater =
     new TextInputShaderStyleUpdater(new ColorShaderStyle(Color.Blue));
 
   aboutToAppear() {
@@ -78,54 +81,48 @@ struct TextInputShaderStyle {
   build() {
     Scroll() {
       Column() {
-        TextInput({ placeholder: 'TextInput shaderStyle LinearGradient' })
+        TextInput({ text: 'TextInput shaderStyle LinearGradient' })
           .key('textinput_shaderStyle_linear_gradient')
           .height('5%')
           .width('100%')
-          .shaderStyle(this.linearGradientOptions)
+          .shaderStyle(this.linearGradientStyle1)
 
-        TextInput({ placeholder: 'TextInput shaderStyle RadialGradient' })
+        TextInput({ text: 'TextInput shaderStyle RadialGradient' })
           .key('textinput_shaderStyle_radial_gradient')
           .height('5%')
           .width('100%')
-          .shaderStyle(this.radialGradientOptions)
+          .shaderStyle(this.radialGradientStyle1)
 
-        TextInput({ placeholder: 'TextInput shaderStyle ColorShader' })
+        TextInput({ text: 'TextInput shaderStyle ColorShader' })
           .key('textinput_shaderStyle_color_shader')
           .height('5%')
           .width('100%')
           .shaderStyle(new ColorShaderStyle(Color.Blue))
 
-        TextInput({ placeholder: 'TextInput shaderStyle null' })
-          .key('textinput_shaderStyle_null')
-          .height('5%')
-          .width('100%')
-          .shaderStyle(null)
-
-        TextInput({ placeholder: 'TextInput shaderStyle undefined' })
+        TextInput({ text: 'TextInput shaderStyle undefined' })
           .key('textinput_shaderStyle_undefined')
           .height('5%')
           .width('100%')
           .shaderStyle(undefined)
 
-        TextInput({ placeholder: 'TextInput shaderStyle default' })
+        TextInput({ text: 'TextInput shaderStyle default' })
           .key('textinput_shaderStyle_default')
           .height('5%')
           .width('100%')
 
-        TextInput({ placeholder: 'TextInput shaderStyle modifier LinearGradient' })
+        TextInput({ text: 'TextInput shaderStyle modifier LinearGradient' })
           .key('textinput_shaderStyle_modifier_linear_gradient')
           .height('5%')
           .width('100%')
           .attributeModifier(this.modifierLinearGradient)
 
-        TextInput({ placeholder: 'TextInput shaderStyle modifier RadialGradient' })
+        TextInput({ text: 'TextInput shaderStyle modifier RadialGradient' })
           .key('textinput_shaderStyle_modifier_radial_gradient')
           .height('5%')
           .width('100%')
           .attributeModifier(this.modifierRadialGradient)
 
-        TextInput({ placeholder: 'TextInput shaderStyle modifier ColorShader' })
+        TextInput({ text: 'TextInput shaderStyle modifier ColorShader' })
           .key('textinput_shaderStyle_modifier_color_shader')
           .height('5%')
           .width('100%')
