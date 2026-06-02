@@ -16,7 +16,6 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 112210;
 
@@ -24,7 +23,6 @@ const EVENT_ID_SET_EMIT_KEY = 112210;
 @Component
 struct webViewContWebMessageExtReturnError {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   ports: web_webview.WebMessagePort[] | null = null;
   nativePort: web_webview.WebMessagePort | null= null;
   @State str: string = "";
@@ -55,10 +53,6 @@ struct webViewContWebMessageExtReturnError {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -293,7 +287,7 @@ struct webViewContWebMessageExtReturnError {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexEdit.html'), controller: this.controller })
+      Web({ src: $rawfile('indexEdit.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
