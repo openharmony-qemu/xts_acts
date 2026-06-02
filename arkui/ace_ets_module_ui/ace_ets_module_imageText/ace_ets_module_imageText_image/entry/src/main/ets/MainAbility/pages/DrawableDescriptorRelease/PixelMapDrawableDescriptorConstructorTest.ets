@@ -38,75 +38,75 @@ struct PixelMapDrawableDescriptorConstructorTest {
 
   build() {
     Scroll() {
-      Column({ space: 20 }) {
-        Text('PixelMapDrawableDescriptor构造函数测试 (API 26+)')
-          .fontSize(22)
+      Column({ space: 10 }) {
+        Text('PixelMapDrawableDescriptor构造函数测试')
+          .fontSize(18)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 10 })
           .fontColor(0x333333)
 
         this.BuildSectionTitle('1. PixelMap类型参数')
-
-        Button('构造-PixelMap正常值')
-          .id('btnTest001')
-          .onClick(async () => await this.Test001())
-        Image(this.drawable001)
-          .width(100)
-          .height(100)
-          .borderColor(Color.Blue)
-          .borderWidth(1)
-          .id('imgTest001')
-        Text(this.testResult001)
-          .id('txtTestResult001')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('构造-PixelMap正常值')
+            .id('btnTest001')
+            .onClick(async () => await this.Test001())
+          Image(this.drawable001)
+            .width(100)
+            .height(100)
+            .borderColor(Color.Blue)
+            .borderWidth(1)
+            .id('imgTest001')
+          Text(this.testResult001)
+            .id('txtTestResult001')
+            .fontSize(14)
+        }
 
         this.BuildSectionTitle('2. ResourceStr类型参数')
+        Row() {
+          Button('构造-应用资源$r')
+            .id('btnTest002')
+            .onClick(() => this.Test002())
+          Image(this.drawable002)
+            .width(100)
+            .height(100)
+            .borderColor(Color.Blue)
+            .borderWidth(1)
+            .id('imgTest002')
+          Text(this.testResult002)
+            .id('txtTestResult002')
+            .fontSize(14)
+        }
 
-        Button('构造-应用资源$r')
-          .id('btnTest002')
-          .onClick(() => this.Test002())
-        Image(this.drawable002)
-          .width(100)
-          .height(100)
-          .borderColor(Color.Blue)
-          .borderWidth(1)
-          .id('imgTest002')
-        Text(this.testResult002)
-          .id('txtTestResult002')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('构造-系统资源$r')
+            .id('btnTest003')
+            .onClick(() => this.Test003())
+          Image(this.drawable003)
+            .width(100)
+            .height(100)
+            .borderColor(Color.Blue)
+            .borderWidth(1)
+            .id('imgTest003')
+          Text(this.testResult003)
+            .id('txtTestResult003')
+            .fontSize(14)
+        }
 
-        Button('构造-系统资源$r')
-          .id('btnTest003')
-          .onClick(() => this.Test003())
-        Image(this.drawable003)
-          .width(100)
-          .height(100)
-          .borderColor(Color.Blue)
-          .borderWidth(1)
-          .id('imgTest003')
-        Text(this.testResult003)
-          .id('txtTestResult003')
-          .fontSize(14)
-          .margin({ bottom: 10 })
-
-        
         this.BuildSectionTitle('3. 特殊参数测试')
 
-        Button('构造-undefined')
-          .id('btnTest006')
-          .onClick(() => this.Test006())
-        Image(this.drawable006)
-          .width(100)
-          .height(100)
-          .borderColor(Color.Blue)
-          .borderWidth(1)
-          .id('imgTest006')
-        Text(this.testResult006)
-          .id('txtTestResult006')
-          .fontSize(14)
-          .margin({ bottom: 10 })
+        Row() {
+          Button('构造-undefined')
+            .id('btnTest006')
+            .onClick(() => this.Test006())
+          Image(this.drawable006)
+            .width(100)
+            .height(100)
+            .borderColor(Color.Blue)
+            .borderWidth(1)
+            .id('imgTest006')
+          Text(this.testResult006)
+            .id('txtTestResult006')
+            .fontSize(14)
+        }
       }
       .width('80%')
     }
@@ -122,7 +122,6 @@ struct PixelMapDrawableDescriptorConstructorTest {
       .fontWeight(FontWeight.Medium)
       .fontColor(Color.Black)
       .width('100%')
-      .margin({ top: 10 })
   }
 
   async Test001() {
@@ -175,7 +174,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
         this.testResult003 = 'FAIL: 类型不匹配';
       }
     } catch (e) {
-        this.testResult003 = `FAIL: 异常 ${JSON.stringify(e)}`;
+      this.testResult003 = `FAIL: 异常 ${JSON.stringify(e)}`;
     }
   }
 
@@ -190,7 +189,7 @@ struct PixelMapDrawableDescriptorConstructorTest {
         this.testResult006 = 'FAIL: 类型不匹配';
       }
     } catch (e) {
-        this.testResult006 = `FAIL: 异常 ${JSON.stringify(e)}`;
+      this.testResult006 = `FAIL: 异常 ${JSON.stringify(e)}`;
     }
   }
 }

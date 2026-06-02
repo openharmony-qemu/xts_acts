@@ -64,9 +64,8 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
         let strJson = getInspectorByKey('txtTestResult001');
         console.info('[pixelMapDrawableDescriptorConstructorPixelMap001] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
-        console.info('[pixelMapDrawableDescriptorConstructorPixelMap001] result: ' + resultText);
-        
+        let resultText: string = obj.$attrs.content
+        console.info('[pixelMapDrawableDescriptorConstructorPixelMap001] result: ' + resultText);     
         expect(resultText).assertContain('PASS');
         console.info('[pixelMapDrawableDescriptorConstructorPixelMap001] END');
         done();
@@ -96,9 +95,8 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
         let strJson = getInspectorByKey('txtTestResult002');
         console.info('[pixelMapDrawableDescriptorConstructorAppResource001] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
-        console.info('[pixelMapDrawableDescriptorConstructorAppResource001] result: ' + resultText);
-        
+        let resultText: string = obj.$attrs.content
+        console.info('[pixelMapDrawableDescriptorConstructorAppResource001] result: ' + resultText);       
         expect(resultText).assertContain('PASS');
         console.info('[pixelMapDrawableDescriptorConstructorAppResource001] END');
         done();
@@ -128,9 +126,9 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
         let strJson = getInspectorByKey('txtTestResult003');
         console.info('[pixelMapDrawableDescriptorConstructorSysResource001] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content
         console.info('[pixelMapDrawableDescriptorConstructorSysResource001] result: ' + resultText);
-        
+        expect(resultText).assertContain('PASS');
         console.info('[pixelMapDrawableDescriptorConstructorSysResource001] END');
         done();
       } catch (error) {
@@ -159,9 +157,9 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
         let strJson = getInspectorByKey('txtTestResult006');
         console.info('[pixelMapDrawableDescriptorConstructorUndefined001] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content
         console.info('[pixelMapDrawableDescriptorConstructorUndefined001] result: ' + resultText);
-        
+        expect(resultText).assertContain('PASS');
         console.info('[pixelMapDrawableDescriptorConstructorUndefined001] END');
         done();
       } catch (error) {
