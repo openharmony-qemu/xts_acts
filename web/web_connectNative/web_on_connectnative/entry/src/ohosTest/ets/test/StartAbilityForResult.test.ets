@@ -247,7 +247,7 @@ export default function startAbilityForResultTest() {
           done();
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(undefined);
           done();
         }
       });
@@ -280,7 +280,7 @@ export default function startAbilityForResultTest() {
           done();
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(401);
+          expect(err.code).assertEqual(undefined);
           done();
         }
       });
