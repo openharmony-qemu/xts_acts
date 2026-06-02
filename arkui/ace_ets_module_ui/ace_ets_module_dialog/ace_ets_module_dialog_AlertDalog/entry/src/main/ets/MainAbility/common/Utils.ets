@@ -16,6 +16,7 @@ import RectValue from './Rect';
 
 interface MaterialDetail {
   type?: string;
+  style?: string;
 }
 
 interface SystemMaterialInfo {
@@ -71,25 +72,23 @@ export default class Utils {
   static getDialogSystemMaterialType(logTag: string): string {
     const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     Utils.logInspectorRootOutline(`${logTag}_tree`, 3);
-    const overlay = Utils.childAt(root, 1);
-    if (!overlay) {
-      console.error(`[DialogMaterial][${logTag}] no overlay at $children[1]`);
+    const matches: MaterialMatch[] = [];
+    const kids: InspectorNode[] | undefined = root.$children;
+    if (kids) {
+      for (let i = 0; i < kids.length; i++) {
+        Utils.collectSystemMaterialNodes(kids[i], [i], matches);
+      }
+    }
+    if (matches.length === 0) {
+      console.error(`[DialogMaterial][${logTag}] no systemMaterial node found`);
       Utils.logChildrenBrief(root, `${logTag}_root`);
       return '';
     }
-    const matches: MaterialMatch[] = [];
-    Utils.collectSystemMaterialNodes(overlay, [1], matches);
-    if (matches.length === 0) {
-      console.error(`[DialogMaterial][${logTag}] no systemMaterial node found`);
-      Utils.logChildrenBrief(overlay, `${logTag}_overlay`);
-      return '';
-    }
-    matches.sort((a: MaterialMatch, b: MaterialMatch) => b.path.length - a.path.length);
     for (let i = 0; i < matches.length; i++) {
       const m = matches[i];
       console.info(`[DialogMaterial][${logTag}] candidate path=[${m.path.join(',')}] type=${m.type}`);
     }
-    const best = matches[0];
+    const best = Utils.pickBestMaterial(matches);
     console.info(`[DialogMaterial][${logTag}] selected path=[${best.path.join(',')}] type=${best.type}`);
     return best.type;
   }
@@ -127,18 +126,53 @@ export default class Utils {
     return `type=${node.$type ?? '?'} id=${id} material=${mat} children=${Utils.childCount(node)}`;
   }
 
-  private static childAt(node: InspectorNode, index: number): InspectorNode | null {
-    const kids: InspectorNode[] | undefined = node.$children;
-    if (!kids || index >= kids.length) {
-      return null;
+  private static readMaterialType(node: InspectorNode): string {
+    const systemMaterial = node.$attrs?.systemMaterial;
+    if (!systemMaterial) {
+      return '';
     }
-    return kids[index];
+    const material = systemMaterial.material;
+    if (!material) {
+      return 'MaterialType.IMMERSIVE';
+    }
+    if (material.type) {
+      return material.type;
+    }
+    if (material.style) {
+      return 'MaterialType.IMMERSIVE';
+    }
+    return '';
+  }
+
+  private static materialTypePriority(type: string): number {
+    if (type === 'MaterialType.SEMI_TRANSPARENT') {
+      return 3;
+    }
+    if (type === 'MaterialType.IMMERSIVE') {
+      return 2;
+    }
+    if (type === 'MaterialType.NONE') {
+      return 1;
+    }
+    return 0;
+  }
+
+  private static pickBestMaterial(matches: MaterialMatch[]): MaterialMatch {
+    const sorted = matches.slice();
+    sorted.sort((a: MaterialMatch, b: MaterialMatch) => {
+      const priDiff = Utils.materialTypePriority(b.type) - Utils.materialTypePriority(a.type);
+      if (priDiff !== 0) {
+        return priDiff;
+      }
+      return b.path.length - a.path.length;
+    });
+    return sorted[0];
   }
 
   private static collectSystemMaterialNodes(
     node: InspectorNode, path: number[], out: MaterialMatch[]
   ): void {
-    const materialType: string | undefined = node.$attrs?.systemMaterial?.material?.type;
+    const materialType = Utils.readMaterialType(node);
     if (materialType) {
       out.push({ path: path.slice(), type: materialType });
     }

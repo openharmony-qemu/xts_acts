@@ -48,6 +48,7 @@ struct CursorControlExample {
         .onClick(() => {
           cursorControl.setCursor(pointer.PointerStyle.SOUTH);
           this.lastSetStyle = pointer.PointerStyle.SOUTH;
+          this.num1 = pointer.PointerStyle.SOUTH;
           setTimeout(() => {
             this.syncPointerStyle();
           }, 500);
@@ -57,6 +58,7 @@ struct CursorControlExample {
         .onClick(() => {
           cursorControl.restoreDefault();
           this.lastSetStyle = pointer.PointerStyle.DEFAULT;
+          this.num1 = pointer.PointerStyle.DEFAULT;
           setTimeout(() => {
             this.syncPointerStyle();
           }, 500);
