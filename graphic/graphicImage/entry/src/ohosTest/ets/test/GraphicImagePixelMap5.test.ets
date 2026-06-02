@@ -706,16 +706,18 @@ export default function graphicImagePixelMap5() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.NV21, size: { height: 4, width: 6 }
         }
-        let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
         let pixelMap = image.createPixelMapSync(color, opts);
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('graphicImagePixelMap5_3700 pass');
           await pixelMap?.release();
+          expect().assertFail();
           done();
         }catch(err){
           console.info('graphicImagePixelMap5_3700 error', JSON.stringify(err.code));
-          expect().assertFail();
+          expect(Number(err.code) === 7600205).assertTrue();
+          await pixelMap?.release();
           done();
         }
       })
@@ -844,14 +846,15 @@ export default function graphicImagePixelMap5() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.NV21, size: { height: 4, width: 6 }
         }
-        let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
         let pixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
           console.info('graphicImagePixelMap5_4100 pass');
+          expect().assertFail();
         }).catch((err: BusinessError) => {
           console.info('graphicImagePixelMap5_4100 error', JSON.stringify(err.code));
-          expect().assertFail();
+          expect(Number(err.code) === 7600205).assertTrue();
         });
         await pixelMap?.release();
         done();

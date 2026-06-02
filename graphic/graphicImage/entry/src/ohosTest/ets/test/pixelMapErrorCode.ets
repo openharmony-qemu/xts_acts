@@ -306,11 +306,12 @@ export default function imagePixelMapErrorCodeTest() {
       try {
         pixelMap.cloneSync();
         console.info('www data Succeeded to cloneSync');
-        await pixelMap.release();
+        expect().assertFail();
         done();
       } catch(error){
         console.error(`www data Failed to cloneSync. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
+        expect(Number(error.code) == 62980103).assertTrue();	 
+        await pixelMap.release();
         done();
       }
     });
@@ -361,11 +362,12 @@ export default function imagePixelMapErrorCodeTest() {
       try {
         await pixelMap.clone();
         console.info('www data Succeeded to cloneSync');
-        await pixelMap.release();
+        expect().assertFail();
         done();
       } catch(error){
-        console.error(`www data Failed to cloneSync. code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
+        console.error(`www data Failed to cloneSync. code is ${error}`);
+        expect(Number(error) == 62980104).assertTrue();	 
+        await pixelMap.release();
         done();
       }
     });
