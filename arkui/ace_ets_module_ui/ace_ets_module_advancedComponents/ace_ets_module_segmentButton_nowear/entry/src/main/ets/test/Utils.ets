@@ -16,6 +16,18 @@
 import componentRect from '@ohos.arkui.componentUtils'
 import { RectValue } from '../MainAbility/common/Utils';
 
+export interface InspectorAttrs {
+  id?: string;
+  content?: string;
+  src?: string;
+  systemMaterial?: Object;
+}
+
+export interface InspectorNode {
+  $type?: string;
+  $attrs?: InspectorAttrs;
+  $children?: InspectorNode[];
+}
 
 export default class Utils {
   static rect_left: number;
@@ -131,27 +143,27 @@ export default class Utils {
     await Utils.sleep(500)
   }
 
-  static navigateInspectorPath(tag: string, indices: number[]): ESObject {
-    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+  static navigateInspectorPath(tag: string, indices: number[]): InspectorNode {
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     return Utils.walkInspector(tag, root, indices);
   }
 
-  static navigateFromNode(tag: string, start: ESObject, indices: number[]): ESObject {
+  static navigateFromNode(tag: string, start: InspectorNode, indices: number[]): InspectorNode {
     return Utils.walkInspector(tag, start, indices);
   }
 
   static logInspectorRootOutline(tag: string, maxDepth: number): void {
-    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     Utils.logNodeOutline(root, tag, 0, maxDepth, 'root');
   }
 
-  private static walkInspector(tag: string, start: ESObject, indices: number[]): ESObject {
+  private static walkInspector(tag: string, start: InspectorNode, indices: number[]): InspectorNode {
     console.info(`[InspectorDebug][${tag}] start ${Utils.nodeBrief(start)}`);
-    let node: ESObject = start;
+    let node: InspectorNode = start;
     let pathStr = 'root';
     for (let i = 0; i < indices.length; i++) {
       const idx: number = indices[i];
-      const next: ESObject | null = Utils.childAt(node, idx);
+      const next: InspectorNode | null = Utils.childAt(node, idx);
       if (!next) {
         console.error(
           `[InspectorDebug][${tag}] FAIL step=${i} path=${pathStr} idx=${idx} len=${Utils.childCount(node)}`
@@ -168,13 +180,13 @@ export default class Utils {
   }
 
   private static logNodeOutline(
-    node: ESObject, tag: string, depth: number, maxDepth: number, path: string
+    node: InspectorNode, tag: string, depth: number, maxDepth: number, path: string
   ): void {
     if (depth > maxDepth) {
       return;
     }
     console.info(`[InspectorDebug][${tag}] ${path} ${Utils.nodeBrief(node)}`);
-    const kids: ESObject[] | undefined = node.$children as ESObject[] | undefined;
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids) {
       return;
     }
@@ -183,29 +195,28 @@ export default class Utils {
     }
   }
 
-  static childCount(node: ESObject): number {
+  static childCount(node: InspectorNode): number {
     if (!node.$children) {
       return -1;
     }
-    return (node.$children as ESObject[]).length;
+    return node.$children.length;
   }
 
-  private static childAt(node: ESObject, index: number): ESObject | null {
-    const kids = node.$children as ESObject[] | undefined;
+  private static childAt(node: InspectorNode, index: number): InspectorNode | null {
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids || index >= kids.length) {
       return null;
     }
     return kids[index];
   }
 
-  static nodeBrief(node: ESObject): string {
-    const attrs: Record<string, Object> = node.$attrs as Record<string, Object>;
-    const id: string = attrs?.id !== undefined ? String(attrs.id) : '';
+  static nodeBrief(node: InspectorNode): string {
+    const id: string = node.$attrs?.id ?? '';
     return `type=${node.$type ?? '?'} id=${id} children=${Utils.childCount(node)}`;
   }
 
-  static logChildrenBrief(node: ESObject, tag: string): void {
-    const kids: ESObject[] | undefined = node.$children as ESObject[] | undefined;
+  static logChildrenBrief(node: InspectorNode, tag: string): void {
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids) {
       console.info(`[InspectorDebug][${tag}] no $children`);
       return;
