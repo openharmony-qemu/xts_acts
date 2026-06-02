@@ -17,12 +17,14 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 126001;
 @Entry
 @Component
 struct WebComponent {
   webviewController: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
@@ -37,6 +39,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.webviewController.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -76,7 +82,7 @@ struct WebComponent {
           }
         })
       }
-      Web({ src: $rawfile('index.html'), controller: this.webviewController})
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.webviewController})
         .optimizeParserBudget(true)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);
