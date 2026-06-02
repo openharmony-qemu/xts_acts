@@ -3024,7 +3024,7 @@ export default function geolocationTest_geo7() {
             expect().assertFail();
         } catch (error) {
             console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
-            expect(error.code).assertEqual(401);
+            expect(Number(error.code)).assertEqual(401);
         }
         await sleep(1000);
         done();
