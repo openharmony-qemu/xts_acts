@@ -92,7 +92,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         }).catch((err: Error):void => {
           console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -159,7 +159,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -169,7 +169,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -179,7 +179,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -225,7 +225,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               done()
             }).catch((err: Error):void => {
               console.error(TEST_SUITE_NAME + TAG + `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              if (err.code == 801) {
+              if (err.code === 801) {
                 expect(err.code).assertEqual(801)
                 done();
               } else {
@@ -235,7 +235,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
             });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -245,7 +245,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         }catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -301,7 +301,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -311,7 +311,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -321,7 +321,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -378,7 +378,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -388,7 +388,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -398,7 +398,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -455,7 +455,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -465,7 +465,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -475,7 +475,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -521,7 +521,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               done()
             }).catch((err: Error):void => {
               console.error(TEST_SUITE_NAME + TAG + `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-              if (err.code == 801) {
+              if (err.code === 801) {
                 expect(err.code).assertEqual(801)
                 done();
               } else {
@@ -531,7 +531,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
             });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -541,7 +541,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         }catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -597,7 +597,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -607,7 +607,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -617,7 +617,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -674,7 +674,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -684,7 +684,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -694,7 +694,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -751,7 +751,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -761,7 +761,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -771,7 +771,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -822,7 +822,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -832,7 +832,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -842,7 +842,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -899,7 +899,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -909,7 +909,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -919,7 +919,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -976,7 +976,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -986,7 +986,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -996,7 +996,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1053,7 +1053,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1063,7 +1063,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1073,7 +1073,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1130,7 +1130,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1140,7 +1140,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1150,7 +1150,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1180,7 +1180,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         }).catch((err: Error):void => {
           console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1242,7 +1242,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1252,7 +1252,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1262,7 +1262,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1316,7 +1316,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1326,7 +1326,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1336,7 +1336,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1349,7 +1349,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         }).catch((err: Error):void => {
           console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1395,7 +1395,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         }).catch((err: Error):void => {
           console.error(TEST_SUITE_NAME + TAG + `openNotificationSettings err: ${JSON.stringify(err.code)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1495,7 +1495,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1505,7 +1505,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1515,7 +1515,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1567,7 +1567,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1577,7 +1577,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1587,7 +1587,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1642,7 +1642,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1652,7 +1652,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1662,7 +1662,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1714,7 +1714,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1724,7 +1724,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1734,7 +1734,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1786,7 +1786,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1796,7 +1796,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1806,7 +1806,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
@@ -1861,7 +1861,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                if (err.code == 801) {
+                if (err.code === 801) {
                   expect(err.code).assertEqual(801)
                   done();
                 } else {
@@ -1871,7 +1871,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
               });
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            if (err.code == 801) {
+            if (err.code === 801) {
               expect(err.code).assertEqual(801)
               done();
             } else {
@@ -1881,7 +1881,7 @@ export default function ActsNotificationAnsReduceAlertsTest(){
           });
         } catch (err) {
           console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          if (err.code == 801) {
+          if (err.code === 801) {
             expect(err.code).assertEqual(801)
             done();
           } else {
