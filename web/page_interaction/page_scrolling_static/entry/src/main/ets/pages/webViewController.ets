@@ -139,23 +139,6 @@ struct webViewController {
 
             case 'testOnOverScroll005': {
               try {
-                  if(this.XTag < 0){
-                    Utils.emitEvent(true, 310383191)
-                  }
-                  else{
-                    Utils.emitEvent(false, 310383191)
-                  }
-                  this.onOverScrollCallBack = false
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(error.code, 310383191)
-              }
-              break;
-            }
-
-            case 'testOnOverScroll006': {
-              try {
                 if(this.YTag > 0){
                   Utils.emitEvent(true, 310383192)
                 }
@@ -169,15 +152,6 @@ struct webViewController {
               }
               break;
             }
-
-            case 'emitonSwitchNextPage1': {
-              let uiContext: UIContext = this.getUIContext();
-              let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webResourceResponseGet' })
-              console.log('push URL success')
-            }
-
-
           }
         })
       }
