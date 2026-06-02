@@ -197,7 +197,7 @@ export default function printExtensionTest(): void {
     it('printExtension_function_0700', Level.LEVEL2, ():void => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
       try {
-        let context : printExtension.context;
+        let context = printExtension.context;
       } catch (err) {
         expect().assertFail();
       }
