@@ -62,7 +62,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0100
-     * @tc.number SUB_ARRAYBUFFER_TEST_0100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0100
      * @tc.desc   Verify constructor with required byteLength parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0200
-     * @tc.number SUB_ARRAYBUFFER_TEST_0200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0200
      * @tc.desc   Verify constructor with normal number values 0, 1, 1024, 1MB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0300
-     * @tc.number SUB_ARRAYBUFFER_TEST_0300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0300
      * @tc.desc   Verify constructor with boundary values 0 and 2147483647
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -109,7 +109,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0400
-     * @tc.number SUB_ARRAYBUFFER_TEST_0400
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0400
      * @tc.desc   Verify constructor with float value 10.5 truncates to integer 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0500
-     * @tc.number SUB_ARRAYBUFFER_TEST_0500
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0500
      * @tc.desc   Verify constructor with negative value -1 throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0600
-     * @tc.number SUB_ARRAYBUFFER_TEST_0600
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0600
      * @tc.desc   Verify constructor with NaN truncates to 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0700
-     * @tc.number SUB_ARRAYBUFFER_TEST_0700
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0700
      * @tc.desc   Verify constructor with Infinity throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -169,7 +169,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0800
-     * @tc.number SUB_ARRAYBUFFER_TEST_0800
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0800
      * @tc.desc   Verify byteLength matches constructor parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest0900
-     * @tc.number SUB_ARRAYBUFFER_TEST_0900
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0900
      * @tc.desc   Verify original buffer byteLength unchanged after slice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1000
-     * @tc.number SUB_ARRAYBUFFER_TEST_1000
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1000
      * @tc.desc   Verify slice with only begin parameter slices from begin to end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1100
-     * @tc.number SUB_ARRAYBUFFER_TEST_1100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1100
      * @tc.desc   Verify slice with begin and end parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -227,7 +227,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1200
-     * @tc.number SUB_ARRAYBUFFER_TEST_1200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1200
      * @tc.desc   Verify slice from 0 copies entire buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1300
-     * @tc.number SUB_ARRAYBUFFER_TEST_1300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1300
      * @tc.desc   Verify slice with begin=0 and begin=512 normal values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1400
-     * @tc.number SUB_ARRAYBUFFER_TEST_1400
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1400
      * @tc.desc   Verify slice with negative begin calculates from end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1500
-     * @tc.number SUB_ARRAYBUFFER_TEST_1500
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1500
      * @tc.desc   Verify slice with begin beyond range returns empty buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -288,7 +288,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1600
-     * @tc.number SUB_ARRAYBUFFER_TEST_1600
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1600
      * @tc.desc   Verify slice with normal end values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -304,7 +304,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1700
-     * @tc.number SUB_ARRAYBUFFER_TEST_1700
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1700
      * @tc.desc   Verify slice with negative end calculates from end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1800
-     * @tc.number SUB_ARRAYBUFFER_TEST_1800
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1800
      * @tc.desc   Verify slice with end beyond range clamps to buffer length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +332,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest1900
-     * @tc.number SUB_ARRAYBUFFER_TEST_1900
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1900
      * @tc.desc   Verify slice with end less than begin returns empty buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -346,7 +346,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2000
-     * @tc.number SUB_ARRAYBUFFER_TEST_2000
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2000
      * @tc.desc   Verify slice returns new ArrayBuffer instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,7 +362,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2100
-     * @tc.number SUB_ARRAYBUFFER_TEST_2100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2100
      * @tc.desc   Verify slice returns empty buffer for edge cases
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -380,7 +380,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2200
-     * @tc.number SUB_ARRAYBUFFER_TEST_2200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2200
      * @tc.desc   Verify slice copies data correctly via Int8Array view
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -399,7 +399,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2300
-     * @tc.number SUB_ARRAYBUFFER_TEST_2300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2300
      * @tc.desc   Verify empty buffer slice returns zero-length buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -413,7 +413,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2400
-     * @tc.number SUB_ARRAYBUFFER_TEST_2400
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2400
      * @tc.desc   Verify TaskPool passes ArrayBuffer and reads byteLength
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -428,7 +428,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2500
-     * @tc.number SUB_ARRAYBUFFER_TEST_2500
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2500
      * @tc.desc   Verify multiple TaskPool tasks share same ArrayBuffer data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2600
-     * @tc.number SUB_ARRAYBUFFER_TEST_2600
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2600
      * @tc.desc   Verify multiple TypedArray views share same ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2700
-     * @tc.number SUB_ARRAYBUFFER_TEST_2700
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2700
      * @tc.desc   Verify cross-thread TypedArray modification via TaskPool is visible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -486,7 +486,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2800
-     * @tc.number SUB_ARRAYBUFFER_TEST_2800
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2800
      * @tc.desc   Verify concurrent slice from two TaskPool tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest2900
-     * @tc.number SUB_ARRAYBUFFER_TEST_2900
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2900
      * @tc.desc   Verify multiple concurrent slice tasks with loop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest3000
-     * @tc.number SUB_ARRAYBUFFER_TEST_3000
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3000
      * @tc.desc   Verify TaskPool passes empty ArrayBuffer correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -544,7 +544,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest3100
-     * @tc.number SUB_ARRAYBUFFER_TEST_3100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3100
      * @tc.desc   Verify custom class extends collections.ArrayBuffer with @Sendable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -559,7 +559,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest3200
-     * @tc.number SUB_ARRAYBUFFER_TEST_3200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3200
      * @tc.desc   Verify instanceof check for collections.ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -572,7 +572,7 @@ export default function ArrayBufferTest(): void {
 
     /**
      * @tc.name   ArrayBufferTest3300
-     * @tc.number SUB_ARRAYBUFFER_TEST_3300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3300
      * @tc.desc   Verify typeof returns object for collections.ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
