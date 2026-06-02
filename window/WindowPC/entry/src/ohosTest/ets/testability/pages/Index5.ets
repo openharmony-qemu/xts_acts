@@ -21,8 +21,8 @@ struct Index5 {
     console.info('TestAbility index aboutToAppear')
   }
   @State message: string = 'Hello World'
-  @Env(SystemProperties.WINDOW_IS_FOCUSED) isFocused: boolean;
-  @Env(SystemProperties.WINDOW_IS_HIGHLIGHTED) isHighlighted: boolean;
+  @Env(ReadonlyEnvKey.WINDOW_IS_FOCUSED) isFocused: boolean;
+  @Env(ReadonlyEnvKey.WINDOW_IS_HIGHLIGHTED) isHighlighted: boolean;
   build() {
     Row() {
       Column() {
