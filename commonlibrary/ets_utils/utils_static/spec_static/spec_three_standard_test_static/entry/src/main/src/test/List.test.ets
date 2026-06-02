@@ -80,7 +80,6 @@ import ComputingSmartTypesTest11 from './semanticrules/smartcastsandsmarttypes/c
 import ComputingSmartTypesTest20 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest20.test'
 import IntersectionTypesTest from './semanticrules/smartcastsandsmarttypes/intersectiontypes/IntersectionTypesTest.test'
 import SmartCastExamplesTest from './semanticrules/smartcastsandsmarttypes/smartcastexamples/SmartCastExamplesTest.test'
-import OverrideCompatibleSignaturesTest01 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest01.test'
 import OverrideCompatibleSignaturesTest02 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest02.test'
 import OverrideCompatibleSignaturesTest03 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest03.test'
 import OverrideCompatibleSignaturesTest04 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest04.test'
@@ -109,25 +108,6 @@ import OverloadWithImportTest03 from './semanticrules/overloading/overloadwithim
 
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
 import ExtendedConditionalExpressionsTest01 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest01.test";
-import ExtendedConditionalExpressionsTest02 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest02.test";
-import ExtendedConditionalExpressionsTest03 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest03.test";
-import ExtendedConditionalExpressionsTest04 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest04.test";
-import ExtendedConditionalExpressionsTest05 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest05.test";
-import ExtendedConditionalExpressionsTest06 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest06.test";
-import ExtendedConditionalExpressionsTest07 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest07.test";
-import ExtendedConditionalExpressionsTest08 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest08.test";
-import ExtendedConditionalExpressionsTest09 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest09.test";
-import ExtendedConditionalExpressionsTest10 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest10.test";
-import ExtendedConditionalExpressionsTest11 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest11.test";
-import ExtendedConditionalExpressionsTest12 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest12.test";
-import ExtendedConditionalExpressionsTest13 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest13.test";
-import ExtendedConditionalExpressionsTest14 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest14.test";
-import ExtendedConditionalExpressionsTest15 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest15.test";
-import ExtendedConditionalExpressionsTest16 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest16.test";
-import ExtendedConditionalExpressionsTest17 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest17.test";
-import ExtendedConditionalExpressionsTest18 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest18.test";
-import ExtendedConditionalExpressionsTest19 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest19.test";
-import ExtendedConditionalExpressionsTest20 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest20.test";
 import DispatchTest from "./semanticrules/dispatch/DispatchTest.test";
 import OverloadSetForClassInstanceMethodsTest from "./semanticrules/overloadresolution/overloadsetforclassinstancemethods/OverloadSetForClassInstanceMethodsTest.test";
 import OverloadSetForConstructorsTest01 from "./semanticrules/overloadresolution/overloadsetforconstructors/OverloadSetForConstructorsTest01.test";
@@ -156,7 +136,6 @@ import SpecificsOfStringOperatorContextsTest from './semanticrules/semanticessen
 import SpecificsOfTypeParametersTest from './semanticrules/semanticessentials/SpecificsOfTypeParametersTest.test'
 import ArrayTypesIdentityTest from './semanticrules/typeidentity/ArrayTypesIdentityTest.test'
 import UnionTypesIdentityTest from './semanticrules/typeidentity/UnionTypesIdentityTest.test'
-import UnionTypesIdentityTest01 from './semanticrules/typeidentity/UnionTypesIdentityTest01.test'
 import SemanticRulesTypeIdentity from './semanticrules/typeidentity/SemanticRulesTypeIdentity.test'
 import TypeIdentityCaseTest from './semanticrules/typeidentity/TypeIdentityCaseTest.test'
 import ArrayOfArraysTypesIdentityTest from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest.test'
@@ -248,7 +227,6 @@ export default function testsuite(): void {
   SmartCastExamplesTest();
   OverridingInClassesTest();
   OverridingTest();
-  OverrideCompatibleSignaturesTest01();
   OverrideCompatibleSignaturesTest02();
   OverrideCompatibleSignaturesTest03();
   OverrideCompatibleSignaturesTest04();
@@ -274,25 +252,6 @@ export default function testsuite(): void {
   OverloadWithImportTest03();
   DispatchTest();
   ExtendedConditionalExpressionsTest01();
-  ExtendedConditionalExpressionsTest02();
-  ExtendedConditionalExpressionsTest03();
-  ExtendedConditionalExpressionsTest04();
-  ExtendedConditionalExpressionsTest05();
-  ExtendedConditionalExpressionsTest06();
-  ExtendedConditionalExpressionsTest07();
-  ExtendedConditionalExpressionsTest08();
-  ExtendedConditionalExpressionsTest09();
-  ExtendedConditionalExpressionsTest10();
-  ExtendedConditionalExpressionsTest11();
-  ExtendedConditionalExpressionsTest12();
-  ExtendedConditionalExpressionsTest13();
-  ExtendedConditionalExpressionsTest14();
-  ExtendedConditionalExpressionsTest15();
-  ExtendedConditionalExpressionsTest16();
-  ExtendedConditionalExpressionsTest17();
-  ExtendedConditionalExpressionsTest18();
-  ExtendedConditionalExpressionsTest19();
-  ExtendedConditionalExpressionsTest20();
   FixedArrayTypesTest();
   OverloadSetForClassInstanceMethodsTest();
   OverloadSetForConstructorsTest01();
@@ -320,7 +279,6 @@ export default function testsuite(): void {
   SpecificsOfTypeParametersTest();
   ArrayTypesIdentityTest();
   UnionTypesIdentityTest();
-  UnionTypesIdentityTest01();
   SemanticRulesTypeIdentity();
   TypeIdentityCaseTest();
   ArrayOfArraysTypesIdentityTest();

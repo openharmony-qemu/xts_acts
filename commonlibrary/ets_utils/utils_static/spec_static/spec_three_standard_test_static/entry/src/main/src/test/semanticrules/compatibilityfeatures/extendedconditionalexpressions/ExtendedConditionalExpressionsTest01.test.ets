@@ -1807,5 +1807,22 @@ export default function ExtendedConditionalExpressionsTest01():void {
       expect(orResult).assertEqual('hello');
     });
 
+    /**
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_THIRTEEN_EXPRESSIONS_0200
+     * @tc.name    testConditionalExpression0491
+     * @tc.desc      If statement with falsy value (boolean false)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testConditionalExpression0491', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let res: number = 0;
+      let v: boolean = false  // falsy
+      if (v) {
+        res = 1
+      }
+      expect(res).assertEqual(0);
+    });
+
   })
 }
