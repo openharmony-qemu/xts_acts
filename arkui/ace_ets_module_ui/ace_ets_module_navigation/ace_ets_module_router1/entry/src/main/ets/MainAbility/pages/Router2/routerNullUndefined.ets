@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 import { router } from '@kit.ArkUI';
-
+ 
 @Entry
 @Component
 struct RouterApiNullUndefined {
   @State message: string = 'Router API 测试页面';
-
+ 
   build() {
     Column() {
       Text('Router API Null/Undefined 测试')
-
+ 
       // 测试 recoverable 参数的 true/false 值
       Row(){
         Button('push - recoverable: true')
@@ -30,7 +30,7 @@ struct RouterApiNullUndefined {
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/Router2/RouterTargetPage',
+                url: 'MainAbility/pages/Router2/RouterTargetPage',
                 params: { recoverable: true }
               });
               console.info('push with recoverable true success');
@@ -39,13 +39,13 @@ struct RouterApiNullUndefined {
             }
           })
           .id('button_push_recoverable_true')
-
+ 
         Button('push - recoverable: false')
           .width('50%')
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/Router2/RouterTargetPage',
+                url: 'MainAbility/pages/Router2/RouterTargetPage',
                 params: { recoverable: false }
               });
               console.info('push with recoverable false success');
@@ -56,14 +56,14 @@ struct RouterApiNullUndefined {
           .id('button_push_recoverable_false')
       }
       .height('20%')
-
+ 
       Row(){
         Button('push - params: null')
           .width('50%')
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/Router2/RouterTargetPage',
+                url: 'MainAbility/pages/Router2/RouterTargetPage',
                 params: null
               });
               console.info('push with params null success');
@@ -72,13 +72,13 @@ struct RouterApiNullUndefined {
             }
           })
           .id('button_push_params_null')
-
+ 
         Button('push - params: undefined')
           .width('50%')
           .onClick(async () => {
             try {
               await router.push({
-                url: 'pages/Router2/RouterTargetPage',
+                url: 'MainAbility/pages/Router2/RouterTargetPage',
                 params: undefined
               });
               console.info('push with params undefined success');
@@ -89,7 +89,7 @@ struct RouterApiNullUndefined {
           .id('button_push_params_undefined')
       }
       .height('20%')
-
+ 
       Row(){
         // 测试 pushUrl 的 uri 空值
         Button('pushUrl - uri: empty string')
@@ -106,7 +106,7 @@ struct RouterApiNullUndefined {
             }
           })
           .id('button_pushUrl_uri_empty')
-
+ 
         Button('pushUrl - options: null')
           .width('30%')
           .onClick(async () => {
@@ -119,7 +119,7 @@ struct RouterApiNullUndefined {
             }
           })
           .id('button_pushUrl_options_null')
-
+ 
         Button('pushUrl - options: undefined')
           .width('30%')
           .onClick(async () => {
@@ -134,29 +134,29 @@ struct RouterApiNullUndefined {
           .id('button_pushUrl_options_undefined')
       }
       .height('20%')
-
+ 
       Row(){
         // 测试 back 方法的 recoverable 和 uri
         Button('back - recoverable: true')
           .width('30%')
           .onClick(() => {
             router.back({
-              url: 'pages/Router2/RouterTargetPage',
+              url: 'MainAbility/pages/Router2/RouterTargetPage',
               params: { recoverable: true }
             });
           })
           .id('button_back_recoverable_true')
-
+ 
         Button('back - recoverable: false')
           .width('30%')
           .onClick(() => {
             router.back({
-              url: 'pages/Router2/RouterTargetPage',
+              url: 'MainAbility/pages/Router2/RouterTargetPage',
               params: { recoverable: false }
             });
           })
           .id('button_back_recoverable_false')
-
+ 
         Button('back - uri: empty string')
           .width('30%')
           .onClick(() => {
@@ -167,7 +167,7 @@ struct RouterApiNullUndefined {
           .id('button_back_uri_empty')
       }
       .height('20%')
-
+ 
       Text(this.message)
         .id('text_result_message')
     }
