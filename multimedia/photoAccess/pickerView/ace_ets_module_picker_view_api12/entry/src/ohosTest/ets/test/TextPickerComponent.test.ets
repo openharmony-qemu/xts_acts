@@ -3636,17 +3636,18 @@ export default function TextPicker() {
         let isInvalidCase = !testCases[i].src || !testCases[i].config || !testCases[i].src?.length || !testCases[i].config?.length;
         console.log('testPicker63 Case A: ' + JSON.stringify(testCases[i]) + ' ' + i);
         console.log(`testPicker63 isInvalidCase = ${isInvalidCase}`);
-
+        let result: Array<string> = [];
         try {
-          let dialogPromise = photoAccessHelper
+          photoAccessHelper
             .getPhotoAccessHelper(context)
             .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config);
-
+            .then((res) => {
+              result = res;
+            });
+            await driveFn();
           if (!isInvalidCase) {
             await driveFn();
           }
-
-          let result = await dialogPromise;
 
           if (!result) {
             expect(result).assertUndefined();
@@ -4249,14 +4250,16 @@ export default function TextPicker() {
       try {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
-        
-        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef]);
+        let result: Array<string> = [];
+        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef])
+        .then((res) => {
+          result = res;
+        });
+        await driveFn();
 
         driveFn().catch((err: Error) => {
           console.info("testPicker71 driveFn info: " + err.message);
         });
-
-        let result = await dialogPromise;
         
         if (!result) {
           expect(result).assertUndefined();
@@ -4380,10 +4383,13 @@ export default function TextPicker() {
       try {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
-        
-        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
+        let result: Array<string> = [];
+        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
           [boxPath], [CreationSettingDef]
-        );
+        ).then((res) => {
+          result = res;
+        });
+        await driveFn();
         
         try {
           await driveFn();
