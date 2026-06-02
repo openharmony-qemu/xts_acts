@@ -19,17 +19,17 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { sleep } from '../Utils';
 
 @Concurrent
-function processFloat32ArrayFunc(arr: collections.Float32Array): number {
+function processFloatArrayFunc(arr: collections.Float32Array): number {
   return arr.length
 }
 
 @Concurrent
-function modifyFloat32ArrayFunc(arr: collections.Float32Array): void {
+function modifyFloatArrayFunc(arr: collections.Float32Array): void {
   arr[0] = 99.5
 }
 
 @Concurrent
-function sumFloat32ArrayFunc(arr: collections.Float32Array): number {
+function sumFloatArrayFunc(arr: collections.Float32Array): number {
   let sum: number = 0
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i]
@@ -38,12 +38,12 @@ function sumFloat32ArrayFunc(arr: collections.Float32Array): number {
 }
 
 @Concurrent
-function readFloat32AtFunc(arr: collections.Float32Array, index: number): number {
+function readFloatAtFunc(arr: collections.Float32Array, index: number): number {
   return arr[index] as number
 }
 
 @Sendable
-class CustomFloat32Array extends collections.Float32Array {
+class CustomFloatArray extends collections.Float32Array {
   constructor(length: number) {
     super(length)
   }
@@ -55,8 +55,8 @@ class CustomFloat32Array extends collections.Float32Array {
   }
 }
 
-export default function Float32ArrayTest(): void {
-  describe('Float32ArrayTest', (): void => {
+export default function FloatArrayTest(): void {
+  describe('FloatArrayTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})
@@ -67,14 +67,14 @@ export default function Float32ArrayTest(): void {
     // ==================== Constructor Tests ====================
 
     /**
-     * @tc.name   Float32ArrayTest0100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0100
+     * @tc.name   FloatArrayTest0100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0100
      * @tc.desc   Verify empty constructor creates array with length 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr = new collections.Float32Array()
       expect(arr.length).assertEqual(0)
       expect(arr.byteLength).assertEqual(0)
@@ -82,14 +82,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0200
+     * @tc.name   FloatArrayTest0200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0200
      * @tc.desc   Verify length constructor with positive integer values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr1 = new collections.Float32Array(5)
       expect(arr1.length).assertEqual(5)
       expect(arr1.byteLength).assertEqual(20)
@@ -100,28 +100,28 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0300
+     * @tc.name   FloatArrayTest0300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0300
      * @tc.desc   Verify length constructor with zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Float32Array(0)
       expect(arr.length).assertEqual(0)
       expect(arr.byteLength).assertEqual(0)
     })
 
     /**
-     * @tc.name   Float32ArrayTest0400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0400
+     * @tc.name   FloatArrayTest0400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0400
      * @tc.desc   Verify length constructor with negative value throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let arr = new collections.Float32Array(-1)
         expect().assertFail()
@@ -131,14 +131,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0500
+     * @tc.name   FloatArrayTest0500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0500
      * @tc.desc   Verify ArrayLike constructor with normal values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.5, 3.5]
       let arr = new collections.Float32Array(src)
       expect(arr.length).assertEqual(3)
@@ -148,14 +148,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0600
+     * @tc.name   FloatArrayTest0600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0600
      * @tc.desc   Verify ArrayLike constructor with special values Infinity and NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [Infinity, -Infinity, NaN]
       let arr = new collections.Float32Array(src)
       expect(arr.length).assertEqual(3)
@@ -165,14 +165,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0700
+     * @tc.name   FloatArrayTest0700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0700
      * @tc.desc   Verify constructor from another Float32Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr1 = new collections.Float32Array(src)
       let arr2 = new collections.Float32Array(arr1)
@@ -182,14 +182,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0800
+     * @tc.name   FloatArrayTest0800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0800
      * @tc.desc   Verify Iterable constructor with Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let set: Set<number> = new Set<number>([1, 2, 3])
       let arr = new collections.Float32Array(set)
       expect(arr.length).assertEqual(3)
@@ -199,14 +199,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest0900
-     * @tc.number SUB_FLOAT32ARRAY_TEST_0900
+     * @tc.name   FloatArrayTest0900
+     * @tc.number SUB_FLOAT_ARRAY_TEST_0900
      * @tc.desc   Verify ArrayBuffer constructor with byteOffset and length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(40)
       let arr = new collections.Float32Array(buffer, 4, 5)
       expect(arr.length).assertEqual(5)
@@ -215,14 +215,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1000
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1000
+     * @tc.name   FloatArrayTest1000
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1000
      * @tc.desc   Verify static from method with ArrayLike
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.5, 3.5]
       let arr = collections.Float32Array.from(src)
       expect(arr.length).assertEqual(3)
@@ -230,14 +230,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1100
+     * @tc.name   FloatArrayTest1100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1100
      * @tc.desc   Verify static from method with mapFn transform
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3]
       let arr = collections.Float32Array.from<number>(src, (v: number, k: number): number => v * 2)
       expect(arr.length).assertEqual(3)
@@ -247,14 +247,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1200
+     * @tc.name   FloatArrayTest1200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1200
      * @tc.desc   Verify static of method with variadic arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr = collections.Float32Array.of(1.5, 2.7, 3.14)
       expect(arr.length).assertEqual(3)
       expect(arr[0]).assertClose(1.5, 0.001)
@@ -262,14 +262,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1300
+     * @tc.name   FloatArrayTest1300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1300
      * @tc.desc   Verify static of method with empty arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = collections.Float32Array.of()
       expect(arr.length).assertEqual(0)
     })
@@ -277,14 +277,14 @@ export default function Float32ArrayTest(): void {
     // ==================== Property Tests ====================
 
     /**
-     * @tc.name   Float32ArrayTest1400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1400
+     * @tc.name   FloatArrayTest1400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1400
      * @tc.desc   Verify length and byteLength relationship (byteLength = length * 4)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr = new collections.Float32Array(10)
       expect(arr.length).assertEqual(10)
       expect(arr.byteLength).assertEqual(40)
@@ -292,40 +292,40 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1500
+     * @tc.name   FloatArrayTest1500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1500
      * @tc.desc   Verify BYTES_PER_ELEMENT is 4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       expect(collections.Float32Array.BYTES_PER_ELEMENT).assertEqual(4)
     })
 
     /**
-     * @tc.name   Float32ArrayTest1600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1600
+     * @tc.name   FloatArrayTest1600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1600
      * @tc.desc   Verify buffer property returns underlying ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(40)
       let arr = new collections.Float32Array(buffer)
       expect(arr.buffer.byteLength).assertEqual(40)
     })
 
     /**
-     * @tc.name   Float32ArrayTest1700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1700
+     * @tc.name   FloatArrayTest1700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1700
      * @tc.desc   Verify byteOffset with ArrayBuffer constructor offset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(40)
       let arr = new collections.Float32Array(buffer, 8)
       expect(arr.byteOffset).assertEqual(8)
@@ -334,14 +334,14 @@ export default function Float32ArrayTest(): void {
     // ==================== Method Tests ====================
 
     /**
-     * @tc.name   Float32ArrayTest1800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1800
+     * @tc.name   FloatArrayTest1800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1800
      * @tc.desc   Verify at() with positive and negative indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14, 4.0, 5.5]
       let arr = new collections.Float32Array(src)
       expect(arr.at(0)).assertClose(1.5, 0.001)
@@ -350,14 +350,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest1900
-     * @tc.number SUB_FLOAT32ARRAY_TEST_1900
+     * @tc.name   FloatArrayTest1900
+     * @tc.number SUB_FLOAT_ARRAY_TEST_1900
      * @tc.desc   Verify at() returns undefined for out-of-bounds index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [1.5, 2.7]
       let arr = new collections.Float32Array(src)
       let result = arr.at(10)
@@ -365,14 +365,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2000
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2000
+     * @tc.name   FloatArrayTest2000
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2000
      * @tc.desc   Verify fill() with value and optional start/end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr = new collections.Float32Array(5)
       arr.fill(1.5)
       expect(arr[0]).assertClose(1.5, 0.001)
@@ -385,14 +385,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2100
+     * @tc.name   FloatArrayTest2100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2100
      * @tc.desc   Verify fill() with Infinity special value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Float32Array(3)
       arr.fill(Infinity)
       expect(arr[0]).assertEqual(Infinity)
@@ -401,14 +401,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2200
+     * @tc.name   FloatArrayTest2200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2200
      * @tc.desc   Verify find() returns first matching element or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 3, 5, 10]
       let arr = new collections.Float32Array(src)
       let found = arr.find((v: number): boolean => v > 2)
@@ -419,14 +419,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2300
+     * @tc.name   FloatArrayTest2300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2300
      * @tc.desc   Verify find() with NaN using isNaN check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [1.5, NaN, 3.14]
       let arr = new collections.Float32Array(src)
       let nanVal = arr.find((v: number): boolean => Number.isNaN(v))
@@ -434,14 +434,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2400
+     * @tc.name   FloatArrayTest2400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2400
      * @tc.desc   Verify findIndex() returns correct index or -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
       let idx = arr.findIndex((v: number): boolean => v > 2)
@@ -451,14 +451,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2500
+     * @tc.name   FloatArrayTest2500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2500
      * @tc.desc   Verify forEach() iterates all elements correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
       let sum: number = 0
@@ -472,14 +472,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2600
+     * @tc.name   FloatArrayTest2600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2600
      * @tc.desc   Verify indexOf() with existing and non-existing elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4]
       let arr = new collections.Float32Array(src)
       expect(arr.indexOf(1)).assertEqual(0)
@@ -488,28 +488,28 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2700
+     * @tc.name   FloatArrayTest2700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2700
      * @tc.desc   Verify indexOf() returns -1 for NaN since NaN !== NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [1.5, NaN, 3.14]
       let arr = new collections.Float32Array(src)
       expect(arr.indexOf(NaN)).assertEqual(-1)
     })
 
     /**
-     * @tc.name   Float32ArrayTest2800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2800
+     * @tc.name   FloatArrayTest2800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2800
      * @tc.desc   Verify lastIndexOf() with duplicate values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 1.5, 3.14]
       let arr = new collections.Float32Array(src)
       expect(arr.lastIndexOf(1.5)).assertEqual(2)
@@ -517,14 +517,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest2900
-     * @tc.number SUB_FLOAT32ARRAY_TEST_2900
+     * @tc.name   FloatArrayTest2900
+     * @tc.number SUB_FLOAT_ARRAY_TEST_2900
      * @tc.desc   Verify join() with default and custom separator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3]
       let arr = new collections.Float32Array(src)
       expect(arr.join()).assertEqual('1,2,3')
@@ -532,14 +532,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3000
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3000
+     * @tc.name   FloatArrayTest3000
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3000
      * @tc.desc   Verify map() creates new array with transformed elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.5, 3.5]
       let arr = new collections.Float32Array(src)
       let mapped = arr.map((v: number): number => v * 2)
@@ -551,14 +551,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3100
+     * @tc.name   FloatArrayTest3100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3100
      * @tc.desc   Verify reduce() without and with initial value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       let sum = arr.reduce((acc: number, v: number): number => acc + v)
@@ -568,14 +568,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3200
+     * @tc.name   FloatArrayTest3200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3200
      * @tc.desc   Verify reduceRight() processes elements from right to left
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       let result = arr.reduceRight((acc: number, v: number): number => acc + v)
@@ -585,14 +585,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3300
+     * @tc.name   FloatArrayTest3300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3300
      * @tc.desc   Verify reverse() reverses array in place
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       arr.reverse()
@@ -602,14 +602,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3400
+     * @tc.name   FloatArrayTest3400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3400
      * @tc.desc   Verify slice() returns new array with selected range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       let sliced = arr.slice(1, 4)
@@ -620,14 +620,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3500
+     * @tc.name   FloatArrayTest3500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3500
      * @tc.desc   Verify slice() with negative indices
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       let sliced = arr.slice(-2)
@@ -637,14 +637,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3600
+     * @tc.name   FloatArrayTest3600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3600
      * @tc.desc   Verify sort() with default and custom comparator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [3.14, 1.5, 2.7, 4.0]
       let arr = new collections.Float32Array(src)
       arr.sort((a: number, b: number): number => a - b)
@@ -655,14 +655,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3700
+     * @tc.name   FloatArrayTest3700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3700
      * @tc.desc   Verify sort() with descending order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [1, 3, 5, 2, 4]
       let arr = new collections.Float32Array(src)
       arr.sort((a: number, b: number): number => b - a)
@@ -671,14 +671,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3800
+     * @tc.name   FloatArrayTest3800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3800
      * @tc.desc   Verify subarray() shares buffer with original array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       let sub = arr.subarray(1, 4)
@@ -689,14 +689,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest3900
-     * @tc.number SUB_FLOAT32ARRAY_TEST_3900
+     * @tc.name   FloatArrayTest3900
+     * @tc.number SUB_FLOAT_ARRAY_TEST_3900
      * @tc.desc   Verify includes() with existing and non-existing elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, NaN, Infinity]
       let arr = new collections.Float32Array(src)
       expect(arr.includes(1.5)).assertTrue()
@@ -706,14 +706,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4000
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4000
+     * @tc.name   FloatArrayTest4000
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4000
      * @tc.desc   Verify copyWithin() copies elements within array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
       let arr = new collections.Float32Array(src)
       arr.copyWithin(3, 1, 3)
@@ -723,14 +723,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4100
+     * @tc.name   FloatArrayTest4100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4100
      * @tc.desc   Verify set() writes values from ArrayLike at offset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let arr = new collections.Float32Array(5)
       let vals: number[] = [1.5, 2.5, 3.5]
       arr.set(vals, 1)
@@ -741,14 +741,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4200
+     * @tc.name   FloatArrayTest4200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4200
      * @tc.desc   Verify every() returns true when all elements match condition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
       expect(arr.every((v: number): boolean => v > 0)).assertTrue()
@@ -756,14 +756,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4300
+     * @tc.name   FloatArrayTest4300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4300
      * @tc.desc   Verify some() returns true when any element matches condition
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
       expect(arr.some((v: number): boolean => v > 2)).assertTrue()
@@ -771,14 +771,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4400
+     * @tc.name   FloatArrayTest4400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4400
      * @tc.desc   Verify filter() returns new array with matching elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [0, 1, 2, 3, 4]
       let arr = new collections.Float32Array(src)
       let filtered = arr.filter((v: number): boolean => v % 2 === 0)
@@ -789,28 +789,28 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4500
+     * @tc.name   FloatArrayTest4500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4500
      * @tc.desc   Verify toString() returns comma-separated string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
       expect(arr.toString()).assertEqual('1,2,3,4,5')
     })
 
     /**
-     * @tc.name   Float32ArrayTest4600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4600
+     * @tc.name   FloatArrayTest4600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4600
      * @tc.desc   Verify entries() returns key-value iterator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [11, 22, 33]
       let arr = new collections.Float32Array(src)
       let iter: IterableIterator<[number, number]> = arr.entries()
@@ -820,14 +820,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4700
+     * @tc.name   FloatArrayTest4700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4700
      * @tc.desc   Verify keys() returns index iterator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [10, 20, 30]
       let arr = new collections.Float32Array(src)
       let keysArr: number[] = []
@@ -840,14 +840,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4800
+     * @tc.name   FloatArrayTest4800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4800
      * @tc.desc   Verify values() returns value iterator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [10, 20, 30]
       let arr = new collections.Float32Array(src)
       let valsArr: number[] = []
@@ -860,14 +860,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest4900
-     * @tc.number SUB_FLOAT32ARRAY_TEST_4900
+     * @tc.name   FloatArrayTest4900
+     * @tc.number SUB_FLOAT_ARRAY_TEST_4900
      * @tc.desc   Verify IEEE 754 precision loss with large and small values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [3.14159265358979]
       let arr = new collections.Float32Array(src)
       expect(arr[0]).assertClose(3.14159, 0.001)
@@ -878,14 +878,14 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest5000
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5000
+     * @tc.name   FloatArrayTest5000
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5000
      * @tc.desc   Verify index access operator returns correct element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
       expect(arr[0]).assertClose(1.5, 0.001)
@@ -897,51 +897,51 @@ export default function Float32ArrayTest(): void {
     // ==================== Concurrent Tests ====================
 
     /**
-     * @tc.name   Float32ArrayTest5100
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5100
+     * @tc.name   FloatArrayTest5100
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5100
      * @tc.desc   Verify TaskPool passes Float32Array and returns correct length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.5, 2.7, 3.14]
       let arr = new collections.Float32Array(src)
-      let task = new taskpool.Task(processFloat32ArrayFunc, arr)
+      let task = new taskpool.Task(processFloatArrayFunc, arr)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(3)
     })
 
     /**
-     * @tc.name   Float32ArrayTest5200
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5200
+     * @tc.name   FloatArrayTest5200
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5200
      * @tc.desc   Verify TaskPool modifies Float32Array via reference sharing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1.0, 2.0, 3.0]
       let arr = new collections.Float32Array(src)
-      let task = new taskpool.Task(modifyFloat32ArrayFunc, arr)
+      let task = new taskpool.Task(modifyFloatArrayFunc, arr)
       await taskpool.execute(task)
       expect(arr[0]).assertClose(99.5, 0.001)
     })
 
     /**
-     * @tc.name   Float32ArrayTest5300
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5300
+     * @tc.name   FloatArrayTest5300
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5300
      * @tc.desc   Verify concurrent read from multiple TaskPool tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Float32ArrayTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('FloatArrayTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let src: number[] = [10, 20, 30, 40, 50]
       let arr = new collections.Float32Array(src)
       let tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
-        tasks.push(new taskpool.Task(readFloat32AtFunc, arr, i))
+        tasks.push(new taskpool.Task(readFloatAtFunc, arr, i))
       }
       let promises: Promise<Object>[] = []
       for (let i = 0; i < tasks.length; i++) {
@@ -954,33 +954,33 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest5400
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5400
+     * @tc.name   FloatArrayTest5400
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5400
      * @tc.desc   Verify TaskPool sum calculation with Float32Array data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Float32ArrayTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('FloatArrayTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let src: number[] = [1, 2, 3, 4, 5]
       let arr = new collections.Float32Array(src)
-      let task = new taskpool.Task(sumFloat32ArrayFunc, arr)
+      let task = new taskpool.Task(sumFloatArrayFunc, arr)
       let result = await taskpool.execute(task)
       expect(result as number).assertClose(15, 0.001)
     })
 
     /**
-     * @tc.name   Float32ArrayTest5500
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5500
+     * @tc.name   FloatArrayTest5500
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5500
      * @tc.desc   Verify Float32Array with special values passed through TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let src: number[] = [Infinity, -Infinity, NaN, 0, 1.5]
       let arr = new collections.Float32Array(src)
-      let task = new taskpool.Task(processFloat32ArrayFunc, arr)
+      let task = new taskpool.Task(processFloatArrayFunc, arr)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(5)
     })
@@ -988,15 +988,15 @@ export default function Float32ArrayTest(): void {
     // ==================== Inheritance Tests ====================
 
     /**
-     * @tc.name   Float32ArrayTest5600
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5600
+     * @tc.name   FloatArrayTest5600
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5600
      * @tc.desc   Verify custom subclass extends Float32Array with sumAll method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let arr = new CustomFloat32Array(5)
+    it('FloatArrayTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let arr = new CustomFloatArray(5)
       arr[0] = 1
       arr[1] = 2
       arr[2] = 3
@@ -1007,28 +1007,28 @@ export default function Float32ArrayTest(): void {
     })
 
     /**
-     * @tc.name   Float32ArrayTest5700
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5700
+     * @tc.name   FloatArrayTest5700
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5700
      * @tc.desc   Verify instanceof check for custom subclass and parent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let arr = new CustomFloat32Array(3)
-      expect(arr instanceof CustomFloat32Array).assertTrue()
+    it('FloatArrayTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let arr = new CustomFloatArray(3)
+      expect(arr instanceof CustomFloatArray).assertTrue()
       expect(arr instanceof collections.Float32Array).assertTrue()
     })
 
     /**
-     * @tc.name   Float32ArrayTest5800
-     * @tc.number SUB_FLOAT32ARRAY_TEST_5800
+     * @tc.name   FloatArrayTest5800
+     * @tc.number SUB_FLOAT_ARRAY_TEST_5800
      * @tc.desc   Verify multiple Float32Array views sharing same ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Float32ArrayTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('FloatArrayTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(20)
       let arr1 = new collections.Float32Array(buffer, 0, 2)
       let arr2 = new collections.Float32Array(buffer, 8, 3)
