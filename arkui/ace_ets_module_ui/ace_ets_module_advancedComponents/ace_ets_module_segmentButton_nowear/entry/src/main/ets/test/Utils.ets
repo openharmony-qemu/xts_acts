@@ -16,16 +16,36 @@
 import componentRect from '@ohos.arkui.componentUtils'
 import { RectValue } from '../MainAbility/common/Utils';
 
+export interface InspectorBlurStyle {
+  value: string;
+}
+
+export interface InspectorSize {
+  width: string;
+  height: string;
+}
+
 export interface InspectorAttrs {
   id?: string;
   content?: string;
   src?: string;
-  systemMaterial?: Object;
+  systemMaterial?: Object | null;
+  borderRadius?: Object;
+  accessibilityLevel?: string;
+  accessibilityDescription?: string;
+  accessibilityText?: string;
+  backgroundColor?: string;
+  padding?: string;
+  fontColor?: string;
+  backgroundBlurStyle: InspectorBlurStyle;
+  fontSize?: string;
+  fontWeight?: string;
+  size: InspectorSize;
 }
 
 export interface InspectorNode {
   $type?: string;
-  $attrs?: InspectorAttrs;
+  $attrs: InspectorAttrs;
   $children?: InspectorNode[];
 }
 
@@ -144,17 +164,40 @@ export default class Utils {
   }
 
   static navigateInspectorPath(tag: string, indices: number[]): InspectorNode {
-    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
-    return Utils.walkInspector(tag, root, indices);
+    const root: InspectorNode = Utils.normalizeInspectorNode(
+      JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode
+    );
+    return Utils.normalizeInspectorNode(Utils.walkInspector(tag, root, indices));
   }
 
   static navigateFromNode(tag: string, start: InspectorNode, indices: number[]): InspectorNode {
-    return Utils.walkInspector(tag, start, indices);
+    return Utils.normalizeInspectorNode(Utils.walkInspector(tag, start, indices));
   }
 
   static logInspectorRootOutline(tag: string, maxDepth: number): void {
-    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
+    const root: InspectorNode = Utils.normalizeInspectorNode(
+      JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode
+    );
     Utils.logNodeOutline(root, tag, 0, maxDepth, 'root');
+  }
+
+  private static emptyAttrs(): InspectorAttrs {
+    return {
+      backgroundBlurStyle: { value: '' },
+      size: { width: '', height: '' },
+    };
+  }
+
+  private static normalizeInspectorNode(node: InspectorNode): InspectorNode {
+    const attrs: InspectorAttrs = node.$attrs ?? Utils.emptyAttrs();
+    if (!attrs.backgroundBlurStyle) {
+      attrs.backgroundBlurStyle = { value: '' };
+    }
+    if (!attrs.size) {
+      attrs.size = { width: '', height: '' };
+    }
+    node.$attrs = attrs;
+    return node;
   }
 
   private static walkInspector(tag: string, start: InspectorNode, indices: number[]): InspectorNode {
@@ -175,7 +218,7 @@ export default class Utils {
       pathStr += `.$children[${idx}]`;
       console.info(`[InspectorDebug][${tag}] step ${i}: ${pathStr} ${Utils.nodeBrief(node)}`);
     }
-    console.info(`[InspectorDebug][${tag}] target attrs=${JSON.stringify(node.$attrs ?? ({} as Record<string, Object>))}`);
+    console.info(`[InspectorDebug][${tag}] target attrs=${JSON.stringify(node.$attrs)}`);
     return node;
   }
 
@@ -211,7 +254,7 @@ export default class Utils {
   }
 
   static nodeBrief(node: InspectorNode): string {
-    const id: string = node.$attrs?.id ?? '';
+    const id: string = node.$attrs.id ?? '';
     return `type=${node.$type ?? '?'} id=${id} children=${Utils.childCount(node)}`;
   }
 
