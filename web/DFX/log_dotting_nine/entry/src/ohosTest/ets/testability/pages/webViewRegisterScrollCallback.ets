@@ -21,6 +21,7 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 124001;
 @Entry
@@ -30,6 +31,8 @@ struct testWebResponseSetErrorFailParamIsString {
   webTag: string = 'ArkWeb1';
   @State isRegister:number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController(this.webTag);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = this.mServer.getAssetUrl('index.html');
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
 
@@ -54,6 +57,10 @@ struct testWebResponseSetErrorFailParamIsString {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -90,7 +97,7 @@ struct testWebResponseSetErrorFailParamIsString {
             }
           }
         })
-      Web({ src: "https://www.example.com", controller: this.controller })
+      Web({ src: this.srcUrl, controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .borderRadius(10)
