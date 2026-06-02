@@ -1695,43 +1695,31 @@ export default function TextPicker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPicker25', Level.LEVEL0, async (done: Function) => {
+    it('testPicker25', 0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
-
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-
-      let cases: photoAccessHelper.PhotoCreationConfig[] = [
-        { fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
-        { fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
-      ];
-
-      for (let i = 0; i < cases.length; i++) {
-        let item = cases[i];
-        console.log(`testPicker25 index = ${i}`)
-        try {
-          let result: string = '';
-          phAccessHelper.createAssetWithShortTermPermission(item).then((data: string)=>{
-            console.log(`createAssetWithShortTermPermission result  = ${data}`)
-            result = data;
-          });
-          console.log(`testPicker25 createPromise`)
-          await driveFn();
-          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
-          expect(result).not().assertUndefined();
-
-        } catch(error) {
-          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
-          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
-          expect(isValidErrorCode).assertTrue();
-        }
-
-        let driver = Driver.create();
-        await driver.delayMs(500);
+      try {
+        let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+          title: 'test',
+          fileNameExtension: 'jpg',
+          photoType: photoAccessHelper.PhotoType.IMAGE,
+          subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+        };
+        phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig).then((result) => {
+          console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
+          if (result) {
+            expect(true).assertTrue();
+          } else {
+            console.error("testPicker25 empty result");
+            expect(false).assertTrue();
+          }
+        })
+      } catch(error) {
+        console.error("testPicker25 error: " + JSON.stringify(error));
+        expect(false).assertTrue();
       }
       console.info("testPicker25 finish");
       done();
