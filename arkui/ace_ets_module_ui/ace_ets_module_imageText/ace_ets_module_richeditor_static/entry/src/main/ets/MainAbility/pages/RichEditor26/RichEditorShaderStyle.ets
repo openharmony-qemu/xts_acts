@@ -34,7 +34,7 @@ import {
   Color,
   ShaderStyle
 } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage} from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -54,16 +54,6 @@ struct RichEditorShaderStyle {
   controllerDefault: RichEditorController = new RichEditorController();
   optionsDefault: RichEditorOptions = { controller: this.controllerDefault };
 
-  @State linearGradientAngle: string = '';
-  @State linearGradientDirection: string = '';
-  @State linearGradientColors: string = '';
-  @State radialGradientCenter: string = '';
-  @State radialGradientRadius: string = '';
-  @State radialGradientColors: string = '';
-  @State colorShaderColor: string = '';
-  @State undefinedShaderStyleResult: string = '';
-  @State defaultShaderStyleResult: string = '';
-
   linearGradientOptions: LinearGradientOptions = {
     angle: 45,
     colors: [[Color.Red, 0.0], [Color.Blue, 1.0]]
@@ -77,46 +67,27 @@ struct RichEditorShaderStyle {
 
   build() {
     Scroll() {
-      Column({ space: 5 }) {
+      Column() {
         Button('Get LinearGradientStyle Value')
           .id('btn_shaderStyle_linear_gradient')
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerLinearGradient.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.paragraphStyle) {
-                let shaderStyle: ShaderStyle | undefined = spanResult.paragraphStyle?.shaderStyle;
-                if (shaderStyle) {
-                  let lgStyle: LinearGradientStyle = shaderStyle as LinearGradientStyle;
-                  this.linearGradientAngle = String(lgStyle.options.angle);
-                  this.linearGradientDirection = String(lgStyle.options.direction ?? '');
-                  this.linearGradientColors = String(lgStyle.options.colors);
-                } else {
-                  this.linearGradientAngle = 'undefined';
-                  this.linearGradientDirection = 'undefined';
-                  this.linearGradientColors = 'undefined';
-                }
+            if (spans &&spans.length > 0 && (spans[0] as RichEditorTextSpanResult).paragraphStyle) {
+              let shaderStyle: ShaderStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).paragraphStyle?.shaderStyle;
+
+              if (shaderStyle) {
+                let linearGradientOptions1 :LinearGradientStyle = shaderStyle as LinearGradientStyle
+                console.log('shaderStyle_linear_gradient'+JSON.stringify(linearGradientOptions1.options))
+                AppStorage.setOrCreate('shaderStyle_linear_gradient', linearGradientOptions1.options);
+              } else {
+                AppStorage.setOrCreate('shaderStyle_linear_gradient', 'undefined');
               }
             }
           })
-
-        Text(`linearGradientAngle=${this.linearGradientAngle}`)
-          .id('text_shaderStyle_linear_gradient_angle')
-          .height('5%')
-          .width('100%')
-
-        Text(`linearGradientDirection=${this.linearGradientDirection}`)
-          .id('text_shaderStyle_linear_gradient_direction')
-          .height('5%')
-          .width('100%')
-
-        Text(`linearGradientColors=${this.linearGradientColors}`)
-          .id('text_shaderStyle_linear_gradient_colors')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsLinearGradient)
           .id('richEditor_shaderStyle_linear_gradient')
@@ -138,40 +109,20 @@ struct RichEditorShaderStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerRadialGradient.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.paragraphStyle) {
-                let shaderStyle: ShaderStyle | undefined = spanResult.paragraphStyle?.shaderStyle;
-                if (shaderStyle) {
-                  let rgStyle: RadialGradientStyle = shaderStyle as RadialGradientStyle;
-                  this.radialGradientCenter = String(rgStyle.options.center);
-                  this.radialGradientRadius = String(rgStyle.options.radius);
-                  this.radialGradientColors = String(rgStyle.options.colors);
-                } else {
-                  this.radialGradientCenter = 'undefined';
-                  this.radialGradientRadius = 'undefined';
-                  this.radialGradientColors = 'undefined';
-                }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).paragraphStyle) {
+              let shaderStyle: ShaderStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).paragraphStyle?.shaderStyle;
+              if (shaderStyle) {
+                let radialGradientOptions1 :RadialGradientStyle = shaderStyle as RadialGradientStyle
+                console.log('shaderStyle_radial_gradient'+JSON.stringify(radialGradientOptions1.options))
+                AppStorage.setOrCreate('shaderStyle_radial_gradient', radialGradientOptions1.options);
+              } else {
+                AppStorage.setOrCreate('shaderStyle_radial_gradient', 'undefined');
               }
             }
           })
-
-        Text(`radialGradientCenter=${this.radialGradientCenter}`)
-          .id('text_shaderStyle_radial_gradient_center')
-          .height('5%')
-          .width('100%')
-
-        Text(`radialGradientRadius=${this.radialGradientRadius}`)
-          .id('text_shaderStyle_radial_gradient_radius')
-          .height('5%')
-          .width('100%')
-
-        Text(`radialGradientColors=${this.radialGradientColors}`)
-          .id('text_shaderStyle_radial_gradient_colors')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsRadialGradient)
           .id('richEditor_shaderStyle_radial_gradient')
@@ -193,26 +144,20 @@ struct RichEditorShaderStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerColorShader.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.paragraphStyle) {
-                let shaderStyle: ShaderStyle | undefined = spanResult.paragraphStyle?.shaderStyle;
-                if (shaderStyle) {
-                  let csStyle: ColorShaderStyle = shaderStyle as ColorShaderStyle;
-                  this.colorShaderColor = String(csStyle.color);
-                } else {
-                  this.colorShaderColor = 'undefined';
-                }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).paragraphStyle) {
+              let shaderStyle: ShaderStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).paragraphStyle?.shaderStyle;
+              if (shaderStyle) {
+                let colorShaderOptions1 :ColorShaderStyle = shaderStyle as ColorShaderStyle
+                console.log('shaderStyle_color_shader'+JSON.stringify(colorShaderOptions1.color))
+                AppStorage.setOrCreate('shaderStyle_color_shader', colorShaderOptions1.color);
+              } else {
+                AppStorage.setOrCreate('shaderStyle_color_shader', 'undefined');
               }
             }
           })
-
-        Text(`colorShaderColor=${this.colorShaderColor}`)
-          .id('text_shaderStyle_color_shader_color')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsColorShader)
           .id('richEditor_shaderStyle_color_shader')
@@ -234,25 +179,20 @@ struct RichEditorShaderStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerUndefined.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.paragraphStyle) {
-                let shaderStyle: ShaderStyle | undefined = spanResult.paragraphStyle?.shaderStyle;
-                if (shaderStyle) {
-                  this.undefinedShaderStyleResult = String(shaderStyle);
-                } else {
-                  this.undefinedShaderStyleResult = 'undefined';
-                }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).paragraphStyle) {
+              let shaderStyle: ShaderStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).paragraphStyle?.shaderStyle;
+              if (shaderStyle) {
+                console.log('shaderStyle_undefined'+JSON.stringify(shaderStyle))
+                AppStorage.setOrCreate('shaderStyle_undefined', shaderStyle);
+              } else {
+                console.log('shaderStyle_undefined :undefined')
+                AppStorage.setOrCreate('shaderStyle_undefined', 'undefined');
               }
             }
           })
-
-        Text(`undefinedShaderStyleResult=${this.undefinedShaderStyleResult}`)
-          .id('text_shaderStyle_undefined_result')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsUndefined)
           .id('richEditor_shaderStyle_undefined')
@@ -273,25 +213,20 @@ struct RichEditorShaderStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerDefault.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.paragraphStyle) {
-                let shaderStyle: ShaderStyle | undefined = spanResult.paragraphStyle?.shaderStyle;
-                if (shaderStyle) {
-                  this.defaultShaderStyleResult = String(shaderStyle);
-                } else {
-                  this.defaultShaderStyleResult = 'undefined';
-                }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).paragraphStyle) {
+              let shaderStyle: ShaderStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).paragraphStyle?.shaderStyle;
+              if (shaderStyle) {
+                console.log('shaderStyle_default'+JSON.stringify(shaderStyle))
+                AppStorage.setOrCreate('shaderStyle_default', shaderStyle);
+              } else {
+                console.log('shaderStyle_default :undefined')
+                AppStorage.setOrCreate('shaderStyle_default', 'undefined');
               }
             }
           })
-
-        Text(`defaultShaderStyleResult=${this.defaultShaderStyleResult}`)
-          .id('text_shaderStyle_default_result')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsDefault)
           .id('richEditor_shaderStyle_default')

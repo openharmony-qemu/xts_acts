@@ -18,15 +18,19 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {
+  LinearGradientOptions,
+  RadialGradientOptions,
+} from '@ohos.arkui.component';
 
 const SLEEP_TIME: number = 1000;
 
 export default function RichEditorShaderStyleTest() {
   describe('RichEditorShaderStyleTest', () => {
+    let driver: Driver;
     beforeAll(async (): Promise<void> => {
       console.info('RichEditorShaderStyleTest beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.richeditor.static', 'EntryAbility');
@@ -50,12 +54,12 @@ export default function RichEditorShaderStyleTest() {
         expect().assertFail();
       }
     });
-
-    afterEach(() => {
-      console.info('RichEditorShaderStyleTest afterEach');
-    });
-
     afterAll(() => {
+      AppStorage.delete('shaderStyle_linear_gradient');
+      AppStorage.delete('shaderStyle_radial_gradient');
+      AppStorage.delete('shaderStyle_color_shader');
+      AppStorage.delete('shaderStyle_default');
+      AppStorage.delete('shaderStyle_undefined');
       console.info('RichEditorShaderStyleTest afterAll');
     });
 
@@ -65,48 +69,23 @@ export default function RichEditorShaderStyleTest() {
      * @tc.desc   Test RichEditor shaderStyle property with LinearGradientStyle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('richEditorShaderStyle_linear_gradient_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('richEditorShaderStyle_linear_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_linear_gradient_0100] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
+      driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('btn_shaderStyle_linear_gradient'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
 
-        let btn = await driver.findComponent(ON.id('btn_shaderStyle_linear_gradient'));
-        expect(btn).not().assertUndefined();
-        await btn.click();
-        await CommonFunc.sleep(SLEEP_TIME);
+      let shaderStyle: LinearGradientOptions | undefined = AppStorage.get<LinearGradientOptions>('shaderStyle_linear_gradient');
+      console.info('[richEditorShaderStyle_linear_gradient_0100] shaderStyle: ' + shaderStyle);
 
-        let angleStrJson: string = inspector.getInspectorByKey('text_shaderStyle_linear_gradient_angle');
-        expect(angleStrJson.length > 0).assertTrue();
-        let angleContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(angleStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_linear_gradient_0100] angleContent: ' + angleContent);
-        expect(angleContent.includes('45')).assertTrue();
-
-        let dirStrJson: string = inspector.getInspectorByKey('text_shaderStyle_linear_gradient_direction');
-        expect(dirStrJson.length > 0).assertTrue();
-        let dirContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(dirStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_linear_gradient_0100] dirContent: ' + dirContent);
-        expect(dirContent.includes('8')).assertTrue();
-
-        let colorsStrJson: string = inspector.getInspectorByKey('text_shaderStyle_linear_gradient_colors');
-        expect(colorsStrJson.length > 0).assertTrue();
-        let colorsContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(colorsStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_linear_gradient_0100] colorsContent: ' + colorsContent);
-        expect(colorsContent.includes('#FFFF0000')).assertTrue();
-        expect(colorsContent.includes('#FF0000FF')).assertTrue();
-
-        console.info('[richEditorShaderStyle_linear_gradient_0100] END');
-        done();
-      } catch (error) {
-        console.error('[richEditorShaderStyle_linear_gradient_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
+      expect(shaderStyle?.angle).assertEqual('45.000000');
+      expect(JSON.stringify(shaderStyle?.colors)).assertEqual('[["#FFFF0000",0],["#FF0000FF",1]]');
+      console.info('[richEditorShaderStyle_linear_gradient_0100] END');
+      done();
     });
 
     /**
@@ -115,48 +94,24 @@ export default function RichEditorShaderStyleTest() {
      * @tc.desc   Test RichEditor shaderStyle property with RadialGradientStyle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('richEditorShaderStyle_radial_gradient_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('richEditorShaderStyle_radial_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_radial_gradient_0100] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
+      driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('btn_shaderStyle_radial_gradient'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
 
-        let btn = await driver.findComponent(ON.id('btn_shaderStyle_radial_gradient'));
-        expect(btn).not().assertUndefined();
-        await btn.click();
-        await CommonFunc.sleep(SLEEP_TIME);
+      let shaderStyle: RadialGradientOptions | undefined = AppStorage.get<RadialGradientOptions>('shaderStyle_radial_gradient');
+      console.info('[richEditorShaderStyle_radial_gradient_0100] shaderStyle: ' + shaderStyle);
 
-        let centerStrJson: string = inspector.getInspectorByKey('text_shaderStyle_radial_gradient_center');
-        expect(centerStrJson.length > 0).assertTrue();
-        let centerContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(centerStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_radial_gradient_0100] centerContent: ' + centerContent);
-        expect(centerContent.includes('0.5')).assertTrue();
-
-        let radiusStrJson: string = inspector.getInspectorByKey('text_shaderStyle_radial_gradient_radius');
-        expect(radiusStrJson.length > 0).assertTrue();
-        let radiusContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(radiusStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_radial_gradient_0100] radiusContent: ' + radiusContent);
-        expect(radiusContent.includes('0.5')).assertTrue();
-
-        let colorsStrJson: string = inspector.getInspectorByKey('text_shaderStyle_radial_gradient_colors');
-        expect(colorsStrJson.length > 0).assertTrue();
-        let colorsContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(colorsStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_radial_gradient_0100] colorsContent: ' + colorsContent);
-        expect(colorsContent.includes('#FFFF0000')).assertTrue();
-        expect(colorsContent.includes('#FF008000')).assertTrue();
-
-        console.info('[richEditorShaderStyle_radial_gradient_0100] END');
-        done();
-      } catch (error) {
-        console.error('[richEditorShaderStyle_radial_gradient_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
+      expect(JSON.stringify(shaderStyle?.center)).assertEqual('["0.50vp","0.50vp"]');
+      expect(shaderStyle?.radius).assertEqual('0.50vp');
+      expect(JSON.stringify(shaderStyle?.colors)).assertEqual('[["#FFFF0000",0],["#FF008000",1]]');
+      console.info('[richEditorShaderStyle_radial_gradient_0100] END');
+      done();
     });
 
     /**
@@ -165,33 +120,18 @@ export default function RichEditorShaderStyleTest() {
      * @tc.desc   Test RichEditor shaderStyle property with ColorShaderStyle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('richEditorShaderStyle_color_shader_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('richEditorShaderStyle_color_shader_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_color_shader_0100] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let btn = await driver.findComponent(ON.id('btn_shaderStyle_color_shader'));
-        expect(btn).not().assertUndefined();
-        await btn.click();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let colorStrJson: string = inspector.getInspectorByKey('text_shaderStyle_color_shader_color');
-        expect(colorStrJson.length > 0).assertTrue();
-        let colorContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(colorStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_color_shader_0100] colorContent: ' + colorContent);
-        expect(colorContent.includes('#FFFFC0CB')).assertTrue();
-
-        console.info('[richEditorShaderStyle_color_shader_0100] END');
-        done();
-      } catch (error) {
-        console.error('[richEditorShaderStyle_color_shader_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
+      driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('btn_shaderStyle_color_shader'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get<string>('shaderStyle_color_shader')).assertEqual('#FFFFC0CB');
+      console.info('[richEditorShaderStyle_color_shader_0100] END');
+      done();
     });
 
     /**
@@ -200,45 +140,23 @@ export default function RichEditorShaderStyleTest() {
      * @tc.desc   Test RichEditor shaderStyle property with undefined value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('richEditorShaderStyle_undefined_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('richEditorShaderStyle_undefined_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_undefined_0100] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
+      driver = Driver.create();
+      let btnUndefined = await driver.findComponent(ON.id('btn_shaderStyle_undefined'));
+      expect(btnUndefined).not().assertUndefined();
+      await (btnUndefined?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
 
-        let btnUndefined = await driver.findComponent(ON.id('btn_shaderStyle_undefined'));
-        expect(btnUndefined).not().assertUndefined();
-        await btnUndefined.click();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let btnDefault = await driver.findComponent(ON.id('btn_shaderStyle_default'));
-        expect(btnDefault).not().assertUndefined();
-        await btnDefault.click();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let undefinedStrJson: string = inspector.getInspectorByKey('text_shaderStyle_undefined_result');
-        expect(undefinedStrJson.length > 0).assertTrue();
-        let undefinedContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(undefinedStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_undefined_0100] undefinedContent: ' + undefinedContent);
-
-        let defaultStrJson: string = inspector.getInspectorByKey('text_shaderStyle_default_result');
-        expect(defaultStrJson.length > 0).assertTrue();
-        let defaultContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(defaultStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_undefined_0100] defaultContent: ' + defaultContent);
-
-        expect(undefinedContent).assertEqual(defaultContent);
-
-        console.info('[richEditorShaderStyle_undefined_0100] END');
-        done();
-      } catch (error) {
-        console.error('[richEditorShaderStyle_undefined_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
+      let btnDefault = await driver.findComponent(ON.id('btn_shaderStyle_default'));
+      expect(btnDefault).not().assertUndefined();
+      await (btnDefault?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get<string>('shaderStyle_undefined')).assertEqual(AppStorage.get<string>('shaderStyle_default'));
+      console.info('[richEditorShaderStyle_undefined_0100] END');
+      done();
     });
 
     /**
@@ -247,33 +165,18 @@ export default function RichEditorShaderStyleTest() {
      * @tc.desc   Test RichEditor shaderStyle property without setting value
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('richEditorShaderStyle_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('richEditorShaderStyle_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_default_0100] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let btn = await driver.findComponent(ON.id('btn_shaderStyle_default'));
-        expect(btn).not().assertUndefined();
-        await btn.click();
-        await CommonFunc.sleep(SLEEP_TIME);
-
-        let defaultStrJson: string = inspector.getInspectorByKey('text_shaderStyle_default_result');
-        expect(defaultStrJson.length > 0).assertTrue();
-        let defaultContent: string = JSON.stringifyJsonElement(
-          JSON.parseJsonElement(defaultStrJson).getElement('$attrs').getElement('content'));
-        console.info('[richEditorShaderStyle_default_0100] defaultContent: ' + defaultContent);
-        expect(defaultContent.includes('undefined')).assertTrue();
-
-        console.info('[richEditorShaderStyle_default_0100] END');
-        done();
-      } catch (error) {
-        console.error('[richEditorShaderStyle_default_0100] error: ' + error);
-        expect().assertFail();
-        done();
-      }
+      driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('btn_shaderStyle_default'));
+      expect(btn).not().assertUndefined();
+      await (btn?.click()as Promise<void>);
+      await CommonFunc.sleep(500);
+      expect(AppStorage.get<string>('shaderStyle_default')).assertEqual('undefined');
+      console.info('[richEditorShaderStyle_default_0100] END');
+      done();
     });
   });
 }

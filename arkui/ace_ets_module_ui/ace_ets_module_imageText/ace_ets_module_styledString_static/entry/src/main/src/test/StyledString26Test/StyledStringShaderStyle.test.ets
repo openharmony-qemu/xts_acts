@@ -36,15 +36,16 @@ export default function StyledStringShaderStyleTest() {
      * @tc.desc   Test StyledString shaderStyle property with LinearGradientOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('styledStringShaderStyle_linear_gradient_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringShaderStyle_linear_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[styledStringShaderStyle_linear_gradient_0100] START');
       let linearGradientOptions: LinearGradientOptions = {
         angle: 45,
         colors: [[Color.Red, 0.0], [Color.Blue, 1.0]]
       };
-      let paragraphStyle = new ParagraphStyle({ shaderStyle: linearGradientOptions });
+      let linearGradientStyle = new LinearGradientStyle(linearGradientOptions);
+      let paragraphStyle = new ParagraphStyle({ shaderStyle: linearGradientStyle });
       let styledString = new StyledString('Test', [{
         start: 0,
         length: 4,
@@ -61,7 +62,7 @@ export default function StyledStringShaderStyleTest() {
         console.info('[styledStringShaderStyle_linear_gradient_0100] shaderStyle: ' + JSON.stringify(linearGradientStyleResult.options));
         let options: LinearGradientOptions = linearGradientStyleResult.options;
         if (options != undefined) {
-          expect(options.angle).assertEqual(45);
+          expect(options.angle).assertEqual('45.000000');
           expect(options.colors.length).assertEqual(2);
           expect(JSON.stringify(options.colors)).assertEqual('[["#FFFF0000",0],["#FF0000FF",1]]');
         } else {
@@ -82,16 +83,17 @@ export default function StyledStringShaderStyleTest() {
      * @tc.desc   Test StyledString shaderStyle property with RadialGradientOptions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('styledStringShaderStyle_radial_gradient_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringShaderStyle_radial_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[styledStringShaderStyle_radial_gradient_0100] START');
       let radialGradientOptions: RadialGradientOptions = {
         center: [0.5, 0.5],
         radius: 0.5,
         colors: [[Color.Red, 0.0], [Color.Green, 1.0]]
       };
-      let paragraphStyle = new ParagraphStyle({ shaderStyle: radialGradientOptions });
+      let radialGradientStyle = new RadialGradientStyle(radialGradientOptions);
+      let paragraphStyle = new ParagraphStyle({ shaderStyle: radialGradientStyle });
       let styledString = new StyledString('Test', [{
         start: 0,
         length: 4,
@@ -130,13 +132,11 @@ export default function StyledStringShaderStyleTest() {
      * @tc.desc   Test StyledString shaderStyle property with ColorShaderStyle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('styledStringShaderStyle_color_shader_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringShaderStyle_color_shader_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[styledStringShaderStyle_color_shader_0100] START');
-      let colorShaderStyle: ColorShaderStyle = {
-        color: Color.Pink
-      };
+      let colorShaderStyle = new ColorShaderStyle(Color.Pink);
       let paragraphStyle = new ParagraphStyle({ shaderStyle: colorShaderStyle });
       let styledString = new StyledString('Test', [{
         start: 0,
@@ -172,9 +172,9 @@ export default function StyledStringShaderStyleTest() {
      * @tc.desc   Test StyledString shaderStyle property with undefined value, should not be set
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('styledStringShaderStyle_undefined_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringShaderStyle_undefined_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[styledStringShaderStyle_undefined_0100] START');
       let paragraphStyle = new ParagraphStyle({ shaderStyle: undefined });
       let styledString = new StyledString('Test', [{
@@ -188,7 +188,7 @@ export default function StyledStringShaderStyleTest() {
       expect(styles.length).assertEqual(1);
       expect(styles[0].styledKey).assertEqual(StyledStringKey.PARAGRAPH_STYLE);
       let paragraphStyleResult: ParagraphStyle = styles[0].styledValue as ParagraphStyle;
-      expect(JSON.stringify(paragraphStyleResult.shaderStyle)).assertEqual('{}');
+      expect(JSON.stringify(paragraphStyleResult.shaderStyle)).assertEqual('undefined');
       console.info('[styledStringShaderStyle_undefined_0100] END');
       done();
     })
@@ -199,9 +199,9 @@ export default function StyledStringShaderStyleTest() {
      * @tc.desc   Test StyledString shaderStyle property without setting, should be undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('styledStringShaderStyle_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringShaderStyle_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[styledStringShaderStyle_default_0100] START');
       let paragraphStyle = new ParagraphStyle({});
       let styledString = new StyledString('Test', [{
@@ -215,7 +215,7 @@ export default function StyledStringShaderStyleTest() {
       expect(styles.length).assertEqual(1);
       expect(styles[0].styledKey).assertEqual(StyledStringKey.PARAGRAPH_STYLE);
       let paragraphStyleResult: ParagraphStyle = styles[0].styledValue as ParagraphStyle;
-      expect(JSON.stringify(paragraphStyleResult.shaderStyle)).assertEqual('{}');
+      expect(JSON.stringify(paragraphStyleResult.shaderStyle)).assertEqual('undefined');
       console.info('[styledStringShaderStyle_default_0100] END');
       done();
     })

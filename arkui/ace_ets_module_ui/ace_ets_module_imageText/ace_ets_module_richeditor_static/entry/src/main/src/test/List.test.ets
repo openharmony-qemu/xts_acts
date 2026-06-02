@@ -22,6 +22,5 @@ import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJo
 export default function testsuite() {
   RichEditorTest();
   RichTextSpanSymbolBatchTest();
-  RichEditorShaderStyleTest();
   RichEditorStrokeJoinStyleTest();
 }

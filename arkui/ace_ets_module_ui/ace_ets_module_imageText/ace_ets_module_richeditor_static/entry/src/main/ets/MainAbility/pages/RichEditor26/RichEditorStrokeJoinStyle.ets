@@ -29,7 +29,7 @@ import {
   Color,
   StrokeJoinStyle
 } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
@@ -52,36 +52,23 @@ struct RichEditorStrokeJoinStyle {
   controllerDefault: RichEditorController = new RichEditorController();
   optionsDefault: RichEditorOptions = { controller: this.controllerDefault };
 
-  @State miterJoinResult: string = '';
-  @State roundJoinResult: string = '';
-  @State bevelJoinResult: string = '';
-  @State nullResult: string = '';
-  @State undefinedResult: string = '';
-  @State defaultResult: string = '';
-
   build() {
     Scroll() {
-      Column({ space: 5 }) {
+      Column() {
         Button('Get MITER_JOIN Value')
           .id('btn_strokeJoinStyle_miter_join')
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerMiterJoin.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.miterJoinResult = String(strokeJoinStyle);
-              }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).textStyle) {
+              let strokeJoinStyle: StrokeJoinStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).textStyle.strokeJoinStyle;
+              console.log('strokeJoinStyle_miter_join :'+String(strokeJoinStyle))
+              AppStorage.setOrCreate('strokeJoinStyle_miter_join', String(strokeJoinStyle));
             }
           })
-
-        Text(`miterJoinResult=${this.miterJoinResult}`)
-          .id('text_strokeJoinStyle_miter_join')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsMiterJoin)
           .id('richEditor_strokeJoinStyle_miter_join')
@@ -102,21 +89,15 @@ struct RichEditorStrokeJoinStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerRoundJoin.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.roundJoinResult = String(strokeJoinStyle);
-              }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).textStyle) {
+              let strokeJoinStyle: StrokeJoinStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).textStyle.strokeJoinStyle;
+              console.log('strokeJoinStyle_round_join :'+String(strokeJoinStyle))
+              AppStorage.setOrCreate('strokeJoinStyle_round_join', String(strokeJoinStyle));
             }
           })
-
-        Text(`roundJoinResult=${this.roundJoinResult}`)
-          .id('text_strokeJoinStyle_round_join')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsRoundJoin)
           .id('richEditor_strokeJoinStyle_round_join')
@@ -137,21 +118,15 @@ struct RichEditorStrokeJoinStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerBevelJoin.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.bevelJoinResult = String(strokeJoinStyle);
-              }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).textStyle) {
+              let strokeJoinStyle: StrokeJoinStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).textStyle.strokeJoinStyle;
+              console.log('strokeJoinStyle_bevel_join :'+String(strokeJoinStyle))
+              AppStorage.setOrCreate('strokeJoinStyle_bevel_join', String(strokeJoinStyle));
             }
           })
-
-        Text(`bevelJoinResult=${this.bevelJoinResult}`)
-          .id('text_strokeJoinStyle_bevel_join')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsBevelJoin)
           .id('richEditor_strokeJoinStyle_bevel_join')
@@ -166,62 +141,20 @@ struct RichEditorStrokeJoinStyle {
               }
             });
           })
-
-        Button('Get NULL Value')
-          .id('btn_strokeJoinStyle_null')
-          .height('5%')
-          .width('100%')
-          .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
-              this.controllerNull.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.nullResult = String(strokeJoinStyle);
-              }
-            }
-          })
-
-        Text(`nullResult=${this.nullResult}`)
-          .id('text_strokeJoinStyle_null')
-          .height('5%')
-          .width('100%')
-
-        RichEditor(this.optionsNull)
-          .id('richEditor_strokeJoinStyle_null')
-          .height('5%')
-          .width('100%')
-          .borderWidth(1)
-          .borderColor(Color.Blue)
-          .onReady(() => {
-            this.controllerNull.addTextSpan('test null', {
-              style: {
-                strokeJoinStyle: null
-              }
-            });
-          })
-
         Button('Get UNDEFINED Value')
           .id('btn_strokeJoinStyle_undefined')
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerUndefined.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.undefinedResult = String(strokeJoinStyle);
-              }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).textStyle) {
+              let strokeJoinStyle: StrokeJoinStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).textStyle.strokeJoinStyle;
+              console.log('strokeJoinStyle_undefined :'+String(strokeJoinStyle))
+              AppStorage.setOrCreate('strokeJoinStyle_undefined', String(strokeJoinStyle));
             }
           })
-
-        Text(`undefinedResult=${this.undefinedResult}`)
-          .id('text_strokeJoinStyle_undefined')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsUndefined)
           .id('richEditor_strokeJoinStyle_undefined')
@@ -242,21 +175,15 @@ struct RichEditorStrokeJoinStyle {
           .height('5%')
           .width('100%')
           .onClick(() => {
-            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] =
+            let spans: (RichEditorImageSpanResult | RichEditorTextSpanResult)[] | undefined =
               this.controllerDefault.getSpans();
-            if (spans.length > 0) {
-              let spanResult: RichEditorTextSpanResult = spans[0] as RichEditorTextSpanResult;
-              if (spanResult.textStyle) {
-                let strokeJoinStyle: StrokeJoinStyle | undefined = spanResult.textStyle.strokeJoinStyle;
-                this.defaultResult = String(strokeJoinStyle);
-              }
+            if (spans && spans.length > 0 && (spans[0] as RichEditorTextSpanResult).textStyle) {
+              let strokeJoinStyle: StrokeJoinStyle | undefined =
+                (spans[0] as RichEditorTextSpanResult).textStyle.strokeJoinStyle;
+              console.log('strokeJoinStyle_default :'+String(strokeJoinStyle))
+              AppStorage.setOrCreate('strokeJoinStyle_default', String(strokeJoinStyle));
             }
           })
-
-        Text(`defaultResult=${this.defaultResult}`)
-          .id('text_strokeJoinStyle_default')
-          .height('5%')
-          .width('100%')
 
         RichEditor(this.optionsDefault)
           .id('richEditor_strokeJoinStyle_default')
