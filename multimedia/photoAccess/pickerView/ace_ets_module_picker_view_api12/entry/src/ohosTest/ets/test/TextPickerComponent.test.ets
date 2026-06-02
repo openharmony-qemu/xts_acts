@@ -3409,7 +3409,7 @@ export default function TextPicker() {
 
         if (isInvalidCase) {
           try {
-            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
+            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
             await driveFn();
           } catch (error) {
             expect((error as BusinessError).code).assertEqual(401);
