@@ -242,15 +242,10 @@ export default function startAbilityForResultPermissionTest() {
         };
 
         try {
-          await context.startAbilityForResult(want, null).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect(err.code).assertEqual(401);
-            done();
-          });
+          context.startAbilityForResult(want, null);
+          hilog.info(0x0000, 'testTag', `${tcNumber} no sync error thrown`);
+          expect().assertFail();
+          done();
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
@@ -281,15 +276,10 @@ export default function startAbilityForResultPermissionTest() {
         };
 
         try {
-          await context.startAbilityForResult(want, undefined).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect(err.code).assertEqual(401);
-            done();
-          });
+          context.startAbilityForResult(want, undefined);
+          hilog.info(0x0000, 'testTag', `${tcNumber} no sync error thrown`);
+          expect().assertFail();
+          done();
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
           expect(err.code).assertEqual(401);
