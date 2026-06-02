@@ -1474,11 +1474,11 @@ int  VIDEO_DECODE_ORDER_0100()
     if (cap != nullptr) {
         if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->INP_DIR = INP_DIR_IPB_264_8BIT;
-            vDecSample->DEFAULT_WIDTH = PORTRAIT_WIDTH;
-            vDecSample->DEFAULT_HEIGHT = PORTRAIT_HEIGHT;
-            vDecSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
-            vDecSample->isCheckLowLatency = true;
+            vDecSample->inpDir = INP_DIR_IPB_264_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
             vDecSample->enableOrderDecode = true;
             ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecName));
             vDecSample->WaitForEOS();
@@ -1502,11 +1502,11 @@ int  VIDEO_DECODE_ORDER_0200()
     if (cap_hevc != nullptr) {
         if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->INP_DIR = INP_DIR_IPB_265_8BIT;
-            vDecSample->DEFAULT_WIDTH = PORTRAIT_WIDTH;
-            vDecSample->DEFAULT_HEIGHT = PORTRAIT_HEIGHT;
-            vDecSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
-            vDecSample->isCheckLowLatency = true;
+            vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
             vDecSample->enableOrderDecode = true;
             ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameHEVC));
             vDecSample->WaitForEOS();
@@ -1530,11 +1530,11 @@ int  VIDEO_DECODE_ORDER_0300()
     if (cap_hevc != nullptr && !access("/system/lib64/media/", 0)) {
         if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->INP_DIR = INP_DIR_IPB_265_10BIT;
-            vDecSample->DEFAULT_WIDTH = PORTRAIT_WIDTH;
-            vDecSample->DEFAULT_HEIGHT = PORTRAIT_HEIGHT;
-            vDecSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
-            vDecSample->isCheckLowLatency = true;
+            vDecSample->inpDir = INP_DIR_IPB_265_10BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
             vDecSample->enableOrderDecode = true;
             ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec(g_codecNameHEVC));
             vDecSample->WaitForEOS();
@@ -1558,12 +1558,12 @@ int  VIDEO_DECODE_ORDER_0400()
     if (cap_vvc != nullptr && g_codecNameVVC.find("hisi") != string::npos) {
         if (OH_AVCapability_IsFeatureSupported(cap, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->INP_DIR = INP_DIR_VVC_1080;
-            vDecSample->DEFAULT_WIDTH = PORTRAIT_WIDTH;
-            vDecSample->DEFAULT_HEIGHT = PORTRAIT_HEIGHT;
-            vDecSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+            vDecSample->inpDir = INP_DIR_VVC_1080;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
             vDecSample->enableOrderDecode = true;
-            vDecSample->enbleSyncMode = 1;
+            vDecSample->enableSyncMode = 1;
             ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameVVC));
             ASSERT_EQ(AV_ERR_OK, vDecSample->ConfigureVideoDecoder());
             ASSERT_EQ(AV_ERR_OK, vDecSample->StartVideoDecoder());
@@ -1588,11 +1588,11 @@ int  VIDEO_DECODE_ORDER_0500()
     if (cap_hevc != nullptr) {
         if (OH_AVCapability_IsFeatureSupported(cap_hevc, VIDEO_DECODER_OUTPUT_IN_DECODING_ORDER)) {
             auto vDecSample = make_shared<VDecAPI11Sample>();
-            vDecSample->INP_DIR = INP_DIR_IPB_265_8BIT;
-            vDecSample->DEFAULT_WIDTH = PORTRAIT_WIDTH;
-            vDecSample->DEFAULT_HEIGHT = PORTRAIT_HEIGHT;
-            vDecSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
-            vDecSample->isCheckLowLatency = true;
+            vDecSample->inpDir = INP_DIR_IPB_265_8BIT;
+            vDecSample->defaultWidth = PORTRAIT_WIDTH;
+            vDecSample->defaultHeight = PORTRAIT_HEIGHT;
+            vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+            vDecSample->isChecklowLatency = true;
             vDecSample->enableOrderDecode = true;
             ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameHEVC));
             vDecSample->WaitForEOS();
