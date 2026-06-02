@@ -102,7 +102,9 @@ public:
     int32_t defaultRetentionMode = 0;
     int32_t defaultRetentionRadio = 0;
     int32_t defaultDecoderSpeed = 0;
-
+    bool isSurfaceExpired = false;
+    bool isSurfaceReset = false;
+    uint32_t inputCount = 0;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();

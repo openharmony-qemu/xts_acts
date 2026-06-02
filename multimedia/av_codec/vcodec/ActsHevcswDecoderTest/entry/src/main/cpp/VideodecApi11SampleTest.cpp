@@ -664,8 +664,6 @@ void VDecAPI11Sample::ExpireSurface()
     if (!expireSurface) {
         return;
     }
-    static bool isSurfaceExpired = false;
-    static bool isSurfaceReset = false;
     if (!isSurfaceExpired) {
         OH_NativeWindow_DestroyNativeWindow(pNativeWindow[0]);
         pNativeWindow[0] = nullptr;
@@ -708,7 +706,6 @@ void VDecAPI11Sample::InFuncTest()
         inFile_->seekg(0, ios::beg);
         OH_VideoDecoder_Start(vdec_);
     }
-    static uint32_t inputCount = 0;
     inputCount++;
     if (inputCount % DEFAULT_ANGLE == 0) {
         ExpireSurface();
