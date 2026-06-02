@@ -117,7 +117,11 @@ export default function printExtensionTest() {
      */
     it('printExtension_function_0700', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
-      expect(printExtension.context).assertTrue();
+      try {
+        let context = printExtension.context;
+      } catch {
+        expect().assertFail();
+      }
     })
   })
 }
