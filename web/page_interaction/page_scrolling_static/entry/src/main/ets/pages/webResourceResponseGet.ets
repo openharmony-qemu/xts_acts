@@ -146,7 +146,6 @@ struct webResourceResponseGet {
               router.pushUrl({ url: 'pages/webViewController' })
             }
           }
-          }
         })
       }
 
