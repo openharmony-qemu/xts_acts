@@ -295,5 +295,68 @@ export default function abilityTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SURFACE_EXPIRE_0100
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SURFACE_EXPIRE_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SURFACE_EXPIRE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_DEC_SURFACE_EXPIRE_0100';
+      try {
+        let result: number = hevcswDecoderNapi.VideoSwdecH265SurfaceExpired0010Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_MAX_INPUT_SIZE_0100
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_MAX_INPUT_SIZE_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_MAX_INPUT_SIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_DEC_MAX_INPUT_SIZE_0100';
+      try {
+        let result: number = hevcswDecoderNapi.VideoSwdecH265SetMaxInputSize0010Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_GET_CROP_SIZE_0100
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_GET_CROP_SIZE_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_GET_CROP_SIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_DEC_GET_CROP_SIZE_0100';
+      try {
+        let result: number = hevcswDecoderNapi.VideoSwdecH265GetCropSize0010Test();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        done();
+      }
+    });
   })
 }

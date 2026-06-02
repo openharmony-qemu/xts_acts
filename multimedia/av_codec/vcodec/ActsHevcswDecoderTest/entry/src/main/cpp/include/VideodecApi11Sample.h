@@ -80,6 +80,7 @@ public:
     bool outputYuvFlag = false;
     // 解码输出数据预期
     bool needCheckOutputDesc = true;
+    bool expireSurface = false;
     bool isResChangeStream = false;
     uint32_t expectCropTop = 0;
     uint32_t expectCropBottom = 0;
