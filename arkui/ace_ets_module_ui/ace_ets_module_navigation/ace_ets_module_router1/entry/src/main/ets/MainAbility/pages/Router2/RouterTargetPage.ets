@@ -13,33 +13,41 @@
  * limitations under the License.
  */
 import { router } from '@kit.ArkUI';
-
+ 
+class RouterParams {
+  public data1:string
+ 
+  constructor(data1:string) {
+    this.data1 = data1
+  }
+}
+ 
 @Entry
 @Component
 struct RouterTargetPage {
-  @State params: ESObject = {};
-
+  private params: string = 'init'
+ 
   aboutToAppear() {
     try {
-      this.params = router.getParams() as ESObject || {};
+      this.params = (router.getParams() as RouterParams).data1;
       console.info('RouterTargetPage params: ' + JSON.stringify(this.params));
     } catch (err) {
       console.error('RouterTargetPage getParams error: ' + JSON.stringify(err));
     }
   }
-
+ 
   build() {
     Column({ space: 5 }) {
       Text('Router Target Page')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
         .margin({ top: 10 })
-
+ 
       Text('接收参数: ' + JSON.stringify(this.params))
         .fontSize(16)
         .margin({ top: 10 })
         .id('text_params_display')
-
+ 
       Button('返回')
         .width('80%')
         .onClick(() => {
