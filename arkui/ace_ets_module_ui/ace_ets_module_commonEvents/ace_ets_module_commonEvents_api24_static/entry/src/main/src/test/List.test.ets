@@ -49,6 +49,7 @@ import HoveredAttributeTest from './hoveredAttribute/HoveredAttributeTest.test'
 import EnableEventPassthroughTest from './enableEventPassthrough/EnableEventPassthroughTest.test'
 
 export default function testsuite() {
+  HoveredAttributeTest();
   getSizeLimitationTest();
   Marquee();
   DragControllerTest();
@@ -81,6 +82,5 @@ export default function testsuite() {
   setCustomCursor();
   shouldRecognizerParallelWith();
   orphanCharOptimizationundefined();
-  HoveredAttributeTest();
   EnableEventPassthroughTest();
 }
