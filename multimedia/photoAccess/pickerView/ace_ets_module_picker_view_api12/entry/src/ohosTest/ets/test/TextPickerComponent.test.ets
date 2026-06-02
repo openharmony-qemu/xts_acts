@@ -3468,7 +3468,7 @@ export default function TextPicker() {
             }
             router.back();
             events_emitter.off(event.eventId);
-            console.log(`result = ${JSON.stringify(result)}`);
+            console.log(`originalUris = ${JSON.stringify(originalUris)}`);
             console.info("testPicker59 valid case finish");
 
           } catch (error) {
