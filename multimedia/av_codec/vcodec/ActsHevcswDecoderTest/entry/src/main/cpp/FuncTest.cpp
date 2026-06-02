@@ -457,7 +457,7 @@ napi_value VideoSwdecH265Speed0090Test(napi_env env, napi_callback_info info)
     return CreateIntInt32Result(env, 0);
 }
 
-napi_value VideoSwdecH265SurfaceExpired0010Test(napi_env env, napi_callback_info info)
+napi_value VideoSwdecH265SurfExpired0010Test(napi_env env, napi_callback_info info)
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
     if (g_capHevc != nullptr) {
