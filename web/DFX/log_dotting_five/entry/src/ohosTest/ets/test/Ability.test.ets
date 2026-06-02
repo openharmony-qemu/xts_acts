@@ -21,13 +21,28 @@ import Utils from './Utils';
 import wifiMg from '@ohos.wifiManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { XtsTestServer } from 'library';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let server: XtsTestServer;
+let prefetchHttpUrl: string = '';
+let prefetchNoSchemeUrl: string = '';
+let prefetchFileUrl: string = '';
+let prefetchSshUrl: string = '';
+let prefetchCustomSchemeUrl: string = '';
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       webview.WebviewController.initializeWebEngine()
+      server = new XtsTestServer(AbilityDelegatorRegistry.getAbilityDelegator().getAppContext(), false);
+      prefetchHttpUrl = server.getAssetUrl('index.html');
+      prefetchNoSchemeUrl = prefetchHttpUrl.replace(/^[A-Za-z]+:/, '');
+      prefetchFileUrl = prefetchHttpUrl.replace(/^[A-Za-z]+:\/\//, 'file://');
+      prefetchSshUrl = prefetchHttpUrl.replace(/^[A-Za-z]+:\/\//, 'ssh://');
+      prefetchCustomSchemeUrl = prefetchHttpUrl.replace(/^[A-Za-z]+:\/\//, 'XXX://');
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
@@ -97,7 +112,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0100 start')
       console.info('Sub_WEB_PrefetchResource_0100 start')
       let info: webview.RequestInfo = {
-        url: "//collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchNoSchemeUrl,
         method: "POST",
         formData: ""
       }
@@ -137,7 +152,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0200 start')
       console.info('Sub_WEB_PrefetchResource_0200 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "GET",
         formData: ""
       }
@@ -178,7 +193,7 @@ export default function abilityTest() {
       console.info('Sub_WEB_PrefetchResource_0300 start')
 
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: temp
       }
@@ -218,7 +233,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0400 start')
       console.info('Sub_WEB_PrefetchResource_0400 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -258,7 +273,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0500 start')
       console.info('Sub_WEB_PrefetchResource_0500 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -299,7 +314,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0600 start')
       console.info('Sub_WEB_PrefetchResource_0600 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -339,7 +354,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_0900 start')
       console.info('Sub_WEB_PrefetchResource_0900 start')
       let info: webview.RequestInfo = {
-        url: "file://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchFileUrl,
         method: "POST",
         formData: ""
       }
@@ -379,7 +394,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1000 start')
       console.info('Sub_WEB_PrefetchResource_1000 start')
       let info: webview.RequestInfo = {
-        url: "ssh://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchSshUrl,
         method: "POST",
         formData: ""
       }
@@ -419,7 +434,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1100 start')
       console.info('Sub_WEB_PrefetchResource_1100 start')
       let info: webview.RequestInfo = {
-        url: "XXX://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchCustomSchemeUrl,
         method: "POST",
         formData: ""
       }
@@ -459,7 +474,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1200 start')
       console.info('Sub_WEB_PrefetchResource_1200 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "PUT",
         formData: ""
       }
@@ -499,7 +514,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1300 start')
       console.info('Sub_WEB_PrefetchResource_1300 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "DELETE",
         formData: ""
       }
@@ -539,7 +554,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1400 start')
       console.info('Sub_WEB_PrefetchResource_1400 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "",
         formData: ""
       }
@@ -579,7 +594,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1500 start')
       console.info('Sub_WEB_PrefetchResource_1500 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -619,7 +634,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1600 start')
       console.info('Sub_WEB_PrefetchResource_1600 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -659,7 +674,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1700 start')
       console.info('Sub_WEB_PrefetchResource_1700 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -699,7 +714,7 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'Sub_WEB_PrefetchResource_1800 start')
       console.info('Sub_WEB_PrefetchResource_1800 start')
       let info: webview.RequestInfo = {
-        url: "http://collect-v6.51.la/v6/collect?dt=4",
+        url: prefetchHttpUrl,
         method: "POST",
         formData: ""
       }
@@ -736,7 +751,7 @@ export default function abilityTest() {
     it('testPrefetchResourceErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('Sub_WEB_PrefetchResource_ErrorCode_0001 start')
       let info: webview.RequestInfo = {
-        url: '//collect-v6.51.la/v6/collect?dt=4',
+        url: prefetchNoSchemeUrl,
         method: 'POST',
         formData: 'a=x&b=y'
       }

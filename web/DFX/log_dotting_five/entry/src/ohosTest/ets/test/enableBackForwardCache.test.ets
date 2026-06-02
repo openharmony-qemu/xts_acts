@@ -27,7 +27,7 @@ const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 
 export default function EnableBackForwardCacheTest() {
-  describe('EnableBackForwardCacheTest', async () => {
+  describe('EnableBackForwardCacheTest', () => {
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
         url: 'testability/pages/EnableBackForwardCache',
