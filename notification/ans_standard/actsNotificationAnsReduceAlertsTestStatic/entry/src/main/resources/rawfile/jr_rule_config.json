@@ -1,0 +1,1260 @@
+{
+  "version": 2,
+  "generalRules": {
+     "replaceBean": [
+      {
+        "playType": 1,
+        "matchWords": "(ht|f)tp(s?)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?*&=#%]*)?",
+        "replaceWords": "网址"
+      },
+      {
+        "playType": 0,
+        "matchWords": "(ht|f)tp(s?)://([\\w-]+\\.)+[\\w-]+(/[\\w-./?*&=#%]*)?",
+        "replaceWords": "网址"
+      },
+      {
+        "playType": 1,
+        "matchWords": "((ht|f)tp(s?)://){0,1}(\\\\{0,2})([1-2]{0,1}\\d{1}\\d{0,1}\\.){3}([1-2]{0,1}\\d{1}\\d{0,1})([\\\\|\\/]\\w*)*",
+        "replaceWords": "网址"
+      },
+      {
+        "playType": 0,
+        "matchWords": "((ht|f)tp(s?)://){0,1}(\\\\{0,2})([1-2]{0,1}\\d{1}\\d{0,1}\\.){3}([1-2]{0,1}\\d{1}\\d{0,1})([\\\\|\\/]\\w*)*",
+        "replaceWords": "网址"
+      },
+      {
+        "playType": 0,
+        "matchWords": ">>$",
+        "replaceWords": ""
+      },
+      {
+        "playType": 0,
+        "matchWords": "\n",
+        "replaceWords": "，"
+      },
+      {
+        "playType": 0,
+        "matchWords": "[\\dA-Za-z//.//:///@ ]{20,30}【抖音商城】",
+        "replaceWords": "抖音商城口令,"
+      }
+    ],
+    "duplicateRuleBean": [
+      {
+        "duplicateType": 1
+      },
+      {
+        "duplicateType": 2
+      }
+    ],
+    "multiExtractBean": [
+      {
+        "playType": 0,
+        "type": 1,
+        "matchWords": "(.*)([京|津|沪|渝|冀|豫|云|辽|黑|湘|皖|鲁|新|苏|浙|赣|鄂|桂|甘|晋|蒙|陕|吉|闽|贵|粤|青|藏|川|宁|琼|使|领|]{1}[A-Z]{1}[A-Z]{0,1}[警京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼]{0,1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1})(.*)"
+      },
+      {
+        "playType": 0,
+        "type": 2,
+        "matchWords": "(.*)(\\d{4})(\\.|\\/|\\-)(\\d{1,2})(\\.|\\/|\\-)(\\d{1,2})(.*)"
+      }
+    ],
+    "contentTypeRuleBean": [
+      {
+        "contentType": 7,
+        "bundle": [
+          "com.dingtalk.hmos"
+        ]
+      }
+    ],
+    "contentFilterBean": [
+      {
+        "matchWords": ".*撤回了一条消息$",
+        "filterType": 0
+      },
+      {
+        "matchWords": ".*撤回一条消息$",
+        "filterType": 0
+      }
+    ]
+  },
+  "whiteRules": {
+    "com.huawei.hmos.meetime": {
+      "appType": 7,
+      "ruleSetBean": {
+        "contentFilterBean": [
+          {
+            "matchWords": "\\[暂不支持该消息类型\\]",
+            "filterType": 0
+          },
+          {
+            "matchWords": "\\[[0-9]{1,4}条\\]  \\[暂不支持该消息类型\\]",
+            "filterType": 0
+          },
+          {
+            "matchWords": "陌生畅连语音已静音",
+            "filterType": 0
+          },
+          {
+            "matchWords": "陌生畅连视频已静音",
+            "filterType": 0
+          }
+        ],
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\[[0-9]{1,4}条\\] ",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[[0-9]{1,4} messages\\] ",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\]",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频\\]",
+            "replaceWords": "发来一个视频"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\]",
+            "replaceWords": "发来地图位置信息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[信封消息\\]",
+            "replaceWords": "发来信封消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\]",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 1,
+            "matchWords": "\\([0-9]{1,3}\\)",
+            "replaceWords": ""
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+：)"
+            ],
+            "filterType": 0
+          }
+        ]
+      }
+    },
+    "com.ohos.mms": {
+      "appType": 0,
+      "ruleSetBean": {
+        "banRuleBean": [
+          {
+            "playType": 1
+          }
+        ],
+        "extractBean": [
+          {
+            "playType": 0,
+            "regularWords": [
+              "验证码"
+            ],
+            "matchWords": ".*验证码\\D{0,3}(\\d{4,8})",
+            "prefix": "验证码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "验证码"
+            ],
+            "matchWords": ".*验证码\\D{0,3}([A-Za-z]{3,6})",
+            "prefix": "验证码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密钥"
+            ],
+            "matchWords": ".*密钥\\D{0,3}(\\d{4,8})",
+            "prefix": "密钥是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "验证码"
+            ],
+            "matchWords": "[^0-9-热线](\\d{4,8})[^0-9-]",
+            "prefix": "验证码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "验证码"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "验证码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "验证码"
+            ],
+            "matchWords": "[^0-9-热线](\\d{4,8})$",
+            "prefix": "验证码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "随机码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9-]",
+            "prefix": "随机码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "随机码"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "随机码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "随机码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "随机码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "校验码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9-]",
+            "prefix": "校验码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "校验码"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "校验码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "校验码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "校验码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "动态码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9-]",
+            "prefix": "动态码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "动态码"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "动态码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "动态码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "动态码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密钥"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9-]",
+            "prefix": "密钥是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密钥"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "密钥是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密钥"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "密钥是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9-\\/]",
+            "prefix": "密码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密码"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-\\/]",
+            "prefix": "密码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "密码"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "密码是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "短信口令"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})[^0-9]",
+            "prefix": "短信口令是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "短信口令"
+            ],
+            "matchWords": "^(\\d{4,8})[^0-9-]",
+            "prefix": "短信口令是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "短信口令"
+            ],
+            "matchWords": "[^0-9-](\\d{4,8})$",
+            "prefix": "短信口令是，",
+            "extractTime": 1,
+            "remainTextState": 0,
+            "splitWords": " "
+          }
+        ]
+      }
+    },
+    "com.huawei.it.welink": {
+      "appType": 1,
+      "ruleSetBean": {
+        "contentFilterBean": [
+          {
+            "matchWords": "/[A-Z:;\\-\\$\\%@\\*][A-Z0-9~\\(\\)\\*\\$\\|\\<\\>\\!\\?@]",
+            "filterType": 0
+          }
+        ],
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\]",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[卡片\\]",
+            "replaceWords": "发来卡片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\]",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "/[A-Z:;\\-\\$\\%@\\*][A-Z0-9~\\(\\)\\*\\$\\|\\<\\>\\!\\?@]",
+            "replaceWords": ""
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*@了我:.*"
+              }
+            ]
+          },
+          {
+            "matchWords": [
+              "^(.+给您发了一封新邮件)"
+            ],
+            "filterType": 1,
+            "extractFilters": []
+          }
+        ],
+        "exclusiveLengthBean": [
+          {
+            "playType": 0,
+            "maxLength": 100,
+            "matchWords": ""
+          }
+        ]
+      }
+    },
+    "com.tencent.wechat": {
+      "appType": 9,
+      "ruleSetBean": {
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\[[0-9]{1,3}(条)?\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[100条以上\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音通话\\]",
+            "replaceWords": "邀请您进行通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[未接通话\\]",
+            "replaceWords": "您有一则未接通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\]",
+            "replaceWords": "发来地图位置消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\](.*\\.([0-9A-Za-z]{1,4}$))?",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频号\\](.*)?",
+            "replaceWords": "发来视频号"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\](.*)?",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[个人名片\\]",
+            "replaceWords": "发来一张个人名片"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[聊天记录\\]",
+            "replaceWords": "发来聊天记录"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频\\]",
+            "replaceWords": "发来视频消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "你收到了一条微信消息",
+            "replaceWords": "给你发了一条微信消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[转账\\]",
+            "replaceWords": "发来转账消息"
+          }
+        ],
+        "extractBean": [
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "(.*:).*\\[.*红包\\].*",
+            "prefix": "",
+            "suffix": "发来红包，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "^\\[.*(红包)\\].*",
+            "prefix": "发来",
+            "suffix": "，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+ : )",
+              ".+(?:分享了一个地理位置)$",
+              ".+(?:在群聊中发送了一张图片)$",
+              ".+(?:在群聊中发送了一段视频)$",
+              ".+(?:在群聊中发送了一个表情)$",
+              ".+(?:在群聊中发送了一段语音)$"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".+(?:在群聊中@了你)$"
+              },
+              {
+                "matchWords": ".*\\[.*红包\\].*"
+              },
+              {
+                "matchWords": "微信支付 : (.*)?"
+              },
+              {
+                "matchWords": ".*(?:我发起了位置共享).*"
+              },
+              {
+                "matchWords": ".*\\[.*转账\\].*"
+              }
+            ]
+          }
+        ],
+        "exclusiveLengthBean": [
+          {
+            "playType": 0,
+            "maxLength": 30,
+            "matchWords": "..."
+          }
+        ]
+      }
+    },
+    "com.tencent.wework.hmos": {
+      "appType": 9,
+      "ruleSetBean": {
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\[[0-9]{1,3}(条)?\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[100条以上\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音通话\\]",
+            "replaceWords": "邀请您进行通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[未接通话\\]",
+            "replaceWords": "您有一则未接通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\]",
+            "replaceWords": "发来地图位置消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\](.*\\.([0-9A-Za-z]{1,4}$))?",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频号\\](.*)?",
+            "replaceWords": "发来视频号"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\](.*)?",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[个人名片\\]",
+            "replaceWords": "发来一张个人名片"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[聊天记录\\]",
+            "replaceWords": "发来聊天记录"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频\\]",
+            "replaceWords": "发来视频消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "你收到了一条微信消息",
+            "replaceWords": "给你发了一条微信消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[转账\\]",
+            "replaceWords": "发来转账消息"
+          }
+        ],
+        "extractBean": [
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "(.*[:|：]).*\\[.*红包\\].*",
+            "prefix": "",
+            "suffix": "发来红包，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "^\\[.*(红包)\\].*",
+            "prefix": "发来",
+            "suffix": "，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          }
+        ],
+        "exclusiveLengthBean": [
+          {
+            "playType": 0,
+            "maxLength": 30,
+            "matchWords": "..."
+          }
+        ]
+      }
+    },
+    "com.tencent.mqq": {
+      "appType": 1,
+      "ruleSetBean": {
+        "replaceBean": [
+          {
+            "playType": 1,
+            "matchWords": "\\[100条以上新消息\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 1,
+            "matchWords": "\\([0-9]{1,3}条新(消息|来电)\\)",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\]",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[应用\\]地图",
+            "replaceWords": "发来地图位置信息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\](.*)?",
+            "replaceWords": "发来地图位置信息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音消息\\]",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\].*",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "戳一戳",
+            "replaceWords": "戳了你一下"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[有人@我\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[@全体成员\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[有全体消息\\]",
+            "replaceWords": ""
+          }
+        ],
+        "extractBean": [
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "(.*:).*\\[.*红包\\].*",
+            "prefix": "",
+            "suffix": "发来红包，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[.*红包\\]"
+            ],
+            "matchWords": "^\\[.*(红包)\\].*",
+            "prefix": "发来",
+            "suffix": "，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+: )"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*\\[有全体消息\\]"
+              },
+              {
+                "matchWords": ".*\\[有人@我\\]"
+              },
+              {
+                "matchWords": ".*\\[.*红包\\].*"
+              },
+              {
+                "matchWords": ".*\\: 发起了QQ通话"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "com.dingtalk.hmos": {
+      "appType": 1,
+      "ruleSetBean": {
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\[[0-9]{1,3}条\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[100条以上\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\]",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\]",
+            "replaceWords": "发来地图位置信息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\]",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[有人@你\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[@所有人\\]",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "钉钉语音",
+            "isOngoing": true,
+            "replaceWords": "邀请你进行语音通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "钉钉视频",
+            "isOngoing": true,
+            "replaceWords": "邀请你进行视频通话"
+          }
+        ],
+        "extractBean": [
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[专享红包\\]"
+            ],
+            "matchWords": "^\\[专享红包\\](.*:).*",
+            "prefix": "",
+            "suffix": "发来红包，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          },
+          {
+            "playType": 0,
+            "regularWords": [
+              "\\[红包\\]"
+            ],
+            "matchWords": "^\\[红包\\](.*:).*",
+            "prefix": "",
+            "suffix": "发来红包，快去领取吧",
+            "extractTime": 1,
+            "extraNumber": 1,
+            "remainTextState": 0
+          }
+        ],
+        "contentFilterBean": [
+          {
+            "matchWords": ".*发来一个日程邀约$",
+            "filterType": 0
+          },
+          {
+            "matchWords": ".*你收到1条新消息$",
+            "filterType": 0
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)",
+              "^(.+：)",
+              ".+(?:分享了一个地理位置)$",
+              ".+(?:在群聊中发送了一个小视频)$",
+              ".+(?:在群聊中发送了一个视频)$",
+              ".+(?:在群聊中发送了一个表情)$",
+              ".+(?:在群聊中发送了一段语音)$",
+              ".+(?:在群聊中发送了一张图片)$",
+              ".+(?:在群聊中发送了一个新闻)$",
+              ".+(?:在群聊中发了一个事)$",
+              ".+(?:在群聊中发送了一个红包)$"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*\\[有人@你\\].*"
+              },
+              {
+                "matchWords": "^\\[红包\\](.*:).*"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "com.huawei.hmos.calendar": {
+      "appType": 0,
+      "ruleSetBean": {
+        "multiExtractBean": [
+          {
+            "playType": 1,
+            "type": 0,
+            "matchWords": "(.*)时间：(\\d{2})\\/(\\d{2})(\\(.{2}\\))(.*)\\(UTC.*\\)([a-zA-Z]*)"
+          }
+        ]
+      }
+    },
+    "com.xingin.xhs_hos": {
+      "appType": 1,
+      "ruleSetBean": {
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*@你.*"
+              }
+            ]
+          }
+        ],
+        "exclusiveLengthBean": [
+          {
+            "playType": 0,
+            "maxLength": 30,
+            "matchWords": "..."
+          }
+        ]
+      }
+    },
+    "com.sina.weibo.stage": {
+      "appType": 1,
+      "ruleSetBean": {
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*@你.*"
+              }
+            ]
+          }
+        ],
+        "exclusiveLengthBean": [
+          {
+            "playType": 0,
+            "maxLength": 30,
+            "matchWords": "..."
+          }
+        ]
+      }
+    },
+    "com.kuaishou.hmapp": {
+      "appType": 1,
+      "ruleSetBean": {
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*@你.*"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "com.ss.hm.ugc.aweme": {
+      "appType": 1,
+      "ruleSetBean": {
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "私信了你",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音通话\\]",
+            "replaceWords": "邀请您进行通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[未接通话\\]",
+            "replaceWords": "您有一则未接通话"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[位置\\]",
+            "replaceWords": "发来位置消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[文件\\](.*\\.([0-9A-Za-z]{1,4}$))?",
+            "replaceWords": "发来一个文件"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[图片\\]",
+            "replaceWords": "发来图片消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[语音\\](.*)?",
+            "replaceWords": "发来语音消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[个人名片\\]",
+            "replaceWords": "发来一张个人名片"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[视频\\]",
+            "replaceWords": "发来视频消息"
+          },
+          {
+            "playType": 0,
+            "matchWords": "\\[转账\\]",
+            "replaceWords": "发来转账消息"
+          }
+        ],
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*@所有人.*"
+              },
+              {
+                "matchWords": ".*在群中@了你.*"
+              },
+              {
+                "matchWords": ".*私信了你:.*"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "com.alipay.mobile.client": {
+      "appType": 1,
+      "ruleSetBean": {
+        "instantFilterBean": [
+          {
+            "matchWords": [
+              "^(.+:)",
+              "^(.+：)",
+              ".+(?:分享了一个地理位置)$",
+              ".+(?:在群聊中发送了一个小视频)$",
+              ".+(?:在群聊中发送了一个视频)$",
+              ".+(?:在群聊中发送了一个表情)$",
+              ".+(?:在群聊中发送了一段语音)$",
+              ".+(?:在群聊中发送了一张图片)$",
+              ".+(?:在群聊中发送了一个新闻)$",
+              ".+(?:在群聊中发了一个新闻)$",
+              ".+(?:在群聊中发送了一个红包)$"
+            ],
+            "filterType": 0,
+            "extractFilters": [
+              {
+                "matchWords": ".*在群聊中@了你.*"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "com.feeyo.variflight": {
+      "appType": 1,
+      "ruleSetBean": {
+        "duplicateRuleBean": [
+          {
+            "duplicateType": 2
+          }
+        ],
+        "replaceBean": [
+          {
+            "playType": 0,
+            "matchWords": "\\(.*\\)",
+            "replaceWords": ""
+          },
+          {
+            "playType": 0,
+            "matchWords": "（.*）",
+            "replaceWords": ""
+          }
+        ]
+      }
+    }
+  },
+  "internalRules": {
+    "MorningBriefing": {
+      "multiExtractBean": [
+        {
+          "playType": 0,
+          "type": 0,
+          "matchWords": "(.*)时间：(\\d{2})\\/(\\d{2})(\\(.{2}\\))(.*)\\(UTC.*\\)([a-zA-Z]*)"
+        }
+      ],
+      "mediaBean": [
+        {
+          "waitTime": 5000
+        }
+      ]
+    },
+    "MorningBriefingAudition": {
+      "multiExtractBean": [
+        {
+          "playType": 0,
+          "type": 0,
+          "matchWords": "(.*)时间：(\\d{2})\\/(\\d{2})(\\(.{2}\\))(.*)\\(UTC.*\\)([a-zA-Z]*)"
+        }
+      ]
+    }
+  },
+  "aiModelRules": {
+    "com.ohos.mms": {
+      "filterMatchWords": [
+        "验证码",
+        "随机码",
+        "校验码",
+        "动态码",
+        "密钥",
+        "密码",
+        "短信口令"
+      ],
+      "matchWords": []
+    }
+  },
+  "createMessageRules": {
+    "lengthLimitBean": [
+      {
+        "maxLength": 50,
+        "waitTime": 5000
+      }
+    ]
+  }
+}
