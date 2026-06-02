@@ -14,6 +14,23 @@
  */
 import RectValue from './Rect';
 
+interface SystemMaterialInfo {
+  material?: {
+    type?: string;
+  };
+}
+
+interface InspectorAttrs {
+  id?: string;
+  systemMaterial?: SystemMaterialInfo;
+}
+
+interface InspectorNode {
+  $type?: string;
+  $attrs?: InspectorAttrs;
+  $children?: InspectorNode[];
+}
+
 interface MaterialMatch {
   path: number[];
   type: string;
@@ -50,7 +67,7 @@ export default class Utils {
   }
 
   static getDialogSystemMaterialType(logTag: string): string {
-    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     Utils.logInspectorRootOutline(`${logTag}_tree`, 3);
     const overlay = Utils.childAt(root, 1);
     if (!overlay) {
@@ -76,19 +93,19 @@ export default class Utils {
   }
 
   static logInspectorRootOutline(tag: string, maxDepth: number): void {
-    const root: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+    const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     Utils.logNodeOutline(root, tag, 0, maxDepth, 'root');
   }
 
-  static childCount(node: ESObject): number {
+  static childCount(node: InspectorNode): number {
     if (!node.$children) {
       return -1;
     }
-    return (node.$children as ESObject[]).length;
+    return node.$children.length;
   }
 
-  static logChildrenBrief(node: ESObject, tag: string): void {
-    const kids = node.$children as ESObject[] | undefined;
+  static logChildrenBrief(node: InspectorNode, tag: string): void {
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids) {
       console.info(`[InspectorDebug][${tag}] no $children`);
       return;
@@ -102,14 +119,14 @@ export default class Utils {
     }
   }
 
-  static nodeBrief(node: ESObject): string {
-    const id = node.$attrs?.id ?? '';
-    const mat = node.$attrs?.systemMaterial?.material?.type ?? '';
+  static nodeBrief(node: InspectorNode): string {
+    const id: string = node.$attrs?.id ?? '';
+    const mat: string = node.$attrs?.systemMaterial?.material?.type ?? '';
     return `type=${node.$type ?? '?'} id=${id} material=${mat} children=${Utils.childCount(node)}`;
   }
 
-  private static childAt(node: ESObject, index: number): ESObject | null {
-    const kids = node.$children as ESObject[] | undefined;
+  private static childAt(node: InspectorNode, index: number): InspectorNode | null {
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids || index >= kids.length) {
       return null;
     }
@@ -117,13 +134,13 @@ export default class Utils {
   }
 
   private static collectSystemMaterialNodes(
-    node: ESObject, path: number[], out: MaterialMatch[]
+    node: InspectorNode, path: number[], out: MaterialMatch[]
   ): void {
-    const materialType = node?.$attrs?.systemMaterial?.material?.type as string | undefined;
+    const materialType: string | undefined = node.$attrs?.systemMaterial?.material?.type;
     if (materialType) {
       out.push({ path: path.slice(), type: materialType });
     }
-    const kids = node.$children as ESObject[] | undefined;
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids) {
       return;
     }
@@ -133,13 +150,13 @@ export default class Utils {
   }
 
   private static logNodeOutline(
-    node: ESObject, tag: string, depth: number, maxDepth: number, path: string
+    node: InspectorNode, tag: string, depth: number, maxDepth: number, path: string
   ): void {
     if (depth > maxDepth) {
       return;
     }
     console.info(`[InspectorDebug][${tag}] ${path} ${Utils.nodeBrief(node)}`);
-    const kids = node.$children as ESObject[] | undefined;
+    const kids: InspectorNode[] | undefined = node.$children;
     if (!kids) {
       return;
     }
