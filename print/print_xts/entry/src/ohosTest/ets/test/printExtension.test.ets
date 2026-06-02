@@ -106,7 +106,6 @@ export default function printExtensionTest() {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0600 onDestroy begin');
       printExtension.onDestroy();
     })
-  })
 
     /**
      * @tc.name   printExtension_function_0700
@@ -120,4 +119,5 @@ export default function printExtensionTest() {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
       expect(printExtension.context).assertTrue();
     })
+  })
 }
