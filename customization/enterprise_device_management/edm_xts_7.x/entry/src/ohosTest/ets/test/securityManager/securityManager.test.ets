@@ -780,6 +780,51 @@ function testSetWatermarkImageWithProperties() {
     try {
       let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, VALID_PROPERTIES);
       expect(ret == null).assertTrue();
+      let result: Array<string> = securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(result.length === 1).assertTrue();
+      expect(result[0] === WATERMARK_BUNDLE_NAME).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setWatermarkImage_pixelmap_2200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_PIXELMAP_JS_2200
+   * @tc.desc   test securityManager setWatermarkImage with PixelMap source and invalid accountId 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWatermarkImage_pixelmap_2200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, 0, VALID_PROPERTIES);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setWatermarkImage_pixelmap_2300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_PIXELMAP_JS_2300
+   * @tc.desc   test securityManager setWatermarkImage with PixelMap source and accountId minValue
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setWatermarkImage_pixelmap_2300", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, 1, VALID_PROPERTIES);
+      expect(ret == null).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -2534,6 +2579,49 @@ function testGetWatermarkImageApps() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let result = securityManager.getWatermarkImageApps(SELFWANT, DEFAULT_USER_ID);
+      expect(Array.isArray(result)).assertTrue();
+      expect(result.length === 0).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_1000
+   * @tc.desc   test securityManager getWatermarkImageApps with invalid accountId 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_watermark_image_apps_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getWatermarkImageApps(SELFWANT, 0);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_watermark_image_apps_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WATERMARK_IMAGE_APPS_JS_1100
+   * @tc.desc   test securityManager getWatermarkImageApps success with accountId minValue
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_watermark_image_apps_1100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = securityManager.getWatermarkImageApps(SELFWANT, 1);
       expect(Array.isArray(result)).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
