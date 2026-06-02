@@ -4397,7 +4397,6 @@ export default function TextPicker() {
           console.info("testPicker73 driveFn warning (UI Lock): " + driverError.message);
         }
         await CommonFunc.sleep(500);
-        let result = await dialogPromise;
 
         if (!result) {
           expect(result).assertUndefined();
