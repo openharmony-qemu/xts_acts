@@ -192,7 +192,7 @@ export default function webViewController() {
 
     /**
      * @tc.name   testOnOverScrollStatic005
-     * @tc.number SUB_WEB_ONOVERSCROLL_0500
+     * @tc.number SUB_WEB_ONOVER_SCROLL_0500
      * @tc.desc   test onOverScroll
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
