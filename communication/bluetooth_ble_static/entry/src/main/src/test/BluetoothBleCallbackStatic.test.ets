@@ -604,7 +604,7 @@ export default function bluetoothBleCallbackTest() {
          * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0100
          * @tc.name    readCharacteristicValueTest_callback_descriptorsEmpty
          * @tc.desc    readCharacteristicValue descriptors empty array test.
-         * @tc.level   Level 0
+         * @tc.level   LEVEL0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
@@ -633,18 +633,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await readCharacteristicValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readCharacteristicValue callback successful");
-                });
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, "api is not supported.");
@@ -660,7 +657,7 @@ export default function bluetoothBleCallbackTest() {
         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0200
         * @tc.name    readCharacteristicValueTest_callback_descriptorsNotEmpty
         * @tc.desc    readCharacteristicValue descriptors not empty array test.
-        * @tc.level   Level 0
+        * @tc.level   LEVEL0
         * @tc.type    Function
         * @tc.size    MEDIUMTEST
         */
@@ -711,18 +708,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await readCharacteristicValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readCharacteristicValue callback successful");
-                });
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, "api is not supported.");
@@ -738,7 +732,7 @@ export default function bluetoothBleCallbackTest() {
          * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0300
          * @tc.name    readCharacteristicValueTest_callback_descriptorUuidEmpty
          * @tc.desc    readCharacteristicValue descriptorUuid empty string test.
-         * @tc.level   Level 0
+         * @tc.level   LEVEL0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
@@ -789,18 +783,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await readCharacteristicValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readCharacteristicValue callback successful");
-                });
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, "api is not supported.");
@@ -816,7 +807,7 @@ export default function bluetoothBleCallbackTest() {
         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTICVALUE_CALLBACK_PARAMETER_0400
         * @tc.name    readCharacteristicValueTest_callback_permissionsReadTrue
         * @tc.desc    readCharacteristicValue descriptor permissions read true test.
-        * @tc.level   Level 0
+        * @tc.level   LEVEL0
         * @tc.type    Function
         * @tc.size    MEDIUMTEST
         */
@@ -867,18 +858,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await readCharacteristicValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readCharacteristicValue callback successful");
-                });
+                await readCharacteristicValueCallback()
+                hilog.info(domain, tag, "readCharacteristicValue callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "readCharacteristicValue callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, "api is not supported.");
@@ -894,7 +882,7 @@ export default function bluetoothBleCallbackTest() {
          * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_READDESCRIPTORVALUE_CALLBACK_PARAMETER_0100
          * @tc.name    readDescriptorValueTest_callback_permissionsAllTrue
          * @tc.desc    readDescriptorValue descriptor permissions all true test.
-         * @tc.level   Level 0
+         * @tc.level   LEVEL0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
@@ -933,18 +921,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await readDescriptorValueCallback().then((data) => {
-                    hilog.info(domain, tag, "readDescriptorValue callback successful");
-                });
+                await readDescriptorValueCallback()
+                hilog.info(domain, tag, "readDescriptorValue callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "readDescriptorValue callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, "api is not supported.");
@@ -963,7 +948,7 @@ export default function bluetoothBleCallbackTest() {
          * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0100
          * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorsNotEmpty
          * @tc.desc    setCharacteristicChangeIndication descriptors not empty array test.
-         * @tc.level   Level 0
+         * @tc.level   LEVEL0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
@@ -1026,18 +1011,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await setCharacteristicChangeIndicationCallback().then(() => {
-                    hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
-                });
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
@@ -1050,10 +1032,10 @@ export default function bluetoothBleCallbackTest() {
         })
 
         /**
-        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_setCharacteristicChangeIndication_callback_Parameter_0200
+        * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0200
         * @tc.name    setCharacteristicChangeIndicationTest_callback_descriptorUuidEmpty
         * @tc.desc    setCharacteristicChangeIndication descriptorUuid empty string test.
-        * @tc.level   Level 0
+        * @tc.level   LEVEL0
         * @tc.type    Function
         * @tc.size    MEDIUMTEST
         */
@@ -1116,18 +1098,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await setCharacteristicChangeIndicationCallback().then(() => {
-                    hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
-                });
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
@@ -1143,7 +1122,7 @@ export default function bluetoothBleCallbackTest() {
          * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0300
          * @tc.name    setCharacteristicChangeIndicationTest_callback_propertiesAllTrue
          * @tc.desc    setCharacteristicChangeIndication characteristic properties all true test.
-         * @tc.level   Level 0
+         * @tc.level   LEVEL0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
@@ -1207,18 +1186,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await setCharacteristicChangeIndicationCallback().then(() => {
-                    hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
-                });
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
@@ -1234,7 +1210,7 @@ export default function bluetoothBleCallbackTest() {
         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_SETCHARACTERISTICCHANGEINDICATION_CALLBACK_PARAMETER_0400
         * @tc.name    setCharacteristicChangeIndicationTest_callback_permissionsAllTrue
         * @tc.desc    setCharacteristicChangeIndication characteristic permissions all true test.
-        * @tc.level   Level 0
+        * @tc.level   LEVEL0
         * @tc.type    Function
         * @tc.size    MEDIUMTEST
         */
@@ -1286,18 +1262,15 @@ export default function bluetoothBleCallbackTest() {
                                 }
                             }
                         } catch (err) {
-                            err = err as BusinessError;
                             hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                         }
                     });
                 });
             }
             try {
-                await setCharacteristicChangeIndicationCallback().then(() => {
-                    hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
-                });
+                await setCharacteristicChangeIndicationCallback()
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback successful");
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.error(domain, tag, 'api is not support');
