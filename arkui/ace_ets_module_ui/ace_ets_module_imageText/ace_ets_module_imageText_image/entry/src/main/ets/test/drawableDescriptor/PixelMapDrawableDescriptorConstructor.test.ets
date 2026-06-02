@@ -47,7 +47,7 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
 
     /**
      * @tc.name   pixelMapDrawableDescriptorConstructorPixelMap001
-     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_PIXELMAP_001
+     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_PIXELMAP_0010
      * @tc.desc   Test PixelMapDrawableDescriptor constructor with PixelMap parameter. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -79,7 +79,7 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
 
     /**
      * @tc.name   pixelMapDrawableDescriptorConstructorAppResource001
-     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_APPRESOURCE_001
+     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_APPRESOURCE_0010
      * @tc.desc   Test PixelMapDrawableDescriptor constructor with app resource $r parameter. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -111,7 +111,7 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
 
     /**
      * @tc.name   pixelMapDrawableDescriptorConstructorSysResource001
-     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_SYSRESOURCE_001
+     * @tc.number SUB_ARKUI_PIXELMAP_DRAWABLEDESCRIPTOR_CONSTRUCTOR_SYSRESOURCE_0010
      * @tc.desc   Test PixelMapDrawableDescriptor constructor with system resource $r parameter. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -142,7 +142,7 @@ export default function PixelMapDrawableDescriptorConstructorTest() {
 
     /**
      * @tc.name   pixelMapDrawableDescriptorConstructorUndefined001
-     * @tc.number SUB_ARKUI_PIXEL_MAP_DRAWABLE_DESCRIPTOR_CONSTRUCTOR_UNDEFINED_001
+     * @tc.number SUB_ARKUI_PIXEL_MAP_DRAWABLE_DESCRIPTOR_CONSTRUCTOR_UNDEFINED_0010
      * @tc.desc   Test PixelMapDrawableDescriptor constructor with undefined parameter. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
