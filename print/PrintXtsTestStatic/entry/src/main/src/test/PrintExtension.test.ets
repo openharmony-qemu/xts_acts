@@ -186,6 +186,23 @@ export default function printExtensionTest(): void {
         }
     })
 
+    /**
+     * @tc.name   printExtension_function_0700
+     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0100
+     * @tc.desc   check the printExtension context property existence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('printExtension_function_0700', Level.LEVEL2, () => {
+      hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
+      try {
+        let context : printExtension.context;
+      } catch {
+        expect().assertFail();
+      }
+    })
+
      /**
       * @tc.name   SUB_Oh_PrintExt_RequestCapability_0700
       * @tc.number SUB_Oh_PrintExt_RequestCapability_0700
@@ -207,22 +224,5 @@ export default function printExtensionTest(): void {
                expect().assertFail();
            }
        })
-
-    /**
-      * @tc.name   printExtension_function_0700
-      * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0100
-      * @tc.desc   check the printExtension context property existence
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-      it('printExtension_function_0700', Level.LEVEL2, () => {
-        hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
-        try {
-          let context = printExtension.context;
-        } catch {
-          expect().assertFail();
-        }
-      })
   })
 }
