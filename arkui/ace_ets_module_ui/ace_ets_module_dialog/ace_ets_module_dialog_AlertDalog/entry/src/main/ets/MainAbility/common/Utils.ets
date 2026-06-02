@@ -14,10 +14,12 @@
  */
 import RectValue from './Rect';
 
+interface MaterialDetail {
+  type?: string;
+}
+
 interface SystemMaterialInfo {
-  material?: {
-    type?: string;
-  };
+  material?: MaterialDetail;
 }
 
 interface InspectorAttrs {
