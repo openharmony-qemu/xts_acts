@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import business_error from '@ohos.base';
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -31,6 +32,7 @@ struct WebViewControllerResumeAllTimers {
   @State isReceive: number = -1;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 132680,
@@ -41,6 +43,10 @@ struct WebViewControllerResumeAllTimers {
 
   onPageHide() {
     events_emitter.off(132680)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -355,12 +361,12 @@ struct WebViewControllerResumeAllTimers {
         })
       }
 
-      Web({ src: $rawfile("index_resumeAllTimers.html"), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index_resumeAllTimers.html'), controller: this.controller })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isPageEnd = 0;
         })
-      Web({ src: $rawfile("index_resumeAllTimers1.html"), controller: this.controller1 })
+      Web({ src: this.mServer.getAssetUrl('index_resumeAllTimers1.html'), controller: this.controller1 })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isPageEnd = 0;

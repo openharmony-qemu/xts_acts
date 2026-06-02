@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
 import cert from '@ohos.security.cert';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 111120;
 
@@ -50,6 +51,7 @@ interface objectCss {
 struct webViewContGetUrlAndOthersError {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
@@ -76,6 +78,10 @@ struct webViewContGetUrlAndOthersError {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -418,7 +424,7 @@ struct webViewContGetUrlAndOthersError {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
