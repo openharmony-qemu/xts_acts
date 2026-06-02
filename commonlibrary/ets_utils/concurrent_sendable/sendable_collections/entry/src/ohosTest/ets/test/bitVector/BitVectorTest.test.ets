@@ -193,7 +193,7 @@ export default function BitVectorTest(): void {
         let bv = new collections.BitVector(-Infinity)
         expect().assertFail()
       } catch (e) {
-        expect((e as BusinessError).code).assertEqual(401)
+        expect(e.code).assertEqual(401)
       }
     })
 
