@@ -91,6 +91,7 @@ import TabContentBottomTabBarStyleIdNullUndefinedTest from './TabContentNullUnde
 import TabContentBottomTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleLabelStyleNullUndefined.test';
 import TabContentBottomTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStylePaddingNullUndefined.test';
 import TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleVerticalAlignNullUndefined.test';
+import tabBarNullUndefined from './TabContentNullUndefinedTest/tabBarNullUndefined.test';
 import animationCurveNullUndefinedTest from './animationCurveNullUndefinedTest/animationCurveNullUndefined.test';
 
 export default function testsuite() {
@@ -164,5 +165,6 @@ export default function testsuite() {
   TabContentBottomTabBarStyleLabelStyleNullUndefinedTest();
   TabContentBottomTabBarStylePaddingNullUndefinedTest();
   TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest();
+  tabBarNullUndefined();
   animationCurveNullUndefinedTest();
 } 
