@@ -3005,6 +3005,32 @@ export default function geolocationTest_geo7() {
     })
 
     /**
+     * @tc.name   SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.number SUB_Location_GetCurrentLocation_errorcode_0300
+     * @tc.desc   Verify that calling getCurrentLocation with priority FIRST_FIX and scenario UNSET returns error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Location_GetCurrentLocation_errorcode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+        let currentLocationRequest = {
+            'priority': geolocationm.LocationRequestPriority.FIRST_FIX,
+            'scenario': geolocationm.LocationRequestScenario.UNSET,
+            'maxAccuracy': -1
+        };
+        try {
+            let result = await geolocationm.getCurrentLocation(currentLocationRequest);
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise result ' + JSON.stringify(result));
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] SUB_Location_GetCurrentLocation_errorcode_0300 promise err:' + JSON.stringify(error));
+            expect(Number(error.code)).assertEqual(401);
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
      * @tc.name   SUB_HSS_mSendCommand_0300
      * @tc.number SUB_HSS_mSendCommand_0300
      * @tc.desc   Test sendCommand api .
