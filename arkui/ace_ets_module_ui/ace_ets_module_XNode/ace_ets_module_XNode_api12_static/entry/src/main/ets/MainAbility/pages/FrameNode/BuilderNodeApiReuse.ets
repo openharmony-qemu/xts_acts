@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,10 +41,11 @@ import {
   LazyForEach,
   IDataSource,
   CustomBuilderT,
+  ReuseObject
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
-export class MyDataSource implements IDataSource<string>{
+class MyDataSource implements IDataSource<string>{
   private dataArray: Array<string> = new Array<string>();
   private listener: DataChangeListener | null = null
 
@@ -109,7 +110,7 @@ struct ReusableChildComponent {
   aboutToAppear() {
     this.controller.item = this.item;
   }
-  aboutToReuse(params: object): void {
+  aboutToReuse(params: ReuseObject): void {
     console.log("ReusableChildComponentAboutToReuse " + JSON.stringify(params));
     this.controller?.builderNode?.reuse(params);
   }
@@ -122,7 +123,7 @@ struct ReusableChildComponent {
 struct ReusableChildComponent2 {
   @State item: string = "false";
 
-  aboutToReuse(params: Record<string, object>) {
+  aboutToReuse(params: ReuseObject) {
     console.log("ReusableChildComponent2 Reusable 2 " + JSON.stringify(params));
   }
 
