@@ -63,11 +63,11 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 		await CommonFunc.sleep(1000);
 
 		let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
-		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-		let dialog: ESObject = obj.$children[1]
-		let date = JSON.stringify(obj.$children[1].$children[0])
-		console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-		expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+		let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0100');
+
+		console.info('[ActionMenuOptionsSystemMaterial_0100] materialType=' + materialType);
+
+		expect(materialType).assertEqual('MaterialType.IMMERSIVE');
 		console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
 
 		await CommonFunc.sleep(500);
@@ -97,11 +97,11 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	await CommonFunc.sleep(1000);
 
 	let titleText = await driver.findComponent(ON.text('ActionMenu HDS THICK'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0200');
+
+	console.info('[ActionMenuOptionsSystemMaterial_0200] materialType=' + materialType);
+
+	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
 	console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
 
 	await CommonFunc.sleep(500);
@@ -130,11 +130,11 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	await CommonFunc.sleep(1000);
 
 	let titleText = await driver.findComponent(ON.text('ActionMenu SEMI_TRANSPARENT'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0300');
+
+	console.info('[ActionMenuOptionsSystemMaterial_0300] materialType=' + materialType);
+
+	expect(materialType).assertEqual('MaterialType.SEMI_TRANSPARENT');
 
 	console.info('ActionMenuOptionsSystemMaterial_0300 Menu title is visible');
 
@@ -165,11 +165,9 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 
 	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive THICK'));
 	console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj004'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0400');
+	console.info('[ActionMenuOptionsSystemMaterial_0400] materialType=' + materialType);
+	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
 	await CommonFunc.sleep(500);
 	let closeButton = await driver.findComponent(ON.text('Button1'));
 	await closeButton.click();
@@ -196,11 +194,9 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	await CommonFunc.sleep(1000);
 
 	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive ULTRA_THIN'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj005'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0500');
+	console.info('[ActionMenuOptionsSystemMaterial_0500] materialType=' + materialType);
+	expect(materialType).assertEqual('MaterialType.IMMERSIVE');
 	console.info('ActionMenuOptionsSystemMaterial_0500 Menu title is visible');
 
 	await CommonFunc.sleep(500);
@@ -229,11 +225,11 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	await CommonFunc.sleep(1000);
 
 	let titleText = await driver.findComponent(ON.text('ActionMenu NONE'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+	let materialType = Utils.getDialogSystemMaterialType('ActionMenuOptionsSystemMaterial_0600');
+
+	console.info('[ActionMenuOptionsSystemMaterial_0600] materialType=' + materialType);
+
+	expect(materialType).assertEqual('MaterialType.NONE');
 	console.info('ActionMenuOptionsSystemMaterial_0600 Menu title is visible');
 
 	await CommonFunc.sleep(500);

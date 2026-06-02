@@ -68,7 +68,7 @@ export default function setCursorTest() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('setCursor' + '_2'));
       await button.click();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let button1 = await driver.findComponent(ON.id('setCursor' + '_1'));
       await button1.click();
       await CommonFunc.sleep(1000);

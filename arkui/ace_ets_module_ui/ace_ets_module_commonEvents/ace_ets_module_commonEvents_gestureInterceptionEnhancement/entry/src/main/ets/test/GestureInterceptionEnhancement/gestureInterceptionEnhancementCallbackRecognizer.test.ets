@@ -57,30 +57,44 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
     it('gestureInterceptionEnhancementCallbackRecognizerTest_0010Adapt002', Level.LEVEL0, async (done: Function) => {
         console.info(' gestureInterceptionEnhancementCallbackRecognizerTest_0010 START');
         let driver: Driver = await Driver.create()
-        await CommonFunc.sleep(1000);
-        let firstTabs = CommonFunc.getComponentRectOnScreen('firstTabsContentR');
-        let top = firstTabs.top;
-        let right = firstTabs.right;
-        let left = firstTabs.left;
-        let bottom = firstTabs.bottom;
-        console.info("gestureInterceptionEnhancementCallbackRecognizerTest_0010 value is" + left + " --" + right + "--" + top + "--" + bottom);
-        let height = bottom -top;
+        await CommonFunc.sleep(1500);
+        let blueTab = await driver.findComponent(ON.text('blue and pink'));
+        await blueTab.click();
+        await CommonFunc.sleep(1500);
+        let swipeArea = CommonFunc.getComponentRectOnScreen('secondTabsContent');
+        let top = swipeArea.top;
+        let right = swipeArea.right;
+        let left = swipeArea.left;
+        let bottom = swipeArea.bottom;
+        let height = bottom - top;
         let width = right - left;
+        console.info(
+          `[Adapt002] secondTabsContent rect left=${left} right=${right} top=${top} bottom=${bottom}`
+        );
+        expect(width > 0).assertTrue();
+        expect(height > 0).assertTrue();
         await CommonFunc.sleep(1000);
-        // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipe(
+          Math.round(left + width * 0.8), Math.round(top + height / 2),
+          Math.round(left + width * 0.2), Math.round(top + height / 2)
+        );
         await CommonFunc.sleep(2500);
-      
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipe(
+          Math.round(left + width * 0.8), Math.round(top + height / 2),
+          Math.round(left + width * 0.2), Math.round(top + height / 2)
+        );
         await CommonFunc.sleep(2500);
-
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipe(
+          Math.round(left + width * 0.8), Math.round(top + height / 2),
+          Math.round(left + width * 0.2), Math.round(top + height / 2)
+        );
         await CommonFunc.sleep(2500);
-         // check the callback data
          let strJson = getInspectorByKey('eventceshi');
          let obj: ESObject = JSON.parse(strJson);
-         console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_0010 ] content: " + JSON.stringify(obj.$attrs.content));
-         let obj2 : ESObject = JSON.parse(obj.$attrs.content);
+         let content: string = obj.$attrs.content as string;
+         console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_0010 ] content: " + content);
+         expect(content.startsWith('{')).assertTrue();
+         let obj2 : ESObject = JSON.parse(content);
          console.info("gestureInterceptionEnhancementCallbackRecognizerTest" + obj2.type);
          console.info("gestureInterceptionEnhancementCallbackRecognizerTest" + obj2.tag);
          console.info("gestureInterceptionEnhancementCallbackRecognizerTest" + obj2.isBuildIn);
@@ -97,8 +111,10 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
          expect(obj2.isValid).assertTrue();
         let strJson2 = getInspectorByKey('eventArray');
         let objA: ESObject = JSON.parse(strJson2);
-        console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_0010 ] contentA: " + JSON.stringify(objA.$attrs.content));
-        let objAA : ESObject = JSON.parse(objA.$attrs.content);
+        let contentA: string = objA.$attrs.content as string;
+        console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_0010 ] contentA: " + contentA);
+        expect(contentA.startsWith('[')).assertTrue();
+        let objAA : ESObject = JSON.parse(contentA);
         expect(objAA[0].tag).assertEqual("");
         expect(objAA[0].type == 2).assertTrue();
         expect(objAA[0].isBuildIn).assertTrue();

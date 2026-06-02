@@ -60,11 +60,11 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0100');
+
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0100] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -93,11 +93,11 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0200');
+
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0200] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -126,11 +126,11 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0300');
+
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0300] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.SEMI_TRANSPARENT');
       console.info('CustomDialogControllerOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
@@ -159,11 +159,9 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0400');
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0400] materialType=' + materialType);
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -192,11 +190,9 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0500');
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0500] materialType=' + materialType);
+      expect(materialType).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
@@ -225,11 +221,11 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       await CommonFunc.sleep(1000);
 
       let dialogText = await driver.findComponent(ON.text('CustomDialog Content'));
-      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      let dialog: ESObject = obj.$children[1];
-      let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      let materialType = Utils.getDialogSystemMaterialType('CustomDialogControllerOptionsSystemMaterial_0600');
+
+      console.info('[CustomDialogControllerOptionsSystemMaterial_0600] materialType=' + materialType);
+
+      expect(materialType).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
