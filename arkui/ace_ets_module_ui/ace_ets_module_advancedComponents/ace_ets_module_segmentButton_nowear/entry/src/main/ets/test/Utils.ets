@@ -150,8 +150,8 @@ export default class Utils {
     let node: ESObject = start;
     let pathStr = 'root';
     for (let i = 0; i < indices.length; i++) {
-      const idx = indices[i];
-      const next = Utils.childAt(node, idx);
+      const idx: number = indices[i];
+      const next: ESObject | null = Utils.childAt(node, idx);
       if (!next) {
         console.error(
           `[InspectorDebug][${tag}] FAIL step=${i} path=${pathStr} idx=${idx} len=${Utils.childCount(node)}`
@@ -163,7 +163,7 @@ export default class Utils {
       pathStr += `.$children[${idx}]`;
       console.info(`[InspectorDebug][${tag}] step ${i}: ${pathStr} ${Utils.nodeBrief(node)}`);
     }
-    console.info(`[InspectorDebug][${tag}] target attrs=${JSON.stringify(node.$attrs ?? {})}`);
+    console.info(`[InspectorDebug][${tag}] target attrs=${JSON.stringify(node.$attrs ?? ({} as Record<string, Object>))}`);
     return node;
   }
 
@@ -174,7 +174,7 @@ export default class Utils {
       return;
     }
     console.info(`[InspectorDebug][${tag}] ${path} ${Utils.nodeBrief(node)}`);
-    const kids = node.$children as ESObject[] | undefined;
+    const kids: ESObject[] | undefined = node.$children as ESObject[] | undefined;
     if (!kids) {
       return;
     }
@@ -199,12 +199,13 @@ export default class Utils {
   }
 
   static nodeBrief(node: ESObject): string {
-    const id = node.$attrs?.id ?? '';
+    const attrs: Record<string, Object> = node.$attrs as Record<string, Object>;
+    const id: string = attrs?.id !== undefined ? String(attrs.id) : '';
     return `type=${node.$type ?? '?'} id=${id} children=${Utils.childCount(node)}`;
   }
 
   static logChildrenBrief(node: ESObject, tag: string): void {
-    const kids = node.$children as ESObject[] | undefined;
+    const kids: ESObject[] | undefined = node.$children as ESObject[] | undefined;
     if (!kids) {
       console.info(`[InspectorDebug][${tag}] no $children`);
       return;

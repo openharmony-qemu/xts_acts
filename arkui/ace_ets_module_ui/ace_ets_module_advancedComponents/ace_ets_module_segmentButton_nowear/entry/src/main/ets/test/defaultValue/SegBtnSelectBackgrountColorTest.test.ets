@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
-import Utils from '../../Utils';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegBtnSelectBackgrountColorTest() {
