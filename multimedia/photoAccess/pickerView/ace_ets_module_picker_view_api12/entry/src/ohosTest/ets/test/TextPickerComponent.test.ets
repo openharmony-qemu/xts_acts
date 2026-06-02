@@ -3406,17 +3406,22 @@ export default function TextPicker() {
 
       for (let i = 0; i < testCases.length; i++) {
         let isInvalidCase = !testCases[i].src || !testCases[i].config;
-
+        let originalUris = [' '];
         if (isInvalidCase) {
           try {
-            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
+            .then((result) => {
+              originalUris = result;
+            });
           } catch (error) {
             expect((error as BusinessError).code).assertEqual(401);
           }
         } else {
           try {
-            let dialogPromise = photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
-
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
+            .then((result) => {
+              originalUris = result;
+            });
             await driveFn();
 
             let code: number = EventType.SELECT_ITEM_INFO;
@@ -3463,8 +3468,6 @@ export default function TextPicker() {
             }
             router.back();
             events_emitter.off(event.eventId);
-
-            let result = await dialogPromise;
             console.log(`result = ${JSON.stringify(result)}`);
             console.info("testPicker59 valid case finish");
 
