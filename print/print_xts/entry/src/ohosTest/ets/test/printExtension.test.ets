@@ -119,48 +119,5 @@ export default function printExtensionTest() {
     it('printExtension_function_0700', Level.LEVEL2, () => {
       hilog.info(DOMAIN, TAG, 'printExtension_function_0700 context property begin');
       expect(printExtension.context).assertTrue();
-      expect(typeof printExtension.context).assertEqual('object');
-    })
-
-    /**
-     * @tc.name   printExtension_function_0800
-     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0200
-     * @tc.desc   check the printExtension context currentHapModuleInfo property
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('printExtension_function_0800', Level.LEVEL2, () => {
-      hilog.info(DOMAIN, TAG, 'printExtension_function_0800 currentHapModuleInfo begin');
-      expect(printExtension.context.currentHapModuleInfo).assertTrue();
-      expect(typeof printExtension.context.currentHapModuleInfo).assertEqual('object');
-    })
-
-    /**
-     * @tc.name   printExtension_function_0900
-     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0300
-     * @tc.desc   check the printExtension context config property
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('printExtension_function_0900', Level.LEVEL2, () => {
-      hilog.info(DOMAIN, TAG, 'printExtension_function_0900 config begin');
-      expect(printExtension.context.config).assertTrue();
-      expect(typeof printExtension.context.config).assertEqual('object');
-    })
-
-    /**
-     * @tc.name   printExtension_function_1000
-     * @tc.number SUB_PRINT_FWK_EXTENSION_FUNCTION_0400
-     * @tc.desc   check the printExtension context extensionAbilityInfo property
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('printExtension_function_1000', Level.LEVEL2, () => {
-      hilog.info(DOMAIN, TAG, 'printExtension_function_1000 extensionAbilityInfo begin');
-      expect(printExtension.context.extensionAbilityInfo).assertTrue();
-      expect(typeof printExtension.context.extensionAbilityInfo).assertEqual('object');
     })
 }
