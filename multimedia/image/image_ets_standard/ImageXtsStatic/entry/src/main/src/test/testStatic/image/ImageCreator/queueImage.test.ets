@@ -101,15 +101,15 @@ export default function ImageCreatorQueueImageTest(): void {
     });
 
     /**
-     * @tc.name   ImageCreator_queueImage_promise_001
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0100
      * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_001
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_queueImage_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_queueImage_promise_001';
+    it('SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -125,15 +125,15 @@ export default function ImageCreatorQueueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_queueImage_promise_002
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0200
      * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_002
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_queueImage_promise_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_queueImage_promise_002';
+    it('SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192
@@ -149,15 +149,15 @@ export default function ImageCreatorQueueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_queueImage_callback_001
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0100
      * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_003
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_queueImage_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_queueImage_callback_001';
+    it('SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -173,15 +173,15 @@ export default function ImageCreatorQueueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_queueImage_callback_002
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0200
      * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_004
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_queueImage_callback_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_queueImage_callback_002';
+    it('SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192

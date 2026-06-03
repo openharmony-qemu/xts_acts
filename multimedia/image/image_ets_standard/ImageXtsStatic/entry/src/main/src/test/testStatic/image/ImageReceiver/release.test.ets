@@ -97,15 +97,15 @@ export default function ImageReceiverReleaseTest(): void {
     });
 
     /**
-     * @tc.name   ImageReceiver_release_promise_001
+     * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_release_promise_static_0100
      * @tc.number IMAGE_RECEIVER_RELEASE_001
      * @tc.desc   ImageReceiver_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageReceiver_release_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageReceiver_release_promise_001';
+    it('SUB_MEDIA_IMAGE_ImageReceiver_release_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageReceiver_release_promise_static_0100';
       try {
         await releasePromiseTest(done, testName);
       } catch (error) {
@@ -117,15 +117,15 @@ export default function ImageReceiverReleaseTest(): void {
     })
 
     /**
-     * @tc.name   ImageReceiver_release_callback_001
+     * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_release_callback_static_0100
      * @tc.number IMAGE_RECEIVER_RELEASE_002
      * @tc.desc   ImageReceiver_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageReceiver_release_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageReceiver_release_callback_001';
+    it('SUB_MEDIA_IMAGE_ImageReceiver_release_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageReceiver_release_callback_static_0100';
       try {
         await releaseCallbackTest(done, testName);
       } catch (error) {

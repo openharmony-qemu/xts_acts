@@ -67,10 +67,10 @@ async function getImagePropertySync9(done: () => void, testContext: Context, tes
     console.info(TAG, testName, "bits_per_sample : " + propertyKeyName);
     callback(propertyKeyName, undefined);
     done();
-  } catch (err) {
-    let businessError: BusinessError = err as BusinessError;
-    console.error(TAG, testName, businessError!.message, businessError!.code);
-    callback(undefined, businessError);
+  } catch (error) {
+    let error1 = error as BusinessError;
+    console.error(TAG, testName, error1!.message, error1!.code);
+    callback(undefined, error1);
     done();
   }
 }
@@ -91,15 +91,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0100
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_136',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0100', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0100',
         'test_exif_empty_2.jpg', image.PropertyKey.ISO_SPEED,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -108,15 +108,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0200
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_137',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0200', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0200',
         'test_exif_empty_2.jpg', image.PropertyKey.LIGHT_SOURCE,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -125,15 +125,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0300
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_138',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0300', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0300',
         'test_exif_empty_2.jpg', image.PropertyKey.FOCUS_MODE,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
@@ -142,15 +142,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0400
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0400
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_139',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0400', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0400',
         'test_exif_empty_2.jpg', image.PropertyKey.YCBCR_POSITIONING,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -159,15 +159,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0500
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0500
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_140',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0500', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0500',
         'test_exif_empty_2.jpg', image.PropertyKey.FACE_VERSION,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
@@ -176,15 +176,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0600
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0600
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_141',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0600', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0600',
         'test_exif_empty_2.jpg', image.PropertyKey.GPS_PROCESSING_METHOD,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -193,15 +193,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0700
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0700
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_142',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0700', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0700',
         'test_exif_empty_2.jpg', image.PropertyKey.DNG_VERSION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -210,15 +210,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0800
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0800
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_143',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0800', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0800',
         'test_exif_empty_2.jpg', image.PropertyKey.GPS_AREA_INFORMATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -227,15 +227,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0900
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0900
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_144',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0900', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_0900',
         'test_exif_empty_2.jpg', image.PropertyKey.LENS_MODEL,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -244,15 +244,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1000
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1000
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_145',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1000', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1000',
         'test_exif_empty_2.jpg', image.PropertyKey.LENS_SPECIFICATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -261,15 +261,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1100
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1100
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_146',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1100', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1100',
         'test_exif_empty_2.jpg', image.PropertyKey.GPS_DATE_STAMP,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -279,15 +279,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
 
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1200
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1200
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_147',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1200', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1200',
         'test_exif_empty_2.jpg', image.PropertyKey.FACE_RECT,
         (data?: string, error?: BusinessError) => {
           expect(data).assertEqual('default_exif_value');
@@ -296,15 +296,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1300
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1300
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_148',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1300', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1300',
         'test_exif_empty_2.jpg', image.PropertyKey.COMPONENTS_CONFIGURATION,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -313,15 +313,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1400
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1400
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_149',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1400', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1400',
         'test_exif_empty_2.jpg', image.PropertyKey.COLOR_SPACE,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);
@@ -330,15 +330,15 @@ export default function ImageGetImagePropertySyncEnumLightSource(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1500
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1500
      * @tc.desc   PhotoAccessHelper_Photo:LENS_SERIAL_NUMBER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM_150',
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1500', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync9(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC9_ENUM_static_1500',
         'test_exif_empty_2.jpg', image.PropertyKey.DATE_TIME,
         (data?: string, error?: BusinessError) => {
           expect(error!.code).assertEqual(7700101);

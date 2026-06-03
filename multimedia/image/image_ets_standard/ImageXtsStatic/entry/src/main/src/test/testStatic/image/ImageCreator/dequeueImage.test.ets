@@ -74,15 +74,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     });
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_promise_static_0100
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0100
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_001
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_promise_static_0100';
+    it('SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -98,15 +98,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_promise_static_0200
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0200
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_002
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_promise_static_0200';
+    it('SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_promise_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192
@@ -122,15 +122,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_callback_static_0100
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0100
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_003
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_callback_static_0100';
+    it('SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0100';
       const size: image.Size = {
         height: 8192,
         width: 8
@@ -146,15 +146,15 @@ export default function ImageCreatorDequeueImageTest(): void {
     })
 
     /**
-     * @tc.name   ImageCreator_dequeueImage_callback_static_0200
+     * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0200
      * @tc.number IMAGE_CREATOR_DEQUEUE_IMAGE_004
      * @tc.desc   ImageCreator_dequeueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ImageCreator_dequeueImage_callback_static_0200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'ImageCreator_dequeueImage_callback_static_0200';
+    it('SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_ImageCreator_dequeueImage_callback_static_0200';
       const size: image.Size = {
         height: 8,
         width: 8192

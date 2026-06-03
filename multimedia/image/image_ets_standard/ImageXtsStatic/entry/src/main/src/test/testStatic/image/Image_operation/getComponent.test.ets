@@ -180,15 +180,14 @@ export default function ImageGetComponentTest(): void {
     });
 
     /**
-     * @tc.name   Image_getComponent_promise_static_0100
-     * @tc.number IMAGE_GET_COMPONENT_001
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_promise_static_0100
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_promise_static_0100';
+    it('SUB_MEDIA_IMAGE_getComponent_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_promise_static_0100';
       try {
         await getComponentPromiseTest(done, testName);
       } catch (error) {
@@ -200,15 +199,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_abnormal_promise_static_0100
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0100
      * @tc.number IMAGE_GET_COMPONENT_002
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_promise_static_0100';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0100';
       const componentType = image.ComponentType.YUV_Y;
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
@@ -221,15 +220,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_abnormal_promise_static_0200
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0200
      * @tc.number IMAGE_GET_COMPONENT_003
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_promise_static_0200';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0200';
       const componentType = image.ComponentType.YUV_U;
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
@@ -242,15 +241,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_abnormal_promise_static_0300
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0300
      * @tc.number IMAGE_GET_COMPONENT_004
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_promise_static_0300', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_promise_static_0300';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0300';
       const componentType = image.ComponentType.YUV_V;
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
@@ -263,15 +262,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_callback_001 // 无callback用法
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_callback_static_0100
      * @tc.number IMAGE_GET_COMPONENT_005
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_callback_001';
+    it('SUB_MEDIA_IMAGE_getComponent_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_callback_static_0100';
       try {
         await getComponentCallbackTest(done, testName);
       } catch (error) {
@@ -283,15 +282,15 @@ export default function ImageGetComponentTest(): void {
     });
 
     /**
-     * @tc.name   Image_getComponent_abnormal_callback_001 // 无callback用法
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0100
      * @tc.number IMAGE_GET_COMPONENT_006
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_callback_001';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0100';
       const componentType = image.ComponentType.YUV_Y;
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);
@@ -304,15 +303,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_abnormal_callback_002
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0200
      * @tc.number IMAGE_GET_COMPONENT_007
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_callback_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_callback_002';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0200';
       const componentType = image.ComponentType.YUV_U;
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);
@@ -325,15 +324,15 @@ export default function ImageGetComponentTest(): void {
     })
 
     /**
-     * @tc.name   Image_getComponent_abnormal_callback_003
+     * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0300
      * @tc.number IMAGE_GET_COMPONENT_008
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Image_getComponent_abnormal_callback_003', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'Image_getComponent_abnormal_callback_003';
+    it('SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0300';
       const componentType = image.ComponentType.YUV_V;
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);

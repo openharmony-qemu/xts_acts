@@ -68,10 +68,10 @@ async function getImagePropertySync(done: () => void, testContext: Context, test
     console.info(TAG, testName, "bits_per_sample : " + propertyKeyName);
     callback(propertyKeyName, undefined);
     done();
-  } catch (err) {
-    let businessError: BusinessError = err as BusinessError;
-    console.error(TAG, testName, businessError!.message, businessError!.code);
-    callback(undefined, businessError);
+  } catch (error) {
+    let error1 = error as BusinessError;
+    console.error(TAG, testName, 'this is catch err', error1!.message, error1!.code);
+    callback(undefined, error1);
     done();
   }
 }
@@ -92,15 +92,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
     });
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_001
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_001
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0100
      * @tc.desc   PhotoAccessHelper_Photo:GPS_TIME_STAMP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_001', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_001', 'test_exif_v2.jpg', image.PropertyKey.GPS_TIME_STAMP,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0100', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0100', 'test_exif_v2.jpg', image.PropertyKey.GPS_TIME_STAMP,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('11:37:58.00');
@@ -112,15 +112,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_002
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_002
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0200
      * @tc.desc   PhotoAccessHelper_Photo:SCENE_POINTER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_002', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_002', 'test_exif_v2.jpg', image.PropertyKey.SCENE_POINTER,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0200', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0200', 'test_exif_v2.jpg', image.PropertyKey.SCENE_POINTER,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('256')
@@ -133,15 +133,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
 
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_003
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_003
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0300
      * @tc.desc   PhotoAccessHelper_Photo:CAMERA_OWNER_NAME
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_003', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_003', 'test_exif_v2.jpg', image.PropertyKey.CAMERA_OWNER_NAME,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0300', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0300', 'test_exif_v2.jpg', image.PropertyKey.CAMERA_OWNER_NAME,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('c.uec')
@@ -153,15 +153,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_004
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_004
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0400
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0400
      * @tc.desc   PhotoAccessHelper_Photo:BITS_PER_SAMPLE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_004', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_004', 'test_exif_v2.jpg', image.PropertyKey.BITS_PER_SAMPLE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0400', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0400', 'test_exif_v2.jpg', image.PropertyKey.BITS_PER_SAMPLE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('1, 1, 1')
@@ -173,15 +173,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_005
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_005
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0500
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0500
      * @tc.desc   PhotoAccessHelper_Photo:STANDARD_OUTPUT_SENSITIVITY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_005', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_005', 'test_exif_v2.jpg', image.PropertyKey.STANDARD_OUTPUT_SENSITIVITY,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0500', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0500', 'test_exif_v2.jpg', image.PropertyKey.STANDARD_OUTPUT_SENSITIVITY,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('5')
@@ -193,15 +193,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_006
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_006
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0600
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0600
      * @tc.desc   PhotoAccessHelper_Photo:OFFSET_TIME
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_006', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_006', 'test_exif_v2.jpg', image.PropertyKey.OFFSET_TIME,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0600', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0600', 'test_exif_v2.jpg', image.PropertyKey.OFFSET_TIME,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('2024:01:25')
@@ -213,15 +213,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_007
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_007
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0700
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0700
      * @tc.desc   PhotoAccessHelper_Photo:DATE_TIME_ORIGINAL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_007', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_007', 'test_exif_v2.jpg', image.PropertyKey.DATE_TIME_ORIGINAL,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0700', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0700', 'test_exif_v2.jpg', image.PropertyKey.DATE_TIME_ORIGINAL,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('2024:01:25 05:51:34')
@@ -233,15 +233,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_008
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_008
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0800
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0800
      * @tc.desc   PhotoAccessHelper_Photo:SCENE_BEACH_CONF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_008', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_008', 'test_exif_v2.jpg', image.PropertyKey.SCENE_BEACH_CONF,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0800', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0800', 'test_exif_v2.jpg', image.PropertyKey.SCENE_BEACH_CONF,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('6')
@@ -253,15 +253,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_009
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_009
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0900
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0900
      * @tc.desc   PhotoAccessHelper_Photo:WHITE_BALANCE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_009', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_009', 'test_exif_v2.jpg', image.PropertyKey.WHITE_BALANCE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0900', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_0900', 'test_exif_v2.jpg', image.PropertyKey.WHITE_BALANCE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('Manual white balance')
@@ -273,15 +273,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_010
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_010
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1000
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1000
      * @tc.desc   PhotoAccessHelper_Photo:COMPOSITE_IMAGE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_010', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_010', 'test_exif_v2.jpg', image.PropertyKey.COMPOSITE_IMAGE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1000', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1000', 'test_exif_v2.jpg', image.PropertyKey.COMPOSITE_IMAGE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('2')
@@ -293,15 +293,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_011
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_011
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1100
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1100
      * @tc.desc   PhotoAccessHelper_Photo:GPS_SATELLITES
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_011', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_011', 'test_exif_v2.jpg', image.PropertyKey.GPS_SATELLITES,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1100', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1100', 'test_exif_v2.jpg', image.PropertyKey.GPS_SATELLITES,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('xxx')
@@ -314,15 +314,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_012
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_012
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1200
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1200
      * @tc.desc   PhotoAccessHelper_Photo:SOURCE_EXPOSURE_TIMES_OF_COMPOSITE_IMAGE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_012', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_012', 'test_exif_v2.jpg', image.PropertyKey.SOURCE_EXPOSURE_TIMES_OF_COMPOSITE_IMAGE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1200', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1200', 'test_exif_v2.jpg', image.PropertyKey.SOURCE_EXPOSURE_TIMES_OF_COMPOSITE_IMAGE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('xxxw')
@@ -335,15 +335,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_013
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_013
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1300
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1300
      * @tc.desc   PhotoAccessHelper_Photo:CFA_PATTERN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_013', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_013', 'test_exif_v2.jpg', image.PropertyKey.CFA_PATTERN,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1300', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1300', 'test_exif_v2.jpg', image.PropertyKey.CFA_PATTERN,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('1 bytes undefined data')
@@ -356,15 +356,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_014
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_014
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1400
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1400
      * @tc.desc   PhotoAccessHelper_Photo:SCENE_SNOW_CONF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_014', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_014', 'test_exif_v2.jpg', image.PropertyKey.SCENE_SNOW_CONF,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1400', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1400', 'test_exif_v2.jpg', image.PropertyKey.SCENE_SNOW_CONF,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('7')
@@ -377,15 +377,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_015
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_015
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1500
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1500
      * @tc.desc   PhotoAccessHelper_Photo:APERTURE_VALUE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_015', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_015', 'test_exif_v2.jpg', image.PropertyKey.APERTURE_VALUE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1500', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1500', 'test_exif_v2.jpg', image.PropertyKey.APERTURE_VALUE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('4.00 EV (f/4.0)')
@@ -397,15 +397,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_016
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_016
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1600
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1600
      * @tc.desc   PhotoAccessHelper_Photo:GIF_LOOP_COUNT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_016', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_016', 'test61.gif', image.PropertyKey.GIF_LOOP_COUNT,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1600', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1600', 'test61.gif', image.PropertyKey.GIF_LOOP_COUNT,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('0')
@@ -417,15 +417,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_017
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_017
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1700
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1700
      * @tc.desc   PhotoAccessHelper_Photo:SCENE_CAPTURE_TYPE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_017', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_017', 'test_exif_v2.jpg', image.PropertyKey.SCENE_CAPTURE_TYPE,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1700', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1700', 'test_exif_v2.jpg', image.PropertyKey.SCENE_CAPTURE_TYPE,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('Standard')
@@ -437,15 +437,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_018
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_018
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1800
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1800
      * @tc.desc   PhotoAccessHelper_Photo:GPS_DOP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_018', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_018', 'test_exif_v2.jpg', image.PropertyKey.GPS_DOP,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1800', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1800', 'test_exif_v2.jpg', image.PropertyKey.GPS_DOP,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('182')
@@ -457,15 +457,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_019
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_019
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1900
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1900
      * @tc.desc   PhotoAccessHelper_Photo:JPEG_INTERCHANGE_FORMAT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_019', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_019', 'test_exif_v2.jpg', image.PropertyKey.JPEG_INTERCHANGE_FORMAT,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1900', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_1900', 'test_exif_v2.jpg', image.PropertyKey.JPEG_INTERCHANGE_FORMAT,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('2798')
@@ -477,15 +477,15 @@ export default function ImageGetImagePropertySyncEnumScenePointer(): void {
         })
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_020
-     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_020
+     * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_2000
+     * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_2000
      * @tc.desc   PhotoAccessHelper_Photo:SCENE_STAGE_CONF
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_020', Level.LEVEL1, async (done: () => void) => {
-      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_020', 'test_exif_v2.jpg', image.PropertyKey.SCENE_STAGE_CONF,
+    it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_2000', Level.LEVEL1, async (done: () => void) => {
+      getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM2A_static_2000', 'test_exif_v2.jpg', image.PropertyKey.SCENE_STAGE_CONF,
         (data?: string, error?: BusinessError) => {
           if (data != undefined) {
             expect(data).assertEqual('3')

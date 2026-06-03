@@ -66,10 +66,10 @@ async function getImagePropertySync(done: () => void, testContext: Context, test
     console.info(TAG, testName, "bits_per_sample : " + propertyKeyName);
     callback(propertyKeyName, undefined);
     done();
-  } catch (err) {
-    let businessError: BusinessError = err as BusinessError;
+  } catch (error) {
+    let error1 = error as BusinessError;
     expect().assertFail();
-    console.error(TAG, testName, businessError!.message, businessError!.code);
+    console.error(TAG, testName, error1!.message, error1!.code);
     done();
   }
 }
