@@ -736,9 +736,8 @@ export default function statisticsHasNetTest() {
                     hilog.info(domain, tag, '%{public}s', `${caseName} getUidTxBytes success ${JSON.stringify(stats)}`);
                     ExpectFail();
                 } catch (error) {
-                    let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectTrue(err.code === 201);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+                    ExpectTrue(error.code === 201);
                 }
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
