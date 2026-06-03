@@ -2786,7 +2786,7 @@ export default function btManagerError003Test() {
                 expect().assertFail();
             } catch (err) {
                 console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message + typeof err.code);
-                if (err.code == 801) {
+                if (err.code === 801) {
                     console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
