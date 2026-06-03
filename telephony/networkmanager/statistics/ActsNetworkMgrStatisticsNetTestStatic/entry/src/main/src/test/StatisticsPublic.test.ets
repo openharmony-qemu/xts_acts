@@ -554,7 +554,7 @@ export default function statisticsHasNetTest() {
                     done();
                 });
             }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -638,7 +638,7 @@ export default function statisticsHasNetTest() {
                     done();
                 });
             } catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -711,7 +711,7 @@ export default function statisticsHasNetTest() {
                     done();
                 });
             } catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -786,7 +786,7 @@ export default function statisticsHasNetTest() {
                     done();
                 });
             } catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -859,7 +859,7 @@ export default function statisticsHasNetTest() {
                     done();
                 });
             } catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
