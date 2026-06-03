@@ -31,25 +31,16 @@ async function getFd(fileName: string) {
   fdNumber = fileInfo.fd
 }
 
-async function getImageSource(path: string): Promise<image.ImageSource> {
-  await getFd(path);
-  const imageSourceApi = image.createImageSource(fdNumber);
+function getImageSource(path: string): image.ImageSource {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let filePath = `file://${testContext.filesDir}/${path}`;
+  const imageSourceApi = image.createImageSource(filePath);
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
   return imageSourceApi;
 }
 
 async function createPixelMapFromImage(pathUri: string, sourceDensity: number = 98): Promise<image.PixelMap> {
-  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(30000);
-  let path = `file://${testContext.filesDir}/${pathUri}`;
-  const fd = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-  let readLength = await fs.read(fd.fd, array);
-  await fs.close(fd);
-  console.info(TAG, `readLength: ${readLength}`);
-  let ops: image.SourceOptions = {
-    sourceDensity: sourceDensity,
-  };
-  let imageSource: image.ImageSource = image.createImageSource(array, ops);
+  let imageSource: image.ImageSource = getImageSource(pathUri);
   let pixelmap = await imageSource.createPixelMap();
   await imageSource.release();
   return pixelmap;
