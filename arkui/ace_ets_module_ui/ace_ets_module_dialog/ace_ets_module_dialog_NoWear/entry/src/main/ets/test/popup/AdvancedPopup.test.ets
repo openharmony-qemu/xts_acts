@@ -30,7 +30,7 @@
  	         console.info('get AdvancedPopupTest state pages:' + JSON.stringify(pages));
  	         if (!('AdvancedPopup' == pages.name)) {
  	           console.info('get AdvancedPopupTest pages.name:' + JSON.stringify(pages.name));
- 	           let result = await router.pushUrl(options);
+ 	           let result = await router.push(options);
  	           await Utils.sleep(2500);
  	           console.info('push AdvancedPopupTest page result:' + JSON.stringify(result));
  	         }
@@ -52,7 +52,7 @@
  	     it('AdvancedPopupTest_001', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_001 START')
- 	       let driver: Driver = Driver.create();
+ 	       let driver: Driver = await Driver.create();
  	       let popup = await driver.findComponent(ON.text('message1'));
  	       await Utils.sleep(200);
  	       expect(popup != null).assertEqual(true)
@@ -70,7 +70,7 @@
  	     it('AdvancedPopupTest_002', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_002 START')
- 	       let driver: Driver = Driver.create();
+ 	       let driver: Driver = await Driver.create();
  	       let popup = await driver.findComponent(ON.text('message2'));
  	       await Utils.sleep(200);
  	       expect(popup != null).assertEqual(true)

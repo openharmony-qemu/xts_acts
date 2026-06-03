@@ -63,7 +63,7 @@ export default function showInSubWindowValueTest() {
      */
     it('showInSubWindow_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showInSubWindow_value_0002 START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -87,7 +87,7 @@ export default function showInSubWindowValueTest() {
       let resource = getInspectorByKey('resource');
       let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
       console.log('select_showInSubWindow_0003 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -115,7 +115,7 @@ export default function showInSubWindowValueTest() {
       let resource = getInspectorByKey('resource');
       let showInSubWindowValue = JSON.stringify(JSON.parse(resource).$attrs.content);
       console.log('select_showInSubWindow_0004 sys.string.ohos_id_expand_display为' + showInSubWindowValue);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showInSubWindowButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);

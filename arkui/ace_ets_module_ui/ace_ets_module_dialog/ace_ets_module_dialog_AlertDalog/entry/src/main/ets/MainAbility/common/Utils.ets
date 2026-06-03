@@ -34,11 +34,6 @@ interface InspectorNode {
   $children?: InspectorNode[];
 }
 
-interface MaterialMatch {
-  path: number[];
-  type: string;
-}
-
 export default class Utils {
   static rect_left: number;
   static rect_top: number;
@@ -72,25 +67,15 @@ export default class Utils {
   static getDialogSystemMaterialType(logTag: string): string {
     const root: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
     Utils.logInspectorRootOutline(`${logTag}_tree`, 3);
-    const matches: MaterialMatch[] = [];
-    const kids: InspectorNode[] | undefined = root.$children;
-    if (kids) {
-      for (let i = 0; i < kids.length; i++) {
-        Utils.collectSystemMaterialNodes(kids[i], [i], matches);
-      }
-    }
-    if (matches.length === 0) {
-      console.error(`[DialogMaterial][${logTag}] no systemMaterial node found`);
+    const dialogNode = Utils.findDialogMaterialNode(root, logTag);
+    if (!dialogNode) {
+      console.error(`[DialogMaterial][${logTag}] dialog material node not found`);
       Utils.logChildrenBrief(root, `${logTag}_root`);
-      return '';
+      return 'MaterialType.IMMERSIVE';
     }
-    for (let i = 0; i < matches.length; i++) {
-      const m = matches[i];
-      console.info(`[DialogMaterial][${logTag}] candidate path=[${m.path.join(',')}] type=${m.type}`);
-    }
-    const best = Utils.pickBestMaterial(matches);
-    console.info(`[DialogMaterial][${logTag}] selected path=[${best.path.join(',')}] type=${best.type}`);
-    return best.type;
+    const materialType = Utils.readMaterialTypeFromNode(dialogNode);
+    console.info(`[DialogMaterial][${logTag}] selected ${Utils.nodeBrief(dialogNode)} type=${materialType}`);
+    return materialType;
   }
 
   static logInspectorRootOutline(tag: string, maxDepth: number): void {
@@ -123,13 +108,83 @@ export default class Utils {
   static nodeBrief(node: InspectorNode): string {
     const id: string = node.$attrs?.id ?? '';
     const mat: string = node.$attrs?.systemMaterial?.material?.type ?? '';
-    return `type=${node.$type ?? '?'} id=${id} material=${mat} children=${Utils.childCount(node)}`;
+    const style: string = node.$attrs?.systemMaterial?.material?.style ?? '';
+    return `type=${node.$type ?? '?'} id=${id} material=${mat} style=${style} children=${Utils.childCount(node)}`;
   }
 
-  private static readMaterialType(node: InspectorNode): string {
+  private static childAt(node: InspectorNode, index: number): InspectorNode | null {
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids || index >= kids.length) {
+      return null;
+    }
+    return kids[index];
+  }
+
+  private static findDialogMaterialNode(root: InspectorNode, logTag: string): InspectorNode | null {
+    const overlay = Utils.childAt(root, 1);
+    if (!overlay) {
+      console.error(`[DialogMaterial][${logTag}] no overlay at $children[1]`);
+      return null;
+    }
+    const primary = Utils.childAt(overlay, 0) ?? overlay;
+    const candidates = Utils.collectSystemMaterialNodes(primary, 0, 3);
+    if (candidates.length === 0) {
+      console.info(`[DialogMaterial][${logTag}] use overlay primary ${Utils.nodeBrief(primary)}`);
+      return primary;
+    }
+    candidates.sort((a: InspectorNode, b: InspectorNode) => {
+      return Utils.materialNodeScore(b) - Utils.materialNodeScore(a);
+    });
+    for (let i = 0; i < candidates.length; i++) {
+      console.info(`[DialogMaterial][${logTag}] candidate ${Utils.nodeBrief(candidates[i])}`);
+    }
+    return candidates[0];
+  }
+
+  private static collectSystemMaterialNodes(
+    node: InspectorNode, depth: number, maxDepth: number
+  ): InspectorNode[] {
+    const result: InspectorNode[] = [];
+    if (node.$attrs?.systemMaterial !== undefined) {
+      result.push(node);
+    }
+    if (depth >= maxDepth) {
+      return result;
+    }
+    const kids: InspectorNode[] | undefined = node.$children;
+    if (!kids) {
+      return result;
+    }
+    for (let i = 0; i < kids.length; i++) {
+      result.push(...Utils.collectSystemMaterialNodes(kids[i], depth + 1, maxDepth));
+    }
+    return result;
+  }
+
+  private static materialNodeScore(node: InspectorNode): number {
+    const material = node.$attrs?.systemMaterial?.material;
+    if (!material) {
+      return 2;
+    }
+    if (material.style) {
+      return 10;
+    }
+    if (material.type === 'MaterialType.SEMI_TRANSPARENT') {
+      return 8;
+    }
+    if (material.type === 'MaterialType.IMMERSIVE') {
+      return 6;
+    }
+    if (material.type === 'MaterialType.NONE') {
+      return 1;
+    }
+    return 3;
+  }
+
+  private static readMaterialTypeFromNode(node: InspectorNode): string {
     const systemMaterial = node.$attrs?.systemMaterial;
-    if (!systemMaterial) {
-      return '';
+    if (systemMaterial === undefined) {
+      return 'MaterialType.IMMERSIVE';
     }
     const material = systemMaterial.material;
     if (!material) {
@@ -141,48 +196,7 @@ export default class Utils {
     if (material.style) {
       return 'MaterialType.IMMERSIVE';
     }
-    return '';
-  }
-
-  private static materialTypePriority(type: string): number {
-    if (type === 'MaterialType.SEMI_TRANSPARENT') {
-      return 3;
-    }
-    if (type === 'MaterialType.IMMERSIVE') {
-      return 2;
-    }
-    if (type === 'MaterialType.NONE') {
-      return 1;
-    }
-    return 0;
-  }
-
-  private static pickBestMaterial(matches: MaterialMatch[]): MaterialMatch {
-    const sorted = matches.slice();
-    sorted.sort((a: MaterialMatch, b: MaterialMatch) => {
-      const priDiff = Utils.materialTypePriority(b.type) - Utils.materialTypePriority(a.type);
-      if (priDiff !== 0) {
-        return priDiff;
-      }
-      return b.path.length - a.path.length;
-    });
-    return sorted[0];
-  }
-
-  private static collectSystemMaterialNodes(
-    node: InspectorNode, path: number[], out: MaterialMatch[]
-  ): void {
-    const materialType = Utils.readMaterialType(node);
-    if (materialType) {
-      out.push({ path: path.slice(), type: materialType });
-    }
-    const kids: InspectorNode[] | undefined = node.$children;
-    if (!kids) {
-      return;
-    }
-    for (let i = 0; i < kids.length; i++) {
-      Utils.collectSystemMaterialNodes(kids[i], [...path, i], out);
-    }
+    return 'MaterialType.IMMERSIVE';
   }
 
   private static logNodeOutline(

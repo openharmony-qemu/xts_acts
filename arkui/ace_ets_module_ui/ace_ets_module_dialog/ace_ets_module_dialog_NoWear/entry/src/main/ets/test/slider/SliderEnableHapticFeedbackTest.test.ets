@@ -53,7 +53,7 @@ export default function SliderEnableHapticFeedbackTest() {
     it('SliderAddEnableHapticFeedbackApi_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_001] START');
       await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_true'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -77,7 +77,7 @@ export default function SliderEnableHapticFeedbackTest() {
     it('SliderAddEnableHapticFeedbackApi_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_002] START');
       await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_false'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -101,7 +101,7 @@ export default function SliderEnableHapticFeedbackTest() {
     it('SliderAddEnableHapticFeedbackApi_003', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_003] START');
       await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_undefied'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -125,7 +125,7 @@ export default function SliderEnableHapticFeedbackTest() {
     it('SliderAddEnableHapticFeedbackApi_004', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_004] START');
       await Utils.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_null'));
       await trueBtn.click();
       await Utils.sleep(1000);

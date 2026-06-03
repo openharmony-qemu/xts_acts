@@ -47,6 +47,20 @@ export default function subwindowDialog() {
       done();
     });
 
+    afterEach(async (done: Function) => {
+      try {
+        let driver = await Driver.create();
+        let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
+        if (buttonCloseDialog) {
+          await buttonCloseDialog.click();
+          await CommonFunc.sleep(500);
+        }
+      } catch (err) {
+        console.warn('subwindowDialog afterEach cleanup: ' + err);
+      }
+      done();
+    });
+
     /**
      * @tc.number    SUB_ACE_subwindowDialog_0100
      * @tc.name      subwindowDialog_0100
@@ -123,13 +137,17 @@ export default function subwindowDialog() {
       expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
       
       let buttonSubwindowMenu = await driver.findComponent(ON.id('subwindowDialogLongClickMenu'));
-      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
 
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
 
-      await buttonCloseDialog.click();
+      await driver.click(Math.round(globalThis.winLeft + vp2px(100)), Math.round(globalThis.winTop + vp2px(100)));
       await CommonFunc.sleep(1000);
+      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
+      if (buttonCloseDialog) {
+        await buttonCloseDialog.click();
+        await CommonFunc.sleep(1000);
+      }
       console.info('[subwindowDialog_0200] END');
       done();
     });

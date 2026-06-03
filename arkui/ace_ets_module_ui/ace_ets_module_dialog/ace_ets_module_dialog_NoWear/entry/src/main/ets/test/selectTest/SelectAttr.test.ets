@@ -57,7 +57,7 @@ export default function SelectAttr() {
       console.info('[SelectAttr_001] START');
       await Utils.sleep(1000);
 
-      let driver= Driver.create();
+      let driver = await Driver.create();
       await Utils.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('SelectAttr_Select'));
       await btn1.click()

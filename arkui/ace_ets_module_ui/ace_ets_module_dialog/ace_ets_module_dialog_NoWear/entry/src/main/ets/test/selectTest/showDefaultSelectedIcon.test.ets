@@ -46,7 +46,7 @@ export default function showDefaultSelectedIconTest() {
      */
     it('showDefaultSelectedIcon_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0001 START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -67,7 +67,7 @@ export default function showDefaultSelectedIconTest() {
      */
     it('showDefaultSelectedIcon_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0002 START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -88,7 +88,7 @@ export default function showDefaultSelectedIconTest() {
      */
     it('showDefaultSelectedIcon_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0003 START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
@@ -109,7 +109,7 @@ export default function showDefaultSelectedIconTest() {
      */
     it('showDefaultSelectedIcon_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0004 START');
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let button = await driver.findComponent(ON.id('showDefaultSelectedIconButton'));
       await button.click();
       await Utils.sleep(SLEEP_TIME);
