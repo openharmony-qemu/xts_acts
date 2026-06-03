@@ -243,7 +243,7 @@ import ImageHeifsTest from './image/ImageHeifMetadataTest.test';
 import SendImageTest from './image/SendImageTest.test';
 import MetaDataSetBlobTest from './image/MetaDataSetBlobTest.test';
 import ImageSupplementTest from './image/ImageSupplementTest.test';
-
+import CreatePixelMapSuppSec from './image/CreatePixelMapSec.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -454,6 +454,7 @@ export default function testsuite() {
  	SendImageTest();
   ImageGammaSupp()
   CreatePixelMapSupp();
+  CreatePixelMapSuppSec();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
   ImageMetadataTest();
