@@ -3693,17 +3693,19 @@ export default function TextPicker() {
 
       for (let item of cases) {
         let isInvalidSingleCase = !item.uri || !item.config;
+        let testResult: string = '',
 
         try {
-          let singleDialogPromise = photoAccessHelper
+          photoAccessHelper
             .getPhotoAccessHelper(context)
-            .showSingleAssetCreationDialogEx(item.uri, item.config, item.displayed);
+            .showSingleAssetCreationDialogEx(item.uri, item.config, item.displayed)
+            .then((uri)=>{
+              testResult = uri;
+            })
 
           if (!isInvalidSingleCase) {
             await driveFn();
           }
-
-          let testResult = await singleDialogPromise;
 
           console.info('testPicker63 showSingleAssetCreationDialogEx success');
           expect(testResult).not().assertUndefined();
@@ -4336,9 +4338,12 @@ export default function TextPicker() {
         for (let i = 0; i < cases.length; i++) {
           let item = cases[i];
           let isInvalidCase = item === null || item === undefined;
-
+          let result: string = '';
           try {
-            let createPromise = phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption);
+            phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption)
+            .then((uri)=>{
+              result = uri;
+            })
 
             if (!isInvalidCase) {
               await driveFn().catch((err: Error) => {
@@ -4346,7 +4351,6 @@ export default function TextPicker() {
               });
             }
 
-            let result = await createPromise;
             console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
 
             expect(result).not().assertUndefined();
