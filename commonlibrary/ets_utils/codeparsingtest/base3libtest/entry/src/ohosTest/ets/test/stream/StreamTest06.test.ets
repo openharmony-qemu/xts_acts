@@ -988,7 +988,11 @@ export default function StreamTest_06() {
           expect(options.encoding).assertEqual(encoding);
           expect().assertFail()
         } catch (err) {
-          expect(err.code).assertEqual(401);
+          if (encoding === 'ascii') {
+            expect(err.code).assertEqual("401");
+          } else {
+            expect(err.code).assertEqual(401);
+          }
         }
       });
     });
