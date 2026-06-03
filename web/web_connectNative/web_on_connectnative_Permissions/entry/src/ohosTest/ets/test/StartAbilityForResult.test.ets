@@ -61,16 +61,16 @@ export default function startAbilityForResultPermissionTest() {
         try {
           await context.startAbilityForResult(want).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(data.resultCode).assertEqual(0);
             done();
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(201);
             done();
           });
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -103,16 +103,16 @@ export default function startAbilityForResultPermissionTest() {
         try {
           await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(data.resultCode).assertEqual(0);
             done();
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(201);
             done();
           });
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -241,16 +241,17 @@ export default function startAbilityForResultPermissionTest() {
           parameters: { 'callType': 'forResult' }
         };
 
+        let errorCode: number = -1;
         try {
           context.startAbilityForResult(want, null);
+          errorCode = 0;
           hilog.info(0x0000, 'testTag', `${tcNumber} API handled null gracefully`);
-          expect(true).assertTrue();
-          done();
         } catch (err) {
+          errorCode = err.code;
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
-          done();
         }
+        expect(errorCode).assertEqual(0);
+        done();
       });
 
     /**
@@ -275,16 +276,17 @@ export default function startAbilityForResultPermissionTest() {
           parameters: { 'callType': 'forResult' }
         };
 
+        let errorCode: number = -1;
         try {
           context.startAbilityForResult(want, undefined);
+          errorCode = 0;
           hilog.info(0x0000, 'testTag', `${tcNumber} API handled undefined gracefully`);
-          expect(true).assertTrue();
-          done();
         } catch (err) {
+          errorCode = err.code;
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
-          done();
         }
+        expect(errorCode).assertEqual(0);
+        done();
       });
 
     /**
@@ -316,16 +318,16 @@ export default function startAbilityForResultPermissionTest() {
         try {
           await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(true).assertTrue();
+            expect(data.resultCode).assertEqual(0);
             done();
           }).catch((err: BusinessError) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect(true).assertTrue();
+            expect(err.code).assertEqual(201);
             done();
           });
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(201);
           done();
         }
       });

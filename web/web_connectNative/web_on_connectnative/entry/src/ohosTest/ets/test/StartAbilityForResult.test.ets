@@ -240,16 +240,17 @@ export default function startAbilityForResultTest() {
           parameters: { 'callType': 'forResult' }
         };
 
+        let errorCode: number = -1;
         try {
           context.startAbilityForResult(want, null);
+          errorCode = 0;
           hilog.info(0x0000, 'testTag', `${tcNumber} API handled null gracefully`);
-          expect(true).assertTrue();
-          done();
         } catch (err) {
+          errorCode = err.code;
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
-          done();
         }
+        expect(errorCode).assertEqual(0);
+        done();
       });
 
     /**
@@ -273,16 +274,17 @@ export default function startAbilityForResultTest() {
           parameters: { 'callType': 'forResult' }
         };
 
+        let errorCode: number = -1;
         try {
           context.startAbilityForResult(want, undefined);
+          errorCode = 0;
           hilog.info(0x0000, 'testTag', `${tcNumber} API handled undefined gracefully`);
-          expect(true).assertTrue();
-          done();
         } catch (err) {
+          errorCode = err.code;
           hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(true).assertTrue();
-          done();
         }
+        expect(errorCode).assertEqual(0);
+        done();
       });
 
     /**
