@@ -231,6 +231,8 @@ static void OnEventReceive4(ArkUI_NodeEvent *event)
             OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
         
         ArkUI_NodeHandle pageNode = OH_ArkUI_NodeUtils_GetCurrentPageRootNode(node);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+            "kkk OnEventReceive4 result2=%{public}d", OH_ArkUI_NodeUtils_GetNodeType(pageNode));
         if (OH_ArkUI_NodeUtils_GetNodeType(pageNode) == NUMBER_1006) {
             ArkUI_NumberValue background_color_value[] = {{.u32 = COLOR_GREEN}};
             ArkUI_AttributeItem background_color_item = {background_color_value,
@@ -269,7 +271,7 @@ napi_value CustomPropertyTest::testGetCurrentPageRootNode004(napi_env env, napi_
     ArkUI_NodeHandle text = nodeAPI->createNode(ARKUI_NODE_TEXT);
     id_item.string = "7";
     nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &id_item);
-    ArkUI_AttributeItem textId = {.string = "onClick"};
+    ArkUI_AttributeItem textId = {.string = "onClick4"};
     nodeAPI->setAttribute(text, NODE_ID, &textId);
     nodeAPI->addChild(column, text);
     ArkUI_NodeHandle text1 = nodeAPI->createNode(ARKUI_NODE_TEXT);

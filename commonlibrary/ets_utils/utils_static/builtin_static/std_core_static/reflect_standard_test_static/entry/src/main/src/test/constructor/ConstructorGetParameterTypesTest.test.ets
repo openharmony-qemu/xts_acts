@@ -142,7 +142,7 @@ export default function ConstructorGetParameterTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0100
      * @tc.name testConstructorGetParameterTypes001
-     * @tc.desc Verify ConstructorGetParameterTypes case 001: getParameterTypes()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorGetParameterTypes case 001: Class.from<MyClass001>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,27 +154,17 @@ export default function ConstructorGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
     });
 
+    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0200
      * @tc.name testConstructorGetParameterTypes002
-     * @tc.desc Verify ConstructorGetParameterTypes case 002: parameters
+     * @tc.desc Verify ConstructorGetParameterTypes case 002: Class.from<MyClass003>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testConstructorGetParameterTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass001>().getConstructors()[0].getParameterTypes().length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0300
-     * @tc.name testConstructorGetParameterTypes003
-     * @tc.desc Verify ConstructorGetParameterTypes case 003: get multiple parameters constructor parameters type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -184,14 +174,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0400
-     * @tc.name testConstructorGetParameterTypes004
-     * @tc.desc Verify ConstructorGetParameterTypes case 004: get no parameters constructor parameters type array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0300
+     * @tc.name testConstructorGetParameterTypes003
+     * @tc.desc Verify ConstructorGetParameterTypes case 003: Class.from<MyClass004>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -199,14 +189,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0500
-     * @tc.name testConstructorGetParameterTypes005
-     * @tc.desc Verify ConstructorGetParameterTypes case 005: get parameters constructor parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0400
+     * @tc.name testConstructorGetParameterTypes004
+     * @tc.desc Verify ConstructorGetParameterTypes case 004: Class.from<MyClass005>(), getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -215,14 +205,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0600
-     * @tc.name testConstructorGetParameterTypes006
-     * @tc.desc Verify ConstructorGetParameterTypes case 006: verify parameters type get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0500
+     * @tc.name testConstructorGetParameterTypes005
+     * @tc.desc Verify ConstructorGetParameterTypes case 005: Class.from<MyClass006>(), getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass006>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -234,14 +224,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0700
-     * @tc.name testConstructorGetParameterTypes007
-     * @tc.desc Verify ConstructorGetParameterTypes case 007: get parameters constructor parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0600
+     * @tc.name testConstructorGetParameterTypes006
+     * @tc.desc Verify ConstructorGetParameterTypes case 006: Class.from<MyClass007>(), getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -251,14 +241,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0800
-     * @tc.name testConstructorGetParameterTypes008
-     * @tc.desc Verify ConstructorGetParameterTypes case 008: get generic parameters constructor parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0700
+     * @tc.name testConstructorGetParameterTypes007
+     * @tc.desc Verify ConstructorGetParameterTypes case 007: Class.from<MyClass008>(), getName returns "std.core.Map", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -268,14 +258,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0900
-     * @tc.name testConstructorGetParameterTypes009
-     * @tc.desc Verify ConstructorGetParameterTypes case 009: get object type parameters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0800
+     * @tc.name testConstructorGetParameterTypes008
+     * @tc.desc Verify ConstructorGetParameterTypes case 008: Class.from<MyClass009>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass009>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -283,14 +273,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1000
-     * @tc.name testConstructorGetParameterTypes010
-     * @tc.desc Verify ConstructorGetParameterTypes case 010: verify return type is FixedArray<Class>
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_0900
+     * @tc.name testConstructorGetParameterTypes009
+     * @tc.desc Verify ConstructorGetParameterTypes case 009: Class.from<MyClass001>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -300,14 +290,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1100
-     * @tc.name testConstructorGetParameterTypes011
-     * @tc.desc Verify ConstructorGetParameterTypes case 011: verify return array Class object using
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1000
+     * @tc.name testConstructorGetParameterTypes010
+     * @tc.desc Verify ConstructorGetParameterTypes case 010: Class.from<MyClass001>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
       expect(paramTypes[0].getName()).assertEqual("std.core.String");
@@ -319,28 +309,28 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1200
-     * @tc.name testConstructorGetParameterTypes012
-     * @tc.desc Verify ConstructorGetParameterTypes case 012: verify return FixedArray is array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1100
+     * @tc.name testConstructorGetParameterTypes011
+     * @tc.desc Verify ConstructorGetParameterTypes case 011: Class.from<MyClass001>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1300
-     * @tc.name testConstructorGetParameterTypes013
-     * @tc.desc Verify ConstructorGetParameterTypes case 013: verify type is parameters get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1200
+     * @tc.name testConstructorGetParameterTypes012
+     * @tc.desc Verify ConstructorGetParameterTypes case 012: Class.from<MyClass013>(), getName returns "i8", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -357,14 +347,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1400
-     * @tc.name testConstructorGetParameterTypes014
-     * @tc.desc Verify ConstructorGetParameterTypes case 014: verify parameters constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1300
+     * @tc.name testConstructorGetParameterTypes013
+     * @tc.desc Verify ConstructorGetParameterTypes case 013: Class.from<MyClass014>(), getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass014>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
@@ -375,42 +365,42 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1500
-     * @tc.name testConstructorGetParameterTypes015
-     * @tc.desc Verify ConstructorGetParameterTypes case 015: verify different constructor parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1400
+     * @tc.name testConstructorGetParameterTypes014
+     * @tc.desc Verify ConstructorGetParameterTypes case 014: Class.from<MyClass015>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass015>().getConstructors();
       expect(constructors.length).assertEqual(1);
       expect(constructors[0].getParameterTypes().length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1600
-     * @tc.name testConstructorGetParameterTypes016
-     * @tc.desc Verify ConstructorGetParameterTypes case 016: getParameterTypes()method not throw exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1500
+     * @tc.name testConstructorGetParameterTypes015
+     * @tc.desc Verify ConstructorGetParameterTypes case 015: Class.from<MyClass004>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
       expect(paramTypes.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1700
-     * @tc.name testConstructorGetParameterTypes017
-     * @tc.desc Verify ConstructorGetParameterTypes case 017: verify modifier constructor get parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1600
+     * @tc.name testConstructorGetParameterTypes016
+     * @tc.desc Verify ConstructorGetParameterTypes case 016: Class.from<MyClass017>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
       let constructors = cls.getConstructors();
       expect(constructors.length).assertEqual(1);
@@ -418,14 +408,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1800
-     * @tc.name testConstructorGetParameterTypes018
-     * @tc.desc Verify ConstructorGetParameterTypes case 018: verify different type constructor getParameterTypes()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1700
+     * @tc.name testConstructorGetParameterTypes017
+     * @tc.desc Verify ConstructorGetParameterTypes case 017: Class.from<AbstractClass018>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass018>().getConstructors()[0];
       let c2 = Class.from<FinalClass018>().getConstructors()[0];
       let p1 = c1.getParameterTypes();
@@ -440,14 +430,14 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1900
-     * @tc.name testConstructorGetParameterTypes019
-     * @tc.desc Verify ConstructorGetParameterTypes case 019: verify inheritance constructor parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1800
+     * @tc.name testConstructorGetParameterTypes018
+     * @tc.desc Verify ConstructorGetParameterTypes case 018: Class.from<ParentClass019>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass019>().getConstructors()[0];
       let childCtor = Class.from<ChildClass019>().getConstructors()[0];
       let parentParams = parentCtor.getParameterTypes();
@@ -460,28 +450,28 @@ export default function ConstructorGetParameterTypesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_2000
-     * @tc.name testConstructorGetParameterTypes020
-     * @tc.desc Verify ConstructorGetParameterTypes case 020: verify constructor getParameterTypes()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1900
+     * @tc.name testConstructorGetParameterTypes019
+     * @tc.desc Verify ConstructorGetParameterTypes case 019: Class.from<MyClass020>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass020>().getConstructors();
       expect(constructors.length).assertEqual(1);
       expect(constructors[0].getParameterTypes().length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_2100
-     * @tc.name testConstructorGetParameterTypes021
-     * @tc.desc Verify ConstructorGetParameterTypes case 021: verify getParameterTypes() and getParametersNum()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_2000
+     * @tc.name testConstructorGetParameterTypes020
+     * @tc.desc Verify ConstructorGetParameterTypes case 020: Class.from<MyClass021>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetParameterTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetParameterTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass021>().getConstructors()[0];
       let paramTypes = ctorRef.getParameterTypes();
       let paramNum = ctorRef.getParametersNum();

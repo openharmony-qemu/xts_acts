@@ -78,6 +78,8 @@ import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
 import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
 import appStorageV2NullUndefinedTest from './appstoragev2/AppStorageV2NullUndefinedTest.test';
 import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2NullUndefinedTest.test';
+import CustomEnvTest from './CustomEnvTest/CustomEnvTest.test';
+
 export default function testsuite() {
 	ArrayLikeStringTest();
     Env001();
@@ -143,4 +145,5 @@ export default function testsuite() {
     appStorageV2NullUndefinedTest();
     persistenceV2NotifyOnErrorTest();
     persistenceV2TypeMismatchTest();
+    CustomEnvTest();
 }

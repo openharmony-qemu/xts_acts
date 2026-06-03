@@ -19,11 +19,13 @@ import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
 import webview from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct setBlanklessLoadingWithParamsTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   newController: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -67,6 +69,13 @@ struct setBlanklessLoadingWithParamsTest {
     }
   }
 
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
+
   build() {
     Column() {
       Row() {
@@ -83,7 +92,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams001';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -143,7 +152,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams002';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -184,7 +193,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams003';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -311,7 +320,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams008';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -382,7 +391,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams009';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -422,7 +431,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams010';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -459,7 +468,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams011';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -499,7 +508,7 @@ struct setBlanklessLoadingWithParamsTest {
                   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key2049]);
@@ -539,7 +548,7 @@ struct setBlanklessLoadingWithParamsTest {
                   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key2048]);
@@ -600,7 +609,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key1 = 'y';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key1]);
@@ -692,7 +701,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams016';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -748,7 +757,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams017';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -786,7 +795,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams018';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -824,7 +833,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams019';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -862,7 +871,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams020';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -900,7 +909,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams021';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -957,7 +966,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams022';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -1016,7 +1025,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams023';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -1073,7 +1082,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'setBlanklessLoadingWithParams024';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -1132,7 +1141,7 @@ struct setBlanklessLoadingWithParamsTest {
                 let key = 'testSetBlanklessLoadingWithParams025';
                 try {
                   this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexPhoto.html'))
+                  this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
                   console.log(msg, 'first loadUrl finish');
                   webView.WebviewController.clearBlanklessLoadingCache([key]);
@@ -1199,7 +1208,7 @@ struct setBlanklessLoadingWithParamsTest {
           })
       }
 
-      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0

@@ -503,7 +503,7 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0100
      * @tc.name testClassGetStaticMethods001
-     * @tc.desc Verify ClassGetStaticMethods case 001: getStaticMethods() with no arguments
+     * @tc.desc Verify ClassGetStaticMethods case 001: Class.from<MyClass001>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -514,43 +514,57 @@ export default function ClassGetStaticMethodsTest(): void {
       expect(methods.length).assertEqual(1);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0300
-     * @tc.name testClassGetStaticMethods003
-     * @tc.desc Verify ClassGetStaticMethods case 003: call getStaticMethods
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0200
+     * @tc.name testClassGetStaticMethods002
+     * @tc.desc Verify ClassGetStaticMethods case 002: Class.from<MyClass003>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0400
-     * @tc.name testClassGetStaticMethods004
-     * @tc.desc Verify ClassGetStaticMethods case 004: interface static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0300
+     * @tc.name testClassGetStaticMethods003
+     * @tc.desc Verify ClassGetStaticMethods case 003: Class.from<MyInterface004>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface004>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0400
+     * @tc.name testClassGetStaticMethods004
+     * @tc.desc Verify ClassGetStaticMethods case 004: Class.from<AbstractClass005>(), getStaticMethods result verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetStaticMethods004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<AbstractClass005>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0500
      * @tc.name testClassGetStaticMethods005
-     * @tc.desc Verify ClassGetStaticMethods case 005: abstract class static method
+     * @tc.desc Verify ClassGetStaticMethods case 005: Class.from<FinalClass006>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AbstractClass005>();
+      let cls = Class.from<FinalClass006>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
     });
@@ -558,35 +572,35 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0600
      * @tc.name testClassGetStaticMethods006
-     * @tc.desc Verify ClassGetStaticMethods case 006: final static method
+     * @tc.desc Verify ClassGetStaticMethods case 006: Class.from<GenericClass007<string>>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FinalClass006>();
-      let methods = cls.getStaticMethods();
-      expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0700
-     * @tc.name testClassGetStaticMethods007
-     * @tc.desc Verify ClassGetStaticMethods case 007: generic static method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetStaticMethods007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass007<string>>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0700
+     * @tc.name testClassGetStaticMethods007
+     * @tc.desc Verify ClassGetStaticMethods case 007: Class.from<NoStaticMethodClass009>(), getStaticMethods result verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetStaticMethods007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<NoStaticMethodClass009>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0800
      * @tc.name testClassGetStaticMethods008
-     * @tc.desc Verify ClassGetStaticMethods case 008: static method return empty array
+     * @tc.desc Verify ClassGetStaticMethods case 008: Class.from<MyClass008>(), getName returns "method1", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -606,26 +620,12 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_0900
      * @tc.name testClassGetStaticMethods009
-     * @tc.desc Verify ClassGetStaticMethods case 009: static method return empty array
+     * @tc.desc Verify ClassGetStaticMethods case 009: Class.from<ChildClass010>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<NoStaticMethodClass009>();
-      let methods = Utils.fixedArrayToArray(cls.getStaticMethods());
-      expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1000
-     * @tc.name testClassGetStaticMethods010
-     * @tc.desc Verify ClassGetStaticMethods case 010: return static method not
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetStaticMethods010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass010>();
       let childMethods = childCls.getStaticMethods();
       expect(childMethods.length).assertEqual(1);
@@ -638,14 +638,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1100
-     * @tc.name testClassGetStaticMethods011
-     * @tc.desc Verify ClassGetStaticMethods case 011: instance method not in static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1000
+     * @tc.name testClassGetStaticMethods010
+     * @tc.desc Verify ClassGetStaticMethods case 010: Class.from<MixedClass011>(), getStaticMethods result verified, getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedClass011>();
       let staticMethods = cls.getStaticMethods();
       let instanceMethods = cls.getInstanceMethods();
@@ -656,14 +656,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1200
-     * @tc.name testClassGetStaticMethods012
-     * @tc.desc Verify ClassGetStaticMethods case 012: call return array instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1100
+     * @tc.name testClassGetStaticMethods011
+     * @tc.desc Verify ClassGetStaticMethods case 011: Class.from<MyClass012>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass012>();
       let methods1 = cls.getStaticMethods();
       let methods2 = cls.getStaticMethods();
@@ -672,28 +672,28 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1300
-     * @tc.name testClassGetStaticMethods013
-     * @tc.desc Verify ClassGetStaticMethods case 013: return FixedArray type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1200
+     * @tc.name testClassGetStaticMethods012
+     * @tc.desc Verify ClassGetStaticMethods case 012: Class.from<MyClass013>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1400
-     * @tc.name testClassGetStaticMethods014
-     * @tc.desc Verify ClassGetStaticMethods case 014: return publicstatic method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1300
+     * @tc.name testClassGetStaticMethods013
+     * @tc.desc Verify ClassGetStaticMethods case 013: Class.from<MixedAccessClass014>(), getName returns "publicMethod", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedAccessClass014>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
@@ -713,14 +713,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1500
-     * @tc.name testClassGetStaticMethods015
-     * @tc.desc Verify ClassGetStaticMethods case 015: privatestatic method not in method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1400
+     * @tc.name testClassGetStaticMethods014
+     * @tc.desc Verify ClassGetStaticMethods case 014: Class.from<PrivateStaticClass015>(), getName returns "publicMethod", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateStaticClass015>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
@@ -730,14 +730,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1600
-     * @tc.name testClassGetStaticMethods016
-     * @tc.desc Verify ClassGetStaticMethods case 016: static method return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1500
+     * @tc.name testClassGetStaticMethods015
+     * @tc.desc Verify ClassGetStaticMethods case 015: Class.from<OverloadClass016>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OverloadClass016>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(3);
@@ -756,42 +756,46 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1600
+     * @tc.name testClassGetStaticMethods016
+     * @tc.desc Verify ClassGetStaticMethods case 016: Class.from<MyClass017>(), getStaticMethods result verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetStaticMethods016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass017>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(1);
+      expect(methods[0].getName()).assertEqual("method");
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1700
      * @tc.name testClassGetStaticMethods017
-     * @tc.desc Verify ClassGetStaticMethods case 017: call not throw exception
+     * @tc.desc Verify ClassGetStaticMethods case 017: Class.from<MyClass018>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass017>();
-      let methods = cls.getStaticMethods();
-      expect(methods.length).assertEqual(1);
+      let cls = Class.from<MyClass018>();
+      let methods1 = cls.getStaticMethods();
+      let methods2 = cls.getStaticMethods();
+      expect(methods1.length).assertEqual(1);
+      expect(methods2.length).assertEqual(1);
+      expect(methods1[0].getName()).assertEqual(methods2[0].getName());
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1800
      * @tc.name testClassGetStaticMethods018
-     * @tc.desc Verify ClassGetStaticMethods case 018: call getStaticMethods
+     * @tc.desc Verify ClassGetStaticMethods case 018: Class.from<ClassWithGetter019>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass018>();
-      let methods = cls.getStaticMethods();
-      expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1900
-     * @tc.name testClassGetStaticMethods019
-     * @tc.desc Verify ClassGetStaticMethods case 019: static gettermethod not in return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetStaticMethods019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ClassWithGetter019>();
       let methods = cls.getStaticMethods();
       let hasGetter = false;
@@ -805,14 +809,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2000
-     * @tc.name testClassGetStaticMethods020
-     * @tc.desc Verify ClassGetStaticMethods case 020: static settermethod not in return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_1900
+     * @tc.name testClassGetStaticMethods019
+     * @tc.desc Verify ClassGetStaticMethods case 019: Class.from<ClassWithSetter020>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ClassWithSetter020>();
       let methods = cls.getStaticMethods();
       let hasSetter = false;
@@ -826,14 +830,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2100
-     * @tc.name testClassGetStaticMethods021
-     * @tc.desc Verify ClassGetStaticMethods case 021: asyncstatic method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2000
+     * @tc.name testClassGetStaticMethods020
+     * @tc.desc Verify ClassGetStaticMethods case 020: Class.from<AsyncStaticClass021>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AsyncStaticClass021>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(3);
@@ -854,28 +858,28 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2200
-     * @tc.name testClassGetStaticMethods022
-     * @tc.desc Verify ClassGetStaticMethods case 022: generic static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2100
+     * @tc.name testClassGetStaticMethods021
+     * @tc.desc Verify ClassGetStaticMethods case 021: Class.from<GenericStaticClass022>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericStaticClass022>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2300
-     * @tc.name testClassGetStaticMethods023
-     * @tc.desc Verify ClassGetStaticMethods case 023: getStaticMethodsnot method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2200
+     * @tc.name testClassGetStaticMethods022
+     * @tc.desc Verify ClassGetStaticMethods case 022: Class.from<ChildClass023>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass023>();
       let childMethods = childCls.getStaticMethods();
       expect(childMethods.length).assertEqual(1);
@@ -888,14 +892,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2400
-     * @tc.name testClassGetStaticMethods024
-     * @tc.desc Verify ClassGetStaticMethods case 024: using getSuperget static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2300
+     * @tc.name testClassGetStaticMethods023
+     * @tc.desc Verify ClassGetStaticMethods case 023: Class.from<ChildClass024>(), getSuper returns expected parent Class, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass024>();
       let superCls = childCls.getSuper();
       expect(superCls !== null).assertTrue();
@@ -905,14 +909,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2500
-     * @tc.name testClassGetStaticMethods025
-     * @tc.desc Verify ClassGetStaticMethods case 025: static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2400
+     * @tc.name testClassGetStaticMethods024
+     * @tc.desc Verify ClassGetStaticMethods case 024: Class.from<ParentClass025>(), getStaticMethods result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass025>();
       let childCls = Class.from<ChildClass025>();
 
@@ -930,14 +934,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2600
-     * @tc.name testClassGetStaticMethods026
-     * @tc.desc Verify ClassGetStaticMethods case 026: return StaticMethodobject getNamemethod
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2500
+     * @tc.name testClassGetStaticMethods025
+     * @tc.desc Verify ClassGetStaticMethods case 025: Class.from<MyClass026>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass026>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
@@ -945,14 +949,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2700
-     * @tc.name testClassGetStaticMethods027
-     * @tc.desc Verify ClassGetStaticMethods case 027: return StaticMethodobject getReturnTypemethod
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2600
+     * @tc.name testClassGetStaticMethods026
+     * @tc.desc Verify ClassGetStaticMethods case 026: Class.from<MyClass027>(), getStaticMethods result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass027>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
@@ -965,14 +969,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2800
-     * @tc.name testClassGetStaticMethods028
-     * @tc.desc Verify ClassGetStaticMethods case 028: return StaticMethodobject getParameterTypesmethod
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2700
+     * @tc.name testClassGetStaticMethods027
+     * @tc.desc Verify ClassGetStaticMethods case 027: Class.from<MyClass028>(), getStaticMethods result verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass028>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
@@ -983,14 +987,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2900
-     * @tc.name testClassGetStaticMethods029
-     * @tc.desc Verify ClassGetStaticMethods case 029: return StaticMethodobject invokemethod
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2800
+     * @tc.name testClassGetStaticMethods028
+     * @tc.desc Verify ClassGetStaticMethods case 028: Class.from<MyClass029>(), getStaticMethods result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass029>();
       let methods = cls.getStaticMethods();
       let addMethod: reflect.StaticMethod | undefined = undefined;
@@ -1007,29 +1011,43 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3000
-     * @tc.name testClassGetStaticMethods030
-     * @tc.desc Verify ClassGetStaticMethods case 030: static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_2900
+     * @tc.name testClassGetStaticMethods029
+     * @tc.desc Verify ClassGetStaticMethods case 029: Class.from<ManyStaticMethodsClass030>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ManyStaticMethodsClass030>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(4);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3000
+     * @tc.name testClassGetStaticMethods030
+     * @tc.desc Verify ClassGetStaticMethods case 030: Class.from<EmptyClass031>(), getStaticMethods result verified
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetStaticMethods030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<EmptyClass031>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3100
      * @tc.name testClassGetStaticMethods031
-     * @tc.desc Verify ClassGetStaticMethods case 031: empty static method
+     * @tc.desc Verify ClassGetStaticMethods case 031: Class.from<OnlyInstanceMethodsClass032>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<EmptyClass031>();
+      let cls = Class.from<OnlyInstanceMethodsClass032>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -1037,40 +1055,26 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3200
      * @tc.name testClassGetStaticMethods032
-     * @tc.desc Verify ClassGetStaticMethods case 032: instance method return empty array
+     * @tc.desc Verify ClassGetStaticMethods case 032: Class.from<MathUtils033>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OnlyInstanceMethodsClass032>();
-      let methods = cls.getStaticMethods();
-      expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3300
-     * @tc.name testClassGetStaticMethods033
-     * @tc.desc Verify ClassGetStaticMethods case 033: using call static method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetStaticMethods033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MathUtils033>();
       let result = StaticMethodInvoker033.invokeAll(cls, "add", 10, 20);
       expect(result as int).assertEqual(30);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3400
-     * @tc.name testClassGetStaticMethods034
-     * @tc.desc Verify ClassGetStaticMethods case 034: static method name
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3300
+     * @tc.name testClassGetStaticMethods033
+     * @tc.desc Verify ClassGetStaticMethods case 033: Class.from<Utils034>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Utils034>();
       let methodNames = MethodNameCollector034.getStaticMethodNames(cls);
       expect(methodNames.length).assertEqual(4);
@@ -1079,14 +1083,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3500
-     * @tc.name testClassGetStaticMethods035
-     * @tc.desc Verify ClassGetStaticMethods case 035: static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3400
+     * @tc.name testClassGetStaticMethods034
+     * @tc.desc Verify ClassGetStaticMethods case 034: Class.from<Service035>(), getName returns "publicApi"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Service035>();
       let publicApis = ApiFilter035.getPublicApis(cls);
       expect(publicApis.length).assertEqual(1);
@@ -1094,28 +1098,28 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3600
-     * @tc.name testClassGetStaticMethods036
-     * @tc.desc Verify ClassGetStaticMethods case 036: verify static method parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3500
+     * @tc.name testClassGetStaticMethods035
+     * @tc.desc Verify ClassGetStaticMethods case 035: Class.from<MyService036>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyService036>();
       let isValid = SignatureValidator036.validateSignature(cls, "processData");
       expect(isValid).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3700
-     * @tc.name testClassGetStaticMethods037
-     * @tc.desc Verify ClassGetStaticMethods case 037: static method performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3600
+     * @tc.name testClassGetStaticMethods036
+     * @tc.desc Verify ClassGetStaticMethods case 036: Class.from<PerformanceTest037>(), getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PerformanceTest037>();
       let startTime = Date.now();
       let methods = cls.getStaticMethods();
@@ -1129,14 +1133,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3800
-     * @tc.name testClassGetStaticMethods038
-     * @tc.desc Verify ClassGetStaticMethods case 038: static method getOwner().getName() FQN
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3700
+     * @tc.name testClassGetStaticMethods037
+     * @tc.desc Verify ClassGetStaticMethods case 037: Class.from<MixedClass038>(), getStaticMethods result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ownerFqn = "entry.src.main.src.test.class.ClassGetStaticMethodsTest.test.MixedClass038";
       let cls = Class.from<MixedClass038>();
       let staticMethods = cls.getStaticMethods();
@@ -1146,14 +1150,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3900
-     * @tc.name testClassGetStaticMethods039
-     * @tc.desc Verify ClassGetStaticMethods case 039: getStaticMethodsget method after getStaticMethod method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3800
+     * @tc.name testClassGetStaticMethods038
+     * @tc.desc Verify ClassGetStaticMethods case 038: Class.from<MyService039>(), getName returns "method2", getStaticMethod resolves expected method, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyService039>();
       let allMethods = cls.getStaticMethods();
       let method2 = cls.getStaticMethod("method2");
@@ -1163,14 +1167,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_4000
-     * @tc.name testClassGetStaticMethods040
-     * @tc.desc Verify ClassGetStaticMethods case 040: getStaticMethods and getStaticFields return method field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3900
+     * @tc.name testClassGetStaticMethods039
+     * @tc.desc Verify ClassGetStaticMethods case 039: Class.from<Config040>(), getStaticFields result verified, getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Config040>();
       let staticMethods = cls.getStaticMethods();
       let staticFields = cls.getStaticFields();
@@ -1183,14 +1187,14 @@ export default function ClassGetStaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_4100
-     * @tc.name testClassGetStaticMethods041
-     * @tc.desc Verify ClassGetStaticMethods case 041: inheritance static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_4000
+     * @tc.name testClassGetStaticMethods040
+     * @tc.desc Verify ClassGetStaticMethods case 040: Class.from<A041>(), getName returns "methodA", getStaticMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetStaticMethods041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetStaticMethods040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsA = Class.from<A041>();
       let clsB = Class.from<B041>();
       let clsC = Class.from<C041>();

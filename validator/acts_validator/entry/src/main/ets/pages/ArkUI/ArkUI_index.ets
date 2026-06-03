@@ -120,6 +120,7 @@ struct IndexPage {
     { title: 'AccessibilityFocusDrawLevel', uri: 'pages/ArkUI/AccessibilityFocusDrawLevel' },
 	  { title: 'EmbeddedComponentInstanceTest', uri: 'pages/ArkUI/EmbeddedComponentInstanceTest' },
     { title: 'AccessibilityNextFocusIdPage', uri: 'pages/ArkUI/AccessibilityNextFocusIdPage' },
+    { title: 'AccessibilityNextFocusId26Page', uri: 'pages/ArkUI/AccessibilityNextFocusId26Page' },
     { title: 'AccessibilityDefaultFocusPage', uri: 'pages/ArkUI/AccessibilityDefaultFocusPage' },
     { title: 'AccessibilityScrollTriggerablePage', uri: 'pages/ArkUI/AccessibilityScrollTriggerablePage' },
     { title: 'OnAccessibilityActionIntercept', uri: 'pages/ArkUI/OnAccessibilityActionIntercept' },

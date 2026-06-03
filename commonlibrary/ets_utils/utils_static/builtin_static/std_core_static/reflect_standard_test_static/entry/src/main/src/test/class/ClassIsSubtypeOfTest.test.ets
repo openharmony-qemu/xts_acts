@@ -301,7 +301,7 @@ function checkCompatibility068(implClass: Class, apiClass: Class): boolean {
   return implClass.isSubtypeOf(apiClass);
 }
 
-/** spec/semantics.md：未在子类型章节描述的 PRIMITIVE 互查应为 false；number≡double 为 Type Identity 例外 */
+/** spec/semantics.md：未在子类型章节描述�?PRIMITIVE 互查应为 false；number≡double �?Type Identity 例外 */
 function expectDistinctPrimitiveSubtypeOfSpec024(fromKind: string, toKind: string): boolean {
   if ((fromKind === 'double' && toKind === 'number') || (fromKind === 'number' && toKind === 'double')) {
     return true;
@@ -376,7 +376,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0100
      * @tc.name testClassIsSubtypeOf001
-     * @tc.desc Verify ClassIsSubtypeOf case 001: isSubtypeOf() requires another Class argument
+     * @tc.desc Verify ClassIsSubtypeOf case 001: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -390,7 +390,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0200
      * @tc.name testClassIsSubtypeOf002
-     * @tc.desc Verify ClassIsSubtypeOf case 002: 1 Classtype parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 002: Class.from<ChildClass002>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0300
      * @tc.name testClassIsSubtypeOf003
-     * @tc.desc Verify ClassIsSubtypeOf case 003: 1 parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 003: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -421,7 +421,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0400
      * @tc.name testClassIsSubtypeOf004
-     * @tc.desc Verify ClassIsSubtypeOf case 004: Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 004: Class.from<B004>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,7 +436,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0500
      * @tc.name testClassIsSubtypeOf005
-     * @tc.desc Verify ClassIsSubtypeOf case 005: null is parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 005: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,15 +447,14 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(null as Class);
         expect(result).assertFalse();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0600
      * @tc.name testClassIsSubtypeOf006
-     * @tc.desc Verify ClassIsSubtypeOf case 006: undefined is parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 006: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,15 +465,14 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(undefined as Class);
         expect(result).assertFalse();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0700
      * @tc.name testClassIsSubtypeOf007
-     * @tc.desc Verify ClassIsSubtypeOf case 007: object string Classtype
+     * @tc.desc Verify ClassIsSubtypeOf case 007: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -487,7 +485,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0800
      * @tc.name testClassIsSubtypeOf008
-     * @tc.desc Verify ClassIsSubtypeOf case 008: PRIMITIVE_BOOLEAN type Class
+     * @tc.desc Verify ClassIsSubtypeOf case 008: Class.from<number>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -502,7 +500,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0900
      * @tc.name testClassIsSubtypeOf009
-     * @tc.desc Verify ClassIsSubtypeOf case 009: Class object call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 009: Class.from<ChildClass009>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -517,7 +515,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1000
      * @tc.name testClassIsSubtypeOf010
-     * @tc.desc Verify ClassIsSubtypeOf case 010: Class object call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 010: Class.from<ChildClass010>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +530,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1100
      * @tc.name testClassIsSubtypeOf011
-     * @tc.desc Verify ClassIsSubtypeOf case 011: Class object call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 011: Class.from<MyClass011>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +544,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1200
      * @tc.name testClassIsSubtypeOf012
-     * @tc.desc Verify ClassIsSubtypeOf case 012: inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 012: Class.from<ClassA012>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -563,7 +561,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1300
      * @tc.name testClassIsSubtypeOf013
-     * @tc.desc Verify ClassIsSubtypeOf case 013: child isSubtypeOf grandparent returns true
+     * @tc.desc Verify ClassIsSubtypeOf case 013: Class.from<Child013>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -578,7 +576,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1400
      * @tc.name testClassIsSubtypeOf014
-     * @tc.desc Verify ClassIsSubtypeOf case 014: child isSubtypeOf parent returns true
+     * @tc.desc Verify ClassIsSubtypeOf case 014: Class.from<Child014>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -593,7 +591,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1500
      * @tc.name testClassIsSubtypeOf015
-     * @tc.desc Verify ClassIsSubtypeOf case 015: parent isSubtypeOf child returns false
+     * @tc.desc Verify ClassIsSubtypeOf case 015: Class.from<Parent015>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -608,7 +606,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1600
      * @tc.name testClassIsSubtypeOf016
-     * @tc.desc Verify ClassIsSubtypeOf case 016: 5 or inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 016: Class.from<E016>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,7 +621,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1700
      * @tc.name testClassIsSubtypeOf017
-     * @tc.desc Verify ClassIsSubtypeOf case 017: interface interface
+     * @tc.desc Verify ClassIsSubtypeOf case 017: Class.from<MyClass017>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -638,7 +636,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1800
      * @tc.name testClassIsSubtypeOf018
-     * @tc.desc Verify ClassIsSubtypeOf case 018: multiple interface interface
+     * @tc.desc Verify ClassIsSubtypeOf case 018: Class.from<MultiImpl018>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -654,7 +652,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1900
      * @tc.name testClassIsSubtypeOf019
-     * @tc.desc Verify ClassIsSubtypeOf case 019: interface interface
+     * @tc.desc Verify ClassIsSubtypeOf case 019: Class.from<ChildInterface019>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -669,7 +667,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2000
      * @tc.name testClassIsSubtypeOf020
-     * @tc.desc Verify ClassIsSubtypeOf case 020: interface interface
+     * @tc.desc Verify ClassIsSubtypeOf case 020: Class.from<MyClass020>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -684,7 +682,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2100
      * @tc.name testClassIsSubtypeOf021
-     * @tc.desc Verify ClassIsSubtypeOf case 021: number type Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 021: Class.from<number>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -701,7 +699,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2200
      * @tc.name testClassIsSubtypeOf022
-     * @tc.desc Verify ClassIsSubtypeOf case 022: boolean type Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 022: Class.from<boolean>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -718,7 +716,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2300
      * @tc.name testClassIsSubtypeOf023
-     * @tc.desc Verify ClassIsSubtypeOf case 023: string type Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 023: Class.from<string>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -732,7 +730,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2400
      * @tc.name testClassIsSubtypeOf024
-     * @tc.desc Verify ClassIsSubtypeOf case 024: distinct PRIMITIVE_* subtyping per semantics.md
+     * @tc.desc Verify ClassIsSubtypeOf case 024: isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -769,7 +767,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2500
      * @tc.name testClassIsSubtypeOf025
-     * @tc.desc Verify ClassIsSubtypeOf case 025: Array<Type> type
+     * @tc.desc Verify ClassIsSubtypeOf case 025: Class.from<Array<number>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -784,7 +782,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2600
      * @tc.name testClassIsSubtypeOf026
-     * @tc.desc Verify ClassIsSubtypeOf case 026: FixedArray<Type> type
+     * @tc.desc Verify ClassIsSubtypeOf case 026: Class.from<FixedArray<int>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -801,7 +799,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2700
      * @tc.name testClassIsSubtypeOf027
-     * @tc.desc Verify ClassIsSubtypeOf case 027: different type array
+     * @tc.desc Verify ClassIsSubtypeOf case 027: Class.from<Array<int>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -815,7 +813,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2800
      * @tc.name testClassIsSubtypeOf028
-     * @tc.desc Verify ClassIsSubtypeOf case 028: type and type
+     * @tc.desc Verify ClassIsSubtypeOf case 028: Class.from<int | string>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -833,7 +831,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2900
      * @tc.name testClassIsSubtypeOf029
-     * @tc.desc Verify ClassIsSubtypeOf case 029: int is subtype of int|string union
+     * @tc.desc Verify ClassIsSubtypeOf case 029: Class.from<int>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -847,7 +845,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3000
      * @tc.name testClassIsSubtypeOf030
-     * @tc.desc Verify ClassIsSubtypeOf case 030: union not subtype of single member type
+     * @tc.desc Verify ClassIsSubtypeOf case 030: Class.from<int | string | boolean | Array<double>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -862,7 +860,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3100
      * @tc.name testClassIsSubtypeOf031
-     * @tc.desc Verify ClassIsSubtypeOf case 031: same generic different type parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 031: Class.from<Map<int, string>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -876,7 +874,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3200
      * @tc.name testClassIsSubtypeOf032
-     * @tc.desc Verify ClassIsSubtypeOf case 032: generic type parameters
+     * @tc.desc Verify ClassIsSubtypeOf case 032: Class.from<Container032<B032>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -890,7 +888,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3300
      * @tc.name testClassIsSubtypeOf033
-     * @tc.desc Verify ClassIsSubtypeOf case 033: generic type
+     * @tc.desc Verify ClassIsSubtypeOf case 033: Class.from<Printer033<Doc033>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -905,7 +903,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3400
      * @tc.name testClassIsSubtypeOf034
-     * @tc.desc Verify ClassIsSubtypeOf case 034: Object type
+     * @tc.desc Verify ClassIsSubtypeOf case 034: Class.from<MyClass034>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -920,7 +918,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3500
      * @tc.name testClassIsSubtypeOf035
-     * @tc.desc Verify ClassIsSubtypeOf case 035: Object type
+     * @tc.desc Verify ClassIsSubtypeOf case 035: Class.from<MyClass035>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -935,7 +933,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3600
      * @tc.name testClassIsSubtypeOf036
-     * @tc.desc Verify ClassIsSubtypeOf case 036: final inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 036: Class.from<Child036>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +948,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3700
      * @tc.name testClassIsSubtypeOf037
-     * @tc.desc Verify ClassIsSubtypeOf case 037: final not inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 037: Class.from<Child037>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -965,7 +963,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3800
      * @tc.name testClassIsSubtypeOf038
-     * @tc.desc Verify ClassIsSubtypeOf case 038: abstract class
+     * @tc.desc Verify ClassIsSubtypeOf case 038: Class.from<ConcreteChild038>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -980,7 +978,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3900
      * @tc.name testClassIsSubtypeOf039
-     * @tc.desc Verify ClassIsSubtypeOf case 039: abstract class
+     * @tc.desc Verify ClassIsSubtypeOf case 039: Class.from<AbstractParent039>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -995,7 +993,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4000
      * @tc.name testClassIsSubtypeOf040
-     * @tc.desc Verify ClassIsSubtypeOf case 040: type Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 040: Class.from<TestEnum040>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1015,7 +1013,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4100
      * @tc.name testClassIsSubtypeOf041
-     * @tc.desc Verify ClassIsSubtypeOf case 041: using isInterface()verify interface type
+     * @tc.desc Verify ClassIsSubtypeOf case 041: Class.from<MyInterface041>(), isInterface returns true, isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1033,7 +1031,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4200
      * @tc.name testClassIsSubtypeOf042
-     * @tc.desc Verify ClassIsSubtypeOf case 042: verify inheritance scenario return true
+     * @tc.desc Verify ClassIsSubtypeOf case 042: Class.from<Child042>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1046,7 +1044,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4300
      * @tc.name testClassIsSubtypeOf043
-     * @tc.desc Verify ClassIsSubtypeOf case 043: verify inheritance scenario return true
+     * @tc.desc Verify ClassIsSubtypeOf case 043: Class.from<C043>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1059,7 +1057,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4400
      * @tc.name testClassIsSubtypeOf044
-     * @tc.desc Verify ClassIsSubtypeOf case 044: verify interface return true
+     * @tc.desc Verify ClassIsSubtypeOf case 044: Class.from<MyClass044>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1072,7 +1070,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4500
      * @tc.name testClassIsSubtypeOf045
-     * @tc.desc Verify ClassIsSubtypeOf case 045: return true
+     * @tc.desc Verify ClassIsSubtypeOf case 045: Class.from<MyClass045>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1086,7 +1084,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4600
      * @tc.name testClassIsSubtypeOf046
-     * @tc.desc Verify ClassIsSubtypeOf case 046: verify return false
+     * @tc.desc Verify ClassIsSubtypeOf case 046: Class.from<A046>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1099,7 +1097,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4700
      * @tc.name testClassIsSubtypeOf047
-     * @tc.desc Verify ClassIsSubtypeOf case 047: verify inheritance return false
+     * @tc.desc Verify ClassIsSubtypeOf case 047: Class.from<Parent047>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1112,7 +1110,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4800
      * @tc.name testClassIsSubtypeOf048
-     * @tc.desc Verify ClassIsSubtypeOf case 048: generic type parameters different
+     * @tc.desc Verify ClassIsSubtypeOf case 048: Class.from<Array<int>>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1124,7 +1122,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4900
      * @tc.name testClassIsSubtypeOf049
-     * @tc.desc Verify ClassIsSubtypeOf case 049: verify return boolean type
+     * @tc.desc Verify ClassIsSubtypeOf case 049: Class.from<B049>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1137,7 +1135,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5000
      * @tc.name testClassIsSubtypeOf050
-     * @tc.desc Verify ClassIsSubtypeOf case 050: verify return not number string
+     * @tc.desc Verify ClassIsSubtypeOf case 050: Class.from<B050>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1152,7 +1150,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5100
      * @tc.name testClassIsSubtypeOf051
-     * @tc.desc Verify ClassIsSubtypeOf case 051: or inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 051: Class.from<Subtype052_L7>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1165,7 +1163,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5200
      * @tc.name testClassIsSubtypeOf052
-     * @tc.desc Verify ClassIsSubtypeOf case 052: 100 inheritance
+     * @tc.desc Verify ClassIsSubtypeOf case 052: Class.from<Subtype052_L7>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1183,7 +1181,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5300
      * @tc.name testClassIsSubtypeOf053
-     * @tc.desc Verify ClassIsSubtypeOf case 053: 100 interface
+     * @tc.desc Verify ClassIsSubtypeOf case 053: Class.from<ManyInterfaces053>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1200,7 +1198,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5400
      * @tc.name testClassIsSubtypeOf054
-     * @tc.desc Verify ClassIsSubtypeOf case 054: multiple when call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 054: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1216,7 +1214,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5500
      * @tc.name testClassIsSubtypeOf055
-     * @tc.desc Verify ClassIsSubtypeOf case 055: call same parameters isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 055: Class.from<SubtypeChild>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1230,7 +1228,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5600
      * @tc.name testClassIsSubtypeOf056
-     * @tc.desc Verify ClassIsSubtypeOf case 056: isSubtypeOf and getSuper
+     * @tc.desc Verify ClassIsSubtypeOf case 056: Class.from<C056>(), isSubtypeOf relationship verified, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1248,7 +1246,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5700
      * @tc.name testClassIsSubtypeOf057
-     * @tc.desc Verify ClassIsSubtypeOf case 057: getSuperreturn isSubtypeOfshould return true
+     * @tc.desc Verify ClassIsSubtypeOf case 057: Class.from<Child057>(), isSubtypeOf relationship verified, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1264,7 +1262,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5800
      * @tc.name testClassIsSubtypeOf058
-     * @tc.desc Verify ClassIsSubtypeOf case 058: getInterfacesreturn interface isSubtypeOf return true
+     * @tc.desc Verify ClassIsSubtypeOf case 058: Class.from<MyClass058>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1280,7 +1278,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_5900
      * @tc.name testClassIsSubtypeOf059
-     * @tc.desc Verify ClassIsSubtypeOf case 059: verify interface inheritance isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 059: Class.from<TopInterface059>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1294,7 +1292,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6000
      * @tc.name testClassIsSubtypeOf060
-     * @tc.desc Verify ClassIsSubtypeOf case 060: child interface isSubtypeOf parent interface
+     * @tc.desc Verify ClassIsSubtypeOf case 060: Class.from<MyInterface060>(), isInterface returns true, isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1313,7 +1311,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6100
      * @tc.name testClassIsSubtypeOf061
-     * @tc.desc Verify ClassIsSubtypeOf case 061: PRIMITIVE_INT not subtype of PRIMITIVE_NUMBER
+     * @tc.desc Verify ClassIsSubtypeOf case 061: isPrimitive returns true, isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1329,7 +1327,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6200
      * @tc.name testClassIsSubtypeOf062
-     * @tc.desc Verify ClassIsSubtypeOf case 062: null when exception
+     * @tc.desc Verify ClassIsSubtypeOf case 062: invalid input throws ClassCastError, Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1347,7 +1345,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6300
      * @tc.name testClassIsSubtypeOf063
-     * @tc.desc Verify ClassIsSubtypeOf case 063: undefined when exception
+     * @tc.desc Verify ClassIsSubtypeOf case 063: invalid input throws ClassCastError, Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1365,7 +1363,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6400
      * @tc.name testClassIsSubtypeOf064
-     * @tc.desc Verify ClassIsSubtypeOf case 064: Class object
+     * @tc.desc Verify ClassIsSubtypeOf case 064: Class.from<MyClass001>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1379,7 +1377,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6500
      * @tc.name testClassIsSubtypeOf065
-     * @tc.desc Verify ClassIsSubtypeOf case 065: Object
+     * @tc.desc Verify ClassIsSubtypeOf case 065: Class.from<NoParent065>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1393,7 +1391,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6600
      * @tc.name testClassIsSubtypeOf066
-     * @tc.desc Verify ClassIsSubtypeOf case 066: Object
+     * @tc.desc Verify ClassIsSubtypeOf case 066: Class.from<Object>(), isSubtypeOf relationship verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1406,7 +1404,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6700
      * @tc.name testClassIsSubtypeOf067
-     * @tc.desc Verify ClassIsSubtypeOf case 067: using isSubtypeOfverify type
+     * @tc.desc Verify ClassIsSubtypeOf case 067: Class.from<Dog067>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1420,7 +1418,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6800
      * @tc.name testClassIsSubtypeOf068
-     * @tc.desc Verify ClassIsSubtypeOf case 068: using isSubtypeOf API
+     * @tc.desc Verify ClassIsSubtypeOf case 068: Class.from<NewImplementation068>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1437,7 +1435,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6900
      * @tc.name testClassIsSubtypeOf069
-     * @tc.desc Verify ClassIsSubtypeOf case 069: verify interface
+     * @tc.desc Verify ClassIsSubtypeOf case 069: Class.from<MyPlugin069>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1450,7 +1448,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_7000
      * @tc.name testClassIsSubtypeOf070
-     * @tc.desc Verify ClassIsSubtypeOf case 070: type
+     * @tc.desc Verify ClassIsSubtypeOf case 070: Class.from<Data070>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

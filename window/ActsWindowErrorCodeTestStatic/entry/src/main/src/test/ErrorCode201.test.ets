@@ -31,6 +31,8 @@ import StartOptions from '@ohos.app.ability.StartOptions'
 import screenshot from '@ohos.screenshot';
 import { image } from '@kit.ImageKit';
 import display from '@ohos.display';
+import { canIUse } from '@internal.full.global';
+import { ImageFit } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -74,7 +76,7 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function ErrorCode201() {
+export default function ErrorCode201(): void {
 
     describe("ErrorCode201", (): void => {
         hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
@@ -169,7 +171,7 @@ export default function ErrorCode201() {
 
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -203,7 +205,7 @@ export default function ErrorCode201() {
                     done();
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -241,7 +243,7 @@ export default function ErrorCode201() {
                     done();
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -275,7 +277,7 @@ export default function ErrorCode201() {
                     }
                 });
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 if (exception.code === 801) {
                     hilog.error(domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
                     done();
@@ -316,7 +318,7 @@ export default function ErrorCode201() {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
                 if (err!.code != 801) {
                     expect(err.message!=null).assertTrue();
@@ -356,7 +358,7 @@ export default function ErrorCode201() {
                     done();
                  })
             } catch (exception) {
-                exception = exception as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
                 
@@ -417,7 +419,7 @@ export default function ErrorCode201() {
                 expect(false).assertTrue()
                 done();
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(domain, tag,caseName + 'Failed. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if (isPCStatus == '') {
@@ -485,8 +487,7 @@ export default function ErrorCode201() {
   
           });
         } catch (error) {
-          let exception: BusinessError = error as BusinessError;
-          console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
+          console.error( CaseName+  `Failed. Cause:${error.code}, message:${error.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -520,7 +521,7 @@ export default function ErrorCode201() {
                 done()
             });
         } catch (exception) {
-            exception = exception as BusinessError;
+            
             hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
             expect(false).assertTrue();
             done()
@@ -550,7 +551,7 @@ export default function ErrorCode201() {
                 done();
             })
         } catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
             expect(err.code === 801).assertTrue();
             done();
@@ -582,7 +583,7 @@ export default function ErrorCode201() {
                 }
             })
         } catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag,caseName + 'error in makeUnique, err : ' + JSON.stringify(err));
             if (err!.code === 801) {
                 done();
@@ -626,7 +627,7 @@ export default function ErrorCode201() {
             })().awaitSync()
         });
         } catch (err) {
-        err = err as BusinessError;
+        
         hilog.error(domain, tag, caseName + 'Failed2 to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
         await terminateAbility(caseName);
         if (err.code === 201) {
@@ -663,7 +664,7 @@ export default function ErrorCode201() {
         expect(false).assertTrue();
         done();
         } catch (err) {
-        err = err as BusinessError;
+        
         if (err.code === 201) {
             console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
             done();
@@ -699,7 +700,7 @@ export default function ErrorCode201() {
         expect(true).assertFail();
         done()
         } catch (err) {
-        err = err as BusinessError;
+        
         if (err.code === 201) {
             console.error(caseName + ' getMainWindowSnapshot failed. Cause: ' + JSON.stringify(err.code))
             done();
@@ -710,6 +711,131 @@ export default function ErrorCode201() {
         }
         }
     });
+
+/**
+* @tc.number      SUB_BASIC_WMS_removeImageForRecent_static_0100
+* @tc.name        testremoveImageForRecent_static_0100
+* @tc.desc        testremoveImageForRecent_static_201
+* @tc.size        MediumTest
+* @tc.type        Function
+* @tc.level       Level 1
+*/
+it('testremoveImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testremoveImageForRecent_static_0100';
+    let msgStr: string = 'jsunittest ' + caseName + ' ';
+    hilog.info(domain, tag, msgStr + 'begin');
+    let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+    console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+    try {
+    let promise = windowStage!.removeImageForRecent();
+    promise.then(() => {
+        hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
+        expect(false).assertTrue();
+        done()
+    }).catch((err: Error): PromiseLike<void> | undefined => {
+        hilog.error(domain, tag, msgStr + `Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+        if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            done();
+        } else {
+            expect(err.code).assertEqual(201);
+            done();
+        }
+    });
+    } catch (exception) {
+        hilog.error(domain, tag, msgStr + 'Failed to remove image for recent.');
+        expect(false).assertTrue();
+        done()
+    }
+})
+
+
+/**
+ * @tc.number      SUB_BASIC_WMS_setImageForRecent_static_0100
+ * @tc.name        testsetImageForRecent_static_0100
+ * @tc.desc        testsetImageForRecent_static_201
+ * @tc.size        MediumTest
+ * @tc.type        Function
+ * @tc.level       Level 1
+ */
+it('testsetImageForRecent_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+    let caseName: string = 'testsetImageForRecent_static_0100';
+    let msgStr: string = 'jsunittest ' + caseName + ' ';
+    hilog.info(domain, tag, msgStr + 'begin');
+    let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+    console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+        let color = new ArrayBuffer(512 * 512 * 4);
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+            bufferArr[i] = 255;
+            bufferArr[i + 1] = 0;
+            bufferArr[i + 2] = 122;
+            bufferArr[i + 3] = 255;
+        }
+        image.createPixelMap(color, {
+            editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data: image.PixelMap) => {
+            pixelMap = data;
+            hilog.info(domain, tag, msgStr + 'Succeeded in creating pixelMap');
+            try {
+                let promise = windowStage!.setImageForRecent(pixelMap, ImageFit.Fill);
+                promise.then(() => {
+                    hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
+                    expect(false).assertTrue();
+                    done()
+                }).catch((err: Error): PromiseLike<void> | undefined => {
+                    hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                    if (!canIUseRes) {
+                    expect(err.code).assertEqual(801);
+                    done();
+                    } else {
+                    expect(err.code).assertEqual(201);
+                    done();
+                    }
+                });
+            } catch (exception) {
+                hilog.error(domain, tag, msgStr + 'Failed to set image for recent.');
+                expect(false).assertTrue();
+                done()
+            }
+        })
+})    
+
+/**
+     * @tc.name SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.number SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.desc SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+it('SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+async (done: () => void): Promise<void> => {
+  let caseName: string = 'SUB_WINDOW_testSetWindowContainerModalColor_NoPermission_static_0100';
+  let msgStr: string = 'jsunittest ' + caseName + ' ';
+  hilog.info(domain, tag, msgStr + 'begin');
+  let mainWindow: window.Window = windowStage!.getMainWindowSync();
+  let activeColor: string = '#FF0000';
+  let inactiveColor: string = '#00FF00';
+  try {
+    mainWindow.setWindowContainerModalColor(activeColor, inactiveColor);
+    hilog.info(domain, tag, `${caseName} Succeeded in setting window container modal color.`);
+    done();
+  } catch (exception) {
+    exception = exception as BusinessError;
+    hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+    if (exception.code === 201) {
+      expect(exception.code).assertEqual(201);
+      done();
+    } else {
+      hilog.info(domain, tag, `${caseName} Expected error 801.`);
+      expect(exception.code).assertEqual(801);
+      done();
+    }
+  }
+});
+
 
     })
 

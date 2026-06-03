@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,19 +25,24 @@ import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    AppStorage.setOrCreate<common.UIAbilityContext>('UIAbilityContext', this.context)
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
-      if (err?.code) {
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
-        return;
-      }
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
-    });
+    try {
+      windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
+        if (err?.code) {
+          hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
+          return;
+        }
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
+      });
+    } catch (e) {
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent catch error：-----------' + e.message);
+    }
   }
 
   onDestroy(): Promise<void> | undefined {

@@ -24,6 +24,7 @@ import testsuite from '../../test/List.test';
 import { BusinessError } from '@ohos.base';
 import web_webview from '@ohos.web.webview';
 import { resourceConfigs } from "./Resource";
+import { XtsTestServer } from 'library';
 
 async function getData(url?: Array<string>) {
   const resourceMapArr: Array<web_webview.OfflineResourceMap> = [];
@@ -74,6 +75,7 @@ class TestObj {
 @Component
 struct injectOfflineResourcesTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerNull: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -101,6 +103,10 @@ struct injectOfflineResourcesTest {
       }
     }
   }
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   build() {
     Column() {
       Row() {
@@ -198,7 +204,7 @@ struct injectOfflineResourcesTest {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .javaScriptProxy({
           object: this.testObj,

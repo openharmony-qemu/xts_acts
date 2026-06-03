@@ -17,11 +17,25 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "bigint_standard_test_static:ActsBigintStandardTest",
+      "bigint_standard_test_static:ActsBigintStandardStaticTest",
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
       "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
+      "error_standard_test_static:ActsErrorCaseStaticTest",
+      "errorhandler_standard_test_static:ActsErrorHandlerStaticTest",
+      "errors_standard_test_static:ActsErrorsStaticTest",
+      "expection_standard_test_static:ActsExpectionStaticTest",
+      "feild_standard_test_static:ActsFeildStaticTest",
+      "float_standard_test_static:ActsFloatStaticTest",
+      "functions_standard_test_static:ActsFunctionsStaticTest",
+      "global_builtin_standard_test_static:ActsBuiltinGlobalStaticTest",
+      "intl_standard_test_static:ActsIntlCaseStaticTest",
+      "iterator_standard_test_static:ActsIteratorStaticTest",
+      "method_standard_test_static:ActsMethodStaticTest",
+      "object_standard_test_static:ActsObjectStaticTest",
+      "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
+      "set_standard_test_static:ActsSetCaseStaticTest",
     ]
   }
 }

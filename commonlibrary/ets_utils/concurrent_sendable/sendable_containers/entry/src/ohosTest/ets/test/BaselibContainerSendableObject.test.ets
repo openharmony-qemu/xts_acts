@@ -25,6 +25,7 @@ import {
   ArrayList,
   collections
 } from '@kit.ArkTS';
+import { gc } from './model/SendableModel';
 
 export function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -44,15 +45,19 @@ class SendableClass {
 }
 
 export default function baselibContainerSendableObjectTest() {
+  let id = setInterval(() => {
+    gc();
+  }, 5000)
   describe('baselibContainerSendableObjectTest', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(200);
+      await sleep(100);
     })
     afterEach(() => {
     })
     afterAll(() => {
+      clearInterval(id);
     })
 
     /**

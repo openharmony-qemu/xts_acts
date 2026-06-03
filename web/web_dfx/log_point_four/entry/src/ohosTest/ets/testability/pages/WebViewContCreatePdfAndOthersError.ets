@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import { webview } from '@kit.ArkWeb';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 110650;
 
@@ -30,6 +31,7 @@ class myInstance {
 struct webViewContCreatePdfAndOthersError {
   controller: webview.WebviewController = new webview.WebviewController();
   controllerNull: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = '';
   @State userAgent: string = 'Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)' +
     ' CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27';
@@ -81,6 +83,10 @@ struct webViewContCreatePdfAndOthersError {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EMIT_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -141,7 +147,7 @@ struct webViewContCreatePdfAndOthersError {
             }
             case 'emitPrefetchPageInitErr': {
               try {
-                this.controllerNull.prefetchPage('https://www.huawei.com', [{ headerKey: 'c', headerValue: 'z' }])
+                this.controllerNull.prefetchPage(this.mServer.getAssetUrl('index.html'), [{ headerKey: 'c', headerValue: 'z' }])
               } catch (error) {
                 console.error(`emitPrefetchPageInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = error.code;
@@ -383,7 +389,7 @@ struct webViewContCreatePdfAndOthersError {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)

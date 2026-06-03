@@ -123,7 +123,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0100
      * @tc.name testClassGetInstanceField001
-     * @tc.desc Verify ClassGetInstanceField case 001: nameparameters in
+     * @tc.desc Verify ClassGetInstanceField case 001: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -137,7 +137,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0200
      * @tc.name testClassGetInstanceField002
-     * @tc.desc Verify ClassGetInstanceField case 002: not nameparameters should
+     * @tc.desc Verify ClassGetInstanceField case 002: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -148,15 +148,14 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField();
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0300
      * @tc.name testClassGetInstanceField003
-     * @tc.desc Verify ClassGetInstanceField case 003: parameters should
+     * @tc.desc Verify ClassGetInstanceField case 003: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -167,15 +166,14 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField('name', 'extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0400
      * @tc.name testClassGetInstanceField004
-     * @tc.desc Verify ClassGetInstanceField case 004: field string
+     * @tc.desc Verify ClassGetInstanceField case 004: Class.from<TestClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -192,7 +190,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0500
      * @tc.name testClassGetInstanceField005
-     * @tc.desc Verify ClassGetInstanceField case 005: empty string
+     * @tc.desc Verify ClassGetInstanceField case 005: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -206,7 +204,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0600
      * @tc.name testClassGetInstanceField006
-     * @tc.desc Verify ClassGetInstanceField case 006: field_name $ CJK and negative field-name query
+     * @tc.desc Verify ClassGetInstanceField case 006: Class.from<SpecialClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,7 +229,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0700
      * @tc.name testClassGetInstanceField007
-     * @tc.desc Verify ClassGetInstanceField case 007: Unicode field names
+     * @tc.desc Verify ClassGetInstanceField case 007: Class.from<UnicodeClass007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +252,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0800
      * @tc.name testClassGetInstanceField008
-     * @tc.desc Verify ClassGetInstanceField case 008: null
+     * @tc.desc Verify ClassGetInstanceField case 008: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -265,15 +263,14 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(null as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_0900
      * @tc.name testClassGetInstanceField009
-     * @tc.desc Verify ClassGetInstanceField case 009: undefined
+     * @tc.desc Verify ClassGetInstanceField case 009: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -284,15 +281,14 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(undefined as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1000
      * @tc.name testClassGetInstanceField010
-     * @tc.desc Verify ClassGetInstanceField case 010: string type
+     * @tc.desc Verify ClassGetInstanceField case 010: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -303,15 +299,14 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField(123 as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1100
      * @tc.name testClassGetInstanceField011
-     * @tc.desc Verify ClassGetInstanceField case 011: field
+     * @tc.desc Verify ClassGetInstanceField case 011: Class.from<CaseClass011>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -330,7 +325,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1200
      * @tc.name testClassGetInstanceField012
-     * @tc.desc Verify ClassGetInstanceField case 012: to field when return InstanceFieldobject
+     * @tc.desc Verify ClassGetInstanceField case 012: Class.from<TestClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -347,7 +342,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1300
      * @tc.name testClassGetInstanceField013
-     * @tc.desc Verify ClassGetInstanceField case 013: return reflect.InstanceFieldtype
+     * @tc.desc Verify ClassGetInstanceField case 013: Class.from<TestClass012>(), isPublic flag verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -365,7 +360,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1400
      * @tc.name testClassGetInstanceField014
-     * @tc.desc Verify ClassGetInstanceField case 014: return InstanceField property
+     * @tc.desc Verify ClassGetInstanceField case 014: Class.from<CompleteTest014>(), isPrivate flag verified, isProtected flag verified, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -384,7 +379,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1500
      * @tc.name testClassGetInstanceField015
-     * @tc.desc Verify ClassGetInstanceField case 015: field not in when return undefined
+     * @tc.desc Verify ClassGetInstanceField case 015: Class.from<TestClass015>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -399,7 +394,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1600
      * @tc.name testClassGetInstanceField016
-     * @tc.desc Verify ClassGetInstanceField case 016: privatefield not
+     * @tc.desc Verify ClassGetInstanceField case 016: Class.from<PrivateTest016>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +411,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1700
      * @tc.name testClassGetInstanceField017
-     * @tc.desc Verify ClassGetInstanceField case 017: protectedfield not
+     * @tc.desc Verify ClassGetInstanceField case 017: Class.from<ProtectedTest017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -430,7 +425,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1800
      * @tc.name testClassGetInstanceField018
-     * @tc.desc Verify ClassGetInstanceField case 018: field
+     * @tc.desc Verify ClassGetInstanceField case 018: Class.from<ChildClass018>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -452,7 +447,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_1900
      * @tc.name testClassGetInstanceField019
-     * @tc.desc Verify ClassGetInstanceField case 019: inheritance field
+     * @tc.desc Verify ClassGetInstanceField case 019: Class.from<Child019>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -473,14 +468,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
-     * @tc.name testClassGetInstanceField021
-     * @tc.desc Verify ClassGetInstanceField case 021: return InstanceField getType()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2000
+     * @tc.name testClassGetInstanceField020
+     * @tc.desc Verify ClassGetInstanceField case 020: Class.from<TypedClass021>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypedClass021>();
 
       let strField = cls.getInstanceField('strField');
@@ -497,33 +492,32 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2200
-     * @tc.name testClassGetInstanceField022
-     * @tc.desc Verify ClassGetInstanceField case 022: string type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
+     * @tc.name testClassGetInstanceField021
+     * @tc.desc Verify ClassGetInstanceField case 021: invalid input throws ClassCastError, Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       try {
         let field = looseReflect(cls as Object).getInstanceField(true as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2300
-     * @tc.name testClassGetInstanceField023
-     * @tc.desc Verify ClassGetInstanceField case 023: Class call
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2200
+     * @tc.name testClassGetInstanceField022
+     * @tc.desc Verify ClassGetInstanceField case 022: Class.from<MyClass001>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       cls.initialize();
       let field = cls.getInstanceField('name');
@@ -532,14 +526,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2400
-     * @tc.name testClassGetInstanceField024
-     * @tc.desc Verify ClassGetInstanceField case 024: method is when
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2300
+     * @tc.name testClassGetInstanceField023
+     * @tc.desc Verify ClassGetInstanceField case 023: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField('name');
       let field2 = cls.getInstanceField('name');
@@ -549,14 +543,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2500
-     * @tc.name testClassGetInstanceField025
-     * @tc.desc Verify ClassGetInstanceField case 025: getInstanceField method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2400
+     * @tc.name testClassGetInstanceField024
+     * @tc.desc Verify ClassGetInstanceField case 024: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name');
       expect(field !== null).assertTrue();
@@ -565,14 +559,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2600
-     * @tc.name testClassGetInstanceField026
-     * @tc.desc Verify ClassGetInstanceField case 026: field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2500
+     * @tc.name testClassGetInstanceField025
+     * @tc.desc Verify ClassGetInstanceField case 025: Class.from<LongName026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LongName026>();
       let longName = 'a'.repeat(1000);
       let field = cls.getInstanceField(longName);
@@ -580,14 +574,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2700
-     * @tc.name testClassGetInstanceField027
-     * @tc.desc Verify ClassGetInstanceField case 027: JavaScript is field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2600
+     * @tc.name testClassGetInstanceField026
+     * @tc.desc Verify ClassGetInstanceField case 026: Class.from<KeywordName027>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<KeywordName027>();
       let field1 = cls.getInstanceField('kwClass');
       let field2 = cls.getInstanceField('kwFunction');
@@ -599,14 +593,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2800
-     * @tc.name testClassGetInstanceField028
-     * @tc.desc Verify ClassGetInstanceField case 028: readonly public
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2700
+     * @tc.name testClassGetInstanceField027
+     * @tc.desc Verify ClassGetInstanceField case 027: Class.from<ModifierClass028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass028>();
 
       let field1 = cls.getInstanceField('readonlyPublic');
@@ -619,14 +613,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2900
-     * @tc.name testClassGetInstanceField029
-     * @tc.desc Verify ClassGetInstanceField case 029: field return same object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2800
+     * @tc.name testClassGetInstanceField028
+     * @tc.desc Verify ClassGetInstanceField case 028: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField('name');
       let field2 = cls.getInstanceField('name');
