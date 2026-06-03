@@ -96,7 +96,8 @@ struct webViewContPageAndprepareForPageLoadErrorTwo {
             }
             case "emitPrepareForPageLoadErrTwo": {
               try {
-                web_webview.WebviewController.prepareForPageLoad(this.mServer.getAssetUrl(CommonConstants.TEST_URL), true, 7);
+                web_webview.WebviewController.prepareForPageLoad(this.mServer.getAssetUrl(CommonConstants.TEST_URL),
+                 true, 7);
               } catch (error) {
                 console.error(`prepareForPageLoad fail, ErrorCode: ${error.code},  Message: ${error.message}`);
                 this.errorCode = error.code;
