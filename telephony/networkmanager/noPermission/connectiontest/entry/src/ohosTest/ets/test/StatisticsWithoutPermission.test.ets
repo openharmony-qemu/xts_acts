@@ -6,8 +6,8 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
   } catch (err) {
-    console.info(` exportTrue failed err: ${JSON.stringify(err)}`);
-  }
+    console.info(`expectTrue failed err: ${JSON.stringify(err)}`);
+  };
 };
 const ExpectFail = () => {
   try {
@@ -15,8 +15,7 @@ const ExpectFail = () => {
   } catch (err) {
     console.info(`exportFail failed err: ${JSON.stringify(err)}`);
   }
-}
-
+};
 
 export default function StatisticsErrorCodeTest() {
   describe('statisticsNoPermissionTest', () => {
@@ -36,11 +35,11 @@ export default function StatisticsErrorCodeTest() {
         let uid: number = 1010;
         statistics.getUidRxBytes(uid, (error: BusinessError, stats: number) => {
           if(error){
-            console.log(`${caseName} err in `,JSON.stringify(error));
+            console.info(`${caseName} err in `,JSON.stringify(error));
             ExpectTrue(error.code === 201);
           }
           else{
-            console.log(`${caseName} GetUidRxBytes success `,JSON.stringify(stats));
+            console.info(`${caseName} GetUidRxBytes success `,JSON.stringify(stats));
             ExpectFail();
           }
           done();
@@ -65,19 +64,15 @@ export default function StatisticsErrorCodeTest() {
       console.info(`${caseName} test start`);
       try {
         let uid: number = 1010;
-        statistics.getUidRxBytes(uid).then((stats: number) => {
-          console.log(`${caseName} get stats success`,JSON.stringify(stats));
-          ExpectFail();
-        }).catch((err:BusinessError)=>{
-            console.log(`${caseName} err in`,JSON.stringify(err));
-            ExpectTrue(err.code === 201);
-          })
-        done();
-      }catch (err){
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        let stats: number = await statistics.getUidRxBytes(uid);
+        console.info(`${caseName} get stats success`,JSON.stringify(stats));
         ExpectFail();
-        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} err in`,JSON.stringify(error));
+        ExpectTrue(error.code === 201);
       }
+      done();
     });
 
     /**
@@ -95,11 +90,11 @@ export default function StatisticsErrorCodeTest() {
         let uid: number = 1010;
         statistics.getUidTxBytes(uid, (error: BusinessError, stats: number) => {
           if(error){
-            console.log(`${caseName} err in `,JSON.stringify(error));
+            console.info(`${caseName} err in `,JSON.stringify(error));
             ExpectTrue(error.code === 201);
           }
           else{
-            console.log(`${caseName} GetUidTxBytes success `,JSON.stringify(stats));
+            console.info(`${caseName} GetUidTxBytes success `,JSON.stringify(stats));
             ExpectFail();
           }
           done();
@@ -124,19 +119,15 @@ export default function StatisticsErrorCodeTest() {
       console.info(`${caseName} test start`);
       try {
         let uid: number = 1010;
-        statistics.getUidTxBytes(uid).then((stats: number) => {
-          console.log(`${caseName} get stats success`,JSON.stringify(stats));
-          ExpectFail();
-        }).catch((err:BusinessError)=>{
-            console.log(`${caseName} err in`,JSON.stringify(err));
-            ExpectTrue(err.code === 201);
-          })
-        done();
-      }catch (err){
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        let stats: number = await statistics.getUidTxBytes(uid);
+        console.info(`${caseName} get stats success`,JSON.stringify(stats));
         ExpectFail();
-        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} err in`,JSON.stringify(error));
+        ExpectTrue(error.code === 201);
       }
+      done();
     });
 
   })
