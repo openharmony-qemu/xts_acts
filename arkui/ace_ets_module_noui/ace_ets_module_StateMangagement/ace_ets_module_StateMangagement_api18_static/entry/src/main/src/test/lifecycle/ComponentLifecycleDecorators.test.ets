@@ -89,6 +89,7 @@ export default function componentLifecycleDecoratorsTest() {
       expect(storageValueActive).assertEqual('ActiveItem5')
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 END');
       done();
+      
     });
 
   });
