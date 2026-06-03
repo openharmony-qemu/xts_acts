@@ -222,8 +222,6 @@ export default function DisplayTest():void {
             await clickButtonDriver();
             hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
         })
-
-        })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
          * @tc.name        tesGetAllDisplays_Promise_static_0100
