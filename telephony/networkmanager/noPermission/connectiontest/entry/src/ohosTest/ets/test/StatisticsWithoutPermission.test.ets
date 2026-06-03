@@ -68,9 +68,8 @@ export default function StatisticsErrorCodeTest() {
         console.info(`${caseName} get stats success`,JSON.stringify(stats));
         ExpectFail();
       } catch (err) {
-        let error = err as BusinessError;
-        console.info(`${caseName} err in`,JSON.stringify(error));
-        ExpectTrue(error.code === 201);
+        console.info(`${caseName} err in`,JSON.stringify(err));
+        ExpectTrue(err.code === 201);
       }
       done();
     });
@@ -123,9 +122,8 @@ export default function StatisticsErrorCodeTest() {
         console.info(`${caseName} get stats success`,JSON.stringify(stats));
         ExpectFail();
       } catch (err) {
-        let error = err as BusinessError;
-        console.info(`${caseName} err in`,JSON.stringify(error));
-        ExpectTrue(error.code === 201);
+        console.info(`${caseName} err in`,JSON.stringify(err));
+        ExpectTrue(err.code === 201);
       }
       done();
     });
