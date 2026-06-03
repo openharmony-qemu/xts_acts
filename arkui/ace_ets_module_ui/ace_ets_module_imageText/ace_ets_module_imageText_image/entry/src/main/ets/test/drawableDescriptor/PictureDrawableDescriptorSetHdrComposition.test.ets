@@ -47,7 +47,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
 
     /**
      * @tc.name   pictureDrawableDescriptorSetHdrCompositionNormal001
-     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_PARAM_001
+     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_PARAM_0010
      * @tc.desc   Test PictureDrawableDescriptor setHdrComposition with normal rect config. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -78,7 +78,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
 
     /**
      * @tc.name   pictureDrawableDescriptorSetHdrCompositionInvalidate001
-     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_PARAM_002
+     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_PARAM_0020
      * @tc.desc   Test PictureDrawableDescriptor setHdrComposition with invalidate to trigger rebuild. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -109,7 +109,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
 
     /**
      * @tc.name   pictureDrawableDescriptorSetHdrCompositionZero001
-     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_BOUNDARY_001
+     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_BOUNDARY_0010
      * @tc.desc   Test PictureDrawableDescriptor setHdrComposition with rect zero values. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -140,7 +140,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
 
     /**
      * @tc.name   pictureDrawableDescriptorSetHdrCompositionNegative001
-     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_BOUNDARY_002
+     * @tc.number SUB_ARKUI_PICTURE_DRAWABLE_DESCRIPTOR_SETHDRCOMPOSITION_BOUNDARY_0020
      * @tc.desc   Test PictureDrawableDescriptor setHdrComposition with rect negative values. since 26.0.0
      * @tc.type   Function
      * @tc.size   MediumTest
