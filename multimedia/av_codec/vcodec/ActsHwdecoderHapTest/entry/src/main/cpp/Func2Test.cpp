@@ -1594,13 +1594,13 @@ int  VIDEO_DECODE_ORDER_0500()
             vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
             vDecSample->isChecklowLatency = true;
             vDecSample->enableOrderDecode = true;
-            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDec_Surface(g_codecNameHEVC));
+            ASSERT_EQ(AV_ERR_OK, vDecSample->RunVideoDecSurface(g_codecNameHEVC));
             vDecSample->WaitForEOS();
             ASSERT_EQ(AV_ERR_OK, vDecSample->errCount);
         } else {
             auto vDecSample = make_shared<VDecAPI11Sample>();
             vDecSample->enableOrderDecode = true;
-            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDec_Surface(g_codecNameHEVC));
+            ASSERT_EQ(AV_ERR_INVALID_VAL, vDecSample->RunVideoDecSurface(g_codecNameHEVC));
         }
     }
     return SUCCESS_CODE;
