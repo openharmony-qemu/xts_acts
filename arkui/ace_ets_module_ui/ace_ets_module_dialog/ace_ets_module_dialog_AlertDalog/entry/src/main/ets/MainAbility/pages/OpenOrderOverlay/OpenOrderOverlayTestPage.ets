@@ -17,7 +17,7 @@ import { ComponentContent, OverlayManager, LevelOrder, LevelMode } from '@kit.Ar
 import router from '@ohos.router';
 
 class Params {
-  text: string = "";
+  public text: string = '';
   offset: Position;
 
   constructor(text: string, offset: Position) {

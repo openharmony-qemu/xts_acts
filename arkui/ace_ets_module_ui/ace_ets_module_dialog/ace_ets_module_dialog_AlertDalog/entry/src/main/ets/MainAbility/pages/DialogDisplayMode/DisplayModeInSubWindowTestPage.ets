@@ -29,7 +29,7 @@ struct Index {
     Column() {
       Text('弹窗').fontSize(30)
       Row({ space: 50 }) {
-        Button("确认").onClick(() => {
+        Button('确认').onClick(() => {
           try {
             promptAction.closeCustomDialog(this.customDialogComponentId)
           } catch (error) {
@@ -38,7 +38,7 @@ struct Index {
             console.error(`closeCustomDialog error code is ${code}, message is ${message}`);
           }
         })
-        Button("取消").onClick(() => {
+        Button('取消').onClick(() => {
           try {
             promptAction.closeCustomDialog(this.customDialogComponentId)
           } catch (error) {
