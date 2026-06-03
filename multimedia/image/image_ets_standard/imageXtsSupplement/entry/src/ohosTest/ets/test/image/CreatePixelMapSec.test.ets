@@ -68,19 +68,19 @@ export default function CreatePixelMapSuppSec() {
       console.info(TAG, 'afterEach case');
     });
     afterAll(() => {
-      console.info(TAG, 'afterAll case');
+      console.info(TAG, 'afterAll');
     });
 
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2400
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2400
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_093';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -98,15 +98,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2500
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2500
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_094';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -124,15 +124,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2600
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2600
      * @tc.desc       createScaledPixelMapSync cover NONE
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_095';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -151,15 +151,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2700
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2700
      * @tc.desc       createScaledPixelMapSync cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_096';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -178,15 +178,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2800
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2800
      * @tc.desc       createScaledPixelMapSync cover HIGH
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_097';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -205,15 +205,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2900
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2900
      * @tc.desc       createScaledPixelMapSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_098';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_2900';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -231,15 +231,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3000
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3000
      * @tc.desc       createScaledPixelMapSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_099';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3000';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -257,15 +257,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3100
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3100
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_100';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3100';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -283,15 +283,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3200
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3200
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_101';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3200';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -309,15 +309,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3300
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3300
      * @tc.desc       createScaledPixelMapSync cover NONE
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_102';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3300';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -336,15 +336,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3400
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3400
      * @tc.desc       createScaledPixelMapSync cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_103';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3400';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -363,15 +363,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3500
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3500
      * @tc.desc       createScaledPixelMapSync cover HIGH
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_104';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3500';
       const pathUri = 'test_exif_v2.png';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -390,15 +390,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3600
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3600
      * @tc.desc       createScaledPixelMapSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_105';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3600';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -416,15 +416,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3700
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3700
      * @tc.desc       createScaledPixelMapSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_106';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3700';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -442,15 +442,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3800
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3800
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_107';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3800';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -468,15 +468,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3900
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3900
      * @tc.desc       createScaledPixelMapSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_108';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_3900';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -494,15 +494,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4000
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4000
      * @tc.desc       createScaledPixelMapSync cover NONE
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_109';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4000';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -521,15 +521,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4100
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4100
      * @tc.desc       createScaledPixelMapSync cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_110';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4100';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -548,15 +548,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111
-     * @tc.name       SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4200
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4200
      * @tc.desc       createScaledPixelMapSync cover HIGH
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_SYNC_TEST_111';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_SYNC_4200';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -575,15 +575,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_TEST_112
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_TEST_112
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4300
      * @tc.desc       opacity cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_TEST_112', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_TEST_112';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -606,15 +606,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_TEST_113
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_TEST_113
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4400
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4400
      * @tc.desc       opacity cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_TEST_113', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_TEST_113';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -637,15 +637,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_TEST_114
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_TEST_114
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4500
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4500
      * @tc.desc       opacity cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_TEST_114', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_TEST_114';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -661,15 +661,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_TEST_115
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_TEST_115
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4600
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4600
      * @tc.desc       opacity cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_TEST_115', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_TEST_115';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_4600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -685,15 +685,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4700
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4700
      * @tc.desc       opacitySync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_116';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -709,15 +709,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_117
-     * @tc.name       SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_117
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4800
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4800
      * @tc.desc       opacitySync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_117', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_OPACITY_SYNC_TEST_117';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_OPACITY_SYNC_4800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -733,15 +733,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_118
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_118
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_4900
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_4900
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_118', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_118';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_4900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_4900';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -764,15 +764,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_119
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_119
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5000
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5000
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_119', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_119';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5000';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -795,15 +795,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_120
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_120
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5100
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5100
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_120', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_120';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5100';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -826,15 +826,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_121
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_121
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5200
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5200
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_121', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_121';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5200';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -857,15 +857,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_122
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_122
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5300
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_122', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_122';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -882,15 +882,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_123
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_123
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5400
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5400
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_123', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_123';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -907,15 +907,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_124
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_124
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5500
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5500
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_124', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_124';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -932,15 +932,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_125
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_125
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5600
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5600
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_125', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_125';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_5600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -957,15 +957,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_126
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_126
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5700
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5700
      * @tc.desc       scaleSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_126', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_126';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -982,15 +982,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_127
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_127
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5800
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5800
      * @tc.desc       scaleSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_127', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_127';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1007,15 +1007,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_128
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_128
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5900
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5900
      * @tc.desc       scaleSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_128', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_128';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_5900';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1032,15 +1032,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_129
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_129
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6000
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6000
      * @tc.desc       scaleSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_129', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_129';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6000';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1057,15 +1057,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_130
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_130
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6100
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6100
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_130', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_130';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6100';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1082,15 +1082,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_131
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_131
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6200
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6200
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_131', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_131';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6200';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1107,15 +1107,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_132
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_132
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6300
      * @tc.desc       scale cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_132', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_132';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1132,15 +1132,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_133
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_133
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6400
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6400
      * @tc.desc       scale cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_133', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_133';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1157,15 +1157,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_134
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_134
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6500
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6500
      * @tc.desc       scale cover NONE
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_134', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_134';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1183,15 +1183,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_135
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_135
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6600
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6600
      * @tc.desc       scale cover HIGH
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_135', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_135';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1209,15 +1209,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_TEST_136
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_TEST_136
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6700
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6700
      * @tc.desc       scale cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_TEST_136', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_TEST_136';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_6700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1235,15 +1235,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_137
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_137
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6800
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6800
      * @tc.desc       scaleSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_137', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_137';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1260,15 +1260,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_138
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_138
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6900
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6900
      * @tc.desc       scaleSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_138', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_138';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_6900';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1285,15 +1285,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_139
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_139
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7000
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7000
      * @tc.desc       scaleSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_139', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_139';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7000';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1310,15 +1310,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_140
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_140
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7100
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7100
      * @tc.desc       scaleSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_140', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_140';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7100';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1335,15 +1335,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_141
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_141
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7200
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7200
      * @tc.desc       scaleSync cover NONE
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_141', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_141';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7200';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1361,15 +1361,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_142
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_142
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7300
      * @tc.desc       scaleSync cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_142', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_142';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1387,15 +1387,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_143
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_143
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7400
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7400
      * @tc.desc       scaleSync cover MEDIUM
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_143', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_143';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1413,15 +1413,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_144
-     * @tc.name       SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_144
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7500
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7500
      * @tc.desc       scaleSync cover HIGH
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_144', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_SCALE_SYNC_TEST_144';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_SCALE_SYNC_7500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1439,15 +1439,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_145
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_145
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7600
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7600
      * @tc.desc       translate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_145', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_145';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1470,15 +1470,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_146
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_146
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7700
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7700
      * @tc.desc       translate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_146', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_146';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1501,15 +1501,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_147
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_147
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7800
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7800
      * @tc.desc       translate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_147', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_147';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1532,15 +1532,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_148
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_148
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7900
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7900
      * @tc.desc       translate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_148', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_148';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_7900';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1563,15 +1563,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_149
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_149
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8000
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8000
      * @tc.desc       translate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_149', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_149';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8000';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1588,15 +1588,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_150
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_150
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8100
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8100
      * @tc.desc       translate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_150', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_150';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8100';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1613,15 +1613,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_151
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_151
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8200
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8200
      * @tc.desc       translate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_151', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_151';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8200';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1638,15 +1638,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_165
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_165
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8300
      * @tc.desc       translate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_165', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_TEST_165';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_8300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1663,15 +1663,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_152
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_152
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8400
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8400
      * @tc.desc       translateSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_152', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_152';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8400';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1688,15 +1688,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_153
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_153
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8500
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8500
      * @tc.desc       translateSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_153', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_153';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8500';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1713,15 +1713,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_154
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_154
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8600
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8600
      * @tc.desc       translateSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_154', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_154';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8600';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1738,15 +1738,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_155
-     * @tc.name       SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_155
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8700
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8700
      * @tc.desc       translateSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_155', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_TRANSLATE_SYNC_TEST_155';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_TRANSLATE_SYNC_8700';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1763,15 +1763,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_TEST_156
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_TEST_156
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8800
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8800
      * @tc.desc       rotate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_TEST_156', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_TEST_156';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8800';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1793,15 +1793,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_TEST_157
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_TEST_157
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8900
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8900
      * @tc.desc       rotate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_TEST_157', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_TEST_157';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8900', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_8900';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1823,15 +1823,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_TEST_158
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_TEST_158
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9000
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9000
      * @tc.desc       translate cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_TEST_158', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_TEST_158';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9000', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9000';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1847,15 +1847,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_TEST_159
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_TEST_159
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9100
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9100
      * @tc.desc       translate cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_TEST_159', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_TEST_159';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9100', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_9100';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1871,15 +1871,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_160
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_160
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9200
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9200
      * @tc.desc       translateSync cover null
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_160', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_160';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9200', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9200';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1895,15 +1895,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_161
-     * @tc.name       SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_161
+     * @tc.number     SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9300
+     * @tc.name       SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9300
      * @tc.desc       translateSync cover undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_161', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_PIXELMAP_ROTATE_SYNC_TEST_161';
+    it('SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9300', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_PIXELMAP_ROTATE_SYNC_9300';
       const pathUri = 'test_exif_v2.jpg';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
@@ -1919,15 +1919,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_162
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_162
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9400
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9400
      * @tc.desc       CreateIncrementalSource return supportedFormats
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_162', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_162';
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9400', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9400';
       try {
         let resourceId = $r('app.media.startIcon').id;
         console.info(TAG, testName, 'Resource ID:', resourceId);
@@ -1950,15 +1950,15 @@ export default function CreatePixelMapSuppSec() {
       }
     })
     /**
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_163
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_163
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9500
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9500
      * @tc.desc       CreateIncrementalSource cover sourceDensity,sourcePixelFormat,sourceSize
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_163', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_163';
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9500', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9500';
       try {
         let resourceId = $r('app.media.startIcon').id;
         console.info(TAG, testName, 'Resource ID:', resourceId);
@@ -1989,15 +1989,15 @@ export default function CreatePixelMapSuppSec() {
       }
     })
     /**
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_164
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_164
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9600
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9600
      * @tc.desc       CreateIncrementalSource return supportedFormats
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_164', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CreateIncrementalSource_164';
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9600', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_INCREMENTAL_SOURCE_9600';
       try {
         let resourceId = $r('app.media.startIcon').id;
         console.info(TAG, testName, 'Resource ID:', resourceId);
@@ -2028,15 +2028,15 @@ export default function CreatePixelMapSuppSec() {
       }
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166
-     * @tc.name       SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166
+     * @tc.number     SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9700
+     * @tc.name       SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9700
      * @tc.desc       dequeueImage return clipRec,size,format,timestamp
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166';
+    it('SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9700', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9700';
       let size: image.Size = {
         height: 8192,
         width: 8192
@@ -2070,15 +2070,15 @@ export default function CreatePixelMapSuppSec() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167
-     * @tc.name       SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167
+     * @tc.number     SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9800
+     * @tc.name       SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9800
      * @tc.desc       dequeueImage return clipRec,size,format,timestamp
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167';
+    it('SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9800', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATOR_DEQUEUE_IMAGE_9800';
       let size: image.Size = {
         height: 8192,
         width: 8192
