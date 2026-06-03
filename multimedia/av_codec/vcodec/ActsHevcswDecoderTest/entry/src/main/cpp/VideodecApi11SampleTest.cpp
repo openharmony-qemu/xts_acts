@@ -707,7 +707,7 @@ void VDecAPI11Sample::InFuncTest()
         OH_VideoDecoder_Start(vdec_);
     }
     inputCount++;
-    if (inputCount % defaultFrameRate == 0) {
+    if (inputCount % (uint32_t)defaultFrameRate == 0) {
         ExpireSurface();
     }
 }
