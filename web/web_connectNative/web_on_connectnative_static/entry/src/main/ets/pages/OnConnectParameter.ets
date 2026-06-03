@@ -19,10 +19,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
-function isCapabilityNotSupportedCode(code: number): boolean {
-  // Convert to string for comparison to avoid type mismatch with NmErrorCode enum
-  return String(code) === '801';
-}
+
 
 export class StringFields {
   public str: string = '';
@@ -146,14 +143,6 @@ struct WebOnConnectParameter {
                   } catch (error) {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativePermissionDenyStatic001 error: ${err.code}, ${err.message}`);
-                    if (isCapabilityNotSupportedCode(err.code)) {
-                      let flag = true;
-                      hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-                      Utils.emitEvent(201, 20260604);
-                      flag = false
-                      done();
-                      return;
-                    }
                     Utils.emitEvent(err.code, 20260604);
                   }
                 };
@@ -168,14 +157,6 @@ struct WebOnConnectParameter {
                   } catch (error) {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${err.code}, ${err.message}`);
-                    if (isCapabilityNotSupportedCode(err.code)) {
-                      let flag = true;
-                      hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-                      Utils.emitEvent(201, 20260605);
-                      flag = false
-                      done();
-                      return;
-                    }
                     Utils.emitEvent(err.code, 20260605);
                   }
                 };
