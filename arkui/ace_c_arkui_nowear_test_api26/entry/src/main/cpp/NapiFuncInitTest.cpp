@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "renderNode/RenderNodeUtilsSetRectShapeOptionValue.cpp"
 #include "renderNode/RenderNodeBlurStyleOptionTest.cpp"
+#include "renderNode/NativeModuleCapiInitErrorCodeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -59,6 +60,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestRenderNodeBlurStyleOption_014", nullptr, TestRenderNodeBlurStyleOption_014, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         {"TestRenderNodeBlurStyleOption_015", nullptr, TestRenderNodeBlurStyleOption_015, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestSetChildMountPolicyInitError001", nullptr, TestSetChildMountPolicyInitError001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetChildMountPolicyInitError001", nullptr, TestGetChildMountPolicyInitError001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

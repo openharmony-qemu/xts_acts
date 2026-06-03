@@ -45,3 +45,7 @@ export const TestRenderNodeBlurStyleOption_013: () => number;
 export const TestRenderNodeBlurStyleOption_014: () => number;
 
 export const TestRenderNodeBlurStyleOption_015: () => number;
+
+export const TestSetChildMountPolicyInitError001: () => number;
+
+export const TestGetChildMountPolicyInitError001: () => number;
