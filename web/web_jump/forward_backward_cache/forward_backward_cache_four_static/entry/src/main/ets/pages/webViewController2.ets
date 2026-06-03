@@ -118,18 +118,6 @@ struct Index {
             }
 
 
-            case "emitSetScrollbarMode003": {
-              console.log("ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR111:", web_webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR);
-              try {
-                web_webview.WebviewController.setScrollbarMode(web_webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR);
-                Utils.emitEvent(webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR, 20260526)
-                break;
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-
             case "emitWebBypassVsyncCondition001": {
               try {
                 this.condition = WebBypassVsyncCondition.SCROLLBY_FROM_ZERO_OFFSET;
