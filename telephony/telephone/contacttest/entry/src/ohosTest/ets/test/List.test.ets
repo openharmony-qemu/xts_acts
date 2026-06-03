@@ -27,6 +27,7 @@ import EmptyTest from './Empty.test';
 import ContactsTest from './Contacts.test';
 import AddContactViaUITest from './AddContactViaUI.test';
 import SaveToExistingContactViaUITest from './SaveToExistingContactViaUI.test';
+import ImportContactsViaUITest from './ImportContactsViaUI.test';
 import SelectContactsTest from './SelectContacts.test';
 import EmptyParamTest from './EmptyParamTest.test';
 import EmptyParamCardTest from './EmptyParamCardTest.test';
@@ -36,11 +37,12 @@ import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
   AddContactTest();
+  IsMyCardTest();
   if (deviceInfo.deviceType !== 'wearable' && deviceInfo.deviceType !== 'default') {
-    IsMyCardTest();
     SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
+    ImportContactsViaUITest();
   } 
   QueryKeyTest();
   QueryByEmailTest();
