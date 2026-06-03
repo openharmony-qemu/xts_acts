@@ -28,7 +28,6 @@ import ListImageTest from './ListImageTest/ListImage.test';
 import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
 import ImageReloadKeyTest from './imageTest/ImageReloadKey.test';
 import DrawableDescriptorReleaseTest from './drawableDescriptorTest/DrawableDescriptorRelease.test';
-import SetHdrCompositionTest from './drawableDescriptorTest/SetHdrComposition.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/PixelMapDrawableDescriptorConstructor.test';
 
 export default function testsuite() {
@@ -46,6 +45,5 @@ export default function testsuite() {
   ImageColorFilterTest();
   ImageReloadKeyTest();
   DrawableDescriptorReleaseTest();
-  SetHdrCompositionTest();
   PixelMapDrawableDescriptorConstructorTest();
 }

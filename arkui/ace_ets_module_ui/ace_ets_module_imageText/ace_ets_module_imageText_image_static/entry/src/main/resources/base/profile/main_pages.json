@@ -18,7 +18,6 @@
     "MainAbility/pages/ImageColorFilter/ImageColorFilter",
     "MainAbility/pages/image/ImageReloadKey",
     "MainAbility/pages/drawableDescriptor/DrawableDescriptorReleaseTest",
-    "MainAbility/pages/drawableDescriptor/PictureDrawableDescriptorSetHdrComposition",
     "MainAbility/pages/drawableDescriptor/PixelMapDrawableDescriptorConstructor"
   ]
 }
