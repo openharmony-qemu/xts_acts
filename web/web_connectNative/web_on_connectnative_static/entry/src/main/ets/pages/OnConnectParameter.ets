@@ -147,11 +147,9 @@ struct WebOnConnectParameter {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativePermissionDenyStatic001 error: ${err.code}, ${err.message}`);
                     if (isCapabilityNotSupportedCode(err.code)) {
-                      let flag = true;
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260604);
-                      flag = false
-                      return;
+                      break;
                     }
                     Utils.emitEvent(err.code, 20260604);
                   }
@@ -168,11 +166,9 @@ struct WebOnConnectParameter {
                     let err = error as BusinessError;
                     console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${err.code}, ${err.message}`);
                     if (isCapabilityNotSupportedCode(err.code)) {
-                      let flag = true;
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260605);
-                      flag = false
-                      return;
+                      break;
                     }
                     Utils.emitEvent(err.code, 20260605);
                   }
