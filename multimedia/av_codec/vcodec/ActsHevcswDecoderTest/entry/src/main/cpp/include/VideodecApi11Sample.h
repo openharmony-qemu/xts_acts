@@ -143,6 +143,7 @@ public:
     void ReleaseSignal();
     void CreateSurface();
     void ReleaseInFile();
+    void ExpireSurface();
     void StopInloop();
     void FlushBuffer();
     void StopOutloop();
