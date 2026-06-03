@@ -87,7 +87,7 @@ export default function webViewSrollableJsunit() {
 	
 	 /** 
       * @tc.name   emitonSwitchNextPage 
-      * @tc.number emitonSwitchNextPage 
+      * @tc.number SUB_WEB_SWITCH_NEXT_0400
       * @tc.desc   emitonSwitchNextPage 
       * @tc.type   FUNCTION 
       * @tc.size   MEDIUMTEST 
