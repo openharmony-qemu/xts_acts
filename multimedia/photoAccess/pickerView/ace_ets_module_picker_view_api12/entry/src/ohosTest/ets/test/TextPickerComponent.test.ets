@@ -3651,7 +3651,7 @@ export default function TextPicker() {
         try {
           photoAccessHelper
             .getPhotoAccessHelper(context)
-            .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config);
+            .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config)
             .then((res) => {
               result = res;
             });
