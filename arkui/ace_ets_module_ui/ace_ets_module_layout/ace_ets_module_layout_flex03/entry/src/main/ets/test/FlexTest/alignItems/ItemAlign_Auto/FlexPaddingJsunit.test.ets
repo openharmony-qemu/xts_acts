@@ -66,34 +66,37 @@ export default function flexPadding_AutoJsunit() {
       let textFlexPadding02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding02');
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexPadding01');
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi1:'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(10))))
+
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi1:' + Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(10))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi2:' + Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi3:' + Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi4:' + Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi5:' + Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi6:' + Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(10))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi7:' + Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi8:' + Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi9:' + Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi10:' + Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi11:' + Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi12:' + Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(150))));
+
       expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(10))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi2:'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)))
       expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi3:'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)))
       expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi4:'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)))
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi5:'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)))
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi6:'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(10))))
       expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(10))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi7:'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))))
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi8:'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))))
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi9:'+ Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))))
       expect(Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi10:'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(150))))
       expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi11:'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(150))))
       expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMeet_chazhi12:'+ Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(150))))
       expect(Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(150))) <= 1).assertTrue();
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Auto');
-
       console.info('new testFlexItemAlignAutoFlexPadMeet END');
+
     });
 
     /**
@@ -117,36 +120,36 @@ export default function flexPadding_AutoJsunit() {
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexPadding01');
 
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi1:'+ Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(30))))
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi1:' + Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(30))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi2:' + Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi3:' + Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi4:' + Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi5:' + Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi6:' + Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(30))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi7:' + Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi8:' + Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi9:' + Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi10:' + Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(440 / 3))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi11:' + Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(440 / 3))));
+      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi12:' + Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(440 / 3))));
+
       expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left - vp2px(30))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi2:'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)))
       expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding02.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi3:'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)))
       expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding03.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi4:'+ Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)))
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi5:'+ Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)))
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi6:'+ Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(30))))
       expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top - vp2px(30))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi7:'+ Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))))
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding01.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi8:'+ Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))))
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding02.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi9:'+ Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))))
       expect(Math.floor(Math.abs(textFlexPadding03.bottom - textFlexPadding03.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi10:'+ Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textFlexPadding01.right - textFlexPadding01.left - vp2px(440 / 3))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi11:'+ Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textFlexPadding02.right - textFlexPadding02.left - vp2px(440 / 3))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadOverflow_chazhi12:'+ Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textFlexPadding03.right - textFlexPadding03.left - vp2px(440 / 3))) <= 1).assertTrue();
-      
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Auto');
-
       console.info('new testFlexItemAlignAutoFlexPadOverflow END');
-    });
 
+    });
   })
 }

@@ -136,7 +136,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0100
      * @tc.name testClassGetFixedArrayComponentType001
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 001: getFixedArrayComponentType instance method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 001: Class.from<FixedArray<int>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -151,7 +151,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0200
      * @tc.name testClassGetFixedArrayComponentType002
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 002: FixedArray<int> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 002: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -167,7 +167,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0300
      * @tc.name testClassGetFixedArrayComponentType003
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 003: FixedArray<double> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 003: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,7 +183,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0400
      * @tc.name testClassGetFixedArrayComponentType004
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 004: FixedArray<boolean> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 004: Class.of(instance), getName returns "std.core.Boolean", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -198,7 +198,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0500
      * @tc.name testClassGetFixedArrayComponentType005
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 005: FixedArray<char> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 005: Class.of(instance), getName returns "std.core.Char", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +213,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0600
      * @tc.name testClassGetFixedArrayComponentType006
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 006: FixedArray<string> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 006: Class.of(instance), getName returns "std.core.String", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -228,7 +228,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0700
      * @tc.name testClassGetFixedArrayComponentType007
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 007: FixedArray<long> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 007: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -243,7 +243,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0800
      * @tc.name testClassGetFixedArrayComponentType008
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 008: FixedArray<float> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 008: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,7 +258,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_0900
      * @tc.name testClassGetFixedArrayComponentType009
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 009: FixedArray<byte> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 009: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -273,7 +273,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1000
      * @tc.name testClassGetFixedArrayComponentType010
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 010: FixedArray<short> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 010: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -288,7 +288,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1100
      * @tc.name testClassGetFixedArrayComponentType011
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 011: FixedArray<Array<int>> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 011: Class.of(instance), getName returns "std.core.Array", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -303,7 +303,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1200
      * @tc.name testClassGetFixedArrayComponentType012
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 012: FixedArray<Map<string, int>> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 012: Class.of(instance), getName returns "std.core.Map", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -320,7 +320,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1300
      * @tc.name testClassGetFixedArrayComponentType013
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 013: FixedArray<Set<int>> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 013: Class.of(instance), getName returns "std.core.Set", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -337,7 +337,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1400
      * @tc.name testClassGetFixedArrayComponentType014
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 014: FixedArray<MyClass> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 014: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -354,7 +354,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1500
      * @tc.name testClassGetFixedArrayComponentType015
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 015: FixedArray<JsonSerializable> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 015: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -369,7 +369,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1600
      * @tc.name testClassGetFixedArrayComponentType016
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 016: Array<int>return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 016: Class.of(instance), getName returns "std.core.Array", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -385,7 +385,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1700
      * @tc.name testClassGetFixedArrayComponentType017
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 017: Array<string>return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 017: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -400,7 +400,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1800
      * @tc.name testClassGetFixedArrayComponentType018
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 018: empty Array<int>return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 018: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -415,7 +415,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_1900
      * @tc.name testClassGetFixedArrayComponentType019
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 019: Class.from<int>()return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 019: Class.from<int>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,7 +429,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2000
      * @tc.name testClassGetFixedArrayComponentType020
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 020: Class.PRIMITIVE_INTreturn undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 020: getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -442,7 +442,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2100
      * @tc.name testClassGetFixedArrayComponentType021
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 021: Class.from<string>()return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 021: Class.from<string>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -455,7 +455,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2200
      * @tc.name testClassGetFixedArrayComponentType022
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 022: Class.PRIMITIVE_BOOLEANreturn undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 022: getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,7 +468,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2300
      * @tc.name testClassGetFixedArrayComponentType023
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 023: return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 023: Class.from<MyClass023>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -482,7 +482,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2400
      * @tc.name testClassGetFixedArrayComponentType024
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 024: abstract class return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 024: Class.from<AbstractClass024>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -496,7 +496,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2500
      * @tc.name testClassGetFixedArrayComponentType025
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 025: final return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 025: Class.from<FinalClass025>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,7 +510,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2600
      * @tc.name testClassGetFixedArrayComponentType026
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 026: interface return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 026: Class.from<MyInterface026>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -524,7 +524,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2700
      * @tc.name testClassGetFixedArrayComponentType027
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 027: JsonSerializableinterface return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 027: Class.from<JsonSerializable>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -538,7 +538,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2800
      * @tc.name testClassGetFixedArrayComponentType028
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 028: ArrayLike<T>interface return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 028: Class.from<ArrayLike<int>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -552,7 +552,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_2900
      * @tc.name testClassGetFixedArrayComponentType029
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 029: Map<K, V>return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 029: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -567,7 +567,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3000
      * @tc.name testClassGetFixedArrayComponentType030
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 030: Set<T>return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 030: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -582,7 +582,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3100
      * @tc.name testClassGetFixedArrayComponentType031
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 031: type return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 031: Class.from<int | string>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +596,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3200
      * @tc.name testClassGetFixedArrayComponentType032
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 032: type return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 032: Class.from<int | string | Array<double>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -610,7 +610,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3300
      * @tc.name testClassGetFixedArrayComponentType033
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 033: return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 033: Class.from<TestEnum033>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -624,7 +624,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3400
      * @tc.name testClassGetFixedArrayComponentType034
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 034: empty FixedArray<int> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 034: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +640,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3500
      * @tc.name testClassGetFixedArrayComponentType035
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 035: 1000 FixedArray<int>
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 035: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -655,7 +655,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3600
      * @tc.name testClassGetFixedArrayComponentType036
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 036: FixedArray<int>
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 036: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -670,7 +670,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3700
      * @tc.name testClassGetFixedArrayComponentType037
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 037: FixedArray<FixedArray<int>> type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 037: Class.of(instance), isFixedArray returns true, getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3800
      * @tc.name testClassGetFixedArrayComponentType038
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 038: array return Class object
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 038: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -704,7 +704,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3900
      * @tc.name testClassGetFixedArrayComponentType039
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 039: array return undefined
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 039: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -719,7 +719,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4000
      * @tc.name testClassGetFixedArrayComponentType040
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 040: primitive FixedArray component types
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 040: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -748,7 +748,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4100
      * @tc.name testClassGetFixedArrayComponentType041
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 041: return Class object call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 041: Class.from<int>(), getSuper returns expected parent Class, getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -771,7 +771,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4200
      * @tc.name testClassGetFixedArrayComponentType042
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 042: using return Class object
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 042: Class.of(instance), instance fields result verified, getInstanceMethods result verified, getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -793,7 +793,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4300
      * @tc.name testClassGetFixedArrayComponentType043
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 043: Map<string, Array<int>> is type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 043: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -810,7 +810,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4400
      * @tc.name testClassGetFixedArrayComponentType044
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 044: type is type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 044: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -825,7 +825,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4500
      * @tc.name testClassGetFixedArrayComponentType045
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 045: array call method not throw exception
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 045: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -840,7 +840,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4600
      * @tc.name testClassGetFixedArrayComponentType046
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 046: array call method return undefined not throw exception
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 046: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -855,7 +855,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4700
      * @tc.name testClassGetFixedArrayComponentType047
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 047: Class object call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 047: Class.from<MyClass014>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -869,7 +869,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4800
      * @tc.name testClassGetFixedArrayComponentType048
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 048: multiple when call getFixedArrayComponentType
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 048: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -886,7 +886,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4900
      * @tc.name testClassGetFixedArrayComponentType049
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 049: using isFixedArray() after call getFixedArrayComponentType()
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 049: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -907,7 +907,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5000
      * @tc.name testClassGetFixedArrayComponentType050
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 050: Class object call getFixedArrayComponentType()
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 050: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -923,7 +923,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5100
      * @tc.name testClassGetFixedArrayComponentType051
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 051: same type different FixedArrayinstance type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 051: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -941,7 +941,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5200
      * @tc.name testClassGetFixedArrayComponentType052
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 052: get type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 052: Class.of(instance), getSuper returns std.core.Object, getName returns "std.core.Object", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -960,7 +960,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5300
      * @tc.name testClassGetFixedArrayComponentType053
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 053: FixedArray
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 053: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -978,7 +978,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5400
      * @tc.name testClassGetFixedArrayComponentType054
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 054: Class object call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 054: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -994,7 +994,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5500
      * @tc.name testClassGetFixedArrayComponentType055
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 055: generic method type array
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 055: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1010,7 +1010,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5600
      * @tc.name testClassGetFixedArrayComponentType056
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 056: type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 056: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1030,7 +1030,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5700
      * @tc.name testClassGetFixedArrayComponentType057
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 057: in using method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 057: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1045,7 +1045,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5800
      * @tc.name testClassGetFixedArrayComponentType058
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 058: type array
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 058: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1061,7 +1061,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5900
      * @tc.name testClassGetFixedArrayComponentType059
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 059: byte long type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 059: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1079,7 +1079,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6000
      * @tc.name testClassGetFixedArrayComponentType060
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 060: null undefined NaN array
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 060: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1101,7 +1101,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6100
      * @tc.name testClassGetFixedArrayComponentType061
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 061: type after array type
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 061: getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1118,7 +1118,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6200
      * @tc.name testClassGetFixedArrayComponentType062
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 062: method in different API is
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 062: Class.from<FixedArray<int>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1134,7 +1134,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6300
      * @tc.name testClassGetFixedArrayComponentType063
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 063: different type array
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 063: Class.of(instance), getName returns "std.core.String", getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1150,7 +1150,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6400
      * @tc.name testClassGetFixedArrayComponentType064
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 064: isFixedArray is true false
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 064: Class.of(instance), isFixedArray returns true, getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1174,7 +1174,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_6500
      * @tc.name testClassGetFixedArrayComponentType065
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 065: primitive FixedArray component type names
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 065: Class.of(instance), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

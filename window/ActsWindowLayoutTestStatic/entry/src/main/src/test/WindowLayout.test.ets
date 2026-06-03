@@ -3867,7 +3867,7 @@ export default function WindowLayoutTest() {
                     await subWin.destroyWindow();
                     hilog.info(domain, tag, msgStr + 'destroyWindow');
                     let maximizeOptions: window.MaximizeOptions = {
-                        maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE,
+                        maximizePresentation: window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING,
                     };
                     await subWin.maximizeWithOptions(maximizeOptions).then(async () => {
                         await Utils.msSleep(200);
@@ -3918,7 +3918,7 @@ export default function WindowLayoutTest() {
                     await subWin.showWindow();
                     hilog.info(domain, tag, msgStr + 'show page');
                     let maximizeOptions: window.MaximizeOptions = {
-                        maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE
+                        maximizePresentation: window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER
                     };
                     await subWin.maximizeWithOptions(maximizeOptions).then(async () => {
                         await Utils.msSleep(200);
@@ -4828,13 +4828,13 @@ export default function WindowLayoutTest() {
                         expect(false).assertTrue();
                         done();
                     }).catch((err: Error) => {
-                        if (!isFreeWindowMode) {
-                            hilog.info(domain, tag, msgStr + `Capability not supported . Cause code: ${err!.code}, message: ${err!.message}`);
-                            expect(err!.code === 801).assertTrue();
-                            done();
-                        }else if (err!.code == 1300002) {
+                        if (err!.code == 1300002) {
                             hilog.info(domain, tag, msgStr + `The window is not created or destroyed. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(err!.code === 1300002).assertTrue();
+                            done();
+                        }else if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported . Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 801).assertTrue();
                             done();
                         } else {
                             hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -4877,13 +4877,13 @@ export default function WindowLayoutTest() {
                         done();
                     }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
-                        if (!isFreeWindowMode) {
-                            hilog.info(domain, tag, msgStr + `Capability not supported or Invalid parameter range. Cause code: ${err!.code}, message: ${err!.message}`);
-                            expect(err!.code === 801).assertTrue();
-                            done();
-                        }else if (err!.code == 1300016) {
+                        if (err!.code == 1300016) {
                             hilog.info(domain, tag, msgStr + `Invalid parameter range. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(err!.code === 1300016).assertTrue();
+                            done();
+                        }else if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 801).assertTrue();
                             done();
                         }  else {
                             hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -4934,13 +4934,13 @@ export default function WindowLayoutTest() {
                         done();
                     }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
-                        if (!isFreeWindowMode) {
-                            hilog.info(domain, tag, msgStr + `Capability not supported or Invalid parameter range. Cause code: ${err!.code}, message: ${err!.message}`);
-                            expect(err!.code === 801).assertTrue();
-                            done();
-                        }else if (err!.code == 1300016) {
+                        if (err!.code == 1300016) {
                             hilog.info(domain, tag, msgStr + `Invalid parameter range. Cause code: ${err!.code}, message: ${err!.message}`);
                             expect(err!.code === 1300016).assertTrue();
+                            done();
+                        }else if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported or Invalid parameter range. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code === 801).assertTrue();
                             done();
                         }else {
                             hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -4956,6 +4956,64 @@ export default function WindowLayoutTest() {
                         expect(exception!.code).assertEqual(801);
                         done();
                     }else {
+                        hilog.error(domain, tag, msgStr + `Failed to recover window or getmainwindow. Cause code: ${exception!.code}, message: ${exception.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                }
+            })
+
+        /**
+         * @tc.number      SUB_WINDOW_recoverError1300001_static_2500
+         * @tc.name        testRecoverError1300001_static_2500
+         * @tc.desc        recover 1300001 repeated operation test.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('testRecoverError1300001_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testRecoverError1300001_static_2500';
+                let msgStr: string = 'jsunittest ' + caseName + ' ';
+                hilog.info(domain, tag, msgStr + 'begin');
+                let windowStageStart = await startAbility(caseName, context!);
+                try {
+                    let mainWindow: window.Window = windowStageStart.getMainWindowSync();
+                    let windowStatusBefore: window.WindowStatusType = mainWindow.getWindowStatus();
+                    hilog.info(domain, tag, msgStr + `window status: ${JSON.stringify(windowStatusBefore)}`);
+                    if (windowStatusBefore !== window.WindowStatusType.FLOATING) {
+                        await mainWindow.recover();
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recover');
+                    }
+                    mainWindow.recover().then(async () => {
+                        hilog.info(domain, tag, msgStr + 'Succeeded in recovering window.');
+                        await terminateAbility(caseName);
+                        expect(false).assertTrue();
+                        done();
+                    }).catch(async (err: Error)=> {
+                        await terminateAbility(caseName);
+                        if (!isFreeWindowMode) {
+                            hilog.info(domain, tag, msgStr + `Capability not supported, skip test. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code).assertEqual(801);
+                            done();
+                        } else if (err!.code == 1300001) {
+                            hilog.info(domain, tag, msgStr + `Repeated operation. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(err!.code).assertEqual(1300001);
+                            done();
+                        } else {
+                            hilog.error(domain, tag, msgStr + `Failed to recover window. Cause code: ${err!.code}, message: ${err!.message}`);
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+                } catch (exception) {
+                    await terminateAbility(caseName);
+                    exception === exception as Error;
+                    if (!isSyscapSessionManagerSupported || !isFreeWindowMode) {
+                        hilog.info(domain, tag, msgStr + `Capability not supported, skip test. Cause code: ${exception!.code}, message: ${exception.message}`);
+                        expect(exception!.code).assertEqual(801);
+                        done();
+                    } else {
                         hilog.error(domain, tag, msgStr + `Failed to recover window or getmainwindow. Cause code: ${exception!.code}, message: ${exception.message}`);
                         expect(false).assertTrue();
                         done();

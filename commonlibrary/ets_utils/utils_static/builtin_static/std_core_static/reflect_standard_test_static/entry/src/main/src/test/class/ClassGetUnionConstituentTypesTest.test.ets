@@ -58,7 +58,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0100
      * @tc.name testClassGetUnionConstituentTypes001
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 001: getUnionConstituentTypes() parameters
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 001: Class.from<int | string | Array<double>>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -71,7 +71,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0200
      * @tc.name testClassGetUnionConstituentTypes002
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 002: union int|string returns two constituent types
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 002: Class.from<int | string>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -85,7 +85,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0300
      * @tc.name testClassGetUnionConstituentTypes003
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 003: return FixedArray<Class> type
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 003: Class.from<int | string | boolean>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -99,7 +99,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0400
      * @tc.name testClassGetUnionConstituentTypes004
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 004: union constituent elements are Class instances
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 004: Class.from<int | string>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -116,7 +116,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0500
      * @tc.name testClassGetUnionConstituentTypes005
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 005: four-type union constituent names include int string boolean double
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 005: Class.from<int | string | boolean | double>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -133,7 +133,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0600
      * @tc.name testClassGetUnionConstituentTypes006
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 006: union of three object classes returns three types
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 006: Class.from<A006 | B006 | C006>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -146,7 +146,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0700
      * @tc.name testClassGetUnionConstituentTypes007
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 007: union with null includes four constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 007: Class.from<int | string | MyClass007 | null>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -159,7 +159,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0800
      * @tc.name testClassGetUnionConstituentTypes008
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 008: non-union Class returns undefined from getUnionConstituentTypes
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 008: Class.from<int>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -178,7 +178,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0900
      * @tc.name testClassGetUnionConstituentTypes009
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 009: degenerate int|int union has one or undefined constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 009: Class.from<int | int>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -190,7 +190,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1000
      * @tc.name testClassGetUnionConstituentTypes010
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 010: union with null type in constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 010: Class.from<string | null>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -205,7 +205,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1100
      * @tc.name testClassGetUnionConstituentTypes011
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 011: union with undefined type in constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 011: Class.from<number | undefined>(), isUnion returns false, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -218,7 +218,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1200
      * @tc.name testClassGetUnionConstituentTypes012
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 012: nested union A|B|C returns three constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 012: Class.from<int | string | boolean>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,7 +231,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1300
      * @tc.name testClassGetUnionConstituentTypes013
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 013: generic union Array<T>|Map returns two constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 013: Class.from<Array<int> | Array<string> | Map<string, int>>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -247,7 +247,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1400
      * @tc.name testClassGetUnionConstituentTypes014
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 014: T|T|undefined union constituent count
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 014: Class.from<int | undefined>(), isUnion returns false, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -260,7 +260,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1500
      * @tc.name testClassGetUnionConstituentTypes015
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 015: empty union T|null returns undefined or empty
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 015: Class.from<string | null>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -276,7 +276,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1600
      * @tc.name testClassGetUnionConstituentTypes016
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 016: return type is FixedArray<Class> or undefined
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 016: Class.from<int | string | Array<double>>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -298,7 +298,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1700
      * @tc.name testClassGetUnionConstituentTypes017
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 017: object class union getUnionConstituentTypes
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 017: Class.from<int | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -317,7 +317,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1800
      * @tc.name testClassGetUnionConstituentTypes018
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 018: getUnionConstituentTypes on int|string returns constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 018: Class.from<int | string>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -332,7 +332,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1900
      * @tc.name testClassGetUnionConstituentTypes019
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 019: repeated getUnionConstituentTypes on same union Class
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 019: Class.from<int | string>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2000
      * @tc.name testClassGetUnionConstituentTypes020
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 020: deprecated method still returns union constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 020: Class.from<int | string>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -362,7 +362,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2100
      * @tc.name testClassGetUnionConstituentTypes021
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 021: getUnionConstituentTypes method exists on union Class
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 021: Class.from<int | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -380,7 +380,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2200
      * @tc.name testClassGetUnionConstituentTypes022
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 022: interface union constituent types
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 022: Class.from<int | string | boolean | double | float | long | short | byte | char | Array<int>>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -394,7 +394,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2300
      * @tc.name testClassGetUnionConstituentTypes023
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 023: int|string|Array<double> per reflect doc
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 023: Class.from<int | string | Array<double>>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -410,7 +410,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2400
      * @tc.name testClassGetUnionConstituentTypes024
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 024: boolean|int union two constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 024: Class.from<int | string | int>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -426,7 +426,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2500
      * @tc.name testClassGetUnionConstituentTypes025
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 025: never in union handled per runtime
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 025: Class.from<int>(), getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -438,7 +438,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2600
      * @tc.name testClassGetUnionConstituentTypes026
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 026: unknown type in union handled per runtime
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 026: Class.from<int | Object>(), isUnion returns false, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -451,7 +451,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2700
      * @tc.name testClassGetUnionConstituentTypes027
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 027: void in union handled per runtime
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 027: Class.from<string | void>(), isUnion returns false, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -464,7 +464,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2800
      * @tc.name testClassGetUnionConstituentTypes028
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 028: isUnion true before getUnionConstituentTypes
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 028: Class.from<int | string>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -482,7 +482,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2900
      * @tc.name testClassGetUnionConstituentTypes029
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 029: repeated calls return same constituent array identity or content
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 029: Class.from<int | string | boolean>(), isUnion returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -503,7 +503,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_3000
      * @tc.name testClassGetUnionConstituentTypes030
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 030: constituent isPrimitive flags for scalar union
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 030: Class.from<int | string | boolean>(), isUnion returns true, isPrimitive returns false, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -518,7 +518,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_3100
      * @tc.name testClassGetUnionConstituentTypes031
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 031: interface types in union constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 031: Class.from<A032 | B032>(), isUnion returns true, isInterface returns true, getUnionConstituentTypes() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -534,7 +534,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_3200
      * @tc.name testClassGetUnionConstituentTypes032
-     * @tc.desc Verify ClassGetUnionConstituentTypes case 032: union of interfaces getInterfaces on constituents
+     * @tc.desc Verify ClassGetUnionConstituentTypes case 032: Class.from<A032 | B032>(), isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

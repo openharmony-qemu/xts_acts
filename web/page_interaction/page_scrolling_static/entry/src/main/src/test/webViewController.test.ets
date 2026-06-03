@@ -254,5 +254,27 @@ export default function webViewController() {
         await Utils.msSleep(5000);
         done();
       });
+
+
+    /**
+     * @tc.name   emitonSwitchNextPage1
+     * @tc.number SUB_WEB_SWITCHNEXT_PAGE_0700
+     * @tc.desc   test onOverScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('emitonSwitchNextPage1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitonSwitchNextPage1', 10)
+        await Utils.msSleep(1000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(1000);
+        let button = await driver.findComponent(ON.id('WebViewControllerButton'));
+        await Utils.msSleep(1000);
+        button?.click();
+        await Utils.msSleep(5000)
+        done()
+      })
   })
 }

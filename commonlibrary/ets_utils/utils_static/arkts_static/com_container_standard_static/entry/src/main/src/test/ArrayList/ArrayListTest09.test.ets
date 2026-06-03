@@ -793,7 +793,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(8);
         arrayList.add(1);
         arrayList.add(4);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(1);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(4);
@@ -819,7 +819,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(4);
         arrayList.add(5);
         arrayList.add(4);
-        arrayList.sort((a: number, b: number): int => (b - a).toInt());
+        arrayList.sort((a: number, b: number): double => (b - a));
         expect(arrayList[0]).assertEqual(5);
         expect(arrayList[1]).assertEqual(4);
         expect(arrayList[2]).assertEqual(4);
@@ -874,7 +874,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(-64);
         arrayList.add(-129);
         arrayList.add(128);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(-129);
         expect(arrayList[1]).assertEqual(-128);
         expect(arrayList[2]).assertEqual(-64);
@@ -905,7 +905,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(192);
         arrayList.add(-1);
         arrayList.add(256);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(-1);
         expect(arrayList[1]).assertEqual(0);
         expect(arrayList[2]).assertEqual(64);
@@ -937,11 +937,11 @@ export default function ArrayList09Test(): void {
         arrayList.add(0);
         arrayList.add(1.5);
         arrayList.add(-1.5);
-        arrayList.sort((a: number, b: number): int => {
+        arrayList.sort((a: number, b: number): double => {
           if (isNaN(a) && isNaN(b)) return 0;
           if (isNaN(a)) return 1;
           if (isNaN(b)) return -1;
-          return (a - b).toInt();
+          return (a - b);
         });
         expect(arrayList[0]).assertEqual(-Infinity);
         expect(arrayList[1]).assertEqual(-3.4028234663852886e38);
@@ -1072,7 +1072,7 @@ export default function ArrayList09Test(): void {
         for (let i: int = 0; i < shuffled.length; i++) {
           arrayList.add(shuffled[i]);
         }
-        arrayList.sort((a: string, b: string): int => (a.charCodeAt(0) - b.charCodeAt(0)).toInt());
+        arrayList.sort((a: string, b: string): double => (a.charCodeAt(0) - b.charCodeAt(0)));
         let sortedArray: string[] = [];
         for (let i: int = 0; i < arrayList.length; i++) {
           sortedArray.push(arrayList[i]);
@@ -1165,11 +1165,11 @@ export default function ArrayList09Test(): void {
         arrayList.add(Number.MAX_VALUE);
         arrayList.add(Infinity);
         arrayList.add(NaN);
-        arrayList.sort((a: number, b: number): int => {
+        arrayList.sort((a: number, b: number): double => {
           if (isNaN(a) && isNaN(b)) return 0;
           if (isNaN(a)) return 1;
           if (isNaN(b)) return -1;
-          return (a - b).toInt();
+          return (a - b);
         });
         for (let i: int = 0; i < arrayList.length; i++) {
           console.log(`arrayList[${i}] = ${arrayList[i]}`);
@@ -1211,7 +1211,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(2 ** 3);
         arrayList.add(1e3);
         arrayList.add(2.5e-2);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(-2147483648);
         expect(arrayList[arrayList.length - 1]).assertEqual(2147483647);
         console.log(TAG + ' done');
@@ -1237,7 +1237,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(8);
         arrayList.add(2);
         arrayList.add(5);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(2);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(2);
@@ -1299,7 +1299,7 @@ export default function ArrayList09Test(): void {
         arrayList.add([2, 3, 1]);
         arrayList.add([1, 1, 1]);
         arrayList.add([9, 8, 7]);
-        arrayList.sort((a: number[], b: number[]): int => (a[0] - b[0]).toInt());
+        arrayList.sort((a: number[], b: number[]): double => (a[0] - b[0]));
         expect(arrayList[0][0]).assertEqual(1);
         expect(arrayList[1][0]).assertEqual(1);
         expect(arrayList[2][0]).assertEqual(2);
@@ -1325,7 +1325,7 @@ export default function ArrayList09Test(): void {
         arrayList.add({ name: "Alice", age: 25 });
         arrayList.add({ name: "Bob", age: 35 });
         arrayList.add({ name: "David", age: 20 });
-        arrayList.sort((a: Person09, b: Person09): int => (a.age - b.age).toInt());
+        arrayList.sort((a: Person09, b: Person09): double => (a.age - b.age));
         expect(arrayList[0].age).assertEqual(20);
         expect(arrayList[0].name).assertEqual("David");
         expect(arrayList[1].age).assertEqual(25);
@@ -1382,7 +1382,7 @@ export default function ArrayList09Test(): void {
           arrayList.add(Math.floor(Math.random() * 100));
         }
         const startTime = Date.now();
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         const endTime = Date.now();
         const duration = endTime - startTime;
         const sortedArray: number[] = [];
@@ -1421,7 +1421,7 @@ export default function ArrayList09Test(): void {
           arrayList.add(i);
         }
         const startTime = Date.now();
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         const endTime = Date.now();
         const duration = endTime - startTime;
         let expectedValue: int = 0;
@@ -1455,7 +1455,7 @@ export default function ArrayList09Test(): void {
           arrayList.add(i);
         }
         const startTime = Date.now();
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         const endTime = Date.now();
         const duration = endTime - startTime;
         let expectedValue: int = 0;
@@ -1487,7 +1487,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(3);
         arrayList.add(1);
         arrayList.add(2);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         let previousValue = -Infinity;
         let isSorted = true;
         arrayList.forEach((currentValue: number) => {
@@ -1566,7 +1566,7 @@ export default function ArrayList09Test(): void {
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
         arrayList.add(42);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList.length).assertEqual(1);
         expect(arrayList[0]).assertEqual(42);
         console.log(TAG + ' done');
@@ -1590,7 +1590,7 @@ export default function ArrayList09Test(): void {
         for (let i: int = 0; i < testData.length; i++) {
           testList.add(testData[i]);
         }
-        testList.sort((a: number, b: number): int => (a - b).toInt());
+        testList.sort((a: number, b: number): double => (a - b));
         let isSorted = true;
         let prevValue = -Infinity;
         testList.forEach((value: number) => {
@@ -1621,13 +1621,13 @@ export default function ArrayList09Test(): void {
         for (let i: int = 0; i < testData.length; i++) {
           list.add(testData[i]);
         }
-        list.sort((a: number, b: number): int => (a - b).toInt());
+        list.sort((a: number, b: number): double => (a - b));
         console.log("Sort function executed successfully");
         const anotherList = new ArrayList<number>();
         anotherList.add(1);
         anotherList.add(2);
         try {
-          anotherList.sort((a: number, b: number): int => 0);
+          anotherList.sort((a: number, b: number): double => 0);
           console.log("Infinity comparator accepted");
         } catch (e) {
           console.log("Infinity comparator rejected");
@@ -1721,8 +1721,8 @@ export default function ArrayList09Test(): void {
         arrayList.add(8);
         arrayList.add(1);
         arrayList.add(4);
-        arrayList.sort((firstValue: number, secondValue: number): int => {
-          return (firstValue - secondValue).toInt();
+        arrayList.sort((firstValue: number, secondValue: number): double => {
+          return (firstValue - secondValue);
         });
         expect(arrayList[0]).assertEqual(1);
         expect(arrayList[1]).assertEqual(2);
@@ -1748,11 +1748,11 @@ export default function ArrayList09Test(): void {
         arrayList.add(3);
         arrayList.add(1);
         arrayList.add(2);
-        arrayList.sort((x: number, y: number): int => (x - y).toInt());
+        arrayList.sort((x: number, y: number): double => (x - y));
         expect(arrayList[0]).assertEqual(1);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(3);
-        arrayList.sort((first: number, second: number): int => (second - first).toInt());
+        arrayList.sort((first: number, second: number): double => (second - first));
         expect(arrayList[0]).assertEqual(3);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(1);
@@ -1776,7 +1776,7 @@ export default function ArrayList09Test(): void {
         arrayList.add(2);
         arrayList.add(8);
         const originalReference = arrayList;
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList).assertEqual(originalReference);
         expect(arrayList[0]).assertEqual(2);
         expect(arrayList[1]).assertEqual(5);
@@ -1800,11 +1800,11 @@ export default function ArrayList09Test(): void {
         arrayList.add(3);
         arrayList.add(1);
         arrayList.add(2);
-        arrayList.sort((a: number, b: number): int => (a - b).toInt());
+        arrayList.sort((a: number, b: number): double => (a - b));
         expect(arrayList[0]).assertEqual(1);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(3);
-        arrayList.sort((a: number, b: number): int => (b - a).toInt());
+        arrayList.sort((a: number, b: number): double => (b - a));
         expect(arrayList[0]).assertEqual(3);
         expect(arrayList[1]).assertEqual(2);
         expect(arrayList[2]).assertEqual(1);

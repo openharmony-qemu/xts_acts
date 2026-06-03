@@ -3,6 +3,7 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/TextInput/TextInputAttributeIndex",
     "MainAbility/pages/TextInputApi26/TextInputOnWillCopy",
- 	  "MainAbility/pages/TextInputApi26/TextInputOnWillCut"
+    "MainAbility/pages/TextInputApi26/TextInputOnWillCut",
+    "MainAbility/pages/TextInputApi26/TextInputShaderStyle"
   ]
 }

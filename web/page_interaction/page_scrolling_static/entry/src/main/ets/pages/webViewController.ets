@@ -32,7 +32,7 @@ import {
   Web
 } from '@ohos.arkui.component'
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -169,6 +169,15 @@ struct webViewController {
               }
               break;
             }
+
+            case 'emitonSwitchNextPage1': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webResourceResponseGet' })
+              console.log('push URL success')
+            }
+
+
           }
         })
       }

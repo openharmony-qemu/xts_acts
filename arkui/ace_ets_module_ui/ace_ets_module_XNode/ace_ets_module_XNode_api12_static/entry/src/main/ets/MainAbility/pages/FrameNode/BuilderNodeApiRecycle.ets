@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,8 @@ import {
   ListItem,
   LazyForEach,
   IDataSource,
-  CustomBuilderT
+  CustomBuilderT,
+  ReuseObject
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from "@ohos.arkui.UIContext"
@@ -113,7 +114,7 @@ struct ReusableChildComponent {
 @Component
 struct ReusableChildComponent2 {
   @State item: string = "false";
-  aboutToReuse(params: Record<string, object>) {
+  aboutToReuse(params: ReuseObject) {
     console.log("ReusableChildComponent2 Reusable 2 " + JSON.stringify(params));
   }
   aboutToRecycle(): void {

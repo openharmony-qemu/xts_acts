@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { huks } from '@kit.UniversalKeystoreKit';
+import { StringToUint8Array } from '../common/CommonUtils';
 import { GenParam } from './HuksOptionsUtils';
 
 export function GetAccessControlOptions(): huks.HuksOptions {
@@ -140,6 +141,15 @@ export function GetStorageLevelEceOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
       GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE),
+    )
+  };
+  return huksOptions;
+}
+
+export function GetAccessGroupOptions(groupId: string): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(groupId)),
     )
   };
   return huksOptions;

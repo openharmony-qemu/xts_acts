@@ -139,6 +139,8 @@ struct PickerComponent {
     result.autoPlayScenes = config.autoPlayScenes ?? [];
     result.appAlbumFilters = config.appAlbumFilters ?? [];
     result.backgroundOpacity = config.backgroundOpacity;
+    result.gridMargin = config.gridMargin;
+    result.photoBrowserMargin = config.photoBrowserMargin;
     return result;
   }
 
@@ -385,6 +387,8 @@ struct PickerComponent {
         updatedOptions.appAlbumFilters =
           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];
         updatedOptions.backgroundOpacity = 0.75;
+        updatedOptions.gridMargin = {};
+        updatedOptions.photoBrowserMargin = {};
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
