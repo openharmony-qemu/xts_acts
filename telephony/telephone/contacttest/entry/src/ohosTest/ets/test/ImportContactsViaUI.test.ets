@@ -227,7 +227,7 @@ export default function ImportContactsViaUITest() {
             contactList.forEach(async (item: contact.Contact) => {
               if (item.key) {
                 await contact.deleteContact(context, item.key);
-                console.info(`afterEach deleteContact success--${item.key}`);
+                console.info(`afterEach deleteContact success->${item.key}`);
               }
             })
           }
@@ -242,4 +242,217 @@ export default function ImportContactsViaUITest() {
       }
     });
 
-    
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0100
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0100
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0100";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [conactData];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+            console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
+            done();
+        }).catch((err: BusinessError) => {
+            console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0200
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0200
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0200";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [conactData];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('picker_cancel_btn');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+            console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+            ExpectTrue(data.length > 0);
+            done();
+        }).catch((err: BusinessError) => {
+            if (err.code === 16700103) {
+                console.log(`${caseName} importContactsViaUI user cancel: errcode->${JSON.stringify(err.code)}`);
+                expect(err.code).assertEqual(16700103);
+                done();
+            } else {
+                console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+                ExpectFail();
+                done();
+            }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0300
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0300
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0300";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let EmptyContacts: contact.Contact[] = [];
+        const result = await contact.importContactsViaUI(context, EmptyContacts);
+        console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} : importContactsViaUI error = ${error.code}, ${error.message}`);
+        expect(error.code == 16700002).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0400
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0400
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0400";
+      console.info(`${caseName} test start `);
+      try {
+        let EmptyContacts: contact.Contact[] = [];
+        const result = await contact.importContactsViaUI(undefined, EmptyContacts);
+        console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} : importContactsViaUI error = ${error.code}, ${error.message}`);
+        expect(error.code == 16700002).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0500
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0500
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0500";
+      console.info(`${caseName} test start `);
+      try {
+        let EmptyContacts: contact.Contact[] = [];
+        const result = await contact.importContactsViaUI(null, EmptyContacts);
+        console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} : importContactsViaUI error = ${error.code}, ${error.message}`);
+        expect(error.code == 16700002).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0600
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0600
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0600";
+      console.info(`${caseName} test start `);
+      try {
+        const result = await contact.importContactsViaUI(null, undefined);
+        console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} : importContactsViaUI error = ${error.code}, ${error.message}`);
+        expect(error.code == 16700002).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0700
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0700
+     * @tc.desc   Call importContactsViaUI with normal contacts, click save button
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0700";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        const result = await contact.importContactsViaUI(context, null);
+        console.info(`${caseName} : result = ${JSON.stringify(result)}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} : importContactsViaUI error = ${error.code}, ${error.message}`);
+        expect(error.code == 16700002).assertTrue();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    })
