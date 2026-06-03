@@ -58,7 +58,7 @@ export default function SegmentButtonTest003() {
     it('SegmentButtonTest003_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_001] START');
       await CommonFunc.sleep(2000);
-      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]);
+      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 2, 3]]);
       console.info("[SegmentButtonTest003_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityLevel).assertEqual('yes');
       console.info('[SegmentButtonTest003_001] END');
@@ -76,7 +76,7 @@ export default function SegmentButtonTest003() {
     it('SegmentButtonTest003_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_002] START');
       await CommonFunc.sleep(2000);
-      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_2', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]);
+      let obj: InspectorNode = Utils.navigateInspectorPath('SegmentButtonTest003.test_obj_2', [0, 0, 0, 0, 0, 0, 0, 0, 2, 3]]);
       console.info("[SegmentButtonTest003_002] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.accessibilityDescription).assertEqual('Description');
       console.info('[SegmentButtonTest003_002] END');

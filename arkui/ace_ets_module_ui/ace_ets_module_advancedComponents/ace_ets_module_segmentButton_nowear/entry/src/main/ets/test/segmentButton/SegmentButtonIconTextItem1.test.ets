@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils, { InspectorNode } from '../Utils';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonIconTextItem1() {
@@ -64,15 +64,13 @@ export default function SegmentButtonIconTextItem1() {
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let obj: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonIconTextItem1.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0]
-      );
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonIconTextItem1.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0]);
+        .$children[0];
       console.info("[SegmentButtonIconTextItem1_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.src).assertEqual('resource:///125830170.svg');
       await CommonFunc.sleep(1000);
-      let selecticon: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonIconTextItem1.test_selecticon_2', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]
-      );
+      let selecticon: ESObject = Utils.navigateInspectorPath('SegmentButtonIconTextItem1.test_selecticon_2', [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0]);
+        .$children[0];
       console.info("[SegmentButtonIconTextItem1_001] component selecticon is: " + JSON.stringify(selecticon));
       expect(selecticon.$attrs.src).assertEqual('resource:///125830169.svg');
       console.info('[SegmentButtonIconTextItem1_001] END');
@@ -96,21 +94,21 @@ export default function SegmentButtonIconTextItem1() {
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let obj: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonIconTextItem1.test_obj_3', [0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0]
-      );
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonIconTextItem1.test_obj_3', [0, 0, 0, 1, 0, 2]);
+        .$children[0]//button浣嶇疆
+        .$children[0]
+        .$children[0]
+        .$children[0];
       console.info("[SegmentButtonIconTextItem1_001] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.src).assertEqual('resource:///125830170.svg');
       await CommonFunc.sleep(1000);
-      let selecticon: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonIconTextItem1.test_selecticon_4', [0, 0, 0, 1, 0, 0, 0, 2, 4, 0, 0, 0]
-      );
+      let selecticon: ESObject = Utils.navigateInspectorPath('SegmentButtonIconTextItem1.test_selecticon_4', [0, 0, 0, 1, 0, 2, 4, 0, 0]);
+        .$children[0];
       console.info("[SegmentButtonIconTextItem1_002] component selecticon is: " + JSON.stringify(selecticon));
       expect(selecticon.$attrs.src).assertEqual('resource:///125830169.svg');
       await CommonFunc.sleep(1000);
-      let text0: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonIconTextItem1.test_text0_5', [0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 1]
-      );
+      let text0: ESObject = Utils.navigateInspectorPath('SegmentButtonIconTextItem1.test_text0_5', [0, 0, 0, 1, 0, 2, 0, 0, 0]);
+        .$children[1];
       console.info("[SegmentButtonIconTextItem1_002] component selecticon is: " + JSON.stringify(selecticon));
       expect(text0.$attrs.content).assertEqual('text1');
       console.info('[SegmentButtonIconTextItem1_002] END');

@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import Utils, { InspectorNode } from '../Utils';
+import Utils from '../Utils';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function SegmentButtonItemOptionsArray1() {
@@ -64,9 +64,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await CommonFunc.sleep(1000);
        await btn.click();
        await CommonFunc.sleep(1000);
-       let obj: InspectorNode = Utils.navigateInspectorPath(
-         'SegmentButtonItemOptionsArray1.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]
-       );
+       let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_1', [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0]);
+        .$children[0];
        console.info("[SegmentButtonItemOptionsArray1_001] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('2');
        console.info('[SegmentButtonItemOptionsArray1_001] END');
@@ -90,9 +89,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await CommonFunc.sleep(1000);
        await btn.click();
        await CommonFunc.sleep(1000);
-       let obj: InspectorNode = Utils.navigateInspectorPath(
-         'SegmentButtonItemOptionsArray1.test_obj_2', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0]
-       );
+       let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_2', [0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0]);
+        .$children[0];
        console.info("[SegmentButtonItemOptionsArray1_002] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('4');
        console.info('[SegmentButtonItemOptionsArray1_002] END');
@@ -115,9 +113,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await CommonFunc.sleep(1000);
        await btn.click();
        await CommonFunc.sleep(1000);
-       let obj: InspectorNode = Utils.navigateInspectorPath(
-         'SegmentButtonItemOptionsArray1.test_obj_3', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0]
-       );
+       let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_3', [0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0]);
+        .$children[0];
        console.info("[SegmentButtonItemOptionsArray1_003] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('push');
        console.info('[SegmentButtonItemOptionsArray1_003] END');
@@ -140,9 +137,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await CommonFunc.sleep(1000);
        await btn.click();
        await CommonFunc.sleep(1000);
-       let obj: InspectorNode = Utils.navigateInspectorPath(
-         'SegmentButtonItemOptionsArray1.test_obj_4', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]
-       );
+       let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_4', [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0]);
+        .$children[0];
        console.info("[SegmentButtonItemOptionsArray1_004] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('unshift');
        console.info('[SegmentButtonItemOptionsArray1_003] END');
@@ -164,9 +160,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await CommonFunc.sleep(1000);
        await btn.click();
        await CommonFunc.sleep(1000);
-       let obj: InspectorNode = Utils.navigateInspectorPath(
-         'SegmentButtonItemOptionsArray1.test_obj_5', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0]
-       );
+       let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_5', [0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0]);
+        .$children[0];
        console.info("[SegmentButtonItemOptionsArray1_005] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('splice1');
        console.info('[SegmentButtonItemOptionsArray1_005] END');
@@ -188,9 +183,8 @@ export default function SegmentButtonItemOptionsArray1() {
       await CommonFunc.sleep(1000);
       await btn.click();
       await CommonFunc.sleep(1000);
-      let obj: InspectorNode = Utils.navigateInspectorPath(
-        'SegmentButtonItemOptionsArray1.test_obj_6', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]
-      );
+      let obj: ESObject = Utils.navigateInspectorPath('SegmentButtonItemOptionsArray1.test_obj_6', [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0]);
+        .$children[0];
       console.info("[SegmentButtonItemOptionsArray1_006] component obj is: " + JSON.stringify(obj));
        expect(obj.$attrs.content).assertEqual('a');
       console.info('[SegmentButtonItemOptionsArray1_006] END');

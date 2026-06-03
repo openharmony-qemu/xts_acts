@@ -58,7 +58,7 @@ export default function localizedTextPadding() {
       let mText = getInspectorByKey('localizedTextPadding_start');
       console.info("[localizedTextPadding_0100] attrs is: " + JSON.stringify(JSON.parse(mText).$attrs));
       expect(JSON.parse(mText).$attrs.label).assertEqual(
-        'start:{"autoRefresh_":false,"unit_":1,"value_":20}');
+        'start:{"unit":1,"value":20}');
       console.info('[localizedTextPadding_0100] END');
       done();
     });
@@ -80,7 +80,7 @@ export default function localizedTextPadding() {
       let mText2 = getInspectorByKey('localizedTextPadding_end');
       console.info("[localizedTextPadding_0200] attrs is: " + JSON.stringify(JSON.parse(mText2).$attrs));
       expect(JSON.parse(mText2).$attrs.label).assertEqual(
-        'end:{"autoRefresh_":false,"unit_":1,"value_":30}');
+        'end:{"unit":1,"value":30}');
       console.info('[localizedTextPadding_0200] END');
       done();
     });
