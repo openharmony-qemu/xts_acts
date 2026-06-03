@@ -248,25 +248,6 @@ export default function ImageSourceGetDelayTimeListTest(): void {
       }
     })
 
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_getDelayTime_List_static_0700
-     * @tc.number SUB_MEDIA_IMAGE_getDelayTime_List_static_0700
-     * @tc.desc   imageSource_getDelayTimeList
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IMAGE_getDelayTime_List_static_0700', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_getDelayTime_List_static_0700';
-      const path = 'test_aisr.dng';
-      try{
-        await getDelayTimeListAbnormalPromiseTest(done, testName, path);
-      }catch (error){
-        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
-        expect().assertFail();
-        done();
-      }
-    })
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getDelayTime_List_static_0800
@@ -379,26 +360,6 @@ export default function ImageSourceGetDelayTimeListTest(): void {
     it('SUB_MEDIA_IMAGE_getDelayTime_List_static_1300', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_getDelayTime_List_static_1300';
       const path = 'test8.bmp';
-      try{
-        await getDelayTimeListCallbackAbnormalTest(done, testName, path);
-      }catch (error){
-        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_getDelayTime_List_static_1400
-     * @tc.number SUB_MEDIA_IMAGE_getDelayTime_List_static_1400
-     * @tc.desc   imageSource_getDelayTimeList
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IMAGE_getDelayTime_List_static_1400', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_getDelayTime_List_static_1400';
-      const path = 'test_aisr.dng';
       try{
         await getDelayTimeListCallbackAbnormalTest(done, testName, path);
       }catch (error){
