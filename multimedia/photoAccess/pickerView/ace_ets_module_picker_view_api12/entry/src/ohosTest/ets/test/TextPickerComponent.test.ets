@@ -3693,7 +3693,7 @@ export default function TextPicker() {
 
       for (let item of cases) {
         let isInvalidSingleCase = !item.uri || !item.config;
-        let testResult: string = '',
+        let testResult: string = '';
 
         try {
           photoAccessHelper
