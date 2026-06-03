@@ -57,6 +57,10 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
       console.info('[pictureDrawableDescriptorSetHdrCompositionNormal001] START');
       try {
         let driver = await Driver.create();
+        let btnCreateDrawable = await driver.findComponent(ON.id('btnCreateDrawable'));
+        await btnCreateDrawable.click();
+        await CommonFunc.sleep(1000);
+
         let button = await driver.findComponent(ON.id('btnTest001'));
         await button.click();
         await CommonFunc.sleep(1000);
@@ -88,6 +92,10 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
       console.info('[pictureDrawableDescriptorSetHdrCompositionInvalidate001] START');
       try {
         let driver = await Driver.create();
+        let btnCreateDrawable = await driver.findComponent(ON.id('btnCreateDrawable'));
+        await btnCreateDrawable.click();
+        await CommonFunc.sleep(1000);
+
         let button = await driver.findComponent(ON.id('btnTest002'));
         await button.click();
         await CommonFunc.sleep(1000);
@@ -119,6 +127,10 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
       console.info('[pictureDrawableDescriptorSetHdrCompositionZero001] START');
       try {
         let driver = await Driver.create();
+        let btnCreateDrawable = await driver.findComponent(ON.id('btnCreateDrawable'));
+        await btnCreateDrawable.click();
+        await CommonFunc.sleep(1000);
+
         let button = await driver.findComponent(ON.id('btnTest003'));
         await button.click();
         await CommonFunc.sleep(1000);
@@ -150,6 +162,10 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
       console.info('[pictureDrawableDescriptorSetHdrCompositionNegative001] START');
       try {
         let driver = await Driver.create();
+        let btnCreateDrawable = await driver.findComponent(ON.id('btnCreateDrawable'));
+        await btnCreateDrawable.click();
+        await CommonFunc.sleep(1000);
+        
         let button = await driver.findComponent(ON.id('btnTest004'));
         await button.click();
         await CommonFunc.sleep(1000);
