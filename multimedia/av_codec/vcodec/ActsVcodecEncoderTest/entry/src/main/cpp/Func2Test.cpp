@@ -1620,6 +1620,36 @@ int VideoCapabilityConfig0020Test()
     }
 }
 
+int VideoEncoderSetXPS0010Test()
+{
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_hevc != nullptr) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+ 	    ASSERT_NE(nullptr, venc_);
+ 	    format = OH_AVFormat_Create();
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
+ 	    ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    }
+}
+
+int VideoEncoderSetXPS0020Test()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap != nullptr) {
+        venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+ 	    ASSERT_NE(nullptr, venc_);
+ 	    format = OH_AVFormat_Create();
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+ 	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
+ 	    ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    }
+}
+
 void InitFunc2Test()
 {
     SetUpTestCase();
