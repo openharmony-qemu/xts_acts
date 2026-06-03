@@ -380,12 +380,6 @@ interface I20 {
   bar20(...p20: [number, string]): void
 }
 
-
-
-
-
-
-
 export default function SpecExamplesTest(): void {
   describe('SpecExamplesTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

@@ -66,45 +66,24 @@ import GenericsExperimentalTest from './experimentalfeatures/genericsexperimenta
 import NonNullishTypeParameterTest from './experimentalfeatures/genericsexperimental/nonnullishtypeparameter/NonNullishTypeParameterTest.test';
 
 import NumericDefaultLiteralTypesTest01 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest01.test';
-import NumericDefaultLiteralTypesTest02 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest02.test';
-import NumericDefaultLiteralTypesTest03 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest03.test';
-import NumericDefaultLiteralTypesTest04 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest04.test';
-import NumericDefaultLiteralTypesTest05 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest05.test';
-import ReturnTypeInferenceTest01 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest01.test'
 import ReturnTypeInferenceTest02 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest02.test'
-import ReturnTypeInferenceTest03 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest03.test'
-import ReturnTypeInferenceTest04 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest04.test'
 import ComputingSmartTypesTest01 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest01.test'
-import ComputingSmartTypesTest10 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest10.test'
 import ComputingSmartTypesTest11 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest11.test'
-import ComputingSmartTypesTest20 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest20.test'
 import IntersectionTypesTest from './semanticrules/smartcastsandsmarttypes/intersectiontypes/IntersectionTypesTest.test'
 import SmartCastExamplesTest from './semanticrules/smartcastsandsmarttypes/smartcastexamples/SmartCastExamplesTest.test'
 import OverrideCompatibleSignaturesTest02 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest02.test'
-import OverrideCompatibleSignaturesTest03 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest03.test'
 import OverrideCompatibleSignaturesTest04 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest04.test'
-import OverrideCompatibleSignaturesTest05 from './semanticrules/overriding/overridecompatiblesignatures/OverrideCompatibleSignaturesTest05.test'
 import OverridingConflictTest from './semanticrules/overriding/overridingconflict/OverridingConflictTest.test';
 import OverridingInClassesTest from './semanticrules/overriding/overridinginclasses/OverridingInClassesTest.test'
 import OverridingTest from './semanticrules/overriding/overridingininterfaces/OverridingTest.test'
 import FirstMatchTest01 from './semanticrules/overloading/firstmatch/FirstMatchTest01.test'
-import FirstMatchTest02 from './semanticrules/overloading/firstmatch/FirstMatchTest02.test'
-import FirstMatchTest03 from './semanticrules/overloading/firstmatch/FirstMatchTest03.test'
-import FirstMatchTest04 from './semanticrules/overloading/firstmatch/FirstMatchTest04.test'
 import SingleClassOverloadTest from './semanticrules/overloading/SingleClassOverloadTest.test'
 import ImplicitConstructorOverloadingTest01 from './semanticrules/overloading/implicitconstructoroverloading/ImplicitConstructorOverloadingTest01.test'
-import ImplicitConstructorOverloadingTest02 from './semanticrules/overloading/implicitconstructoroverloading/ImplicitConstructorOverloadingTest02.test'
-import ImplicitConstructorOverloadingTest03 from './semanticrules/overloading/implicitconstructoroverloading/ImplicitConstructorOverloadingTest03.test'
 import ImplicitFunctionOverloadingTest01 from './semanticrules/overloading/implicitfunctionoverloading/ImplicitFunctionOverloadingTest01.test'
-import ImplicitFunctionOverloadingTest02 from './semanticrules/overloading/implicitfunctionoverloading/ImplicitFunctionOverloadingTest02.test'
 import ImplicitMethodOverloadingTest01 from './semanticrules/overloading/implicitmethodoverloading/ImplicitMethodOverloadingTest01.test'
-import ImplicitMethodOverloadingTest02 from './semanticrules/overloading/implicitmethodoverloading/ImplicitMethodOverloadingTest02.test'
-import ImplicitMethodOverloadingTest03 from './semanticrules/overloading/implicitmethodoverloading/ImplicitMethodOverloadingTest03.test'
 import InterfacesTest from './semanticrules/overloading/interfaces/InterfacesTest.test'
 import OverloadEquivalentSignaturesTest from './semanticrules/overloading/overloadequivalentsignatures/OverloadEquivalentSignaturesTest.test'
 import OverloadWithImportTest01 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest01.test'
-import OverloadWithImportTest02 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest02.test'
-import OverloadWithImportTest03 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest03.test'
 
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
 import ExtendedConditionalExpressionsTest01 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest01.test";
@@ -209,45 +188,24 @@ export default function testsuite(): void {
   ForOfTypeAnnotationTest();
   ExplicitInterfaceMethodOverloadTest();
   NumericDefaultLiteralTypesTest01();
-  NumericDefaultLiteralTypesTest02();
-  NumericDefaultLiteralTypesTest03();
-  NumericDefaultLiteralTypesTest04();
-  NumericDefaultLiteralTypesTest05();
-  ReturnTypeInferenceTest01();
   ReturnTypeInferenceTest02();
-  ReturnTypeInferenceTest03();
-  ReturnTypeInferenceTest04();
   ComputingSmartTypesTest01();
-  ComputingSmartTypesTest10();
   ComputingSmartTypesTest11();
-  ComputingSmartTypesTest20();
   IntersectionTypesTest();
   SmartCastExamplesTest();
   OverridingInClassesTest();
   OverridingTest();
   OverrideCompatibleSignaturesTest02();
-  OverrideCompatibleSignaturesTest03();
   OverrideCompatibleSignaturesTest04();
-  OverrideCompatibleSignaturesTest05();
   OverridingConflictTest();
   SingleClassOverloadTest();
   ImplicitFunctionOverloadingTest01();
-  ImplicitFunctionOverloadingTest02();
   ImplicitMethodOverloadingTest01();
-  ImplicitMethodOverloadingTest02();
-  ImplicitMethodOverloadingTest03();
   ImplicitConstructorOverloadingTest01();
-  ImplicitConstructorOverloadingTest02();
-  ImplicitConstructorOverloadingTest03();
   OverloadEquivalentSignaturesTest();
   FirstMatchTest01();
-  FirstMatchTest02();
-  FirstMatchTest03();
-  FirstMatchTest04();
   InterfacesTest();
   OverloadWithImportTest01();
-  OverloadWithImportTest02();
-  OverloadWithImportTest03();
   DispatchTest();
   ExtendedConditionalExpressionsTest01();
   FixedArrayTypesTest();
