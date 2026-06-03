@@ -1620,7 +1620,7 @@ int VideoCapabilityConfig0020Test()
     }
 }
 
-int VideoEncoderSetXPS0010Test()
+int32_t VideoEncoderSetXPS0010Test()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr) {
@@ -1633,9 +1633,10 @@ int VideoEncoderSetXPS0010Test()
  	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
  	    ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
     }
+    return 0;
 }
 
-int VideoEncoderSetXPS0020Test()
+int32_t VideoEncoderSetXPS0020Test()
 {
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap != nullptr) {
@@ -1648,6 +1649,7 @@ int VideoEncoderSetXPS0020Test()
  	    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_HEADER_BEFORE_SYNC_FRAMES, 1);
  	    ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
     }
+    return 0;
 }
 
 void InitFunc2Test()
