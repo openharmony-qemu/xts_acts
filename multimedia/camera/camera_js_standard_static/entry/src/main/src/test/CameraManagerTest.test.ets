@@ -240,7 +240,6 @@ export default function cameraManagerTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseVideoReceiveSurface();
       Utils.msSleep(1000);
       console.info('afterAll case');
     })

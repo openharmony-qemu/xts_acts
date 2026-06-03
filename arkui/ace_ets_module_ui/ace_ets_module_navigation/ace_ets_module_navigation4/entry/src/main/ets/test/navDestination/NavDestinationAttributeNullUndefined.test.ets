@@ -288,6 +288,37 @@ export default function NavDestinationAttributeNullUndefinedTest() {
     })
 
     /**
+     * @tc.name   navDestinationMenus_unNull_0100
+     * @tc.number SUB_ARKUI_NAVDESTINATION_MENUS_NULL_UNDEFINED_0100
+     * @tc.desc   Test NavDestination menus property with undefined and null, should restore to default value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('navDestinationMenus_unNull_0100', Level.LEVEL2, async () => {
+      console.info('[navDestinationMenus_unNull_0100] START');
+
+      try {
+        let strJsonCompare: string = getInspectorByKey('navDes_menus_null2');
+        let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+        let strJson: string = getInspectorByKey('navDes_menus_undefined2');
+        let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+        console.info("[navDestinationMenus_unNull_0100] default obj is: " + JSON.stringify(objCompare.$attrs));
+        console.info("[navDestinationMenus_unNull_0100] undefined obj is: " + JSON.stringify(obj.$attrs));
+
+        // undefined should restore to default value
+        expect(obj.$attrs.menus).assertEqual(objCompare.$attrs.menus);
+        console.info('[navDestinationMenus_unNull_0100] NavDestination menus with undefined restores to default');
+      } catch (error) {
+        console.info('[navDestinationMenus_unNull_0100] ERROR: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+
+      console.info('[navDestinationMenus_unNull_0100] END');
+    })
+
+    /**
      * @tc.name   navDestinationToolbarConfiguration_null_0100
      * @tc.number SUB_ARKUI_NAVDESTINATION_TOOLBARCONFIGURATION_NULL_0100
      * @tc.desc   Test NavDestination toolbarConfiguration property with null, should restore to default value

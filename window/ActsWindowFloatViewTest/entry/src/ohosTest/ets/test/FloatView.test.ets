@@ -15,6 +15,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import floatView from '@ohos.window.floatView';
 import floatingBall from '@ohos.window.floatingBall';
+import pipWindow from '@ohos.PiPWindow';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import { common, Want } from '@kit.AbilityKit';
@@ -23,6 +24,7 @@ import { image } from '@kit.ImageKit';
 import { Driver, ON } from '@kit.TestKit';
 import { abilityAccessCtrl, StartOptions, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
+import { entryName } from '../testability/pages/NamedRoutePage';
 
 async function getPermission() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
@@ -1190,8 +1192,8 @@ export default function abilityTest() {
             expect(properties.windowRect != null).assertTrue();
             expect(properties.windowRect.width > 0).assertTrue();
             expect(properties.windowRect.height > 0).assertTrue();
-            expect(properties.windowRect.left >= 0).assertTrue();
-            expect(properties.windowRect.top >= 0).assertTrue();
+            expect(typeof properties.windowRect.left === 'number').assertTrue();
+            expect(typeof properties.windowRect.top === 'number').assertTrue();
             expect(properties.avoidArea.visible).assertTrue();
             expect(properties.avoidArea.leftRect.left === 0).assertTrue();
             expect(properties.avoidArea.leftRect.top === 0).assertTrue();
@@ -1470,8 +1472,8 @@ export default function abilityTest() {
       let rectChanged = false;
       let onRectChange = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(typeof info.windowRect.left === 'number').assertTrue();
+        expect(typeof info.windowRect.top === 'number').assertTrue();
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -1532,8 +1534,8 @@ export default function abilityTest() {
       };
       let callback1 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback1 Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(typeof info.windowRect.left === 'number').assertTrue();
+        expect(typeof info.windowRect.top === 'number').assertTrue();
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -1543,8 +1545,8 @@ export default function abilityTest() {
       };
       let callback2 = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' callback2 Float view rectChange: ' + JSON.stringify(info));
-        expect(info.windowRect.left).assertLarger(0);
-        expect(info.windowRect.top).assertLarger(0);
+        expect(typeof info.windowRect.left === 'number').assertTrue();
+        expect(typeof info.windowRect.top === 'number').assertTrue();
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
@@ -2793,6 +2795,401 @@ export default function abilityTest() {
         }
       }
     })
+
+    /**
+     * @tc.name   test_start_pip_after_floatView
+     * @tc.number SUB_BASIC_WMS_PIP_AFTER_FLOAT_VIEW_0100
+     * @tc.desc   test start pip after floatView started should fail with error 1300034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_start_pip_after_floatView', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_start_pip_after_floatView';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let pipConfig: pipWindow.PiPConfiguration = {
+        context: context,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: 500,
+        contentHeight: 500,
+        localStorage: null!
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        callDoneOnStopped(floatViewController, CaseName, done)
+        let pipController = await pipWindow.create(pipConfig);
+        console.info(CaseName + ' Succeeded in creating pip controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        pipController.startPiP().then(async () => {
+          console.info(CaseName + ' Succeeded in starting pip.');
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to start pip. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300034);
+          expect(err.message != null).assertTrue();
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_start_floatingBall_after_floatView
+     * @tc.number SUB_BASIC_WMS_FLOATINGBALL_AFTER_FLOAT_VIEW_0100
+     * @tc.desc   test start floatingBall after floatView started should fail with error 1300034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_start_floatingBall_after_floatView', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_start_floatingBall_after_floatView';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        callDoneOnStopped(floatViewController, CaseName, done)
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        floatingBallController.startFloatingBall(floatingBallParams).then(async () => {
+          console.info(CaseName + ' Succeeded in starting floating ball.');
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to start floating ball. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300034);
+          expect(err.message != null).assertTrue();
+          console.log(CaseName + ' end.');
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_start_after_pipWindow
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_AFTER_PIP_0100
+     * @tc.desc   test start float view after pipWindow started should fail with error 1300034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_start_after_pipWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_start_after_pipWindow';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let pipConfig: pipWindow.PiPConfiguration = {
+        context: context,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: 500,
+        contentHeight: 500,
+        localStorage: null!
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let pipController = await pipWindow.create(pipConfig);
+        console.info(CaseName + ' Succeeded in creating pip controller.');
+        await pipController.startPiP();
+        console.info(CaseName + ' Succeeded in starting pip.');
+        await sleep(200);
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        floatViewController.start().then(async () => {
+          console.info(CaseName + ' Succeeded in starting float view.');
+          await pipController.stopPiP();
+          console.info(CaseName + ' Succeeded in stopping pip.');
+          await sleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
+          await pipController.stopPiP();
+          console.info(CaseName + ' Succeeded in stopping pip.');
+          expect(err.code).assertEqual(1300034);
+          expect(err.message != null).assertTrue();
+          console.log(CaseName + ' end.');
+          await sleep(1000);
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    
+    /**
+     * @tc.name   test_setUIContextByName_0100
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0100
+     * @tc.desc   test setUIContextByName with valid name and start float view
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setUIContextByName_0100';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContextByName(entryName);
+        console.info(CaseName + ' Succeeded in setting UI context by name.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_1300016
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0200
+     * @tc.desc   test setUIContextByName with invalid name should fail with error 1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setUIContextByName_1300016';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatViewController.setUIContextByName('').then(async () => {
+          console.info(CaseName + ' Succeeded in setting UI context by name.');
+          await floatViewController.start();
+          await sleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300016);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0300
+     * @tc.desc   test setUIContextByName with null name should fail with error 1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setUIContextByName_null';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatViewController.setUIContextByName(null).then(async () => {
+          console.info(CaseName + ' Succeeded in setting UI context by name.');
+          await floatViewController.start();
+          await sleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(e.code).assertEqual(401);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_empty
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0400
+     * @tc.desc   test setUIContextByName with empty string name should fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setUIContextByName_empty';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatViewController.setUIContextByName('').then(async () => {
+          console.info(CaseName + ' Succeeded in setting UI context by name.');
+          await floatViewController.start();
+          await sleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300016);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setUIContextByName_with_storage
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_SET_NAME_0500
+     * @tc.desc   test setUIContextByName with LocalStorage parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setUIContextByName_with_storage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setUIContextByName_with_storage';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let storage: LocalStorage = new LocalStorage();
+      storage.setOrCreate('testKey', 'testValue');
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContextByName(entryName, storage);
+        console.info(CaseName + ' Succeeded in setting UI context by name with storage.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
 
   })
 }

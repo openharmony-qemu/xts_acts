@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -171,6 +172,242 @@ export default function FloatingBallTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+
+    /**
+     * @tc.name   test_Create_FloatingBall_animation_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_animation_0100
+     * @tc.desc   test_Create_FloatingBall_animation_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_FloatingBall_animation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_Create_FloatingBall_animation_0100 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'animation_0100',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_NONE,
+      };
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                 done();
+              }).catch((err: Error) => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: Error) => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_Create_FloatingBall_animation_0200
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_animation_0200
+     * @tc.desc   test_Create_FloatingBall_animation_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_FloatingBall_animation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_Create_FloatingBall_animation_0200 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'animation_0200',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_OPACITY,
+      };
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                 done();
+              }).catch((err: Error) => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+  
+          }).catch((err: Error) => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+      
+    })
+
+    /**
+     * @tc.name   test_updateFloatingBall_ANIMATION_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ANIMATION_0100
+     * @tc.desc   test_updateFloatingBall_ANIMATION_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_updateFloatingBall_ANIMATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(800);
+      let CaseName:string = 'test_updateFloatingBall_ANIMATION_0100 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008E',
+        content:'ANIMATION_0100'
+      };
+      let updateParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title2',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008EF5',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_NONE,
+      };
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          let floatingBallController = await floatingBall.create(config);
+          floatingBallController.startFloatingBall(startParams).then(async () => {
+            console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+            floatingBallController.updateFloatingBall(updateParams).then(async () => {
+              console.info(CaseName+ ' Succeeded in updating floating ball.');
+              await floatingBallController.stopFloatingBall();
+               done();
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch(async (err: Error) => {
+            console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            expect(false).assertTrue();
+            done()
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_updateFloatingBall_ANIMATION_0200
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ANIMATION_0200
+     * @tc.desc   test_updateFloatingBall_ANIMATION_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_updateFloatingBall_ANIMATION_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_updateFloatingBall_ANIMATION_0200 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008E',
+        content:'content'
+      };
+      let updateParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title2',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008EF5',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_OPACITY,
+      };
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (!issupportFloatingBall) {
+        done();
+      } else {
+        try {
+          let floatingBallController = await floatingBall.create(config);
+          floatingBallController.startFloatingBall(startParams).then(async () => {
+            console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+            floatingBallController.updateFloatingBall(updateParams).then(async () => {
+              console.info(CaseName+ ' Succeeded in updating floating ball.');
+              await floatingBallController.stopFloatingBall();
+               done();
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch(async (err: Error) => {
+            console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            expect(false).assertTrue();
+            done()
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    
 
     /**
      * @tc.name   test_FloatingBallTemplate_Enum
@@ -991,6 +1228,8 @@ export default function FloatingBallTest(): void {
         content: 'content',
         icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
+        titleColor: '#008EF5',
+        contentColor: '#008EF5'
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);

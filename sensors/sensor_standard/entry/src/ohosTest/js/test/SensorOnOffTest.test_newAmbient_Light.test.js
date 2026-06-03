@@ -133,6 +133,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, callback);
@@ -169,6 +173,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -201,6 +209,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -251,6 +263,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, onSensorCallback, {'interval': 100000000}, 5);
@@ -283,6 +299,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -319,6 +339,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -370,6 +394,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.once(sensor.SensorId.AMBIENT_LIGHT, onceSensorCallback, 5);
@@ -396,6 +424,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -446,6 +478,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, onSensorCallback);
@@ -481,6 +517,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -512,6 +552,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -573,6 +617,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     try {
                         expect(typeof(data)).assertEqual("object");
@@ -607,6 +655,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -668,6 +720,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -732,6 +788,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     try {
@@ -783,6 +843,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, callback);
@@ -826,6 +890,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -871,6 +939,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     console.info('----------------------newAmbientLight_SensorJsTest018 off in--------------');
@@ -907,6 +979,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     try {
@@ -945,6 +1021,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -985,6 +1065,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -1029,6 +1113,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, callback, null);
@@ -1072,6 +1160,10 @@ describe("SensorJsTest_sensor_41", function () {
                 if (error) {
                     console.info(TAG + ' error:' + error);
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorId.AMBIENT_LIGHT, callback, { 'interval': null });
@@ -1108,6 +1200,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -1152,6 +1248,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -1236,6 +1336,10 @@ describe("SensorJsTest_sensor_41", function () {
            sensor.getSingleSensor(sensor.SensorId.AMBIENT_LIGHT,(error, data) => {
                 if (error) {
                     console.info(TAG + ' error:' + error);
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

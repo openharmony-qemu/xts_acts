@@ -115,7 +115,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0100
      * @tc.name testConstructorGetOwner001
-     * @tc.desc Verify ConstructorGetOwner case 001: getOwner()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorGetOwner case 001: Class.from<MyClass001>(), getName returns expected qualified name, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -130,7 +130,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0200
      * @tc.name testConstructorGetOwner002
-     * @tc.desc Verify ConstructorGetOwner case 002: parameters
+     * @tc.desc Verify ConstructorGetOwner case 002: Class.from<MyClass001>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -142,7 +142,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0300
      * @tc.name testConstructorGetOwner003
-     * @tc.desc Verify ConstructorGetOwner case 003: call return constructor Class object
+     * @tc.desc Verify ConstructorGetOwner case 003: Class.from<MyClass003>(), getName returns expected qualified name, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -158,7 +158,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0400
      * @tc.name testConstructorGetOwner004
-     * @tc.desc Verify ConstructorGetOwner case 004: verify different constructor return Class object
+     * @tc.desc Verify ConstructorGetOwner case 004: Class.from<ClassA004>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -173,7 +173,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0500
      * @tc.name testConstructorGetOwner005
-     * @tc.desc Verify ConstructorGetOwner case 005: verify inheritance constructor getOwner()
+     * @tc.desc Verify ConstructorGetOwner case 005: Class.from<ParentClass005>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -188,7 +188,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0600
      * @tc.name testConstructorGetOwner006
-     * @tc.desc Verify ConstructorGetOwner case 006: verify generic constructor getOwner()
+     * @tc.desc Verify ConstructorGetOwner case 006: Class.from<GenericClass006<int>>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -202,7 +202,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0700
      * @tc.name testConstructorGetOwner007
-     * @tc.desc Verify ConstructorGetOwner case 007: verify abstract class constructor getOwner()
+     * @tc.desc Verify ConstructorGetOwner case 007: Class.from<AbstractClass007>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -215,28 +215,12 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0800
      * @tc.name testConstructorGetOwner008
-     * @tc.desc Verify ConstructorGetOwner case 008: verify return type is Class
+     * @tc.desc Verify ConstructorGetOwner case 008: Class.from<MyClass001>(), isSubtypeOf relationship verified, getSuper returns expected parent Class, getName returns expected qualified name, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testConstructorGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let constructors = cls.getConstructors();
-      let owner = constructors[0].getOwner();
-      expect(typeof owner).assertEqual("object");
-      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0900
-     * @tc.name testConstructorGetOwner009
-     * @tc.desc Verify ConstructorGetOwner case 009: verify return Class object using
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let owner = ctor.getOwner();
       expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
@@ -247,14 +231,14 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1000
-     * @tc.name testConstructorGetOwner010
-     * @tc.desc Verify ConstructorGetOwner case 010: via ownerget constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0900
+     * @tc.name testConstructorGetOwner009
+     * @tc.desc Verify ConstructorGetOwner case 009: Class.from<MyClass010>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass010>();
       let constructors = cls.getConstructors();
       let owner = constructors[0].getOwner();
@@ -263,27 +247,27 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1100
-     * @tc.name testConstructorGetOwner011
-     * @tc.desc Verify ConstructorGetOwner case 011: final constructor getOwner()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1000
+     * @tc.name testConstructorGetOwner010
+     * @tc.desc Verify ConstructorGetOwner case 010: Class.from<FinalClass011>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass011>().getConstructors()[0];
       expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.FinalClass011");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1200
-     * @tc.name testConstructorGetOwner012
-     * @tc.desc Verify ConstructorGetOwner case 012: multiple constructor return same Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1100
+     * @tc.name testConstructorGetOwner011
+     * @tc.desc Verify ConstructorGetOwner case 011: Class.from<MyClass012>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass012>().getConstructors();
       let ownerClass = constructors[0].getOwner();
       for (let i = 0; i < constructors.length; i++) {
@@ -292,42 +276,42 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1300
-     * @tc.name testConstructorGetOwner013
-     * @tc.desc Verify ConstructorGetOwner case 013: getOwner().getName()should and
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1200
+     * @tc.name testConstructorGetOwner012
+     * @tc.desc Verify ConstructorGetOwner case 012: Class.from<MyClass013>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
       let ctorRef = cls.getConstructors()[0];
       expect(cls.getName()).assertEqual(ctorRef.getOwner().getName());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1400
-     * @tc.name testConstructorGetOwner014
-     * @tc.desc Verify ConstructorGetOwner case 014: getOwner()method not throw exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1300
+     * @tc.name testConstructorGetOwner013
+     * @tc.desc Verify ConstructorGetOwner case 013: Class.from<MyClass001>(), getName returns expected qualified name, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let owner = ctor.getOwner();
       expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1500
-     * @tc.name testConstructorGetOwner015
-     * @tc.desc Verify ConstructorGetOwner case 015: verify modifier constructor get owner
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1400
+     * @tc.name testConstructorGetOwner014
+     * @tc.desc Verify ConstructorGetOwner case 014: Class.from<MyClass015>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
       let constructors = cls.getConstructors();
       for (let i = 0; i < constructors.length; i++) {
@@ -336,14 +320,14 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1600
-     * @tc.name testConstructorGetOwner016
-     * @tc.desc Verify ConstructorGetOwner case 016: verify different type constructor getOwner()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1500
+     * @tc.name testConstructorGetOwner015
+     * @tc.desc Verify ConstructorGetOwner case 015: Class.from<AbstractClass016>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass016>().getConstructors()[0];
       let c2 = Class.from<FinalClass016>().getConstructors()[0];
       let c3 = Class.from<NormalClass016>().getConstructors()[0];
@@ -353,14 +337,14 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1700
-     * @tc.name testConstructorGetOwner017
-     * @tc.desc Verify ConstructorGetOwner case 017: verify constructor getOwner()return same Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1600
+     * @tc.name testConstructorGetOwner016
+     * @tc.desc Verify ConstructorGetOwner case 016: Class.from<MyClass017>(), owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass017>().getConstructors();
       let ownerClass = constructors[0].getOwner();
       for (let i = 0; i < constructors.length; i++) {
@@ -369,14 +353,14 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1800
-     * @tc.name testConstructorGetOwner018
-     * @tc.desc Verify ConstructorGetOwner case 018: verify getOwner() and getName()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1700
+     * @tc.name testConstructorGetOwner017
+     * @tc.desc Verify ConstructorGetOwner case 017: Class.from<MyClass018>(), getName returns "constructor", constructor getName returns constructor, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
       let ctorRef = cls.getConstructors()[0];
       expect(ctorRef.getName()).assertEqual("constructor");
@@ -384,14 +368,14 @@ export default function ConstructorGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1900
-     * @tc.name testConstructorGetOwner019
-     * @tc.desc Verify ConstructorGetOwner case 019: via getOwner() get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1800
+     * @tc.name testConstructorGetOwner018
+     * @tc.desc Verify ConstructorGetOwner case 018: Class.from<MyClass019>(), getSuper returns expected parent Class, getName returns expected qualified name, getStaticMethods result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorGetOwner019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
       let owner = ctorRef.getOwner();
 

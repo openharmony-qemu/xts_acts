@@ -68,31 +68,33 @@ export default function flexExceed_AutoJsunit() {
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexExceed01');
-      
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi1:'+ Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(10))));
+
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi1:' + Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(10))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi2:' + Math.floor(Math.abs(textExceed01.right - textExceed02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi3:' + Math.floor(Math.abs(textExceed02.right - textExceed03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi4:' + Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(10))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi5:' + Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi6:' + Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi7:' + Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi8:' + Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi9:' + Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi10:' + Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi11:' + Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi12:' + Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(150))));
+
       expect(Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(10))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi2:'+ Math.floor(Math.abs(textExceed01.right - textExceed02.left)));
       expect(Math.floor(Math.abs(textExceed01.right - textExceed02.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi3:'+ Math.floor(Math.abs(textExceed02.right - textExceed03.left)));
       expect(Math.floor(Math.abs(textExceed02.right - textExceed03.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi4:'+ Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(10))));
       expect(Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(10))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi5:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi6:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)))
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi7:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))))
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi8:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))))
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi9:'+ Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))))
       expect(Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi10:'+ Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(150))))
       expect(Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi11:'+ Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(150))))
       expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarMeet_chazhi12:'+ Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(150))))
       expect(Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(150))) <= 1).assertTrue();
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Auto');
 
@@ -122,35 +124,37 @@ export default function flexExceed_AutoJsunit() {
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexExceed01');
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi1:'+ Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(30))))
+
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi1:' + Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(30))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi2:' + Math.floor(Math.abs(textExceed01.right - textExceed02.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi3:' + Math.floor(Math.abs(textExceed02.right - textExceed03.left)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi4:' + Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(30))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi5:' + Math.floor(Math.abs(textExceed01.top - textExceed02.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi6:' + Math.floor(Math.abs(textExceed02.top - textExceed03.top)));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi7:' + Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi8:' + Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi9:' + Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi10:' + Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(440 / 3))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi11:' + Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(440 / 3))));
+      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi12:' + Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(440 / 3))));
+
       expect(Math.floor(Math.abs(textExceed01.left - flexExceed01.left - vp2px(30))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi2:'+ Math.floor(Math.abs(textExceed01.right - textExceed02.left)))
       expect(Math.floor(Math.abs(textExceed01.right - textExceed02.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi3:'+ Math.floor(Math.abs(textExceed02.right - textExceed03.left)))
       expect(Math.floor(Math.abs(textExceed02.right - textExceed03.left)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi4:'+ Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(30))))
       expect(Math.floor(Math.abs(textExceed01.top - flexExceed01.top - vp2px(30))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi5:'+ Math.floor(Math.abs(textExceed01.top - textExceed02.top)))
       expect(Math.floor(Math.abs(textExceed01.top - textExceed02.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi6:'+ Math.floor(Math.abs(textExceed02.top - textExceed03.top)))
       expect(Math.floor(Math.abs(textExceed02.top - textExceed03.top)) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi7:'+ Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))))
       expect(Math.floor(Math.abs(textExceed01.bottom - textExceed01.top - vp2px(50))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi8:'+ Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))))
       expect(Math.floor(Math.abs(textExceed02.bottom - textExceed02.top - vp2px(100))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi9:'+ Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))))
       expect(Math.floor(Math.abs(textExceed03.bottom - textExceed03.top - vp2px(150))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi10:'+ Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textExceed01.right - textExceed01.left - vp2px(440 / 3))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi11:'+ Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textExceed02.right - textExceed02.left - vp2px(440 / 3))) <= 1).assertTrue();
-      console.info('testFlexItemAlignAutoFlexPadMarOverflow_chazhi12:'+ Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(440 / 3))))
       expect(Math.floor(Math.abs(textExceed03.right - textExceed03.left - vp2px(440 / 3))) <= 1).assertTrue();
+
       expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row');
       expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Auto');
-
+      
       console.info('new testFlexItemAlignAutoFlexPadMarOverflow END');
     });
-
   })
 }

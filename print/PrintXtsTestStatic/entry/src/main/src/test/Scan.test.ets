@@ -1047,5 +1047,96 @@ export default function scanTest(): void {
         done();
       }
     })
+
+    /**
+      * @tc.name   SUB_Oh_Scan_GetCurrentSetting_4500
+      * @tc.number SUB_Oh_Scan_GetCurrentSetting_4500
+      * @tc.desc   check getScannerCurrentSetting return value all properties
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Scan_GetCurrentSetting_4500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_GetCurrentSetting_4500 start');
+         try {
+           let scannerId: string = 'testScannerId';
+           let optionIndex: int = 1;
+           scan.getScannerCurrentSetting(scannerId, optionIndex).then((value: scan.ScannerOptionValue) => {
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 valueType = %{public}d', value.valueType);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 numValue = %{public}s', String(value.numValue ?? ''));
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 strValue = %{public}s', value.strValue ?? '');
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 boolValue = %{public}s', String(value.boolValue ?? ''));
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 success');
+             done();
+           }).catch((err: Object | null | undefined) => {
+             let error = err as BusinessError;
+             hilog.info(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 errorCode = %{public}d', error.code);
+             done();
+           });
+         } catch (err) {
+           let error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Scan_GetCurrentSetting_4500 error');
+           expect().assertFail();
+           done();
+         }
+       })
+  
+    /**
+      * @tc.name   SUB_Oh_Scan_OnDeviceFound_4600
+      * @tc.number SUB_Oh_Scan_OnDeviceFound_4600
+      * @tc.desc   check onScanDeviceFound callback with ScannerDevice all properties
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Scan_OnDeviceFound_4600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_OnDeviceFound_4600 start');
+         try {
+           let deviceFoundCallback = (device: scan.ScannerDevice) => {
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 scannerId = %{public}s', device.scannerId);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 discoveryMode = %{public}s', device.discoveryMode);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 uniqueId = %{public}s', device.uniqueId);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 manufacturer = %{public}s', device.manufacturer);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 model = %{public}s', device.model);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 deviceName = %{public}s', device.deviceName);
+           };
+           scan.onScanDeviceFound(deviceFoundCallback);
+           scan.offScanDeviceFound(deviceFoundCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 success');
+           done();
+         } catch (err) {
+           hilog.error(domain, tag, 'SUB_Oh_Scan_OnDeviceFound_4600 error');
+           expect().assertFail();
+           done();
+         }
+       })
+  
+    /**
+      * @tc.name   SUB_Oh_Scan_OnDeviceSync_4700
+      * @tc.number SUB_Oh_Scan_OnDeviceSync_4700
+      * @tc.desc   check onScanDeviceSync callback with ScannerSyncDevice all properties
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+       it('SUB_Oh_Scan_OnDeviceSync_4700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_OnDeviceSync_4700 start');
+         try {
+           let deviceSyncCallback = (device: scan.ScannerSyncDevice) => {
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 scannerId = %{public}s', device.scannerId);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 discoveryMode = %{public}s', device.discoveryMode);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 uniqueId = %{public}s', device.uniqueId);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 syncMode = %{public}s', device.syncMode);
+             hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 oldScannerId = %{public}s', device.oldScannerId);
+           };
+           scan.onScanDeviceSync(deviceSyncCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 success');
+           done();
+         } catch (err) {
+           hilog.error(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_4700 error');
+           expect().assertFail();
+           done();
+         }
+       })
   })
 }

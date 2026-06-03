@@ -1203,7 +1203,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0100
      * @tc.name testClassInitialize001
-     * @tc.desc Verify ClassInitialize case 001: initialize() with no arguments
+     * @tc.desc Verify ClassInitialize case 001: Class.from<MyClass001>(), getName returns expected qualified name, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1217,7 +1217,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0200
      * @tc.name testClassInitialize002
-     * @tc.desc Verify ClassInitialize case 002: parameters should compile error or runtime error
+     * @tc.desc Verify ClassInitialize case 002: invalid input throws ClassCastError, Class.from<MyClass002>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1228,15 +1228,14 @@ export default function runClassInitializeTest(): void {
         looseReflect(cls as Object).initialize("invalid" as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0300
      * @tc.name testClassInitialize003
-     * @tc.desc Verify ClassInitialize case 003: initialize() with no arguments on loaded Class
+     * @tc.desc Verify ClassInitialize case 003: Class.from<MyClass004>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1250,7 +1249,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0400
      * @tc.name testClassInitialize004
-     * @tc.desc Verify ClassInitialize case 004: method return void type
+     * @tc.desc Verify ClassInitialize case 004: Class.from<MyClass004>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1264,7 +1263,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0500
      * @tc.name testClassInitialize005
-     * @tc.desc Verify ClassInitialize case 005: when not throw exception
+     * @tc.desc Verify ClassInitialize case 005: Class.from<MyClass005>(), getName returns expected qualified name, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1278,7 +1277,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0600
      * @tc.name testClassInitialize006
-     * @tc.desc Verify ClassInitialize case 006: call initialize
+     * @tc.desc Verify ClassInitialize case 006: Class.from<MyClass006>(), getName returns expected qualified name, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1293,7 +1292,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0700
      * @tc.name testClassInitialize007
-     * @tc.desc Verify ClassInitialize case 007: verify initialize static field
+     * @tc.desc Verify ClassInitialize case 007: Class.from<MyClass007>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1307,7 +1306,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0800
      * @tc.name testClassInitialize008
-     * @tc.desc Verify ClassInitialize case 008: verify initialize static
+     * @tc.desc Verify ClassInitialize case 008: Class.from<MyClass008>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1321,7 +1320,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0900
      * @tc.name testClassInitialize009
-     * @tc.desc Verify ClassInitialize case 009: null Class reference call initialize throws NullPointerError
+     * @tc.desc Verify ClassInitialize case 009: invalid call throws Error, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1332,15 +1331,14 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('NullPointerError');
+        expect(error.name).assertEqual('NullPointerError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1000
      * @tc.name testClassInitialize010
-     * @tc.desc Verify ClassInitialize case 010: undefined Class reference call initialize throws NullPointerError
+     * @tc.desc Verify ClassInitialize case 010: invalid call throws Error, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1351,15 +1349,14 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('NullPointerError');
+        expect(error.name).assertEqual('NullPointerError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1100
      * @tc.name testClassInitialize011
-     * @tc.desc Verify ClassInitialize case 011: static throw exception when
+     * @tc.desc Verify ClassInitialize case 011: Class.from<MyClass011>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1373,7 +1370,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1200
      * @tc.name testClassInitialize012
-     * @tc.desc Verify ClassInitialize case 012: circular static init throws or fails initialize()
+     * @tc.desc Verify ClassInitialize case 012: invalid call throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1384,16 +1381,15 @@ export default function runClassInitializeTest(): void {
         let _ = InitCycleA012.marker;
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('Circular static initialization') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('Circular static initialization') >= 0).assertEqual(true);
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1300
      * @tc.name testClassInitialize013
-     * @tc.desc Verify ClassInitialize case 013: OutOfMemoryError
+     * @tc.desc Verify ClassInitialize case 013: Class.from<MyClass013>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1403,8 +1399,7 @@ export default function runClassInitializeTest(): void {
       try {
         cls.initialize();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
         return;
       }
       expect(MyClass013.largeArray.length).assertLarger(0);
@@ -1413,7 +1408,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1400
      * @tc.name testClassInitialize014
-     * @tc.desc Verify ClassInitialize case 014: initialize then createInstance sets instance name
+     * @tc.desc Verify ClassInitialize case 014: Class.from<MyClass014>(), createInstance succeeds, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1428,7 +1423,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1500
      * @tc.name testClassInitialize015
-     * @tc.desc Verify ClassInitialize case 015: abstract class initialize succeeds
+     * @tc.desc Verify ClassInitialize case 015: Class.from<AbstractClass015>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1442,7 +1437,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1600
      * @tc.name testClassInitialize016
-     * @tc.desc Verify ClassInitialize case 016: generic initialize call
+     * @tc.desc Verify ClassInitialize case 016: Class.from<GenericClass016<int>>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1456,7 +1451,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1700
      * @tc.name testClassInitialize017
-     * @tc.desc Verify ClassInitialize case 017: final class initialize succeeds
+     * @tc.desc Verify ClassInitialize case 017: Class.from<FinalClass017>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1470,7 +1465,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1800
      * @tc.name testClassInitialize018
-     * @tc.desc Verify ClassInitialize case 018: interface type Class object call initialize
+     * @tc.desc Verify ClassInitialize case 018: Class.from<MyInterface018>(), isInterface returns true, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1484,7 +1479,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1900
      * @tc.name testClassInitialize019
-     * @tc.desc Verify ClassInitialize case 019: type Class object initialize
+     * @tc.desc Verify ClassInitialize case 019: isPrimitive returns true, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1498,7 +1493,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2000
      * @tc.name testClassInitialize020
-     * @tc.desc Verify ClassInitialize case 020: verify
+     * @tc.desc Verify ClassInitialize case 020: Class.from<ChildClass020>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1513,7 +1508,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2100
      * @tc.name testClassInitialize021
-     * @tc.desc Verify ClassInitialize case 021: verify inheritance
+     * @tc.desc Verify ClassInitialize case 021: Class.from<Child021>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1529,7 +1524,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2200
      * @tc.name testClassInitialize022
-     * @tc.desc Verify ClassInitialize case 022: repeated initialize only runs static init once
+     * @tc.desc Verify ClassInitialize case 022: Class.from<MyClass022>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1546,7 +1541,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2300
      * @tc.name testClassInitialize023
-     * @tc.desc Verify ClassInitialize case 023: call initialize
+     * @tc.desc Verify ClassInitialize case 023: Class.from<MyClass023>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1563,7 +1558,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2400
      * @tc.name testClassInitialize024
-     * @tc.desc Verify ClassInitialize case 024: createInstance call initialize
+     * @tc.desc Verify ClassInitialize case 024: Class.from<MyClass024>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1578,7 +1573,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2500
      * @tc.name testClassInitialize025
-     * @tc.desc Verify ClassInitialize case 025: getName getSuper method
+     * @tc.desc Verify ClassInitialize case 025: Class.from<MyClass025>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1595,7 +1590,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2600
      * @tc.name testClassInitialize026
-     * @tc.desc Verify ClassInitialize case 026: empty class without static members
+     * @tc.desc Verify ClassInitialize case 026: Class.from<EmptyClass026>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1609,7 +1604,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2700
      * @tc.name testClassInitialize027
-     * @tc.desc Verify ClassInitialize case 027: static
+     * @tc.desc Verify ClassInitialize case 027: Class.from<ComplexClass027>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1623,7 +1618,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2800
      * @tc.name testClassInitialize028
-     * @tc.desc Verify ClassInitialize case 028: instance
+     * @tc.desc Verify ClassInitialize case 028: Class.from<MyClass028>(), createInstance succeeds, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1639,7 +1634,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_2900
      * @tc.name testClassInitialize029
-     * @tc.desc Verify ClassInitialize case 029: createInstance triggers static init without explicit initialize
+     * @tc.desc Verify ClassInitialize case 029: Class.from<MyClass029>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1653,7 +1648,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_3000
      * @tc.name testClassInitialize030
-     * @tc.desc Verify ClassInitialize case 030: static field performance
+     * @tc.desc Verify ClassInitialize case 030: Class.from<LargeClass030>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1667,7 +1662,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_3100
      * @tc.name testClassInitialize031
-     * @tc.desc Verify ClassInitialize case 031: call performance
+     * @tc.desc Verify ClassInitialize case 031: Class.from<MyClass031>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

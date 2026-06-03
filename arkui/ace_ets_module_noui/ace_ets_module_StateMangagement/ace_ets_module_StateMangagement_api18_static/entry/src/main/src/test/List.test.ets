@@ -51,6 +51,7 @@ import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListen
 import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
 import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
 import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
+import AppStorageV2Api from './AppStorageV2/AppStorageV2Api.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -90,5 +91,6 @@ export default function testsuite() {
   SVDeepListenMakeObservedFalseTest();
   SVDeepListenObservedAndObjectlinkTest();
   SVDeepListenObservedBuiltInTest();
+  AppStorageV2Api();
 
 }
