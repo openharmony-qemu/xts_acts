@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.example.actsNotificationThreePartyWatchTest.static",
+        "bundle-name": "com.example.actsnotificationthreepartywatchtest.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"
