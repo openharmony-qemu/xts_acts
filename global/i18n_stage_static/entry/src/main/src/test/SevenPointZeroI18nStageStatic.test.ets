@@ -2577,5 +2577,240 @@ export default function SevenPointZeroI18nStageStaticTest() {
       }
     })
 
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0100
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0100
+     * @tc.desc locale:zh-CN, lenientMode:true, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0100 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200
+     * @tc.desc locale:zh-CN, lenientMode:true, 异常场景: text="abc123"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = 'abc123';
+        let result: number = symbolFormat.parse(text, true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200 result:' + result);
+        expect(Number.isNaN(result)).assertTrue();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0200 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0300
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0300
+     * @tc.desc locale:zh-CN, lenientMode:false, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('zh-CN');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0300 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400
+     * @tc.desc locale:zh-CN, lenientMode:false, 异常场景: text="13,5,000" (错误千分位)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let text: string = '13,5,000';
+        let result: number = symbolFormat.parse(text, false);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400 result:' + result);
+        expect(Number.isNaN(result)).assertTrue();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0400 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0500
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0500
+     * @tc.desc locale:en-US, lenientMode:true, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0500 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0600
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0600
+     * @tc.desc locale:en-US, lenientMode:true, 异常场景: text="135.000 km/h" (欧式小数点)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135.000 km/h';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0600 result:' + result);
+      expect(result).assertEqual(135);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0700
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0700
+     * @tc.desc locale:en-US, lenientMode:false, 正常场景: text="135,000 km/h"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000 km/h';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0700 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0800
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0800
+     * @tc.desc locale:en-US, lenientMode:false, 异常场景: text="135 000" (无分隔符)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135 000';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0800 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_0900
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_0900
+     * @tc.desc locale:ar-AE, lenientMode:true, 正常场景: text=东阿拉伯数字格式
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let formattedText: string = symbolFormat.format(135000);
+      let result: number = symbolFormat.parse(formattedText, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_0900 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_1000
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_1000
+     * @tc.desc locale:ar-AE, lenientMode:true, 异常场景: text="135,000" (西阿拉伯数字)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135,000';
+      let result: number = symbolFormat.parse(text, true);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1000 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_1100
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_1100
+     * @tc.desc locale:ar-AE, lenientMode:false, 正常场景: text=东阿拉伯数字格式
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let formattedText: string = symbolFormat.format(135000);
+      let result: number = symbolFormat.parse(formattedText, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1100 result:' + result);
+      expect(result).assertEqual(135000);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_1200
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_1200
+     * @tc.desc locale:ar-AE, lenientMode:false, 异常场景: text="135.000" (西式小数点)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('ar-AE');
+      let symbolFormat = new i18n.SymbolNumberFormat(locale);
+      let text: string = '135.000';
+      let result: number = symbolFormat.parse(text, false);
+      console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1200 result:' + result);
+      expect(result).assertEqual(135);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500
+     * @tc.number SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500
+     * @tc.desc undefined参数场景: text='', 预期抛出错误码 8900001
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500', Level.LEVEL2, () => {
+      try {
+        let locale = new Intl.Locale('zh-CN');
+        let symbolFormat = new i18n.SymbolNumberFormat(locale);
+        let result: number = symbolFormat.parse('', true);
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500 result:' + result);
+        expect().assertFail();
+      } catch (error) {
+        console.log('SUB_GLOBAL_SymbolNumberFormat_parse_Static_1500 catch error:' + error.code + error.message);
+        expect(Number(error.code)).assertEqual(8900001);
+      }
+    })
+
   })
 }
