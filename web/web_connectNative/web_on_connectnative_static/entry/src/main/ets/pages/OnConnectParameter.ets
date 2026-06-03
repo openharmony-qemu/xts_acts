@@ -20,7 +20,6 @@ import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
 
-
 export class StringFields {
   public str: string = '';
 }
