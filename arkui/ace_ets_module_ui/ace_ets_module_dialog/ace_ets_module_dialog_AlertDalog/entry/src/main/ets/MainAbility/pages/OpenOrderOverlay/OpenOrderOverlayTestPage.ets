@@ -18,7 +18,7 @@ import router from '@ohos.router';
 
 class Params {
   public text: string = '';
-  offset: Position;
+  public offset: Position;
 
   constructor(text: string, offset: Position) {
     this.text = text;
