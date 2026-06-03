@@ -68,16 +68,16 @@ export default function CreatePixelMapSupp() {
   const CROP_FIRST = image.CropAndScaleStrategy.CROP_FIRST;
   describe('CreatePixelMapSupp', () => {
     beforeAll(async () => {
-      console.info('beforeAll case');
+      console.info(TAG, 'beforeAll case');
     });
     beforeEach(async () => {
-      console.info('beforeEach case');
+      console.info(TAG, 'beforeEach case');
     });
     afterEach(async () => {
-      console.info('afterEach case');
+      console.info(TAG, 'afterEach case');
     });
     afterAll(() => {
-      console.info('afterAll case');
+      console.info(TAG, 'afterAll case');
     });
     /**
      * @tc.number     SUB_MEDIA_IMAGE_CREATE_PIXELMAP_TEST_001
@@ -4171,6 +4171,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
+        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -4209,6 +4210,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi);
         expect(imageSourceIncrementalSApi != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
+        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -4247,6 +4249,7 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
+        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
