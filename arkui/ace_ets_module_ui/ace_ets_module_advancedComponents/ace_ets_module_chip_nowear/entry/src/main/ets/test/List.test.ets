@@ -51,6 +51,11 @@ import ChipV2OnClose2 from './chipV2/ChipV2OnClose2.test';
 import ChipV2Padding from './chipV2/ChipV2Padding.test';
 import ChipV2Page from './chipV2/ChipV2Page.test';
 import ChipV2localizedLabelMargin from './chipV2/ChipV2localizedLabelMargin.test';
+import ChipGroupV2EndSpaceTest from './ChipGroupV2Test/ChipGroupV2EndSpaceTest.test';
+import ChipGroupV2IconItemOptionsTest from './ChipGroupV2Test/ChipGroupV2IconItemOptionsTest.test';
+import ChipGroupV2ItemSpaceTest from './ChipGroupV2Test/ChipGroupV2ItemSpaceTest.test';
+import ChipGroupV2StartSpaceTest from './ChipGroupV2Test/ChipGroupV2StartSpaceTest.test';
+import ChipGroupV2SymbolItemOptionsTest from './ChipGroupV2Test/ChipGroupV2SymbolItemOptionsTest.test';
 export default function testsuite() {
   chipDirectionTest();
   ChipAction();
@@ -88,4 +93,9 @@ export default function testsuite() {
   ChipV2Padding();
   ChipV2Page();
   ChipV2localizedLabelMargin();
+  ChipGroupV2EndSpaceTest();
+  ChipGroupV2IconItemOptionsTest();
+  ChipGroupV2ItemSpaceTest();
+  ChipGroupV2StartSpaceTest();
+  ChipGroupV2SymbolItemOptionsTest();
 }
