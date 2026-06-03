@@ -110,7 +110,7 @@ export default function OnConnectParameter() {
     it('testDisconnectNativePermissionDenyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('DisconnectNativePermissionDenyStatic001', 10);
-        Utils.registerEvent('testDisconnectNativePermissionDenyStatic001', 201, 20260604, done);
+        Utils.registerEvent('testDisconnectNativePermissionDenyStatic001', 801, 20260604, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
       })
@@ -127,7 +127,7 @@ export default function OnConnectParameter() {
     it('testDisconnectNativeNullUndefinedParamStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('DisconnectNativeNullUndefinedParamStatic001', 10);
-        Utils.registerEvent('testDisconnectNativeNullUndefinedParamStatic001', 201, 20260605, done);
+        Utils.registerEvent('testDisconnectNativeNullUndefinedParamStatic001', 801, 20260605, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
       })
