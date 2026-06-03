@@ -23,7 +23,7 @@ const TAG = LOG_TAG + 'Picture.PackingPictureSupp';
 
 async function pictureCreatImageSource(done: Function, testName: string,pathUri: string, callback:(pixelMap: image.PixelMap,imageSource:image.ImageSource) => void) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(20000000);
   let path = `file://${testContext.filesDir}/${pathUri}`;
   console.info(TAG, testName, `path: ${path}`);
   const fd = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -91,10 +91,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -126,10 +128,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -161,10 +165,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -197,10 +203,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -233,10 +241,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -269,10 +279,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -305,10 +317,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -342,10 +356,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -378,10 +394,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -414,10 +432,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail()
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -450,10 +470,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -487,10 +509,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Failed to packToData the image.code ${error.code},message is ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -532,6 +556,7 @@ export default function PicturePackDataFirTestSupp() {
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -565,10 +590,12 @@ export default function PicturePackDataFirTestSupp() {
           }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Faild packToDataFromPixelmapSequence, errorCode: ${error.code},errorMessage: ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -602,10 +629,12 @@ export default function PicturePackDataFirTestSupp() {
           }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Faild packToDataFromPixelmapSequence, errorCode: ${error.code},errorMessage: ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -642,6 +671,7 @@ export default function PicturePackDataFirTestSupp() {
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
@@ -674,10 +704,12 @@ export default function PicturePackDataFirTestSupp() {
             }).catch((error: BusinessError) => {
             console.error(TAG, testName, `Faild packToDataFromPixelmapSequence, errorCode: ${error.code},errorMessage: ${error.message}`);
             expect().assertFail();
+            done();
           })
         } catch (err) {
           console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
           expect().assertFail();
+          done();
         }
       })
     })
