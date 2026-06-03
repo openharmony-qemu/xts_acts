@@ -151,7 +151,6 @@ struct WebOnConnectParameter {
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260604);
                       flag = false
-                      done();
                       return;
                     }
                     Utils.emitEvent(err.code, 20260604);
@@ -173,7 +172,6 @@ struct WebOnConnectParameter {
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260605);
                       flag = false
-                      done();
                       return;
                     }
                     Utils.emitEvent(err.code, 20260605);
