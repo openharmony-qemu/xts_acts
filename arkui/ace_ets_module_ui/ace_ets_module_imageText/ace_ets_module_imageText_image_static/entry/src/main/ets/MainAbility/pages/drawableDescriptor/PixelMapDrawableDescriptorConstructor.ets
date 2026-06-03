@@ -30,10 +30,11 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import { PixelMapDrawableDescriptor } from '@ohos.arkui.drawableDescriptor'
 import image from '@ohos.multimedia.image'
-import { fileIo as fs } from '@kit.CoreFileKit'
 import { fileUri } from '@kit.CoreFileKit'
+import fs from '@ohos.file.fs';
 
-const BASE64_STR: string = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwADhQGAWjR9awAAAABJRU5ErkJggg=='
+const BASE64_STR: string =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwADhQGAWjR9awAAAABJRU5ErkJggg=='
 
 @Entry
 @Component
@@ -130,21 +131,22 @@ struct PixelMapDrawableDescriptorConstructor {
         return
       }
       let unit8Array: Uint8Array = resManager.getMediaContentSync($r('app.media.startIcon').id)
-      let imageSource: image.ImageSource = image.createImageSource(unit8Array.buffer)
-      let pixelMap: image.PixelMap = imageSource.createPixelMapSync({
+      let imageSource: image.ImageSource | undefined = image.createImageSource(unit8Array.buffer)
+      let pixelMap: image.PixelMap | undefined = imageSource?.createPixelMapSync({
         desiredPixelFormat: image.PixelMapFormat.BGRA_8888
       })
       let drawable: PixelMapDrawableDescriptor = new PixelMapDrawableDescriptor(pixelMap)
-      let resultPixelMap: image.PixelMap = drawable.getPixelMap()
-      let originInfo: image.ImageInfo = pixelMap.getImageInfoSync()
-      let resultInfo: image.ImageInfo = resultPixelMap.getImageInfoSync()
-      if (originInfo.size.width === resultInfo.size.width &&
-        originInfo.size.height === resultInfo.size.height) {
+      let resultPixelMap: image.PixelMap | undefined = drawable.getPixelMap()
+      let originInfo: image.ImageInfo | undefined = pixelMap?.getImageInfoSync()
+      let resultInfo: image.ImageInfo | undefined = resultPixelMap?.getImageInfoSync()
+      if (originInfo?.size.width === resultInfo?.size.width &&
+        originInfo?.size.height === resultInfo?.size.height) {
         this.testResult002 = 'PASS'
       } else {
-        this.testResult002 = `FAIL: dimension mismatch origin=${originInfo.size.width}x${originInfo.size.height} result=${resultInfo.size.width}x${resultInfo.size.height}`
+        this.testResult002 =
+          `FAIL: dimension mismatch origin=${originInfo?.size.width}x${originInfo?.size.height} result=${resultInfo?.size.width}x${resultInfo?.size.height}`
       }
-      imageSource.release()
+      imageSource?.release()
     } catch (e) {
       this.testResult002 = `FAIL: exception ${JSON.stringify(e)}`
     }
@@ -153,7 +155,7 @@ struct PixelMapDrawableDescriptorConstructor {
   Test003() {
     try {
       let drawable: PixelMapDrawableDescriptor = new PixelMapDrawableDescriptor($r('app.media.startIcon'))
-      let resultPixelMap: image.PixelMap = drawable.getPixelMap()
+      let resultPixelMap: image.PixelMap | undefined = drawable.getPixelMap()
       if (resultPixelMap !== undefined) {
         let resultInfo: image.ImageInfo = resultPixelMap.getImageInfoSync()
         if (resultInfo.size.width > 0 && resultInfo.size.height > 0) {
@@ -180,12 +182,12 @@ struct PixelMapDrawableDescriptorConstructor {
       let unit8Array: Uint8Array = resManager.getMediaContentSync($r('app.media.startIcon').id)
       let filesDir: string = context.filesDir
       let sandboxFilePath: string = filesDir + '/test_constructor_sandbox.png'
-      let file = fs.openSync(sandboxFilePath, fs.OpenMode.CREATE_ALWAYS | fs.OpenMode.WRITE_ONLY)
+      let file = fs.openSync(sandboxFilePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE)
       fs.writeSync(file.fd, unit8Array.buffer)
       fs.closeSync(file)
       let uri: string = fileUri.getUriFromPath(sandboxFilePath)
       let drawable: PixelMapDrawableDescriptor = new PixelMapDrawableDescriptor(uri)
-      let resultPixelMap: image.PixelMap = drawable.getPixelMap()
+      let resultPixelMap: image.PixelMap | undefined = drawable.getPixelMap()
       if (resultPixelMap !== undefined) {
         let resultInfo: image.ImageInfo = resultPixelMap.getImageInfoSync()
         if (resultInfo.size.width > 0 && resultInfo.size.height > 0) {
@@ -204,7 +206,7 @@ struct PixelMapDrawableDescriptorConstructor {
   Test005() {
     try {
       let drawable: PixelMapDrawableDescriptor = new PixelMapDrawableDescriptor(BASE64_STR)
-      let resultPixelMap: image.PixelMap = drawable.getPixelMap()
+      let resultPixelMap: image.PixelMap | undefined = drawable.getPixelMap()
       if (resultPixelMap !== undefined) {
         let resultInfo: image.ImageInfo = resultPixelMap.getImageInfoSync()
         if (resultInfo.size.width > 0 && resultInfo.size.height > 0) {
