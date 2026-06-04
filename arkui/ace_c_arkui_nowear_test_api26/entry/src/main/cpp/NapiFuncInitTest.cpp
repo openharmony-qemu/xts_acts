@@ -67,8 +67,8 @@ static napi_value Init(napi_env env, napi_value exports)
                 napi_default, nullptr},
         {"TestInsertRenderNodeAtInitError001", nullptr, TestInsertRenderNodeAtInitError001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
-        {"TestGetRenderNodeChildrenCountInitError001", nullptr, TestGetRenderNodeChildrenCountInitError001,
-                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCountInitError001", nullptr, TestGetRenderNodeChildrenCountInitError001, nullptr,
+                nullptr, nullptr, napi_default, nullptr},
         {"TestGetRenderNodeAtInitError001", nullptr, TestGetRenderNodeAtInitError001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
 
