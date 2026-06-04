@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach, expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -24,6 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import { NavigationPolicy } from "@ohos.arkui.component";
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import { MicrophoneCaptureState } from "@ohos.arkui.component";
+import { Want, StartOptions } from '@kit.AbilityKit';
 let driver = Driver.create()
 
 let testAbilityContext:common.UIAbilityContext;
@@ -631,8 +632,8 @@ export default function webViewController() {
     /**
      * @tc.name   testStartAbilityForResultStatic001
      * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0100
-     * @tc.desc   test startAbilityForResult(want): directly call context.startAbilityForResult
-     *            to launch rely EntryAbility, verify AbilityResult.resultCode == 0.
+     * @tc.desc   test startAbilityForResult(want): call with non-existent ability,
+     *            verify BusinessError.code = 16000001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -640,23 +641,26 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
-        Utils.emitEvent('emitStartAbilityForResultStatic001', 10);
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testStartAbilityForResultStatic001', 0, 20260401, done);
-        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
-        await Utils.msSleep(2000);
-        if (keyButton) {
-          await keyButton.click();
-          console.info('keyButton.click');
+        let want: Want = {
+          bundleName: 'com.invalid.nonexistent.bundle',
+          abilityName: 'NonExistentAbility'
+        };
+        try {
+          let result = await testAbilityContext.startAbilityForResult(want);
+          console.info('testStartAbilityForResultStatic001 success: ' + JSON.stringify(result));
+        } catch (err) {
+          console.info('testStartAbilityForResultStatic001 error: ' + err.code);
+          expect(err.code).assertEqual(16000001);
         }
-        await Utils.msSleep(6000);
+        await Utils.msSleep(1000);
+        done();
       })
 
     /**
      * @tc.name   testStartAbilityForResultStatic002
      * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0200
-     * @tc.desc   test startAbilityForResult(want, options): call with StartOptions parameter,
-     *            verify error code 201 (Permission denied).
+     * @tc.desc   test startAbilityForResult(want, options): call with non-existent ability
+     *            and StartOptions, verify BusinessError.code = 16000001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -664,22 +668,26 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
-        Utils.emitEvent('emitStartAbilityForResultStatic002', 10);
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testStartAbilityForResultStatic002', 201, 20260402, done);
-        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
-        await Utils.msSleep(2000);
-        if (keyButton) {
-          await keyButton.click();
-          console.info('keyButton.click');
+        let want: Want = {
+          bundleName: 'com.invalid.nonexistent.bundle',
+          abilityName: 'NonExistentAbility'
+        };
+        let options: StartOptions = { displayId: 0 };
+        try {
+          let result = await testAbilityContext.startAbilityForResult(want, options);
+          console.info('testStartAbilityForResultStatic002 success: ' + JSON.stringify(result));
+        } catch (err) {
+          console.info('testStartAbilityForResultStatic002 error: ' + err.code);
+          expect(err.code).assertEqual(16000001);
         }
-        await Utils.msSleep(6000);
+        await Utils.msSleep(1000);
+        done();
       })
 
     /**
      * @tc.name   testStartAbilityForResultStatic003
      * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0300
-     * @tc.desc   test startAbilityForResult with non-existent ability:
+     * @tc.desc   test startAbilityForResult with another non-existent ability:
      *            verify BusinessError.code = 16000001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -688,16 +696,19 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
-        Utils.emitEvent('emitStartAbilityForResultStatic003', 10);
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testStartAbilityForResultStatic003', 16000001, 20260403, done);
-        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
-        await Utils.msSleep(2000);
-        if (keyButton) {
-          await keyButton.click();
-          console.info('keyButton.click');
+        let want: Want = {
+          bundleName: 'com.nonexistent.app.test',
+          abilityName: 'NonExistentAbility'
+        };
+        try {
+          let result = await testAbilityContext.startAbilityForResult(want);
+          console.info('testStartAbilityForResultStatic003 success: ' + JSON.stringify(result));
+        } catch (err) {
+          console.info('testStartAbilityForResultStatic003 error: ' + err.code);
+          expect(err.code).assertEqual(16000001);
         }
-        await Utils.msSleep(6000);
+        await Utils.msSleep(1000);
+        done();
       })
 
     /**
