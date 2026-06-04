@@ -71,7 +71,7 @@ export default function SegBtnItemTest0010() {
       await textClick.click();
       await CommonFunc.sleep(500);
 
-      let btn0: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_1', [0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]);
+      let btn0: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_1', [0, 1, 0, 0, 0, 2, 0, 0, 0, 0]);
       console.info("[SegBtnItemTest0010_0100] component btn0 is: " + JSON.stringify(btn0));
       expect(btn0.$attrs.content).assertEqual('a');
       expect(btn0.$attrs.backgroundColor).assertEqual('#00000000');
@@ -131,13 +131,13 @@ export default function SegBtnItemTest0010() {
 
       await CommonFunc.sleep(500);
 
-      let btn0: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_4', [0, 1, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0]);
+      let btn0: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_4', [0, 1, 0, 2, 0, 2, 0, 0, 0, 0]);
       console.info("[SegBtnItemTest0010_0300] component btn0 is: " + JSON.stringify(btn0));
       expect(btn0.$attrs.content).assertEqual('c');
       expect(btn0.$attrs.fontSize).assertEqual('18.00fp');
       expect(btn0.$attrs.fontWeight).assertEqual('FontWeight.Lighter');
       await CommonFunc.sleep(500);
-      let btn1: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn1_5', [0, 1, 0, 2, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0]);
+      let btn1: ESObject = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn1_5', [0, 1, 0, 2, 0, 2, 1, 0, 0, 0]);
       console.info("[SegBtnItemTest0010_0300_1] component btn0 is: " + JSON.stringify(btn1));
       expect(btn1.$attrs.content).assertEqual('h');
       expect(btn1.$attrs.fontSize).assertEqual('18.00fp');

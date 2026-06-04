@@ -56,7 +56,7 @@ export default function SegBtnItemTest0010() {
     it('SegBtnItemTest0010_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegBtnItemTest0010_001] START');
       await CommonFunc.sleep(1000);
-      let btn0: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_1', [0, 0, 0, 0, 0, 0, 2, 0]);
+      let btn0: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn0_1', [0, 0, 0, 2, 0]);
       console.info("[SegBtnItemTest0010_001] btn0.$attrs.accessibilityLevel is: " +
       JSON.stringify(btn0.$attrs.accessibilityLevel));
       console.info("[SegBtnItemTest0010_001] btn0.$attrs.accessibilityDescription is: " +
@@ -64,17 +64,17 @@ export default function SegBtnItemTest0010() {
       expect(btn0.$attrs.accessibilityLevel).assertEqual('auto');
       expect(btn0.$attrs.accessibilityDescription).assertEqual('tab1');
       await CommonFunc.sleep(500);
-      let btn1: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn1_2', [0, 0, 0, 0, 0, 0, 2, 1]);
+      let btn1: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn1_2', [0, 0, 0, 2, 1]);
       console.info("[SegBtnItemTest0010_001] btn1.$attrs.accessibilityLevel is: " +
       JSON.stringify(btn1.$attrs.accessibilityLevel));
       expect(btn1.$attrs.accessibilityLevel).assertEqual('no');
       await CommonFunc.sleep(500);
-      let btn2: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn2_3', [0, 0, 0, 0, 0, 0, 2, 2]);
+      let btn2: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn2_3', [0, 0, 0, 2, 2]);
       console.info("[SegBtnItemTest0010_001] btn2.$attrs.accessibilityLevel is: " +
       JSON.stringify(btn2.$attrs.accessibilityLevel));
       expect(btn2.$attrs.accessibilityLevel).assertEqual('yes');
       await CommonFunc.sleep(500);
-      let btn3: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn3_4', [0, 0, 0, 0, 0, 0, 2, 3]);
+      let btn3: InspectorNode = Utils.navigateInspectorPath('SegBtnItemTest0010.test_btn3_4', [0, 0, 0, 2, 3]);
       console.info("[SegBtnItemTest0010_001]  btn3.$attrs.accessibilityLevel is: " +
       JSON.stringify(btn3.$attrs.accessibilityLevel));
       expect(btn3.$attrs.accessibilityLevel).assertEqual('no-hide-descendants');
