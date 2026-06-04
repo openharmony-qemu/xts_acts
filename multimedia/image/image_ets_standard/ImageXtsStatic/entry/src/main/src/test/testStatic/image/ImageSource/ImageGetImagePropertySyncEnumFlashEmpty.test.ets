@@ -55,7 +55,7 @@ function getImageSource(path: string): image.ImageSource {
 }
 
 async function getImagePropertySync4(done: () => void, testContext: Context, testName: string, path: string,
-  propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
+  propertyKey: image.PropertyKey, callback: (data?: string, errorCode?: int) => void) {
   console.info(TAG, testName + '- start');
   try {
     const imageSourceApi = getImageSource(path);
@@ -69,7 +69,7 @@ async function getImagePropertySync4(done: () => void, testContext: Context, tes
     done();
   } catch (error) {
     console.error(TAG, testName, error!.message, error!.code);
-    callback(undefined, error as BusinessError);
+    callback(undefined, error!.code);
     done();
   }
 }
@@ -100,8 +100,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0100', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0100',
         'test_exif_empty_2.jpg', image.PropertyKey.FLASH,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -117,8 +117,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0200', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0200',
         'test_exif_empty_2.jpg', image.PropertyKey.GPS_H_POSITIONING_ERROR,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -134,8 +134,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0300', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0300',
         'test_exif_empty_2.jpg', image.PropertyKey.MODEL,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -152,7 +152,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0400',
         'test_exif_empty_2.jpg',
         image.PropertyKey.SCENE_SUNSET_CONF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -170,8 +170,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0500',
         'test_exif_empty_2.jpg',
         image.PropertyKey.FOCAL_PLANE_X_RESOLUTION,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -188,7 +188,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0600',
         'test_exif_empty_2.jpg',
         image.PropertyKey.SCENE_GREEN_PLANT_CONF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -206,8 +206,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0700',
         'test_exif_empty_2.jpg',
         image.PropertyKey.MAKER_NOTE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -224,8 +224,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0800',
         'test_exif_empty_2.jpg',
         image.PropertyKey.GPS_DIFFERENTIAL,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -242,8 +242,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0900',
         'test_exif_empty_2.jpg',
         image.PropertyKey.YCBCR_COEFFICIENTS,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -260,8 +260,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1000',
         'test_exif_empty_2.jpg',
         image.PropertyKey.SUBJECT_DISTANCE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -278,8 +278,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1100',
         'test_exif_empty_2.jpg',
         image.PropertyKey.ORIENTATION,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -296,8 +296,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1200',
         'test_exif_empty_2.jpg',
         image.PropertyKey.PIXEL_Y_DIMENSION,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -314,8 +314,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1300',
         'test_exif_empty_2.jpg',
         image.PropertyKey.EXPOSURE_INDEX,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -332,7 +332,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1400',
         'test_exif_empty_2.jpg',
         image.PropertyKey.CLOUD_ENHANCEMENT_MODE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -350,8 +350,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1500',
         'test_exif_empty_2.jpg',
         image.PropertyKey.BRIGHTNESS_VALUE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -368,8 +368,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
       getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1600',
         'test_exif_empty_2.jpg',
         image.PropertyKey.FLASH_ENERGY,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -387,7 +387,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
         getImagePropertySync4(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1700',
           'test_exif_empty_2.jpg',
           image.PropertyKey.FACE_SMILE_SCORE,
-          (data?: string, error?: BusinessError) => {
+          (data?: string, errorCode?: int) => {
             expect(data).assertEqual('default_exif_value');
             done();
           });
@@ -407,8 +407,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
           'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1800',
           'test_exif_empty_2.jpg',
           image.PropertyKey.GPS_VERSION_ID,
-          (data?: string, error?: BusinessError) => {
-            expect(error!.code).assertEqual(7700101);
+          (data?: string, errorCode?: int) => {
+            expect(errorCode).assertEqual(7700101);
             done();
           });
       });
@@ -427,8 +427,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
           'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1900',
           'test_exif_empty_2.jpg',
           image.PropertyKey.GPS_LONGITUDE_REF,
-          (data?: string, error?: BusinessError) => {
-            expect(error!.code).assertEqual(7700101);
+          (data?: string, errorCode?: int) => {
+            expect(errorCode).assertEqual(7700101);
             done();
           });
       });
@@ -447,8 +447,8 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
           'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_2000',
           'test_exif_empty_2.jpg',
           image.PropertyKey.EXPOSURE_PROGRAM,
-          (data?: string, error?: BusinessError) => {
-            expect(error!.code).assertEqual(7700101);
+          (data?: string, errorCode?: int) => {
+            expect(errorCode).assertEqual(7700101);
             done();
           });
       });

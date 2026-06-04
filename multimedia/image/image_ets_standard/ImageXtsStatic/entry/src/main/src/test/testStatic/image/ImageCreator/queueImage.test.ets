@@ -36,9 +36,9 @@ async function queueImagePromiseTest(done: () => void, testName: string, size: i
       })
       await creator.queueImage(img).then(() => {
         console.info('Succeeded promise in queuing the Image.');
-      }).catch((error: Error) => {
-        let error1 = error as BusinessError
-        console.error(`Failed to queue the Image.code ${error1.code},message is ${error1.message}`);
+      }).catch((error) => {
+        // let error1 = error as BusinessError
+        console.error(`Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
       })
       done();
@@ -117,8 +117,7 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImagePromiseTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -141,8 +140,8 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImagePromiseTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+        // const err = error as BusinessError;
+        console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -165,8 +164,8 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImageCallbackTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+        // const err = error as BusinessError;
+        console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -189,8 +188,8 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImageCallbackTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to queue the Image.code ${err.code},message is ${err.message}`);
+        // const err = error as BusinessError;
+        console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }

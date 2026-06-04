@@ -35,9 +35,9 @@ async function releasePromiseTest(done: () => void, testName: string): Promise<v
         img?.release().then(() => {
           console.info(TAG, 'Succeeded promise in releasing the image instance.');
           done();
-        }).catch((error: Error) => {
-          let error1 = error as BusinessError
-          console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+        }).catch((error) => {
+          // let error1 = error as BusinessError
+          console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
           expect().assertFail();
           done();
         })
@@ -60,8 +60,8 @@ async function releaseCallbackTest(done: () => void, testName: string): Promise<
       } else {
         img?.release((error: Error | null) => {
           if (error) {
-            let error1 = error as BusinessError;
-            console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+            // let error1 = error as BusinessError;
+            console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
             expect().assertFail();
           } else {
             console.info(TAG, 'Succeeded callback in releasing the image instance.');
@@ -109,8 +109,7 @@ export default function ImageReceiverReleaseTest(): void {
       try {
         await releasePromiseTest(done, testName);
       } catch (error) {
-        let err = error as BusinessError;
-        console.info(TAG, `failed; error: ${err}, ${err.code}`, testName);
+        console.info(TAG, `failed; error: ${error}, ${error.code}`, testName);
         expect().assertFail();
         done();
       }
@@ -129,8 +128,7 @@ export default function ImageReceiverReleaseTest(): void {
       try {
         await releaseCallbackTest(done, testName);
       } catch (error) {
-        let err = error as BusinessError;
-        console.info(TAG, `failed; error: ${err}, ${err.code}`, testName);
+        console.info(TAG, `failed; error: ${error}, ${error.code}`, testName);
         expect().assertFail();
         done();
       }

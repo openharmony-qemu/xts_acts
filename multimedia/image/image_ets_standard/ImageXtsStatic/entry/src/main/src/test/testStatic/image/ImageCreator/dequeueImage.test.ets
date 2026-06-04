@@ -25,9 +25,9 @@ async function dequeueImagePromiseTest(done: () => void, testName: string,  size
   await creator.dequeueImage().then((img: image.Image) => {
     creator.release();
     console.info(TAG, 'Succeeded in dequeuing the Image.');
-  }).catch((error: Error) => {
-    let error1 = error as BusinessError
-    console.error(TAG, `Failed to dequeue the Image.code ${error1.code},message is ${error1.message}`);
+  }).catch((error) => {
+    // let error1 = error as BusinessError
+    console.error(TAG, `Failed to dequeue the Image.code ${error.code},message is ${error.message}`);
     expect().assertFail();
   })
   done();
@@ -90,8 +90,7 @@ export default function ImageCreatorDequeueImageTest(): void {
       try {
         await dequeueImagePromiseTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to dequeue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -114,8 +113,7 @@ export default function ImageCreatorDequeueImageTest(): void {
       try {
         await dequeueImagePromiseTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to dequeue the Image.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to dequeue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -138,8 +136,7 @@ export default function ImageCreatorDequeueImageTest(): void {
       try {
         await dequeueImageCallbackTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `failed; error: ${err.code},message is ${err.message}`, testName);
+        console.error(TAG, `failed; error: ${error.code},message is ${error.message}`, testName);
         expect().assertFail();
         done();
       }
@@ -162,8 +159,7 @@ export default function ImageCreatorDequeueImageTest(): void {
       try {
         await dequeueImageCallbackTest(done, testName, size);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `failed; error: ${err.code},message is ${err.message}`, testName);
+        console.error(TAG, `failed; error: ${error.code},message is ${error.message}`, testName);
         expect().assertFail();
         done();
       }

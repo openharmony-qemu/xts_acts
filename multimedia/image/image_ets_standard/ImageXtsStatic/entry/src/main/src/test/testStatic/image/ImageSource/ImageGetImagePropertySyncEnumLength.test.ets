@@ -55,7 +55,7 @@ function getImageSource(path: string): image.ImageSource {
 }
 
 async function getImagePropertySync8(done: () => void, testContext: Context, testName: string, path: string,
-  propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
+  propertyKey: image.PropertyKey, callback: (data?: string, errorCode?: int) => void) {
   console.info(TAG, testName + '- start');
   try {
     const imageSourceApi = getImageSource(path);
@@ -68,7 +68,7 @@ async function getImagePropertySync8(done: () => void, testContext: Context, tes
     done();
   } catch (error) {
     console.error(TAG, testName, error!.message, error!.code);
-    callback(undefined, error as BusinessError);
+    callback(undefined, error.code);
     done();
   }
 }
@@ -100,7 +100,7 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0100',
         'test_exif_empty_2.jpg',
         image.PropertyKey.FRONT_CAMERA,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -118,8 +118,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0200',
         'test_exif_empty_2.jpg',
         image.PropertyKey.GPS_DEST_DISTANCE_REF,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -136,8 +136,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0300',
         'test_exif_empty_2.jpg',
         image.PropertyKey.IMAGE_LENGTH,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -154,7 +154,7 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0400',
         'test_exif_empty_2.jpg',
         image.PropertyKey.BURST_NUMBER,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -172,8 +172,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0500',
         'test_exif_empty_2.jpg',
         image.PropertyKey.YCBCR_SUB_SAMPLING,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -190,8 +190,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0600',
         'test_exif_empty_2.jpg',
         image.PropertyKey.GPS_DEST_BEARING,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -208,8 +208,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0700',
         'test_exif_empty_2.jpg',
         image.PropertyKey.DEFAULT_CROP_SIZE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -226,8 +226,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0800',
         'test_exif_empty_2.jpg',
         image.PropertyKey.EXPOSURE_TIME,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -244,8 +244,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_0900',
         'test_exif_empty_2.jpg',
         image.PropertyKey.LENS_SERIAL_NUMBER,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -262,7 +262,7 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1000',
         'test_exif_empty_2.jpg',
         image.PropertyKey.XMAGE_MODE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -280,7 +280,7 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1100',
         'test_exif_empty_2.jpg',
         image.PropertyKey.XMAGE_BOTTOM,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         });
@@ -298,8 +298,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1200',
         'test_exif_empty_2.jpg',
         image.PropertyKey.FOCAL_PLANE_RESOLUTION_UNIT,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -316,8 +316,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1300',
         'test_exif_empty_2.jpg',
         image.PropertyKey.SUBSEC_TIME_DIGITIZED,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -334,8 +334,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1400',
         'test_exif_empty_2.jpg',
         image.PropertyKey.PHOTO_MODE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });
@@ -352,8 +352,8 @@ export default function ImageGetImagePropertySyncEnumLength(): void {
       getImagePropertySync8(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC8_ENUM_static_1500',
         'test_exif_empty_2.jpg',
         image.PropertyKey.ISO_SPEED_LATITUDE_YYY,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         });
     });

@@ -47,9 +47,9 @@ async function getComponentPromiseTest(done: () => void, testName: string): Prom
         img?.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
           console.info(TAG, 'Succeeded getComponent_promise in dequeuing the Image.');
           done();
-        }).catch((error: Error) => {
-          let error1 = error as BusinessError
-          console.error(TAG, `Failed to get the component.code ${error1.code},message is ${error1.message}`);
+        }).catch((error) => {
+          // let error1 = error as BusinessError
+          console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
           expect().assertFail();
           done();
         })
@@ -78,9 +78,9 @@ async function getComponentAbnormalPromiseTest(done: () => void, testName: strin
         img?.getComponent(ComponentType).then(() => {
           console.info(TAG, 'Succeeded getComponent_promise_abnormal in dequeuing the Image.');
           done();
-        }).catch((error: Error) => {
-          let error1 = error as BusinessError
-          console.error(TAG, `Failed to get the component.code ${error1.code},message is ${error1.message}`);
+        }).catch((error) => {
+          // let error1 = error as BusinessError
+          console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
           expect().assertFail();
           done();
         })
@@ -141,8 +141,8 @@ async function getComponentAbnormalCallbackTest(done: () => void, testName: stri
       } else {
         console.info('Succeeded in dequeuing the Image.');
         img?.getComponent(componentType, (error: BusinessError | null, component: image.Component | undefined) => {
-          if (err) {
-            let error = err as BusinessError;
+          if (error) {
+            // let error = err as BusinessError;
             console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFail();
             done();
@@ -192,8 +192,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentPromiseTest(done, testName);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -213,8 +212,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -234,8 +232,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -255,8 +252,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalPromiseTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -275,8 +271,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentCallbackTest(done, testName);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -296,8 +291,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -317,8 +311,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -338,8 +331,7 @@ export default function ImageGetComponentTest(): void {
       try {
         await getComponentAbnormalCallbackTest(done, testName, componentType);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to get component.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to get component.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }

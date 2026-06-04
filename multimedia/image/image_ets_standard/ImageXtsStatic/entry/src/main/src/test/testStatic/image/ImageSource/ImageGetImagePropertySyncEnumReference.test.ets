@@ -55,7 +55,7 @@ function getImageSource(path: string): image.ImageSource {
 }
 
 async function getImagePropertySync7(done: () => void, testContext: Context, testName: string, path: string,
-  propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
+  propertyKey: image.PropertyKey, callback: (data?: string, errorCode?: int) => void) {
   console.info(TAG, testName + '- start');
   try {
     const imageSourceApi = getImageSource(path);
@@ -69,7 +69,7 @@ async function getImagePropertySync7(done: () => void, testContext: Context, tes
     done();
   } catch (error) {
     console.error(TAG, testName, 'this is catch err', error!.message, error!.code);
-    callback(undefined, error as BusinessError);
+    callback(undefined, error.code);
     done();
   }
 }
@@ -99,8 +99,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0100', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0100', 'test_exif_empty_2.jpg', image.PropertyKey.SUBFILE_TYPE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -115,8 +115,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0200', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0200', 'test_exif_empty_2.jpg', image.PropertyKey.REFERENCE_BLACK_WHITE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -131,8 +131,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0300', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0300', 'test_exif_empty_2.jpg', image.PropertyKey.ISO_SPEED_LATITUDE_ZZZ,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -147,8 +147,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0400', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0400', 'test_exif_empty_2.jpg', image.PropertyKey.PITCH_ANGLE,
-        (data?: string, error?: BusinessError) => {
-          expect(error?.code).assertUndefined();
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertUndefined();
           done();
         })
     })
@@ -163,8 +163,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0500', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0500', 'test_exif_empty_2.jpg', image.PropertyKey.FLASHPIX_VERSION,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -179,7 +179,7 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0600', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0600', 'test_exif_empty_2.jpg', image.PropertyKey.SCENE_NIGHT_CONF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         })
@@ -195,8 +195,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0700', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0700', 'test_exif_empty_2.jpg', image.PropertyKey.GPS_DEST_LATITUDE,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -211,8 +211,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0800', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0800', 'test_exif_empty_2.jpg', image.PropertyKey.CUSTOM_RENDERED,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -227,7 +227,7 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0900', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_0900', 'test_exif_empty_2.jpg', image.PropertyKey.FACE_CONF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         })
@@ -243,8 +243,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1000', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1000', 'test_exif_empty_2.jpg', image.PropertyKey.SUBSEC_TIME,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -259,8 +259,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1100', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1100', 'test_exif_empty_2.jpg', image.PropertyKey.COMPRESSED_BITS_PER_PIXEL,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -275,7 +275,7 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1200', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1200', 'test_exif_empty_2.jpg', image.PropertyKey.CAPTURE_MODE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           expect(data).assertEqual('default_exif_value');
           done();
         })
@@ -291,8 +291,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1300', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1300', 'test_exif_empty_2.jpg', image.PropertyKey.IMAGE_WIDTH,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -307,8 +307,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1400', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1400', 'test_exif_empty_2.jpg', image.PropertyKey.RECOMMENDED_EXPOSURE_INDEX,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })
@@ -323,8 +323,8 @@ export default function ImageGetImagePropertySyncEnumReference(): void {
      */
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1500', Level.LEVEL1, async (done: () => void) => {
       getImagePropertySync7(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC7_ENUM_static_1500', 'test_exif_empty_2.jpg', image.PropertyKey.SUBSEC_TIME_ORIGINAL,
-        (data?: string, error?: BusinessError) => {
-          expect(error!.code).assertEqual(7700101);
+        (data?: string, errorCode?: int) => {
+          expect(errorCode).assertEqual(7700101);
           done();
         })
     })

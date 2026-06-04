@@ -44,9 +44,9 @@ async function releasePromiseTest(done: () => void, testName: string): Promise<v
       img?.release().then(() => {
         console.info(TAG, 'Succeeded in releasing the image instance.');
         done();
-      }).catch((error: Error) => {
-        let error1 = error as BusinessError
-        console.error(TAG, `Failed to release the image instance.code ${error1.code},message is ${error1.message}`);
+      }).catch((error) => {
+        // let error1 = error as BusinessError
+        console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       })
@@ -110,8 +110,7 @@ export default function ImageReleaseTest(): void {
       try {
         await releasePromiseTest(done, testName);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }
@@ -130,8 +129,7 @@ export default function ImageReleaseTest(): void {
       try {
         await releaseCallbackTest(done, testName);
       } catch (error) {
-        const err = error as BusinessError;
-        console.error(TAG, `Failed to release the image instance.code ${err.code},message is ${err.message}`);
+        console.error(TAG, `Failed to release the image instance.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
       }

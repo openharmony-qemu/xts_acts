@@ -55,7 +55,7 @@ function getImageSource(path: string): image.ImageSource {
 }
 
 async function getImagePropertySync(done: () => void, testContext: Context, testName: string, path: string,
-  propertyKey: image.PropertyKey, callback: (data?: string, error?: BusinessError) => void) {
+  propertyKey: image.PropertyKey, callback: (data?: string, errorCode?: int) => void) {
   console.info(TAG, testName + '- start');
   try {
     const imageSourceApi = getImageSource(path);
@@ -100,11 +100,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0100',
         'test_exif_v2.jpg',
         image.PropertyKey.GPS_SPEED,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('150');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -123,11 +123,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0200',
         'test_exif_v2.jpg',
         image.PropertyKey.XMAGE_RIGHT,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('default_exif_value');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -146,11 +146,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0300',
         'test_exif_v2.jpg',
         image.PropertyKey.COMPRESSION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('Uncompressed');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -169,11 +169,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0400',
         'test_exif_v2.jpg',
         image.PropertyKey.ROWS_PER_STRIP,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('123');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -192,11 +192,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0500',
         'test_exif_v2.jpg',
         image.PropertyKey.RELATED_SOUND_FILE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('/usr/home');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -215,11 +215,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0600',
         'test_exif_v2.jpg',
         image.PropertyKey.IMAGE_UNIQUE_ID,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('FXIC012');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -238,11 +238,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0700',
         'test_exif_v2.jpg',
         image.PropertyKey.EXPOSURE_BIAS_VALUE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('23.00 EV');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -261,11 +261,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0800',
         'test_exif_v2.jpg',
         image.PropertyKey.PHOTOMETRIC_INTERPRETATION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('Reversed mono');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -284,11 +284,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_0900',
         'test_exif_v2.jpg',
         image.PropertyKey.USER_COMMENT,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('place for user comments');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -307,11 +307,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1000',
         'test_exif_v2.jpg',
         image.PropertyKey.SPATIAL_FREQUENCY_RESPONSE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('13');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -330,11 +330,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1100',
         'test_exif_v2.jpg',
         image.PropertyKey.GPS_IMG_DIRECTION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('2.23');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -353,11 +353,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1200',
         'test_exif_v2.jpg',
         image.PropertyKey.SCENE_VERSION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('1');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -376,11 +376,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1300',
         'test_exif_v2.jpg',
         image.PropertyKey.SCENE_BLUE_SKY_CONF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('4');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -399,11 +399,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1400',
         'test_exif_v2.jpg',
         image.PropertyKey.METERING_MODE,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('Pattern');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -422,11 +422,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1500',
         'test_exif_v2.jpg',
         image.PropertyKey.TRANSFER_FUNCTION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('3 bytes undefined data');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -445,11 +445,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1600',
         'test_exif_v2.jpg',
         image.PropertyKey.SATURATION,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('Normal');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -468,11 +468,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1700',
         'test_exif_v2.jpg',
         image.PropertyKey.GPS_TRACK_REF,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('T');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -491,11 +491,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1800',
         'test_exif_v2.jpg',
         image.PropertyKey.XMAGE_LEFT,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('default_exif_value');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -514,11 +514,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_1900',
         'test_exif_v2.jpg',
         image.PropertyKey.JPEG_INTERCHANGE_FORMAT_LENGTH,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('4');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
@@ -537,11 +537,11 @@ export default function ImagePropertyKeySyncEnumGPS(): void {
       getImagePropertySync(done, testContext, 'SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM1A_static_2000',
         'test_exif_v2.jpg',
         image.PropertyKey.COPYRIGHT,
-        (data?: string, error?: BusinessError) => {
+        (data?: string, errorCode?: int) => {
           if (data != undefined) {
             expect(data).assertEqual('undefined (Photographer) - [None] (Editor)');
           }
-          if (error != undefined) {
+          if (errorCode != undefined) {
             expect().assertFail();
           }
           done();
