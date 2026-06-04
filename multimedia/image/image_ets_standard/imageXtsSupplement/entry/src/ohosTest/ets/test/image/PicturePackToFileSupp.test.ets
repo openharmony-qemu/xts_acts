@@ -512,7 +512,7 @@ export default function PicturePackToFileTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_013', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_013';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,imageSource) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -548,7 +548,7 @@ export default function PicturePackToFileTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_014';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,imageSource) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -583,7 +583,7 @@ export default function PicturePackToFileTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_015';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,imageSource) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -620,7 +620,7 @@ export default function PicturePackToFileTestSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_016', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_CALLBACK_016';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,imageSource) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,imageSource) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
