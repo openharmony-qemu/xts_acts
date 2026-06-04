@@ -143,7 +143,7 @@ struct webResourceResponseGet {
             case 'emitonSwitchNextPage3': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/scrollEvent' })
+              router.pushUrl({ url: 'pages/webViewController' })
             }
           }
         })

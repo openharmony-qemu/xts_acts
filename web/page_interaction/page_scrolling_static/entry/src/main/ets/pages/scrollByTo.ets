@@ -94,7 +94,7 @@ struct WebComponent{
             case 'emitonSwitchNextPage1': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webViewController' })
+              router.pushUrl({ url: 'pages/scrollEvent' })
               console.log('push URL success')
             }
           }

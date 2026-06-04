@@ -75,6 +75,13 @@ struct scrollEventComponent {
               Utils.emitEvent(this.xOffset,20241226);
               break;
             }
+			
+			case 'emitonSwitchNextPage2': { 
+               let uiContext: UIContext = this.getUIContext(); 
+               let router: Router = uiContext.getRouter(); 
+               router.pushUrl({ url: 'pages/webResourceResponseGet' }) 
+               console.log('push URL success') 
+             }
 
           }
         })
