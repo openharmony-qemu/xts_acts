@@ -106,7 +106,6 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
         });
     });
 
-
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0200
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_0200
@@ -248,6 +247,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
           done();
         });
     });
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1000
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1000
@@ -401,7 +401,6 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1800', Level.LEVEL1,
       async (done: () => void) => {
         getImagePropertySync4(done, testContext,
@@ -422,7 +421,6 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it('SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_1900', Level.LEVEL1,
       async (done: () => void) => {
         getImagePropertySync4(done, testContext,
@@ -434,6 +432,7 @@ export default function ImageGetImagePropertySyncEnumFlashEmpty(): void {
             done();
           });
       });
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_2000
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC4_ENUM_static_2000

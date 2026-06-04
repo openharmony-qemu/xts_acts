@@ -97,7 +97,7 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_promise_static_0100
-     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_001
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_promise_static_0100
      * @tc.desc   ImageReceiver_getReceivingSurfaceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_promise_static_0200
-     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_002
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_promise_static_0200
      * @tc.desc   ImageReceiver_getReceivingSurfaceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_callback_static_0100
-     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_003
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_callback_static_0100
      * @tc.desc   ImageReceiver_getReceivingSurfaceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -148,7 +148,7 @@ export default function ImageReceiverGetReceivingSurfaceIdTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_callback_static_0200
-     * @tc.number IMAGE_RECEIVER_GET_RECEIVING_SURFACE_ID_004
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_getReceivingSurfaceId_callback_static_0200
      * @tc.desc   ImageReceiver_getReceivingSurfaceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

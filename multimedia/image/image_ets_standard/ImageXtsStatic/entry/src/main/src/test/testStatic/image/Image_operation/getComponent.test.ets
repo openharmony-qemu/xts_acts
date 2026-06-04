@@ -180,6 +180,7 @@ export default function ImageGetComponentTest(): void {
     });
 
     /**
+     * @tc.name SUB_MEDIA_IMAGE_getComponent_promise_static_0100
      * @tc.number SUB_MEDIA_IMAGE_getComponent_promise_static_0100
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
@@ -200,7 +201,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0100
-     * @tc.number IMAGE_GET_COMPONENT_002
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0100
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -221,7 +222,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0200
-     * @tc.number IMAGE_GET_COMPONENT_003
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0200
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +243,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0300
-     * @tc.number IMAGE_GET_COMPONENT_004
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_promise_static_0300
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +264,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_callback_static_0100
-     * @tc.number IMAGE_GET_COMPONENT_005
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_callback_static_0100
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +284,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0100
-     * @tc.number IMAGE_GET_COMPONENT_006
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0100
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -304,7 +305,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0200
-     * @tc.number IMAGE_GET_COMPONENT_007
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0200
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -325,7 +326,7 @@ export default function ImageGetComponentTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0300
-     * @tc.number IMAGE_GET_COMPONENT_008
+     * @tc.number SUB_MEDIA_IMAGE_getComponent_abnormal_callback_static_0300
      * @tc.desc   Image_getComponent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

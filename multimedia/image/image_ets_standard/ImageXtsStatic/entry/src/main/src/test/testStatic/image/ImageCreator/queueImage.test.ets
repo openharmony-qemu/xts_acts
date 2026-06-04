@@ -102,7 +102,7 @@ export default function ImageCreatorQueueImageTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0100
-     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_001
+     * @tc.number SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0100
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function ImageCreatorQueueImageTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0200
-     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_002
+     * @tc.number SUB_MEDIA_IMAGE_ImageCreator_queueImage_promise_static_0200
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -150,7 +150,7 @@ export default function ImageCreatorQueueImageTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0100
-     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_003
+     * @tc.number SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0100
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function ImageCreatorQueueImageTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0200
-     * @tc.number IMAGE_CREATOR_QUEUE_IMAGE_004
+     * @tc.number SUB_MEDIA_IMAGE_ImageCreator_queueImage_callback_static_0200
      * @tc.desc   ImageCreator_queueImage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

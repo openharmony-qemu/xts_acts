@@ -99,7 +99,7 @@ export default function ImageReleaseTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_release_promise_static_0100
-     * @tc.number IMAGE_RELEASE_001
+     * @tc.number SUB_MEDIA_IMAGE_release_promise_static_0100
      * @tc.desc   Image_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function ImageReleaseTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_release_callback_static_0100
-     * @tc.number IMAGE_RELEASE_002
+     * @tc.number SUB_MEDIA_IMAGE_release_callback_static_0100
      * @tc.desc   Image_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

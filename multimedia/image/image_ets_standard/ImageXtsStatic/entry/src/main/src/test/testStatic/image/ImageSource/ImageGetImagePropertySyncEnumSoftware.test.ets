@@ -109,6 +109,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0200
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0200
@@ -129,6 +130,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0300
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0300
@@ -149,6 +151,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0400
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0400
@@ -169,6 +172,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0500
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0500
@@ -189,6 +193,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0600
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0600
@@ -209,6 +214,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0700
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0700
@@ -229,6 +235,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0800
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0800
@@ -249,6 +256,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0900
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_0900
@@ -269,6 +277,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1000
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1000
@@ -289,6 +298,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1100
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1100
@@ -393,6 +403,7 @@ export default function ImageGetImagePropertySyncEnumSoftware(): void {
           done();
         })
     })
+
     /**
      * @tc.name   SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1600
      * @tc.number SUB_MEDIA_IMAGE_EXIF_PROPERTY_SYNC_ENUM4A_static_1600

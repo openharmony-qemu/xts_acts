@@ -98,7 +98,7 @@ export default function ImageReceiverReleaseTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_release_promise_static_0100
-     * @tc.number IMAGE_RECEIVER_RELEASE_001
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_release_promise_static_0100
      * @tc.desc   ImageReceiver_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function ImageReceiverReleaseTest(): void {
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_ImageReceiver_release_callback_static_0100
-     * @tc.number IMAGE_RECEIVER_RELEASE_002
+     * @tc.number SUB_MEDIA_IMAGE_ImageReceiver_release_callback_static_0100
      * @tc.desc   ImageReceiver_release
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
