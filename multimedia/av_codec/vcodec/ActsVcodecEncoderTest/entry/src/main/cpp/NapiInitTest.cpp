@@ -716,7 +716,9 @@ static std::vector<TestFunction> GetFunc2TestPart2()
     VideoEncodeSyncFormat0010Test,
     VideoEncodeAnother0010Test,
     VideoCapabilityConfig0010Test,
-    VideoCapabilityConfig0020Test
+    VideoCapabilityConfig0020Test,
+    VideoEncoderSetXPS0010Test,
+    VideoEncoderSetXPS0020Test
     };
 }
 
