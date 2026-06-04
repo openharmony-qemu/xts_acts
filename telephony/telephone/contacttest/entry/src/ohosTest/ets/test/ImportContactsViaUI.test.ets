@@ -85,9 +85,6 @@ async function getComponent(driver: Driver, onType: On, maxRetries: number = 3) 
 export default function ImportContactsViaUITest() {
   describe('ImportContactsViaUITest', () => {
 
-    let fileName = 'SaveToExistingContactViaUITest.jpg';
-    SavePhoto(fileName);
-    let uri = GetUri(fileName);
 
     let contactData: contact.Contact = {
       id: 0,
@@ -116,9 +113,6 @@ export default function ImportContactsViaUITest() {
       phoneNumbers: [{
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
-      portrait: {
-        uri: uri
-      },
       postalAddresses: [{
         city: "南京",
         country: "中国",
@@ -251,7 +245,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI0100";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactData];
@@ -262,7 +256,7 @@ export default function ImportContactsViaUITest() {
         await delay(500);
         promise.then((data: number[]) => {
             console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
-            ExpectTrue(data.length > 0);
+            ExpectTrue(data[0] > 0);
             done();
         }).catch((err: BusinessError) => {
             console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
@@ -290,7 +284,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI0200";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactData];
@@ -333,7 +327,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0300";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let emptyContacts: contact.Contact[] = [];
@@ -360,7 +354,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0400";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let testContacts: contact.Contact[] = [];
         const result = await contact.importContactsViaUI(undefined, testContacts);
@@ -386,7 +380,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0500";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let testContacts: contact.Contact[] = [];
         const result = await contact.importContactsViaUI(null, testContacts);
@@ -411,7 +405,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0600";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         const result = await contact.importContactsViaUI(context, undefined);
@@ -436,7 +430,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0700";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         const result = await contact.importContactsViaUI(context, null);
@@ -463,7 +457,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI0900";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactDataWithDash];
@@ -501,7 +495,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI1000";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactDataWithSpace];
@@ -538,7 +532,7 @@ export default function ImportContactsViaUITest() {
      */
     it('testTelephonyContactImportContactsViaUI1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI1500";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
@@ -573,7 +567,7 @@ export default function ImportContactsViaUITest() {
           ExpectFail();
           done();
         }
-      console.info(`${caseName} test end `);
+      console.info(`${caseName} test end`);
     });
 
 
@@ -585,9 +579,9 @@ export default function ImportContactsViaUITest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyContactImportContactsViaUI1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTelephonyContactImportContactsViaUI1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI1600";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let phoneNumContacts: contact.Contact[] = [];
@@ -622,7 +616,7 @@ export default function ImportContactsViaUITest() {
           ExpectFail();
           done();
         }
-      console.info(`${caseName} test end `);
+      console.info(`${caseName} test end`);
     });
 
     /**
@@ -636,7 +630,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI1700";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let multiContacts: contact.Contact[] = [
@@ -677,9 +671,7 @@ export default function ImportContactsViaUITest() {
         await delay(500);
         promise.then((data: number[]) => {
           console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
-          ExpectTrue(data.length === 2);
-          ExpectTrue(data[0] > 0);
-          expect(data[1]).assertEqual(-2);
+          ExpectTrue(data.length === 2 && data[0] > 0 && data[1] === -2);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
@@ -706,7 +698,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI1800";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let multiContacts: contact.Contact[] = [
@@ -720,7 +712,7 @@ export default function ImportContactsViaUITest() {
         await delay(500);
         promise.then((data: number[]) => {
           console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
-          ExpectTrue(data.length === 2);
+          ExpectTrue(data[0] > 0 && data[1] > 0);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
@@ -732,7 +724,7 @@ export default function ImportContactsViaUITest() {
           ExpectFail();
           done();
         }
-      console.info(`${caseName} test end `);
+      console.info(`${caseName} test end`);
     });
 
 
@@ -747,7 +739,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI2000";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactDataOverlong];
@@ -770,7 +762,7 @@ export default function ImportContactsViaUITest() {
           ExpectFail();
           done();
         }
-      console.info(`${caseName} test end `);
+      console.info(`${caseName} test end`);
     });
 
     /**
@@ -784,7 +776,7 @@ export default function ImportContactsViaUITest() {
     it('testTelephonyContactImportContactsViaUI2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI2100";
-      console.info(`${caseName} test start `);
+      console.info(`${caseName} test start`);
       try {
         let context: Context = AppStorage.get('context') as Context;
         let contacts: contact.Contact[] = [contactDataWithCountry];
@@ -807,7 +799,7 @@ export default function ImportContactsViaUITest() {
           ExpectFail();
           done();
         }
-      console.info(`${caseName} test end `);
+      console.info(`${caseName} test end`);
     });
 
     });
