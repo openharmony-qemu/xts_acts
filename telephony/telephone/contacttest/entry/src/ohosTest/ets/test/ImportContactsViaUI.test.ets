@@ -89,8 +89,6 @@ export default function ImportContactsViaUITest() {
     SavePhoto(fileName);
     let uri = GetUri(fileName);
 
-    let contactDataNull: contact.Contact = {
-    };
     let contactData: contact.Contact = {
       id: 0,
       key: "0",
@@ -338,8 +336,8 @@ export default function ImportContactsViaUITest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
-        let EmptyContacts: contact.Contact[] = [];
-        const result = await contact.importContactsViaUI(context, EmptyContacts);
+        let emptyContacts: contact.Contact[] = [];
+        const result = await contact.importContactsViaUI(context, emptyContacts);
         console.info(`${caseName} : result = ${JSON.stringify(result)}`);
         expect().assertFail();
         done();
@@ -375,7 +373,7 @@ export default function ImportContactsViaUITest() {
         done();
       }
       console.info(`${caseName} test end`);
-    })
+    });
 
 
     /**
@@ -547,9 +545,9 @@ export default function ImportContactsViaUITest() {
         for (let i = 0; i < 101; i++) {
           let phoneNumContact: contact.Contact = {
             name: {
-                fullName: `李四${i}`
+              fullName: `李四${i}`
             }, phoneNumbers:[{
-                phoneNumber: `13800000000`
+              phoneNumber: `13800000000`
             }]
           };
           phoneNumContacts.push(phoneNumContact);
@@ -588,7 +586,6 @@ export default function ImportContactsViaUITest() {
      * @tc.level  LEVEL0
      */
     it('testTelephonyContactImportContactsViaUI1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      await delay(1500);
       const caseName: string = "testTelephonyContactImportContactsViaUI1600";
       console.info(`${caseName} test start `);
       try {
@@ -604,7 +601,7 @@ export default function ImportContactsViaUITest() {
           };
           phoneNumContacts.push(phoneNumContact);
         }
-        let promise = contact.importContactsViaUI(context, phoneNumberContacts);
+        let promise = contact.importContactsViaUI(context, phoneNumContacts);
         promise.then((data: number[]) => {
           console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectFail();
@@ -779,7 +776,7 @@ export default function ImportContactsViaUITest() {
     /**
      * @tc.name   testTelephonyContactImportContactsViaUI2100
      * @tc.number SUB_Telephony_Contact_ImportContactsViaUI_2100
-     * @tc.desc   Call importContactsViaUI with ultra long
+     * @tc.desc   Call importContactsViaUI with Country code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
