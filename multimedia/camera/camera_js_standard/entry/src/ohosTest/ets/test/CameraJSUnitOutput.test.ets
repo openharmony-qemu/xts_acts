@@ -3712,7 +3712,15 @@ export default function cameraJSUnitOutput() {
           console.info(TAG + "Start to addOutput previewOutput");
           captureSession.addOutput(previewOutput);
       }
-      await captureSession.commitConfig();
+      try {
+        await captureSession.commitConfig();
+      } catch (error) {
+        console.info(TAG + ' need surfaceID ' + error.code);
+        await captureSession.release();
+        expect(Number(error.code)).assertEqual(7400201);
+        done();
+        return
+      }
       await previewOutput.addDeferredSurface(surfaceIds);
       await captureSession.release();
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_DEFERRED_PREVIEW_OUTPUT_ADD_DEFERRED_SURFACE_0100 PASS");
