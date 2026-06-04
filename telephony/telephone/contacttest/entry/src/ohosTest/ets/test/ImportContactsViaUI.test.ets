@@ -188,7 +188,7 @@ export default function ImportContactsViaUITest() {
         }]
     }
 
-    let contactDataWitOverlong: contact.Contact = {
+    let contactDataWitContry: contact.Contact = {
         name: {fullName : "国家码测试"},
         phoneNumbers: [{phoneNumbers: "+8613800000000"}],
         emails: [{
@@ -456,3 +456,372 @@ export default function ImportContactsViaUITest() {
       }
       console.info(`${caseName} test end `);
     })
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI0900
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_0900
+     * @tc.desc   Call importContactsViaUI with phoneNumber containing dash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI0900";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [contactDataWithDash];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data[0] > 0);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI1000
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_1000
+     * @tc.desc   Call importContactsViaUI with phoneNumber containing dash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI1000";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [contactDataWithSpace];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data[0] > 0);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI1500
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_1500
+     * @tc.desc   Call importContactsViaUI verify error code 16700004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI1500";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumberContacts: contact.Contact[] = [];
+        for (let i = 0; i < 101; i++) {
+          let phoneNumberContact: contact.Contact = {
+            name: {
+                fullName: `李四${i}`
+            }, phoneNumbers:[{
+                phoneNumber: `13800000000`
+            }]
+          };
+          phoneNumberContacts.push(phoneNumberContact);
+        }
+        let promise = contact.importContactsViaUI(context, phoneNumberContacts);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data[0] > 0);
+          done();
+        }).catch((err: BusinessError) => {
+          if (err.code == 16700004) {
+            console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+            expect(error.code == 16700004).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();      
+          }
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI1600
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_1600
+     * @tc.desc   Call importContactsViaUI verify error code 16700004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI1600";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumberContacts: contact.Contact[] = [];
+        for (let i = 0; i < 10000; i++) {
+          let phoneNumberContact: contact.Contact = {
+            name: {
+                fullName: `李四${i}`
+            }, phoneNumbers:[{
+                phoneNumber: `13800000000`
+            }]
+          };
+          phoneNumberContacts.push(phoneNumberContact);
+        }
+        let promise = contact.importContactsViaUI(context, phoneNumberContacts);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data[0] > 0);
+          done();
+        }).catch((err: BusinessError) => {
+          if (err.code == 16700004) {
+            console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+            expect(error.code == 16700004).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();      
+          }
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI1700
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_1700
+     * @tc.desc   Call importContactsViaUI verify non-selected contact return -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI1700";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let multiContacts: contact.Contact[] = [
+            { name: { fullName: `选择1`}, phoneNumbers:[{ phoneNumber: `13800000000`}] },
+            { name: { fullName: `选择2`}, phoneNumbers:[{ phoneNumber: `13800000000`}] }
+        ];
+        let promise = contact.importContactsViaUI(context, multiContacts);
+        let select2Retry = 0;
+        let select2Component: Component | null = null; 
+        while (select2Retry < 3) {
+            select2Component = await driver.findComponent(ON.text('选择2'))；
+            if (select2Component) {
+                console.log(`${caseName} select2 found: retryCount=${select2Retry}`);
+                await select2Component.click();
+                break;
+            }
+            select2Retry++;
+            console.log(`${caseName} select2 found: retryCount=${select2Retry}`);
+            await delay(1000);
+        }
+        if (!select2Component) {
+            console.log(`${caseName} select2 found after 3 retrys`);
+            ExpectFail();
+            done();
+            return;
+        }
+        await delay(500);
+        // 点击完成按钮
+        let doneResult = await getComponent(driver, ON.id('doneButton'));
+        if (!doneResult) {
+          console.log(`${caseName} doneButton click failed `);
+          ExpectFail();
+          done();
+          return;
+        }
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data.length === 2);
+          ExpectTrue(data[0] > 0);
+          expect(data[1]).assertEqual(-2);
+          done();
+        }).catch((err: BusinessError) => {
+          if (err.code == 16700004) {
+            console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+            expect(error.code == 16700004).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();      
+          }
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end`);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI1800
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_1800
+     * @tc.desc   Call importContactsViaUI with multiple contacts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI1800";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let multiContacts: contact.Contact[] = [
+            { name: { fullName: `批量1`}, phoneNumbers:[{ phoneNumber: `13800000000`}] },
+            { name: { fullName: `批量2`}, phoneNumbers:[{ phoneNumber: `13800000000`}] }
+        ];
+        let promise = contact.importContactsViaUI(context, multiContacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data.length === 2);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI2000
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_2000
+     * @tc.desc   Call importContactsViaUI with ultra long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI2000";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [contactDataWitOverlong];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data.length === 2);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyContactImportContactViaUI2100
+     * @tc.number SUB_Telephony_Contact_ImportContactViaUI_2100
+     * @tc.desc   Call importContactsViaUI with ultra long
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyContactImportContactViaUI2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      await delay(1500);
+      const caseName: string = "testTelephonyContactImportContactViaUI2100";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let contacts: contact.Contact[] = [contactDataWitContry];
+        let promise = contact.importContactsViaUI(context, contacts);
+        let driver: Driver = Driver.create();
+        let onType: On = ON.text('doneButton');
+        await getComponent(driver, onType);
+        await delay(500);
+        promise.then((data: number[])) => {
+          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          ExpectTrue(data.length === 2);
+          done();
+        }).catch((err: BusinessError) => {
+          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+      console.info(`${caseName} test end `);
+    });
+
+
+
+
