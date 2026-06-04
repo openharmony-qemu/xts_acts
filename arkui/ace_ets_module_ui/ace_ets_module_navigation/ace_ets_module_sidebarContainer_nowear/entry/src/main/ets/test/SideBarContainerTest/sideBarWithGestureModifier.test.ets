@@ -71,7 +71,7 @@ export default function sideBarWithGestureModifier() {
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
       console.info("[showSideBarWithGestureModifier_0100] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual('Hide sidebar');
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('onChange: init');
       console.info('[showSideBarWithGestureModifier_0100] END');
       done();
     });
@@ -103,15 +103,25 @@ export default function sideBarWithGestureModifier() {
       let barComponent = await driver.findComponent(ON.id('showSideBarWithGesture_modifier'));
       console.info('[showSideBarWithGestureModifier_0200] barComponent is ', barComponent);
       let barRect = await barComponent.getBounds();
+      let left = barRect.left;
       let right = barRect.right;
       let bottom = barRect.bottom;
-      console.info('[showSideBarWithGestureModifier_0200] right is ', right);
-      console.info('[showSideBarWithGestureModifier_0200] bottom is ', bottom);
+      console.info('[showSideBarWithGestureModifier_0200] barRect is ', barRect);
+      console.info('[showSideBarWithGestureModifier_0200] left is ', left);
+      console.info('[showSideBarWithGestureModifier_0200] right/3: ', right/3 + ', bottom/2: ' + bottom/2);
       await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
-      console.info("[showSideBarWithGestureModifier_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual('Show sidebar');
+      console.info("[showSideBarWithGestureModifier_0200] content1: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('onChange: Show sidebar');
+      
+      await CommonFunc.sleep(1000);
+      console.info('[showSideBarWithGestureModifier_0200] (right - right/3) is ', (right - right/3));
+      await driver.fling({x: Math.round(right*0.7), y: Math.round(bottom/2)}, {x: Math.round(left), y: Math.round(bottom/2)}, 2, 20000);
+      await CommonFunc.sleep(2000);
+      let strJson3: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
+      console.info("[showSideBarWithGestureModifier_0200] content2: " + JSON.stringify(JSON.parse(strJson3).$attrs.content));
+      expect(JSON.parse(strJson3).$attrs.content).assertEqual('onChange: Hide sidebar');
       console.info('[showSideBarWithGestureModifier_0200] END');
       done();
     });

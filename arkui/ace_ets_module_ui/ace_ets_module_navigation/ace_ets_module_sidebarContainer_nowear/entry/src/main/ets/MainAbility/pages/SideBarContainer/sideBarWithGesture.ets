@@ -19,7 +19,7 @@ struct SideBarContainerShowSideBarWithGesture {
     Column() {
       Text('SideBarContainer showSideBarWithGesture 测试')
 
-      // 1. showSideBarWithGesture 
+      // 1. showSideBarWithGesture
       Text('1. showSideBarWithGesture noSet').fontSize(10)
       SideBarContainer(SideBarContainerType.DISPLACE) {
         Column() {
@@ -28,23 +28,23 @@ struct SideBarContainerShowSideBarWithGesture {
             .fontColor(Color.Black)
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#FFE0B2')
-        .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('AAA1')
-            .fontSize(12)
-            .fontColor(Color.Black)
+          Text('noSet')
+          Row() {
+            Image($r('app.media.icon')).width(32)
+            Text('AAA1')
+          }
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#C8E6C9')
         .justifyContent(FlexAlign.Center)
       }
       .id('sideBarContainer_showSideBarWithGesture_default')
+      .showSideBar(false)
       .sideBarWidth(100)
-      .height('18%')
+      .height('15%')
 
       Text('2. showSideBarWithGesture = true').fontSize(10)
       SideBarContainer(SideBarContainerType.DISPLACE) {
@@ -54,24 +54,24 @@ struct SideBarContainerShowSideBarWithGesture {
             .fontColor(Color.Black)
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#BBDEFB')
-        .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('BBB2')
-            .fontSize(12)
-            .fontColor(Color.Black)
+          Text('true')
+          Row() {
+            Image($r('app.media.icon')).width(32)
+            Text('BBB2')
+          }.margin({ left: 15, top: 10 })
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#F8BBD0')
         .justifyContent(FlexAlign.Center)
       }
       .id('sideBarContainer_showSideBarWithGesture_true')
+      .showSideBar(false)
       .sideBarWidth(100)
       .showSideBarWithGesture(true)
-      .height('18%')
+      .height('15%')
 
       Text('3. showSideBarWithGesture = false').fontSize(10)
       SideBarContainer(SideBarContainerType.DISPLACE) {
@@ -81,24 +81,24 @@ struct SideBarContainerShowSideBarWithGesture {
             .fontColor(Color.Black)
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#D1C4E9')
-        .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('CCC3')
-            .fontSize(12)
-            .fontColor(Color.Black)
+          Text('false')
+          Row() {
+            Image($r('app.media.icon')).width(32)
+            Text('CCC3')
+          }.margin({ left: 15, top: 10 })
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#FFF9C4')
         .justifyContent(FlexAlign.Center)
       }
       .id('sideBarContainer_showSideBarWithGesture_false')
+      .showSideBar(false)
       .sideBarWidth(100)
       .showSideBarWithGesture(false)
-      .height('18%')
+      .height('15%')
 
       Text('4. showSideBarWithGesture = null').fontSize(10)
       SideBarContainer(SideBarContainerType.DISPLACE) {
@@ -108,24 +108,24 @@ struct SideBarContainerShowSideBarWithGesture {
             .fontColor(Color.Black)
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#E1BEE7')
-        .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('DDD4')
-            .fontSize(12)
-            .fontColor(Color.Black)
+          Text('null')
+          Row() {
+            Image($r('app.media.icon')).width(32)
+            Text('DDD4')
+          }.margin({ left: 15, top: 10 })
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#FFCCBC')
         .justifyContent(FlexAlign.Center)
       }
       .id('sideBarContainer_showSideBarWithGesture_null')
+      .showSideBar(false)
       .sideBarWidth(100)
       .showSideBarWithGesture(null)
-      .height('18%')
+      .height('15%')
 
       Text('5. showSideBarWithGesture = undefined').fontSize(10)
       SideBarContainer(SideBarContainerType.DISPLACE) {
@@ -135,27 +135,27 @@ struct SideBarContainerShowSideBarWithGesture {
             .fontColor(Color.Black)
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#C5CAE9')
-        .justifyContent(FlexAlign.Center)
 
         Column() {
-          Text('EEE5')
-            .fontSize(12)
-            .fontColor(Color.Black)
+          Text('undefined')
+          Row() {
+            Image($r('app.media.icon')).width(32)
+            Text('EEE5')
+          }.margin({ left: 15, top: 10 })
         }
         .width('100%')
-        .height('100%')
         .backgroundColor('#B2DFDB')
         .justifyContent(FlexAlign.Center)
       }
       .id('sideBarContainer_showSideBarWithGesture_undefined')
+      .showSideBar(false)
       .sideBarWidth(100)
       .showSideBarWithGesture(undefined)
-      .height('18%')
+      .height('15%')
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F5F5F5')
+    .backgroundColor('#C0C0C0')
   }
 }

@@ -59,12 +59,13 @@ struct showSideBarWithGestureModifier {
             Text('AABB')
           }.margin({ left: 15, top: 10 })
 
-          Button('enableGesture1:' + this.modifier.isEnableGesture)
+          Text('showSideBarWithGesture')
+          Button('true')
             .id('showSideBarWithGesture_modifier_true')
             .onClick(() => {
               this.modifier.isEnableGesture = true
             })
-          Button('enableGesture2:' + this.modifier.isEnableGesture)
+          Button('false')
             .id('showSideBarWithGesture_modifier_false')
             .onClick(() => {
               this.modifier.isEnableGesture = false

@@ -28,10 +28,10 @@ struct NavigationScrollEffectOptions {
 
   build() {
     Column() {
-      Text('Navigation scrollEffectOptions 测试')
+      Text('Navigation scrollEffectOptions')
 
-      // 1. scrollEffectOptions （不设置）
-      Text('1. scrollEffectOptions default').fontSize(10)
+      // scrollEffectOptions （不设置）
+      Text('scrollEffectOptions default').fontSize(10)
       Navigation() {
         Column() {
           List({ space: 2, initialIndex: 0 }) {
@@ -47,7 +47,7 @@ struct NavigationScrollEffectOptions {
               }
             }, (item: number) => item.toString())
           }
-          .height("100%")
+          .height('100%')
           .width('100%')
         }
         .width('100%')
@@ -55,213 +55,213 @@ struct NavigationScrollEffectOptions {
       }
       .id('navigation_scrollEffectOptions_default')
       .title('Title', { barStyle: BarStyle.STACK })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+      .titleMode(NavigationTitleMode.Mini)
+      .height('20%')
 
-      // 2. scrollEffectOptions COMMON_BLUR
-      Text('2. scrollEffectType = COMMON_BLUR').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+      Text('scrollEffectType = COMMON_BLUR / GRADUAL_BLUR').fontSize(10)
+      Row(){
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
-      }
-      .id('navigation_scrollEffectOptions_common_blur')
-      .title('COMMON_BLUR', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: {
-          scrollEffectType: ScrollEffectType.COMMON_BLUR,
-          blurEffectiveStartOffset: LengthMetrics.vp(8),
-          blurEffectiveEndOffset: LengthMetrics.vp(56)
-        }
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+        .id('navigation_scrollEffectOptions_common_blur')
+        .title('COMMON_BLUR', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: {
+            scrollEffectType: ScrollEffectType.COMMON_BLUR,
+            blurEffectiveStartOffset: LengthMetrics.vp(8),
+            blurEffectiveEndOffset: LengthMetrics.vp(56)
+          }
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
 
-      // 3. scrollEffectOptions GRADUAL_BLUR
-      Text('3. scrollEffectType = GRADUAL_BLUR').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
+        .id('navigation_scrollEffectOptions_gradual_blur')
+        .title('GRADUAL_BLUR', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: {
+            scrollEffectType: ScrollEffectType.GRADUAL_BLUR,
+            blurEffectiveStartOffset: LengthMetrics.vp(8),
+            blurEffectiveEndOffset: LengthMetrics.vp(56)
+          }
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
       }
-      .id('navigation_scrollEffectOptions_gradual_blur')
-      .title('GRADUAL_BLUR', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: {
-          scrollEffectType: ScrollEffectType.GRADUAL_BLUR,
-          blurEffectiveStartOffset: LengthMetrics.vp(8),
-          blurEffectiveEndOffset: LengthMetrics.vp(56)
-        }
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+      .height('20%')
 
-      // 4. scrollEffectOptions scrollEffectType 为 null
-      Text('4. scrollEffectType = null').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+      Text('scrollEffectType = null / undefined').fontSize(10)
+      Row(){
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
-      }
-      .id('navigation_scrollEffectOptions_scrollEffectType_null')
-      .title('scrollEffectType null', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: {
-          scrollEffectType: null,
-          blurEffectiveStartOffset: LengthMetrics.vp(8),
-          blurEffectiveEndOffset: LengthMetrics.vp(56)
-        }
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+        .id('navigation_scrollEffectOptions_scrollEffectType_null')
+        .title('Type null', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: {
+            scrollEffectType: null,
+            blurEffectiveStartOffset: LengthMetrics.vp(8),
+            blurEffectiveEndOffset: LengthMetrics.vp(56)
+          }
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
 
-      // 5. scrollEffectOptions scrollEffectType 为 undefined
-      Text('5. scrollEffectType = undefined').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
+        .id('navigation_scrollEffectOptions_scrollEffectType_undefined')
+        .title('Type undefined', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: {
+            scrollEffectType: undefined,
+            blurEffectiveStartOffset: LengthMetrics.vp(8),
+            blurEffectiveEndOffset: LengthMetrics.vp(56)
+          }
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
       }
-      .id('navigation_scrollEffectOptions_scrollEffectType_undefined')
-      .title('scrollEffectType undefined', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: {
-          scrollEffectType: undefined,
-          blurEffectiveStartOffset: LengthMetrics.vp(8),
-          blurEffectiveEndOffset: LengthMetrics.vp(56)
-        }
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+      .height('20%')
 
-      // 6. scrollEffectOptions null
-      Text('6. scrollEffectOptions = null').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+      Text('scrollEffectOptions = null / undefined').fontSize(10)
+      Row(){
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
-      }
-      .id('navigation_scrollEffectOptions_null')
-      .title('scrollEffectOptions null', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: null
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+        .id('navigation_scrollEffectOptions_null')
+        .title('null', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: null
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
 
-      // 7. scrollEffectOptions undefined
-      Text('7. scrollEffectOptions = undefined').fontSize(10)
-      Navigation() {
-        Column() {
-          List({ space: 2, initialIndex: 0 }) {
-            ForEach(this.arr, (item: number) => {
-              ListItem() {
-                Text('' + item)
-                  .width('90%')
-                  .height('50%')
-                  .backgroundColor($r('sys.color.brand'))
-                  .borderRadius(12)
-                  .fontSize(14)
-                  .textAlign(TextAlign.Center)
-              }
-            }, (item: number) => item.toString())
+        Navigation() {
+          Column() {
+            List({ space: 2, initialIndex: 0 }) {
+              ForEach(this.arr, (item: number) => {
+                ListItem() {
+                  Text('' + item)
+                    .width('90%')
+                    .height('50%')
+                    .backgroundColor($r('sys.color.brand'))
+                    .borderRadius(12)
+                    .fontSize(14)
+                    .textAlign(TextAlign.Center)
+                }
+              }, (item: number) => item.toString())
+            }
+            .height('100%')
+            .width('100%')
           }
-          .height("100%")
           .width('100%')
+          .height('100%')
         }
-        .width('100%')
-        .height('100%')
+        .id('navigation_scrollEffectOptions_undefined')
+        .title('undefined', {
+          barStyle: BarStyle.STACK,
+          scrollEffectOptions: undefined
+        })
+        .titleMode(NavigationTitleMode.Mini)
+        .width('50%')
       }
-      .id('navigation_scrollEffectOptions_undefined')
-      .title('scrollEffectOptions undefined', {
-        barStyle: BarStyle.STACK,
-        scrollEffectOptions: undefined
-      })
-      .titleMode(NavigationTitleMode.Full)
-      .height('12%')
+      .height('20%')
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F5F5F5')
+    .backgroundColor('#C0C0C0')
   }
 }
