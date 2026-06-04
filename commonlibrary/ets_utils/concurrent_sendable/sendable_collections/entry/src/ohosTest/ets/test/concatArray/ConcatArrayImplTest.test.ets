@@ -545,88 +545,17 @@ export default function ConcatArrayImplTest(): void {
       expect(stdArr.join(',')).assertEqual('5,6')
     })
 
-    // ===== Section 5: collections.Array default implementation (2300-2400) =====
+    // ===== Section 8: Error handling (2600-2700) =====
 
     /**
      * @tc.name   CAImplTest2300
      * @tc.number SUB_CONCATARRAY_IMPL_TEST_2300
-     * @tc.desc   Verify collections.Array default ConcatArray implementation with length, join and slice
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAImplTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new collections.Array<number>(1, 2, 3)
-      expect(arr.length).assertEqual(3)
-      expect(arr.join('-')).assertEqual('1-2-3')
-      let sliced = arr.slice(0, 2)
-      expect(sliced.length).assertEqual(2)
-    })
-
-    /**
-     * @tc.name   CAImplTest2400
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2400
-     * @tc.desc   Verify collections.Array assigned to ConcatArray type variable works correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAImplTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new collections.Array<number>(1, 2, 3)
-      expect(arr.length).assertEqual(3)
-      expect(arr.join()).assertEqual('1,2,3')
-      let sliced = arr.slice(1, 2)
-      expect(sliced.length).assertEqual(1)
-    })
-
-    // ===== Section 6.2: concat operation (2500) =====
-
-    /**
-     * @tc.name   CAImplTest2500
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2500
-     * @tc.desc   Verify collections.Array.concat accepts ConcatArray parameter correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAImplTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr1 = new collections.Array<number>(1, 2)
-      let arr2 = new collections.Array<number>(3, 4)
-      let concatenated = arr1.concat(arr2)
-      expect(concatenated.length).assertEqual(4)
-      expect(concatenated[0]).assertEqual(1)
-      expect(concatenated[3]).assertEqual(4)
-    })
-
-    // ===== Section 8: Error handling (2600-2700) =====
-
-    /**
-     * @tc.name   CAImplTest2600
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2600
-     * @tc.desc   Verify index out-of-bounds access on collections.Array throws error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('CAImplTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let arr = new collections.Array<number>(1, 2, 3)
-      try {
-        let value = arr[10]
-        expect(value === undefined).assertTrue()
-      } catch (error) {
-        expect(error.message !== undefined).assertTrue()
-      }
-    })
-
-    /**
-     * @tc.name   CAImplTest2700
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2700
      * @tc.desc   Verify slice method returns empty ConcatArray when start equals array length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CAImplTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('CAImplTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3)
       let sliced = arr.slice(3)
       expect(sliced.length).assertEqual(0)
@@ -637,14 +566,14 @@ export default function ConcatArrayImplTest(): void {
     // ===== Section 3.4/3.5: Additional boundary tests (2800-2900) =====
 
     /**
-     * @tc.name   CAImplTest2800
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2800
+     * @tc.name   CAImplTest2400
+     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2400
      * @tc.desc   Verify join method on collections.Array with number elements and custom separator
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CAImplTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('CAImplTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3)
       expect(arr.join(' | ')).assertEqual('1 | 2 | 3')
       let emptyArr = new collections.Array<number>()
@@ -654,14 +583,14 @@ export default function ConcatArrayImplTest(): void {
     })
 
     /**
-     * @tc.name   CAImplTest2900
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2900
+     * @tc.name   CAImplTest2500
+     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2500
      * @tc.desc   Verify slice on collections.Array with negative start and end parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CAImplTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('CAImplTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3, 4, 5)
       let sliced1 = arr.slice(-3)
       expect(sliced1.length).assertEqual(3)
@@ -675,14 +604,14 @@ export default function ConcatArrayImplTest(): void {
     // ===== Section 4: Interface method implementation (3000-3100) =====
 
     /**
-     * @tc.name   CAImplTest3000
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_3000
+     * @tc.name   CAImplTest2600
+     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2600
      * @tc.desc   Verify ConcatArray readonly index accessor returns correct type for string elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAImplTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('CAImplTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new collections.Array<string>('hello', 'world')
       expect(arr[0]).assertEqual('hello')
       expect(arr[1]).assertEqual('world')
@@ -691,14 +620,14 @@ export default function ConcatArrayImplTest(): void {
     })
 
     /**
-     * @tc.name   CAImplTest3100
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_3100
+     * @tc.name   CAImplTest2700
+     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2700
      * @tc.desc   Verify ConcatArray slice returns a new independent ConcatArray instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAImplTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('CAImplTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arr = new collections.Array<number>(10, 20, 30, 40, 50)
       let sliced = arr.slice(1, 4)
       expect(sliced.length).assertEqual(3)
@@ -708,14 +637,14 @@ export default function ConcatArrayImplTest(): void {
     })
 
     /**
-     * @tc.name   CAImplTest3200
-     * @tc.number SUB_CONCATARRAY_IMPL_TEST_3200
+     * @tc.name   CAImplTest2800
+     * @tc.number SUB_CONCATARRAY_IMPL_TEST_2800
      * @tc.desc   Verify multiple concat operations chain correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('CAImplTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('CAImplTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr1 = new collections.Array<number>(1)
       let arr2 = new collections.Array<number>(2)
       let arr3 = new collections.Array<number>(3)

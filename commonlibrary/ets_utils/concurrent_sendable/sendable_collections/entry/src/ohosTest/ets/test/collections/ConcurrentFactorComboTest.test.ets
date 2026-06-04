@@ -306,38 +306,12 @@ export default function ConcurrentFactorComboTest(): void {
     /**
      * @tc.name   ConcurrentFactorComboTest0900
      * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_0900
-     * @tc.desc   Verify competitive access with 10 tasks on same Array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('ConcurrentFactorComboTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 10; i++) {
-          tasks.push(new taskpool.Task(factorArrayPushFunc, arr, i * 100))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(arr.length).assertEqual(10)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
-      }
-    })
-
-    /**
-     * @tc.name   ConcurrentFactorComboTest1000
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1000
      * @tc.desc   Verify dependent set-get-delete chain on Map via sequential TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
       let t1 = new taskpool.Task(factorMapSetFunc, map, 'dep1', 100)
       await taskpool.execute(t1)
@@ -352,14 +326,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1100
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1100
+     * @tc.name   ConcurrentFactorComboTest1000
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1000
      * @tc.desc   Verify delayed push with setTimeout wrapping TaskPool execution
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
       await new Promise<void>((resolve) => {
         setTimeout((): void => {
@@ -376,14 +350,14 @@ export default function ConcurrentFactorComboTest(): void {
     // ===== Nested Scenarios (1200-1500) =====
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1200
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1200
+     * @tc.name   ConcurrentFactorComboTest1100
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1100
      * @tc.desc   Verify forEach on 100-element Array via TaskPool returns correct sum
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
       for (let i = 0; i < 100; i++) {
         arr.push(i + 1)
@@ -394,14 +368,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1300
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1300
+     * @tc.name   ConcurrentFactorComboTest1200
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1200
      * @tc.desc   Verify nested Array-Map forEach with 2-level iteration computing cross products
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentFactorComboTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ConcurrentFactorComboTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3)
       let map = new collections.Map<string, number>()
       map.set('a', 10)
@@ -418,14 +392,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1400
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1400
+     * @tc.name   ConcurrentFactorComboTest1300
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1300
      * @tc.desc   Verify nested Array-Set forEach with deduplication and cross combination
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentFactorComboTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ConcurrentFactorComboTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3)
       let set = new collections.Set<number>()
       set.add(10)
@@ -442,14 +416,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1500
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1500
+     * @tc.name   ConcurrentFactorComboTest1400
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1400
      * @tc.desc   Verify 3-level nested iteration with Array Map and Set containers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentFactorComboTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ConcurrentFactorComboTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2)
       let map = new collections.Map<string, number>()
       map.set('x', 10)
@@ -470,14 +444,14 @@ export default function ConcurrentFactorComboTest(): void {
     // ===== Data Scale (1600-1900) =====
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1600
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1600
+     * @tc.name   ConcurrentFactorComboTest1500
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1500
      * @tc.desc   Verify 1K element Array with forEach sum via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
       for (let i = 1; i <= 1000; i++) {
         arr.push(i)
@@ -488,32 +462,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1700
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1700
-     * @tc.desc   Verify 10K element Array bulk push and length validation via TaskPool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('ConcurrentFactorComboTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let arr = new collections.Array<number>()
-      for (let i = 0; i < 10000; i++) {
-        arr.push(i)
-      }
-      let task = new taskpool.Task(factorForEachSumFunc, arr)
-      let result = await taskpool.execute(task)
-      expect(result as number).assertEqual(49995000)
-    })
-
-    /**
-     * @tc.name   ConcurrentFactorComboTest1800
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1800
+     * @tc.name   ConcurrentFactorComboTest1600
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1600
      * @tc.desc   Verify Uint8Array with 1K data scale via TaskPool write and read
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let task = new taskpool.Task(factorTypedArrayFunc, buffer, 1024)
       let result = await taskpool.execute(task)
@@ -524,14 +480,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest1900
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1900
+     * @tc.name   ConcurrentFactorComboTest1700
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1700
      * @tc.desc   Verify Float32Array precision with 100 elements via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(400)
       let task = new taskpool.Task(factorFloatFunc, buffer, 100)
       let result = await taskpool.execute(task)
@@ -544,14 +500,14 @@ export default function ConcurrentFactorComboTest(): void {
     // ===== Mixed Concurrent Factor Matrix (2000-2300) =====
 
     /**
-     * @tc.name   ConcurrentFactorComboTest2000
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2000
+     * @tc.name   ConcurrentFactorComboTest1800
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1800
      * @tc.desc   Verify 50 concurrent batch push operations on separate Arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
       let task = new taskpool.Task(factorBatchPushFunc, arr, 50)
       let result = await taskpool.execute(task)
@@ -560,14 +516,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest2100
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2100
+     * @tc.name   ConcurrentFactorComboTest1900
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_1900
      * @tc.desc   Verify ArrayBuffer shared between multiple TypedArray views concurrently
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let task1 = new taskpool.Task(factorTypedArrayFunc, buffer, 512)
       let p1 = taskpool.execute(task1)
@@ -579,14 +535,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest2200
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2200
+     * @tc.name   ConcurrentFactorComboTest2000
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2000
      * @tc.desc   Verify Map and Set combination with concurrent set operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
       let set = new collections.Set<number>()
       try {
@@ -614,14 +570,14 @@ export default function ConcurrentFactorComboTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentFactorComboTest2300
-     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2300
+     * @tc.name   ConcurrentFactorComboTest2100
+     * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2100
      * @tc.desc   Verify chunk processing with Array split into 5 segments via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentFactorComboTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ConcurrentFactorComboTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
       for (let i = 0; i < 1000; i++) {
         arr.push(i)

@@ -308,45 +308,31 @@ export default function MapInheritanceTest(): void {
       expect(myMap.constructor).assertEqual(BasicMap)
     })
 
-    /**
-     * @tc.name   MapInheritanceTest0900
-     * @tc.number SUB_MAP_INHERITANCE_TEST_0900
-     * @tc.desc   Verify subclass constructor points to subclass not parent class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MapInheritanceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let myMap = new BasicMap()
-      expect(myMap.constructor).assertEqual(BasicMap)
-      expect(myMap.constructor !== collections.Map).assertTrue()
-    })
-
     // ===== Section 4: Constructor Inheritance (1000-1300) =====
 
     /**
-     * @tc.name   MapInheritanceTest1000
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1000
+     * @tc.name   MapInheritanceTest0900
+     * @tc.number SUB_MAP_INHERITANCE_TEST_0900
      * @tc.desc   Verify subclass no-arg constructor creates empty Map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myMap = new BasicMap()
       expect(myMap.size).assertEqual(0)
       expect(myMap instanceof BasicMap).assertTrue()
     })
 
     /**
-     * @tc.name   MapInheritanceTest1100
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1100
+     * @tc.name   MapInheritanceTest1000
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1000
      * @tc.desc   Verify subclass construction with key-value pair array parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2], ['c', 3]]
       let myMap = new BasicMap(entries)
       expect(myMap.size).assertEqual(3)
@@ -356,30 +342,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest1200
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1200
-     * @tc.desc   Verify subclass construction with Iterable parameter from Array entries
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('MapInheritanceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let source: [string, number][] = [['a', 1], ['b', 2], ['c', 3]]
-      let myMap = new BasicMap(source)
-      expect(myMap.size).assertEqual(3)
-      expect(myMap.get('a')).assertEqual(1)
-      expect(myMap.get('c')).assertEqual(3)
-    })
-
-    /**
-     * @tc.name   MapInheritanceTest1300
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1300
+     * @tc.name   MapInheritanceTest1100
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1100
      * @tc.desc   Verify subclass constructor with super call passes parameters correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['key', 100]]
       let myMap = new TagMap(entries)
       expect(myMap.get('key')).assertEqual(100)
@@ -390,14 +360,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 5: Sendable Semantics (1400-1600) =====
 
     /**
-     * @tc.name   MapInheritanceTest1400
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1400
+     * @tc.name   MapInheritanceTest1200
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1200
      * @tc.desc   Verify subclass inherits @Sendable and is passable across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MapInheritanceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let myMap = new BasicMap()
       myMap.set('test', 1)
       let task = new taskpool.Task(checkMapSendableFunc, myMap)
@@ -406,14 +376,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest1500
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1500
+     * @tc.name   MapInheritanceTest1300
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1300
      * @tc.desc   Verify subclass instance reference passing in TaskPool with custom method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('MapInheritanceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let entries: (readonly [string, number])[] = [['a', 10], ['b', 20]]
       let myMap = new SumMap(entries)
       let task = new taskpool.Task(sumMapFunc, myMap)
@@ -424,14 +394,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest1600
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1600
+     * @tc.name   MapInheritanceTest1400
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1400
      * @tc.desc   Verify multiple TaskPool tasks share same subclass instance via reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MapInheritanceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MapInheritanceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let sharedMap = new BasicMap()
       let task = new taskpool.Task(concurrentBatchSetFunc, sharedMap, 5)
       let result = await taskpool.execute(task)
@@ -444,32 +414,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 6: Method Inheritance (1700-2200) =====
 
     /**
-     * @tc.name   MapInheritanceTest1700
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1700
-     * @tc.desc   Verify inherited set method behavior on subclass matches parent
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MapInheritanceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let myMap = new BasicMap()
-      myMap.set('a', 1)
-      expect(myMap.size).assertEqual(1)
-      expect(myMap.get('a')).assertEqual(1)
-      myMap.set('a', 100)
-      expect(myMap.get('a')).assertEqual(100)
-      expect(myMap.size).assertEqual(1)
-    })
-
-    /**
-     * @tc.name   MapInheritanceTest1800
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1800
+     * @tc.name   MapInheritanceTest1500
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1500
      * @tc.desc   Verify inherited get method returns value or undefined on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['key', 100]]
       let myMap = new BasicMap(entries)
       expect(myMap.get('key')).assertEqual(100)
@@ -477,14 +429,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest1900
-     * @tc.number SUB_MAP_INHERITANCE_TEST_1900
+     * @tc.name   MapInheritanceTest1600
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1600
      * @tc.desc   Verify inherited has method returns correct boolean on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['exists', 1]]
       let myMap = new BasicMap(entries)
       expect(myMap.has('exists')).assertTrue()
@@ -492,14 +444,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2000
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2000
+     * @tc.name   MapInheritanceTest1700
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1700
      * @tc.desc   Verify inherited delete method removes entry and returns boolean on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2]]
       let myMap = new BasicMap(entries)
       let deleted = myMap.delete('a')
@@ -511,14 +463,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2100
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2100
+     * @tc.name   MapInheritanceTest1800
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1800
      * @tc.desc   Verify inherited forEach traverses all entries correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 10], ['b', 20]]
       let myMap = new BasicMap(entries)
       let sum = 0
@@ -529,14 +481,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2200
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2200
+     * @tc.name   MapInheritanceTest1900
+     * @tc.number SUB_MAP_INHERITANCE_TEST_1900
      * @tc.desc   Verify inherited clear method empties subclass Map completely
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2]]
       let myMap = new BasicMap(entries)
       myMap.clear()
@@ -548,14 +500,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 6.2: Method Override (2300-2400) =====
 
     /**
-     * @tc.name   MapInheritanceTest2300
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2300
+     * @tc.name   MapInheritanceTest2000
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2000
      * @tc.desc   Verify overridden set method delegates to super and works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MapInheritanceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapInheritanceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myMap = new OverrideMap()
       myMap.set('test', 100)
       expect(myMap.get('test')).assertEqual(100)
@@ -566,14 +518,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2400
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2400
+     * @tc.name   MapInheritanceTest2100
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2100
      * @tc.desc   Verify overridden set method works correctly in concurrent TaskPool context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MapInheritanceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MapInheritanceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myMap = new OverrideMap()
       let task = new taskpool.Task(overrideSetFunc, myMap, 'concurrent', 42)
       let result = await taskpool.execute(task)
@@ -584,14 +536,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 7: Property Inheritance (2500-2700) =====
 
     /**
-     * @tc.name   MapInheritanceTest2500
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2500
+     * @tc.name   MapInheritanceTest2200
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2200
      * @tc.desc   Verify size property inherited correctly and reflects Map state changes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2]]
       let myMap = new BasicMap(entries)
       expect(myMap.size).assertEqual(2)
@@ -602,35 +554,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2600
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2600
-     * @tc.desc   Verify inherited size property correctly tracks Map state on subclass
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MapInheritanceTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let myMap = new BasicMap()
-      expect(myMap.size).assertEqual(0)
-      myMap.set('a', 1)
-      expect(myMap.size).assertEqual(1)
-      myMap.set('b', 2)
-      expect(myMap.size).assertEqual(2)
-      myMap.delete('a')
-      expect(myMap.size).assertEqual(1)
-      myMap.clear()
-      expect(myMap.size).assertEqual(0)
-    })
-
-    /**
-     * @tc.name   MapInheritanceTest2700
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2700
+     * @tc.name   MapInheritanceTest2300
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2300
      * @tc.desc   Verify custom Sendable properties accessible on subclass instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myMap = new CustomPropMap()
       expect(myMap.tag).assertEqual('CustomPropMap')
       expect(myMap.version).assertEqual(1)
@@ -641,14 +572,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 8: Custom Extensions (2800-2900) =====
 
     /**
-     * @tc.name   MapInheritanceTest2800
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2800
+     * @tc.name   MapInheritanceTest2400
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2400
      * @tc.desc   Verify custom sumValues and average methods work correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 10], ['b', 20], ['c', 30]]
       let myMap = new SumMap(entries)
       expect(myMap.sumValues()).assertEqual(60)
@@ -658,14 +589,14 @@ export default function MapInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   MapInheritanceTest2900
-     * @tc.number SUB_MAP_INHERITANCE_TEST_2900
+     * @tc.name   MapInheritanceTest2500
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2500
      * @tc.desc   Verify custom doubleAll method works correctly via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MapInheritanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MapInheritanceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2]]
       let myMap = new DoubleMap(entries)
       let task = new taskpool.Task(doubleAllFunc, myMap)
@@ -677,14 +608,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 9: Multi-level Inheritance (3000) =====
 
     /**
-     * @tc.name   MapInheritanceTest3000
-     * @tc.number SUB_MAP_INHERITANCE_TEST_3000
+     * @tc.name   MapInheritanceTest2600
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2600
      * @tc.desc   Verify two-level inheritance chain with instanceof and custom methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('MapInheritanceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('MapInheritanceTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1], ['b', 2]]
       let grandMap = new GreatGrandMap(entries)
       expect(grandMap instanceof GreatGrandMap).assertTrue()
@@ -698,14 +629,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 11: Concurrent Scenarios (3100) =====
 
     /**
-     * @tc.name   MapInheritanceTest3100
-     * @tc.number SUB_MAP_INHERITANCE_TEST_3100
+     * @tc.name   MapInheritanceTest2700
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2700
      * @tc.desc   Verify multiple TaskPool tasks concurrently operate on subclass instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('MapInheritanceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('MapInheritanceTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let sharedMap = new BasicMap()
       let task = new taskpool.Task(concurrentBatchSetFunc, sharedMap, 10)
       let result = await taskpool.execute(task)
@@ -716,14 +647,14 @@ export default function MapInheritanceTest(): void {
     // ===== Section 12: Error Handling (3200) =====
 
     /**
-     * @tc.name   MapInheritanceTest3200
-     * @tc.number SUB_MAP_INHERITANCE_TEST_3200
+     * @tc.name   MapInheritanceTest2800
+     * @tc.number SUB_MAP_INHERITANCE_TEST_2800
      * @tc.desc   Verify subclass constructor works normally and instance has correct type
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MapInheritanceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('MapInheritanceTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let entries: (readonly [string, number])[] = [['a', 1]]
       let myMap = new BasicMap(entries)
       expect(myMap instanceof collections.Map).assertTrue()

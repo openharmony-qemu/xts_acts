@@ -650,33 +650,17 @@ export default function ArrayInheritanceTest(): void {
       expect(typeof strArr[0]).assertEqual('string')
     })
 
-    /**
-     * @tc.name   ArrayInheritanceTest2900
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_2900
-     * @tc.desc   Verify Sendable property types including primitives and collections container
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayInheritanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let myArr = new CustomPropArray(1, 2, 3)
-      expect(myArr.tag).assertEqual('CustomPropArray')
-      expect(myArr.version).assertEqual(1)
-      expect(myArr.metadata !== null).assertTrue()
-      expect(myArr.length).assertEqual(3)
-    })
-
     // ===== Custom Property Cross-thread & Performance (3000-3200) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest3000
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3000
+     * @tc.name   ArrayInheritanceTest2900
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_2900
      * @tc.desc   Verify custom Sendable property accessible across threads via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayInheritanceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayInheritanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myArr = new CustomPropArray(1, 2, 3)
       let task = new taskpool.Task(getDescFunc, myArr)
       let result = await taskpool.execute(task)
@@ -684,14 +668,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3100
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3100
+     * @tc.name   ArrayInheritanceTest3000
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3000
      * @tc.desc   Verify large array creation and cross-thread pass with subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ArrayInheritanceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('ArrayInheritanceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let largeArr = new BasicArray()
       for (let i = 0; i < 10000; i++) {
         largeArr.push(i)
@@ -703,14 +687,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3200
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3200
+     * @tc.name   ArrayInheritanceTest3100
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3100
      * @tc.desc   Verify subclass instance type checks with typeof and instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       expect(typeof myArr).assertEqual('object')
       expect(myArr instanceof BasicArray).assertTrue()
@@ -721,14 +705,14 @@ export default function ArrayInheritanceTest(): void {
     // ===== Method Inheritance (3300-4000) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest3300
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3300
+     * @tc.name   ArrayInheritanceTest3200
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3200
      * @tc.desc   Verify push method inherited correctly returns new length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray()
       let newLength = myArr.push(1, 2, 3)
       expect(newLength).assertEqual(3)
@@ -737,14 +721,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3400
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3400
+     * @tc.name   ArrayInheritanceTest3300
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3300
      * @tc.desc   Verify pop method inherited correctly removes and returns last element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       let popped = myArr.pop()
       expect(popped).assertEqual(3)
@@ -752,14 +736,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3500
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3500
+     * @tc.name   ArrayInheritanceTest3400
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3400
      * @tc.desc   Verify forEach method inherited correctly iterates all elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       let total = 0
       myArr.forEach((value: number) => {
@@ -769,14 +753,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3600
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3600
+     * @tc.name   ArrayInheritanceTest3500
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3500
      * @tc.desc   Verify map method inherited correctly returns mapped collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       let mapped = new collections.Array<number>()
       myArr.forEach((v: number) => {
@@ -790,14 +774,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3700
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3700
+     * @tc.name   ArrayInheritanceTest3600
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3600
      * @tc.desc   Verify filter method inherited correctly returns filtered collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3, 4, 5)
       let filtered = myArr.filter((v: number, index: number, arr: collections.Array<number>): boolean => v > 2)
       expect(filtered.length).assertEqual(3)
@@ -808,28 +792,28 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3800
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3800
+     * @tc.name   ArrayInheritanceTest3700
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3700
      * @tc.desc   Verify reduce method inherited correctly computes accumulated value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3, 4, 5)
       let total = myArr.reduce((a: number, b: number) => a + b, 0)
       expect(total).assertEqual(15)
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest3900
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3900
+     * @tc.name   ArrayInheritanceTest3800
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3800
      * @tc.desc   Verify slice method inherited correctly returns sub collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3, 4, 5)
       let sliced = myArr.slice(1, 3)
       expect(sliced.length).assertEqual(2)
@@ -839,14 +823,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4000
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4000
+     * @tc.name   ArrayInheritanceTest3900
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_3900
      * @tc.desc   Verify concat method inherited correctly merges two subclass arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr1 = new BasicArray(1, 2)
       let myArr2 = new BasicArray(3, 4)
       let concatenated = myArr1.concat(myArr2)
@@ -859,14 +843,14 @@ export default function ArrayInheritanceTest(): void {
     // ===== Method Return Type & Override (4100-4300) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest4100
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4100
+     * @tc.name   ArrayInheritanceTest4000
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4000
      * @tc.desc   Verify map returns collections.Array with correct values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayInheritanceTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ArrayInheritanceTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myArr = new MethodArray(1, 2, 3)
       let mapped = new collections.Array<number>()
       myArr.forEach((v: number) => {
@@ -878,14 +862,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4200
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4200
+     * @tc.name   ArrayInheritanceTest4100
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4100
      * @tc.desc   Verify slice returns collections.Array with correct values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayInheritanceTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ArrayInheritanceTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       let sliced = myArr.slice(0, 2)
       expect(sliced instanceof collections.Array).assertTrue()
@@ -895,14 +879,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4300
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4300
+     * @tc.name   ArrayInheritanceTest4200
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4200
      * @tc.desc   Verify overridden push method delegates to super and works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayInheritanceTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ArrayInheritanceTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myArr = new OverridePushArray()
       let newLength = myArr.push(1, 2, 3)
       expect(newLength).assertEqual(3)
@@ -914,14 +898,14 @@ export default function ArrayInheritanceTest(): void {
     // ===== Property Inheritance (4400-4600) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest4400
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4400
+     * @tc.name   ArrayInheritanceTest4300
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4300
      * @tc.desc   Verify length property inherited correctly and reflects array state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       expect(myArr.length).assertEqual(3)
       myArr.push(4)
@@ -931,14 +915,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4500
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4500
+     * @tc.name   ArrayInheritanceTest4400
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4400
      * @tc.desc   Verify length property reflects actual array state after multiple operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new BasicArray(1, 2, 3)
       expect(myArr.length).assertEqual(3)
       myArr.push(4, 5)
@@ -951,14 +935,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4600
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4600
+     * @tc.name   ArrayInheritanceTest4500
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4500
      * @tc.desc   Verify custom Sendable properties accessible on subclass instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new CustomPropArray(1, 2, 3)
       expect(myArr.tag).assertEqual('CustomPropArray')
       expect(myArr.version).assertEqual(1)
@@ -969,14 +953,14 @@ export default function ArrayInheritanceTest(): void {
     // ===== Custom Extensions (4700-4900) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest4700
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4700
+     * @tc.name   ArrayInheritanceTest4600
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4600
      * @tc.desc   Verify custom sum and average methods work correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayInheritanceTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('ArrayInheritanceTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let myArr = new MathArray(10, 20, 30)
       expect(myArr.sum()).assertEqual(60)
       expect(myArr.average()).assertEqual(20)
@@ -985,14 +969,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4800
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4800
+     * @tc.name   ArrayInheritanceTest4700
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4700
      * @tc.desc   Verify custom doubleAll method works correctly via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayInheritanceTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayInheritanceTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let myArr = new DoubleArray(1, 2, 3)
       let task = new taskpool.Task(doubleAllFunc, myArr)
       await taskpool.execute(task)
@@ -1002,14 +986,14 @@ export default function ArrayInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   ArrayInheritanceTest4900
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4900
+     * @tc.name   ArrayInheritanceTest4800
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4800
      * @tc.desc   Verify static fromRange method creates subclass with correct elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayInheritanceTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ArrayInheritanceTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let rangeArr = RangeArray.fromRange(1, 5)
       expect(rangeArr.length).assertEqual(5)
       expect(rangeArr[0]).assertEqual(1)
@@ -1020,29 +1004,14 @@ export default function ArrayInheritanceTest(): void {
     // ===== Error Handling (5000-5100) =====
 
     /**
-     * @tc.name   ArrayInheritanceTest5000
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_5000
-     * @tc.desc   Verify subclass constructor works normally with valid arguments
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayInheritanceTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let myArr = new BasicArray(1, 2, 3)
-      expect(myArr.length).assertEqual(3)
-      expect(myArr instanceof collections.Array).assertTrue()
-      expect(myArr instanceof BasicArray).assertTrue()
-    })
-
-    /**
-     * @tc.name   ArrayInheritanceTest5100
-     * @tc.number SUB_ARRAY_INHERITANCE_TEST_5100
+     * @tc.name   ArrayInheritanceTest4900
+     * @tc.number SUB_ARRAY_INHERITANCE_TEST_4900
      * @tc.desc   Verify forEach with conditional logic works correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayInheritanceTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('ArrayInheritanceTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let myArr = new BasicArray(10, 20, 30, 40, 50)
       let count = 0
       myArr.forEach((v: number) => {

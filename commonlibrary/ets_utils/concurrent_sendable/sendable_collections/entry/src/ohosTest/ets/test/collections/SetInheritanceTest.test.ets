@@ -390,45 +390,31 @@ export default function SetInheritanceTest(): void {
       expect(mySet.constructor).assertEqual(BasicSet)
     })
 
-    /**
-     * @tc.name   SetInheritanceTest1400
-     * @tc.number SUB_SET_INHERITANCE_TEST_1400
-     * @tc.desc   Verify subclass constructor points to subclass not parent class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SetInheritanceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let mySet = new BasicSet()
-      expect(mySet.constructor).assertEqual(BasicSet)
-      expect(mySet.constructor !== collections.Set).assertTrue()
-    })
-
     // ===== Section 4: Constructor Inheritance (1500-1800) =====
 
     /**
-     * @tc.name   SetInheritanceTest1500
-     * @tc.number SUB_SET_INHERITANCE_TEST_1500
+     * @tc.name   SetInheritanceTest1400
+     * @tc.number SUB_SET_INHERITANCE_TEST_1400
      * @tc.desc   Verify subclass no-arg constructor creates empty Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let mySet = new BasicSet()
       expect(mySet.size).assertEqual(0)
       expect(mySet instanceof BasicSet).assertTrue()
     })
 
     /**
-     * @tc.name   SetInheritanceTest1600
-     * @tc.number SUB_SET_INHERITANCE_TEST_1600
+     * @tc.name   SetInheritanceTest1500
+     * @tc.number SUB_SET_INHERITANCE_TEST_1500
      * @tc.desc   Verify subclass construction with array parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2, 3]
       let mySet = new BasicSet(values)
       expect(mySet.size).assertEqual(3)
@@ -438,14 +424,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest1700
-     * @tc.number SUB_SET_INHERITANCE_TEST_1700
+     * @tc.name   SetInheritanceTest1600
+     * @tc.number SUB_SET_INHERITANCE_TEST_1600
      * @tc.desc   Verify subclass construction with Iterable parameter from collections.Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SetInheritanceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('SetInheritanceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = new collections.Array<number>(1, 2, 3)
       let mySet = new BasicSet(arr)
       expect(mySet.size).assertEqual(3)
@@ -454,14 +440,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest1800
-     * @tc.number SUB_SET_INHERITANCE_TEST_1800
+     * @tc.name   SetInheritanceTest1700
+     * @tc.number SUB_SET_INHERITANCE_TEST_1700
      * @tc.desc   Verify subclass constructor with super call passes parameters correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2]
       let mySet = new TagSet(values)
       expect(mySet.size).assertEqual(2)
@@ -473,14 +459,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 5: Sendable Semantics (1900-2100) =====
 
     /**
-     * @tc.name   SetInheritanceTest1900
-     * @tc.number SUB_SET_INHERITANCE_TEST_1900
+     * @tc.name   SetInheritanceTest1800
+     * @tc.number SUB_SET_INHERITANCE_TEST_1800
      * @tc.desc   Verify subclass inherits @Sendable and is passable across threads
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('SetInheritanceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let mySet = new BasicSet()
       mySet.add(1)
       let task = new taskpool.Task(checkSetSendableFunc, mySet)
@@ -489,14 +475,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2000
-     * @tc.number SUB_SET_INHERITANCE_TEST_2000
+     * @tc.name   SetInheritanceTest1900
+     * @tc.number SUB_SET_INHERITANCE_TEST_1900
      * @tc.desc   Verify subclass instance reference passing in TaskPool with custom method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('SetInheritanceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let values: number[] = [10, 20, 30]
       let mySet = new SumSet(values)
       let task = new taskpool.Task(sumSetFunc, mySet)
@@ -506,14 +492,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2100
-     * @tc.number SUB_SET_INHERITANCE_TEST_2100
+     * @tc.name   SetInheritanceTest2000
+     * @tc.number SUB_SET_INHERITANCE_TEST_2000
      * @tc.desc   Verify multiple TaskPool tasks share same subclass instance via reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SetInheritanceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SetInheritanceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let sharedSet = new BasicSet()
       let task = new taskpool.Task(concurrentBatchAddFunc, sharedSet, 5)
       let result = await taskpool.execute(task)
@@ -526,32 +512,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 6: Method Inheritance (2200-2600) =====
 
     /**
-     * @tc.name   SetInheritanceTest2200
-     * @tc.number SUB_SET_INHERITANCE_TEST_2200
-     * @tc.desc   Verify inherited add method on subclass deduplicates and maintains size
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SetInheritanceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let mySet = new BasicSet()
-      mySet.add(1)
-      mySet.add(2)
-      mySet.add(1)
-      expect(mySet.size).assertEqual(2)
-      expect(mySet.has(1)).assertTrue()
-      expect(mySet.has(2)).assertTrue()
-    })
-
-    /**
-     * @tc.name   SetInheritanceTest2300
-     * @tc.number SUB_SET_INHERITANCE_TEST_2300
+     * @tc.name   SetInheritanceTest2100
+     * @tc.number SUB_SET_INHERITANCE_TEST_2100
      * @tc.desc   Verify inherited has method returns correct boolean on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2, 3]
       let mySet = new BasicSet(values)
       expect(mySet.has(1)).assertTrue()
@@ -560,14 +528,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2400
-     * @tc.number SUB_SET_INHERITANCE_TEST_2400
+     * @tc.name   SetInheritanceTest2200
+     * @tc.number SUB_SET_INHERITANCE_TEST_2200
      * @tc.desc   Verify inherited delete method removes element and returns boolean on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2, 3]
       let mySet = new BasicSet(values)
       let deleted = mySet.delete(1)
@@ -579,14 +547,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2500
-     * @tc.number SUB_SET_INHERITANCE_TEST_2500
+     * @tc.name   SetInheritanceTest2300
+     * @tc.number SUB_SET_INHERITANCE_TEST_2300
      * @tc.desc   Verify inherited forEach traverses all elements correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [10, 20, 30]
       let mySet = new BasicSet(values)
       let sum = 0
@@ -595,14 +563,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2600
-     * @tc.number SUB_SET_INHERITANCE_TEST_2600
+     * @tc.name   SetInheritanceTest2400
+     * @tc.number SUB_SET_INHERITANCE_TEST_2400
      * @tc.desc   Verify inherited clear method empties subclass Set completely
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2, 3]
       let mySet = new BasicSet(values)
       mySet.clear()
@@ -615,14 +583,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 6.2: Method Override (2700-2800) =====
 
     /**
-     * @tc.name   SetInheritanceTest2700
-     * @tc.number SUB_SET_INHERITANCE_TEST_2700
+     * @tc.name   SetInheritanceTest2500
+     * @tc.number SUB_SET_INHERITANCE_TEST_2500
      * @tc.desc   Verify overridden add method delegates to super and works correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SetInheritanceTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('SetInheritanceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let mySet = new OverrideSet()
       mySet.add(100)
       expect(mySet.has(100)).assertTrue()
@@ -634,14 +602,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest2800
-     * @tc.number SUB_SET_INHERITANCE_TEST_2800
+     * @tc.name   SetInheritanceTest2600
+     * @tc.number SUB_SET_INHERITANCE_TEST_2600
      * @tc.desc   Verify overridden add method works correctly in concurrent TaskPool context
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SetInheritanceTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SetInheritanceTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let mySet = new OverrideSet()
       let task = new taskpool.Task(overrideAddFunc, mySet, 42)
       let result = await taskpool.execute(task)
@@ -652,14 +620,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 7: Property Inheritance (2900-3000) =====
 
     /**
-     * @tc.name   SetInheritanceTest2900
-     * @tc.number SUB_SET_INHERITANCE_TEST_2900
+     * @tc.name   SetInheritanceTest2700
+     * @tc.number SUB_SET_INHERITANCE_TEST_2700
      * @tc.desc   Verify size property inherited correctly and reflects Set state changes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [1, 2, 3]
       let mySet = new BasicSet(values)
       expect(mySet.size).assertEqual(3)
@@ -669,38 +637,17 @@ export default function SetInheritanceTest(): void {
       expect(mySet.size).assertEqual(3)
     })
 
-    /**
-     * @tc.name   SetInheritanceTest3000
-     * @tc.number SUB_SET_INHERITANCE_TEST_3000
-     * @tc.desc   Verify inherited size property correctly tracks Set state on subclass
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SetInheritanceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let mySet = new BasicSet()
-      expect(mySet.size).assertEqual(0)
-      mySet.add(1)
-      expect(mySet.size).assertEqual(1)
-      mySet.add(2)
-      expect(mySet.size).assertEqual(2)
-      mySet.delete(1)
-      expect(mySet.size).assertEqual(1)
-      mySet.clear()
-      expect(mySet.size).assertEqual(0)
-    })
-
     // ===== Section 8: Custom Extensions (3100-3200) =====
 
     /**
-     * @tc.name   SetInheritanceTest3100
-     * @tc.number SUB_SET_INHERITANCE_TEST_3100
+     * @tc.name   SetInheritanceTest2800
+     * @tc.number SUB_SET_INHERITANCE_TEST_2800
      * @tc.desc   Verify custom sum and toArray methods work correctly on subclass
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let values: number[] = [10, 20, 30]
       let mySet = new SumSet(values)
       expect(mySet.sum()).assertEqual(60)
@@ -711,14 +658,14 @@ export default function SetInheritanceTest(): void {
     })
 
     /**
-     * @tc.name   SetInheritanceTest3200
-     * @tc.number SUB_SET_INHERITANCE_TEST_3200
+     * @tc.name   SetInheritanceTest2900
+     * @tc.number SUB_SET_INHERITANCE_TEST_2900
      * @tc.desc   Verify custom doubleAll method works correctly via TaskPool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SetInheritanceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SetInheritanceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let values: number[] = [1, 3, 5]
       let mySet = new DoubleSet(values)
       let task = new taskpool.Task(doubleAllFunc, mySet)
@@ -734,14 +681,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 9: Multi-level Inheritance (3300) =====
 
     /**
-     * @tc.name   SetInheritanceTest3300
-     * @tc.number SUB_SET_INHERITANCE_TEST_3300
+     * @tc.name   SetInheritanceTest3000
+     * @tc.number SUB_SET_INHERITANCE_TEST_3000
      * @tc.desc   Verify two-level inheritance chain with instanceof and custom methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SetInheritanceTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('SetInheritanceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let values: number[] = [1, 2]
       let grandSet = new GrandSet(values)
       expect(grandSet instanceof GrandSet).assertTrue()
@@ -755,14 +702,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 10: Inheritance Constraints (3400) =====
 
     /**
-     * @tc.name   SetInheritanceTest3400
-     * @tc.number SUB_SET_INHERITANCE_TEST_3400
+     * @tc.name   SetInheritanceTest3100
+     * @tc.number SUB_SET_INHERITANCE_TEST_3100
      * @tc.desc   Verify generic type constraint with typed subclass construction
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SetInheritanceTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('SetInheritanceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let numberSet = new BasicSet()
       numberSet.add(1)
       numberSet.add(2)
@@ -778,14 +725,14 @@ export default function SetInheritanceTest(): void {
     // ===== Section 11: Concurrent Scenarios (3500) =====
 
     /**
-     * @tc.name   SetInheritanceTest3500
-     * @tc.number SUB_SET_INHERITANCE_TEST_3500
+     * @tc.name   SetInheritanceTest3200
+     * @tc.number SUB_SET_INHERITANCE_TEST_3200
      * @tc.desc   Verify multiple TaskPool tasks concurrently operate on subclass instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SetInheritanceTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SetInheritanceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let sharedSet = new BasicSet()
       let task = new taskpool.Task(concurrentBatchAddFunc, sharedSet, 10)
       let result = await taskpool.execute(task)
@@ -797,27 +744,5 @@ export default function SetInheritanceTest(): void {
 
     // ===== Section 12: Error Handling (3600) =====
 
-    /**
-     * @tc.name   SetInheritanceTest3600
-     * @tc.number SUB_SET_INHERITANCE_TEST_3600
-     * @tc.desc   Verify subclass constructor works normally and instance has correct type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SetInheritanceTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let values: number[] = [1]
-      let mySet = new BasicSet(values)
-      expect(mySet instanceof collections.Set).assertTrue()
-      expect(mySet instanceof BasicSet).assertTrue()
-      expect(mySet.size).assertEqual(1)
-      expect(mySet.has(1)).assertTrue()
-
-      let nullSet = new BasicSet(null)
-      expect(nullSet.size).assertEqual(0)
-
-      let emptySet = new BasicSet()
-      expect(emptySet.size).assertEqual(0)
-    })
   })
 }

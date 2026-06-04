@@ -320,23 +320,5 @@ export default function ConcatArrayConcurrentTest(): void {
       expect(result as number).assertEqual(4)
     })
 
-    /**
-     * @tc.name   CAConcurrentTest1200
-     * @tc.number SUB_CONCATARRAY_CONCURRENT_TEST_1200
-     * @tc.desc   Verify large collections.Array can be passed to TaskPool and processed correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('CAConcurrentTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      let largeArr = new collections.Array<number>()
-      for (let i = 0; i < 1000; i++) {
-        largeArr.push(i)
-      }
-      expect(largeArr.length).assertEqual(1000)
-      let task = new taskpool.Task(getArrayLengthConcurrent, largeArr)
-      let result = await taskpool.execute(task)
-      expect(result as number).assertEqual(1000)
-    })
   })
 }

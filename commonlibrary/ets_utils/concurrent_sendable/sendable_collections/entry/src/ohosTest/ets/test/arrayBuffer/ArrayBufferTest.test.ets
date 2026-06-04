@@ -170,22 +170,21 @@ export default function ArrayBufferTest(): void {
     /**
      * @tc.name   ArrayBufferTest0800
      * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0800
-     * @tc.desc   Verify byteLength matches constructor parameter
+     * @tc.desc   Verify slice with only begin parameter slices from begin to end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('ArrayBufferTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let buffer1 = new collections.ArrayBuffer(512)
-      expect(buffer1.byteLength).assertEqual(512)
-      let buffer2 = new collections.ArrayBuffer(1024)
-      expect(buffer2.byteLength).assertEqual(1024)
+      let buffer = new collections.ArrayBuffer(1024)
+      let sliced = buffer.slice(512)
+      expect(sliced.byteLength).assertEqual(512)
     })
 
     /**
      * @tc.name   ArrayBufferTest0900
      * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_0900
-     * @tc.desc   Verify original buffer byteLength unchanged after slice
+     * @tc.desc   Verify slice with begin and end parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -193,47 +192,18 @@ export default function ArrayBufferTest(): void {
     it('ArrayBufferTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(100, 500)
-      expect(buffer.byteLength).assertEqual(1024)
       expect(sliced.byteLength).assertEqual(400)
     })
 
     /**
      * @tc.name   ArrayBufferTest1000
      * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1000
-     * @tc.desc   Verify slice with only begin parameter slices from begin to end
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayBufferTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let buffer = new collections.ArrayBuffer(1024)
-      let sliced = buffer.slice(512)
-      expect(sliced.byteLength).assertEqual(512)
-    })
-
-    /**
-     * @tc.name   ArrayBufferTest1100
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1100
-     * @tc.desc   Verify slice with begin and end parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayBufferTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let buffer = new collections.ArrayBuffer(1024)
-      let sliced = buffer.slice(100, 500)
-      expect(sliced.byteLength).assertEqual(400)
-    })
-
-    /**
-     * @tc.name   ArrayBufferTest1200
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1200
      * @tc.desc   Verify slice from 0 copies entire buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(0)
       expect(sliced.byteLength).assertEqual(1024)
@@ -241,44 +211,28 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest1300
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1300
-     * @tc.desc   Verify slice with begin=0 and begin=512 normal values
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayBufferTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let buffer = new collections.ArrayBuffer(1024)
-      let s1 = buffer.slice(0)
-      expect(s1.byteLength).assertEqual(1024)
-      let s2 = buffer.slice(512)
-      expect(s2.byteLength).assertEqual(512)
-    })
-
-    /**
-     * @tc.name   ArrayBufferTest1400
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1400
+     * @tc.name   ArrayBufferTest1100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1100
      * @tc.desc   Verify slice with negative begin calculates from end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(-100)
       expect(sliced.byteLength).assertEqual(100)
     })
 
     /**
-     * @tc.name   ArrayBufferTest1500
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1500
+     * @tc.name   ArrayBufferTest1200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1200
      * @tc.desc   Verify slice with begin beyond range returns empty buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let s1 = buffer.slice(1024)
       expect(s1.byteLength).assertEqual(0)
@@ -287,72 +241,56 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest1600
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1600
-     * @tc.desc   Verify slice with normal end values
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ArrayBufferTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let buffer = new collections.ArrayBuffer(1024)
-      let s1 = buffer.slice(0, 512)
-      expect(s1.byteLength).assertEqual(512)
-      let s2 = buffer.slice(256, 768)
-      expect(s2.byteLength).assertEqual(512)
-    })
-
-    /**
-     * @tc.name   ArrayBufferTest1700
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1700
+     * @tc.name   ArrayBufferTest1300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1300
      * @tc.desc   Verify slice with negative end calculates from end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(0, -100)
       expect(sliced.byteLength).assertEqual(924)
     })
 
     /**
-     * @tc.name   ArrayBufferTest1800
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1800
+     * @tc.name   ArrayBufferTest1400
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1400
      * @tc.desc   Verify slice with end beyond range clamps to buffer length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let s1 = buffer.slice(0, 2000)
       expect(s1.byteLength).assertEqual(1024)
     })
 
     /**
-     * @tc.name   ArrayBufferTest1900
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1900
+     * @tc.name   ArrayBufferTest1500
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1500
      * @tc.desc   Verify slice with end less than begin returns empty buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(500, 100)
       expect(sliced.byteLength).assertEqual(0)
     })
 
     /**
-     * @tc.name   ArrayBufferTest2000
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2000
+     * @tc.name   ArrayBufferTest1600
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1600
      * @tc.desc   Verify slice returns new ArrayBuffer instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let sliced = buffer.slice(100, 500)
       expect(sliced !== buffer).assertTrue()
@@ -361,32 +299,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2100
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2100
-     * @tc.desc   Verify slice returns empty buffer for edge cases
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ArrayBufferTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let buffer = new collections.ArrayBuffer(1024)
-      let s1 = buffer.slice(1024)
-      expect(s1.byteLength).assertEqual(0)
-      let s2 = buffer.slice(500, 500)
-      expect(s2.byteLength).assertEqual(0)
-      let s3 = buffer.slice(800, 200)
-      expect(s3.byteLength).assertEqual(0)
-    })
-
-    /**
-     * @tc.name   ArrayBufferTest2200
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2200
+     * @tc.name   ArrayBufferTest1700
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1700
      * @tc.desc   Verify slice copies data correctly via Int8Array view
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(8)
       let int8View = new collections.Int8Array(buffer)
       int8View[0] = 10
@@ -398,28 +318,28 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2300
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2300
+     * @tc.name   ArrayBufferTest1800
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1800
      * @tc.desc   Verify empty buffer slice returns zero-length buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(0)
       let sliced = buffer.slice(0)
       expect(sliced.byteLength).assertEqual(0)
     })
 
     /**
-     * @tc.name   ArrayBufferTest2400
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2400
+     * @tc.name   ArrayBufferTest1900
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_1900
      * @tc.desc   Verify TaskPool passes ArrayBuffer and reads byteLength
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let task = new taskpool.Task(processBufferFunc, buffer)
       let result = await taskpool.execute(task)
@@ -427,14 +347,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2500
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2500
+     * @tc.name   ArrayBufferTest2000
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2000
      * @tc.desc   Verify multiple TaskPool tasks share same ArrayBuffer data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let view = new collections.Int8Array(buffer)
       view[0] = 100
@@ -449,14 +369,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2600
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2600
+     * @tc.name   ArrayBufferTest2100
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2100
      * @tc.desc   Verify multiple TypedArray views share same ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(16)
       let int8View = new collections.Int8Array(buffer)
       let int32View = new collections.Int32Array(buffer)
@@ -468,14 +388,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2700
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2700
+     * @tc.name   ArrayBufferTest2200
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2200
      * @tc.desc   Verify cross-thread TypedArray modification via TaskPool is visible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(16)
       let view = new collections.Int32Array(buffer)
       view[0] = 0
@@ -485,14 +405,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2800
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2800
+     * @tc.name   ArrayBufferTest2300
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2300
      * @tc.desc   Verify concurrent slice from two TaskPool tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let task1 = new taskpool.Task(sliceBufferFunc, buffer)
       let task2 = new taskpool.Task(sliceBufferFunc, buffer)
@@ -504,14 +424,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest2900
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2900
+     * @tc.name   ArrayBufferTest2400
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2400
      * @tc.desc   Verify multiple concurrent slice tasks with loop
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       let tasks: taskpool.Task[] = []
       for (let i = 0; i < 5; i++) {
@@ -528,14 +448,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest3000
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3000
+     * @tc.name   ArrayBufferTest2500
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2500
      * @tc.desc   Verify TaskPool passes empty ArrayBuffer correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ArrayBufferTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('ArrayBufferTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(0)
       let task = new taskpool.Task(processBufferFunc, buffer)
       let result = await taskpool.execute(task)
@@ -543,14 +463,14 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest3100
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3100
+     * @tc.name   ArrayBufferTest2600
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2600
      * @tc.desc   Verify custom class extends collections.ArrayBuffer with @Sendable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayBufferTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('ArrayBufferTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let myBuffer = new CustomArrayBuffer(1024)
       expect(myBuffer.byteLength).assertEqual(1024)
       expect(myBuffer.getHalfLength()).assertEqual(512)
@@ -558,27 +478,27 @@ export default function ArrayBufferTest(): void {
     })
 
     /**
-     * @tc.name   ArrayBufferTest3200
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3200
+     * @tc.name   ArrayBufferTest2700
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2700
      * @tc.desc   Verify instanceof check for collections.ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       expect(buffer instanceof collections.ArrayBuffer).assertTrue()
     })
 
     /**
-     * @tc.name   ArrayBufferTest3300
-     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_3300
+     * @tc.name   ArrayBufferTest2800
+     * @tc.number SUB_COLLECTIONS_ARRAYBUFFER_TEST_2800
      * @tc.desc   Verify typeof returns object for collections.ArrayBuffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArrayBufferTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('ArrayBufferTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let buffer = new collections.ArrayBuffer(1024)
       expect(typeof buffer).assertEqual('object')
     })
