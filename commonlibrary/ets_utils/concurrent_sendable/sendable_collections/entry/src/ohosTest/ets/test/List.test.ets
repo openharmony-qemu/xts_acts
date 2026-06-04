@@ -35,6 +35,7 @@ import UintByteClampedArrayConcurrentTest from './uintArray/UintByteClampedArray
 import UintShortArrayTest from './uintArray/UintShortArrayTest.test'
 import UintIntArrayTest from './uintArray/UintIntArrayTest.test'
 export default function testsuite(): void {
+  StressStabilityComboTest()
   BitVectorTest()
   ArrayBufferTest()
   ArrayInheritanceTest()
@@ -43,7 +44,6 @@ export default function testsuite(): void {
   ContainerComboTest()
   ConcurrentFactorComboTest() 
   RealWorldComboTest()
-  StressStabilityComboTest()
   ConcatArrayImplTest()
   ConcatArrayConcurrentTest()
   FloatArrayTest()
