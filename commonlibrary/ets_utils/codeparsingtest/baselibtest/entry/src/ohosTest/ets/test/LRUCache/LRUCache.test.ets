@@ -23,7 +23,8 @@ function sleep(ms: number): Promise<void> {
 
 export default function LRUCatchTest() {
   describe('ActsLRUCatchTest', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       sleep(20);
     })
     /**
