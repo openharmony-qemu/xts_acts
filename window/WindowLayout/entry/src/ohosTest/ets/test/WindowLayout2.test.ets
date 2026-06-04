@@ -24,7 +24,7 @@ import { bundleManager } from '@kit.AbilityKit';
 
 async function sleep(time: number) {
   let timeoutId: number = 0;
-  let promise = new Promise(resolve => {
+  let promise = new Promise<string>(resolve => {
     timeoutId = setTimeout(() => {
       resolve('sleep finished');
     }, time);
@@ -69,7 +69,7 @@ async function terminateAbility(caseName: string) {
 export default function windowLayoutTest2() {
   describe('windowLayoutTest2', () => {
     console.log('describe window_api_test start!!!')
-    let sleep = (sleepMs: number) => new Promise(resolve => setTimeout(resolve, sleepMs));
+    let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
     let isFreeWindowMode = false;
