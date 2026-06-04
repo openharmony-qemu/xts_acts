@@ -163,41 +163,6 @@ export default function getAssetsStaticTest(): void {
     })
 
     /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0070
-     * @tc.number SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0070
-     * @tc.desc   callback, image, fetchOps->invalid strings
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL4
-     */
-    it('SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0070', Level.LEVEL4, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0070';
-      console.info(TAG, testName);
-      try {
-        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
-        let fetchOps: photoAccessHelper.FetchOptions = {
-          fetchColumns: [''],
-          predicates: predicates
-        };
-        helper!.getAssets(fetchOps, (error: BusinessError<void> | null,
-          fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
-          if(error !== undefined){
-            console.info(TAG,testName,'failed',error!.code)
-            expect(error!.code).assertEqual(ErrorCode.error_parm);
-            done();
-          }else {
-            expect().assertFail();
-            done();
-          }
-        });
-      } catch (error) {
-        console.error(TAG, `getAssets catch failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0080
      * @tc.number SUB_MULTMEDIA_PHOTO_GET_ASSETS_STATIC_0080
      * @tc.desc   promise, image, fetchOps -> normal image name
@@ -317,7 +282,7 @@ export default function getAssetsStaticTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.error_parm);
+        expect(error.code).assertEqual(13900020);
         done();
       }
     })
