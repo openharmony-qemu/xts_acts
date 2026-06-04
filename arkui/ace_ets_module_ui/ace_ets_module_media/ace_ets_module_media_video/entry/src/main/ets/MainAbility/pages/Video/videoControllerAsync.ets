@@ -14,26 +14,26 @@ struct videoControllerAsync {
       Row() {
         Button('start')
           .onClick(() => {
-          this.controller.start()
-            .then(() => {
-              console.info('jyy start succeed');
-            })
-            .catch((err: BusinessError) => {
-              console.info(`jyy start failed: ${err.message}`);
-            });
+            this.controller.start()
+              .then(() => {
+                console.info('jyy start succeed');
+              })
+              .catch((err: BusinessError) => {
+                console.info(`jyy start failed: ${err.message}`);
+              });
           })
           .id('videoControllerAsyncStart')
           .width(65)
           .height(20)
         Button('pause')
           .onClick(() => {
-          this.controller.pause()
-            .then(() => {
-              console.info('jyy pause succeed');
-            })
-            .catch((err: BusinessError) => {
-              console.info(`jyy pause failed: ${err.message}`);
-            });
+            this.controller.pause()
+              .then(() => {
+                console.info('jyy pause succeed');
+              })
+              .catch((err: BusinessError) => {
+                console.info(`jyy pause failed: ${err.message}`);
+              });
           })
           .id('videoControllerAsyncPause')
           .width(65)
@@ -50,27 +50,27 @@ struct videoControllerAsync {
       Row(){
         Button('stop')
           .onClick(() => {
-          this.controller.stop()
-            .then(() => {
-              console.info('jyy stop succeed');
-            })
-            .catch((err: BusinessError) => {
-              console.info(`jyy stop failed: ${err.message}`);
-            });
+            this.controller.stop()
+              .then(() => {
+                console.info('jyy stop succeed');
+              })
+              .catch((err: BusinessError) => {
+                console.info(`jyy stop failed: ${err.message}`);
+              });
           })
           .id('videoControllerAsyncStop')
           .width(65)
           .height(20)
         Button('reset')
           .onClick(() => {
-          this.controller.reset()
-            .then(() => {
-              this.str1 = 'reset'
-              console.info('jyy reset succeed');
-            })
-            .catch((err: BusinessError) => {
-              console.info(`jyy reset failed: ${err.message}`);
-            });
+            this.controller.reset()
+              .then(() => {
+                this.str1 = 'reset'
+                console.info('jyy reset succeed');
+              })
+              .catch((err: BusinessError) => {
+                console.info(`jyy reset failed: ${err.message}`);
+              });
           })
           .id('videoControllerAsyncReset')
           .width(65)
@@ -88,18 +88,18 @@ struct videoControllerAsync {
       }
       Row(){
         Button('setNull')
-          .id('videoControllerAsyncSetNull')
           .onClick(() => {
             this.controller.setCurrentTime(null)
+            this.controller.setCurrentTime(null,null)
             this.controller.requestFullscreen(null)
           })
           .id('videoControllerAsyncSetNull')
           .width(65)
           .height(20)
         Button('setUndefined')
-          .id('videoControllerAsyncSetUndefined')
           .onClick(() => {
             this.controller.setCurrentTime(undefined)
+            this.controller.setCurrentTime(undefined,undefined)
             this.controller.requestFullscreen(undefined)
           })
           .id('videoControllerAsyncSetUndefined')
@@ -139,31 +139,31 @@ struct videoControllerAsync {
           this.str = 'onStop'
           console.info('jyy onStop');
         })
-        .onPrepared((e?: DurationObject) => {
+        .onPrepared((e?: videoControllerAsyncDurationObject) => {
           if (e != undefined) {
             this.str = 'onPrepared'
             console.info(`jyy onPrepared is ${e.duration}`);
           }
         })
-        .onSeeking((e?: TimeObject) => {
+        .onSeeking((e?: videoControllerAsyncTimeObject) => {
           if (e != undefined) {
             this.str = 'onSeeking'
             console.info(`jyy onSeeking is ${e.time}`);
           }
         })
-        .onSeeked((e?: TimeObject) => {
+        .onSeeked((e?: videoControllerAsyncTimeObject) => {
           if (e != undefined) {
             this.str = 'onSeeked'
             console.info(`jyy onSeeked is ${e.time}`);
           }
         })
-        .onUpdate((e?: TimeObject) => {
+        .onUpdate((e?: videoControllerAsyncTimeObject) => {
           if (e != undefined) {
             this.str1 = 'onUpdate'
             console.info(`jyy onUpdate is ${e.time}`);
           }
         })
-        .onFullscreenChange((e?: FullscreenObject) => {
+        .onFullscreenChange((e?: videoControllerAsyncFullscreenObject) => {
           if (e != undefined) {
             this.str = 'onFullscreenChange_' + e.fullscreen
             console.info(`jyy onFullscreenChange is ${e.fullscreen}`);
@@ -173,14 +173,14 @@ struct videoControllerAsync {
   }
 }
 
-interface DurationObject {
+interface videoControllerAsyncDurationObject {
   duration: number;
 }
 
-interface TimeObject {
+interface videoControllerAsyncTimeObject {
   time: number;
 }
 
-interface FullscreenObject {
+interface videoControllerAsyncFullscreenObject {
   fullscreen: boolean;
 }
