@@ -2117,11 +2117,17 @@ describe('relationalStoreResultSetTest', function () {
             resultSet = result;
             expect((resultSet as data_Rdb.ResultSet).goToFirstRow()).assertTrue()
             const codes = (resultSet as data_Rdb.ResultSet).getValue((resultSet as data_Rdb.ResultSet).getColumnIndex("blobType"));
-            console.info(TAG + "codes:" + codes)
-            expect(codes).assertInstanceOf("Null")
+            console.info(TAG + "codes:" + (codes instanceof Uint8Array))
+            expect(codes).assertInstanceOf("Uint8Array")
+            if (codes instanceof Uint8Array) {
+                expect(codes.length).assertEqual(0)
+            }
             const row = (resultSet as data_Rdb.ResultSet).getRow();
             console.info(TAG + "row.blobType:" + JSON.stringify(row.blobType));
-            expect(row.blobType).assertInstanceOf("Null")
+            expect(row.blobType).assertInstanceOf("Uint8Array")
+            if (row.blobType instanceof Uint8Array) {
+              expect(row.blobType.length).assertEqual(0)
+            }
             await rdbStore?.executeSql(DROP_TABLE_TEST1, null);
             done()
         } catch (err) {
@@ -2131,7 +2137,6 @@ describe('relationalStoreResultSetTest', function () {
         }
         console.info(TAG + "************* testRdbStoreResultSetGetValuetest0100 end *************");
     });
-    
     console.info(TAG + '*************Unit Test End*************');
 })
 }
