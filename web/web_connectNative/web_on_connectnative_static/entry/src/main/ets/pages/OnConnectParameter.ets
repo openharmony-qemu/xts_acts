@@ -149,9 +149,9 @@ struct WebOnConnectParameter {
                     if (isCapabilityNotSupportedCode(err.code)) {
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260604);
-                      break;
+                    } else {
+                      Utils.emitEvent(err.code, 20260604);
                     }
-                    Utils.emitEvent(err.code, 20260604);
                   }
                 };
                 doTest();
@@ -168,9 +168,10 @@ struct WebOnConnectParameter {
                     if (isCapabilityNotSupportedCode(err.code)) {
                       hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
                       Utils.emitEvent(201, 20260605);
-                      break;
+                    } else {
+                      Utils.emitEvent(err.code, 20260605);
                     }
-                    Utils.emitEvent(err.code, 20260605);
+                   
                   }
                 };
                 doTest();
