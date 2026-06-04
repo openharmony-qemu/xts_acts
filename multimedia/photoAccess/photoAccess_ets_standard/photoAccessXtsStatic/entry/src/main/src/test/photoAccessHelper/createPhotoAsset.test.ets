@@ -23,7 +23,14 @@ import { fileUri } from '@kit.CoreFileKit';
 import { Context } from '@kit.ArkUI';
 
 const TAG = LOG_TAG + 'createPhotoAssetTest';
-
+interface ErrorCodeType{
+  No_Permission: string;
+  Invalid_Parm: string;
+}
+const ErrorCode: ErrorCodeType = {
+  No_Permission: '201',
+  Invalid_Parm: '401'
+}
 export default function createPhotoAssetTest(): void {
   describe('createPhotoAssetTest', () => {
     const testTitle = 'createPhotoAssetTest';
@@ -93,7 +100,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -117,7 +124,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -165,7 +172,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -215,7 +222,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -241,7 +248,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -289,7 +296,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -317,7 +324,7 @@ export default function createPhotoAssetTest(): void {
         done();
       } catch (error) {
         console.error(testName, `createPhotoAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
