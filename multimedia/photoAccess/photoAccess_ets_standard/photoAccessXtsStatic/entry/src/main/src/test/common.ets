@@ -96,6 +96,16 @@ export async function createUserAlbum(testContext: common.Context, testName: str
     console.error(`Failed to createUserAlbum! error: ${error}`);
   }
 }
+
+export function fetchAllOption(): photoAccessHelper.FetchOptions {
+  const predicates = new dataSharePredicates.DataSharePredicates();
+  const ops: photoAccessHelper.FetchOptions = {
+    fetchColumns: [],
+    predicates: predicates
+  };
+  return ops;
+}
+
 export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {
   const predicates = new dataSharePredicates.DataSharePredicates();
   predicates.equalTo(key, value);

@@ -7805,31 +7805,5 @@ export default function windowLayoutTest() {
       }
     });
 
-    /**
-    * @tc.name SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.number SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.desc SUB_WINDOW_SystemProperties_focused_highlighted_0100
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL0
-    */
-    it('SUB_WINDOW_SystemProperties_focused_highlighted_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'SUB_WINDOW_SystemProperties_focused_highlighted_0100 ';
-      console.log(caseName + 'begin');
-      try {
-        console.info(caseName + ' SystemProperties: ' + JSON.stringify(SystemProperties));
-        expect(SystemProperties.WINDOW_IS_FOCUSED).assertEqual('system.window.focused');
-        expect(SystemProperties.WINDOW_IS_HIGHLIGHTED).assertEqual('system.window.highlighted');
-        expect(SystemProperties.WINDOW_DISPLAY_ID).assertEqual('system.window.displayid');
-        expect(SystemProperties.WINDOW_SYSTEM_DENSITY).assertEqual('system.window.density.system');
-        done();
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        expect().assertFail();
-        done()
-      }
-    });
-
-
   })
 }

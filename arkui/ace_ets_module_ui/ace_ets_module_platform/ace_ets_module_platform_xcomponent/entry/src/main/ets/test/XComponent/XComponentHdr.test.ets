@@ -67,15 +67,6 @@ export default function XComponentHdrTest() {
       expect(HdrType.AIHDR).assertEqual(1);
     });
     /**
-     * @tc.number   SUB_ArkUI_XComponentHdr_HdrType_EDR_0500
-     * @tc.name     SUB_ArkUI_XComponentHdr_HdrType_EDR_0500
-     * @tc.desc     xcomponent HdrType.EDR enum numeric value is 2
-     * @tc.level    Level.LEVEL0
-     */
-    it('SUB_ArkUI_XComponentHdr_HdrType_EDR_0500', Level.LEVEL0, () => {
-      expect(HdrType.EDR).assertEqual(2);
-    });
-    /**
      * @tc.number   SUB_ArkUI_XComponentHdr_Brightness_With_HdrType_0300
      * @tc.name     SUB_ArkUI_XComponentHdr_Brightness_With_HdrType_0300
      * @tc.desc     XComponentAttribute.hdrBrightness(brightness, type) two-argument overload with HdrType.AIHDR

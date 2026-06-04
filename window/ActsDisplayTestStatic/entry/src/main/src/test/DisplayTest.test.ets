@@ -75,7 +75,7 @@ async function clickButtonDriver(){
     let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
     console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
     if(buttonOne!=null){
-        buttonOne.click();
+        await buttonOne.click();
     }
 
 }
@@ -221,15 +221,6 @@ export default function DisplayTest():void {
             await Utils.msSleep(500);
             await clickButtonDriver();
             hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
-            await windowClass.setWindowBrightness(0.5);
-            await Utils.msSleep(500);
-            try {
-                let properties = windowClass.getWindowProperties();
-                curWindowBrightness = properties.brightness;
-                console.log(domain, tag, `getBrightnessInfo: ${JSON.stringify(curWindowBrightness)}`);
-            } catch (exception) {
-                console.error(domain, tag, `Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
-            }
         })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
@@ -2735,6 +2726,17 @@ export default function DisplayTest():void {
      */
     it('testGetBrightnessInfowithMainDisplayid_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName:string =  'testGetBrightnessInfowithMainDisplayid_static';
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        await windowClass.setWindowBrightness(0.5);
+        await Utils.msSleep(1000);
+        try {
+            let properties = windowClass.getWindowProperties();
+            curWindowBrightness = properties.brightness;
+            console.log(domain, tag, `getBrightnessInfo: ${JSON.stringify(curWindowBrightness)}`);
+        } catch (exception) {
+            console.error(domain, tag, `Failed to obtain the window properties. Cause code: ${exception.code}, message: ${exception.message}`);
+        }
+        await Utils.msSleep(3000);
         try {
             let brightnessInfo = display.getBrightnessInfo(0);
             console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);

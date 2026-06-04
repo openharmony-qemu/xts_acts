@@ -1348,12 +1348,12 @@ export default function windowPropertiesTest3() {
       }
     });
 
-    // ==================== @Env(SystemProperties.WINDOW_SYSTEM_DENSITY) 测试用例 ====================
+    // ==================== @Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY) 测试用例 ====================
 
     /**
      * @tc.name   testEnvSystemDensity
      * @tc.number SUB_WINDOW_ENV_SYSTEM_DENSITY_0100
-     * @tc.desc   验证@Env(SystemProperties.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
+     * @tc.desc   验证@Env(ReadonlyEnvKey.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1399,12 +1399,12 @@ export default function windowPropertiesTest3() {
       }
     });
 
-    // ==================== @Env(SystemProperties.WINDOW_DISPLAY_ID) 测试用例 ====================
+    // ==================== @Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID) 测试用例 ====================
 
     /**
      * @tc.name   testEnvDisplayId
      * @tc.number SUB_WINDOW_ENV_DISPLAY_ID_0100
-     * @tc.desc   验证@Env(SystemProperties.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
+     * @tc.desc   验证@Env(ReadonlyEnvKey.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
