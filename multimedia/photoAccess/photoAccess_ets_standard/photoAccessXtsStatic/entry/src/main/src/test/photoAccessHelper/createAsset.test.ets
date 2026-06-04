@@ -24,7 +24,14 @@ const TAG = LOG_TAG + 'createAssetTest';
 
 let testContext: Context = Hypium.get('Context') as Context;
 const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-
+interface ErrorCodeType{
+  No_Permission: string;
+  Invalid_Parm: string;
+}
+const ErrorCode: ErrorCodeType = {
+  No_Permission: '201',
+  Invalid_Parm: '401'
+}
 
 
 export default function createAssetTest(): void {
@@ -94,7 +101,7 @@ export default function createAssetTest(): void {
         helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'invalid', options,
           (error: BusinessError<void> | null, uri: string | undefined) => {
             if (error !== undefined) {
-              expect(Number(error!.code)).assertEqual(401);
+              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
               console.info(TAG, testName, 'create failed', error!.code)
               done();
             }
@@ -208,7 +215,7 @@ export default function createAssetTest(): void {
         helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'invalid', options,
           (error: BusinessError<void> | null, uri: string | undefined) => {
             if (error !== undefined) {
-              expect(Number(error!.code)).assertEqual(401);
+              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
               console.info(TAG, testName, 'create failed', error!.code)
               done();
             }
@@ -317,7 +324,7 @@ export default function createAssetTest(): void {
         helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'invalid',
           (error: BusinessError<void> | null, uri: string | undefined) => {
             if (error !== undefined) {
-              expect(Number(error!.code)).assertEqual(401);
+              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
               console.info(TAG, testName, 'create failed', error!.code)
               done();
             }
@@ -368,7 +375,7 @@ export default function createAssetTest(): void {
         helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'invalid',
           (error: BusinessError<void> | null, uri: string | undefined) => {
             if (error !== undefined) {
-              expect(Number(error!.code)).assertEqual(401);
+              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
               console.info(TAG, testName, 'create failed', error!.code)
               done();
             }
@@ -401,7 +408,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -427,7 +434,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -533,7 +540,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -633,7 +640,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -678,7 +685,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
