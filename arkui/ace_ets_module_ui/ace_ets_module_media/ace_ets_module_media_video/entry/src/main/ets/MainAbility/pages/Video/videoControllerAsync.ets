@@ -40,7 +40,7 @@ struct videoControllerAsync {
           .height(20)
         Button('setTime')
           .onClick(() => {
-            this.controller.setCurrentTime(1)
+            this.controller.setCurrentTime(1,SeekMode.PreviousKeyframe)
             this.str = 'setCurrentTime'
           })
           .id('videoControllerAsyncSetTime')
@@ -89,7 +89,6 @@ struct videoControllerAsync {
       Row(){
         Button('setNull')
           .onClick(() => {
-            this.controller.setCurrentTime(null)
             this.controller.setCurrentTime(null,null)
             this.controller.requestFullscreen(null)
           })
@@ -98,7 +97,6 @@ struct videoControllerAsync {
           .height(20)
         Button('setUndefined')
           .onClick(() => {
-            this.controller.setCurrentTime(undefined)
             this.controller.setCurrentTime(undefined,undefined)
             this.controller.requestFullscreen(undefined)
           })
