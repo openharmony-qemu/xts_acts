@@ -836,7 +836,6 @@ async (done: () => void): Promise<void> => {
   }
 });
 
-
-    })
+})
 
 }
