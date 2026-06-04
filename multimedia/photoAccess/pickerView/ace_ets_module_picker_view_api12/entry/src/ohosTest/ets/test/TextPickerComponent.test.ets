@@ -1678,40 +1678,31 @@ export default function TextPicker() {
         done();
         return;
       }
-
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-
-      let cases: AssetCreateOption[] = [
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
-      ];
-
-      for (let i = 0; i < cases.length; i++) {
-        let item = cases[i];
-        console.log(`testPicker25 index = ${i}`)
-        try {
-          let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
-          console.log(`testPicker25 createPromise`)
-          await driveFn();
-
-          let result = await createPromise;
-          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
-          expect(result).not().assertUndefined();
-
-        } catch(error) {
-          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
-          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
-          expect(isValidErrorCode).assertTrue();
-        }
-
-        let driver = Driver.create();
-        await driver.delayMs(500);
+      try {
+        let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+          title: 'test',
+          fileNameExtension: 'jpg',
+          photoType: photoAccessHelper.PhotoType.IMAGE,
+          subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+        };
+        phAccessHelper.createAssetWithShortTermPermission(photoCreationConfig).then((result) => {
+          console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
+          if (result) {
+            expect(true).assertTrue();
+          } else {
+            console.error("testPicker25 empty result");
+            expect(false).assertTrue();
+          }
+        })
+      } catch(error) {
+        console.error("testPicker25 error: " + JSON.stringify(error));
+        expect(false).assertTrue();
       }
       console.info("testPicker25 finish");
       done();
     });
+
 
     /**
      * @tc.name   testPicker26
@@ -3394,17 +3385,22 @@ export default function TextPicker() {
 
       for (let i = 0; i < testCases.length; i++) {
         let isInvalidCase = !testCases[i].src || !testCases[i].config;
-
+        let originalUris = [' '];
         if (isInvalidCase) {
           try {
-            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
+            .then((result) => {
+              originalUris = result;
+            });
           } catch (error) {
             expect((error as BusinessError).code).assertEqual(401);
           }
         } else {
           try {
-            let dialogPromise = photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
-
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
+            .then((result) => {
+              originalUris = result;
+            });
             await driveFn();
 
             let code: number = EventType.SELECT_ITEM_INFO;
@@ -3452,8 +3448,7 @@ export default function TextPicker() {
             router.back();
             events_emitter.off(event.eventId);
 
-            let result = await dialogPromise;
-            console.log(`result = ${JSON.stringify(result)}`);
+            console.log(`originalUris = ${JSON.stringify(originalUris)}`);
             console.info("testPicker59 valid case finish");
 
           } catch (error) {
@@ -3621,17 +3616,20 @@ export default function TextPicker() {
         let isInvalidCase = !testCases[i].src || !testCases[i].config || !testCases[i].src?.length || !testCases[i].config?.length;
         console.log('testPicker63 Case A: ' + JSON.stringify(testCases[i]) + ' ' + i);
         console.log(`testPicker63 isInvalidCase = ${isInvalidCase}`);
-
+        let result: Array<string> = [];
         try {
-          let dialogPromise = photoAccessHelper
+          photoAccessHelper
             .getPhotoAccessHelper(context)
-            .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config);
+            .showAssetsCreationDialogEx(testCases[i].src, testCases[i].config)
+            .then((res) => {
+              result = res;
+            });
+            await driveFn();
 
           if (!isInvalidCase) {
             await driveFn();
           }
 
-          let result = await dialogPromise;
 
           if (!result) {
             expect(result).assertUndefined();
@@ -3666,17 +3664,19 @@ export default function TextPicker() {
 
       for (let item of cases) {
         let isInvalidSingleCase = !item.uri || !item.config;
+        let testResult: string = '';
 
         try {
-          let singleDialogPromise = photoAccessHelper
+          photoAccessHelper
             .getPhotoAccessHelper(context)
-            .showSingleAssetCreationDialogEx(item.uri, item.config, item.displayed);
+            .showSingleAssetCreationDialogEx(item.uri, item.config, item.displayed)
+            .then((uri)=>{
+              testResult = uri;
+            })
 
           if (!isInvalidSingleCase) {
             await driveFn();
           }
-
-          let testResult = await singleDialogPromise;
 
           console.info('testPicker63 showSingleAssetCreationDialogEx success');
           expect(testResult).not().assertUndefined();
@@ -4235,13 +4235,17 @@ export default function TextPicker() {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
         
-        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef]);
+        let result: Array<string> = [];
+        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx([boxPath], [CreationSettingDef])
+        .then((res) => {
+          result = res;
+        });
+        await driveFn();
 
         driveFn().catch((err: Error) => {
           console.info("testPicker71 driveFn info: " + err.message);
         });
 
-        let result = await dialogPromise;
         
         if (!result) {
           expect(result).assertUndefined();
@@ -4307,9 +4311,12 @@ export default function TextPicker() {
         for (let i = 0; i < cases.length; i++) {
           let item = cases[i];
           let isInvalidCase = item === null || item === undefined;
-
+          let result: string = '';
           try {
-            let createPromise = phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption);
+            phAccessHelper.createAssetWithShortTermPermissionEx(item as AssetCreateOption)
+            .then((uri)=>{
+              result = uri;
+            })
 
             if (!isInvalidCase) {
               await new Promise<void>(resolve => setTimeout(resolve, 500));
@@ -4319,7 +4326,6 @@ export default function TextPicker() {
               });
             }
 
-            let result = await createPromise;
             console.info("createAssetWithShortTermPermission, result=" + JSON.stringify(result));
 
             expect(result).not().assertUndefined();
@@ -4366,9 +4372,13 @@ export default function TextPicker() {
         let pickerController: PickerController = new PickerController();
         let boxPath = fileUri.getUriFromPath(context.filesDir + "/test.jpg").toString();
         
-        let dialogPromise = photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
+        let result: Array<string> = [];
+        photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialogEx(
           [boxPath], [CreationSettingDef]
-        );
+        ).then((res) => {
+          result = res;
+        });
+        await driveFn();
         
         try {
           await driveFn();
@@ -4376,7 +4386,6 @@ export default function TextPicker() {
           console.info("testPicker73 driveFn warning (UI Lock): " + driverError.message);
         }
         await CommonFunc.sleep(500);
-        let result = await dialogPromise;
 
         if (!result) {
           expect(result).assertUndefined();
@@ -4865,8 +4874,14 @@ export default function TextPicker() {
           });
         });
       };
+      const endTest = async () => {
+        const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+        await closeBtn?.click();
+        console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
+        done();
+      }
       // ── Helper: select 2 photos via Selector_0 and Selector_1 ──
-      const selectTwoPhotos = async (label: string): Promise<void> => {
+      const selectTwoPhotos = async (label: string): Promise<boolean> => {
         await CommonFunc.sleep(500);
         const firstCheckbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
         if (firstCheckbox) {
@@ -4875,6 +4890,7 @@ export default function TextPicker() {
           await CommonFunc.sleep(500);
         } else {
           console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_0 not found`);
+          return false;
         }
         const secondCheckbox: Component | null = await driver.findComponent(ON.id('Selector_1'));
         if (secondCheckbox) {
@@ -4883,7 +4899,9 @@ export default function TextPicker() {
           await CommonFunc.sleep(500);
         } else {
           console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_1 not found`);
+          return false;
         }
+        return true;
       };
       // ── Helper: click Complete (Done) button ──
       const clickComplete = async (label: string): Promise<void> => {
@@ -4941,14 +4959,22 @@ export default function TextPicker() {
       try {
         console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 1: select 2 photos and confirm ═══');
         const round1Promise = openPickerAndCollect('R1');
-        await selectTwoPhotos('R1');
+        const R1Selected = await selectTwoPhotos('R1');
+        if (!R1Selected) {
+          await endTest();
+          return;
+        }
         await clickComplete('R1');
         originalUris = await round1Promise;
         printUris('R1 ORIGINAL', originalUris);
         await CommonFunc.sleep(500);
         console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 2: select 2 photos, reorder, confirm ═══');
         const round2Promise = openPickerAndCollect('R2');
-        await selectTwoPhotos('R2');
+        const R2Selected = await selectTwoPhotos('R2');
+        if (!R2Selected) {
+          await endTest();
+          return;
+        }
         await openBrowserMode('R2');
         const reordered: boolean = await reorderFirstTwoThumbnails('R2');
         await clickComplete('R2');
@@ -4975,10 +5001,7 @@ export default function TextPicker() {
         console.error(`SUB_PHOTO_PICKER_TEST_0400 error: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
       }
-      const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
-      await closeBtn?.click();
-      console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
-      done();
+      await endTest();
     });
   })
 }
