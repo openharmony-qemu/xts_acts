@@ -67,9 +67,8 @@ async function getImagePropertySync6(done: () => void, testContext: Context, tes
     callback(propertyKeyName, undefined);
     done();
   } catch (error) {
-    let error1 = error as BusinessError;
     expect().assertFail();
-    console.error(TAG, testName, error1!.message, error1!.code);
+    console.error(TAG, testName, error!.message, error!.code);
     done();
   }
 }
