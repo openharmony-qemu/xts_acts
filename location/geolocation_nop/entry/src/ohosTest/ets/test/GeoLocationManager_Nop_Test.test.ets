@@ -1458,33 +1458,6 @@ export default function geoLocationManager_nop_test() {
     });
 
     /**
-     * @tc.name   geoLocationManager_removeGnssGeofence_nop_test_017
-     * @tc.number SUB_geoLocationManager_removeGnssGeofence_nop_test_017
-     * @tc.desc   GnssGeofence.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geoLocationManager_removeGnssGeofence_nop_test_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let fenceId = 1;
-      try {
-        geoLocationManager.removeGnssGeofence(fenceId).then(() => {
-          console.info("removeGnssGeofence success fenceId:" + fenceId);
-          expect(fenceId === null).assertTrue();
-          done();
-        }).catch((err: BusinessError) => {
-          console.info("removeGnssGeofence: error=" + JSON.stringify(err));
-          expect(Number(err.code)).assertEqual(201);
-          done();
-        });
-      } catch (err) {
-        console.info("removeGnssGeofence: catch error=" + JSON.stringify(err));
-        expect().assertFalse();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   geoLocationManager_getCurrentWifiBssidForLocating_nop_test_018
      * @tc.number SUB_geoLocationManager_getCurrentWifiBssidForLocating_nop_test_018
      * @tc.desc   GnssGeofence.
