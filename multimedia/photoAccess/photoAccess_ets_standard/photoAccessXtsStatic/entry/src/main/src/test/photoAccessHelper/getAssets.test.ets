@@ -23,7 +23,14 @@ import { Context } from '@kit.ArkUI';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 const TAG = LOG_TAG + 'getAssetsStaticTest';
-
+interface ErrorCodeType{
+  error_parm: string;
+  Invalid_Parm: string;
+}
+const ErrorCode: ErrorCodeType = {
+  error_parm: '13900020',
+  Invalid_Parm: '401'
+}
 
 let testContext: Context = Hypium.get('Context') as Context;
 const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -176,7 +183,7 @@ export default function getAssetsStaticTest(): void {
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           if(error !== undefined){
             console.info(TAG,testName,'failed',error!.code)
-            expect(error!.code == 13900020).assertTrue();
+            expect(error.code).assertEqual(ErrorCode.error_parm);
             done();
           }else {
             expect().assertFail();
@@ -310,7 +317,7 @@ export default function getAssetsStaticTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `failed; error: ${error?.code}, ${error?.message}`);
-        expect(Number(error.code)).assertEqual(13900020);
+        expect(error.code).assertEqual(ErrorCode.error_parm);
         done();
       }
     })
