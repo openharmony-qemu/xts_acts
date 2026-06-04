@@ -244,6 +244,7 @@ import SendImageTest from './image/SendImageTest.test';
 import MetaDataSetBlobTest from './image/MetaDataSetBlobTest.test';
 import ImageSupplementTest from './image/ImageSupplementTest.test';
 import CreatePixelMapSuppSec from './image/CreatePixelMapSec.test';
+import CreatePixelMapSuppThi from './image/CreatePixelMapThi.test';
 
 
 export default function testsuite() {
@@ -456,6 +457,7 @@ export default function testsuite() {
   ImageGammaSupp()
   CreatePixelMapSupp();
   CreatePixelMapSuppSec();
+  CreatePixelMapSuppThi();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
   ImageMetadataTest();
