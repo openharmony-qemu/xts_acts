@@ -30,12 +30,9 @@ export default function triggerSelectTest() {
         router.clear();
         let pages = router.getState();
         console.info("get triggerSelect state pages: " + JSON.stringify(pages));
-        if (!("triggerSelect" == pages.name)) {
-          console.info("get triggerSelect state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push triggerSelect success: " + JSON.stringify(result));
-        }
+        let result = await router.pushUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push triggerSelect success: " + JSON.stringify(result));
       } catch (err) {
         console.error("push triggerSelect page error: " + err);
         expect().assertFail();

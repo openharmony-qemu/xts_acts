@@ -28,11 +28,9 @@ export default function showInSubWindowValueTest() {
       router.clear();
       let pages = router.getState();
       console.info("get showInSubWindowValueTest state pages: " + JSON.stringify(pages));
-      if (!("showInSubWindow" == pages.name)) {
-        console.info("get showInSubWindowValueTest state pages.name: " + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        console.info("push showInSubWindowValueTest success: " + JSON.stringify(result));
-      }
+      let result = await router.pushUrl(options);
+      await Utils.sleep(SLEEP_TIME);
+      console.info("push showInSubWindowValueTest success: " + JSON.stringify(result));
       done();
     });
 

@@ -15,8 +15,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import CommonFunc from '../../MainAbility/common/Common';
+import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
 export default function menuBackgroundBlurStyle() {
@@ -30,12 +30,9 @@ export default function menuBackgroundBlurStyle() {
         router.clear();
         let pages = router.getState();
         console.info("get menuBackgroundBlurStyle state pages: " + JSON.stringify(pages));
-        if (!("menuBackgroundBlurStyle" == pages.name)) {
-          console.info("get menuBackgroundBlurStyle state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push menuBackgroundBlurStyle success: " + JSON.stringify(result));
-        }
+        let result = await router.pushUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push menuBackgroundBlurStyle success: " + JSON.stringify(result));
       } catch (err) {
         console.error("push menuBackgroundBlurStyle page error: " + err);
         expect().assertFail();

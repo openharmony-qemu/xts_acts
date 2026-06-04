@@ -36,7 +36,7 @@ export default function subwindowDialog() {
         console.info("get subwindowDialog state pages: " + JSON.stringify(pages));
         if (!("subwindowDialog" == pages.name)) {
           console.info("get subwindowDialog state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
+          let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           console.info("push subwindowDialog success: " + JSON.stringify(result));
         }
@@ -50,13 +50,26 @@ export default function subwindowDialog() {
     afterEach(async (done: Function) => {
       try {
         let driver = await Driver.create();
+        await driver.pressBack();
+        await CommonFunc.sleep(500);
         let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
         if (buttonCloseDialog) {
           await buttonCloseDialog.click();
           await CommonFunc.sleep(500);
         }
+        await driver.click(
+          Math.round(globalThis.winLeft + vp2px(100)),
+          Math.round(globalThis.winTop + vp2px(100))
+        );
+        await CommonFunc.sleep(500);
+        await driver.pressBack();
       } catch (err) {
         console.warn('subwindowDialog afterEach cleanup: ' + err);
+      }
+      try {
+        router.clear();
+        await CommonFunc.sleep(1500);
+      } catch (_) {
       }
       done();
     });

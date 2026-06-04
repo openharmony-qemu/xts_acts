@@ -30,12 +30,9 @@ export default function SelectJsunit() {
         router.clear();
         let pages = router.getState();
         console.info("get SelectJsunit state pages: " + JSON.stringify(pages));
-        if (!("SelectPage" == pages.name)) {
-          console.info("get SelectJsunit state pages.name: " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push SelectJsunit success: " + JSON.stringify(result));
-        }
+        let result = await router.pushUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push SelectJsunit success: " + JSON.stringify(result));
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
         expect().assertFail();
@@ -154,13 +151,13 @@ export default function SelectJsunit() {
       console.info('[SelectJsunit_0300] START');
 
       // Verify the click function of the select component
-      let driver = await UiDriver.create()
-      let textComponent1 = await driver.findComponent(BY.key('SelectPage' + '_select'));
-      await textComponent1.click()
+      let driver = await Driver.create();
+      await CommonFunc.sleep(1000);
+      let textComponent1 = await driver.findComponent(ON.text('SelecteButton'));
+      await textComponent1.click();
       await CommonFunc.sleep(1000);
 
-      // Verify the onSelect function of the select component
-      let textMenuComponent = await driver.findComponent(BY.text('bbb'));
+      let textMenuComponent = await driver.findComponent(ON.text('bbb'));
       await textMenuComponent.click()
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('SelectPage' + '_indexValue');

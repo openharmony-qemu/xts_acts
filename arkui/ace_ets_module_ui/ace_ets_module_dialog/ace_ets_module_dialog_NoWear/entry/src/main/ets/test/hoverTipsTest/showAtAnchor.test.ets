@@ -33,12 +33,9 @@ export default function showAtAnchorTest() {
       router.clear();
       let pages = router.getState();
       console.info("get showAtAnchorTest state pages: " + JSON.stringify(pages));
-      if (!("showAtAnchor" == pages.name)) {
-        console.info("get showAtAnchorTest state pages.name: " + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        await Utils.sleep(SLEEP_TIME);
-        console.info("push showAtAnchorTest success: " + JSON.stringify(result));
-      }
+      let result = await router.pushUrl(options);
+      await Utils.sleep(SLEEP_TIME);
+      console.info("push showAtAnchorTest success: " + JSON.stringify(result));
       done();
     });
 

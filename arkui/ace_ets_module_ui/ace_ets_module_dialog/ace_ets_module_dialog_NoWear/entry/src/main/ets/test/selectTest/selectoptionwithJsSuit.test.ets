@@ -15,7 +15,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/utils/Common';
+import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter'
 
 export default function selectoptionwithJsSuit() {
@@ -29,12 +29,9 @@ export default function selectoptionwithJsSuit() {
         router.clear();
         let pages = router.getState();
         console.info("get selectoptionwithJsSuit state pages: " + JSON.stringify(pages));
-        if (!("selectoptionwith" == pages.name)) {
-          console.info("get selectoptionwithJsSuit state pages.name:" + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          console.info("push selectoptionwithJsSuit page result:" + JSON.stringify(result));
-        }
+        let result = await router.pushUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push selectoptionwithJsSuit page result:" + JSON.stringify(result));
       } catch (err) {
         console.error("push selectoptionwithJsSuit page error:" + err);
       }

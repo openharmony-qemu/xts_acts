@@ -28,11 +28,9 @@ export default function showDefaultSelectedIconTest() {
       router.clear();
       let pages = router.getState();
       console.info("get showDefaultSelectedIconTest state pages: " + JSON.stringify(pages));
-      if (!("showDefaultSelectedIcon" == pages.name)) {
-        console.info("get showDefaultSelectedIconTest state pages.name: " + JSON.stringify(pages.name));
-        let result = await router.push(options);
-        console.info("push showDefaultSelectedIconTest success: " + JSON.stringify(result));
-      }
+      let result = await router.pushUrl(options);
+      await Utils.sleep(SLEEP_TIME);
+      console.info("push showDefaultSelectedIconTest success: " + JSON.stringify(result));
       done();
     });
 

@@ -15,7 +15,10 @@
  	 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
  	 import { router } from '@kit.ArkUI';
  	 import Utils from '../../MainAbility/common/Utils';
- 	 import { Driver, ON, } from '@ohos.UiTest';
+ 	 
+ 	 function inspectorContains(text: string): boolean {
+ 	   return JSON.stringify(getInspectorTree()).includes(text);
+ 	 }
  	 
  	 export default function AdvancedPopupTest() {
  	   describe('AdvancedPopupTest', () => {
@@ -28,12 +31,9 @@
  	         router.clear();
  	         let pages = router.getState();
  	         console.info('get AdvancedPopupTest state pages:' + JSON.stringify(pages));
- 	         if (!('AdvancedPopup' == pages.name)) {
- 	           console.info('get AdvancedPopupTest pages.name:' + JSON.stringify(pages.name));
- 	           let result = await router.push(options);
- 	           await Utils.sleep(2500);
- 	           console.info('push AdvancedPopupTest page result:' + JSON.stringify(result));
- 	         }
+ 	         let result = await router.pushUrl(options);
+ 	         await Utils.sleep(2500);
+ 	         console.info('push AdvancedPopupTest page result:' + JSON.stringify(result));
  	       } catch (err) {
  	         console.error('push AdvancedPopupTest page error:' + err);
  	       }
@@ -52,10 +52,7 @@
  	     it('AdvancedPopupTest_001', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_001 START')
- 	       let driver: Driver = await Driver.create();
- 	       let popup = await driver.findComponent(ON.text('message1'));
- 	       await Utils.sleep(200);
- 	       expect(popup != null).assertEqual(true)
+ 	       expect(inspectorContains('message1')).assertTrue()
  	       console.log('AdvancedPopupTest_001 END')
  	       done();
  	     });
@@ -70,10 +67,7 @@
  	     it('AdvancedPopupTest_002', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_002 START')
- 	       let driver: Driver = await Driver.create();
- 	       let popup = await driver.findComponent(ON.text('message2'));
- 	       await Utils.sleep(200);
- 	       expect(popup != null).assertEqual(true)
+ 	       expect(inspectorContains('message2')).assertTrue()
  	       console.log('AdvancedPopupTest_002 END')
  	       done();
  	     });
