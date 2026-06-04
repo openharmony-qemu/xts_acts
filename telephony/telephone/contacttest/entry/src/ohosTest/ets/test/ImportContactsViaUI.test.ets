@@ -70,15 +70,15 @@ async function getComponent(driver: Driver, onType: On, maxRetries: number = 3) 
     while (retryCount < maxRetries) {
         item = await driver.findComponent(onType);
         if (item) {
-            console.log(`get component success, retryCount=${retryCount}`);
+            console.info(`get component success, retryCount=${retryCount}`);
             await item.click();
             return true;
         }
         retryCount++;
-        console.log(`get component failed, retryCount=${retryCount}`);
+        console.info(`get component failed, retryCount=${retryCount}`);
         await delay(1000);
     }
-    console.log(`get component failed after ${maxRetries} retries`);
+    console.info(`get component failed after ${maxRetries} retries`);
     return false;
 }
 
@@ -172,7 +172,7 @@ export default function ImportContactsViaUITest() {
         }]
     };
 
-    let contactDataWhitSpace: contact.Contact = {
+    let contactDataWithSpace: contact.Contact = {
         name: {fullName : "空格测试"},
         phoneNumbers: [{phoneNumber: "138 0000 0000"}],
         emails: [{
@@ -194,7 +194,7 @@ export default function ImportContactsViaUITest() {
         emails: [{
             email: "13800000000@email.com", labelName: "自定义邮箱", labelId: 1, displayName: "emailDisplayName"
         }]
-    }
+    };
 
     beforeAll(async (done: Function) => {
       console.info("beforeAll case");
@@ -263,11 +263,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-            console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+            console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
             ExpectTrue(data.length > 0);
             done();
         }).catch((err: BusinessError) => {
-            console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+            console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
             ExpectFail();
             done();
         });
@@ -284,7 +284,7 @@ export default function ImportContactsViaUITest() {
     /**
      * @tc.name   testTelephonyContactImportContactsViaUI0200
      * @tc.number SUB_Telephony_Contact_ImportContactsViaUI_0200
-     * @tc.desc   Call importContactsViaUI verify error code 16700103 when user canncels, click cancel button
+     * @tc.desc   Call importContactsViaUI verify error code 16700103 when user cancels, click cancel button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -302,16 +302,16 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-            console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+            console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
             ExpectFail();
             done();
         }).catch((err: BusinessError) => {
             if (err.code === 16700103) {
-              console.log(`${caseName} user cancel: errcode->${JSON.stringify(err.code)}`);
+              console.info(`${caseName} user cancel: errcode->${JSON.stringify(err.code)}`);
               expect(err.code).assertEqual(16700103);
               done();
             } else {
-                console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+                console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
                 ExpectFail();
                 done();
             }
@@ -360,7 +360,7 @@ export default function ImportContactsViaUITest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyContactImportContactsViaUI0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTelephonyContactImportContactsViaUI0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0400";
       console.info(`${caseName} test start `);
       try {
@@ -386,7 +386,7 @@ export default function ImportContactsViaUITest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyContactImportContactsViaUI0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTelephonyContactImportContactsViaUI0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0500";
       console.info(`${caseName} test start `);
       try {
@@ -411,7 +411,7 @@ export default function ImportContactsViaUITest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyContactImportContactsViaUI0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTelephonyContactImportContactsViaUI0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI0600";
       console.info(`${caseName} test start `);
       try {
@@ -475,11 +475,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data[0] > 0);
           done();
         }).catch((err: BusinessError) => {
-          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -513,11 +513,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data[0] > 0);
           done();
         }).catch((err: BusinessError) => {
-          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -538,7 +538,7 @@ export default function ImportContactsViaUITest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTelephonyContactImportContactsViaUI1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTelephonyContactImportContactsViaUI1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testTelephonyContactImportContactsViaUI1500";
       console.info(`${caseName} test start `);
       try {
@@ -554,15 +554,15 @@ export default function ImportContactsViaUITest() {
           };
           phoneNumContacts.push(phoneNumContact);
         }
-        let promise = contact.importContactsViaUI(context, phoneNumberContacts);
+        let promise = contact.importContactsViaUI(context, phoneNumContacts);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
         }).catch((err: BusinessError) => {
           if (err.code === 16700004) {
-            console.log(`${caseName} system error: errcode->${JSON.stringify(err.code)}`);
-            expect(error.code).assertEqual(16700004);
+            console.info(`${caseName} system error: errcode->${JSON.stringify(err.code)}`);
+            expect(err.code).assertEqual(16700004);
             done();
           } else {
             console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
@@ -606,13 +606,13 @@ export default function ImportContactsViaUITest() {
         }
         let promise = contact.importContactsViaUI(context, phoneNumberContacts);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectFail();
           done();
         }).catch((err: BusinessError) => {
           if (err.code === 16700004) {
-            console.log(`${caseName} system error: errcode->${JSON.stringify(err.code)}`);
-            expect(error.code).assertEqual(16700004);
+            console.info(`${caseName} system error: errcode->${JSON.stringify(err.code)}`);
+            expect(err.code).assertEqual(16700004);
             done();
           } else {
             console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
@@ -634,7 +634,7 @@ export default function ImportContactsViaUITest() {
      * @tc.desc   Call importContactsViaUI to verify non-selected contact returns -2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactImportContactsViaUI1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -654,16 +654,16 @@ export default function ImportContactsViaUITest() {
         while (select2Retry < 3) {
             select2Component = await driver.findComponent(ON.text('选择2'));
             if (select2Component) {
-                console.log(`${caseName} select2 found, retryCount=${select2Retry}`);
+                console.info(`${caseName} select2 found, retryCount=${select2Retry}`);
                 await select2Component.click();
                 break;
             }
             select2Retry++;
-            console.log(`${caseName} select2 not found, retryCount=${select2Retry}`);
+            console.info(`${caseName} select2 not found, retryCount=${select2Retry}`);
             await delay(1000);
         }
         if (!select2Component) {
-            console.log(`${caseName} select2 not found after 3 retries`);
+            console.info(`${caseName} select2 not found after 3 retries`);
             ExpectFail();
             done();
             return;
@@ -672,14 +672,14 @@ export default function ImportContactsViaUITest() {
         // 点击完成按钮
         let doneResult = await getComponent(driver, ON.id('doneButton'));
         if (!doneResult) {
-          console.log(`${caseName} doneButton click failed `);
+          console.info(`${caseName} doneButton click failed `);
           ExpectFail();
           done();
           return;
         }
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data.length === 2);
           ExpectTrue(data[0] > 0);
           expect(data[1]).assertEqual(-2);
@@ -704,7 +704,7 @@ export default function ImportContactsViaUITest() {
      * @tc.desc   Call importContactsViaUI with multiple contacts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactImportContactsViaUI1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -722,11 +722,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data.length === 2);
           done();
         }).catch((err: BusinessError) => {
-          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -745,7 +745,7 @@ export default function ImportContactsViaUITest() {
      * @tc.desc   Call importContactsViaUI with phoneNumber ultra long
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactImportContactsViaUI2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       await delay(1500);
@@ -760,11 +760,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data[0] > 0);
           done();
         }).catch((err: BusinessError) => {
-          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
@@ -797,11 +797,11 @@ export default function ImportContactsViaUITest() {
         await getComponent(driver, onType);
         await delay(500);
         promise.then((data: number[]) => {
-          console.log(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
+          console.info(`${caseName} importContactsViaUI: data->${JSON.stringify(data)}`);
           ExpectTrue(data[0] > 0);
           done();
         }).catch((err: BusinessError) => {
-          console.log(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
+          console.info(`${caseName} importContactsViaUI: err->${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });
