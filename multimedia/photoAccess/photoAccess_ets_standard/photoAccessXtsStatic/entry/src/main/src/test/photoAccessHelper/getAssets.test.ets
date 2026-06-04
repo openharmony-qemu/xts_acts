@@ -183,7 +183,7 @@ export default function getAssetsStaticTest(): void {
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           if(error !== undefined){
             console.info(TAG,testName,'failed',error!.code)
-            expect(error.code).assertEqual(ErrorCode.error_parm);
+            expect(error!.code).assertEqual(ErrorCode.error_parm);
             done();
           }else {
             expect().assertFail();
