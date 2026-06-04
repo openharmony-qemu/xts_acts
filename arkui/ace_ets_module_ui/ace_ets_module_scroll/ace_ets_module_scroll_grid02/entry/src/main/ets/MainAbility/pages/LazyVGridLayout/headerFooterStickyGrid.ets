@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics, LazyVGridLayout } from '@kit.ArkUI';
+import { LengthMetrics } from '@kit.ArkUI';
 
 @Entry
 @Component
