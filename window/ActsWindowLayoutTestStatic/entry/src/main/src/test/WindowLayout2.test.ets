@@ -136,13 +136,13 @@ export default function WindowLayoutTest2() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_ARRAY_EMPTY_0100',
+    it('SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_ARRAY_EMPTY_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise => {
-        let caseName = "SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_ARRAY_EMPTY_0100";
+        let caseName = "SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_ARRAY_EMPTY_Static_0100";
         let msgStr = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin.');
         let subWindow: window.Window =
-          await windowStage!.createSubWindow('SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_ARRAY_EMPTY_0100');
+          await windowStage!.createSubWindow('SetSupportedWindowModes_ARRAY_EMPTY_Static_0100');
         try {
           subWindow.setSupportedWindowModes([]).then(async () => {
             console.info('Succeed in setting window support modes');
@@ -344,7 +344,7 @@ export default function WindowLayoutTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_SubWindow_FLOATTING_0100',
+    it('SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_SubWindow_FLOATTING_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName = "SUB_WINDOW_WINDOWCLASS_SetSupportedWindowModes_SubWindow_FLOATTING_Static_0100";
         let msgStr = 'jsunittest ' + caseName + ' ';
