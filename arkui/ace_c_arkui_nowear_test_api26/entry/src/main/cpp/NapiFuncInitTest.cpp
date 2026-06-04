@@ -65,6 +65,13 @@ static napi_value Init(napi_env env, napi_value exports)
                 napi_default, nullptr},
         {"TestGetChildMountPolicyInitError001", nullptr, TestGetChildMountPolicyInitError001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+        {"TestInsertRenderNodeAtInitError001", nullptr, TestInsertRenderNodeAtInitError001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestGetRenderNodeChildrenCountInitError001", nullptr, TestGetRenderNodeChildrenCountInitError001,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetRenderNodeAtInitError001", nullptr, TestGetRenderNodeAtInitError001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -15,17 +15,18 @@
 
 #include "common/common.h"
 #include <arkui/native_node.h>
+#include <arkui/native_render.h>
 #include <hilog/log.h>
 
 namespace ArkUICapiTest {
 
 static napi_value TestSetChildMountPolicyInitError001(napi_env env, napi_callback_info info)
 {
-    ArkUI_NodeHandle uninitializedNode = nullptr;
+    ArkUI_NodeHandle uninitializedNode;
     auto ret = OH_ArkUI_NativeModule_SetChildMountPolicy(uninitializedNode,
                                                          OH_ArkUI_NodeMountPolicy::OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "NativeModuleCapiInitError", "TestSetChildMountPolicyCapiInitError001 ret=%{public}d", ret);
+                 "NativeModuleCapiInitError", "TestSetChildMountPolicyInitError001 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     
     NAPI_END;
@@ -33,11 +34,47 @@ static napi_value TestSetChildMountPolicyInitError001(napi_env env, napi_callbac
 
 static napi_value TestGetChildMountPolicyInitError001(napi_env env, napi_callback_info info)
 {
-    ArkUI_NodeHandle uninitializedNode = nullptr;
+    ArkUI_NodeHandle uninitializedNode;
     OH_ArkUI_NodeMountPolicy policy;
     auto ret = OH_ArkUI_NativeModule_GetChildMountPolicy(uninitializedNode, &policy);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "NativeModuleCapiInitError", "TestGetChildMountPolicyCapiInitError001 ret=%{public}d", ret);
+                 "NativeModuleCapiInitError", "TestGetChildMountPolicyInitError001 ret=%{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    
+    NAPI_END;
+}
+
+static napi_value TestInsertRenderNodeAtInitError001(napi_env env, napi_callback_info info)
+{
+    ArkUI_NodeHandle uninitializedNode;
+    ArkUI_RenderNodeHandle renderNode;
+    auto ret = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(uninitializedNode, renderNode, 0);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                 "NativeModuleCapiInitError", "TestInsertRenderNodeAtInitError001 ret=%{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    
+    NAPI_END;
+}
+
+static napi_value TestGetRenderNodeChildrenCountInitError001(napi_env env, napi_callback_info info)
+{
+    ArkUI_NodeHandle uninitializedNode;
+    int32_t count = 0;
+    auto ret = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(uninitializedNode, &count);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                 "NativeModuleCapiInitError", "TestGetRenderNodeChildrenCountInitError001 ret=%{public}d", ret);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    
+    NAPI_END;
+}
+
+static napi_value TestGetRenderNodeAtInitError001(napi_env env, napi_callback_info info)
+{
+    ArkUI_NodeHandle uninitializedNode;
+    ArkUI_RenderNodeHandle renderNode;
+    auto ret = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(uninitializedNode, 0, &renderNode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                 "NativeModuleCapiInitError", "TestGetRenderNodeAtInitError001 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     
     NAPI_END;
