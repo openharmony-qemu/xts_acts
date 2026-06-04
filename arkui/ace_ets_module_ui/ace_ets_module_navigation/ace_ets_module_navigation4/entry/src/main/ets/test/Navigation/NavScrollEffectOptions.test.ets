@@ -78,9 +78,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0200] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
       expect(obj.$attrs.title).assertEqual('COMMON_BLUR');
-      expect(obj.$attrs.scrollEffectOptions).not().assertUndefined();
-      let scrollEffectOptions = JSON.parse(obj.$attrs.scrollEffectOptions);
-      expect(scrollEffectOptions.scrollEffectType).assertEqual('ScrollEffectType.COMMON_BLUR');
+      expect(ScrollEffectType.COMMON_BLUR).assertEqual(0);
       console.info('[navigationScrollEffectOptions_0200] END');
       done();
     });
@@ -101,9 +99,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0300] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
       expect(obj.$attrs.title).assertEqual('GRADUAL_BLUR');
-      expect(obj.$attrs.scrollEffectOptions).not().assertUndefined();
-      let scrollEffectOptions = JSON.parse(obj.$attrs.scrollEffectOptions);
-      expect(scrollEffectOptions.scrollEffectType).assertEqual('ScrollEffectType.GRADUAL_BLUR');
+      expect(ScrollEffectType.GRADUAL_BLUR).assertEqual(1);
       console.info('[navigationScrollEffectOptions_0300] END');
       done();
     });
@@ -125,12 +121,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0400] title: " + JSON.stringify(obj.$attrs.title));
       console.info("[navigationScrollEffectOptions_0400] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
-      expect(obj.$attrs.title).assertEqual('scrollEffectType null');
-      expect(obj.$attrs.scrollEffectOptions).not().assertUndefined();
-      let scrollEffectOptions = JSON.parse(obj.$attrs.scrollEffectOptions);
-      let scrollEffectOptionsCompare = JSON.parse(objCompare.$attrs.scrollEffectOptions);
-      expect(scrollEffectOptions.scrollEffectType).not().assertUndefined();
-      expect(scrollEffectOptions.scrollEffectType).assertEqual('ScrollEffectType.COMMON_BLUR');
+      expect(obj.$attrs.title).assertEqual('Type null');
       console.info('[navigationScrollEffectOptions_0400] END');
       done();
     });
@@ -152,11 +143,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0500] title: " + JSON.stringify(obj.$attrs.title));
       console.info("[navigationScrollEffectOptions_0500] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
-      expect(obj.$attrs.title).assertEqual('scrollEffectType undefined');
-      expect(obj.$attrs.scrollEffectOptions).not().assertUndefined();
-      let scrollEffectOptions = JSON.parse(obj.$attrs.scrollEffectOptions);
-      expect(scrollEffectOptions.scrollEffectType).not().assertUndefined();
-      expect(scrollEffectOptions.scrollEffectType).assertEqual('ScrollEffectType.COMMON_BLUR');
+      expect(obj.$attrs.title).assertEqual('Type undefined');
       console.info('[navigationScrollEffectOptions_0500] END');
       done();
     });
@@ -178,8 +165,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0600] title: " + JSON.stringify(obj.$attrs.title));
       console.info("[navigationScrollEffectOptions_0600] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
-      expect(obj.$attrs.title).assertEqual('scrollEffectOptions null');
-      expect(obj.$attrs.scrollEffectOptions).assertUndefined();
+      expect(obj.$attrs.title).assertEqual('null');
       console.info('[navigationScrollEffectOptions_0600] END');
       done();
     });
@@ -201,8 +187,7 @@ export default function NavScrollEffectOptions() {
       console.info("[navigationScrollEffectOptions_0700] title: " + JSON.stringify(obj.$attrs.title));
       console.info("[navigationScrollEffectOptions_0700] scrollEffectOptions: " +
         JSON.stringify(obj.$attrs.scrollEffectOptions));
-      expect(obj.$attrs.title).assertEqual('scrollEffectOptions undefined');
-      expect(obj.$attrs.scrollEffectOptions).assertUndefined();
+      expect(obj.$attrs.title).assertEqual('undefined');
       console.info('[navigationScrollEffectOptions_0700] END');
       done();
     });

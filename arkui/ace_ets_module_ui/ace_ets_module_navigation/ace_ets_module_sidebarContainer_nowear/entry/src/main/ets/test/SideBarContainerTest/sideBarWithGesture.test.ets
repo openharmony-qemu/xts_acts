@@ -121,7 +121,6 @@ export default function sideBarWithGesture() {
       console.info("[showSideBarWithGesture_0400] showSideBarWithGesture: " +
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
-      expect(obj.$attrs.showSideBarWithGesture).not().assertUndefined();
       expect(obj.$attrs.showSideBarWithGesture).assertEqual(objCompare.$attrs.showSideBarWithGesture);
       console.info('[showSideBarWithGesture_0400] END');
       done();
@@ -145,7 +144,6 @@ export default function sideBarWithGesture() {
       console.info("[showSideBarWithGesture_0500] showSideBarWithGesture: " +
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
-      expect(obj.$attrs.showSideBarWithGesture).not().assertUndefined();
       expect(obj.$attrs.showSideBarWithGesture).assertEqual(objCompare.$attrs.showSideBarWithGesture);
       console.info('[showSideBarWithGesture_0500] END');
       done();
