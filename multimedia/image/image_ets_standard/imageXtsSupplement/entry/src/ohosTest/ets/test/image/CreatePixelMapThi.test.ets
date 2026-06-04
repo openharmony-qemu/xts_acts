@@ -908,7 +908,7 @@ export default function CreatePixelMapSuppThi() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
-        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
+        console.info(TAG, testName, 'Succeeded ', 'imageSourceIncrementalSApi.release');
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -947,7 +947,7 @@ export default function CreatePixelMapSuppThi() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi);
         expect(imageSourceIncrementalSApi != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
-        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
+        console.info(TAG, testName, 'Succeeded ', 'imageSourceIncrementalSApi.release');
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -986,7 +986,7 @@ export default function CreatePixelMapSuppThi() {
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
         await imageSourceIncrementalSApi.release();
-        console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.release);
+        console.info(TAG, testName, 'Succeeded ', 'imageSourceIncrementalSApi.release');
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
