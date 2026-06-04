@@ -1042,7 +1042,7 @@ napi_value TestGetSupportedExposureDurationRangeSucc(napi_env env, napi_callback
     int32_t maxExposureDuration;
     Camera_ErrorCode ret = OH_CaptureSession_GetSupportedExposureDurationRange(
         captureSession, &minExposureDuration, &maxExposureDuration);
-    if (ret != CAMERA_OK || ret != CAMERA_OPERATION_NOT_ALLOWED) {
+    if (ret != CAMERA_OK && ret != CAMERA_OPERATION_NOT_ALLOWED) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetSupportedExposureDurationRange failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);
         OH_CaptureSession_Release(captureSession);
