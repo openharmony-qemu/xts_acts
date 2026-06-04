@@ -9,6 +9,8 @@ import getAlbumIdByLPathTest from "./photoAccessHelper/getAlbumIdByLPath.test";
 import PhotoGetAssetsTestSupp from "./photoAccessHelper/PhotoGetAssets.test";
 import MediaLibraryAvailabilitySupp from "./photoAccessHelper/MediaLibraryAvailability.test";
 import photoMediaLibraryNoPermissionStatic from "./photoAccessHelper/MediaLibraryAvailabilityNoPermission.test";
+import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
+import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
@@ -22,4 +24,6 @@ export default function testsuite(): void {
   FetchResultStatic();
   PhotoGetAssetsTestSupp();
   getAlbumIdByLPathTest();
+  AddResourceChangeRequestUrlSuppTest();
+  CommitModifySuppTest();
 }
