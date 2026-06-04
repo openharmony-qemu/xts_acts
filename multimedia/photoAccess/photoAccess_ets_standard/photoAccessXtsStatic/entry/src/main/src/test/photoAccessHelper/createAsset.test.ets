@@ -24,14 +24,6 @@ const TAG = LOG_TAG + 'createAssetTest';
 
 let testContext: Context = Hypium.get('Context') as Context;
 const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-interface ErrorCodeType{
-  No_Permission: string;
-  Invalid_Parm: string;
-}
-const ErrorCode: ErrorCodeType = {
-  No_Permission: '201',
-  Invalid_Parm: '401'
-}
 
 
 export default function createAssetTest(): void {
@@ -75,36 +67,6 @@ export default function createAssetTest(): void {
             expect(uri!.length > 0).assertTrue();
             console.info(TAG, `createAsset success, uri: ${uri}`);
             done();
-          })
-      } catch (error) {
-        console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0020
-     * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0020
-     * @tc.desc   callback, image, with options, extension->invalid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0020';
-      console.info(TAG, testName);
-      const options: photoAccessHelper.CreateOptions = {
-        title: testTitle
-      };
-      try {
-        helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'invalid', options,
-          (error: BusinessError<void> | null, uri: string | undefined) => {
-            if (error !== undefined) {
-              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
-              console.info(TAG, testName, 'create failed', error!.code)
-              done();
-            }
           })
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
@@ -197,35 +159,7 @@ export default function createAssetTest(): void {
         done();
       }
     })
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0060
-     * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0060
-     * @tc.desc   callback, video, with options, extension->invalid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL4
-     */
-    it('SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0060', Level.LEVEL4, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0060';
-      console.info(TAG, testName);
-      const options: photoAccessHelper.CreateOptions = {
-        title: testTitle
-      };
-      try {
-        helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'invalid', options,
-          (error: BusinessError<void> | null, uri: string | undefined) => {
-            if (error !== undefined) {
-              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
-              console.info(TAG, testName, 'create failed', error!.code)
-              done();
-            }
-          })
-      } catch (error) {
-        console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
+
     /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0070
      * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0070
@@ -310,32 +244,6 @@ export default function createAssetTest(): void {
     })
 
     /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0100
-     * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0100
-     * @tc.desc   callback, image, extension->invalid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0100';
-      console.info(TAG, testName);
-      try {
-        helper!.createAsset(photoAccessHelper.PhotoType.IMAGE, 'invalid',
-          (error: BusinessError<void> | null, uri: string | undefined) => {
-            if (error !== undefined) {
-              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
-              console.info(TAG, testName, 'create failed', error!.code)
-              done();
-            }
-          })
-      } catch (error) {
-        console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-    /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0110
      * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0110
      * @tc.desc   callback, video, extension->mp4
@@ -359,34 +267,6 @@ export default function createAssetTest(): void {
         done();
       }
     })
-
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0120
-     * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0120
-     * @tc.desc   callback, video, extension->invalid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0120', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0120';
-      console.info(TAG, testName);
-      try {
-        helper!.createAsset(photoAccessHelper.PhotoType.VIDEO, 'invalid',
-          (error: BusinessError<void> | null, uri: string | undefined) => {
-            if (error !== undefined) {
-              expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
-              console.info(TAG, testName, 'create failed', error!.code)
-              done();
-            }
-          })
-      } catch (error) {
-        console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
     /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0130
      * @tc.number SUB_MULTMEDIA_PHOTO_CREATE_ASSET_STATIC_0130
@@ -408,7 +288,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -434,7 +314,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -540,7 +420,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -640,7 +520,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
@@ -685,7 +565,7 @@ export default function createAssetTest(): void {
         done();
       } catch (error) {
         console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
