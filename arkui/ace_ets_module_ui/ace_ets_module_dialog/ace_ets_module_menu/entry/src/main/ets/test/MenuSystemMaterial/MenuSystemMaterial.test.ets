@@ -42,6 +42,32 @@ export default function MenuSystemMaterialTest() {
         done();
       });
 
+      /**
+      * @tc.name   MenuSystemMaterialTest_MaterialType_0100
+      * @tc.number SUB_ARKUI_API_MenuSystemMaterial_MaterialType_0100
+      * @tc.desc   Test MaterialType enum values and getMaterialInfo
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('MenuSystemMaterialTest_MaterialType_0100', Level.LEVEL0, async (done: Function) => {
+        console.info('MenuSystemMaterialTest_MaterialType_0100 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(1000);
+
+        let btn = await driver.findComponent(ON.id('btn_check_type'));
+        expect(btn).not().assertUndefined();
+        await btn.click();
+        await CommonFunc.sleep(1000);
+
+        let resultText = getInspectorByKey('result_text');
+        expect(JSON.parse(resultText).$attrs.content).assertContain('MaterialType.IMMERSIVE=2');
+        console.info('MenuSystemMaterialTest_MaterialType_0100 result: ' + resultText);
+
+        console.info('MenuSystemMaterialTest_MaterialType_0100 END');
+        done();
+      });
+
         /**
         * @tc.name   MenuSystemMaterialTest_Enum_0100
         * @tc.number SUB_ARKUI_API_MenuSystemMaterial_Enum_0100
@@ -547,36 +573,6 @@ export default function MenuSystemMaterialTest() {
       await CommonFunc.sleep(1500);
 
       console.info('MenuSystemMaterialTest_Return_0100 END');
-      done();
-    });
-
-   
-
-    
-
-    /**
-     * @tc.name   MenuSystemMaterialTest_MaterialType_0100
-     * @tc.number SUB_ARKUI_API_MenuSystemMaterial_MaterialType_0100
-     * @tc.desc   Test MaterialType enum values and getMaterialInfo
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('MenuSystemMaterialTest_MaterialType_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('MenuSystemMaterialTest_MaterialType_0100 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-
-      let btn = await driver.findComponent(ON.id('btn_check_type'));
-      expect(btn).not().assertUndefined();
-      await btn.click();
-      await CommonFunc.sleep(500);
-
-      let resultText = getInspectorByKey('result_text');
-      expect(JSON.parse(resultText).$attrs.content).assertContain('MaterialType.IMMERSIVE=2');
-      console.info('MenuSystemMaterialTest_MaterialType_0100 result: ' + resultText);
-
-      console.info('MenuSystemMaterialTest_MaterialType_0100 END');
       done();
     });
 
