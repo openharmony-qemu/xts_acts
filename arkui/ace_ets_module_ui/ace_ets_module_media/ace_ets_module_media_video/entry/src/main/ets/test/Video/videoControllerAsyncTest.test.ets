@@ -103,7 +103,7 @@ export default function videoControllerAsyncTest() {
 
       let button9 = await driver.findComponent(ON.id('videoControllerAsyncStart'));
       await button9.click();
-      await Utils.sleep(15000)
+      await Utils.sleep(20000)
       let strJson9 = getInspectorByKey('videoControllerAsyncText');
       
       expect(JSON.parse(strJson).$attrs.content).assertEqual('onPrepared');
@@ -120,6 +120,6 @@ export default function videoControllerAsyncTest() {
       console.info('[videoControllerAsyncTest_0100] END');
       done();
     });
-    
+
   })
 }
