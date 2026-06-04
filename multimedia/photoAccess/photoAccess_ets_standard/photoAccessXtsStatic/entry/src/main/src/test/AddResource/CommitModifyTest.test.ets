@@ -53,9 +53,8 @@ export default function CommitModifySuppTest(): void {
           expect().assertFail();
           done();
         } catch (error) {
-          let err = error as BusinessError;
-          console.error(TAG + testName + 'commitModify failed, error: ' + err.code);
-          callback(err.code);
+          console.error(TAG + testName + 'commitModify failed, error: ' + error.code);
+          callback(error.code);
           done();
         }
       }
@@ -84,8 +83,7 @@ export default function CommitModifySuppTest(): void {
             }
           });
         } catch (error) {
-          let err = error as BusinessError;
-          console.error(testName + 'error: ' + err.code);
+          console.error(testName + 'error: ' + error.code);
           expect().assertFail();
           done();
         }
