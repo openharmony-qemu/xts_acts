@@ -394,6 +394,52 @@ export default function HilogTsTest() {
     })
 
     /**
+     * @tc.name   testHilogTsApiStatic20
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2000
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 start');
+      try{
+        hilog.debug(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.info(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.error(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.warn(domain, "", "%{public}s World ", "testHilogTsApiStatic20");
+        hilog.fatal(domain, "","%{public}s World ", "testHilogTsApiStatic20");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic20 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic20 end');
+    })
+ 
+    /**
+     * @tc.name   testHilogTsApiStatic21
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_2100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 start');
+      try{
+        hilog.debug(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.info(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.error(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.warn(domain, tag, "", "testHilogTsApiStatic21");
+        hilog.fatal(domain, tag,"", "testHilogTsApiStatic21");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic21 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic21 end');
+    })
+
+    /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0100
      * @tc.desc   hilog begin interface test.
