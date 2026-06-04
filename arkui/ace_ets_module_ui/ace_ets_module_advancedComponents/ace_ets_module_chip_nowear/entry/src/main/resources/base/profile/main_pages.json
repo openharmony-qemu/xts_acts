@@ -37,6 +37,11 @@
     "MainAbility/pages/chipV2/ChipV2OnClose2",
     "MainAbility/pages/chipV2/ChipV2Padding",
     "MainAbility/pages/chipV2/ChipV2Page",
-    "MainAbility/pages/chipV2/ChipV2LocalizedLabelMargin"
+    "MainAbility/pages/chipV2/ChipV2LocalizedLabelMargin",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2EndSpace",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2IconItemOptionsPage",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2ItemSpace",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2StartSpace",
+    "MainAbility/pages/ChipGroupV2/ChipGroupV2SymbolItemOptionsPage"
   ]
 }
