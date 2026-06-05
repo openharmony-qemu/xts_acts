@@ -138,7 +138,7 @@ export default function onSinglePhotoChangeTest() {
         assetChangeRequest.setTitle(newTitle);
         await helper.applyChanges(assetChangeRequest);
         await sleep(2000);
-        await helper.offSinglePhotoChange();
+        helper.offSinglePhotoChange();
         expect(isChange).assertTrue();
         done();
       } catch (err) {
@@ -184,7 +184,7 @@ export default function onSinglePhotoChangeTest() {
         };
         helper.onSinglePhotoChange(asset, newCallback1);
         helper.onSinglePhotoChange(asset2, newCallback2);
-        await helper.offSinglePhotoChange();
+        helper.offSinglePhotoChange();
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
           new photoAccessHelper.MediaAssetChangeRequest(asset);
         assetChangeRequest.setTitle(newTitle);
@@ -294,7 +294,7 @@ export default function onSinglePhotoChangeTest() {
         await sleep(2000);
         expect(isChange1).assertTrue();
         expect(!isChange2).assertTrue();
-        await helper.offSinglePhotoChange();
+        helper.offSinglePhotoChange();
         done();
       } catch (err) {
         console.error(`offSinglePhotoChange_004:: failed ::${err.code}, ${err.message} !`);
