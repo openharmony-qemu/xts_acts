@@ -228,6 +228,9 @@ export default function ConcurrentSetConstructorArrayLikeTest(): void {
     it('ConcurrentSetConstructorArrayLikeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let arr: Array<number> = [0, 1, 2, 3, 4]
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(arr)
+      expect(set.size).assertEqual(5)
+      expect(set.has(0)).assertTrue()
+      expect(set.has(4)).assertTrue()
       Done()
     })
 

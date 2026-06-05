@@ -151,6 +151,8 @@ export default function ConcurrentSetConstructorEmptyTest(): void {
      */
     it('ConcurrentSetConstructorEmptyTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
+      expect(set.size).assertEqual(0)
+      expect(set.has(1)).assertFalse()
       Done()
     })
 

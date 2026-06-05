@@ -198,6 +198,9 @@ export default function ConcurrentSetConstructorIterableTest(): void {
       }
       let iter: IterableIterator<number> = setSource.keys()
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter)
+      expect(set.size).assertEqual(10)
+      expect(set.has(0)).assertTrue()
+      expect(set.has(9)).assertTrue()
       Done()
     })
 

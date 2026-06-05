@@ -188,6 +188,9 @@ export default function ConcurrentSetConstructorReadonlySetTest(): void {
         setSource.add(i)
       }
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(setSource)
+      expect(set.size).assertEqual(10)
+      expect(set.has(0)).assertTrue()
+      expect(set.has(9)).assertTrue()
       Done()
     })
 
