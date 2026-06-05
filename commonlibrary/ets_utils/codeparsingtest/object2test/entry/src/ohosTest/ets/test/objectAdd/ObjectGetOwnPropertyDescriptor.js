@@ -1033,3 +1033,1038 @@ export function getDescSealPlainObj() {
     obj.a = 100;
     var threw = false;
     try { delete obj.a; } catch (e) { threw = e.name; }
+    return { writable: descA.writable, configurable: descA.configurable, newVal: obj.a, threw: threw };
+}
+
+export function getDescSealReadOnly() {
+    const obj = {};
+    Object.defineProperty(obj, 'readOnly', { value: 100, writable: false });
+    Object.seal(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, 'readOnly');
+    return { writable: desc.writable, configurable: desc.configurable };
+}
+
+export function getDescSealNested() {
+    const obj = { outer: 'value', nested: { inner: 'nested' } };
+    Object.seal(obj);
+    const outerDesc = Object.getOwnPropertyDescriptor(obj, 'outer');
+    const nestedDesc = Object.getOwnPropertyDescriptor(obj, 'nested');
+    obj.nested.inner = 'modified';
+    return { outerConf: outerDesc.configurable, nestedConf: nestedDesc.configurable, modifiedInner: obj.nested.inner };
+}
+
+export function getDescSealArray() {
+    const arr = [1, 2, 3];
+    Object.seal(arr);
+    const desc0 = Object.getOwnPropertyDescriptor(arr, '0');
+    arr[0] = 100;
+    return { writable: desc0.writable, configurable: desc0.configurable, newVal: arr[0] };
+}
+
+export function getDescDetectSealed() {
+    const obj = { a: 1 };
+    const beforeSealed = Object.isSealed(obj);
+    Object.seal(obj);
+    const afterSealed = Object.isSealed(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { beforeSealed: beforeSealed, afterSealed: afterSealed, configurable: desc.configurable };
+}
+
+export function getDescPreventExtPlainObj() {
+    const obj = { a: 1 };
+    Object.preventExtensions(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    obj.a = 100;
+    delete obj.a;
+    var threw = false;
+    try { obj.b = 2; } catch (e) { threw = e.name; }
+    return { writable: desc.writable, configurable: desc.configurable, threw: threw };
+}
+
+export function getDescPreventExtDefineProp() {
+    const obj = { a: 1 };
+    Object.preventExtensions(obj);
+    var threw = false;
+    try { Object.defineProperty(obj, 'b', { value: 2 }); } catch (e) { threw = e.name; }
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { threw: threw, configurable: desc.configurable };
+}
+
+export function getDescPreventExtModifyDesc() {
+    const obj = { a: 1 };
+    Object.preventExtensions(obj);
+    Object.defineProperty(obj, 'a', { writable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { writable: desc.writable, configurable: desc.configurable };
+}
+
+export function getDescPreventExtArray() {
+    const arr = [1, 2, 3];
+    Object.preventExtensions(arr);
+    const lengthDesc = Object.getOwnPropertyDescriptor(arr, 'length');
+    arr.length = 5;
+    var threw = false;
+    try { arr[100] = 'new'; } catch (e) { threw = e.name; }
+    return { writableLen: lengthDesc.writable, newLen: arr.length, threw: threw };
+}
+
+export function getDescDetectExtensible() {
+    const obj = { a: 1 };
+    const beforeExt = Object.isExtensible(obj);
+    Object.preventExtensions(obj);
+    const afterExt = Object.isExtensible(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { beforeExt: beforeExt, afterExt: afterExt, writable: desc.writable, configurable: desc.configurable };
+}
+
+
+export function getDescProtoNotOwn() {
+    const obj = { a: 1 };
+    const desc = Object.getOwnPropertyDescriptor(obj, '__proto__');
+    return { isUndef: desc === undefined };
+}
+
+export function getDescProtoExplicit() {
+    const obj = {};
+    Object.defineProperty(obj, '__proto__', {
+        value: {},
+        enumerable: true,
+        configurable: true
+    });
+    const desc = Object.getOwnPropertyDescriptor(obj, '__proto__');
+    return { valueIsObj: typeof desc.value === 'object', enumerable: desc.enumerable };
+}
+
+export function getDescConstructorNotOwn() {
+    const obj = {};
+    const desc = Object.getOwnPropertyDescriptor(obj, 'constructor');
+    const protoDesc = Object.getOwnPropertyDescriptor(Object.prototype, 'constructor');
+    return { isUndef: desc === undefined, protoValIsObj: protoDesc.value === Object, protoEnum: protoDesc.enumerable };
+}
+
+export function getDescClassConstructor() {
+    class MyClass {}
+    const instance = new MyClass();
+    const desc = Object.getOwnPropertyDescriptor(instance, 'constructor');
+    const protoDesc = Object.getOwnPropertyDescriptor(MyClass.prototype, 'constructor');
+    return { isUndef: desc === undefined, protoValIsMyClass: protoDesc.value === MyClass, protoWritable: protoDesc.writable };
+}
+
+export function getDescArrayPrototypePush() {
+    const pushDesc = Object.getOwnPropertyDescriptor(Array.prototype, 'push');
+    return { isFunc: typeof pushDesc.value === 'function', writable: pushDesc.writable, configurable: pushDesc.configurable, enumerable: pushDesc.enumerable };
+}
+
+
+export function getDescFuncPrototypeApply() {
+    const applyDesc = Object.getOwnPropertyDescriptor(Function.prototype, 'apply');
+    return { isFunc: typeof applyDesc.value === 'function', writable: applyDesc.writable, configurable: applyDesc.configurable, enumerable: applyDesc.enumerable };
+}
+
+export function getDescStrPrototypeSplit() {
+    const splitDesc = Object.getOwnPropertyDescriptor(String.prototype, 'split');
+    return { isFunc: typeof splitDesc.value === 'function', writable: splitDesc.writable, configurable: splitDesc.configurable, enumerable: splitDesc.enumerable };
+}
+
+export function getDescNumPrototypeToFixed() {
+    const toFixedDesc = Object.getOwnPropertyDescriptor(Number.prototype, 'toFixed');
+    return { isFunc: typeof toFixedDesc.value === 'function', writable: toFixedDesc.writable, configurable: toFixedDesc.configurable, enumerable: toFixedDesc.enumerable };
+}
+
+export function getDescMathPI() {
+    const piDesc = Object.getOwnPropertyDescriptor(Math, 'PI');
+    const absDesc = Object.getOwnPropertyDescriptor(Math, 'abs');
+    return {
+        piVal: piDesc.value, piWritable: piDesc.writable, piConf: piDesc.configurable, piEnum: piDesc.enumerable,
+        absIsFunc: typeof absDesc.value === 'function', absWritable: absDesc.writable, absConf: absDesc.configurable, absEnum: absDesc.enumerable
+    };
+}
+
+export function getDescJSONParse() {
+    const parseDesc = Object.getOwnPropertyDescriptor(JSON, 'parse');
+    const stringifyDesc = Object.getOwnPropertyDescriptor(JSON, 'stringify');
+    return {
+        parseIsFunc: typeof parseDesc.value === 'function', parseWritable: parseDesc.writable, parseConf: parseDesc.configurable, parseEnum: parseDesc.enumerable,
+        strIsFunc: typeof stringifyDesc.value === 'function', strWritable: stringifyDesc.writable
+    };
+}
+
+export function getDescReflectGet() {
+    const getDesc = Object.getOwnPropertyDescriptor(Reflect, 'get');
+    return { isFunc: typeof getDesc.value === 'function', writable: getDesc.writable, configurable: getDesc.configurable, enumerable: getDesc.enumerable };
+}
+
+export function getDescAtomicsAdd() {
+    const addDesc = Object.getOwnPropertyDescriptor(Atomics, 'add');
+    return { isFunc: typeof addDesc.value === 'function', writable: addDesc.writable, configurable: addDesc.configurable, enumerable: addDesc.enumerable };
+}
+
+export function getDescSymbolProp() {
+    const sym = Symbol('mySymbol');
+    var obj = {};
+    obj[sym] = 'symbol value';
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { value: desc.value, enumerable: desc.enumerable, configurable: desc.configurable, writable: desc.writable };
+}
+
+export function getDescAnonSymbolProp() {
+    const anonSym = Symbol();
+    var obj = {};
+    obj[anonSym] = 'anonymous value';
+    const desc = Object.getOwnPropertyDescriptor(obj, anonSym);
+    return { value: desc.value, descIsUndef: anonSym.description === undefined };
+}
+
+export function getDescGlobalSymbolProp() {
+    const globalSym1 = Symbol.for('globalKey');
+    const globalSym2 = Symbol.for('globalKey');
+    var obj = {};
+    obj[globalSym1] = 'global value';
+    const desc = Object.getOwnPropertyDescriptor(obj, globalSym2);
+    return { value: desc.value, symsEqual: globalSym1 === globalSym2, description: globalSym1.description };
+}
+
+export function getDescSymbolKeyFor() {
+    const globalSym = Symbol.for('sharedKey');
+    const localSym = Symbol('localKey');
+    var obj = {};
+    obj[globalSym] = 'value';
+    const desc = Object.getOwnPropertyDescriptor(obj, globalSym);
+    return { globalKey: Symbol.keyFor(globalSym), localKeyIsUndef: Symbol.keyFor(localSym) === undefined, value: desc.value };
+}
+
+export function getDescMultiSymbolProp() {
+    const sym1 = Symbol('first');
+    const sym2 = Symbol('second');
+    const sym3 = Symbol('third');
+    var obj = {};
+    obj[sym1] = 'value1';
+    obj[sym2] = 'value2';
+    obj[sym3] = 'value3';
+    return {
+        val1: Object.getOwnPropertyDescriptor(obj, sym1).value,
+        val2: Object.getOwnPropertyDescriptor(obj, sym2).value,
+        val3: Object.getOwnPropertyDescriptor(obj, sym3).value
+    };
+}
+
+export function getDescMixedSymStr() {
+    const sym = Symbol('mixed');
+    var obj = {};
+    obj.stringKey = 'string value';
+    obj[sym] = 'symbol value';
+    const stringDesc = Object.getOwnPropertyDescriptor(obj, 'stringKey');
+    const symDesc = Object.getOwnPropertyDescriptor(obj, sym);
+    const keys = Object.keys(obj);
+    return { stringVal: stringDesc.value, symVal: symDesc.value, keysLength: keys.length, includesString: keys.includes('stringKey'), includesSym: keys.includes(sym) };
+}
+
+export function getDescNonEnumSymbol() {
+    const sym = Symbol('hidden');
+    var obj = {};
+    Object.defineProperty(obj, sym, { value: 'hidden symbol', enumerable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    const symbols = Object.getOwnPropertySymbols(obj);
+    return { enumerable: desc.enumerable, hasSym: symbols.length > 0, value: desc.value };
+}
+
+export function getDescNonConfSymbol() {
+    const sym = Symbol('locked');
+    var obj = {};
+    Object.defineProperty(obj, sym, { value: 'immutable', configurable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    var threw = false;
+    try { delete obj[sym]; } catch (e) { threw = e.name; }
+    return { configurable: desc.configurable, threw: threw };
+}
+
+export function getDescSymbolAccessor() {
+    const sym = Symbol('accessor');
+    var obj = {};
+    Object.defineProperty(obj, sym, {
+        get: function() { return this._internal; },
+        set: function(value) { this._internal = value; },
+        enumerable: true,
+        configurable: true
+    });
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    obj[sym] = 100;
+    return { getIsFunc: typeof desc.get === 'function', setIsFunc: typeof desc.set === 'function', result: obj[sym] };
+}
+
+export function getDescSymbolIterator() {
+    var obj = {};
+    obj.data = [1, 2, 3];
+    obj[Symbol.iterator] = function() {
+        var data = this.data;
+        var idx = 0;
+        return { next: function() { return idx < data.length ? { value: data[idx++], done: false } : { done: true }; } };
+    };
+    const desc = Object.getOwnPropertyDescriptor(obj, Symbol.iterator);
+    return { isFunc: typeof desc.value === 'function', enumerable: desc.enumerable };
+}
+
+export function getDescSymbolToStringTag() {
+    var obj = {};
+    obj[Symbol.toStringTag] = 'MyCustomObject';
+    const desc = Object.getOwnPropertyDescriptor(obj, Symbol.toStringTag);
+    const tag = Object.prototype.toString.call(obj);
+    return { value: desc.value, includesTag: tag.indexOf('MyCustomObject') !== -1 };
+}
+
+export function getDescSymbolHasInstance() {
+    var customType = {};
+    customType[Symbol.hasInstance] = function(instance) {
+        return instance && typeof instance.customFlag === 'boolean';
+    };
+    const desc = Object.getOwnPropertyDescriptor(customType, Symbol.hasInstance);
+    var testObj = { customFlag: true };
+    return { isFunc: typeof desc.value === 'function', instanceofResult: testObj?.constructor?.name=== "customType" };
+}
+
+export function getDescSymbolToPrimitive() {
+    var obj = { value: 42 };
+    obj[Symbol.toPrimitive] = function(hint) {
+        if (hint === 'number') { return this.value; }
+        if (hint === 'string') { return 'value: ' + this.value; }
+        return this.value;
+    };
+    const desc = Object.getOwnPropertyDescriptor(obj, Symbol.toPrimitive);
+    return { isFunc: typeof desc.value === 'function', addResult: obj + 8, templateResult: '' + obj };
+}
+
+export function getDescSymbolSpecies() {
+    class MyArray extends Array {
+        static get [Symbol.species]() { return Array; }
+    }
+    const desc = Object.getOwnPropertyDescriptor(MyArray, Symbol.species);
+    const myArr = new MyArray(1, 2, 3);
+    const mapped = myArr.map(function(x) { return x * 2; });
+    return { getIsFunc: typeof desc.get === 'function', isMyArray: mapped?.constructor?.name === "MyArray", isArray: mapped?.constructor?.name=== "Array" };
+}
+
+export function getDescSymbolMatch() {
+    var customMatcher = {};
+    customMatcher[Symbol.match] = function(str) { return str.includes('test'); };
+    const desc = Object.getOwnPropertyDescriptor(customMatcher, Symbol.match);
+    return { isFunc: typeof desc.value === 'function', result: 'this is a test string'.match(customMatcher) };
+}
+
+export function getDescSymbolReplace() {
+    var customReplacer = {};
+    customReplacer[Symbol.replace] = function(str, replacement) { return str.replace(/test/g, replacement); };
+    const desc = Object.getOwnPropertyDescriptor(customReplacer, Symbol.replace);
+    return { isFunc: typeof desc.value === 'function', result: 'test string test'.replace(customReplacer, 'new') };
+}
+
+export function getDescSymbolSearch() {
+    var customSearcher = {};
+    customSearcher[Symbol.search] = function(str) { return str.indexOf('target'); };
+    const desc = Object.getOwnPropertyDescriptor(customSearcher, Symbol.search);
+    return { isFunc: typeof desc.value === 'function', result: 'find the target here'.search(customSearcher) };
+}
+
+export function getDescSymbolSplit() {
+    var customSplitter = {};
+    customSplitter[Symbol.split] = function(str) { return str.split(/,\s*/); };
+    const desc = Object.getOwnPropertyDescriptor(customSplitter, Symbol.split);
+    var result = 'a, b, c, d'.split(customSplitter);
+    return { isFunc: typeof desc.value === 'function', length: result.length, first: result[0] };
+}
+
+export function getDescSymbolConcatSpreadable() {
+    var arr = [1, 2];
+    arr[Symbol.isConcatSpreadable] = false;
+    const desc = Object.getOwnPropertyDescriptor(arr, Symbol.isConcatSpreadable);
+    var result = [3, 4].concat(arr);
+    return { value: desc.value, length: result.length, thirdIsArr: Array.isArray(result[2]) };
+}
+
+export function getDescSymbolUnscopables() {
+    var obj = { foo: 1, bar: 2 };
+    obj[Symbol.unscopables] = { foo: true, bar: false };
+    const desc = Object.getOwnPropertyDescriptor(obj, Symbol.unscopables);
+    return { fooTrue: desc.value.foo, barFalse: desc.value.bar };
+}
+
+export function getDescSymbolAsyncIterator() {
+    var asyncIterable = { data: [1, 2, 3] };
+    asyncIterable[Symbol.asyncIterator] = async function*() {
+        for (var item of this.data) {
+            await new Promise(function(resolve) { setTimeout(resolve, 10); });
+            yield item;
+        }
+    };
+    const desc = Object.getOwnPropertyDescriptor(asyncIterable, Symbol.asyncIterator);
+    return { isFunc: typeof desc.value === 'function' };
+}
+
+export function getDescSymbolDispose() {
+    var resource = {};
+    resource[Symbol.dispose] = function() {};
+    const desc = Object.getOwnPropertyDescriptor(resource, Symbol.dispose);
+    return { isFunc: typeof desc.value === 'function' };
+}
+
+export function getDescSymbolMetadata() {
+    var obj = {};
+    obj[Symbol.metadata] = { author: 'test', version: '1.0' };
+    const desc = Object.getOwnPropertyDescriptor(obj, Symbol.metadata);
+    return { author: desc.value.author };
+}
+
+export function getDescObjKeysNoSymbol() {
+    const sym = Symbol('test');
+    var obj = {};
+    obj.stringKey = 'value';
+    obj[sym] = 'symbol value';
+    const keys = Object.keys(obj);
+    const symDesc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { keysLength: keys.length, includesStr: keys.includes('stringKey'), symEnumerable: symDesc.enumerable };
+}
+
+export function getDescObjGetNamesNoSymbol() {
+    const sym = Symbol('hidden');
+    var obj = {};
+    obj.normalKey = 'value';
+    obj[sym] = 'symbol';
+    const names = Object.getOwnPropertyNames(obj);
+    return { namesLength: names.length, includesKey: names.includes('normalKey'), includesSym: names.includes(String(sym)) };
+}
+
+export function getDescObjGetSymbols() {
+    const sym1 = Symbol('first');
+    const sym2 = Symbol('second');
+    var obj = {};
+    obj[sym1] = 'value1';
+    obj[sym2] = 'value2';
+    obj.normalKey = 'normal';
+    const symbols = Object.getOwnPropertySymbols(obj);
+    return { length: symbols.length, includesSym1: symbols.includes(sym1), includesSym2: symbols.includes(sym2) };
+}
+
+export function getDescReflectOwnKeys() {
+    const sym = Symbol('test');
+    var obj = {};
+    obj.stringKey = 'value';
+    obj[sym] = 'symbol';
+    const ownKeys = Reflect.ownKeys(obj);
+    return { length: ownKeys.length, includesStr: ownKeys.includes('stringKey'), includesSym: ownKeys.includes(sym) };
+}
+
+export function getDescForInNoSymbol() {
+    const sym = Symbol('iterable');
+    var obj = { a: 1, b: 2 };
+    obj[sym] = 3;
+    var keys = [];
+    for (var key in obj) { keys.push(key); }
+    return { length: keys.length, includesA: keys.includes('a'), includesB: keys.includes('b'), includesSym: keys.includes(String(sym)) };
+}
+
+export function getDescDeleteSymbol() {
+    const sym = Symbol('deletable');
+    var obj = {};
+    obj[sym] = 'value';
+    const beforeDesc = Object.getOwnPropertyDescriptor(obj, sym);
+    delete obj[sym];
+    const afterDesc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { beforeConf: beforeDesc.configurable, afterIsUndef: afterDesc === undefined };
+}
+
+export function getDescDeleteNonConfSymbol() {
+    const sym = Symbol('locked');
+    var obj = {};
+    Object.defineProperty(obj, sym, { value: 'permanent', configurable: false });
+    var threw = false;
+    try { delete obj[sym]; } catch (e) { threw = e.name; }
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { threw: threw, value: desc.value };
+}
+
+export function getDescFreezeSymbolCannotDelete() {
+    const sym = Symbol('frozen');
+    var obj = {};
+    obj[sym] = 'value';
+    Object.freeze(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    var threw = false;
+    try { delete obj[sym]; } catch (e) { threw = e.name; }
+    return { configurable: desc.configurable, threw: threw };
+}
+
+export function getDescNonexistReturnUndef() {
+    const obj = { existing: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'nonexistent');
+    return { isUndef: desc === undefined };
+}
+
+export function getDescProtoPropReturnUndef() {
+    function Parent() { this.inherited = 'value'; }
+    const child = new Parent();
+    const desc = Object.getOwnPropertyDescriptor(child, 'inherited');
+    return { isUndef: desc === undefined ? undefined : 'NOT_UNDEF' };
+}
+
+export function getDescEmptyObjAnyProp() {
+    const emptyObj = {};
+    const desc = Object.getOwnPropertyDescriptor(emptyObj, 'any');
+    return { isUndef: desc === undefined };
+}
+
+export function getDescNullObjThrows() {
+    var threwNull = false;
+    var threwUndef = false;
+    try { Object.getOwnPropertyDescriptor(null, 'prop'); } catch (e) { threwNull = e.name; }
+    try { Object.getOwnPropertyDescriptor(undefined, 'prop'); } catch (e) { threwUndef = e.name; }
+    return { threwNull: threwNull, threwUndef: threwUndef };
+}
+
+export function getDescDataDescStructure() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return {
+        hasValue: desc.hasOwnProperty('value'),
+        hasWritable: desc.hasOwnProperty('writable'),
+        noGet: !desc.hasOwnProperty('get'),
+        noSet: !desc.hasOwnProperty('set')
+    };
+}
+
+export function getDescDataDescTypes() {
+    const obj = { num: 42 };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'num');
+    return {
+        valueType: typeof desc.value,
+        writableType: typeof desc.writable,
+        enumerableType: typeof desc.enumerable,
+        configurableType: typeof desc.configurable
+    };
+}
+
+export function getDescDataDescImmutable() {
+    const obj = { a: 1 };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a');
+    desc.value = 999;
+    desc.writable = false;
+    const newDesc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { origValue: obj.a, newWritable: newDesc.writable };
+}
+
+export function getDescDataDescReusable() {
+    const obj1 = { prop: 42 };
+    const desc = Object.getOwnPropertyDescriptor(obj1, 'prop');
+    const obj2 = {};
+    Object.defineProperty(obj2, 'copiedProp', desc);
+    const newDesc = Object.getOwnPropertyDescriptor(obj2, 'copiedProp');
+    return { copiedVal: obj2.copiedProp, newDescVal: newDesc.value };
+}
+export function getDescAccessorDescStructure() {
+    const obj = { get accessor() { return 42; } };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'accessor');
+    return {
+        hasGet: desc.hasOwnProperty('get'),
+        hasSet: desc.hasOwnProperty('set'),
+        noValue: !desc.hasOwnProperty('value'),
+        noWritable: !desc.hasOwnProperty('writable')
+    };
+}
+
+export function getDescAccessorGetSetTypes() {
+    const obj = {
+        _val: 0,
+        get getter() { return 'value'; },
+        set setter(val) { this._val = val; }
+    };
+    const getterDesc = Object.getOwnPropertyDescriptor(obj, 'getter');
+    const setterDesc = Object.getOwnPropertyDescriptor(obj, 'setter');
+    return {
+        getterGetIsFunc: typeof getterDesc.get === 'function',
+        getterSetIsUndef: getterDesc.set === undefined,
+        setterSetIsFunc: typeof setterDesc.set === 'function',
+        setterGetIsUndef: setterDesc.get === undefined
+    };
+}
+
+export function getDescCallGetterFromDesc() {
+    const obj = { _val: 100, get value() { return this._val; } };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'value');
+    return { calledOnObj: desc.get.call(obj), calledOnOther: desc.get.call({ _val: 200 }) };
+}
+
+export function getDescCallSetterFromDesc() {
+    const obj = { _val: 0, set value(val) { this._val = val * 2; } };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'value');
+    desc.set.call(obj, 50);
+    return { internalVal: obj._val };
+}
+
+export function getDescObjIsPlainObj() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return { constIsObj: desc.constructor === Object, isInstanceofObj: desc?.constructor?.name ==="Object" };
+}
+
+export function getDescObjProtoChain() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return { protoIsObjProto: Object.getPrototypeOf(desc) === Object.prototype };
+}
+
+export function getDescObjCanFreeze() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    Object.freeze(desc);
+    var threw = false;
+    try { desc.value = 'new value'; } catch (e) { threw = e.name; }
+    return { threw: threw };
+}
+
+export function getDescObjCanSeal() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    Object.seal(desc);
+    var threw = false;
+    try { desc.newProperty = 'added'; } catch (e) { threw = e.name; }
+    return { isSealed: Object.isSealed(desc), threw: threw };
+}
+
+export function getDescObjCanAddProps() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    desc.customNote = 'This is a descriptor';
+    desc.timestamp = Date.now();
+    return { note: desc.customNote, tsIsNum: typeof desc.timestamp === 'number' };
+}
+
+export function getDescObjJSONSerialize() {
+    const obj = { prop: 42 };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    const json = JSON.stringify(desc);
+    const parsed = JSON.parse(json);
+    return { parsedValue: parsed.value };
+}
+
+export function getDescNullArg() {
+    var threwTypeError = false;
+    var errorName = '';
+    try {
+        Object.getOwnPropertyDescriptor(null, 'prop');
+    } catch (e) {
+        threwTypeError = e.name;
+        errorName = e.name;
+    }
+    return { threwTypeError: threwTypeError, errorName: errorName };
+}
+
+export function getDescUndefArg() {
+    var threw = false;
+    try { Object.getOwnPropertyDescriptor(undefined, 'prop'); } catch (e) { threw = e.name; }
+    return { threw: threw };
+}
+
+export function getDescES5Primitive() {
+    var desc = null;
+    var threw = false;
+    try {
+        desc = Object.getOwnPropertyDescriptor('string', '0');
+    } catch (e) {
+        threw = e.name;
+    }
+    return { hasDesc: desc !== null && desc !== undefined, threw: threw };
+}
+
+export function getDescMissingSecondArg() {
+    const obj = { prop: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj);
+    return { isUndef: desc === undefined };
+}
+
+export function getDescExtraArgs() {
+    const obj = { a: 1 };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'a', 'extra', 'more');
+    return { value: desc.value };
+}
+
+export function getDescProxyProperty() {
+    const target = { prop: 'value' };
+    var interceptorCalled = false;
+    const handler = {
+        getOwnPropertyDescriptor: function(target, prop) {
+            interceptorCalled = true;
+            return Object.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const desc = Object.getOwnPropertyDescriptor(proxy, 'prop');
+    return { value: desc.value, interceptorCalled: interceptorCalled };
+}
+
+export function getDescProxyIntercept() {
+    const target = {};
+    const handler = {
+        getOwnPropertyDescriptor: function(target, prop) {
+            return { value: 'intercepted', writable: true, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const desc = Object.getOwnPropertyDescriptor(proxy, 'anyProp');
+    return { value: desc.value };
+}
+
+export function getDescProxyVirtualProp() {
+    const target = {};
+    const handler = {
+        getOwnPropertyDescriptor: function(target, prop) {
+            if (prop === 'virtual') {
+                return { value: 'virtual prop', writable: true, enumerable: true, configurable: false };
+            }
+            return undefined;
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    var threw = false;
+    var isTypeError = false;
+    try {
+        const desc = Object.getOwnPropertyDescriptor(proxy, 'virtual');
+        return { configurable: desc.configurable, value: desc.value, threw: false };
+    } catch (e) {
+        threw = true;
+        isTypeError = e.name;
+        return { threw: true, isTypeError: isTypeError };
+    }
+}
+
+export function getDescProxyInconsistent() {
+    const target = { existing: 'value' };
+    const handler = {
+        getOwnPropertyDescriptor: function(target, prop) {
+            if (prop === 'existing') {
+                return { value: 'wrong type', writable: true, enumerable: true, configurable: true };
+            }
+            return Object.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    var threw = false;
+    try { Object.getOwnPropertyDescriptor(proxy, 'existing'); } catch (e) { threw = e.name; }
+    return { threw: threw };
+}
+
+export function getDescCopyProp() {
+    const source = { prop: 'value' };
+    const target = {};
+    const desc = Object.getOwnPropertyDescriptor(source, 'prop');
+    Object.defineProperty(target, 'prop', desc);
+    const targetDesc = Object.getOwnPropertyDescriptor(target, 'prop');
+    return { targetVal: target.prop, targetDescVal: targetDesc.value };
+}
+
+export function getDescCopyAccessor() {
+    const source = {
+        _internal: 0,
+        get accessor() { return this._internal; },
+        set accessor(val) { this._internal = val; }
+    };
+    const target = {};
+    const desc = Object.getOwnPropertyDescriptor(source, 'accessor');
+    Object.defineProperty(target, 'accessor', desc);
+    target.accessor = 42;
+    return { result: target.accessor };
+}
+
+export function getDescCopyNonConfigurable() {
+    const source = {};
+    Object.defineProperty(source, 'locked', { value: 100, configurable: false, writable: true });
+    const desc = Object.getOwnPropertyDescriptor(source, 'locked');
+    const target = {};
+    Object.defineProperty(target, 'locked', desc);
+    const targetDesc = Object.getOwnPropertyDescriptor(target, 'locked');
+    return { configurable: targetDesc.configurable };
+}
+
+export function getDescCopyModifyDesc() {
+    const source = { mutable: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(source, 'mutable');
+    desc.writable = false;
+    const target = {};
+    Object.defineProperty(target, 'mutable', desc);
+    var threw = false;
+    try { target.mutable = 'new value'; } catch (e) { threw = e.name; }
+    return { threw: threw };
+}
+
+export function getDescBatchCopy() {
+    const source = { a: 1, b: 2, c: 3 };
+    const descriptors = Object.getOwnPropertyDescriptors(source);
+    const target = {};
+    Object.defineProperties(target, descriptors);
+    return { a: target.a, b: target.b, c: target.c };
+}
+
+export function getDescBatchCopyAccessor() {
+    const source = {
+        _value: 0,
+        get value() { return this._value; },
+        set value(v) { this._value = v; },
+        name: 'source'
+    };
+    const descriptors = Object.getOwnPropertyDescriptors(source);
+    const target = {};
+    Object.defineProperties(target, descriptors);
+    target.value = 42;
+    return { value: target.value, name: target.name };
+}
+
+export function getDescCreateWithDesc() {
+    const proto = { inherited: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(proto, 'inherited');
+    const child = Object.create(proto, { own: desc });
+    const ownDesc = Object.getOwnPropertyDescriptor(child, 'own');
+    const inheritedDesc = Object.getOwnPropertyDescriptor(child, 'inherited');
+    return { ownVal: child.own, inheritedVal: child.inherited, ownDescVal: ownDesc.value, inheritedDescUndef: inheritedDesc === undefined };
+}
+
+export function getDescAssignEnumOnly() {
+    const source = {};
+    Object.defineProperty(source, 'visible', { value: 'shown', enumerable: true });
+    Object.defineProperty(source, 'hidden', { value: 'secret', enumerable: false });
+    const target = {};
+    Object.assign(target, source);
+    const hiddenDesc = Object.getOwnPropertyDescriptor(source, 'hidden');
+    return { visible: target.visible, hiddenUndef: target.hidden === undefined, hiddenEnum: hiddenDesc.enumerable };
+}
+
+export function getDescAssignSymbol() {
+    const sym = Symbol('key');
+    var source = {};
+    source[sym] = 'symbol value';
+    source.normalKey = 'normal value';
+    const target = {};
+    Object.assign(target, source);
+    return { symVal: target[sym], normalVal: target.normalKey };
+}
+
+export function getDescAssignNoGetter() {
+    const source = {
+        _internal: 100,
+        get accessor() { return this._internal; }
+    };
+    const target = {};
+    Object.assign(target, source);
+    const sourceDesc = Object.getOwnPropertyDescriptor(source, 'accessor');
+    const targetDesc = Object.getOwnPropertyDescriptor(target, 'accessor');
+    return { sourceGetIsFunc: typeof sourceDesc.get === 'function', targetGetIsUndef: targetDesc.get === undefined, targetVal: targetDesc.value };
+}
+
+export function getDescAllDescsMatch() {
+    var obj = { a: 1, b: 2 };
+    const allDescs = Object.getOwnPropertyDescriptors(obj);
+    const aDesc = Object.getOwnPropertyDescriptor(obj, 'a');
+    return { valMatch: allDescs.a.value === aDesc.value, writableMatch: allDescs.a.writable === aDesc.writable };
+}
+
+export function getDescAllDescsNonEnum() {
+    const obj = {};
+    Object.defineProperty(obj, 'hidden', { value: 'secret', enumerable: false });
+    const allDescs = Object.getOwnPropertyDescriptors(obj);
+    const singleDesc = Object.getOwnPropertyDescriptor(obj, 'hidden');
+    return { hasHidden: allDescs.hidden !== undefined, enumFalse: allDescs.hidden.enumerable === false, notSameRef: allDescs.hidden !== singleDesc };
+}
+
+export function getDescFreezeCompare() {
+    const obj = { prop: 'value' };
+    const beforeWritable = Object.getOwnPropertyDescriptor(obj, 'prop').writable;
+    const beforeConf = Object.getOwnPropertyDescriptor(obj, 'prop').configurable;
+    Object.freeze(obj);
+    const afterDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return { beforeWritable: beforeWritable, beforeConf: beforeConf, afterWritable: afterDesc.writable, afterConf: afterDesc.configurable };
+}
+
+export function getDescSealCompare() {
+    const obj = { prop: 'value' };
+    const beforeConf = Object.getOwnPropertyDescriptor(obj, 'prop').configurable;
+    Object.seal(obj);
+    const afterDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return { beforeConf: beforeConf, afterConf: afterDesc.configurable, afterWritable: afterDesc.writable };
+}
+
+export function getDescPreventExtCompare() {
+    const obj = { prop: 'value' };
+    const beforeDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    Object.preventExtensions(obj);
+    const afterDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return {
+        writableSame: beforeDesc.writable === afterDesc.writable,
+        confSame: beforeDesc.configurable === afterDesc.configurable,
+        enumSame: beforeDesc.enumerable === afterDesc.enumerable
+    };
+}
+
+export function getDescKeysEnumRel() {
+    const obj = {};
+    Object.defineProperty(obj, 'visible', { value: 1, enumerable: true });
+    Object.defineProperty(obj, 'hidden', { value: 2, enumerable: false });
+    const keys = Object.keys(obj);
+    const visibleDesc = Object.getOwnPropertyDescriptor(obj, 'visible');
+    const hiddenDesc = Object.getOwnPropertyDescriptor(obj, 'hidden');
+    return { hasVisible: keys.includes('visible'), hasHidden: keys.includes('hidden'), visibleEnum: visibleDesc.enumerable, hiddenEnum: hiddenDesc.enumerable };
+}
+
+export function getDescValuesEnumRel() {
+    const obj = { visible: 'shown' };
+    Object.defineProperty(obj, 'hidden', { value: 'secret', enumerable: false });
+    const values = Object.values(obj);
+    return { hasShown: values.includes('shown'), hasSecret: values.includes('secret') };
+}
+
+export function getDescEntriesEnumRel() {
+    const obj = {};
+    Object.defineProperty(obj, 'a', { value: 1, enumerable: true });
+    Object.defineProperty(obj, 'b', { value: 2, enumerable: false });
+    const entries = Object.entries(obj);
+    return { length: entries.length };
+}
+
+export function getDescGetNamesNonEnum() {
+    const obj = { a: 1 };
+    Object.defineProperty(obj, 'b', { value: 2, enumerable: false });
+    const names = Object.getOwnPropertyNames(obj);
+    const bDesc = Object.getOwnPropertyDescriptor(obj, 'b');
+    return { hasA: names.includes('a'), hasB: names.includes('b'), bEnum: bDesc.enumerable };
+}
+
+export function getDescGetNamesNoSymbol() {
+    const sym = Symbol('test');
+    var obj = { a: 1 };
+    obj[sym] = 'symbol';
+    const names = Object.getOwnPropertyNames(obj);
+    const symDesc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { hasA: names.includes('a'), includesSymStr: names.includes(String(sym)), symDescExists: symDesc !== undefined };
+}
+
+export function getDescGetSymbolsAll() {
+    const sym1 = Symbol('first');
+    const sym2 = Symbol('second');
+    var obj = {};
+    obj[sym1] = 'v1';
+    obj[sym2] = 'v2';
+    obj.normal = 'normal';
+    const symbols = Object.getOwnPropertySymbols(obj);
+    const sym1Desc = Object.getOwnPropertyDescriptor(obj, sym1);
+    return { length: symbols.length, hasSym1: symbols.includes(sym1), hasSym2: symbols.includes(sym2), sym1Val: sym1Desc.value };
+}
+
+export function getDescGetSymbolsNonEnum() {
+    const sym = Symbol('hidden');
+    var obj = {};
+    Object.defineProperty(obj, sym, { value: 'value', enumerable: false });
+    const symbols = Object.getOwnPropertySymbols(obj);
+    const desc = Object.getOwnPropertyDescriptor(obj, sym);
+    return { hasSym: symbols.includes(sym), enumFalse: desc.enumerable };
+}
+
+export function getDescReflectSame() {
+    const obj = { prop: 'value' };
+    const objDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    const reflectDesc = Reflect.getOwnPropertyDescriptor(obj, 'prop');
+    return {
+        valSame: objDesc.value === reflectDesc.value,
+        writableSame: objDesc.writable === reflectDesc.writable,
+        enumSame: objDesc.enumerable === reflectDesc.enumerable,
+        confSame: objDesc.configurable === reflectDesc.configurable
+    };
+}
+
+export function getDescReflectPrimitive() {
+    const objDesc = Object.getOwnPropertyDescriptor('hello', '0');
+    var reflectThrew = false;
+    try { Reflect.getOwnPropertyDescriptor('hello', '0'); } catch (e) { reflectThrew = e.name; }
+    return { objValue: objDesc.value, reflectThrew: reflectThrew };
+}
+
+export function getDescReflectNull() {
+    var reflectThrew = false;
+    var objThrew = false;
+    try { Reflect.getOwnPropertyDescriptor(null, 'prop'); } catch (e) { reflectThrew = e.name; }
+    try { Object.getOwnPropertyDescriptor(null, 'prop'); } catch (e) { objThrew = e.name; }
+    return { reflectThrew: reflectThrew, objThrew: objThrew };
+}
+
+export function getDescHasOwnProp() {
+    const obj = { own: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'own');
+    return { hasOwn: Object.hasOwn(obj, 'own'), hasToString: Object.hasOwn(obj, 'toString'), descExists: desc !== undefined };
+}
+
+export function getDescHasOwnNonEnum() {
+    const obj = {};
+    Object.defineProperty(obj, 'hidden', { value: 'secret', enumerable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, 'hidden');
+    return { hasOwn: Object.hasOwn(obj, 'hidden'), descExists: desc !== undefined, enumFalse: desc.enumerable };
+}
+
+export function getDescForInEnumOnly() {
+    const obj = { enumerable: 'shown' };
+    Object.defineProperty(obj, 'nonEnumerable', { value: 'hidden', enumerable: false });
+    var keys = [];
+    for (var key in obj) { keys.push(key); }
+    const desc = Object.getOwnPropertyDescriptor(obj, 'nonEnumerable');
+    return { hasEnum: keys.includes('enumerable'), hasNonEnum: keys.includes('nonEnumerable'), nonEnumFalse: desc.enumerable };
+}
+
+export function getDescHasOwnPropCheck() {
+    const obj = { own: 'value' };
+    const desc = Object.getOwnPropertyDescriptor(obj, 'own');
+    return { hasOwnProp: obj.hasOwnProperty('own'), hasToString: obj.hasOwnProperty('toString'), descExists: desc !== undefined };
+}
+
+export function getDescHasOwnPropNonEnum() {
+    const obj = {};
+    Object.defineProperty(obj, 'hidden', { value: 'value', enumerable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, 'hidden');
+    return { hasOwnProp: obj.hasOwnProperty('hidden'), descExists: desc !== undefined };
+}
+
+export function getDescPropIsEnumerable() {
+    const obj = { visible: 'value' };
+    Object.defineProperty(obj, 'hidden', { value: 'secret', enumerable: false });
+    const visibleDesc = Object.getOwnPropertyDescriptor(obj, 'visible');
+    const hiddenDesc = Object.getOwnPropertyDescriptor(obj, 'hidden');
+    return { visibleIsEnum: obj.propertyIsEnumerable('visible'), hiddenIsEnum: obj.propertyIsEnumerable('hidden'), visibleEnum: visibleDesc.enumerable, hiddenEnum: hiddenDesc.enumerable };
+}
+
+export function getDescPropIsEnumOwnOnly() {
+    var obj = Object.create({ inherited: 'value' });
+    return { isEnumInherited: obj.propertyIsEnumerable('inherited'), descUndef: Object.getOwnPropertyDescriptor(obj, 'inherited') === undefined };
+}
+
+export function getDescDeleteConfigurableProp() {
+    const obj = { prop: 'value' };
+    const beforeDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    delete obj.prop;
+    const afterDesc = Object.getOwnPropertyDescriptor(obj, 'prop');
+    return { beforeConf: beforeDesc.configurable, afterUndef: afterDesc === undefined };
+}
+
+export function getDescDeleteNonConfProp() {
+    const obj = {};
+    Object.defineProperty(obj, 'locked', { value: 100, configurable: false });
+    const desc = Object.getOwnPropertyDescriptor(obj, 'locked');
+    var threw = false;
+    try { delete obj.locked; } catch (e) { threw = e.name; }
+    return { confFalse: desc.configurable, threw: threw, stillExists: Object.getOwnPropertyDescriptor(obj, 'locked') !== undefined };
+}
+
+export function getDescDeleteNonexist() {
+    const obj = {};
+    const result = delete obj.nonexistent;
+    return { result: result, descUndef: Object.getOwnPropertyDescriptor(obj, 'nonexistent') === undefined };
+}
+
+export function getDescDeleteProtoProp() {
+    function Parent() {}
+    Parent.prototype.inherited = 'value';
+    const child = new Parent();
+    delete child.inherited;
+    return { stillAccessible: child.inherited === 'value', descUndef: Object.getOwnPropertyDescriptor(child, 'inherited') === undefined };
+}
