@@ -18,9 +18,12 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import deviceControl from '@ohos.enterprise.deviceControl';
+import restrictions from '@ohos.enterprise.restrictions';
 
 const LOCK_SCREEN: string = "lockScreen";
+const DISK_ERASE: string = "diskErase";
 const OPERATE_DEVICE: string = "operateDevice";
+const LABEL_RESET_FACTORY = "resetFactory";
 
 export default function deviceControlTest() {
   describe('deviceControl_test', () => {
@@ -269,6 +272,105 @@ function testOperateDevice() {
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0013
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0013
+   * @tc.desc   test deviceControl operateDevice without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0013", Level.LEVEL2, async (done: Function) => {
+    try {
+      deviceControl.operateDevice(SELFWANT, DISK_ERASE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0014
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0014
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0014", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      deviceControl.operateDevice(SELFWANT, DISK_ERASE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0015
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0015
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0015", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_RESET_FACTORY, true);
+      deviceControl.operateDevice(SELFWANT, DISK_ERASE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_operate_device_0016
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPERATE_DEVICE_JS_0016
+   * @tc.desc   test deviceControl operateDevice with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_operate_device_0016", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
+      deviceControl.operateDevice(SELFWANT, DISK_ERASE);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
