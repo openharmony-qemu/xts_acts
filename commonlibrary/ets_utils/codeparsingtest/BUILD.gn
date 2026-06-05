@@ -45,6 +45,7 @@ group("codeparsingtest") {
       "base3libtest:ActsBase3LibTest",
       "annotationtest:ActsAnnotationTest",
       "array2test:ActsArray2Test",
+      "object2test:ActsObject2Test",
     ]
   }
 }
