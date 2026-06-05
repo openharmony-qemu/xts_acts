@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -106,7 +106,11 @@ interface StoreWithObjectParam {
 
 export default function AtomicReferenceStoreTest(): void {
   describe("AtomicReferenceStoreTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -219,7 +223,7 @@ export default function AtomicReferenceStoreTest(): void {
         atomicRef.store(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 
@@ -783,7 +787,7 @@ export default function AtomicReferenceStoreTest(): void {
         atomicRef.store(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 

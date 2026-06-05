@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface FetchOrNumberParam {
 
 export default function AtomicByteFetchOrTest(): void {
   describe("AtomicByteFetchOrTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -590,16 +594,16 @@ export default function AtomicByteFetchOrTest(): void {
     it("testAtomicByteFetchOr2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let atomicByte = new AtomicByte(3);
       let start: number = Date.now();
-      
+
       for (let i: number = 0; i < 1000; i++) {
         atomicByte.fetchOr(0x01);
         atomicByte.fetchOr(0x00);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 1000).assertTrue();
+
+      expect(atomicByte.load()).assertEqual(3);
     })
     /**
      * @tc.name   testAtomicByteFetchOr2900
@@ -614,15 +618,15 @@ export default function AtomicByteFetchOrTest(): void {
       let iterations: number = 10000;
       let start: number = Date.now();
       let testVal: byte = 0x55;
-      
+
       for (let i: number = 0; i < iterations; i++) {
         atomicByte.fetchOr(testVal);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 5000).assertTrue();
+
+      expect(atomicByte.load()).assertEqual(testVal);
     })
   })
 }

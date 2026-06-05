@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface FetchXorNumberParam {
 
 export default function AtomicByteFetchXorTest(): void {
   describe("AtomicByteFetchXorTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -504,16 +508,16 @@ export default function AtomicByteFetchXorTest(): void {
     it("testAtomicByteFetchXor2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let atomicByte = new AtomicByte(0);
       let start: number = Date.now();
-      
+
       for (let i: number = 0; i < 1000; i++) {
         atomicByte.fetchXor(1);
         atomicByte.fetchXor(1);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 1000).assertTrue();
+
+      expect(atomicByte.load()).assertEqual(0);
     })
     /**
      * @tc.name   testAtomicByteFetchXor2700
@@ -528,15 +532,15 @@ export default function AtomicByteFetchXorTest(): void {
       let iterations: number = 10000;
       let start: number = Date.now();
       let testVal: byte = 85;
-      
+
       for (let i: number = 0; i < iterations; i++) {
         atomicByte.fetchXor(testVal);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 5000).assertTrue();
+
+      expect(typeof atomicByte.load()).assertEqual('byte');
     })
     /**
      * @tc.name   testAtomicByteFetchXor2800

@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicDoubleConstructorTest():void {
   describe('atomicDoubleConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -33,8 +37,7 @@ export default function atomicDoubleConstructorTest():void {
      */
     it('atomicDoubleConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicDouble = new AtomicDouble(10.0);
-      expect(atomicDouble !== null).assertTrue();
-      expect(atomicDouble !== undefined).assertTrue();
+      expect(atomicDouble.load()).assertEqual(10.0);
     });
 
     /**
@@ -112,7 +115,6 @@ export default function atomicDoubleConstructorTest():void {
      */
     it('atomicDoubleConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicDouble = new AtomicDouble(10.5);
-      expect(atomicDouble !== null).assertTrue();
       expect(atomicDouble instanceof AtomicDouble).assertTrue();
     });
 

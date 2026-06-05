@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -20,7 +20,11 @@ import Utils from '../Util.test';
 
 export default function atomicIntConstructorTest(): void {
   describe('atomicIntConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -138,7 +142,6 @@ export default function atomicIntConstructorTest(): void {
      */
     it('atomicIntConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicInt = new AtomicInt(1);
-      expect(atomicInt !== null).assertTrue();
       expect(typeof atomicInt).assertEqual("object");
     })
 

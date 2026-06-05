@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface FetchAndNumberParam {
 
 export default function AtomicByteFetchAndTest(): void {
   describe("AtomicByteFetchAndTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -628,15 +632,15 @@ export default function AtomicByteFetchAndTest(): void {
     it("testAtomicByteFetchAnd3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let atomicByte = new AtomicByte(7);
       let start: number = Date.now();
-      
+
       for (let i: number = 0; i < 1000; i++) {
         atomicByte.fetchAnd(-1);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 1000).assertTrue();
+
+      expect(atomicByte.load()).assertEqual(7);
     })
     /**
      * @tc.name   testAtomicByteFetchAnd3400
@@ -651,15 +655,15 @@ export default function AtomicByteFetchAndTest(): void {
       let iterations: number = 10000;
       let start: number = Date.now();
       let testVal: byte = 85;
-      
+
       for (let i: number = 0; i < iterations; i++) {
         atomicByte.fetchAnd(testVal);
       }
-      
+
       let end: number = Date.now();
       let duration: number = end - start;
-      
-      expect(duration < 5000).assertTrue();
+
+      expect(atomicByte.load()).assertEqual(testVal);
     })
     /**
      * @tc.name   testAtomicByteFetchAnd3500

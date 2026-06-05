@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicShortConstructorTest(): void {
   describe('atomicShortConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -33,7 +37,6 @@ export default function atomicShortConstructorTest(): void {
      */
     it('atomicShortConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicShort = new AtomicShort(3);
-      expect(atomicShort !== null).assertTrue();
       expect(atomicShort.load()).assertEqual(3);
     });
 
@@ -125,7 +128,7 @@ export default function atomicShortConstructorTest(): void {
      */
     it('atomicShortConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicShort = new AtomicShort(3);
-      expect(atomicShort !== null).assertTrue();
+      expect(atomicShort.load()).assertEqual(3);
     });
 
     /**
@@ -197,7 +200,7 @@ export default function atomicShortConstructorTest(): void {
      */
     it('atomicShortConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const isLockFree: boolean = AtomicShort.isLockFree();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
     });
 
     /**

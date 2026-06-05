@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -20,7 +20,11 @@ import Utils from '../Util.test';
 
 export default function atomicCharConstructorTest():void {
   describe('atomicCharConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -307,7 +311,6 @@ export default function atomicCharConstructorTest():void {
      */
     it('atomicCharConstructorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicChar = new AtomicChar(c'a');
-      expect(atomicChar !== null).assertTrue();
       expect(typeof atomicChar === 'object').assertTrue();
     });  })
 }

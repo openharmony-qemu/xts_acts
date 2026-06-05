@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -28,7 +28,11 @@ interface FetchSubObjectParam {
 
 export default function AtomicFloatFetchSubTest(): void {
   describe("AtomicFloatFetchSubTest", ():void =>  {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 

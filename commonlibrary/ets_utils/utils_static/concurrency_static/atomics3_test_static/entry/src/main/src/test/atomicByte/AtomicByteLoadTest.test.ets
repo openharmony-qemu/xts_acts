@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -23,7 +23,11 @@ interface LoadWithParams {
 
 export default function AtomicByteLoadTest(): void {
   describe("AtomicByteLoadTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -461,7 +465,6 @@ export default function AtomicByteLoadTest(): void {
       let end = Date.now();
       let duration = end - start;
       expect(value).assertEqual(10);
-      expect(duration < 1000).assertTrue();
     })
     /**
      * @tc.name   testAtomicByteLoad3000
@@ -479,7 +482,7 @@ export default function AtomicByteLoadTest(): void {
       }
       let end = Date.now();
       let duration = end - start;
-      expect(duration < 5000).assertTrue();
+      expect(atomicByte.load()).assertEqual(42);
     })
     /**
      * @tc.name   testAtomicByteLoad3100

@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -102,7 +102,11 @@ class MyClassLocal {
 
 export default function AtomicReferenceExchangeTest(): void {
   describe("AtomicReferenceExchangeTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -199,7 +203,7 @@ export default function AtomicReferenceExchangeTest(): void {
         atomicRef.exchange(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 
@@ -451,7 +455,7 @@ export default function AtomicReferenceExchangeTest(): void {
     it("atomicReferenceExchangeTest2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<string>("initial");
       let result = atomicRef.load();
-      expect(result !== null).assertTrue();
+      expect(result).assertEqual("initial");
     })
 
     /**
@@ -847,7 +851,7 @@ export default function AtomicReferenceExchangeTest(): void {
         atomicRef.exchange(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 
@@ -864,7 +868,7 @@ export default function AtomicReferenceExchangeTest(): void {
         let atomicRef = new AtomicReference<string>("test");
         atomicRef.exchange("new");
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 
@@ -932,7 +936,7 @@ export default function AtomicReferenceExchangeTest(): void {
     it("atomicReferenceExchangeTest5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<string>("initial");
       let result = atomicRef.load();
-      expect(result !== null).assertTrue();
+      expect(result).assertEqual("initial");
     })
 
     /**
@@ -947,8 +951,8 @@ export default function AtomicReferenceExchangeTest(): void {
       let atomicRef = new AtomicReference<string>("initial");
       let oldValue = atomicRef.exchange("new");
       let result = atomicRef.load();
-      expect(oldValue !== null).assertTrue();
-      expect(result !== null).assertTrue();
+      expect(oldValue).assertEqual("initial");
+      expect(result).assertEqual("new");
     })
 
     /**

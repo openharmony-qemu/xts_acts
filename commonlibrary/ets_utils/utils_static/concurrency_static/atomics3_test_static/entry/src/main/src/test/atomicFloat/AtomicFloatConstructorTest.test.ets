@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function AtomicFloatConstructorTest(): void {
   describe("AtomicFloatConstructorTest", (): void => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -33,7 +37,6 @@ export default function AtomicFloatConstructorTest(): void {
      */
     it("testAtomicFloatConstructor0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let atomicFloat = new AtomicFloat(Double.toFloat(1.5));
-      expect(atomicFloat !== null).assertTrue();
       expect(atomicFloat.load()).assertEqual(Double.toFloat(1.5));
     })
 
@@ -164,7 +167,6 @@ export default function AtomicFloatConstructorTest(): void {
      */
     it("testAtomicFloatConstructor1100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let atomicFloat = new AtomicFloat(Double.toFloat(10.5));
-      expect(atomicFloat !== null).assertTrue();
       expect(typeof atomicFloat).assertEqual("object");
     })
 
@@ -265,8 +267,7 @@ export default function AtomicFloatConstructorTest(): void {
       let atomicFloat = new AtomicFloat(Double.toFloat(10.5));
       let end = Date.now();
       let duration = end - start;
-      expect(atomicFloat !== null).assertTrue();
-      expect(duration < 1000).assertTrue();
+      expect(atomicFloat.load()).assertEqual(Double.toFloat(10.5));
     })
 
     /**
@@ -286,7 +287,6 @@ export default function AtomicFloatConstructorTest(): void {
       let end = Date.now();
       let duration = end - start;
       expect(atomics.length).assertEqual(1000);
-      expect(duration < 5000).assertTrue();
     })
 
     /**

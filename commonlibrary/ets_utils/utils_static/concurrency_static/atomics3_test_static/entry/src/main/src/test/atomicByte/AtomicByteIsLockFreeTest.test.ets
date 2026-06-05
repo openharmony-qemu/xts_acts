@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -27,7 +27,11 @@ interface IsLockFreeWithStringParam {
 
 export default function AtomicByteIsLockFreeTest(): void {
   describe("AtomicByteIsLockFreeTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -42,7 +46,7 @@ export default function AtomicByteIsLockFreeTest(): void {
     it("testAtomicByteIsLockFree0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result = AtomicByte.isLockFree();
       expect(result !== undefined).assertTrue();
-      expect(result !== null).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     })
     /**
      * @tc.name   testAtomicByteIsLockFree0200

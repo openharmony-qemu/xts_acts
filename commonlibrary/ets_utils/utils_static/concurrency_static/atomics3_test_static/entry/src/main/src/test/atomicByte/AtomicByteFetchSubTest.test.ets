@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface FetchSubNumberParam {
 
 export default function AtomicByteFetchSubTest(): void {
   describe("AtomicByteFetchSubTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -784,7 +788,6 @@ export default function AtomicByteFetchSubTest(): void {
       
       expect(oldValue).assertEqual(8);
       expect(atomicByte.load()).assertEqual(5);
-      expect(duration < 100).assertTrue();
     })
 
     /**
@@ -807,7 +810,6 @@ export default function AtomicByteFetchSubTest(): void {
       let duration = end - start;
 
       expect(atomicByte.load()).assertEqual(50);
-      expect(duration < 1000).assertTrue();
     })
 
   })

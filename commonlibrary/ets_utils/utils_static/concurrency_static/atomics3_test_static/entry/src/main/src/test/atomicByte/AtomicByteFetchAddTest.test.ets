@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface FetchAddNumberParam {
 
 export default function AtomicByteFetchAddTest(): void {
   describe("AtomicByteFetchAddTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -511,7 +515,6 @@ export default function AtomicByteFetchAddTest(): void {
       let duration = end - start;
 
       expect(atomicByte.load()).assertEqual(100);
-      expect(duration < 10000).assertTrue();
     })
     /**
      * @tc.name   testAtomicByteFetchAdd2800

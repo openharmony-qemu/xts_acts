@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicIntLoadTest(): void {
   describe('atomicIntLoadTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -362,7 +366,7 @@ export default function atomicIntLoadTest(): void {
       try {
         const atomicInt = new AtomicInt(5);
         const result: int = atomicInt.load();
-        expect(result !== null).assertTrue();
+        expect(result).assertEqual(5);
       } catch (error) {
         expect().assertFail();
       }

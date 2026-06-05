@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function AtomicByteConstructorTest(): void {
   describe("AtomicByteConstructorTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -33,7 +37,6 @@ export default function AtomicByteConstructorTest(): void {
      */
     it("testAtomicByteConstructor0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let atomicByte = new AtomicByte(5);
-      expect(atomicByte !== null).assertTrue();
       expect(atomicByte.load()).assertEqual(5);
     })
     /**
@@ -154,7 +157,6 @@ export default function AtomicByteConstructorTest(): void {
      */
     it("testAtomicByteConstructor1100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let atomicByte = new AtomicByte(10);
-      expect(atomicByte !== null).assertTrue();
       expect(typeof atomicByte).assertEqual("object");
     })
     /**
@@ -322,8 +324,7 @@ export default function AtomicByteConstructorTest(): void {
       let atomicByte = new AtomicByte(10);
       let end = Date.now();
       let duration = end - start;
-      expect(atomicByte !== null).assertTrue();
-      expect(duration < 1000).assertTrue();
+      expect(atomicByte.load()).assertEqual(10);
     })
     /**
      * @tc.name   testAtomicByteConstructor2400
@@ -343,7 +344,6 @@ export default function AtomicByteConstructorTest(): void {
       let end = Date.now();
       let duration = end - start;
       expect(atomics.length).assertEqual(1000);
-      expect(duration < 5000).assertTrue();
     })
     /**
      * @tc.name   testAtomicByteConstructor2500

@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -20,7 +20,11 @@ import Utils from '../Util.test';
 
 export default function atomicLongStoreTest(): void {
   describe('atomicLongStoreTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -172,7 +176,7 @@ export default function atomicLongStoreTest(): void {
       };
       await Promise.all([task1(), task2()]);
       let result: long = atomicLong.load();
-      expect(result !== null).assertTrue();
+      expect(typeof result).assertEqual('long');
     });
 
     /**
@@ -335,7 +339,7 @@ export default function atomicLongStoreTest(): void {
       };
       await Promise.all([task1(), task2()]);
       let result: long = atomicLong.load();
-      expect(result !== null).assertTrue();
+      expect(typeof result).assertEqual('long');
     });
 
     /**
@@ -391,7 +395,7 @@ export default function atomicLongStoreTest(): void {
     it('atomicLongStoreTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let timestamp = new AtomicLong(0);
       timestamp.store(Date.now());
-      expect(timestamp.load() !== null).assertTrue();
+      expect(typeof timestamp.load()).assertEqual('long');
     });
 
     /**

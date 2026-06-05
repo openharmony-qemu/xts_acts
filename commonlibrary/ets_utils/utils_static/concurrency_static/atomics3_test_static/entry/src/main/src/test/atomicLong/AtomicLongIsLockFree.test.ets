@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicLongIsLockFreeTest():void {
   describe('atomicLongIsLockFreeTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -47,7 +51,6 @@ export default function atomicLongIsLockFreeTest():void {
     it('atomicLongIsLockFreeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicLong.isLockFree();
       expect(typeof result).assertEqual('boolean');
-      expect(result === true || result === false).assertTrue();
     });
 
     /**
@@ -60,7 +63,7 @@ export default function atomicLongIsLockFreeTest():void {
      */
     it('atomicLongIsLockFreeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicLong.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -478,7 +481,7 @@ export default function atomicLongIsLockFreeTest():void {
       } else {
         strategy = 'locking';
       }
-      expect(strategy === 'lock-free' || strategy === 'locking').assertTrue();
+      expect(isLockFree).assertTrue();
     });
 
     /**

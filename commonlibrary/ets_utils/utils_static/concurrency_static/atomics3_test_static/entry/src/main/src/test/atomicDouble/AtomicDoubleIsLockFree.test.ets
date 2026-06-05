@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -32,7 +32,11 @@ interface PerformanceReport {
 
 export default function atomicDoubleIsLockFreeTest(): void {
   describe('atomicDoubleIsLockFreeTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -94,7 +98,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
       } else {
         strategy = 'locking';
       }
-      expect(strategy === 'lock-free' || strategy === 'locking').assertTrue();
+      expect(isLockFree).assertTrue();
     });
 
     /**
@@ -107,7 +111,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
      */
     it('atomicDoubleIsLockFreeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const strategy = AtomicDouble.isLockFree() ? 'lock-free' : 'pessimistic';
-      expect(strategy === 'lock-free' || strategy === 'pessimistic').assertTrue();
+      expect(AtomicDouble.isLockFree()).assertTrue();
     });
 
     /**
@@ -163,7 +167,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
         warningIssued = true;
       }
       expect(typeof isLockFree).assertEqual('boolean');
-      expect(warningIssued === true || warningIssued === false).assertTrue();
+      expect(typeof warningIssued).assertEqual('boolean');
     });
 
     /**
@@ -196,7 +200,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
       } else {
         result = 'generic';
       }
-      expect(result === 'optimized' || result === 'generic').assertTrue();
+      expect(AtomicDouble.isLockFree()).assertTrue();
     });
 
     /**
@@ -211,7 +215,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
       const isLockFree = AtomicDouble.isLockFree();
       const implementationType = isLockFree ? 'Lock-free' : 'May use locks';
       expect(typeof isLockFree).assertEqual('boolean');
-      expect(implementationType === 'Lock-free' || implementationType === 'May use locks').assertTrue();
+      expect(isLockFree).assertTrue();
     });
 
     /**
@@ -230,7 +234,7 @@ export default function atomicDoubleIsLockFreeTest(): void {
         }
       };
       expect(typeof report.atomicDouble.isLockFree).assertEqual('boolean');
-      expect(report.atomicDouble.implementation === 'lock-free' || report.atomicDouble.implementation === 'locking').assertTrue();
+      expect(report.atomicDouble.isLockFree).assertTrue();
     });
   });
 }

@@ -23,4 +23,9 @@ export default class Utils{
       }, count)
     })
   }
+  static syncSleep(count:int) : void {
+    let start: number = Date.now()
+    while (Date.now() - start < count) {
+    }
+  }
 }

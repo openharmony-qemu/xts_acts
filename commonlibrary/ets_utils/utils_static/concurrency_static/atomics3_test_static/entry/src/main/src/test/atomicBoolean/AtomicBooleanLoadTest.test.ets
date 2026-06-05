@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicBooleanLoadTest():void {
   describe('atomicBooleanLoadTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -160,7 +164,7 @@ export default function atomicBooleanLoadTest():void {
 
       expect(readResults.length).assertEqual(100);
       for (let i = 0; i < readResults.length; i++) {
-        expect(readResults[i] === true || readResults[i] === false).assertTrue();
+        expect(typeof readResults[i]).assertEqual('boolean');
       }
     });
   });

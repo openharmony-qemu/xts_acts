@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicBooleanCompareAndSwapTest():void {
   describe('atomicBooleanCompareAndSwapTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -319,7 +323,7 @@ export default function atomicBooleanCompareAndSwapTest():void {
 
       expect(results.length).assertEqual(200);
       for (let i = 0; i < results.length; i++) {
-        expect(results[i] === true || results[i] === false).assertTrue();
+        expect(typeof results[i]).assertEqual('boolean');
       }
     });
 
@@ -355,10 +359,10 @@ export default function atomicBooleanCompareAndSwapTest():void {
       expect(readResults.length).assertEqual(100);
       expect(casResults.length).assertEqual(100);
       for (let i = 0; i < readResults.length; i++) {
-        expect(readResults[i] === true || readResults[i] === false).assertTrue();
+        expect(typeof readResults[i]).assertEqual('boolean');
       }
       for (let i = 0; i < casResults.length; i++) {
-        expect(casResults[i] === true || casResults[i] === false).assertTrue();
+        expect(typeof casResults[i]).assertEqual('boolean');
       }
     });
   });

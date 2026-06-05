@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicBooleanConstructorTest():void {
   describe('atomicBooleanConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -33,8 +37,7 @@ export default function atomicBooleanConstructorTest():void {
      */
     it('atomicBooleanConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicBoolean = new AtomicBoolean(false);
-      expect(atomicBoolean !== null).assertTrue();
-      expect(atomicBoolean !== undefined).assertTrue();
+      expect(atomicBoolean.load()).assertFalse();
     });
 
     /**
@@ -73,7 +76,6 @@ export default function atomicBooleanConstructorTest():void {
      */
     it('atomicBooleanConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const atomicBoolean = new AtomicBoolean(false);
-      expect(atomicBoolean !== null).assertTrue();
       expect(atomicBoolean instanceof AtomicBoolean).assertTrue();
     });
 

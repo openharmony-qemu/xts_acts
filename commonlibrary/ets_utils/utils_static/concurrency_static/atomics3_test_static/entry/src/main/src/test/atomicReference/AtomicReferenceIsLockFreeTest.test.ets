@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -58,7 +58,11 @@ interface IsLockFreeFunc {
 
 export default function AtomicReferenceIsLockFreeTest(): void {
   describe("AtomicReferenceIsLockFreeTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -119,7 +123,7 @@ export default function AtomicReferenceIsLockFreeTest(): void {
      */
     it("atomicReferenceIsLockFreeTest0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       let result = AtomicReference.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     })
 
     /**
@@ -347,7 +351,7 @@ export default function AtomicReferenceIsLockFreeTest(): void {
         atomicRef.store("new");
         throw new Error("test error");
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
       let result = AtomicReference.isLockFree();
       expect(typeof result).assertEqual("boolean");
@@ -509,7 +513,7 @@ export default function AtomicReferenceIsLockFreeTest(): void {
         let result = AtomicReference.isLockFree();
         expect(typeof result).assertEqual("boolean");
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 

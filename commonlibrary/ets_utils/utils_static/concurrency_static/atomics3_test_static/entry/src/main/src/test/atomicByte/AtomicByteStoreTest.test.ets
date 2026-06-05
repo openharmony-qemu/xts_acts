@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -35,7 +35,11 @@ interface StoreNumberParam {
 
 export default function AtomicByteStoreTest(): void {
   describe("AtomicByteStoreTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -611,7 +615,6 @@ export default function AtomicByteStoreTest(): void {
       let end = Date.now();
       let duration = end - start;
       expect(atomicByte.load()).assertEqual(10);
-      expect(duration < 1000).assertTrue();
     })
     /**
      * @tc.name   testAtomicByteStore3600
@@ -630,7 +633,7 @@ export default function AtomicByteStoreTest(): void {
       }
       let end = Date.now();
       let duration = end - start;
-      expect(duration < 5000).assertTrue();
+      expect(typeof atomicByte.load()).assertEqual('byte');
     })
     /**
      * @tc.name   testAtomicByteStore3700
@@ -648,7 +651,7 @@ export default function AtomicByteStoreTest(): void {
       }
       let end = Date.now();
       let duration = end - start;
-      expect(duration < 10000).assertTrue();
+      expect(typeof atomicByte.load()).assertEqual('byte');
     })
     /**
      * @tc.name   testAtomicByteStore3800

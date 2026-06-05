@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -33,7 +33,11 @@ interface PerformanceReport {
 
 export default function atomicShortIsLockFreeTest(): void {
   describe('atomicShortIsLockFreeTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -47,7 +51,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -60,7 +64,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -86,7 +90,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -115,7 +119,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -129,7 +133,7 @@ export default function atomicShortIsLockFreeTest(): void {
     it('atomicShortIsLockFreeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const atomic: AtomicShort = new AtomicShort(0);
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -142,7 +146,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
       const result2: boolean = AtomicShort.isLockFree();
       expect(result).assertEqual(result2);
     });
@@ -160,7 +164,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const atomic2: AtomicShort = new AtomicShort(2);
       const atomic3: AtomicShort = new AtomicShort(3);
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -175,7 +179,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const isLockFree: boolean = AtomicShort.isLockFree();
       const atomic: AtomicShort = new AtomicShort(10);
       const value: short = atomic.load();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(value).assertEqual(10);
     });
 
@@ -221,7 +225,7 @@ export default function atomicShortIsLockFreeTest(): void {
       await Promise.all([task1(), task2()]);
 
       for (let i = 0; i < results.length; i++) {
-        expect(results[i] === true || results[i] === false).assertTrue();
+        expect(typeof results[i]).assertEqual('boolean');
       }
     });
 
@@ -252,10 +256,10 @@ export default function atomicShortIsLockFreeTest(): void {
       await Promise.all([task1(), task2()]);
 
       for (let i = 0; i < results1.length; i++) {
-        expect(results1[i] === true || results1[i] === false).assertTrue();
+        expect(typeof results1[i]).assertEqual('boolean');
       }
       for (let i = 0; i < results2.length; i++) {
-        expect(results2[i] === true || results2[i] === false).assertTrue();
+        expect(typeof results2[i]).assertEqual('boolean');
       }
     });
 
@@ -273,7 +277,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const end: number = Date.now();
       const duration: number = end - start;
 
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
       expect(duration >= 0).assertTrue();
     });
 
@@ -341,7 +345,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const result3: boolean = AtomicShort.isLockFree();
       expect(result1).assertEqual(result2);
       expect(result2).assertEqual(result3);
-      expect(result1 === true || result1 === false).assertTrue();
+      expect(typeof result1).assertEqual('boolean');
     });
 
     /**
@@ -371,7 +375,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result: boolean = AtomicShort.isLockFree();
-      expect(result === true || result === false).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -386,7 +390,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const atomic: AtomicShort = new AtomicShort(32767);
       const isLockFree: boolean = AtomicShort.isLockFree();
       const value: short = atomic.load();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(value).assertEqual(32767);
     });
 
@@ -402,7 +406,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const atomic: AtomicShort = new AtomicShort(-32768);
       const isLockFree: boolean = AtomicShort.isLockFree();
       const value: short = atomic.load();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(value).assertEqual(-32768);
     });
 
@@ -422,7 +426,7 @@ export default function atomicShortIsLockFreeTest(): void {
       } else {
         strategy = 'locking';
       }
-      expect(strategy === 'lock-free' || strategy === 'locking').assertTrue();
+      expect(AtomicShort.isLockFree()).assertTrue();
     });
 
     /**
@@ -435,7 +439,7 @@ export default function atomicShortIsLockFreeTest(): void {
      */
     it('atomicShortIsLockFreeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const strategy: string = AtomicShort.isLockFree() ? 'lock-free' : 'pessimistic';
-      expect(strategy === 'lock-free' || strategy === 'pessimistic').assertTrue();
+      expect(AtomicShort.isLockFree()).assertTrue();
     });
 
     /**
@@ -454,7 +458,7 @@ export default function atomicShortIsLockFreeTest(): void {
         atomic.fetchAdd(1);
       }
       const end: number = Date.now();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(end >= start).assertTrue();
     });
 
@@ -478,7 +482,7 @@ export default function atomicShortIsLockFreeTest(): void {
         const end: number = Date.now();
         results.push(end - start);
       }
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(results.length).assertEqual(10);
     });
 
@@ -495,7 +499,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const atomic: AtomicShort = new AtomicShort(0);
       atomic.fetchAdd(1);
       const currentValue: short = atomic.load();
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(currentValue).assertEqual(1);
     });
 
@@ -513,8 +517,8 @@ export default function atomicShortIsLockFreeTest(): void {
       if (!isLockFree) {
         warningIssued = true;
       }
-      expect(isLockFree === true || isLockFree === false).assertTrue();
-      expect(warningIssued === true || warningIssued === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
+      expect(typeof warningIssued).assertEqual('boolean');
     });
 
     /**
@@ -529,7 +533,7 @@ export default function atomicShortIsLockFreeTest(): void {
       const features: PlatformFeatures = {
         atomicShortLockFree: AtomicShort.isLockFree()
       };
-      expect(features.atomicShortLockFree === true || features.atomicShortLockFree === false).assertTrue();
+      expect(typeof features.atomicShortLockFree).assertEqual('boolean');
     });
 
     /**
@@ -561,7 +565,7 @@ export default function atomicShortIsLockFreeTest(): void {
     it('atomicShortIsLockFreeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const isLockFree: boolean = AtomicShort.isLockFree();
       const implementationType: string = isLockFree ? 'Lock-free' : 'May use locks';
-      expect(isLockFree === true || isLockFree === false).assertTrue();
+      expect(typeof isLockFree).assertEqual('boolean');
       expect(implementationType === 'Lock-free' || implementationType === 'May use locks').assertTrue();
     });
 
@@ -580,8 +584,8 @@ export default function atomicShortIsLockFreeTest(): void {
           implementation: AtomicShort.isLockFree() ? 'lock-free' : 'locking'
         }
       };
-      expect(report.atomicShort.isLockFree === true || report.atomicShort.isLockFree === false).assertTrue();
-      expect(report.atomicShort.implementation === 'lock-free' || report.atomicShort.implementation === 'locking').assertTrue();
+      expect(typeof report.atomicShort.isLockFree).assertEqual('boolean');
+      expect(report.atomicShort.isLockFree).assertTrue();
     });
   });
 }

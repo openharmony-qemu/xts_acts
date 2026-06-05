@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -72,7 +72,11 @@ class ValidClass {
 
 export default function AtomicReferenceConstructorTest(): void {
   describe("AtomicReferenceConstructorTest", () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -86,7 +90,7 @@ export default function AtomicReferenceConstructorTest(): void {
      */
     it("atomicReferenceConstructorTest0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicRef = new AtomicReference<Container>(new Container());
-      expect(atomicRef !== null).assertTrue();
+      expect(atomicRef.load() instanceof Container).assertTrue();
     })
 
     /**
@@ -112,7 +116,7 @@ export default function AtomicReferenceConstructorTest(): void {
      */
     it("atomicReferenceConstructorTest0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicRef = new AtomicReference<Container>(new Container());
-      expect(atomicRef.load() !== null).assertTrue();
+      expect(atomicRef.load() instanceof Container).assertTrue();
     })
 
     /**
@@ -154,7 +158,7 @@ export default function AtomicReferenceConstructorTest(): void {
         let atomicRef = new AtomicReference<string>(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 
@@ -207,7 +211,7 @@ export default function AtomicReferenceConstructorTest(): void {
      */
     it("atomicReferenceConstructorTest1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let atomicRef = new AtomicReference<EmptyClass>(new EmptyClass());
-      expect(atomicRef.load() !== null).assertTrue();
+      expect(atomicRef.load() instanceof EmptyClass).assertTrue();
     })
 
     /**
@@ -221,7 +225,7 @@ export default function AtomicReferenceConstructorTest(): void {
     it("atomicReferenceConstructorTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let func = (): void => {};
       let atomicRef = new AtomicReference<() => void>(func);
-      expect(atomicRef.load() !== null).assertTrue();
+      expect(atomicRef.load()).assertEqual(func);
     })
 
     /**
@@ -234,7 +238,6 @@ export default function AtomicReferenceConstructorTest(): void {
      */
     it("atomicReferenceConstructorTest1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicRef = new AtomicReference<string>("test");
-      expect(atomicRef !== null).assertTrue();
       expect(typeof atomicRef).assertEqual("object");
     })
 
@@ -477,7 +480,7 @@ export default function AtomicReferenceConstructorTest(): void {
         let atomicRef = new AtomicReference<string>(null as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertTrue();
       }
     })
 

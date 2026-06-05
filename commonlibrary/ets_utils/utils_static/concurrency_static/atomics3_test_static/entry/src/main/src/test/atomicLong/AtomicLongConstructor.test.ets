@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 
 /*
 * Copyright (c) 2026 RKH Corp.
@@ -19,7 +19,11 @@ import Utils from '../Util.test';
 
 export default function atomicLongConstructorTest():void {
   describe('atomicLongConstructorTest', () => {
-    afterAll(async() => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {
+          })
+    afterAll(async (): Promise<void> => {
       await Utils.msSleep(100);
     })
 
@@ -98,7 +102,6 @@ export default function atomicLongConstructorTest():void {
      */
     it('atomicLongConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicLong = new AtomicLong(16);
-      expect(atomicLong !== null).assertTrue();
       expect(typeof atomicLong).assertEqual("object");
     });
 
@@ -215,7 +218,6 @@ export default function atomicLongConstructorTest():void {
      */
     it('atomicLongConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let atomicLong = new AtomicLong(1000);
-      expect(atomicLong !== null).assertTrue();
       expect(atomicLong.load()).assertEqual(1000);
     });
 
