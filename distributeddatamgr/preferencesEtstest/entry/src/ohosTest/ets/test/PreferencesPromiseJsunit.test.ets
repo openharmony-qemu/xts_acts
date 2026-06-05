@@ -634,7 +634,7 @@ export default function preferencesPromiseTest(){
             try {
               let mPreferences = await dataPreferences.getPreferences(context, NAME_MAX);
               console.info( TAG + "mPreferences is " + mPreferences);
-              mPreferences.put(KEY_TEST_STRING_ELEMENT, '333333');
+              await mPreferences.put(KEY_TEST_STRING_ELEMENT, '333333');
               let ret = await mPreferences.get(KEY_TEST_STRING_ELEMENT, 'default');
               expect(ret).assertEqual('333333');
               done();
