@@ -52,6 +52,8 @@ export default function headerFooterStickyFlow() {
      */
     it('lazyVWaterFlowHeader_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowHeader_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('lazyVWaterFlow_header_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowHeader_0100] header: " + JSON.stringify(obj.$attrs.header));
@@ -134,6 +136,8 @@ export default function headerFooterStickyFlow() {
      */
     it('lazyVWaterFlowFooter_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVWaterFlowFooter_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('lazyVWaterFlow_footer_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowFooter_0100] footer: " + JSON.stringify(obj.$attrs.footer));

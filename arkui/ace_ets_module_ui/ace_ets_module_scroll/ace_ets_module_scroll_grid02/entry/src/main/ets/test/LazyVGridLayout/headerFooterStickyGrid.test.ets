@@ -52,6 +52,8 @@ export default function headerFooterStickyGrid() {
      */
     it('lazyVGridHeader_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVGridHeader_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('lazyVGrid_header_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVGridHeader_0100] header: " + JSON.stringify(obj.$attrs.header));
@@ -134,6 +136,8 @@ export default function headerFooterStickyGrid() {
      */
     it('lazyVGridFooter_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[lazyVGridFooter_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('lazyVGrid_footer_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVGridFooter_0100] footer: " + JSON.stringify(obj.$attrs.footer));
