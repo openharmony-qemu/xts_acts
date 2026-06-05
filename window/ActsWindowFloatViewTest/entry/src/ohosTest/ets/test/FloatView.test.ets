@@ -3490,7 +3490,7 @@ export default function abilityTest() {
           console.info(CaseName + ' Window properties after switch: ' + JSON.stringify(properties));
           expect(properties.templateType).assertEqual(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
           expect(properties.windowRect.width).assertEqual(newSize.width);
-          expect(properties.windowRect.height).assertEqual(limits.minSize.height);
+          expect(properties.windowRect.height).assertEqual(newSize.height);
           await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
