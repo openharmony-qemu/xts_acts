@@ -196,7 +196,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -262,7 +262,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -328,7 +328,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -423,7 +423,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -497,7 +497,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -571,7 +571,7 @@ export default function UIExtensionTest(): void {
             }
             done()
           }).catch((error: Error) => {
-            console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+            console.log(caseName + 'Failed to create the subwindow. Cause: ' + error.code + error.message);
             if (error.code == 1300002) {
               console.log(caseName + 'device not support')
   
@@ -633,7 +633,7 @@ export default function UIExtensionTest(): void {
           expect().assertFail();
           done()
         } catch (error) {
-          console.error(`${caseName} Failed. Cause: ${JSON.stringify(error)}`);
+          console.error(`${caseName} Failed. Cause: ` + error.code + error.message);
           if (error.code === 801) {
             done();
           } else {
