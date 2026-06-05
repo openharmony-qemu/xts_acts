@@ -33,7 +33,12 @@ export default function webStorageTest() {
                 }
             });
             await Utils.msSleep(2000)
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswebstoragetest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswebstoragetest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(4000)
             console.info('beforeAll end,%s', 'Succeed!')
         })
