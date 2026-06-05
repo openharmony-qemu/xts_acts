@@ -36,6 +36,7 @@ export default function BuiltinsEAWorkerQuitTest(): void {
       let eaWorker = new EAWorker('quitType')
       eaWorker.start()
       let result: void = eaWorker.quit()
+      expect(eaWorker.isAlive()).assertFalse()
     })
 
     /**

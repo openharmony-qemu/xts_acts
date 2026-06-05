@@ -17,7 +17,9 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
 import Utils from '../Util.test';
 
+let postTaskHelperExecuted: boolean = false
 let postTaskHelperCallback = (): void => {
+  postTaskHelperExecuted = true
 }
 
 export default function BuiltinsEAWorkerPostTaskTest(): void {
@@ -71,10 +73,12 @@ export default function BuiltinsEAWorkerPostTaskTest(): void {
      * @tc.level  LEVEL0
      */
     it('BuiltinsEAWorkerPostTaskTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      postTaskHelperExecuted = false
       let eaWorker = new EAWorker('postVoid')
       eaWorker.start()
       let result: void = eaWorker.postTask(postTaskHelperCallback)
       await eaWorker.join()
+      expect(postTaskHelperExecuted).assertTrue()
     })
 
     /**
