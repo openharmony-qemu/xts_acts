@@ -352,7 +352,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         for (let index = 0; index < 500; index++) {
-          await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
+          notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
             hilog.info(0x0000, 'testTag',
               `${testNum} ${index} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(index).assertEqual(0)
