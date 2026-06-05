@@ -55,7 +55,10 @@ export default function headerFooterStickyFlow() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_header_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowHeader_0100] header: " + JSON.stringify(obj.$attrs.header));
-      expect(obj.$attrs.header).assertUndefined();
+
+      let content = await driver.findComponent(ON.id('lazy_waterflow_header'));
+      console.info("[lazyVWaterFlowHeader_0100'] content is: " + content);
+      expect(content).assertEqual(null);
       console.info('[lazyVWaterFlowHeader_0100]  END');
       done();
     });
@@ -73,7 +76,10 @@ export default function headerFooterStickyFlow() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_header_builder');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowHeader_0200] header: " + JSON.stringify(obj.$attrs.header));
-      expect(obj.$attrs.header).not().assertUndefined();
+
+      let strJson2: string = getInspectorByKey('lazy_waterflow_header');
+      console.info("[lazyVWaterFlowHeader_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('Header');
       console.info('[lazyVWaterFlowHeader_0200]  END');
       done();
     });
@@ -131,7 +137,10 @@ export default function headerFooterStickyFlow() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_footer_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowFooter_0100] footer: " + JSON.stringify(obj.$attrs.footer));
-      expect(obj.$attrs.footer).assertUndefined();
+
+      let content = await driver.findComponent(ON.id('lazy_waterflow_footer'));
+      console.info("[lazyVWaterFlowFooter_0100'] content is: " + content);
+      expect(content).assertEqual(null);
       console.info('[lazyVWaterFlowFooter_0100]  END');
       done();
     });
@@ -149,7 +158,10 @@ export default function headerFooterStickyFlow() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_footer_builder');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowFooter_0200] footer: " + JSON.stringify(obj.$attrs.footer));
-      expect(obj.$attrs.footer).not().assertUndefined();
+
+      let strJson2: string = getInspectorByKey('lazy_waterflow_footer');
+      console.info("[lazyVWaterFlowFooter_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('Footer');
       console.info('[lazyVWaterFlowFooter_0200]  END');
       done();
     });
@@ -279,7 +291,7 @@ export default function headerFooterStickyFlow() {
       let strJson: string = getInspectorByKey('lazyVWaterFlow_sticky_both');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowSticky_0500] sticky: " + JSON.stringify(obj.$attrs.sticky));
-      expect(obj.$attrs.sticky).assertEqual('StickyStyle.BOTH');
+      expect(obj.$attrs.sticky).assertEqual('StickyStyle.Header | StickyStyle.Footer');
       console.info('[lazyVWaterFlowSticky_0500]  END');
       done();
     });

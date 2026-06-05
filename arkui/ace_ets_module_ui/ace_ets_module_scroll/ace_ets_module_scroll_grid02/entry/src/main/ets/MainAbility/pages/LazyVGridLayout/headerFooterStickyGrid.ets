@@ -17,10 +17,19 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct LazyVGridLayoutHeaderFooterSticky {
+  @State arr: number[] = []
+
+  aboutToAppear() {
+    for (let i = 0; i < 10; i++) {
+      this.arr.push(i)
+    }
+  }
+
   @Builder
   HeaderBuilder() {
     Column() {
-      Text('Header Component')
+      Text('Header')
+        .id('lazy_grid_header')
         .fontSize(14)
         .fontColor(Color.Black)
     }
@@ -33,7 +42,8 @@ struct LazyVGridLayoutHeaderFooterSticky {
   @Builder
   FooterBuilder() {
     Column() {
-      Text('Footer Component')
+      Text('Footer')
+        .id('lazy_grid_footer')
         .fontSize(14)
         .fontColor(Color.Black)
     }
@@ -45,7 +55,7 @@ struct LazyVGridLayoutHeaderFooterSticky {
 
   build() {
     Column() {
-      Text('LazyVGridLayout header/footer/sticky 测试')
+      Text('LazyVGridLayout header/footer/sticky')
 
       Scroll() {
         Column() {
@@ -54,7 +64,7 @@ struct LazyVGridLayoutHeaderFooterSticky {
           Row() {
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -69,13 +79,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .id('lazyVGrid_header_default')
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Header)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -91,13 +100,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Header)
               .header(this.HeaderBuilder)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -113,13 +121,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Header)
               .header(null)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -135,7 +142,6 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Header)
               .header(undefined)
-              .height('100%')
             }
             .width('25%')
           }
@@ -146,7 +152,7 @@ struct LazyVGridLayoutHeaderFooterSticky {
           Row() {
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -161,13 +167,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .id('lazyVGrid_footer_default')
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Footer)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -183,13 +188,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Footer)
               .footer(this.FooterBuilder)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -205,13 +209,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Footer)
               .footer(null)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -227,7 +230,6 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .sticky(StickyStyle.Footer)
               .footer(undefined)
-              .height('100%')
             }
             .width('25%')
           }
@@ -238,7 +240,7 @@ struct LazyVGridLayoutHeaderFooterSticky {
           Row() {
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -254,13 +256,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .columnsTemplate('1fr 1fr')
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -277,13 +278,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(StickyStyle.None)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -300,13 +300,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(StickyStyle.Header)
-              .height('100%')
             }
             .width('25%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -323,7 +322,6 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(StickyStyle.Footer)
-              .height('100%')
             }
             .width('25%')
           }
@@ -332,7 +330,7 @@ struct LazyVGridLayoutHeaderFooterSticky {
           Row() {
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -349,13 +347,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(StickyStyle.BOTH)
-              .height('100%')
             }
             .width('30%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -372,13 +369,12 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(null)
-              .height('100%')
             }
             .width('30%')
 
             Scroll() {
               LazyVGridLayout() {
-                ForEach([1, 2, 3, 4, 5], (item: number) => {
+                ForEach(this.arr, (item: number) => {
                   Column() {
                     Text('item ' + item.toString())
                       .fontSize(12)
@@ -395,7 +391,6 @@ struct LazyVGridLayoutHeaderFooterSticky {
               .header(this.HeaderBuilder)
               .footer(this.FooterBuilder)
               .sticky(undefined)
-              .height('100%')
             }
             .width('30%')
           }
@@ -407,6 +402,6 @@ struct LazyVGridLayoutHeaderFooterSticky {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F5F5F5')
+    .backgroundColor('#C0C0C0')
   }
 }
