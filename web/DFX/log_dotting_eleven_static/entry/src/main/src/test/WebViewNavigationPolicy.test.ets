@@ -641,12 +641,15 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let topAbility = await abilityDelegator.getCurrentTopAbility();
+        let context = topAbility.context;
         let want: Want = {
           bundleName: 'com.invalid.nonexistent.bundle',
           abilityName: 'NonExistentAbility'
         };
         try {
-          let result = await testAbilityContext.startAbilityForResult(want);
+          let result = await context.startAbilityForResult(want);
           console.info('testStartAbilityForResultStatic001 success: ' + JSON.stringify(result));
         } catch (err) {
           console.info('testStartAbilityForResultStatic001 error: ' + err.code);
@@ -668,13 +671,16 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let topAbility = await abilityDelegator.getCurrentTopAbility();
+        let context = topAbility.context;
         let want: Want = {
           bundleName: 'com.invalid.nonexistent.bundle',
           abilityName: 'NonExistentAbility'
         };
         let options: StartOptions = { displayId: 0 };
         try {
-          let result = await testAbilityContext.startAbilityForResult(want, options);
+          let result = await context.startAbilityForResult(want, options);
           console.info('testStartAbilityForResultStatic002 success: ' + JSON.stringify(result));
         } catch (err) {
           console.info('testStartAbilityForResultStatic002 error: ' + err.code);
@@ -696,12 +702,15 @@ export default function webViewController() {
     it('testStartAbilityForResultStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+        let topAbility = await abilityDelegator.getCurrentTopAbility();
+        let context = topAbility.context;
         let want: Want = {
           bundleName: 'com.nonexistent.app.test',
           abilityName: 'NonExistentAbility'
         };
         try {
-          let result = await testAbilityContext.startAbilityForResult(want);
+          let result = await context.startAbilityForResult(want);
           console.info('testStartAbilityForResultStatic003 success: ' + JSON.stringify(result));
         } catch (err) {
           console.info('testStartAbilityForResultStatic003 error: ' + err.code);
