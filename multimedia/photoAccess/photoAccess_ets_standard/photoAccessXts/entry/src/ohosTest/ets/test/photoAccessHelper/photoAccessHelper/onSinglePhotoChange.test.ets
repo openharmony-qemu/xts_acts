@@ -138,7 +138,7 @@ export default function onSinglePhotoChangeTest() {
         assetChangeRequest.setTitle(newTitle);
         await helper.applyChanges(assetChangeRequest);
         await sleep(2000);
-        helper.offSinglePhotoChange();
+        await helper.offSinglePhotoChange();
         expect(isChange).assertTrue();
         done();
       } catch (err) {
@@ -184,7 +184,7 @@ export default function onSinglePhotoChangeTest() {
         };
         helper.onSinglePhotoChange(asset, newCallback1);
         helper.onSinglePhotoChange(asset2, newCallback2);
-        helper.offSinglePhotoChange();
+        await helper.offSinglePhotoChange();
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
           new photoAccessHelper.MediaAssetChangeRequest(asset);
         assetChangeRequest.setTitle(newTitle);
@@ -294,7 +294,7 @@ export default function onSinglePhotoChangeTest() {
         await sleep(2000);
         expect(isChange1).assertTrue();
         expect(!isChange2).assertTrue();
-        helper.offSinglePhotoChange();
+        await helper.offSinglePhotoChange();
         done();
       } catch (err) {
         console.error(`offSinglePhotoChange_004:: failed ::${err.code}, ${err.message} !`);
@@ -623,6 +623,7 @@ export default function onSinglePhotoChangeTest() {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
         expect(err.code).assertEqual('23800151');
         helper.offSinglePhotoChange();
+        await sleep(2000);
         done();
       }
     });
@@ -668,6 +669,7 @@ export default function onSinglePhotoChangeTest() {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
         expect(err.code).assertEqual('23800151');
         helper.offSinglePhotoAlbumChange();
+        await sleep(2000);
         done();
       }
     });
@@ -711,6 +713,7 @@ export default function onSinglePhotoChangeTest() {
         }
         console.log(`${tag} success`);
         helper.offSinglePhotoChange();
+        await sleep(2000);
         done();
       } catch (err) {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
@@ -754,6 +757,7 @@ export default function onSinglePhotoChangeTest() {
         }
         console.log(`${tag} success`);
         helper.offSinglePhotoAlbumChange();
+        await sleep(2000);
         done();
       } catch (err) {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
