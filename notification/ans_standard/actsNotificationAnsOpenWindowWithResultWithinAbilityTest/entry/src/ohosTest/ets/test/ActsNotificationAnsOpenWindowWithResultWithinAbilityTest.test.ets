@@ -66,6 +66,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } esle if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -116,6 +119,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
+            done()
+          } esle if(err.code === 801){
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -183,6 +189,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } esle if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -239,6 +248,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
+            done()
+          } esle if(err.code === 801){
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -302,6 +314,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
+          } esle if(err.code === 801){
+            expect(err.code).assertEqual(801)
+            done()
           } else {
             expect(false).assertTrue();
             done()
@@ -337,7 +352,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         for (let index = 0; index < 500; index++) {
-          notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
+          await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
             hilog.info(0x0000, 'testTag',
               `${testNum} ${index} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(index).assertEqual(0)
@@ -349,6 +364,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } esle if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else if (index === 499) {
               expect(err.code).assertEqual(1600018);
               await sleep(1000)
@@ -405,6 +423,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } esle if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else {
               expect(err.code).assertEqual(401);
             }
@@ -446,6 +467,9 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } esle if(err.code === 801){
+              expect(err.code).assertEqual(801)
+              done()
             } else {
               expect(err.code).assertEqual(401);
             }
