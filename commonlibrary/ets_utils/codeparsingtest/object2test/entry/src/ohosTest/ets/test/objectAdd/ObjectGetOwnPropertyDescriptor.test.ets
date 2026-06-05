@@ -1725,3 +1725,1731 @@ export default function ObjectGetOwnPropertyDescriptorTest() {
      * @tc.desc   Verify getter implements lazy initialization
      * @tc.type   Function
      * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFrozenGetter();
+      expect(result.getIsFunc).assertEqual(true);
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest109
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0109
+     * @tc.desc   Verify setter defined via object literal syntax
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealedGetterSetter();
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest110
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0110
+     * @tc.desc   Verify setter defined via Object.defineProperty
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescConvertToData();
+      expect(result.beforeGetIsFunc).assertEqual(true);
+      expect(result.afterValue).assertEqual('data');
+      expect(result.afterGetIsUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest111
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0111
+     * @tc.desc   Verify setter validates and filters input value
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCannotConvertNonConf();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest112
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0112
+     * @tc.desc   Verify setter triggers side effects
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAllFalse();
+      expect(result.writable).assertEqual(false);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest113
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0113
+     * @tc.desc   Verify setter transforms input value type or format
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReadOnlyEnum();
+      expect(result.writable).assertEqual(false);
+      expect(result.enumerable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest114
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0114
+     * @tc.desc   Verify setter throws exception internally
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescWritableNonEnum();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest115
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0115
+     * @tc.desc   Verify defining both getter and setter forms a complete accessor
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNonDelButWritable();
+      expect(result.configurable).assertEqual(false);
+      expect(result.writable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest116
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0116
+     * @tc.desc   Verify defining getter and setter simultaneously via Object.defineProperty
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDelButReadOnly();
+      expect(result.configurable).assertEqual(true);
+      expect(result.writable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest117
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0117
+     * @tc.desc   Verify getter/setter implements relationship between properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescConvertAccToData();
+      expect(result.beforeGetIsFunc).assertEqual(true);
+      expect(result.afterValue).assertEqual('now is data');
+      expect(result.afterGetIsUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest118
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0118
+     * @tc.desc   Verify getter/setter implements true private property effect
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescModifyWritableToFalse();
+      expect(result.beforeWritable).assertEqual(true);
+      expect(result.afterWritable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest119
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0119
+     * @tc.desc   Verify getter/setter defined in class syntax
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescModifyEnumerable();
+      expect(result.beforeEnum).assertEqual(true);
+      expect(result.afterEnum).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest120
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0120
+     * @tc.desc   Verify getter property set to non-enumerable
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezePlainObj();
+      expect(result.aWritable).assertEqual(false);
+      expect(result.aConf).assertEqual(false);
+      expect(result.bWritable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest121
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0121
+     * @tc.desc   Verify getter/setter set to non-configurable
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeNested();
+      expect(result.outerWritable).assertEqual(false);
+      expect(result.nestedWritable).assertEqual(false);
+      expect(result.modifiedInner).assertEqual('modified');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest122
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0122
+     * @tc.desc   Verify non-configurable getter/setter cannot be deleted
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeWithGetter();
+      expect(result.getIsFunc).assertEqual(true);
+      expect(result.valueConf).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest123
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0123
+     * @tc.desc   Verify getter still accessible after Object.freeze()
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeArray();
+      expect(result.writable0).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest124
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0124
+     * @tc.desc   Verify getter/setter cannot be deleted but internal value can be modified after Object.seal()
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeFunction();
+      expect(result.writable).assertEqual(false);
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest125
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0125
+     * @tc.desc   Verify accessor can be converted to data property when configurable=true
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDetectFrozen();
+      expect(result.afterFrozen).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest126
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0126
+     * @tc.desc   Verify accessor cannot be converted to data property when configurable=false
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealPlainObj();
+      expect(result.writable).assertEqual(true);
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest127
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0127
+     * @tc.desc   Verify all of configurable, writable, enumerable are false
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealReadOnly();
+      expect(result.writable).assertEqual(false);
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest128
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0128
+     * @tc.desc   Verify writable=false but enumerable=true
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealNested();
+      expect(result.outerConf).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest129
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0129
+     * @tc.desc   Verify writable=true but enumerable=false
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealArray();
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest130
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0130
+     * @tc.desc   Verify configurable=false but writable=true
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDetectSealed();
+      expect(result.afterSealed).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest131
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0131
+     * @tc.desc   Verify configurable=true but writable=false
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPreventExtPlainObj();
+      expect(result.writable).assertEqual(true);
+      expect(result.configurable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest132
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0132
+     * @tc.desc   Verify converting property type when configurable=true
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPreventExtDefineProp();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest133
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0133
+     * @tc.desc   Verify modifying writable attribute when configurable=true
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPreventExtModifyDesc();
+      expect(result.writable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest134
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0134
+     * @tc.desc   Verify modifying enumerable attribute when configurable=true
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPreventExtArray();
+      expect(result.writableLen).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest135
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0135
+     * @tc.desc   Verify all properties become writable=false and configurable=false after freeze
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDetectExtensible();
+      expect(result.afterExt).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest136
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0136
+     * @tc.desc   Verify freeze only affects top level, does not recursively freeze nested objects
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProtoNotOwn();
+      expect(result.isUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest137
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0137
+     * @tc.desc   Verify getter still callable after freeze
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProtoExplicit();
+      expect(result.valueIsObj).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest138
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0138
+     * @tc.desc   Verify array elements cannot be modified after freeze
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescConstructorNotOwn();
+      expect(result.isUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest139
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0139
+     * @tc.desc   Verify function properties cannot be modified after freeze
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescClassConstructor();
+      expect(result.isUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest140
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0140
+     * @tc.desc   Verify frozen state using Object.isFrozen()
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescArrayPrototypePush();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(true);
+    });
+
+
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest141
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0141
+     * @tc.desc   Verify existing non-writable properties remain non-writable after seal
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFuncPrototypeApply();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest142
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0142
+     * @tc.desc   Verify seal only affects top level
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescStrPrototypeSplit();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest143
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0143
+     * @tc.desc   Verify array elements cannot be deleted but can be modified after seal
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNumPrototypeToFixed();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest144
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0144
+     * @tc.desc   Verify sealed state using Object.isSealed()
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescMathPI();
+      expect(result.piVal).assertEqual(Math.PI);
+      expect(result.piWritable).assertEqual(false);
+      expect(result.piEnum).assertEqual(false);
+      expect(result.piConf).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest145
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0145
+     * @tc.desc   Verify new properties cannot be added but existing properties unaffected after preventExtensions
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescJSONParse();
+      expect(result.parseIsFunc).assertEqual(true);
+      expect(result.parseWritable).assertEqual(true);
+      expect(result.parseEnum).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest146
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0146
+     * @tc.desc   Verify cannot defineProperty to add new properties after preventExtensions
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReflectGet();
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+      expect(result.configurable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest147
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0147
+     * @tc.desc   Verify existing property descriptors can be modified after preventExtensions (if configurable=true)
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAtomicsAdd();
+      expect(result.isFunc).assertEqual(true);
+      expect(result.writable).assertEqual(true);
+      expect(result.enumerable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest148
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0148
+     * @tc.desc   Verify array length still modifiable after preventExtensions
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolProp();
+      expect(result.value).assertEqual('symbol value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest149
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0149
+     * @tc.desc   Verify extensible state using Object.isExtensible()
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAnonSymbolProp();
+      expect(result.value).assertEqual('anonymous value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest150
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0150
+     * @tc.desc   Verify __proto__ is usually not an own property
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescGlobalSymbolProp();
+      expect(result.value).assertEqual('global value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest151
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0151
+     * @tc.desc   Verify __proto__ can be explicitly defined as own property
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolKeyFor();
+      expect(result.globalKey).assertEqual('sharedKey');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest152
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0152
+     * @tc.desc   Verify constructor is usually a prototype chain property
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescMultiSymbolProp();
+      expect(result.val1).assertEqual('value1');
+      expect(result.val2).assertEqual('value2');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest153
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0153
+     * @tc.desc   Verify constructor property can be customized
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescMixedSymStr();
+      expect(result.stringVal).assertEqual('string value');
+      expect(result.symVal).assertEqual('symbol value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest154
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0154
+     * @tc.desc   Verify built-in method properties of Array.prototype
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNonEnumSymbol();
+      expect(result.enumerable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest155
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0155
+     * @tc.desc   Verify built-in method properties of Object.prototype
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNonConfSymbol();
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest156
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0156
+     * @tc.desc   Verify built-in method properties of Function.prototype
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolAccessor();
+      expect(result.getIsFunc).assertEqual(true);
+      expect(result.setIsFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest157
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0157
+     * @tc.desc   Verify built-in method properties of String.prototype
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolIterator();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest158
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0158
+     * @tc.desc   Verify built-in method properties of Number.prototype
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolToStringTag();
+      expect(result.value).assertEqual('MyCustomObject');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest159
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0159
+     * @tc.desc   Verify static properties and methods of Math object
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolHasInstance();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest160
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0160
+     * @tc.desc   Verify static method properties of JSON object
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolToPrimitive();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest161
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0161
+     * @tc.desc   Verify static method properties of Reflect object
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolSpecies();
+      expect(result.getIsFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest162
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0162
+     * @tc.desc   Verify static method properties of Atomics object
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolMatch();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest163
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0163
+     * @tc.desc   Verify using Symbol as object property key
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolReplace();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest164
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0164
+     * @tc.desc   Verify using Symbol without description as property key
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolSearch();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest165
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0165
+     * @tc.desc   Verify using global Symbol from Symbol.for() as property key
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolSplit();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest166
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0166
+     * @tc.desc   Verify key of global Symbol
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolConcatSpreadable();
+      expect(result.value).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest167
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0167
+     * @tc.desc   Verify object with multiple different Symbol properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolUnscopables();
+      expect(result.fooTrue).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest168
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0168
+     * @tc.desc   Verify object with both Symbol and string properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolAsyncIterator();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest169
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0169
+     * @tc.desc   Verify Symbol property set to non-enumerable
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolDispose();
+      expect(result.isFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest170
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0170
+     * @tc.desc   Verify Symbol property set to non-configurable
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSymbolMetadata();
+      expect(result.author).assertEqual('test');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest171
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0171
+     * @tc.desc   Verify Symbol property as getter/setter
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjKeysNoSymbol();
+      expect(result.includesStr).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest172
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0172
+     * @tc.desc   Verify defining custom iterator
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjGetNamesNoSymbol();
+      expect(result.includesKey).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest173
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0173
+     * @tc.desc   Verify custom toString tag
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjGetSymbols();
+      expect(result.length).assertEqual(2);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest174
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0174
+     * @tc.desc   Verify custom instanceof behavior
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReflectOwnKeys();
+      expect(result.length).assertEqual(2);
+      expect(result.includesStr).assertEqual(true);
+      expect(result.includesSym).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest175
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0175
+     * @tc.desc   Verify custom type conversion behavior
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescForInNoSymbol();
+      expect(result.includesSym).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest176
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0176
+     * @tc.desc   Verify defining constructor for derived object creation
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteSymbol();
+      expect(result.afterIsUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest177
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0177
+     * @tc.desc   Verify custom String.prototype.match behavior
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteNonConfSymbol();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest178
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0178
+     * @tc.desc   Verify custom String.prototype.replace behavior
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeSymbolCannotDelete();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest179
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0179
+     * @tc.desc   Verify custom String.prototype.search behavior
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNonexistReturnUndef();
+      expect(result.desc).assertEqual(undefined);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest180
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0180
+     * @tc.desc   Verify custom String.prototype.split behavior
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProtoPropReturnUndef();
+      expect(result.isUndef).assertEqual('NOT_UNDEF');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest181
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0181
+     * @tc.desc   Verify controlling Array.prototype.concat spread behavior
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescEmptyObjAnyProp();
+      expect(result.desc).assertEqual(undefined);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest182
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0182
+     * @tc.desc   Verify defining properties unavailable in with statements
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNullObjThrows();
+      expect(result.threwNull).assertEqual('TypeError');
+      expect(result.threwUndef).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest183
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0183
+     * @tc.desc   Verify defining async iterator
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDataDescStructure();
+      expect(result.hasValue).assertEqual(true);
+      expect(result.hasWritable).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest184
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0184
+     * @tc.desc   Verify defining resource cleanup behavior
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDataDescTypes();
+      expect(result.valueType).assertEqual('number');
+      expect(result.writableType).assertEqual('boolean');
+      expect(result.enumerableType).assertEqual('boolean');
+      expect(result.configurableType).assertEqual('boolean');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest185
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0185
+     * @tc.desc   Verify defining metadata decorator
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDataDescImmutable();
+      expect(result.origValue).assertEqual(1);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest186
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0186
+     * @tc.desc   Verify Object.keys() only returns string properties
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDataDescReusable();
+      expect(result.copiedVal).assertEqual(42);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest187
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0187
+     * @tc.desc   Verify Object.getOwnPropertyNames() only returns string property names
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAccessorDescStructure();
+      expect(result.hasGet).assertEqual(true);
+      expect(result.hasSet).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest188
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0188
+     * @tc.desc   Verify Object.getOwnPropertySymbols() returns all Symbol properties
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAccessorGetSetTypes();
+      expect(result.getterGetIsFunc).assertEqual(true);
+      expect(result.setterSetIsFunc).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest189
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0189
+     * @tc.desc   Verify Reflect.ownKeys() returns string and Symbol properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCallGetterFromDesc();
+      expect(result.calledOnObj).assertEqual(100);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest190
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0190
+     * @tc.desc   Verify for-in loop only iterates enumerable string properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCallSetterFromDesc();
+      expect(result.internalVal).assertEqual(100);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest191
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0191
+     * @tc.desc   Verify configurable Symbol property can be deleted
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjIsPlainObj();
+      expect(result.constIsObj).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest192
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0192
+     * @tc.desc   Verify non-configurable Symbol property cannot be deleted
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjProtoChain();
+      expect(result.protoIsObjProto).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest193
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0193
+     * @tc.desc   Verify Symbol property cannot be deleted after freeze
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjCanFreeze();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest194
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0194
+     * @tc.desc   Verify non-existent property returns undefined
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjCanSeal();
+      expect(result.isSealed).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest195
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0195
+     * @tc.desc   Verify property on prototype chain but not own property returns undefined
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjCanAddProps();
+      expect(result.tsIsNum).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest196
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0196
+     * @tc.desc   Verify empty object returns undefined for any property lookup
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescObjJSONSerialize();
+      expect(result.parsedValue).assertEqual(42);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest197
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0197
+     * @tc.desc   Verify null or undefined as first argument throws TypeError
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescNullArg();
+      expect(result.threwTypeError).assertEqual('TypeError');
+      expect(result.errorName).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest198
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0198
+     * @tc.desc   Verify data property descriptor contains value, writable, enumerable, configurable
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescUndefArg();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest199
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0199
+     * @tc.desc   Verify types of data descriptor properties
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescES5Primitive();
+      expect(result.hasDesc).assertEqual(true);
+      expect(result.threw).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest200
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0200
+     * @tc.desc   Verify modifying returned descriptor does not affect original property
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescMissingSecondArg();
+      expect(result.desc).assertEqual(undefined);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest201
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0201
+     * @tc.desc   Verify returned descriptor can be used for other operations
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescExtraArgs();
+      expect(result.value).assertEqual(1);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest202
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0202
+     * @tc.desc   Verify accessor property descriptor contains get, set, enumerable, configurable
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProxyProperty();
+      expect(result.value).assertEqual('value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest203
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0203
+     * @tc.desc   Verify types of accessor descriptor get/set
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProxyIntercept();
+      expect(result.value).assertEqual('intercepted');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest204
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0204
+     * @tc.desc   Verify getter function in descriptor can be called
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProxyVirtualProp();
+      expect(result.threw).assertEqual(true);
+      expect(result.isTypeError).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest205
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0205
+     * @tc.desc   Verify setter function in descriptor can be called
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescProxyInconsistent();
+      expect(result.value).assertEqual(undefined);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest206
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0206
+     * @tc.desc   Verify descriptor is a plain Object instance
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCopyProp();
+      expect(result.targetVal).assertEqual('value');
+      expect(result.targetDescVal).assertEqual('value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest207
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0207
+     * @tc.desc   Verify descriptor object prototype chain is normal
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCopyAccessor();
+      expect(result.result).assertEqual(42);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest208
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0208
+     * @tc.desc   Verify returned descriptor object can be frozen
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCopyNonConfigurable();
+      expect(result.configurable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest209
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0209
+     * @tc.desc   Verify returned descriptor object can be sealed
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCopyModifyDesc();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest210
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0210
+     * @tc.desc   Verify new properties can be added to descriptor object
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescBatchCopy();
+      expect(result.a).assertEqual(1);
+      expect(result.b).assertEqual(2);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest211
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0211
+     * @tc.desc   Verify data descriptor can be serialized to JSON
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescBatchCopyAccessor();
+      expect(result.value).assertEqual(42);
+      expect(result.name).assertEqual('source');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest212
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0212
+     * @tc.desc   Verify null as first argument throws TypeError
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescCreateWithDesc();
+      expect(result.ownDescVal).assertEqual('value');
+      expect(result.inheritedDescUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest213
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0213
+     * @tc.desc   Verify undefined as first argument throws TypeError
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAssignEnumOnly();
+      expect(result.visible).assertEqual('shown');
+      expect(result.hiddenUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest214
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0214
+     * @tc.desc   Verify primitive type as first argument throws TypeError in ES5
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAssignSymbol();
+      expect(result.symVal).assertEqual('symbol value');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest215
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0215
+     * @tc.desc   Verify missing second argument returns undefined
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAssignNoGetter();
+      expect(result.targetGetIsUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest216
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0216
+     * @tc.desc   Verify extra arguments are ignored
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAllDescsMatch();
+      expect(result.valMatch).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest217
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0217
+     * @tc.desc   Verify accessing property descriptor via Proxy
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescAllDescsNonEnum();
+      expect(result.enumFalse).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest218
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0218
+     * @tc.desc   Verify Proxy custom getOwnPropertyDescriptor behavior
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescFreezeCompare();
+      expect(result.beforeWritable).assertEqual(true);
+      expect(result.afterWritable).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest219
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0219
+     * @tc.desc   Verify Proxy throws TypeError when returning configurable=false for non-existent property
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescSealCompare();
+      expect(result.beforeConf).assertEqual(true);
+      expect(result.afterConf).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest220
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0220
+     * @tc.desc   Verify Proxy throws TypeError when returned descriptor violates consistency rules
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPreventExtCompare();
+      expect(result.confSame).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest221
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0221
+     * @tc.desc   Verify using getOwnPropertyDescriptor to get descriptor and copying via defineProperty
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescKeysEnumRel();
+      expect(result.hasVisible).assertEqual(true);
+      expect(result.hasHidden).assertEqual(false);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest222
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0222
+     * @tc.desc   Verify copying getter/setter property to another object
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescValuesEnumRel();
+      expect(result.hasShown).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest223
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0223
+     * @tc.desc   Verify copying non-configurable property (configurable must be false)
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescEntriesEnumRel();
+      expect(result.length).assertEqual(1);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest224
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0224
+     * @tc.desc   Verify modifying descriptor before copying
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescGetNamesNonEnum();
+      expect(result.hasB).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest225
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0225
+     * @tc.desc   Verify batch copying properties using getOwnPropertyDescriptors
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescGetNamesNoSymbol();
+      expect(result.symDescExists).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest226
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0226
+     * @tc.desc   Verify batch copying object with getter/setter
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescGetSymbolsAll();
+      expect(result.length).assertEqual(2);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest227
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0227
+     * @tc.desc   Verify using Object.create second argument to pass descriptors
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescGetSymbolsNonEnum();
+      expect(result.hasSym).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest228
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0228
+     * @tc.desc   Verify Object.assign only copies enumerable own properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReflectSame();
+      expect(result.valSame).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest229
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0229
+     * @tc.desc   Verify Object.assign copies Symbol properties (Symbol is enumerable)
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReflectPrimitive();
+      expect(result.reflectThrew).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest230
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0230
+     * @tc.desc   Verify Object.assign calls getter to get value rather than copying getter function
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescReflectNull();
+      expect(result.objThrew).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest231
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0231
+     * @tc.desc   Verify Object.getOwnPropertyDescriptors returns all own property descriptors
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescHasOwnProp();
+      expect(result.descExists).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest232
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0232
+     * @tc.desc   Verify Object.getOwnPropertyDescriptors includes non-enumerable properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescHasOwnNonEnum();
+      expect(result.descExists).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest233
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0233
+     * @tc.desc   Verify property descriptor changes before and after freeze
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescForInEnumOnly();
+      expect(result.hasEnum).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest234
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0234
+     * @tc.desc   Verify property descriptor changes before and after seal
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescHasOwnPropCheck();
+      expect(result.hasOwnProp).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest235
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0235
+     * @tc.desc   Verify preventExtensions does not change existing property descriptors
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescHasOwnPropNonEnum();
+      expect(result.hasOwnProp).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest236
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0236
+     * @tc.desc   Verify only enumerable=true properties appear in Object.keys
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPropIsEnumerable();
+      expect(result.visibleIsEnum).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest237
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0237
+     * @tc.desc   Verify only enumerable=true property values appear in Object.values
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescPropIsEnumOwnOnly();
+      expect(result.descUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest238
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0238
+     * @tc.desc   Verify only enumerable=true properties appear in Object.entries
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteConfigurableProp();
+      expect(result.afterUndef).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest239
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0239
+     * @tc.desc   Verify Object.getOwnPropertyNames includes all string properties (including non-enumerable)
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteNonConfProp();
+      expect(result.threw).assertEqual('TypeError');
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest240
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0240
+     * @tc.desc   Verify Object.getOwnPropertyNames does not include Symbol properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteNonexist();
+      expect(result.result).assertEqual(true);
+    });
+
+     /**
+     * @tc.name   ObjectGetOwnPropertyDescriptorTest241
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTGETOWNPROPERTYDESCRIPTOR_TEST_0241
+     * @tc.desc   Verify Object.getOwnPropertySymbols returns all Symbol properties
+     * @tc.size   MediumTest
+     * @tc.level  Level 2
+     */
+    it('ObjectGetOwnPropertyDescriptorTest241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = getDescDeleteProtoProp();
+      expect(result.stillAccessible).assertEqual(true);
+    });
+  });
+};
