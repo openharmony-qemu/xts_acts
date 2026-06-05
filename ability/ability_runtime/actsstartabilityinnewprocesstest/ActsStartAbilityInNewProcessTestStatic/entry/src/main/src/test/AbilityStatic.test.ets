@@ -183,7 +183,12 @@ export default function abilitystaticTest() {
       });
       hilog.info(domain, testTag, '%{public}s', 'abilityDelegator start');
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a TestAbility -b com.example.startabilityinnewprocesstest.static")
+      let cmd = "aa start -a TestAbility -b com.example.startabilityinnewprocesstest.static";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static beforeAll]';
       try {

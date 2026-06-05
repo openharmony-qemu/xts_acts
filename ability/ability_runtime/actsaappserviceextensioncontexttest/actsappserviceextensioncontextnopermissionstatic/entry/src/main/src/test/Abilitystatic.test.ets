@@ -58,7 +58,12 @@ export default function ActsAppServiceExtensionContextNoPermissionStaticTest() {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await Utils.msSleep(WAIT_TIME2000);
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(WAIT_TIME2000);
       context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll end`);

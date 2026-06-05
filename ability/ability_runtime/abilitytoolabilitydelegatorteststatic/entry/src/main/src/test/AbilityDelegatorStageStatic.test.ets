@@ -62,7 +62,12 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-          await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
           await Utils.msSleep(2000);
 
           expect(isAbilityCreated).assertTrue();
@@ -110,7 +115,12 @@ export default function AbilityDelegatorStageStaticTest() {
             await abilityDelegator.removeAbilityMonitor(monitor);
             hilog.info(domain, tag, `${itName} removeAbilityMonitor callback success`);
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
             const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
@@ -178,7 +188,12 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
 
                      hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-                     await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+                     let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+                     let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                     if(user !== undefined){
+                         cmd += ' -u ' + user;
+                     }
+                     await abilityDelegator.executeShellCommand(cmd);
                      await Utils.msSleep(2000);
 
                      hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
@@ -250,7 +265,12 @@ export default function AbilityDelegatorStageStaticTest() {
           hilog.info(domain, tag, `${itName} removeAbilityMonitorSync success`);
 
           hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-          await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
           await Utils.msSleep(2000);
 
 
@@ -315,7 +335,12 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(1000);
 
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
@@ -377,7 +402,12 @@ export default function AbilityDelegatorStageStaticTest() {
               expect(data !== undefined).assertTrue();
             })
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
@@ -440,7 +470,12 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
@@ -506,7 +541,12 @@ export default function AbilityDelegatorStageStaticTest() {
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(1000);
 
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
@@ -544,7 +584,12 @@ export default function AbilityDelegatorStageStaticTest() {
         try {
           const abilityName = 'EntryAbility';
           hilog.info(domain, tag, `${itName} start ${abilityName}`);
-          await abilityDelegator.executeShellCommand(`aa start -a ${abilityName} -b ${BUNDLE_NAME}`);
+          let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
           await Utils.msSleep(2000);
 
           hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
@@ -596,7 +641,12 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${abilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
@@ -657,7 +707,12 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${abilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
@@ -720,7 +775,12 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${abilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
@@ -778,7 +838,12 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const abilityName = 'EntryAbility';
             hilog.info(domain, tag, `${itName} start ${abilityName}`);
-            await abilityDelegator.executeShellCommand(`aa start -a ${abilityName} -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
             await Utils.msSleep(2000);
 
             hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
