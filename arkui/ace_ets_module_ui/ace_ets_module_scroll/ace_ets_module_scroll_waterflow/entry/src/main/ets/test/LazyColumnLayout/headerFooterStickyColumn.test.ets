@@ -57,10 +57,7 @@ export default function headerFooterStickyColumn() {
       let strJson: string = getInspectorByKey('lazyColumn_header_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyColumnHeader_0100] header: " + JSON.stringify(obj.$attrs.header));
-
-      let content = await driver.findComponent(ON.id('lazy_column_header'));
-      console.info("[lazyColumnHeader_0100'] content is: " + content);
-      expect(content).assertEqual(null);
+      expect(obj.$attrs.header).assertUndefined();
       console.info('[lazyColumnHeader_0100] END');
       done();
     });
@@ -141,10 +138,7 @@ export default function headerFooterStickyColumn() {
       let strJson: string = getInspectorByKey('lazyColumn_footer_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyColumnFooter_0100] footer: " + JSON.stringify(obj.$attrs.footer));
-
-      let content = await driver.findComponent(ON.id('lazy_column_footer'));
-      console.info("[lazyColumnFooter_0100'] content is: " + content);
-      expect(content).assertEqual(null);
+      expect(obj.$attrs.footer).assertUndefined();
       console.info('[lazyColumnFooter_0100] END');
       done();
     });

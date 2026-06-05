@@ -57,10 +57,7 @@ export default function headerFooterStickyGrid() {
       let strJson: string = getInspectorByKey('lazyVGrid_header_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVGridHeader_0100] header: " + JSON.stringify(obj.$attrs.header));
-
-      let content = await driver.findComponent(ON.id('lazy_grid_header'));
-      console.info("[lazyVGridHeader_0100'] content is: " + content);
-      expect(content).assertEqual(null);
+      expect(obj.$attrs.header).assertUndefined();
       console.info('[lazyVGridHeader_0100] END');
       done();
     });
@@ -141,10 +138,7 @@ export default function headerFooterStickyGrid() {
       let strJson: string = getInspectorByKey('lazyVGrid_footer_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVGridFooter_0100] footer: " + JSON.stringify(obj.$attrs.footer));
-
-      let content = await driver.findComponent(ON.id('lazy_grid_footer'));
-      console.info("[lazyVGridFooter_0100'] content is: " + content);
-      expect(content).assertEqual(null);
+      expect(obj.$attrs.footer).assertUndefined();
       console.info('[lazyVGridFooter_0100] END');
       done();
     });
