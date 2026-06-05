@@ -38,3 +38,4 @@ export const AccessibilityNextFocusIdTest_001: () => number;
 export const AccessibilityNextFocusIdTest_002: () => number;
 export const AccessibilityDefaultFocusTest_001: () => number;
 export const AccessibilityDefaultFocusTest_002: () => number;
+export const Hovered_UI_STATE_HOVERED: () => number;

@@ -128,6 +128,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         });
         await Utils.msSleep(2000)
         await driver.assertComponentExist(ON.text('通知管理'));
+        await Utils.msSleep(2000)
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
@@ -138,7 +139,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonOne).assertContain('允许通知')
         }
-        await Utils.msSleep(500)
+        await Utils.msSleep(1500)
         let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
         console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
         if (buttonTwo !== null) {
@@ -149,7 +150,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonTwo).assertContain('桌面角标')
         }
-        await Utils.msSleep(500)
+        await Utils.msSleep(1500)
         let buttonZero = await driver.findComponent(ON.type('Toggle').isAfter(ON.text("允许通知")));
         console.info(`${testNum} buttonZero is ${JSON.stringify(buttonZero)}`);
         if (buttonZero !== null) {
@@ -161,7 +162,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonZero).assertContain("允许通知")
         }
 
-        await Utils.msSleep(500)
+        await Utils.msSleep(1500)
         let buttonThree = await driver.findComponent(ON.text('确定'));
         console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
         if (buttonThree !== null) {
@@ -235,6 +236,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
             done();
           }
         });
+        await Utils.msSleep(2000)
         await driver.assertComponentExist(ON.text('通知管理'));
         await Utils.msSleep(2000)
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
@@ -258,7 +260,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonTwo).assertContain('允许通知')
         }
-        await Utils.msSleep(500)
+        await Utils.msSleep(1500)
         let buttonThree = await driver.findComponent(ON.text('横幅通知'));
         console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
         if (buttonThree !== null) {
@@ -269,7 +271,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonThree).assertContain('允许通知')
         }
-        await Utils.msSleep(500)
+        await Utils.msSleep(1500)
         let buttonFour = await driver.findComponent(ON.text('确定'));
         console.info(`${testNum} button is ${JSON.stringify(buttonFour)}`);
         if (buttonFour !== null) {

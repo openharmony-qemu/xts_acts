@@ -35,6 +35,7 @@ let mPreviewOutput: cameraObj.PreviewOutput | null = null;
 let mPhotoOutput: cameraObj.PhotoOutput | null = null;
 let mPhotoSurface: string;
 let receiver: image.ImageReceiver;
+let colorSpace: colorSpaceManager.ColorSpace;
 let power: ESObject;
 let context = getContext();
 let dr = Driver.create();
@@ -68,12 +69,15 @@ let createCameraSessionInstance = () => {
 }
 
 let createOutput = (idx: number) => {
-  let cameraOutputCap = mCameraManager.getSupportedOutputCapability(mCameraDevicesArray[idx],
+  let cameraOutputCap = mCameraManager.getSupportedFullOutputCapability(mCameraDevicesArray[idx],
     cameraObj.SceneMode.NORMAL_PHOTO);
   if (!isEmpty(cameraOutputCap)) {
     if (!isEmpty(cameraOutputCap.previewProfiles)) {
       for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
         mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], indexSurfaceId);
+        if (colorSpace == 9) {
+          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[1], indexSurfaceId);
+        }
         if (!isEmpty(mPreviewOutput)) { break; }
       }
     }
@@ -147,6 +151,13 @@ let getPhotoReceiverSurface = async () => {
   }
 }
 
+async function releaseCameraSession() {
+  console.info(TAG, 'releasePhotoSession.');
+  await mPreviewOutput?.release();
+  await mPhotoOutput?.release();
+  await mCameraSession?.release();
+}
+
 export default function colorManagementTest() {
     describe('colorManagementTest', () => {
       beforeAll(async () => {
@@ -206,6 +217,12 @@ export default function colorManagementTest() {
             colorSpaces = mCameraSession.getSupportedColorSpaces();
             if (colorSpaces.length>0&&!isEmpty(colorSpaces)) {
                 for (let i = 0; i < colorSpaces.length; i++) {
+                  if (colorSpaces[i] == 9) {
+                    colorSpace = colorSpaces[i];
+                    await releaseCameraSession();
+                    createCameraSessionInstance();
+                    await startCameraSession(0);
+                  }
                   await mCameraSession.setColorSpace(colorSpaces[i])
                   currentColorSpace = mCameraSession.getActiveColorSpace();
                   console.info(TAG + "currentColorSpace is " + currentColorSpace);
@@ -215,8 +232,9 @@ export default function colorManagementTest() {
             }
         } catch (err) {
           console.info(TAG + testNum + " FAILED" + err.code);
-            expect(true).assertFalse();
+          expect(true).assertFalse();
         }
+        await releaseCameraSession();
         done();
       })
 
@@ -240,7 +258,6 @@ export default function colorManagementTest() {
         return;
         }
         createCameraSessionInstance();
-        await startCameraSession(0);
         let colorSpaces: Array<colorSpaceManager.ColorSpace> = [];
         let currentColorSpace: colorSpaceManager.ColorSpace | undefined = undefined;
         colorSpaces = mCameraSession.getSupportedColorSpaces();

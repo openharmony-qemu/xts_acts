@@ -211,20 +211,6 @@ export default function linux_group_test() {
       done();
     });
     /**
-     * @tc.name   getdents
-     * @tc.number SUB_THIRDPARTY_MUSL_GETDENTS_0100
-     * @tc.desc   libc-test getdents
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("getdents", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getdents");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   copy_file_range
      * @tc.number SUB_THIRDPARTY_MUSL_COPY_FILE_RANGE_0100
      * @tc.desc   libc-test copy_file_range

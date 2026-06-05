@@ -15,7 +15,7 @@
 import { huks } from '@kit.UniversalKeystoreKit';
 
 
-export async function generateKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<void> {
+export async function generateKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<void> {
   return new Promise((resolve, reject) => {
     huks.generateKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -26,7 +26,7 @@ export async function generateKeyItem(keyAlias: string, options: huks.HuksOption
   })
 }
 
-export async function deleteKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<void> {
+export async function deleteKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<void> {
   return new Promise((resolve, reject) => {
     huks.deleteKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -37,7 +37,7 @@ export async function deleteKeyItem(keyAlias: string, options: huks.HuksOptions)
   })
 }
 
-export async function importKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<void> {
+export async function importKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<void> {
   return new Promise((resolve, reject) => {
     huks.importKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -48,7 +48,8 @@ export async function importKeyItem(keyAlias: string, options: huks.HuksOptions)
   })
 }
 
-export async function importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: string, options: huks.HuksOptions): Promise<void> {
+export async function importWrappedKeyItem(keyAlias: string | null | undefined, wrappingKeyAlias: string | null | undefined,
+  options: huks.HuksOptions | null | undefined): Promise<void> {
   return new Promise((resolve, reject) => {
     huks.importWrappedKeyItem(keyAlias, wrappingKeyAlias, options, (err, data) => {
       if (err) {
@@ -59,7 +60,7 @@ export async function importWrappedKeyItem(keyAlias: string, wrappingKeyAlias: s
   })
 }
 
-export async function exportKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function exportKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.exportKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -70,7 +71,7 @@ export async function exportKeyItem(keyAlias: string, options: huks.HuksOptions)
   })
 }
 
-export async function getKeyItemProperties(keyAlias: string, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function getKeyItemProperties(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.getKeyItemProperties(keyAlias, options, (err, data) => {
       if (err) {
@@ -81,7 +82,7 @@ export async function getKeyItemProperties(keyAlias: string, options: huks.HuksO
   })
 }
 
-export async function isKeyItemExist(keyAlias: string, options: huks.HuksOptions): Promise<boolean> {
+export async function isKeyItemExist(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<boolean> {
   return new Promise((resolve, reject) => {
     huks.isKeyItemExist(keyAlias, options, (err, data) => {
       if (err) {
@@ -92,7 +93,7 @@ export async function isKeyItemExist(keyAlias: string, options: huks.HuksOptions
   })
 }
 
-export async function hasKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<boolean> {
+export async function hasKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<boolean> {
   return new Promise((resolve, reject) => {
     huks.hasKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -103,7 +104,7 @@ export async function hasKeyItem(keyAlias: string, options: huks.HuksOptions): P
   })
 }
 
-export async function initSession(keyAlias: string, options: huks.HuksOptions): Promise<huks.HuksSessionHandle> {
+export async function initSession(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksSessionHandle> {
   return new Promise((resolve, reject) => {
     huks.initSession(keyAlias, options, (err, data) => {
       if (err) {
@@ -114,7 +115,7 @@ export async function initSession(keyAlias: string, options: huks.HuksOptions): 
   })
 }
 
-export async function updateSession(handle: number, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function updateSession(handle: number | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.updateSession(handle, options, (err, data) => {
       if (err) {
@@ -125,7 +126,7 @@ export async function updateSession(handle: number, options: huks.HuksOptions): 
   })
 }
 
-export async function finishSession(handle: number, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function finishSession(handle: number | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.finishSession(handle, options, (err, data) => {
       if (err) {
@@ -136,7 +137,7 @@ export async function finishSession(handle: number, options: huks.HuksOptions): 
   })
 }
 
-export async function abortSession(handle: number, options: huks.HuksOptions): Promise<void> {
+export async function abortSession(handle: number | null | undefined, options: huks.HuksOptions | null | undefined): Promise<void> {
   return new Promise((resolve, reject) => {
     huks.abortSession(handle, options, (err, data) => {
       if (err) {
@@ -147,7 +148,7 @@ export async function abortSession(handle: number, options: huks.HuksOptions): P
   })
 }
 
-export async function anonAttestKeyItem(keyAlias: string, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function anonAttestKeyItem(keyAlias: string | null | undefined, options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.anonAttestKeyItem(keyAlias, options, (err, data) => {
       if (err) {
@@ -158,7 +159,8 @@ export async function anonAttestKeyItem(keyAlias: string, options: huks.HuksOpti
   })
 }
 
-export async function update(handle: number, token: Uint8Array | undefined, options: huks.HuksOptions): Promise<huks.HuksReturnResult> {
+export async function update(handle: number | null | undefined, token: Uint8Array | null | undefined,
+  options: huks.HuksOptions | null | undefined): Promise<huks.HuksReturnResult> {
   return new Promise((resolve, reject) => {
     huks.update(handle, token, options, (err, data) => {
       if (err) {

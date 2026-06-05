@@ -1148,5 +1148,88 @@ export default function cameraSessionZoomRatioTest() {
             done();
         }
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.desc   Check capture session get zoom point infos with promise - normal case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 start for camera[" + i + "]");
+
+          await startCameraSession(i);
+
+          try {
+            let zoomPointInfos = mCameraSession.getZoomPointInfos();
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 finish");
+            expect(zoomPointInfos != undefined).assertTrue();
+          } catch (error) {
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 FAILED with error: " + error);
+            expect().assertFail();
+          }
+
+          await stopCameraSession();
+
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 end for camera[" + i + "]");
+        }
+
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 ends here");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200
+     * @tc.desc   Check capture session get zoom point infos with promise - session not config error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 start for camera[" + i + "]");
+
+          try {
+            let zoomPointInfos = mCameraSession.getZoomPointInfos();
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 FAILED - should throw error");
+            expect().assertFail();
+          } catch (error) {
+            let err = error as BusinessError;
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 error code: " + err.code);
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 error message: " + err.message);
+            expect(err.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue();
+          }
+
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 end for camera[" + i + "]");
+        }
+
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0200 ends here");
+        done();
+      }
+    })
   })
 }

@@ -252,7 +252,12 @@ export default function flagstartwithouttipstest() {
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0700';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
-      await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
+      let cmd = 'aa start -b com.acts.flagstartwithouttipstest -a TestAbility';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',
@@ -292,7 +297,12 @@ export default function flagstartwithouttipstest() {
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0800';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
-      await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
+      let cmd = 'aa start -b com.acts.flagstartwithouttipstest -a TestAbility';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',

@@ -22,7 +22,7 @@ import inspector from '@ohos.arkui.inspector';
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { OnScrollEvent,$rawfile,Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -30,7 +30,7 @@ export class StringFields {
 @Component
 struct scrollEventComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields();
+  stringObj: StringFields  = new StringFields ();
   @State xOffset: number = 0;
   @State yOffset: number = 0;
   @State str: string = '';
@@ -75,13 +75,13 @@ struct scrollEventComponent {
               Utils.emitEvent(this.xOffset,20241226);
               break;
             }
-
-            case 'emitonSwitchNextPage2': {
-              let uiContext: UIContext = this.getUIContext();
-              let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/webResourceResponseGet' })
-              console.log('push URL success')
-            }
+			
+			case 'emitonSwitchNextPage2': { 
+               let uiContext: UIContext = this.getUIContext(); 
+               let router: Router = uiContext.getRouter(); 
+               router.pushUrl({ url: 'pages/webResourceResponseGet' }) 
+               console.log('push URL success') 
+             }
 
           }
         })

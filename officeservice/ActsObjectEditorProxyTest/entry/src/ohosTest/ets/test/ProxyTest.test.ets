@@ -509,6 +509,23 @@ export default function proxyTest() {
     })
 
     /**
+     * @tc.name   SUB_Object_Editor_TestGetContentEmbedFormatByOEidAndLocale_0700
+     * @tc.number SUB_Object_Editor_TestGetContentEmbedFormatByOEidAndLocale_0700
+     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale with invalid OEID format
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestGetContentEmbedFormatByOEidAndLocale_0700', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestGetContentEmbedFormatByOEidAndLocale_0700';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
      * @tc.name   SUB_Object_Editor_TestGetOEidFromFormat_0100
      * @tc.number SUB_Object_Editor_TestGetOEidFromFormat_0100
      * @tc.desc   Test OH_ContentEmbed_GetOEidFromFormat with null format and null OEid
@@ -556,6 +573,23 @@ export default function proxyTest() {
       let result = testNapi.TestProxyGetOEidFromFormat_NullFormat();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestGetOEidFromFormat_0400
+     * @tc.number SUB_Object_Editor_TestGetOEidFromFormat_0400
+     * @tc.desc   Test OH_ContentEmbed_GetOEidFromFormat with format not init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestGetOEidFromFormat_0400', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestGetOEidFromFormat_0400';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetOEidFromFormat_FormatNotInit();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
       expect(expectResult).assertTrue();
     })
 
@@ -628,6 +662,23 @@ export default function proxyTest() {
     })
 
     /**
+     * @tc.name   SUB_Object_Editor_TestGetNameAndDescriptionFromFormat_0500
+     * @tc.number SUB_Object_Editor_TestGetNameAndDescriptionFromFormat_0500
+     * @tc.desc   Test OH_ContentEmbed_GetNameAndDescriptionFromFormat with format not init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestGetNameAndDescriptionFromFormat_0500', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestGetNameAndDescriptionFromFormat_0500';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetNameAndDescriptionFromFormat_FormatNotInit();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
      * @tc.name   SUB_Object_Editor_TestGetIconFromFormat_0100
      * @tc.number SUB_Object_Editor_TestGetIconFromFormat_0100
      * @tc.desc   Test OH_ContentEmbed_GetIconFromFormat with null format and null icon
@@ -692,6 +743,23 @@ export default function proxyTest() {
       let result = testNapi.TestProxyGetIconFromFormat_EmptyFormat();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestGetIconFromFormat_0500
+     * @tc.number SUB_Object_Editor_TestGetIconFromFormat_0500
+     * @tc.desc   Test OH_ContentEmbed_GetIconFromFormat with format not init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestGetIconFromFormat_0500', Level.LEVEL0, () => {
+      let tag = 'SUB_Object_Editor_TestGetIconFromFormat_0500';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetIconFromFormat_FormatNotInit();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
       expect(expectResult).assertTrue();
     })
 

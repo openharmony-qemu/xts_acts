@@ -115,7 +115,12 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
     afterEach(async (done: Function) => {
       console.log(TAG1 + "afterEach called");
 
-      await abilityDelegator.executeShellCommand('aa start -b com.example.abilitymultiinstance -a com.example.abilitymultiinstance.MainAbility');
+      let cmd = 'aa start -b com.example.abilitymultiinstance -a com.example.abilitymultiinstance.MainAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
 
       setTimeout(() => {
         console.log(TAG1 + "afterEach end");

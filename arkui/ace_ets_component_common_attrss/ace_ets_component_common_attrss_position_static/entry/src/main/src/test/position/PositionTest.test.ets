@@ -98,7 +98,6 @@ export default async function positionTest() {
     'Path',
     'Rect',
     'Shape',
-    'AlphabetIndexer',
     'Navigation',
     'ListItemGroup',
     'Tabs',

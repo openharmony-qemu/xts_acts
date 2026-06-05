@@ -42,6 +42,10 @@ export default {
     let testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.TestAbility';
 
     let cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName;
+    var user = abilityDelegatorArguments.parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
     let debug = abilityDelegatorArguments.parameters['-D'];
     console.info('debug value : ' + debug);

@@ -57,6 +57,15 @@ let avTranscoderTestConfig: media.AVTranscoderConfig = {
   enableBFrame: true,
 };
 
+let avTranscoderTestConfigNormal: media.AVTranscoderConfig = {
+  audioBitrate: 200000,
+  audioCodecV2: media.CodecMimeType.AUDIO_AAC,
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+  videoBitrate: 3000000,
+  videoCodec: media.CodecMimeType.VIDEO_AVC,
+  enableBFrame: true,
+};
+
 function openFileFailed() {
   console.info(TAG, 'openFileFailed case file fail');
 }
@@ -119,6 +128,23 @@ async function prepareAVTranscoderTest(done: Function, testName: string) {
     await mTranscoder.prepare(avTranscoderTestConfig).then(() => {
       console.info(TAG, testName + ' prepare success.');
       expect(true).assertTrue();
+    }).catch((error: BusinessError) => {
+      console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+      expect().assertFail();
+      done();
+    });
+  }
+}
+
+async function prepareAVTranscoderNormal(avTranscoderConfig: media.AVTranscoderConfig, done: Function, testName: string) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  if (mTranscoder !== undefined) {
+    await mTranscoder.prepare(avTranscoderConfig).then(() => {
+      console.info(TAG, testName + ' prepare success.');
     }).catch((error: BusinessError) => {
       console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
       expect().assertFail();
@@ -334,6 +360,29 @@ async function errorListen(done: Function, testName: string, context: common.UIA
     done();
   }
 }
+
+async function listenComplete(done: Function) {
+  let currentProgress: number = 0;
+  if (mTranscoder !== undefined) {
+    // 转码完成回调函数。
+    mTranscoder.on('complete', async () => {
+      console.info(`AVTranscoder is completed`);
+    });
+    // 进度上报回调函数。
+    mTranscoder.on('progressUpdate', (progress: number) => {
+      console.info(`AVTranscoder progressUpdate = ${progress}`);
+      currentProgress = progress;
+    })
+    while(currentProgress < 100){
+      console.info(`AVTranscoder progress is`, currentProgress);
+      await sleep(50);
+    }
+    mTranscoder!.off('complete');
+    mTranscoder!.off('progressUpdate');
+    done();
+  }
+}
+
 
 export default function AVTranscoderTest() {
   describe('AVTranscoderTest', () => {
@@ -690,6 +739,23 @@ export default function AVTranscoderTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_START_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_START_0100
+     * @tc.desc   Test normal scene of start AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_START_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_START_0100';
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoderNormal(avTranscoderTestConfigNormal, done, testName);
+      await startAVTranscoder(done, testName);
+      await listenComplete(done)
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100
      * @tc.desc   Test normal scene of watermark in AVTranscoder.
@@ -710,6 +776,7 @@ export default function AVTranscoderTest() {
       });
       await prepareAVTranscoder(done, testName);
       await startAVTranscoder(done, testName);
+      await listenComplete(done);
       done();
     })
 
@@ -757,6 +824,7 @@ export default function AVTranscoderTest() {
         console.error('addWatermark failed and catch error is ' + err.message + err.code);
         expect(err.code).assertEqual(5400108);
       }
+      done();
     })
 
     /**

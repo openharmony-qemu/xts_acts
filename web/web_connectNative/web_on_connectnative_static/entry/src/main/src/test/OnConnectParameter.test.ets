@@ -102,7 +102,7 @@ export default function OnConnectParameter() {
     /**
      * @tc.name   testDisconnectNativePermissionDenyStatic001
      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0100
-     * @tc.desc   test disconnectNative without WEB_NATIVE_MESSAGING permission: verify error code is 201
+     * @tc.desc   test disconnectNative without WEB_NATIVE_MESSAGING permission: verify error code is 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -118,8 +118,8 @@ export default function OnConnectParameter() {
     /**
      * @tc.name   testDisconnectNativeNullUndefinedParamStatic001
      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_NullUndefined_0100
-     * @tc.desc   test disconnectNative with null/undefined-equivalent connectionId (0): since the app has no
-     *            WEB_NATIVE_MESSAGING permission, the system rejects with error code 201 before parameter check
+     * @tc.desc   test disconnectNative with null/undefined-equivalent connectionId (0): since the device does not
+     *            support WEB_NATIVE_MESSAGING capability, the system rejects with error code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0

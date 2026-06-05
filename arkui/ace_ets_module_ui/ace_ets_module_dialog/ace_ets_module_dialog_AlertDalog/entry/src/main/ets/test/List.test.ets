@@ -43,6 +43,8 @@ import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDial
 import CustomDialogControllerOptionsSystemMaterialTest from './dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial.test';
 import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
 import ShowToastOptionsTest from './dialogSystemMaterial/ShowToastOptions.test';
+import OpenOrderOverlayTest from './OpenOrderOverlay/OpenOrderOverlay.test';
+import DisplayModeInSubWindowTest from './DialogDisplayMode/DisplayModeInSubWindow.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
@@ -75,4 +77,6 @@ export default function testsuite() {
   CustomDialogControllerOptionsSystemMaterialTest();
   ShowDialogOptionsSystemMaterialTest();
   ShowToastOptionsTest();
+  OpenOrderOverlayTest();
+  DisplayModeInSubWindowTest();
 }

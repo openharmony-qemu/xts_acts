@@ -2298,6 +2298,20 @@ static napi_value TestNativeConvertAlphaTypeNullDst(napi_env env, napi_callback_
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
+static napi_value TestNativeImageDataConversionFailedErrorCode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeImageDataConversionFailedErrorCode start.");
+    const int32_t expectedErrorCode = 7600306;
+    if (IMAGE_DATA_CONVERSION_FAILED != expectedErrorCode) {
+        OH_LOG_ERROR(LOG_APP,
+            "IMAGE_DATA_CONVERSION_FAILED value mismatch, expected: %{public}d, actual: %{public}d.",
+            expectedErrorCode, IMAGE_DATA_CONVERSION_FAILED);
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeImageDataConversionFailedErrorCode success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
 static void setInt32NamedProperty(napi_env env, napi_value object, const char *utf8name, uint32_t value)
 {
     napi_value tmp;
@@ -2460,6 +2474,8 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"testNativeConvertAlphaTypeUnsupportedDataFormat", nullptr,
      TestNativeConvertAlphaTypeUnsupportedDataFormat, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeImageDataConversionFailedErrorCode", nullptr,
+     TestNativeImageDataConversionFailedErrorCode, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

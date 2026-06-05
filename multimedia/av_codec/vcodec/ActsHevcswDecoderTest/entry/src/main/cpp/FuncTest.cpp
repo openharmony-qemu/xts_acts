@@ -44,7 +44,7 @@ constexpr int32_t TWO = 2;
 constexpr int32_t THREE = 3;
 constexpr double RATION = 0.5;
 constexpr double RATION1 = 0.01;
-
+constexpr int32_t SYS_MAX_INPUT_SIZE = 1024 * 1024 * 24;
 }
 
 const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
@@ -445,6 +445,72 @@ napi_value VideoSwdecH265Speed0090Test(napi_env env, napi_callback_info info)
         vDecSample->enableHash = false;
         vDecSample->defaultDecoderSpeed = TWO;
         vDecSample->defaultRetentionRadio = RATION;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265SurfExpired0010Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->expireSurface = true;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265SetMaxInputSize0010Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->maxInputSize = SYS_MAX_INPUT_SIZE;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265GetCropSize0010Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->needCheckOutputDesc = true;
         if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
             return CreateIntInt32Result(env, -1);
         }

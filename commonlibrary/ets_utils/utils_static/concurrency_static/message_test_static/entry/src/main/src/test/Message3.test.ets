@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -58,7 +58,7 @@ interface NullData {
   isNull: boolean
 }
 
-export const Sleep = (ms: int) => {
+export function Sleep(ms: int): Promise<number> {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
       resolve(1)
@@ -68,7 +68,7 @@ export const Sleep = (ms: int) => {
 
 type CB = () => void;
 
-export default function Message3Test() {
+export default function Message3Test(): void {
   describe('Message3Test', (): void => {
     afterEach(async () => {
       await Utils.msSleep(20);

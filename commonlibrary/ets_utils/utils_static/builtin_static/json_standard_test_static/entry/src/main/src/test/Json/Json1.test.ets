@@ -173,7 +173,7 @@ class test037 {
   a: test037_1 = { b: 1 };
 }
 
-export default function Json1Test() {
+export default function Json1Test(): void {
   describe('Json1Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

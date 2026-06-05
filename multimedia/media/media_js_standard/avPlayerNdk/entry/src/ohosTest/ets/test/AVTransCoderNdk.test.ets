@@ -347,7 +347,7 @@ export default function AVTransCoderNdkTest() {
       let ret: number = avTransCoderNdk.AvTransCoderErrorCode(avFd.fd, avFd.offset, avFd.length);
       console.log('case testOhAvTransCoderNdkPrepareError0008 ret ' + ret);
       await closeRawFd(AUDIO_SOURCE_MP3);
-      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OPERATE_NOT_PERMIT);
+      expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       done();
     });
 

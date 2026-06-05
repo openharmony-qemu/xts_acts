@@ -22,6 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import fs from '@ohos.file.fs';
 import business_error from '@ohos.base';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 class testObj {
   constructor() {
@@ -45,6 +46,7 @@ const EVENT_ID_SET_SUITE_KEY = 123101;
 @Component
 struct Index {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerNull: webView.WebviewController = new webView.WebviewController();
   responseWeb: WebResourceResponse = new WebResourceResponse()
   @State webResult: string = ' ';
@@ -70,6 +72,10 @@ struct Index {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -194,7 +200,7 @@ struct Index {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .zoomAccess(false)
         .onSslErrorEvent((event: SslErrorEvent) => {

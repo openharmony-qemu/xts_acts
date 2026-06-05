@@ -426,7 +426,12 @@ export default class Utils {
           await com.click();
         } else if (key == 2674) {
           await Utils.driver.triggerKey(1);
-          await Utils.simulateByShell('aa start -a MainAbility -b com.acts.keycodeevent');
+          let cmd = 'aa start -a MainAbility -b com.acts.keycodeevent';
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          await Utils.simulateByShell(cmd);
         }
         let KeyResult: number = ndkfunction();
         expect(KEY_CODE_EVENT_OK).assertEqual(KeyResult);

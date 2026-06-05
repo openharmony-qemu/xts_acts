@@ -45,8 +45,10 @@ struct PopupCommonOptionsSystemMaterial {
   contentImmersiveUltraThin: ComponentContent<PopupParam> | null = null;
   contentNone: ComponentContent<PopupParam> | null = null;
 
+
   build() {
     Column({ space: 5 }) {
+
       Row({ space: 5 }) {
         Button('undefined')
           .id('undefined')

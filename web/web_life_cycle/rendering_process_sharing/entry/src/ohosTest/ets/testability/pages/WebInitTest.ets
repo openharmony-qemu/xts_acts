@@ -21,11 +21,13 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import business_error from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebInitTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ''
   @State webInit: boolean = false
   @State webCreated: boolean = false
@@ -65,6 +67,13 @@ struct WebInitTest {
     console.info('start run testcase!!!')
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Row() {
@@ -129,7 +138,7 @@ struct WebInitTest {
             }
           })
 
-        Web({ src: $rawfile('common_index.html'), controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('common_index.html'), controller: this.controller })
           .height('50%')
           .width('100%')
           .javaScriptAccess(true)

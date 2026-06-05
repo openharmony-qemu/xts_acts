@@ -30,6 +30,13 @@ export function Uint8ArrayToString(fileData: Uint8Array) {
   return str;
 }
 
+export function IntToUint8Array(value: number) {
+  const buffer = new ArrayBuffer(4);
+  const view = new DataView(buffer);
+  view.setUint32(0, value, true);
+  return new Uint8Array(buffer);
+}
+
 export function HexToUint8Array(hexString: string) {
   const length: number = hexString.length;
   if (length % 2 !== 0) {
@@ -38,8 +45,8 @@ export function HexToUint8Array(hexString: string) {
   let a = '[';
   const uint8Array = new Uint8Array(length / 2);
   for (let i = 0; i < length; i += 2) {
-    const byteValue = parseInt(hexString[i] + hexString[i+1], 16);
-    uint8Array[i/2] = byteValue;
+    const byteValue = parseInt(hexString[i] + hexString[i + 1], 16);
+    uint8Array[i / 2] = byteValue;
     a = a + byteValue + ','
   }
   return uint8Array;

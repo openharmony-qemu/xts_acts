@@ -35,6 +35,10 @@ function sleep(time: number) {
 }
 
 async function executeShellCmd(cmd: string, abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator) {
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
   abilityDelegator.executeShellCommand(cmd,
     (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
       hilog.info(0x0000, `${TAG}`, 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');

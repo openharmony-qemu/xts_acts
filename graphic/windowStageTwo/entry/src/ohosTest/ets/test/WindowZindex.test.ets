@@ -1739,7 +1739,7 @@ export default function windowZindexTest() {
             let driver =  Driver.create()
             await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5})
             await sleep(1000)
-            await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top - 100})
+            await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100})
             await sleep(1000)
             let windowPointDragged = windowClass.getWindowProperties().windowRect
             console.info(`${message} windowPointDraged = ${JSON.stringify(windowPointDragged)}`)

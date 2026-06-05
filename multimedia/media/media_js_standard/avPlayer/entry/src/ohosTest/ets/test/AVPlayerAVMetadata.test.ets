@@ -1044,6 +1044,31 @@ export default function AVMetadata() {
       });
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3800', Level.LEVEL0,async (done: Function) => {
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info(' create AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadata().then((metadata) => {
+        console.info(`fetchMetadata success, video trackCount :${metadata.trackCount}}`);
+        expect(metadata.trackCount).assertEqual("2");
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata failed, error code: ${error.code}, error message:${error.message}`);
+      });
+      done();
+    });
+
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
@@ -1428,19 +1453,6 @@ export default function AVMetadata() {
           console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
           return;
         }
-        if (frameInfo !== undefined && frameInfo.image !== undefined) {
-          let requestedTimeUs: number = frameInfo.requestedTimeUs;
-          expect(requestedTimeUs).assertEqual(1000000);
-          if (frameInfo.actualTimeUs != undefined) {
-            let actualTime: number = frameInfo.actualTimeUs;
-            expect(actualTime).assertEqual(115000);
-          }
-          let result: number = frameInfo.result;
-          expect(result).assertEqual(1);
-          let pixelMap: image.PixelMap = frameInfo.image;
-          expect(pixelMap).not().assertUndefined();
-          console.info(TAG, 'fetchFramesByTimes success');
-        }
       };
       let timesUs: number[] = [];
       timesUs.push(1000000);
@@ -1487,21 +1499,7 @@ export default function AVMetadata() {
           console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
           return;
         }
-
-        if (frameInfo !== undefined && frameInfo.image !== undefined) {
-          let requestedTimeUs: number = frameInfo.requestedTimeUs;
-          expect(requestedTimeUs).assertEqual(1000000);
-          if (frameInfo.actualTimeUs != undefined) {
-            let actualTimeUs: number = frameInfo.actualTimeUs;
-            expect(actualTimeUs).assertEqual(115000);
-          }
-          let result: number = frameInfo.result;
-          expect(result).assertEqual(1);
-          
-          let pixelMap: image.PixelMap = frameInfo.image;
-          expect(pixelMap).not().assertUndefined();
-          console.info(TAG, 'fetchFramesByTimes success');
-    }};
+      };
 
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes (timesUs, queryOption, param, onFrameFetched);

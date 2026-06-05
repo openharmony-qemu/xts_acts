@@ -15,6 +15,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
+import { SystemProperties } from '@ohos.arkui.component';
 
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -1952,8 +1953,6 @@ export default function WindowZindexTest() {
   
       })
 
-
-      
     })
 
 }
