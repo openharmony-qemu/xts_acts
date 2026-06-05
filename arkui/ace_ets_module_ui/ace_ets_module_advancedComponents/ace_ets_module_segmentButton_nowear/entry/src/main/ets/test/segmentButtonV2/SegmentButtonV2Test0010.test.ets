@@ -26,8 +26,8 @@ export default function SegmentButtonV2Test0010() {
         url: "MainAbility/pages/segmentButtonV2/SegmentButtonV20010",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButtonV20010" == pages.name)) {
           console.info("get SegmentButtonV2Test0010 pages.name:" + JSON.stringify(pages.name));
@@ -57,7 +57,7 @@ export default function SegmentButtonV2Test0010() {
     it('SegmentButtonV2Test0010_001', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonV2Test0010_001] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       let textClick: Component = await driver.findComponent(ON.text("share"));
       await CommonFunc.sleep(500);
@@ -188,7 +188,7 @@ export default function SegmentButtonV2Test0010() {
     it('SegmentButtonV2Test0010_002', Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonV2Test0010_002] START');
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       let textClick: Component = await driver.findComponent(ON.text("close3"));
       await CommonFunc.sleep(500);

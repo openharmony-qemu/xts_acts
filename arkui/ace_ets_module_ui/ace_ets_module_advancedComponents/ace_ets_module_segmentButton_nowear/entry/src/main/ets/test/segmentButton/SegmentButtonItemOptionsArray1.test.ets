@@ -28,8 +28,8 @@ export default function SegmentButtonItemOptionsArray1() {
         url: "MainAbility/pages/segmentButton/SegmentButtonItemOptionsArray1",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButtonItemOptionsArray1" == pages.name)) {
           console.info("get SegmentButtonItemOptionsArray1 pages.name:" + JSON.stringify(pages.name));
@@ -59,7 +59,7 @@ export default function SegmentButtonItemOptionsArray1() {
        it('SegmentButtonItemOptionsArray1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_001] START');
        await CommonFunc.sleep(2000);
-       let driver: Driver = Driver.create();
+       let driver: Driver = await Driver.create();
        let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray101"));
        await CommonFunc.sleep(1000);
        await btn.click();
@@ -84,7 +84,7 @@ export default function SegmentButtonItemOptionsArray1() {
            it('SegmentButtonItemOptionsArray1_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_002] START');
        await CommonFunc.sleep(2000);
-       let driver: Driver = Driver.create();
+       let driver: Driver = await Driver.create();
        let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray102"));
        await CommonFunc.sleep(1000);
        await btn.click();
@@ -108,7 +108,7 @@ export default function SegmentButtonItemOptionsArray1() {
            it('SegmentButtonItemOptionsArray1_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_003] START');
        await CommonFunc.sleep(2000);
-       let driver: Driver = Driver.create();
+       let driver: Driver = await Driver.create();
        let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray103"));
        await CommonFunc.sleep(1000);
        await btn.click();
@@ -132,7 +132,7 @@ export default function SegmentButtonItemOptionsArray1() {
       it('SegmentButtonItemOptionsArray1_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_004] START');
        await CommonFunc.sleep(2000);
-       let driver: Driver = Driver.create();
+       let driver: Driver = await Driver.create();
        let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray104"));
        await CommonFunc.sleep(1000);
        await btn.click();
@@ -155,7 +155,7 @@ export default function SegmentButtonItemOptionsArray1() {
      it('SegmentButtonItemOptionsArray1_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
        console.info('[SegmentButtonItemOptionsArray1_005] START');
        await CommonFunc.sleep(2000);
-       let driver: Driver = Driver.create();
+       let driver: Driver = await Driver.create();
        let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray105"));
        await CommonFunc.sleep(1000);
        await btn.click();
@@ -178,7 +178,7 @@ export default function SegmentButtonItemOptionsArray1() {
     it('SegmentButtonItemOptionsArray1_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SegmentButtonItemOptionsArray1_006] START');
       await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       let btn: Component = await driver.findComponent(ON.id("SegmentButtonItemOptionsArray106"));
       await CommonFunc.sleep(1000);
       await btn.click();

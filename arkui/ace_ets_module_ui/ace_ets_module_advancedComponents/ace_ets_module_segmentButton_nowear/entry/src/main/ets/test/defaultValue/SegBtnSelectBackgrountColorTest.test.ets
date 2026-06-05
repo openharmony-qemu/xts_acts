@@ -25,8 +25,8 @@ export default function SegBtnSelectBackgrountColorTest() {
         url: "MainAbility/pages/defaultValue/SegBtnSelectBackgrountColor",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegBtnSelectBackgrountColorTest" == pages.name)) {
           console.info("get SegBtnSelectBackgrountColorTest pages.name:" + JSON.stringify(pages.name));

@@ -27,8 +27,8 @@ export default function SegmentButtonTest004() {
         url: "MainAbility/pages/segmentButton/SegmentButton004",
       }
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButton004" == pages.name)) {
           console.info("get SegmentButton004 pages.name:" + JSON.stringify(pages.name));

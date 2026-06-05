@@ -15,6 +15,17 @@
 
 import { ColorMetrics, LengthMetrics, SegmentButtonV2Items, TabSegmentButtonV2 } from '@kit.ArkUI';
 
+@Component
+struct TabSegmentButtonV2AnimationMirror {
+  @Prop mirrorEnabled: boolean = false
+
+  build() {
+    Text(this.mirrorEnabled ? '1' : '0')
+      .key('TabSegmentButtonV2Animation_mirror')
+      .fontSize(10)
+  }
+}
+
 @Entry
 @ComponentV2
 struct TabSegmentButtonV2Example {
@@ -104,7 +115,7 @@ struct TabSegmentButtonV2Example {
         .onClick(() => {
         this.enableStateAnimation = !this.enableStateAnimation;
         })
-        Text('' + this.enableStateAnimation).key('TabSegmentButtonV2Animation_text')
+        TabSegmentButtonV2AnimationMirror({ mirrorEnabled: this.enableStateAnimation })
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

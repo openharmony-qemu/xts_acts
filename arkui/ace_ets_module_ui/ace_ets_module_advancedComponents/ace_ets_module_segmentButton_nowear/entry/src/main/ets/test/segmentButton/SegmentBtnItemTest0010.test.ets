@@ -29,8 +29,8 @@ export default function SegmentBtnItemTest0010() {
         url: 'MainAbility/pages/segmentButton/SegmentBtnItem0010',
       };
       try {
-        router.clear();
         let pages = router.getState();
+        router.clear();
         console.info("get SegmentBtnItem0010 state pages: " + JSON.stringify(pages));
         if (!('SegmentBtnItem0010' == pages.name)) {
           console.info("get SegmentBtnItem0010 pages.name: " + JSON.stringify(pages.name));
@@ -64,7 +64,7 @@ export default function SegmentBtnItemTest0010() {
     it('SegmentBtnItem0010_0100', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0100 ", "START");
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       let textClick= await driver.findComponent(ON.text("a"));
       await CommonFunc.sleep(500);
@@ -93,7 +93,7 @@ export default function SegmentBtnItemTest0010() {
     it('SegmentBtnItem0010_0200', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0200 ", "START");
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       let textClick= await driver.findComponent(ON.text("b"));
       await CommonFunc.sleep(500);
@@ -127,7 +127,7 @@ export default function SegmentBtnItemTest0010() {
     it('SegmentBtnItem0010_0300', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0300 ", "START");
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
 
       await CommonFunc.sleep(500);
 
@@ -158,7 +158,7 @@ export default function SegmentBtnItemTest0010() {
     it('SegmentBtnItem0010_0400', Level.LEVEL0, async (done: Function) => {
       console.log("SegmentBtnItem0010_0400 ", "START");
       await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
+      let driver: Driver = await Driver.create();
       await CommonFunc.sleep(500);
       let btn0: InspectorNode = Utils.navigateInspectorPath('SegmentBtnItemTest0010.test_btn0_6', [0, 1, 0, 3, 0, 2, 0, 0, 0, 0]);
       console.info("[SegmentBtnItem0010_0400] component btn0 is: " + JSON.stringify(btn0));
