@@ -1034,3 +1034,1040 @@ export default function ObjectEntriesTest() {
      * @tc.desc   Verify large integer key ordering
      * @tc.size   MediumTest
      * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defLargeIntKey();
+      expect(entries.length).assertEqual(3);
+      expect(entries[0][0]).assertEqual('2');
+      expect(entries[1][0]).assertEqual('10');
+      expect(entries[2][0]).assertEqual('100');
+    });
+
+
+
+    /**
+     * @tc.name   ObjectEntriesTest062
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0062
+     * @tc.desc   Verify consistency with Object.keys
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defKeysConsistency()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest063
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0063
+     * @tc.desc   Verify consistency with Object.values
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defValuesConsistency()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest064
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0064
+     * @tc.desc   Verify length consistency
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defLengthConsistency()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest065
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0065
+     * @tc.desc   Verify round trip with Object.fromEntries
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defFromEntriesRoundTrip()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest066
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0066
+     * @tc.desc   Verify multiple round trips
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defMultipleRoundTrip()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest067
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0067
+     * @tc.desc   Verify conversion to Map
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defObjToMap();
+      expect(r.foo).assertEqual('bar');
+      expect(r.baz).assertEqual(42);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest068
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0068
+     * @tc.desc   Verify Map to object to Map round trip
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defMapToObjToMap()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest069
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0069
+     * @tc.desc   Verify for...of traversal
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result = defForOfTraversal() as string[];
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a 5');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest070
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0070
+     * @tc.desc   Verify forEach traversal
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result = defForEachTraversal() as string[];
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a 5');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest071
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0071
+     * @tc.desc   Verify destructuring
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defDestructuring();
+      expect(r.k1).assertEqual('a');
+      expect(r.v1).assertEqual(1);
+      expect(r.k2).assertEqual('b');
+      expect(r.v2).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest072
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0072
+     * @tc.desc   Verify map transformation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const doubled = defMapTransform();
+      expect(doubled.length).assertEqual(2);
+      expect(doubled[0][0]).assertEqual('a');
+      expect(doubled[0][1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest073
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0073
+     * @tc.desc   Verify filter operation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const filtered = defFilterEntries();
+      expect(filtered.length).assertEqual(2);
+      expect(filtered[0][0]).assertEqual('b');
+      expect(filtered[1][0]).assertEqual('c');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest074
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0074
+     * @tc.desc   Verify reduce operation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defReduceEntries()).assertEqual(6);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest075
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0075
+     * @tc.desc   Verify find operation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const found = defFindEntry();
+      expect(found !== undefined).assertEqual(true);
+      expect(found![0]).assertEqual('b');
+      expect(found![1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest076
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0076
+     * @tc.desc   Verify sort operation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sorted = defSortEntries();
+      expect(sorted.length).assertEqual(3);
+      expect(sorted[0][0]).assertEqual('a');
+      expect(sorted[1][0]).assertEqual('b');
+      expect(sorted[2][0]).assertEqual('c');
+    });
+
+
+
+    /**
+     * @tc.name   ObjectEntriesTest077
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0077
+     * @tc.desc   Verify basic getter property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defBasicGetter();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('name');
+      expect(entries[0][1]).assertEqual('getter');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest078
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0078
+     * @tc.desc   Verify computed getter property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defComputedGetter();
+      expect(entries.length).assertEqual(2);
+      expect(entries[1][0]).assertEqual('doubled');
+      expect(entries[1][1]).assertEqual(20);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest079
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0079
+     * @tc.desc   Verify getter throws exception
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defGetterThrows()).assertEqual('getter error');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest080
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0080
+     * @tc.desc   Verify getter/setter property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defGetterSetter();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('_value');
+      expect(entries[0][1]).assertEqual(10);
+      expect(entries[1][0]).assertEqual('value');
+      expect(entries[1][1]).assertEqual(10);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest081
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0081
+     * @tc.desc   Verify setter-only property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries: [string, Object][] = defOnlySetter();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('onlySetter');
+      expect(entries[0][1]).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest082
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0082
+     * @tc.desc   Verify dynamic property addition
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defDynamicAdd();
+      expect(entries.length).assertEqual(3);
+      expect(entries[0][0]).assertEqual('a');
+      expect(entries[1][0]).assertEqual('b');
+      expect(entries[2][0]).assertEqual('c');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest083
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0083
+     * @tc.desc   Verify dynamic property deletion
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defDynamicDelete();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('a');
+      expect(entries[1][0]).assertEqual('c');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest084
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0084
+     * @tc.desc   Verify dynamic property modification
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defDynamicModify();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('a');
+      expect(entries[0][1]).assertEqual(100);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest085
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0085
+     * @tc.desc   Verify computed key with variable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defComputedKeyVar();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('dynamic');
+      expect(entries[0][1]).assertEqual('value');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest086
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0086
+     * @tc.desc   Verify computed key with expression
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defComputedKeyExpr();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('key1');
+      expect(entries[1][0]).assertEqual('key2');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest087
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0087
+     * @tc.desc   Verify computed key with function call
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defComputedKeyFunc();
+      expect(entries.length).assertEqual(1);
+      expect(entries[0][0]).assertEqual('funcKey');
+      expect(entries[0][1]).assertEqual('value');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest088
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0088
+     * @tc.desc   Verify method property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defMethodProp()).assertEqual('function');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest089
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0089
+     * @tc.desc   Verify arrow function property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defArrowFuncProp()).assertEqual('function');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest090
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0090
+     * @tc.desc   Verify async method property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defAsyncMethodProp()).assertEqual('function');
+    });
+
+
+
+    /**
+     * @tc.name   ObjectEntriesTest091
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0091
+     * @tc.desc   Verify __proto__ property handling
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defProtoProp()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest092
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0092
+     * @tc.desc   Verify constructor property override
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries = defConstructorOverride();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('constructor');
+      expect(entries[0][1]).assertEqual('custom');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest093
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0093
+     * @tc.desc   Verify self-referential object
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defSelfReference()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest094
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0094
+     * @tc.desc   Verify mutual reference objects
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defMutualReference()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest095
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0095
+     * @tc.desc   Verify ES6 class instance
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries: [string, Object][] = defClassInstance();
+      expect(entries.length).assertEqual(2);
+      expect(entries[0][0]).assertEqual('a');
+      expect(entries[1][0]).assertEqual('b');
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest096
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0096
+     * @tc.desc   Verify static class properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defStaticClass();
+      expect(r.instanceEntries.length).assertEqual(1);
+      expect(r.classEntries).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest097
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0097
+     * @tc.desc   Verify arguments object
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const entries: [string, Object][] = defArgumentsObj();
+      expect(entries.length).assertEqual(3);
+      expect(entries[0][0]).assertEqual('0');
+      expect(entries[0][1]).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest098
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0098
+     * @tc.desc   Verify empty arguments
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defEmptyArguments().length).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   ObjectEntriesTest099
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0099
+     * @tc.desc   Verify Math object entries
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectEntriesTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defMathObj()).assertEqual(false);
+    });
+      /**
+       * @tc.name   ObjectEntriesTest100
+       * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0100
+       * @tc.desc   Verify JSON object entries
+       * @tc.size   MediumTest
+       * @tc.type   Function
+       * @tc.level  Level 2
+       */
+      it('ObjectEntriesTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(defJSONObj()).assertEqual(false);
+      });
+        /**
+         * @tc.name   ObjectEntriesTest101
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0101
+         * @tc.desc   Verify array as object entries
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const entries = defArrayAsObj();
+          expect(entries.length).assertEqual(4);
+          expect(entries[3][0]).assertEqual('custom');
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest102
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0102
+         * @tc.desc   Verify sparse array entries
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defSparseArray()).assertEqual(2);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest103
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0103
+         * @tc.desc   Verify empty array with property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const entries: [string, Object][] = defEmptyArrayWithProp();
+          expect(entries.length).assertEqual(1);
+          expect(entries[0][0]).assertEqual('prop');
+        });
+
+
+
+        /**
+         * @tc.name   ObjectEntriesTest104
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0104
+         * @tc.desc   Verify Int8Array property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defInt8ArrayProp();
+          expect(r.first).assertEqual(-128);
+          expect(r.second).assertEqual(127);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest105
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0105
+         * @tc.desc   Verify Int8Array overflow handling
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defInt8ArrayOverflow();
+          expect(r.first).assertEqual(127);
+          expect(r.second).assertEqual(-128);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest106
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0106
+         * @tc.desc   Verify Uint8Array property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defUint8ArrayProp();
+          expect(r.first).assertEqual(0);
+          expect(r.second).assertEqual(255);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest107
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0107
+         * @tc.desc   Verify Uint8ClampedArray property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defUint8ClampedArrayProp();
+          expect(r.first).assertEqual(0);
+          expect(r.second).assertEqual(255);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest108
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0108
+         * @tc.desc   Verify Int16Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defInt16ArrayProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest109
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0109
+         * @tc.desc   Verify Int32Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defInt32ArrayProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest110
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0110
+         * @tc.desc   Verify Float32Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defFloat32ArrayProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest111
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0111
+         * @tc.desc   Verify Float32Array special values
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defFloat32ArraySpecial();
+          expect(r.inf).assertEqual(true);
+          expect(r.nan).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest112
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0112
+         * @tc.desc   Verify Float64Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defFloat64ArrayProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest113
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0113
+         * @tc.desc   Verify BigInt64Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defBigInt64ArrayProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest114
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0114
+         * @tc.desc   Verify BigUint64Array boundary value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defBigUint64ArrayProp()).assertEqual(true);
+        });
+
+
+
+        /**
+         * @tc.name   ObjectEntriesTest115
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0115
+         * @tc.desc   Verify empty string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const entries = defEmptyStringValue();
+          expect(entries.length).assertEqual(1);
+          expect(entries[0][1]).assertEqual('');
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest116
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0116
+         * @tc.desc   Verify special character string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defSpecialCharStringValue()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest117
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0117
+         * @tc.desc   Verify ASCII string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defAsciiStringValue()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest118
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0118
+         * @tc.desc   Verify escaped string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defEscapedStringValue()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest119
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0119
+         * @tc.desc   Verify emoji string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defEmojiStringValue()).assertEqual('👆👀💯🎅');
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest120
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0120
+         * @tc.desc   Verify Unicode string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defUnicodeStringValue()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest121
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0121
+         * @tc.desc   Verify Chinese string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defChineseStringValue()).assertEqual('你好世界');
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest122
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0122
+         * @tc.desc   Verify keyword string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defKeywordStringValue()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest123
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0123
+         * @tc.desc   Verify large string value
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defLargeStringValue()).assertEqual(true);
+        });
+
+
+
+        /**
+         * @tc.name   ObjectEntriesTest124
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0124
+         * @tc.desc   Verify zero value properties
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defZeroValueProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest125
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0125
+         * @tc.desc   Verify NaN value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defNaNValueProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest126
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0126
+         * @tc.desc   Verify Infinity value properties
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defInfinityValueProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest127
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0127
+         * @tc.desc   Verify MAX_VALUE property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defMaxValueProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest128
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0128
+         * @tc.desc   Verify MIN_VALUE property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defMinValueProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest129
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0129
+         * @tc.desc   Verify MAX_SAFE_INTEGER property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defMaxSafeIntegerProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest130
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0130
+         * @tc.desc   Verify EPSILON property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defEpsilonProps()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest131
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0131
+         * @tc.desc   Verify hexadecimal value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defHexValueProps()).assertEqual(258);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest132
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0132
+         * @tc.desc   Verify octal value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defOctalValueProps()).assertEqual(7);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest133
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0133
+         * @tc.desc   Verify scientific notation value properties
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defSciNotationValueProps();
+          expect(r.sci1).assertEqual(true);
+          expect(r.sci2).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest134
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0134
+         * @tc.desc   Verify BigInt value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defBigIntValueProps()).assertEqual(true);
+        });
+
+
+
+        /**
+         * @tc.name   ObjectEntriesTest135
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0135
+         * @tc.desc   Verify true value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defTrueValueProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest136
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0136
+         * @tc.desc   Verify false value property
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          expect(defFalseValueProp()).assertEqual(true);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest137
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0137
+         * @tc.desc   Verify falsy value properties
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defFalsyValueProps();
+          expect(r.length).assertEqual(5);
+          expect(r.nullVal).assertEqual(null);
+          expect(r.undef).assertEqual(undefined);
+        });
+
+        /**
+         * @tc.name   ObjectEntriesTest138
+         * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTENTRIES_TEST_0138
+         * @tc.desc   Verify boolean operation result properties
+         * @tc.size   MediumTest
+         * @tc.type   Function
+         * @tc.level  Level 2
+         */
+        it('ObjectEntriesTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+          const r = defBooleanOperationProps();
+          expect(r.notStr).assertEqual(true);
+          expect(r.notZero).assertEqual(true);
+        });
+      });
+    }
