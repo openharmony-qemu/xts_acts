@@ -343,7 +343,12 @@ export default function lastExitReasonTest() {
 
 async function startRely1() {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-  await abilityDelegator.executeShellCommand("aa start -b com.acts.lastexitreasonrely1 -a EntryAbility");
+  let cmd = "aa start -b com.acts.lastexitreasonrely1 -a EntryAbility";
+  let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await abilityDelegator.executeShellCommand(cmd);
 }
 
 function unSubscribe(subscriber: CommonEventManager.CommonEventSubscriber, callback: Function) {
