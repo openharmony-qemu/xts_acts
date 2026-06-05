@@ -623,6 +623,7 @@ export default function onSinglePhotoChangeTest() {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
         expect(err.code).assertEqual('23800151');
         helper.offSinglePhotoChange();
+        await sleep(2000);
         done();
       }
     });
@@ -668,6 +669,7 @@ export default function onSinglePhotoChangeTest() {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
         expect(err.code).assertEqual('23800151');
         helper.offSinglePhotoAlbumChange();
+        await sleep(2000);
         done();
       }
     });
@@ -711,6 +713,7 @@ export default function onSinglePhotoChangeTest() {
         }
         console.log(`${tag} success`);
         helper.offSinglePhotoChange();
+        await sleep(2000);
         done();
       } catch (err) {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
@@ -754,6 +757,7 @@ export default function onSinglePhotoChangeTest() {
         }
         console.log(`${tag} success`);
         helper.offSinglePhotoAlbumChange();
+        await sleep(2000);
         done();
       } catch (err) {
         console.error(`${tag} failed :: ${err}, ${err.code}`);
