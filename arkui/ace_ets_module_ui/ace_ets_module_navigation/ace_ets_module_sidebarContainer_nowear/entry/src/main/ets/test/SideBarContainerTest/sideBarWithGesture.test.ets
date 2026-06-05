@@ -71,6 +71,8 @@ export default function sideBarWithGesture() {
      */
     it('showSideBarWithGesture_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[showSideBarWithGesture_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_true');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[showSideBarWithGesture_0200] type: " + JSON.parse(strJson).$attrs.type)
@@ -105,6 +107,8 @@ export default function sideBarWithGesture() {
      */
     it('showSideBarWithGesture_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[showSideBarWithGesture_0300] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
       let strJson: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_false');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[showSideBarWithGesture_0300] type: " + JSON.parse(strJson).$attrs.type)
