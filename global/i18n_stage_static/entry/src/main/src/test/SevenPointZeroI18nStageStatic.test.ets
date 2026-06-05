@@ -577,6 +577,28 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
+     * @tc.name test_SymbolNumberFormat_static_2500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_static_3300
+     * @tc.desc test SymbolNumberFormat with groupingSeparator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_static_2500', Level.LEVEL2, async (): Promise<void> => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'groupingSeparator': '' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_static_2500 result:' + options.groupingSeparator);
+        expect(options.groupingSeparator === '').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_static_2500 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
      * @tc.name test_SymbolNumberFormat_static_2600
      * @tc.number SUB_GLOBAL_I18N_customSymbol_static_3200
      * @tc.desc test SymbolNumberFormat with empty groupingSeparator param
