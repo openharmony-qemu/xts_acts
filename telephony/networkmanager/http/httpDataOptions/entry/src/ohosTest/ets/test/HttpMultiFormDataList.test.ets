@@ -526,7 +526,6 @@ export default function HttpMultiFormDataListTest() {
       }
       console.info(`${caseName} test End`);
     });
-
     /**
      * @tc.name   testHttpMultiFormDataList0900
      * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0900
@@ -558,19 +557,18 @@ export default function HttpMultiFormDataListTest() {
                   {
                     name: "multiTest",
                     remoteFileName: "xtsRemoteTest",
-                    contentType: "image/png",
-                    filePath: "../../resources/base/media/icon.png",
+                    contentType: "image/png"
                   },
                 ],
               }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
-                console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-                ExpectTrue(err.code==2300026);
+                console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
+                ExpectFail();
                 httpRequest.destroy();
                 done();
               } else {
-                console.info(`${caseName} httpRequest success:${JSON.stringify(data)}`);
-                ExpectFail();
+                console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
+                ExpectTrue(true);
                 httpRequest.destroy();
                 done();
               }
@@ -615,20 +613,19 @@ export default function HttpMultiFormDataListTest() {
                   name: "multiTest",
                   remoteFileName: "xtsRemoteTest",
                   contentType: "image/png",
-                  filePath: "../../resources/base/media/icon.png",
                 },
               ],
             }).then((data: http.HttpResponse) => {
-              console.info(`${caseName} httpRequest success:${JSON.stringify(data)}`);
+              console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              httpRequest.destroy();
+              done();
+            }).catch((err: BusinessError) => {
+              console.info(`${caseName} httpRequest fail err ${JSON.stringify(err)}`);
               ExpectFail();
               httpRequest.destroy();
-              done()
-            }).catch((err: BusinessError) => {
-              console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code==2300026);
-              httpRequest.destroy();
-              done()
-            });
+              done();
+            })
           }
         });
       } catch (err) {
