@@ -15,7 +15,9 @@
 #include "common/common.h"
 #include "TextCommon/TextCommonEnumTest.cpp"
 #include "TextArea/TextAreaEnumTest.cpp"
+#include "TextArea/TextAreaGradientTest.cpp"
 #include "TextInput/TextInputEnumTest.cpp"
+#include "TextInput/TextInputGradientTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -69,11 +71,17 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextAreaEnumTest_005", nullptr, TextAreaEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaEnumTest_006", nullptr, TextAreaEnumTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"TextAreaGradientTest_001", nullptr, TextAreaGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaGradientTest_002", nullptr, TextAreaGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
         {"TextInputEnumTest_001", nullptr, TextInputEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_002", nullptr, TextInputEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_003", nullptr, TextInputEnumTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_004", nullptr, TextInputEnumTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputEnumTest_005", nullptr, TextInputEnumTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextInputGradientTest_001", nullptr, TextInputGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputGradientTest_002", nullptr, TextInputGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -60,3 +60,9 @@ export const TextInputEnumTest_002: () => number;
 export const TextInputEnumTest_003: () => number;
 export const TextInputEnumTest_004: () => number;
 export const TextInputEnumTest_005: () => number;
+
+export const TextAreaGradientTest_001: () => number;
+export const TextAreaGradientTest_002: () => number;
+
+export const TextInputGradientTest_001: () => number;
+export const TextInputGradientTest_002: () => number;
