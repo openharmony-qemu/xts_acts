@@ -131,7 +131,7 @@ struct webViewController {
                 this.flag = 1;
                 console.log('emitContextMenuMediaTypeVideo9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('video.html'))
+                this.controller.loadUrl($rawfile("video.html"))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeVideo IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
@@ -147,7 +147,7 @@ struct webViewController {
                 this.flag = 2;
                 console.log('emitContextMenuMediaTypeText9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('text.html'))
+                this.controller.loadUrl($rawfile("text.html"))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeText IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
@@ -216,7 +216,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('text.html'), controller: this.controller })
+      Web({ src: $rawfile("text.html"), controller: this.controller })
         .key('ContextMenuMediaTypeButton')
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);

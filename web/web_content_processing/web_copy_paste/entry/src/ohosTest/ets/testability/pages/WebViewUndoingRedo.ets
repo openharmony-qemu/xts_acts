@@ -23,14 +23,12 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 import { waitForExist, waitForComponent } from '../../test/WaitTest.test';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
-import { XtsTestServer } from 'library';
 const TAG = 'ContextMenu';
 
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private result: WebContextMenuResult | undefined = undefined;
   @State linkUrl: string = '';
   @State offsetX: number = 0;
@@ -42,10 +40,6 @@ struct WebComponent {
   @State isPageEnd: number = -1;
   aboutToAppear() {
 
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   onPageShow() {
@@ -192,7 +186,7 @@ struct WebComponent {
                     Utils.emitEvent(true, 130720)
                   } else {
                     console.log('pbbbnetment444');
-                    this.controller.loadUrl(this.mServer.getAssetUrl("keyEvent.html"));
+                    this.controller.loadUrl("resource://rawfile/index.html");
                     await waitForExist(()=>this.isPageEnd, this.str, 0);
                     let driver: Driver = Driver.create();
                     let webRect = Utils.getComponentRect('webviewundoingredokey');
@@ -232,7 +226,7 @@ struct WebComponent {
       }
 
 
-      Web({ src: this.mServer.getAssetUrl("keyEvent.html"), controller: this.controller })
+      Web({ src: $rawfile("index.html"), controller: this.controller })
         .key('webviewundoingredokey')
         .javaScriptAccess(true)
           // 触发自定义弹窗

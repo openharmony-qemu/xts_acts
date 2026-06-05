@@ -18,7 +18,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import {inputMethod} from '@kit.IMEKit';
 import { Driver, ON, BY } from '@kit.TestKit';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 175201;
 const driver = Driver.create();
@@ -27,7 +26,6 @@ const driver = Driver.create();
 @Component
 struct WebOnInterceptKeyEvent {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   inputMethodController = inputMethod.getController()
   @State str: string = "";
   @State javaScriptAccess: boolean = true;
@@ -55,10 +53,6 @@ struct WebOnInterceptKeyEvent {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-  }
-
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -83,7 +77,7 @@ struct WebOnInterceptKeyEvent {
               try {
                 this.interceptKeyEvent = true
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('keyEvent.html'))
+                this.controller.loadUrl('resource://rawfile/keyEvent.html')
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnInterceptKeyEventWebView', 1, 1000);
                 await Utils.clickComponent('WebOnInterceptKeyEventWebView', driver)
                 await Utils.waitForReleaseDriver(this.str,driver)
@@ -107,7 +101,7 @@ struct WebOnInterceptKeyEvent {
               try {
                 this.interceptKeyEvent = false
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('keyEvent.html'))
+                this.controller.loadUrl('resource://rawfile/keyEvent.html')
                 await Utils.waitForExist(()=>this.isPageEnd, 'WebOnInterceptKeyEventWebView', 1, 1000);
                 await Utils.clickComponent('WebOnInterceptKeyEventWebView', driver)
                 await Utils.waitForReleaseDriver(this.str,driver)
@@ -125,7 +119,7 @@ struct WebOnInterceptKeyEvent {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .key('WebOnInterceptKeyEventWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

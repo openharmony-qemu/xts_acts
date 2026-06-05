@@ -17,7 +17,6 @@ import { BusinessError } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 126127;
 
@@ -25,7 +24,6 @@ const EVENT_ID_SET_SUITE_KEY = 126127;
 @Component
 struct TrimMemoryByPressureLevel {
   webviewController: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
@@ -40,10 +38,6 @@ struct TrimMemoryByPressureLevel {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
-  }
-
-  aboutToDisappear() {
-    this.webviewController.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -81,7 +75,7 @@ struct TrimMemoryByPressureLevel {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.webviewController })
+      Web({ src: $rawfile('index.html'), controller: this.webviewController })
         .javaScriptAccess(true)
         .fileAccess(true)
         .domStorageAccess(true)

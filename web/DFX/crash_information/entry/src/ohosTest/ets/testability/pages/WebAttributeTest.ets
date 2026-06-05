@@ -19,14 +19,12 @@ import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 125001;
 @Entry
 @Component
 struct WebAttributeTest {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State flag:boolean = false
   @State isPageEnd: number = -1;
@@ -42,10 +40,6 @@ struct WebAttributeTest {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -97,17 +91,17 @@ struct WebAttributeTest {
             }
           })
 
-        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+        Web({ src: $rawfile('index.html'), controller: this.controller })
           .key('webView')
           .onRenderExited((event) => {
             if (event) {
                 if(!this.flag) {
                     console.info("onRenderExited==>" + event.renderExitReason);
-                    this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                    this.controller.loadUrl("resource://rawfile/index.html");
                     Utils.emitEvent(event.renderExitReason, 125010);
                 }else {
                     console.info("onRenderExited==>" + event.renderExitReason);
-                    this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
+                    this.controller.loadUrl("resource://rawfile/index.html");
                     Utils.emitEvent(event.renderExitReason, 125020);
                 }
             }

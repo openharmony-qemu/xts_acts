@@ -17,15 +17,12 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import testsuite from '../../test/List.test';
-import { XtsTestServer } from 'library';
 const EVENT_ID_SET_RESULT_KEY = 133250;
 
 @Entry
 @Component
 struct SerializeWebState {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
-  srcUrl: string = this.mServer.getAssetUrl('index.html');
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -43,10 +40,6 @@ struct SerializeWebState {
     events_emitter.off(EVENT_ID_SET_RESULT_KEY)
   }
 
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-  }
-
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("SerializeWebState page valueChangeCallBack");
     if (eventData != null) {
@@ -56,7 +49,7 @@ struct SerializeWebState {
         this.isReceive = 0;
         this.resultMessage = "Loading page...";
         if (this.controller) {
-          this.controller.loadUrl(this.srcUrl);
+          this.controller.loadUrl("resource://rawfile/index.html");
           this.controller.clearHistory()
         }
       }
@@ -198,7 +191,7 @@ struct SerializeWebState {
 
 
 
-      Web({ src: this.srcUrl, controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .onPageEnd((event) => {

@@ -107,7 +107,7 @@ struct WebViewEnumAndSetWebController {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('fullScreenEnter.html'), controller: this.controller })
+      Web({ src: $rawfile('fullScreenEnter.html'), controller: this.controller })
         .key('WebViewEnumAndSetWebControllerWebView')
         .blockNetwork(Boolean(this.block))
         .cacheMode(this.CacheMode)

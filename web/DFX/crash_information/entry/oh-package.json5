@@ -19,8 +19,6 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {
-    "library": "file:../libs/xtstestserver.har"
-  }
+  "dependencies": {}
 }
 

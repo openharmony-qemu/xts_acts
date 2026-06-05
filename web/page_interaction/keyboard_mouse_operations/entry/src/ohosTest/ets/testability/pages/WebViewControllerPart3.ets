@@ -118,7 +118,7 @@ struct WebViewControllerPart3 {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
