@@ -26,12 +26,14 @@ export default function selectoptionwithJsSuit() {
         url: 'MainAbility/pages/select/selectoptionwith',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get selectoptionwithJsSuit state pages: " + JSON.stringify(pages));
-        let result = await router.pushUrl(options);
-        await CommonFunc.sleep(2000);
-        console.info("push selectoptionwithJsSuit page result:" + JSON.stringify(result));
+        if (pages.name !== 'selectoptionwith') {
+          router.clear();
+          let result = await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push selectoptionwithJsSuit page result:" + JSON.stringify(result));
+        }
       } catch (err) {
         console.error("push selectoptionwithJsSuit page error:" + err);
       }
@@ -54,13 +56,10 @@ export default function selectoptionwithJsSuit() {
 
     it('selectoptionwithJsSuit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[selectoptionwithJsSuit_0100] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('selectoption1'));
-      await button_Bottom.click();
+      expect(sendEventByKey('selectoption1', 10, '')).assertTrue();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('selectoption1');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      let obj: Record<string, ESObject> = JSON.parse(getInspectorByKey('selectoption1'));
       console.info("[selectoptionwithJsSuit_0100] obj is: " + JSON.stringify(obj));
       console.info("[selectoptionwithJsSuit_0100] obj optionWidth is: " + JSON.stringify(obj.$attrs.optionWidth));
       expect(obj.$attrs.optionWidth=='0.000000').assertTrue();
@@ -79,13 +78,10 @@ export default function selectoptionwithJsSuit() {
 	 
     it('selectoptionwithJsSuit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[selectoptionwithJsSuit_0200] START');
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('selectoption2'));
-      await button_Bottom.click();
+      expect(sendEventByKey('selectoption2', 10, '')).assertTrue();
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('selectoption2');
-      let obj2: Record<string, ESObject> = JSON.parse(strJson2);
+      let obj2: Record<string, ESObject> = JSON.parse(getInspectorByKey('selectoption2'));
       console.info("[selectoptionwithJsSuit_0200] obj2 is: " + JSON.stringify(obj2));
       console.info("[selectoptionwithJsSuit_0200] obj2 optionWidth is: " + JSON.stringify(obj2.$attrs.optionWidth));
       expect(obj2.$attrs.optionWidth=='0.000000').assertTrue();

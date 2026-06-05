@@ -24,11 +24,10 @@ export default function SelectJsunit1() {
         url: 'MainAbility/pages/select/select1',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get select state success " + JSON.stringify(pages));
-        if (!("select" == pages.name)) {
-          console.info("get select success " + JSON.stringify(pages.name));
+        if (pages.name !== 'select1') {
+          router.clear();
           let result = await router.pushUrl(options);
           await Utils.sleep(2000);
           console.info("push select page success " + JSON.stringify(result));

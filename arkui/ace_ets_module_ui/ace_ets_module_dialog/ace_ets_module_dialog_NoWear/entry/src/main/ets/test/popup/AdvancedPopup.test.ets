@@ -41,14 +41,6 @@
  	       done();
  	     });
  	 
- 	     /**
- 	      * @tc.name   AdvancedPopupTest_001
- 	      * @tc.number AdvancedPopupTest_001
- 	      * @tc.desc   To test the Advanced Popup
- 	      * @tc.type   FUNCTION
- 	      * @tc.size   MEDIUMTEST
- 	      * @tc.level  LEVEL2
- 	      */
  	     it('AdvancedPopupTest_001', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_001 START')
@@ -56,14 +48,6 @@
  	       console.log('AdvancedPopupTest_001 END')
  	       done();
  	     });
- 	     /**
- 	      * @tc.name   AdvancedPopupTest_002
- 	      * @tc.number AdvancedPopupTest_002
- 	      * @tc.desc   To test the Advanced Popup
- 	      * @tc.type   FUNCTION
- 	      * @tc.size   MEDIUMTEST
- 	      * @tc.level  LEVEL2
- 	      */
  	     it('AdvancedPopupTest_002', Level.LEVEL2, async (done: Function) => {
  	       await Utils.sleep(1000);
  	       console.log('AdvancedPopupTest_002 START')

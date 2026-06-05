@@ -40,7 +40,7 @@ struct subwindowDialogExample {
   customDialogComponent() {
     Column({ space: 5 }) {
       Text('长按触发Menu弹出')
-        .id('subwindowDialogLongClickMenu')
+        .key('subwindowDialog_longClickMenu')
         .width(200)
         .height(100)
         .textAlign(TextAlign.Center)
@@ -53,7 +53,7 @@ struct subwindowDialogExample {
         .backgroundColor('#ff3df2f5')
       Button('关闭弹窗').onClick(() => {
         this.promptAction.closeCustomDialog(this.customDialogComponentId)
-      }).id('subwindowDialogClickClose')
+      }).key('subwindowDialog_clickClose')
 
     }
   }
@@ -63,12 +63,12 @@ struct subwindowDialogExample {
     Column() {
       Button('showInSubwindow: false').onClick(() => {
         this.dialogSubwindowTag = false
-      }).margin({top: 50}).id('subwindowDialogClickFalse')
+      }).margin({top: 50}).key('subwindowDialog_clickFalse')
       Button('showInSubwindow: true').onClick(() => {
         this.dialogSubwindowTag = true
-      }).margin({top: 50, bottom: 50}).id('subwindowDialogClickTrue')
+      }).margin({top: 50, bottom: 50}).key('subwindowDialog_clickTrue')
       Button('弹出弹窗')
-        .id('subwindowDialogClickOpen')
+        .key('subwindowDialog_clickOpen')
         .onClick(() => {
           this.promptAction.openCustomDialog({
             builder: () => {

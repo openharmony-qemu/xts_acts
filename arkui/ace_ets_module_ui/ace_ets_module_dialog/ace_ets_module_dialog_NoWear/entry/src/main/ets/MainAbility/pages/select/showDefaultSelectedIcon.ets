@@ -27,7 +27,7 @@ struct SelectExample12 {
     Column() {
       Column(){
         Button('showDefaultSelectedIcon数值切换')
-          .id('showDefaultSelectedIconButton')
+          .key('showDefaultSelectedIcon_button')
           .onClick(() => {
            this.countIndex = (this.countIndex + 1) % this.countList.length;
           })

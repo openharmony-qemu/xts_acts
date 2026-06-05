@@ -19,3 +19,8 @@ export default class RectValue {
   right: number = 0;
   bottom: number = 0;
 }
+
+export class PointValue {
+  x: number = 0;
+  y: number = 0;
+}

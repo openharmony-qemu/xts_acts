@@ -32,7 +32,7 @@ struct SliderExample4 {
           direction: Axis.Horizontal,
           reverse: false
         })
-          .id('slider')
+          .key('SliderEnableHapticFeedbackTest_slider')
           .showSteps(this.showSteps)
           .showTips(true)
           .enableHapticFeedback(this.enableHapticFeedback)
@@ -44,22 +44,22 @@ struct SliderExample4 {
       .height('40%')
 
       Button('true')
-        .id('enableHapticFeedback_true')
+        .key('SliderEnableHapticFeedbackTest_true')
         .onClick(() => {
           this.enableHapticFeedback = true
         })
       Button('false')
-        .id('enableHapticFeedback_false')
+        .key('SliderEnableHapticFeedbackTest_false')
         .onClick(() => {
           this.enableHapticFeedback = false
         })
       Button('undefined')
-        .id('enableHapticFeedback_undefied')
+        .key('SliderEnableHapticFeedbackTest_undefied')
         .onClick(() => {
           this.enableHapticFeedback = undefined
         })
       Button('null')
-        .id('enableHapticFeedback_null')
+        .key('SliderEnableHapticFeedbackTest_null')
         .onClick(() => {
           this.enableHapticFeedback = null
         })

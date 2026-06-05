@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import Utils from '../../MainAbility/common/Utils';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
@@ -27,12 +28,15 @@ export default function SelectJsunit() {
         url: 'MainAbility/pages/select/SelectPage',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get SelectJsunit state pages: " + JSON.stringify(pages));
-        let result = await router.pushUrl(options);
-        await CommonFunc.sleep(2000);
-        console.info("push SelectJsunit success: " + JSON.stringify(result));
+        if (pages.name !== 'SelectPage') {
+          router.clear();
+          console.info("get SelectJsunit state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push SelectJsunit success: " + JSON.stringify(result));
+        }
       } catch (err) {
         console.error("push SelectJsunit page error: " + err);
         expect().assertFail();
@@ -149,19 +153,14 @@ export default function SelectJsunit() {
     it('SelectJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Verify the functions of the select component
       console.info('[SelectJsunit_0300] START');
+      await CommonFunc.sleep(2000);
+      await Utils.openSelectMenu('SelectPage_select', 2000);
 
-      // Verify the click function of the select component
       let driver = await Driver.create();
+      let menuPt = Utils.getSelectMenuItemPoint('SelectPage_select', 1);
+      await driver.click(menuPt.x, menuPt.y);
       await CommonFunc.sleep(1000);
-      let textComponent1 = await driver.findComponent(ON.text('SelecteButton'));
-      await textComponent1.click();
-      await CommonFunc.sleep(1000);
-
-      let textMenuComponent = await driver.findComponent(ON.text('bbb'));
-      await textMenuComponent.click()
-      await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('SelectPage' + '_indexValue');
-      let obj1: ESObject = JSON.parse(strJson1);
+      let obj1: ESObject = JSON.parse(getInspectorByKey('SelectPage' + '_indexValue'));
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:1');
 

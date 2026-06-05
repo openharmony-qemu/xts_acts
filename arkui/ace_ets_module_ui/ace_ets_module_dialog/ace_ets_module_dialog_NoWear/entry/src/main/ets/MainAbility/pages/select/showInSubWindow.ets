@@ -27,7 +27,7 @@ struct SelectExample4 {
     Column() {
       Column(){
         Button('showInSubWindow数值切换' + this.countIndex)
-          .id('showInSubWindowButton')
+          .key('showInSubWindow_button')
           .onClick(() => {
            this.countIndex = (this.countIndex + 1) % this.countList.length;
           })

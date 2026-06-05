@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 
 
 export default function menuBackgroundBlurStyle() {
@@ -27,12 +27,14 @@ export default function menuBackgroundBlurStyle() {
         url: 'MainAbility/pages/select/menuBackgroundBlurStyle',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get menuBackgroundBlurStyle state pages: " + JSON.stringify(pages));
-        let result = await router.pushUrl(options);
-        await CommonFunc.sleep(2000);
-        console.info("push menuBackgroundBlurStyle success: " + JSON.stringify(result));
+        if (pages.name !== 'menuBackgroundBlurStyle') {
+          router.clear();
+          let result = await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+          console.info("push menuBackgroundBlurStyle success: " + JSON.stringify(result));
+        }
       } catch (err) {
         console.error("push menuBackgroundBlurStyle page error: " + err);
         expect().assertFail();
@@ -48,13 +50,10 @@ export default function menuBackgroundBlurStyle() {
      */
     it('menuBackgroundBlurStyle_0100', Level.LEVEL1, async (done: Function) => {
       console.info('menuBackgroundBlurStyle_0100 START');
-      let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let Select = await driver.findComponent(ON.id('menuBackgroundBlurStyle'));
-      await Select.click();
+      expect(sendEventByKey('menuBackgroundBlurStyle_select', 10, '')).assertTrue();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('menuBackgroundBlurStyle');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      let obj: Record<string, ESObject> = JSON.parse(getInspectorByKey('menuBackgroundBlurStyle_select'));
       console.info("[menuBackgroundBlurStyle_0100] component obj is: " + JSON.stringify(obj));
       console.info("[menuBackgroundBlurStyle_0100] title: " + JSON.stringify(obj.$attrs.menuBackgroundBlurStyle));
       expect(obj.$attrs.menuBackgroundBlurStyle).assertEqual('BlurStyle.Thin');

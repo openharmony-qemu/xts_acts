@@ -29,6 +29,7 @@ struct TipsExample {
       Column(){
         Button('跟随')
           .id('showAtAnchorBth')
+          .key('showAtAnchor_button')
           .width('100%')
           .height('10%')
           .onClick(() => {
@@ -36,6 +37,7 @@ struct TipsExample {
           })
         Button('ori tips')
           .id('oriBtn')
+          .key('showAtAnchor_oriBtn')
           .width('100%')
           .height('70%')
           .bindTips('hover tips', {

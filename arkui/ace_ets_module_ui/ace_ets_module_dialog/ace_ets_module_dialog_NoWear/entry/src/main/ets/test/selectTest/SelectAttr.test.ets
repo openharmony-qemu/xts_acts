@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import CommonFunc from "../../MainAbility/common/Common";
+import Utils from "../../MainAbility/common/Common";
 import { Driver, ON ,MouseButton} from '@ohos.UiTest';
 
 
@@ -26,12 +26,14 @@ export default function SelectAttr() {
         url: 'MainAbility/pages/select/SelectAttr',
       }
       try {
-        router.clear();
         let pages = router.getState();
         console.info("get SelectAttr state success " + JSON.stringify(pages));
-        let result = await router.pushUrl(options);
-        await CommonFunc.sleep(2000);
-        console.info("push SelectAttr page success " + JSON.stringify(result));
+        if (pages.name !== 'SelectAttr') {
+          router.clear();
+          let result = await router.pushUrl(options);
+          await Utils.sleep(2000);
+          console.info("push SelectAttr page success " + JSON.stringify(result));
+        }
       } catch (err) {
         console.error("push SelectAttr page error: " + err);
       }
@@ -39,7 +41,7 @@ export default function SelectAttr() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("SelectAttr after each called");
     });
 
@@ -52,21 +54,16 @@ export default function SelectAttr() {
     */
     it('SelectAttr_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SelectAttr_001] START');
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
+      expect(sendEventByKey('SelectAttr_Select', 10, '')).assertTrue();
+      await Utils.sleep(3000);
 
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('SelectAttr_Select'));
-      await btn1.click()
-      await CommonFunc.sleep(3000);
-
-      let strJson1 = getInspectorByKey('SelectAttr_Select');
-      let obj1: Record<string, ESObject> = JSON.parse(strJson1);
-      await CommonFunc.sleep(1000);
+      let obj1: Record<string, ESObject> = JSON.parse(getInspectorByKey('SelectAttr_Select'));
+      await Utils.sleep(1000);
       console.info("[SelectAttr_001] obj1 is: " + JSON.stringify(obj1));
 
       let obj2: Record<string, ESObject> = JSON.parse(JSON.stringify(getInspectorTree()));
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
       console.info("[SelectAttr_001] obj2 is: " + JSON.stringify(obj2));
       let width = parseFloat(obj2.$children[1].$children[0].$attrs.width.slice(0,-2))
       let width1 = parseFloat(obj1.$attrs.width.slice(0,-2))
