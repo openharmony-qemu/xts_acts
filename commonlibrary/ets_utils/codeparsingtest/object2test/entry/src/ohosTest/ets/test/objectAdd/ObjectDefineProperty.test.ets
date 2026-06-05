@@ -1257,3 +1257,1262 @@ export default function ObjectDefinePropertyTest() {
     it('ObjectDefinePropertyTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(defPropIgnoreSetter()).assertEqual(5);
     });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest082
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0082
+     * @tc.desc   Verify write-only property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropWriteOnly();
+      expect(r.getResult).assertEqual(undefined);
+      expect(r.stored).assertEqual(42);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest083
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0083
+     * @tc.desc   Verify setter set to non-function throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropNonFuncSetter()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest084
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0084
+     * @tc.desc   Verify full accessor property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropFullAccessor()).assertEqual(42);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest085
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0085
+     * @tc.desc   Verify getter and setter use this correctly
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropThisAccessor();
+      expect(r.name).assertEqual('HELLO');
+      expect(r.internal).assertEqual('hello');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest086
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0086
+     * @tc.desc   Verify readonly accessor
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropReadonlyAccessor()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest087
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0087
+     * @tc.desc   Verify write-only accessor
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropWriteOnlyAccessor();
+      expect(r.getResult).assertEqual(undefined);
+      expect(r.stored).assertEqual('secret123');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest088
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0088
+     * @tc.desc   Verify data and accessor cannot be mixed
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropMixedDescError()).assertEqual("TypeError");
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest089
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0089
+     * @tc.desc   Verify configurable true allows reconfiguration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropConfigurableTrue()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest090
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0090
+     * @tc.desc   Verify configurable false prevents reconfiguration
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropConfigurableFalse()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest091
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0091
+     * @tc.desc   Verify default configurable is false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDefaultConfigurable()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest092
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0092
+     * @tc.desc   Verify configurable property can be deleted
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDeleteConfigurable()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest093
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0093
+     * @tc.desc   Verify non-configurable property cannot be deleted
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDeleteNonConfigurable()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest094
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0094
+     * @tc.desc   Verify writable true non-configurable can reassign
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWritableTrueNonConfig()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest095
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0095
+     * @tc.desc   Verify writable can change to false on non-configurable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropWritableToFalseNonConfig();
+      expect(r.writable).assertEqual(false);
+      expect(r.configurable).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest096
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0096
+     * @tc.desc   Verify fully locked property cannot be modified
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropFullyLocked()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest097
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0097
+     * @tc.desc   Verify same value modification on non-configurable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropSameValueNonConfig()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest098
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0098
+     * @tc.desc   Verify type switch between data and accessor
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTypeSwitch()).assertEqual(3);
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest099
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0099
+     * @tc.desc   Verify enumerable true appears in Object.keys
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropEnumerableTrue()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest100
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0100
+     * @tc.desc   Verify enumerable false hidden from Object.keys
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropEnumerableFalse();
+      expect(r.inKeys).assertEqual(false);
+      expect(r.value).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest101
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0101
+     * @tc.desc   Verify default enumerable is false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDefaultEnumerable()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest102
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0102
+     * @tc.desc   Verify Object.keys only returns enumerable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropMixedEnumerable();
+      expect(r.hasA).assertEqual(true);
+      expect(r.hasB).assertEqual(false);
+      expect(r.hasC).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest103
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0103
+     * @tc.desc   Verify non-enumerable property still accessible
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropHiddenAccessible();
+      expect(r.value).assertEqual('secret');
+      expect(r.inObj).assertEqual(true);
+      expect(r.hasOwn).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest104
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0104
+     * @tc.desc   Verify getOwnPropertyNames includes non-enumerable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropOwnNamesIncludes();
+      expect(r.hasA).assertEqual(true);
+      expect(r.hasB).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest105
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0105
+     * @tc.desc   Verify modify enumerable on configurable property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyEnumerable()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest106
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0106
+     * @tc.desc   Verify enumerable for accessor properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropEnumerableAccessor();
+      expect(r.hasGetter).assertEqual(true);
+      expect(r.hasHidden).assertEqual(false);
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest107
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0107
+     * @tc.desc   Verify default all attributes are false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropDefaultAll();
+      expect(r.writable).assertEqual(false);
+      expect(r.enumerable).assertEqual(false);
+      expect(r.configurable).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest108
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0108
+     * @tc.desc   Verify modify existing data property value
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyExisting()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest109
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0109
+     * @tc.desc   Verify modify writable characteristic
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyWritable()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest110
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0110
+     * @tc.desc   Verify modify configurable from true to false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyConfigFromTrue()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest111
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0111
+     * @tc.desc   Verify partial modification preserves others
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropPartialModify();
+      expect(r.value).assertEqual(2);
+      expect(r.writable).assertEqual(true);
+      expect(r.enumerable).assertEqual(true);
+      expect(r.configurable).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest112
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0112
+     * @tc.desc   Verify assign-created property can be modified
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyAssignCreated()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest113
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0113
+     * @tc.desc   Verify switch data to accessor property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDataToAccessor()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest114
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0114
+     * @tc.desc   Verify switch accessor to data property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropAccessorToData();
+      expect(r.value).assertEqual(2);
+      expect(r.get).assertEqual(undefined);
+      expect(r.set).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest115
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0115
+     * @tc.desc   Verify cannot switch type on non-configurable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropSwitchTypeNonConfig()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest116
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0116
+     * @tc.desc   Verify prototype accessor inherited
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropProtoAccessor()).assertEqual('inherited');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest117
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0117
+     * @tc.desc   Verify prototype getter shared variable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropProtoSharedAccessor()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest118
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0118
+     * @tc.desc   Verify this accessor on prototype
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProtoThisAccessor();
+      expect(r.aVal).assertEqual(1);
+      expect(r.bVal).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest119
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0119
+     * @tc.desc   Verify prototype data property inherited
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropProtoData()).assertEqual(10);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest120
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0120
+     * @tc.desc   Verify writable prototype allows instance property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProtoDataWritable();
+      expect(r.val).assertEqual(20);
+      expect(r.hasOwn).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest121
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0121
+     * @tc.desc   Verify non-writable prototype blocks instance
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProtoReadonly();
+      expect(r.val).assertEqual(1);
+      expect(r.hasOwn).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest122
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0122
+     * @tc.desc   Verify prototype configurable override
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProtoConfigOverride();
+      expect(r.val).assertEqual(2);
+      expect(r.hasOwn).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest123
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0123
+     * @tc.desc   Verify for-in enumerates inherited enumerable
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProtoChainForIn();
+      expect(r.hasY).assertEqual(true);
+      expect(r.hasX).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest124
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0124
+     * @tc.desc   Verify Object.create(null) with defineProperty
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropObjCreateNull();
+      expect(r.val).assertEqual(1);
+      expect(r.proto).assertEqual(null);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest125
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0125
+     * @tc.desc   Verify Object.create second arg defines properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropObjCreateSecondArg()).assertEqual(42);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest126
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0126
+     * @tc.desc   Verify value and get mixed throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropValueGetMixed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest127
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0127
+     * @tc.desc   Verify value and set mixed throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropValueSetMixed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest128
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0128
+     * @tc.desc   Verify writable and get mixed throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWritableGetMixed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest129
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0129
+     * @tc.desc   Verify writable and set mixed throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWritableSetMixed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest130
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0130
+     * @tc.desc   Verify target null throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetNull()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest131
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0131
+     * @tc.desc   Verify target undefined throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetUndefined()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest132
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0132
+     * @tc.desc   Verify target number throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetNumber()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest133
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0133
+     * @tc.desc   Verify target string throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetString()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest134
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0134
+     * @tc.desc   Verify target boolean throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetBoolean()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest135
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0135
+     * @tc.desc   Verify target Symbol throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetSymbol()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest136
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0136
+     * @tc.desc   Verify target BigInt throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropTargetBigInt()).assertEqual("TypeError");
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest137
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0137
+     * @tc.desc   Verify modify non-configurable non-writable value throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyNonConfigValue()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest138
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0138
+     * @tc.desc   Verify modify non-configurable enumerable throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyNonConfigEnum()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest139
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0139
+     * @tc.desc   Verify modify non-configurable configurable throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyNonConfigConfig()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest140
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0140
+     * @tc.desc   Verify modify non-configurable getter throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyNonConfigGetter()).assertEqual("TypeError");
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest141
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0141
+     * @tc.desc   Verify add property on preventedExtensions throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropAddOnPrevented()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest142
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0142
+     * @tc.desc   Verify add property on sealed object throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropAddOnSealed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest143
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0143
+     * @tc.desc   Verify add property on frozen object throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropAddOnFrozen()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest144
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0144
+     * @tc.desc   Verify modify property on frozen object throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyOnFrozen()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest145
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0145
+     * @tc.desc   Verify modify characteristics on sealed throws
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyCharOnSealed()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest146
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0146
+     * @tc.desc   Verify freeze sets configurable and writable to false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropFreezeEffect();
+      expect(r.writable).assertEqual(false);
+      expect(r.configurable).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest147
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0147
+     * @tc.desc   Verify freeze accessor getter works setter fails
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropFreezeAccessor();
+      expect(r.getVal).assertEqual(1);
+      expect(r.threwTypeError).assertEqual(false);
+
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest148
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0148
+     * @tc.desc   Verify seal sets configurable to false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropSealEffect()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest149
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0149
+     * @tc.desc   Verify preventExtensions allows modify existing
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropPreventModify()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest150
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0150
+     * @tc.desc   Verify Object.defineProperties batch definition
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropDefineProperties();
+      expect(r.prop1).assertEqual(1);
+      expect(r.prop2).assertEqual(2);
+      expect(r.accessor).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest151
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0151
+     * @tc.desc   Verify getOwnPropertyDescriptor returns correct desc
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropGetOwnPropDesc();
+      expect(r.value).assertEqual(1);
+      expect(r.writable).assertEqual(true);
+      expect(r.enumerable).assertEqual(true);
+      expect(r.configurable).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest152
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0152
+     * @tc.desc   Verify defineProperty on nested object
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropNestedObj()).assertEqual('nested value');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest153
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0153
+     * @tc.desc   Verify defineProperty on object with Symbol keys
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropObjWithSymbol();
+      expect(r.newProp).assertEqual('new value');
+      expect(r.symVal).assertEqual('symbol value');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest154
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0154
+     * @tc.desc   Verify defineProperty on object with function properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropObjWithFunc();
+      expect(r.methodResult).assertEqual(1);
+      expect(r.propVal).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest155
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0155
+     * @tc.desc   Verify defineProperty on object with many properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropLargeObj();
+      expect(r.newProp).assertEqual('new');
+      expect(r.prop25).assertEqual(25);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest156
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0156
+     * @tc.desc   Verify undefined/null/NaN/Infinity properties
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropUndefNullNaNInf();
+      expect(r.undef).assertEqual(undefined);
+      expect(r.undefIn).assertEqual(true);
+      expect(r.nullVal).assertEqual(null);
+      expect(r.nanVal).assertEqual(true);
+      expect(r.infVal).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest157
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0157
+     * @tc.desc   Verify long string as value
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropLongStringValue()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest158
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0158
+     * @tc.desc   Verify deeply nested object as value
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDeepNested()).assertEqual('deep');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest159
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0159
+     * @tc.desc   Verify override toString via defineProperty
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropOverrideToString()).assertEqual('custom toString');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest160
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0160
+     * @tc.desc   Verify delete and redefine property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropDeleteRedefine()).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest161
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0161
+     * @tc.desc   Verify sealed writable properties can be modified
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropSealedWritable();
+      expect(r.writable).assertEqual(10);
+      expect(r.readonly).assertEqual(2);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest162
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0162
+     * @tc.desc   Verify propertyIsEnumerable reflects status
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropPropertyIsEnumerable();
+      expect(r.aEnum).assertEqual(true);
+      expect(r.bEnum).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest163
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0163
+     * @tc.desc   Verify Symbol properties not in Object.keys
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropSymbolKeysNotInKeys();
+      expect(r.aInKeys).assertEqual(true);
+      expect(r.symInSyms).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest164
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0164
+     * @tc.desc   Verify enumerable false not in JSON.stringify
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropJSONStringifyEnum()).assertEqual('{"a":1}');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest165
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0165
+     * @tc.desc   Verify enumerable false not copied by Object.assign
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropObjectAssignEnum();
+      expect(r.a).assertEqual(1);
+      expect(r.b).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest166
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0166
+     * @tc.desc   Verify circular reference value
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropCircularRef();
+      expect(r.equals).assertEqual(true);
+      expect(r.nestedName).assertEqual('circular');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest167
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0167
+     * @tc.desc   Verify TypedArray special value storage
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropTypedArraySpecial();
+      expect(r.float32).assertEqual(Infinity);
+      expect(r.int8).assertEqual(0);
+      expect(r.uint8c).assertEqual(255);
+    });
+
+
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest168
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0168
+     * @tc.desc   Verify defineProperty on Proxy object
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropOnProxy()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest169
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0169
+     * @tc.desc   Verify defineProperty with unicode escape sequence key
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWithUnicodeKey()).assertEqual('unicode');
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest170
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0170
+     * @tc.desc   Verify function as descriptor uses its value property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWithFuncDesc()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest171
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0171
+     * @tc.desc   Verify descriptor with inherited properties via prototype chain
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWithInheritedDesc()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest172
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0172
+     * @tc.desc   Verify frozen descriptor object used as descriptor
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropWithFrozenDesc()).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest173
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0173
+     * @tc.desc   Verify modify non-configurable accessor setter throws TypeError
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropModifyNonConfigSetter()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest174
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0174
+     * @tc.desc   Verify cannot switch accessor to data on non-configurable property
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropSwitchAccessorToDataNonConfig()).assertEqual("TypeError");
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest175
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0175
+     * @tc.desc   Verify Reflect.defineProperty returns true on success
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropReflectBasic()).assertEqual(true);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest176
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0176
+     * @tc.desc   Verify Reflect.defineProperty returns false on failure
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropReflectFail()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest177
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0177
+     * @tc.desc   Verify Reflect.defineProperty on frozen object returns false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(defPropReflectFreeze()).assertEqual(false);
+    });
+
+    /**
+     * @tc.name   ObjectDefinePropertyTest178
+     * @tc.number SUB_COMMONLIBRARY_OBJECTTEST_OBJECTDEFINEPROPERTY_TEST_0178
+     * @tc.desc   Verify Proxy intercepts defineProperty operation
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('ObjectDefinePropertyTest178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = defPropProxyIntercept();
+      expect(r.prop).assertEqual(1);
+      expect(r.intercepted).assertEqual('prop');
+    });
+
+  })
+}
