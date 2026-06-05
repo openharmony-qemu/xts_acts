@@ -63,11 +63,15 @@ export default function sideBarWithGestureModifier() {
       let barComponent = await driver.findComponent(ON.id('showSideBarWithGesture_modifier'));
       console.info('[showSideBarWithGestureModifier_0100] barComponent is ', barComponent);
       let barRect = await barComponent.getBounds();
+      let left = barRect.left;
       let right = barRect.right;
+      let top = barRect.top;
       let bottom = barRect.bottom;
-      console.info('[showSideBarWithGestureModifier_0100] right is ', right);
-      console.info('[showSideBarWithGestureModifier_0100] bottom is ', bottom);
-      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      let width = barRect.right - barRect.left;
+      let height = barRect.bottom - barRect.top;
+      console.info("showSideBarWithGestureModifier_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("showSideBarWithGestureModifier_0100 getBounds width: " + width + ", height: " + height);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
       console.info("[showSideBarWithGestureModifier_0100] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
@@ -105,11 +109,13 @@ export default function sideBarWithGestureModifier() {
       let barRect = await barComponent.getBounds();
       let left = barRect.left;
       let right = barRect.right;
+      let top = barRect.top;
       let bottom = barRect.bottom;
-      console.info('[showSideBarWithGestureModifier_0200] barRect is ', barRect);
-      console.info('[showSideBarWithGestureModifier_0200] left is ', left);
-      console.info('[showSideBarWithGestureModifier_0200] right/3: ', right/3 + ', bottom/2: ' + bottom/2);
-      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      let width = barRect.right - barRect.left;
+      let height = barRect.bottom - barRect.top;
+      console.info("showSideBarWithGestureModifier_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("showSideBarWithGestureModifier_0200 getBounds width: " + width + ", height: " + height);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
       console.info("[showSideBarWithGestureModifier_0200] content1: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
@@ -117,7 +123,7 @@ export default function sideBarWithGestureModifier() {
       
       await CommonFunc.sleep(1000);
       console.info('[showSideBarWithGestureModifier_0200] (right - right/3) is ', (right - right/3));
-      await driver.fling({x: Math.round(right*0.7), y: Math.round(bottom/2)}, {x: Math.round(left), y: Math.round(bottom/2)}, 2, 20000);
+      await driver.fling({x: Math.round(left + width*0.7), y: Math.round(top + height/2)}, {x: Math.round(left), y: Math.round(top + height/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson3: string = getInspectorByKey('showSideBarWithGesture_modifier_changeTxt');
       console.info("[showSideBarWithGestureModifier_0200] content2: " + JSON.stringify(JSON.parse(strJson3).$attrs.content));

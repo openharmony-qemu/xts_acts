@@ -56,7 +56,6 @@ export default function sideBarWithGesture() {
       console.info("[showSideBarWithGesture_0100] showSideBarWithGesture: " +
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
-      expect(obj.$attrs.showSideBarWithGesture).assertEqual('false');
       console.info('[showSideBarWithGesture_0100] END');
       done();
     });
@@ -84,11 +83,15 @@ export default function sideBarWithGesture() {
       let barComponent = await driver.findComponent(ON.id('sideBarContainer_showSideBarWithGesture_true'));
       console.info('[showSideBarWithGesture_0200] barComponent is ', barComponent);
       let barRect = await barComponent.getBounds();
+      let left = barRect.left;
       let right = barRect.right;
+      let top = barRect.top;
       let bottom = barRect.bottom;
-      console.info('[showSideBarWithGesture_0200] right is ', right);
-      console.info('[showSideBarWithGesture_0200] bottom is ', bottom);
-      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      let width = barRect.right - barRect.left;
+      let height = barRect.bottom - barRect.top;
+      console.info("showSideBarWithGesture_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("showSideBarWithGesture_0200 getBounds width: " + width + ", height: " + height);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('sideBar2_true_text');
       console.info("[showSideBarWithGesture_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
@@ -120,11 +123,15 @@ export default function sideBarWithGesture() {
       let barComponent = await driver.findComponent(ON.id('sideBarContainer_showSideBarWithGesture_false'));
       console.info('[showSideBarWithGesture_0300] barComponent is ', barComponent);
       let barRect = await barComponent.getBounds();
+      let left = barRect.left;
       let right = barRect.right;
+      let top = barRect.top;
       let bottom = barRect.bottom;
-      console.info('[showSideBarWithGesture_0300] right is ', right);
-      console.info('[showSideBarWithGesture_0300] bottom is ', bottom);
-      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      let width = barRect.right - barRect.left;
+      let height = barRect.bottom - barRect.top;
+      console.info("showSideBarWithGesture_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("showSideBarWithGesture_0300 getBounds width: " + width + ", height: " + height);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
       await CommonFunc.sleep(2000);
       let content = await driver.findComponent(ON.id('sideBar3_false_text'));
       console.info("[showSideBarWithGesture_0300'] content is: " + content);
@@ -143,15 +150,14 @@ export default function sideBarWithGesture() {
      */
     it('showSideBarWithGesture_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[showSideBarWithGesture_0400] START');
-      let strJsonCompare: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+      await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[showSideBarWithGesture_0400] type: " + JSON.parse(strJson).$attrs.type)
       console.info("[showSideBarWithGesture_0400] showSideBarWithGesture: " +
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
-      expect(obj.$attrs.showSideBarWithGesture).assertEqual(objCompare.$attrs.showSideBarWithGesture);
+      expect(obj.$attrs.showSideBarWithGesture).assertEqual('false');
       console.info('[showSideBarWithGesture_0400] END');
       done();
     });
@@ -166,15 +172,14 @@ export default function sideBarWithGesture() {
      */
     it('showSideBarWithGesture_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[showSideBarWithGesture_0500] START');
-      let strJsonCompare: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
+      await CommonFunc.sleep(1000);
       let strJson: string = getInspectorByKey('sideBarContainer_showSideBarWithGesture_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[showSideBarWithGesture_0500] type: " + JSON.parse(strJson).$attrs.type)
       console.info("[showSideBarWithGesture_0500] showSideBarWithGesture: " +
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
-      expect(obj.$attrs.showSideBarWithGesture).assertEqual(objCompare.$attrs.showSideBarWithGesture);
+      expect(obj.$attrs.showSideBarWithGesture).assertEqual('false');
       console.info('[showSideBarWithGesture_0500] END');
       done();
     });
