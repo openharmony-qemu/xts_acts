@@ -78,6 +78,19 @@ export default function sideBarWithGesture() {
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
       expect(obj.$attrs.showSideBarWithGesture).assertEqual('true');
+
+      let barComponent = await driver.findComponent(ON.id('sideBarContainer_showSideBarWithGesture_true'));
+      console.info('[showSideBarWithGesture_0200] barComponent is ', barComponent);
+      let barRect = await barComponent.getBounds();
+      let right = barRect.right;
+      let bottom = barRect.bottom;
+      console.info('[showSideBarWithGesture_0200] right is ', right);
+      console.info('[showSideBarWithGesture_0200] bottom is ', bottom);
+      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      await CommonFunc.sleep(2000);
+      let strJson2: string = getInspectorByKey('sideBar2_true_text');
+      console.info("[showSideBarWithGesture_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual('SideBar2');
       console.info('[showSideBarWithGesture_0200] END');
       done();
     });
@@ -99,6 +112,19 @@ export default function sideBarWithGesture() {
         JSON.stringify(obj.$attrs.showSideBarWithGesture));
       expect(obj.$attrs.type).assertEqual('SideBarContainerType.DISPLACE');
       expect(obj.$attrs.showSideBarWithGesture).assertEqual('false');
+
+      let barComponent = await driver.findComponent(ON.id('sideBarContainer_showSideBarWithGesture_false'));
+      console.info('[showSideBarWithGesture_0300] barComponent is ', barComponent);
+      let barRect = await barComponent.getBounds();
+      let right = barRect.right;
+      let bottom = barRect.bottom;
+      console.info('[showSideBarWithGesture_0300] right is ', right);
+      console.info('[showSideBarWithGesture_0300] bottom is ', bottom);
+      await driver.fling({x: Math.round(right/3), y: Math.round(bottom/2)}, {x: Math.round(right), y: Math.round(bottom/2)}, 2, 20000);
+      await CommonFunc.sleep(2000);
+      let content = await driver.findComponent(ON.id('sideBar3_false_text'));
+      console.info("[showSideBarWithGesture_0300'] content is: " + content);
+      expect(content).assertEqual(null);
       console.info('[showSideBarWithGesture_0300] END');
       done();
     });

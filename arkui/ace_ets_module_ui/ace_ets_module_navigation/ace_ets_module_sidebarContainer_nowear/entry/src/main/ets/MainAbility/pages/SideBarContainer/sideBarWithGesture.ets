@@ -50,6 +50,7 @@ struct SideBarContainerShowSideBarWithGesture {
       SideBarContainer(SideBarContainerType.DISPLACE) {
         Column() {
           Text('SideBar2')
+            .id('sideBar2_true_text')
             .fontSize(12)
             .fontColor(Color.Black)
         }
@@ -77,6 +78,7 @@ struct SideBarContainerShowSideBarWithGesture {
       SideBarContainer(SideBarContainerType.DISPLACE) {
         Column() {
           Text('SideBar3')
+            .id('sideBar3_false_text')
             .fontSize(12)
             .fontColor(Color.Black)
         }
