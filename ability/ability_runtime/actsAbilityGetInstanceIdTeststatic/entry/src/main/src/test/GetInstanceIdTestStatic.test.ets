@@ -41,7 +41,12 @@ export default function ActsGetInstanceIdStaticTest(): void {
     let context: common.UIAbilityContext | undefined
     beforeAll(async() => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsAbilityGetInstanceIdTest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.actsAbilityGetInstanceIdTest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       // Presets an action, which is performed only once before all test cases of the test suite start.
