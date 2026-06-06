@@ -367,6 +367,7 @@ export default function lifecycleTest() {
           console.error(TAG + ' startMainAbility2 failed. Cause: ' + JSON.stringify(error));
         })
       await ab2ForePromise;
+      await sleep(2000);
       let ab3DestPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
       let para: ability.AbilityResult = {
         resultCode: 1,
