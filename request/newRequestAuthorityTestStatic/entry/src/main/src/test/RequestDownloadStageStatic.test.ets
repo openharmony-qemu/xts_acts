@@ -40,7 +40,12 @@ export default function requestDownloadStageStaticUnit() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         await Utils.msSleep(1000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+        let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(4000)
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
