@@ -1784,5 +1784,173 @@ export default function SerialBusManagerTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testSerialPortInfo002
+     * @tc.number SUB_BusManager_Serial_JS_SerialPortInfo_Func_0200
+     * @tc.desc   SerialPortInfo optional fields vendorId, productId, manufacturer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSerialPortInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testSerialPortInfo002 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        let portList: serial.SerialPort[] = await serial.getSerialPortList();
+        if (portList.length > 0) {
+          let portInfo: serial.SerialPortInfo = portList[0].portInfo;
+          console.info(TAG, 'testSerialPortInfo002 portName: ', portInfo.portName);
+          console.info(TAG, 'testSerialPortInfo002 vendorId: ', portInfo.vendorId);
+          console.info(TAG, 'testSerialPortInfo002 productId: ', portInfo.productId);
+          console.info(TAG, 'testSerialPortInfo002 manufacturer: ', portInfo.manufacturer);
+          expect(portInfo.portName !== null && portInfo.portName !== undefined).assertTrue();
+          if (portInfo.vendorId !== undefined) {
+            expect(typeof portInfo.vendorId).assertEqual('number');
+          }
+          if (portInfo.productId !== undefined) {
+            expect(typeof portInfo.productId).assertEqual('number');
+          }
+          if (portInfo.manufacturer !== undefined) {
+            expect(typeof portInfo.manufacturer).assertEqual('string');
+          }
+        }
+        done();
+      } catch (err) {
+        console.error(TAG, 'testSerialPortInfo002 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testDataBitsEnum001
+     * @tc.number SUB_BusManager_Serial_JS_DataBits_Enum_0100
+     * @tc.desc   verify DataBits enum values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testDataBitsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testDataBitsEnum001 start');
+      try {
+        expect(serial.DataBits.FIVE).assertEqual(5);
+        expect(serial.DataBits.SIX).assertEqual(6);
+        expect(serial.DataBits.SEVEN).assertEqual(7);
+        expect(serial.DataBits.EIGHT).assertEqual(8);
+        done();
+      } catch (err) {
+        console.error(TAG, 'testDataBitsEnum001 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testStopBitsEnum001
+     * @tc.number SUB_BusManager_Serial_JS_StopBits_Enum_0100
+     * @tc.desc   verify StopBits enum values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStopBitsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testStopBitsEnum001 start');
+      try {
+        expect(serial.StopBits.ONE).assertEqual(1);
+        expect(serial.StopBits.TWO).assertEqual(2);
+        done();
+      } catch (err) {
+        console.error(TAG, 'testStopBitsEnum001 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testParityEnum001
+     * @tc.number SUB_BusManager_Serial_JS_Parity_Enum_0100
+     * @tc.desc   verify Parity enum values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testParityEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testParityEnum001 start');
+      try {
+        expect(serial.Parity.NONE).assertEqual('none');
+        expect(serial.Parity.EVEN).assertEqual('even');
+        expect(serial.Parity.ODD).assertEqual('odd');
+        expect(serial.Parity.MARK).assertEqual('mark');
+        expect(serial.Parity.SPACE).assertEqual('space');
+        done();
+      } catch (err) {
+        console.error(TAG, 'testParityEnum001 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testOpen022
+     * @tc.number SUB_BusManager_Serial_JS_open_ErrCode_2100
+     * @tc.desc   open with DataBits.EIGHT standalone.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOpen022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testOpen022 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        let config: serial.SerialConfigs = {
+          dataBits: serial.DataBits.EIGHT
+        };
+        gPort!.open(config);
+        await driveFn();
+        console.info(TAG, 'testOpen022 open success');
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testOpen022 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testWrite010
+     * @tc.number SUB_BusManager_Serial_JS_write_Func_0200
+     * @tc.desc   write with no timeout parameter (default).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWrite010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testWrite010 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        gPort!.open();
+        await driveFn();
+        let writeData: Uint8Array = new Uint8Array(buffer.from('Hello', 'utf-8').buffer);
+        let writeLen: number = await gPort!.write(writeData);
+        console.info(TAG, 'testWrite010 writeLen: ', writeLen);
+        expect(writeLen >= 0).assertTrue();
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testWrite010 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
