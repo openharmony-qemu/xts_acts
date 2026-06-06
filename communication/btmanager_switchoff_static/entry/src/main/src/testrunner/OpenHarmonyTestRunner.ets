@@ -61,7 +61,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
       }
       hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
     });
-    abilityDelegator.executeShellCommand('aa start -a EntryAbility -b ohos.acts.communication.bluetooth.bluetoothhost.static')
+    let cmd = 'aa start -a EntryAbility -b ohos.acts.communication.bluetooth.bluetoothhost.static';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd)
     hilog.info(domain, tag, 'onRun end');
   }
 }

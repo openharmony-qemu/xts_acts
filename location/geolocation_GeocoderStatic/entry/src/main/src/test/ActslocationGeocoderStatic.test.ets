@@ -58,7 +58,12 @@ export default function actslocationTest() {
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-          abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.location.geolocation.geocoder")
+          let cmd = "aa start -a EntryAbility -b ohos.acts.location.geolocation.geocoder";
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd)
           await Utils.msSleep(4000);
           g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
           hilog.info(domain, tag, 'get UIAbilityContext end');
