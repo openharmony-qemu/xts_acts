@@ -15,7 +15,7 @@
 
 import { SymbolGlyphModifier, uiMaterial } from '@kit.ArkUI';
 
-function BuildMenu(): Array<NavigationMenuItem> {
+function buildMenu(): Array<NavigationMenuItem> {
   return [
     {
       value: 'menu1',
@@ -34,7 +34,7 @@ function BuildMenu(): Array<NavigationMenuItem> {
 
 @Component
 struct TestComponent {
-  private arr: number[] = new Array<number>();
+  private arr: number[] = [];
 
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {
@@ -75,7 +75,7 @@ struct MyDest {
       }),
       barStyle: BarStyle.STACK
     })
-    .menus(BuildMenu())
+    .menus(buildMenu())
   }
 }
 
@@ -112,7 +112,7 @@ struct NavigationTitleMaterialDemo {
         }),
         barStyle: BarStyle.STACK
       })
-      .menus(BuildMenu())
+      .menus(buildMenu())
 
       Text('systemMaterial THIN').fontSize(10)
       Navigation(this.stack) {
@@ -136,7 +136,7 @@ struct NavigationTitleMaterialDemo {
         }),
         barStyle: BarStyle.STACK
       })
-      .menus(BuildMenu())
+      .menus(buildMenu())
 
       Text('systemMaterial REGULAR').fontSize(10)
       Navigation(this.stack) {
@@ -160,7 +160,7 @@ struct NavigationTitleMaterialDemo {
         }),
         barStyle: BarStyle.STACK
       })
-      .menus(BuildMenu())
+      .menus(buildMenu())
 
       Text('systemMaterial ULTRA_THICK').fontSize(10)
       Navigation(this.stack) {
@@ -184,7 +184,7 @@ struct NavigationTitleMaterialDemo {
         }),
         barStyle: BarStyle.STACK
       })
-      .menus(BuildMenu())
+      .menus(buildMenu())
 
     }
     .width('100%')

@@ -97,11 +97,14 @@ export default function navigationMaterial() {
         JSON.stringify(btn2.$attrs.systemMaterial));
       console.info("[navigationMaterial_0020] material style is: " +
         JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.style));
+      console.info("[navigationMaterial_0020] material materialColor is: " +
+        JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.materialColor));
       console.info("[navigationMaterial_0020] material colorInvert is: " +
         JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.colorInvert));
       console.info("[navigationMaterial_0020] material applyShadow is: " +
         JSON.stringify(btn2.$attrs.systemMaterial.material?.immersiveOptions?.applyShadow));
       expect(btn2.$attrs.systemMaterial.material.immersiveOptions.style).assertEqual("ImmersiveStyle.THIN");
+      expect(btn2.$attrs.systemMaterial.material.immersiveOptions.materialColor).assertEqual("#80FF0000");
       expect(btn2.$attrs.systemMaterial.material.immersiveOptions.colorInvert).assertEqual("false");
       expect(btn2.$attrs.systemMaterial.material.immersiveOptions.applyShadow).assertEqual("false");
       console.info('[navigationMaterial_0020] END');
@@ -143,7 +146,7 @@ export default function navigationMaterial() {
 
     /**
      * @tc.name   navigationMaterial_0040
-     * @tc.number SUB_ARKUI_NAVIGATION_SYSTEMMATERIAL_PARAM_0300
+     * @tc.number SUB_ARKUI_NAVIGATION_SYSTEMMATERIAL_PARAM_0400
      * @tc.desc   test Navigation systemMaterial set uiMaterial.ImmersiveStyle.ULTRA_THICK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
