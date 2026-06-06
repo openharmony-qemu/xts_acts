@@ -186,8 +186,8 @@ it('testGauge_static_006', Level.LEVEL0, async (done: () => void): Promise<void>
       try {
         AppStorage.setOrCreate<string>('colorValues',JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]]))
         await CommonFunc.sleep(1000);
-        expect(AppStorage.get('colorValues')).not().assertUndefined();        
-      } catch (err) {        
+        expect(AppStorage.get<string>('colorValues')).not().assertUndefined();
+      } catch (err) {
         console.log("[testGauge006] change component data error: " + (err as BusinessError).message);
       }
       done()
