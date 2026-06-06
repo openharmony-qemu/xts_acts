@@ -33,12 +33,14 @@
 #include "ohaudio/native_audio_stream_manager.h"
 #include "ohaudio/native_audio_session_base.h"
 #include "ohaudio/native_audio_device_enhance_manager.h"
+#include "ohaudio/native_audio_debugging_manager.h"
 #include "hilog/log.h"
 #include <ctime>
 #include <set>
 #include <algorithm>
 #include <random>
 #include <ohaudiosuite/native_audio_suite_engine.h>
+#include <fcntl.h>   // for open, O_*
 
 #include "AudioResourceManagerTest.h"
 
@@ -11106,6 +11108,308 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVI
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioCommon_Result resultManager = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (resultManager != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultManager, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioSession_Strategy strategy = {
+        CONCURRENCY_DEFAULT
+    };
+    OH_AudioSession_Scene scene = AUDIO_SESSION_SCENE_MEDIA;
+    OH_AudioCommon_Result sceneResult = OH_AudioSessionManager_SetScene(audioSessionManager, scene);
+    if (sceneResult != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_MEDIA, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result resultActivate = OH_AudioSessionManager_ActivateAudioSession(audioSessionManager, &strategy);
+    if (resultActivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultActivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, fd start");
+        int32_t fd = -1;
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, fd is: %{public}d", fd);
+        result = OH_AudioDebuggingManager_PrintAppInfo(debugManager, fd);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioCommon_Result resultDeactivate = OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    if (resultDeactivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultDeactivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintAppInfo(nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateRenderBuilder();
+    OH_AudioRenderer *audioRenderer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioDebuggingManager *debugManager = nullptr;
+        OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+            int32_t fd = -1;
+            result2 = OH_AudioDebuggingManager_PrintRendererInfo(debugManager, audioRenderer, fd);
+            LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100,result: %{public}d", result2);
+            if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+                napi_create_int32(env, TEST_PASS, &res);
+            } else {
+                napi_create_int32(env, TEST_FAIL, &res);
+            }
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        OH_AudioRenderer_Release(audioRenderer);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintRendererInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintRendererInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        OH_AudioDebuggingManager *debugManager = nullptr;
+        OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+            int32_t fd = -1;
+            result2 = OH_AudioDebuggingManager_PrintCapturerInfo(debugManager, audioCapturer, fd);
+            LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100,result: %{public}d", result2);
+            if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+                napi_create_int32(env, TEST_PASS, &res);
+            } else {
+                napi_create_int32(env, TEST_FAIL, &res);
+            }
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        OH_AudioCapturer_Release(audioCapturer);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioStreamBuilder_Destroy(builder);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintCapturerInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintCapturerInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *sessionManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioSessionManager(&sessionManager);
+    OH_AudioSession_Strategy strategy = {
+        CONCURRENCY_DEFAULT
+    };
+    OH_AudioSession_Scene scene = AUDIO_SESSION_SCENE_MEDIA;
+    OH_AudioCommon_Result sceneResult = OH_AudioSessionManager_SetScene(sessionManager, scene);
+    if (sceneResult != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_MEDIA, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioCommon_Result resultActivate = OH_AudioSessionManager_ActivateAudioSession(sessionManager, &strategy);
+    if (resultActivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultActivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result2 = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result2 == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        int32_t fd = -1;
+        result2 = OH_AudioDebuggingManager_PrintSessionInfo(debugManager, sessionManager, fd);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100, result is: %{public}d", result2);
+        if (result2 == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    OH_AudioCommon_Result resultDeactivate = OH_AudioSessionManager_DeactivateAudioSession(sessionManager);
+    if (resultDeactivate != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("resultDeactivate, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioDebuggingManager_PrintSessionInfo(nullptr, nullptr, -1);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100, result is: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDebuggingManager *debugManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDebuggingManager(&debugManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && debugManager != nullptr) {
+        result = OH_AudioDebuggingManager_PrintSessionInfo(debugManager, nullptr, -1);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200, result is: %{public}d", result);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100", nullptr,
@@ -11967,6 +12271,45 @@ napi_property_descriptor desc3[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200,
         nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
