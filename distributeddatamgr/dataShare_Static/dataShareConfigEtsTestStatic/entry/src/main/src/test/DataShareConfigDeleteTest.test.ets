@@ -51,7 +51,12 @@ export default function dataShareConfigDeleteTest() {
         console.log('BusinessError  end');
       });
       await Utils.msSleep(2000);
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.datasharestabilityclient");
+      let cmd = "aa start -a EntryAbility -b com.acts.datasharestabilityclient";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       await dataShare.createDataProxyHandle().then((handle: dataShare.DataProxyHandle) => {
         if (handle == null || handle == undefined) {
