@@ -48,6 +48,10 @@ export default function abilityTest() {
     });
     beforeEach(async () => {
       let cmdBeforeEach = 'aa start -d 0 -a TestAbility' + ' -b ' + 'com.example.actsterminateselfwithresulttest';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmdBeforeEach += ' -u ' + user;
+      }
       await delegator.executeShellCommand(cmdBeforeEach);
       await sleep(1000);
     });
