@@ -18,6 +18,11 @@
     "MainAbility/pages/ArcSwiper/arcSwiperShow",
     "MainAbility/pages/ArcSwiper/arcSwiperBoolean",
     "MainAbility/pages/ArcSwiper/arcSwiperEffectMode",
-    "MainAbility/pages/Grid/gridEnableEditMode"
+    "MainAbility/pages/Grid/gridEnableEditMode",
+    "MainAbility/pages/Grid/gridEditModeChange",
+    "MainAbility/pages/List/listEnableEditMode",
+    "MainAbility/pages/List/listEditModeChange",
+    "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",
+    "MainAbility/pages/LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties"
   ]
 }
