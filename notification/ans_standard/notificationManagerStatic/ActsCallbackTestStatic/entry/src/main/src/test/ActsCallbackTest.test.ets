@@ -40,7 +40,12 @@ export default function ActsCallbackTest() {
       console.info(`${tag} testAbilityContext 1`)
       await Utils.msSleep(2000)
       console.info(`${tag} testAbilityContext 2`)
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      let cmd = `aa start -a EntryAbility -b ${JSON.stringify(bundle)}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       console.info(`${tag} testAbilityContext 3`)
       await Utils.msSleep(4000)
       console.info(`${tag} testAbilityContext 4`)
