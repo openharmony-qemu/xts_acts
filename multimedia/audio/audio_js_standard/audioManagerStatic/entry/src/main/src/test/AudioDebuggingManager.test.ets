@@ -56,7 +56,7 @@ export default function audioDebuggingManagerTest() {
         let audioSessionManager: audio.AudioSessionManager;
         debugManager = audioManager.getDebuggingManager();
         audioSessionManager = audioManager.getSessionManager();
-        await audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
+        audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
         let strategy: audio.AudioSessionStrategy = {
             concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
         }
@@ -258,7 +258,7 @@ export default function audioDebuggingManagerTest() {
         let audioSessionManager: audio.AudioSessionManager;
         debugManager = audioManager.getDebuggingManager();
         audioSessionManager = audioManager.getSessionManager();
-        await audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
+        audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
         let strategy: audio.AudioSessionStrategy = {
             concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
         }
