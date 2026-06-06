@@ -55,7 +55,12 @@ export default function RdbStoreSqliteErrorOccurredTest() {
   describe('rdbStoreSqliteErrorOccurredTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG, "*************Unit Test Begin*************");
-      delegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd)
       await Utils.msSleep(5000);
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
       console.info(TAG + 'beforeAll')
