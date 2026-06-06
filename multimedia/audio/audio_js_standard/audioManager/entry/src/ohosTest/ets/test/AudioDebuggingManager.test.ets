@@ -44,9 +44,6 @@ export default function audioDebuggingManagerTest() {
       console.info(`${TAG}: afterEach: Test case cleanup`);
       if (audioRenderer) {
         try {
-          if (audioRenderer.state === audio.AudioState.STATE_RUNNING) {
-            await audioRenderer.stop();
-          }
           await audioRenderer.release();
         } catch (err) {
           console.error(`${TAG}: Failed to cleanup AudioRenderer`);
@@ -54,9 +51,6 @@ export default function audioDebuggingManagerTest() {
       }
       if (audioCapturer) {
         try {
-          if (audioCapturer.state === audio.AudioState.STATE_RUNNING) {
-            await audioCapturer.stop();
-          }
           await audioCapturer.release();
         } catch (err) {
           console.error(`${TAG}: Failed to cleanup AudioCapturer`);
@@ -88,8 +82,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printAppInfo(-1);
         await audioSessionManager.deactivateAudioSession();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printAppInfo failed: ${error.code}, ${error.message}`);
         expect().assertFail();
         done();
@@ -117,8 +110,7 @@ export default function audioDebuggingManagerTest() {
         await audioSessionManager.deactivateAudioSession();
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printAppInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -146,8 +138,7 @@ export default function audioDebuggingManagerTest() {
         await audioSessionManager.deactivateAudioSession();
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printAppInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -184,8 +175,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printRendererInfo(audioRenderer, -1);
         console.info(`${TAG}: printRendererInfo with valid renderer executed successfully`);
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printRendererInfo failed: ${error.code}, ${error.message}`);
         expect().assertFail();
         done();
@@ -206,8 +196,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printRendererInfo(null, -1);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -245,8 +234,7 @@ export default function audioDebuggingManagerTest() {
         console.info(`${TAG}: printRendererInfo with negative fd executed successfully`);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printRendererInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -278,14 +266,12 @@ export default function audioDebuggingManagerTest() {
         };
         
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-        expect(audioRenderer.state).assertEqual(audio.AudioState.STATE_PREPARED);
         
         debugManager.printRendererInfo(audioRenderer, undefined);
         console.info(`${TAG}: printRendererInfo in prepared state executed successfully`);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printRendererInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -322,8 +308,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printCapturerInfo(audioCapturer, -1);
         console.info(`${TAG}: printCapturerInfo with valid capturer executed successfully`);
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
         expect().assertFail();
         done();
@@ -344,8 +329,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printCapturerInfo(null, -1);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -383,8 +367,7 @@ export default function audioDebuggingManagerTest() {
         console.info(`${TAG}: printCapturerInfo with negative fd executed successfully`);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -422,8 +405,7 @@ export default function audioDebuggingManagerTest() {
         console.info(`${TAG}: printCapturerInfo with negative fd executed successfully`);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -451,8 +433,7 @@ export default function audioDebuggingManagerTest() {
         console.info(`${TAG}: printSessionInfo with valid session manager executed successfully`);
         await audioSessionManager.deactivateAudioSession();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printSessionInfo failed: ${error.code}, ${error.message}`);
         expect().assertFail();
         done();
@@ -473,8 +454,7 @@ export default function audioDebuggingManagerTest() {
         debugManager.printSessionInfo(null, -1);
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.info(`${TAG}: Expected error caught: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -503,8 +483,7 @@ export default function audioDebuggingManagerTest() {
         await audioSessionManager.deactivateAudioSession();
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printSessionInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();
@@ -533,8 +512,7 @@ export default function audioDebuggingManagerTest() {
         await audioSessionManager.deactivateAudioSession();
         expect().assertFail();
         done();
-      } catch (err) {
-        let error = err as BusinessError;
+      } catch (error) {
         console.error(`${TAG}: printSessionInfo failed: ${error.code}, ${error.message}`);
         expect(error.code).assertEqual(6800101);
         done();

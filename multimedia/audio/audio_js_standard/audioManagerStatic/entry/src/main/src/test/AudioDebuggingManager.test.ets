@@ -16,6 +16,7 @@
 
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
 import audio from '@ohos.multimedia.audio';
+import Utils from './Util.test';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function audioDebuggingManagerTest() {
@@ -103,6 +104,8 @@ export default function audioDebuggingManagerTest() {
         
         debugManager.printRendererInfo(audioRenderer!, -1);
         console.info(`${TAG}: printRendererInfo with valid renderer executed successfully`);
+        await Utils.msSleep(1000);
+        await audioRenderer!.release();
         done();
       } catch (error) {
         console.error(`${TAG}: printRendererInfo failed: ${error.code}, ${error.message}`);
@@ -184,6 +187,8 @@ export default function audioDebuggingManagerTest() {
         
         debugManager.printCapturerInfo(audioCapturer!, -1);
         console.info(`${TAG}: printCapturerInfo with valid capturer executed successfully`);
+        await Utils.msSleep(1000);
+        await audioCapturer!.release();
         done();
       } catch (error) {
         console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
@@ -227,7 +232,7 @@ export default function audioDebuggingManagerTest() {
         done();
       } catch (error) {
         console.error(`${TAG}: printCapturerInfo failed: ${error.code}, ${error.message}`);
-        if (error.code != 6800101) {
+        if (error.code !== 6800101) {
           expect(error.code).assertEqual(6800301);
         }
         else {
