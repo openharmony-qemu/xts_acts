@@ -90,7 +90,7 @@ export default function listEditModeChange() {
 
     /**
      * @tc.name   listEditModeChange_static_0200
-     * @tc.number SUB_ARKUI_listOnEditModeChange__ONEDITMODECHANGE_STATIC_0200
+     * @tc.number SUB_ARKUI_LIST_ONEDITMODECHANGE_STATIC_0200
      * @tc.desc   Test List onEditModeChange property with undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
