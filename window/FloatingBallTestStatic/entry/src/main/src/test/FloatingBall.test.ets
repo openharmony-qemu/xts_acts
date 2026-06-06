@@ -113,7 +113,12 @@ export default function FloatingBallTest(): void {
     let pixelMapIcon1:image.PixelMap|undefined;
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await Utils.msSleep(2000);
       driver = Driver.create();

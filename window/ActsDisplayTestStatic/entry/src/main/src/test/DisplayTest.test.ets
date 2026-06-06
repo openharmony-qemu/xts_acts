@@ -150,7 +150,12 @@ export default function DisplayTest():void {
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
  	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             hilog.info(domain, tag, 'beforeAll start');
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
             await Utils.msSleep(2000);
             displayFoldStatus = display.getFoldStatus();
