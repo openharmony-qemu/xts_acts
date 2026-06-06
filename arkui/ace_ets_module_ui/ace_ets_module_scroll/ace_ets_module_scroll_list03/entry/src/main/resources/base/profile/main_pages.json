@@ -51,6 +51,8 @@
         "MainAbility/pages/List/editModeList",
         "MainAbility/pages/List/editBadgeList",
         "MainAbility/pages/List/backPressBehaviorList",
-        "MainAbility/pages/ListItemGroup/headerFooterStyle"
+        "MainAbility/pages/ListItemGroup/headerFooterStyle",
+        "MainAbility/pages/listOptions/listEnableEditMode",
+        "MainAbility/pages/listOptions/listEditModeChange"
     ]
 }
