@@ -1,3 +1,4 @@
+'use static';
 import GetBundleInfo from "./GetBundleInfo.test";
 import GetAppCloneIdentityTest from "./GetAppCloneIdentity.test.ets";
 import getLaunchWant from './GetLaunchWant.test.ets';

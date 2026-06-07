@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Row, Color,ResourceColor,ColorContent, Alignment,
   AttributeModifier, Scroll, $r,

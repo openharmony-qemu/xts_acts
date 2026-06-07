@@ -1,3 +1,4 @@
+'use static';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';

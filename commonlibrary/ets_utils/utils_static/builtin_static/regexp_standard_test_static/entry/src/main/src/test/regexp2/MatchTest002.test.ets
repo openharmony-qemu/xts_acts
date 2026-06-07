@@ -1,3 +1,4 @@
+'use static';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { regexpSymbolMatchAll } from './RegExpSymbols';

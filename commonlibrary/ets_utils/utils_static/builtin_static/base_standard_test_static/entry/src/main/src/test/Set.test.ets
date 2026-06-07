@@ -1,3 +1,4 @@
+'use static';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';

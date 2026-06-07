@@ -1,3 +1,4 @@
+'use static';
 import CbrtStatic from "./CbrtStatic.test";
 import CeilStatic from "./CeilStatic.test";
 import Clz32Static from "./Clz32Static.test";

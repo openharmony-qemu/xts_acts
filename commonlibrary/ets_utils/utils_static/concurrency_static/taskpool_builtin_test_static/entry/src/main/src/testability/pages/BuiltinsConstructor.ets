@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 class BigIntConverter {
   public value: bigint;

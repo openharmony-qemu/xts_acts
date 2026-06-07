@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 // 01: uid
 

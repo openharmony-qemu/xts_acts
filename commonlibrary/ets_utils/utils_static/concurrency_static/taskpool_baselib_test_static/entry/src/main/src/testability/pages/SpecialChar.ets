@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import buffer from '@ohos.buffer';
 
 export const specChars =

@@ -1,3 +1,4 @@
+'use static';
 import webView from '@ohos.web.webview'
 import { Callback, RecordData } from '@ohos.base';
 import { Entry, Column, Component, Button, ClickEvent, Row, OnOverScrollEvent} from '@ohos.arkui.component'

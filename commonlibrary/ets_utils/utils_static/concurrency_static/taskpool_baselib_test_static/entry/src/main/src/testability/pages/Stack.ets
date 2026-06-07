@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Stack } from '@kit.ArkTS';
 import { C1 } from './importclass';
 

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { State } from '@ohos.arkui.stateManagement'
 import { Entry, Builder, Color, Text, TextAttribute,IDataSource,
   Scroll,Column, Row,Component, Button, TextAlign,LazyForEach,

@@ -1,3 +1,4 @@
+'use static';
 import arrayTest from './Array.test.ets'
 import BigInt64ArrayTest from './BigInt64Array.test.ets'
 import BigUint64ArrayTest from './BigUint64Array.test.ets'

@@ -1,3 +1,4 @@
+'use static';
 // BigInt tests
 import BuiltinsBigIntDoubleValueTest from "./BigInt/BuiltinsBigIntDoubleValueTest.test";
 import BuiltinsBigIntGetLongTest from "./BigInt/BuiltinsBigIntGetLongTest.test";

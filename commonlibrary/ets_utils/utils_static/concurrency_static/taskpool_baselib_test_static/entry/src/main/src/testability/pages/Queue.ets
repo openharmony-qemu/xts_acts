@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Queue } from '@kit.ArkTS';
 

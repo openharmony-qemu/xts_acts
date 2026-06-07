@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function testWeakSetConstructor1() {
   let TAG = 'testWeakSetConstructor1'

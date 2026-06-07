@@ -1,3 +1,4 @@
+'use static';
 import abilityTest from "./Ability.test";
 import builtinsArrayFindPrototypebTest from "./ArrayFindTest.test";
 

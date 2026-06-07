@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function testDataViewSetuint32() {
   let TAG = 'testDataViewSetuint'

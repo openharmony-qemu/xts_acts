@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, ScrollDirection, Row, Scroll, Image, $r } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'

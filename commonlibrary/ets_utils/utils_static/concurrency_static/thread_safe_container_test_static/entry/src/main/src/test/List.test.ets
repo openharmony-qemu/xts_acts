@@ -1,3 +1,4 @@
+'use static';
 import ArrayConcurrentQueuetest from './ArrayConcurrentQueue.test';
 import LinkedConcurrentQueuetest from './LinkedConcurrentQueuetest.test';
 import ArrayConcurrentQueueStressTest from './ArrayConcurrentQueueStressTest.test';

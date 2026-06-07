@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import TreeMap from '@ohos.util.TreeMap';
 
 

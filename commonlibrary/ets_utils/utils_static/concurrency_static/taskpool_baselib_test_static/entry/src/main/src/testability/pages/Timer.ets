@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { add, TAG, waitForSeconds } from './Testxml';
 
 

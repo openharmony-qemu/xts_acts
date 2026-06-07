@@ -1,3 +1,4 @@
+'use static';
 import BigIntTest from './BigInt.test';
 import BooleanTest from './Boolean.test';
 import DataViewTest from './DataView.test';

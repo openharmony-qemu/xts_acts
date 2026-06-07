@@ -1,3 +1,4 @@
+'use static';
 import abilityTest from "./Ability.test";
 import builtinsArrayAtPrototypebTest from "./ArrayAtTest.test";
 import builtinsArrayAtSecondPrototypebTest from "./ArrayAtSecondTest.test";
