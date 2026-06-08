@@ -63,7 +63,12 @@ export default function SingleKvStoreConcurrencyTest() {
     }
 
     beforeAll(async (done: () => void): Promise<void> => {
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(1000)
 
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;

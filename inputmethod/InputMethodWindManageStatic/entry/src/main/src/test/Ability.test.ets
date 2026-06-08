@@ -104,7 +104,12 @@ export default function inputMethodEngineStatic() {
             try {
               let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
               await Utils.msSleep(2000);
-              abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.acts.inputmethodwidmanage.test.static');
+              let cmd = 'aa start -a EntryAbility -b com.acts.inputmethodwidmanage.test.static';
+              let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+              if(user !== undefined){
+                  cmd += ' -u ' + user;
+              }
+              abilityDelegator.executeShellCommand(cmd);
               await Utils.msSleep(2000);
               await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test.static -f');
               await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test.static');

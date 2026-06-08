@@ -311,9 +311,9 @@ napi_value AudioSessionActivateAudioSessionIllegalState(napi_env env, napi_callb
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
-    OH_AudioSession_Strategy *strategy;
+    OH_AudioSession_Strategy *strategy = nullptr;
     result = OH_AudioSessionManager_ActivateAudioSession(audioSessionManager, strategy);
-    if (result == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
         napi_value res;
         napi_create_int32(env, result, &res);
         return res;

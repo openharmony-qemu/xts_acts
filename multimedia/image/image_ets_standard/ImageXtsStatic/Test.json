@@ -72,6 +72,8 @@
                 "./resource/image/test_exif_v2.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test7.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test_aisr.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v2.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files"
             ]
         },
         {

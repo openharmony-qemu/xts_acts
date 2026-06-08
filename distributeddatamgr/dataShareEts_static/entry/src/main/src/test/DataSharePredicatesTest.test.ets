@@ -49,7 +49,12 @@ export default function dataSharePredicatesTest() {
   describe('dataSharePredicatesTest', (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll')
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.datashareetstest");
+      let cmd = "aa start -a EntryAbility -b ohos.acts.datashareetstest";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
     })
 

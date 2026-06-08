@@ -106,7 +106,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001 startBackgroundRunning delegator success.');
 
-      delegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actslongtimetasktest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.actslongtimetasktest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd)
 
       await Utils.msSleep(3500);
 

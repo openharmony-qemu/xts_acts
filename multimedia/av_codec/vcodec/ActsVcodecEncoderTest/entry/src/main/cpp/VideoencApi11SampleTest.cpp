@@ -551,6 +551,8 @@ void VEncAPI11Sample::GetStride()
     }
     int32_t inputStride = 0;
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_STRIDE, &inputStride);
+    int32_t pendingFrame = 0;
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_NUMBER_OF_PENDING_FRAMES, &pendingFrame);
     stride_ = inputStride;
     OH_AVFormat_Destroy(format);
 }

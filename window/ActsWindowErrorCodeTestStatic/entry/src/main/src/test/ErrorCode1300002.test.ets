@@ -89,7 +89,12 @@ export default function ErrorCode201(): void  {
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;

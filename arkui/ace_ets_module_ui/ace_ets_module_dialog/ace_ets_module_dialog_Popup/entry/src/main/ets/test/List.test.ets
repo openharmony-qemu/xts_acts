@@ -49,6 +49,7 @@ import PopupCommonOptionsSystemMaterial from './popupSystemMaterial/PopupCommonO
 import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
 import PopupColorMode from './popup/PopupColorMode.test';
+import PopupBackgroundEffectTest from './popup/PopupBackgroundEffect.test';
 
 
 export default function testsuite() {
@@ -86,4 +87,5 @@ export default function testsuite() {
   // CustomPopupOptionsSystemMaterial();
   // TipsOptionsSystemMaterial();
   PopupColorMode();
+  PopupBackgroundEffectTest();
 }

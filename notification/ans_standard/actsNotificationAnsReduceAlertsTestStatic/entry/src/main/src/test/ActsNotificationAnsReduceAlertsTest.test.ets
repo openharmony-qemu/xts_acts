@@ -38,7 +38,12 @@ export default function ActsNotificationAnsReduceAlertsTest(){
     beforeAll(async (): Promise<void> => {
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
+      let cmd = `aa start -a EntryAbility -b ${JSON.stringify(bundle)}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       await Utils.msSleep(2000)
@@ -1173,7 +1178,12 @@ export default function ActsNotificationAnsReduceAlertsTest(){
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1600'
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsnotificationansreducealertstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.actsnotificationansreducealertstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(1500)
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         await notificationManager.openNotificationSettings(testAbilityContext).then(() => {

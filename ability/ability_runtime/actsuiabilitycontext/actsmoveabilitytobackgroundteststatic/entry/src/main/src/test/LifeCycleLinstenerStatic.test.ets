@@ -104,7 +104,12 @@ export default function LifeCycleLinstenerStaticTest() {
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
-      await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+      let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator!.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       uiAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       applicationContext = uiAbilityContext?.getApplicationContext();
@@ -160,7 +165,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertTrue();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertTrue();
@@ -219,7 +229,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();
@@ -277,7 +292,12 @@ export default function LifeCycleLinstenerStaticTest() {
             expect(cb.isBackground).assertFalse();
 
             hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-            await abilityDelegator!.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            let cmd = `aa start -a EntryAbility -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
             await Utils.msSleep(2000);
             hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
             expect(cb.isForeground).assertFalse();

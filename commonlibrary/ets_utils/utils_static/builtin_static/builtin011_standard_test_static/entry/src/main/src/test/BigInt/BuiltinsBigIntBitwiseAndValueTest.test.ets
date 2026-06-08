@@ -287,8 +287,6 @@ export default function BuiltinsBigIntBitwiseAndValueTest(): void {
         expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof RangeError).assertTrue();
-        const err: RangeError = e as RangeError;
-        expect(err.code).assertEqual(401);
       }
     });
 

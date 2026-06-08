@@ -32,6 +32,10 @@ let launcher: Want = {
   abilityName: 'MainAbility'
 }
 let startAbilityMainCmd = `aa start -b ${bundleName} -a ${mainActivity} -m ${mainModuleName}`;
+let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+if(user !== undefined){
+    startAbilityMainCmd += ' -u ' + user;
+}
 let startAbilityFeatureCmd = `aa start -b ${bundleName} -a ${mainActivity} -m ${featureModuleName}`;
 let startAbilityNoModuleNameCmd = `aa start -b ${bundleName} -a ${mainActivity}`;
 let onForegroundEvent_main = '10000-onForegroundEvent_entry';

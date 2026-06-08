@@ -82,7 +82,12 @@ export default function rdbResultSetSyncTest() {
       await Utils.msSleep(2000)
       hilog.info(domain, tag, 'abilityDelegator:' );
       hilog.info(domain, tag, 'abilityDelegator:' + JSON.stringify(abilityDelegator));
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000)
       context = AppStorage.get<common.UIAbilityContext>('abilityContextMainAbility2') as common.UIAbilityContext;
       hilog.info(domain, tag, 'context:' + JSON.stringify(context!))
