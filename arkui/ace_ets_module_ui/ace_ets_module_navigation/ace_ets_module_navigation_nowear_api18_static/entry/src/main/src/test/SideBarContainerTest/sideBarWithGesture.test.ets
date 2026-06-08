@@ -29,15 +29,14 @@ import { NavPathInfo, NavigationDividerStyle, ScrollEffectType } from '@ohos.ark
 
 export default function sideBarWithGesture() {
   describe('sideBarWithGesture', () => {
-
     beforeAll(async (): Promise<void> => {
       console.info("sideBarWithGesture beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear18.static", "EntryAbility")
-
+      await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async (done: () => void): Promise<void> => {
-      console.info("OnNewParamPage beforeEach start");
+    beforeEach(async (): Promise<void> => {
+      console.info('sideBarWithGesture beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SideBarContainer/sideBarWithGesture',
       }
@@ -49,7 +48,7 @@ export default function sideBarWithGesture() {
         if (!('sideBarWithGesture' == pages.name)) {
           console.info('get sideBarWithGesture pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push sideBarWithGesture page error:' + err);

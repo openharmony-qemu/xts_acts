@@ -34,7 +34,7 @@ export default function NavScrollEffectOptions() {
       await UtilsTest.startAbility('com.arkui.ace.navigation.static', 'EntryAbility');
     });
 
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('NavScrollEffectOptions beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Navigation/NavScrollEffectOptions',

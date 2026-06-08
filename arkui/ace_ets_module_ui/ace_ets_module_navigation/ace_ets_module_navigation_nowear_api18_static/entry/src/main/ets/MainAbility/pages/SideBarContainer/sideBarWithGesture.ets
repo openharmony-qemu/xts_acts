@@ -45,7 +45,7 @@ import { LengthMetrics } from '@kit.ArkUI'
 struct SideBarContainerShowSideBarWithGesture {
   build() {
     Column() {
-      Text('SideBarContainer showSideBarWithGesture 测试')
+      Text('SideBarContainer showSideBarWithGesture')
 
       // 1. showSideBarWithGesture
       Text('1. showSideBarWithGesture noSet').fontSize(10)
