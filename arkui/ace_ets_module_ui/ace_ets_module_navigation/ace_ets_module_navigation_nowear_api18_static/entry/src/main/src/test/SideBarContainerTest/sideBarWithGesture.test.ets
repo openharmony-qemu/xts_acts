@@ -32,7 +32,6 @@ export default function sideBarWithGesture() {
     beforeAll(async (): Promise<void> => {
       console.info("sideBarWithGesture beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
