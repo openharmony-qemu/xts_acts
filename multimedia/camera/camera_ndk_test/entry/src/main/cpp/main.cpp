@@ -3947,7 +3947,7 @@ static napi_value GetEnumProximityStateForFocus(napi_env env, napi_callback_info
     napi_get_value_int32(env, args[0], &index);
 
     if (index == 0) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_IN_RANGE_RAISE_NONE , &result);
+        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_IN_RANGE_RAISE_NONE, &result);
     } else if (index == 1) {
         napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_OUT_OF_RANGE_RAISE_REQUIRED, &result);
     }
