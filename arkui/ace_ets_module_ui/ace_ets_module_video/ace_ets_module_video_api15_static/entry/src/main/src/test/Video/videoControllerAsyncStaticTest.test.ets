@@ -129,7 +129,7 @@ export default function videoControllerAsyncStaticTest() {
 
       let button8 = await driver.findComponent(ON.id('videoControllerAsyncRequestFullscreen'));
       await (button8?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(3000);
       let strJson8 = inspector.getInspectorByKey('videoControllerAsyncText');
 
       let button9 = await driver.findComponent(ON.id('videoControllerAsyncStart'));
