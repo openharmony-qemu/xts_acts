@@ -3711,15 +3711,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100
      * @tc.desc      test sub multimedia camera enum notification
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0100', Level.LEVEL2, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0100"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3745,15 +3745,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0200
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200
      * @tc.desc      test sub multimedia camera on NotificationReceived
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0200', Level.LEVEL0, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0200"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3778,15 +3778,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300
-     * @tc.desc      : test sub multimedia camera on NotificationReceived with first param null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300
+     * @tc.desc      test sub multimedia camera on NotificationReceived with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300', Level.LEVEL2, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0300"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3808,15 +3808,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0400
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0400
-     * @tc.desc      : test sub multimedia camera on NotificationReceived with second param null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400
+     * @tc.desc      test sub multimedia camera on NotificationReceived with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0400', Level.LEVEL2, async () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0400"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3838,15 +3838,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0500
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0500
-     * @tc.desc      : test sub multimedia camera off NotificationReceived
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500
+     * @tc.desc      test sub multimedia camera off NotificationReceived
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0500', Level.LEVEL0, async () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0500"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500', Level.LEVEL0, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3868,15 +3868,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0600
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0600
-     * @tc.desc      : test sub multimedia camera off NotificationReceived with first param null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600
+     * @tc.desc      test sub multimedia camera off NotificationReceived with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0600', Level.LEVEL2, async () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0600"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3898,15 +3898,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0700
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0700
-     * @tc.desc      : test sub multimedia camera off NotificationReceived with second param null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700
+     * @tc.desc      test sub multimedia camera off NotificationReceived with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0700', Level.LEVEL2, async () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0700"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3928,15 +3928,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0800
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800
      * @tc.desc      test sub multimedia camera GetNotificationName with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0800', Level.LEVEL0, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0800"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3964,15 +3964,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0900
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0900
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900
      * @tc.desc      test sub multimedia camera GetNotificationName with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0900', Level.LEVEL0, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_0900"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -4000,15 +4000,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1000
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1000
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000
      * @tc.desc      test sub multimedia camera GetProximityStateForFocus with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1000', Level.LEVEL0, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1000"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -4036,15 +4036,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100
      * @tc.desc      test sub multimedia camera GetProximityStateForFocus with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1100', Level.LEVEL2, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1100"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -4072,15 +4072,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1200
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200
      * @tc.desc      test sub multimedia camera CameraNotificationInfo_Destroy
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1200', Level.LEVEL2, () => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_1200"
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
