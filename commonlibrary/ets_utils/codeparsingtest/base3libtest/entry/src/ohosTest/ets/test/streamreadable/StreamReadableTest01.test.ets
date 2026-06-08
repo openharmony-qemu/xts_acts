@@ -160,7 +160,7 @@ export default function StreamReadable01Test() {
         expect(readableStream !== null && readableStream !== undefined).assertTrue();
       } catch (err) {
         errCaught = true;
-        expect(err.code).assertEqual(401);
+        expect(err.code).assertEqual("401");
       }
     });
 
