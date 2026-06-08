@@ -206,7 +206,7 @@ export default function LongToChar1Test(): void {
       const value = new Long(Long.MAX_VALUE);
       const result: char = value.toChar();
       // MAX_VALUE wraps into char range, verify valid char
-      expect(result !== null).assertTrue();
+      expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();
     });
 
     /**
@@ -221,7 +221,7 @@ export default function LongToChar1Test(): void {
       const value = new Long(Long.MIN_VALUE);
       const result: char = value.toChar();
       // MIN_VALUE wraps into char range, verify valid char
-      expect(result !== null).assertTrue();
+      expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();
     });
   });
 }

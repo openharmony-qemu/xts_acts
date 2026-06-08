@@ -127,40 +127,40 @@ export default function LongToString1Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_0800
+     * @tc.name testLongToString1008
+     * @tc.desc Verify result.length > 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: string = Long.toString(TS1_123);
+      expect(result.length > 0).assertTrue();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_0900
      * @tc.name testLongToString1009
-     * @tc.desc Verify result.length > 0
+     * @tc.desc Verify positive result contains no spaces
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongToString1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: string = Long.toString(TS1_123);
-      expect(result.length > 0).assertTrue();
+      expect(result.indexOf(" ")).assertEqual(-1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_1000
      * @tc.name testLongToString1010
-     * @tc.desc Verify positive result contains no spaces
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongToString1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: string = Long.toString(TS1_123);
-      expect(result.indexOf(" ")).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_1100
-     * @tc.name testLongToString1011
      * @tc.desc Verify multiple calls with same input return same result
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongToString1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongToString1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result1: string = Long.toString(TS1_123);
       const result2: string = Long.toString(TS1_123);
       expect(result1).assertEqual(result2);

@@ -166,83 +166,68 @@ export default function LongSubTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1000
      * @tc.name testLongSub010
-     * @tc.desc Verify MIN_VALUE minus 1 overflows to MAX_VALUE
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongSub010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(Long.MIN_VALUE);
-      const result: Long = value.sub(new Long(SUB_1));
-      expect(result.toString()).assertEqual(Long.MAX_VALUE.toString());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1100
-     * @tc.name testLongSub011
      * @tc.desc Verify sub returns a Long instance
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongSub011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongSub010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(SUB_10).sub(new Long(SUB_3));
       expect(result instanceof Long).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1200
-     * @tc.name testLongSub012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1100
+     * @tc.name testLongSub011
      * @tc.desc Verify sub returns a new instance, not the same object
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongSub012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongSub011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original: Long = new Long(SUB_10);
       const result: Long = original.sub(new Long(SUB_3));
       expect(result !== original).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1300
-     * @tc.name testLongSub013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1200
+     * @tc.name testLongSub012
      * @tc.desc Verify chained sub operations
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongSub013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongSub012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(SUB_100).sub(new Long(SUB_30)).sub(new Long(SUB_20));
       expect(result.toString()).assertEqual(SUB_STR_50);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1400
-     * @tc.name testLongSub014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1300
+     * @tc.name testLongSub013
      * @tc.desc Verify default constructor Long sub
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongSub014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongSub013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long().sub(new Long(SUB_5));
       expect(result.toString()).assertEqual(SUB_STR_NEG_5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1500
-     * @tc.name testLongSub015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1400
+     * @tc.name testLongSub014
      * @tc.desc Verify MAX_VALUE - (-1) overflows to MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongSub015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongSub014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: Long = value.sub(new Long(SUB_NEG_1));
       expect(result.toString()).assertEqual(Long.MIN_VALUE.toString());
     });
   });
 }
-

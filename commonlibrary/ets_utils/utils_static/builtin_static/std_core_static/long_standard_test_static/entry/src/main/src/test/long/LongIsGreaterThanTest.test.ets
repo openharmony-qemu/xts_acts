@@ -220,79 +220,79 @@ export default function LongIsGreaterThanTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1700
-     * @tc.name testLongIsGreaterThan017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1500
+     * @tc.name testLongIsGreaterThan015
      * @tc.desc Verify adjacent 2 > 1 returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongIsGreaterThan017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongIsGreaterThan015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: boolean = new Long(GT_2).isGreaterThan(new Long(GT_1));
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1800
-     * @tc.name testLongIsGreaterThan018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1600
+     * @tc.name testLongIsGreaterThan016
      * @tc.desc Verify -1 > -2 returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongIsGreaterThan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongIsGreaterThan016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: boolean = new Long(GT_NEG_1).isGreaterThan(new Long(GT_NEG_2));
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1700
+     * @tc.name testLongIsGreaterThan017
+     * @tc.desc Verify -2 > -1 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsGreaterThan017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(GT_NEG_2).isGreaterThan(new Long(GT_NEG_1));
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1800
+     * @tc.name testLongIsGreaterThan018
+     * @tc.desc Verify 200000000000 > 100000000000 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsGreaterThan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(GT_LARGE2).isGreaterThan(new Long(GT_LARGE1));
       expect(result).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_1900
      * @tc.name testLongIsGreaterThan019
-     * @tc.desc Verify -2 > -1 returns false
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongIsGreaterThan019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: boolean = new Long(GT_NEG_2).isGreaterThan(new Long(GT_NEG_1));
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_2000
-     * @tc.name testLongIsGreaterThan020
-     * @tc.desc Verify 200000000000 > 100000000000 returns true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongIsGreaterThan020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: boolean = new Long(GT_LARGE2).isGreaterThan(new Long(GT_LARGE1));
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_2100
-     * @tc.name testLongIsGreaterThan021
      * @tc.desc Verify MAX_VALUE > MIN_VALUE returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongIsGreaterThan021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongIsGreaterThan019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: boolean = new Long(Long.MAX_VALUE).isGreaterThan(new Long(Long.MIN_VALUE));
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_2200
-     * @tc.name testLongIsGreaterThan022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATERTHAN_2000
+     * @tc.name testLongIsGreaterThan020
      * @tc.desc Verify self comparison (value > value) returns false
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongIsGreaterThan022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongIsGreaterThan020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(GT_42);
       const result: boolean = value.isGreaterThan(value);
       expect(result).assertFalse();

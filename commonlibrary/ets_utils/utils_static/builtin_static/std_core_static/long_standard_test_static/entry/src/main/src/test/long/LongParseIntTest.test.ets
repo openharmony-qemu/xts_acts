@@ -237,7 +237,7 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_1);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
       }
@@ -254,7 +254,7 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_37);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
       }
@@ -271,7 +271,7 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_NEG_1);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
       }
@@ -288,7 +288,7 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_ABC, PI_10);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
       }
@@ -305,7 +305,7 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("", PI_10);
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
       }
@@ -322,6 +322,70 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(Long.MAX_VALUE.toString(), PI_10);
       expect(result.toString()).assertEqual(Long.MAX_VALUE.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_2000
+     * @tc.name testLongParseInt020
+     * @tc.desc Verify Long.parseInt with whitespace-only string throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseInt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("  ", PI_10);
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_2100
+     * @tc.name testLongParseInt021
+     * @tc.desc Verify Long.parseInt with invalid characters returns non-negative partial result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseInt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt("12a3", PI_10);
+      expect(result >= 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_2200
+     * @tc.name testLongParseInt022
+     * @tc.desc Verify Long.parseInt with overflow value throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseInt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("9223372036854775808", PI_10);
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_2300
+     * @tc.name testLongParseInt023
+     * @tc.desc Verify Long.parseInt with null-like string throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseInt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("null", PI_10);
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
   });
 }

@@ -115,7 +115,7 @@ export default function LongToFloat1Test(): void {
       const value = new Long(TF1_1000000);
       const result: float = value.toFloat();
       expect(result === TF1_1000000).assertTrue();
-      expect(isFinite(result)).assertTrue();
+      expect(result === result).assertTrue();  // NaN check
     });
 
     /**

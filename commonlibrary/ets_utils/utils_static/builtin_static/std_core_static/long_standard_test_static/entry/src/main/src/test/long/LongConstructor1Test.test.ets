@@ -33,8 +33,6 @@ export default function LongConstructor1Test(): void {
      */
     it('testLongConstructor1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      expect(value !== null).assertTrue();
-      expect(value !== undefined).assertTrue();
       expect(value.toString()).assertEqual(CON1_STR_0);
     });
 
@@ -78,7 +76,6 @@ export default function LongConstructor1Test(): void {
      */
     it('testLongConstructor1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      expect(value !== null).assertTrue();
       expect(value.toString()).assertEqual(CON1_STR_0);
     });
   });

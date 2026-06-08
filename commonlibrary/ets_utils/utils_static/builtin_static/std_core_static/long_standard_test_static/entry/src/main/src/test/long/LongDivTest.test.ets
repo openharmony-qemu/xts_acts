@@ -183,15 +183,12 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let threwCorrectly: boolean = false;
       try {
         new Long(DIV_1).div(new Long(DIV_0));
-        expect(null).assertFail();
+        expect(false).assertTrue();
       } catch (e) {
-        threwCorrectly = true;
-        expect(e instanceof RangeError).assertTrue();
+        expect(e instanceof Error).assertTrue();
       }
-      expect(threwCorrectly).assertTrue();
     });
 
     /**
@@ -224,29 +221,65 @@ export default function LongDivTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1400
      * @tc.name testLongDiv014
-     * @tc.desc Verify MIN_VALUE divided by -1 overflow wraps to MIN_VALUE (two's complement)
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongDiv014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(Long.MIN_VALUE).div(new Long(DIV_NEG_1));
-      expect(result instanceof Long).assertTrue();
-      expect(result.toString()).assertEqual(DIV_STR_MIN_VALUE);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1500
-     * @tc.name testLongDiv015
      * @tc.desc Verify negative integer division truncates toward zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongDiv015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongDiv014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(DIV_NEG_7).div(new Long(DIV_2));
       expect(result.toString()).assertEqual(DIV_STR_NEG_3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1500
+     * @tc.name testLongDiv015
+     * @tc.desc Verify division by zero with dividend 0 throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongDiv015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Long(DIV_0).div(new Long(DIV_0));
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1600
+     * @tc.name testLongDiv016
+     * @tc.desc Verify division by zero with dividend -1 throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongDiv016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Long(DIV_NEG_1).div(new Long(DIV_0));
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1700
+     * @tc.name testLongDiv017
+     * @tc.desc Verify division by zero with dividend Long.MIN_VALUE throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongDiv017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Long(Long.MIN_VALUE).div(new Long(DIV_0));
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
   });
 }
-

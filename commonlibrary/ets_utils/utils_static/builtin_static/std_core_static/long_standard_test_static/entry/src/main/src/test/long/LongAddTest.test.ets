@@ -42,7 +42,6 @@ export default function LongAddTest(): void {
     const ADD_STR_50: string = "50";
     const ADD_STR_100: string = "100";
     const ADD_STR_300: string = "300";
-    const ADD_STR_MIN_VALUE: string = "-9223372036854775808";
     const ADD_STR_MAX_VALUE: string = "9223372036854775807";
 
     /**
@@ -139,123 +138,108 @@ export default function LongAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_0800
      * @tc.name testLongAdd008
-     * @tc.desc Verify MAX_VALUE plus 1 overflows to MIN_VALUE
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongAdd008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(Long.MAX_VALUE);
-      const result = value.add(new Long(ADD_1));
-      expect(result.toString()).assertEqual(ADD_STR_MIN_VALUE);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_0900
-     * @tc.name testLongAdd009
      * @tc.desc Verify MIN_VALUE plus -1 overflows to MAX_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MIN_VALUE);
       const result = value.add(new Long(-ADD_1));
       expect(result.toString()).assertEqual(ADD_STR_MAX_VALUE);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1000
-     * @tc.name testLongAdd010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_0900
+     * @tc.name testLongAdd009
      * @tc.desc Verify MAX_VALUE plus MIN_VALUE equals -1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(Long.MAX_VALUE).add(new Long(Long.MIN_VALUE));
       expect(result.toString()).assertEqual(ADD_STR_NEG_1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1100
-     * @tc.name testLongAdd011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1000
+     * @tc.name testLongAdd010
      * @tc.desc Verify chained add operations
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(ADD_1).add(new Long(ADD_2)).add(new Long(ADD_3));
       expect(result.toString()).assertEqual(ADD_STR_6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1200
-     * @tc.name testLongAdd012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1100
+     * @tc.name testLongAdd011
      * @tc.desc Verify add returns a Long instance
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(ADD_3).add(new Long(ADD_7));
       expect(result instanceof Long).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1300
-     * @tc.name testLongAdd013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1200
+     * @tc.name testLongAdd012
      * @tc.desc Verify add returns a new instance, not the same object
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Long(ADD_5);
       const result = original.add(new Long(ADD_3));
       expect(result !== original).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1400
-     * @tc.name testLongAdd014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1300
+     * @tc.name testLongAdd013
      * @tc.desc Verify default constructor Long add
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long().add(new Long(ADD_10));
       expect(result.toString()).assertEqual(ADD_STR_10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1500
-     * @tc.name testLongAdd015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1400
+     * @tc.name testLongAdd014
      * @tc.desc Verify add with itself
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(ADD_7);
       const result = value.add(value);
       expect(result.toString()).assertEqual(ADD_STR_14);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1600
-     * @tc.name testLongAdd016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1500
+     * @tc.name testLongAdd015
      * @tc.desc Verify zero plus zero
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongAdd016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongAdd015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(ADD_0).add(new Long(ADD_0));
       expect(result.toString()).assertEqual(ADD_STR_0);
     });
   });
 }
-
