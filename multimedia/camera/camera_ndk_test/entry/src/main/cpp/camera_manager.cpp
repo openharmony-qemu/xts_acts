@@ -4604,14 +4604,15 @@ void NotificationReceivedCallback(void* context, OH_Camera_NotificationInfo* inf
     g_notificationInfo = info;
     OH_CameraNotificationInfo_GetNotificationName(g_notificationInfo, &g_notificationName);
     OH_CameraNotificationInfo_GetProximityStateForFocus(g_notificationInfo, &g_notificationValue);
-    LOG("NotificationReceivedCallback info.name %d, info.value %d.",g_notificationName, g_notificationValue);
+    LOG("NotificationReceivedCallback info.name %d, info.value %d.", g_notificationName, g_notificationValue);
 }
 
 Camera_ErrorCode NDKCamera::RegisterNotificationReceivedCallback(int useCaseCode)
 {
     LOG("RegisterNotificationReceivedCallback useCaseCode: %d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
-        ret_ = OH_CaptureSession_RegisterNotificationReceivedCallback(captureSession_, nullptr, NotificationReceivedCallback);
+        ret_ = OH_CaptureSession_RegisterNotificationReceivedCallback(captureSession_, nullptr,
+            NotificationReceivedCallback);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_RegisterNotificationReceivedCallback(nullptr, nullptr, NotificationReceivedCallback);
     } else if (useCaseCode == PARAMETER2_ERROR) {
