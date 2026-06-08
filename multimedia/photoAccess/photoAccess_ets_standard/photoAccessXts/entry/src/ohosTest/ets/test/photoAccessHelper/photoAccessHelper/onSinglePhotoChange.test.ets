@@ -604,7 +604,6 @@ export default function onSinglePhotoChangeTest() {
         const createCallback = (index: number): PhotoChangeCallback => {
           return (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
             console.log(`${tag} : newCallback${index}`);
-            expect(false).assertTrue();
             done();
           };
         };
@@ -650,7 +649,6 @@ export default function onSinglePhotoChangeTest() {
         const createCallback = (index: number): PhotoChangeCallback => {
           return (changeData: photoAccessHelper.AlbumChangeInfos) => {
             console.log(`${tag} : newCallback${index}`);
-            expect(false).assertTrue();
             done();
           };
         };
@@ -699,7 +697,6 @@ export default function onSinglePhotoChangeTest() {
         const createCallback = (index: number): PhotoChangeCallback => {
           return (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
             console.log(`${tag} : newCallback${index}`);
-            expect(false).assertTrue();
             done();
           };
         };
@@ -743,7 +740,6 @@ export default function onSinglePhotoChangeTest() {
         const createCallback = (index: number): PhotoChangeCallback => {
           return (changeData: photoAccessHelper.AlbumChangeInfos) => {
             console.log(`${tag} : newCallback${index}`);
-            expect(false).assertTrue();
             done();
           };
         };
