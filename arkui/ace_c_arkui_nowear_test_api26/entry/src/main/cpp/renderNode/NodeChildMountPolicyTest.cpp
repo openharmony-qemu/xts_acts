@@ -128,7 +128,7 @@ static napi_value TestInsertRenderNodeAt_001(napi_env env, napi_callback_info in
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, renderNode, 0);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, rsNodeRoot, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_001 ret2=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
@@ -198,7 +198,8 @@ static napi_value TestInsertRenderNodeAt_004(napi_env env, napi_callback_info in
 
 static napi_value TestInsertRenderNodeAt_005(napi_env env, napi_callback_info info)
 {
-    ArkUI_NodeHandle Text = nodeAPI->createNode(ARKUI_NODE_TEXT);
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    auto renderNode = OH_ArkUI_RenderNodeUtils_CreateNode();
     auto ret = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Text, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_005 ret=%{public}d", ret);
@@ -257,7 +258,7 @@ static napi_value TestInsertRenderNodeAt_008(napi_env env, napi_callback_info in
     auto ret1 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Custom, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_008 ret1=%{public}d", ret1);
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(node, makeRender(), 0);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Custom, makeRender(), 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_008 ret2=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_CHILD_EXISTED);
@@ -282,7 +283,7 @@ static napi_value TestGetRenderNodeChildrenCount_001(napi_env env, napi_callback
     OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child1, 0);
     OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child2, 1);
     
-    uint32_t count = 0;
+    int32_t count = 0;
     auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(custom, &count);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeChildrenCount_001 ret=%{public}d, count=%{public}u", ret2, count);
@@ -311,7 +312,7 @@ static napi_value TestGetRenderNodeChildrenCount_002(napi_env env, napi_callback
 
 static napi_value TestGetRenderNodeChildrenCount_003(napi_env env, napi_callback_info info)
 {
-    uint32_t count = 0;
+    int32_t count = 0;
     auto ret = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(nullptr, &count);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeChildrenCount_003 nullptr ret=%{public}d", ret);
