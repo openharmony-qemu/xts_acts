@@ -27,6 +27,8 @@ import {
   Entry,
   PlaybackInfo,
   PlaybackSpeed,
+  PreparedInfo,
+  FullscreenInfo,
   Resource,
   Row,
   Text,
@@ -163,31 +165,31 @@ struct videoControllerAsyncStatic {
           this.str = 'onStop'
           console.info('jyy onStop');
         })
-        .onPrepared((e?: videoControllerAsyncDurationObject) => {
+        .onPrepared((e?: PreparedInfo) => {
           if (e != undefined) {
             this.str = 'onPrepared'
             console.info(`jyy onPrepared is ${e.duration}`);
           }
         })
-        .onSeeking((e?: videoControllerAsyncTimeObject) => {
+        .onSeeking((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str = 'onSeeking'
             console.info(`jyy onSeeking is ${e.time}`);
           }
         })
-        .onSeeked((e?: videoControllerAsyncTimeObject) => {
+        .onSeeked((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str = 'onSeeked'
             console.info(`jyy onSeeked is ${e.time}`);
           }
         })
-        .onUpdate((e?: videoControllerAsyncTimeObject) => {
+        .onUpdate((e?: PlaybackInfo) => {
           if (e != undefined) {
             this.str1 = 'onUpdate'
             console.info(`jyy onUpdate is ${e.time}`);
           }
         })
-        .onFullscreenChange((e?: videoControllerAsyncFullscreenObject) => {
+        .onFullscreenChange((e?: FullscreenInfo) => {
           if (e != undefined) {
             this.str = 'onFullscreenChange_' + e.fullscreen
             console.info(`jyy onFullscreenChange is ${e.fullscreen}`);
@@ -197,14 +199,3 @@ struct videoControllerAsyncStatic {
   }
 }
 
-interface videoControllerAsyncDurationObject {
-  duration: number;
-}
-
-interface videoControllerAsyncTimeObject {
-  time: number;
-}
-
-interface videoControllerAsyncFullscreenObject {
-  fullscreen: boolean;
-}
