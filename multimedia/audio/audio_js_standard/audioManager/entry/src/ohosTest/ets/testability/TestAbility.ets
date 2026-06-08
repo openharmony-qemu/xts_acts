@@ -53,8 +53,7 @@ export default class TestAbility extends UIAbility {
                 await power?.click();
                 await power2?.click();
                 await sleep(2000);
-            }
-            catch (error) {
+            } catch (error) {
                 console.info('click1 error:' + error);
             }
         }
