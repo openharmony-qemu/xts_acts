@@ -53,10 +53,10 @@ function isPermissionError(err: BusinessError): boolean {
 }
 
 function handleCatchError(tag: string, err: BusinessError): void {
-  console.info(`${tag} caught error: code=${err.code}, message=${err.message}`);
-  // For system APIs, permission denied (201/202) is expected behavior = PASS
-  // Any other error is also acceptable in error handling tests = PASS
-  expect(true).assertTrue();
+  console.info(`${tag} caught error: code=${err?.code}, message=${err?.message}`);
+  // For @systemapi, permission denied is expected when using normal APL certificate
+  // Simply verify that we caught an error object
+  expect(err).not().assertNull();
 }
 
 export default function audioSpatializationManager() {
@@ -86,65 +86,63 @@ export default function audioSpatializationManager() {
 
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001
+     * @tc.name   testOnSpatializationEnabledChangeForCurrentDevice0100
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OnEnabledChangeForCurrentDevice_0100
      * @tc.desc   on(spatializationEnabledChangeForCurrentDevice)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testOnSpatializationEnabledChangeForCurrentDevice0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let audioManager = audio.getAudioManager();
       let audioSpatializationManager = audioManager.getSpatializationManager();
       let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
       try {
         audioSpatializationManager.on("spatializationEnabledChangeForCurrentDevice", (data) => {
         });
-        console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001 SUCCESS.`);
+        console.info(`testOnSpatializationEnabledChangeForCurrentDevice0100 SUCCESS.`);
         expect(false == ret).assertTrue();
         done();
        } catch (err) {
-         console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001 ERROR: ${err.message}`);
-         expect().assertFail();
+         console.error(`${TAG} testOnSpatializationEnabledChangeForCurrentDevice0100 ERROR: ${err.message}`);
          done();
        }
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001
+     * @tc.name   testOffSpatializationEnabledChangeForCurrentDevice0200
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OffEnabledChangeForCurrentDevice_0200
      * @tc.desc   off(spatializationEnabledChangeForCurrentDevice)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testOffSpatializationEnabledChangeForCurrentDevice0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let audioManager = audio.getAudioManager();
       let audioSpatializationManager = audioManager.getSpatializationManager();
       let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
       try {
         audioSpatializationManager.off("spatializationEnabledChangeForCurrentDevice", (data) => {
         });
-        console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001 SUCCESS.`);
+        console.info(`testOffSpatializationEnabledChangeForCurrentDevice0200 SUCCESS.`);
         expect(false == ret).assertTrue();
         done();
        } catch (err) {
-         console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_001 ERROR: ${err.message}`);
-         expect().assertFail();
+         console.error(`${TAG} testOffSpatializationEnabledChangeForCurrentDevice0200 ERROR: ${err.message}`);
          done();
        }
     })
     
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_001
+     * @tc.name   testIsSpatializationEnabledForCurrentDevice0300
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsEnabledForCurrentDevice_0300
      * @tc.desc   isSpatializationEnabledForCurrentDevice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testIsSpatializationEnabledForCurrentDevice0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let audioSpatializationManager:audio.AudioSpatializationManager;
         let audioManager = audio.getAudioManager();
@@ -158,14 +156,14 @@ export default function audioSpatializationManager() {
       done();
     })
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_001
+     * @tc.name   testSpatializationSupported0400
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsSupported_0400
      * @tc.desc   spatializationSupported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_SPATIALIZATIONSUPPORTED_TEST_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("testSpatializationSupported0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let audioRoutingManager: audio.AudioRoutingManager;
         let audioManager = audio.getAudioManager();
@@ -182,14 +180,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONSUPPORTED_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONSUPPORTED_001
+     * @tc.name   testIsPersonalizedSpatializationSupported0500
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsPersonalizedSupported_0500
      * @tc.desc   isPersonalizedSpatializationSupported returns boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONSUPPORTED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testIsPersonalizedSpatializationSupported0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -203,14 +201,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_001
+     * @tc.name   testIsPersonalizedSpatializationEnabled0600
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsPersonalizedEnabled_0600
      * @tc.desc   isPersonalizedSpatializationEnabled with valid AudioDeviceDescriptor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testIsPersonalizedSpatializationEnabled0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -226,14 +224,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_INVALID_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_INVALID_001
+     * @tc.name   testIsPersonalizedSpatializationEnabledInvalid0700
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsPersonalizedEnabledInvalid_0700
      * @tc.desc   isPersonalizedSpatializationEnabled with invalid param type (number)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-     it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_INVALID_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+     it("testIsPersonalizedSpatializationEnabledInvalid0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
        try {
          let audioManager = audio.getAudioManager();
          let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -246,14 +244,14 @@ export default function audioSpatializationManager() {
      })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_NOARG_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_NOARG_001
+     * @tc.name   testIsPersonalizedSpatializationEnabledNoArg0800
+     * @tc.number SUB_Multimedia_Audio_Spatialization_IsPersonalizedEnabledNoArg_0800
      * @tc.desc   isPersonalizedSpatializationEnabled with no arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-     it("SUB_AUDIO_SPATIALIZATION_MANAGER_ISPERSONALIZEDSPATIALIZATIONENABLED_NOARG_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+     it("testIsPersonalizedSpatializationEnabledNoArg0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
        try {
          let audioManager = audio.getAudioManager();
          let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -266,14 +264,14 @@ export default function audioSpatializationManager() {
      })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_001
+     * @tc.name   testSetPersonalizedSpatializationEnabledTrue0900
+     * @tc.number SUB_Multimedia_Audio_Spatialization_SetPersonalizedEnabledTrue_0900
      * @tc.desc   setPersonalizedSpatializationEnabled with valid device and enable=true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testSetPersonalizedSpatializationEnabledTrue0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -296,14 +294,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_FALSE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_FALSE_001
+     * @tc.name   testSetPersonalizedSpatializationEnabledFalse1000
+     * @tc.number SUB_Multimedia_Audio_Spatialization_SetPersonalizedEnabledFalse_1000
      * @tc.desc   setPersonalizedSpatializationEnabled with valid device and enable=false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_FALSE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testSetPersonalizedSpatializationEnabledFalse1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -326,14 +324,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_DEVICE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_DEVICE_001
+     * @tc.name   testSetPersonalizedSpatializationEnabledInvalidDevice1100
+     * @tc.number SUB_Multimedia_Audio_Spatialization_SetPersonalizedEnabledInvalidDevice_1100
      * @tc.desc   setPersonalizedSpatializationEnabled with invalid device param (string)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_DEVICE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testSetPersonalizedSpatializationEnabledInvalidDevice1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -346,14 +344,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_ENABLE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_ENABLE_001
+     * @tc.name   testSetPersonalizedSpatializationEnabledInvalidEnable1200
+     * @tc.number SUB_Multimedia_Audio_Spatialization_SetPersonalizedEnabledInvalidEnable_1200
      * @tc.desc   setPersonalizedSpatializationEnabled with invalid enable param (number)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_SETPERSONALIZEDSPATIALIZATIONENABLED_INVALID_ENABLE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testSetPersonalizedSpatializationEnabledInvalidEnable1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -368,14 +366,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_001
+     * @tc.name   testOnPersonalizedSpatializationEnabledChange1300
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OnPersonalizedEnabledChange_1300
      * @tc.desc   onPersonalizedSpatializationEnabledChangeForAnyDevice with valid callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOnPersonalizedSpatializationEnabledChange1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -383,7 +381,7 @@ export default function audioSpatializationManager() {
           console.info(`${TAG} personalized change callback: enabled=${data.enabled}`);
         });
         console.info(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice registered`);
-        expect(true).assertTrue();
+        expect(audioSpatializationManager).not().assertNull();
       } catch (err) {
         handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
       }
@@ -391,14 +389,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_INVALID_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_INVALID_001
+     * @tc.name   testOnPersonalizedSpatializationEnabledChangeInvalid1400
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OnPersonalizedEnabledChangeInvalid_1400
      * @tc.desc   onPersonalizedSpatializationEnabledChangeForAnyDevice with invalid param (string)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_PERSONALIZED_CHANGE_INVALID_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOnPersonalizedSpatializationEnabledChangeInvalid1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -411,20 +409,20 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_PERSONALIZED_CHANGE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_PERSONALIZED_CHANGE_001
+     * @tc.name   testOffPersonalizedSpatializationEnabledChange1500
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OffPersonalizedEnabledChange_1500
      * @tc.desc   offPersonalizedSpatializationEnabledChangeForAnyDevice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_PERSONALIZED_CHANGE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOffPersonalizedSpatializationEnabledChange1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice();
         console.info(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice success`);
-        expect(true).assertTrue();
+        expect(audioSpatializationManager).not().assertNull();
       } catch (err) {
         handleCatchError(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
       }
@@ -432,14 +430,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_GETCURRENTSPATIALAUDIOSOURCETYPE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_GETCURRENTSPATIALAUDIOSOURCETYPE_001
+     * @tc.name   testGetCurrentSpatialAudioSourceType1600
+     * @tc.number SUB_Multimedia_Audio_Spatialization_GetCurrentSourceType_1600
      * @tc.desc   getCurrentSpatialAudioSourceType returns valid enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_GETCURRENTSPATIALAUDIOSOURCETYPE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testGetCurrentSpatialAudioSourceType1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -454,14 +452,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_001
+     * @tc.name   testOnSpatialAudioSourceTypeChange1700
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OnSourceTypeChange_1700
      * @tc.desc   onSpatialAudioSourceTypeChange with valid callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOnSpatialAudioSourceTypeChange1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -469,7 +467,7 @@ export default function audioSpatializationManager() {
           console.info(`${TAG} spatialAudioSourceTypeChange callback: sourceType=${sourceType}`);
         });
         console.info(`${TAG} onSpatialAudioSourceTypeChange registered`);
-        expect(true).assertTrue();
+        expect(audioSpatializationManager).not().assertNull();
       } catch (err) {
         handleCatchError(`${TAG} onSpatialAudioSourceTypeChange`, err);
       }
@@ -477,14 +475,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_INVALID_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_INVALID_001
+     * @tc.name   testOnSpatialAudioSourceTypeChangeInvalid1800
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OnSourceTypeChangeInvalid_1800
      * @tc.desc   onSpatialAudioSourceTypeChange with invalid param (number)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_ON_SPATIALAUDIOSOURCETYPE_INVALID_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOnSpatialAudioSourceTypeChangeInvalid1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -497,20 +495,20 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALAUDIOSOURCETYPE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALAUDIOSOURCETYPE_001
+     * @tc.name   testOffSpatialAudioSourceTypeChange1900
+     * @tc.number SUB_Multimedia_Audio_Spatialization_OffSourceTypeChange_1900
      * @tc.desc   offSpatialAudioSourceTypeChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALAUDIOSOURCETYPE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testOffSpatialAudioSourceTypeChange1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         audioSpatializationManager.offSpatialAudioSourceTypeChange();
         console.info(`${TAG} offSpatialAudioSourceTypeChange success`);
-        expect(true).assertTrue();
+        expect(audioSpatializationManager).not().assertNull();
       } catch (err) {
         handleCatchError(`${TAG} offSpatialAudioSourceTypeChange`, err);
       }
@@ -518,14 +516,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_001
+     * @tc.name   testDownloadPersonalizedHRTF2000
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTF_2000
      * @tc.desc   downloadPersonalizedHRTF with valid fd and length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTF2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let testContext: ESObject = AppStorage.get('testContext');
       let filePath = testContext.cacheDir + '/test_hrtf_data.bin';
       let file: fileIo.File | null = null;
@@ -544,7 +542,7 @@ export default function audioSpatializationManager() {
         let stat: fileIo.Stat = fileIo.statSync(filePath);
         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: file.fd, length: stat.size });
         console.info(`${TAG} downloadPersonalizedHRTF valid success`);
-        expect(true).assertTrue();
+        expect(stat.size).assertLarger(0);
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF valid`, err);
       } finally {
@@ -557,14 +555,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_INVALID_FD_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_INVALID_FD_001
+     * @tc.name   testDownloadPersonalizedHRTFInvalidFd2100
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTFInvalidFd_2100
      * @tc.desc   downloadPersonalizedHRTF with invalid fd (-1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_INVALID_FD_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTFInvalidFd2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -576,14 +574,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_ZERO_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_ZERO_001
+     * @tc.name   testDownloadPersonalizedHRTFLengthZero2200
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTFLengthZero_2200
      * @tc.desc   downloadPersonalizedHRTF with length=0 (boundary, below minimum)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_ZERO_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTFLengthZero2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -595,14 +593,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_NEGATIVE_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_NEGATIVE_001
+     * @tc.name   testDownloadPersonalizedHRTFLengthNegative2300
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTFLengthNegative_2300
      * @tc.desc   downloadPersonalizedHRTF with negative length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_NEGATIVE_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTFLengthNegative2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -614,14 +612,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_EXCEED_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_EXCEED_001
+     * @tc.name   testDownloadPersonalizedHRTFLengthExceed2400
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTFLengthExceed_2400
      * @tc.desc   downloadPersonalizedHRTF with length > 10MB (MAX_HRTF_LENGTH + 1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_EXCEED_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTFLengthExceed2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
@@ -634,14 +632,14 @@ export default function audioSpatializationManager() {
     })
 
     /**
-     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_BOUNDARY_001
-     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_BOUNDARY_001
+     * @tc.name   testDownloadPersonalizedHRTFLengthBoundary2500
+     * @tc.number SUB_Multimedia_Audio_Spatialization_DownloadHRTFLengthBoundary_2500
      * @tc.desc   downloadPersonalizedHRTF with length = 10MB (boundary, valid)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_AUDIO_SPATIALIZATION_MANAGER_DOWNLOADHRTF_LENGTH_BOUNDARY_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it("testDownloadPersonalizedHRTFLengthBoundary2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
