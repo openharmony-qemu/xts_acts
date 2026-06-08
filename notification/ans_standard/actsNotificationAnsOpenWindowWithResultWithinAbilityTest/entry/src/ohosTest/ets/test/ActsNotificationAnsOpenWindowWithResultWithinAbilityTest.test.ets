@@ -66,8 +66,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err.code).assertEqual(801)
+          } esle if(err?.code === 801){
+            expect(err?.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -120,8 +120,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err.code).assertEqual(801)
+          } esle if(err?.code === 801){
+            expect(err?.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -189,8 +189,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err.code).assertEqual(801)
+          } esle if(err?.code === 801){
+            expect(err?.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -249,8 +249,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err.code).assertEqual(801)
+          } esle if(err?.code === 801){
+            expect(err?.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -314,8 +314,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err.code).assertEqual(801)
+          } esle if(err?.code === 801){
+            expect(err?.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -364,8 +364,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err.code === 801){
-              expect(err.code).assertEqual(801)
+            } esle if(err?.code === 801){
+              expect(err?.code).assertEqual(801)
               done()
             } else if (index === 499) {
               expect(err.code).assertEqual(1600018);
@@ -423,7 +423,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err.code === 801){
+            } esle if(err?.code === 801){
               expect(err.code).assertEqual(801)
               done()
             } else {
@@ -467,7 +467,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err.code === 801){
+            } esle if(err?.code === 801){
               expect(err.code).assertEqual(801)
               done()
             } else {
