@@ -2893,7 +2893,7 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
 
     OH_UdsPlainText* plain_text = OH_UdsPlainText_Create();
     NAPI_ASSERT(env, plain_text != nullptr, "OH_UdsPlainText_Create is fail.");
-    char *helloworld = "Hello World!";
+    const char *helloworld = "Hello World!";
     OH_UdsPlainText_SetContent(plain_text, helloworld);
     OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
     NAPI_ASSERT(env, hyperlink != nullptr, "OH_UdsHyperlink_Create is fail.");
@@ -2949,6 +2949,7 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
             unsigned int recordCount = OH_UdmfData_GetRecordCount(readData);
             for (unsigned int j = 0; j < recordCount; j++) {
                 OH_UdmfRecord* record = OH_UdmfData_GetRecord(readData, j);
+                NAPI_ASSERT(env, record != nullptr, "OH_UdmfData_GetRecord is fail.");
                 OH_UdsHyperlink* getHyperlink = OH_UdsHyperlink_Create();
                 int getRes = OH_UdmfRecord_GetHyperlink(record, getHyperlink);
                 if (getRes == UDMF_E_OK) {
