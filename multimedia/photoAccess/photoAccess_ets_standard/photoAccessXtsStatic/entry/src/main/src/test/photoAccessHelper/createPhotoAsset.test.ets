@@ -22,6 +22,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { fileUri } from '@kit.CoreFileKit';
 import { Context } from '@kit.ArkUI';
 
+const TAG = LOG_TAG + 'createPhotoAssetTest';
+
 export default function createPhotoAssetTest(): void {
   describe('createPhotoAssetTest', () => {
     const testTitle = 'createPhotoAssetTest';
