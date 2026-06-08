@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -152,7 +153,7 @@ export default function PiPWindowTest() {
             //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             isPCStatus = settings.getValueSync(context1!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
             //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
+            //isPCStatus == '1' PC设备状态栏dock未融�?
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
             try{
@@ -183,8 +184,8 @@ export default function PiPWindowTest() {
      * @tc.level  LEVEL0
      */
     it('OH_PictureInPicture_On_ActiveStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_On_ActiveStatusChange_0100';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_On_ActiveStatusChange_0100 ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -205,25 +206,25 @@ export default function PiPWindowTest() {
             try {
               let callbackIndex = 0;
               const callback = (res: boolean) => {
-                console.log(`${caseName} callback res: ${res}`)
+                console.log(`${msgStr}callback res: ${res}`)
                 callbackIndex = callbackIndex + 1;
-                console.log(`${caseName} callback callbackIndex: ${callbackIndex}`)
+                console.log(`${msgStr}callback callbackIndex: ${callbackIndex}`)
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
               pipController = await pipWindow.create(config)
-              console.log(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController !== undefined).assertTrue();
               pipController!.onActiveStatusChange(callback);
               await pipController!.startPiP();
               await Utils.msSleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
-              console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+              console.log(`${msgStr} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await Utils.msSleep(1000)
               let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-              console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+              console.log(`${msgStr} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
               let displayInfo = display.getDefaultDisplaySync();
-              console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+              console.log(`${msgStr} displayInfo: ${JSON.stringify(displayInfo)}`);
               let dragToX = pipWindowCenter.x + displayInfo.width;
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX.toInt(), dragToY);
@@ -235,7 +236,7 @@ export default function PiPWindowTest() {
               pipController?.offActiveStatusChange();
               done();
             } catch (error) {
-              console.log(`${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               if (error.code == 801) {
                 expect(error.message != null).assertTrue();
                 done();
@@ -260,8 +261,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_On_ActiveStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_On_ActiveStatusChange_0200';
-        console.log(caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_On_ActiveStatusChange_0200 ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -283,21 +284,21 @@ export default function PiPWindowTest() {
               let callbackIndex1 = 0;
               let callbackIndex2 = 0;
               const callback = (res: boolean) => {
-                console.log(`${caseName} callback res: ${res}`)
+                console.log(`${msgStr}callback res: ${res}`)
                 callbackIndex1 = callbackIndex1 + 1;
-                console.log(`${caseName} callback callbackIndex1: ${callbackIndex1}`)
+                console.log(`${msgStr} callback callbackIndex1: ${callbackIndex1}`)
                 expect(res).assertEqual(false)
               }
               const callback2 = (res: boolean) => {
-                console.log(`${caseName} callback2 res: ${res}`)
+                console.log(`${msgStr} callback2 res: ${res}`)
                 callbackIndex2 = callbackIndex2 + 1;
-                console.log(`${caseName} callback2 callbackIndex2: ${callbackIndex2}`)
+                console.log(`${msgStr} callback2 callbackIndex2: ${callbackIndex2}`)
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
               pipController = await pipWindow.create(config)
                 
-                console.log(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+                console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
                 expect(pipController!= null).assertTrue();
                 pipController!.onActiveStatusChange(callback);
                 pipController!.onActiveStatusChange(callback2);
@@ -306,9 +307,9 @@ export default function PiPWindowTest() {
                 let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
                 await Utils.msSleep(1000)
                 let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-                console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+                console.log(`${msgStr} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
                 let displayInfo = display.getDefaultDisplaySync();
-                console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+                console.log(`${msgStr} displayInfo: ${JSON.stringify(displayInfo)}`);
                 let dragToX = pipWindowCenter.x + displayInfo.width;
                 let dragToY = pipWindowCenter.y;
                 await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX.toInt(), dragToY);
@@ -321,7 +322,7 @@ export default function PiPWindowTest() {
                 pipController?.offActiveStatusChange();
                 done();
             } catch (error) {
-              console.log(`${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               if (error.code == 801) {
                 expect(error.message != null).assertTrue();
                 done();
@@ -346,8 +347,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_Off_ActiveStatusChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_Off_ActiveStatusChange_0100';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_Off_ActiveStatusChange_0100 ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -368,15 +369,15 @@ export default function PiPWindowTest() {
             try {
               let callbackIndex = 0;
               const callback = (res: boolean) => {
-                console.log(`${caseName} callback res: ${res}`)
+                console.log(`${msgStr}callback res: ${res}`)
                 callbackIndex = callbackIndex + 1;
-                console.log(`${caseName} callback callbackIndex1: ${callbackIndex}`)
+                console.log(`${msgStr} callback callbackIndex1: ${callbackIndex}`)
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
               pipController = await pipWindow.create(config)
                 
-                console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+                console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
                 expect(pipController!= null).assertTrue();
                 pipController!.onActiveStatusChange(callback);
                 pipController?.offActiveStatusChange(callback);
@@ -385,9 +386,9 @@ export default function PiPWindowTest() {
                 let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
                 await Utils.msSleep(1000)
                 let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-                console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+                console.log(`${msgStr} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
                 let displayInfo = display.getDefaultDisplaySync();
-                console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+                console.log(`${msgStr} displayInfo: ${JSON.stringify(displayInfo)}`);
                 let dragToX = pipWindowCenter.x + displayInfo.width;
                 let dragToY = pipWindowCenter.y;
                 await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX.toInt(), dragToY);
@@ -397,7 +398,7 @@ export default function PiPWindowTest() {
                 await Utils.msSleep(3000);
                 done();
             } catch (error) {
-              console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               if (error.code == 801) {
                   expect(error.message != null).assertTrue();
                   done();
@@ -422,8 +423,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_Off_ActiveStatusChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_Off_ActiveStatusChange_0200';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_Off_ActiveStatusChange_0200 ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -444,15 +445,15 @@ export default function PiPWindowTest() {
             try {
               let callbackIndex = 0;
               const callback = (res: boolean) => {
-                console.log(`${caseName} callback res: ${res}`)
+                console.log(`${msgStr}callback res: ${res}`)
                 callbackIndex = callbackIndex + 1;
-                console.log(`${caseName} callback callbackIndex2: ${callbackIndex}`)
+                console.log(`${msgStr} callback callbackIndex2: ${callbackIndex}`)
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
               pipController = await pipWindow.create(config)
                 
-                console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+                console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
                 expect(pipController!= null).assertTrue();
                 pipController!.onActiveStatusChange(callback);
                 pipController?.offActiveStatusChange();
@@ -461,9 +462,9 @@ export default function PiPWindowTest() {
                 let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
                 await Utils.msSleep(1000)
                 let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-                console.log(`${tag} ${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+                console.log(`${msgStr} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
                 let displayInfo = display.getDefaultDisplaySync();
-                console.log(`${tag} ${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+                console.log(`${msgStr} displayInfo: ${JSON.stringify(displayInfo)}`);
                 let dragToX = pipWindowCenter.x + displayInfo.width;
                 let dragToY = pipWindowCenter.y;
                 await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX.toInt(), dragToY);
@@ -473,7 +474,7 @@ export default function PiPWindowTest() {
                 await Utils.msSleep(3000);
                 done();
             } catch (error) {
-              console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               if (error.code == 801) {
                   expect(error.message != null).assertTrue();
                   done();
@@ -498,16 +499,17 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('isPiPEnabled_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.log('www data isPiPEnabled_test begin')
+        let msgStr = 'isPiPEnabled_test '
+        console.log(msgStr + 'begin')
         try {
           let enable = pipWindow.isPiPEnabled();
-          console.info('isPipEnabled:' + enable);
-          console.log('www data Succeeded in isPipEnabled ' + enable)
+          console.info(msgStr + 'isPipEnabled:' + enable)
+          console.log(msgStr + 'Succeeded in isPipEnabled ' + enable)
           expect(enable != null).assertTrue();
           expect(enable == true || enable == false).assertTrue();
           done();
         } catch (error) {
-          console.log('www data Succeeded in isPipEnabled ' + error)
+          console.log(msgStr + 'Succeeded in isPipEnabled ' + error)
           expect().assertFail();
           done();
         }
@@ -521,7 +523,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('create_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        console.log('www data create_Function_Promise begin')
+        let msgStr = 'create_Function_Promise '
+        console.log(msgStr + 'begin')
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -538,12 +541,11 @@ export default function PiPWindowTest() {
         try {
           let promise = pipWindow.create(config);
           promise.then((data: pipWindow.PiPController) => {
-            
-            console.log(`www data Succeeded in creating pip controller. Data:${data}`)
-            expect(pipController!= null).assertTrue();
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${data}`)
+            expect(data!= null).assertTrue();
             done();
           }).catch((err: Error) => {
-            console.log('www data Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(msgStr + 'Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -553,7 +555,7 @@ export default function PiPWindowTest() {
             }
           });
         } catch (error) {
-          console.log('www data Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + ' Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           expect().assertFail();
           done();
         }
@@ -567,6 +569,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('startPiP_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'startPiP_Function_Promise '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -582,18 +585,18 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log('www data startPiP_Function_Promise begin')
+          console.log(msgStr + 'begin')
           let promise = pipController!.startPiP();
           promise.then(() => {
-            console.log('www data Succeeded in starting pip')
+            console.log(msgStr + 'Succeeded in starting pip')
             done();
           }).catch((err: Error) => {
-            console.log('www data Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(msgStr + 'Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             expect().assertFail();
             done();
           });
         } catch (error) {
-          console.log('www data Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(msgStr + 'Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
             done();
@@ -613,6 +616,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('stopPiP_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'stopPiP_Function_Promise '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -628,26 +632,26 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log('www data stopPiP_Function_Promise begin ')
+          console.log(msgStr + 'stopPiP_Function_Promise begin ')
           await pipController!.startPiP()
           let promise = pipController!.stopPiP()
           promise.then(() => {
-            console.log('www data Succeeded in stopping pip')
+            console.log(msgStr + 'Succeeded in stopping pip')
   
             done();
           }).catch((err: Error) => {
             if (err.code == 1300015) {
-              console.log('www data window is stopping:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
+              console.log(msgStr + 'window is stopping:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
               expect(err.message != null).assertTrue();
               done()
             } else {
-              console.log('www data Failed1 to stop pip in stopPiP . Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
+              console.log(msgStr + 'Failed1 to stop pip in stopPiP . Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
               expect().assertFail();
               done();
             }
           });
         } catch (error) {
-          console.log('www data Failed2 to stop pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + 'Failed2 to stop pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -667,6 +671,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('setAutoStartEnabled_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'setAutoStartEnabled_test '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -682,14 +687,14 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data setAutoStartEnabled_test begin')
+          console.log(msgStr + 'setAutoStartEnabled_test begin')
           let enable = true;
           pipController!.setAutoStartEnabled(enable);
-          console.log('www data Succeeded in setAutoStartEnabled_test')
+          console.log(msgStr + 'Succeeded in setAutoStartEnabled_test')
   
           done();
         } catch (error) {
-          console.log('www data Failed to setAutoStartEnabled_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + 'Failed to setAutoStartEnabled_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -709,6 +714,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('updateContentSize_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'updateContentSize_test '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -724,15 +730,15 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data updateContentSize_test begin');
+          console.log(msgStr + 'updateContentSize_test begin');
           let width = 540;
           let height = 960;
           pipController!.updateContentSize(width, height);
-          console.log('www data Succeeded in updateContentSize_test');
+          console.log(msgStr + ' Succeeded in updateContentSize_test');
   
           done();
         } catch (error) {
-          console.log('www data Failed to updateContentSize_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(msgStr + ' Failed to updateContentSize_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -752,6 +758,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('stateChange_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'stateChange_Function_Callback '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -767,7 +774,7 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data stateChange_Function_ Callback begin');
+          console.log(msgStr + ' stateChange_Function_ Callback begin');
           pipController!.onStateChange((state, reason) => {
             let curState = '';
             switch (state) {
@@ -792,14 +799,13 @@ export default function PiPWindowTest() {
               default:
                 break;
             }
-            console.info('stateChange:' + curState + ' reason:' + reason);
-            console.log('www data Succeeded in stateChange_Function_ Callback' + curState)
-            console.log('www data Succeeded in stateChange_Function_ Callback' + reason)
+            console.log(msgStr + ' Succeeded in stateChange_Function_ Callback' + curState)
+            console.log(msgStr + ' Succeeded in stateChange_Function_ Callback' + reason)
           });
   
           done();
         } catch (err) {
-          console.log('www data Failed to stateChange_Function_ Callback' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(msgStr + ' Failed to stateChange_Function_ Callback' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
   
@@ -819,6 +825,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('stateChange_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'stateChange_test '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -834,7 +841,7 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data stateChange_test begin');
+          console.log(msgStr + ' stateChange_test begin');
           pipController!.onStateChange((state, reason) => {
             let curState = '';
             switch (state) {
@@ -859,21 +866,21 @@ export default function PiPWindowTest() {
               default:
                 break;
             }
-            console.log('www data Succeeded in stateChange_Function_ Callback' + curState)
-            console.log('www data Succeeded in stateChange_Function_ Callback' + reason)
+            console.log(msgStr + ' Succeeded in stateChange_Function_ Callback' + curState)
+            console.log(msgStr + ' Succeeded in stateChange_Function_ Callback' + reason)
           });
           try {
             pipController!.offStateChange();
-            console.log('www data Succeeded in stateChange_test')
+            console.log(msgStr + ' Succeeded in stateChange_test')
   
             done()
           } catch (error) {
-            console.log('www data Failed1 to stateChange_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+            console.log(msgStr + ' Failed1 to stateChange_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
             expect().assertFail();
             done();
           }
         } catch (error) {
-          console.log('www data Failed2 to stateChange_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + ' Failed2 to stateChange_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -893,6 +900,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('controlPanelActionEvent_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'controlPanelActionEvent_Function_Callback '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -908,7 +916,7 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data controlPanelActionEvent_Function_Callback begin');
+          console.log(msgStr + ' controlPanelActionEvent_Function_Callback begin');
           pipController!.onControlPanelActionEvent((event) => {
             switch (event) {
               case 'playbackStateChanged':
@@ -920,13 +928,12 @@ export default function PiPWindowTest() {
               default:
                 break;
             }
-            console.info('registerActionEventCallback, event:' + event);
-            console.log('www data Succeeded in registerActionEventCallback , event:' + event)
+            console.log(msgStr + ' Succeeded in registerActionEventCallback , event:' + event)
           });
   
           done();
         } catch (error) {
-          console.log('www data Failed to registerActionEventCallback , event:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(msgStr + ' Failed to registerActionEventCallback , event:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -946,6 +953,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('controlPanelActionEvent_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let msgStr = 'controlPanelActionEvent_test '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -961,7 +969,7 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config);
-          console.log('www data controlPanelActionEvent_test begin');
+          console.log(msgStr + ' controlPanelActionEvent_test begin');
           pipController!.onControlPanelActionEvent((event) => {
             switch (event) {
               case 'playbackStateChanged':
@@ -973,20 +981,20 @@ export default function PiPWindowTest() {
               default:
                 break;
             }
-            console.log('www data Succeeded in registerActionEventCallback , event:' + event)
+            console.log(msgStr + ' Succeeded in registerActionEventCallback , event:' + event)
           });
           try {
             pipController!.offControlPanelActionEvent();
-            console.log('www data Succeeded in controlPanelActionEvent_test')
+            console.log(msgStr + ' Succeeded in controlPanelActionEvent_test')
   
             done();
           } catch (error) {
-            console.log('www data Failed1 to controlPanelActionEvent_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.log(msgStr + ' Failed1 to controlPanelActionEvent_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
         } catch (error) {
-          console.log('www data Failed2 to registerActionEventCallback , event:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + ' Failed2 to registerActionEventCallback , event:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
   
@@ -1006,7 +1014,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPTemplateType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let msg = "testPiPTemplateType"
+        let msgStr = "testPiPTemplateType"
         try {
           expect(pipWindow.PiPTemplateType.VIDEO_PLAY).assertEqual(0);
           expect(pipWindow.PiPTemplateType.VIDEO_CALL).assertEqual(1);
@@ -1027,7 +1035,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let msg = "testPiPEvent"
+        let msgStr = "testPiPEvent"
         try {
           let event: pipWindow.PiPActionEventType = "playbackStateChanged";
           let event2: pipWindow.PiPVideoActionEvent = "playbackStateChanged";
@@ -1055,7 +1063,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('create_Function_Promise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        console.log('www data create_Function_Promise begin')
+        let msgStr = 'create_Function_Promise_2 '
+        console.log(msgStr + 'begin')
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1073,11 +1082,11 @@ export default function PiPWindowTest() {
           let promise = pipWindow.create(config);
           promise.then((data: pipWindow.PiPController) => {
             
-            console.log(`www data Succeeded in creating pip controller. Data:${data}`)
-            expect(pipController!= null).assertTrue();
+            console.log(msgStr + 'Succeeded in creating pip controller. Data:' + data)
+            expect(data!= null).assertTrue();
             done();
           }).catch((err: Error) => {
-            console.log('www data Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(msgStr + 'Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1088,7 +1097,7 @@ export default function PiPWindowTest() {
             }
           });
         } catch (error) {
-          console.log('www data Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(msgStr + 'Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           expect().assertFail();
           done();
         }
@@ -1102,7 +1111,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('create_Function_Promise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        console.log('www data create_Function_Promise begin')
+        let msgStr = 'create_Function_Promise_3 '
+        console.log(msgStr + 'begin')
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1120,11 +1130,11 @@ export default function PiPWindowTest() {
           let promise = pipWindow.create(config);
           promise.then((data: pipWindow.PiPController) => {
             
-            console.log(`www data Succeeded in creating pip controller. Data:${data}`)
-            expect(pipController!= null).assertTrue();
+            console.log(msgStr + 'Succeeded in creating pip controller. Data:' + data)
+            expect(data!= null).assertTrue();
             done();
           }).catch((err: Error) => {
-            console.log('www data Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(msgStr + ' Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1135,7 +1145,7 @@ export default function PiPWindowTest() {
             }
           });
         } catch (error) {
-          console.log('www data Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + ' Failed3 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           expect().assertFail();
           done();
         }
@@ -1149,7 +1159,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('create_Function_Promise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        console.log('www data create_Function_Promise begin')
+        let msgStr = 'create_Function_Promise_4 '
+        console.log(msgStr + 'begin')
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1167,11 +1178,11 @@ export default function PiPWindowTest() {
           let promise = pipWindow.create(config);
           promise.then((data: pipWindow.PiPController) => {
             
-            console.log(`www data Succeeded in creating pip controller. Data:${data}`)
-            expect(pipController!= null).assertTrue();
+            console.log(msgStr + 'Succeeded in creating pip controller. Data:' + data)
+            expect(data!= null).assertTrue();
             done();
           }).catch((err: Error) => {
-            console.log('www data Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
+            console.log(msgStr + ' Failed1 to create pip controller. Cause' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message))
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1182,7 +1193,7 @@ export default function PiPWindowTest() {
             }
           });
         } catch (error) {
-          console.log('www data Failed2 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
+          console.log(msgStr + ' Failed2 to create pip controller. Cause' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
           expect().assertFail();
           done();
         }
@@ -1196,7 +1207,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT begin');
+        let msgStr = 'test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1213,11 +1225,11 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+          console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           expect(pipController!= null).assertTrue();
           done();
         } catch (error) {
-          console.log(`${tag} test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(`${msgStr} test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
 
@@ -1239,7 +1251,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD begin');
+        let msgStr = 'test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1256,11 +1269,11 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+          console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           expect(pipController!= null).assertTrue();
           done();
         } catch (error) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
             done();
@@ -1282,7 +1295,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_MICROPHONE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH begin');
+        let msgStr = 'test_VideoCallControlGroup_MICROPHONE_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1299,11 +1313,11 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)            
-          console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+          console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           expect(pipController!= null).assertTrue();
           done();
         } catch (error) {
-          console.log(`${tag} test_VideoCallControlGroup_MICROPHONE_SWITCH Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(`${msgStr} test_VideoCallControlGroup_MICROPHONE_SWITCH Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
             done();
@@ -1323,7 +1337,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_HANG_UP_BUTTON begin');
+        let msgStr = 'test_VideoCallControlGroup_HANG_UP_BUTTON '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1340,11 +1355,11 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+          console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           expect(pipController!= null).assertTrue();
           done();
         } catch (error) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
               expect(error.message != null).assertTrue();
   
@@ -1365,7 +1380,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoCallControlGroup_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1382,11 +1398,11 @@ export default function PiPWindowTest() {
         };
         try {
           pipController = await pipWindow.create(config)
-          console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+          console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           expect(pipController!= null).assertTrue();
           done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
             done();
@@ -1406,7 +1422,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON begin');
+        let msgStr = 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1424,12 +1441,12 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
      
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1450,7 +1467,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1468,12 +1486,12 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
           
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1495,7 +1513,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1513,12 +1532,12 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
          
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1539,7 +1558,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1557,11 +1577,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1583,7 +1603,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON begin');
+        let msgStr = 'test_VideoMeetingControlGroup_HANG_UP_BUTTON '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1601,12 +1622,12 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
           
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1627,7 +1648,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1645,11 +1667,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -1671,7 +1693,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_MUTE_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_MUTE_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1689,11 +1712,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -1714,7 +1737,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1732,11 +1756,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
             done();
@@ -1756,7 +1780,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1774,12 +1799,12 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1800,7 +1825,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1818,11 +1844,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1843,7 +1869,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH begin');
+        let msgStr = 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH '
+        console.log(msgStr + 'begin');
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -1861,11 +1888,11 @@ export default function PiPWindowTest() {
         try {
           pipController = await pipWindow.create(config)
             
-            console.log(`${tag} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController!= null).assertTrue();
             done();
         } catch (err) {
-          console.log(`${tag} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+          console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
   
@@ -1886,7 +1913,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestUpdatePiPControlStatusInVideoPlay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestUpdatePiPControlStatusInVideoPlay';
+        let msgStr = 'TestUpdatePiPControlStatusInVideoPlay ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_PLAY);
         let pipController: pipWindow.PiPController;
         try {
@@ -1909,33 +1936,33 @@ export default function PiPWindowTest() {
           })
           try {
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, pipWindow.PiPControlStatus.PLAY);
-            console.info(`${message} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PLAY`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PLAY`);
             await Utils.msSleep(1000);
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, pipWindow.PiPControlStatus.PAUSE);
-            console.info(`${message} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PAUSE`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PAUSE`);
 
-            console.info(`${message} count is：${count}`);
+            console.info(`${msgStr} count is�?{count}`);
             expect(0).assertEqual(count);
             pipController!.offControlPanelActionEvent();
             done();
           } catch (error) {
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to updatePiPControlStatus`);
+              console.info(`${msgStr} The current device type does not support to updatePiPControlStatus`);
 
               done();
             } else {
-              console.error(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.error(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               expect().assertFail();
               done();
             }
           }
         } catch (error) {
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
   
             done();
           } else {
-            console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -1950,7 +1977,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestUpdatePiPControlStatelessType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestUpdatePiPControlStatelessType';
+        let msgStr = 'TestUpdatePiPControlStatelessType ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_PLAY);
         let pipController: pipWindow.PiPController;
         try {
@@ -1972,28 +1999,28 @@ export default function PiPWindowTest() {
 
             done();
           } catch (error) {
-            console.error(`${message} Params error. Cause:${error.code}, message:${error.message}`);
+            console.error(`${msgStr} Params error. Cause:${error.code}, message:${error.message}`);
             if (error.code == 801) {
               expect(error.message != null).assertTrue();
-              console.info(`${message} The current device type does not support to updatePiPControlStatus`);
+              console.info(`${msgStr} The current device type does not support to updatePiPControlStatus`);
 
               done();
             } else {
-              console.error(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.error(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               expect().assertFail();
               done();
             }
           }
 
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
   
             done();
           } else {
-            console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -2008,7 +2035,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestUpdatePiPControlStatusInVideoCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestUpdatePiPControlStatusInVideoCall';
+        let msgStr = 'TestUpdatePiPControlStatusInVideoCall ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_CALL);
         let pipController: pipWindow.PiPController;
         try {
@@ -2032,44 +2059,44 @@ export default function PiPWindowTest() {
           })
           try {
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.CAMERA_SWITCH, pipWindow.PiPControlStatus.OPEN);
-            console.info(`${message} Succeeded updatePiPControlStatus CAMERA_SWITCH to OPEN`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus CAMERA_SWITCH to OPEN`);
             await Utils.msSleep(2000);
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.CAMERA_SWITCH, pipWindow.PiPControlStatus.CLOSE);
-            console.info(`${message} Succeeded updatePiPControlStatus CAMERA_SWITCH to CLOSE`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus CAMERA_SWITCH to CLOSE`);
             await Utils.msSleep(2000)
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.MUTE_SWITCH, pipWindow.PiPControlStatus.OPEN);
-            console.info(`${message} Succeeded updatePiPControlStatus MUTE_SWITCH to OPEN`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus MUTE_SWITCH to OPEN`);
             await Utils.msSleep(2000)
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.MUTE_SWITCH, pipWindow.PiPControlStatus.CLOSE);
-            console.info(`${message} Succeeded updatePiPControlStatus MUTE_SWITCH to CLOSE`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus MUTE_SWITCH to CLOSE`);
             await Utils.msSleep(2000)
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.MICROPHONE_SWITCH, pipWindow.PiPControlStatus.OPEN);
-            console.info(`${message} Succeeded updatePiPControlStatus MICROPHONE_SWITCH to OPEN`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus MICROPHONE_SWITCH to OPEN`);
 
-            console.info(`${message} count is：${count}`);
+            console.info(`${msgStr} count is�?{count}`);
             expect(0).assertEqual(count);
             done();
           } catch (error) {
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to updatePiPControlStatus`);
+              console.info(`${msgStr} The current device type does not support to updatePiPControlStatus`);
 
               done();
             } else {
-              console.info(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.info(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               expect().assertFail();
               done();
             }
           }
 
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
             expect(error.message != null).assertTrue();
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
   
             done();
           } else {
-            console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -2085,7 +2112,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestUpdatePiPControlStatusInVideoMeeting', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestUpdatePiPControlStatusInVideoMeeting';
+        let msgStr = 'TestUpdatePiPControlStatusInVideoMeeting ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_MEETING);
         let pipController: pipWindow.PiPController;
         try {
@@ -2109,29 +2136,29 @@ export default function PiPWindowTest() {
           })
           try {
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.CAMERA_SWITCH, pipWindow.PiPControlStatus.OPEN);
-            console.info(`${message} Succeeded updatePiPControlStatus CAMERA_SWITCH to OPEN`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus CAMERA_SWITCH to OPEN`);
             await Utils.msSleep(2000);
             pipController!.updatePiPControlStatus(pipWindow.PiPControlType.CAMERA_SWITCH, pipWindow.PiPControlStatus.CLOSE);
-            console.info(`${message} Succeeded updatePiPControlStatus CAMERA_SWITCH to CLOSE`);
+            console.info(`${msgStr} Succeeded updatePiPControlStatus CAMERA_SWITCH to CLOSE`);
 
-            console.info(`${message} count is：${count}`);
+            console.info(`${msgStr} count is�?{count}`);
             expect(0).assertEqual(count);
             done();
           } catch (error) {
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to updatePiPControlStatus`);
+              console.info(`${msgStr} The current device type does not support to updatePiPControlStatus`);
 
               done();
             } else {
-              console.error(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.error(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               expect().assertFail();
               done();
             }
           }
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2150,7 +2177,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestUpdatePiPControlStatusInVideoLive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestUpdatePiPControlStatusInVideoLive';
+        let msgStr = 'TestUpdatePiPControlStatusInVideoLive ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_LIVE);
         let pipController: pipWindow.PiPController;
         try {
@@ -2173,18 +2200,18 @@ export default function PiPWindowTest() {
             })
             try {
               pipController!.updatePiPControlStatus(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, pipWindow.PiPControlStatus.PLAY);
-              console.info(`${message} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PLAY`);
+              console.info(`${msgStr} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PLAY`);
               await Utils.msSleep(2000);
               pipController!.updatePiPControlStatus(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, pipWindow.PiPControlStatus.PAUSE);
-              console.info(`${message} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PAUSE`);
+              console.info(`${msgStr} Succeeded updatePiPControlStatus VIDEO_PLAY_PAUSE to PAUSE`);
 
-              console.info(`${message} count is：${count}`);
+              console.info(`${msgStr} count is�?{count}`);
               expect(0).assertEqual(count);
               done();
             } catch (error) {
-              console.info(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+              console.info(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
               if (error.code == 801) {
-                console.info(`${message} The current device type does not support to updatePiPControlStatus`);
+                console.info(`${msgStr} The current device type does not support to updatePiPControlStatus`);
                 expect(error.message != null).assertTrue();
 
                 done();
@@ -2194,9 +2221,9 @@ export default function PiPWindowTest() {
               }
             }
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2215,7 +2242,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestSetPiPControlEnabledInVideoPlay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestSetPiPControlEnabledInVideoPlay';
+        let msgStr = 'TestSetPiPControlEnabledInVideoPlay ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_PLAY);
         let pipController: pipWindow.PiPController;
         try {
@@ -2225,33 +2252,33 @@ export default function PiPWindowTest() {
 
           try {
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, false);
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PLAY_PAUSE false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_PLAY_PAUSE false`);
             await Utils.msSleep(1000);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE, true);
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PLAY_PAUSE true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_PLAY_PAUSE true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PREVIOUS, true)
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PREVIOUS true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_PREVIOUS true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_PREVIOUS, false)
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_PREVIOUS false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_PREVIOUS false`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_NEXT, true)
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_NEXT true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_NEXT true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.VIDEO_NEXT, false)
-            console.info(`${message} Succeeded setPiPControlEnabled VIDEO_NEXT false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled VIDEO_NEXT false`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, true)
-            console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled FAST_FORWARD true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.FAST_FORWARD, false)
-            console.info(`${message} Succeeded setPiPControlEnabled FAST_FORWARD false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled FAST_FORWARD false`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, true)
-            console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled FAST_BACKWARD true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.FAST_BACKWARD, false)
-            console.info(`${message} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled FAST_BACKWARD false`);
             
 
             done();
           } catch (error) {
-            console.info(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to setPiPControlEnabled`);
+              console.info(`${msgStr} The current device type does not support to setPiPControlEnabled`);
               expect(error.message != null).assertTrue();
 
               done();
@@ -2261,9 +2288,9 @@ export default function PiPWindowTest() {
             }
           }
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2282,7 +2309,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestSetPiPControlEnabledInVideoCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestSetPiPControlEnabledInVideoCall';
+        let msgStr = 'TestSetPiPControlEnabledInVideoCall ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_CALL);
         let pipController: pipWindow.PiPController;
         try {
@@ -2291,25 +2318,25 @@ export default function PiPWindowTest() {
           await pipController!.startPiP()
           try {
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.MICROPHONE_SWITCH, false);
-            console.info(`${message} Succeeded setPiPControlEnabled MICROPHONE_SWITCH false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled MICROPHONE_SWITCH false`);
             await Utils.msSleep(1000);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.MICROPHONE_SWITCH, true);
-            console.info(`${message} Succeeded setPiPControlEnabled MICROPHONE_SWITCH true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled MICROPHONE_SWITCH true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.HANG_UP_BUTTON, true)
-            console.info(`${message} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.HANG_UP_BUTTON, true)
-            console.info(`${message} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled HANG_UP_BUTTON true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
-            console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.CAMERA_SWITCH, true)
-            console.info(`${message} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled CAMERA_SWITCH true`);
             
 
             done();
           } catch (error) {
-            console.info(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to setPiPControlEnabled`);
+              console.info(`${msgStr} The current device type does not support to setPiPControlEnabled`);
               expect(error.message != null).assertTrue();
 
               done();
@@ -2319,9 +2346,9 @@ export default function PiPWindowTest() {
             }
           }
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2340,7 +2367,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('TestSetPiPControlEnabledInVideoMeeting', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'TestSetPiPControlEnabledInVideoMeeting';
+        let msgStr = 'TestSetPiPControlEnabledInVideoMeeting ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_MEETING);
         let pipController: pipWindow.PiPController;
         try {
@@ -2349,16 +2376,16 @@ export default function PiPWindowTest() {
           await  pipController!.startPiP()
           try {
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.MUTE_SWITCH, false);
-            console.info(`${message} Succeeded setPiPControlEnabled MUTE_SWITCH false`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled MUTE_SWITCH false`);
             await Utils.msSleep(1000);
             pipController!.setPiPControlEnabled(pipWindow.PiPControlType.MUTE_SWITCH, true);
-            console.info(`${message} Succeeded setPiPControlEnabled MUTE_SWITCH true`);
+            console.info(`${msgStr} Succeeded setPiPControlEnabled MUTE_SWITCH true`);
 
             done();
           } catch (error) {
-            console.info(`${message} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Params error. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
-              console.info(`${message} The current device type does not support to setPiPControlEnabled`);
+              console.info(`${msgStr} The current device type does not support to setPiPControlEnabled`);
               expect(error.message != null).assertTrue();
 
               done();
@@ -2368,9 +2395,9 @@ export default function PiPWindowTest() {
             }
           }
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2389,8 +2416,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testPiPControlCustomUI', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        console.log(`${tag} testPiPControlCustomUI begin`);
-        const message = 'testPiPControlCustomUI';
+        let msgStr = 'testPiPControlCustomUI ';
+        console.log(`${msgStr} testPiPControlCustomUI begin`);
         let nodeController: TextNodeController = new TextNodeController('this is custom UI');
         let config: pipWindow.PiPConfiguration = {
           context: context1 as common.BaseContext,
@@ -2402,12 +2429,12 @@ export default function PiPWindowTest() {
         };
         try {
           let pipController = await pipWindow.create(config)
-          console.log(`${message}} Succeeded to creat pip controller. PiPControllerData：${pipController}`)
+          console.log(`${msgStr}} Succeeded to creat pip controller. PiPControllerData�?{pipController}`)
           done();
         } catch (error) {
-          console.info(`${message} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          console.info(`${msgStr} Failed to create pipController!. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to create pipController`);
+            console.info(`${msgStr} The current device type does not support to create pipController`);
             expect(error.message != null).assertTrue();
   
             done();
@@ -2426,7 +2453,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testCreateArgsContentNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const caseName = 'TestCreateArgsContentNode';
+        let msgStr = 'testCreateArgsContentNode ';
         try {
           let windowClass = windowStage!.getMainWindowSync();
           let uiContext = windowClass.getUIContext();
@@ -2447,13 +2474,13 @@ export default function PiPWindowTest() {
             contentHeight: contentHeight
           };
           pipWindow.create(config, xComponent).then((data: pipWindow.PiPController) => {
-            console.info(`${caseName} Succeeded in creating pip controller. Data:${data}`);
+            console.info(`${msgStr} Succeeded in creating pip controller. Data:${data}`);
             expect(data !== null).assertTrue();
             done();
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+            console.error(`${msgStr} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code === 801) {
-              console.error(`${caseName} The current device Capability not supported.`);
+              console.error(`${msgStr} The current device Capability not supported.`);
               expect(err.message != null).assertTrue();
               done();
             } else {
@@ -2462,9 +2489,9 @@ export default function PiPWindowTest() {
             }
           });
         } catch (exception) {
-          console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+          console.error(`${msgStr} Error. Cause code: ${exception.code}, message: ${exception.message}`);
           if (exception.code == 1300002) {
-            console.info(`${caseName}: This window state is abnormal.`);
+            console.info(`${msgStr}: This window state is abnormal.`);
             expect(exception.message != null).assertTrue();
             done();
           } else {
@@ -2483,20 +2510,20 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testgetPiPWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const caseName = 'testgetPiPWindowInfo';
+        let msgStr = 'testgetPiPWindowInfo ';
         let pipWindowInfo: pipWindow.PiPWindowInfo | undefined = undefined;
         try {
           let windowClass = windowStage!.getMainWindowSync();
           let pipController: pipWindow.PiPController;
           let xComponentController: XComponentController = new XComponentController();
-          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效�?
           let options: XComponentOptions = {
             type: XComponentType.SURFACE,
             controller: xComponentController
           } 
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);
-          let contentWidth: int = 800; // 假设当前内容宽度800px。
-          let contentHeight: int = 600; // 假设当前内容高度600px。
+          let contentWidth: int = 800; // 假设当前内容宽度800px�?
+          let contentHeight: int = 600; // 假设当前内容高度600px�?
           let config: pipWindow.PiPConfiguration = {
             context: context1 as common.BaseContext,
             componentController: xComponentController,
@@ -2508,31 +2535,31 @@ export default function PiPWindowTest() {
           let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
           promise1.then((data: pipWindow.PiPController) => {
             pipController = data;
-            console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+            console.info(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             let promise2: Promise<void> = pipController!.startPiP();
             promise2.then(() => {
-              console.info(`${caseName} Succeeded in starting pip.`);
+              console.info(`${msgStr} Succeeded in starting pip.`);
               let promise3: Promise<pipWindow.PiPWindowInfo> = pipController!.getPiPWindowInfo();
               promise3.then((data: pipWindow.PiPWindowInfo) => {
                 pipWindowInfo = data;
-                console.info(caseName + ' Success in get pip window info. Info windowId: ' + JSON.stringify(pipWindowInfo!.windowId) + ' windowSize: ' + JSON.stringify(pipWindowInfo!.size));
+                console.info(msgStr + ' Success in get pip window info. Info windowId: ' + JSON.stringify(pipWindowInfo!.windowId) + ' windowSize: ' + JSON.stringify(pipWindowInfo!.size));
                 expect(pipWindowInfo!.windowId).assertLargerOrEqual(0);
                 expect(pipWindowInfo!.size!.width).assertLargerOrEqual(0);
                 expect(pipWindowInfo!.size!.height).assertLargerOrEqual(0);
                 expect(pipWindowInfo!.size!.scale).assertLargerOrEqual(0);
                 done();
               }).catch((err: Error) => {
-                console.error(`${caseName} Failed to get pip window info. Cause code: ${err.code}, message: ${err.message}`);
+                console.error(`${msgStr} Failed to get pip window info. Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
               });
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+              console.error(`${msgStr} Failed to start pip. Cause:${err.code}, message:${err.message}`);
               expect(false).assertTrue();
               done();
             });
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+            console.error(`${msgStr} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -2544,7 +2571,7 @@ export default function PiPWindowTest() {
   
   
         } catch (exception) {
-          console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+          console.error(`${msgStr} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -2559,23 +2586,23 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('testGetPiPWindowInfoErrCode1300014_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'testGetPiPWindowInfoErrCode1300014_0100';
+        let msgStr = 'testGetPiPWindowInfoErrCode1300014_0100 ';
         const config = initConfig(pipWindow.PiPTemplateType.VIDEO_PLAY);
         let pipController: pipWindow.PiPController | null = null;
         try {
           pipController = await pipWindow.create(config)
           pipController!.getPiPWindowInfo().then(() => {
-            console.error(`${message} Succeeded to getPiPWindowInfo.`);
+            console.error(`${msgStr} Succeeded to getPiPWindowInfo.`);
             expect().assertFail();
             done();
           }).catch((err: Error) => {
             if (err.code == 801) {
-              console.info(`${message} The current device type does not support to getPiPWindowInfo`);
+              console.info(`${msgStr} The current device type does not support to getPiPWindowInfo`);
   
               expect(err.message != null).assertTrue();
               done();
             } else {
-              console.error(`${message} Failed to getPiPWindowInfo. Cause:${err.code}, message:${err.message}`);
+              console.error(`${msgStr} Failed to getPiPWindowInfo. Cause:${err.code}, message:${err.message}`);
               expect(err.code).assertEqual(1300014);
               expect(err.message != null).assertTrue();
               done();
@@ -2583,12 +2610,12 @@ export default function PiPWindowTest() {
           });
         } catch (error) {
           if (error.code == 801) {
-            console.info(`${message} The current device type does not support to getPiPWindowInfo`);
+            console.info(`${msgStr} The current device type does not support to getPiPWindowInfo`);
             expect(error.message != null).assertTrue();
   
             done();
           } else {
-            console.info(`${message} Failed2 to getPiPWindowInfo. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.info(`${msgStr} Failed2 to getPiPWindowInfo. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             expect().assertFail();
             done();
           }
@@ -2605,7 +2632,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_pipWindowSizeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_pipWindowSizeChange!'
+        let msgStr = 'test_pipWindowSizeChange '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2619,7 +2646,7 @@ export default function PiPWindowTest() {
           contentHeight: 500
         };
         let callback = (size: pipWindow.PiPWindowSize) => {
-          console.info(`${message} success in callback, size: ${size}`)
+          console.info(`${msgStr} success in callback, size: ${size}`)
           pipSize = size
         }
         try {
@@ -2627,7 +2654,7 @@ export default function PiPWindowTest() {
             if (!pipController!.isPiPSupported()) {
               done();
             } else {
-              console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`)
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`)
               await pipController!.startPiP();
               await Utils.msSleep(1000);
               pipController!.onPipWindowSizeChange(callback);
@@ -2635,8 +2662,8 @@ export default function PiPWindowTest() {
               await Utils.msSleep(1000);
               let pipWindowInfo = await pipController!.getPiPWindowInfo();
               let pipInfoSize = pipWindowInfo.size
-              console.log(`${message} pipWindowInfo width is ${pipInfoSize.width}, pipWindowInfo height is ${pipInfoSize.height}, pipWindowInfo scale is ${pipInfoSize.scale}`)
-              console.log(`${message} callback width is ${pipSize.width}, callback height is ${pipSize.height}, callback scale is ${pipSize.scale}`)
+              console.log(`${msgStr} pipWindowInfo width is ${pipInfoSize.width}, pipWindowInfo height is ${pipInfoSize.height}, pipWindowInfo scale is ${pipInfoSize.scale}`)
+              console.log(`${msgStr} callback width is ${pipSize.width}, callback height is ${pipSize.height}, callback scale is ${pipSize.scale}`)
               expect(pipSize.width).assertEqual(pipInfoSize.width);
               expect(pipSize.height).assertEqual(pipInfoSize.height);
               expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
@@ -2646,7 +2673,7 @@ export default function PiPWindowTest() {
               done();
             }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}Cause:${JSON.stringify(err.message)}`)
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -2667,7 +2694,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_videoCallControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_videoCallControlGroup_MUTE_SWITCH!'
+        let msgStr = 'test_videoCallControlGroup_MUTE_SWITCH '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2685,13 +2712,13 @@ export default function PiPWindowTest() {
           if (!pipController!.isPiPSupported()) {
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`)
             let promise = pipController!.startPiP();
             promise.then(() => {
-              console.log(`${message} Succeeded in starting pip`)
+              console.log(`${msgStr} Succeeded in starting pip`)
 
             }).catch((err: Error) => {
-              console.error(`${message} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+              console.error(`${msgStr} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
               expect().assertFail();
             });
             await Utils.msSleep(1000);
@@ -2700,7 +2727,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
             done();
@@ -2720,7 +2747,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_VideoMeetingControlGroup_MICROPHONE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_VideoMeetingControlGroup_MICROPHONE_SWITCH!'
+        let msgStr = 'test_VideoMeetingControlGroup_MICROPHONE_SWITCH '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2739,13 +2766,13 @@ export default function PiPWindowTest() {
   
               done();
             } else {
-              console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`)
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`)
               let promise = pipController!.startPiP();
               promise.then(() => {
-                console.log(`${message} Succeeded in starting pip`)
+                console.log(`${msgStr} Succeeded in starting pip`)
   
               }).catch((err: Error) => {
-                console.error(`${message} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+                console.error(`${msgStr} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
                 expect().assertFail();
               });
               await Utils.msSleep(1000);
@@ -2754,7 +2781,7 @@ export default function PiPWindowTest() {
               done();
             }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
             done();
@@ -2774,7 +2801,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE!'
+        let msgStr = 'test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2793,13 +2820,13 @@ export default function PiPWindowTest() {
           if (!pipController!.isPiPSupported()) {
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`)
             let promise = pipController!.startPiP();
             promise.then(() => {
-              console.log(`${message} Succeeded in starting pip`)
+              console.log(`${msgStr} Succeeded in starting pip`)
 
             }).catch((err: Error) => {
-              console.error(`${message} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+              console.error(`${msgStr} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
               expect().assertFail();
             });
             await Utils.msSleep(1000);
@@ -2808,7 +2835,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -2829,7 +2856,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_VideoLiveControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_VideoLiveControlGroup_MUTE_SWITCH!'
+        let msgStr = 'test_VideoLiveControlGroup_MUTE_SWITCH '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2847,13 +2874,13 @@ export default function PiPWindowTest() {
             if (!pipController!.isPiPSupported()) {
               done();
             } else {
-              console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`)
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`)
               let promise = pipController!.startPiP();
               promise.then(() => {
-                console.log(`${message} Succeeded in starting pip`)
+                console.log(`${msgStr} Succeeded in starting pip`)
   
               }).catch((err: Error) => {
-                console.error(`${message} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+                console.error(`${msgStr} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
                 expect().assertFail();
               });
               await Utils.msSleep(1000);
@@ -2862,7 +2889,7 @@ export default function PiPWindowTest() {
               done();
             }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -2883,7 +2910,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE!'
+        let msgStr = 'test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2903,13 +2930,13 @@ export default function PiPWindowTest() {
 
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             let promise = pipController!.startPiP();
             promise.then(() => {
-              console.log(`${message} Succeeded in starting pip`);
+              console.log(`${msgStr} Succeeded in starting pip`);
 
             }).catch((err: Error) => {
-              console.error(`${message} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+              console.error(`${msgStr} promise failed to start pip, errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
               expect().assertFail();
             });
             await Utils.msSleep(1000);
@@ -2919,7 +2946,7 @@ export default function PiPWindowTest() {
           }
           
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
 
@@ -2940,7 +2967,7 @@ export default function PiPWindowTest() {
       * @tc.level LEVEL3
       */
       it('test_on_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_on_controlEvent!'
+        let msgStr = 'test_on_controlEvent '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -2955,7 +2982,7 @@ export default function PiPWindowTest() {
           contentHeight: 500
         };
         let callback = (control: pipWindow.ControlEventParam) => {
-          console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
+          console.info(`${msgStr} success in callback, control: ${JSON.stringify(control)}`)
           controlParam = control
         }
         let driver: Driver = Driver.create();
@@ -2964,7 +2991,7 @@ export default function PiPWindowTest() {
           if (!pipController!.isPiPSupported()) {
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             await pipController!.startPiP();
             await Utils.msSleep(1000);
             pipController!.onControlEvent(callback);
@@ -2973,12 +3000,12 @@ export default function PiPWindowTest() {
             let bottom = Bounds.bottom
             let BoundsCenter = await button1!.getBoundsCenter();
             let x = BoundsCenter.x;
-            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            console.log(`${msgStr} BoundsCenter x: ${x}, bottom: ${bottom}`);
             let component = await driver.findComponent(ON.id('SCBPipSceneOverlay'))
             await component!.click();
             await Utils.msSleep(1000);
             let button2 = await driver.findComponent(ON.id('control_play'));
-            console.log(`${message} button2: ${JSON.stringify(button2)}`);
+            console.log(`${msgStr} button2: ${JSON.stringify(button2)}`);
             await button2!.click();
             await Utils.msSleep(2000);
             expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PLAY_PAUSE);
@@ -2987,7 +3014,7 @@ export default function PiPWindowTest() {
 
             await Utils.msSleep(1000);
             let button3 = await driver.findComponent(ON.id('control_play'));
-            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            console.log(`${msgStr} button3: ${JSON.stringify(button3)}`);
             await button3!.click();
 
             await Utils.msSleep(1000);
@@ -3000,7 +3027,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           expect().assertFail();
           done();
         }
@@ -3017,7 +3044,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_off_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_off_controlEvent!'
+        let msgStr = 'test_off_controlEvent '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3032,7 +3059,7 @@ export default function PiPWindowTest() {
           contentHeight: 500
         };
         let callback = (control: pipWindow.ControlEventParam) => {
-          console.error(`${message} success in callback, control: ${control}`)
+          console.error(`${msgStr} success in callback, control: ${control}`)
           controlParam = control
         }
         let driver: Driver = Driver.create();
@@ -3043,7 +3070,7 @@ export default function PiPWindowTest() {
 
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             await pipController!.startPiP();
             await Utils.msSleep(1000);
             pipController!.onControlEvent(callback);
@@ -3053,12 +3080,12 @@ export default function PiPWindowTest() {
             let bottom = Bounds.bottom
             let BoundsCenter = await button1!.getBoundsCenter();
             let x = BoundsCenter.x;
-            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            console.log(`${msgStr} BoundsCenter x: ${x}, bottom: ${bottom}`);
             let component = await driver.findComponent(ON.id('SCBPipSceneOverlay'))
             await component!.click();
             await Utils.msSleep(1000);
             let button2 = await driver.findComponent(ON.id('control_play'));
-            console.log(`${message} button2: ${JSON.stringify(button2)}`);
+            console.log(`${msgStr} button2: ${JSON.stringify(button2)}`);
             await button2!.click();
 
             await Utils.msSleep(1000);
@@ -3069,7 +3096,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.log(`${message} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
+          console.log(`${msgStr} Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`)
           expect().assertFail();
           done();
         }
@@ -3083,7 +3110,7 @@ export default function PiPWindowTest() {
       * @tc.level  LEVEL3
       */
       it('test_on_controlEvent_VIDEO_PLAY_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_on_controlEvent_VIDEO_PLAY_01!'
+        let msgStr = 'test_on_controlEvent_VIDEO_PLAY_01 '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3099,7 +3126,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoPlayControlGroup.VIDEO_PREVIOUS_NEXT]
         };
         let callback = (control: pipWindow.ControlEventParam) => {
-          console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
+          console.info(`${msgStr} success in callback, control: ${JSON.stringify(control)}`)
           controlParam = control
         }
         let driver: Driver =
@@ -3111,7 +3138,7 @@ export default function PiPWindowTest() {
   
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             await pipController!.startPiP();
             await Utils.msSleep(1000);
             pipController!.onControlEvent(callback);
@@ -3120,12 +3147,12 @@ export default function PiPWindowTest() {
             let bottom = Bounds.bottom
             let BoundsCenter = await button1!.getBoundsCenter();
             let x = BoundsCenter.x;
-            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            console.log(`${msgStr} BoundsCenter x: ${x}, bottom: ${bottom}`);
             let component = await driver.findComponent(ON.id('SCBPipSceneOverlay'))
             await component!.click();
               await Utils.msSleep(1000);
               let button2 = await driver.findComponent(ON.id('control_play_last'));
-              console.log(`${message} button2: ${JSON.stringify(button2)}`);
+              console.log(`${msgStr} button2: ${JSON.stringify(button2)}`);
               await button2!.click();
             await Utils.msSleep(1000);
             expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.VIDEO_PREVIOUS);
@@ -3133,7 +3160,7 @@ export default function PiPWindowTest() {
 
             await Utils.msSleep(1000);
             let button3 = await driver.findComponent(ON.id('control_play_next'));
-            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            console.log(`${msgStr} button3: ${JSON.stringify(button3)}`);
             await button3!.click();
 
             await Utils.msSleep(1000);
@@ -3147,7 +3174,7 @@ export default function PiPWindowTest() {
           }
 
         } catch (err) {
-          console.log(`${message} promise Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          console.log(`${msgStr} promise Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
           pipController?.offControlEvent(callback);
           if (err.code == 801) {
             expect(err.message != null).assertTrue();
@@ -3170,7 +3197,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_on_controlEvent_VIDEO_PLAY_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_on_controlEvent_VIDEO_PLAY_02!'
+        let msgStr = 'test_on_controlEvent_VIDEO_PLAY_02 '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3186,7 +3213,7 @@ export default function PiPWindowTest() {
           controlGroups: [pipWindow.VideoPlayControlGroup.FAST_FORWARD_BACKWARD]
         };
         let callback = (control: pipWindow.ControlEventParam) => {
-          console.info(`${message} success in callback, control: ${JSON.stringify(control)}`)
+          console.info(`${msgStr} success in callback, control: ${JSON.stringify(control)}`)
           controlParam = control
         }
         let driver: Driver =
@@ -3198,7 +3225,7 @@ export default function PiPWindowTest() {
   
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             await pipController!.startPiP();
             await Utils.msSleep(1000);
             pipController!.onControlEvent(callback);
@@ -3207,12 +3234,12 @@ export default function PiPWindowTest() {
             let bottom = Bounds.bottom
             let BoundsCenter = await button1!.getBoundsCenter();
             let x = BoundsCenter.x;
-            console.log(`${message} BoundsCenter x: ${x}, bottom: ${bottom}`);
+            console.log(`${msgStr} BoundsCenter x: ${x}, bottom: ${bottom}`);
             let component = await driver.findComponent(ON.id('SCBPipSceneOverlay'))
             await component!.click();
               await Utils.msSleep(1000);
               let button2 = await driver.findComponent(ON.id('control_fast_backward'));
-              console.log(`${message} button2: ${JSON.stringify(button2)}`);
+              console.log(`${msgStr} button2: ${JSON.stringify(button2)}`);
               await button2!.click();
             await Utils.msSleep(1000);
             expect(controlParam.controlType).assertEqual(pipWindow.PiPControlType.FAST_BACKWARD);
@@ -3220,7 +3247,7 @@ export default function PiPWindowTest() {
 
             await Utils.msSleep(1000);
             let button3 = await driver.findComponent(ON.id('control_fast_forward'));
-            console.log(`${message} button3: ${JSON.stringify(button3)}`);
+            console.log(`${msgStr} button3: ${JSON.stringify(button3)}`);
             await button3!.click();
 
             await Utils.msSleep(1000);
@@ -3233,7 +3260,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.log(`${message} promise Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
+          console.log(`${msgStr} promise Failed to create pipController!.errcode:${err.code}, Cause:${JSON.stringify(err.message)}`);
             pipController?.offControlEvent(callback);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -3258,7 +3285,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_updateContentNode_ErrorCode_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_updateContentNode_ErrorCode_801!'
+        let msgStr = 'test_updateContentNode_ErrorCode_801 '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3283,26 +3310,26 @@ export default function PiPWindowTest() {
           if (!pipController!.isPiPSupported()) {
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             try {
               await pipController!.startPiP();
-              console.log(`${message} Succeeded startPiP`);
+              console.log(`${msgStr} Succeeded startPiP`);
               await Utils.msSleep(1000);
               await pipController!.updateContentNode(xComponent);
-              console.log(`${message} Succeeded updateContentNode`);
+              console.log(`${msgStr} Succeeded updateContentNode`);
 
               pipController!.stopPiP();
               await Utils.msSleep(1000)
               done();
             } catch (err) {
-              console.error(`${message} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
+              console.error(`${msgStr} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
               expect(err.code).assertEqual(801);
               expect(err.message != null).assertTrue();
               done();
             }
           }
         } catch (err) {
-          console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(801);
           expect(err.message != null).assertTrue();
           done();
@@ -3318,7 +3345,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_updateContentNode1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_updateContentNode1!'
+        let msgStr = 'test_updateContentNode1 '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3344,27 +3371,27 @@ export default function PiPWindowTest() {
   
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             try {
               await pipController!.updateContentNode(xComponent);
               await Utils.msSleep(1000);
-              console.log(`${message} Succeeded updateContentNode`);
+              console.log(`${msgStr} Succeeded updateContentNode`);
               await pipController!.startPiP();
               await Utils.msSleep(1000);
-              console.log(`${message} Succeeded startPiP`);
+              console.log(`${msgStr} Succeeded startPiP`);
 
               pipController!.stopPiP();
               await Utils.msSleep(1000)
               done();
             } catch (err) {
-              console.error(`${message} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
+              console.error(`${msgStr} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
               expect(err.code).assertEqual(801);
               expect(err.message != null).assertTrue();
               done();
             }
           }
         } catch (err) {
-          console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(801);
           expect(err.message != null).assertTrue();
           done();
@@ -3380,7 +3407,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_updateContentNode2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_updateContentNode2!'
+        let msgStr = 'test_updateContentNode2 '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3406,19 +3433,19 @@ export default function PiPWindowTest() {
 
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             try {
               await pipController!.startPiP();
               await Utils.msSleep(1000);
-              console.log(`${message} Succeeded startPiP`);
+              console.log(`${msgStr} Succeeded startPiP`);
               await pipController!.updateContentNode(xComponent);
-              console.log(`${message} Succeeded updateContentNode`);
+              console.log(`${msgStr} Succeeded updateContentNode`);
 
               pipController!.stopPiP();
               await Utils.msSleep(1000)
               done();
             } catch (err) {
-              console.error(`${message} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
+              console.error(`${msgStr} Failed to updateContentNode, Cause code ${err.code}, message ${err.message}`);
               expect(err.code).assertEqual(801);
               expect(err.message != null).assertTrue();
               done();
@@ -3426,7 +3453,7 @@ export default function PiPWindowTest() {
           }
      
         } catch (err) {
-          console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(801);
           expect(err.message != null).assertTrue();
           done();
@@ -3443,7 +3470,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_pip_create_with_localstorage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_pip_create_with_localstorage!'
+        let msgStr = 'test_pip_create_with_localstorage '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3464,24 +3491,24 @@ export default function PiPWindowTest() {
 
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             try {
               await pipController!.startPiP();
               await Utils.msSleep(1000);
-              console.log(`${message} Succeeded startPiP`);
+              console.log(`${msgStr} Succeeded startPiP`);
               pipController!.stopPiP();
               await Utils.msSleep(1000)
 
               done();
             } catch (err) {
-              console.error(`${message} Failed to updateContentSize, Cause code ${err.code}, message ${err.message}`);
+              console.error(`${msgStr} Failed to updateContentSize, Cause code ${err.code}, message ${err.message}`);
               expect(err.code == 801).assertTrue();
               expect(err.message != null).assertTrue();
               done();
             }
           }
         } catch (err) {
-          console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(801);
           expect(err.message != null).assertTrue();
           done();
@@ -3498,7 +3525,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('test_pip_create_undefined_localstorage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-        const message = 'test_pip_create_undefined_localstorage!'
+        let msgStr = 'test_pip_create_undefined_localstorage '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3516,23 +3543,23 @@ export default function PiPWindowTest() {
           if (!pipController!.isPiPSupported()) {
             done();
           } else {
-            console.log(`${message} Succeeded in creating pip controller, Data:${pipController}`)
+            console.log(`${msgStr} Succeeded in creating pip controller, Data:${pipController}`)
             try {
               await pipController!.startPiP();
               await Utils.msSleep(1000);
-              console.log(`${message} Succeeded startPiP`);
+              console.log(`${msgStr} Succeeded startPiP`);
               pipController!.stopPiP();
               await Utils.msSleep(1000)
 
               done();
             } catch (err) {
-              console.error(`${message} Failed to updateContentSize, Cause code ${err.code}, message ${err.message}`);
+              console.error(`${msgStr} Failed to updateContentSize, Cause code ${err.code}, message ${err.message}`);
               expect(err.code == 801).assertTrue();
               done();
             }
           }
         } catch (err) {
-          console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(801);
           expect(err.message != null).assertTrue();
           done();
@@ -3542,13 +3569,13 @@ export default function PiPWindowTest() {
       /**
        * @tc.name   testGetPiPSettingSwitchStatus
        * @tc.number SUB_BASIC_WMS_GETPIPSETTINGSWITCH_0100
-       * @tc.desc   验证支持画中画的设备调用getpipsettingswitch接口，获取设置中自动启动画中画按钮状态
+       * @tc.desc   验证支持画中画的设备调用getpipsettingswitch接口，获取设置中自动启动画中画按钮状�?
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
       it('testGetPiPSettingSwitchStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const message = 'testGetPiPSettingSwitchStatus!'
+        let msgStr = 'testGetPiPSettingSwitchStatus '
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3569,26 +3596,26 @@ export default function PiPWindowTest() {
   
               done();
             } else {
-              console.log(`${message} Succeeded in creating pip controller, Data:${data}`)
+              console.log(`${msgStr} Succeeded in creating pip controller, Data:${data}`)
               pipController!.getPiPSettingSwitch().then((result: boolean) => {
-                console.log(`${message} result: ${result}`)
+                console.log(`${msgStr} result: ${result}`)
                 expect(result).assertEqual(true);
                 done();
               }).catch((err: Error) => {
-                console.error(`${message} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
+                console.error(`${msgStr} promise Failed getPiPSettingSwitch, Cause code ${err.code}, message ${err.message}`);
                 expect(err.code).assertEqual(801);
                 expect(err.message != null).assertTrue();
                 done();
               });
             }
           }).catch((err: Error) => {
-            console.error(`${message} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
+            console.error(`${msgStr} promise Failed to create pipcontroller, Cause code ${err.code}, message ${err.message}`);
             expect(err.code).assertEqual(801);
             expect(err.message != null).assertTrue();
             done();
           });
         } catch (err) {
-          console.error(`${message} Failed to test updateContentSize, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} Failed to test updateContentSize, Cause code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
         }
@@ -3603,7 +3630,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPipHandleId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const message = 'testPipHandleId!'
+        let msgStr = 'testPipHandleId '
         try {
           if (!isPipWindowEnabled) {
             done();
@@ -3625,7 +3652,7 @@ export default function PiPWindowTest() {
             done();
           }
         } catch (err) {
-          console.error(`${message} Failed, Cause code ${err.code}, message ${err.message}`);
+          console.error(`${msgStr} Failed, Cause code ${err.code}, message ${err.message}`);
           if (err.code === 801) {
             expect(err.message != null).assertTrue();
             done();
@@ -3645,8 +3672,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_undefined';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_undefined ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -3667,13 +3694,13 @@ export default function PiPWindowTest() {
           try {
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
               pipController!.stopPiP();
               done();
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
 
@@ -3697,8 +3724,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_false';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_false ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -3719,13 +3746,13 @@ export default function PiPWindowTest() {
           try {
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
               pipController!.stopPiP();
               done();
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
 
@@ -3749,8 +3776,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_true';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'OH_PictureInPicture_PiPConfiguration_cornerAdsorptionEnabled_true ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -3771,14 +3798,14 @@ export default function PiPWindowTest() {
           try {
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
               pipController!.stopPiP();
               await Utils.msSleep(5000);
               done();
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
 
@@ -3801,8 +3828,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangeRequestStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangeRequestStart';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangeRequestStart ';
+        console.log(msgStr + 'begin');
         if (!isPipWindowEnabled) {
           done()
         } else {
@@ -3822,8 +3849,8 @@ export default function PiPWindowTest() {
           };
           try {
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('requestStart');
               pipController?.offStateChange()
               pipController!.stopPiP();
@@ -3832,12 +3859,12 @@ export default function PiPWindowTest() {
             pipController = await pipWindow.create(config)
               
               pipController!.onStateChange(callback)
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
               await Utils.msSleep(3000);
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             pipController?.offStateChange()
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -3861,8 +3888,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangeAutoStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangeAutoStart';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangeAutoStart ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled && isPCStatus != '') {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -3881,8 +3908,8 @@ export default function PiPWindowTest() {
           try {
             let windowClass = windowStage!.getMainWindowSync();
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('autoStart')
               pipController?.offStateChange()
               pipController!.stopPiP();
@@ -3892,14 +3919,14 @@ export default function PiPWindowTest() {
             pipController = await pipWindow.create(config)
               
               pipController!.onStateChange(callback)
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               pipController!.setAutoStartEnabled(true)
               await windowClass.minimize();
               await Utils.msSleep(1000);
             
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message)`);
+            console.log(`${msgStr} Failed1 to create pip controller. Cause + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message)`);
             pipController?.offStateChange()
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -3925,8 +3952,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangeRequestDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangeRequestDelete';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangeRequestDelete ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -3944,22 +3971,22 @@ export default function PiPWindowTest() {
           };
           try {
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('requestDelete')
               pipController?.offStateChange()
               done();
             }
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP()
               pipController!.onStateChange(callback)
               pipController!.stopPiP();
               await Utils.msSleep(3000);
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             pipController?.offStateChange()
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -3984,8 +4011,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangePanelActionDelete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangePanelActionDelete';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangePanelActionDelete ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4004,22 +4031,22 @@ export default function PiPWindowTest() {
           let driver = Driver.create();
           try {
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('panelActionDelete');
               pipController?.offStateChange()
               done();
             }
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
-              console.log(`${tag} ${caseName} Succeeded in start pip controller.`);
+              console.log(`${msgStr} Succeeded in start pip controller.`);
               await Utils.msSleep(1000)
               pipController!.onStateChange(callback)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
-              console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+              console.log(`${msgStr} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await pipWindowComponent!.click();
               await Utils.msSleep(1000)
               let exit = await driver.findComponent(ON.id('control_exit'));
@@ -4027,7 +4054,7 @@ export default function PiPWindowTest() {
               await exit!.click();
               await Utils.msSleep(1000);
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             pipController?.offStateChange()
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -4053,8 +4080,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangePanelActionRestore', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangePanelActionRestore';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangePanelActionRestore ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4073,20 +4100,20 @@ export default function PiPWindowTest() {
           let driver = Driver.create();
           try {
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('panelActionRestore')
               pipController?.offStateChange()
               done();
             }
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP()
               pipController!.onStateChange(callback)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
-              console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+              console.log(`${msgStr} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await pipWindowComponent!.click();
               await Utils.msSleep(1000)
               let restore = await driver.findComponent(ON.id('control_restore'));
@@ -4094,7 +4121,7 @@ export default function PiPWindowTest() {
               await restore!.click();
               await Utils.msSleep(1000);
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             pipController?.offStateChange()
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
@@ -4120,8 +4147,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPStateChangeOtherwithTwoPiP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPStateChangeOtherwithTwoPiP';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPStateChangeOtherwithTwoPiP ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let pipController2: pipWindow.PiPController | undefined = undefined;
@@ -4140,8 +4167,8 @@ export default function PiPWindowTest() {
           };
           try {
             const callback = (state: pipWindow.PiPState, reason: string) => {
-              console.log(caseName + ' callback state: ' + state);
-              console.log(caseName + ' callback reason: ' + reason);
+              console.log(msgStr + ' callback state: ' + state);
+              console.log(msgStr + ' callback reason: ' + reason);
               expect(reason).assertEqual('other')
               pipController?.offStateChange()
               pipController2?.stopPiP();
@@ -4149,7 +4176,7 @@ export default function PiPWindowTest() {
             }
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP()
               pipController!.onStateChange(callback)
@@ -4157,7 +4184,7 @@ export default function PiPWindowTest() {
               pipController2!.startPiP()
               await Utils.msSleep(3000);
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4181,8 +4208,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPisPiPActiveStarted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPisPiPActiveStarted';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPisPiPActiveStarted ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4201,17 +4228,17 @@ export default function PiPWindowTest() {
           try {
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               await pipController!.startPiP();
               let isPipActive = await pipController!.isPiPActive();
-              console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+              console.log(msgStr + ' isPipActive: ' + isPipActive);
               expect(isPipActive).assertEqual(true);
               pipController!.stopPiP();
               await Utils.msSleep(5000);
               done();
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4235,8 +4262,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPisPiPActiveBeforeStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPisPiPActiveBeforeStart';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPisPiPActiveBeforeStart ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4255,15 +4282,15 @@ export default function PiPWindowTest() {
           try {
             pipController = await pipWindow.create(config)
               
-              console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
               expect(pipController!= null).assertTrue();
               let isPipActive = await pipController!.isPiPActive();
-              console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+              console.log(msgStr + ' isPipActive: ' + isPipActive);
               expect(isPipActive).assertEqual(false);
               await Utils.msSleep(5000);
               done();
           } catch (err) {
-            console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            console.log(`${msgStr} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4287,8 +4314,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPisPiPActiveStoped', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPisPiPActiveStoped';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPisPiPActiveStoped ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4306,18 +4333,18 @@ export default function PiPWindowTest() {
           };
           try {
             pipController = await pipWindow.create(config)
-            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController != null).assertTrue();
             await pipController!.startPiP();
             pipController!.stopPiP();
             let isPipActive = await pipController!.isPiPActive();
-            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            console.log(msgStr + ' isPipActive: ' + isPipActive);
             expect(isPipActive).assertEqual(false);
             await Utils.msSleep(5000);
             done();
             
           } catch (error) {
-            console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
               expect(error.message != null).assertTrue();
               done();
@@ -4341,8 +4368,8 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL0
        */
       it('testPiPisPiPActiveSidebar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        let caseName = 'testPiPisPiPActiveSidebar';
-        console.log(tag + caseName + ' begin');
+        let msgStr = 'testPiPisPiPActiveSidebar ';
+        console.log(msgStr + 'begin');
         if (isPipWindowEnabled && isFreeWindowMode == false) {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController = new XComponentController();
@@ -4361,30 +4388,30 @@ export default function PiPWindowTest() {
           let driver = Driver.create();
           try {
             pipController = await pipWindow.create(config);
-            console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+            console.log(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             expect(pipController != null).assertTrue();
             await pipController!.startPiP();
-            // 3、画中画拉到侧边条
+            // 3、画中画拉到侧边�?
             let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
-            console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+            console.log(`${msgStr} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
             await Utils.msSleep(1000)
             let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-            console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+            console.log(`${msgStr} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
             let displayInfo = display.getDefaultDisplaySync();
-            console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+            console.log(`${msgStr} displayInfo: ${JSON.stringify(displayInfo)}`);
             let dragToX = pipWindowCenter.x + displayInfo.width;
             let dragToY = pipWindowCenter.y;
             await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX.toInt(), dragToY);
             await Utils.msSleep(3000);
             let expectValue = deviceType == 'tv' ? true : false;
             let isPipActive = await pipController!.isPiPActive();
-            console.log(tag + caseName + ' isPipActive: ' + isPipActive);
+            console.log(msgStr + ' isPipActive: ' + isPipActive);
             expect(isPipActive).assertEqual(expectValue);
             pipController!.stopPiP();
             await Utils.msSleep(1000);
             done();
           } catch (error) {
-            console.log(`${tag} ${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+            console.log(`${msgStr} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
             if (error.code == 801) {
               expect(error.message != null).assertTrue();
               done();
@@ -4408,7 +4435,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('tesCreate_null_undefined2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const message = 'tesCreate_null_undefined2!';
+        let msgStr = 'tesCreate_null_undefined2 ';
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let config: pipWindow.PiPConfiguration = {
@@ -4422,7 +4449,7 @@ export default function PiPWindowTest() {
             
             done();
           } catch (err) {
-            console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+            console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
             expect().assertFail();
             done();
           }
@@ -4440,7 +4467,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('tesCreate_navigation_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const message = 'tesCreate_navigation_null!';
+        let msgStr = 'tesCreate_navigation_null ';
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let config: pipWindow.PiPConfiguration = {
@@ -4454,7 +4481,7 @@ export default function PiPWindowTest() {
             
             done();
           } catch (err) {
-            console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+            console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
             expect().assertFail();
             done();
           }
@@ -4473,7 +4500,7 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL3
        */
       it('tesupdateContentNode_null_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        const message = 'tesupdateContentNode_null_undefined!';
+        let msgStr = 'tesupdateContentNode_null_undefined ';
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let config: pipWindow.PiPConfiguration = {
@@ -4488,7 +4515,7 @@ export default function PiPWindowTest() {
             
             done();
           } catch (err) {
-            console.error(`${message} Failed2, Cause code ${err.code}, message ${err.message}`);
+            console.error(`${msgStr} Failed2, Cause code ${err.code}, message ${err.message}`);
             expect().assertFail();
             done();
           }
@@ -4506,19 +4533,19 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testCreatePiPWindow_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const caseName = 'testCreatePiPWindow_01';
+        let msgStr = 'testCreatePiPWindow_01 ';
         try {
           let windowClass = windowStage!.getMainWindowSync();
           let pipController: pipWindow.PiPController;
           let xComponentController: XComponentController = new XComponentController();
-          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效�?
           let options: XComponentOptions = {
             type: XComponentType.SURFACE,
             controller: xComponentController
           } 
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);
-          let contentWidth: int = 800; // 假设当前内容宽度800px。
-          let contentHeight: int = 600; // 假设当前内容高度600px。
+          let contentWidth: int = 800; // 假设当前内容宽度800px�?
+          let contentHeight: int = 600; // 假设当前内容高度600px�?
           let config: pipWindow.PiPConfiguration = {
             context: context1 as common.BaseContext,
             navigationId:'',
@@ -4534,27 +4561,27 @@ export default function PiPWindowTest() {
           let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
           promise1.then((data: pipWindow.PiPController) => {
             pipController = data;
-            console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+            console.info(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
             let promise2: Promise<void> = pipController!.startPiP();
             promise2.then(() => {
-              console.info(`${caseName} Succeeded in starting pip.`);
+              console.info(`${msgStr} Succeeded in starting pip.`);
               let promise3 : Promise<void> = pipController!.stopPiP();
               promise3.then(() => {
-                console.info(caseName + ' Succeeded in stopping pip');
+                console.info(msgStr + ' Succeeded in stopping pip');
                 
                 done();
               }).catch((err: Error) => {
-                console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+                console.error(`${msgStr} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
               });
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+              console.error(`${msgStr} Failed to start pip. Cause:${err.code}, message:${err.message}`);
               expect(false).assertTrue();
               done();
             });
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+            console.error(`${msgStr} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4566,7 +4593,7 @@ export default function PiPWindowTest() {
   
   
         } catch (exception) {
-          console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+          console.error(`${msgStr} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -4580,19 +4607,19 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testCreatePiPWindow_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const caseName = 'testCreatePiPWindow_02';
+        let msgStr = 'testCreatePiPWindow_02 ';
         try {
           let windowClass = windowStage!.getMainWindowSync();
           let pipController: pipWindow.PiPController;
           let xComponentController: XComponentController = new XComponentController();
-          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效�?
           let options: XComponentOptions = {
             type: XComponentType.SURFACE,
             controller: xComponentController
           } 
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);
-          let contentWidth: int = 800; // 假设当前内容宽度800px。
-          let contentHeight: int = 600; // 假设当前内容高度600px。
+          let contentWidth: int = 800; // 假设当前内容宽度800px�?
+          let contentHeight: int = 600; // 假设当前内容高度600px�?
           let config: pipWindow.PiPConfiguration = {
             context: context1 as common.BaseContext,
             navigationId:'',
@@ -4606,21 +4633,21 @@ export default function PiPWindowTest() {
           };
   
           pipController = await pipWindow.create(config, xComponent);
-          console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+          console.info(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           let promise2: Promise<void> = pipController!.startPiP();
           promise2.then(() => {
-            console.info(`${caseName} Succeeded in starting pip.`);
+            console.info(`${msgStr} Succeeded in starting pip.`);
             let promise3 : Promise<void> = pipController!.stopPiP();
             promise3.then(() => {
-              console.info(caseName + ' Succeeded in stopping pip');
+              console.info(msgStr + ' Succeeded in stopping pip');
               done();
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+              console.error(`${msgStr} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               done();
             });
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+            console.error(`${msgStr} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4632,7 +4659,7 @@ export default function PiPWindowTest() {
   
   
         } catch (exception) {
-          console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
+          console.error(`${msgStr} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -4647,20 +4674,20 @@ export default function PiPWindowTest() {
        * @tc.level  LEVEL2
        */
       it('testCreatePiPWindow_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        const caseName = 'testCreatePiPWindow_03';
+        let msgStr = 'testCreatePiPWindow_03 ';
         await Utils.msSleep(1000)
         try {
           let windowClass = windowStage!.getMainWindowSync();
           let pipController: pipWindow.PiPController;
           let xComponentController: XComponentController = new XComponentController();
-          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效值
+          let uiContext = windowClass.getUIContext(); // 可传入UIContext或在布局中通过this.getUIContext()为context赋有效�?
           let options: XComponentOptions = {
             type: XComponentType.SURFACE,
             controller: xComponentController
           } 
           let xComponent = typeNode.createXComponentNodeWithOptions(uiContext, options);
-          let contentWidth: int = 800; // 假设当前内容宽度800px。
-          let contentHeight: int = 600; // 假设当前内容高度600px。
+          let contentWidth: int = 800; // 假设当前内容宽度800px�?
+          let contentHeight: int = 600; // 假设当前内容高度600px�?
           let config: pipWindow.PiPConfiguration = {
             context: context1 as common.BaseContext,
             navigationId:'',
@@ -4674,27 +4701,27 @@ export default function PiPWindowTest() {
           };
   
           pipController = await pipWindow.create(config, xComponent);
-          console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+          console.info(`${msgStr} Succeeded in creating pip controller. Data:${pipController}`);
           let promise2: Promise<void> = pipController!.startPiP();
           promise2.then(() => {
-            console.info(`${caseName} Succeeded in starting pip.`);
+            console.info(`${msgStr} Succeeded in starting pip.`);
             let promise3 : Promise<void> = pipController!.stopPiP();
             promise3.then(() => {
-              console.info(caseName + ' Succeeded in stopping pip');
+              console.info(msgStr + ' Succeeded in stopping pip');
               
               done();
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
+              console.error(`${msgStr} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               done();
             });
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+            console.error(`${msgStr} Failed to start pip. Cause:${err.code}, message:${err.message}`);
             expect(false).assertTrue();
             done();
           });
         } catch (err) {
-          console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+          console.error(`${msgStr} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4705,7 +4732,80 @@ export default function PiPWindowTest() {
         }
       })
         
+       /**
+     * @tc.name   createPiP_templateType_videoDrive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_VIDEO_DRIVE_0100
+     * @tc.desc   To test the function of startPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('createPiP_templateType_videoDrive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let msgStr = 'createPiP_templateType_videoDrive '
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1 as common.BaseContext,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_DRIVE,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let testSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController!.startPiP();
+          promise.then(() => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            done();
+          }).catch((err: Error) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      }
 
+      let testNotSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController!.startPiP();
+          promise.then(() => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            done();
+          }).catch((err: Error) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          if (error.code == 801) {
+            expect(error.message != null).assertTrue();
+            done();
+          } else {
+            expect(error.code).assertEqual(401);
+            done();
+          }
+        }
+      }
+
+      if (deviceType == 'car') {
+        testSupport()
+      } else {
+        testNotSupport()
+      }
+    })
         
 
       

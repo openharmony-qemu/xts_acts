@@ -75,10 +75,10 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function ErrorCode201(): void  {
+export default function ErrorCode1300002(): void  {
 
-    describe("ErrorCode201", (): void => {
-        hilog.info(domain, tag, '%{public}s', 'ErrorCode201 describe start');
+    describe("ErrorCode1300002", (): void => {
+        hilog.info(domain, tag, '%{public}s', 'ErrorCode1300002 describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage | undefined;
