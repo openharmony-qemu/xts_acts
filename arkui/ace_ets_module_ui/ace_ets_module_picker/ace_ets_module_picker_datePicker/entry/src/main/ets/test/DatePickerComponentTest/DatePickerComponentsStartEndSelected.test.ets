@@ -43,6 +43,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerCommonStart_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_START_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的START属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonStart_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonStart_001] START');
 
@@ -60,6 +68,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonStart_001] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonStart_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_START_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的START属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonStart_002', Level.LEVEL2, async () => {
       console.info('[datePickerCommonStart_002] START');
 
@@ -77,6 +93,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonStart_002] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonEnd_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_END_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的END属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonEnd_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonEnd_001] START');
 
@@ -94,6 +118,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonEnd_001] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonEnd_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_END_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的END属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonEnd_002', Level.LEVEL2, async () => {
       console.info('[datePickerCommonEnd_002] START');
 
@@ -111,6 +143,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonEnd_002] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonSelected_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_SELECTED_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的SELECTED属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonSelected_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonSelected_001] START');
 
@@ -128,6 +168,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonSelected_001] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonSelected_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_SELECTED_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的SELECTED属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonSelected_002', Level.LEVEL2, async () => {
       console.info('[datePickerCommonSelected_002] START');
 
@@ -145,6 +193,14 @@ export default function DatePickerComponentsStartEndSelectedTest() {
       console.info('[datePickerCommonSelected_002] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonStartEndSelected_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_STARTENDSELECTED_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的StartEndSelected属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonStartEndSelected_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonStartEndSelected_001] START');
 

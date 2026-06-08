@@ -44,6 +44,14 @@ export default function DatePickerTimeFormatNullUndefinedTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerTimeFormat_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的TIMEFORMAT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeFormat_001', Level.LEVEL2, async () => {
       console.info('[datePickerTimeFormat_001] START');
 
@@ -57,6 +65,14 @@ export default function DatePickerTimeFormatNullUndefinedTest() {
       console.info('[datePickerTimeFormat_001] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeFormat_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的TIMEFORMAT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeFormat_002', Level.LEVEL2, async () => {
       console.info('[datePickerTimeFormat_002] START');
 
@@ -70,6 +86,14 @@ export default function DatePickerTimeFormatNullUndefinedTest() {
       console.info('[datePickerTimeFormat_002] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeFormat_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的TIMEFORMAT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeFormat_003', Level.LEVEL2, async () => {
       console.info('[datePickerTimeFormat_003] START');
 
@@ -87,6 +111,14 @@ export default function DatePickerTimeFormatNullUndefinedTest() {
       console.info('[datePickerTimeFormat_003] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeFormat_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的TIMEFORMAT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeFormat_004', Level.LEVEL2, async () => {
       console.info('[datePickerTimeFormat_004] START');
 
@@ -104,6 +136,14 @@ export default function DatePickerTimeFormatNullUndefinedTest() {
       console.info('[datePickerTimeFormat_004] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeFormat_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的TIMEFORMAT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeFormat_005', Level.LEVEL2, async () => {
       console.info('[datePickerTimeFormat_005] START');
 

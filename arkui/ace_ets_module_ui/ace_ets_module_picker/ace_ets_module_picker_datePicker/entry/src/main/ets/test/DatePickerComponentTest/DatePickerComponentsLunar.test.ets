@@ -43,6 +43,14 @@ export default function DatePickerComponentsLunarTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerDateLunar_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的LUNAR属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDateLunar_001', Level.LEVEL2, async () => {
       console.info('[datePickerDateLunar_001] START');
 
@@ -56,6 +64,14 @@ export default function DatePickerComponentsLunarTest() {
       console.info('[datePickerDateLunar_001] END');
     });
 
+    /**
+     * @tc.name   datePickerDateLunar_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的LUNAR属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDateLunar_002', Level.LEVEL2, async () => {
       console.info('[datePickerDateLunar_002] START');
 
@@ -69,6 +85,14 @@ export default function DatePickerComponentsLunarTest() {
       console.info('[datePickerDateLunar_002] END');
     });
 
+    /**
+     * @tc.name   datePickerDateLunar_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的LUNAR属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDateLunar_003', Level.LEVEL2, async () => {
       console.info('[datePickerDateLunar_003] START');
 
@@ -86,6 +110,14 @@ export default function DatePickerComponentsLunarTest() {
       console.info('[datePickerDateLunar_003] END');
     });
 
+    /**
+     * @tc.name   datePickerDateLunar_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的LUNAR属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDateLunar_004', Level.LEVEL2, async () => {
       console.info('[datePickerDateLunar_004] START');
 
@@ -103,6 +135,14 @@ export default function DatePickerComponentsLunarTest() {
       console.info('[datePickerDateLunar_004] END');
     });
 
+    /**
+     * @tc.name   datePickerDateLunar_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的LUNAR属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDateLunar_005', Level.LEVEL2, async () => {
       console.info('[datePickerDateLunar_005] START');
 

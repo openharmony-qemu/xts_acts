@@ -43,6 +43,14 @@ export default function DatePickerComponentsUseMilitaryTimeTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerTimeMilitary_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEMILITARY_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的TIMEMILITARY属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeMilitary_001', Level.LEVEL2, async () => {
       console.info('[datePickerTimeMilitary_001] START');
 
@@ -56,6 +64,14 @@ export default function DatePickerComponentsUseMilitaryTimeTest() {
       console.info('[datePickerTimeMilitary_001] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeMilitary_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEMILITARY_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的TIMEMILITARY属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeMilitary_002', Level.LEVEL2, async () => {
       console.info('[datePickerTimeMilitary_002] START');
 
@@ -69,6 +85,14 @@ export default function DatePickerComponentsUseMilitaryTimeTest() {
       console.info('[datePickerTimeMilitary_002] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeMilitary_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEMILITARY_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的TIMEMILITARY属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeMilitary_003', Level.LEVEL2, async () => {
       console.info('[datePickerTimeMilitary_003] START');
 
@@ -86,6 +110,14 @@ export default function DatePickerComponentsUseMilitaryTimeTest() {
       console.info('[datePickerTimeMilitary_003] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeMilitary_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEMILITARY_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的TIMEMILITARY属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeMilitary_004', Level.LEVEL2, async () => {
       console.info('[datePickerTimeMilitary_004] START');
 
@@ -103,6 +135,14 @@ export default function DatePickerComponentsUseMilitaryTimeTest() {
       console.info('[datePickerTimeMilitary_004] END');
     });
 
+    /**
+     * @tc.name   datePickerTimeMilitary_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEMILITARY_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的TIMEMILITARY属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerTimeMilitary_005', Level.LEVEL2, async () => {
       console.info('[datePickerTimeMilitary_005] START');
 

@@ -43,6 +43,14 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerEnableHapticFeedback_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonHaptic_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonHaptic_001] START');
 
@@ -56,6 +64,14 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
       console.info('[datePickerCommonHaptic_001] END');
     });
 
+    /**
+     * @tc.name   datePickerEnableHapticFeedback_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonHaptic_002', Level.LEVEL2, async () => {
       console.info('[datePickerCommonHaptic_002] START');
 
@@ -69,6 +85,14 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
       console.info('[datePickerCommonHaptic_002] END');
     });
 
+    /**
+     * @tc.name   datePickerEnableHapticFeedback_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonHaptic_003', Level.LEVEL2, async () => {
       console.info('[datePickerCommonHaptic_003] START');
 
@@ -86,6 +110,14 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
       console.info('[datePickerCommonHaptic_003] END');
     });
 
+    /**
+     * @tc.name   datePickerEnableHapticFeedback_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonHaptic_004', Level.LEVEL2, async () => {
       console.info('[datePickerCommonHaptic_004] START');
 
@@ -103,6 +135,14 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
       console.info('[datePickerCommonHaptic_004] END');
     });
 
+    /**
+     * @tc.name   datePickerEnableHapticFeedback_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonHaptic_005', Level.LEVEL2, async () => {
       console.info('[datePickerCommonHaptic_005] START');
 

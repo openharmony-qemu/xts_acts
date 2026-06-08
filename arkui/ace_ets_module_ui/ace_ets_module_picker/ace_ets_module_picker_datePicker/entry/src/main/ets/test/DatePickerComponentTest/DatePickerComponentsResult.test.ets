@@ -45,6 +45,14 @@ export default function DatePickerComponentResultTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerResult_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_RESULT_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的RESULT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerResult_001', Level.LEVEL2, async () => {
       console.info('[datePickerResult_001] START');
 
@@ -99,6 +107,14 @@ export default function DatePickerComponentResultTest() {
       console.info('[datePickerResult_001] END');
     });
 
+    /**
+     * @tc.name   datePickerResult_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_RESULT_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的RESULT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerResult_002', Level.LEVEL2, async () => {
       console.info('[datePickerResult_002] START');
 
@@ -123,6 +139,14 @@ export default function DatePickerComponentResultTest() {
       console.info('[datePickerResult_002] END');
     });
 
+    /**
+     * @tc.name   datePickerResult_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_RESULT_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的RESULT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerResult_003', Level.LEVEL2, async () => {
       console.info('[datePickerResult_003] START');
 
@@ -177,6 +201,14 @@ export default function DatePickerComponentResultTest() {
       console.info('[datePickerResult_003] END');
     });
 
+    /**
+     * @tc.name   datePickerResult_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_RESULT_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的RESULT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerResult_004', Level.LEVEL2, async () => {
       console.info('[datePickerResult_004] START');
 
@@ -201,6 +233,14 @@ export default function DatePickerComponentResultTest() {
       console.info('[datePickerResult_004] END');
     });
 
+    /**
+     * @tc.name   datePickerResult_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_RESULT_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的RESULT属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerResult_005', Level.LEVEL2, async () => {
       console.info('[datePickerResult_005] START');
 

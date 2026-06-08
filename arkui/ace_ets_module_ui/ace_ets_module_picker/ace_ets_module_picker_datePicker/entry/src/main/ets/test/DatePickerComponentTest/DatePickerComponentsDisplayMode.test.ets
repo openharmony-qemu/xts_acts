@@ -44,6 +44,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_001', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_001] START');
 
@@ -57,6 +65,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
       console.info('[datePickerDisplayMode_001] END');
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_002', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_002] START');
 
@@ -70,6 +86,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
       console.info('[datePickerDisplayMode_002] END');
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_003', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_003] START');
 
@@ -83,6 +107,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
       console.info('[datePickerDisplayMode_003] END');
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_004', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_004] START');
 
@@ -100,6 +132,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
       console.info('[datePickerDisplayMode_004] END');
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_005', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_005] START');
 
@@ -117,6 +157,14 @@ export default function DatePickerDisplayModeNullUndefinedTest() {
       console.info('[datePickerDisplayMode_005] END');
     });
 
+    /**
+     * @tc.name   datePickerDisplayMode_006
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_PARAM_0060
+     * @tc.desc   测试DatePickerComponent的DisplayMode属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerDisplayMode_006', Level.LEVEL2, async () => {
       console.info('[datePickerDisplayMode_006] START');
 

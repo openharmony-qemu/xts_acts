@@ -43,6 +43,14 @@ export default function DatePickerComponentsLoopTest() {
     afterEach(async () => {
     });
 
+    /**
+     * @tc.name   datePickerCommonLoop_001
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_COMMONLOOP_PARAM_0010
+     * @tc.desc   测试DatePickerComponent的COMMONLOOP属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonLoop_001', Level.LEVEL2, async () => {
       console.info('[datePickerCommonLoop_001] START');
 
@@ -56,6 +64,14 @@ export default function DatePickerComponentsLoopTest() {
       console.info('[datePickerCommonLoop_001] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonLoop_002
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_COMMONLOOP_PARAM_0020
+     * @tc.desc   测试DatePickerComponent的COMMONLOOP属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonLoop_002', Level.LEVEL2, async () => {
       console.info('[datePickerCommonLoop_002] START');
 
@@ -69,6 +85,14 @@ export default function DatePickerComponentsLoopTest() {
       console.info('[datePickerCommonLoop_002] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonLoop_003
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_COMMONLOOP_PARAM_0030
+     * @tc.desc   测试DatePickerComponent的COMMONLOOP属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonLoop_003', Level.LEVEL2, async () => {
       console.info('[datePickerCommonLoop_003] START');
 
@@ -86,6 +110,14 @@ export default function DatePickerComponentsLoopTest() {
       console.info('[datePickerCommonLoop_003] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonLoop_004
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_COMMONLOOP_PARAM_0040
+     * @tc.desc   测试DatePickerComponent的COMMONLOOP属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonLoop_004', Level.LEVEL2, async () => {
       console.info('[datePickerCommonLoop_004] START');
 
@@ -103,6 +135,14 @@ export default function DatePickerComponentsLoopTest() {
       console.info('[datePickerCommonLoop_004] END');
     });
 
+    /**
+     * @tc.name   datePickerCommonLoop_005
+     * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_COMMONLOOP_PARAM_0050
+     * @tc.desc   测试DatePickerComponent的COMMONLOOP属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
     it('datePickerCommonLoop_005', Level.LEVEL2, async () => {
       console.info('[datePickerCommonLoop_005] START');
 
