@@ -28,7 +28,7 @@
 #define PARAM_0 0
 #define PARAM_1 1
 
-const char *TAG = "testTag:"
+const char *TAG = "testTag:";
 
 static napi_value OH_Udmf_CreateUnifiedData001(napi_env env, napi_callback_info info)
 {
