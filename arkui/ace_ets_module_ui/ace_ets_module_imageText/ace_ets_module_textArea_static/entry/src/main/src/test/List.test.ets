@@ -17,10 +17,12 @@ import TextAreaAttributeTest from './TextAreaTest/TextAreaAttribute.test';
 import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
 import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
 import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.test';
+import TextAreaStrokeJoinStyleTest from './TextAreaApi26Test/TextAreaStrokeJoinStyle.test';
 
 export default function testsuite() {
   TextAreaAttributeTest();
   TextAreaOnWillCopyTest();
   TextAreaOnWillCutTest();
   TextAreaShaderStyleTest();
+  TextAreaStrokeJoinStyleTest();
 }
