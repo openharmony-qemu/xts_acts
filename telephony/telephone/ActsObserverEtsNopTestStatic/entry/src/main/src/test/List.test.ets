@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 import ObserverNopTest from "./ObserverNopUnit.test";
+import ObserverSimNopTest from "./ObserverSimNopUnit.test";
+
 export default function testsuite() {
     ObserverNopTest();
+    ObserverSimNopTest();
 }
