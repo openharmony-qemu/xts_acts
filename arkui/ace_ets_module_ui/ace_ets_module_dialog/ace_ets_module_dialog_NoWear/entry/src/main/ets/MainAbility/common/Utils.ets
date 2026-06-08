@@ -15,6 +15,8 @@
 import { Driver } from '@ohos.UiTest';
 import RectValue, { PointValue } from './Rect';
 
+type InspectorNode = Record<string, Object>;
+
 export default class Utils {
   static rect_left: number;
   static rect_top: number;
@@ -45,15 +47,15 @@ export default class Utils {
     })
   }
 
-  static parseInspectorKey(key: string): ESObject {
-    const emptyAttrs: ESObject = {} as ESObject;
-    const empty: ESObject = { '$attrs': emptyAttrs } as ESObject;
+  static parseInspectorKey(key: string): InspectorNode {
+    const emptyAttrs: InspectorNode = {} as InspectorNode;
+    const empty: InspectorNode = { '$attrs': emptyAttrs } as InspectorNode;
     const raw: string = getInspectorByKey(key);
     if (!Utils.isKeyReadableRaw(raw)) {
       return empty;
     }
     try {
-      return JSON.parse(raw) as ESObject;
+      return JSON.parse(raw) as InspectorNode;
     } catch (_e) {
       return empty;
     }
@@ -68,8 +70,8 @@ export default class Utils {
       return false;
     }
     try {
-      const obj: ESObject = JSON.parse(raw) as ESObject;
-      return (obj as Record<string, ESObject>)['$rect'] !== undefined;
+      const obj: InspectorNode = JSON.parse(raw) as InspectorNode;
+      return (obj as Record<string, InspectorNode>)['$rect'] !== undefined;
     } catch (_e) {
       return false;
     }
@@ -115,19 +117,19 @@ export default class Utils {
   }
 
   static findRectCenterForTextInTree(expected: string): PointValue | undefined {
-    const raw: ESObject = JSON.parse(JSON.stringify(getInspectorTree())) as ESObject;
-    return Utils.searchTextRect(raw as Record<string, ESObject>, expected);
+    const raw: InspectorNode = JSON.parse(JSON.stringify(getInspectorTree())) as InspectorNode;
+    return Utils.searchTextRect(raw as Record<string, InspectorNode>, expected);
   }
 
-  private static searchTextRect(node: Record<string, ESObject>, expected: string): PointValue | undefined {
+  private static searchTextRect(node: Record<string, InspectorNode>, expected: string): PointValue | undefined {
     const hit: PointValue | undefined = Utils.textRectFromNode(node, expected);
     if (hit !== undefined) {
       return hit;
     }
-    const kids: ESObject[] = Utils.childNodes(node);
+    const kids: InspectorNode[] = Utils.childNodes(node);
     for (let i: number = 0; i < kids.length; i++) {
       const inner: PointValue | undefined =
-        Utils.searchTextRect(kids[i] as Record<string, ESObject>, expected);
+        Utils.searchTextRect(kids[i] as Record<string, InspectorNode>, expected);
       if (inner !== undefined) {
         return inner;
       }
@@ -135,9 +137,9 @@ export default class Utils {
     return undefined;
   }
 
-  private static textRectFromNode(node: Record<string, ESObject>, expected: string): PointValue | undefined {
+  private static textRectFromNode(node: Record<string, InspectorNode>, expected: string): PointValue | undefined {
     const rect: PointValue | undefined =
-      Utils.centerFromRectField(node['$rect'] as ESObject | undefined);
+      Utils.centerFromRectField(node['$rect'] as InspectorNode | undefined);
     if (rect === undefined) {
       return undefined;
     }
@@ -147,12 +149,12 @@ export default class Utils {
     return rect;
   }
 
-  private static nodeTextMatches(node: Record<string, ESObject>, expected: string): boolean {
-    const attrs: ESObject | undefined = node['$attrs'] as ESObject | undefined;
+  private static nodeTextMatches(node: Record<string, InspectorNode>, expected: string): boolean {
+    const attrs: InspectorNode | undefined = node['$attrs'] as InspectorNode | undefined;
     if (attrs) {
       const keys: string[] = ['content', 'text', 'label', 'name'];
       for (let i: number = 0; i < keys.length; i++) {
-        const val: ESObject | undefined = (attrs as Record<string, ESObject>)[keys[i]];
+        const val: InspectorNode | undefined = (attrs as Record<string, InspectorNode>)[keys[i]];
         if (val === expected) {
           return true;
         }
@@ -164,7 +166,7 @@ export default class Utils {
     return JSON.stringify(node).indexOf(expected) >= 0;
   }
 
-  private static centerFromRectField(rectField: ESObject | undefined): PointValue | undefined {
+  private static centerFromRectField(rectField: InspectorNode | undefined): PointValue | undefined {
     if (rectField === undefined || rectField === null) {
       return undefined;
     }
@@ -183,18 +185,18 @@ export default class Utils {
     }
   }
 
-  private static childNodes(node: Record<string, ESObject>): ESObject[] {
-    const ch: ESObject | undefined = node['$children'] as ESObject | undefined;
+  private static childNodes(node: Record<string, InspectorNode>): InspectorNode[] {
+    const ch: InspectorNode | undefined = node['$children'] as InspectorNode | undefined;
     if (!ch) {
       return [];
     }
     if (Array.isArray(ch)) {
-      return ch as ESObject[];
+      return ch as InspectorNode[];
     }
-    const out: ESObject[] = [];
-    const names: string[] = Object.keys(ch as Record<string, ESObject>);
+    const out: InspectorNode[] = [];
+    const names: string[] = Object.keys(ch as Record<string, InspectorNode>);
     for (let i: number = 0; i < names.length; i++) {
-      const one: ESObject | undefined = (ch as Record<string, ESObject>)[names[i]];
+      const one: InspectorNode | undefined = (ch as Record<string, InspectorNode>)[names[i]];
       if (one !== undefined && one !== null && typeof one === 'object') {
         out.push(one);
       }

@@ -41,14 +41,14 @@ export default function triggerSelectTest() {
       }
       done();
     });
-    
-     /**
+
+    /**
      * @tc.number    SUB_ACE_triggerSelect_0100
      * @tc.name      triggerSelect_0100
      * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     Level 1
      */
     it('triggerSelect_0100', Level.LEVEL1, async (done: Function) => {
       console.info('triggerSelect_0100 START');
@@ -67,8 +67,6 @@ export default function triggerSelectTest() {
       console.info('[triggerSelect_0100] END');
       done();
     });
-    
-
   })
 }
 

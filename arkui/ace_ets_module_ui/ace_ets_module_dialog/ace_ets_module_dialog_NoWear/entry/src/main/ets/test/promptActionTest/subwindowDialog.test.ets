@@ -21,7 +21,9 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
-
+const SUBWINDOW_PREFIX = 'subwindowDialog_';
+const KEY_LONG_CLICK_MENU = SUBWINDOW_PREFIX + 'longClickMenu';
+const KEY_CLICK_CLOSE = SUBWINDOW_PREFIX + 'clickClose';
 
 export default function subwindowDialog() {
   describe('subwindowDialog', () => {
@@ -51,9 +53,9 @@ export default function subwindowDialog() {
      * @tc.number    SUB_ACE_subwindowDialog_0100
      * @tc.name      subwindowDialog_0100
      * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.level     Level 2
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
     it('subwindowDialog_0100', Level.LEVEL2, async (done: Function) => {
       console.info('subwindowDialog_0100 START');
@@ -69,7 +71,7 @@ export default function subwindowDialog() {
       expect(propertiesFirst.type).assertEqual(1)
 
       let uiDriver = await UiDriver.create();
-      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key('subwindowDialog_longClickMenu'));
+      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key(KEY_LONG_CLICK_MENU));
       expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
@@ -84,7 +86,7 @@ export default function subwindowDialog() {
       await CommonFunc.sleep(1000);
       await uiDriver.click(Math.round(globalThis.winLeft + vp2px(100)), Math.round(globalThis.winTop + vp2px(100)));
       await CommonFunc.sleep(1000);
-      let buttonCloseDialog = await uiDriver.findComponent(BY.key('subwindowDialog_clickClose'));
+      let buttonCloseDialog = await uiDriver.findComponent(BY.key(KEY_CLICK_CLOSE));
       if (buttonCloseDialog) {
         await buttonCloseDialog.click();
         await CommonFunc.sleep(1000);
@@ -97,9 +99,9 @@ export default function subwindowDialog() {
      * @tc.number    SUB_ACE_subwindowDialog_0200
      * @tc.name      subwindowDialog_0200
      * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.level     Level 2
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
      */
     it('subwindowDialog_0200', Level.LEVEL2, async (done: Function) => {
       console.info('subwindowDialog_0200 START');
@@ -115,12 +117,12 @@ export default function subwindowDialog() {
       expect(properties.type).assertEqual(0)
 
       let uiDriver = await UiDriver.create();
-      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key('subwindowDialog_longClickMenu'));
+      let buttonSubwindowMenu = await uiDriver.findComponent(BY.key(KEY_LONG_CLICK_MENU));
       expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
 
-      let buttonCloseDialog = await uiDriver.findComponent(BY.key('subwindowDialog_clickClose'));
+      let buttonCloseDialog = await uiDriver.findComponent(BY.key(KEY_CLICK_CLOSE));
       if (buttonCloseDialog) {
         await buttonCloseDialog.click();
         await CommonFunc.sleep(1000);

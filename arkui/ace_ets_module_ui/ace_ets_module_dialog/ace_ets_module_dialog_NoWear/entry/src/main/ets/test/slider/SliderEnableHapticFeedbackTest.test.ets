@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,14 @@ export default function SliderEnableHapticFeedbackTest() {
       done();
     });
 
+    /**
+     * @tc.number    SliderAddEnableHapticFeedbackApi_001
+     * @tc.name      SliderAddEnableHapticFeedbackApi_001
+     * @tc.desc      testing EnableHpaticFeedback for slider with true value
+     * @tc.level     Level 1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('SliderAddEnableHapticFeedbackApi_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_001] START');
       await Utils.sleep(1000);
@@ -50,6 +58,14 @@ export default function SliderEnableHapticFeedbackTest() {
       done();
     });
 
+    /**
+     * @tc.number    SliderAddEnableHapticFeedbackApi_002
+     * @tc.name      SliderAddEnableHapticFeedbackApi_002
+     * @tc.desc      testing EnableHpaticFeedback for slider with false value
+     * @tc.level     Level 1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('SliderAddEnableHapticFeedbackApi_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_002] START');
       await Utils.sleep(1000);
@@ -61,6 +77,14 @@ export default function SliderEnableHapticFeedbackTest() {
       done();
     });
 
+    /**
+     * @tc.number    SliderAddEnableHapticFeedbackApi_003
+     * @tc.name      SliderAddEnableHapticFeedbackApi_003
+     * @tc.desc      testing EnableHpaticFeedback for slider with undefied value
+     * @tc.level     Level 1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('SliderAddEnableHapticFeedbackApi_003', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_003] START');
       await Utils.sleep(1000);
@@ -72,6 +96,14 @@ export default function SliderEnableHapticFeedbackTest() {
       done();
     });
 
+    /**
+     * @tc.number    SliderAddEnableHapticFeedbackApi_004
+     * @tc.name      SliderAddEnableHapticFeedbackApi_004
+     * @tc.desc      testing EnableHpaticFeedback for slider with null value
+     * @tc.level     Level 1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('SliderAddEnableHapticFeedbackApi_004', Level.LEVEL1, async (done: Function) => {
       console.info('[SliderAddEnableHapticFeedbackApi_004] START');
       await Utils.sleep(1000);

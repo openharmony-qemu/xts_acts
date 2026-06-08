@@ -41,6 +41,14 @@ export default function triggerSelect() {
       done();
     });
 
+    /**
+     * @tc.number    SUB_ACE_triggerSelect_0100
+     * @tc.name      triggerSelect_0100
+     * @tc.desc      set api
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     * @tc.level     Level 1
+     */
     it('triggerSelect_0100', Level.LEVEL1, async (done: Function) => {
       console.info('triggerSelect_0100 START');
       await CommonFunc.sleep(1000);

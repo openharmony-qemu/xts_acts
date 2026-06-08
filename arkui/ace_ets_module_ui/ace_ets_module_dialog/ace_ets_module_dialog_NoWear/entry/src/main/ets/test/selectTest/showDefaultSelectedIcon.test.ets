@@ -39,6 +39,14 @@ export default function showDefaultSelectedIconTest() {
       done();
     });
 
+    /**
+     * @tc.number    showDefaultSelectedIcon_value_0001
+     * @tc.name      showDefaultSelectedIcon_value_0001
+     * @tc.desc      set showDefaultSelectedIcon:false,levelUniqueId: Normal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('showDefaultSelectedIcon_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0001 START');
@@ -51,6 +59,14 @@ export default function showDefaultSelectedIconTest() {
       done();
     });
 
+    /**
+     * @tc.number    showDefaultSelectedIcon_value_0002
+     * @tc.name      showDefaultSelectedIcon_value_0002
+     * @tc.desc      set showDefaultSelectedIcon:true,levelUniqueId: Normal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('showDefaultSelectedIcon_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0002 START');
@@ -63,6 +79,14 @@ export default function showDefaultSelectedIconTest() {
       done();
     });
 
+    /**
+     * @tc.number    showDefaultSelectedIcon_value_0003
+     * @tc.name      showDefaultSelectedIcon_value_0003
+     * @tc.desc      set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('showDefaultSelectedIcon_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0003 START');
@@ -75,6 +99,14 @@ export default function showDefaultSelectedIconTest() {
       done();
     });
 
+    /**
+     * @tc.number    showDefaultSelectedIcon_value_0004
+     * @tc.name      showDefaultSelectedIcon_value_0004
+     * @tc.desc      set showDefaultSelectedIcon:null,levelUniqueId: Abnormal value
+     * @tc.level     Level 3
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
     it('showDefaultSelectedIcon_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info('showDefaultSelectedIcon_value_0004 START');
