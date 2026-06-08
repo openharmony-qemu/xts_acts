@@ -32,6 +32,11 @@ import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test'
 import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
 import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
+import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
+import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties.test'
+import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test'
+import headerFooterStickyFlow from './LazyVWaterFlowLayout/headerFooterStickyFlow.test'
+import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColumn.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -52,4 +57,9 @@ export default function testsuite() {
   arcSwiperBoolean();
   arcSwiperEffectMode();
   gridEnableEditMode();
+  LazyColumnLayoutProperties();
+  LazyVWaterFlowLayoutProperties();
+  headerFooterStickyGrid();
+  headerFooterStickyFlow();
+  headerFooterStickyColumn();
 }

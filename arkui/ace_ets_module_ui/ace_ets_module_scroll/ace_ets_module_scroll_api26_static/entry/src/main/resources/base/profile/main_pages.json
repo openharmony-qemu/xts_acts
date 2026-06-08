@@ -18,6 +18,11 @@
     "MainAbility/pages/ArcSwiper/arcSwiperShow",
     "MainAbility/pages/ArcSwiper/arcSwiperBoolean",
     "MainAbility/pages/ArcSwiper/arcSwiperEffectMode",
-    "MainAbility/pages/Grid/gridEnableEditMode"
+    "MainAbility/pages/Grid/gridEnableEditMode",
+    "MainAbility/pages/LazyColumnLayout/LazyColumnLayoutProperties",
+    "MainAbility/pages/LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties",
+    "MainAbility/pages/LazyVGridLayout/headerFooterStickyGrid",
+    "MainAbility/pages/LazyVWaterFlowLayout/headerFooterStickyFlow",
+    "MainAbility/pages/LazyColumnLayout/headerFooterStickyColumn"
   ]
 }
