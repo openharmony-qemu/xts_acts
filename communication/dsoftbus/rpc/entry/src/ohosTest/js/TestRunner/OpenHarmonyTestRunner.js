@@ -50,6 +50,10 @@ function translateParamsToString(parameters) {
             cmd += ' -D'
         }
         console.info('cmd : '+cmd)
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         abilityDelegator.executeShellCommand(cmd, (err, data) => {
             console.info('executeShellCommand : err : ' + JSON.stringify(err));
             console.info('executeShellCommand : data : ' + data.stdResult);

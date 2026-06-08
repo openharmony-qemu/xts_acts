@@ -33,7 +33,9 @@
     "MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial",
-    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage"
+    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage",
+    "MainAbility/pages/OpenOrderOverlay/OpenOrderOverlayTestPage",
+    "MainAbility/pages/DialogDisplayMode/DisplayModeInSubWindowTestPage"
 
   ]
 }

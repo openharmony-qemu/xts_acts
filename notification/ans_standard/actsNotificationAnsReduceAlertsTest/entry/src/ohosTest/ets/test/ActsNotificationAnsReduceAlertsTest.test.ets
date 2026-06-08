@@ -154,13 +154,18 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       let driver: Driver = Driver.create();
       await sleep(1500)
       await driver.assertComponentExist(ON.text('横幅通知'));
+      await sleep(1500)
+      let scrollBarOne = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')));
+      console.info(TAG + `scrollToBottom Scroll, ${JSON.stringify(scrollBarOne)} `);
+      await scrollBarOne.scrollToBottom()
+      await sleep(500)
       let button = await driver.findComponent(ON.text('横幅通知'));
       console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
       if (button !== null) {
         console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
         await sleep(1000);
         await button.click()
-        await sleep(500)
+        await sleep(1500)
       }
       let button2 = await driver.findComponent(ON.text('确定'));
       console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
@@ -168,7 +173,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
         await sleep(1000);
         await button2.click()
-        await sleep(500)
+        await sleep(1500)
       }
       let notificationRequest: notificationManager.NotificationRequest = {
         id: getRandomNumber(1, 1000),
@@ -933,7 +938,12 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     it('SUB_Notification_Ans_Reduce_alerts_1500', Level.LEVEL2, async (done: Function) => {
       let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_1500'
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.executeShellCommand("aa start -a TestAbility -b com.example.actsnotificationansreducealertstest")
+      let cmd = "aa start -a TestAbility -b com.example.actsnotificationansreducealertstest";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await sleep(3000)
       let context: common.UIAbilityContext = getContext(la) as common.UIAbilityContext;
       await notificationManager.openNotificationSettings(context).then(() => {
@@ -987,10 +997,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {

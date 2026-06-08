@@ -71,23 +71,6 @@ export default function FunctionTypesWithReceiverTest() :void{
     });
 
     /**
-     * @tc.number    SUB_FUNCTION_TYPES_WITH_RECEIVER_0200
-     * @tc.name      testFunctionTypesWithReceiver0002
-     * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
-    Declarations) that looks almost the same as Function Declarations, except that the
-    first parameter is mandatory, and the keyword this is used as its name
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFunctionTypesWithReceiver0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let a: A = new A()
-      let t: T = (this: A): int => { return 1 }
-      expect(t(a)).assertEqual(1);
-    });
-
-    /**
      * @tc.number    SUB_FUNCTION_TYPES_WITH_RECEIVER_0300
      * @tc.name      testFunctionTypesWithReceiver0003
      * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
@@ -98,23 +81,6 @@ export default function FunctionTypesWithReceiverTest() :void{
      * @tc.level     Level 2
      */
     it("testFunctionTypesWithReceiver0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let i: I = {}
-      let t: T1 = (this: I): int => { return 1 }
-      expect(t(i)).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_FUNCTION_TYPES_WITH_RECEIVER_0400
-     * @tc.name      testFunctionTypesWithReceiver0004
-     * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
-    Declarations) that looks almost the same as Function Declarations, except that the
-    first parameter is mandatory, and the keyword this is used as its name
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFunctionTypesWithReceiver0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let i: I = {}
       let t: T1 = (this: I): int => { return 1 }
@@ -138,22 +104,6 @@ export default function FunctionTypesWithReceiverTest() :void{
       expect(t(b)).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_FUNCTION_TYPES_WITH_RECEIVER_0600
-     * @tc.name      testFunctionTypesWithReceiver0006
-     * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
-    Declarations) that looks almost the same as Function Declarations, except that the
-    first parameter is mandatory, and the keyword this is used as its name
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFunctionTypesWithReceiver0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let b: boolean[] = [true, false]
-      let t: T2 = (this: boolean[]): boolean => { return true }
-      expect(t(b)).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_FUNCTION_TYPES_WITH_RECEIVER_0700

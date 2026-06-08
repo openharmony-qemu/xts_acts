@@ -30,8 +30,13 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       const ABILITY_NAME = 'EntryAbility';
       const BUNDLE_NAME = 'ohos.acts.communication.wifi.wifidevice.static';
+      let cmd = `aa start -a ${ABILITY_NAME} -b ${BUNDLE_NAME}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       await Utils.openWifi();
-      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(`aa start -a ${ABILITY_NAME} -b ${BUNDLE_NAME}`);
+      await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(cmd);
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
       done();
     });

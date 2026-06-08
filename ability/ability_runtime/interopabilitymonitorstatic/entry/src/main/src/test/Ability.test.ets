@@ -43,7 +43,12 @@ export default function abilityTest() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       await Utils.msSleep(2000)
-      delegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.actsinteropabilitymonitorstatictest.static")
+      let cmd = "aa start -a EntryAbility -b com.open.harmony.actsinteropabilitymonitorstatictest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      delegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
     })

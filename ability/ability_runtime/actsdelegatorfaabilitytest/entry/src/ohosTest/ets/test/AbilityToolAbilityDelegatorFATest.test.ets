@@ -56,6 +56,10 @@ export default function abilityToolAbilityDelegatorFATest() {
         let timeout = 100
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`)
         let abilityProxy = AbilityDelegatorRegistry.getAbilityDelegator()
+        let user = delegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         abilityProxy.executeShellCommand(cmd, timeout, (err, data) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , err = ${JSON.stringify(err)} , data= ${JSON.stringify(data)}`);
           expect(delegatorArguments.bundleName).assertEqual(BUNDLE_NAME);

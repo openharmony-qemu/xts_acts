@@ -59,7 +59,12 @@ export default function abilityTest() {
     })
     beforeEach(async () => {
       log('beforeEach::', 'execute force-stop backdemo')
-      await delegator.executeShellCommand('aa start -b com.example.startdemo -a TestAbility');
+      let cmd = 'aa start -b com.example.startdemo -a TestAbility';
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await delegator.executeShellCommand(cmd);
       await delegator.executeShellCommand('aa force-stop com.example.backdemo');
       await delegator.executeShellCommand('aa force-stop com.example.backdemo1');
       await sleep(1000)

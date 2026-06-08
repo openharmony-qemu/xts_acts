@@ -834,7 +834,7 @@ export default function relationalStoreErrorCode32Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () =>{
+    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
       console.info(TAG + "************* relationalStoreTest035 start *************");
       await rdbStore.backup("backup4.db");
       rdbStore.restore("backup4.db", (err) => {
@@ -843,6 +843,7 @@ export default function relationalStoreErrorCode32Test() {
           expect(err.code).assertEqual(14800032);
         }
         console.info('Restore success.');
+        done();
       })
     })
 

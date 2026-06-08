@@ -62,7 +62,7 @@ struct ComponentLifecycleDecorators {
         .id('scrollToIndexBtn')
         .height('5%')
         .onClick(() => {
-          this.scroller.scrollToIndex(6);
+          this.scroller.scrollToIndex(6,true);
         })
       List({  scroller: this.scroller }) {
         Repeat<string>(this.data)

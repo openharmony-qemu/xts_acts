@@ -55,6 +55,10 @@ export class OpenHarmonyTestRunner implements TestRunner {
     if (debug == 'true') {
       cmd += ' -D'
     }
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
     abilityDelegator.executeShellCommand(cmd,
       (err: BusinessError<void>|null, d: AbilityDelegatorRegistry.ShellCmdResult|undefined) => {

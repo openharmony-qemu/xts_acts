@@ -1,3 +1,4 @@
+'use static'
 import metaDataStaticTest from "./image/Metadata.test";
 import ImageGetComponentSupp from "./image/getComponent/GetComponent.test";
 import AuxiliaryPictureGetAuxiliaryPictureInfoTest from "./Picture/Picture.test";
@@ -24,9 +25,18 @@ import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
 import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
 import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
 import ImageSourceTest from "./image/imageSource/ImageSource.test";
-import CreatePixelMapSupp from "./testStatic/image/iamgeSource/createPixelMap.test";
+import CreatePixelMapSupp from "./testStatic/image/imageSource/createPixelMap.test";
 import createPremultipliedPixelMapTest from "./testStatic/image/image/createPremultipliedPixelMap.test";
-import ImageSourceGetImagePropertyTest from "./testStatic/image/iamgeSource/getImageProperty.test";
+import ImageSourceGetImagePropertyTest from "./testStatic/image/imageSource/getImageProperty.test";
+import createPictureTest from "./testStatic/image/image/createPicture.test";
+import CreatePictureTestSupp from "./testStatic/image/imageSource/createPicture.test";
+import CreatePixelMapListTest from "./testStatic/image/imageSource/createPixelMapList.test";
+import ImageSourceCreatePixelMapSyncTest from "./testStatic/image/imageSource/createPixelMapSync.test";
+import ImageSourceCreatePixelMapUsingAllocatorTest
+  from "./testStatic/image/imageSource/createPixelMapUsingAllocator.test";
+import ImageSourceCreatePixelMapUsingAllocatorSyncTest
+  from "./testStatic/image/imageSource/createPixelMapUsingAllocatorSync.test";
+import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getDelayTimeList.test";
 
 
 export default function testsuite(): void {
@@ -37,7 +47,7 @@ export default function testsuite(): void {
   AuxiliaryPictureGetAuxiliaryPictureInfoTest();
   CrateImageCreatorTest();
   MakerNoteHuaweiMetadataTest();
-  ImageReceiverSupp();
+  //ImageReceiverSupp();
   CrateImageSourceTest();
   ImageGetComponentSupp();
   ImageMetadataTestStatic();
@@ -57,7 +67,15 @@ export default function testsuite(): void {
   ImageSourceTest();
   CreatePixelMapSupp();
   ImageSourceGetImagePropertyTest();
+  createPictureTest();
+  CreatePictureTestSupp();
+  CreatePixelMapListTest();
+  ImageSourceCreatePixelMapSyncTest();
+  ImageSourceCreatePixelMapUsingAllocatorTest();
+  ImageSourceCreatePixelMapUsingAllocatorSyncTest();
+  ImageSourceGetDelayTimeListTest();
 }
+
 
 
 

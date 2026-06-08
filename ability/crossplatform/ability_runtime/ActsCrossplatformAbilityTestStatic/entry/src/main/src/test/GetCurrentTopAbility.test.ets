@@ -35,7 +35,12 @@ export default function GetCurrentTopAbilityTest() {
       } catch (err) {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.delegatortest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.delegatortest.static";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
     });
 

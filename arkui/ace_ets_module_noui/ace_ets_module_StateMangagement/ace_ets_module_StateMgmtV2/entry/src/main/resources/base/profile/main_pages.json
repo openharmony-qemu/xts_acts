@@ -65,6 +65,7 @@
     "MainAbility/pages/env/SubWindow",
     "MainAbility/pages/index/index",
     "MainAbility/pages/SyncMonitor/SyncMonitor0010",
-    "MainAbility/pages/SyncMonitor/SyncMonitor0020"
+    "MainAbility/pages/SyncMonitor/SyncMonitor0020",
+    "MainAbility/pages/CustomEnv/CustomEnv"
   ]
 }

@@ -2010,18 +2010,13 @@ export default function DeviceInfoTest() {
             let deviceTypeInfo = deviceinfo.deviceType;
             console.info('the value of the deviceType is :' + deviceTypeInfo);
 
-            if(deviceTypeInfo == '2in1'){                
-                if (diskSN != "" && diskSN != null && diskSN != undefined) {
-                    console.info('the value of the deviceinfo diskSN is :' + diskSN);
-                    expect(diskSN).assertInstanceOf('String');
-				    done();
-                } else {
-                    console.info('the return value diskSN is null or incorrect.');
-                    expect().assertFail();
-				    done();
-                }
-            }else{
-                expect(diskSN == "").assertTrue();
+            if (diskSN != null && diskSN != undefined) {
+                console.info('the value of the deviceinfo diskSN is :' + diskSN);
+                expect(diskSN).assertInstanceOf('String');
+                done();
+            } else {
+                console.info('the return value diskSN is null or incorrect.');
+                expect().assertFail();
                 done();
             }
             console.info('device_info_test_074 : end');

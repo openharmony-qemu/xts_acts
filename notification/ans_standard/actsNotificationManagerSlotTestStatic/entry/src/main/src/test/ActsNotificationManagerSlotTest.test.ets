@@ -36,7 +36,12 @@ export default function ActsNotificationManagerSlotTest() {
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b" + bundle_name)
+      let cmd = `aa start -a EntryAbility -b${bundle_name}`;
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');

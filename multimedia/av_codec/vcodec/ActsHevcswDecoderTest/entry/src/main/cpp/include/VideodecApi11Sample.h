@@ -80,6 +80,7 @@ public:
     bool outputYuvFlag = false;
     // 解码输出数据预期
     bool needCheckOutputDesc = true;
+    bool expireSurface = false;
     bool isResChangeStream = false;
     uint32_t expectCropTop = 0;
     uint32_t expectCropBottom = 0;
@@ -101,7 +102,9 @@ public:
     int32_t defaultRetentionMode = 0;
     int32_t defaultRetentionRadio = 0;
     int32_t defaultDecoderSpeed = 0;
-
+    bool isSurfaceExpired = false;
+    bool isSurfaceReset = false;
+    uint32_t inputCount = 0;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();
@@ -140,6 +143,7 @@ public:
     void ReleaseSignal();
     void CreateSurface();
     void ReleaseInFile();
+    void ExpireSurface();
     void StopInloop();
     void FlushBuffer();
     void StopOutloop();

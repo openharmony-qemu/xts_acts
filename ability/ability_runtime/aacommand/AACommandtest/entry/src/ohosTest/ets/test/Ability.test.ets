@@ -68,6 +68,10 @@ export default function abilityTest() {
         '-s unittest OpenHarmonyTestRunner ' +
         '-w 40 -s class ACTS_AACommand_01_3 -s level 1 -s size 0 -s testType aaa -s ' +
         'timeout 5 -s 1 3';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
       await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0100 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0100 stdResult = ' + data.stdResult);
