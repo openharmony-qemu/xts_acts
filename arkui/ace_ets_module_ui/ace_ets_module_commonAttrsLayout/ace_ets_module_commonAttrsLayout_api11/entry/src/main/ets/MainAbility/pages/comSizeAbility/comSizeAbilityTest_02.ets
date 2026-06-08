@@ -47,7 +47,7 @@ struct comSizeAbilityTest_02 {
 
         Column() {
           Checkbox({ name: 'checkbox' })
-            .key("Checkbox_Size")
+            .key("comSizeAbilityTest_02_Checkbox_Size")
             .size({ width: 90, height: 60 })
             .translate({ x: 1, y: 1, z: 1 })
             .scale({

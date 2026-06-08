@@ -78,7 +78,7 @@ export default function gridSettingsJsunit() {
 it('testGridSettings000_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridSettings000] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('gridContainer');
+      let strJson: string = inspector.getInspectorByKey('gridSettings_gridContainer');
       console.info("[testGridSettings000] component strJson:" + strJson);
       expect(true).assertEqual(true);
       done()
