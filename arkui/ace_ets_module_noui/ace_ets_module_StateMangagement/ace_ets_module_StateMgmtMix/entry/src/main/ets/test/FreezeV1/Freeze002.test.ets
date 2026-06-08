@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { UIElementInfo, Driver, ON, } from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON, } from '@ohos.UiTest';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 
 function sleep(time: number) {
@@ -25,6 +25,13 @@ function sleep(time: number) {
   }).then(() => {
     console.info(`sleep ${time} over...`)
   })
+}
+
+async function scrollListToEdge(driver: Driver, toBottom: boolean): Promise<void> {
+  let btnId = toBottom ? 'btnToBottom' : 'btnToTop';
+  let btn = await driver.findComponent(ON.id(btnId));
+  await btn.click();
+  await sleep(4);
 }
 
 export default function FreezeV1Test02() {
@@ -67,18 +74,14 @@ export default function FreezeV1Test02() {
       await sleep(1)
       let driver = await Driver.create()
       await sleep(1);
-      let btnToBottom = await driver.findComponent(ON.id('btnToBottom'));
-      await btnToBottom.click();
-      await sleep(1);
+      await scrollListToEdge(driver, true);
       let btnChangeMsg = await driver.findComponent(ON.id('btnChangeMsg'));
       await btnChangeMsg.click();
-      await sleep(1);
+      await sleep(2);
       let tvCount = await (await driver.findComponent(ON.id('tvFreezeChangeCount'))).getText();
       console.info('[FreezeV1Test02001] component tvCount: ' + tvCount);
       expect(tvCount).assertEqual('count5')
-      let btnToTop = await driver.findComponent(ON.id('btnToTop'));
-      await btnToTop.click();
-      await sleep(1);
+      await scrollListToEdge(driver, false);
       let tvCount1 = await (await driver.findComponent(ON.id('tvFreezeChangeCount'))).getText();
       console.info('[FreezeV1Test02001] component tvCount1: ' + tvCount1);
       expect(tvCount1).assertEqual('count8')
