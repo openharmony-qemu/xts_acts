@@ -36,7 +36,7 @@ static napi_value TestSetChildMountPolicy_001(napi_env env, napi_callback_info i
 static napi_value TestSetChildMountPolicy_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
-    OH_ArkUI_NodeMountPolicy policy = OH_ARKUI_NODE_MOUNT_POLICY_MIXED ;
+    OH_ArkUI_NodeMountPolicy policy = OH_ARKUI_NODE_MOUNT_POLICY_MIXED;
     auto ret = OH_ArkUI_NativeModule_SetChildMountPolicy(node, policy);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestSetChildMountPolicy_002 ret=%{public}d", ret);
@@ -59,7 +59,7 @@ static napi_value TestSetChildMountPolicy_004(napi_env env, napi_callback_info i
     NAPI_START(node, ARKUI_NODE_CUSTOM);
     auto ret = OH_ArkUI_NativeModule_SetChildMountPolicy(node, static_cast<OH_ArkUI_NodeMountPolicy>(3));
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
-        "TestSetChildMountPolicy_005 nullptr ret=%{public}d", ret);
+        "TestSetChildMountPolicy_004 nullptr ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
@@ -108,12 +108,12 @@ static napi_value TestGetChildMountPolicy_004(napi_env env, napi_callback_info i
     auto ret1 = OH_ArkUI_NativeModule_SetChildMountPolicy(node, OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "NodeChildMountPolicy", "TestGetChildMountPolicy_004 ret1=%{public}d", ret1);
-    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_NodeMountPolicy policy;
     auto ret2 = OH_ArkUI_NativeModule_GetChildMountPolicy(node, &policy);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "NodeChildMountPolicy", "TestGetChildMountPolicy_004 ret2=%{public}d", ret2);
-    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(policy, OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     NAPI_END;
 }
@@ -315,11 +315,11 @@ static napi_value TestGetRenderNodeChildrenCount_002(napi_env env, napi_callback
     int32_t count = -1;
     auto ret1 = OH_ArkUI_NativeModule_SetChildMountPolicy(Custom, OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
-        "TestGetRenderNodeChildrenCount_003 ret1=%{public}d", ret1);
+        "TestGetRenderNodeChildrenCount_002 ret1=%{public}d", ret1);
     auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(Custom, &count);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
-        "TestGetRenderNodeChildrenCount_003 ret2=%{public}d", ret2);
-    ASSERT_EQ(ret4, ARKUI_ERROR_CODE_NO_ERROR);
+        "TestGetRenderNodeChildrenCount_002 ret2=%{public}d", ret2);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(count, 0);
     NAPI_END;
 }

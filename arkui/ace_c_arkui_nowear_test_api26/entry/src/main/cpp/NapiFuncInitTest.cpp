@@ -76,7 +76,7 @@ static napi_value Init(napi_env env, napi_value exports)
                 napi_default, nullptr},
         {"TestSetChildMountPolicy_004", nullptr, TestSetChildMountPolicy_004, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
-        {"TestGetChildMountPolicy_001", nullptr,上 TestGetChildMountPolicy_001, nullptr, nullptr, nullptr,
+        {"TestGetChildMountPolicy_001", nullptr, TestGetChildMountPolicy_001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         {"TestGetChildMountPolicy_002", nullptr, TestGetChildMountPolicy_002, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
