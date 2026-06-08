@@ -258,7 +258,7 @@ static napi_value TestInsertRenderNodeAt_008(napi_env env, napi_callback_info in
     auto ret1 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Custom, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_008 ret1=%{public}d", ret1);
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Custom, makeRender(), 0);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Custom, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_008 ret2=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_CHILD_EXISTED);
