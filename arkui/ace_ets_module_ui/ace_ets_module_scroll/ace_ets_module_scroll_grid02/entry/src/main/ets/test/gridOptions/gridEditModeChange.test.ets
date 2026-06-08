@@ -56,17 +56,17 @@ export default function gridEditModeChange() {
       let btn_true = await driver.findComponent(ON.id('grid_enableEditMode_change'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let result: string | undefined = AppStorage.get("grid_onEditModeChange");
-      console.info('[gridEditModeChange_0100] result: ' + JSON.stringify(result));
-      expect(result).assertEqual(true);
+      let result1: string | undefined = AppStorage.get("grid_onEditModeChange");
+      console.info('[gridEditModeChange_0100] result1: ' + JSON.stringify(result1));
+      expect(result1).assertEqual(true);
       await CommonFunc.sleep(500);
 
       let btn_false = await driver.findComponent(ON.id('grid_enableEditMode_change'));
       await btn_false.click();
       await CommonFunc.sleep(1500);
-      let result: string | undefined = AppStorage.get("grid_onEditModeChange");
-      console.info('[gridEditModeChange_0100] result: ' + JSON.stringify(result));
-      expect(result).assertEqual(false);
+      let result2: string | undefined = AppStorage.get("grid_onEditModeChange");
+      console.info('[gridEditModeChange_0100] result2: ' + JSON.stringify(result2));
+      expect(result2).assertEqual(false);
       await CommonFunc.sleep(500);
       AppStorage.delete('grid_onEditModeChange')
       console.info('[gridEditModeChange_0100] END');
