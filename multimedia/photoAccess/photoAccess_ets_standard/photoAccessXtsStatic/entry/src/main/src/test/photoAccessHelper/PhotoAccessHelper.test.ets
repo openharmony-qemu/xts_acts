@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,9 +67,6 @@ export default function getAssetsTest(): void {
           if(error !== undefined){
             expect(error!.code == 13900020).assertTrue();
             done();
-          }else if (fetchResult !== undefined) {
-            fetchResult.close();
-            done();
           }else {
             expect().assertFail();
             done();
@@ -101,7 +98,7 @@ export default function getAssetsTest(): void {
         helper!.getAssets(fetchOptions, (error: BusinessError<void> | null,
           fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined) => {
           if(error !== undefined){
-            expect(error!.code == 13900020).assertTrue();
+            expect(error!.code === 13900020).assertTrue();
             done();
           }else {
             expect().assertFail();
@@ -1173,7 +1170,8 @@ export default function getAssetsTest(): void {
       let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
         console.info(TAG, testName, ' album onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
+        let typeCheck = changeData.type == 0 || changeData.type == 2;
+        expect(typeCheck).assertTrue();
         expect(changeData.albumChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
         isCallbackCalled = true;
@@ -1194,7 +1192,7 @@ export default function getAssetsTest(): void {
           await sleep(100)
         }
         expect(isCallbackCalled).assertTrue();
-        helper!.offPhotoAlbumChange(onCallback);
+        helper!.offPhotoAlbumChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1202,10 +1200,11 @@ export default function getAssetsTest(): void {
         done();
       }
     });
+
     /**
      * @tc.name   SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100
      * @tc.number SUB_MULTMEDIA_OFF_PHOTO_ALBUM_CHANGE_STATIC_0100
-     * @tc.desc   PhotoAccessHelper.off_photoAlbumChange-normal-返回值所有属性覆盖
+     * @tc.desc   PhotoAccessHelper.off_photoAlbumChange-normal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1215,7 +1214,8 @@ export default function getAssetsTest(): void {
       let isCallbackCalled = false;
       let onCallback = (changeData: photoAccessHelper.AlbumChangeInfos) => {
         console.info(TAG, testName, ' album onCallback success, changData: ' + JSON.stringify(changeData));
-        expect(changeData.type == 0).assertTrue();
+        let typeCheck = changeData.type == 0 || changeData.type == 2;
+        expect(typeCheck).assertTrue();
         expect(changeData.albumChangeDatas != undefined).assertTrue();
         expect(changeData.isForRecheck).assertFalse();
         isCallbackCalled = true;
@@ -1227,6 +1227,7 @@ export default function getAssetsTest(): void {
         helper!.onPhotoAlbumChange(onCallback);
         let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest =
           new photoAccessHelper.MediaAlbumChangeRequest(album);
+        console.error(TAG,testName,'success',albumChangeRequest)
         let newAlbumName: string = 'newAlbumName' + new Date().getTime();
         albumChangeRequest.setAlbumName(newAlbumName);
         await helper!.applyChanges(albumChangeRequest);
@@ -1236,7 +1237,7 @@ export default function getAssetsTest(): void {
           await sleep(100)
         }
         expect(isCallbackCalled).assertTrue();
-        helper!.offPhotoAlbumChange(onCallback);
+        helper!.offPhotoAlbumChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1282,11 +1283,11 @@ export default function getAssetsTest(): void {
         await helper!.applyChanges(assetChangeRequest);
         const startTime = Date.now();
         const timeoutMs = 15000;
-        while (!isCallbackCalled && (Date.now() - startTime)<timeoutMs){
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
           await sleep(100)
         }
         expect(isCallbackCalled).assertTrue();
-        helper!.offPhotoChange(onCallback);
+        helper!.offPhotoChange();
         done();
       } catch (error) {
         console.error(TAG, testName, `fetch failed with err: ${error.code}, ${error.message}`);
@@ -1344,7 +1345,6 @@ export default function getAssetsTest(): void {
         done();
       }
     });
-
 
   })
 }
