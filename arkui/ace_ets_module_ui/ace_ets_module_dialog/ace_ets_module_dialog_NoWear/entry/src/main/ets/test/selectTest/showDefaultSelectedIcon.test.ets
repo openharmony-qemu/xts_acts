@@ -40,7 +40,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0001
+     * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0100
      * @tc.name      showDefaultSelectedIcon_value_0001
      * @tc.desc      set showDefaultSelectedIcon:false,levelUniqueId: Normal value
      * @tc.level     Level 3
@@ -80,7 +80,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0003
+     * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0300
      * @tc.name      showDefaultSelectedIcon_value_0003
      * @tc.desc      set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
      * @tc.level     Level 3
@@ -100,7 +100,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0004
+     * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0400
      * @tc.name      showDefaultSelectedIcon_value_0004
      * @tc.desc      set showDefaultSelectedIcon:null,levelUniqueId: Abnormal value
      * @tc.level     Level 3

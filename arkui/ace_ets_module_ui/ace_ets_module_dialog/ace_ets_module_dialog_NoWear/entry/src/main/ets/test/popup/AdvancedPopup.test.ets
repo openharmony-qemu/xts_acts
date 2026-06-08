@@ -42,7 +42,7 @@ export default function AdvancedPopupTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_AdvancedPopup_0001
+     * @tc.number    SUB_ACE_Popup_AdvancedPopup_0100
      * @tc.name      AdvancedPopupTest_001
      * @tc.desc      To test the Advanced Popup
      * @tc.type      FUNCTION
@@ -58,7 +58,7 @@ export default function AdvancedPopupTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_AdvancedPopup_0002
+     * @tc.number    SUB_ACE_Popup_AdvancedPopup_0200
      * @tc.name      AdvancedPopupTest_002
      * @tc.desc      To test the Advanced Popup
      * @tc.type      FUNCTION

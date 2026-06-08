@@ -101,7 +101,7 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showAtAnchor_0001
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0100
      * @tc.name      showAtAnchor_value_0001
      * @tc.desc      set undefined,The center position of the two pop-up tips is the same
      * @tc.level     Level 3
@@ -116,7 +116,7 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showAtAnchor_0002
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0200
      * @tc.name      showAtAnchor_value_0002
      * @tc.desc      set null,The center position of the two pop-up tips is the same
      * @tc.level     Level 3
@@ -131,7 +131,7 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showAtAnchor_0003
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0300
      * @tc.name      showAtAnchor_value_0003
      * @tc.desc      set TARGET,The center position of the two pop-up tips is the same
      * @tc.level     Level 3
@@ -146,7 +146,7 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showAtAnchor_0004
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0400
      * @tc.name      showAtAnchor_value_0004
      * @tc.desc      set CURSOR,The center position of the two pop-up tips is inconsistent
      * @tc.level     Level 3
@@ -161,7 +161,7 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showAtAnchor_0005
+     * @tc.number    SUB_ACE_Tips_showAtAnchor_0500
      * @tc.name      showAtAnchor_value_0005
      * @tc.desc      set -9,The center position of the two pop-up tips is the same
      * @tc.level     Level 3
