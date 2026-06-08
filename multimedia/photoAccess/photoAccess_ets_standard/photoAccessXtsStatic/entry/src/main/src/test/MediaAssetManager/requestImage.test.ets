@@ -68,14 +68,7 @@ class MovingPhotoHandler implements photoAccessHelper.MediaAssetDataHandler<phot
     return undefined;
   }
 }
-interface ErrorCodeType{
-  No_Permission: string;
-  Invalid_Parm: string;
-}
-const ErrorCode: ErrorCodeType = {
-  No_Permission: '201',
-  Invalid_Parm: '401'
-}
+
 export default function MediaAssetRequestImageSuppStatic(): void {
   describe('MediaAssetRequestImageSuppStatic', () => {
     let testContext: Context = Hypium.get('Context') as Context;
@@ -340,7 +333,7 @@ export default function MediaAssetRequestImageSuppStatic(): void {
         done();
       } catch (error) {
         console.info(TAG, `failed; error: ${error.code}`, testName);
-        expect(error.code).assertEqual(ErrorCode.Invalid_Parm);
+        expect(error.code).assertEqual(401);
         done();
       }
     })
