@@ -229,13 +229,13 @@ struct WebCameraApiNoCrash {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
+      Web({ src: $rawfile('index.html'), controller: this.controller, renderMode: RenderMode.SYNC_RENDER })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd(()=>{
           this.isPageEnd = 0;
         })
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controllerTwo, renderMode: RenderMode.ASYNC_RENDER })
+      Web({ src: $rawfile('index.html'), controller: this.controllerTwo, renderMode: RenderMode.ASYNC_RENDER })
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .onPageEnd(()=>{

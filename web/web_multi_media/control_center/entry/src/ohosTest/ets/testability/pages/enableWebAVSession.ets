@@ -77,7 +77,7 @@ struct WebComponent {
 
 
       Text('enableWebAVSession').fontSize(14).id('textContent')
-      Web({src: this.mServer.getAssetUrl('iframeVideoPoster.html'), controller:this.controller})
+      Web({src: $rawfile('iframeVideoPoster.html'), controller:this.controller})
         // Web({src:$rawfile('iframeVideoPoster.html'), controller:this.controller})
         .mediaOptions(this.options)
         .javaScriptAccess(true)
