@@ -44,7 +44,7 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.name   datePickerEnableHapticFeedback_001
+     * @tc.name   datePickerCommonHaptic_001
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0010
      * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
      * @tc.type   FUNCTION
@@ -65,7 +65,7 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.name   datePickerEnableHapticFeedback_002
+     * @tc.name   datePickerCommonHaptic_002
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0020
      * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
      * @tc.type   FUNCTION
@@ -86,7 +86,7 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.name   datePickerEnableHapticFeedback_003
+     * @tc.name   datePickerCommonHaptic_003
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0030
      * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
      * @tc.type   FUNCTION
@@ -111,7 +111,7 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.name   datePickerEnableHapticFeedback_004
+     * @tc.name   datePickerCommonHaptic_004
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0040
      * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
      * @tc.type   FUNCTION
@@ -136,7 +136,7 @@ export default function DatePickerComponentsEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.name   datePickerEnableHapticFeedback_005
+     * @tc.name   datePickerCommonHaptic_005
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_PARAM_0050
      * @tc.desc   测试DatePickerComponent的EnableHapticFeedback属性
      * @tc.type   FUNCTION
