@@ -24,7 +24,7 @@ import { XtsTestServer } from 'library';
 @Component
 struct webViewSdkSchemeHandler {
   controller: webview.WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), true);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream|null = null
   @State emitKey: string = '';

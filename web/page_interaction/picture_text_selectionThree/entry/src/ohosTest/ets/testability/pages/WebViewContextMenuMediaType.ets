@@ -183,7 +183,7 @@ struct webViewController {
                 this.flag = 4;
                 console.log('emitContextMenuMediaTypeAudio9999')
                 this.isPageEnd = -1;
-                this.controller.loadUrl(this.mServer.getAssetUrl('audio.html'))
+                this.controller.loadUrl($rawfile('audio.html'))
                 await waitForExist(()=>this.isPageEnd, 'emitContextMenuMediaTypeAudio IsPageEnd', 0);
                 let webRect = Utils.getComponentRect('ContextMenuMediaTypeButton');
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);

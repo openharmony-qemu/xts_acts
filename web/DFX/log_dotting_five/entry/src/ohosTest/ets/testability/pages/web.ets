@@ -19,12 +19,15 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import {waitForExist} from '../../test/WaitTest';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = this.mServer.getAssetUrl('index.html');
   scheme1: web_webview.WebCustomScheme = { schemeName: "name1", isSupportCORS: true, isSupportFetch: true };
   scheme2: web_webview.WebCustomScheme = { schemeName: "name2", isSupportCORS: true, isSupportFetch: true };
   scheme3: web_webview.WebCustomScheme = { schemeName: "name3", isSupportCORS: true, isSupportFetch: true };
@@ -66,12 +69,16 @@ struct Index {
       web_webview.WebviewController.customizeSchemes([this.scheme1, this.scheme2, this.scheme3]);
       web_webview.WebviewController.setWebDebuggingAccess(true);
       web_webview.once("webInited", () => {
-        web_webview.WebCookieManager.setCookie("https://www.huawei.com", "a=b");
+        web_webview.WebCookieManager.setCookie(this.mServer.getCookieUrl('index.html'), "a=b");
       });
     } catch (error) {
       console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
     }
 
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -207,7 +214,7 @@ struct Index {
         })
       }
 
-      Web({ src: "www.example.com", controller: this.controller })
+      Web({ src: this.srcUrl, controller: this.controller })
         .mediaPlayGestureAccess(true)
         .javaScriptAccess(true)
         .zoomAccess(this.text)
