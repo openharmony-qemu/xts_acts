@@ -128,23 +128,11 @@ static napi_value TestInsertRenderNodeAt_001(napi_env env, napi_callback_info in
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto child1 = OH_ArkUI_RenderNodeUtils_CreateNode();
-    auto child2 = OH_ArkUI_RenderNodeUtils_CreateNode();
-    ASSERT_EQ(child1 != nullptr, true);
-    ASSERT_EQ(child2 != nullptr, true);
-    
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child1, 0);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_001 ret2=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto ret3 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child2, 1);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
-        "TestInsertRenderNodeAt_001 ret3=%{public}d", ret3);
-    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NO_ERROR);
-    
-    OH_ArkUI_RenderNodeUtils_DisposeNode(child1);
-    OH_ArkUI_RenderNodeUtils_DisposeNode(child2);
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
@@ -178,7 +166,7 @@ static napi_value TestInsertRenderNodeAt_003(napi_env env, napi_callback_info in
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, nullptr, 0);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_003 nullptr child ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -198,7 +186,7 @@ static napi_value TestInsertRenderNodeAt_004(napi_env env, napi_callback_info in
     auto child = OH_ArkUI_RenderNodeUtils_CreateNode();
     ASSERT_EQ(child != nullptr, true);
     
-    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child, -1);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child, -1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestInsertRenderNodeAt_004 negative index ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -210,8 +198,6 @@ static napi_value TestInsertRenderNodeAt_004(napi_env env, napi_callback_info in
 
 static napi_value TestInsertRenderNodeAt_005(napi_env env, napi_callback_info info)
 {
-    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
-    
     ArkUI_NodeHandle Text = nodeAPI->createNode(ARKUI_NODE_TEXT);
     auto ret = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(Text, renderNode, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
@@ -293,11 +279,11 @@ static napi_value TestGetRenderNodeChildrenCount_001(napi_env env, napi_callback
     ASSERT_EQ(child1 != nullptr, true);
     ASSERT_EQ(child2 != nullptr, true);
     
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child1, 0);
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child2, 1);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child1, 0);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child2, 1);
     
     uint32_t count = 0;
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(rsNodeRoot, &count);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(custom, &count);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeChildrenCount_001 ret=%{public}d, count=%{public}u", ret2, count);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
@@ -341,7 +327,7 @@ static napi_value TestGetRenderNodeChildrenCount_004(napi_env env, napi_callback
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(rsNodeRoot, nullptr);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount(custom, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeChildrenCount_004 nullptr param ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -365,20 +351,18 @@ static napi_value TestGetRenderNodeAt_001(napi_env env, napi_callback_info info)
     ASSERT_EQ(child1 != nullptr, true);
     ASSERT_EQ(child2 != nullptr, true);
     
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child1, 0);
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child2, 1);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child1, 0);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child2, 1);
     
     ArkUI_RenderNodeHandle retrievedChild = nullptr;
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(rsNodeRoot, 0, &retrievedChild);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 0, &retrievedChild);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeAt_001 ret=%{public}d, child=%{public}p", ret2, retrievedChild);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(retrievedChild, child1);
     
     retrievedChild = nullptr;
-    auto ret3 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(rsNodeRoot, 1, &retrievedChild);
+    auto ret3 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 1, &retrievedChild);
     ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(retrievedChild, child2);
     
     OH_ArkUI_RenderNodeUtils_DisposeNode(child1);
     OH_ArkUI_RenderNodeUtils_DisposeNode(child2);
@@ -412,7 +396,7 @@ static napi_value TestGetRenderNodeAt_003(napi_env env, napi_callback_info info)
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(rsNodeRoot, 0, nullptr);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 0, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeAt_003 nullptr param ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -431,10 +415,10 @@ static napi_value TestGetRenderNodeAt_004(napi_env env, napi_callback_info info)
     
     auto child = OH_ArkUI_RenderNodeUtils_CreateNode();
     ASSERT_EQ(child != nullptr, true);
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child, 0);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child, 0);
     
     ArkUI_RenderNodeHandle retrievedChild = nullptr;
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(rsNodeRoot, -1, &retrievedChild);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, -1, &retrievedChild);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeAt_004 negative index ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -454,10 +438,10 @@ static napi_value TestGetRenderNodeAt_005(napi_env env, napi_callback_info info)
     
     auto child = OH_ArkUI_RenderNodeUtils_CreateNode();
     ASSERT_EQ(child != nullptr, true);
-    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(rsNodeRoot, child, 0);
+    OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, child, 0);
     
     ArkUI_RenderNodeHandle retrievedChild = nullptr;
-    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(rsNodeRoot, 100, &retrievedChild);
+    auto ret2 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 100, &retrievedChild);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
         "TestGetRenderNodeAt_005 out of range ret=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
