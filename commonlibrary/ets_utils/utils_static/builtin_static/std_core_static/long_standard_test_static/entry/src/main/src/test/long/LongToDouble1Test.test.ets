@@ -1,0 +1,191 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+export default function LongToDouble1Test(): void {
+  describe('LongToDouble1Test', () => {
+    beforeEach(async () => { await Utils.msSleep(30); });
+
+    const TD1_NEG_1000000: long = -1000000;
+    const TD1_NEG_10: long = -10;
+    const TD1_NEG_1: long = -1;
+    const TD1_0: long = 0;
+    const TD1_1: long = 1;
+    const TD1_7: long = 7;
+    const TD1_42: long = 42;
+    const TD1_1000000: long = 1000000;
+    const TD1_DOUBLE_EXACT_BOUNDARY: long = 9007199254740992;
+    const TD1_DOUBLE_PRECISION_LOSS: long = 9007199254740993;
+    const TD1_DOUBLE_EXACT_BOUNDARY_VAL: double = 9007199254740992.0;
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0100
+     * @tc.name testLongToDouble1001
+     * @tc.desc Verify toDouble() basic 7 -> 7.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_7);
+      const result: double = value.toDouble();
+      expect(result === TD1_7).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0200
+     * @tc.name testLongToDouble1002
+     * @tc.desc Verify toDouble() zero -> 0.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_0);
+      const result: double = value.toDouble();
+      expect(result === TD1_0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0300
+     * @tc.name testLongToDouble1003
+     * @tc.desc Verify toDouble() negative -10 -> -10.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_NEG_10);
+      const result: double = value.toDouble();
+      expect(result === TD1_NEG_10).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0400
+     * @tc.name testLongToDouble1004
+     * @tc.desc Verify toDouble() value 1 -> 1.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_1);
+      const result: double = value.toDouble();
+      expect(result === TD1_1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0500
+     * @tc.name testLongToDouble1005
+     * @tc.desc Verify toDouble() value -1 -> -1.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_NEG_1);
+      const result: double = value.toDouble();
+      expect(result === TD1_NEG_1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0600
+     * @tc.name testLongToDouble1006
+     * @tc.desc Verify toDouble() large positive TD1_1000000 returns double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_1000000);
+      const result: double = value.toDouble();
+      expect(result === TD1_1000000).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0700
+     * @tc.name testLongToDouble1007
+     * @tc.desc Verify toDouble() large negative -TD1_1000000 returns double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_NEG_1000000);
+      const result: double = value.toDouble();
+      expect(result === TD1_NEG_1000000).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0800
+     * @tc.name testLongToDouble1008
+     * @tc.desc Verify toDouble() multiple calls return consistent result
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_42);
+      const result1: double = value.toDouble();
+      const result2: double = value.toDouble();
+      expect(result1 === result2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0900
+     * @tc.name testLongToDouble1009
+     * @tc.desc Verify toDouble() default constructor -> 0.0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long();
+      const result: double = value.toDouble();
+      expect(result === TD1_0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1000
+     * @tc.name testLongToDouble1010
+     * @tc.desc Verify toDouble(TD1_DOUBLE_EXACT_BOUNDARY) exact at 2^53 boundary
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_DOUBLE_EXACT_BOUNDARY);
+      const result: double = value.toDouble();
+      expect(result === TD1_DOUBLE_EXACT_BOUNDARY_VAL).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1100
+     * @tc.name testLongToDouble1011
+     * @tc.desc Verify toDouble(TD1_DOUBLE_PRECISION_LOSS) precision loss at 2^53+1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_DOUBLE_PRECISION_LOSS);
+      const result: double = value.toDouble();
+      expect(result === TD1_DOUBLE_EXACT_BOUNDARY_VAL).assertTrue();
+    });
+  });
+}
+
