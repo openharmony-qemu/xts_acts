@@ -508,6 +508,7 @@ export default function abilityTest() {
         expect(limits.maxSize != null).assertTrue();
         expect(limits.maxSize.width).assertLarger(0);
         expect(limits.maxSize.height).assertLarger(0);
+        expect(limits.maxSize.height).assertEqual(limits.minSize.height);
         expect(limits.ratioLimits != null).assertTrue();
         expect(limits.ratioLimits[0].minRatio).assertLarger(0);
         expect(limits.ratioLimits[0].maxRatio).assertLarger(0);
