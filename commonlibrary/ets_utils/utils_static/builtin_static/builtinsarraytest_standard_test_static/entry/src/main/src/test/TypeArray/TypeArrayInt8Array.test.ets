@@ -22,7 +22,7 @@ interface GeneratedTypeLiteralInterface_1 {
   arr: Int8Array;
 }
 
-export default function typeArrayInt8ArrayTest() {
+export default function typeArrayInt8ArrayTest(): void {
   describe('TypeArrayInt8ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

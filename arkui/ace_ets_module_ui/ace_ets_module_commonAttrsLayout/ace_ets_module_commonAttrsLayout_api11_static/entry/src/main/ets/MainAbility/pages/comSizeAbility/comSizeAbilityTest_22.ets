@@ -95,7 +95,7 @@ struct comSizeAbilityTest_22 {
             .select(true)
             .selectedColor(0xed6f21)
             .backgroundColor(0XBDDB69)
-            .key("Checkbox_Size")
+            .key("comSizeAbilityTest_22_Checkbox_Size")
             .size({ width: 100, height: 60 })
           DataPanel({ values: [0] })
             .trackShadow({ offsetX: 5, offsetY: 5 })

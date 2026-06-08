@@ -22,7 +22,7 @@ interface Item {
 interface EmptyObject {
 }
 
-export default function builtinsArrayFillTest() {
+export default function builtinsArrayFillTest(): void {
   describe('BuiltinsArrayFillTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

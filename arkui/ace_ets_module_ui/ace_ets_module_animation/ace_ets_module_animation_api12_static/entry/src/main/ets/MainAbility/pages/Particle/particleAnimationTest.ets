@@ -154,7 +154,7 @@ struct ParticleExample {
         noiseScale: 10,
         noiseFrequency: 15,
         noiseAmplitude: 5,
-      }]).key("particleTest")
+      }]).key("particleAnimationTest_particleTest")
 
       Particle({
         particles: [

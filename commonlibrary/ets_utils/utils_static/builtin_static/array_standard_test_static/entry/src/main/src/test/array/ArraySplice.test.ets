@@ -51,7 +51,7 @@ class C {
   }
 }
 
-export default function ArraySpliceTest() {
+export default function ArraySpliceTest(): void {
   describe('ArraySpliceTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

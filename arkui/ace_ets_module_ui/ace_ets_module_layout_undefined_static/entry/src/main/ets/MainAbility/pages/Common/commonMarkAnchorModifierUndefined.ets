@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 export class MySelectModifier implements AttributeModifier<CommonAttribute> {
   public flag : boolean = true;
   applyNormalAttribute(instance: CommonAttribute): void {
-    instance.markAnchor(this.flag ? undefined  : { x: -50, y: -0 } as Position  )
+    instance.markAnchor(this.flag ? undefined  : { x: -50, y: 0 } as Position  )
   }
 }
 

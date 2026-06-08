@@ -366,7 +366,12 @@ export default function abilityTest() {
     beforeAll(async() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll in');
       try {
-        await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsipctaihetest.static");
+        let cmd = "aa start -a EntryAbility -b com.example.actsipctaihetest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        await abilityDelegator.executeShellCommand(cmd);
         await Utils.msSleep(6000);
         await toConnectAbility(bundleNameRpc, abilityNameRpc).then(data => {
           gIRemoteObject = data;

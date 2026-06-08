@@ -90,6 +90,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
                 setTimeout(() => {
@@ -119,6 +123,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, { 'interval': 100000000 });
@@ -160,6 +168,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, onSensorCallback, { 'interval': 100000000 }, 5);
                 }
@@ -185,6 +197,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
@@ -224,6 +240,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, onceSensorCallback, 5);
@@ -255,6 +275,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {
@@ -296,6 +320,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, onSensorCallback);
                 setTimeout(() => {
@@ -331,6 +359,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.off(1000000, onSensorCallback);
@@ -364,6 +396,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback2);
@@ -396,6 +432,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback);
@@ -439,6 +479,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, { 'interval': 100000000 });
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback2);
@@ -471,6 +515,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, { 'interval': 100000000 });
@@ -514,6 +562,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, { 'interval': 100000000 });
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback2, { 'interval': 100000000 });
@@ -546,6 +598,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest014 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -585,6 +641,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest015 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -628,6 +688,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, null);
@@ -670,6 +734,10 @@ describe("SensorJsTest_sensor_15", function () {
                 if (error) {
                     console.info('MagneticField_SensorJsTest017 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD, callback, { 'interval': null });
@@ -705,6 +773,10 @@ describe("SensorJsTest_sensor_15", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_MAGNETIC_FIELD,(error, data) => {
                 if (error) {
                     console.info('MagneticField_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");

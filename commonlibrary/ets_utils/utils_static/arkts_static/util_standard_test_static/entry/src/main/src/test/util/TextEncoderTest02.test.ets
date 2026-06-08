@@ -16,7 +16,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
-
+import Utils from '../Util.test';
 
 const ENC_UNICODE = ['utf-8', 'utf-16be', 'utf-16le'];
 
@@ -57,14 +57,6 @@ class TestCase {
   }
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
-
 function encodeStr(encoder: util.TextEncoder, input: string): Uint8Array {
   let bufSize: int = input.length * 4;
   if (bufSize === 0) {
@@ -86,7 +78,7 @@ export default function TextEncoder02Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

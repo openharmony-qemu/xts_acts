@@ -21,6 +21,7 @@ import ComponentNodeDefaultTest from './XComponentTest/ComponentNodeDefaultTest.
 import XComponentHdrBrightnessTest from './XComponentHdrBrightnessTest/XComponentHdrBrightness.test';
 import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentApi.test';
 import InspectorLabelTest from './InspectorLabelTest/InspectorLabel.test';
+import AccessibilityTest from './AccessibilityTest/Accessibility.test';
 
 export default function testsuite() {
   XComponentTest();
@@ -30,4 +31,5 @@ export default function testsuite() {
   XComponentHdrBrightnessTest();
   ComponentContentApiTest();
   InspectorLabelTest();
+  AccessibilityTest();
 }

@@ -518,7 +518,7 @@ export default function dataShareConfigGetTest() {
           result => {
           expect(result.result).assertEqual(dataShare.DataProxyErrorCode.OVER_LIMIT);
         });
-        await g_handle!.delete(config_publish);
+        await g_handle!.deleteMyPublishedData(config_publish);
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest019 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
@@ -558,7 +558,7 @@ export default function dataShareConfigGetTest() {
           result => {
           expect(result.result).assertEqual(dataShare.DataProxyErrorCode.OVER_LIMIT);
         });
-        await g_handle!.delete(config_publish);
+        await g_handle!.deleteMyPublishedData(config_publish);
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest020 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
@@ -598,7 +598,7 @@ export default function dataShareConfigGetTest() {
           result => {
           expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
         });
-        await g_handle!.delete(config_publish);
+        await g_handle!.deleteMyPublishedData(config_publish);
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigGetTest021 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();

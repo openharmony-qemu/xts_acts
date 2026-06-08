@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,23 +39,23 @@ let testSample = new TestSample()
 const t2Str: string = 't2'
 
 enum ENUM {
-  T3 = 't3'
+  T3 = 't7'
 }
 
 @ObservedV2
 export class ChildInfo extends Info {
   @Trace public age: number = 20
-  @Monitor(['t2'])	 
-   onT2Change(monitor: IMonitor) {	 
-     testSample.res1 = "测试1：Success" 
-   } 
- 
- 
-   @Monitor([ENUM.T3]) 
-   onT3Change(monitor: IMonitor) { 
-     testSample.res2 = "测试2：Success" 
-   }
-  
+  @Trace public t6: number = 0
+  @Trace public t7: string = ''
+  @Monitor(['t6'])
+  onT2Change(monitor: IMonitor):void {
+    testSample.res1 = "测试1：Success"
+  }
+
+  @Monitor([ENUM.T3])
+  onT3Change(monitor: IMonitor):void {
+    testSample.res2 = "测试2：Success"
+  }
 }
 
 @Entry
@@ -70,12 +70,12 @@ struct Monitor5 {
         Button(testSample.res1)
           .id('Monitor5_1')
           .onClick(():void => {
-            this.info.t2++
+            this.info.t6++
           })
         Button(testSample.res2)
           .id('Monitor5_2')
           .onClick(():void => {
-            this.info.t3 += 'a'
+            this.info.t7 += 'a'
           })
       }
       .width('100%')

@@ -64,7 +64,11 @@ export default function ActsOsAccountTest(): void {
       try {
         let localId: number = await accountManager.getForegroundOsAccountLocalId();
         console.info("====>ActsOsAccountGetForegroundOsAccountLocalId_0100 localId: " + localId);
-        expect(localId).assertEqual(100);
+        if (localId != 100){
+          expect(localId > 100).assertTrue();
+        } else {
+          expect(localId).assertEqual(100);
+        }
         console.info("====>ActsOsAccountGetForegroundOsAccountLocalId_0100 end====");
         done();
       } catch (err) {

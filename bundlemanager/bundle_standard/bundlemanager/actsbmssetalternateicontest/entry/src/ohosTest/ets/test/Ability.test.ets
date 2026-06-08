@@ -21,6 +21,7 @@ const DOMAIN: number = 0x0000;
 const TAG: string = 'testTag';
 const ERROR_CODE_17700308: number = 17700308;
 const ERROR_CODE_17700309: number = 17700309;
+const ERROR_CODE_401: number = 401;
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
@@ -129,5 +130,69 @@ export default function abilityTest() {
         }
         hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} end`);
      })
+
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SETALTERNATEICON_0400
+     * @tc.number SUB_BMS_FRAMEWORK_SETALTERNATEICON_0400
+     * @tc.desc   Test setAlternateIcon  with nulll.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_SETALTERNATEICON_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_SETALTERNATEICON_0400';
+        hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} begin`);
+        let alternateName: string | null = null;
+        try {
+          bundleManager.setAlternateIcon(alternateName).then(() => {
+            hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon success`);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.error(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon failed: ${err.code}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.error(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon error: ${err.code}`);
+          expect(err.code).assertEqual(ERROR_CODE_401);
+          done();
+        }
+        hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} end`);
+     })
+
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SETALTERNATEICON_0500
+     * @tc.number SUB_BMS_FRAMEWORK_SETALTERNATEICON_0500
+     * @tc.desc   Test setAlternateIcon  with undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+      it('SUB_BMS_FRAMEWORK_SETALTERNATEICON_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: Function) => {
+          const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_SETALTERNATEICON_0500';
+          hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} begin`);
+          let alternateName: string | undefined = undefined;
+          try {
+            bundleManager.setAlternateIcon(alternateName).then(() => {
+              hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon success`);
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.error(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon failed: ${err.code}`);
+              expect().assertFail();
+              done();
+            });
+          } catch (e) {
+            let err: BusinessError = e as BusinessError;
+            hilog.error(DOMAIN, TAG, `${TEST_CASE_NAME} setAlternateIcon error: ${err.code}`);
+            expect(err.code).assertEqual(ERROR_CODE_401);
+            done();
+          }
+          hilog.info(DOMAIN, TAG, `${TEST_CASE_NAME} end`);
+       })
   })
 }

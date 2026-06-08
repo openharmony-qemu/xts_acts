@@ -80,7 +80,12 @@ export default function abilityTest() {
  	                console.log(newTag + "createSubscriber err");
  	                expect().assertFail();
  	            })
- 	            await abilityDelegator.executeShellCommand('aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100')
+ 	            let cmd = 'aa start -a EntryAbility2 -b com.acts.photoeditorextensiontest --ps action test_0100';
+ 	            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+ 	            if(user !== undefined){
+ 	                cmd += ' -u ' + user;
+ 	            }
+ 	            await abilityDelegator.executeShellCommand(cmd)
  	        }catch{
  	            console.log(newTag + "createSubscriber err");
  	            expect().assertFail();

@@ -25,6 +25,7 @@ export default function photoPickerCallback(abilityContexts: Context) {
       await startAbility('ohos.acts.storage.picker', 'TestAbility');
       await sleep(500);
       await stopAbility('com.huawei.hmos.filemanager');
+      await stopAbility('com.ohos.filepicker');
       await stopAbility('com.huawei.hmos.photos');
       await stopAbility('com.ohos.photos');
       await sleep(500);

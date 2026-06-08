@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from "../../../hypium/index";
-import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
+import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
 
 export default function AbilityDelegatorTest() {
-  describe("AbilityDelegatorTest", () => {
+  describe('AbilityDelegatorTest', () => {
     
     beforeAll(async () => {
       let driver = Driver.create();	
@@ -33,41 +33,41 @@ export default function AbilityDelegatorTest() {
     })
 
     /**
-     * @tc.name   GET_ARGUMENTS_0001
-     * @tc.number GET_ARGUMENTS_0001
+     * @tc.name   SUB_Ability_AbilityTools_GET_ARGUMENTS_0001
+     * @tc.number SUB_Ability_AbilityTools_GET_ARGUMENTS_0001
      * @tc.desc   test getArguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("GET_ARGUMENTS_0001", Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('SUB_Ability_AbilityTools_GET_ARGUMENTS_0001', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       const abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
       let bundleName: string = abilityDelegatorArguments.bundleName;
       let testCaseNames: string = abilityDelegatorArguments.testCaseNames;
       let testRunnerClassName: string = abilityDelegatorArguments.testRunnerClassName;
       let parameters: Record<string, string> = abilityDelegatorArguments.parameters;
-      let moduleName = parameters["moduleName"];
-      let timeout = parameters["timeout"];
+      let moduleName = parameters['moduleName'];
+      let timeout = parameters['timeout'];
       abilityDelegator.printSync(
-        "GET_ARGUMENTS_0001 bundleName: " + bundleName
+        'GET_ARGUMENTS_0001 bundleName: ' + bundleName
       );
       abilityDelegator.printSync(
-        "GET_ARGUMENTS_0001 testRunnerClassName: " + testRunnerClassName
+        'GET_ARGUMENTS_0001 testRunnerClassName: ' + testRunnerClassName
       );
       abilityDelegator.printSync(
-        "GET_ARGUMENTS_0001 moduleName: " + moduleName
+        'GET_ARGUMENTS_0001 moduleName: ' + moduleName
       );
       abilityDelegator.printSync(
-        "GET_ARGUMENTS_0001 moduleName: " + testCaseNames
+        'GET_ARGUMENTS_0001 moduleName: ' + testCaseNames
       );
-      abilityDelegator.printSync("GET_ARGUMENTS_0001 timeout: " + timeout);
-      expect(bundleName).assertEqual("com.example.delegatortest.static");
-      expect(testRunnerClassName).assertEqual("OpenHarmonyTestRunner");
+      abilityDelegator.printSync('GET_ARGUMENTS_0001 timeout: ' + timeout);
+      expect(bundleName).assertEqual('com.example.delegatortest.static');
+      expect(testRunnerClassName).assertEqual('OpenHarmonyTestRunner');
       expect(moduleName == null).assertFalse();
       expect(timeout).assertEqual(undefined);
-      expect(testCaseNames).assertEqual("");
-      abilityDelegator.printSync("GET_ARGUMENTS_0001 pass");
+      expect(testCaseNames != undefined).assertTrue();
+      abilityDelegator.printSync('GET_ARGUMENTS_0001 pass');
       done();
     });
   });

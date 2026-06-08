@@ -14,10 +14,14 @@
  */
 import TextEnumTest from "./TextCommonTest/TextCommonEnum.test"
 import TextAreaEnumTest from "./TextAreaTest/TextAreaEnum.test"
+import TextAreaGradientTest from "./TextAreaTest/TextAreaGradient.test"
 import TextInputEnumTest from "./TextInputTest/TextInputEnum.test"
+import TextInputGradientTest from "./TextInputTest/TextInputGradient.test"
 
 export default function testsuite() {
   TextEnumTest();
   TextAreaEnumTest();
+  TextAreaGradientTest();
   TextInputEnumTest();
+  TextInputGradientTest();
 }

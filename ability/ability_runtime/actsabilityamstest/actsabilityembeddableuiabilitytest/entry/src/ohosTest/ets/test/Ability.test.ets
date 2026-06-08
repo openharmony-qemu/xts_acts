@@ -514,7 +514,12 @@ export default function abilityTest() {
         })
 
         if (globalThis.testAbilityOnBackground) {
-          abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+          let cmd = `aa start -b com.example.appa -a TestAbility`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd);
           await eventBus.onWait('TestAbility_onForeground');
         }
 
@@ -574,7 +579,12 @@ export default function abilityTest() {
         })
 
         if (globalThis.testAbilityOnBackground) {
-          abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+          let cmd = `aa start -b com.example.appa -a TestAbility`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd);
           await eventBus.onWait('TestAbility_onForeground');
         }
 
@@ -608,7 +618,12 @@ export default function abilityTest() {
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} =========`);
 
       if (globalThis.testAbilityOnBackground) {
-        abilityDelegator.executeShellCommand(`aa start -b com.example.appa -a TestAbility`);
+        let cmd = `aa start -b com.example.appa -a TestAbility`;
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd);
         await eventBus.onWait('TestAbility_onForeground');
       }
 

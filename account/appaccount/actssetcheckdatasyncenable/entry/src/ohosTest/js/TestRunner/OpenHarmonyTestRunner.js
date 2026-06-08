@@ -25,6 +25,10 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         let testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.TestAbility';
         let cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName;
+        var user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         let debug = abilityDelegatorArguments.parameters["-D"];
         if (debug == 'true')
         {

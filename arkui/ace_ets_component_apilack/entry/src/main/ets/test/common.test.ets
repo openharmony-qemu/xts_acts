@@ -55,7 +55,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonBackgroundBlurStyle001', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('borderImageText');
+      let strJson = getInspectorByKey('common_borderImageText');
       console.info("[testcommonBackgroundBlurStyle001] component borderImage strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -76,7 +76,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonBackgroundBlurStyle002', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('tabIndexText');
+      let strJson = getInspectorByKey('common_tabIndexText');
       console.info("[testcommonBackgroundBlurStyle002] component tabIndex strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -96,7 +96,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonBackgroundBlurStyle003', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle003 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('sepiaText');
+      let strJson = getInspectorByKey('common_sepiaText');
       console.info("[testcommonBackgroundBlurStyle003] component sepia strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -116,7 +116,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonBackgroundBlurStyle004', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle004 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('alignRulesText');
+      let strJson = getInspectorByKey('common_alignRulesText');
       console.info("[testcommonBackgroundBlurStyle004] component alignRules strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -138,7 +138,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonBackgroundBlurStyle005', Level.LEVEL0, async () => {
       console.info('commonBackgroundBlurStyle testcommonBackgroundBlurStyle005 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('backgroundBlurStyleText');
+      let strJson = getInspectorByKey('common_backgroundBlurStyleText');
       console.info("[testcommonBackgroundBlurStyle005] component backgroundBlurStyle strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       // let testL = obj.$attrs.backgroundBlurStyle;
@@ -161,7 +161,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonHoverEffectHighlight0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectHighlight testcommonHoverEffectHighlight0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('hoverEffectText');
+      let strJson = getInspectorByKey('common_hoverEffectText');
       console.info("[testcommonHoverEffectHighlight0001] component hoverEffect strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$attrs.hoverEffect).assertEqual('HoverEffect.Highlight');
@@ -180,7 +180,7 @@ export default function commonBackgroundBlurStyleJsunit() {
     it('testcommonHoverEffectScale0001', Level.LEVEL0, async () => {
       console.info('commonHoverEffectScale testcommonHoverEffectScale0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('hoverEffectScaleText');
+      let strJson = getInspectorByKey('common_hoverEffectScaleText');
       console.info("[testcommonHoverEffectScale0001] component hoverEffect strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(JSON.parse(strJson).$attrs.hoverEffect).assertEqual('HoverEffect.Scale');

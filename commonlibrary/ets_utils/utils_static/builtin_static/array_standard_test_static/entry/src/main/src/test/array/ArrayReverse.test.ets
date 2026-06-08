@@ -30,7 +30,7 @@ class Person087 {
   }
 }
 
-export default function ArrayReverseTest() {
+export default function ArrayReverseTest(): void {
   describe('ArrayReverseTest', () => {
     beforeAll(() => {
     });

@@ -57,7 +57,7 @@ struct GridSetting {
     }
     .backgroundColor(0xf1f3f5)
     .margin({ top: 10 })
-    .key('gridContainer')
+    .key('gridSettings_gridContainer')
   }
 
   onPageShow() {

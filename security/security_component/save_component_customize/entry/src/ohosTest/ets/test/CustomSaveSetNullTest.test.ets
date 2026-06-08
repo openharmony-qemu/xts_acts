@@ -258,5 +258,57 @@ export default function customSaveSetNullTest() {
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
     });
+
+    /**
+     * @tc.name   Test_Security_Customize_SaveButton_SetNull_0500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Customize_SaveButton_SetNull_0500
+     * @tc.desc   Test SaveComponent attr symbolIconColor set undefined validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Customize_SaveButton_SetNull_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Customize_SaveButton_SetNull_0500';
+      console.info(`====>${TCNAME} START====`);
+      let expectText: string = '自定义保存';
+      let strJson = getInspectorByKey('customSave4');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.icon).assertEqual(0);
+      expect(obj.$attrs.text).assertEqual(0);
+      expect(obj.$attrs.buttonType).assertEqual(0);
+      expect(obj.$attrs.symbolIconColor).assertEqual('#FFFFFFFF');
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, expectText, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_Customize_SaveButton_SetNull_0600
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Customize_SaveButton_SetNull_0600
+     * @tc.desc   Test SaveComponent attr symbolIconColor set null validated and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Customize_SaveButton_SetNull_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Customize_SaveButton_SetNull_0600';
+      console.info(`====>${TCNAME} START====`);
+      let expectText: string = '自定义保存';
+      let strJson = getInspectorByKey('customSave5');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.icon).assertEqual(0);
+      expect(obj.$attrs.text).assertEqual(0);
+      expect(obj.$attrs.buttonType).assertEqual(0);
+      expect(obj.$attrs.symbolIconColor).assertEqual('#FFFFFFFF');
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
+      expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, expectText, driver);
+    });
   })
 }

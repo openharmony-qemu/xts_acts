@@ -122,7 +122,7 @@ struct Index {
           this.handler = event.handler;
         })
       Row() {
-        Button("web click").key('webcomponent').onClick((event: ClickEvent) => {
+        Button("web click").key('webg_webcomponent').onClick((event: ClickEvent) => {
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitStoreWebArchive": {

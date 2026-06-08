@@ -93,7 +93,7 @@ static napi_value OsAccountGetAccountNameByIdA(napi_env env, napi_callback_info 
 static napi_value OsAccountGetAccountNameByIdB(napi_env env, napi_callback_info info)
 {
     char str[MAX_NAME_LENGTH] = {0};
-    OsAccount_ErrCode returnValue = OH_OsAccount_GetNameByLocalId(101, str, MAX_NAME_LENGTH);
+    OsAccount_ErrCode returnValue = OH_OsAccount_GetNameByLocalId(999, str, MAX_NAME_LENGTH);
     if (returnValue == OsAccount_ErrCode::OS_ACCOUNT_ERR_OK) {
         napi_value result = nullptr;
         NAPI_CALL(env, napi_create_string_utf8(env, str, NAPI_AUTO_LENGTH, &result));

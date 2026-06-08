@@ -43,7 +43,7 @@ export default function KeyEventGetTypeTest() {
       await Utils.sleep(500);
       await driver.triggerKey(2049);
       await Utils.sleep(500);
-      expect(Utils.getComponentInfoByKey('onClick').$attrs.backgroundColor).assertEqual('#FF00FF00');
+      expect(Utils.getComponentInfoByKey('onClick_type').$attrs.backgroundColor).assertEqual('#FF00FF00');
       console.info('KeyEventGetTypeTest_001 END');
       done();
     })

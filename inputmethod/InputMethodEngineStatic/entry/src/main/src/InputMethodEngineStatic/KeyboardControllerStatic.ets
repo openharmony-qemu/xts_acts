@@ -2978,7 +2978,7 @@ export class KeyboardControllerStatic {
     }    
   }
 
-  private SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
+  private async SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100(): Promise<void> {
     console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 data`);     
     try {
       inputMethodAbility!.onInputStart((KeyboardDelegate: inputMethodEngine.KeyboardController, InputClient: inputMethodEngine.InputClient): void => {

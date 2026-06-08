@@ -96,7 +96,12 @@ export default function DeviceKvStoreNullEtsTestStatic() {
 
     beforeAll(async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
 
       // await abilityDelegator.startAbility({
       //   bundleName: 'com.example.kvstoreetstest.static',
@@ -126,7 +131,7 @@ export default function DeviceKvStoreNullEtsTestStatic() {
         }, 2000);
       });
       
-      // await getDeviceId.then((deviceId: string): Promise<void> => {
+      // await getDeviceId.then((deviceId: string): void => {
       //   console.info(TAG + 'beforeAll getDeviceId=' + JSON.stringify(deviceId));
       //   localDeviceId = deviceId;
       // }).catch((error: Error) => {

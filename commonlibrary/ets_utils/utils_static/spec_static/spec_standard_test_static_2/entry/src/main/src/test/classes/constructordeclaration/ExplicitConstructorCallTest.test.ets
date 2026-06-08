@@ -568,14 +568,14 @@ class B20 extends A28 {
 
 class A29 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]
@@ -590,14 +590,14 @@ class A29 {
 
 class A30 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]
@@ -616,14 +616,14 @@ class A30 {
 
 class A31 {
     p1: Array<() => string>|undefined
-    p2: FixedArray<() => number>
+    p2: Array<() => number>
     p3: [string, number]|undefined
     p4: Record<string, number>
     p5: string[]|undefined
 
     constructor(
         p1?: Array<() => string>,
-        p2: FixedArray<() => number> = [],
+        p2: Array<() => number> = [],
         p3?: [string, number],
         p4: Record<string, number> = { '': 0 },
         p5?: string[]

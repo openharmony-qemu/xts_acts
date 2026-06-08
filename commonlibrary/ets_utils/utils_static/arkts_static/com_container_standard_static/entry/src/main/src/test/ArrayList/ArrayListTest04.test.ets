@@ -16,6 +16,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { ArrayList } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 type MixedType1 = number | string | boolean | null | undefined;
 
@@ -115,14 +116,6 @@ interface Data {
   value: number;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function ArrayList04Test(): void {
   describe('ArrayList04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -134,7 +127,7 @@ export default function ArrayList04Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

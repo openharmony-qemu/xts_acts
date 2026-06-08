@@ -26,7 +26,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function webJsunitTwo() {
 
-  describe('componentLifeCycleTestOne', (): void => {
+  describe('componentLifeCycleTestOneAdapt001', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
     });

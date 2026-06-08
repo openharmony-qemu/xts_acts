@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 import { Button, ClickEvent, Column, Component, Entry, PersistenceV2, Text, Local, ObservedV2, Trace, ComponentV2, Row } from '@kit.ArkUI';
- 
+import contextConstant from '@ohos.app.ability.contextConstant';
+
 @ObservedV2
 export class Person {
   @Trace public userName: string = 'John';
   @Trace public userId: number = 1;
 }
- 
+
 @ObservedV2
 export class Person2 {
   @Trace public userName: string = 'Jane';
   @Trace public userId: number = 2;
 }
- 
+
 @Entry
 @ComponentV2
 struct PersistenceV2Api {
@@ -35,35 +36,41 @@ struct PersistenceV2Api {
     type: Class.from<Person2>(),
     key: 'Person2',
     defaultCreator: () => new Person2(),
+    areaMode: contextConstant.AreaMode.EL3,
+    toJson: (a: Person2) => {
+      throw new Error()
+    }, fromJson: (b: jsonx.JsonElement) => {
+      throw new Error()
+    },
     enableAutoSave: true
   })!;
   @Local keysResult: string = '';
   @Local errorMessage: string = '';
- 
+
   static {
     PersistenceV2.notifyOnError((key: string, reason: string, msg: string) => {
       console.error(`error key: ${key}, reason: ${reason}, message: ${msg}`);
     });
   }
- 
+
   build() {
     Column() {
       Text(`Connect Value: ${this.person.userName}`)
         .id('text_connect')
         .height('5%')
- 
+
       Text(`GlobalConnect Value: ${this.person2.userName}`)
         .id('text_global_connect')
         .height('5%')
- 
+
       Text(`Keys Result: ${this.keysResult}`)
         .id('text_keys_result')
         .height('5%')
- 
+
       Text(`Error Message: ${this.errorMessage}`)
         .id('text_error_message')
         .height('5%')
- 
+
       Row() {
         Button('Change Person')
           .id('button_change_person')
@@ -71,7 +78,7 @@ struct PersistenceV2Api {
           .onClick((e: ClickEvent) => {
             this.person.userName += 'A';
           })
- 
+
         Button('Save Person')
           .id('button_save_person')
           .height('5%')
@@ -79,7 +86,7 @@ struct PersistenceV2Api {
             PersistenceV2.save('Person');
           })
       }
- 
+
       Row() {
         Button('Get Keys')
           .id('button_get_keys')
@@ -88,7 +95,7 @@ struct PersistenceV2Api {
             let keys = PersistenceV2.keys();
             this.keysResult = keys.join(',');
           })
- 
+
         Button('Remove')
           .id('button_remove')
           .height('5%')
@@ -96,7 +103,7 @@ struct PersistenceV2Api {
             PersistenceV2.remove('Person');
           })
       }
- 
+
       Button('Change Person2')
         .id('button_change_person2')
         .height('5%')

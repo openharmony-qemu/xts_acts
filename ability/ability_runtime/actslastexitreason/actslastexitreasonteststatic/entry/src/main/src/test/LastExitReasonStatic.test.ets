@@ -38,7 +38,12 @@ export default function lastExitReasonStaticTest() {
         console.error('findComponent failed: ' + JSON.stringify(err));
       }
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.lastexitreasontest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.lastexitreasontest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 start EntryAbility');
     })
@@ -93,7 +98,12 @@ export default function lastExitReasonStaticTest() {
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 begin');
       try {
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.lastexitreasontest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.lastexitreasontest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000)
         hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7901 start EntryAbility');
         let launchParam = AppStorage.get<AbilityConstant.LaunchParam>("launchParam");

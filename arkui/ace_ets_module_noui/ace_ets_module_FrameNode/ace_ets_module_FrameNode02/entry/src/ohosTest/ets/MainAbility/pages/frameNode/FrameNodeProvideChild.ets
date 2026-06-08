@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import { NodeController, FrameNode, UIContext, BuilderNode, ExpandMode, ChildrenCountMode } from '@kit.ArkUI';
 
 const TEST_TAG: string = 'hello'
@@ -148,7 +148,7 @@ export function buildData(params: Params):void {
       Row() {
         Text('1')
           .fontSize(100)
-      } 
+      }
     }.id('N16')
   }
   .cachedCount(5)
@@ -158,12 +158,14 @@ export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private data: MyDataSource = new MyDataSource();
   private scroller: Scroller = new Scroller();
+  public dataNode:BuilderNode<[Params]> | null = null
   makeNode(uiContext: UIContext): FrameNode | null {
     for (let i = 0; i <= 15; i++) {
       this.data.pushData(`N${i}`);
     }
     const params: Params = new Params(this.data, this.scroller);
     const dataNode: BuilderNode<[Params]> = new BuilderNode(uiContext);
+    this.dataNode = dataNode
     dataNode.build(wrapBuilder<[Params]>(buildData), params);
     this.rootNode = dataNode.getFrameNode();
     const scrollToIndexOptions: ScrollToIndexOptions = {
@@ -171,37 +173,45 @@ export class MyNodeController extends NodeController {
     this.scroller.scrollToIndex(6, true, ScrollAlign.START, scrollToIndexOptions!);
     return this.rootNode;
   }
-  getChildCountDefault():void {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount()
+  getChildCountDefault():string {
+    const childCount = this.rootNode?.getChildrenCount()
     console.info(TEST_TAG + 'defalut, childCount=' + childCount);
+    let str = childCount!.toString()
+    return str
   }
-  getChildCountExpand():void {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount(ChildrenCountMode.ALL_EXPAND)
+  getChildCountExpand():string {
+    const childCount = this.rootNode?.getChildrenCount(ChildrenCountMode.ALL_EXPAND)
     console.info(TEST_TAG + 'defalut, childCount=' + childCount);
+    let str = childCount!.toString()
+    return str
   }
-  getChildCountExpanded():void {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount(ChildrenCountMode.ONLY_EXPANDED)
+  getChildCountExpanded():string {
+    const childCount = this.rootNode?.getChildrenCount(ChildrenCountMode.ONLY_EXPANDED)
     console.info(TEST_TAG + 'false, childCount=' + childCount);
+    let str = childCount!.toString()
+    return str
   }
-  getChildCountALL():void {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount(ChildrenCountMode.ALL_NOT_EXPAND)
+  getChildCountALL():string {
+    const childCount = this.rootNode?.getChildrenCount(ChildrenCountMode.ALL_NOT_EXPAND)
     console.info(TEST_TAG + 'false, childCount=' + childCount);
+    let str = childCount!.toString()
+    return str
   }
   getChildCountUndefined():string {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount(undefined)
+    const childCount = this.rootNode?.getChildrenCount(undefined)
     console.info(TEST_TAG + 'false, childCount=' + childCount);
     let str = childCount!.toString()
     return str
   }
   getChildCountNull():string {
-    const childCount = this.rootNode?.getChild(0)!.getChildrenCount(null)
+    const childCount = this.rootNode?.getChildrenCount(null)
     console.info(TEST_TAG + 'false, childCount=' + childCount);
     let str = childCount!.toString()
     return str
   }
 
   getChildWithLazyExpand():string|undefined {
-    const childNode = this.rootNode!.getChild(0)!.getChild(16, ExpandMode.LAZY_EXPAND );
+    const childNode = this.rootNode!.getChild(16, ExpandMode.LAZY_EXPAND );
     console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND): ' + childNode?.getId());
     if (childNode?.getId() === 'N3') {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: success.');
@@ -212,7 +222,7 @@ export class MyNodeController extends NodeController {
     return str
   }
   getChildWithLazyNotExpand():string|undefined {
-    const childNode = this.rootNode!.getChild(0)!.getChild(8, ExpandMode.LAZY_NOT_EXPAND);
+    const childNode = this.rootNode!.getChild(8, ExpandMode.LAZY_NOT_EXPAND);
     console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND): ' + childNode?.getId());
     if (childNode?.getId() === 'N3') {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: success.');
@@ -222,23 +232,27 @@ export class MyNodeController extends NodeController {
     let str = childNode?.getId()
     return str
   }
-  getChildWithLazyUndefined():void {
-    const childNode = this.rootNode!.getChild(0)!.getChild(8, undefined);
+  getChildWithLazyUndefined():string|undefined {
+    const childNode = this.rootNode!.getChild(8, undefined);
     console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND): ' + childNode?.getId());
     if (childNode?.getId() === 'N3') {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: success.');
     } else {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: fail.');
     }
+    let str = childNode?.getId().toString()
+    return str
   }
-  getChildWithLazyNull():void {
-    const childNode = this.rootNode!.getChild(0)!.getChild(8, null);
+  getChildWithLazyNull():string|undefined {
+    const childNode = this.rootNode!.getChild(8, null);
     console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND): ' + childNode?.getId());
     if (childNode?.getId() === 'N3') {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: success.');
     } else {
       console.info(TEST_TAG + 'getChild(3, ExpandMode.LAZY_EXPAND)  result: fail.');
     }
+    let str = childNode?.getId().toString()
+    return str
   }
 }
 
@@ -261,7 +275,7 @@ struct FrameNodeProvideChild {
             .height(15)
             .onClick(() => {
               this.myNodeController.getChildWithLazyUndefined();
-              this.myNodeController.getChildCountUndefined()
+              this.str = this.myNodeController.getChildCountUndefined()
             })
           Button('getNull')
             .id('getNull')
@@ -269,7 +283,7 @@ struct FrameNodeProvideChild {
             .height(15)
             .onClick(() => {
               this.myNodeController.getChildWithLazyNull();
-              this.myNodeController.getChildCountNull()
+              this.str = this.myNodeController.getChildCountNull()
             })
         }
         Button('getChildCountDefault')
@@ -307,14 +321,14 @@ struct FrameNodeProvideChild {
           .width(180)
           .height(15)
           .onClick(() => {
-            this.myNodeController.getChildWithLazyExpand();
+            this.str = this.myNodeController.getChildWithLazyExpand();
           })
         Button('getChildWithLazyNotExpand')
           .id('getChildWithLazyNotExpand')
           .width(180)
           .height(15)
           .onClick(() => {
-            this.myNodeController.getChildWithLazyNotExpand();
+            this.str = this.myNodeController.getChildWithLazyNotExpand();
           })
         Column() {
           NodeContainer(this.myNodeController)

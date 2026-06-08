@@ -521,7 +521,6 @@ let getPhotoReceiverSurface = async (): Promise<void> => {
 
     afterAll(async () => {
       await releaseVideoReceiveSurface();
-      await releaseCameraSessionInstance();
       await Utils.msSleep(1000);
       console.info('  cameraSessionExposureTest afterAll case');
     })

@@ -53,7 +53,12 @@ export async function initialize():Promise<void> {
   });
 
   await Utils.msSleep(2000);
-  abilityDelegator.executeShellCommand("aa start -a EntryAbility -b ohos.acts.multimedia.image.Colorspace.Static");
+  let cmd = "aa start -a EntryAbility -b ohos.acts.multimedia.image.Colorspace.Static";
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  abilityDelegator.executeShellCommand(cmd);
   await Utils.msSleep(2000);
   hilog.info(domain, tag, '%{public}s', 'initialize end');
 

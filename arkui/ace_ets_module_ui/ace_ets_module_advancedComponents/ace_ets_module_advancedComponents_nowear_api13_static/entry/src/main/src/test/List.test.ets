@@ -16,9 +16,13 @@
 import SegmentButtonTest003 from './segmenButton/SegmentButtonTest003.test';
 import SegmentButtonTest004 from './segmenButton/SegmentButtonTest004.test';
 import SegmentButtonTest005 from './segmenButton/SegmentButtonTest005.test';
+import PopupV2DirectionTest from './PopupV2/PopupV2Direction.test';
+import PopupV2ButtonTest from './PopupV2/PopupV2Button.test';
 
 export default function testsuite() {
   SegmentButtonTest003();
   SegmentButtonTest004();
   SegmentButtonTest005();
+  PopupV2ButtonTest();
+  PopupV2DirectionTest();
 }

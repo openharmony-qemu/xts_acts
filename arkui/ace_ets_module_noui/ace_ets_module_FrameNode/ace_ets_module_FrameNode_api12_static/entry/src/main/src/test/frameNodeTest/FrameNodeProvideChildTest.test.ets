@@ -108,10 +108,12 @@ export default function FrameNodeProvideChildTest() {
       let button5 = await driver.findComponent(ON.id('getChildWithLazyExpandStatic'));
       await (button5?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
+      let strJson1 = inspector.getInspectorByKey('FrameNodeProvideChildTextStatic');
 
       let button6 = await driver.findComponent(ON.id('getChildWithLazyNotExpandStatic'));
       await (button6?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
+      let strJson2 = inspector.getInspectorByKey('FrameNodeProvideChildTextStatic');
       
       expect(ExpandMode.LAZY_EXPAND).assertEqual(2);
       expect(ExpandMode.LAZY_NOT_EXPAND).assertEqual(3);

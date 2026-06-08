@@ -369,9 +369,14 @@ export async function createVideoBySandBoxUri(testNum: string, testContext: Cont
 
 export async function startAbility(bundleName: string, abilityName: string): Promise<void> {
   try {
-    let result =
+    let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+      let result =
       await abilityDelegatorRegistry.getAbilityDelegator()
-        .executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
+        .executeShellCommand(cmd);
     console.info(`[picker] start abilityFinished: ${result}`);
   } catch (err) {
     console.error(`[picker] start abilityFailed: ${err}`);
