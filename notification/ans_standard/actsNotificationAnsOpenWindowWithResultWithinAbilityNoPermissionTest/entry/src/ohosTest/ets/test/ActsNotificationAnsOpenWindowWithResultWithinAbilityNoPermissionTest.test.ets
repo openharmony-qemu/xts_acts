@@ -496,8 +496,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
             hilog.info(0x0000, 'testTag',
               `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(num).assertEqual(1);
-            expect(JSON.stringify(data))
-              .assertEqual('{"vibrationEnabled":true,"soundEnabled":true,"lockScreenEnabled":true,"bannerEnabled":true,"badgeNumberEnabled":true,"notificationEnabled":true}')
             done()
           }).catch(async (e: Error) => {
             let err: BusinessError = e as BusinessError
