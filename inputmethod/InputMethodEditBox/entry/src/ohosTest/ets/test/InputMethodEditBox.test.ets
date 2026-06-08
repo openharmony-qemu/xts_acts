@@ -4526,7 +4526,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_updatePanelRectSync_0800', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea9.click();
       await driver.delayMs(1000);
       let unSubscriberCallback = (err: BusinessError) => {
         console.info('====>Sub_InputMethod_IME_updatePanelRectSync_0800 unSubscriberCallback start');
@@ -4810,7 +4810,7 @@ export default function InputMethodEditBoxAbility() {
      * @tc.level  LEVEL3
      */
     it('Sub_InputMethod_IME_updatePanelRectSync_1200', Level.LEVEL3, async (done: Function) => {
-      await textArea1.click();
+      await textArea9.click();
       await driver.delayMs(1000);
       let unSubscriberCallback = (err: BusinessError) => {
         console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1200 unSubscriberCallback start');
