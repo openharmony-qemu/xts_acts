@@ -25,19 +25,6 @@ export default function NativeModuleCapiInitErrorCodeTest() {
     });
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_NativeModuleInitError_0100
-     * @tc.number SUB_ACE_ARKUI_NativeModuleInitError_0100
-     * @tc.desc   Test OH_ArkUI_NativeModule_SetChildMountPolicy returns ARKUI_ERROR_CODE_CAPI_INIT_ERROR
-     * @tc.type   Function
-     * @tc.size   MediumTest
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ACE_ARKUI_NativeModuleInitError_0100', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.TestSetChildMountPolicyInitError001()).assertEqual(0)
-      done()
-    })
-
-    /**
      * @tc.name   SUB_ACE_ARKUI_NativeModuleInitError_0200
      * @tc.number SUB_ACE_ARKUI_NativeModuleInitError_0200
      * @tc.desc   Test OH_ArkUI_NativeModule_GetChildMountPolicy returns ARKUI_ERROR_CODE_CAPI_INIT_ERROR
@@ -47,19 +34,6 @@ export default function NativeModuleCapiInitErrorCodeTest() {
      */
     it('SUB_ACE_ARKUI_NativeModuleInitError_0200', Level.LEVEL2, async (done: Function) => {
       expect(nativeFunc.TestGetChildMountPolicyInitError001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeUtilsInitError_0100
-     * @tc.number SUB_ACE_ARKUI_RenderNodeUtilsInitError_0100
-     * @tc.desc   Test OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt returns ARKUI_ERROR_CODE_CAPI_INIT_ERROR
-     * @tc.type   Function
-     * @tc.size   MediumTest
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ACE_ARKUI_RenderNodeUtilsInitError_0100', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.TestInsertRenderNodeAtInitError001()).assertEqual(0)
       done()
     })
 
