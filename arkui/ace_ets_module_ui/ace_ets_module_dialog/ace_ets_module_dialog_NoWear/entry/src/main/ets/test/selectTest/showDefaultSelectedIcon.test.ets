@@ -40,7 +40,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    showDefaultSelectedIcon_value_0001
+     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0001
      * @tc.name      showDefaultSelectedIcon_value_0001
      * @tc.desc      set showDefaultSelectedIcon:false,levelUniqueId: Normal value
      * @tc.level     Level 3
@@ -60,7 +60,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    showDefaultSelectedIcon_value_0002
+     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0002
      * @tc.name      showDefaultSelectedIcon_value_0002
      * @tc.desc      set showDefaultSelectedIcon:true,levelUniqueId: Normal value
      * @tc.level     Level 3
@@ -80,7 +80,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    showDefaultSelectedIcon_value_0003
+     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0003
      * @tc.name      showDefaultSelectedIcon_value_0003
      * @tc.desc      set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
      * @tc.level     Level 3
@@ -100,7 +100,7 @@ export default function showDefaultSelectedIconTest() {
     });
 
     /**
-     * @tc.number    showDefaultSelectedIcon_value_0004
+     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0004
      * @tc.name      showDefaultSelectedIcon_value_0004
      * @tc.desc      set showDefaultSelectedIcon:null,levelUniqueId: Abnormal value
      * @tc.level     Level 3

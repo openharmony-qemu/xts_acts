@@ -40,7 +40,7 @@ export default function SliderEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SliderAddEnableHapticFeedbackApi_001
+     * @tc.number    SUB_ACE_enableHapticFeedback_0001
      * @tc.name      SliderAddEnableHapticFeedbackApi_001
      * @tc.desc      testing EnableHpaticFeedback for slider with true value
      * @tc.level     Level 1
@@ -59,7 +59,7 @@ export default function SliderEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SliderAddEnableHapticFeedbackApi_002
+     * @tc.number    SUB_ACE_enableHapticFeedback_0002
      * @tc.name      SliderAddEnableHapticFeedbackApi_002
      * @tc.desc      testing EnableHpaticFeedback for slider with false value
      * @tc.level     Level 1
@@ -78,7 +78,7 @@ export default function SliderEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SliderAddEnableHapticFeedbackApi_003
+     * @tc.number    SUB_ACE_enableHapticFeedback_0003
      * @tc.name      SliderAddEnableHapticFeedbackApi_003
      * @tc.desc      testing EnableHpaticFeedback for slider with undefied value
      * @tc.level     Level 1
@@ -97,7 +97,7 @@ export default function SliderEnableHapticFeedbackTest() {
     });
 
     /**
-     * @tc.number    SliderAddEnableHapticFeedbackApi_004
+     * @tc.number    SUB_ACE_enableHapticFeedback_0004
      * @tc.name      SliderAddEnableHapticFeedbackApi_004
      * @tc.desc      testing EnableHpaticFeedback for slider with null value
      * @tc.level     Level 1
