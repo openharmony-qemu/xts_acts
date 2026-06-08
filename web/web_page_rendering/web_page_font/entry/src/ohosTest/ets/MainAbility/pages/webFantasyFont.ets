@@ -64,7 +64,7 @@ struct webFantasyFont {
   aboutToAppear(): void {
     try {
       webView.WebviewController.setWebDebuggingAccess(true);
-      this.controller.prefetchPage($rawfile('index.html'));
+      this.controller.prefetchPage(this.mServer.getAssetUrl('index.html'));
     } catch (error) {
       console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
