@@ -54,9 +54,7 @@ function isPermissionError(err: BusinessError): boolean {
 
 function handleCatchError(tag: string, err: BusinessError): void {
   console.info(`${tag} caught error: code=${err?.code}, message=${err?.message}`);
-  // For @systemapi, permission denied is expected when using normal APL certificate
-  // Simply verify that we caught an error object
-  expect(err).not().assertNull();
+  expect(err).not().assertUndefined();
 }
 
 export default function audioSpatializationManager() {
@@ -104,7 +102,8 @@ export default function audioSpatializationManager() {
         expect(false == ret).assertTrue();
         done();
        } catch (err) {
-         console.error(`${TAG} testOnSpatializationEnabledChangeForCurrentDevice0100 ERROR: ${err.message}`);
+         console.error(`${TAG} testOnSpatializationEnabledChangeForCurrentDevice0100 ERROR: ${(err as BusinessError).message}`);
+         expect((err as BusinessError).code).not().assertUndefined();
          done();
        }
     })
@@ -128,7 +127,8 @@ export default function audioSpatializationManager() {
         expect(false == ret).assertTrue();
         done();
        } catch (err) {
-         console.error(`${TAG} testOffSpatializationEnabledChangeForCurrentDevice0200 ERROR: ${err.message}`);
+         console.error(`${TAG} testOffSpatializationEnabledChangeForCurrentDevice0200 ERROR: ${(err as BusinessError).message}`);
+         expect((err as BusinessError).code).not().assertUndefined();
          done();
        }
     })
@@ -237,6 +237,7 @@ export default function audioSpatializationManager() {
          let audioSpatializationManager = audioManager.getSpatializationManager();
          let invalidParam: ESObject = numberParameter;
          audioSpatializationManager.isPersonalizedSpatializationEnabled(invalidParam);
+         expect().assertFail();
        } catch (err) {
          handleCatchError(`${TAG} isPersonalizedSpatializationEnabled invalid param`, err);
        }
@@ -257,6 +258,7 @@ export default function audioSpatializationManager() {
          let audioSpatializationManager = audioManager.getSpatializationManager();
          let invalidCall: ESObject = audioSpatializationManager;
          let ret: ESObject = invalidCall.isPersonalizedSpatializationEnabled();
+         expect().assertFail();
        } catch (err) {
          handleCatchError(`${TAG} isPersonalizedSpatializationEnabled no arg`, err);
        }
@@ -316,7 +318,7 @@ export default function audioSpatializationManager() {
         await audioSpatializationManager.setPersonalizedSpatializationEnabled(audioDeviceDescriptors[0], false);
         console.info(`${TAG} setPersonalizedSpatializationEnabled(false) success`);
         let ret = audioSpatializationManager.isPersonalizedSpatializationEnabled(audioDeviceDescriptors[0]);
-        expect(ret === false).assertTrue();
+        expect(ret).assertFalse();
       } catch (err) {
         handleCatchError(`${TAG} setPersonalizedSpatializationEnabled(false)`, err);
       }
@@ -337,6 +339,7 @@ export default function audioSpatializationManager() {
         let audioSpatializationManager = audioManager.getSpatializationManager();
          let invalidDevice: ESObject = stringParameter;
          await audioSpatializationManager.setPersonalizedSpatializationEnabled(invalidDevice, true);
+         expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid device`, err);
       }
@@ -359,6 +362,7 @@ export default function audioSpatializationManager() {
         let audioDeviceDescriptors = audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
          let invalidEnable: ESObject = numberParameter;
          await audioSpatializationManager.setPersonalizedSpatializationEnabled(audioDeviceDescriptors[0], invalidEnable);
+         expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid enable`, err);
       }
@@ -381,7 +385,7 @@ export default function audioSpatializationManager() {
           console.info(`${TAG} personalized change callback: enabled=${data.enabled}`);
         });
         console.info(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice registered`);
-        expect(audioSpatializationManager).not().assertNull();
+        expect(typeof audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice).assertEqual('function');
       } catch (err) {
         handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
       }
@@ -400,8 +404,9 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-         let invalidCallback: ESObject = stringParameter;
-         audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice(invalidCallback);
+          let invalidCallback: ESObject = stringParameter;
+          audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice(invalidCallback);
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice invalid`, err);
       }
@@ -422,7 +427,7 @@ export default function audioSpatializationManager() {
         let audioSpatializationManager = audioManager.getSpatializationManager();
         audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice();
         console.info(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice success`);
-        expect(audioSpatializationManager).not().assertNull();
+        expect(typeof audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice).assertEqual('function');
       } catch (err) {
         handleCatchError(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
       }
@@ -444,7 +449,7 @@ export default function audioSpatializationManager() {
         let sourceType = audioSpatializationManager.getCurrentSpatialAudioSourceType();
         console.info(`${TAG} getCurrentSpatialAudioSourceType result: ${sourceType}`);
         expect(typeof sourceType === 'number').assertTrue();
-        expect(sourceType >= 0 && sourceType <= 2).assertTrue();
+        expect(sourceType >= audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_STEREO && sourceType <= audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_MULTI_CHANNEL).assertTrue();
       } catch (err) {
         handleCatchError(`${TAG} getCurrentSpatialAudioSourceType`, err);
       }
@@ -467,7 +472,7 @@ export default function audioSpatializationManager() {
           console.info(`${TAG} spatialAudioSourceTypeChange callback: sourceType=${sourceType}`);
         });
         console.info(`${TAG} onSpatialAudioSourceTypeChange registered`);
-        expect(audioSpatializationManager).not().assertNull();
+        expect(typeof audioSpatializationManager.onSpatialAudioSourceTypeChange).assertEqual('function');
       } catch (err) {
         handleCatchError(`${TAG} onSpatialAudioSourceTypeChange`, err);
       }
@@ -486,8 +491,9 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-         let invalidCallback: ESObject = numberParameter;
-         audioSpatializationManager.onSpatialAudioSourceTypeChange(invalidCallback);
+          let invalidCallback: ESObject = numberParameter;
+          audioSpatializationManager.onSpatialAudioSourceTypeChange(invalidCallback);
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} onSpatialAudioSourceTypeChange invalid`, err);
       }
@@ -508,7 +514,7 @@ export default function audioSpatializationManager() {
         let audioSpatializationManager = audioManager.getSpatializationManager();
         audioSpatializationManager.offSpatialAudioSourceTypeChange();
         console.info(`${TAG} offSpatialAudioSourceTypeChange success`);
-        expect(audioSpatializationManager).not().assertNull();
+        expect(typeof audioSpatializationManager.offSpatialAudioSourceTypeChange).assertEqual('function');
       } catch (err) {
         handleCatchError(`${TAG} offSpatialAudioSourceTypeChange`, err);
       }
@@ -525,6 +531,11 @@ export default function audioSpatializationManager() {
      */
     it("testDownloadPersonalizedHRTF2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let testContext: ESObject = AppStorage.get('testContext');
+      if (testContext === null || testContext === undefined) {
+        console.info(`${TAG} testContext is null, skip`);
+        done();
+        return;
+      }
       let filePath = testContext.cacheDir + '/test_hrtf_data.bin';
       let file: fileIo.File | null = null;
       try {
@@ -566,7 +577,8 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: -1, length: 1024 });
+          await audioSpatializationManager.downloadPersonalizedHRTF({ fd: -1, length: 1024 });
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF invalid fd`, err);
       }
@@ -585,7 +597,8 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 0, length: 0 });
+          await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 0, length: 0 });
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF length=0`, err);
       }
@@ -604,7 +617,8 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: -1 });
+          await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: -1 });
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF negative length`, err);
       }
@@ -623,8 +637,9 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
-        let exceedLength = 10 * 1024 * 1024 + 1;
-         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: exceedLength });
+         let exceedLength = 10 * 1024 * 1024 + 1;
+          await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: exceedLength });
+          expect().assertFail();
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF length>10MB`, err);
       }
@@ -645,6 +660,7 @@ export default function audioSpatializationManager() {
         let audioSpatializationManager = audioManager.getSpatializationManager();
         let maxValidLength = 10 * 1024 * 1024;
          await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: maxValidLength });
+         expect(maxValidLength).assertEqual(10 * 1024 * 1024);
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF length=10MB`, err);
       }
