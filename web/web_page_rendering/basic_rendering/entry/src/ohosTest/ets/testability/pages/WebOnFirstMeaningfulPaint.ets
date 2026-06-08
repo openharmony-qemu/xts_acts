@@ -63,7 +63,7 @@ struct WebOnFirstMeaningfulPaint {
               this.text = [0, 0]
               try {
                 this.isComplete = -1;
-                this.controller.loadUrl('www.example.com');
+                this.controller.loadUrl($rawfile("indexdemo.html"));
                 await waitForExist(() => this.isComplete, this.str, 0);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
@@ -80,7 +80,7 @@ struct WebOnFirstMeaningfulPaint {
               this.text = [0, 0]
               try {
                 this.isComplete = -1;
-                this.controller.loadUrl('https://www.iana.org/help/example-domains');
+                this.controller.loadUrl($rawfile("indexdemo.html"));
                 await waitForExist(() => this.isComplete, this.str, 0);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;
@@ -96,7 +96,7 @@ struct WebOnFirstMeaningfulPaint {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: $rawfile("indexdemo.html"), controller: this.controller })
         .onFirstMeaningfulPaint(event => {
           if (event) {
             console.log("onFirstMeaningfulPaint:" + "[NavigationStart]:" +

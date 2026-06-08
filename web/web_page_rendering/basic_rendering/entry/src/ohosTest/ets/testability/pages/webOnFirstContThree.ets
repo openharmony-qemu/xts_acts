@@ -67,7 +67,7 @@ struct webOnFirstContThree {
               try {
                 this.isComplete = -1;
                 this.controller.clearHistory();
-                this.controller.loadUrl({ url: "https://m.weibo.cn" });
+                this.controller.loadUrl($rawfile("onfirstcontentfulpaint.html"));
                 await waitForExist(() => this.isComplete, this.str, 0);
                 console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
               } catch (error) {
@@ -80,7 +80,7 @@ struct webOnFirstContThree {
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.controller })
+      Web({ src: $rawfile("onfirstcontentfulpaint.html"), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
