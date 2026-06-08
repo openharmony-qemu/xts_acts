@@ -41,7 +41,7 @@ let audioRendererOptions: audio.AudioRendererOptions[] = [
       encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,
       channelLayout: audio.AudioChannelLayout.CH_LAYOUT_5POINT1
     },
-    rendererInfo:{
+    rendererInfo: {
       usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
       rendererFlags: 0
     }
