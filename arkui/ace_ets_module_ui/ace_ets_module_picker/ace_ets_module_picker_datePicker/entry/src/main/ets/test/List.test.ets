@@ -29,6 +29,15 @@ import DatePickerDisappearTextStyleNullUndefinedTest from './datePickerNullUndef
 import DatePickerLunarNullUndefinedTest from './datePickerNullUndefined/DatePickerLunarNullUndefined.test';
 import DatePickerSelectedTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined.test';
 import DatePickerTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerTextStyleNullUndefined.test';
+import DatePickerComponentsDisplayModeTest from './DatePickerComponentTest/DatePickerComponentsDisplayMode.test';
+import DatePickerComponentsDateModeTest from './DatePickerComponentTest/DatePickerComponentsDateMode.test';
+import DatePickerComponentsTimeFormatTest from './DatePickerComponentTest/DatePickerComponentsTimeFormat.test';
+import DatePickerComponentsResultTest from './DatePickerComponentTest/DatePickerComponentsResult.test';
+import DatePickerComponentsLoopTest from './DatePickerComponentTest/DatePickerComponentsLoop.test';
+import DatePickerComponentsEnableHapticFeedbackTest from './DatePickerComponentTest/DatePickerComponentsEnableHapticFeedback.test';
+import DatePickerComponentsStartEndSelectedTest from './DatePickerComponentTest/DatePickerComponentsStartEndSelected.test';
+import DatePickerComponentsLunarTest from './DatePickerComponentTest/DatePickerComponentsLunar.test';
+import DatePickerComponentsUseMilitaryTimeTest from './DatePickerComponentTest/DatePickerComponentsUseMilitaryTime.test';
 
 export default function testsuite() {
   DatePickerCanLoopTest();
@@ -46,4 +55,13 @@ export default function testsuite() {
   DatePickerLunarNullUndefinedTest();
   DatePickerSelectedTextStyleNullUndefinedTest();
   DatePickerTextStyleNullUndefinedTest();
+  DatePickerComponentsDisplayModeTest();
+  DatePickerComponentsDateModeTest();
+  DatePickerComponentsTimeFormatTest();
+  DatePickerComponentsResultTest();
+  DatePickerComponentsLoopTest();
+  DatePickerComponentsEnableHapticFeedbackTest();
+  DatePickerComponentsStartEndSelectedTest();
+  DatePickerComponentsLunarTest();
+  DatePickerComponentsUseMilitaryTimeTest();
 }
