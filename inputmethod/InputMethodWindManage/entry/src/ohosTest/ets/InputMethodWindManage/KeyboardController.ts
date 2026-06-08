@@ -3407,7 +3407,10 @@ export class KeyboardController {
           data: 'SUCCESS'
         };
       }
-      commoneventmanager.publish(`${testCaseName}`, commonEventPublishData, this.publishCallback);   
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        commoneventmanager.publish(`${testCaseName}`, commonEventPublishData, this.publishCallback);
+      }, 100);   
     }
   }
 
