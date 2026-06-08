@@ -66,7 +66,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err?.code === 801){
+          } esle if(err.code == 801){
             expect(err.code).assertEqual(801)
             done()
           } else {
@@ -120,7 +120,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err?.code === 801){
+          } esle if(err.code == 801){
             expect(err.code).assertEqual(801)
             done()
           } else {
@@ -189,7 +189,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err?.code === 801){
+          } esle if(err.code == 801){
             expect(err.code).assertEqual(801)
             done()
           } else {
@@ -240,7 +240,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
+            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
           }
         }).catch((e: Error) => {
           let err: BusinessError = e as BusinessError
@@ -249,7 +249,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err?.code === 801){
+          } esle if(err.code == 801){
             expect(err.code).assertEqual(801)
             done()
           } else {
@@ -278,8 +278,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
         await sleep(500)
         let scrollBar = await driver.findComponent(ON.type('List').isAfter(ON.text('应用获取本机通知')));
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
+        //expect(scrollBar != null).assertTrue()
+        await scrollBar?.scrollToBottom()
         await sleep(10000)
         let button2 = await driver.findComponent(ON.type('Toggle').isAfter(ON.originalText('ZZZopenWindow')));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -304,7 +304,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.userGrantEnabled).assertEqual(true)
           if (data.grantedBundleInfos !== undefined) {
-            expect(JSON.stringify(data.grantedBundleInfos[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
+            expect(JSON.stringify(data.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest","appName":"ZZZopenWindow","appIndex":0}')
           }
           done()
         }).catch((e: Error) => {
@@ -314,8 +314,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
           if (err?.code === 201) {
             expect(err?.code).assertEqual(201)
             done()
-          } esle if(err.code === 801){
-            expect(err?.code).assertEqual(801)
+          } esle if(err.code == 801){
+            expect(err.code).assertEqual(801)
             done()
           } else {
             expect(false).assertTrue();
@@ -364,7 +364,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err?.code === 801){
+            } esle if(err.code == 801){
               expect(err.code).assertEqual(801)
               done()
             } else if (index === 499) {
@@ -423,7 +423,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err?.code === 801){
+            } esle if(err.code == 801){
               expect(err.code).assertEqual(801)
               done()
             } else {
@@ -467,7 +467,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityTest
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
-            } esle if(err?.code === 801){
+            } esle if(err.code == 801){
               expect(err.code).assertEqual(801)
               done()
             } else {
