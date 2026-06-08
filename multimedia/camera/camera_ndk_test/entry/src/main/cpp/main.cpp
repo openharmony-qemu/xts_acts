@@ -3949,7 +3949,7 @@ static napi_value GetEnumProximityStateForFocus(napi_env env, napi_callback_info
     if (index == 0) {
         napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_IN_RANGE_RAISE_NONE , &result);
     } else if (index == 1) {
-        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_OUT_OF_RANGE_RAISE_REQUIRED  , &result);
+        napi_create_int32(env, OH_CAMERA_PROXIMITY_STATE_OUT_OF_RANGE_RAISE_REQUIRED, &result);
     }
 
     return result;
@@ -4395,13 +4395,18 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getEnumNotificationName", nullptr, GetEnumNotificationName, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getEnumProximityStateForFocus", nullptr, GetEnumProximityStateForFocus, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"registerNotificationReceivedCallback", nullptr, RegisterNotificationReceivedCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"unregisterNotificationReceivedCallback", nullptr, UnregisterNotificationReceivedCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"getEnumNotificationName", nullptr, GetEnumNotificationName, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getEnumProximityStateForFocus", nullptr, GetEnumProximityStateForFocus, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        {"registerNotificationReceivedCallback", nullptr, RegisterNotificationReceivedCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"unregisterNotificationReceivedCallback", nullptr, UnregisterNotificationReceivedCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getNotificationName", nullptr, GetNotificationName, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"getProximityStateForFocus", nullptr, GetProximityStateForFocus, nullptr, nullptr, nullptr, napi_default, nullptr },
-        {"destroyCameraNotificationInfo", nullptr, DestroyCameraNotificationInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"getProximityStateForFocus", nullptr, GetProximityStateForFocus, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        {"destroyCameraNotificationInfo", nullptr, DestroyCameraNotificationInfo, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,
