@@ -1,0 +1,520 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+export default function LongParseIntRadixTest(): void {
+  describe('LongParseIntRadixTest', () => {
+    const PARSE_STR_10: string = "10";
+
+    const PARSE_2: int = 2;
+    const PARSE_3: int = 3;
+    const PARSE_4: int = 4;
+    const PARSE_5: int = 5;
+    const PARSE_6: int = 6;
+    const PARSE_7: int = 7;
+    const PARSE_8: int = 8;
+    const PARSE_9: int = 9;
+    const PARSE_10: int = 10;
+    const PARSE_11: int = 11;
+    const PARSE_12: int = 12;
+    const PARSE_13: int = 13;
+    const PARSE_14: int = 14;
+    const PARSE_15: int = 15;
+    const PARSE_16: int = 16;
+    const PARSE_17: int = 17;
+    const PARSE_18: int = 18;
+    const PARSE_19: int = 19;
+    const PARSE_20: int = 20;
+    const PARSE_21: int = 21;
+    const PARSE_22: int = 22;
+    const PARSE_23: int = 23;
+    const PARSE_24: int = 24;
+    const PARSE_25: int = 25;
+    const PARSE_26: int = 26;
+    const PARSE_27: int = 27;
+    const PARSE_28: int = 28;
+    const PARSE_29: int = 29;
+    const PARSE_30: int = 30;
+    const PARSE_31: int = 31;
+    const PARSE_32: int = 32;
+    const PARSE_33: int = 33;
+    const PARSE_34: int = 34;
+    const PARSE_35: int = 35;
+    const PARSE_36: int = 36;
+
+
+    const SLEEP_30: int = 30;
+
+    beforeEach(async () => { await Utils.msSleep(SLEEP_30); });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0100
+     * @tc.name testLongParseIntRadix001
+     * @tc.desc Verify Long.parseInt("10", 2) returns 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_2);
+      expect(result === 2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0200
+     * @tc.name testLongParseIntRadix002
+     * @tc.desc Verify Long.parseInt("10", 3) returns 3
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_3);
+      expect(result === 3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0300
+     * @tc.name testLongParseIntRadix003
+     * @tc.desc Verify Long.parseInt("10", 4) returns 4
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_4);
+      expect(result === 4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0400
+     * @tc.name testLongParseIntRadix004
+     * @tc.desc Verify Long.parseInt("10", 5) returns 5
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_5);
+      expect(result === 5).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0500
+     * @tc.name testLongParseIntRadix005
+     * @tc.desc Verify Long.parseInt("10", 6) returns 6
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_6);
+      expect(result === 6).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0600
+     * @tc.name testLongParseIntRadix006
+     * @tc.desc Verify Long.parseInt("10", 7) returns 7
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_7);
+      expect(result === 7).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0700
+     * @tc.name testLongParseIntRadix007
+     * @tc.desc Verify Long.parseInt("10", 8) returns 8
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_8);
+      expect(result === 8).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0800
+     * @tc.name testLongParseIntRadix008
+     * @tc.desc Verify Long.parseInt("10", 9) returns 9
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_9);
+      expect(result === 9).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0900
+     * @tc.name testLongParseIntRadix009
+     * @tc.desc Verify Long.parseInt("10", 10) returns 10
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_10);
+      expect(result === 10).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1000
+     * @tc.name testLongParseIntRadix010
+     * @tc.desc Verify Long.parseInt("10", 11) returns 11
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_11);
+      expect(result === 11).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1100
+     * @tc.name testLongParseIntRadix011
+     * @tc.desc Verify Long.parseInt("10", 12) returns 12
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_12);
+      expect(result === 12).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1200
+     * @tc.name testLongParseIntRadix012
+     * @tc.desc Verify Long.parseInt("10", 13) returns 13
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_13);
+      expect(result === 13).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1300
+     * @tc.name testLongParseIntRadix013
+     * @tc.desc Verify Long.parseInt("10", 14) returns 14
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_14);
+      expect(result === 14).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1400
+     * @tc.name testLongParseIntRadix014
+     * @tc.desc Verify Long.parseInt("10", 15) returns 15
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_15);
+      expect(result === 15).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1500
+     * @tc.name testLongParseIntRadix015
+     * @tc.desc Verify Long.parseInt("10", 16) returns 16
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_16);
+      expect(result === 16).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1600
+     * @tc.name testLongParseIntRadix016
+     * @tc.desc Verify Long.parseInt("10", 17) returns 17
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_17);
+      expect(result === 17).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1700
+     * @tc.name testLongParseIntRadix017
+     * @tc.desc Verify Long.parseInt("10", 18) returns 18
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_18);
+      expect(result === 18).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1800
+     * @tc.name testLongParseIntRadix018
+     * @tc.desc Verify Long.parseInt("10", 19) returns 19
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_19);
+      expect(result === 19).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_1900
+     * @tc.name testLongParseIntRadix019
+     * @tc.desc Verify Long.parseInt("10", 20) returns 20
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_20);
+      expect(result === 20).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2000
+     * @tc.name testLongParseIntRadix020
+     * @tc.desc Verify Long.parseInt("10", 21) returns 21
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_21);
+      expect(result === 21).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2100
+     * @tc.name testLongParseIntRadix021
+     * @tc.desc Verify Long.parseInt("10", 22) returns 22
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_22);
+      expect(result === 22).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2200
+     * @tc.name testLongParseIntRadix022
+     * @tc.desc Verify Long.parseInt("10", 23) returns 23
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_23);
+      expect(result === 23).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2300
+     * @tc.name testLongParseIntRadix023
+     * @tc.desc Verify Long.parseInt("10", 24) returns 24
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_24);
+      expect(result === 24).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2400
+     * @tc.name testLongParseIntRadix024
+     * @tc.desc Verify Long.parseInt("10", 25) returns 25
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_25);
+      expect(result === 25).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2500
+     * @tc.name testLongParseIntRadix025
+     * @tc.desc Verify Long.parseInt("10", 26) returns 26
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_26);
+      expect(result === 26).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2600
+     * @tc.name testLongParseIntRadix026
+     * @tc.desc Verify Long.parseInt("10", 27) returns 27
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_27);
+      expect(result === 27).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2700
+     * @tc.name testLongParseIntRadix027
+     * @tc.desc Verify Long.parseInt("10", 28) returns 28
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_28);
+      expect(result === 28).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2800
+     * @tc.name testLongParseIntRadix028
+     * @tc.desc Verify Long.parseInt("10", 29) returns 29
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_29);
+      expect(result === 29).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_2900
+     * @tc.name testLongParseIntRadix029
+     * @tc.desc Verify Long.parseInt("10", 30) returns 30
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_30);
+      expect(result === 30).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3000
+     * @tc.name testLongParseIntRadix030
+     * @tc.desc Verify Long.parseInt("10", 31) returns 31
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_31);
+      expect(result === 31).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3100
+     * @tc.name testLongParseIntRadix031
+     * @tc.desc Verify Long.parseInt("10", 32) returns 32
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_32);
+      expect(result === 32).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3200
+     * @tc.name testLongParseIntRadix032
+     * @tc.desc Verify Long.parseInt("10", 33) returns 33
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_33);
+      expect(result === 33).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3300
+     * @tc.name testLongParseIntRadix033
+     * @tc.desc Verify Long.parseInt("10", 34) returns 34
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_34);
+      expect(result === 34).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3400
+     * @tc.name testLongParseIntRadix034
+     * @tc.desc Verify Long.parseInt("10", 35) returns 35
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_35);
+      expect(result === 35).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3500
+     * @tc.name testLongParseIntRadix035
+     * @tc.desc Verify Long.parseInt("10", 36) returns 36
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_10, PARSE_36);
+      expect(result === 36).assertTrue();
+    });
+
+  });
+}
