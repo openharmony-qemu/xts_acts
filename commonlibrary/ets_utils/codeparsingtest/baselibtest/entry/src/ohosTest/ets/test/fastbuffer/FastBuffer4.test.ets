@@ -18,20 +18,14 @@ import { fastbuffer } from '@kit.ArkTS';
 
 let TAG = "FastBufferNullUndefinedTest";
 
-function sleep(time: number) {
-  return new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, time)
-  }).then(() => {
-    console.info(`sleep ${time} over...`)
-  })
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
 }
 
 export default function FastBuffer4() {
   describe('FastBuffer4', () => {
     afterEach(async (done: Function) => {
-      await sleep(20);
+      await sleep(50);
       done();
     })
 

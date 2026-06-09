@@ -15,6 +15,10 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import util from '@ohos.util';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 let TAG = '';
 
 async function fn1(input: string) {
@@ -87,7 +91,8 @@ export default function Util3Test() {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach(() => {
