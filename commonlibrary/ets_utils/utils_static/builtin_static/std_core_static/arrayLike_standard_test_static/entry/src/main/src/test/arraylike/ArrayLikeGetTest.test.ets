@@ -29,26 +29,26 @@ import {
 import Utils from './../Util.test';
 import { CustomIntArrayLike } from './CustomArrayLike';
 
-/** int 鏋氫妇锛岀敤浜?$_get 绱㈠紩鐨勬灇涓惧埌鏁板€艰浆鎹紙conversions.md锛?*/
+/** int 枚举，用于 $_get 索引的枚举到数值转换（conversions.md） */
 enum ArrayLikeGetIndexEnum {
   FIRST = 0,
   MID = 2
 }
 
-/** int 鏋氫妇鍏冪礌锛岀敤浜?ArrayLike 鍏冪礌绫诲瀷瑕嗙洊 */
+/** int 枚举元素，用于 ArrayLike 元素类型覆盖 */
 enum ArrayLikeStatusEnum {
   SUCCESS = 0,
   FAIL = 1,
   TIMEOUT = 2
 }
 
-/** string 鍩虹被鍨嬫灇涓撅紙spec/enums.md锛?*/
+/** string 基础类型枚举（spec/enums.md） */
 enum ArrayLikeStringEnum {
   OK = "SUCCESS",
   ERR = "FAIL"
 }
 
-/** double 鍩虹被鍨嬫灇涓撅紙spec/enums.md锛?*/
+/** double 基础类型枚举（spec/enums.md） */
 enum ArrayLikeScoreEnum: double {
   LOW = 1.0,
   HIGH = 99.99
@@ -895,10 +895,10 @@ export default function ArrayLikeGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayLikeGet047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values = new Array<string>("\uD83D\uDE00", "鈥?, "-")
+      const values = new Array<string>("\uD83D\uDE00", "—", "-")
       const list: ArrayLike<string> = values
       expect(list.$_get(0)).assertEqual("\uD83D\uDE00")
-      expect(list.$_get(1)).assertEqual("鈥?)
+      expect(list.$_get(1)).assertEqual("—")
       expect(list.$_get(2)).assertEqual("-")
     });
 
