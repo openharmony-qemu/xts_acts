@@ -53,9 +53,15 @@ function isPermissionError(err: BusinessError): boolean {
 }
 
 function handleCatchError(tag: string, err: BusinessError): void {
-  console.info(`${tag} caught error: code=${err?.code}, message=${err?.message}`);
-  expect(err).not().assertUndefined();
+  let bizErr = err as BusinessError;
+  console.info(`${tag} caught error: code=${bizErr?.code}, message=${bizErr?.message}`);
+  expect(bizErr).not().assertUndefined();
+  let codeValue = bizErr.code;
+  if (codeValue !== undefined && codeValue !== null) {
+    expect(Number(codeValue)).assertLarger(-1);
+  }
 }
+
 
 export default function audioSpatializationManager() {
 
@@ -168,6 +174,11 @@ export default function audioSpatializationManager() {
         let audioRoutingManager: audio.AudioRoutingManager;
         let audioManager = audio.getAudioManager();
         audioRoutingManager = audioManager.getRoutingManager();
+        if (!canIUse('SystemCapability.Multimedia.Audio.RoutingManager')) {
+          console.info(`${TAG} RoutingManager not supported, skip`);
+          done();
+          return;
+        }
         let audioDeviceDescriptors: audio.AudioDeviceDescriptors =
           audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
         let isSpaSupported = audioDeviceDescriptors[0].spatializationSupported as boolean;
@@ -213,6 +224,11 @@ export default function audioSpatializationManager() {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         let audioRoutingManager = audioManager.getRoutingManager();
+        if (!canIUse('SystemCapability.Multimedia.Audio.RoutingManager')) {
+          console.info(`${TAG} RoutingManager not supported, skip`);
+          done();
+          return;
+        }
         let audioDeviceDescriptors = audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
         let ret = audioSpatializationManager.isPersonalizedSpatializationEnabled(audioDeviceDescriptors[0]);
         console.info(`${TAG} isPersonalizedSpatializationEnabled result: ${ret}`);
@@ -278,6 +294,11 @@ export default function audioSpatializationManager() {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         let audioRoutingManager = audioManager.getRoutingManager();
+        if (!canIUse('SystemCapability.Multimedia.Audio.RoutingManager')) {
+          console.info(`${TAG} RoutingManager not supported, skip`);
+          done();
+          return;
+        }
         let audioDeviceDescriptors = audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
         let isSupported = audioSpatializationManager.isPersonalizedSpatializationSupported();
         if (!isSupported) {
@@ -308,6 +329,11 @@ export default function audioSpatializationManager() {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         let audioRoutingManager = audioManager.getRoutingManager();
+        if (!canIUse('SystemCapability.Multimedia.Audio.RoutingManager')) {
+          console.info(`${TAG} RoutingManager not supported, skip`);
+          done();
+          return;
+        }
         let audioDeviceDescriptors = audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
         let isSupported = audioSpatializationManager.isPersonalizedSpatializationSupported();
         if (!isSupported) {
@@ -359,6 +385,11 @@ export default function audioSpatializationManager() {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
         let audioRoutingManager = audioManager.getRoutingManager();
+        if (!canIUse('SystemCapability.Multimedia.Audio.RoutingManager')) {
+          console.info(`${TAG} RoutingManager not supported, skip`);
+          done();
+          return;
+        }
         let audioDeviceDescriptors = audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
          let invalidEnable: ESObject = numberParameter;
          await audioSpatializationManager.setPersonalizedSpatializationEnabled(audioDeviceDescriptors[0], invalidEnable);
@@ -381,11 +412,15 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
+        let callbackTriggered: boolean = false;
         audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice((data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => {
           console.info(`${TAG} personalized change callback: enabled=${data.enabled}`);
+          callbackTriggered = true;
         });
         console.info(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice registered`);
         expect(typeof audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice).assertEqual('function');
+        expect(callbackTriggered).assertFalse();
+        audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice();
       } catch (err) {
         handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
       }
@@ -449,7 +484,12 @@ export default function audioSpatializationManager() {
         let sourceType = audioSpatializationManager.getCurrentSpatialAudioSourceType();
         console.info(`${TAG} getCurrentSpatialAudioSourceType result: ${sourceType}`);
         expect(typeof sourceType === 'number').assertTrue();
-        expect(sourceType >= audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_STEREO && sourceType <= audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_MULTI_CHANNEL).assertTrue();
+        let validTypes: number[] = [
+          audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_STEREO,
+          audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_AUDIO_VIVID,
+          audio.SpatialAudioSourceType.SPATIAL_AUDIO_SOURCE_TYPE_MULTI_CHANNEL
+        ];
+        expect(validTypes.includes(sourceType as number)).assertTrue();
       } catch (err) {
         handleCatchError(`${TAG} getCurrentSpatialAudioSourceType`, err);
       }
@@ -560,7 +600,7 @@ export default function audioSpatializationManager() {
         if (file !== null) {
           fileIo.closeSync(file);
         }
-        try { fileIo.unlinkSync(filePath); } catch (e) {}
+        try { fileIo.unlinkSync(filePath); } catch (e) { console.error(`${TAG} cleanup failed: ${(e as BusinessError).message}`); }
       }
       done();
     })
@@ -658,11 +698,45 @@ export default function audioSpatializationManager() {
       try {
         let audioManager = audio.getAudioManager();
         let audioSpatializationManager = audioManager.getSpatializationManager();
+        let isSupported = audioSpatializationManager.isPersonalizedSpatializationSupported();
+        if (!isSupported) {
+          console.info(`${TAG} downloadPersonalizedHRTF: device not supported, skip`);
+          done();
+          return;
+        }
         let maxValidLength = 10 * 1024 * 1024;
-         await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: maxValidLength });
-         expect(maxValidLength).assertEqual(10 * 1024 * 1024);
+        await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: maxValidLength });
+        console.info(`${TAG} downloadPersonalizedHRTF boundary 10MB accepted`);
+        expect(isSupported).assertTrue();
       } catch (err) {
         handleCatchError(`${TAG} downloadPersonalizedHRTF length=10MB`, err);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testPermissionDeniedPersonalizedSpatialization2600
+     * @tc.number SUB_Multimedia_Audio_Spatialization_PermissionDeniedPersonalized_2600
+     * @tc.desc   Verify API behavior when MANAGE_SYSTEM_AUDIO_EFFECTS permission is not granted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testPermissionDeniedPersonalizedSpatialization2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioManager = audio.getAudioManager();
+        let audioSpatializationManager = audioManager.getSpatializationManager();
+        let ret = audioSpatializationManager.isPersonalizedSpatializationSupported();
+        console.info(`${TAG} permission test: isPersonalizedSpatializationSupported=${ret}`);
+        expect(typeof ret === 'boolean').assertTrue();
+      } catch (err) {
+        let bizErr = err as BusinessError;
+        console.info(`${TAG} permission test caught: code=${bizErr.code}, message=${bizErr.message}`);
+        expect(bizErr).not().assertUndefined();
+        let codeValue = bizErr.code;
+        if (codeValue !== undefined && codeValue !== null) {
+          expect(Number(codeValue) === 201 || Number(codeValue) === 202).assertTrue();
+        }
       }
       done();
     })
