@@ -134,7 +134,8 @@ int RESET_BITRATE_001Test()
 
 int RESET_BITRATE_002Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc") && isSupported) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -350,7 +351,7 @@ int RESET_BITRATE_010Test()
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = 0;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
-        vEncSample->OUT_DIR = "/data/test/media/cbr_0_.h264";
+        vEncSample->OUT_DIR = "/data/test/media/cbr_0_.h265";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -375,7 +376,7 @@ int RESET_BITRATE_011Test()
         vEncSample->DEFAULT_BITRATE_MODE = CBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
-        vEncSample->OUT_DIR = "/data/test/media/cbr_1s_.h264";
+        vEncSample->OUT_DIR = "/data/test/media/cbr_1s_.h265";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -400,7 +401,7 @@ int RESET_BITRATE_012Test()
         vEncSample->DEFAULT_BITRATE_MODE = VBR;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
-        vEncSample->OUT_DIR = "/data/test/media/vbr_1s_.h264";
+        vEncSample->OUT_DIR = "/data/test/media/vbr_1s_.h265";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -437,7 +438,7 @@ int RESET_FRAMERATE_001Test()
     return 0;
 }
 int RESET_FRAMERATE_012Test()
-{
+{   
     if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
@@ -515,7 +516,8 @@ int RESET_FRAMERATE_014Test()
 }
 int RESET_FRAMERATE_002Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc") && isSupported) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -765,7 +767,8 @@ int RESET_FRAMERATE_011Test()
 
 int RESET_QP_001Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc") && isSupported) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -824,7 +827,8 @@ int RESET_QP_002Test()
 
 int RESET_QP_003Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc") && isSupported) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -848,7 +852,8 @@ int RESET_QP_003Test()
 
 int RESET_QP_004Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc") && isSupported) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -872,7 +877,7 @@ int RESET_QP_004Test()
 
 int RESET_QP_005Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -896,7 +901,7 @@ int RESET_QP_005Test()
 
 int RESET_QP_006Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -920,7 +925,7 @@ int RESET_QP_006Test()
 
 int RESET_QP_007Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -944,7 +949,7 @@ int RESET_QP_007Test()
 
 int RESET_QP_008Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1238,7 +1243,7 @@ int SET_RANGE_FLAG_001Test()
 
 int SET_RANGE_FLAG_002Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1259,7 +1264,7 @@ int SET_RANGE_FLAG_002Test()
 
 int SET_COLORSPACE_001Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1318,13 +1323,14 @@ int SET_FORCE_IDR_001Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
         vEncSample->WaitForEOS();
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
     return 0;
-}
 }
 
 int SET_FORCE_IDR_002Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
