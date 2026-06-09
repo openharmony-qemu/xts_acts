@@ -154,12 +154,12 @@ export default class Utils {
     if (attrs) {
       const keys: string[] = ['content', 'text', 'label', 'name'];
       for (let i: number = 0; i < keys.length; i++) {
-        const val: InspectorNode | undefined = (attrs as Record<string, InspectorNode>)[keys[i]];
-        if (val === expected) {
-          return true;
-        }
-        if (typeof val === 'string' && (val as string).indexOf(expected) >= 0) {
-          return true;
+        const val: Object | undefined = (attrs as Record<string, Object>)[keys[i]];
+        if (typeof val === 'string') {
+          const text: string = val as string;
+          if (text === expected || text.indexOf(expected) >= 0) {
+            return true;
+          }
         }
       }
     }
