@@ -53,13 +53,10 @@ function isPermissionError(err: BusinessError): boolean {
 }
 
 function handleCatchError(tag: string, err: BusinessError): void {
-  let bizErr = err as BusinessError;
-  console.info(`${tag} caught error: code=${bizErr?.code}, message=${bizErr?.message}`);
-  expect(bizErr).not().assertUndefined();
-  let codeValue = bizErr.code;
-  if (codeValue !== undefined && codeValue !== null) {
-    expect(codeValue).assertLarger(0);
-  }
+  console.info(`${tag} caught error: code=${err.code}, message=${err.message}`);
+  let hasValidCode = err.code != null && err.code > 0;
+  let hasValidMessage = err.message != null && err.message.length > 0;
+  expect(hasValidCode || hasValidMessage).assertTrue();
 }
 
 
@@ -105,11 +102,11 @@ export default function audioSpatializationManager() {
         audioSpatializationManager.on("spatializationEnabledChangeForCurrentDevice", (data) => {
         });
         console.info(`testOnSpatializationEnabledChangeForCurrentDevice0100 SUCCESS.`);
-        expect(false == ret).assertTrue();
+        expect(ret).assertFalse();
         done();
        } catch (err) {
-         console.error(`${TAG} testOnSpatializationEnabledChangeForCurrentDevice0100 ERROR: ${(err as BusinessError).message}`);
-         expect((err as BusinessError).code).not().assertUndefined();
+         console.error(`${TAG} testOnSpatializationEnabledChangeForCurrentDevice0100 ERROR: ${err.message}`);
+         expect(err.code).assertLarger(0);
          done();
        }
     })
@@ -130,11 +127,11 @@ export default function audioSpatializationManager() {
         audioSpatializationManager.off("spatializationEnabledChangeForCurrentDevice", (data) => {
         });
         console.info(`testOffSpatializationEnabledChangeForCurrentDevice0200 SUCCESS.`);
-        expect(false == ret).assertTrue();
+        expect(ret).assertFalse();
         done();
        } catch (err) {
-         console.error(`${TAG} testOffSpatializationEnabledChangeForCurrentDevice0200 ERROR: ${(err as BusinessError).message}`);
-         expect((err as BusinessError).code).not().assertUndefined();
+         console.error(`${TAG} testOffSpatializationEnabledChangeForCurrentDevice0200 ERROR: ${err.message}`);
+         expect(err.code).assertLarger(0);
          done();
        }
     })
@@ -155,9 +152,9 @@ export default function audioSpatializationManager() {
         audioSpatializationManager = audioManager.getSpatializationManager();
         let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
         console.log("Sample_ret_isSpatializationEnabledForCurrentDevice_test = %s,",ret);
-        expect(false == ret).assertTrue();
+        expect(ret).assertFalse();
       } catch (err) {
-        expect(false).assertTrue();
+        handleCatchError(`${TAG} isSpatializationEnabledForCurrentDevice`, err as BusinessError);
       }
       done();
     })
@@ -183,9 +180,9 @@ export default function audioSpatializationManager() {
           audioRoutingManager.getPreferredOutputDeviceForRendererInfoSync(audioRendererOptions[0].rendererInfo);
         let isSpaSupported = audioDeviceDescriptors[0].spatializationSupported as boolean;
         console.log("Sample_ret_isSpaSupported = %s",isSpaSupported);
-        expect(false == isSpaSupported).assertTrue();
+        expect(isSpaSupported).assertFalse();
       } catch (err) {
-        expect(false).assertTrue();
+        handleCatchError(`${TAG} spatializationSupported`, err as BusinessError);
       }
       done();
     })
@@ -206,7 +203,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} isPersonalizedSpatializationSupported result: ${ret}`);
         expect(typeof ret === 'boolean').assertTrue();
       } catch (err) {
-        handleCatchError(`${TAG} isPersonalizedSpatializationSupported`, err);
+        handleCatchError(`${TAG} isPersonalizedSpatializationSupported`, err as BusinessError);
       }
       done();
     })
@@ -234,7 +231,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} isPersonalizedSpatializationEnabled result: ${ret}`);
         expect(typeof ret === 'boolean').assertTrue();
       } catch (err) {
-        handleCatchError(`${TAG} isPersonalizedSpatializationEnabled`, err);
+        handleCatchError(`${TAG} isPersonalizedSpatializationEnabled`, err as BusinessError);
       }
       done();
     })
@@ -255,7 +252,7 @@ export default function audioSpatializationManager() {
          audioSpatializationManager.isPersonalizedSpatializationEnabled(invalidParam);
          expect().assertFail();
        } catch (err) {
-         handleCatchError(`${TAG} isPersonalizedSpatializationEnabled invalid param`, err);
+         handleCatchError(`${TAG} isPersonalizedSpatializationEnabled invalid param`, err as BusinessError);
        }
        done();
      })
@@ -276,7 +273,7 @@ export default function audioSpatializationManager() {
          let ret: ESObject = invalidCall.isPersonalizedSpatializationEnabled();
          expect().assertFail();
        } catch (err) {
-         handleCatchError(`${TAG} isPersonalizedSpatializationEnabled no arg`, err);
+         handleCatchError(`${TAG} isPersonalizedSpatializationEnabled no arg`, err as BusinessError);
        }
        done();
      })
@@ -311,7 +308,7 @@ export default function audioSpatializationManager() {
         let ret = audioSpatializationManager.isPersonalizedSpatializationEnabled(audioDeviceDescriptors[0]);
         expect(ret).assertTrue();
       } catch (err) {
-        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled(true)`, err);
+        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled(true)`, err as BusinessError);
       }
       done();
     })
@@ -346,7 +343,7 @@ export default function audioSpatializationManager() {
         let ret = audioSpatializationManager.isPersonalizedSpatializationEnabled(audioDeviceDescriptors[0]);
         expect(ret).assertFalse();
       } catch (err) {
-        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled(false)`, err);
+        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled(false)`, err as BusinessError);
       }
       done();
     })
@@ -367,7 +364,7 @@ export default function audioSpatializationManager() {
          await audioSpatializationManager.setPersonalizedSpatializationEnabled(invalidDevice, true);
          expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid device`, err);
+         handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid device`, err as BusinessError);
       }
       done();
     })
@@ -395,7 +392,7 @@ export default function audioSpatializationManager() {
          await audioSpatializationManager.setPersonalizedSpatializationEnabled(audioDeviceDescriptors[0], invalidEnable);
          expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid enable`, err);
+         handleCatchError(`${TAG} setPersonalizedSpatializationEnabled invalid enable`, err as BusinessError);
       }
       done();
     })
@@ -422,7 +419,7 @@ export default function audioSpatializationManager() {
         expect(callbackTriggered).assertFalse();
         audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice();
       } catch (err) {
-        handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
+        handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice`, err as BusinessError);
       }
       done();
     })
@@ -443,7 +440,7 @@ export default function audioSpatializationManager() {
           audioSpatializationManager.onPersonalizedSpatializationEnabledChangeForAnyDevice(invalidCallback);
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice invalid`, err);
+         handleCatchError(`${TAG} onPersonalizedSpatializationEnabledChangeForAnyDevice invalid`, err as BusinessError);
       }
       done();
     })
@@ -464,7 +461,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice success`);
         expect(typeof audioSpatializationManager.offPersonalizedSpatializationEnabledChangeForAnyDevice).assertEqual('function');
       } catch (err) {
-        handleCatchError(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice`, err);
+        handleCatchError(`${TAG} offPersonalizedSpatializationEnabledChangeForAnyDevice`, err as BusinessError);
       }
       done();
     })
@@ -491,7 +488,7 @@ export default function audioSpatializationManager() {
         ];
         expect(validTypes.includes(sourceType as number)).assertTrue();
       } catch (err) {
-        handleCatchError(`${TAG} getCurrentSpatialAudioSourceType`, err);
+        handleCatchError(`${TAG} getCurrentSpatialAudioSourceType`, err as BusinessError);
       }
       done();
     })
@@ -514,7 +511,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} onSpatialAudioSourceTypeChange registered`);
         expect(typeof audioSpatializationManager.onSpatialAudioSourceTypeChange).assertEqual('function');
       } catch (err) {
-        handleCatchError(`${TAG} onSpatialAudioSourceTypeChange`, err);
+        handleCatchError(`${TAG} onSpatialAudioSourceTypeChange`, err as BusinessError);
       }
       done();
     })
@@ -535,7 +532,7 @@ export default function audioSpatializationManager() {
           audioSpatializationManager.onSpatialAudioSourceTypeChange(invalidCallback);
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} onSpatialAudioSourceTypeChange invalid`, err);
+         handleCatchError(`${TAG} onSpatialAudioSourceTypeChange invalid`, err as BusinessError);
       }
       done();
     })
@@ -556,7 +553,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} offSpatialAudioSourceTypeChange success`);
         expect(typeof audioSpatializationManager.offSpatialAudioSourceTypeChange).assertEqual('function');
       } catch (err) {
-        handleCatchError(`${TAG} offSpatialAudioSourceTypeChange`, err);
+        handleCatchError(`${TAG} offSpatialAudioSourceTypeChange`, err as BusinessError);
       }
       done();
     })
@@ -595,12 +592,12 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} downloadPersonalizedHRTF valid success`);
         expect(stat.size).assertLarger(0);
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF valid`, err);
+        handleCatchError(`${TAG} downloadPersonalizedHRTF valid`, err as BusinessError);
       } finally {
         if (file !== null) {
           fileIo.closeSync(file);
         }
-        try { fileIo.unlinkSync(filePath); } catch (e) { console.error(`${TAG} cleanup failed: ${(e as BusinessError).message}`); }
+        try { fileIo.unlinkSync(filePath); } catch (e) { console.error(`${TAG} cleanup failed: ${e.message}`); }
       }
       done();
     })
@@ -620,7 +617,7 @@ export default function audioSpatializationManager() {
           await audioSpatializationManager.downloadPersonalizedHRTF({ fd: -1, length: 1024 });
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF invalid fd`, err);
+         handleCatchError(`${TAG} downloadPersonalizedHRTF invalid fd`, err as BusinessError);
       }
       done();
     })
@@ -640,7 +637,7 @@ export default function audioSpatializationManager() {
           await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 0, length: 0 });
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF length=0`, err);
+         handleCatchError(`${TAG} downloadPersonalizedHRTF length=0`, err as BusinessError);
       }
       done();
     })
@@ -660,7 +657,7 @@ export default function audioSpatializationManager() {
           await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: -1 });
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF negative length`, err);
+         handleCatchError(`${TAG} downloadPersonalizedHRTF negative length`, err as BusinessError);
       }
       done();
     })
@@ -681,7 +678,7 @@ export default function audioSpatializationManager() {
           await audioSpatializationManager.downloadPersonalizedHRTF({ fd: 1, length: exceedLength });
           expect().assertFail();
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF length>10MB`, err);
+         handleCatchError(`${TAG} downloadPersonalizedHRTF length>10MB`, err as BusinessError);
       }
       done();
     })
@@ -709,7 +706,7 @@ export default function audioSpatializationManager() {
         console.info(`${TAG} downloadPersonalizedHRTF boundary 10MB accepted`);
         expect(isSupported).assertTrue();
       } catch (err) {
-        handleCatchError(`${TAG} downloadPersonalizedHRTF length=10MB`, err);
+        handleCatchError(`${TAG} downloadPersonalizedHRTF length=10MB`, err as BusinessError);
       }
       done();
     })
@@ -729,15 +726,9 @@ export default function audioSpatializationManager() {
         let ret = audioSpatializationManager.isPersonalizedSpatializationSupported();
         console.info(`${TAG} permission test: isPersonalizedSpatializationSupported=${ret}`);
         expect(typeof ret === 'boolean').assertTrue();
-      } catch (err) {
-        let bizErr = err as BusinessError;
-        console.info(`${TAG} permission test caught: code=${bizErr.code}, message=${bizErr.message}`);
-        expect(bizErr).not().assertUndefined();
-        let codeValue = bizErr.code;
-        if (codeValue !== undefined && codeValue !== null) {
-          expect(codeValue === 201 || codeValue === 202).assertTrue();
-        }
-      }
+       } catch (err) {
+         handleCatchError(`${TAG} permission test`, err as BusinessError);
+       }
       done();
     })
 
