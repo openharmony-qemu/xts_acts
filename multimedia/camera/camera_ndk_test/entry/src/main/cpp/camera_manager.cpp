@@ -4683,3 +4683,114 @@ Camera_ErrorCode NDKCamera::DestroyCameraNotificationInfo(int useCaseCode)
     }
     return CAMERA_OK;
 }
+
+
+Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(photoOutput_, &PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(photoOutput_, nullptr);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_CreatePhotoCaptureSettingExt(nullptr, &PhotoCaptureSettingExt_);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("CreatePhotoCaptureSettingExt failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::DestroyPhotoCaptureSettingExt(int useCaseCode)
+{
+    
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_DestroyPhotoCaptureSettingExt(PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_DestroyPhotoCaptureSettingExt(nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("DestroyPhotoCaptureSettingExt failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetCompressionQuality(int useCaseCode, int compressionQuality)
+{
+    LOG("SetCompressionQuality compressionQuality: %d", compressionQuality);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(PhotoCaptureSettingExt_, compressionQuality);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(nullptr, compressionQuality);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        // ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(PhotoCaptureSettingExt_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetCompressionQuality failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetImageRotation(int useCaseCode, Camera_ImageRotation ImageRotation)
+{
+    LOG("SetImageRotation ImageRotation: %d", ImageRotation);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, ImageRotation);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(nullptr, ImageRotation);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        // ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetImageRotation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetMirror(int useCaseCode, bool isMirror)
+{
+    LOG("SetMirror isMirror: %d", isMirror);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetMirror(PhotoCaptureSettingExt_, isMirror);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetMirror(nullptr, isMirror);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        // ret_ = OH_PhotoCaptureSettingExt_SetMirror(PhotoCaptureSettingExt_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetMirror failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SetLocation(int useCaseCode, Camera_Location location)
+{
+    LOG("SetLocation location.altitude: %f", location.altitude);
+    LOG("SetLocation location.latitude: %f", location.latitude);
+    LOG("SetLocation location.longitude: %f", location.longitude);
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoCaptureSettingExt_SetLocation(PhotoCaptureSettingExt_, location);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoCaptureSettingExt_SetLocation(nullptr, location);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        // ret_ = OH_PhotoCaptureSettingExt_SetLocation(PhotoCaptureSettingExt_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("SetLocation failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CaptureWithCaptureSettingExt(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(photoOutput_, PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(nullptr, PhotoCaptureSettingExt_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_PhotoOutput_Capture_WithCaptureSettingExt(photoOutput_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("CaptureWithCaptureSettingExt failed.");
+    }
+    return ret_;
+}
