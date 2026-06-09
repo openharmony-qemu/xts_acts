@@ -4702,7 +4702,6 @@ Camera_ErrorCode NDKCamera::CreatePhotoCaptureSettingExt(int useCaseCode)
 
 Camera_ErrorCode NDKCamera::DestroyPhotoCaptureSettingExt(int useCaseCode)
 {
-    
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_PhotoOutput_DestroyPhotoCaptureSettingExt(PhotoCaptureSettingExt_);
     } else if (useCaseCode == PARAMETER1_ERROR) {
