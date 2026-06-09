@@ -38,6 +38,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     async onRun() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+        var user = abilityDelegatorArguments.parameters["-u"];
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         var testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility'
         let lMonitor = {
@@ -49,6 +50,9 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         var debug = abilityDelegatorArguments.parameters['-D']
         if (debug == 'true') {
             cmd += ' -D'
+        }
+        if(user !== undefined){
+            cmd += ' -u ' + user;
         }
         hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
         abilityDelegator.executeShellCommand(cmd,
