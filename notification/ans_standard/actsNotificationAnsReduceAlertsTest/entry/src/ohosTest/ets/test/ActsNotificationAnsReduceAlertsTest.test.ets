@@ -207,7 +207,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
-            .catch((err: sError) => {
+            .catch((err: Error) => {
               let error :BusinessError = err as BusinessError
               console.error(TEST_SUITE_NAME + TAG +
                 `Failed to get active notifications. Code is ${error.code}, message is ${error.message}`);
