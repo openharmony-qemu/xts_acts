@@ -21,7 +21,6 @@
 
 #define FAIL (-1)
 #define SUCCESS (0)
-#define OPUS_LIB_PATH "/system/lib64/libopus_codec.z.so"
 
 #define SAMPLE_RATE_8000   (8000)
 #define SAMPLE_RATE_12000  (12000)
@@ -42,24 +41,11 @@
 #define INVALID_RATE_COUNT (2)
 #define COMBO_TEST_COUNT (9)
 
-static bool IsOpusLibAvailable()
-{
-    return access(OPUS_LIB_PATH, F_OK) == 0;
-}
-
 static napi_value NapiReturn(napi_env env, int32_t val)
 {
     napi_value r = nullptr;
     napi_create_int32(env, val, &r);
     return r;
-}
-
-static napi_value ReturnIfNoLib(napi_env env)
-{
-    if (!IsOpusLibAvailable()) {
-        return NapiReturn(env, SUCCESS);
-    }
-    return nullptr;
 }
 
 static bool IsSupportOpus()
@@ -83,10 +69,6 @@ static int32_t ConfigCheck(OH_AVCodec *codec, int32_t sampleRate, int32_t channe
 
 static napi_value DecoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
@@ -122,10 +104,6 @@ static napi_value DecoderSampleRateCheck(napi_env env, napi_callback_info info)
 
 static napi_value DecoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
@@ -160,10 +138,6 @@ static napi_value DecoderChannelCountCheck(napi_env env, napi_callback_info info
 
 static napi_value EncoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
@@ -199,10 +173,6 @@ static napi_value EncoderSampleRateCheck(napi_env env, napi_callback_info info)
 
 static napi_value EncoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
@@ -237,10 +207,6 @@ static napi_value EncoderChannelCountCheck(napi_env env, napi_callback_info info
 
 static napi_value EncoderBitrateCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
@@ -275,10 +241,6 @@ static napi_value EncoderBitrateCheck(napi_env env, napi_callback_info info)
 
 static napi_value EncoderBitrateSampleRateComboCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
@@ -308,10 +270,6 @@ static napi_value EncoderBitrateSampleRateComboCheck(napi_env env, napi_callback
 
 static napi_value EncoderStereoSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
@@ -341,10 +299,6 @@ static napi_value EncoderStereoSampleRateCheck(napi_env env, napi_callback_info 
 
 static napi_value DecoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Opus");
@@ -363,10 +317,6 @@ static napi_value DecoderCreateByNameCheck(napi_env env, napi_callback_info info
 
 static napi_value EncoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) {
-        return early;
-    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Opus");
