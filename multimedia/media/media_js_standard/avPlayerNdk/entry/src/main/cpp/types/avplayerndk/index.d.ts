@@ -130,4 +130,5 @@ export const avPlayerSetPCMProcessorCallbackNotPermit: () => Promise<number>;
 export const avPlayerSetPCMProcessorMaxLen: () => Promise<number>;
 export const avPlayerSetPCMProcessorMaxLenVal: () => Promise<number>;
 export const avPlayerSetPCMProcessorMaxLenValErr: () => Promise<number>;
+export const avPlayerSetPCMProcessorMaxLenValError: () => Promise<number>;
 export const avPlayerSetPCMProcessorMaxLenNotPermit: () => Promise<number>;
