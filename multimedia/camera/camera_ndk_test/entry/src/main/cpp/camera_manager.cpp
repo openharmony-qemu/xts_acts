@@ -4721,8 +4721,6 @@ Camera_ErrorCode NDKCamera::SetCompressionQuality(int useCaseCode, int compressi
         ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(PhotoCaptureSettingExt_, compressionQuality);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(nullptr, compressionQuality);
-    } else if (useCaseCode == PARAMETER2_ERROR) {
-        // ret_ = OH_PhotoCaptureSettingExt_SetCompressionQuality(PhotoCaptureSettingExt_, nullptr);
     }
     if (ret_ != CAMERA_OK) {
         LOG("SetCompressionQuality failed.");
@@ -4737,9 +4735,7 @@ Camera_ErrorCode NDKCamera::SetImageRotation(int useCaseCode, Camera_ImageRotati
         ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, ImageRotation);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(nullptr, ImageRotation);
-    } else if (useCaseCode == PARAMETER2_ERROR) {
-        // ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, nullptr);
-    }
+    } 
     if (ret_ != CAMERA_OK) {
         LOG("SetImageRotation failed.");
     }
@@ -4753,8 +4749,6 @@ Camera_ErrorCode NDKCamera::SetMirror(int useCaseCode, bool isMirror)
         ret_ = OH_PhotoCaptureSettingExt_SetMirror(PhotoCaptureSettingExt_, isMirror);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_PhotoCaptureSettingExt_SetMirror(nullptr, isMirror);
-    } else if (useCaseCode == PARAMETER2_ERROR) {
-        // ret_ = OH_PhotoCaptureSettingExt_SetMirror(PhotoCaptureSettingExt_, nullptr);
     }
     if (ret_ != CAMERA_OK) {
         LOG("SetMirror failed.");
@@ -4771,8 +4765,6 @@ Camera_ErrorCode NDKCamera::SetLocation(int useCaseCode, Camera_Location locatio
         ret_ = OH_PhotoCaptureSettingExt_SetLocation(PhotoCaptureSettingExt_, location);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_PhotoCaptureSettingExt_SetLocation(nullptr, location);
-    } else if (useCaseCode == PARAMETER2_ERROR) {
-        // ret_ = OH_PhotoCaptureSettingExt_SetLocation(PhotoCaptureSettingExt_, nullptr);
     }
     if (ret_ != CAMERA_OK) {
         LOG("SetLocation failed.");
