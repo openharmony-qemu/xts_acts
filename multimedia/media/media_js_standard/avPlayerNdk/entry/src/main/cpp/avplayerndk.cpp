@@ -3721,7 +3721,7 @@ static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperVal(napi_env env, napi_c
 {
     int backParam = FAIL;
     napi_value result = nullptr;
-    int32_t maxProcessedPCMLen = 0;
+    int32_t maxProcessedPCMLen = 1 * 1024 * 1024;
     OH_AVPlayer *player = OH_AVPlayer_Create();
     NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
 
@@ -3751,6 +3751,35 @@ static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperValErr(napi_env env, nap
     int backParam = FAIL;
     napi_value result = nullptr;
     int32_t maxProcessedPCMLen = 5 * 1024 * 1024 + 1;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errorCode = OH_AVPlayer_SetPCMProcessorCallback(player, AVPlayerPCMProcessorCallbackImpl,
+        ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMProcessorCallback SetPCMProcessorCallback errCode:%{public}d", errorCode);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMProcessorMaxLen(player, maxProcessedPCMLen);
+    LOG("OhAvPlayerSetPCMProcessorMaxLen SetPCMProcessorMaxLen errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMProcessorMaxLenWrapperValError(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    int32_t maxProcessedPCMLen = 0;
     OH_AVPlayer *player = OH_AVPlayer_Create();
     NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
 
@@ -4006,6 +4035,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"avPlayerSetPCMProcessorMaxLenVal", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperVal, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"avPlayerSetPCMProcessorMaxLenValErr", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperValErr, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMProcessorMaxLenValError", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperValError, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"avPlayerSetPCMProcessorMaxLenNotPermit", nullptr, OhAvPlayerSetPCMProcessorMaxLenWrapperNotPermit,
             nullptr, nullptr, nullptr, napi_default, nullptr},
