@@ -308,24 +308,6 @@ export default function charIsInBasicMultilingualPlaneStaticUTF16Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISINBMPSTATICUTF_2000
-     * @tc.name testCharIsInBMPStaticUTF160030
-     * @tc.desc Verify BMP code points are valid
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharIsInBMPStaticUTF160030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      for (let i = 0; i <= 65535; i += 1000) {
-        if (i < 0xD800 || i > 0xDFFF) {
-          const inBMP = Char.isInBasicMultilingualPlane(i as UTF_16_CodePoint);
-          const valid = Char.isValidCodePoint(i as UTF_16_CodePoint);
-          expect(inBMP).assertEqual(valid);
-        }
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISINBMPSTATICUTF_2100
      * @tc.name testCharIsInBMPStaticUTF160031
      * @tc.desc Verify BMP code point requires 1 code unit

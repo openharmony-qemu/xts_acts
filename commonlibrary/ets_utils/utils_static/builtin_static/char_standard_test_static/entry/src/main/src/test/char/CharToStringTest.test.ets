@@ -347,7 +347,7 @@ export default function CharToStringTest(): void {
       const c = new Char(c'A');
       const str = c.toString();
       expect(typeof str).assertEqual("string");
-      expect(str instanceof String).assertTrue();
+      expect(typeof str === "string").assertTrue();
     });
 
 

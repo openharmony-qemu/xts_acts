@@ -204,27 +204,6 @@ export default function CharIsBinDigitInstanceTest(): void {
       }
     });
 
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITINSTANCETEST_ISBINDIGITTEST_1400
-     * @tc.name testCharIsBinDigitInstance0014
-     * @tc.desc Verify isBinDigit() works correctly in a try-finally context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharIsBinDigitInstance0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted = false;
-      try {
-        const c = new Char(c'A');
-        const result = c.isBinDigit();
-        expect(result).assertFalse();
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITINSTANCETEST_ISBINDIGITTEST_1600
      * @tc.name testCharIsBinDigitInstance0016

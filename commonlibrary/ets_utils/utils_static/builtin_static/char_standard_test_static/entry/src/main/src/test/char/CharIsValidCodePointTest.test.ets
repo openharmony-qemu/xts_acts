@@ -51,26 +51,6 @@ export default function CharIsValidCodePointTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISVALIDCODEPOINTTEST_0200
-     * @tc.name testCharIsValidCodePoint0002
-     * @tc.desc Verify that calling with a valid code point works
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharIsValidCodePoint0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let cp: UTF_16_CodePoint = 65;
-        const result = Char.isValidCodePoint(cp);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISVALIDCODEPOINTTEST_2300
      * @tc.name testCharIsValidCodePoint0023
      * @tc.desc Verify isValidCodePoint is a static method
