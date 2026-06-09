@@ -41,81 +41,81 @@ export default function showDefaultSelectedIconTest() {
 
     /**
      * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0100
-     * @tc.name      showDefaultSelectedIcon_value_0001
+     * @tc.name      SUB_ACE_Select_showDefaultSelectedIcon_0100
      * @tc.desc      set showDefaultSelectedIcon:false,levelUniqueId: Normal value
      * @tc.level     Level 3
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('showDefaultSelectedIcon_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0001 START');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0100 START');
       await Utils.sleep(SLEEP_TIME);
       expect(sendEventByKey('showDefaultSelectedIcon_button', UI_EVENT_CLICK, '')).assertTrue();
       await Utils.sleep(SLEEP_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showDefaultSelectedIcon_select');
       expect(obj.$attrs.showDefaultSelectedIcon).assertEqual('false');
-      console.info('showDefaultSelectedIcon_value_0001 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0100 END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_showDefaultSelectedIcon_0002
-     * @tc.name      showDefaultSelectedIcon_value_0002
+     * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0200
+     * @tc.name      SUB_ACE_Select_showDefaultSelectedIcon_0200
      * @tc.desc      set showDefaultSelectedIcon:true,levelUniqueId: Normal value
      * @tc.level     Level 3
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('showDefaultSelectedIcon_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0002 START');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0200 START');
       await Utils.sleep(SLEEP_TIME);
       expect(sendEventByKey('showDefaultSelectedIcon_button', UI_EVENT_CLICK, '')).assertTrue();
       await Utils.sleep(SLEEP_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showDefaultSelectedIcon_select');
       expect(obj.$attrs.showDefaultSelectedIcon).assertEqual('true');
-      console.info('showDefaultSelectedIcon_value_0002 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0200 END');
       done();
     });
 
     /**
      * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0300
-     * @tc.name      showDefaultSelectedIcon_value_0003
+     * @tc.name      SUB_ACE_Select_showDefaultSelectedIcon_0300
      * @tc.desc      set showDefaultSelectedIcon:undefined,levelUniqueId: Abnormal value
      * @tc.level     Level 3
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('showDefaultSelectedIcon_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0003 START');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0300 START');
       await Utils.sleep(SLEEP_TIME);
       expect(sendEventByKey('showDefaultSelectedIcon_button', UI_EVENT_CLICK, '')).assertTrue();
       await Utils.sleep(SLEEP_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showDefaultSelectedIcon_select');
       expect(obj.$attrs.showDefaultSelectedIcon).assertEqual('false');
-      console.info('showDefaultSelectedIcon_value_0003 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0300 END');
       done();
     });
 
     /**
      * @tc.number    SUB_ACE_Select_showDefaultSelectedIcon_0400
-     * @tc.name      showDefaultSelectedIcon_value_0004
+     * @tc.name      SUB_ACE_Select_showDefaultSelectedIcon_0400
      * @tc.desc      set showDefaultSelectedIcon:null,levelUniqueId: Abnormal value
      * @tc.level     Level 3
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('showDefaultSelectedIcon_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_ACE_Select_showDefaultSelectedIcon_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-      console.info('showDefaultSelectedIcon_value_0004 START');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0400 START');
       await Utils.sleep(SLEEP_TIME);
       expect(sendEventByKey('showDefaultSelectedIcon_button', UI_EVENT_CLICK, '')).assertTrue();
       await Utils.sleep(SLEEP_TIME);
       let obj: ESObject = Utils.parseInspectorKey('showDefaultSelectedIcon_select');
       expect(obj.$attrs.showDefaultSelectedIcon).assertEqual('false');
-      console.info('showDefaultSelectedIcon_value_0004 END');
+      console.info('SUB_ACE_Select_showDefaultSelectedIcon_0400 END');
       done();
     });
   })
