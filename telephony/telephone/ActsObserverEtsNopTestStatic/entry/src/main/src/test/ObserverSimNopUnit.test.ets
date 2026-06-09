@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,15 +41,15 @@ export default function ObserverSimNopTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.name   testTelephonyObserverOnGetSimActiveState1200
-     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_1200
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0600
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0600
      * @tc.desc   Subscribe to sim active state change events.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testTelephonyObserverOnGetSimActiveState1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverOnGetSimActiveState1200';
+    it('testTelephonyObserverOnGetSimActiveState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0600';
       console.info(`${caseName} test start`);
       try {
         let slotId: int = 0;
@@ -58,7 +59,7 @@ export default function ObserverSimNopTest() {
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        console.info(`${caseName} catchError ` + error?.code);
         ExpectTrue(error?.code === 201);
         done();
       }
