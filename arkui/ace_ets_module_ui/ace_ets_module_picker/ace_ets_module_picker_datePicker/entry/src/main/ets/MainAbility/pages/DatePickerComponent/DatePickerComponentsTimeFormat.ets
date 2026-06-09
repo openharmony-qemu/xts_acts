@@ -13,95 +13,62 @@
  * limitations under the License.
  */
 
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat } from '@kit.ArkUI';
+import { DatePickerComponent, DisplayMode, TimeFormat } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct DatePickerComponentsTimeFormat {
+  @State formatValue: TimeFormat | undefined = undefined
+
   build() {
-    Row() {
-      Column() {
-        Text('DatePickerComponent TimeFormat Test')
-          .fontSize(24)
-          .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 20 })
+    Column({ space: 10 }) {
+      Text('DatePickerComponent TimeFormat Test')
+        .fontSize(18)
+        .fontWeight(FontWeight.Bold)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              format: TimeFormat.HOUR_MINUTE,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
+      Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
+        Button('hour_minute')
           .id('datePicker_timeFormat_hour_minute')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              format: TimeFormat.HOUR_MINUTE_SECOND,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
+          .onClick(() => {
+            this.formatValue = TimeFormat.HOUR_MINUTE;
+          })
+        Button('hour_minute_second')
           .id('datePicker_timeFormat_hour_minute_second')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+          .onClick(() => {
+            this.formatValue = TimeFormat.HOUR_MINUTE_SECOND;
+          })
+      }.width('80%')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              format: null,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.TIME,
+          timeOptions: {
+            format: this.formatValue,
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_timeFormat_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+        }
+      })
+        .id('datePicker_timeFormat_hour_minute')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              format: undefined,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_timeFormat_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+      Text('DatePickerComponent 不设置format')
+        .fontSize(14)
+        .fontWeight(FontWeight.Normal)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.TIME,
+          timeOptions: {
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_timeFormat_default')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-      }
-      .width('100%')
+        }
+      })
+        .id('datePicker_timeFormat_default')
     }
-    .height('100%')
+    .width('100%')
+    .margin({ top: 30 })
   }
 }

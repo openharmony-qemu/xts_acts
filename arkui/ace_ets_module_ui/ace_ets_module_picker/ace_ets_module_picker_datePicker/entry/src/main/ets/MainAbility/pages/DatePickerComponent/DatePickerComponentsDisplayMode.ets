@@ -13,109 +13,64 @@
  * limitations under the License.
  */
 
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode } from '@kit.ArkUI';
+import { DatePickerComponent, DisplayMode } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct DatePickerComponentsDisplayMode {
+  @State displayModeValue: DisplayMode | undefined = undefined
+
   build() {
-    Row() {
-      Column() {
-        Text('DatePickerComponent DisplayMode Test')
-          .fontSize(24)
-          .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 20 })
+    Column({ space: 10 }) {
+      Text('DatePickerComponent DisplayMode Test')
+        .fontSize(18)
+        .fontWeight(FontWeight.Bold)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: this.displayModeValue,
+          dateOptions: {
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
+        }
+      })
+
+      Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
+        Button('date')
           .id('datePicker_displayMode_date')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+          .onClick(() => {
+            this.displayModeValue = DisplayMode.DATE;
+          })
+        Button('time')
+          .id('datePicker_displayMode_year_and_month')
+          .onClick(() => {
+            this.displayModeValue = DisplayMode.TIME;
+          })
+        Button('date-time')
+          .id('datePicker_displayMode_month_and_day')
+          .onClick(() => {
+            this.displayModeValue = DisplayMode.DATE_TIME;
+          })
+      }.width('80%')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_displayMode_time')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+      Text('DatePickerComponent 不设置DisplayMode')
+        .fontSize(14)
+        .fontWeight(FontWeight.Normal)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE_TIME,
-            dateOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            },
-            timeOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          dateOptions: {
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_displayMode_date_time')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: null,
-            dateOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_displayMode_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: undefined,
-            dateOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_displayMode_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            dateOptions: {
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_displayMode_default')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-      }
-      .width('100%')
+        }
+      })
+        .id('datePicker_displayMode_default')
     }
-    .height('100%')
+    .width('100%')
+    .margin({ top: 30 })
   }
 }

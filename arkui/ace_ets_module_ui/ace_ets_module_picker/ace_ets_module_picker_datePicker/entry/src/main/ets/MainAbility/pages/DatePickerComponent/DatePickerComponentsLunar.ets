@@ -18,95 +18,59 @@ import { DatePickerComponent, DisplayMode, DateMode } from '@kit.ArkUI';
 @Entry
 @Component
 struct DatePickerComponentsLunar {
+  @State lunarValue: boolean | undefined = undefined
+
   build() {
-    Row() {
-      Column() {
-        Text('DatePickerComponent Lunar Test')
-          .fontSize(24)
-          .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 20 })
+    Column({ space: 10 }) {
+      Text('DatePickerComponent Lunar Test')
+        .fontSize(18)
+        .fontWeight(FontWeight.Bold)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              lunar: false,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.DATE,
+          dateOptions: {
+            mode: DateMode.DATE,
+            lunar: this.lunarValue,
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_lunar_false')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+        }
+      })
+        .id('datePicker_lunar_false')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              lunar: true,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
+      Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
+        Button('true')
           .id('datePicker_lunar_true')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+          .onClick(() => {
+            this.lunarValue = true;
+          })
+        Button('false')
+          .id('datePicker_lunar_false')
+          .onClick(() => {
+            this.lunarValue = false;
+          })
+      }.width('80%')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              lunar: null,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_lunar_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+      Text('DatePickerComponent 不设置lunar')
+        .fontSize(14)
+        .fontWeight(FontWeight.Normal)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              lunar: undefined,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.DATE,
+          dateOptions: {
+            mode: DateMode.DATE,
+            selected: new Date('2021-08-08'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_lunar_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              selected: new Date('2021-08-08'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_lunar_default')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-      }
-      .width('100%')
+        }
+      })
+        .id('datePicker_lunar_default')
     }
-    .height('100%')
+    .width('100%')
+    .margin({ top: 30 })
   }
 }

@@ -13,95 +13,62 @@
  * limitations under the License.
  */
 
-import { DatePickerComponent, DisplayMode, TimeFormat } from '@kit.ArkUI';
+import { DatePickerComponent, DisplayMode } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct DatePickerComponentsUseMilitaryTime {
+  @State useMilitaryTimeValue: boolean | undefined = undefined;
+
   build() {
-    Row() {
-      Column() {
-        Text('DatePickerComponent UseMilitaryTime Test')
-          .fontSize(24)
-          .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 20 })
+    Column({ space: 10 }) {
+      Text('DatePickerComponent UseMilitaryTime Test')
+        .fontSize(18)
+        .fontWeight(FontWeight.Bold)
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              useMilitaryTime: false,
-              selected: new Date('2021-08-08T10:30:00'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
+      Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
+        Button('false')
           .id('datePicker_military_false')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              useMilitaryTime: true,
-              selected: new Date('2021-08-08T10:30:00'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
+          .onClick(() => {
+            this.useMilitaryTimeValue = false;
+          })
+        Button('true')
           .id('datePicker_military_true')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+          .onClick(() => {
+            this.useMilitaryTimeValue = true;
+          })
+      }.width('80%')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              useMilitaryTime: null,
-              selected: new Date('2021-08-08T10:30:00'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.TIME,
+          timeOptions: {
+            useMilitaryTime: this.useMilitaryTimeValue,
+            selected: new Date('2021-08-08T10:30:00'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_military_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
+        }
+      })
+        .id('datePicker_military_false')
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              useMilitaryTime: undefined,
-              selected: new Date('2021-08-08T10:30:00'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
+      Text('DatePickerComponent 不设置useMilitaryTime')
+        .fontSize(14)
+        .fontWeight(FontWeight.Normal)
+      
+      DatePickerComponent({
+        options: {
+          displayMode: DisplayMode.TIME,
+          timeOptions: {
+            selected: new Date('2021-08-08T10:30:00'),
+            start: new Date('2000-1-1'),
+            end: new Date('2100-12-31')
           }
-        })
-          .id('datePicker_military_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.TIME,
-            timeOptions: {
-              selected: new Date('2021-08-08T10:30:00'),
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31')
-            }
-          }
-        })
-          .id('datePicker_military_default')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-      }
-      .width('100%')
+        }
+      })
+        .id('datePicker_military_default')
     }
-    .height('100%')
+    .width('100%')
+    .margin({ top: 30 })
   }
 }

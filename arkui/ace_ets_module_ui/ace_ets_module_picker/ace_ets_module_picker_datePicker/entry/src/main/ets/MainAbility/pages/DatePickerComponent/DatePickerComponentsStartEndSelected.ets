@@ -19,12 +19,11 @@ import { DatePickerComponent, DisplayMode, DateMode } from '@kit.ArkUI';
 @Component
 struct DatePickerComponentsStartEndSelected {
   build() {
-    Row() {
-      Column() {
+    Scroll() {
+      Column({ space: 10 }) {
         Text('DatePickerComponent Start/End/Selected Test')
-          .fontSize(24)
+          .fontSize(18)
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 20, bottom: 20 })
 
         DatePickerComponent({
           options: {
@@ -38,23 +37,6 @@ struct DatePickerComponentsStartEndSelected {
           }
         })
           .id('datePicker_start_end_selected_valid')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
-
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              start: null,
-              end: new Date('2100-12-31'),
-              selected: new Date('2021-08-08')
-            }
-          }
-        })
-          .id('datePicker_start_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
         DatePickerComponent({
           options: {
@@ -68,23 +50,7 @@ struct DatePickerComponentsStartEndSelected {
           }
         })
           .id('datePicker_start_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              start: new Date('2000-1-1'),
-              end: null,
-              selected: new Date('2021-08-08')
-            }
-          }
-        })
-          .id('datePicker_end_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
         DatePickerComponent({
           options: {
@@ -98,23 +64,7 @@ struct DatePickerComponentsStartEndSelected {
           }
         })
           .id('datePicker_end_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
-        DatePickerComponent({
-          options: {
-            displayMode: DisplayMode.DATE,
-            dateOptions: {
-              mode: DateMode.DATE,
-              start: new Date('2000-1-1'),
-              end: new Date('2100-12-31'),
-              selected: null
-            }
-          }
-        })
-          .id('datePicker_selected_null')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
         DatePickerComponent({
           options: {
@@ -128,8 +78,6 @@ struct DatePickerComponentsStartEndSelected {
           }
         })
           .id('datePicker_selected_undefined')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
 
         DatePickerComponent({
           options: {
@@ -140,11 +88,9 @@ struct DatePickerComponentsStartEndSelected {
           }
         })
           .id('datePicker_start_end_selected_default')
-          .height('8%')
-          .margin({ top: 5, bottom: 5 })
       }
-      .width('100%')
     }
     .height('100%')
+    .padding(30)
   }
 }
