@@ -67,7 +67,7 @@ struct webOnFirstContThree {
               try {
                 this.isComplete = -1;
                 this.controller.clearHistory();
-                this.controller.loadUrl($rawfile("onfirstcontentfulpaint.html"));
+                this.controller.loadUrl({ url: $rawfile('onfirstcontentfulpaint.html') });
                 await waitForExist(() => this.isComplete, this.str, 0);
                 console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
               } catch (error) {
