@@ -505,7 +505,6 @@ public:
     Camera_ErrorCode SetLocation(int useCaseCode, Camera_Location location);
     Camera_ErrorCode CaptureWithCaptureSettingExt(int useCaseCode);
 
-
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,
