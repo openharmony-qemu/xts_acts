@@ -4040,6 +4040,112 @@ static napi_value DestroyCameraNotificationInfo(napi_env env, napi_callback_info
     return result;
 }
 
+static napi_value CreatePhotoCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->CreatePhotoCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value DestroyPhotoCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->DestroyPhotoCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetCompressionQuality(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    int32_t compressionQuality;
+    napi_get_value_int32(env, args[1], &compressionQuality);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetCompressionQuality(useCaseCode, compressionQuality);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetImageRotation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    Camera_ImageRotation imageRotation;
+    int32_t Rotation;
+    napi_get_value_int32(env, args[1], &Rotation);
+    imageRotation = static_cast<Camera_ImageRotation>(Rotation);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetImageRotation(useCaseCode, imageRotation);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetMirror(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+
+    bool isMirror;
+    napi_get_value_bool(env, args[1], &isMirror);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetMirror(useCaseCode, isMirror);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetLocation(napi_env env, napi_callback_info info)
+{
+    size_t argc = 4;
+    napi_value args[4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_Location location;
+    napi_get_value_double(env, args[1], &location.latitude);
+    napi_get_value_double(env, args[NUMBER_2], &location.longitude);
+    napi_get_value_double(env, args[NUMBER_3], &location.altitude);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetLocation(useCaseCode, location);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value CaptureWithCaptureSettingExt(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->CaptureWithCaptureSettingExt(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4223,6 +4329,20 @@ static napi_value Init(napi_env env, napi_value exports)
         { "createPreviewOutputByIndex", nullptr, createPreviewOutputByIndex, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "createDeferredPreviewOutput", nullptr, CreateDeferredPreviewOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "createPhotoCaptureSettingExt", nullptr, CreatePhotoCaptureSettingExt, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "destroyPhotoCaptureSettingExt", nullptr, DestroyPhotoCaptureSettingExt, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setCompressionQuality", nullptr, SetCompressionQuality, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setImageRotation", nullptr, SetImageRotation, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setMirror", nullptr, SetMirror, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "setLocation", nullptr, SetLocation, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "captureWithCaptureSettingExt", nullptr, CaptureWithCaptureSettingExt, nullptr, nullptr, nullptr,
             napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {
