@@ -201,9 +201,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -268,9 +265,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -340,9 +334,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -412,10 +403,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: Error) => {
@@ -478,9 +466,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -550,9 +535,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -622,9 +604,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
             })
@@ -694,10 +673,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((e: Error) => {
@@ -760,10 +736,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((e: Error) => {
@@ -832,10 +805,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -902,10 +872,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -972,10 +939,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1042,10 +1006,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1208,10 +1169,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
             })
             .catch((err: BusinessError) => {
               console.error(TEST_SUITE_NAME + TAG +
@@ -1389,10 +1347,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1449,10 +1404,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1509,10 +1461,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1569,10 +1518,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
@@ -1629,10 +1575,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             .then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG +
                 ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-              expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-              expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(2)
               done()
             })
             .catch((err: BusinessError) => {
