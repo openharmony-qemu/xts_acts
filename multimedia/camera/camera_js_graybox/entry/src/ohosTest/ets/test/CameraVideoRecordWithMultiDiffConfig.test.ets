@@ -170,10 +170,10 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                     console.info("get vsMode: " + activeMode)
                   }
                 }
+                onPreviewOutputFrameStart(previewOutPut!);
                 await startSession(session);
                 startVideoOutput(videoOutput);
                 setFocusMode(session);
-                await onPreviewOutputFrameStart(previewOutPut!);
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
                 await startAvRecoder(avRecoder);
                 if (zoomRatioRange != undefined) {
@@ -330,10 +330,10 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                     console.info("get vsMode: " + activeMode)
                   }
                 }
+                onPreviewOutputFrameStart(previewOutPut!);
                 await startSession(session);
                 startVideoOutput(videoOutput);
                 setFocusMode(session);
-                await onPreviewOutputFrameStart(previewOutPut!);
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
                 await startAvRecoder(avRecoder);
                 if (zoomRatioRange != undefined) {
