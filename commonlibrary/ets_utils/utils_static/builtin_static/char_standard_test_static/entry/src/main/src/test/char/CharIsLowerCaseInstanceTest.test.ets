@@ -57,7 +57,7 @@ export default function CharIsLowerCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLOWERCASEINSTANCETEST_ISLOWERCASETEST_0200
      * @tc.name testCharIsLowerCaseInstance0002
-     * @tc.desc Verify passing parameters is ignored or throws error
+     * @tc.desc Verify isLowerCase() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function CharIsLowerCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLOWERCASEINSTANCETEST_ISLOWERCASETEST_1700
      * @tc.name testCharIsLowerCaseInstance0017
-     * @tc.desc Verify cannot call through class statically
+     * @tc.desc Verify instance isLowerCase() returns the same result as the static Char.isLowerCase()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

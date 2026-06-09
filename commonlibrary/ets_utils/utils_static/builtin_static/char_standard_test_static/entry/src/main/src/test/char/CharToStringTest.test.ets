@@ -44,7 +44,7 @@ export default function CharToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_0200
      * @tc.name testCharToString0002
-     * @tc.desc Verify toString with passing parameters should be ignored or throw error
+     * @tc.desc Verify toString() can be called with no arguments on a Char instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +416,7 @@ export default function CharToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_3100
      * @tc.name testCharToString0031
-     * @tc.desc Verify finally block always executes regardless of exception
+     * @tc.desc Verify toString() works correctly in a try-finally context regardless of exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,7 +436,7 @@ export default function CharToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_3300
      * @tc.name testCharToString0033
-     * @tc.desc Verify toString cannot be called statically on class
+     * @tc.desc Verify Char.toString exists as a function on the Char class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

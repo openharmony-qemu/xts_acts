@@ -33,7 +33,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0100
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0100
      * @tc.name testCharIsPartOfSurrogatePairInstance0001
      * @tc.desc Verify instance method accepts no parameters
      * @tc.size MediumTest
@@ -47,9 +47,9 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0200
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0200
      * @tc.name testCharIsPartOfSurrogatePairInstance0002
-     * @tc.desc Verify passing parameters should be ignored or throw error
+     * @tc-desc Verify isPartOfSurrogatePair() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -61,7 +61,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0500
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0500
      * @tc.name testCharIsPartOfSurrogatePairInstance0005
      * @tc.desc Verify high surrogate character returns true
      * @tc.size MediumTest
@@ -75,7 +75,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0600
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0600
      * @tc.name testCharIsPartOfSurrogatePairInstance0006
      * @tc.desc Verify low surrogate character returns true
      * @tc.size MediumTest
@@ -89,7 +89,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0700
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0700
      * @tc.name testCharIsPartOfSurrogatePairInstance0007
      * @tc.desc Verify normal character returns false
      * @tc.size MediumTest
@@ -103,7 +103,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_0800
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0800
      * @tc.name testCharIsPartOfSurrogatePairInstance0008
      * @tc.desc Verify surrogate range characters return true (full high & low surrogate traversal)
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1000
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1000
      * @tc.name testCharIsPartOfSurrogatePairInstance0010
      * @tc.desc Verify boundary return values for different char instances
      * @tc.size MediumTest
@@ -143,9 +143,9 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1300
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1300
      * @tc.name testCharIsPartOfSurrogatePairInstance0013
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify isPartOfSurrogatePair() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -162,7 +162,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1400
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1400
      * @tc.name testCharIsPartOfSurrogatePairInstance0014
      * @tc.desc Verify isPartOfSurrogatePair is an instance method
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1500
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1500
      * @tc.name testCharIsPartOfSurrogatePairInstance0015
      * @tc.desc Verify static call produces same result as instance call
      * @tc.size MediumTest
@@ -194,7 +194,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1600
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1600
      * @tc.name testCharIsPartOfSurrogatePairInstance0016
      * @tc.desc Verify isPartOfSurrogatePair is synchronous
      * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1800
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1800
      * @tc.name testCharIsPartOfSurrogatePairInstance0018
      * @tc.desc Verify different calling methods between static and instance
      * @tc.size MediumTest
@@ -227,7 +227,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_1900
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_1900
      * @tc.name testCharIsPartOfSurrogatePairInstance0019
      * @tc.desc Verify surrogate type identification with isHighSurrogate and isLowSurrogate
      * @tc.size MediumTest
@@ -253,7 +253,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2000
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2000
      * @tc.name testCharIsPartOfSurrogatePairInstance0020
      * @tc.desc Verify surrogate characters not in BMP
      * @tc.size MediumTest
@@ -276,7 +276,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2100
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2100
      * @tc.name testCharIsPartOfSurrogatePairInstance0021
      * @tc.desc Verify complete high surrogate range (0xD800-0xDBFF)
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2200
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2200
      * @tc.name testCharIsPartOfSurrogatePairInstance0022
      * @tc.desc Verify complete low surrogate range (0xDC00-0xDFFF)
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2300
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2300
      * @tc.name testCharIsPartOfSurrogatePairInstance0023
      * @tc.desc Verify normal BMP characters are not surrogate pair parts (full ASCII)
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2400
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2400
      * @tc.name testCharIsPartOfSurrogatePairInstance0024
      * @tc.desc Verify surrogate area boundary characters
      * @tc.size MediumTest
@@ -370,7 +370,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2500
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2500
      * @tc.name testCharIsPartOfSurrogatePairInstance0025
      * @tc.desc Verify repeated calls return consistent results
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2600
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2600
      * @tc.name testCharIsPartOfSurrogatePairInstance0026
      * @tc.desc Verify batch calls return correct results
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRLNSTANCETEST_2800
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_2800
      * @tc.name testCharIsPartOfSurrogatePairInstance0028
      * @tc.desc Verify instance and static methods are consistent for same characters
      * @tc.size MediumTest

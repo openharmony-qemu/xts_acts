@@ -578,7 +578,8 @@ export default function CharToUpperCaseStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOUPPERCASESTATICCHARTEST_4000
      * @tc.name testCharToUpperCaseStaticChar0040
-     * @tc.desc Verify case conversion is reversible
+     * @tc.desc Verify that toUpperCase().toLowerCase() produces valid
+     * lowercase letters within basic Latin range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

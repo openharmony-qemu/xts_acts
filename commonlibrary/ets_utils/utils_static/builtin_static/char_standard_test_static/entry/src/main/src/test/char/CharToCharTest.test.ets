@@ -562,7 +562,7 @@ export default function CharToCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARTOCHARTEST_CHARTOCHARTEST_4400
      * @tc.name testCharToChar0044
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toChar() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -582,7 +582,7 @@ export default function CharToCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARTOCHARTEST_CHARTOCHARTEST_4600
      * @tc.name testCharToChar0046
-     * @tc.desc Verify instance method cannot be called statically through Char class
+     * @tc.desc Verify instance toChar() returns the same char value as the original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

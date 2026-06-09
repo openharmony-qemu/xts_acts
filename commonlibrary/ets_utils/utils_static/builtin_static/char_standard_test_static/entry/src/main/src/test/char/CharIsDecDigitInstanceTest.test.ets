@@ -45,7 +45,7 @@ export default function CharIsDecDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISDECDIGITINSTANCETEST_ISDECDIGITTEST_0200
      * @tc.name testCharIsDecDigitInstance0002
-     * @tc.desc Verify passing parameters is ignored or throws error
+     * @tc.desc Verify isDecDigit() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -197,7 +197,7 @@ export default function CharIsDecDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISDECDIGITINSTANCETEST_ISDECDIGITTEST_1400
      * @tc.name testCharIsDecDigitInstance0014
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify isDecDigit() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

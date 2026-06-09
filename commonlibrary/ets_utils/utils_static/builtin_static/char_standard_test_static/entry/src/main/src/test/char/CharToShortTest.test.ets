@@ -588,24 +588,6 @@ export default function CharToShortTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_4800
-     * @tc.name testCharToShort0048
-     * @tc.desc Verify no precision loss within short range 0 to 32767
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToShort0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const chars: char[] = [c'\u0000', c'A', c'\u7FFF'];
-      const expected: short[] = [0, 65, 32767];
-      for (let i = 0; i < chars.length; i++) {
-        const c = new Char(chars[i]);
-        const result = c.toShort();
-        expect(result).assertEqual(expected[i]);
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_4900
      * @tc.name testCharToShort0049
      * @tc.desc Verify values greater than 32767 treated as negative

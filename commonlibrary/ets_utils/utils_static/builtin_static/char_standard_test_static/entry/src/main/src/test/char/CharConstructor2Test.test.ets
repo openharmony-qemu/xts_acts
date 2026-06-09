@@ -430,7 +430,7 @@ export default function CharConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARCONSTRUCTOR2TEST_CONSTRUCTORTEST_4400
      * @tc.name testCharConstructor2044
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify Char constructor works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

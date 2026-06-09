@@ -426,7 +426,7 @@ export default function CharToDoubleTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TODOUBLETEST_3100
      * @tc.name testCharToDouble0031
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toDouble() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -460,7 +460,7 @@ export default function CharToDoubleTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TODOUBLETEST_3300
      * @tc.name testCharToDouble0033
-     * @tc.desc Verify toDouble cannot be called statically
+     * @tc.desc Verify instance toDouble() returns the numeric code point value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

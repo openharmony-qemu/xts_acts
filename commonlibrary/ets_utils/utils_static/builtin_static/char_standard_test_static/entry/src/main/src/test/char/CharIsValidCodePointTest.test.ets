@@ -327,7 +327,7 @@ export default function CharIsValidCodePointTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISVALIDCODEPOINTTEST_2200
      * @tc.name testCharIsValidCodePoint0022
-     * @tc.desc Verify finally always executes
+     * @tc.desc Verify isValidCodePoint() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

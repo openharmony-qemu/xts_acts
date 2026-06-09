@@ -265,7 +265,7 @@ export default function CharIsLowSurrogateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISLOWSURROGATETEST_1800
      * @tc.name testCharIsLowSurrogate0018
-     * @tc.desc Verify finally always executes
+     * @tc.desc Verify isLowSurrogate() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

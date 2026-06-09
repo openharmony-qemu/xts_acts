@@ -263,7 +263,7 @@ export default function CharCodeUnitsToEncodeTest(): void {
     /**
      * @tc.number SUB_CHAR_CODE_UNITSTOENCODETEST_1800
      * @tc.name testCharCodeUnitsToEncode0018
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify codeUnitsToEncode() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

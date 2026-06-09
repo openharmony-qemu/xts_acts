@@ -432,7 +432,7 @@ export default function CharToLongTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLONGTEST_3200
      * @tc.name testCharToLong0032
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toLong() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,7 +466,7 @@ export default function CharToLongTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLONGTEST_3400
      * @tc.name testCharToLong0034
-     * @tc.desc Verify toLong cannot be called statically on Char class
+     * @tc.desc Verify instance toLong() returns the numeric code point value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

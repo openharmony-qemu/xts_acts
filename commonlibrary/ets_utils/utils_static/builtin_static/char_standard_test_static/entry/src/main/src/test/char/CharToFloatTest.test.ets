@@ -49,7 +49,7 @@ export default function CharToFloatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOFLOATTEST_0200
      * @tc.name testCharToFloat0002
-     * @tc.desc Verify passing parameter to toFloat is ignored or throws error
+     * @tc.desc Verify toFloat() can be called with no arguments and returns a valid result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -400,7 +400,7 @@ export default function CharToFloatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOFLOATTEST_2900
      * @tc.name testCharToFloat0029
-     * @tc.desc Verify finally block always executes regardless of exception
+     * @tc.desc Verify toFloat() works correctly in a try-finally context regardless of exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -420,7 +420,7 @@ export default function CharToFloatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOFLOATTEST_3100
      * @tc.name testCharToFloat0031
-     * @tc.desc Verify toFloat cannot be called statically on class
+     * @tc.desc Verify Char.toFloat() can be called statically and returns a defined value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

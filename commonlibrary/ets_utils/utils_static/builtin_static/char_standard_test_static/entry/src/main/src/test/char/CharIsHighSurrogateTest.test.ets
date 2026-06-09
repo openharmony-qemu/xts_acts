@@ -267,7 +267,7 @@ export default function CharIsHighSurrogateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISHIGHSURROGATETEST_ISHIGHSURROGATETEST_1800
      * @tc.name testCharIsHighSurrogate0018
-     * @tc.desc Verify finally always executes
+     * @tc.desc Verify isHighSurrogate() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

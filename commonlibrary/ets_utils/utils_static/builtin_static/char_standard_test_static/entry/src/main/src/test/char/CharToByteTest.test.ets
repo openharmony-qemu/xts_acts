@@ -52,7 +52,7 @@ export default function CharToByteTest():void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_0200
      * @tc.name testCharToByte0002
-     * @tc.desc Verify passing parameters to toByte is ignored or throws error
+     * @tc.desc Verify toByte() can be called with no arguments and returns a valid result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -378,7 +378,7 @@ export default function CharToByteTest():void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_3000
      * @tc.name testCharToByte0030
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toByte() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -398,7 +398,7 @@ export default function CharToByteTest():void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_3200
      * @tc.name testCharToByte0032
-     * @tc.desc Verify toByte cannot be called statically
+     * @tc.desc Verify Char.toByte() can be called statically and returns a numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

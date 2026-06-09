@@ -44,7 +44,7 @@ export default function CharIsBinDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITINSTANCETEST_ISBINDIGITTEST_0200
      * @tc.name testCharIsBinDigitInstance0002
-     * @tc.desc Verify passing parameters should be ignored or throw error
+     * @tc.desc Verify isBinDigit() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -208,7 +208,7 @@ export default function CharIsBinDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITINSTANCETEST_ISBINDIGITTEST_1400
      * @tc.name testCharIsBinDigitInstance0014
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify isBinDigit() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -228,7 +228,7 @@ export default function CharIsBinDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITINSTANCETEST_ISBINDIGITTEST_1600
      * @tc.name testCharIsBinDigitInstance0016
-     * @tc.desc Verify cannot be called statically through class
+     * @tc.desc Verify instance isBinDigit() returns the same result as the static Char.isBinDigit()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

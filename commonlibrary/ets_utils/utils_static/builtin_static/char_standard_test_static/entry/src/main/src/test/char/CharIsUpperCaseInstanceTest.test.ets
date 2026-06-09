@@ -212,7 +212,7 @@ export default function CharIsUpperCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISUPPERCASEINSTANCETEST_1700
      * @tc.name testCharIsUpperCaseInstance0017
-     * @tc.desc Verify cannot be called statically through class
+     * @tc.desc Verify instance isUpperCase() returns the same result as the static Char.isUpperCase()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

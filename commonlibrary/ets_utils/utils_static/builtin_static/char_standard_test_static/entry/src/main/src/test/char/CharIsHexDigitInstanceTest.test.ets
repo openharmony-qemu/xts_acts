@@ -45,7 +45,7 @@ export default function CharIsHexDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISHEXDIGITINSTANCETEST_ISHEXDIGITTEST_0200
      * @tc.name testCharIsHexDigitInstance0002
-     * @tc.desc Verify passing parameters is ignored or throws error
+     * @tc.desc Verify isHexDigit() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -221,7 +221,7 @@ export default function CharIsHexDigitInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISHEXDIGITINSTANCETEST_ISHEXDIGITTEST_1400
      * @tc.name testCharIsHexDigitInstance0014
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify isHexDigit() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

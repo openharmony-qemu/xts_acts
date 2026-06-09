@@ -49,7 +49,7 @@ export default function CharToIntTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLNTTEST_0200
      * @tc.name testCharToInt0002
-     * @tc.desc Verify passing parameter should be ignored or throw error
+     * @tc.desc Verify toInt() can be called with no arguments and returns a valid result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -432,7 +432,7 @@ export default function CharToIntTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLNTTEST_3200
      * @tc.name testCharToInt0032
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toInt() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

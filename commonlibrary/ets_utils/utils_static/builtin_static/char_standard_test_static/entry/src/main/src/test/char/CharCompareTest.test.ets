@@ -331,7 +331,7 @@ export default function CharCompareTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARCOMPARETEST_COMPARETEST_4700
      * @tc.name testCharCompare0047
-     * @tc.desc Verify finally block always executes regardless of exception
+     * @tc.desc Verify compare() works correctly in a try-finally context regardless of exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

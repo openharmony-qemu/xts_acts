@@ -44,7 +44,7 @@ export default function CharToUpperCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOUPPERCASEINSTANCETEST_0200
      * @tc.name testCharToUpperCaseInstance0002
-     * @tc.desc Verify passing extra parameters is ignored or throws error
+     * @tc.desc Verify toUpperCase() can be called with no extra parameters and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -236,7 +236,7 @@ export default function CharToUpperCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOUPPERCASEINSTANCETEST_1500
      * @tc.name testCharToUpperCaseInstance0015
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toUpperCase() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -183,7 +183,7 @@ export default function CharIsWhiteSpaceInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISWHITESPACEINSTANCETSET_1400
      * @tc.name testCharIsWhiteSpaceInstance0014
-     * @tc.desc Verify finally always executes regardless of exception
+     * @tc.desc Verify isWhiteSpace() works correctly in a try-finally context regardless of exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

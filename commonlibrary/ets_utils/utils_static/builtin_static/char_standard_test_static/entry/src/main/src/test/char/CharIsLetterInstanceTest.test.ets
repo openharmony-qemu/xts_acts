@@ -176,7 +176,7 @@ export default function CharIsLetterInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLETTERINSTANCETEST_ISLETTERTEST_1400
      * @tc.name testCharIsLetterInstance0014
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify isLetter() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -196,7 +196,7 @@ export default function CharIsLetterInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLETTERINSTANCETEST_ISLETTERTEST_1600
      * @tc.name testCharIsLetterInstance0016
-     * @tc.desc Verify cannot be called statically through class
+     * @tc.desc Verify instance isLetter() returns the same result as the static Char.isLetter()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

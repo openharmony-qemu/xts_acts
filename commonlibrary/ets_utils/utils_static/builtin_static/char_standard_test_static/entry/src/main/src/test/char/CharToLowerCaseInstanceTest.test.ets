@@ -44,7 +44,7 @@ export default function CharToLowerCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLOWERCASEINSTANCETEST_0200
      * @tc.name testCharToLowerCaseInstance0002
-     * @tc.desc Verify passing parameters should be ignored or throw error
+     * @tc.desc Verify toLowerCase() can be called with no extra parameters and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -230,7 +230,7 @@ export default function CharToLowerCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLOWERCASEINSTANCETEST_1500
      * @tc.name testCharToLowerCaseInstance0015
-     * @tc.desc Verify finally block always executes
+     * @tc.desc Verify toLowerCase() works correctly in a try-finally context
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
