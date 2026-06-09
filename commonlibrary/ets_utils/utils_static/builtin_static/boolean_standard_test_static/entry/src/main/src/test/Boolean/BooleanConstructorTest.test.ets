@@ -1951,5 +1951,354 @@ function BooleanConstructor06Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
+    it("testBooleanConstructorAnyBooleanInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Boolean(true)).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Boolean(false)).toBoolean()).assertEqual(false);
+      expect(new Boolean(Boolean.TRUE).toBoolean()).assertEqual(true);
+      expect(new Boolean(Boolean.FALSE).toBoolean()).assertEqual(false);
+    })
 
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0300
+     * @tc.name      testBooleanConstructorAnyNumberInstances
+     * @tc.desc      Boolean constructor converts Number instances by numeric conversion rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyNumberInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Number(10)).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Number(-10)).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Number(0)).toBoolean()).assertEqual(false);
+      expect(new Boolean(new Number(Number.NaN)).toBoolean()).assertEqual(false);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0400
+     * @tc.name      testBooleanConstructorAnyStringInstances
+     * @tc.desc      Boolean constructor converts String instances by string length rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyStringInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new String("arkts")).toBoolean()).assertEqual(true);
+      expect(new Boolean(new String("")).toBoolean()).assertEqual(false);
+      expect(new Boolean(new String(" ")).toBoolean()).assertEqual(true);
+      expect(new Boolean(new String("0")).toBoolean()).assertEqual(true);
+      expect(new Boolean(new String("false")).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0500
+     * @tc.name      testBooleanConstructorAnyCharInstances
+     * @tc.desc      Boolean constructor converts Char instances by char conversion rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyCharInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Char(c'A')).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Char(c'\n')).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Char(c'\u0000')).toBoolean()).assertEqual(false);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0600
+     * @tc.name      testBooleanConstructorAnyFloatInstances
+     * @tc.desc      Boolean constructor converts Float instances by floating conversion rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyFloatInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Float(3.14)).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Float(-3.14)).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Float(0.0)).toBoolean()).assertEqual(false);
+      expect(new Boolean(new Float(Float.NaN)).toBoolean()).assertEqual(false);
+      expect(new Boolean(new Float(Float.POSITIVE_INFINITY)).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0700
+     * @tc.name      testBooleanConstructorAnyPrimitiveValues
+     * @tc.desc      Boolean constructor coordinates Any overload with primitive overloads.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyPrimitiveValues", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(true).toBoolean()).assertEqual(true);
+      expect(new Boolean(false).toBoolean()).assertEqual(false);
+      expect(new Boolean(100 as int).toBoolean()).assertEqual(true);
+      expect(new Boolean(0 as int).toBoolean()).assertEqual(false);
+      expect(new Boolean("arkts").toBoolean()).assertEqual(true);
+      expect(new Boolean("").toBoolean()).assertEqual(false);
+      expect(new Boolean(c'A').toBoolean()).assertEqual(true);
+      expect(new Boolean(c'\u0000').toBoolean()).assertEqual(false);
+      expect(new Boolean(100n).toBoolean()).assertEqual(true);
+      expect(new Boolean(0n).toBoolean()).assertEqual(false);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0800
+     * @tc.name      testBooleanConstructorAnyObjectInstances
+     * @tc.desc      Boolean constructor converts general object instances to true.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyObjectInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Object()).toBoolean()).assertEqual(true);
+      expect(new Boolean(new BooleanConstructor06Class()).toBoolean()).assertEqual(true);
+      expect(new Boolean(new BooleanConstructor06SubClass()).toBoolean()).assertEqual(true);
+      expect(new Boolean(new BooleanConstructor06CustomValue()).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_0900
+     * @tc.name      testBooleanConstructorAnyDateRegExpErrorInstances
+     * @tc.desc      Boolean constructor converts Date, RegExp, and Error instances to true.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyDateRegExpErrorInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Date()).toBoolean()).assertEqual(true);
+      expect(new Boolean(new RegExp("pattern")).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Error("error message")).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1000
+     * @tc.name      testBooleanConstructorAnyCollectionInstances
+     * @tc.desc      Boolean constructor converts Array, Map, and Set object instances to true.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyCollectionInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emptyArray: int[] = [];
+      const numberArray: int[] = [1, 2, 3];
+      const emptyMap: Map<string, string> = new Map<string, string>();
+      const nonEmptyMap: Map<string, string> = new Map<string, string>();
+      const emptySet: Set<int> = new Set<int>();
+      const nonEmptySet: Set<int> = new Set<int>();
+      nonEmptyMap.set("key", "value");
+      nonEmptySet.add(1);
+
+      expect(new Boolean(emptyArray).toBoolean()).assertEqual(true);
+      expect(new Boolean(numberArray).toBoolean()).assertEqual(true);
+      expect(new Boolean(emptyMap).toBoolean()).assertEqual(true);
+      expect(new Boolean(nonEmptyMap).toBoolean()).assertEqual(true);
+      expect(new Boolean(emptySet).toBoolean()).assertEqual(true);
+      expect(new Boolean(nonEmptySet).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1100
+     * @tc.name      testBooleanConstructorAnyReturnType
+     * @tc.desc      Boolean constructor with Any values returns Boolean object instances.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyReturnType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const defaultBool: Boolean = new Boolean();
+      const nullBool: Boolean = new Boolean(null);
+      const objectBool: Boolean = new Boolean(new Number(10));
+
+      expect(defaultBool instanceof Boolean).assertEqual(true);
+      expect(nullBool instanceof Boolean).assertEqual(true);
+      expect(objectBool instanceof Boolean).assertEqual(true);
+      expect(defaultBool.toBoolean()).assertEqual(false);
+      expect(nullBool.toBoolean()).assertEqual(false);
+      expect(objectBool.toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1200
+     * @tc.name      testBooleanConstructorAnyNullUndefinedRules
+     * @tc.desc      Boolean constructor consistently converts null and undefined to false.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyNullUndefinedRules", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      assertAnyBoolean(null, false);
+      assertAnyBoolean(undefined, false);
+      expect(new Boolean().toBoolean()).assertEqual(false);
+      expect(new Boolean().equals(Boolean.FALSE)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1300
+     * @tc.name      testBooleanConstructorAnyWrapperConversionRules
+     * @tc.desc      Boolean constructor converts wrapper instances by wrapped primitive rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyWrapperConversionRules", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      assertAnyBoolean(new Number(100), true);
+      assertAnyBoolean(new Number(0), false);
+      assertAnyBoolean(new String("hello"), true);
+      assertAnyBoolean(new String(""), false);
+      assertAnyBoolean(new Char(c'A'), true);
+      assertAnyBoolean(new Char(c'\u0000'), false);
+      assertAnyBoolean(new Float(3.14), true);
+      assertAnyBoolean(new Float(0.0), false);
+      assertAnyBoolean(new Float(Float.NaN), false);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1400
+     * @tc.name      testBooleanConstructorAnyObjectConversionRules
+     * @tc.desc      Boolean constructor converts object instances not handled as wrappers to true.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyObjectConversionRules", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      assertAnyBoolean(new Object(), true);
+      assertAnyBoolean(new Date(), true);
+      assertAnyBoolean(new Error("test"), true);
+      assertAnyBoolean(new BooleanConstructor06Class(), true);
+      assertAnyBoolean(new BooleanConstructor06SubClass(), true);
+      assertAnyBoolean(new BooleanConstructor06CustomValue(), true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1500
+     * @tc.name      testBooleanConstructorAnyChainedBooleanInstances
+     * @tc.desc      Boolean constructor preserves values through repeated Boolean wrapping.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyChainedBooleanInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const trueBool1: Boolean = new Boolean(true);
+      const trueBool2: Boolean = new Boolean(trueBool1);
+      const trueBool3: Boolean = new Boolean(trueBool2);
+      const falseBool1: Boolean = new Boolean(false);
+      const falseBool2: Boolean = new Boolean(falseBool1);
+      const falseBool3: Boolean = new Boolean(falseBool2);
+
+      expect(trueBool3.toBoolean()).assertEqual(true);
+      expect(falseBool3.toBoolean()).assertEqual(false);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1600
+     * @tc.name      testBooleanConstructorAnyCompareWithStaticInstances
+     * @tc.desc      Any constructor true and false cases match Boolean.TRUE and Boolean.FALSE by value.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyCompareWithStaticInstances", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Number(1)).equals(Boolean.TRUE)).assertEqual(true);
+      expect(new Boolean(new String("x")).equals(Boolean.TRUE)).assertEqual(true);
+      expect(new Boolean(new Char(c'A')).equals(Boolean.TRUE)).assertEqual(true);
+      expect(new Boolean(new Float(1.5)).equals(Boolean.TRUE)).assertEqual(true);
+      expect(new Boolean(new Object()).equals(Boolean.TRUE)).assertEqual(true);
+      expect(new Boolean(null).equals(Boolean.FALSE)).assertEqual(true);
+      expect(new Boolean(undefined).equals(Boolean.FALSE)).assertEqual(true);
+      expect(new Boolean(new Boolean(false)).equals(Boolean.FALSE)).assertEqual(true);
+      expect(new Boolean(new Number(0)).equals(Boolean.FALSE)).assertEqual(true);
+      expect(new Boolean(new String("")).equals(Boolean.FALSE)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1700
+     * @tc.name      testBooleanConstructorAnyDynamicTypeScenarios
+     * @tc.desc      Boolean constructor can be used for safe dynamic type conversion.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyDynamicTypeScenarios", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(toBooleanSafe(null)).assertEqual(false);
+      expect(toBooleanSafe(undefined)).assertEqual(false);
+      expect(toBooleanSafe(new Number(100))).assertEqual(true);
+      expect(toBooleanSafe(new Number(0))).assertEqual(false);
+      expect(toBooleanSafe(new String("test"))).assertEqual(true);
+      expect(toBooleanSafe(new String(""))).assertEqual(false);
+      expect(toBooleanSafe(new Object())).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1800
+     * @tc.name      testBooleanConstructorAnyHasValueScenarios
+     * @tc.desc      Boolean constructor can validate whether dynamic data has a truthy converted value.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyHasValueScenarios", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emptyArray: int[] = [];
+
+      expect(hasValue(null)).assertEqual(false);
+      expect(hasValue(undefined)).assertEqual(false);
+      expect(hasValue(new Number(0))).assertEqual(false);
+      expect(hasValue(new String(""))).assertEqual(false);
+      expect(hasValue(new Number(100))).assertEqual(true);
+      expect(hasValue(new String("test"))).assertEqual(true);
+      expect(hasValue(new Object())).assertEqual(true);
+      expect(hasValue(emptyArray)).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_1900
+     * @tc.name      testBooleanConstructorAnyLogicalOperations
+     * @tc.desc      Boolean constructor from Any values supports Boolean logic operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyLogicalOperations", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(new Boolean(new Number(100)).negate().toBoolean()).assertEqual(false);
+      expect(new Boolean(new Number(0)).negate().toBoolean()).assertEqual(true);
+      expect(new Boolean(new Number(100)).and(new Boolean(new String("test"))).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Number(0)).and(new Boolean(new String("test"))).toBoolean()).assertEqual(false);
+      expect(new Boolean(new Number(0)).or(new Boolean(new String("test"))).toBoolean()).assertEqual(true);
+      expect(new Boolean(new Number(100)).xor(new Boolean(new String("test"))).toBoolean()).assertEqual(false);
+      expect(new Boolean(new Number(100)).xor(new Boolean(new String(""))).toBoolean()).assertEqual(true);
+    })
+
+    /**
+     * @tc.number    SUB_BOOLEAN_CONSTRUCTOR_SIX_2000
+     * @tc.name      testBooleanConstructorAnyBatchConversionScenarios
+     * @tc.desc      Boolean constructor converts a batch of Any values according to null, wrapper, and object rules.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBooleanConstructorAnyBatchConversionScenarios", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Any[] = [
+        null,
+        undefined,
+        new Number(0),
+        new Number(100),
+        new String(""),
+        new String("test"),
+        new Object(),
+        new Date(),
+        new Error("test")
+      ];
+      const expected: boolean[] = [false, false, false, true, false, true, true, true, true];
+
+      for (let i: int = 0; i < values.length; i++) {
+        expect(new Boolean(values[i]).toBoolean()).assertEqual(expected[i]);
+      }
+    })
+  })
+}
+export default function BooleanConstructorTest(): void {
+  BooleanConstructor01Test();
+  BooleanConstructor02Test();
+  BooleanConstructor03Test();
+  BooleanConstructor04Test();
+  BooleanConstructor05Test();
+  BooleanConstructor06Test();
 }
