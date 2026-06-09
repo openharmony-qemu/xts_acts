@@ -79,6 +79,11 @@ import WatchTest from './Watch/Watch.test';
 import WatchLinkTest0050 from './Watch/WatchLinkTest0050.test';
 import Observed0060TestJsunit from './Observed/Observed0060TestJsunit.test';
 
+import ReusableChildState1Test from './Reusable/ReusableChildState1Test.test';
+import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
+import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
+import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
+
 export default function testsuite() {
     Consume0020Test();
     Consume0030Test();
@@ -142,6 +147,8 @@ export default function testsuite() {
     WatchTest();
     WatchLinkTest0050();
     Observed0060TestJsunit();
-
-
+    ReusableChildState1Test();
+    ReusableChildState2Test();
+    ReusableChildState3Test();
+    ReusableChildState4Test();
 }
