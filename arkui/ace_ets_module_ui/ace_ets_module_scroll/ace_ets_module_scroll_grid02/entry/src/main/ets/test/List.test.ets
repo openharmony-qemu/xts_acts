@@ -63,6 +63,7 @@ import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChange
 import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test';
 import gridEnableEditMode from './gridOptions/gridEnableEditMode.test';
 import gridEditModeOptions from './gridOptions/gridEditModeOptions.test';
+import gridEditModeChange from './gridOptions/gridEditModeChange.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -115,4 +116,5 @@ export default function testsuite() {
   headerFooterStickyGrid()
   gridEnableEditMode()
   gridEditModeOptions()
+  gridEditModeChange()
 }

@@ -24,7 +24,7 @@ import createIncrementalSourceTest from "./testStatic/image/image/createIncremen
 import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
 import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
 import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
-import ImageSourceTest from "./image/imageSource/ImageSource.test";
+import ImageSourceTest from "./testStatic/image/imageSource/ImageSource.test";
 import CreatePixelMapSupp from "./testStatic/image/imageSource/createPixelMap.test";
 import createPremultipliedPixelMapTest from "./testStatic/image/image/createPremultipliedPixelMap.test";
 import ImageGetComponentTest from "./testStatic/image/Image_operation/getComponent.test";
@@ -56,6 +56,14 @@ import ImageSourceCreatePixelMapUsingAllocatorTest
 import ImageSourceCreatePixelMapUsingAllocatorSyncTest
   from "./testStatic/image/imageSource/createPixelMapUsingAllocatorSync.test";
 import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getDelayTimeList.test";
+import MetaDataSetBlobStaticSuppTest from './testStatic/image/Metadata/MetaDataSetBlobTest.test';
+import imagePackerPackToFileAbnormalStaticSuppTest from './testStatic/image/ImagePacker/packToFileAbnormalStatic.test';
+import imagePackerPackToFileStaticSuppTest from './testStatic/image/ImagePacker/packToFileNormalStatic.test';
+import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
+import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getAllPropertiesStatic.test';
+import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
+import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
+import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -111,6 +119,15 @@ export default function testsuite(): void {
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImageSourceCreatePixelMapUsingAllocatorSyncTest();
   ImageSourceGetDelayTimeListTest();
+
+  MetaDataSetBlobStaticSuppTest();
+  imagePackerPackToFileAbnormalStaticSuppTest();
+  imagePackerPackToFileStaticSuppTest();
+  imagePackerPackToFilePictureStaticSuppTest();
+  metaDatagetAllPropertiesStaticTest();
+  metaDataGetPropertiesTestStatic();
+  setPropertiesStaticSuppTest();
+  metadataCloneStaticSuppTest();
 }
 
 

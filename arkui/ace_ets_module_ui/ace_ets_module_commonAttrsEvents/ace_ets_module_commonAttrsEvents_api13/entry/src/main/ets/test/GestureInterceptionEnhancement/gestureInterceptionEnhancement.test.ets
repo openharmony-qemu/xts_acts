@@ -59,7 +59,7 @@ export default function gestureInterceptionEnhancementTest() {
         console.info('gestureInterceptionEnhancementTest_0010 START');
         let driver: Driver = await Driver.create()
         await CommonFunc.sleep(1000);
-        let firstTabs = CommonFunc.getComponentRectOnScreen('firstTabsContent');
+        let firstTabs = CommonFunc.getComponentRectOnScreen('tabsInterceptionEnhancement' + '_firstTabsContent');
         let top = firstTabs.top;
         let right = firstTabs.right;
         let left = firstTabs.left;
@@ -107,7 +107,7 @@ export default function gestureInterceptionEnhancementTest() {
         await CommonFunc.sleep(1000);
         let driver: Driver = await Driver.create()
         await CommonFunc.sleep(1000);
-        let firstTabs = CommonFunc.getComponentRectOnScreen('firstTabsContent');
+        let firstTabs = CommonFunc.getComponentRectOnScreen('tabsInterceptionEnhancement' + '_firstTabsContent');
         let top = firstTabs.top;
         let right = firstTabs.right;
         let left = firstTabs.left;
@@ -154,7 +154,7 @@ export default function gestureInterceptionEnhancementTest() {
         await CommonFunc.sleep(1000);
         let driver: Driver = await Driver.create()
         await CommonFunc.sleep(1000);
-        let firstTabs = CommonFunc.getComponentRectOnScreen('firstTabsContent');
+        let firstTabs = CommonFunc.getComponentRectOnScreen('tabsInterceptionEnhancement' + '_firstTabsContent');
         let top = firstTabs.top;
         let right = firstTabs.right;
         let left = firstTabs.left;

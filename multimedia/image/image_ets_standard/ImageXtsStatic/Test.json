@@ -36,6 +36,9 @@
             "type": "PushKit",
             "pre-push": [],
             "push": [
+                "./resource/image/test_exif_empty_2.png->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/moving_test_loop0.gif->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v4.heic->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/jpeg_exif_thumbnail.jpg->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test.jpg->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test.svg->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",

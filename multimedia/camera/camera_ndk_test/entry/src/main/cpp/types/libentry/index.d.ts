@@ -686,3 +686,17 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getEnumNotificationName: (index: number) => number;
+
+export const getEnumProximityStateForFocus: (index: number) => number;
+
+export const registerNotificationReceivedCallback: (index: number) => number;
+
+export const unregisterNotificationReceivedCallback: (index: number) => number;
+
+export const getNotificationName: (index: number) => number;
+
+export const getProximityStateForFocus: (index: number) => number;
+
+export const destroyCameraNotificationInfo: (index: number) => number;

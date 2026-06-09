@@ -82,7 +82,7 @@ export default function hoverEffectJsunit() {
 it('testhoverEffect_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('hoverEffect testhoverEffect0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('ScaleText');
+      let strJson: string = inspector.getInspectorByKey('hoverEffect_ScaleText');
       console.info("[testhoverEffect0001] component hoverEffect strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('hoverEffect')).assertEqual('HoverEffect.Scale');
@@ -102,7 +102,7 @@ it('testhoverEffect_static_0001', Level.LEVEL2, async (done: () => void): Promis
 it('testhoverEffect_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('hoverEffect testhoverEffect0002 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('HighlightText');
+      let strJson: string = inspector.getInspectorByKey('hoverEffect_HighlightText');
       console.info("[testhoverEffect0002] component hoverEffect strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('hoverEffect')).assertEqual('HoverEffect.Highlight');

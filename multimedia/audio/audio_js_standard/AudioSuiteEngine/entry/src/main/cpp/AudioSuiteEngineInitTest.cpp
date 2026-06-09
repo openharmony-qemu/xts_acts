@@ -9495,6 +9495,80 @@ static napi_value SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100(
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(audioSuiteEngine, audioSuitePipeline, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(nullptr, audioSuitePipeline, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuiteEngine *audioSuiteEngine = nullptr;
+    OH_AudioSuitePipeline *audioSuitePipeline = nullptr;
+    OH_AudioSuiteEngine_Create(&audioSuiteEngine);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(audioSuiteEngine, nullptr, -1);
+    OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
+    OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
+    if (result == AUDIOSUITE_SUCCESS) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSuite_Result result = OH_AudioSuite_PrintInfo(nullptr, nullptr, -1);
+    if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 success, result is: %{public}d", result);
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -10065,6 +10139,14 @@ static napi_value Init(napi_env env, napi_value exports)
             SUB_MULTIMEDIA_AUDIOSUITE_HOA_CASCADE_FAIL_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100", nullptr,
             SUB_MULTIMEDIA_AUDIOSUITE_HOA_EQ_TO_HOA_FAIL_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400", nullptr,
+            SUB_MULTIMEDIA_AUDIOSUITE_PRINTINFO_TEST_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -45,9 +45,13 @@ export default class MainAbility extends Ability {
     console.log('MainAbility onCreate');
     let cmd: string;
     let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
+    let user = abilityDelegatorArguments.parameters["-u"];
     let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     cmd = 'aa test -b com.example.aacommandprintsync -m entry_test  -s class ' +
       'AACommandPrintTest#ACTS_AACommand_printSync_01_0100 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0100 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0100 stdResult = ' + data.stdResult);
@@ -60,6 +64,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
       'AACommandPrintTest#ACTS_AACommand_printSync_01_0200 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0200 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0200 stdResult = ' + data.stdResult);
@@ -72,6 +79,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
       'AACommandPrintTest#ACTS_AACommand_printSync_01_0300 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0300 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0300 stdResult = ' + data.stdResult);
@@ -84,6 +94,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
       'AACommandPrintTest#ACTS_AACommand_printSync_01_0400 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0400 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0400 stdResult = ' + data.stdResult);
@@ -96,6 +109,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.example.aacommandprintsync -s class ' +
       'AACommandPrintTest#SUB_Ability_AbilityTools_TestRunner_OnStop_01_0500 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
       console.log('ACTS_AACommand_printSync_01_0500 start err: ' + JSON.stringify(err));
       console.log('ACTS_AACommand_printSync_01_0500 stdResult = ' + data.stdResult);
