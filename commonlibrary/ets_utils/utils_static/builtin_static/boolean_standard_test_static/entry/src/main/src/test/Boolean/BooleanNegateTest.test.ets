@@ -139,7 +139,7 @@ export default function BooleanNegateTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_NEGATE_TEST_0100
      * @tc.name      testBooleanNegateNoParameterCompileConstraint
-     * @tc.desc      Boolean.negate()
+     * @tc.desc      Boolean.negate() takes no arguments; any argument is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -155,7 +155,7 @@ export default function BooleanNegateTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_NEGATE_TEST_0200
      * @tc.name      testBooleanNegateMaxParameterCountCompileConstraint
-     * @tc.desc      Boolean.negate()
+     * @tc.desc      Boolean.negate() has zero parameters; extra parameters are compile-time invalid, valid call works correctly.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -169,7 +169,7 @@ export default function BooleanNegateTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_NEGATE_TEST_0300
      * @tc.name      testBooleanNegateMustCallByInstanceCompileConstraint
-     * @tc.desc      Boolean.negate()
+     * @tc.desc      Boolean.negate() must be called on a Boolean instance; static call is rejected by static typing.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -433,7 +433,7 @@ export default function BooleanNegateTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_NEGATE_TEST_1700
      * @tc.name      testBooleanNegateInstanceCallOnlyCompileConstraint
-     * @tc.desc      Boolean.negate()
+     * @tc.desc      Boolean.negate() is an instance-only method; class-level call is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -447,7 +447,7 @@ export default function BooleanNegateTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_NEGATE_TEST_1800
      * @tc.name      testBooleanNegateThisBindingCompileConstraint
-     * @tc.desc      Boolean.negate()
+     * @tc.desc      Boolean.negate() requires Boolean receiver; unsupported rebinding forms are compile-time constraints.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

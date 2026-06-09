@@ -144,7 +144,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_0100
      * @tc.name      testBooleanIsTrueNoArgumentsCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() takes no arguments; extra arguments are compile-time invalid, valid call returns correct boolean.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -158,7 +158,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_0200
      * @tc.name      testBooleanIsTrueMaxParameterCountCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() has zero parameters; extra parameters are compile-time invalid, valid call works correctly.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -172,7 +172,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_0300
      * @tc.name      testBooleanIsTrueRequiresInstanceCallCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() must be called on a Boolean instance; static call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -408,7 +408,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_1600
      * @tc.name      testBooleanIsTrueInstanceMethodOnlyCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() is an instance-only method; static access is not part of the ArkTS Boolean API.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -618,7 +618,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_2800
      * @tc.name      testBooleanIsTrueWrongCallModeCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() must be called via instance; class-level call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -632,7 +632,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_2900
      * @tc.name      testBooleanIsTrueArgumentErrorCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() takes no arguments; any argument is rejected before runtime, valid call returns correct result.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -646,7 +646,7 @@ export default function BooleanIsTrueTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_TRUE_TEST_3000
      * @tc.name      testBooleanIsTrueWrongThisBindingCompileConstraint
-     * @tc.desc      Boolean.isTrue()
+     * @tc.desc      Boolean.isTrue() requires Boolean receiver; non-Boolean binding is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

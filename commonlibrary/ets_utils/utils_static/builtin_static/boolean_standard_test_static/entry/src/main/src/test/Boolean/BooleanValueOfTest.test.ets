@@ -65,7 +65,7 @@ export default function BooleanValueOfInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_VALUE_OF_INSTANCE_0200
      * @tc.name      testBooleanValueOfRequiresInstanceCallCompileConstraint
-     * @tc.desc      instance.valueOf() must be called on a Boolean instance.
+     * @tc.desc      instance.valueOf() must be called on a Boolean instance; static call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -271,7 +271,7 @@ export default function BooleanValueOfInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_VALUE_OF_INSTANCE_1400
      * @tc.name      testBooleanValueOfComparedWithStaticValueOfCompileConstraint
-     * @tc.desc      instance.valueOf() compared with new Boolean() construction.
+     * @tc.desc      instance.valueOf() returns primitive boolean; compared with Boolean construction for consistency.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -505,7 +505,7 @@ export default function BooleanValueOfInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_VALUE_OF_INSTANCE_2800
      * @tc.name      testBooleanValueOfWrongCallModeCompileConstraint
-     * @tc.desc      instance.valueOf() via normal instance call.
+     * @tc.desc      instance.valueOf() must be called via instance; class-level call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -519,7 +519,7 @@ export default function BooleanValueOfInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_VALUE_OF_INSTANCE_2900
      * @tc.name      testBooleanValueOfArgumentErrorCompileConstraint
-     * @tc.desc      instance.valueOf() with zero arguments is the legal call form.
+     * @tc.desc      instance.valueOf() takes zero arguments; extra arguments are compile-time invalid, valid call returns correct result.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -533,7 +533,7 @@ export default function BooleanValueOfInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_VALUE_OF_INSTANCE_3000
      * @tc.name      testBooleanValueOfThisBindingErrorCompileConstraint
-     * @tc.desc      instance.valueOf() via normal call; dynamic this binding is not used in ArkTS.
+     * @tc.desc      instance.valueOf() requires Boolean receiver; dynamic this binding is not used in ArkTS, invalid binding is compile-time constraint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

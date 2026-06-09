@@ -128,7 +128,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_0100
      * @tc.name      testBooleanIsFalseRejectsArgumentsCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() takes no arguments; any argument is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -142,7 +142,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_0200
      * @tc.name      testBooleanIsFalseMaxParameterCountCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() has zero parameters; extra parameters are compile-time invalid, valid call works correctly.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -156,7 +156,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_0300
      * @tc.name      testBooleanIsFalseRequiresInstanceCallCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() must be called on a Boolean instance; static call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -394,7 +394,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_1600
      * @tc.name      testBooleanIsFalseInstanceMethodOnlyCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() is an instance-only method; static access is not part of the ArkTS Boolean API.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -604,7 +604,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_2800
      * @tc.name      testBooleanIsFalseWrongCallModeCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() must be called via instance; class-level call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -618,7 +618,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_2900
      * @tc.name      testBooleanIsFalseArgumentErrorCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() takes no arguments; extra arguments are rejected before runtime, valid call returns correct result.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -632,7 +632,7 @@ export default function BooleanIsFalseTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_IS_FALSE_TEST_3000
      * @tc.name      testBooleanIsFalseWrongThisBindingCompileConstraint
-     * @tc.desc      Boolean.isFalse()
+     * @tc.desc      Boolean.isFalse() requires Boolean receiver; non-Boolean binding is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

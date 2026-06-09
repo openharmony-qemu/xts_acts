@@ -96,7 +96,7 @@ export default function BooleanToBooleanInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_TO_BOOLEAN_INSTANCE_0200
      * @tc.name      testBooleanToBooleanRejectsArgumentCompileConstraint
-     * @tc.desc      Passing any argument to instance.toBoolean() is rejected by ArkTS static checking.
+     * @tc.desc      Passing any argument to instance.toBoolean() is rejected by ArkTS static checking; valid call returns correct boolean.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -122,7 +122,7 @@ export default function BooleanToBooleanInstanceTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_TO_BOOLEAN_INSTANCE_0400
      * @tc.name      testBooleanToBooleanStaticNoArgumentCompileConstraint
-     * @tc.desc      Boolean.toBoolean() without the required static value parameter is rejected by ArkTS static checking.
+     * @tc.desc      Boolean.toBoolean() requires a value parameter; calling without it is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

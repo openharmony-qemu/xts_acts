@@ -148,7 +148,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_0100
      * @tc.name      testBooleanOrRequiresOtherParameterCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() requires a Boolean other parameter; calling without it is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -161,7 +161,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_0200
      * @tc.name      testBooleanOrRejectsExtraParameterCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or(Boolean) takes exactly one argument; extra arguments are compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -260,7 +260,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_0900
      * @tc.name      testBooleanOrRejectsNullCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects null as other parameter; null is compile-time invalid for Boolean type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -273,7 +273,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_1000
      * @tc.name      testBooleanOrRejectsUndefinedCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects undefined as other parameter; undefined is compile-time invalid for Boolean type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -286,7 +286,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_1100
      * @tc.name      testBooleanOrRejectsPrimitiveTrueCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects primitive boolean as other parameter; only Boolean instance is accepted.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -299,7 +299,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_1200
      * @tc.name      testBooleanOrRejectsStringCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects string as other parameter; only Boolean instance is accepted.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -312,7 +312,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_1300
      * @tc.name      testBooleanOrRejectsNumberCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects number as other parameter; only Boolean instance is accepted.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -325,7 +325,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_1400
      * @tc.name      testBooleanOrRejectsObjectCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() rejects plain object as other parameter; only Boolean instance is accepted.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -613,7 +613,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_3100
      * @tc.name      testBooleanOrMustCallThroughInstanceCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() must be called on a Boolean instance; static class call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -822,7 +822,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_4300
      * @tc.name      testBooleanOrWrongCallModeCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() must be called via instance; class-level call is compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -835,7 +835,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_4400
      * @tc.name      testBooleanOrNonBooleanArgumentCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() only accepts Boolean argument; null, undefined, primitive, string etc. are compile-time invalid.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -848,7 +848,7 @@ export default function BooleanOrTest(): void {
     /**
      * @tc.number    SUB_BOOLEAN_OR_TEST_4500
      * @tc.name      testBooleanOrWrongThisBindingCompileConstraint
-     * @tc.desc      Boolean.or()
+     * @tc.desc      Boolean.or() requires Boolean receiver; non-Boolean binding is rejected by ArkTS static checking.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
