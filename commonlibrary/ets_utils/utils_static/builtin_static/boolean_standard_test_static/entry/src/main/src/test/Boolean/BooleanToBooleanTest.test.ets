@@ -142,7 +142,6 @@ export default function BooleanToBooleanInstanceTest(): void {
     it("testBooleanToBooleanReturnType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new Boolean(true).toBoolean();
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**

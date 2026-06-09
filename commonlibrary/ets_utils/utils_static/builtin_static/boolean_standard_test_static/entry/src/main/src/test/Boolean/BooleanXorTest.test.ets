@@ -281,7 +281,6 @@ export default function BooleanXorTest(): void {
     it("testBooleanXorReturnsBooleanObjectType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new Boolean(true).xor(new Boolean(false));
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**

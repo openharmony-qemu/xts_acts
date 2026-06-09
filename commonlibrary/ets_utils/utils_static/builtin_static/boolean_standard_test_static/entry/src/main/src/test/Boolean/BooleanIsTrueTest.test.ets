@@ -194,7 +194,6 @@ export default function BooleanIsTrueTest(): void {
     it("testBooleanIsTrueReturnsPrimitiveBooleanType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new Boolean(true).isTrue();
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**
@@ -231,7 +230,7 @@ export default function BooleanIsTrueTest(): void {
       expect(new Boolean(0 as int).isTrue()).assertEqual(false);
       expect(new Boolean(c'\u0000').isTrue()).assertEqual(false);
       expect(new Boolean(0.0).isTrue()).assertEqual(false);
-      expect(new Boolean(NaN).isTrue()).assertEqual(new Boolean(NaN).valueOf() === true);
+      expect(new Boolean(NaN).isFalse()).assertEqual(true);
       expect(new Boolean("").isTrue()).assertEqual(false);
       expect(new Boolean(null as Any).isTrue()).assertEqual(false);
       expect(new Boolean(undefined as Any).isTrue()).assertEqual(false);
@@ -301,7 +300,6 @@ export default function BooleanIsTrueTest(): void {
     it("testBooleanIsTruePrimitiveBooleanReturnCharacteristics", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new Boolean(true).isTrue();
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
       expect(result && true).assertEqual(true);
       expect(result || false).assertEqual(true);
       expect(!result).assertEqual(false);

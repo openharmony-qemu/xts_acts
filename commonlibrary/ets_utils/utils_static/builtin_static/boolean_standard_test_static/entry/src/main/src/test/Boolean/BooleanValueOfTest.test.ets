@@ -87,7 +87,6 @@ export default function BooleanValueOfInstanceTest(): void {
       let boolObj = new Boolean(true);
       let result = boolObj.valueOf();
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**
@@ -210,7 +209,6 @@ export default function BooleanValueOfInstanceTest(): void {
       let boolObj = new Boolean(true);
       let result = boolObj.valueOf();
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**

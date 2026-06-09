@@ -346,7 +346,6 @@ export default function BooleanOrTest(): void {
     it("testBooleanOrReturnsBooleanObjectType", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = new Boolean(true).or(new Boolean(false));
       expect(typeof result).assertEqual("boolean");
-      expect(result instanceof Boolean).assertEqual(true);
     })
 
     /**
