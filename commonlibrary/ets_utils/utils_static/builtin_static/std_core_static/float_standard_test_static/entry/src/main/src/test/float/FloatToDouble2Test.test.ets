@@ -63,7 +63,7 @@ export default function FloatToDouble2Test(): void {
      */
     it('testToDouble2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Float.toDouble(0.0f);
-      expect(result).assertEqual(0.0);
+      expect(result).assertEqual(0.0f);
     });
 
     /**
@@ -133,9 +133,9 @@ export default function FloatToDouble2Test(): void {
      */
     it('testToDouble2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let toDoubleResult5: double = Float.toDouble(0.0f);
-      expect(toDoubleResult5).assertEqual(0.0);
+      expect(toDoubleResult5).assertEqual(0.0f);
       let toDoubleResult6: double = Float.toDouble(-0.0f);
-      expect(toDoubleResult6).assertEqual(-0.0);
+      expect(toDoubleResult6).assertEqual(-0.0f);
     });
 
     /**

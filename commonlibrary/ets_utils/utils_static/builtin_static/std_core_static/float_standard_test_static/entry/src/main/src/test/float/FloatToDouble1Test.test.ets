@@ -77,7 +77,7 @@ export default function FloatToDouble1Test(): void {
      */
     it('testToDouble1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = new Float(0.0f).toDouble();
-      expect(result).assertEqual(0.0);
+      expect(result).assertEqual(0.0f);
     });
 
     /**
@@ -358,7 +358,7 @@ export default function FloatToDouble1Test(): void {
      */
     it('testToDouble1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = new Float(0).toDouble();
-      expect(result).assertEqual(0.0);
+      expect(result).assertEqual(0.0f);
     });
 
     /**
@@ -387,7 +387,7 @@ export default function FloatToDouble1Test(): void {
      */
     it('testToDouble1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = new Float().toDouble();
-      expect(result).assertEqual(0.0);
+      expect(result).assertEqual(0.0f);
     });
   });
 }

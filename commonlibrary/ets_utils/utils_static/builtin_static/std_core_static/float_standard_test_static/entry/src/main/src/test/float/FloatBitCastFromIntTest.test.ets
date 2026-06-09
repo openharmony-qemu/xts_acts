@@ -50,7 +50,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(1065353216);
-      expect(result).assertClose(1.0f, Float.EPSILON);
+      expect(result).assertEqual(1.0f);
     });
 
     /**
@@ -91,7 +91,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(1073741824);
-      expect(result).assertClose(2.0f, Float.EPSILON);
+      expect(result).assertEqual(2.0f);
     });
 
     /**
@@ -143,7 +143,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(1092616192);
-      expect(result).assertClose(10.0f, Float.EPSILON);
+      expect(result).assertEqual(10.0f);
     });
 
     /**
@@ -156,7 +156,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(-1054867456);
-      expect(result).assertClose(-10.0f, Float.EPSILON);
+      expect(result).assertEqual(-10.0f);
     });
 
     /**
@@ -169,7 +169,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(1056964608);
-      expect(result).assertClose(0.5f, Float.EPSILON);
+      expect(result).assertEqual(0.5f);
     });
 
     /**
@@ -182,7 +182,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(-1090519040);
-      expect(result).assertClose(-0.5f, Float.EPSILON);
+      expect(result).assertEqual(-0.5f);
     });
 
     /**
@@ -416,7 +416,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(Float.bitCastToInt(1.0f));
-      expect(result).assertClose(1.0f, Float.EPSILON);
+      expect(result).assertEqual(1.0f);
     });
 
     /**
@@ -429,7 +429,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(Float.bitCastToInt(-10.0f));
-      expect(result).assertClose(-10.0f, Float.EPSILON);
+      expect(result).assertEqual(-10.0f);
     });
 
     /**
@@ -572,7 +572,7 @@ export default function FloatBitCastFromIntTest(): void {
      */
     it('testBitCastFromInt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: float = Float.bitCastFromInt(1065353216);
-      expect(result).assertClose(1.0f, Float.EPSILON);
+      expect(result).assertEqual(1.0f);
       let isNotNumericEqual: boolean = result !== 1065353216.0f;
       expect(isNotNumericEqual).assertTrue();
     });
