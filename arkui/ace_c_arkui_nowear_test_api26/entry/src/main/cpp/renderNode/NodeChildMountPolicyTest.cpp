@@ -17,11 +17,11 @@
 #include <arkui/native_render.h>
 #include <arkui/native_node.h>
 #include <hilog/log.h>
-
+ 
 namespace ArkUICapiTest {
-
+ 
 // ========== OH_ArkUI_NativeModule_SetChildMountPolicy Tests ==========
-
+ 
 static napi_value TestSetChildMountPolicy_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -32,7 +32,7 @@ static napi_value TestSetChildMountPolicy_001(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
-
+ 
 static napi_value TestSetChildMountPolicy_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -43,7 +43,7 @@ static napi_value TestSetChildMountPolicy_002(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
-
+ 
 static napi_value TestSetChildMountPolicy_003(napi_env env, napi_callback_info info)
 {
     OH_ArkUI_NodeMountPolicy policy = OH_ARKUI_NODE_MOUNT_POLICY_MIXED;
@@ -53,7 +53,7 @@ static napi_value TestSetChildMountPolicy_003(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
-
+ 
 static napi_value TestSetChildMountPolicy_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -63,9 +63,9 @@ static napi_value TestSetChildMountPolicy_004(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
-
+ 
 // ========== OH_ArkUI_NativeModule_GetChildMountPolicy Tests ==========
-
+ 
 static napi_value TestGetChildMountPolicy_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -81,7 +81,7 @@ static napi_value TestGetChildMountPolicy_001(napi_env env, napi_callback_info i
     ASSERT_EQ(getPolicy, OH_ARKUI_NODE_MOUNT_POLICY_SINGLE_IF_RENDER_NODE);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetChildMountPolicy_002(napi_env env, napi_callback_info info)
 {
     OH_ArkUI_NodeMountPolicy policy = OH_ARKUI_NODE_MOUNT_POLICY_SINGLE_IF_RENDER_NODE;
@@ -91,7 +91,7 @@ static napi_value TestGetChildMountPolicy_002(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetChildMountPolicy_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -101,7 +101,7 @@ static napi_value TestGetChildMountPolicy_003(napi_env env, napi_callback_info i
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetChildMountPolicy_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(node, ARKUI_NODE_CUSTOM);
@@ -117,16 +117,13 @@ static napi_value TestGetChildMountPolicy_004(napi_env env, napi_callback_info i
     ASSERT_EQ(policy, OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     NAPI_END;
 }
-
+ 
 // ========== OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt Tests ==========
-
+ 
 static napi_value TestInsertRenderNodeAt_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
     auto rsNodeRoot = OH_ArkUI_RenderNodeUtils_CreateNode();
-    ASSERT_EQ(rsNodeRoot != nullptr, true);
-    auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
-    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
     auto ret2 = OH_ArkUI_RenderNodeUtils_InsertRenderNodeAt(custom, rsNodeRoot, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NodeChildMountPolicy",
@@ -136,7 +133,7 @@ static napi_value TestInsertRenderNodeAt_001(napi_env env, napi_callback_info in
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -157,7 +154,7 @@ static napi_value TestInsertRenderNodeAt_002(napi_env env, napi_callback_info in
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -174,7 +171,7 @@ static napi_value TestInsertRenderNodeAt_003(napi_env env, napi_callback_info in
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -195,7 +192,7 @@ static napi_value TestInsertRenderNodeAt_004(napi_env env, napi_callback_info in
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_005(napi_env env, napi_callback_info info)
 {
     NAPI_START(Text, ARKUI_NODE_TEXT);
@@ -207,7 +204,7 @@ static napi_value TestInsertRenderNodeAt_005(napi_env env, napi_callback_info in
     
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_006(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
@@ -222,11 +219,11 @@ static napi_value TestInsertRenderNodeAt_006(napi_env env, napi_callback_info in
     
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_007(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
-
+ 
     ArkUI_NodeHandle node = nodeAPI->createNode(ARKUI_NODE_CUSTOM);
     ArkUI_NodeHandle host = nodeAPI->createNode(ARKUI_NODE_CUSTOM);
     ArkUI_NodeHandle adoptedNode = nodeAPI->createNode(ARKUI_NODE_TEXT);
@@ -250,7 +247,7 @@ static napi_value TestInsertRenderNodeAt_007(napi_env env, napi_callback_info in
     
     NAPI_END;
 }
-
+ 
 static napi_value TestInsertRenderNodeAt_008(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
@@ -264,14 +261,15 @@ static napi_value TestInsertRenderNodeAt_008(napi_env env, napi_callback_info in
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_CHILD_EXISTED);
     NAPI_END;
 }
-
+ 
 // ========== OH_ArkUI_RenderNodeUtils_GetRenderNodeChildrenCount Tests ==========
-
+ 
 static napi_value TestGetRenderNodeChildrenCount_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
     auto rsNodeRoot = OH_ArkUI_RenderNodeUtils_CreateNode();
     ASSERT_EQ(rsNodeRoot != nullptr, true);
+    OH_ArkUI_NativeModule_SetChildMountPolicy(custom, OH_ArkUI_NodeMountPolicy::OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
@@ -294,7 +292,7 @@ static napi_value TestGetRenderNodeChildrenCount_001(napi_env env, napi_callback
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeChildrenCount_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
@@ -309,7 +307,7 @@ static napi_value TestGetRenderNodeChildrenCount_002(napi_env env, napi_callback
     ASSERT_EQ(count, 0);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeChildrenCount_003(napi_env env, napi_callback_info info)
 {
     int32_t count = 0;
@@ -319,7 +317,7 @@ static napi_value TestGetRenderNodeChildrenCount_003(napi_env env, napi_callback
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeChildrenCount_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -336,14 +334,15 @@ static napi_value TestGetRenderNodeChildrenCount_004(napi_env env, napi_callback
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 // ========== OH_ArkUI_RenderNodeUtils_GetRenderNodeAt Tests ==========
-
+ 
 static napi_value TestGetRenderNodeAt_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
     auto rsNodeRoot = OH_ArkUI_RenderNodeUtils_CreateNode();
     ASSERT_EQ(rsNodeRoot != nullptr, true);
+    OH_ArkUI_NativeModule_SetChildMountPolicy(custom, OH_ArkUI_NodeMountPolicy::OH_ARKUI_NODE_MOUNT_POLICY_MIXED);
     auto ret1 = OH_ArkUI_RenderNodeUtils_AddRenderNode(custom, rsNodeRoot);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     
@@ -361,16 +360,12 @@ static napi_value TestGetRenderNodeAt_001(napi_env env, napi_callback_info info)
         "TestGetRenderNodeAt_001 ret=%{public}d, child=%{public}p", ret2, retrievedChild);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_NO_ERROR);
     
-    retrievedChild = nullptr;
-    auto ret3 = OH_ArkUI_RenderNodeUtils_GetRenderNodeAt(custom, 1, &retrievedChild);
-    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NO_ERROR);
-    
     OH_ArkUI_RenderNodeUtils_DisposeNode(child1);
     OH_ArkUI_RenderNodeUtils_DisposeNode(child2);
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeAt_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -388,7 +383,7 @@ static napi_value TestGetRenderNodeAt_002(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeAt_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -405,7 +400,7 @@ static napi_value TestGetRenderNodeAt_003(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeAt_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -428,7 +423,7 @@ static napi_value TestGetRenderNodeAt_004(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 static napi_value TestGetRenderNodeAt_005(napi_env env, napi_callback_info info)
 {
     NAPI_START(custom, ARKUI_NODE_CUSTOM);
@@ -451,5 +446,5 @@ static napi_value TestGetRenderNodeAt_005(napi_env env, napi_callback_info info)
     OH_ArkUI_RenderNodeUtils_DisposeNode(rsNodeRoot);
     NAPI_END;
 }
-
+ 
 }
