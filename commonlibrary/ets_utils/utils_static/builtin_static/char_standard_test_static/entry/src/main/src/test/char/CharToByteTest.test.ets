@@ -74,7 +74,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toByte();
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -88,7 +88,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toByte();
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -174,7 +174,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'中');
       const result = c.toByte();
-      expect(result === 45 || result === 20013).assertTrue();
+      expect(result === 45).assertTrue();
     });
 
     /**
@@ -244,7 +244,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(Char.HIGH_SURROGATE_MIN); // 0xD800 = 55296
       const result = c.toByte();
-      expect(result === 0 || result === -128 || result === 128).assertTrue();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -258,7 +258,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(Char.LOW_SURROGATE_MIN); // 0xDC00 = 56320
       const result = c.toByte();
-      expect(result === 0 || result === -128 || result === 128).assertTrue();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -286,7 +286,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'\x80'); // 128
       const result = c.toByte();
-      expect(result === -128 || result === 128).assertTrue();
+      expect(result).assertEqual(-128);
     });
 
 
@@ -367,7 +367,7 @@ export default function CharToByteTest():void {
       try {
         const c = new Char(c'\u0100');
         const result = c.toByte();
-        expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+        expect(typeof result).assertEqual("number");
       } catch (error) {
         expect(error.name.length > 0).assertTrue();
         expect(error.name !== null).assertTrue();
@@ -406,7 +406,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0032' as string, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toByte(c'A');
       expect(result !== undefined && result !== null).assertTrue();
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -437,8 +437,8 @@ export default function CharToByteTest():void {
       const c = new Char(c'A');
       const byteResult = c.toByte();
       const intResult = c.toInt();
-      expect(typeof byteResult === "number" || typeof byteResult === "byte" || typeof byteResult === "int").assertTrue();
-      expect(typeof intResult === "number" || typeof intResult === "byte" || typeof intResult === "int").assertTrue();
+      expect(typeof byteResult).assertEqual("number");
+      expect(typeof intResult).assertEqual("number");
       expect(byteResult).assertEqual(intResult);
     });
 
@@ -518,7 +518,7 @@ export default function CharToByteTest():void {
         const c = new Char(ch);
         const result = c.toByte();
         if (i > 127) {
-          expect(result === i || result === i - 256).assertTrue();
+          expect(result).assertEqual(i - 256);
         }
       }
     });
@@ -534,7 +534,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'\u03A8');
       const result = c.toByte();
-      expect(result === -88 || result === 168 || result === 936).assertTrue();
+      expect(result).assertEqual(-88);
     });
 
 
@@ -564,7 +564,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(Char.MAX_VALUE); // 65535
       const result = c.toByte();
-      expect(result === 255 || result === -1).assertTrue();
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -592,7 +592,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'\u0100'); // 256
       const result = c.toByte();
-      expect(result === 0 || result === 256).assertTrue();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -609,8 +609,8 @@ export default function CharToByteTest():void {
         const c = new Char(ch);
         const result = c.toByte();
         const unsignedVal = c.toInt();
-        const signedValue = unsignedVal - 256;
-        expect(result === unsignedVal || result === signedValue).assertTrue();
+        const signedValue = unsignedVal > 127 ? unsignedVal - 256 : unsignedVal;
+        expect(result).assertEqual(signedValue);
       }
     });
 

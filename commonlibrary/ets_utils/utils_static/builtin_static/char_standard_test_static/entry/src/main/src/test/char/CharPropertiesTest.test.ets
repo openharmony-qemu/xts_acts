@@ -49,7 +49,7 @@ export default function CharPropertiesTest(): void {
      * @tc.level Level 2
      */
     it('testCharProperties0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(typeof Char.CHAR_BIT_SIZE === "number" || typeof Char.CHAR_BIT_SIZE === "int").assertTrue();
+      expect(typeof Char.CHAR_BIT_SIZE).assertEqual("number");
       expect(Number.isInteger(Char.CHAR_BIT_SIZE)).assertTrue();
     });
 
@@ -91,7 +91,7 @@ export default function CharPropertiesTest(): void {
      * @tc.level Level 2
      */
     it('testCharProperties0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(typeof Char.MAX_CODE_POINT === "number" || typeof Char.MAX_CODE_POINT === "int").assertTrue();
+      expect(typeof Char.MAX_CODE_POINT).assertEqual("number");
       expect(Number.isInteger(Char.MAX_CODE_POINT)).assertTrue();
     });
 
@@ -176,7 +176,7 @@ export default function CharPropertiesTest(): void {
      * @tc.level Level 2
      */
     it('testCharProperties0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(typeof Char.HIGH_SURROGATE_MIN).assertEqual("char");
+      expect(typeof Char.HIGH_SURROGATE_MIN).assertEqual("number");
     });
 
     /**

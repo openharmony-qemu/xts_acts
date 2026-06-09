@@ -500,8 +500,8 @@ export default function CharToDoubleTest(): void {
       const c = new Char(c'A');
       const doubleResult = c.toDouble();
       const intResult = c.toInt();
-      expect(typeof doubleResult === "number" || typeof doubleResult === "double").assertTrue();
-      expect(typeof intResult === "number" || typeof intResult === "int").assertTrue();
+      expect(typeof doubleResult).assertEqual("number");
+      expect(typeof intResult).assertEqual("number");
       expect(doubleResult).assertEqual(intResult);
       expect(doubleResult).assertEqual(65);
     });

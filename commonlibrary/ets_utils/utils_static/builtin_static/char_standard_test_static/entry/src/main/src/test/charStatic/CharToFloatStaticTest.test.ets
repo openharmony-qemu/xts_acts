@@ -193,7 +193,7 @@ export default function CharToFloatStaticTest(): void {
      */
     it('testCharToFloatStatic0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toFloat(c'A');
-      expect(typeof result === "number" || typeof result === "float").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isFinite(result)).assertTrue();
     });
 
@@ -376,7 +376,7 @@ export default function CharToFloatStaticTest(): void {
      */
     it('testCharToFloatStatic0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toFloat(c'A');
-      expect(typeof result === "number" || typeof result === "float").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -496,8 +496,8 @@ export default function CharToFloatStaticTest(): void {
       const c = new Char(c'A');
       const instanceResult = c.toFloat();
       const staticResult = Char.toFloat(c'A');
-      expect(typeof instanceResult === "number" || typeof instanceResult === "float").assertTrue();
-      expect(typeof staticResult === "number" || typeof staticResult === "float").assertTrue();
+      expect(typeof instanceResult).assertEqual("number");
+      expect(typeof staticResult).assertEqual("number");
     });
 
     /**
@@ -555,8 +555,8 @@ export default function CharToFloatStaticTest(): void {
     it('testCharToFloatStatic0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const floatResult = Char.toFloat(c'A');
       const intResult = Char.toInt(c'A');
-      expect(typeof floatResult === "number" || typeof floatResult === "float").assertTrue();
-      expect(typeof intResult === "number" || typeof intResult === "int").assertTrue();
+      expect(typeof floatResult).assertEqual("number");
+      expect(typeof intResult).assertEqual("number");
       expect(floatResult).assertEqual(intResult);
       expect(floatResult).assertEqual(65);
     });

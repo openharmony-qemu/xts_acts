@@ -54,7 +54,7 @@ export default function CharCompareToTest(): void {
       try {
         const c = new Char(c'A');
         const result = c.compareTo(undefined as Char);
-        expect(result).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name.length > 0).assertTrue();
         expect(error.name !== null).assertTrue();
@@ -91,7 +91,7 @@ export default function CharCompareToTest(): void {
       try {
         const c = new Char(c'A');
         const result = c.compareTo(null as Char);
-        expect(result).assertFail();
+        expect().assertFail();
       } catch (error) {
         expect(error.name.length > 0).assertTrue();
         expect(error.name !== null).assertTrue();
@@ -312,7 +312,7 @@ export default function CharCompareToTest(): void {
       const c1 = new Char(c'A');
       const c2 = new Char(c'A');
       const result = c1.compareTo(c2);
-      expect(typeof result === "number" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -581,7 +581,7 @@ export default function CharCompareToTest(): void {
       const c2 = new Char(c'A');
       const compareToResult = c1.compareTo(c2);
       const compareResult = Char.compare(c1, c2);
-      expect(typeof compareToResult === "number" || typeof compareToResult === "int").assertTrue();
+      expect(typeof compareToResult).assertEqual("number");
       expect(typeof compareResult).assertEqual("boolean");
       if (compareToResult === 0) {
         expect(compareResult).assertTrue();

@@ -364,7 +364,7 @@ export default function CharIsLetterInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLETTERINSTANCETEST_ISLETTERTEST_2800
      * @tc.name testCharIsLetterInstance0028
-     * @tc.desc Verify Unicode characters are not letters
+     * @tc.desc Verify that non-ASCII letters return false (API only supports ASCII)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

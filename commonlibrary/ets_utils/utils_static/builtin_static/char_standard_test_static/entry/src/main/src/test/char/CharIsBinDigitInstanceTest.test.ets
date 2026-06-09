@@ -218,7 +218,7 @@ export default function CharIsBinDigitInstanceTest(): void {
       try {
         const c = new Char(c'A');
         const result = c.isBinDigit();
-      } finally {
+        expect(result).assertFalse();
         finallyExecuted = true;
       }
       expect(finallyExecuted).assertTrue();

@@ -71,7 +71,7 @@ export default function CharToLongTest(): void {
     it('testCharToLong0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toLong();
-      expect(typeof result === "number" || typeof result === "long").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -85,7 +85,7 @@ export default function CharToLongTest(): void {
     it('testCharToLong0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toLong();
-      expect(typeof result === "number" || typeof result === "long").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -460,7 +460,7 @@ export default function CharToLongTest(): void {
       const c = new Char(c'A');
       let result: number;
       result = c.toLong();
-      expect(typeof result === "number" || typeof result === "long").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -759,7 +759,7 @@ export default function CharToLongTest(): void {
     it('testCharToLong0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const longValue = c.toLong();
-      expect(typeof longValue === "number" || typeof longValue === "long").assertTrue();
+      expect(typeof longValue).assertEqual("number");
     });
   });
 }

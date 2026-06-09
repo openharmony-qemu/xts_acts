@@ -232,7 +232,7 @@ export default function CharToByteStaticTest():void {
      */
     it('testCharToByteStatic0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toByte(c'A');
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -360,7 +360,7 @@ export default function CharToByteStaticTest():void {
      */
     it('testCharToByteStatic0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toByte(c'A');
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -535,7 +535,7 @@ export default function CharToByteStaticTest():void {
      */
     it('testCharToByteStatic0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = invokeToByte(c'A');
-      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(result).assertEqual(65);
     });
 
@@ -552,8 +552,8 @@ export default function CharToByteStaticTest():void {
       const c = new Char(c'A');
       const result1 = c.toByte();
       const result2 = Char.toByte(c'A');
-      expect(typeof result1 === "number" || typeof result1 === "byte" || typeof result1 === "int").assertTrue();
-      expect(typeof result2 === "number" || typeof result2 === "byte" || typeof result2 === "int").assertTrue();
+      expect(typeof result1).assertEqual("number");
+      expect(typeof result2).assertEqual("number");
     });
 
     /**

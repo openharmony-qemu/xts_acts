@@ -573,8 +573,8 @@ export default function CharToDoubleStaticTest():void {
     it('testCharToDoubleStatic0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const doubleResult = Char.toDouble(c'A');
       const intResult = Char.toInt(c'A');
-      expect(typeof doubleResult === "number" || typeof doubleResult === "double").assertTrue();
-      expect(typeof intResult === "number" || typeof intResult === "int").assertTrue();
+      expect(typeof doubleResult).assertEqual("number");
+      expect(typeof intResult).assertEqual("number");
       expect(doubleResult).assertEqual(intResult);
       expect(doubleResult).assertEqual(65);
     });

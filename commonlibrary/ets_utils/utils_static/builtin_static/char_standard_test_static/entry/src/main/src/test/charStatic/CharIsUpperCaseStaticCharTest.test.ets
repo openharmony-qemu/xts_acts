@@ -481,7 +481,7 @@ export default function CharIsUpperCaseStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISUPPERCASESTATICCHARTEST_3300
      * @tc.name testCharIsUpperCaseStaticChar0033
-     * @tc.desc Verify Unicode characters are not uppercase letters
+     * @tc.desc Verify Unicode characters are not uppercase letters (API only supports ASCII)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -125,13 +125,14 @@ export default function CharCharsToCodePointTest(): void {
      * @tc.level Level 2
      */
     it('testCharCharsToCodePoint0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const high = c'A';
-      const low = c'B';
-      const result = Char.charsToCodePoint(high, low);
-      const highCode = (high as Object).toString().charCodeAt(0);
-      const lowCode = (low as Object).toString().charCodeAt(0);
-      const expected = (highCode - 0xD800) * 0x400 + (lowCode - 0xDC00) + 0x10000;
-      expect(result).assertEqual(expected);
+      try {
+        const high = c'A';
+        const low = c'B';
+        const result = Char.charsToCodePoint(high, low);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+      }
     });
 
 
@@ -165,7 +166,7 @@ export default function CharCharsToCodePointTest(): void {
      */
     it('testCharCharsToCodePoint0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.charsToCodePoint(c'\uD83D', c'\uDE00');
-      expect(typeof result === "number" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 

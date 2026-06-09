@@ -147,7 +147,7 @@ export default function CharIsLetterStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARISLETTERSTATICCHARTEST_ISLETTERTEST_0600
      * @tc.name testCharIsLetterStaticChar0006
-     * @tc.desc Verify that non-ASCII letters return false
+     * @tc.desc Verify that non-ASCII letters return false (API only supports ASCII)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -207,7 +207,7 @@ export default function CharToIntStaticTest(): void {
      */
     it('testCharToIntStatic0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toInt(c'A');
-      expect(typeof result === "number" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -325,7 +325,7 @@ export default function CharToIntStaticTest(): void {
      */
     it('testCharToIntStatic0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toInt(c'A');
-      expect(typeof result === "number" || typeof result === "int").assertTrue();
+      expect(typeof result).assertEqual("number");
     });
 
     /**
@@ -519,8 +519,8 @@ export default function CharToIntStaticTest(): void {
       const c = new Char(c'A');
       const instanceResult = c.toInt();
       const staticResult = Char.toInt(c'A');
-      expect(typeof instanceResult === "number" || typeof instanceResult === "int").assertTrue();
-      expect(typeof staticResult === "number" || typeof staticResult === "int").assertTrue();
+      expect(typeof instanceResult).assertEqual("number");
+      expect(typeof staticResult).assertEqual("number");
     });
 
     /**

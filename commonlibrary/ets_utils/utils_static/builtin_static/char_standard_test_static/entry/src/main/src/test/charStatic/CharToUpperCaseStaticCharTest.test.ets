@@ -44,7 +44,7 @@ export default function CharToUpperCaseStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOUPPERCASESTATICCHARTEST_0200
      * @tc.name testCharToUpperCaseStaticChar0002
-     * @tc.desc Verify that passing no parameter throws error
+     * @tc.desc Verify that passing valid parameter does not throw error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

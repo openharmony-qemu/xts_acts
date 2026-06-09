@@ -188,7 +188,7 @@ export default function CharIsWhiteSpaceStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISWHITESPACESTATICCHARTEST_1200
      * @tc.name testCharIsWhiteSpaceStaticChar0012
-     * @tc.desc Verify control characters whitespace check
+     * @tc.desc Verify control characters whitespace check (Note: \\v and \\f are whitespace per this API, unlike Java Character.isWhitespace)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -208,7 +208,7 @@ export default function CharIsWhiteSpaceStaticCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISWHITESPACESTATICCHARTEST_1300
      * @tc.name testCharIsWhiteSpaceStaticChar0013
-     * @tc.desc Verify other Unicode whitespace characters
+     * @tc.desc Verify NBSP (U+00A0) is whitespace (Note: unlike Java Character.isWhitespace where NBSP is not whitespace)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
