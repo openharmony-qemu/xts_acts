@@ -4091,9 +4091,9 @@ static napi_value SetImageRotation(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, args[0], &useCaseCode);
 
     Camera_ImageRotation imageRotation;
-    int32_t Rotation;
-    napi_get_value_int32(env, args[1], &Rotation);
-    imageRotation = static_cast<Camera_ImageRotation>(Rotation);
+    int32_t rotation;
+    napi_get_value_int32(env, args[1], &rotation);
+    imageRotation = static_cast<Camera_ImageRotation>(rotation);
     napi_value result;
     Camera_ErrorCode ret = ndkCamera_->SetImageRotation(useCaseCode, imageRotation);
     napi_create_int32(env, ret, &result);
