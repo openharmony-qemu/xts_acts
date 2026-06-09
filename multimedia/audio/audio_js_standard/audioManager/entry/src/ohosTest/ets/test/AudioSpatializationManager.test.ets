@@ -58,7 +58,7 @@ function handleCatchError(tag: string, err: BusinessError): void {
   expect(bizErr).not().assertUndefined();
   let codeValue = bizErr.code;
   if (codeValue !== undefined && codeValue !== null) {
-    expect(Number(codeValue)).assertLarger(-1);
+    expect(codeValue).assertLarger(0);
   }
 }
 
@@ -735,7 +735,7 @@ export default function audioSpatializationManager() {
         expect(bizErr).not().assertUndefined();
         let codeValue = bizErr.code;
         if (codeValue !== undefined && codeValue !== null) {
-          expect(Number(codeValue) === 201 || Number(codeValue) === 202).assertTrue();
+          expect(codeValue === 201 || codeValue === 202).assertTrue();
         }
       }
       done();
