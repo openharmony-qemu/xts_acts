@@ -2700,12 +2700,7 @@ export default function CameraPhotoSessionTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let zoomPointInfos = mCameraSession.getZoomPointInfos()
         console.info(`camera session getZoomPointInfos: ${JSON.stringify(zoomPointInfos)}`);
-        if (isEmpty(zoomPointInfos)) {
-          console.error(`not surported zoom pointInfos, please check`)
-          done();
-          return;
-        }
-        expect(zoomPointInfos.length).assertLarger(0)
+        expect(zoomPointInfos).not().assertUndefined();
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED, error: ${JSON.stringify(error)}`)
