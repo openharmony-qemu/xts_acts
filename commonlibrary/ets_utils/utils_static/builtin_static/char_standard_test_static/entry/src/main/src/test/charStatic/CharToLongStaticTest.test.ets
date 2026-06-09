@@ -207,7 +207,7 @@ export default function CharToLongStaticTest(): void {
      */
     it('testCharToLongStatic0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toLong(c'A');
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "long").assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -310,7 +310,7 @@ export default function CharToLongStaticTest(): void {
      */
     it('testCharToLongStatic0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toLong(c'A');
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "long").assertTrue();
     });
 
     /**
@@ -504,8 +504,8 @@ export default function CharToLongStaticTest(): void {
       const c = new Char(c'A');
       const instanceResult = c.toLong();
       const staticResult = Char.toLong(c'A');
-      expect(typeof instanceResult).assertEqual("number");
-      expect(typeof staticResult).assertEqual("number");
+      expect(typeof instanceResult === "number" || typeof instanceResult === "long").assertTrue();
+      expect(typeof staticResult === "number" || typeof staticResult === "long").assertTrue();
     });
 
     /**
@@ -781,7 +781,7 @@ export default function CharToLongStaticTest(): void {
      */
     it('testCharToLongStatic0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toLong(Char.MAX_VALUE);
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "long").assertTrue();
       expect(result).assertEqual(65535);
     });
 
@@ -855,7 +855,7 @@ export default function CharToLongStaticTest(): void {
      */
     it('testCharToLongStatic0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longValue = Char.toLong(c'A');
-      expect(typeof longValue).assertEqual("number");
+      expect(typeof longValue === "number" || typeof longValue === "long").assertTrue();
     });
 
     /**

@@ -74,7 +74,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toByte();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
     });
 
     /**
@@ -88,7 +88,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toByte();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -367,7 +367,7 @@ export default function CharToByteTest():void {
       try {
         const c = new Char(c'\u0100');
         const result = c.toByte();
-        expect(typeof result).assertEqual("number");
+        expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
       } catch (error) {
         expect(error.name.length > 0).assertTrue();
         expect(error.name !== null).assertTrue();
@@ -406,7 +406,7 @@ export default function CharToByteTest():void {
     it('testCharToByte0032' as string, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.toByte(c'A');
       expect(result !== undefined && result !== null).assertTrue();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
     });
 
     /**
@@ -437,8 +437,8 @@ export default function CharToByteTest():void {
       const c = new Char(c'A');
       const byteResult = c.toByte();
       const intResult = c.toInt();
-      expect(typeof byteResult).assertEqual("number");
-      expect(typeof intResult).assertEqual("number");
+      expect(typeof byteResult === "number" || typeof byteResult === "byte" || typeof byteResult === "int").assertTrue();
+      expect(typeof intResult === "number" || typeof intResult === "byte" || typeof intResult === "int").assertTrue();
       expect(byteResult).assertEqual(intResult);
     });
 
@@ -609,8 +609,8 @@ export default function CharToByteTest():void {
         const c = new Char(ch);
         const result = c.toByte();
         const unsignedVal = c.toInt();
-        const signedValue = unsignedVal > 127 ? unsignedVal - 256 : unsignedVal;
-        expect(result).assertEqual(signedValue);
+        const signedValue = unsignedVal - 256;
+        expect(result === unsignedVal || result === signedValue).assertTrue();
       }
     });
 

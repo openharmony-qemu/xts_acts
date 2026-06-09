@@ -126,7 +126,7 @@ export default function CharCodeUnitsToEncodeTest(): void {
      */
     it('testCharCodeUnitsToEncode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = Char.codeUnitsToEncode(97 as UTF_16_CodePoint);
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "int").assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 

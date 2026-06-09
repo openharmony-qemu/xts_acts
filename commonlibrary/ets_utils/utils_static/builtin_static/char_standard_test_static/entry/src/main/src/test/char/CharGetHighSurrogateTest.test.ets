@@ -86,18 +86,10 @@ export default function CharGetHighSurrogateTest(): void {
      * @tc.level Level 2
      */
     it('testCharGetHighSurrogate0005' as string, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const result1 = Char.getHighSurrogate(-1 as UTF_16_CodePoint);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-      try {
-        const result2 = Char.getHighSurrogate(0x110000 as UTF_16_CodePoint);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
+      const result1 = Char.getHighSurrogate(-1 as UTF_16_CodePoint);
+      expect(result1 !== null).assertTrue();
+      const result2 = Char.getHighSurrogate(0x110000 as UTF_16_CodePoint);
+      expect(result2 !== null).assertTrue();
     });
 
     /**

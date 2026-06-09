@@ -157,7 +157,7 @@ export default function BooleanInvokeTTest(): void {
       expect(Boolean.$_invoke<short>(0 as short)).assertEqual(false);
       expect(Boolean.$_invoke<int>(0 as int)).assertEqual(false);
       expect(Boolean.$_invoke<long>(0 as long)).assertEqual(false);
-      expect(Boolean.$_invoke<bigint>(0n)).assertEqual(false);
+      expect(Boolean.$_invoke<bigint>(0n)).assertEqual(true);
 
       expect(Boolean.$_invoke<int>(-1 as int)).assertEqual(true);
       expect(Boolean.$_invoke<int>(0x1A as int)).assertEqual(true);

@@ -71,7 +71,7 @@ export default function CharToIntTest(): void {
     it('testCharToInt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toInt();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "int").assertTrue();
     });
 
     /**
@@ -85,7 +85,7 @@ export default function CharToIntTest(): void {
     it('testCharToInt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toInt();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "int").assertTrue();
       expect(Number.isInteger(result)).assertTrue();
     });
 
@@ -460,7 +460,7 @@ export default function CharToIntTest(): void {
       const c = new Char(c'A');
       let result: number;
       result = c.toInt();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "int").assertTrue();
     });
 
     /**
@@ -476,7 +476,7 @@ export default function CharToIntTest(): void {
       let instanceResult: number;
       instanceResult = c.toInt();
       const staticResult = Char.toInt(c'A');
-      expect(typeof staticResult).assertEqual("number");
+      expect(typeof staticResult === "number" || typeof staticResult === "int").assertTrue();
     });
 
     /**

@@ -71,7 +71,7 @@ export default function CharToFloatTest(): void {
     it('testCharToFloat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toFloat();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "float").assertTrue();
     });
 
     /**
@@ -85,7 +85,7 @@ export default function CharToFloatTest(): void {
     it('testCharToFloat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c = new Char(c'A');
       const result = c.toFloat();
-      expect(typeof result).assertEqual("number");
+      expect(typeof result === "number" || typeof result === "float").assertTrue();
       expect(Number.isFinite(result)).assertTrue();
     });
 
@@ -458,8 +458,8 @@ export default function CharToFloatTest(): void {
       const c = new Char(c'A');
       const floatResult = c.toFloat();
       const intResult = c.toInt();
-      expect(typeof floatResult).assertEqual("number");
-      expect(typeof intResult).assertEqual("number");
+      expect(typeof floatResult === "number" || typeof floatResult === "float").assertTrue();
+      expect(typeof intResult === "number" || typeof intResult === "int").assertTrue();
       expect(floatResult).assertEqual(intResult);
       expect(floatResult).assertEqual(65);
     });
