@@ -43,6 +43,7 @@ import {
   startVideoOutput,
   startAvRecoder,
   onPreviewOutputFrameStart,
+  waitPreviewOutputFrameStart,
   offPreviewOutputFrameStart,
   stopVideoOutput,
   stopAvRecoder,
@@ -128,12 +129,10 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
               let session: ESObject = undefined
               let avRecoder: media.AVRecorder | undefined = undefined
               try {
-                console.info(`${testNum} videoProfile frameRateRange is ${videoProfile.frameRateRange} videoProfile
-                format is ${videoProfile.format} videoProfile size is ${videoProfile.size}`);
-                console.info(`${testNum} previewProfile format is ${previewProfile.format} previewProfile
-                size is ${previewProfile.size} `);
-                console.info(`${testNum} camrePosition is ${camreId.cameraPosition} camreType
-                is ${camreId.connectionType}`);
+                console.info(`${testNum} videoProfile frameRateRange is ${videoProfile.frameRateRange}`);
+                console.info(`${testNum} videoProfile format is ${videoProfile.format} size is ${videoProfile.size.width} * ${videoProfile.size.height}`);
+                console.info(`${testNum} previewProfile format is ${previewProfile.format} size is ${previewProfile.size.width} * ${previewProfile.size.height}`);
+                console.info(`${testNum} camrePosition is ${camreId.cameraPosition} camreType is ${camreId.connectionType}`);
                 // 创建空的视频文件
                 let videoName =
                   await generateNameForAsset(camera.SceneMode.NORMAL_VIDEO, camreId, videoProfile, previewProfile)
@@ -174,6 +173,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 await startSession(session);
                 startVideoOutput(videoOutput);
                 setFocusMode(session);
+                await waitPreviewOutputFrameStart(previewOutPut!);
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
                 await startAvRecoder(avRecoder);
                 if (zoomRatioRange != undefined) {
@@ -288,12 +288,10 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
               let session: ESObject = undefined
               let avRecoder: media.AVRecorder | undefined = undefined
               try {
-                console.info(`${testNum} videoProfile frameRateRange is ${videoProfile.frameRateRange} videoProfile
-                format is ${videoProfile.format} videoProfile size is ${videoProfile.size}`);
-                console.info(`${testNum} previewProfile format is ${previewProfile.format} previewProfile
-                size is ${previewProfile.size} `);
-                console.info(`${testNum} camrePosition is ${camreId.cameraPosition} camreType
-                is ${camreId.connectionType}`);
+                console.info(`${testNum} videoProfile frameRateRange is ${videoProfile.frameRateRange}`);
+                console.info(`${testNum} videoProfile format is ${videoProfile.format} size is ${videoProfile.size.width} * ${videoProfile.size.height}`);
+                console.info(`${testNum} previewProfile format is ${previewProfile.format} size is ${previewProfile.size.width} * ${previewProfile.size.height}`);
+                console.info(`${testNum} camrePosition is ${camreId.cameraPosition} camreType is ${camreId.connectionType}`);
                 // 创建空的视频文件
                 let videoName =
                   await generateNameForAsset(camera.SceneMode.NORMAL_VIDEO, camreId, videoProfile, previewProfile)
@@ -334,6 +332,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 await startSession(session);
                 startVideoOutput(videoOutput);
                 setFocusMode(session);
+                await waitPreviewOutputFrameStart(previewOutPut!);
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
                 await startAvRecoder(avRecoder);
                 if (zoomRatioRange != undefined) {
