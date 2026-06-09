@@ -4734,7 +4734,7 @@ Camera_ErrorCode NDKCamera::SetImageRotation(int useCaseCode, Camera_ImageRotati
         ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(PhotoCaptureSettingExt_, ImageRotation);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_PhotoCaptureSettingExt_SetImageRotation(nullptr, ImageRotation);
-    } 
+    }
     if (ret_ != CAMERA_OK) {
         LOG("SetImageRotation failed.");
     }
