@@ -15,12 +15,18 @@
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import pluginBundleManager from '@ohos.bundle.pluginBundleManager';
+import resourceManager from '@ohos.resourceManager';
+import { common} from '@kit.AbilityKit';
 
 const DOMAIN: number = 0x0000;
 const TAG: string = 'testTag';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
+    let context: common.UIAbilityContext;
+    beforeAll(() => {
+      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    })
     /**
      * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_0100
      * @tc.number SUB_BMS_PC_Self_Dist_Plugin_0100
@@ -75,6 +81,43 @@ export default function abilityTest() {
         expect(err?.code).assertEqual(17700092);
         done();
       })
+    })
+    
+    /**
+     * @tc.name   SUB_BMS_PC_Self_Dist_Plugin_0300
+     * @tc.number SUB_BMS_PC_Self_Dist_Plugin_0300
+     * @tc.desc   Test pluginBundleManager.getAllLocalPluginInfoForSelf is normal 
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_PC_Self_Dist_Plugin_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const itName = 'SUB_BMS_PC_Self_Dist_Plugin_0300';
+      hilog.info(DOMAIN, TAG, `${itName} start.`);
+      try {
+        let deviceCapability = context.resourceManager.getDeviceCapabilitySync();
+        hilog.info(DOMAIN, TAG, 'deviceType is ' + deviceCapability.deviceType);
+        pluginBundleManager.getAllLocalPluginInfoForSelf().then((data) => {
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf success.data:${JSON.stringify(data)}`);
+          expect(data.length).assertEqual(0)
+          done();
+          hilog.info(DOMAIN, TAG, `${itName} end.`);
+        }).catch((err: BusinessError) => {
+          hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+          if (deviceCapability.deviceType == resourceManager.DeviceType.DEVICE_TYPE_PHONE) {
+            expect(err?.code).assertEqual(201);
+            done();
+            hilog.info(DOMAIN, TAG, `${itName} end.`);
+          }else{
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (err){
+        hilog.info(DOMAIN, TAG, `${itName} getAllLocalPluginInfoForSelf fail. code: ${err?.code}, msg: ${err?.message}`);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }
