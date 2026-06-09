@@ -49,7 +49,7 @@ export default function CharIsPartOfSurrogatePairInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_ISPARTOFSURROGATEPAIRINSTANCETEST_0200
      * @tc.name testCharIsPartOfSurrogatePairInstance0002
-     * @tc-desc Verify isPartOfSurrogatePair() can be called with no arguments and returns correct result
+     * @tc.desc Verify isPartOfSurrogatePair() can be called with no arguments and returns correct result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
