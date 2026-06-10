@@ -340,9 +340,14 @@ export default function ArrayLikeIteratorTest(): void {
       const values = new Array<int>(100, 200, 300);
       const list: ArrayLike<int> = values;
       const iter = list.$_iterator();
-      const result = iter.next();
-      expect(result.done).assertEqual(false);
-      expect(result.value).assertEqual(100);
+      for (let i = 0; i < list.length; i++) {
+        const result = iter.next();
+        expect(result.done).assertEqual(false);
+        expect(result.value).assertEqual(list.$_get(i));
+      }
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
     });
 
     /**
@@ -357,9 +362,14 @@ export default function ArrayLikeIteratorTest(): void {
       const values = new Array<string>("hello", "world");
       const list: ArrayLike<string> = values;
       const iter = list.$_iterator();
-      const result = iter.next();
-      expect(result.done).assertEqual(false);
-      expect(result.value).assertEqual("hello");
+      for (let i = 0; i < list.length; i++) {
+        const result = iter.next();
+        expect(result.done).assertEqual(false);
+        expect(result.value).assertEqual(list.$_get(i));
+      }
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
     });
 
     /**
@@ -374,9 +384,14 @@ export default function ArrayLikeIteratorTest(): void {
       const values = new Array<double>(1.0, 2.0);
       const list: ArrayLike<double> = values;
       const iter = list.$_iterator();
-      const result = iter.next();
-      expect(result.done).assertEqual(false);
-      expect(result.value).assertEqual(1);
+      for (let i = 0; i < list.length; i++) {
+        const result = iter.next();
+        expect(result.done).assertEqual(false);
+        expect(result.value).assertEqual(list.$_get(i));
+      }
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
     });
 
     /**
@@ -393,9 +408,14 @@ export default function ArrayLikeIteratorTest(): void {
       const values = new Array<Object>(obj1, obj2);
       const list: ArrayLike<Object> = values;
       const iter = list.$_iterator();
-      const result = iter.next();
-      expect(result.done).assertEqual(false);
-      expect(result.value).assertEqual(obj1);
+      for (let i = 0; i < list.length; i++) {
+        const result = iter.next();
+        expect(result.done).assertEqual(false);
+        expect(result.value).assertEqual(list.$_get(i));
+      }
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
     });
 
     /**
@@ -1062,6 +1082,7 @@ export default function ArrayLikeIteratorTest(): void {
       const list: ArrayLike<string> = values;
       let count = 0;
       for (const item of list) {
+        expect(item).assertEqual(longStr);
         expect(item.length).assertEqual(60);
         count++;
       }
@@ -1583,15 +1604,21 @@ export default function ArrayLikeIteratorTest(): void {
       expect(list[1]).assertUndefined();
       const iter = list.$_iterator();
       let step = iter.next();
+      expect(step.done).assertEqual(false);
       expect(step.value).assertEqual(list.$_get(0));
       expect(step.value).assertEqual(list[0]);
       step = iter.next();
+      expect(step.done).assertEqual(false);
       expect(step.value).assertEqual(list.$_get(1));
       expect(step.value).assertEqual(list[1]);
       expect(step.value).assertUndefined();
       step = iter.next();
+      expect(step.done).assertEqual(false);
       expect(step.value).assertEqual(list.$_get(2));
       expect(step.value).assertEqual(list[2]);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
     });
 
     /**
@@ -1649,6 +1676,950 @@ export default function ArrayLikeIteratorTest(): void {
       step = iter.next();
       expect(step.done).assertEqual(false);
       expect(step.value).assertEqual("tail");
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0700
+     * @tc.name testArrayLikeIterator070
+     * @tc.desc Verify iterator and for...of yield null from ArrayLike<int | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | null>(10, null, 30);
+      const list: ArrayLike<int | null> = values;
+      const fromForOf: (int | null)[] = [];
+      for (const item of list) {
+        fromForOf.push(item);
+      }
+      expect(fromForOf.length).assertEqual(3);
+      expect(fromForOf[1]).assertEqual(null);
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(10);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(30);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0710
+     * @tc.name testArrayLikeIterator071
+     * @tc.desc Verify iterator yields undefined from ArrayLike<string | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<string | undefined>();
+      arr.push("a");
+      arr.push(undefined);
+      arr.push("c");
+      const list: ArrayLike<string | undefined> = arr;
+      expect(list.$_get(1)).assertUndefined();
+      const fromForOf: (string | undefined)[] = [];
+      for (const item of list) {
+        fromForOf.push(item);
+      }
+      expect(fromForOf.length).assertEqual(3);
+      expect(fromForOf[1]).assertUndefined();
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual("a");
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual("c");
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0720
+     * @tc.name testArrayLikeIterator072
+     * @tc.desc Verify iterator yields null and undefined from ArrayLike<int | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>();
+      arr.push(1);
+      arr.push(null);
+      arr.push(undefined);
+      arr.push(4);
+      const list: ArrayLike<int | null | undefined> = arr;
+      const result: (int | null | undefined)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(null);
+      expect(result[2]).assertUndefined();
+      expect(result[3]).assertEqual(4);
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(1);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(4);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0730
+     * @tc.name testArrayLikeIterator073
+     * @tc.desc Verify iterator yields heterogeneous union elements int string boolean null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | string | boolean | null>(1, "x", false, null);
+      const list: ArrayLike<int | string | boolean | null> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(1);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual("x");
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(false);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0740
+     * @tc.name testArrayLikeIterator074
+     * @tc.desc Verify spread of ArrayLike<int | null | undefined> preserves nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>();
+      arr.push(7);
+      arr.push(null);
+      arr.push(undefined);
+      const list: ArrayLike<int | null | undefined> = arr;
+      const spread = [...list];
+      expect(spread.length).assertEqual(3);
+      expect(spread[0]).assertEqual(7);
+      expect(spread[1]).assertEqual(null);
+      expect(spread[2]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0750
+     * @tc.name testArrayLikeIterator075
+     * @tc.desc Verify iterator yields double null and undefined from ArrayLike<double | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<double | null | undefined>();
+      arr.push(2.5);
+      arr.push(null);
+      arr.push(undefined);
+      const list: ArrayLike<double | null | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(2.5);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0760
+     * @tc.name testArrayLikeIterator076
+     * @tc.desc Verify for...of over ArrayLike<bigint | null> yields null slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<bigint | null>(10n, null, 30n);
+      const list: ArrayLike<bigint | null> = values;
+      const result: (bigint | null)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(10n);
+      expect(result[1]).assertEqual(null);
+      expect(result[2]).assertEqual(30n);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0770
+     * @tc.name testArrayLikeIterator077
+     * @tc.desc Verify iterator yields undefined from ArrayLike<float | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<float | undefined>();
+      arr.push(1.0f);
+      arr.push(undefined);
+      const list: ArrayLike<float | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(1.0f);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0780
+     * @tc.name testArrayLikeIterator078
+     * @tc.desc Verify for...of over ArrayLike<long | null> preserves null element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<long | null>(200, null, 400);
+      const list: ArrayLike<long | null> = values;
+      const collected: (long | null)[] = [];
+      for (const item of list) {
+        collected.push(item);
+      }
+      expect(collected.length).assertEqual(3);
+      expect(collected[0]).assertEqual(200);
+      expect(collected[1]).assertEqual(null);
+      expect(collected[2]).assertEqual(400);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0790
+     * @tc.name testArrayLikeIterator079
+     * @tc.desc Verify iterator yields char and null from ArrayLike<char | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<char | null>(c'z', null, c'0');
+      const list: ArrayLike<char | null> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(c'z');
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(c'0');
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0800
+     * @tc.name testArrayLikeIterator080
+     * @tc.desc Verify spread of ArrayLike<string | int | null> preserves mixed union elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<string | int | null>("k", 9, null);
+      const list: ArrayLike<string | int | null> = values;
+      const spread = [...list];
+      expect(spread.length).assertEqual(3);
+      expect(spread[0]).assertEqual("k");
+      expect(spread[1]).assertEqual(9);
+      expect(spread[2]).assertEqual(null);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0810
+     * @tc.name testArrayLikeIterator081
+     * @tc.desc Verify iterator yields enum and undefined from ArrayLike<ArrayLikeIterStatusEnum | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeIterStatusEnum | undefined>();
+      arr.push(ArrayLikeIterStatusEnum.SUCCESS);
+      arr.push(undefined);
+      arr.push(ArrayLikeIterStatusEnum.FAIL);
+      const list: ArrayLike<ArrayLikeIterStatusEnum | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(ArrayLikeIterStatusEnum.SUCCESS);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(ArrayLikeIterStatusEnum.FAIL);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0820
+     * @tc.name testArrayLikeIterator082
+     * @tc.desc Verify for...of over ArrayLike<Promise<int> | null> yields Promise and null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const promise = Promise.resolve(11);
+      const values = new Array<Promise<int> | null>(promise, null);
+      const list: ArrayLike<Promise<int> | null> = values;
+      const result: (Promise<int> | null)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(promise);
+      expect(result[1]).assertEqual(null);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0830
+     * @tc.name testArrayLikeIterator083
+     * @tc.desc Verify iterator yields Error and null from ArrayLike<Error | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = new Error("iter");
+      const values = new Array<Error | null>(err, null);
+      const list: ArrayLike<Error | null> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(err);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0840
+     * @tc.name testArrayLikeIterator084
+     * @tc.desc Verify spread of ArrayLike<boolean | null | undefined> preserves all nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<boolean | null | undefined>();
+      arr.push(false);
+      arr.push(null);
+      arr.push(undefined);
+      arr.push(true);
+      const list: ArrayLike<boolean | null | undefined> = arr;
+      const spread = [...list];
+      expect(spread.length).assertEqual(4);
+      expect(spread[0]).assertEqual(false);
+      expect(spread[1]).assertEqual(null);
+      expect(spread[2]).assertUndefined();
+      expect(spread[3]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0850
+     * @tc.name testArrayLikeIterator085
+     * @tc.desc Verify for...of over ArrayLike<Array<int> | null> yields nested array and null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(5, 6);
+      const values = new Array<Array<int> | null>(nested, null);
+      const list: ArrayLike<Array<int> | null> = values;
+      const collected: (Array<int> | null)[] = [];
+      for (const item of list) {
+        collected.push(item);
+      }
+      expect(collected.length).assertEqual(2);
+      expect(collected[0]).assertEqual(nested);
+      expect(collected[1]).assertEqual(null);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0860
+     * @tc.name testArrayLikeIterator086
+     * @tc.desc Verify iterator yields RegExp and null from ArrayLike<RegExp | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pattern = new RegExp('x');
+      const values = new Array<RegExp | null>(pattern, null);
+      const list: ArrayLike<RegExp | null> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(pattern);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0870
+     * @tc.name testArrayLikeIterator087
+     * @tc.desc Verify iterator yields Date and null from ArrayLike<Date | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(1700000000000);
+      const values = new Array<Date | null>(date, null);
+      const list: ArrayLike<Date | null> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(date);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0880
+     * @tc.name testArrayLikeIterator088
+     * @tc.desc Verify for...of over ArrayLike<Array<int> | undefined> yields nested array and undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(1, 2);
+      let arr = new Array<Array<int> | undefined>();
+      arr.push(nested);
+      arr.push(undefined);
+      const list: ArrayLike<Array<int> | undefined> = arr;
+      const result: (Array<int> | undefined)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result[0]).assertEqual(nested);
+      expect(result[1]).assertUndefined();
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(nested);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0890
+     * @tc.name testArrayLikeIterator089
+     * @tc.desc Verify iterator yields RegExp and undefined from ArrayLike<RegExp | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pattern = new RegExp('y');
+      let arr = new Array<RegExp | undefined>();
+      arr.push(pattern);
+      arr.push(undefined);
+      const list: ArrayLike<RegExp | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(pattern);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0900
+     * @tc.name testArrayLikeIterator090
+     * @tc.desc Verify spread of ArrayLike<Object | undefined> preserves undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Object();
+      let arr = new Array<Object | undefined>();
+      arr.push(obj);
+      arr.push(undefined);
+      const list: ArrayLike<Object | undefined> = arr;
+      const spread = [...list];
+      expect(spread.length).assertEqual(2);
+      expect(spread[0]).assertEqual(obj);
+      expect(spread[1]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0910
+     * @tc.name testArrayLikeIterator091
+     * @tc.desc Verify iterator yields Date and undefined from ArrayLike<Date | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(0);
+      let arr = new Array<Date | undefined>();
+      arr.push(date);
+      arr.push(undefined);
+      const list: ArrayLike<Date | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(date);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0920
+     * @tc.name testArrayLikeIterator092
+     * @tc.desc Verify iterator yields enum null and undefined from ArrayLike<ArrayLikeIterStatusEnum | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeIterStatusEnum | null | undefined>();
+      arr.push(ArrayLikeIterStatusEnum.SUCCESS);
+      arr.push(null);
+      arr.push(undefined);
+      const list: ArrayLike<ArrayLikeIterStatusEnum | null | undefined> = arr;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(ArrayLikeIterStatusEnum.SUCCESS);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(null);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0930
+     * @tc.name testArrayLikeIterator093
+     * @tc.desc Verify for...of, $_iterator(), and spread yield undefined for explicit undefined element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | undefined>(10, undefined, 30);
+      const list: ArrayLike<int | undefined> = values;
+      expect(list.length).assertEqual(3);
+      expect(list.$_get(1)).assertUndefined();
+      const fromForOf: (int | undefined)[] = [];
+      for (const item of list) {
+        fromForOf.push(item);
+      }
+      expect(fromForOf.length).assertEqual(3);
+      expect(fromForOf[0]).assertEqual(10);
+      expect(fromForOf[1]).assertUndefined();
+      expect(fromForOf[2]).assertEqual(30);
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(10);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(30);
+      step = iter.next();
+      expect(step.done).assertEqual(true);
+      expect(step.value).assertEqual(undefined);
+      const spread = [...list];
+      expect(spread.length).assertEqual(3);
+      expect(spread[0]).assertEqual(10);
+      expect(spread[1]).assertUndefined();
+      expect(spread[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0940
+     * @tc.name testArrayLikeIterator094
+     * @tc.desc Verify custom ArrayLike multiple $_iterator() calls return independent iterators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new CustomIntArrayLike(new Array<int>(1, 2, 3));
+      const list: ArrayLike<int> = custom;
+      const iter1 = list.$_iterator();
+      const iter2 = list.$_iterator();
+      let step1 = iter1.next();
+      expect(step1.done).assertEqual(false);
+      expect(step1.value).assertEqual(1);
+      let step2 = iter2.next();
+      expect(step2.done).assertEqual(false);
+      expect(step2.value).assertEqual(1);
+      step1 = iter1.next();
+      expect(step1.done).assertEqual(false);
+      expect(step1.value).assertEqual(2);
+      step2 = iter2.next();
+      expect(step2.done).assertEqual(false);
+      expect(step2.value).assertEqual(2);
+      step1 = iter1.next();
+      expect(step1.done).assertEqual(false);
+      expect(step1.value).assertEqual(3);
+      step2 = iter2.next();
+      expect(step2.done).assertEqual(false);
+      expect(step2.value).assertEqual(3);
+      step1 = iter1.next();
+      expect(step1.done).assertEqual(true);
+      expect(step1.value).assertEqual(undefined);
+      step2 = iter2.next();
+      expect(step2.done).assertEqual(true);
+      expect(step2.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0950
+     * @tc.name testArrayLikeIterator095
+     * @tc.desc Verify spread operator converts custom ArrayLike to array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new CustomIntArrayLike(new Array<int>(10, 20, 30));
+      const list: ArrayLike<int> = custom;
+      const arr = [...list];
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(10);
+      expect(arr[1]).assertEqual(20);
+      expect(arr[2]).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0960
+     * @tc.name testArrayLikeIterator096
+     * @tc.desc Verify two iterators from same custom ArrayLike traverse independently
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new CustomIntArrayLike(new Array<int>(1, 2, 3, 4, 5));
+      const list: ArrayLike<int> = custom;
+      const iter1 = list.$_iterator();
+      const iter2 = list.$_iterator();
+      iter1.next();
+      iter1.next();
+      expect(iter2.next().value).assertEqual(1);
+      expect(iter1.next().value).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0970
+     * @tc.name testArrayLikeIterator097
+     * @tc.desc Verify custom ArrayLike $_iterator() return type is IterableIterator<int>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new CustomIntArrayLike(new Array<int>(1, 2));
+      const list: ArrayLike<int> = custom;
+      const iter: IterableIterator<int> = list.$_iterator();
+      const first = iter.next();
+      expect(first.done).assertEqual(false);
+      expect(first.value).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0980
+     * @tc.name testArrayLikeIterator098
+     * @tc.desc Verify iterator and for...of yield undefined from ArrayLike<int | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | undefined>(10, undefined, 30);
+      const list: ArrayLike<int | undefined> = values;
+      expect(list.$_get(1)).assertUndefined();
+      const fromForOf: (int | undefined)[] = [];
+      for (const item of list) {
+        fromForOf.push(item);
+      }
+      expect(fromForOf.length).assertEqual(3);
+      expect(fromForOf[1]).assertUndefined();
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(10);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(30);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_0990
+     * @tc.name testArrayLikeIterator099
+     * @tc.desc Verify for...of and iterator yield undefined from ArrayLike<bigint | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<bigint | undefined>(10n, undefined, 30n);
+      const list: ArrayLike<bigint | undefined> = values;
+      const result: (bigint | undefined)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(10n);
+      expect(result[1]).assertUndefined();
+      expect(result[2]).assertEqual(30n);
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(10n);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(30n);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_1000
+     * @tc.name testArrayLikeIterator100
+     * @tc.desc Verify for...of and iterator yield undefined from ArrayLike<long | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<long | undefined>(200, undefined, 400);
+      const list: ArrayLike<long | undefined> = values;
+      const collected: (long | undefined)[] = [];
+      for (const item of list) {
+        collected.push(item);
+      }
+      expect(collected[0]).assertEqual(200);
+      expect(collected[1]).assertUndefined();
+      expect(collected[2]).assertEqual(400);
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(200);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(400);
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_1010
+     * @tc.name testArrayLikeIterator101
+     * @tc.desc Verify iterator yields char and undefined from ArrayLike<char | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<char | undefined>(c'z', undefined, c'0');
+      const list: ArrayLike<char | undefined> = values;
+      expect(list.$_get(1)).assertUndefined();
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(c'z');
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(c'0');
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_1020
+     * @tc.name testArrayLikeIterator102
+     * @tc.desc Verify for...of and iterator yield undefined from ArrayLike<Promise<int> | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const promise = Promise.resolve(11);
+      const values = new Array<Promise<int> | undefined>(promise, undefined);
+      const list: ArrayLike<Promise<int> | undefined> = values;
+      const result: (Promise<int> | undefined)[] = [];
+      for (const item of list) {
+        result.push(item);
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(promise);
+      expect(result[1]).assertUndefined();
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(promise);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_1030
+     * @tc.name testArrayLikeIterator103
+     * @tc.desc Verify iterator yields Error and undefined from ArrayLike<Error | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = new Error("iter");
+      const values = new Array<Error | undefined>(err, undefined);
+      const list: ArrayLike<Error | undefined> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(err);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
+      const exhausted = iter.next();
+      expect(exhausted.done).assertEqual(true);
+      expect(exhausted.value).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_ITERATOR_1040
+     * @tc.name testArrayLikeIterator104
+     * @tc.desc Verify iterator yields heterogeneous union elements int string boolean undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeIterator104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | string | boolean | undefined>(1, "x", false, undefined);
+      const list: ArrayLike<int | string | boolean | undefined> = values;
+      const iter = list.$_iterator();
+      let step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(1);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual("x");
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertEqual(false);
+      step = iter.next();
+      expect(step.done).assertEqual(false);
+      expect(step.value).assertUndefined();
       const exhausted = iter.next();
       expect(exhausted.done).assertEqual(true);
       expect(exhausted.value).assertEqual(undefined);
