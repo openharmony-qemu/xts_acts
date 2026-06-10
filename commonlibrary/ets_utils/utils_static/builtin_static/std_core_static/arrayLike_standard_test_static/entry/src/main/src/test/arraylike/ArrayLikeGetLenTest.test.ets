@@ -80,16 +80,16 @@ export default function ArrayLikeGetLenTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0030
      * @tc.name testArrayLikeGetLength003
-     * @tc.desc Verify length matches element count for different ArrayLike sizes
+     * @tc.desc Verify length matches element count for ArrayLike<int> with two elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLikeGetLength003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1: ArrayLike<int> = new Array<int>(1, 2)
-      const arr2: ArrayLike<int> = new Array<int>(10, 20, 30, 40, 50)
       expect(arr1.length).assertEqual(2)
-      expect(arr2.length).assertEqual(5)
+      expect(arr1.$_get(0)).assertEqual(1)
+      expect(arr1.$_get(1)).assertEqual(2)
     });
 
     /**
@@ -180,16 +180,22 @@ export default function ArrayLikeGetLenTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0090
      * @tc.name testArrayLikeGetLength009
-     * @tc.desc Verify different generic ArrayLike objects return correct independent length
+     * @tc.desc Verify empty ArrayLike length, Array.from, and $_get stay consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLikeGetLength009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const intArr: ArrayLike<int> = new Array<int>(1, 2)
-      const strArr: ArrayLike<string> = new Array<string>("x", "y", "z")
-      expect(intArr.length).assertEqual(2)
-      expect(strArr.length).assertEqual(3)
+      const source: ArrayLike<int> = new Array<int>()
+      expect(source.length).assertEqual(0)
+      const copied = Array.from<int>(source)
+      expect(copied.length).assertEqual(0)
+      try {
+        source.$_get(0)
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
     });
 
     /**
@@ -774,5 +780,409 @@ export default function ArrayLikeGetLenTest(): void {
       expect(copied[1]).assertEqual(source.$_get(1))
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0430
+     * @tc.name testArrayLikeGetLength043
+     * @tc.desc Verify Array.from<int | undefined> copy matches ArrayLike length and undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | undefined>()
+      arr.push(1)
+      arr.push(undefined)
+      arr.push(3)
+      const source: ArrayLike<int | undefined> = arr
+      expect(source.length).assertEqual(3)
+      expect(source.$_get(1)).assertUndefined()
+      const copied = Array.from<int | undefined>(source)
+      expect(copied.length).assertEqual(source.length)
+      expect(copied[0]).assertEqual(source.$_get(0))
+      expect(copied[1]).assertUndefined()
+      expect(copied[2]).assertEqual(source.$_get(2))
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0440
+     * @tc.name testArrayLikeGetLength044
+     * @tc.desc Verify Array.from<string | null> copy matches ArrayLike length and null slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<string | null>("x", null, "z")
+      const source: ArrayLike<string | null> = values
+      expect(source.length).assertEqual(3)
+      expect(source.$_get(1)).assertEqual(null)
+      const copied = Array.from<string | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0450
+     * @tc.name testArrayLikeGetLength045
+     * @tc.desc Verify Array.from heterogeneous union copy preserves null element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | string | boolean | null>(9, "s", false, null)
+      const source: ArrayLike<int | string | boolean | null> = values
+      expect(source.length).assertEqual(4)
+      const copied = Array.from<int | string | boolean | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      expect(copied[0]).assertEqual(9)
+      expect(copied[1]).assertEqual("s")
+      expect(copied[2]).assertEqual(false)
+      expect(copied[3]).assertEqual(null)
+      expect(copied[3]).assertEqual(source.$_get(3))
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0460
+     * @tc.name testArrayLikeGetLength046
+     * @tc.desc Verify Array.from<int | null | undefined> copy matches length and nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>()
+      arr.push(2)
+      arr.push(null)
+      arr.push(undefined)
+      const source: ArrayLike<int | null | undefined> = arr
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<int | null | undefined>(source)
+      expect(copied.length).assertEqual(3)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0470
+     * @tc.name testArrayLikeGetLength047
+     * @tc.desc Verify Array.from<double | null | undefined> copy matches length and nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<double | null | undefined>()
+      arr.push(4.4)
+      arr.push(null)
+      arr.push(undefined)
+      const source: ArrayLike<double | null | undefined> = arr
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<double | null | undefined>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0480
+     * @tc.name testArrayLikeGetLength048
+     * @tc.desc Verify Array.from<bigint | null> copy matches ArrayLike length and null slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<bigint | null>(20n, null, 40n)
+      const source: ArrayLike<bigint | null> = values
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<bigint | null>(source)
+      expect(copied.length).assertEqual(3)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0490
+     * @tc.name testArrayLikeGetLength049
+     * @tc.desc Verify Array.from<long | null> copy preserves long and null elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<long | null>(300, null)
+      const source: ArrayLike<long | null> = values
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<long | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0500
+     * @tc.name testArrayLikeGetLength050
+     * @tc.desc Verify Array.from<float | undefined> copy matches length and undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<float | undefined>()
+      arr.push(2.0f)
+      arr.push(undefined)
+      arr.push(3.0f)
+      const source: ArrayLike<float | undefined> = arr
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<float | undefined>(source)
+      expect(copied.length).assertEqual(3)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0510
+     * @tc.name testArrayLikeGetLength051
+     * @tc.desc Verify Array.from<ArrayLikeGetLenStatusEnum | undefined> copy preserves undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeGetLenStatusEnum | undefined>()
+      arr.push(ArrayLikeGetLenStatusEnum.SUCCESS)
+      arr.push(undefined)
+      const source: ArrayLike<ArrayLikeGetLenStatusEnum | undefined> = arr
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<ArrayLikeGetLenStatusEnum | undefined>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0520
+     * @tc.name testArrayLikeGetLength052
+     * @tc.desc Verify Array.from<Promise<int> | null> copy matches length and null slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const promise = Promise.resolve(66)
+      const values = new Array<Promise<int> | null>(promise, null)
+      const source: ArrayLike<Promise<int> | null> = values
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Promise<int> | null>(source)
+      expect(copied.length).assertEqual(2)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0530
+     * @tc.name testArrayLikeGetLength053
+     * @tc.desc Verify Array.from<Error | null> copy preserves Error reference and null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = new Error("copy")
+      const values = new Array<Error | null>(err, null)
+      const source: ArrayLike<Error | null> = values
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Error | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0540
+     * @tc.name testArrayLikeGetLength054
+     * @tc.desc Verify Array.from<boolean | null | undefined> copy matches all nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<boolean | null | undefined>()
+      arr.push(false)
+      arr.push(null)
+      arr.push(undefined)
+      const source: ArrayLike<boolean | null | undefined> = arr
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<boolean | null | undefined>(source)
+      expect(copied.length).assertEqual(3)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0550
+     * @tc.name testArrayLikeGetLength055
+     * @tc.desc Verify Array.from<Array<int> | null> copy preserves nested array and null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(3, 4)
+      const values = new Array<Array<int> | null>(nested, null)
+      const source: ArrayLike<Array<int> | null> = values
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Array<int> | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0560
+     * @tc.name testArrayLikeGetLength056
+     * @tc.desc Verify Array.from<Date | null> copy preserves Date reference and null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(1700000000000)
+      const values = new Array<Date | null>(date, null)
+      const source: ArrayLike<Date | null> = values
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Date | null>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0570
+     * @tc.name testArrayLikeGetLength057
+     * @tc.desc Verify Array.from<Array<int> | undefined> copy preserves nested array and undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(6, 7)
+      let arr = new Array<Array<int> | undefined>()
+      arr.push(nested)
+      arr.push(undefined)
+      const source: ArrayLike<Array<int> | undefined> = arr
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Array<int> | undefined>(source)
+      expect(copied.length).assertEqual(2)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0580
+     * @tc.name testArrayLikeGetLength058
+     * @tc.desc Verify Array.from<RegExp | undefined> copy preserves RegExp and undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pattern = new RegExp('from')
+      let arr = new Array<RegExp | undefined>()
+      arr.push(pattern)
+      arr.push(undefined)
+      const source: ArrayLike<RegExp | undefined> = arr
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<RegExp | undefined>(source)
+      expect(copied.length).assertEqual(source.length)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0590
+     * @tc.name testArrayLikeGetLength059
+     * @tc.desc Verify Array.from<Object | undefined> copy preserves Object reference and undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Object()
+      let arr = new Array<Object | undefined>()
+      arr.push(obj)
+      arr.push(undefined)
+      const source: ArrayLike<Object | undefined> = arr
+      expect(source.length).assertEqual(2)
+      const copied = Array.from<Object | undefined>(source)
+      expect(copied.length).assertEqual(2)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0600
+     * @tc.name testArrayLikeGetLength060
+     * @tc.desc Verify Array.from<ArrayLikeGetLenStatusEnum | null | undefined> copy preserves all nullish slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeGetLenStatusEnum | null | undefined>()
+      arr.push(ArrayLikeGetLenStatusEnum.SUCCESS)
+      arr.push(null)
+      arr.push(undefined)
+      const source: ArrayLike<ArrayLikeGetLenStatusEnum | null | undefined> = arr
+      expect(source.length).assertEqual(3)
+      const copied = Array.from<ArrayLikeGetLenStatusEnum | null | undefined>(source)
+      expect(copied.length).assertEqual(3)
+      for (let i = 0; i < source.length; i++) {
+        expect(copied[i]).assertEqual(source.$_get(i))
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0610
+     * @tc.name testArrayLikeGetLength061
+     * @tc.desc Verify length matches element count for ArrayLike<int> with five elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr2: ArrayLike<int> = new Array<int>(10, 20, 30, 40, 50)
+      expect(arr2.length).assertEqual(5)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_LENGTH_0620
+     * @tc.name testArrayLikeGetLength062
+     * @tc.desc Verify ArrayLike<string> returns correct length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGetLength062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const strArr: ArrayLike<string> = new Array<string>("x", "y", "z")
+      expect(strArr.length).assertEqual(3)
+    });
   });
 }
