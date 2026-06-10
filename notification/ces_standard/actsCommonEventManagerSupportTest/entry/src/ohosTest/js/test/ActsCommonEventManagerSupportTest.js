@@ -417,6 +417,7 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_DISK_MOUNTED).assertEqual('usual.event.data.DISK_MOUNTED')
       expect(commonEventManager.Support.COMMON_EVENT_DISK_BAD_REMOVAL).assertEqual('usual.event.data.DISK_BAD_REMOVAL')
       expect(commonEventManager.Support.COMMON_EVENT_DISK_UNMOUNTABLE).assertEqual('usual.event.data.DISK_UNMOUNTABLE')
+      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE).assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
       expect(commonEventManager.Support.COMMON_EVENT_DISK_EJECT).assertEqual('usual.event.data.DISK_EJECT')
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_REMOVED).assertEqual('usual.event.data.VOLUME_REMOVED')
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_UNMOUNTED).assertEqual('usual.event.data.VOLUME_UNMOUNTED')
@@ -862,6 +863,21 @@ export default function ActsCommonEventManagerSupportTest() {
         .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 END`)
     })
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900
+     * @tc.desc   system data disk volume state changed common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE)
+        .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 END`)
+    })
+
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
 }
