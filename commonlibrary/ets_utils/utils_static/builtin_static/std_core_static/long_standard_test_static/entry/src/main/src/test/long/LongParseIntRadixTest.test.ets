@@ -19,6 +19,9 @@ import Utils from '../Util.test';
 export default function LongParseIntRadixTest(): void {
   describe('LongParseIntRadixTest', () => {
     const PARSE_STR_10: string = "10";
+    const PARSE_STR_NEG_10: string = "-10";
+    const PARSE_STR_NEG_FF: string = "-ff";
+    const PARSE_STR_FF: string = "ff";
 
     const PARSE_2: int = 2;
     const PARSE_3: int = 3;
@@ -514,6 +517,45 @@ export default function LongParseIntRadixTest(): void {
     it('testLongParseIntRadix035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_36);
       expect(result === 36).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3600
+     * @tc.name testLongParseIntRadix036
+     * @tc.desc Verify Long.parseInt("-10", 10) returns -10 (negative decimal)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_NEG_10, PARSE_10);
+      expect(result === -10).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3700
+     * @tc.name testLongParseIntRadix037
+     * @tc.desc Verify Long.parseInt("-10", 16) returns -16 (negative hex digits)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_NEG_10, PARSE_16);
+      expect(result === -16).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3800
+     * @tc.name testLongParseIntRadix038
+     * @tc.desc Verify Long.parseInt("-ff", 16) returns -255 (negative hex with letters)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(PARSE_STR_NEG_FF, PARSE_16);
+      expect(result === -255).assertTrue();
     });
 
   });

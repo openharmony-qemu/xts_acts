@@ -173,6 +173,7 @@ export default function LongToShort1Test(): void {
       const value = new Long(TS1_LARGE_POS);
       const result: short = value.toShort();
       expect(result !== TS1_LARGE_POS).assertTrue();
+      expect(result === -31072).assertTrue();
       expect(result >= TS1_SHORT_MIN).assertTrue();
       expect(result <= TS1_SHORT_MAX).assertTrue();
     });

@@ -38,6 +38,8 @@ export default function LongToChar1Test(): void {
     const TC1_CHAR_a: char = c'a';
     const TC1_CHAR_EURO: char = c'€';
     const TC1_CHAR_EXP_MAX: char = c'￿';
+    const TC1_CJK_UNIFIED: long = 19968;
+    const TC1_CHAR_CJK: char = c'一';
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR1_0100
@@ -205,8 +207,8 @@ export default function LongToChar1Test(): void {
     it('testLongToChar1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: char = value.toChar();
-      // MAX_VALUE wraps into char range, verify valid char
-      expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();
+      // MAX_VALUE low 16 bits = 0xFFFF = 65535 = char max
+      expect(result === TC1_CHAR_EXP_MAX).assertTrue();
     });
 
     /**
@@ -222,6 +224,20 @@ export default function LongToChar1Test(): void {
       const result: char = value.toChar();
       // MIN_VALUE wraps into char range, verify valid char
       expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR1_1400
+     * @tc.name testLongToChar1014
+     * @tc.desc Verify toChar() CJK unified ideograph U+4E00 (一, 19968)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToChar1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(TC1_CJK_UNIFIED);
+      const result: char = value.toChar();
+      expect(result === TC1_CHAR_CJK).assertTrue();
     });
   });
 }

@@ -230,5 +230,44 @@ export default function LongIsLessEqualThanTest(): void {
       expect(result).assertTrue();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISLESSEQUALTHAN_1600
+     * @tc.name testLongIsLessEqualThan016
+     * @tc.desc Verify MIN_VALUE <= MAX_VALUE returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsLessEqualThan016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(Long.MIN_VALUE).isLessEqualThan(new Long(Long.MAX_VALUE));
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISLESSEQUALTHAN_1700
+     * @tc.name testLongIsLessEqualThan017
+     * @tc.desc Verify MAX_VALUE <= MAX_VALUE returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsLessEqualThan017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(Long.MAX_VALUE).isLessEqualThan(new Long(Long.MAX_VALUE));
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISLESSEQUALTHAN_1800
+     * @tc.name testLongIsLessEqualThan018
+     * @tc.desc Verify MIN_VALUE <= MIN_VALUE returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsLessEqualThan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(Long.MIN_VALUE).isLessEqualThan(new Long(Long.MIN_VALUE));
+      expect(result).assertTrue();
+    });
+
   });
 }

@@ -169,6 +169,7 @@ export default function LongToInt1Test(): void {
       const value = new Long(TI1_LARGE_POS);
       const result: int = value.toInt();
       expect(result !== TI1_LARGE_POS).assertTrue();
+      expect(result === 1410065408).assertTrue();
     });
 
     /**

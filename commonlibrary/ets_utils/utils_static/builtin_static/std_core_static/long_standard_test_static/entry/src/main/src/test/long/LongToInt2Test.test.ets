@@ -159,6 +159,7 @@ export default function LongToInt2Test(): void {
     it('testLongToInt2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: int = Long.toInt(TI2_LARGE_POS);
       expect(result !== TI2_LARGE_POS).assertTrue();
+      expect(result === 0).assertTrue();
     });
 
     /**

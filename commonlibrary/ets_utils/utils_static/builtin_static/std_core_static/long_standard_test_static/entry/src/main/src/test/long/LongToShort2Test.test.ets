@@ -167,6 +167,33 @@ export default function LongToShort2Test(): void {
       expect(result <= TS2_SHORT_MAX).assertTrue();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT2_1100
+     * @tc.name testLongToShort2011
+     * @tc.desc Verify Long.toShort(Long.MAX_VALUE) extreme truncation — upper boundary (low 16 bits = 0xFFFF → -1)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToShort2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: short = Long.toShort(Long.MAX_VALUE);
+      // MAX_VALUE low 16 bits = 0xFFFF → -1 as signed short
+      expect(result === TS2_NEG_1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT2_1200
+     * @tc.name testLongToShort2012
+     * @tc.desc Verify Long.toShort(Long.MIN_VALUE) extreme truncation — lower boundary (low 16 bits = 0x0000 → 0)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToShort2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: short = Long.toShort(Long.MIN_VALUE);
+      // MIN_VALUE low 16 bits = 0x0000 → 0 as signed short
+      expect(result === TS2_0).assertTrue();
+    });
   });
 }
 

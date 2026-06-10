@@ -191,7 +191,7 @@ export default function LongParseIntTest(): void {
      */
     it('testLongParseInt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PI_STR_123, PI_10);
-      expect(typeof result).assertEqual(PI_STR_TYPE);
+      expect(result.toString()).assertEqual(PI_STR_123);
     });
 
     /**
@@ -350,8 +350,12 @@ export default function LongParseIntTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongParseInt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: long = Long.parseInt("12a3", PI_10);
-      expect(result >= 0).assertTrue();
+      try {
+        const result: long = Long.parseInt("12a3", PI_10);
+        expect(result === 12).assertTrue();
+      } catch (e) {
+        expect().assertFail();
+      }
     });
 
     /**

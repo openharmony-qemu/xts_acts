@@ -86,123 +86,110 @@ export default function LongConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0400
      * @tc.name testLongConstructor1004
-     * @tc.desc Verify default constructor does not throw exception
+     * @tc.desc Verify default constructor instance toByte() returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      expect(value.toString()).assertEqual(CON1_STR_0);
+      const result: byte = value.toByte();
+      expect(result === CON1_0_BYTE).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0500
      * @tc.name testLongConstructor1005
-     * @tc.desc Verify default constructor instance toByte() returns 0
+     * @tc.desc Verify default constructor instance toShort() returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: byte = value.toByte();
-      expect(result === CON1_0_BYTE).assertTrue();
+      const result: short = value.toShort();
+      expect(result === CON1_0_SHORT).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0600
      * @tc.name testLongConstructor1006
-     * @tc.desc Verify default constructor instance toShort() returns 0
+     * @tc.desc Verify default constructor instance toInt() returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: short = value.toShort();
-      expect(result === CON1_0_SHORT).assertTrue();
+      const result: int = value.toInt();
+      expect(result === CON1_0_INT).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0700
      * @tc.name testLongConstructor1007
-     * @tc.desc Verify default constructor instance toInt() returns 0
+     * @tc.desc Verify default constructor instance toLong() returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: int = value.toInt();
-      expect(result === CON1_0_INT).assertTrue();
+      const result: long = value.toLong();
+      expect(result === CON1_0_LONG).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0800
      * @tc.name testLongConstructor1008
-     * @tc.desc Verify default constructor instance toLong() returns 0
+     * @tc.desc Verify default constructor instance toFloat() returns 0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: long = value.toLong();
-      expect(result === CON1_0_LONG).assertTrue();
+      const result: float = value.toFloat();
+      expect(result === CON1_0_FLOAT).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0900
      * @tc.name testLongConstructor1009
-     * @tc.desc Verify default constructor instance toFloat() returns 0.0
+     * @tc.desc Verify default constructor instance toDouble() returns 0.0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: float = value.toFloat();
-      expect(result === CON1_0_FLOAT).assertTrue();
+      const result: double = value.toDouble();
+      expect(result === CON1_0_DOUBLE).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1000
      * @tc.name testLongConstructor1010
-     * @tc.desc Verify default constructor instance toDouble() returns 0.0
+     * @tc.desc Verify default constructor instance toChar() returns null char for value 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: double = value.toDouble();
-      expect(result === CON1_0_DOUBLE).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1100
-     * @tc.name testLongConstructor1011
-     * @tc.desc Verify default constructor instance toChar() returns null char for value 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long();
       const result: char = value.toChar();
       expect(result === CON1_CHAR_NULL).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1200
-     * @tc.name testLongConstructor1012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1100
+     * @tc.name testLongConstructor1011
      * @tc.desc Verify default constructor instance compareTo with equal Long(0) returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_0_LONG);
       const result: int = value.compareTo(other);
@@ -210,14 +197,14 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1300
-     * @tc.name testLongConstructor1013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1200
+     * @tc.name testLongConstructor1012
      * @tc.desc Verify default constructor instance compareTo with larger Long(1) returns -1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_1);
       const result: int = value.compareTo(other);
@@ -225,14 +212,14 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1400
-     * @tc.name testLongConstructor1014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1300
+     * @tc.name testLongConstructor1013
      * @tc.desc Verify default constructor instance compareTo with smaller Long(-1) returns 1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_NEG_1);
       const result: int = value.compareTo(other);
@@ -240,14 +227,14 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1500
-     * @tc.name testLongConstructor1015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1400
+     * @tc.name testLongConstructor1014
      * @tc.desc Verify default constructor instance isLessThan with larger Long(1) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_1);
       const result: boolean = value.isLessThan(other);
@@ -255,9 +242,24 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1500
+     * @tc.name testLongConstructor1015
+     * @tc.desc Verify default constructor instance isLessThan with equal Long(0) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongConstructor1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long();
+      const other: Long = new Long(CON1_0_LONG);
+      const result: boolean = value.isLessThan(other);
+      expect(result).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1600
      * @tc.name testLongConstructor1016
-     * @tc.desc Verify default constructor instance isLessThan with equal Long(0) returns false
+     * @tc.desc Verify default constructor instance isLessEqualThan with equal Long(0) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -265,34 +267,19 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_0_LONG);
-      const result: boolean = value.isLessThan(other);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1700
-     * @tc.name testLongConstructor1017
-     * @tc.desc Verify default constructor instance isLessEqualThan with equal Long(0) returns true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongConstructor1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long();
-      const other: Long = new Long(CON1_0_LONG);
       const result: boolean = value.isLessEqualThan(other);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1800
-     * @tc.name testLongConstructor1018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1700
+     * @tc.name testLongConstructor1017
      * @tc.desc Verify default constructor instance isGreaterThan with smaller Long(-1) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_NEG_1);
       const result: boolean = value.isGreaterThan(other);
@@ -300,9 +287,24 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1800
+     * @tc.name testLongConstructor1018
+     * @tc.desc Verify default constructor instance isGreaterThan with equal Long(0) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongConstructor1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long();
+      const other: Long = new Long(CON1_0_LONG);
+      const result: boolean = value.isGreaterThan(other);
+      expect(result).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_1900
      * @tc.name testLongConstructor1019
-     * @tc.desc Verify default constructor instance isGreaterThan with equal Long(0) returns false
+     * @tc.desc Verify default constructor instance isGreaterEqualThan with equal Long(0) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -310,159 +312,144 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_0_LONG);
-      const result: boolean = value.isGreaterThan(other);
-      expect(result).assertFalse();
+      const result: boolean = value.isGreaterEqualThan(other);
+      expect(result).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2000
      * @tc.name testLongConstructor1020
-     * @tc.desc Verify default constructor instance isGreaterEqualThan with equal Long(0) returns true
+     * @tc.desc Verify default constructor instance add with Long(5) returns Long(5) as additive identity
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const other: Long = new Long(CON1_0_LONG);
-      const result: boolean = value.isGreaterEqualThan(other);
-      expect(result).assertTrue();
+      const result: Long = value.add(new Long(CON1_5));
+      expect(result.toString()).assertEqual(CON1_STR_5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2100
      * @tc.name testLongConstructor1021
-     * @tc.desc Verify default constructor instance add with Long(5) returns Long(5) as additive identity
+     * @tc.desc Verify default constructor instance sub with Long(5) returns Long(-5)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: Long = value.add(new Long(CON1_5));
-      expect(result.toString()).assertEqual(CON1_STR_5);
+      const result: Long = value.sub(new Long(CON1_5));
+      expect(result.toString()).assertEqual(CON1_STR_NEG_5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2200
      * @tc.name testLongConstructor1022
-     * @tc.desc Verify default constructor instance sub with Long(5) returns Long(-5)
+     * @tc.desc Verify default constructor instance mul with Long(5) returns Long(0) as zero multiplier
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: Long = value.sub(new Long(CON1_5));
-      expect(result.toString()).assertEqual(CON1_STR_NEG_5);
+      const result: Long = value.mul(new Long(CON1_5));
+      expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2300
      * @tc.name testLongConstructor1023
-     * @tc.desc Verify default constructor instance mul with Long(5) returns Long(0) as zero multiplier
+     * @tc.desc Verify default constructor instance div with Long(5) returns Long(0) as zero dividend
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: Long = value.mul(new Long(CON1_5));
+      const result: Long = value.div(new Long(CON1_5));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2400
      * @tc.name testLongConstructor1024
-     * @tc.desc Verify default constructor instance div with Long(5) returns Long(0) as zero dividend
+     * @tc.desc Verify default constructor instance toString(2) returns "0" in binary format
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: Long = value.div(new Long(CON1_5));
-      expect(result.toString()).assertEqual(CON1_STR_0);
+      const result: string = value.toString(CON1_2);
+      expect(result).assertEqual(CON1_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2500
      * @tc.name testLongConstructor1025
-     * @tc.desc Verify default constructor instance toString(2) returns "0" in binary format
+     * @tc.desc Verify default constructor instance toString(16) returns "0" in hex format
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: string = value.toString(CON1_2);
+      const result: string = value.toString(CON1_16);
       expect(result).assertEqual(CON1_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2600
      * @tc.name testLongConstructor1026
-     * @tc.desc Verify default constructor instance toString(16) returns "0" in hex format
+     * @tc.desc Verify default constructor instance toLocaleString("en-US") returns "0"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: string = value.toString(CON1_16);
+      const result: string = value.toLocaleString(CON1_STR_EN_US);
       expect(result).assertEqual(CON1_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2700
      * @tc.name testLongConstructor1027
-     * @tc.desc Verify default constructor instance toLocaleString("en-US") returns "0"
+     * @tc.desc Verify default constructor instance is instanceof Long type
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const result: string = value.toLocaleString(CON1_STR_EN_US);
-      expect(result).assertEqual(CON1_STR_0);
+      expect(value instanceof Long).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2800
      * @tc.name testLongConstructor1028
-     * @tc.desc Verify default constructor instance is instanceof Long type
+     * @tc.desc Verify default constructor instance add with negative Long(-5) equals Long(-5)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      expect(value instanceof Long).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2900
-     * @tc.name testLongConstructor1029
-     * @tc.desc Verify default constructor instance add with negative Long(-5) equals Long(-5)
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongConstructor1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long();
       const result: Long = value.add(new Long(CON1_NEG_5));
       expect(result.toString()).assertEqual(CON1_STR_NEG_5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3000
-     * @tc.name testLongConstructor1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2900
+     * @tc.name testLongConstructor1029
      * @tc.desc Verify default constructor instance compareTo with Long.MIN_VALUE returns 1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(Long.MIN_VALUE);
       const result: int = value.compareTo(other);
@@ -470,14 +457,14 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3100
-     * @tc.name testLongConstructor1031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3000
+     * @tc.name testLongConstructor1030
      * @tc.desc Verify default constructor instance compareTo with Long.MAX_VALUE returns -1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(Long.MAX_VALUE);
       const result: int = value.compareTo(other);
@@ -485,84 +472,84 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3200
-     * @tc.name testLongConstructor1032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3100
+     * @tc.name testLongConstructor1031
      * @tc.desc Verify default constructor instance equals with explicit Long(0) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_0_LONG);
       expect(value.equals(other)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3300
-     * @tc.name testLongConstructor1033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3200
+     * @tc.name testLongConstructor1032
      * @tc.desc Verify default constructor instance equals with non-zero Long(10) returns false
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_10);
       expect(value.equals(other)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3400
-     * @tc.name testLongConstructor1034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3300
+     * @tc.name testLongConstructor1033
      * @tc.desc Verify default constructor instance sub with negative Long(-5) returns Long(5)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.sub(new Long(CON1_NEG_5));
       expect(result.toString()).assertEqual(CON1_STR_5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3500
-     * @tc.name testLongConstructor1035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3400
+     * @tc.name testLongConstructor1034
      * @tc.desc Verify default constructor instance mul with Long(-5) returns Long(0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.mul(new Long(CON1_NEG_5));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3600
-     * @tc.name testLongConstructor1036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3500
+     * @tc.name testLongConstructor1035
      * @tc.desc Verify default constructor instance div with Long(-5) returns Long(0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.div(new Long(CON1_NEG_5));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3700
-     * @tc.name testLongConstructor1037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3600
+     * @tc.name testLongConstructor1036
      * @tc.desc Verify default constructor instance isLessThan with negative Long(-1) returns false
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_NEG_1);
       const result: boolean = value.isLessThan(other);
@@ -570,59 +557,59 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3700
+     * @tc.name testLongConstructor1037
+     * @tc.desc Verify default constructor instance isGreaterEqualThan with larger Long(1) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongConstructor1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long();
+      const other: Long = new Long(CON1_1);
+      const result: boolean = value.isGreaterEqualThan(other);
+      expect(result).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3800
      * @tc.name testLongConstructor1038
-     * @tc.desc Verify default constructor instance isGreaterEqualThan with larger Long(1) returns false
+     * @tc.desc Verify default constructor instance isGreaterEqualThan with negative Long(-1) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const other: Long = new Long(CON1_1);
+      const other: Long = new Long(CON1_NEG_1);
       const result: boolean = value.isGreaterEqualThan(other);
-      expect(result).assertFalse();
+      expect(result).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_3900
      * @tc.name testLongConstructor1039
-     * @tc.desc Verify default constructor instance isGreaterEqualThan with negative Long(-1) returns true
+     * @tc.desc Verify default constructor instance isLessEqualThan with larger Long(1) returns true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      const other: Long = new Long(CON1_NEG_1);
-      const result: boolean = value.isGreaterEqualThan(other);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4000
-     * @tc.name testLongConstructor1040
-     * @tc.desc Verify default constructor instance isLessEqualThan with larger Long(1) returns true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongConstructor1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long();
       const other: Long = new Long(CON1_1);
       const result: boolean = value.isLessEqualThan(other);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4100
-     * @tc.name testLongConstructor1041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4000
+     * @tc.name testLongConstructor1040
      * @tc.desc Verify default constructor instance isLessEqualThan with negative Long(-1) returns false
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const other: Long = new Long(CON1_NEG_1);
       const result: boolean = value.isLessEqualThan(other);
@@ -630,70 +617,70 @@ export default function LongConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4200
-     * @tc.name testLongConstructor1042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4100
+     * @tc.name testLongConstructor1041
      * @tc.desc Verify default constructor instance add with Long(0) returns Long(0) as identity
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.add(new Long(CON1_0_LONG));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4300
-     * @tc.name testLongConstructor1043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4200
+     * @tc.name testLongConstructor1042
      * @tc.desc Verify default constructor instance sub with Long(0) returns Long(0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.sub(new Long(CON1_0_LONG));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4400
-     * @tc.name testLongConstructor1044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4300
+     * @tc.name testLongConstructor1043
      * @tc.desc Verify default constructor instance mul with Long(0) returns Long(0)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: Long = value.mul(new Long(CON1_0_LONG));
       expect(result.toString()).assertEqual(CON1_STR_0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4500
-     * @tc.name testLongConstructor1045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4400
+     * @tc.name testLongConstructor1044
      * @tc.desc Verify default constructor instance toLocaleString with no params returns non-empty string
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: string = value.toLocaleString();
       expect(result.length > 0).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4600
-     * @tc.name testLongConstructor1046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_4500
+     * @tc.name testLongConstructor1045
      * @tc.desc Verify default constructor instance toString(10) returns "0" in decimal format
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongConstructor1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongConstructor1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: string = value.toString(CON1_10);
       expect(result).assertEqual(CON1_STR_0);

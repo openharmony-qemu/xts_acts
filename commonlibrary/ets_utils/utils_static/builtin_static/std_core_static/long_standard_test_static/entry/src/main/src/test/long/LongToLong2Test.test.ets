@@ -133,6 +133,30 @@ export default function LongToLong2Test(): void {
       expect(result === TL2_LARGE_NEG).assertTrue();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLONG2_0900
+     * @tc.name testLongToLong2009
+     * @tc.desc Verify Long.toLong(Long.MAX_VALUE) returns MAX_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLong2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.toLong(Long.MAX_VALUE);
+      expect(result === Long.MAX_VALUE).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLONG2_1000
+     * @tc.name testLongToLong2010
+     * @tc.desc Verify Long.toLong(Long.MIN_VALUE) returns MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLong2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.toLong(Long.MIN_VALUE);
+      expect(result === Long.MIN_VALUE).assertTrue();
+    });
   });
 }
-

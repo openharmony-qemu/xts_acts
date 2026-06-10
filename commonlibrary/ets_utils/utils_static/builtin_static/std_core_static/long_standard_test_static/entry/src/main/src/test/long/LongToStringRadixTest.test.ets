@@ -586,5 +586,91 @@ export default function LongToStringRadixTest(): void {
       expect(result).assertEqual(RADIX_STR_36);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_3600
+     * @tc.name testLongToStringRadix036
+     * @tc.desc Verify negative value toString with radix
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value1: Long = new Long(-10);
+      const result1: string = value1.toString(RADIX_2);
+      expect(result1).assertEqual("-1010");
+      const value2: Long = new Long(-10);
+      const result2: string = value2.toString(RADIX_16);
+      expect(result2).assertEqual("-a");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_3700
+     * @tc.name testLongToStringRadix037
+     * @tc.desc Verify zero and large value toString with radix
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroVal: Long = new Long(0);
+      expect(zeroVal.toString(RADIX_2)).assertEqual("0");
+      expect(zeroVal.toString(RADIX_16)).assertEqual("0");
+      const maxVal: Long = new Long(Long.MAX_VALUE);
+      expect(maxVal.toString(RADIX_16).length > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_3800
+     * @tc.name testLongToStringRadix038
+     * @tc.desc Verify radix=1 throws RangeError (below minimum valid radix 2)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(RADIX_VAL);
+      try {
+        value.toString(1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof RangeError).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_3900
+     * @tc.name testLongToStringRadix039
+     * @tc.desc Verify radix=37 throws RangeError (above maximum valid radix 36)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(RADIX_VAL);
+      try {
+        value.toString(37);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof RangeError).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_4000
+     * @tc.name testLongToStringRadix040
+     * @tc.desc Verify radix=-1 throws RangeError (negative radix invalid)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(RADIX_VAL);
+      try {
+        value.toString(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof RangeError).assertTrue();
+      }
+    });
   });
 }

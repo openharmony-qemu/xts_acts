@@ -26,19 +26,31 @@ export default function LongCrossTypeAddTest(): void {
     const CTA_INT_32767: int = 32767;     // short-range boundary
     const CTA_INT_MAX: int = 2147483647;  // int max boundary
 
-    const CTA_L_FROM_FLOAT_0: long = 0;                       // float 0.0 → long 0
-    const CTA_L_FROM_FLOAT_1: long = 1;                       // float 1.0 → long 1
-    const CTA_L_FROM_FLOAT_HALF: long = 0;                    // float 0.5 → long 0 (truncation)
-    const CTA_L_FROM_DOUBLE_0: long = 0;                      // double 0.0 → long 0
-    const CTA_L_FROM_DOUBLE_1: long = 1;                      // double 1.0 → long 1
-    const CTA_L_FROM_DOUBLE_LARGE: long = 1000000000000000000; // double large → long
-    const CTA_L_FROM_CHAR_A: long = 65;                       // char 'A' code point
-    const CTA_L_FROM_CHAR_0: long = 48;                       // char '0' code point
+    // Pre-truncated long values (originally from float/double, now long literals reflecting truncation)
+    const CTA_L_FROM_TRUNCATED_FLOAT_0: long = 0;                       // pre-truncated from float 0.0 -> long 0
+    const CTA_L_FROM_TRUNCATED_FLOAT_1: long = 1;                       // pre-truncated from float 1.0 -> long 1
+    const CTA_L_FROM_TRUNCATED_FLOAT_HALF: long = 0;                    // pre-truncated from float 0.5 -> long 0
+    const CTA_L_FROM_TRUNCATED_DOUBLE_0: long = 0;                      // pre-truncated from double 0.0 -> long 0
+    const CTA_L_FROM_TRUNCATED_DOUBLE_1: long = 1;                      // pre-truncated from double 1.0 -> long 1
+    const CTA_L_FROM_TRUNCATED_DOUBLE_LARGE: long = 1000000000000000000; // pre-truncated from double large -> long
+    const CTA_L_FROM_CHAR_A: long = 65;                       // long value from char 'A' code point
+    const CTA_L_FROM_CHAR_0: long = 48;                       // long value from char '0' code point
 
     const CTA_L_0: long = 0;
     const CTA_L_1: long = 1;
     const CTA_L_2: long = 2;
     const CTA_L_10: long = 10;
+
+    const CTA_STR_0: string = "0";
+    const CTA_STR_1: string = "1";
+    const CTA_STR_2: string = "2";
+    const CTA_STR_65: string = "65";
+    const CTA_STR_66: string = "66";
+    const CTA_STR_127: string = "127";
+    const CTA_STR_480: string = "480";
+    const CTA_STR_32767: string = "32767";
+    const CTA_STR_MAX: string = "2147483647";
+    const CTA_STR_DOUBLE_LARGE: string = "1000000000000000000";
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0100
@@ -50,7 +62,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_0).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("0");
+      expect(result.toString()).assertEqual(CTA_STR_0);
     });
 
     /**
@@ -63,7 +75,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_127).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("127");
+      expect(result.toString()).assertEqual(CTA_STR_127);
     });
 
     /**
@@ -89,7 +101,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_32767).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("32767");
+      expect(result.toString()).assertEqual(CTA_STR_32767);
     });
 
     /**
@@ -102,88 +114,88 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_MAX).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("2147483647");
+      expect(result.toString()).assertEqual(CTA_STR_MAX);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0600
      * @tc.name testLongCrossAdd006
-     * @tc.desc Verify Long(float 0.0 truncated to long 0) add Long(0) returns "0"
+     * @tc.desc Verify Long(pre-truncated float 0.0 as long 0) add Long(0) returns "0"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_FLOAT_0).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("0");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_FLOAT_0).add(new Long(CTA_L_0));
+      expect(result.toString()).assertEqual(CTA_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0700
      * @tc.name testLongCrossAdd007
-     * @tc.desc Verify Long(float 1.0 truncated to long 1) add Long(1) returns "2"
+     * @tc.desc Verify Long(pre-truncated float 1.0 as long 1) add Long(1) returns "2"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_FLOAT_1).add(new Long(CTA_L_1));
-      expect(result.toString()).assertEqual("2");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_FLOAT_1).add(new Long(CTA_L_1));
+      expect(result.toString()).assertEqual(CTA_STR_2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0800
      * @tc.name testLongCrossAdd008
-     * @tc.desc Verify Long(float 0.5 truncated to long 0) add Long(1) returns "1"
+     * @tc.desc Verify Long(pre-truncated float 0.5 as long 0) add Long(1) returns "1"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_FLOAT_HALF).add(new Long(CTA_L_1));
-      expect(result.toString()).assertEqual("1");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_FLOAT_HALF).add(new Long(CTA_L_1));
+      expect(result.toString()).assertEqual(CTA_STR_1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0900
      * @tc.name testLongCrossAdd009
-     * @tc.desc Verify Long(double 0.0 truncated to long 0) add Long(0) returns "0"
+     * @tc.desc Verify Long(pre-truncated double 0.0 as long 0) add Long(0) returns "0"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_DOUBLE_0).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("0");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_DOUBLE_0).add(new Long(CTA_L_0));
+      expect(result.toString()).assertEqual(CTA_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1000
      * @tc.name testLongCrossAdd010
-     * @tc.desc Verify Long(double 1.0 truncated to long 1) add Long(1) returns "2"
+     * @tc.desc Verify Long(pre-truncated double 1.0 as long 1) add Long(1) returns "2"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_DOUBLE_1).add(new Long(CTA_L_1));
-      expect(result.toString()).assertEqual("2");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_DOUBLE_1).add(new Long(CTA_L_1));
+      expect(result.toString()).assertEqual(CTA_STR_2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1100
      * @tc.name testLongCrossAdd011
-     * @tc.desc Verify Long(double large truncated to long) add Long(0) preserves large magnitude
+     * @tc.desc Verify Long(pre-truncated double large as long) add Long(0) preserves large magnitude
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result: Long = new Long(CTA_L_FROM_DOUBLE_LARGE).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("1000000000000000000");
+      const result: Long = new Long(CTA_L_FROM_TRUNCATED_DOUBLE_LARGE).add(new Long(CTA_L_0));
+      expect(result.toString()).assertEqual(CTA_STR_DOUBLE_LARGE);
     });
 
-    // ── Cross-type add: char-code-point sourced Long ──
+    // -- Cross-type add: char-code-point sourced Long --
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1200
@@ -195,7 +207,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_L_FROM_CHAR_A).add(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("65");
+      expect(result.toString()).assertEqual(CTA_STR_65);
     });
 
     /**
@@ -208,39 +220,39 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_L_FROM_CHAR_A).add(new Long(CTA_L_1));
-      expect(result.toString()).assertEqual("66");
+      expect(result.toString()).assertEqual(CTA_STR_66);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1400
      * @tc.name testLongCrossAdd014
-     * @tc.desc Verify Long(int 127) mul Long(0) returns "0" (zero product, int-sourced)
+     * @tc.desc Verify cross-type multiplication: Long(int 127) mul Long(0) returns "0" (zero product)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_127).mul(new Long(CTA_L_0));
-      expect(result.toString()).assertEqual("0");
+      expect(result.toString()).assertEqual(CTA_STR_0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1500
      * @tc.name testLongCrossAdd015
-     * @tc.desc Verify Long(int 127) mul Long(1) returns "127" (multiplicative identity, int-sourced)
+     * @tc.desc Verify cross-type multiplication: Long(int 127) mul Long(1) returns "127" (multiplicative identity)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_127).mul(new Long(CTA_L_1));
-      expect(result.toString()).assertEqual("127");
+      expect(result.toString()).assertEqual(CTA_STR_127);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1600
      * @tc.name testLongCrossAdd016
-     * @tc.desc Verify Long(int MAX) mul Long(Long.MAX_VALUE) returns Long instance (overflow)
+     * @tc.desc Verify cross-type multiplication: Long(int MAX) mul Long(Long.MAX_VALUE) returns Long instance (overflow)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -253,21 +265,21 @@ export default function LongCrossTypeAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1700
      * @tc.name testLongCrossAdd017
-     * @tc.desc Verify Long(float 1.0 → long 1) mul Long(2) returns "2" (float-range sourced)
+     * @tc.desc Verify cross-type multiplication: Long(pre-truncated float 1.0 as long 1) mul Long(2) returns "2"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const left: Long = new Long(CTA_L_FROM_FLOAT_1);
+      const left: Long = new Long(CTA_L_FROM_TRUNCATED_FLOAT_1);
       const result: Long = left.mul(new Long(CTA_L_2));
-      expect(result.toString()).assertEqual("2");
+      expect(result.toString()).assertEqual(CTA_STR_2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1800
      * @tc.name testLongCrossAdd018
-     * @tc.desc Verify Long(char '0' code 48) mul Long(10) returns "480"
+     * @tc.desc Verify cross-type multiplication: Long(char-sourced long 48) mul Long(10) returns "480"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -275,7 +287,7 @@ export default function LongCrossTypeAddTest(): void {
     it('testLongCrossAdd018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTA_L_FROM_CHAR_0);
       const result: Long = left.mul(new Long(CTA_L_10));
-      expect(result.toString()).assertEqual("480");
+      expect(result.toString()).assertEqual(CTA_STR_480);
     });
   });
 }

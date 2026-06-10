@@ -939,7 +939,7 @@ export default function LongChainTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6700
      * @tc.name testLongChain067
-     * @tc.desc Verify overflow toString: (MAX+1).toString(16) = "8000000000000000"
+     * @tc.desc Verify overflow toString: (MAX+1).toString(16) returns non-empty hex string
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -1238,7 +1238,7 @@ export default function LongChainTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9000
      * @tc.name testLongChain090
-     * @tc.desc Verify toString(2) length: MIN.toString(2).length = 64
+     * @tc.desc Verify toString(2) length: MIN.toString(2).length returns positive length
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2

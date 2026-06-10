@@ -30,6 +30,8 @@ export default function LongToFloat2Test(): void {
     const TF2_FLOAT_EXACT_BOUNDARY: long = 16777216;
     const TF2_FLOAT_PRECISION_LOSS: long = 16777217;
     const TF2_FLOAT_16777216: float = 16777216.0 as float;
+    const TF2_1000000: long = 1000000;
+    const TF2_NEG_1000000: long = -1000000;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_0100
@@ -158,7 +160,33 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_12345);
-      expect(result === result).assertTrue();  // NaN check
+
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_1100
+     * @tc.name testLongToFloat2011
+     * @tc.desc Verify Long.toFloat(TF2_1000000) large positive value conversion
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToFloat2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: float = Long.toFloat(TF2_1000000);
+      expect(result === TF2_1000000).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_1200
+     * @tc.name testLongToFloat2012
+     * @tc.desc Verify Long.toFloat(TF2_NEG_1000000) large negative value conversion
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToFloat2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: float = Long.toFloat(TF2_NEG_1000000);
+      expect(result === TF2_NEG_1000000).assertTrue();
     });
   });
 }

@@ -21,7 +21,6 @@ export default function LongCrossTypeSubDivTest(): void {
     beforeEach(async () => { await Utils.msSleep(30); });
 
     const CSD_INT_0: int = 0;
-    const CSD_INT_1: int = 1;
     const CSD_INT_127: int = 127;
     const CSD_INT_NEG_128: int = -128;
     const CSD_INT_32767: int = 32767;
@@ -102,6 +101,7 @@ export default function LongCrossTypeSubDivTest(): void {
     it('testLongCrossSubDiv005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CSD_INT_127).sub(new Long(Long.MAX_VALUE));
       expect(result instanceof Long).assertTrue();
+      expect(result.toString()).assertEqual("-9223372036854775680");
     });
 
     // ── Cross-type sub: float/double/char-range sourced Long ──
@@ -487,7 +487,9 @@ export default function LongCrossTypeSubDivTest(): void {
       let toCharThrew: boolean = false;
       try {
         const result: char = value.toChar();
+        expect(result === c'A').assertTrue();
       } catch (e) {
+        console.error(e.message);
         toCharThrew = true;
       }
       expect(toCharThrew).assertFalse();
@@ -506,7 +508,9 @@ export default function LongCrossTypeSubDivTest(): void {
       let toCharThrew: boolean = false;
       try {
         const result: char = value.toChar();
+        expect(result === c'0').assertTrue();
       } catch (e) {
+        console.error(e.message);
         toCharThrew = true;
       }
       expect(toCharThrew).assertFalse();
@@ -526,9 +530,27 @@ export default function LongCrossTypeSubDivTest(): void {
       try {
         const result: char = value.toChar();
       } catch (e) {
+        console.error(e.message);
         toCharThrew = true;
       }
       expect(toCharThrew).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_DIV2_1600
+     * @tc.name testLongCrossSubDiv037
+     * @tc.desc Verify Long.div(0) throws an exception
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Long(CSD_L_1).div(new Long(CSD_L_0));
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
   });
 }

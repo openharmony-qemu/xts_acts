@@ -20,7 +20,7 @@ export default function LongToString3Test(): void {
   describe('LongToString3Test', () => {
     const TS3_NEG_255: int = -255;
     const TS3_NEG_1: int = -1;
-    const TS3_0: long = 0;
+    const TS3_0: int = 0;
     const TS3_1: int = 1;
     const TS3_2: int = 2;
     const TS3_3: int = 3;
@@ -41,6 +41,8 @@ export default function LongToString3Test(): void {
     const TS3_STR_Z: string = "z";
     const TS3_STR_ZZ: string = "zz";
     const TS3_STR_BIN_32ONES: string = "11111111111111111111111111111111";
+    const TS3_STR_MAX_HEX: string = "7fffffffffffffff";
+    const TS3_STR_NEG_FF: string = "-ff";
     beforeEach(async () => { await Utils.msSleep(TS3_30); });
 
     /**
@@ -56,6 +58,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_36);
       expect(result).assertEqual(TS3_STR_ZZ);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0200
      * @tc.name testLongToString3002
@@ -69,6 +72,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_3);
       expect(result).assertEqual(TS3_STR_101);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0300
      * @tc.name testLongToString3003
@@ -82,6 +86,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_2);
       expect(result).assertEqual(TS3_STR_1);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0400
      * @tc.name testLongToString3004
@@ -95,6 +100,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_16);
       expect(result).assertEqual(TS3_STR_0);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0500
      * @tc.name testLongToString3005
@@ -108,6 +114,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_36);
       expect(result).assertEqual(TS3_STR_Z);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0600
      * @tc.name testLongToString3006
@@ -121,6 +128,7 @@ export default function LongToString3Test(): void {
       const result: string = value.toString(TS3_2);
       expect(result).assertEqual(TS3_STR_BIN_32ONES);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0700
      * @tc.name testLongToString3007
@@ -138,6 +146,7 @@ export default function LongToString3Test(): void {
         expect(e instanceof RangeError).assertTrue();
       }
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0800
      * @tc.name testLongToString3008
@@ -155,6 +164,7 @@ export default function LongToString3Test(): void {
         expect(e instanceof RangeError).assertTrue();
       }
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0900
      * @tc.name testLongToString3009
@@ -172,6 +182,7 @@ export default function LongToString3Test(): void {
         expect(e instanceof RangeError).assertTrue();
       }
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_1000
      * @tc.name testLongToString3010
@@ -183,12 +194,13 @@ export default function LongToString3Test(): void {
     it('testLongToString3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TS3_255);
       try {
-        value.toString(0);
+        value.toString(TS3_0);
         expect().assertFail();
       } catch (e) {
         expect(e instanceof RangeError).assertTrue();
       }
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_1100
      * @tc.name testLongToString3011
@@ -200,8 +212,9 @@ export default function LongToString3Test(): void {
     it('testLongToString3011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: string = value.toString(TS3_2);
-      expect(result).assertContain("1");
+      expect(result).assertContain("1111111");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_1200
      * @tc.name testLongToString3012
@@ -213,7 +226,21 @@ export default function LongToString3Test(): void {
     it('testLongToString3012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: string = value.toString(TS3_16);
-      expect(result).assertContain("7");
+      expect(result).assertEqual(TS3_STR_MAX_HEX);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_1300
+     * @tc.name testLongToString3013
+     * @tc.desc Verify negative value toString with radix
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString3013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(TS3_NEG_255);
+      const result: string = value.toString(TS3_16);
+      expect(result).assertEqual(TS3_STR_NEG_FF);
     });
   });
 }

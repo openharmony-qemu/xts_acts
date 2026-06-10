@@ -175,8 +175,8 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(Long.MAX_VALUE);
-      expect(result >= TB2_BYTE_MIN).assertTrue();
-      expect(result <= TB2_BYTE_MAX).assertTrue();
+      // MAX_VALUE low 8 bits = 0xFF → -1 as signed byte
+      expect(result === -1).assertTrue();
     });
 
     /**
@@ -189,8 +189,8 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(Long.MIN_VALUE);
-      expect(result >= TB2_BYTE_MIN).assertTrue();
-      expect(result <= TB2_BYTE_MAX).assertTrue();
+      // MIN_VALUE low 8 bits = 0x00 → 0 as signed byte
+      expect(result === 0).assertTrue();
     });
 
   });

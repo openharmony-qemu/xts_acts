@@ -23,6 +23,7 @@ export default function LongDivTest(): void {
     const DIV_NEG_100: long = -100;
     const DIV_NEG_7: long = -7;
     const DIV_NEG_5: long = -5;
+    const DIV_NEG_2: long = -2;
     const DIV_NEG_1: long = -1;
     const DIV_0: long = 0;
     const DIV_1: long = 1;
@@ -232,6 +233,19 @@ export default function LongDivTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1900
+     * @tc.name testLongDiv019
+     * @tc.desc Verify positive divided by negative truncates toward zero: 7/(-2) = -3 (symmetric with test014)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongDiv019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(DIV_7).div(new Long(DIV_NEG_2));
+      expect(result.toString()).assertEqual(DIV_STR_NEG_3);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1500
      * @tc.name testLongDiv015
      * @tc.desc Verify division by zero with dividend 0 throws an error
@@ -285,18 +299,14 @@ export default function LongDivTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1800
      * @tc.name testLongDiv018
-     * @tc.desc Verify Long.MIN_VALUE divided by -1 overflow behavior
+     * @tc.desc Verify Long.MIN_VALUE divided by -1 overflows back to MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongDiv018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Long(Long.MIN_VALUE).div(new Long(DIV_NEG_1));
-        expect(false).assertTrue();
-      } catch (e) {
-        expect(e instanceof Error).assertTrue();
-      }
+      const result: Long = new Long(Long.MIN_VALUE).div(new Long(DIV_NEG_1));
+      expect(result.toString()).assertEqual(DIV_STR_MIN_VALUE);
     });
   });
 }

@@ -230,6 +230,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {notation: "scientific"};
       const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("e") !== -1 || result.indexOf("E") !== -1).assertTrue();
     });
 
     /**
@@ -275,6 +276,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {signDisplay: "always"};
       const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("+") !== -1).assertTrue();
     });
 
     /**
@@ -290,6 +292,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {signDisplay: "never"};
       const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("-") === -1).assertTrue();
     });
 
     /**
@@ -369,7 +372,7 @@ export default function LongToLocaleString1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING1_2300
      * @tc.name testLongToLocaleString1023
-     * @tc.desc Verify toLocaleString with style currency and currency EUR
+     * @tc.desc Verify toLocaleString with EUR currency symbol rendering (default currencyDisplay)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -379,7 +382,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {style: "currency", currency: "EUR"};
       const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
-      expect(result.indexOf("EUR") !== -1).assertTrue();
+      expect(result.indexOf("€") !== -1).assertTrue();
     });
 
     /**
@@ -446,14 +449,14 @@ export default function LongToLocaleString1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING1_2800
      * @tc.name testLongToLocaleString1028
-     * @tc.desc Verify toLocaleString with en-GB locale and style currency GBP
+     * @tc.desc Verify toLocaleString with GBP currency code rendering (currencyDisplay code)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongToLocaleString1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(9999999);
-      const opts: Intl.NumberFormatOptions = {style: "currency", currency: "GBP"};
+      const opts: Intl.NumberFormatOptions = {style: "currency", currency: "GBP", currencyDisplay: "code"};
       const result: string = value.toLocaleString("en-GB", opts);
       expect(result.length > 0).assertTrue();
       expect(result.indexOf("GBP") !== -1).assertTrue();
@@ -488,6 +491,20 @@ export default function LongToLocaleString1Test(): void {
       const result: string = value.toLocaleString(LOC30_ZH_TW, opts);
       expect(result.length > 0).assertTrue();
       expect(result.indexOf("%") !== -1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING1_3100
+     * @tc.name testLongToLocaleString1031
+     * @tc.desc Verify toLocaleString with null/undefined locale returns non-empty string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLocaleString1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(LOC1_1234);
+      const resultUndefined: string = value.toLocaleString(undefined);
+      expect(resultUndefined.length > 0).assertTrue();
     });
   });
 }

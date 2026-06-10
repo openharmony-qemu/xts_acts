@@ -152,5 +152,19 @@ export default function LongToString2Test(): void {
       const result: string = value.toString();
       expect(result).assertEqual(T2S_STR_MIN_VALUE);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING2_0900
+     * @tc.name testLongToString2009
+     * @tc.desc Verify new Long(Long.MAX_VALUE).toString() returns "9223372036854775807"
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MAX_VALUE);
+      const result: string = value.toString();
+      expect(result).assertEqual("9223372036854775807");
+    });
   });
 }

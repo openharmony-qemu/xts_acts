@@ -55,8 +55,8 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_0);
       const result: string = value.toLocaleString(LOC2_EN_US);
-      // Zero should always format to a non-empty string in en-US
-      expect(result.length > 0).assertTrue();
+      // Zero should format to "0" in en-US
+      expect(result).assertEqual("0");
     });
 
     /**
@@ -70,8 +70,9 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_NEG_1234);
       const result: string = value.toLocaleString(LOC2_EN_US);
-      // Negative value should format to a non-empty string in en-US
+      // Negative value should contain "-" in en-US
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("-") !== -1).assertTrue();
     });
 
     /**
@@ -102,6 +103,8 @@ export default function LongToLocaleString2Test(): void {
       const r1: string = value.toLocaleString(LOC2_EN_US);
       const r2: string = value.toLocaleString(LOC2_DE_DE);
       expect(r1 !== r2).assertTrue();
+      // en-US should use comma as thousands separator for 1234567
+      expect(r1.indexOf(",") !== -1).assertTrue();
     });
   });
 }

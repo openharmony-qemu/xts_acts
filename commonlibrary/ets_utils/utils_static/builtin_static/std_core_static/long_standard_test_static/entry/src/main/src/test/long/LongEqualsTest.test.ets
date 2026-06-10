@@ -267,5 +267,50 @@ export default function LongEqualsTest(): void {
       expect(result).assertFalse();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_1700
+     * @tc.name testLongEquals017
+     * @tc.desc Verify equals returns true when comparing two MAX_VALUE Long instances
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new Long(Long.MAX_VALUE);
+      const right = new Long(Long.MAX_VALUE);
+      const result: boolean = left.equals(right);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_1800
+     * @tc.name testLongEquals018
+     * @tc.desc Verify equals returns true when comparing two MIN_VALUE Long instances
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new Long(Long.MIN_VALUE);
+      const right = new Long(Long.MIN_VALUE);
+      const result: boolean = left.equals(right);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_1900
+     * @tc.name testLongEquals019
+     * @tc.desc Verify equals returns false when comparing MAX_VALUE with MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new Long(Long.MAX_VALUE);
+      const right = new Long(Long.MIN_VALUE);
+      const result: boolean = left.equals(right);
+      expect(result).assertFalse();
+    });
+
   });
 }

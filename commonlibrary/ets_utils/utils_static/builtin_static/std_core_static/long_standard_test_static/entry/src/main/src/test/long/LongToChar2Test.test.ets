@@ -40,6 +40,8 @@ export default function LongToChar2Test(): void {
     const TC2_CHAR_EURO: char = c'€';
     const TC2_CHAR_LEFTARROW: char = c'←';
     const TC2_CHAR_EXP_MAX: char = c'￿';
+    const TC2_CJK_ER: long = 20108;
+    const TC2_CHAR_ER: char = c'二';
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR2_0100
@@ -196,6 +198,47 @@ export default function LongToChar2Test(): void {
     it('testLongToChar2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: char = Long.toChar(TC2_NEG_1);
       expect(result === TC2_CHAR_EXP_MAX).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR2_1300
+     * @tc.name testLongToChar2013
+     * @tc.desc Verify Long.toChar CJK unified ideograph U+4E8C (二, 20108)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToChar2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: char = Long.toChar(TC2_CJK_ER);
+      expect(result === TC2_CHAR_ER).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR2_1400
+     * @tc.name testLongToChar2014
+     * @tc.desc Verify Long.toChar(Long.MAX_VALUE) truncation is within char range
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToChar2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: char = Long.toChar(Long.MAX_VALUE);
+      expect(result >= c'\0').assertTrue();
+      expect(result <= c'￿').assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOCHAR2_1500
+     * @tc.name testLongToChar2015
+     * @tc.desc Verify Long.toChar(Long.MIN_VALUE) truncation is within char range
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToChar2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: char = Long.toChar(Long.MIN_VALUE);
+      expect(result >= c'\0').assertTrue();
+      expect(result <= c'￿').assertTrue();
     });
   });
 }

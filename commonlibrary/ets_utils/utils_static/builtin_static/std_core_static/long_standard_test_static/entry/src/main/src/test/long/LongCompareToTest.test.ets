@@ -256,5 +256,61 @@ export default function LongCompareToTest(): void {
       const result: int = left.compareTo(right);
       expect(result).assertEqual(CT_0);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_1600
+     * @tc.name testLongCompareTo016
+     * @tc.desc Verify compareTo transitivity: if a>b and b>c then a>c (5 > 0 > -5)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Long = new Long(CT_5);
+      const b: Long = new Long(CT_0);
+      const c: Long = new Long(CT_NEG_5);
+      expect(a.compareTo(b)).assertEqual(CT_1);   // 5 > 0
+      expect(b.compareTo(c)).assertEqual(CT_1);   // 0 > -5
+      expect(a.compareTo(c)).assertEqual(CT_1);   // 5 > -5
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_1700
+     * @tc.name testLongCompareTo017
+     * @tc.desc Verify compareTo reflexivity: a.compareTo(a) == 0 for various values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v1: Long = new Long(CT_NEG_100);
+      const v2: Long = new Long(CT_0);
+      const v3: Long = new Long(CT_42);
+      const v4: Long = new Long(CT_100);
+      expect(v1.compareTo(v1)).assertEqual(CT_0);
+      expect(v2.compareTo(v2)).assertEqual(CT_0);
+      expect(v3.compareTo(v3)).assertEqual(CT_0);
+      expect(v4.compareTo(v4)).assertEqual(CT_0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_1800
+     * @tc.name testLongCompareTo018
+     * @tc.desc Verify equals consistency: a.equals(b) iff a.compareTo(b) == 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Long = new Long(CT_5);
+      const b: Long = new Long(CT_5);   // equal
+      const c: Long = new Long(CT_3);   // less
+      // a equals b <=> compareTo 0
+      expect(a.equals(b)).assertTrue();
+      expect(a.compareTo(b)).assertEqual(CT_0);
+      // a not equals c <=> compareTo != 0
+      expect(a.equals(c)).assertFalse();
+      expect(a.compareTo(c) !== 0).assertTrue();
+    });
   });
 }
