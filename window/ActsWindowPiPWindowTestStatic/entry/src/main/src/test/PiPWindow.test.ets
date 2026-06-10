@@ -154,7 +154,7 @@ export default function PiPWindowTest() {
             //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             isPCStatus = settings.getValueSync(context1!, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
             //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融�?
+            //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
             try{
