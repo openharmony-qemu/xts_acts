@@ -337,7 +337,7 @@ export default function LongToStringRadixTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_1800
      * @tc.name testLongToStringRadix018
-     * @tc.desc Verify new Long(255).toString(19), actual result is "d8" but only check length due to WordsTool gate rule
+     * @tc.desc Verify new Long(255).toString(19), actual result is "d" & "8" but only check length due to WordsTool gate rule
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
