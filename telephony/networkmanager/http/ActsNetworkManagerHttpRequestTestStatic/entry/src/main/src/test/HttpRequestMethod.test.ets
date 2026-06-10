@@ -21,7 +21,7 @@ import http from '@ohos.net.http';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+let ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
 
 
 const ExpectFail = () => {
