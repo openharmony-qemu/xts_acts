@@ -74,7 +74,7 @@ export default function imageAddApi3() {
       console.info('[imageAddApi3_001] START');
 
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('imageAddApi3');
+      let strJson = inspector.getInspectorByKey('imageAddApi3' + '_imageAddApi3');
       await CommonFunc.sleep(200);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[imageAddApi3_001] component obj is: " + JSON.stringify(obj));

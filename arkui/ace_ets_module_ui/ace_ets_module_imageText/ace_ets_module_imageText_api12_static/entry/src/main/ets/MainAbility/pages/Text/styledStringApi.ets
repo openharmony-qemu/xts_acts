@@ -98,7 +98,7 @@ struct styledStringApi {
           .copyOption(CopyOptions.InApp)
           .fontSize(30)
 
-        Text(this.text).key('styledStringText')
+        Text(this.text).key('styledStringApi_styledStringText')
         Text(undefined, { controller: this.controller1 })
         Button('appendStyledString').onClick((event: ClickEvent) => {
           this.mutableStyledString1.appendStyledString(

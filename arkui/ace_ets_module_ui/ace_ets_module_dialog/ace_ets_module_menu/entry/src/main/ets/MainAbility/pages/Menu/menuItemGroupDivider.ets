@@ -60,7 +60,7 @@ struct menuItemGroupDividerTest {
             symbolEndIcon: this.endIconModifier
           })
         }
-      }.menuItemGroupDivider({strokeWidth: LengthMetrics.vp(50), color: Color.Blue}).key('menuItemGroupDividerText')
+      }.menuItemGroupDivider({strokeWidth: LengthMetrics.vp(50), color: Color.Blue}).key('menuItemGroupDivider_menuItemGroupDividerText')
       .subMenuExpandingMode(SubMenuExpandingMode.SIDE_EXPAND)
 
     }

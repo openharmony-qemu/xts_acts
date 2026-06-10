@@ -89,7 +89,7 @@ struct ImageExample3 {
         Column() {
           Image($rawfile(this.imageName))
             .alt($rawfile('img2.png'))
-            .key('image1')
+            .key('imageThree_image1')
             .sourceSize({
               width: 900,
               height: 900
@@ -136,7 +136,7 @@ struct ImageExample3 {
                 this.m3 = "click"
               }
             })
-            .key('image2')
+            .key('imageThree_image2')
             .onFinish(() => {
               if (this.src == this.off2on) {
                 this.src = this.on

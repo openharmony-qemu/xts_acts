@@ -90,7 +90,7 @@ export default function richEditorApi2() {
       await CommonFunc.sleep(1000);
       console.info('[richEditorApi2_0100] richEditorApi2_btn2 click');
 
-      let text1 = inspector.getInspectorByKey('richEditorApi2_text1');
+      let text1 = inspector.getInspectorByKey('richEditorApi2' + '_text1');
       let obj = JSON.parseJsonElement(text1);
       const contentElement = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'))
 

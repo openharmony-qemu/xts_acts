@@ -87,7 +87,7 @@ struct ImageExample1 {
             .border({ width: 1 })
             .borderStyle(BorderStyle.Dashed)
             .overlay('png', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-            .key('image1')
+            .key('imageOne_image1')
           Image($rawfile(this.imageNamePng))
             .width(110)
             .height(110)

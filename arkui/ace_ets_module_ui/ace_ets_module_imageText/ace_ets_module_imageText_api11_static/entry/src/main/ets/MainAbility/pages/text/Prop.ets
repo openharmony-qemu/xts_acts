@@ -74,7 +74,7 @@ struct prop {
         }
       }
     }
-    .key('flex')
+    .key('Prop_flex')
     .width('100%')
     .height('100%')
   }

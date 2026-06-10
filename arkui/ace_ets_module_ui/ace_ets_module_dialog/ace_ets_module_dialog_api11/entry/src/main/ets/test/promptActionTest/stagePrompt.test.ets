@@ -111,7 +111,7 @@ export default function stagePromptTest() {
         } catch (err) {
           console.info("testPromptActionShowToast002 on events_emitter err : " + JSON.stringify(err));
         }
-        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast002 END ');
       } catch (err) {
         expect().assertFail()
@@ -144,7 +144,7 @@ export default function stagePromptTest() {
         } catch (err) {
           console.info("testPromptActionShowToast003 on events_emitter err : " + JSON.stringify(err));
         }
-        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast003 END ');
       } catch (err) {
         expect().assertFail()
@@ -177,7 +177,7 @@ export default function stagePromptTest() {
         } catch (err) {
           console.info("testPromptActionShowToast004 on events_emitter err : " + JSON.stringify(err));
         }
-        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast004 END ');
       } catch (err) {
         expect().assertFail()
@@ -210,7 +210,7 @@ export default function stagePromptTest() {
         } catch (err) {
           console.info("testPromptActionShowToast005 on events_emitter err : " + JSON.stringify(err));
         }
-        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('showDialogText', 10, "")));
+        console.info("onSelect_001 click result is: " + JSON.stringify(sendEventByKey('stagePrompt' + '_showDialogText', 10, "")));
         console.info('testPromptActionShowToast005 END ');
       } catch (err) {
         expect().assertFail()

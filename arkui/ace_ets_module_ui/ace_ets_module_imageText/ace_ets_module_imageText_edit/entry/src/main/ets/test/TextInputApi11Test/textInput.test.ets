@@ -209,7 +209,7 @@ export default function textInputOnEditChangeJsunit() {
     it('testtextInputCopyOption0001', Level.LEVEL1, async () => {
       console.info('textInputCopyOption testtextInputCopyOption0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('textInputCopyOptionText');
+      let strJson = getInspectorByKey('textInput6' + '_textInputCopyOptionText');
       console.info("[testtextInputCopyOption0001] component copyOption strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextInput');
@@ -228,7 +228,7 @@ export default function textInputOnEditChangeJsunit() {
     it('testtextInputShowPasswordIcon0001', Level.LEVEL1, async () => {
       console.info('textInputShowPasswordIcon testtextInputShowPasswordIcon0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('showPasswordIconText');
+      let strJson = getInspectorByKey('textInput6' + '_showPasswordIconText');
       console.info("[testtextInputShowPasswordIcon0001] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('TextInput');

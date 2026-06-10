@@ -72,7 +72,7 @@ export default function bindPopupTest(){
       } catch (err) {
         console.info("bindPopupTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("bindPopupTest_0100 click result is: " + JSON.stringify(sendEventByKey('button',10,"")));
+      console.info("bindPopupTest_0100 click result is: " + JSON.stringify(sendEventByKey('bindPopup' + '_button',10,"")));
       await CommonFunc.sleep(1000);
       console.info("bindPopupTest_0100 click Two result is: " + JSON.stringify(sendEventByKey('image',10,"")));
       await CommonFunc.sleep(1000);

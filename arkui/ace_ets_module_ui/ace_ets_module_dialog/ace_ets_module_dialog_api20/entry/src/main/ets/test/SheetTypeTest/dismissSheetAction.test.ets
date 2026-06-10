@@ -65,7 +65,7 @@ export default function dismissSheetActionTest() {
       await driver.swipe(Math.round(height.x - 200),Math.round(height.y),Math.round(height.x + 300),Math.round(height.y));
       await CommonFunc.sleep(1000);
 
-      let strJson1 : string = getInspectorByKey('DismissReason');
+      let strJson1 : string = getInspectorByKey('dismissSheetAction' + '_DismissReason');
       console.info("[dismissSheetActionTest_001] DismissReason obj is: " + JSON.stringify(JSON.parse(strJson1)));
       console.info("[dismissSheetActionTest_001] $attrs obj is: " + JSON.parse(strJson1).$attrs);
       console.info("[dismissSheetActionTest_001] content obj is: " + JSON.parse(strJson1).$attrs.content);

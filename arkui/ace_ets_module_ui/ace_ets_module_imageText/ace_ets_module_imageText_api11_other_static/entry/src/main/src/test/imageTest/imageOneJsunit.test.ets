@@ -81,7 +81,7 @@ it('imageOneJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise
       console.info('imageOneJsunit_static_0100 START');
       await CommonFunc.sleep(1000);
       // get the image component and test attribute
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textimageOneJsunit_static_0100 component obj is: ' + obj.getElement('$attrs').getString('src'));
       expect(obj.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/test3.png');
@@ -111,28 +111,28 @@ it('imageOneJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise
       // modify the image format
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat>>("messageManager")!.notify({ name: 'imageNamePng', value: 'test2.svg' })
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textimageOneJsunit_static_0200 component obj is: ' + obj.getElement('$attrs').getString('src'));
       expect(obj.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/test2.svg');
 
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat>>("messageManager")!.notify({ name: 'imageNamePng', value: 'test.gif' })
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('image1');
+      let strJson2 = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textimageOneJsunit_static_0200 component obj2 is: ' + obj2.getElement('$attrs').getString('src'));
       expect(obj2.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/test.gif');
 
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat>>("messageManager")!.notify({ name: 'imageNamePng', value: 'bm.bmp' })
       await CommonFunc.sleep(1000);
-      let strJson3 = inspector.getInspectorByKey('image1');
+      let strJson3 = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('textimageOneJsunit_static_0100 component obj3 is: ' + obj3.getElement('$attrs').getString('src'));
       expect(obj3.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/bm.bmp');
 
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat>>("messageManager")!.notify({ name: 'imageNamePng', value: 'bm.jpg' })
       await CommonFunc.sleep(1000);
-      let strJson4 = inspector.getInspectorByKey('image1');
+      let strJson4 = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info('textimageOneJsunit_static_0100 component obj4 is: ' + obj4.getElement('$attrs').getString('src'));
       expect(obj4.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/bm.jpg');
@@ -153,7 +153,7 @@ it('imageOneJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise
       // modify the image of not exit
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat>>("messageManager")!.notify({ name: 'imageNamePng', value: 'aaa.png' })
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textimageOneJsunit_static_0300 component obj is: ' + obj.getElement('$attrs').getString('src'));
       expect(obj.getElement('$attrs').getString('src')).assertEqual('resource://rawfile/aaa.png');
@@ -229,7 +229,7 @@ it('imageOneJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise
       //AppStorage.get<MessageManager<string | ImageFit | ImageRepeat | number>>("messageManager")!.notify({ name: 'objectFit', value: 9 })
       AppStorage.get<MessageManager<string | ImageFit | ImageRepeat | number>>("messageManager")!.notify({ name: 'objectFit', value: ImageFit.None })
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('image1');
+      let strJson = inspector.getInspectorByKey('imageOne' + '_image1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textimageOneJsunit_static_0500 component obj is: ' + obj.getElement('$attrs').getString("objectFit"));
       expect(obj.getElement('$attrs').getString("objectFit")).assertEqual('ImageFit.Cover');

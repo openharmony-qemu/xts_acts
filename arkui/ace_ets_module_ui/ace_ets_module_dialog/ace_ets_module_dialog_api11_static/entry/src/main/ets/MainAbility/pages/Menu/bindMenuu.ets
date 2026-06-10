@@ -60,7 +60,7 @@ struct MenuExample {
         .textAlign(TextAlign.Center)
       Divider().height(10)
       Button('button')
-        .key('button')
+        .key('bindMenuu_button')
         .fontSize(20)
         .width(100)
         .height(50)
@@ -88,7 +88,7 @@ struct MenuExample {
   build() {
     Column() {
       Button('click for menu')
-        .key('text')
+        .key('bindMenuu_text')
         .onClick((e: ClickEvent) => {
           this.isShow = true
         })

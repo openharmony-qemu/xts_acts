@@ -225,7 +225,7 @@ struct Modifier {
 
         Button(this.textvalue[this.textValueIndex])
           .attributeModifier(this.modifier)
-          .key('textValue')
+          .key('modifier_textValue')
 
         Text('设置长文本高度自适应方式为以maxLines优先')
         Button('helloThellohello hello hellohello hello hellohello hello helloh ellohell ohellohellohel lohellohellohellohellohellohello')

@@ -95,7 +95,7 @@ export default function textAreaJsunit() {
      */
     it('testTextArea020', Level.LEVEL1, async (done: Function) => {
       console.info('testTextArea020 START');
-      let strJson = getInspectorByKey('textArea2');
+      let strJson = getInspectorByKey('TextArea' + '_textArea2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textArea2] get inspector value is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('TextArea')
@@ -114,7 +114,7 @@ export default function textAreaJsunit() {
      */
     it('testTextArea030', Level.LEVEL1, async (done: Function) => {
       console.info('testTextArea030 START');
-      let strJson = getInspectorByKey('textArea3');
+      let strJson = getInspectorByKey('TextArea' + '_textArea3');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textArea3] get inspector value is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('TextArea')

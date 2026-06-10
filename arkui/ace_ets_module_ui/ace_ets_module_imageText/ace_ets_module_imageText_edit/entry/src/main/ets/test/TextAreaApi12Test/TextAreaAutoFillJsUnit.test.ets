@@ -24,23 +24,29 @@ function sleep(time: number): Promise<number> {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+async function pollInspectorKey(key: string, retries: number): Promise<string> {
+  let last = '';
+  for (let i = 0; i < retries; i++) {
+    last = getInspectorByKey(key);
+    if (last && last.length > 0) {
+      return last;
+    }
+    await sleep(500);
+  }
+  return last;
+}
+
 export default function textAreaAutoFillTest() {
-  describe('textAreaAutoFillTest', async () => {
+  describe('textAreaAutoFillTest', () => {
     beforeEach(async (done: Function) => {
       console.info('textAreaAutoFill beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TextAreaApi12/textAreaAutoFill',
       }
       try {
-        router.clear();
-        let pages: router.RouterState = router.getState();
-        console.info('get textAreaAutoFill state pages:' + JSON.stringify(pages));
-        if (!('textAreaAutoFill' == pages.name)) {
-          console.info('get textAreaAutoFill state pages.name:' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info('push textAreaAutoFill page result:' + JSON.stringify(result));
-        }
+        let result = await router.pushUrl(options);
+        await CommonFunc.sleep(5000);
+        console.info('push textAreaAutoFill page result:' + JSON.stringify(result));
       } catch (err) {
         console.error('push textAreaAutoFill page error:' + err);
       }
@@ -60,11 +66,10 @@ export default function textAreaAutoFillTest() {
       console.info(TAG, 'Start');
       let driver = Driver.create();
       await driver.delayMs(500);
-      let textArea3 = await driver.waitForComponent(ON.id('textArea3'), 2000);
+      let textArea3 = await driver.waitForComponent(ON.id('textArea3'), 5000);
       expect(textArea3 != null).assertEqual(true);
-      await sleep(2000);
-      let baseKey = 'textArea3';
-      let strJson = getInspectorByKey(baseKey);
+      await sleep(1000);
+      let strJson = await pollInspectorKey('textArea3', 20);
       expect(ContentType.FULL_STREET_ADDRESS).assertEqual(3);
       expect(JSON.parse(strJson).$attrs.contentType).assertEqual('TextContentType.FULL_STREET_ADDRESS');
       console.info(TAG, 'End');

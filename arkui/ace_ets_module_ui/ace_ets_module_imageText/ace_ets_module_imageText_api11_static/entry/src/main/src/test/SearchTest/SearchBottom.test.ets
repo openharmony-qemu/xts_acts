@@ -16,16 +16,27 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -59,7 +70,7 @@ export default function search_bottom() {
         }
       } catch (err) {
         console.error("push search_bottom page error: " + err);
-        expect(false).assertEqual(true);
+        expect().assertFail();
       }
     });
 
@@ -80,7 +91,7 @@ export default function search_bottom() {
         let text_01 = CommonFunc.getComponentRect('search_bottom_text_01');
         let text_02 = CommonFunc.getComponentRect('search_bottom_text_02');
         let text_03 = CommonFunc.getComponentRect('search_bottom_text_03');
-        let Column_1 = CommonFunc.getComponentRect('search_bottom_Column_1');
+        let Column_1 = CommonFunc.getComponentRect('search_bottom' + '_Column_1');
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await (driver.mouseScroll({
@@ -88,7 +99,7 @@ export default function search_bottom() {
         }, true, 30, 2072) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get swipe after Initial value')
-        let search_01 = CommonFunc.getComponentRect('search_bottom_search_01');
+        let search_01 = CommonFunc.getComponentRect('search_bottom' + '_search_01');
         console.log('assert click before position')
         let y1 = search_01.bottom
         await (driver.click(
@@ -97,7 +108,7 @@ export default function search_bottom() {
         ) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get click after Initial value')
-        let search_02 = CommonFunc.getComponentRect('search_bottom_search_01');
+        let search_02 = CommonFunc.getComponentRect('search_bottom' + '_search_01');
         let y2 = search_02.bottom
         expect(y1).assertEqual(y2);
       }

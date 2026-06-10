@@ -88,7 +88,7 @@ export default function menuEnabledJsunit() {
       let change = await driver.findComponent(BY.key('change'));
       await change.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('text');
+      let strJson = getInspectorByKey('menuEnabled' + '_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[menuEnabledJsunit_0200] component obj is: " + JSON.stringify(obj));
       console.info("[menuEnabledJsunit_0200] enabled: " + JSON.stringify(obj.$attrs.enabled));
