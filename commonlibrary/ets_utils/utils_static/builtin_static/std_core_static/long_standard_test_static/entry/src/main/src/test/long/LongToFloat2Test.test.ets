@@ -160,7 +160,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_12345);
-
+      expect(isFinite(result)).assertTrue();
     });
 
     /**

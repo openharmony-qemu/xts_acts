@@ -160,7 +160,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_42);
-
+      expect(isFinite(result)).assertTrue();
     });
 
     /**

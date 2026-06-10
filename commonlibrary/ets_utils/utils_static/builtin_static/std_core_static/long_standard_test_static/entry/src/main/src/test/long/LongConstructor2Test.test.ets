@@ -177,6 +177,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_42);
+      expect(value.toLong()).assertEqual(CON2_42);
     });
 
     /**

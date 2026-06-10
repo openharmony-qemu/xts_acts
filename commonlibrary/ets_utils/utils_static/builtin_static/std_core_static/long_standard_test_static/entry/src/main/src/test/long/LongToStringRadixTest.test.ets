@@ -73,7 +73,7 @@ export default function LongToStringRadixTest(): void {
     const RADIX_STR_16: string = "ff";
     const RADIX_STR_17: string = "f0";
     const RADIX_STR_18: string = "e3";
-    const RADIX_STR_19: string = "d8";
+    const RADIX_STR_19: string = "d8";  // radix-19 expected output for value 255
     const RADIX_STR_20: string = "cf";
     const RADIX_STR_21: string = "c3";
     const RADIX_STR_22: string = "bd";
