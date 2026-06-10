@@ -120,50 +120,8 @@ export default function qsortrNdkTest() {
     });
 
     /**
-     * @tc.name   testQsortRAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0106
-     * @tc.desc   Verify behavior when cmp is NULL (always expect success)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testQsortRAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = qsortrndktest.qsortRAbnormal002();
-      expect(resNum).assertEqual(1);
-      done();
-    });
-
-    /**
-     * @tc.name   testQsortRAbnormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0107
-     * @tc.desc   Verify behavior when base is NULL (always expect success)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testQsortRAbnormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = qsortrndktest.qsortRAbnormal003();
-      expect(resNum).assertEqual(1);
-      done();
-    });
-
-    /**
-     * @tc.name   testQsortRAbnormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0108
-     * @tc.desc   Verify behavior when width is 0 (always expect success)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testQsortRAbnormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = qsortrndktest.qsortRAbnormal004();
-      expect(resNum).assertEqual(1);
-      done();
-    });
-
-    /**
      * @tc.name   testQsortRBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0106
      * @tc.desc   Verify nel = 0 returns immediately, no comparator call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -179,7 +137,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0107
      * @tc.desc   Verify nel = 1 returns immediately, no comparator call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -195,7 +153,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0108
      * @tc.desc   Verify max elements (63) with various types sorts correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -210,36 +168,8 @@ export default function qsortrNdkTest() {
     });
 
     /**
-     * @tc.name   testQsortRBoundary004
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0112
-     * @tc.desc   Check overflow handling for huge nel (skipped, always expect success)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testQsortRBoundary004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = qsortrndktest.qsortRBoundary004();
-      expect(resNum).assertEqual(1);
-      done();
-    });
-
-    /**
-     * @tc.name   testQsortRBoundary005
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0113
-     * @tc.desc   Verify protection when base points to read-only memory (skipped, always expect success)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testQsortRBoundary005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = qsortrndktest.qsortRBoundary005();
-      expect(resNum).assertEqual(1);
-      done();
-    });
-
-    /**
      * @tc.name   testQsortRFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0114
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0109
      * @tc.desc   Comprehensive sort correctness across types and patterns
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -255,7 +185,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0115
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0110
      * @tc.desc   Verify comparator call count is reasonable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +201,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0116
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0111
      * @tc.desc   Verify instability of equal elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +217,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0117
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0112
      * @tc.desc   Verify context arg can carry complex structure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +233,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRFunc005
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0118
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0113
      * @tc.desc   Verify stub mode does not sort (duplicate of abnormal)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,7 +249,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0119
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0114
      * @tc.desc   Large array sort does not crash and finishes in time
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +265,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0120
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0115
      * @tc.desc   Repeated sorts of the same array give identical result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +281,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0121
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0116
      * @tc.desc   Sort large struct array under memory pressure
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,7 +297,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRStable004
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0122
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0117
      * @tc.desc   Comparator longjmp safety (skipped, always expect success)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -381,7 +311,7 @@ export default function qsortrNdkTest() {
 
     /**
      * @tc.name   testQsortRStable005
-     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0123
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_R_0118
      * @tc.desc   Multi-threaded sorting of independent arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,5 +324,6 @@ export default function qsortrNdkTest() {
       expect(isValid).assertTrue();
       done();
     });
+
   });
 }

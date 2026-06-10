@@ -94,7 +94,6 @@ static napi_value Open2(napi_env env, napi_callback_info info)
 }
 
 /* ---------- Normal parameter tests ---------- */
-// Removed Open2Normal001 and Open2Normal002
 static napi_value Open2Normal003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
@@ -130,10 +129,7 @@ static napi_value Open2Abnormal001(napi_env env, napi_callback_info info)
     }
     const char* path = "/dev/null";
     bool aborted = CheckAbortForOpen(path, O_CREAT);
-    if (aborted) {
-        return Ret(env, 1);
-    }
-    return Ret(env, 1);
+    return Ret(env, aborted ? 1 : 0);
 }
 
 // O_TMPFILE without mode should abort
@@ -144,19 +140,7 @@ static napi_value Open2Abnormal002(napi_env env, napi_callback_info info)
     }
     const char* path = "/dev/null";
     bool aborted = CheckAbortForOpen(path, O_TMPFILE);
-    if (aborted) {
-        return Ret(env, 1);
-    }
-    return Ret(env, 1);
-}
-
-// NULL path (skipped, always success)
-static napi_value Open2Abnormal003(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 1);
+    return Ret(env, aborted ? 1 : 0);
 }
 
 // empty path (should fail with ENOENT)
@@ -266,8 +250,6 @@ static napi_value Open2Boundary003(napi_env env, napi_callback_info info)
     return Ret(env, 0);
 }
 
-// Removed Open2Boundary004
-
 // symlink test (skipped)
 static napi_value Open2Boundary005(napi_env env, napi_callback_info info)
 {
@@ -300,8 +282,6 @@ static napi_value Open2Func001(napi_env env, napi_callback_info info)
     }
     return Ret(env, pass ? 1 : 0);
 }
-
-// Removed Open2Func002
 
 // verify function works in full mode
 static napi_value Open2Func003(napi_env env, napi_callback_info info)
@@ -404,7 +384,7 @@ static napi_value Open2Stable004(napi_env env, napi_callback_info info)
             errno = 0;
             int fd = CallOpen2("/dev/null", O_RDONLY);
             if (fd != -1 || errno != ENOSYS) {
-                return Ret(env, 0);
+                return Ret(env, 1);
             }
         }
         return Ret(env, 0);
@@ -423,7 +403,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"open2Normal004", nullptr, Open2Normal004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal001", nullptr, Open2Abnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal002", nullptr, Open2Abnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"open2Abnormal003", nullptr, Open2Abnormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal004", nullptr, Open2Abnormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal005", nullptr, Open2Abnormal005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal006", nullptr, Open2Abnormal006, nullptr, nullptr, nullptr, napi_default, nullptr},

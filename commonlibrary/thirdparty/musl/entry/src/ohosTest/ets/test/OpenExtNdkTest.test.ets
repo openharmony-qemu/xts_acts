@@ -15,26 +15,26 @@
 
 import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
 import Utils from './Utils';
-import explicitbzerochkndktest from 'libexplicitbzerochkndktest.so';
+import open2ndktest from 'libopenextndktest.so';
 import { deviceInfo } from '@kit.BasicServicesKit';
 
-export default function explicitbzerochkNdkTest() {
-  describe('ExplicitbzerochkNdkTest', () => {
+export default function openExtNdkTest() {
+  describe('OpenExtNdkTest', () => {
 
     beforeEach(async () => {
       await Utils.sleep(50);
     });
 
     /**
-     * @tc.name   testMuslSymExportedExplicitBzeroChk001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0100
-     * @tc.desc   Original simple test for __explicit_bzero_chk
+     * @tc.name   testMuslSymExportedOpen2001
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0100
+     * @tc.desc   Original simple test for __open_2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMuslSymExportedExplicitBzeroChk001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChk();
+    it('testMuslSymExportedOpen2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -42,15 +42,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0101
-     * @tc.desc   Normal test: zero out entire buffer
+     * @tc.name   testOpen2Normal003
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0101
+     * @tc.desc   Normal test: open /dev/null with O_WRONLY | O_APPEND
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkNormal001();
+    it('testOpen2Normal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Normal003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -58,15 +58,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0102
-     * @tc.desc   Normal test: zero out first 5 bytes of 10-byte buffer
+     * @tc.name   testOpen2Normal004
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0102
+     * @tc.desc   Normal test: open /dev/null with O_WRONLY | O_TRUNC
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkNormal002();
+    it('testOpen2Normal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Normal004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -74,15 +74,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0103
-     * @tc.desc   Normal test: zero length should not modify buffer
+     * @tc.name   testOpen2Abnormal001
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0103
+     * @tc.desc   Abnormal test: O_CREAT without mode (should abort)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkNormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkNormal003();
+    it('testOpen2Abnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -90,15 +90,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0104
-     * @tc.desc   Normal test: zero out first byte only
+     * @tc.name   testOpen2Abnormal002
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0104
+     * @tc.desc   Abnormal test: O_TMPFILE without mode (should abort)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkNormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkNormal004();
+    it('testOpen2Abnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal002();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -106,15 +106,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0105
-     * @tc.desc   Abnormal test: NULL dest (skipped)
+     * @tc.name   testOpen2Abnormal004
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0105
+     * @tc.desc   Abnormal test: empty path (should fail with ENOENT)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkAbnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkAbnormal002();
+    it('testOpen2Abnormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -122,15 +122,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkAbnormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0106
-     * @tc.desc   Abnormal test: zero length on single byte buffer
+     * @tc.name   testOpen2Abnormal005
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0106
+     * @tc.desc   Abnormal test: invalid flags (EINVAL expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkAbnormal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkAbnormal003();
+    it('testOpen2Abnormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal005();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -138,15 +138,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkAbnormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0107
-     * @tc.desc   Abnormal test: write to read-only string literal
+     * @tc.name   testOpen2Abnormal006
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0107
+     * @tc.desc   Abnormal test: non-existent file (ENOENT expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkAbnormal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkAbnormal004();
+    it('testOpen2Abnormal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal006();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -154,15 +154,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkAbnormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0108
-     * @tc.desc   Abnormal test: stub mode behavior (ENOSYS)
+     * @tc.name   testOpen2Abnormal007
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0108
+     * @tc.desc   Abnormal test: open directory with O_WRONLY (EISDIR expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkAbnormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkAbnormal005();
+    it('testOpen2Abnormal007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Abnormal007();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -170,15 +170,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0109
-     * @tc.desc   Boundary test: zero length on single byte
+     * @tc.name   testOpen2Boundary001
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0109
+     * @tc.desc   Boundary test: path length > PATH_MAX (ENAMETOOLONG expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkBoundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkBoundary001();
+    it('testOpen2Boundary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Boundary001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -186,15 +186,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0110
-     * @tc.desc   Boundary test: clear single byte buffer
+     * @tc.name   testOpen2Boundary002
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0110
+     * @tc.desc   Boundary test: flags = 0 (O_RDONLY)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkBoundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkBoundary002();
+    it('testOpen2Boundary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Boundary002();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -202,15 +202,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0111
-     * @tc.desc   Boundary test: clear 9 bytes of 10-byte buffer
+     * @tc.name   testOpen2Boundary003
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0111
+     * @tc.desc   Boundary test: O_CLOEXEC flag, verify FD_CLOEXEC set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkBoundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkBoundary003();
+    it('testOpen2Boundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Boundary003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -218,15 +218,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkBoundary005
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0112
-     * @tc.desc   Boundary test: SIZE_MAX (impractical, skipped)
+     * @tc.name   testOpen2Boundary005
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0112
+     * @tc.desc   Boundary test: symlink test (skipped, always success in full mode)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkBoundary005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkBoundary005();
+    it('testOpen2Boundary005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Boundary005();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -234,15 +234,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0113
-     * @tc.desc   Functional: volatile buffer ensures no optimization
+     * @tc.name   testOpen2Func001
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0113
+     * @tc.desc   Functional: compare open2 with standard open
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkFunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkFunc001();
+    it('testOpen2Func001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Func001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -250,15 +250,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0114
-     * @tc.desc   Functional: zero length should not change memory
+     * @tc.name   testOpen2Func003
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0114
+     * @tc.desc   Functional: verify function works in full mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkFunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkFunc002();
+    it('testOpen2Func003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Func003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -266,15 +266,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0115
-     * @tc.desc   Functional: stub mode returns ENOSYS and no modification
+     * @tc.name   testOpen2Func004
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0115
+     * @tc.desc   Functional: O_DIRECT flag test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkFunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkFunc003();
+    it('testOpen2Func004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Func004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -282,15 +282,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0116
-     * @tc.desc   Functional: not applicable, always returns 1 in full mode
+     * @tc.name   testOpen2Stable001
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0116
+     * @tc.desc   Stability: repeated open/close 10000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkFunc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkFunc004();
+    it('testOpen2Stable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Stable001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -298,15 +298,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0117
-     * @tc.desc   Stability: repeated calls 10000 times
+     * @tc.name   testOpen2Stable002
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0117
+     * @tc.desc   Stability: multi-threaded concurrent open/close
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkStable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable001();
+    it('testOpen2Stable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Stable002();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -314,15 +314,15 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0118
-     * @tc.desc   Stability: multi-threaded concurrent calls
+     * @tc.name   testOpen2Stable003
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0118
+     * @tc.desc   Stability: exhaust file descriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable002();
+    it('testOpen2Stable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Stable003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
@@ -330,35 +330,20 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0119
-     * @tc.desc   Stability: abort on out-of-bounds (fortify)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testExplicitBzeroChkStable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable003();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.name   testExplicitBzeroChkStable004
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0120
+     * @tc.name   testOpen2Stable004
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0119
      * @tc.desc   Stability: stub mode repeated calls consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testExplicitBzeroChkStable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable004();
+    it('testOpen2Stable004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let resNum: number = open2ndktest.open2Stable004();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
       done();
     });
+
   });
 }

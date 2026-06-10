@@ -431,29 +431,6 @@ static napi_value QsortRAbnormal001(napi_env env, napi_callback_info info)
     }
 }
 
-static napi_value QsortRAbnormal002(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    }
-    return ReturnInt32(env, 1);
-}
-
-static napi_value QsortRAbnormal003(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    }
-    return ReturnInt32(env, 1);
-}
-
-static napi_value QsortRAbnormal004(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    }
-    return ReturnInt32(env, 1);
-}
 
 /* Boundary value tests */
 static napi_value QsortRBoundary001(napi_env env, napi_callback_info info)
@@ -544,22 +521,6 @@ static napi_value QsortRBoundary003(napi_env env, napi_callback_info info)
         return ReturnInt32(env, (std::memcmp(arr, ref, sizeof(arr)) == 0 &&
                                  ctx.outOfRange == 0) ? 1 : 0);
     }
-}
-
-static napi_value QsortRBoundary004(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    }
-    return ReturnInt32(env, 1);
-}
-
-static napi_value QsortRBoundary005(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return ReturnInt32(env, 0);
-    }
-    return ReturnInt32(env, 1);
 }
 
 /* Helper for single test */
@@ -987,14 +948,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"qsortRNormal003", nullptr, QsortRNormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRNormal004", nullptr, QsortRNormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRAbnormal001", nullptr, QsortRAbnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"qsortRAbnormal002", nullptr, QsortRAbnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"qsortRAbnormal003", nullptr, QsortRAbnormal003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"qsortRAbnormal004", nullptr, QsortRAbnormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRBoundary001", nullptr, QsortRBoundary001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRBoundary002", nullptr, QsortRBoundary002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRBoundary003", nullptr, QsortRBoundary003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"qsortRBoundary004", nullptr, QsortRBoundary004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"qsortRBoundary005", nullptr, QsortRBoundary005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRFunc001", nullptr, QsortRFunc001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRFunc002", nullptr, QsortRFunc002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"qsortRFunc003", nullptr, QsortRFunc003, nullptr, nullptr, nullptr, napi_default, nullptr},
