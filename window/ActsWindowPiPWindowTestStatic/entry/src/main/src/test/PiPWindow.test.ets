@@ -17,6 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import pipWindow from "@ohos.PiPWindow"
+import { canIUse } from "@internal.full.global";
 import {
     XComponent,
     XComponentType,
@@ -4762,6 +4763,7 @@ export default function PiPWindowTest() {
           let promise = pipController!.startPiP();
           promise.then(() => {
             console.log(msgStr + ' Succeeded in starting pip')
+            pipController!.stopPiP()
             done();
           }).catch((err: Error) => {
             console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
@@ -4790,11 +4792,11 @@ export default function PiPWindowTest() {
           });
         } catch (error) {
           console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-          if (error.code == 801) {
-            expect(error.message != null).assertTrue();
+          if (canIUse("SystemCapability.Window.SessionManager")) {
+            expect(error.code).assertEqual(401);
             done();
           } else {
-            expect(error.code).assertEqual(401);
+            expect(error.code).assertEqual(801);
             done();
           }
         }
@@ -4804,6 +4806,85 @@ export default function PiPWindowTest() {
         testSupport()
       } else {
         testNotSupport()
+      }
+    })
+
+
+    /**
+     * @tc.name   test_createPiP_multi
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_CREATE_MULTI_PIP_0200
+     * @tc.desc   test_createPiP_multi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_createPiP_multi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let msgStr = 'test_createPiP_multi '
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1 as common.BaseContext,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_DRIVE,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let STOPPED: boolean = false;
+      try {
+        let pipController = await pipWindow.create(config);
+        console.log(msgStr + 'create pip1');
+        pipController.onStateChange((state, reason) => {
+          console.log(msgStr + 'pip1 stateChange state : ' + state);
+          if (state === pipWindow.PiPState.STOPPED) {
+            STOPPED = true
+          }
+        });
+        await pipController.startPiP()
+        console.log(msgStr + 'start pip1');
+        await Utils.msSleep(1000)
+
+        let pipController2 = await pipWindow.create(config);
+        console.log(msgStr + 'create pip2');
+        pipController2.onStateChange((state, reason) => {
+          console.log(msgStr + 'pip2 stateChange state : ' + state);
+          if (state === pipWindow.PiPState.STOPPED) {
+            STOPPED = true
+          }
+        });
+        await pipController2.startPiP()
+        console.log(msgStr + 'start pip2');
+        await Utils.msSleep(1000)
+
+        // car不会触发画中画关闭回调
+        expect(STOPPED).assertFalse();
+
+        let pipController3 = await pipWindow.create(config);
+        console.log(msgStr + 'create pip3');
+        pipController3.onStateChange((state, reason) => {
+          console.log(msgStr + 'pip3 stateChange state : ' + state);
+          if (state === pipWindow.PiPState.STOPPED) {
+            STOPPED = true
+          }
+        });
+        await pipController3.startPiP()
+        console.log(msgStr + 'start pip3');
+        await Utils.msSleep(1000)
+        expect(STOPPED).assertTrue();
+        await pipController2.stopPiP()
+        await pipController3.stopPiP()
+        done();
+      } catch (err) {
+        console.log(msgStr + 'www data Failed to stateChange_Function_ Callback' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+        if (canIUse("SystemCapability.Window.SessionManager")) {
+          expect(err.code).assertEqual(401);
+          done();
+        } else {
+          expect(err.code).assertEqual(801);
+          done();
+        }
       }
     })
         
