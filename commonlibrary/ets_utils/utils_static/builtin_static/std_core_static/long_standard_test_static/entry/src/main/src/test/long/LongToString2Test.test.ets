@@ -33,6 +33,7 @@ export default function LongToString2Test(): void {
     const T2S_STR_100: string = "100";
     const T2S_STR_123: string = "123";
     const T2S_STR_200: string = "200";
+    const T2S_STR_MIN_VALUE: string = "-9223372036854775808";
 
     beforeEach(async () => { await Utils.msSleep(T2S_30); });
 
@@ -136,6 +137,20 @@ export default function LongToString2Test(): void {
       expect(result1).assertEqual(T2S_STR_100);
       expect(result2).assertEqual(T2S_STR_200);
       expect(result1 !== result2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING2_0800
+     * @tc.name testLongToString2008
+     * @tc.desc Verify new Long(Long.MIN_VALUE).toString() returns correct minimum value string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MIN_VALUE);
+      const result: string = value.toString();
+      expect(result).assertEqual(T2S_STR_MIN_VALUE);
     });
   });
 }

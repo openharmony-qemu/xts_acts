@@ -18,7 +18,7 @@ import Utils from '../Util.test';
 
 export default function LongToString3Test(): void {
   describe('LongToString3Test', () => {
-    const TS3_NEG_255: long = -255;
+    const TS3_NEG_255: int = -255;
     const TS3_NEG_1: int = -1;
     const TS3_0: long = 0;
     const TS3_1: int = 1;
@@ -27,19 +27,17 @@ export default function LongToString3Test(): void {
     const TS3_10: int = 10;
     const TS3_16: int = 16;
     const TS3_30: int = 30;
-    const TS3_35: long = 35;
+    const TS3_35: int = 35;
     const TS3_36: int = 36;
     const TS3_37: int = 37;
-    const TS3_255: long = 255;
-    const TS3_1295: long = 1295;
+    const TS3_255: int = 255;
+    const TS3_1295: int = 1295;
     const TS3_4294967295: long = 4294967295;
-    const TS3_STR_NEG_FF: string = "-ff";
     const TS3_STR_0: string = "0";
     const TS3_STR_1: string = "1";
     const TS3_STR_101: string = "101";
     const TS3_STR_11111111: string = "11111111";
     const TS3_STR_255: string = "255";
-    const TS3_STR_FF: string = "ff";
     const TS3_STR_Z: string = "z";
     const TS3_STR_ZZ: string = "zz";
     const TS3_STR_BIN_32ONES: string = "11111111111111111111111111111111";

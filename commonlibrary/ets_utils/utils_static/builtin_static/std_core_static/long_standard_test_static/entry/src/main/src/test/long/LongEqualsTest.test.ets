@@ -128,7 +128,7 @@ export default function LongEqualsTest(): void {
      */
     it('testLongEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(EQ_10);
-      const obj: Object = {};
+      const obj: Object = new Object();
       const result: boolean = value.equals(obj);
       expect(result).assertFalse();
     });

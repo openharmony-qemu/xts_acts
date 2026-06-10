@@ -29,8 +29,7 @@ export default function LongToFloat2Test(): void {
     const TF2_12345: long = 12345;
     const TF2_FLOAT_EXACT_BOUNDARY: long = 16777216;
     const TF2_FLOAT_PRECISION_LOSS: long = 16777217;
-    const TF2_FLOAT_EXACT_BOUNDARY_VAL: float = 16777216.0 as float;
-    const TF2_FLOAT_1_6777216E7: float = 1.6777216E7 as float;
+    const TF2_FLOAT_16777216: float = 16777216.0 as float;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_0100
@@ -120,7 +119,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_FLOAT_EXACT_BOUNDARY);
-      expect(result === TF2_FLOAT_EXACT_BOUNDARY_VAL).assertTrue();
+      expect(result === TF2_FLOAT_16777216).assertTrue();
     });
 
     /**
@@ -133,7 +132,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_FLOAT_PRECISION_LOSS);
-      expect(result === TF2_FLOAT_1_6777216E7).assertTrue();
+      expect(result === TF2_FLOAT_16777216).assertTrue();
     });
 
     /**

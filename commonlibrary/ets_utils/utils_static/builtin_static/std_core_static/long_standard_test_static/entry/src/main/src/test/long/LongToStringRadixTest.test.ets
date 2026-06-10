@@ -73,6 +73,7 @@ export default function LongToStringRadixTest(): void {
     const RADIX_STR_16: string = "ff";
     const RADIX_STR_17: string = "f0";
     const RADIX_STR_18: string = "e3";
+    const RADIX_STR_19: string = "d8";
     const RADIX_STR_20: string = "cf";
     const RADIX_STR_21: string = "c3";
     const RADIX_STR_22: string = "bd";
@@ -344,7 +345,7 @@ export default function LongToStringRadixTest(): void {
     it('testLongToStringRadix018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(RADIX_VAL);
       const result: string = value.toString(RADIX_19);
-      expect(result.length > 0).assertTrue();
+      expect(result).assertEqual(RADIX_STR_19);
     });
 
     /**

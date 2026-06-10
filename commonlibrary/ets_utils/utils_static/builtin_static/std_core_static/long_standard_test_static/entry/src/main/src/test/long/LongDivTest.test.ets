@@ -53,7 +53,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_8).div(new Long(DIV_4));
+      const result: Long = new Long(DIV_8).div(new Long(DIV_4));
       expect(result.toString()).assertEqual(DIV_STR_2);
     });
 
@@ -66,7 +66,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_100).div(new Long(DIV_5));
+      const result: Long = new Long(DIV_100).div(new Long(DIV_5));
       expect(result.toString()).assertEqual(DIV_STR_20);
     });
 
@@ -79,7 +79,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_100).div(new Long(DIV_NEG_5));
+      const result: Long = new Long(DIV_100).div(new Long(DIV_NEG_5));
       expect(result.toString()).assertEqual(DIV_STR_NEG_20);
     });
 
@@ -92,7 +92,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_NEG_100).div(new Long(DIV_5));
+      const result: Long = new Long(DIV_NEG_100).div(new Long(DIV_5));
       expect(result.toString()).assertEqual(DIV_STR_NEG_20);
     });
 
@@ -105,7 +105,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_NEG_100).div(new Long(DIV_NEG_5));
+      const result: Long = new Long(DIV_NEG_100).div(new Long(DIV_NEG_5));
       expect(result.toString()).assertEqual(DIV_STR_20);
     });
 
@@ -118,7 +118,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_100).div(new Long(DIV_1));
+      const result: Long = new Long(DIV_100).div(new Long(DIV_1));
       expect(result.toString()).assertEqual(DIV_STR_100);
     });
 
@@ -131,7 +131,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_100).div(new Long(DIV_NEG_1));
+      const result: Long = new Long(DIV_100).div(new Long(DIV_NEG_1));
       expect(result.toString()).assertEqual(DIV_STR_NEG_100);
     });
 
@@ -144,7 +144,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_10).div(new Long(DIV_10));
+      const result: Long = new Long(DIV_10).div(new Long(DIV_10));
       expect(result.toString()).assertEqual(DIV_STR_1);
     });
 
@@ -157,7 +157,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_0).div(new Long(DIV_5));
+      const result: Long = new Long(DIV_0).div(new Long(DIV_5));
       expect(result.toString()).assertEqual(DIV_STR_0);
     });
 
@@ -170,7 +170,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_7).div(new Long(DIV_2));
+      const result: Long = new Long(DIV_7).div(new Long(DIV_2));
       expect(result.toString()).assertEqual(DIV_STR_3);
     });
 
@@ -200,7 +200,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_8).div(new Long(DIV_4));
+      const result: Long = new Long(DIV_8).div(new Long(DIV_4));
       expect(result instanceof Long).assertTrue();
     });
 
@@ -213,7 +213,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original = new Long(DIV_8);
+      const original: Long = new Long(DIV_8);
       const result = original.div(new Long(DIV_4));
       expect(result !== original).assertTrue();
     });
@@ -227,7 +227,7 @@ export default function LongDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongDiv014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(DIV_NEG_7).div(new Long(DIV_2));
+      const result: Long = new Long(DIV_NEG_7).div(new Long(DIV_2));
       expect(result.toString()).assertEqual(DIV_STR_NEG_3);
     });
 
@@ -276,6 +276,23 @@ export default function LongDivTest(): void {
     it('testLongDiv017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Long(Long.MIN_VALUE).div(new Long(DIV_0));
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1800
+     * @tc.name testLongDiv018
+     * @tc.desc Verify Long.MIN_VALUE divided by -1 overflow behavior
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongDiv018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new Long(Long.MIN_VALUE).div(new Long(DIV_NEG_1));
         expect(false).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();

@@ -30,6 +30,8 @@ export default function LongToByte2Test(): void {
     const TB2_BYTE_MAX: long = 127;
     const TB2_OVERFLOW_ABOVE_MAX: long = 128;
     const TB2_LARGE_POS: long = 100000;
+    const TB2_EXPECTED_NEG_96: byte = -96;
+    const TB2_EXPECTED_96: byte = 96;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOBYTE2_0100
@@ -146,7 +148,7 @@ export default function LongToByte2Test(): void {
     it('testLongToByte2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_LARGE_POS);
       expect(result !== TB2_LARGE_POS).assertTrue();
-      expect(result === -96).assertTrue();
+      expect(result === TB2_EXPECTED_NEG_96).assertTrue();
     });
 
     /**
@@ -160,7 +162,7 @@ export default function LongToByte2Test(): void {
     it('testLongToByte2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_LARGE_NEG);
       expect(result !== TB2_LARGE_NEG).assertTrue();
-      expect(result === 96).assertTrue();
+      expect(result === TB2_EXPECTED_96).assertTrue();
     });
 
     /**

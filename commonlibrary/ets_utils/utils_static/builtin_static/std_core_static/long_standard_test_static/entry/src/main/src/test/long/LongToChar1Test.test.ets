@@ -48,7 +48,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_65);
+      const value: Long = new Long(TC1_65);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_A).assertTrue();
     });
@@ -62,7 +62,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_97);
+      const value: Long = new Long(TC1_97);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_a).assertTrue();
     });
@@ -76,7 +76,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_48);
+      const value: Long = new Long(TC1_48);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_0).assertTrue();
     });
@@ -90,7 +90,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_32);
+      const value: Long = new Long(TC1_32);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_SPACE).assertTrue();
     });
@@ -104,7 +104,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_CHAR_MAX);
+      const value: Long = new Long(TC1_CHAR_MAX);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_EXP_MAX).assertTrue();
     });
@@ -118,7 +118,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_0);
+      const value: Long = new Long(TC1_0);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_NULL).assertTrue();
     });
@@ -132,7 +132,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_10);
+      const value: Long = new Long(TC1_10);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_NEWLINE).assertTrue();
     });
@@ -146,7 +146,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_EURO_SIGN);
+      const value: Long = new Long(TC1_EURO_SIGN);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_EURO).assertTrue();
     });
@@ -160,7 +160,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_65);
+      const value: Long = new Long(TC1_65);
       const result1: char = value.toChar();
       const result2: char = value.toChar();
       expect(result1 === result2).assertTrue();
@@ -175,7 +175,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_OVERFLOW_ABOVE_MAX);
+      const value: Long = new Long(TC1_OVERFLOW_ABOVE_MAX);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_NULL).assertTrue();
     });
@@ -189,7 +189,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(TC1_NEG_1);
+      const value: Long = new Long(TC1_NEG_1);
       const result: char = value.toChar();
       expect(result === TC1_CHAR_EXP_MAX).assertTrue();
     });
@@ -203,7 +203,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(Long.MAX_VALUE);
+      const value: Long = new Long(Long.MAX_VALUE);
       const result: char = value.toChar();
       // MAX_VALUE wraps into char range, verify valid char
       expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();
@@ -218,7 +218,7 @@ export default function LongToChar1Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToChar1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(Long.MIN_VALUE);
+      const value: Long = new Long(Long.MIN_VALUE);
       const result: char = value.toChar();
       // MIN_VALUE wraps into char range, verify valid char
       expect(result >= TC1_CHAR_NULL && result <= TC1_CHAR_EXP_MAX).assertTrue();

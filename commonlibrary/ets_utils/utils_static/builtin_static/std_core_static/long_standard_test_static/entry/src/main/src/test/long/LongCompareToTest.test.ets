@@ -23,9 +23,9 @@ export default function LongCompareToTest(): void {
     const CT_NEG_100: long = -100;
     const CT_NEG_10: long = -10;
     const CT_NEG_5: long = -5;
-    const CT_NEG_1: long = -1;
-    const CT_0: long = 0;
-    const CT_1: long = 1;
+    const CT_NEG_1: int = -1;
+    const CT_0: int = 0;
+    const CT_1: int = 1;
     const CT_3: long = 3;
     const CT_5: long = 5;
     const CT_42: long = 42;

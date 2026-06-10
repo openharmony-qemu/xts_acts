@@ -27,13 +27,13 @@ export default function LongToLocaleString1Test(): void {
     const LOC1_STR_NEG_1234_COMMA: string = "-1,234";
     const LOC1_STR_1234_COMMA: string = "1,234";
     const LOC1_STR_1234_00: string = "1,234.00";
-    const LOC1_EN_US: string = "en-US";
+    const LOC2_EN_US: string = "en-US";
     const LOC19_JA_JP: string = "ja-JP";
     const LOC20_AR_EG: string = "ar-EG";
     const LOC22_FR_FR: string = "fr-FR";
     const LOC29_DE_CH: string = "de-CH";
     const LOC30_ZH_TW: string = "zh-TW";
-    const LOC1_ZH_CN: string = "zh-CN";
+    const LOC3_ZH_CN: string = "zh-CN";
 
     beforeEach(async () => { await Utils.msSleep(LOC1_30); });
 
@@ -61,7 +61,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
-      const result: string = value.toLocaleString(LOC1_EN_US);
+      const result: string = value.toLocaleString(LOC2_EN_US);
       // en-US locale uses comma as thousands separator, so 1234 should be "1,234"
       expect(result).assertEqual(LOC1_STR_1234_COMMA);
     });
@@ -76,7 +76,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
-      const result: string = value.toLocaleString(LOC1_ZH_CN);
+      const result: string = value.toLocaleString(LOC3_ZH_CN);
       // zh-CN locale may use full-width comma ("1，234"), half-width comma ("1,234"),
       // or no grouping ("1234") depending on the device's ICU/Intl implementation.
       // Only verify format is non-empty and contains numeric characters.
@@ -93,7 +93,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
-      const result: string = value.toLocaleString(undefined);
+      const result: string = value.toLocaleString();
       expect(result.length > 0).assertTrue();
     });
 
@@ -108,7 +108,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const options: Intl.NumberFormatOptions = {};
-      const result: string = value.toLocaleString(LOC1_EN_US, options);
+      const result: string = value.toLocaleString(LOC2_EN_US, options);
       expect(result.length > 0).assertTrue();
     });
 
@@ -123,7 +123,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1000000000);
       const opts: Intl.NumberFormatOptions = { useGrouping: true };
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -138,7 +138,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234567);
       const opts: Intl.NumberFormatOptions = { useGrouping: true };
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.indexOf(",") !== -1).assertTrue();
     });
 
@@ -152,7 +152,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_NEG_1234);
-      const result: string = value.toLocaleString(LOC1_EN_US);
+      const result: string = value.toLocaleString(LOC2_EN_US);
       // Negative numbers in en-US locale should be formatted as "-1,234"
       expect(result).assertEqual(LOC1_STR_NEG_1234_COMMA);
     });
@@ -168,7 +168,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = { minimumFractionDigits: LOC1_2 };
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       // With minimumFractionDigits=2, 1234 should be formatted as "1,234.00"
       expect(result).assertEqual(LOC1_STR_1234_00);
     });
@@ -183,7 +183,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MAX_VALUE);
-      const result: string = value.toLocaleString(LOC1_EN_US);
+      const result: string = value.toLocaleString(LOC2_EN_US);
       expect(result.length > 0).assertTrue();
     });
 
@@ -197,7 +197,7 @@ export default function LongToLocaleString1Test(): void {
      */
     it('testLongToLocaleString1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MIN_VALUE);
-      const result: string = value.toLocaleString(LOC1_EN_US);
+      const result: string = value.toLocaleString(LOC2_EN_US);
       expect(result.length > 0).assertTrue();
     });
 
@@ -212,8 +212,9 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {style: "currency", currency: "USD", currencyDisplay: "code"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("USD") !== -1).assertTrue();
     });
 
     /**
@@ -227,7 +228,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {notation: "scientific"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -242,7 +243,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1000000000);
       const opts: Intl.NumberFormatOptions = {notation: "compact", compactDisplay: "short"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -257,7 +258,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234567);
       const opts: Intl.NumberFormatOptions = {maximumSignificantDigits: LOC1_2};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -272,7 +273,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {signDisplay: "always"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -287,7 +288,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_NEG_1234);
       const opts: Intl.NumberFormatOptions = {signDisplay: "never"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -302,8 +303,9 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {style: "percent"};
-      const result: string = value.toLocaleString(LOC1_ZH_CN, opts);
+      const result: string = value.toLocaleString(LOC3_ZH_CN, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("%") !== -1).assertTrue();
     });
 
     /**
@@ -375,8 +377,9 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {style: "currency", currency: "EUR"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("EUR") !== -1).assertTrue();
     });
 
     /**
@@ -390,7 +393,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(1234567);
       const opts: Intl.NumberFormatOptions = {useGrouping: false};
-      const result: string = value.toLocaleString(LOC1_ZH_CN, opts);
+      const result: string = value.toLocaleString(LOC3_ZH_CN, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -405,7 +408,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {minimumFractionDigits: 3};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -420,7 +423,7 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234567);
       const opts: Intl.NumberFormatOptions = {maximumFractionDigits: LOC1_2};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
     });
 
@@ -435,8 +438,9 @@ export default function LongToLocaleString1Test(): void {
     it('testLongToLocaleString1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(LOC1_1234);
       const opts: Intl.NumberFormatOptions = {style: "unit", unit: "meter"};
-      const result: string = value.toLocaleString(LOC1_EN_US, opts);
+      const result: string = value.toLocaleString(LOC2_EN_US, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("m") !== -1).assertTrue();
     });
 
     /**
@@ -452,6 +456,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {style: "currency", currency: "GBP"};
       const result: string = value.toLocaleString("en-GB", opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("GBP") !== -1).assertTrue();
     });
 
     /**
@@ -482,6 +487,7 @@ export default function LongToLocaleString1Test(): void {
       const opts: Intl.NumberFormatOptions = {style: "percent", minimumFractionDigits: 1};
       const result: string = value.toLocaleString(LOC30_ZH_TW, opts);
       expect(result.length > 0).assertTrue();
+      expect(result.indexOf("%") !== -1).assertTrue();
     });
   });
 }

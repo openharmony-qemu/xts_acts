@@ -29,11 +29,14 @@ export default function LongChainTest(): void {
     const CH_6: long = 6;
     const CH_8: long = 8;
     const CH_10: long = 10;
+    const CH_15: long = 15;
     const CH_16: long = 16;
     const CH_20: long = 20;
     const CH_30: long = 30;
     const CH_35: long = 35;
     const CH_36: long = 36;
+    const CH_50: long = 50;
+    const CH_60: long = 60;
     const CH_100: long = 100;
     const CH_123: long = 123;
     const CH_255: long = 255;
@@ -73,7 +76,7 @@ export default function LongChainTest(): void {
     const CH_FR_FR: string = "fr-FR";
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0100
      * @tc.name testLongChain001
      * @tc.desc Verify add, sub, mul, div chain: (10+20-5)*2/5 = 10
      * @tc.size MEDIUMTEST
@@ -86,7 +89,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0200
      * @tc.name testLongChain002
      * @tc.desc Verify toString with radix 16: 255 -> ff
      * @tc.size MEDIUMTEST
@@ -99,7 +102,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0300
      * @tc.name testLongChain003
      * @tc.desc Verify add chain with zero: 0+0 = 0
      * @tc.size MEDIUMTEST
@@ -112,7 +115,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0400
      * @tc.name testLongChain004
      * @tc.desc Verify sub chain: 1-2 = -1
      * @tc.size MEDIUMTEST
@@ -125,7 +128,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0500
      * @tc.name testLongChain005
      * @tc.desc Verify mul chain: 2*3 = 6
      * @tc.size MEDIUMTEST
@@ -138,7 +141,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0600
      * @tc.name testLongChain006
      * @tc.desc Verify div chain: 8/4 = 2
      * @tc.size MEDIUMTEST
@@ -151,7 +154,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0700
      * @tc.name testLongChain007
      * @tc.desc Verify compareTo chain: Long.MAX_VALUE compareTo Long.MAX_VALUE = 0
      * @tc.size MEDIUMTEST
@@ -164,7 +167,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0800
      * @tc.name testLongChain008
      * @tc.desc Verify compareTo chain: Long.MIN_VALUE compareTo Long.MAX_VALUE = -1
      * @tc.size MEDIUMTEST
@@ -177,7 +180,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0900
      * @tc.name testLongChain009
      * @tc.desc Verify compareTo chain: Long.MAX_VALUE compareTo Long.MIN_VALUE = 1
      * @tc.size MEDIUMTEST
@@ -190,7 +193,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1000
      * @tc.name testLongChain010
      * @tc.desc Verify isLessThan chain: 0 < 1 = true
      * @tc.size MEDIUMTEST
@@ -203,7 +206,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1100
      * @tc.name testLongChain011
      * @tc.desc Verify isLessThan chain: 1 < 0 = false
      * @tc.size MEDIUMTEST
@@ -216,7 +219,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1200
      * @tc.name testLongChain012
      * @tc.desc Verify isLessEqualThan chain: 1 <= 1 = true
      * @tc.size MEDIUMTEST
@@ -229,7 +232,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1300
      * @tc.name testLongChain013
      * @tc.desc Verify isGreaterThan chain: 1 > 0 = true
      * @tc.size MEDIUMTEST
@@ -242,7 +245,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1400
      * @tc.name testLongChain014
      * @tc.desc Verify isGreaterEqualThan chain: 0 >= 0 = true
      * @tc.size MEDIUMTEST
@@ -255,7 +258,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1500
      * @tc.name testLongChain015
      * @tc.desc Verify parseInt chain: parseInt("10", 16) = 16
      * @tc.size MEDIUMTEST
@@ -268,7 +271,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1600
      * @tc.name testLongChain016
      * @tc.desc Verify parseInt chain: parseInt("10", 8) = 8
      * @tc.size MEDIUMTEST
@@ -281,7 +284,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1700
      * @tc.name testLongChain017
      * @tc.desc Verify parseInt chain: parseInt("10", 2) = 2
      * @tc.size MEDIUMTEST
@@ -294,7 +297,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1800
      * @tc.name testLongChain018
      * @tc.desc Verify parseInt chain: parseInt("Z", 36) = 35
      * @tc.size MEDIUMTEST
@@ -307,7 +310,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1900
      * @tc.name testLongChain019
      * @tc.desc Verify add and compareTo chain: 10+20 compareTo 30 = 0
      * @tc.size MEDIUMTEST
@@ -320,7 +323,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2000
      * @tc.name testLongChain020
      * @tc.desc Verify mul and div chain: 10*20/2 = 100
      * @tc.size MEDIUMTEST
@@ -333,7 +336,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2100
      * @tc.name testLongChain021
      * @tc.desc Verify toFloat and toLocaleString chain returns non-empty string
      * @tc.size MEDIUMTEST
@@ -346,7 +349,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2200
      * @tc.name testLongChain022
      * @tc.desc Verify equals and isGreaterThan combined chain
      * @tc.size MEDIUMTEST
@@ -359,7 +362,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2300
      * @tc.name testLongChain023
      * @tc.desc Verify add and toInt chain: 10+20 = 30
      * @tc.size MEDIUMTEST
@@ -372,7 +375,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2400
      * @tc.name testLongChain024
      * @tc.desc Verify toString with radix 2: 255 = 11111111
      * @tc.size MEDIUMTEST
@@ -385,7 +388,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2500
      * @tc.name testLongChain025
      * @tc.desc Verify toString and length: 123 has 3 digits
      * @tc.size MEDIUMTEST
@@ -398,7 +401,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2600
      * @tc.name testLongChain026
      * @tc.desc Verify toString and length: -123 has 4 chars
      * @tc.size MEDIUMTEST
@@ -411,7 +414,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2700
      * @tc.name testLongChain027
      * @tc.desc Verify toString with radix 2 for zero: "0"
      * @tc.size MEDIUMTEST
@@ -424,7 +427,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2800
      * @tc.name testLongChain028
      * @tc.desc Verify add chain: Long.MAX_VALUE + 0 = Long.MAX_VALUE
      * @tc.size MEDIUMTEST
@@ -437,7 +440,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_2900
      * @tc.name testLongChain029
      * @tc.desc Verify add chain: Long.MIN_VALUE + 0 = Long.MIN_VALUE
      * @tc.size MEDIUMTEST
@@ -450,7 +453,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3000
      * @tc.name testLongChain030
      * @tc.desc Verify mul chain: Long.MAX_VALUE * 0 = 0
      * @tc.size MEDIUMTEST
@@ -463,7 +466,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3100
      * @tc.name testLongChain031
      * @tc.desc Verify mul chain: Long.MIN_VALUE * 0 = 0
      * @tc.size MEDIUMTEST
@@ -476,7 +479,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3200
      * @tc.name testLongChain032
      * @tc.desc Verify div chain: 0 / 1 = 0
      * @tc.size MEDIUMTEST
@@ -489,7 +492,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3300
      * @tc.name testLongChain033
      * @tc.desc Verify div chain: 0 / Long.MAX_VALUE = 0
      * @tc.size MEDIUMTEST
@@ -502,7 +505,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3400
      * @tc.name testLongChain034
      * @tc.desc Verify mixed chain: ((1+2)*3-4)/2 = 2
      * @tc.size MEDIUMTEST
@@ -515,7 +518,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3500
      * @tc.name testLongChain035
      * @tc.desc Verify sub and add chain: 5-3+1 = 3
      * @tc.size MEDIUMTEST
@@ -528,7 +531,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3600
      * @tc.name testLongChain036
      * @tc.desc Verify div chain: 10/3 = 3 (integer division)
      * @tc.size MEDIUMTEST
@@ -541,7 +544,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3700
      * @tc.name testLongChain037
      * @tc.desc Verify div chain with negative numerator: -10/3 = -3
      * @tc.size MEDIUMTEST
@@ -554,7 +557,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3800
      * @tc.name testLongChain038
      * @tc.desc Verify div chain with negative denominator: 10/(-3) = -3
      * @tc.size MEDIUMTEST
@@ -567,7 +570,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_3900
      * @tc.name testLongChain039
      * @tc.desc Verify div chain with both negative: (-10)/(-3) = 3
      * @tc.size MEDIUMTEST
@@ -580,7 +583,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4000
      * @tc.name testLongChain040
      * @tc.desc Verify parseInt chain with max hex value 7fffffffffffffff
      * @tc.size MEDIUMTEST
@@ -593,7 +596,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4100
      * @tc.name testLongChain041
      * @tc.desc Verify toString with radix 2 and length: 10 in binary has 4 chars
      * @tc.size MEDIUMTEST
@@ -606,7 +609,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4200
      * @tc.name testLongChain042
      * @tc.desc Verify toString with radix 8: 255 = 377
      * @tc.size MEDIUMTEST
@@ -619,7 +622,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4300
      * @tc.name testLongChain043
      * @tc.desc Verify toString with radix 10: 255
      * @tc.size MEDIUMTEST
@@ -632,7 +635,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4400
      * @tc.name testLongChain044
      * @tc.desc Verify toByte chain: byte(256) = 0
      * @tc.size MEDIUMTEST
@@ -645,7 +648,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4500
      * @tc.name testLongChain045
      * @tc.desc Verify overflow chain: MAX+1+1+1 wraps to MIN+2
      * @tc.size MEDIUMTEST
@@ -658,7 +661,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4600
      * @tc.name testLongChain046
      * @tc.desc Verify underflow chain: MIN-1-1 wraps to MAX-1
      * @tc.size MEDIUMTEST
@@ -671,7 +674,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4700
      * @tc.name testLongChain047
      * @tc.desc Verify equals chain: Long(0).equals(0) returns true for primitive arg
      * @tc.size MEDIUMTEST
@@ -684,7 +687,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4800
      * @tc.name testLongChain048
      * @tc.desc Verify toDouble chain: Long.MAX_VALUE converted to double is finite
      * @tc.size MEDIUMTEST
@@ -697,7 +700,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_4900
      * @tc.name testLongChain049
      * @tc.desc Verify double equals chain with &&
      * @tc.size MEDIUMTEST
@@ -710,7 +713,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5000
      * @tc.name testLongChain050
      * @tc.desc Verify isLessThan and isGreaterThan combined chain
      * @tc.size MEDIUMTEST
@@ -723,7 +726,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5100
      * @tc.name testLongChain051
      * @tc.desc Verify toLocaleString with grouping for 100
      * @tc.size MEDIUMTEST
@@ -736,7 +739,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5200
      * @tc.name testLongChain052
      * @tc.desc Verify toString with radix 36: 255 = 73
      * @tc.size MEDIUMTEST
@@ -749,7 +752,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5300
      * @tc.name testLongChain053
      * @tc.desc Verify toString with radix 36: 35 = z
      * @tc.size MEDIUMTEST
@@ -762,7 +765,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5400
      * @tc.name testLongChain054
      * @tc.desc Verify toString with radix 36: 36 = 10
      * @tc.size MEDIUMTEST
@@ -775,7 +778,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5500
      * @tc.name testLongChain055
      * @tc.desc Verify add chain: (10+5+5+5).toString = "25"
      * @tc.size MEDIUMTEST
@@ -788,7 +791,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5600
      * @tc.name testLongChain056
      * @tc.desc Verify sub chain: (100-30-20-10).toString = "40"
      * @tc.size MEDIUMTEST
@@ -801,7 +804,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5700
      * @tc.name testLongChain057
      * @tc.desc Verify mul chain: (2*3*4).toString = "24"
      * @tc.size MEDIUMTEST
@@ -814,7 +817,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5800
      * @tc.name testLongChain058
      * @tc.desc Verify div chain: (100/2/5).toString = "10"
      * @tc.size MEDIUMTEST
@@ -827,7 +830,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_5900
      * @tc.name testLongChain059
      * @tc.desc Verify mixed arithmetic chain: (100+50-30)*2/4 = 60
      * @tc.size MEDIUMTEST
@@ -835,12 +838,12 @@ export default function LongChainTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongChain059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(CH_100).add(new Long(50)).sub(new Long(CH_30)).mul(new Long(CH_2)).div(new Long(CH_4)).toLong();
-      expect(result === 60).assertTrue();
+      const result = new Long(CH_100).add(new Long(CH_50)).sub(new Long(CH_30)).mul(new Long(CH_2)).div(new Long(CH_4)).toLong();
+      expect(result === CH_60).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6000
      * @tc.name testLongChain060
      * @tc.desc Verify add chain: 1+2+3+4+5 = 15
      * @tc.size MEDIUMTEST
@@ -849,11 +852,11 @@ export default function LongChainTest(): void {
      */
     it('testLongChain060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(CH_1).add(new Long(CH_2)).add(new Long(CH_3)).add(new Long(CH_4)).add(new Long(CH_5)).toLong();
-      expect(result === 15).assertTrue();
+      expect(result === CH_15).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6100
      * @tc.name testLongChain061
      * @tc.desc Verify div chain: 1000/10/10 = 10
      * @tc.size MEDIUMTEST
@@ -866,7 +869,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6200
      * @tc.name testLongChain062
      * @tc.desc Verify toString with radix 16: (255+1).toString(16) = "100"
      * @tc.size MEDIUMTEST
@@ -879,7 +882,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6300
      * @tc.name testLongChain063
      * @tc.desc Verify parseInt: parseInt("ff", 16).toString = "255"
      * @tc.size MEDIUMTEST
@@ -892,7 +895,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6400
      * @tc.name testLongChain064
      * @tc.desc Verify toByte overflow: 127+1 toByte = -128
      * @tc.size MEDIUMTEST
@@ -906,7 +909,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6500
      * @tc.name testLongChain065
      * @tc.desc Verify toShort overflow: 32767+1 toShort = -32768
      * @tc.size MEDIUMTEST
@@ -920,7 +923,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6600
      * @tc.name testLongChain066
      * @tc.desc Verify toInt overflow: 2147483647+1 toInt = -2147483648
      * @tc.size MEDIUMTEST
@@ -934,7 +937,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6700
      * @tc.name testLongChain067
      * @tc.desc Verify overflow toString: (MAX+1).toString(16) = "8000000000000000"
      * @tc.size MEDIUMTEST
@@ -947,7 +950,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6800
      * @tc.name testLongChain068
      * @tc.desc Verify double overflow: MAX+2+1 = MIN+2
      * @tc.size MEDIUMTEST
@@ -960,7 +963,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_6900
      * @tc.name testLongChain069
      * @tc.desc Verify double underflow: MIN-2-1 = MAX-2
      * @tc.size MEDIUMTEST
@@ -973,7 +976,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7000
      * @tc.name testLongChain070
      * @tc.desc Verify overflow comparison: 1+MAX < 0 = true
      * @tc.size MEDIUMTEST
@@ -986,7 +989,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7100
      * @tc.name testLongChain071
      * @tc.desc Verify underflow comparison: MIN-1 > 0 = true
      * @tc.size MEDIUMTEST
@@ -999,7 +1002,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7200
      * @tc.name testLongChain072
      * @tc.desc Verify parseInt roundtrip: parseInt(MAX.toString(), 10) === MAX
      * @tc.size MEDIUMTEST
@@ -1012,7 +1015,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7300
      * @tc.name testLongChain073
      * @tc.desc Verify parseInt roundtrip: parseInt(MIN.toString(), 10) === MIN
      * @tc.size MEDIUMTEST
@@ -1025,7 +1028,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7400
      * @tc.name testLongChain074
      * @tc.desc Verify zero conversions: toByte===0 && toShort===0 && toInt===0
      * @tc.size MEDIUMTEST
@@ -1038,7 +1041,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7500
      * @tc.name testLongChain075
      * @tc.desc Verify one conversions: toByte===1 && toShort===1 && toInt===1
      * @tc.size MEDIUMTEST
@@ -1051,7 +1054,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7600
      * @tc.name testLongChain076
      * @tc.desc Verify negative one conversions: toByte===-1 && toShort===-1 && toInt===-1
      * @tc.size MEDIUMTEST
@@ -1064,7 +1067,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7700
      * @tc.name testLongChain077
      * @tc.desc Verify toDouble toLocaleString: Long.toDouble(MAX).toLocaleString("en-US") non-empty
      * @tc.size MEDIUMTEST
@@ -1077,7 +1080,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7800
      * @tc.name testLongChain078
      * @tc.desc Verify toFloat is finite: Long.toFloat(MAX) is finite
      * @tc.size MEDIUMTEST
@@ -1090,7 +1093,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_7900
      * @tc.name testLongChain079
      * @tc.desc Verify mul chain toString: 10*10*10 = "1000"
      * @tc.size MEDIUMTEST
@@ -1103,7 +1106,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8000
      * @tc.name testLongChain080
      * @tc.desc Verify div chain: 1000000/1000/10 = 100
      * @tc.size MEDIUMTEST
@@ -1116,7 +1119,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8100
      * @tc.name testLongChain081
      * @tc.desc Verify toString with radix 2: 16.toString(2) = "10000"
      * @tc.size MEDIUMTEST
@@ -1129,7 +1132,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8200
      * @tc.name testLongChain082
      * @tc.desc Verify toString with radix 2: 8.toString(2) = "1000"
      * @tc.size MEDIUMTEST
@@ -1142,7 +1145,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8300
      * @tc.name testLongChain083
      * @tc.desc Verify toString with radix 8: 64.toString(8) = "100"
      * @tc.size MEDIUMTEST
@@ -1155,7 +1158,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8400
      * @tc.name testLongChain084
      * @tc.desc Verify toString with radix 16: 256.toString(16) = "100"
      * @tc.size MEDIUMTEST
@@ -1168,7 +1171,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8500
      * @tc.name testLongChain085
      * @tc.desc Verify toLocaleString with no grouping: 100 = "100"
      * @tc.size MEDIUMTEST
@@ -1181,7 +1184,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0860
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8600
      * @tc.name testLongChain086
      * @tc.desc Verify toLocaleString de-DE: 1000000 non-empty
      * @tc.size MEDIUMTEST
@@ -1194,7 +1197,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0870
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8700
      * @tc.name testLongChain087
      * @tc.desc Verify toLocaleString fr-FR: 1000000 non-empty
      * @tc.size MEDIUMTEST
@@ -1207,7 +1210,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0880
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8800
      * @tc.name testLongChain088
      * @tc.desc Verify toLocaleString zh-CN: 0 non-empty
      * @tc.size MEDIUMTEST
@@ -1220,7 +1223,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0890
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_8900
      * @tc.name testLongChain089
      * @tc.desc Verify toString(2) length: MAX.toString(2).length = 63
      * @tc.size MEDIUMTEST
@@ -1233,7 +1236,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9000
      * @tc.name testLongChain090
      * @tc.desc Verify toString(2) length: MIN.toString(2).length = 64
      * @tc.size MEDIUMTEST
@@ -1246,7 +1249,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0910
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9100
      * @tc.name testLongChain091
      * @tc.desc Verify toLong: 1.toLong() === 1
      * @tc.size MEDIUMTEST
@@ -1259,7 +1262,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0920
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9200
      * @tc.name testLongChain092
      * @tc.desc Verify toLong: 0.toLong() === 0
      * @tc.size MEDIUMTEST
@@ -1272,7 +1275,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0930
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9300
      * @tc.name testLongChain093
      * @tc.desc Verify toLong: -1.toLong() === -1
      * @tc.size MEDIUMTEST
@@ -1285,7 +1288,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0940
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_9400
      * @tc.name testLongChain094
      * @tc.desc Verify equals: MAX.equals(MAX) && MIN.equals(MIN) = true
      * @tc.size MEDIUMTEST

@@ -20,7 +20,6 @@ export default function LongCrossTypeSubDivTest(): void {
   describe('LongCrossTypeSubDivTest', () => {
     beforeEach(async () => { await Utils.msSleep(30); });
 
-    // int-typed variables: test int-to-long widening
     const CSD_INT_0: int = 0;
     const CSD_INT_1: int = 1;
     const CSD_INT_127: int = 127;
@@ -37,11 +36,8 @@ export default function LongCrossTypeSubDivTest(): void {
     const CSD_L_FROM_CHAR_A: long = 65;     // char 'A' code point
     const CSD_L_FROM_CHAR_0: long = 48;     // char '0' code point
 
-    // long reference values
     const CSD_L_0: long = 0;
     const CSD_L_1: long = 1;
-
-    // ── Cross-type sub: int-sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUB2_0100
@@ -174,8 +170,6 @@ export default function LongCrossTypeSubDivTest(): void {
       const result: Long = new Long(CSD_L_FROM_CHAR_A).sub(new Long(CSD_L_1));
       expect(result.toString()).assertEqual("64");
     });
-
-    // ── Cross-type div: int-sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_DIV2_0100
@@ -321,8 +315,6 @@ export default function LongCrossTypeSubDivTest(): void {
       const result: Long = new Long(CSD_INT_0).div(new Long(Long.MIN_VALUE));
       expect(result.toString()).assertEqual("0");
     });
-
-    // ── Cross-type conversion: Long to narrow types ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CONV_0100

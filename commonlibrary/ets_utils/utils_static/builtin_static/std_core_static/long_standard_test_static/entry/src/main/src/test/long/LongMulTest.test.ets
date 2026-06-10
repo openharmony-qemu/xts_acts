@@ -145,6 +145,7 @@ export default function LongMulTest(): void {
      */
     it('testLongMul008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MAX_VALUE).mul(new Long(MUL_2));
+      // This test depends on 64-bit signed integer overflow wrap-around behavior
       expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(MUL_STR_NEG_2);
     });
@@ -159,6 +160,7 @@ export default function LongMulTest(): void {
      */
     it('testLongMul009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MIN_VALUE).mul(new Long(MUL_NEG_1));
+      // This test depends on 64-bit signed integer overflow wrap-around behavior
       expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(Long.MIN_VALUE.toString());
     });

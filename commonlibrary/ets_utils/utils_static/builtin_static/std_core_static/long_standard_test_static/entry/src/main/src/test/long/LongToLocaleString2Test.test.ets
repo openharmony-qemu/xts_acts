@@ -38,7 +38,7 @@ export default function LongToLocaleString2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToLocaleString2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(LOC2_1234);
+      const value: Long = new Long(LOC2_1234);
       const result: string = value.toLocaleString(LOC2_DE_DE);
       // de-DE locale uses "." as thousands separator, so 1234 should be "1.234"
       expect(result).assertEqual(LOC2_STR_1234_DOT);
@@ -53,8 +53,9 @@ export default function LongToLocaleString2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToLocaleString2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(LOC2_0);
+      const value: Long = new Long(LOC2_0);
       const result: string = value.toLocaleString(LOC2_EN_US);
+      // Zero should always format to a non-empty string in en-US
       expect(result.length > 0).assertTrue();
     });
 
@@ -67,8 +68,9 @@ export default function LongToLocaleString2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToLocaleString2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(LOC2_NEG_1234);
+      const value: Long = new Long(LOC2_NEG_1234);
       const result: string = value.toLocaleString(LOC2_EN_US);
+      // Negative value should format to a non-empty string in en-US
       expect(result.length > 0).assertTrue();
     });
 
@@ -81,8 +83,9 @@ export default function LongToLocaleString2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongToLocaleString2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = new Long(LOC2_1234);
+      const value: Long = new Long(LOC2_1234);
       const result: string = value.toLocaleString(LOC2_EN_US);
+      // Verify the result is a non-empty string (return type check)
       expect(result.length > 0).assertTrue();
     });
 

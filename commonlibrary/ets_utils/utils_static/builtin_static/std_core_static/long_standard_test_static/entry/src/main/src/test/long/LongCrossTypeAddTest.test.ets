@@ -26,7 +26,6 @@ export default function LongCrossTypeAddTest(): void {
     const CTA_INT_32767: int = 32767;     // short-range boundary
     const CTA_INT_MAX: int = 2147483647;  // int max boundary
 
-    // long-typed variables covering values from different numeric ranges
     const CTA_L_FROM_FLOAT_0: long = 0;                       // float 0.0 → long 0
     const CTA_L_FROM_FLOAT_1: long = 1;                       // float 1.0 → long 1
     const CTA_L_FROM_FLOAT_HALF: long = 0;                    // float 0.5 → long 0 (truncation)
@@ -36,9 +35,10 @@ export default function LongCrossTypeAddTest(): void {
     const CTA_L_FROM_CHAR_A: long = 65;                       // char 'A' code point
     const CTA_L_FROM_CHAR_0: long = 48;                       // char '0' code point
 
-    // long reference values
     const CTA_L_0: long = 0;
     const CTA_L_1: long = 1;
+    const CTA_L_2: long = 2;
+    const CTA_L_10: long = 10;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0100
@@ -104,8 +104,6 @@ export default function LongCrossTypeAddTest(): void {
       const result: Long = new Long(CTA_INT_MAX).add(new Long(CTA_L_0));
       expect(result.toString()).assertEqual("2147483647");
     });
-
-    // ── Cross-type add: float/double-range sourced Long values ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0600
@@ -213,8 +211,6 @@ export default function LongCrossTypeAddTest(): void {
       expect(result.toString()).assertEqual("66");
     });
 
-    // ── Cross-type mul: int-sourced Long ──
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1400
      * @tc.name testLongCrossAdd014
@@ -264,7 +260,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTA_L_FROM_FLOAT_1);
-      const result: Long = left.mul(new Long(2));
+      const result: Long = left.mul(new Long(CTA_L_2));
       expect(result.toString()).assertEqual("2");
     });
 
@@ -278,7 +274,7 @@ export default function LongCrossTypeAddTest(): void {
      */
     it('testLongCrossAdd018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTA_L_FROM_CHAR_0);
-      const result: Long = left.mul(new Long(10));
+      const result: Long = left.mul(new Long(CTA_L_10));
       expect(result.toString()).assertEqual("480");
     });
   });

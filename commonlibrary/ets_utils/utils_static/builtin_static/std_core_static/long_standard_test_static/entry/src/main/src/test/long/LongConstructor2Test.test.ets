@@ -179,15 +179,8 @@ export default function LongConstructor2Test(): void {
      * @tc.level LEVEL2
      */
     it('testLongConstructor2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
-      try {
-        const value: Long = new Long(CON2_42);
-          expect(value instanceof Long).assertTrue();
-      } catch (_error) {
-        caught = true;
-      } finally {
-        expect(caught).assertFalse();
-      }
+      const value: Long = new Long(CON2_42);
+      expect(value instanceof Long).assertTrue();
     });
 
     /**

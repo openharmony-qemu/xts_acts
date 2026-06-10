@@ -39,13 +39,10 @@ export default function LongCrossTypeCmpTest(): void {
     const CTC_L_FROM_CHAR_B: long = 66;    // char 'B' code point
     const CTC_L_FROM_CHAR_0: long = 48;    // char '0' code point
 
-    // long reference values
     const CTC_L_0: long = 0;
     const CTC_L_1: long = 1;
     const CTC_L_127: long = 127;
     const CTC_L_32767: long = 32767;
-
-    // ── isGreaterThan: int-sourced Long vs long-sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_0100
@@ -119,8 +116,6 @@ export default function LongCrossTypeCmpTest(): void {
       expect(right.isGreaterEqualThan(left)).assertTrue();
     });
 
-    // ── isGreaterThan: float-range sourced Long ──
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_0600
      * @tc.name testLongCrossCmp006
@@ -163,8 +158,6 @@ export default function LongCrossTypeCmpTest(): void {
       expect(left.isGreaterThan(right)).assertFalse();
       expect(left.equals(right)).assertTrue();
     });
-
-    // ── isGreaterThan: double-range sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_0900
@@ -220,7 +213,7 @@ export default function LongCrossTypeCmpTest(): void {
      */
     it('testLongCrossCmp012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTC_L_FROM_CHAR_A);
-      const right: Long = new Long(65);
+      const right: Long = new Long(CTC_L_FROM_CHAR_A);
       expect(left.equals(right)).assertTrue();
     });
 
@@ -248,11 +241,9 @@ export default function LongCrossTypeCmpTest(): void {
      */
     it('testLongCrossCmp014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTC_L_FROM_CHAR_0);
-      const right: Long = new Long(48);
+      const right: Long = new Long(CTC_L_FROM_CHAR_0);
       expect(left.equals(right)).assertTrue();
     });
-
-    // ── Cross-type sub: int/long sourced operands ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_1500
@@ -310,8 +301,6 @@ export default function LongCrossTypeCmpTest(): void {
       const result: Long = left.sub(new Long(Long.MIN_VALUE));
       expect(result instanceof Long).assertTrue();
     });
-
-    // ── Cross-type div: int/long sourced operands ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_1900

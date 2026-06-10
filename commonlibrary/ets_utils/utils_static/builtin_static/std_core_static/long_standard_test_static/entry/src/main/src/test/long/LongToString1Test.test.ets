@@ -33,6 +33,7 @@ export default function LongToString1Test(): void {
     const TS1_STR_1: string = "1";
     const TS1_STR_123: string = "123";
     const TS1_STR_10000000000: string = "10000000000";
+    const TS1_STR_MIN_VALUE: string = "-9223372036854775808";
     beforeEach(async () => { await Utils.msSleep(TS1_30); });
 
     /**
@@ -164,6 +165,19 @@ export default function LongToString1Test(): void {
       const result1: string = Long.toString(TS1_123);
       const result2: string = Long.toString(TS1_123);
       expect(result1).assertEqual(result2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_1100
+     * @tc.name testLongToString1011
+     * @tc.desc Verify Long.toString(Long.MIN_VALUE) returns correct minimum value string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: string = Long.toString(Long.MIN_VALUE);
+      expect(result).assertEqual(TS1_STR_MIN_VALUE);
     });
   });
 }
