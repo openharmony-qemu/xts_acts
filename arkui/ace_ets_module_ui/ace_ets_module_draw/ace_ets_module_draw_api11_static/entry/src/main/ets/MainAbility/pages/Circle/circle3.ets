@@ -59,7 +59,7 @@ struct CircleExample {
       Circle()
         .width(`${this.theWidth}`)
         .height(`${this.theHeight}`)
-        .key('circle')
+        .key('circle3_circle')
     }.width('100%').height('100%').margin({ top: 5 } as Margin)
   }
 

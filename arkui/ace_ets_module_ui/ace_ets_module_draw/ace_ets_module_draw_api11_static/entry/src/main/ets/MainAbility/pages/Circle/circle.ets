@@ -63,12 +63,12 @@ struct CircleNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("circle_neText")
 
       Circle()
         .width(`${this.w}`)
         .height(`${this.h}`)
-        .key('circle')
+        .key('circle_circle')
 
       Image($rawfile('test.png'))
         // .mask(new Circle({ width: '150px', height: '150px' }).fill(Color.Gray))

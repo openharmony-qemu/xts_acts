@@ -82,7 +82,7 @@ export default function OffScreenCanvasTest() {
 it('ArkUI_Canvas_API_OffScreenCanvas_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_API_OffScreenCanvas_static_0100'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson: string = inspector.getInspectorByKey('OffScreenCanvas_Canvas1')
+      let strJson: string = inspector.getInspectorByKey('OffScreenCanvas' + '_Canvas1')
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas')
       console.info(`${SUITE} ${CASE} END`)
       done()

@@ -73,7 +73,7 @@ export default function CanvasShaderTest() {
 it('ArkUI_Canvas_Shader_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_Shader_static_0100'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson = inspector.getInspectorByKey('CanvasShader_Canvas1')
+      let strJson = inspector.getInspectorByKey('CanvasShader' + '_Canvas1')
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas')
       console.info(`${SUITE} ${CASE} END`)
       done()
@@ -89,7 +89,7 @@ it('ArkUI_Canvas_Shader_static_0100', Level.LEVEL0, async (done: () => void): Pr
 it('ArkUI_Canvas_Shader_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_Canvas_Shader_static_0200'
       console.info(`${SUITE} ${CASE} START`)
-      let strJson: string = inspector.getInspectorByKey('CanvasShader_Canvas2')
+      let strJson: string = inspector.getInspectorByKey('CanvasShader' + '_Canvas2')
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas')
       console.info(`${SUITE} ${CASE} END`)
       done()
