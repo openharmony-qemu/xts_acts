@@ -325,7 +325,7 @@ int RESET_BITRATE_009Test()
         vEncSample->DEFAULT_KEY_FRAME_INTERVAL = -1;
         vEncSample->enableAutoSwitchParam = true;
         vEncSample->needResetBitrate = true;
-        vEncSample->OUT_DIR = "/data/test/media/cbr_-1_.h264";
+        vEncSample->OUT_DIR = "/data/test/media/cbr_-1_.h265";
         ASSERT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(g_codecNameHEVC));
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetVideoEncoderCallback());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
@@ -1308,7 +1308,11 @@ int SET_COLORSPACE_002Test()
 
 int SET_FORCE_IDR_001Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!g_codecNameHEVC[0] || strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+        return 0;
+    }
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
@@ -1803,7 +1807,11 @@ int FRAMENUM_JUDGMENT_001Test()
 
 int FRAMENUM_JUDGMENT_002Test()
 {
-    if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+    if (!g_codecNameHEVC[0] || strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
+        return 0;
+    }
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         vEncSample->INP_DIR = INP_DIR_720;
         vEncSample->OUT_DIR = "/data/test/media/EN_1280_720_nv.h265";
@@ -1818,8 +1826,8 @@ int FRAMENUM_JUDGMENT_002Test()
         vEncSample->WaitForEOS();
         ASSERT_EQ(EXPECTED_FRAME_COUNT_25, vEncSample->outCount);
         ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
-    return 0;
-}
+        return 0;
+    }
     return 0;
 }
 
