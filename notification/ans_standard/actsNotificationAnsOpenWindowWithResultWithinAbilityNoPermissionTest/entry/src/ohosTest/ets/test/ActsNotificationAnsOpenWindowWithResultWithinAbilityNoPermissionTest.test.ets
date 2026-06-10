@@ -491,12 +491,12 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         for (let index = 0; index < 500; index++) {
-          await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+          notificationManager.openNotificationSettingsWithResult(context).then((data) => {
             num++
-            hilog.info(0x0000, 'testTag',
-              `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
             expect(num).assertEqual(1);
             done()
+            hilog.info(0x0000, 'testTag',
+              `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           }).catch(async (e: Error) => {
             let err: BusinessError = e as BusinessError
             hilog.error(0x0000, 'testTag',
