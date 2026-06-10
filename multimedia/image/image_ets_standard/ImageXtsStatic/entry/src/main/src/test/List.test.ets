@@ -27,6 +27,25 @@ import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadat
 import ImageSourceTest from "./testStatic/image/imageSource/ImageSource.test";
 import CreatePixelMapSupp from "./testStatic/image/imageSource/createPixelMap.test";
 import createPremultipliedPixelMapTest from "./testStatic/image/image/createPremultipliedPixelMap.test";
+import ImageGetComponentTest from "./testStatic/image/Image_operation/getComponent.test";
+import ImageReleaseTest from "./testStatic/image/Image_operation/release.test";
+import ImageCreatorDequeueImageTest from "./testStatic/image/ImageCreator/dequeueImage.test";
+import ImageCreatorQueueImageTest from "./testStatic/image/ImageCreator/queueImage.test";
+import ImageReceiverGetReceivingSurfaceIdTest from "./testStatic/image/ImageReceiver/getReceivingSurfaceId.test";
+import ImageReceiverReleaseTest from "./testStatic/image/ImageReceiver/release.test";
+import ImageGetImagePropertySyncEnumFlashEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumFlashEmpty.test"
+import ImageGetImagePropertySyncEnumFrontCamera from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumFrontCamera.test"
+import ImagePropertyKeySyncEnumGPS from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPS.test"
+import ImageGetImagePropertySyncEnumGPSStatus from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatus.test"
+import ImageGetImagePropertySyncEnumGPSStatusEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatusEmpty.test"
+import ImageGetImagePropertySyncEnumISO from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumISO.test"
+import ImageGetImagePropertySyncEnumLength from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLength.test"
+import ImageGetImagePropertySyncEnumLightSource from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLightSource.test"
+import ImageGetImagePropertySyncEnumReference from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumReference.test"
+import ImageGetImagePropertySyncEnumScenePointer from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumScenePointer.test"
+import ImageGetImagePropertySyncEnumSensitiveType from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSensitiveType.test"
+import ImageGetImagePropertySyncEnumSensitiveTypeEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSensitiveTypeEmpty.test"
+import ImageGetImagePropertySyncEnumSoftware from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumSoftware.test"
 import ImageSourceGetImagePropertyTest from "./testStatic/image/imageSource/getImageProperty.test";
 import createPictureTest from "./testStatic/image/image/createPicture.test";
 import CreatePictureTestSupp from "./testStatic/image/imageSource/createPicture.test";
@@ -46,7 +65,6 @@ import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getProp
 import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
 import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
 
-
 export default function testsuite(): void {
   metaDataStaticTest();
   ImageAuxiliaryPictureGetMetadataStaticTest();
@@ -57,7 +75,7 @@ export default function testsuite(): void {
   MakerNoteHuaweiMetadataTest();
   //ImageReceiverSupp();
   CrateImageSourceTest();
-  // ImageGetComponentSupp();
+  //ImageGetComponentSupp();
   ImageMetadataTestStatic();
   createAuxiliaryPictureTest();
   ImageCreateImageCreatorTestSupp();
@@ -75,6 +93,25 @@ export default function testsuite(): void {
   ImageSourceTest();
   CreatePixelMapSupp();
   ImageSourceGetImagePropertyTest();
+  ImageGetComponentTest();
+  ImageReleaseTest();
+  ImageCreatorDequeueImageTest();
+  ImageCreatorQueueImageTest();
+  ImageReceiverGetReceivingSurfaceIdTest();
+  ImageReceiverReleaseTest();
+  ImageGetImagePropertySyncEnumFlashEmpty();
+  ImageGetImagePropertySyncEnumFrontCamera();
+  ImagePropertyKeySyncEnumGPS();
+  ImageGetImagePropertySyncEnumGPSStatus();
+  ImageGetImagePropertySyncEnumGPSStatusEmpty();
+  ImageGetImagePropertySyncEnumISO();
+  ImageGetImagePropertySyncEnumLength();
+  ImageGetImagePropertySyncEnumLightSource();
+  ImageGetImagePropertySyncEnumReference();
+  ImageGetImagePropertySyncEnumScenePointer();
+  ImageGetImagePropertySyncEnumSensitiveType();
+  ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
+  ImageGetImagePropertySyncEnumSoftware();
   createPictureTest();
   CreatePictureTestSupp();
   CreatePixelMapListTest();
