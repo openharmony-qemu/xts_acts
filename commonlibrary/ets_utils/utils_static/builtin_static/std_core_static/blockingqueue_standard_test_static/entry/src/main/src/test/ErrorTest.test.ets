@@ -38,14 +38,14 @@ export default function errorTest(): void {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BLOCKINGQUEUE_ERROR_0100
-     * @tc.name testBlockingQueueError001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ERROR_0100
+     * @tc.name testMathError001
      * @tc.desc Verify basic error test framework is operational
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testBlockingQueueError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMathError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let skipReason: string = "compile-time verification only";
       expect(skipReason.length > 0).assertTrue();
     });
