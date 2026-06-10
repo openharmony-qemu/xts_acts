@@ -52,7 +52,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }).catch((err: Error) => {
         let error :BusinessError = err as BusinessError
         console.error(TEST_SUITE_NAME +
-          `requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
+          `requestEnableNotification failed, code is ${error.code}, message is ${error.message}`);
         expect(false).assertTrue();
         console.info(`${TEST_SUITE_NAME}` + `test case end`);
         done();
