@@ -1,9 +1,9 @@
 {
-    "description": "Configuration for hjunit matsh.standard.test.static Tests",
+    "description": "Configuration for hjunit math.standard.test.static Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "matsh.standard.test.static",
+        "bundle-name": "math.standard.test.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"
@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsMatshCaseStaticTest.hap"
+                "ActsMathCaseStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
