@@ -22,7 +22,6 @@ export default function LongCrossTypeAddTest(): void {
 
     // int-typed variables: test int-to-long widening in Long constructor
     const CTA_INT_0: int = 0;
-    const CTA_INT_1: int = 1;
     const CTA_INT_127: int = 127;       // byte-range boundary
     const CTA_INT_32767: int = 32767;     // short-range boundary
     const CTA_INT_MAX: int = 2147483647;  // int max boundary
@@ -40,8 +39,6 @@ export default function LongCrossTypeAddTest(): void {
     // long reference values
     const CTA_L_0: long = 0;
     const CTA_L_1: long = 1;
-
-    // ── Cross-type add: int-sourced Long (int widens to long) ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0100
