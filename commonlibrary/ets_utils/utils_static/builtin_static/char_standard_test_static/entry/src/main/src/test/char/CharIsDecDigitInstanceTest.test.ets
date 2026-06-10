@@ -303,13 +303,14 @@ export default function CharIsDecDigitInstanceTest(): void {
       const c0 = new Char(c'0');
       expect(c0.isBinDigit()).assertTrue();
       expect(c0.isDecDigit()).assertTrue();
+
       const c1 = new Char(c'1');
       expect(c1.isBinDigit()).assertTrue();
       expect(c1.isDecDigit()).assertTrue();
+
       const c2 = new Char(c'2');
-      if (c2.isBinDigit()) {
-        expect(c2.isDecDigit()).assertTrue();
-      }
+      expect(c2.isBinDigit()).assertFalse();
+      expect(c2.isDecDigit()).assertTrue();
     });
 
     /**

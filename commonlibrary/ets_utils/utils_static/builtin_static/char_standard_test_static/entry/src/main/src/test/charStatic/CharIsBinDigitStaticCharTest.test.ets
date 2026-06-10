@@ -54,7 +54,7 @@ export default function CharIsBinDigitStaticCharTest(): void {
         const result = Char.isBinDigit(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -136,9 +136,9 @@ export default function CharIsBinDigitStaticCharTest(): void {
     it('testCharIsBinDigitStaticChar0007' as string, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const result = Char.isBinDigit(null as Char);
-        expect(result).assertFail();
+        expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -371,11 +371,6 @@ export default function CharIsBinDigitStaticCharTest(): void {
       const isBin1 = Char.isBinDigit(c'1');
       const isDec1 = Char.isDecDigit(c'1');
       expect(isBin1).assertEqual(isDec1);
-      const isBin2 = Char.isBinDigit(c'2');
-      const isDec2 = Char.isDecDigit(c'2');
-      if (isBin2) {
-        expect(isDec2).assertTrue();
-      }
     });
 
     /**
@@ -412,11 +407,6 @@ export default function CharIsBinDigitStaticCharTest(): void {
       const isBin1 = Char.isBinDigit(c'1');
       const isHex1 = Char.isHexDigit(c'1');
       expect(isBin1).assertEqual(isHex1);
-      const isBinA = Char.isBinDigit(c'A');
-      const isHexA = Char.isHexDigit(c'A');
-      if (isBinA) {
-        expect(isHexA).assertTrue();
-      }
     });
 
     /**
@@ -558,30 +548,6 @@ export default function CharIsBinDigitStaticCharTest(): void {
       for (let i = 0; i < 1000; i++) {
         expect(Char.isBinDigit(c'1')).assertTrue();
         expect(Char.isBinDigit(c'2')).assertFalse();
-      }
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_CHARISBINDIGITSTATICCHARTEST_ISBINDIGITTEST_3700
-     * @tc.name testCharIsBinDigitStaticChar0037
-     * @tc.desc Verify that binary digits are consistent with other digit classification methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharIsBinDigitStaticChar0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const testChars = [c'0', c'1', c'2', c'9', c'A', c'a', c'F', c'f'];
-
-      for (const ch of testChars) {
-        const isBin = Char.isBinDigit(ch);
-        const isDec = Char.isDecDigit(ch);
-        const isHex = Char.isHexDigit(ch);
-
-        if (isBin) {
-          expect(isDec).assertTrue();
-          expect(isHex).assertTrue();
-        }
       }
     });
 

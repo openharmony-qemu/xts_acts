@@ -53,7 +53,7 @@ export default function CharCodeUnitsToEncodeTest(): void {
         const result = Char.codeUnitsToEncode(undefined as UTF_16_CodePoint);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -255,7 +255,7 @@ export default function CharCodeUnitsToEncodeTest(): void {
         const result = Char.codeUnitsToEncode(null as UTF_16_CodePoint);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

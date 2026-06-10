@@ -58,7 +58,7 @@ export default function CharIsUpperCaseStaticCharTest(): void {
         const result = Char.isUpperCase(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -133,7 +133,7 @@ export default function CharIsUpperCaseStaticCharTest(): void {
         const result = Char.isUpperCase(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

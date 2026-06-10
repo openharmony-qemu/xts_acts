@@ -56,7 +56,7 @@ export default function CharCharsToCodePointTest(): void {
         const result = func(undefined, c'\uDE00');
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

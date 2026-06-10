@@ -86,7 +86,7 @@ export default function CharToCharTest(): void {
         const result = Char.toChar(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -171,13 +171,13 @@ export default function CharToCharTest(): void {
         const result = Char.toChar(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
       try {
         const result = Char.toChar(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

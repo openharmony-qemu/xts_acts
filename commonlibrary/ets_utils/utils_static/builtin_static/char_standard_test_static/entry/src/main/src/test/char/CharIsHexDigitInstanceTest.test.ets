@@ -212,8 +212,7 @@ export default function CharIsHexDigitInstanceTest(): void {
         const result = c.isHexDigit();
         expect(result !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -335,9 +334,8 @@ export default function CharIsHexDigitInstanceTest(): void {
       expect(c1.isBinDigit()).assertTrue();
       expect(c1.isHexDigit()).assertTrue();
       const c2 = new Char(c'2');
-      if (c2.isBinDigit()) {
-        expect(c2.isHexDigit()).assertTrue();
-      }
+      expect(c2.isBinDigit()).assertFalse();
+      expect(c2.isHexDigit()).assertTrue();
     });
 
     /**

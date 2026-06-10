@@ -145,7 +145,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateNoParameterCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing any argument to negate() is rejected by ArkTS static checking.
       let bool = new Boolean(true);
       let result = bool.negate();
       expect(result.equals(Boolean.FALSE)).assertEqual(true);
@@ -161,7 +160,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateMaxParameterCountCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Even undefined is an extra argument and is rejected by ArkTS static checking.
       expect(new Boolean(true).negate().equals(Boolean.FALSE)).assertEqual(true);
       expect(new Boolean(false).negate().equals(Boolean.TRUE)).assertEqual(true);
     })
@@ -175,7 +173,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateMustCallByInstanceCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling negate() through Boolean as a static method is rejected by static typing.
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
       expect(typeof instance.negate).assertEqual("function");
@@ -439,7 +436,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateInstanceCallOnlyCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Boolean.negate() as a class call is rejected; only Boolean instances can call negate().
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
     })
@@ -453,7 +449,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateThisBindingCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS keeps the receiver typed as Boolean; unsupported rebinding forms are compile-time constraints.
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
       expect(instance.negate().valueOf()).assertEqual(!instance.valueOf());
@@ -661,7 +656,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateWrongCallModeCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Boolean.negate() as a static call is rejected by ArkTS static checking.
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
     })
@@ -675,7 +669,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateArgumentErrorCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Extra parameters are rejected by ArkTS static checking because negate() has arity zero.
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
     })
@@ -689,7 +682,6 @@ export default function BooleanNegateTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanNegateInvalidThisBindingCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Binding this to a non-Boolean object is rejected by ArkTS static checking.
       let instance = new Boolean(true);
       expect(instance.negate().equals(Boolean.FALSE)).assertEqual(true);
     })

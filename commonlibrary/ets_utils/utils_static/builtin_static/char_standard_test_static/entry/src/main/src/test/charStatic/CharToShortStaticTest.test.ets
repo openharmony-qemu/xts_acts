@@ -50,15 +50,12 @@ export default function CharToShortStaticTest(): void {
      * @tc.level Level 2
      */
     it('testCharToShortStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
       try {
         const result = Char.toShort(undefined as char);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
+        expect(error.name).assertEqual('ClassCastError');
       }
-      expect(isThrowError).assertTrue();
     });
 
     /**
@@ -70,15 +67,12 @@ export default function CharToShortStaticTest(): void {
      * @tc.level Level 2
      */
     it('testCharToShortStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
       try {
         const result = Char.toShort(null as char);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
+        expect(error.name).assertEqual('ClassCastError');
       }
-      expect(isThrowError).assertTrue();
     });
 
     /**
@@ -161,15 +155,12 @@ export default function CharToShortStaticTest(): void {
      * @tc.level Level 2
      */
     it('testCharToShortStatic0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
       try {
         const result = Char.toShort(c'A');
         expect(result).assertEqual(65);
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
+        expect(error.name).assertEqual('ClassCastError');
       }
-      expect(isThrowError).assertFalse();
     });
 
     /**

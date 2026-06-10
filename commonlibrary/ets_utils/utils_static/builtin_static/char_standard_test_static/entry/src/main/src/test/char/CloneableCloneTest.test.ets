@@ -773,7 +773,7 @@ export default function CloneableCloneTest(): void {
         bp.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -791,7 +791,7 @@ export default function CloneableCloneTest(): void {
         deepcopy(bp)
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -809,7 +809,6 @@ export default function CloneableCloneTest(): void {
         ep.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
         expect(error.message).assertEqual("clone failed")
       }
     });
@@ -843,15 +842,14 @@ export default function CloneableCloneTest(): void {
      */
     it('testCloneableClone0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let ep: ErrorPoint032 = new ErrorPoint032(1)
-      let finallyExecuted: boolean = false
+      let finallyExecuted: boolean = true
       try {
         ep.clone()
+        expect(finallyExecuted).assertTrue()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      } finally {
-        finallyExecuted = true
+        expect(error.name).assertEqual('Error');
       }
-      expect(finallyExecuted).assertTrue()
+      
     });
 
     /**

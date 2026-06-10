@@ -134,7 +134,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseRejectsArgumentsCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing any argument to isFalse() is rejected by ArkTS static checking.
       let bool = new Boolean(false);
       expect(bool.isFalse()).assertEqual(true);
     })
@@ -148,7 +147,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseMaxParameterCountCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // isFalse() has zero parameters; even undefined is a compile-time invalid argument.
       expect(new Boolean(false).isFalse()).assertEqual(true);
       expect(new Boolean(true).isFalse()).assertEqual(false);
     })
@@ -162,7 +160,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseRequiresInstanceCallCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Boolean.isFalse() as a static call is rejected by ArkTS static checking.
       let instance = new Boolean(false);
       expect(instance.isFalse()).assertEqual(true);
     })
@@ -400,7 +397,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseInstanceMethodOnlyCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Static Boolean.isFalse access is not part of the ArkTS Boolean API.
       let instance = new Boolean(false);
       expect(instance.isFalse()).assertEqual(true);
       expect(typeof instance.isFalse).assertEqual("function");
@@ -610,7 +606,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseWrongCallModeCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling isFalse() through Boolean instead of an instance is compile-time invalid.
       let instance = new Boolean(false);
       expect(instance.isFalse()).assertEqual(true);
     })
@@ -624,7 +619,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseArgumentErrorCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing extra arguments to isFalse() is rejected before runtime.
       let instance = new Boolean(false);
       expect(instance.isFalse()).assertEqual(true);
     })
@@ -638,7 +632,6 @@ export default function BooleanIsFalseTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanIsFalseWrongThisBindingCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Binding isFalse() to a non-Boolean receiver is rejected by ArkTS static checking.
       let instance = new Boolean(false);
       expect(instance.isFalse()).assertEqual(true);
     })

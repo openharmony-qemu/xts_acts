@@ -94,7 +94,7 @@ export default function CharIsLetterStaticCharTest(): void {
         const result = Char.isLetter(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -173,7 +173,7 @@ export default function CharIsLetterStaticCharTest(): void {
         const result = Char.isLetter(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

@@ -337,9 +337,9 @@ export default function CharEqualsTest(): void {
       const c1 = new Char(c'A');
       const c2 = new Char(c'A');
       const c3 = new Char(c'A');
-      if (c1.equals(c2) && c2.equals(c3)) {
-        expect(c1.equals(c3)).assertTrue();
-      }
+      expect(c1.equals(c2)).assertTrue();
+      expect(c2.equals(c3)).assertTrue();
+      expect(c1.equals(c3)).assertTrue();
     });
 
     /**
@@ -371,9 +371,8 @@ export default function CharEqualsTest(): void {
     it('testCharEquals0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c1 = new Char(c'A');
       const c2 = new Char(c'A');
-      if (c1.equals(c2)) {
-        expect(c1.compareTo(c2)).assertEqual(0);
-      }
+      expect(c1.equals(c2)).assertTrue();
+      expect(c1.compareTo(c2)).assertEqual(0);
     });
 
     /**
@@ -387,9 +386,8 @@ export default function CharEqualsTest(): void {
     it('testCharEquals0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c1 = new Char(c'A');
       const c2 = new Char(c'B');
-      if (!c1.equals(c2)) {
-        expect(c1.compareTo(c2) !== 0).assertTrue();
-      }
+      expect(c1.equals(c2)).assertFalse();
+      expect(c1.compareTo(c2) !== 0).assertTrue();
     });
 
     /**

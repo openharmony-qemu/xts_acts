@@ -59,7 +59,7 @@ export default function CharIsPartOfSurrogatePairStaticCharTest(): void {
         const result = Char.isPartOfSurrogatePair(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -144,7 +144,7 @@ export default function CharIsPartOfSurrogatePairStaticCharTest(): void {
         const result = Char.isPartOfSurrogatePair(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

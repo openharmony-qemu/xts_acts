@@ -492,9 +492,6 @@ export default function CharCompareTest(): void {
       const compareToResult = c1.compareTo(c2);
       expect(typeof compareResult).assertEqual("boolean");
       expect(compareToResult === 0).assertTrue();
-      if (compareResult) {
-        expect(compareToResult === 0).assertTrue();
-      }
     });
 
     

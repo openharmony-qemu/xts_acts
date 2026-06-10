@@ -66,7 +66,7 @@ export default function CharIsLowerCaseStaticCharTest(): void {
         invokeIsLowerCaseNoArg();
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -141,7 +141,7 @@ export default function CharIsLowerCaseStaticCharTest(): void {
         invokeIsLowerCaseWithParam(null);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -300,7 +300,7 @@ export default function CharIsLowerCaseStaticCharTest(): void {
         invokeIsLowerCaseWithParam(123 as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

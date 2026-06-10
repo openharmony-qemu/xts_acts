@@ -54,7 +54,7 @@ export default function CharIsHighSurrogateTest(): void {
         const result = Char.isHighSurrogate(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -133,7 +133,7 @@ export default function CharIsHighSurrogateTest(): void {
         const result = Char.isHighSurrogate(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

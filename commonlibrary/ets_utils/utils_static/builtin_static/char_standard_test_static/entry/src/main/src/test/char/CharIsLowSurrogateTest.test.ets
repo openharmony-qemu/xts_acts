@@ -66,7 +66,7 @@ export default function CharIsLowSurrogateTest(): void {
         invokeIsLowSurrogate();
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -144,7 +144,7 @@ export default function CharIsLowSurrogateTest(): void {
         invokeIsLowSurrogateWithParam(null);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

@@ -58,7 +58,7 @@ export default function CharToIntStaticTest(): void {
         const result = Char.toInt(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -147,13 +147,13 @@ export default function CharToIntStaticTest(): void {
         const result = Char.toInt(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
       try {
         const result = Char.toInt(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -446,8 +446,7 @@ export default function CharToIntStaticTest(): void {
         const result = Char.toInt(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -464,8 +463,7 @@ export default function CharToIntStaticTest(): void {
         const result = Char.toInt(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -483,7 +481,7 @@ export default function CharToIntStaticTest(): void {
         const result = Char.toInt(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

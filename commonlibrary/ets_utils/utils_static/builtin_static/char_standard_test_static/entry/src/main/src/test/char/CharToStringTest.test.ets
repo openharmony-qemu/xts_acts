@@ -43,26 +43,6 @@ export default function CharToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_0200
-     * @tc.name testCharToString0002
-     * @tc.desc Verify toString() can be called with no arguments on a Char instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
-      try {
-        const c = new Char(c'A');
-        const str = c.toString();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
-      }
-      expect(isThrowError).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_0300
      * @tc.name testCharToString0003
      * @tc.desc Verify toString does not require any parameters

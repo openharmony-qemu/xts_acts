@@ -154,7 +154,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRequiresOtherParameterCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling or() without other is rejected by ArkTS static checking.
       expect(new Boolean(false).or(new Boolean(false)).valueOf()).assertEqual(false);
     })
 
@@ -167,7 +166,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsExtraParameterCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing more than one argument to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(true).or(new Boolean(false)).valueOf()).assertEqual(true);
     })
 
@@ -266,7 +264,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsNullCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing null to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(true).or(Boolean.FALSE).valueOf()).assertEqual(true);
     })
 
@@ -279,7 +276,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsUndefinedCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing undefined to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(true).or(Boolean.FALSE).valueOf()).assertEqual(true);
     })
 
@@ -292,7 +288,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsPrimitiveTrueCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing primitive boolean to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(false).or(Boolean.TRUE).valueOf()).assertEqual(true);
     })
 
@@ -305,7 +300,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsStringCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing string to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(false).or(Boolean.FALSE).valueOf()).assertEqual(false);
     })
 
@@ -318,7 +312,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsNumberCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing number to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(true).or(Boolean.FALSE).equals(Boolean.TRUE)).assertEqual(true);
     })
 
@@ -331,7 +324,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrRejectsObjectCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing a plain object to or(Boolean) is rejected by ArkTS static checking.
       expect(new Boolean(true).or(Boolean.FALSE).valueOf()).assertEqual(true);
     })
 
@@ -619,7 +611,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrMustCallThroughInstanceCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling Boolean.or(...) as a static class method is rejected by ArkTS static checking.
       let instance = new Boolean(true);
       expect(instance.or(new Boolean(false)).equals(Boolean.TRUE)).assertEqual(true);
     })
@@ -828,7 +819,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrWrongCallModeCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling or through Boolean instead of a Boolean instance is rejected by ArkTS static checking.
       expect(new Boolean(true).or(new Boolean(false)).equals(Boolean.TRUE)).assertEqual(true);
     })
 
@@ -841,7 +831,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrNonBooleanArgumentCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // null, undefined, primitive boolean, string and other non-Boolean arguments are compile-time invalid.
       expect(new Boolean(true).or(Boolean.FALSE).valueOf()).assertEqual(true);
     })
 
@@ -854,7 +843,6 @@ export default function BooleanOrTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanOrWrongThisBindingCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Binding this to a non-Boolean receiver is rejected by ArkTS static checking.
       expect(new Boolean(false).or(new Boolean(true)).equals(Boolean.TRUE)).assertEqual(true);
     })
 

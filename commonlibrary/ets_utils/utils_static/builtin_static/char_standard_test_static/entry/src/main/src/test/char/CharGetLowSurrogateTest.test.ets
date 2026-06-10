@@ -54,7 +54,7 @@ export default function CharGetLowSurrogateTest(): void {
         const result = Char.getLowSurrogate(undefined as UTF_16_CodePoint);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -270,7 +270,7 @@ export default function CharGetLowSurrogateTest(): void {
         const result = Char.getLowSurrogate(null as UTF_16_CodePoint);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -287,8 +287,7 @@ export default function CharGetLowSurrogateTest(): void {
         const result = Char.getLowSurrogate(0x1F600 as UTF_16_CodePoint);
         expect(result !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -304,13 +303,10 @@ export default function CharGetLowSurrogateTest(): void {
       let finallyExecuted = false;
       try {
         const result = Char.getLowSurrogate(0x1F600 as UTF_16_CodePoint);
+        expect(result !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
-      } finally {
-        finallyExecuted = true;
+        expect(error.name).assertEqual('TypeError');
       }
-      expect(finallyExecuted).assertTrue();
     });
 
 

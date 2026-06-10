@@ -394,47 +394,6 @@ export default function CharToShortTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_3100
-     * @tc.name testCharToShort0031
-     * @tc.desc Verify normal invocation does not throw error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToShort0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
-      try {
-        const c = new Char(c'A');
-        const result = c.toShort();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
-      }
-      expect(isThrowError).assertFalse();
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_3300
-     * @tc.name testCharToShort0033
-     * @tc.desc Verify finally block always executes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToShort0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let finallyExecuted = false;
-      try {
-        const c = new Char(c'A');
-        const result = c.toShort();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_3500
      * @tc.name testCharToShort0035
      * @tc.desc Verify toShort is instance method

@@ -327,13 +327,12 @@ export default function CharIsLowerCaseInstanceTest(): void {
      */
     it('testCharIsLowerCaseInstance0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c1 = new Char(c'a');
-      if (c1.isLowerCase()) {
-        expect(c1.isLetter()).assertTrue();
-      }
+      expect(c1.isLowerCase()).assertTrue();
+      expect(c1.isLetter()).assertTrue();
+
       const c2 = new Char(c'A');
-      if (c2.isLowerCase()) {
-        expect(c2.isLetter()).assertTrue();
-      }
+      expect(c2.isLowerCase()).assertFalse();
+      expect(c2.isLetter()).assertTrue();
     });
 
     /**

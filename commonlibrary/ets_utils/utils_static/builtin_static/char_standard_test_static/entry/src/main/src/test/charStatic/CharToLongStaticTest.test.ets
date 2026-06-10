@@ -58,7 +58,7 @@ export default function CharToLongStaticTest(): void {
         const result = Char.toLong(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -147,13 +147,13 @@ export default function CharToLongStaticTest(): void {
         const result = Char.toLong(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
       try {
         const result = Char.toLong(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -431,8 +431,7 @@ export default function CharToLongStaticTest(): void {
         const result = Char.toLong(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -449,8 +448,7 @@ export default function CharToLongStaticTest(): void {
         const result = Char.toLong(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -468,7 +466,7 @@ export default function CharToLongStaticTest(): void {
         const result = Char.toLong(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

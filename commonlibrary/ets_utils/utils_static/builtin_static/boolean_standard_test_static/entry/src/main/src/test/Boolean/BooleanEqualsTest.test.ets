@@ -107,7 +107,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsRequiredParameterCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling equals() without the required parameter is rejected by ArkTS static checking.
       let bool = new Boolean(true);
       expect(bool.equals(new Boolean(true))).assertEqual(true);
     })
@@ -121,7 +120,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsExtraParameterCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing more than one parameter to equals() is compile-time invalid.
       let bool = new Boolean(true);
       expect(bool.equals(new Boolean(true))).assertEqual(true);
     })
@@ -674,7 +672,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsInstanceCallCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Boolean.equals(...) as a class call is rejected; equals is an instance method.
       let instance = new Boolean(true);
       expect(instance.equals(new Boolean(true))).assertEqual(true);
     })
@@ -688,7 +685,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsThisBindingCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Rebinding equals through call/apply/bind is outside the statically typed Boolean receiver contract.
       let instance = new Boolean(true);
       expect(instance.equals(new Boolean(true))).assertEqual(true);
     })
@@ -878,7 +874,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsWrongCallModeCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Calling equals() through Boolean instead of an instance is compile-time invalid.
       let instance = new Boolean(true);
       expect(instance.equals(new Boolean(true))).assertEqual(true);
     })
@@ -912,7 +907,6 @@ export default function BooleanEqualsTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanEqualsWrongThisCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Binding equals() to a non-Boolean receiver is rejected by ArkTS static checking.
       let instance = new Boolean(true);
       expect(instance.equals(new Boolean(true))).assertEqual(true);
     })

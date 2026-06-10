@@ -63,7 +63,7 @@ export default function CharToByteStaticTest():void {
         const result = Char.toByte(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -168,13 +168,13 @@ export default function CharToByteStaticTest():void {
         const result = Char.toByte(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
       try {
         const result = Char.toByte(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -433,9 +433,7 @@ export default function CharToByteStaticTest():void {
       for (let i = 128; i < 256; i++) {
         const ch = charFromCode(i);
         const result = Char.toByte(ch);
-        if (i > 127) {
-          expect(result === i || result === i - 256).assertTrue();
-        }
+        expect(result).assertEqual(i - 256);
       }
     });
 
@@ -466,8 +464,7 @@ export default function CharToByteStaticTest():void {
         const result = Char.toByte(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -484,8 +481,7 @@ export default function CharToByteStaticTest():void {
         const result = Char.toByte(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -503,7 +499,7 @@ export default function CharToByteStaticTest():void {
         const result = Char.toByte(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

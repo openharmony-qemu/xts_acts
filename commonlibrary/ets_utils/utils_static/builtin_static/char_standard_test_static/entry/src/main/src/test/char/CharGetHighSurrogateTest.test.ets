@@ -54,7 +54,7 @@ export default function CharGetHighSurrogateTest(): void {
         const result = Char.getHighSurrogate(undefined as UTF_16_CodePoint);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -256,7 +256,7 @@ export default function CharGetHighSurrogateTest(): void {
         const result = Char.getHighSurrogate(null as UTF_16_CodePoint);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -273,8 +273,7 @@ export default function CharGetHighSurrogateTest(): void {
         const result = Char.getHighSurrogate(0x1F600 as UTF_16_CodePoint);
         expect(result !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

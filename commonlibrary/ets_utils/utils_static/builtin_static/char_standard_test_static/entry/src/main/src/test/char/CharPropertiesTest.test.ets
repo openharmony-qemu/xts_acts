@@ -149,10 +149,7 @@ export default function CharPropertiesTest(): void {
     it('testCharProperties0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const invalidCodePoint = 0x110000;
       expect(invalidCodePoint > Char.MAX_CODE_POINT).assertTrue();
-      if (invalidCodePoint <= Number.MAX_SAFE_INTEGER) {
-        let cp: UTF_16_CodePoint = invalidCodePoint;
-        expect(Char.isValidCodePoint(cp)).assertFalse();
-      }
+      expect(Char.isValidCodePoint(invalidCodePoint)).assertFalse();
     });
 
     /**

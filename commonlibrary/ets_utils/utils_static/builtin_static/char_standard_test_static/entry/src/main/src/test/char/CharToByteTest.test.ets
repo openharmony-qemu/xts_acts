@@ -495,9 +495,7 @@ export default function CharToByteTest():void {
         const ch = charFromCode(i);
         const c = new Char(ch);
         const result = c.toByte();
-        if (i > 127) {
-          expect(result).assertEqual(i - 256);
-        }
+        expect(result).assertEqual(i - 256);
       }
     });
 

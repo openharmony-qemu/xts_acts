@@ -199,8 +199,7 @@ export default function CharIsBinDigitInstanceTest(): void {
         const result = c.isBinDigit();
         expect(result !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

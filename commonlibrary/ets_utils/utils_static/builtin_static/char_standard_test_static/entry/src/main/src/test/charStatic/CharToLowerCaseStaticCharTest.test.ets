@@ -50,14 +50,12 @@ export default function CharToLowerCaseStaticCharTest(): void {
      * @tc.level Level 2
      */
     it('testCharToLowerCaseStaticChar0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let isThrowError = false;
       try {
         const result = Char.toLowerCase(null as char);
+        expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
+        expect(error.name).assertEqual('ClassCastError');
       }
-      expect(isThrowError).assertTrue();
     });
 
     /**

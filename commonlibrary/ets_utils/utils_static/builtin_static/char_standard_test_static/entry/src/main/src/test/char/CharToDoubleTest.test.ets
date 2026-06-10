@@ -537,7 +537,6 @@ export default function CharToDoubleTest(): void {
       expect(floatResult).assertEqual(doubleResult);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TODOUBLETEST_3900
      * @tc.name testCharToDouble0039

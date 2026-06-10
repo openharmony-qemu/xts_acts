@@ -56,8 +56,7 @@ export default function CharCompareToTest(): void {
         const result = c.compareTo(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -93,8 +92,7 @@ export default function CharCompareToTest(): void {
         const result = c.compareTo(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -514,9 +512,9 @@ export default function CharCompareToTest(): void {
       const c1 = new Char(c'A');
       const c2 = new Char(c'B');
       const c3 = new Char(c'C');
-      if (c1.compareTo(c2) < 0 && c2.compareTo(c3) < 0) {
-        expect(c1.compareTo(c3) < 0).assertTrue();
-      }
+      expect(c1.compareTo(c2) < 0).assertTrue();
+      expect(c2.compareTo(c3) < 0).assertTrue();
+      expect(c1.compareTo(c3) < 0).assertTrue();
     });
 
     /**
@@ -531,9 +529,9 @@ export default function CharCompareToTest(): void {
       const c1 = new Char(c'C');
       const c2 = new Char(c'B');
       const c3 = new Char(c'A');
-      if (c1.compareTo(c2) > 0 && c2.compareTo(c3) > 0) {
-        expect(c1.compareTo(c3) > 0).assertTrue();
-      }
+      expect(c1.compareTo(c2) > 0).assertTrue();
+      expect(c2.compareTo(c3) > 0).assertTrue();
+      expect(c1.compareTo(c3) > 0).assertTrue();
     });
 
     /**
@@ -547,9 +545,8 @@ export default function CharCompareToTest(): void {
     it('testCharCompareTo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c1 = new Char(c'A');
       const c2 = new Char(c'A');
-      if (c1.compareTo(c2) === 0) {
-        expect(c1.equals(c2)).assertTrue();
-      }
+      expect(c1.compareTo(c2)).assertEqual(0);
+      expect(c1.equals(c2)).assertTrue();
     });
 
     /**
@@ -563,9 +560,8 @@ export default function CharCompareToTest(): void {
     it('testCharCompareTo0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const c1 = new Char(c'A');
       const c2 = new Char(c'B');
-      if (c1.compareTo(c2) !== 0) {
-        expect(c1.equals(c2)).assertFalse();
-      }
+      expect(c1.compareTo(c2) !== 0).assertTrue();
+      expect(c1.equals(c2)).assertFalse();
     });
 
     /**
@@ -583,9 +579,6 @@ export default function CharCompareToTest(): void {
       const compareResult = Char.compare(c1, c2);
       expect(typeof compareToResult === "number" || typeof compareToResult === "int").assertTrue();
       expect(typeof compareResult).assertEqual("boolean");
-      if (compareToResult === 0) {
-        expect(compareResult).assertTrue();
-      }
     });
 
     /**

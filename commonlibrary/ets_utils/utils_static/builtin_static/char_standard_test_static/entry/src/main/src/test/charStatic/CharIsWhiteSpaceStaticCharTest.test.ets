@@ -58,7 +58,7 @@ export default function CharIsWhiteSpaceStaticCharTest(): void {
         const result = Char.isWhiteSpace(undefined as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -119,7 +119,7 @@ export default function CharIsWhiteSpaceStaticCharTest(): void {
         const result = Char.isWhiteSpace(null as Char);
         expect(result).assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

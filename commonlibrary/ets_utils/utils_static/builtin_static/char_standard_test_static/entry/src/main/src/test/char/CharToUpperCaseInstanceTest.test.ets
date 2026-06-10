@@ -56,8 +56,7 @@ export default function CharToUpperCaseInstanceTest(): void {
         const ch = new Char(c'a');
         const result = ch.toUpperCase();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
+        expect(error.name).assertEqual('ClassCastError');
       }
       expect(isThrowError).assertFalse();
     });

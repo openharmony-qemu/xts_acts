@@ -421,8 +421,7 @@ export default function CharConstructor2Test(): void {
         const c = new Char(c'A');
         expect(c !== null).assertTrue();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error).assertFail();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

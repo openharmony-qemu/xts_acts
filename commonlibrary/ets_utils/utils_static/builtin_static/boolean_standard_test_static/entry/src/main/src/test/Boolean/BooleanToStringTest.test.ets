@@ -55,7 +55,6 @@ export default function BooleanToStringTest(): void {
      * @tc.level     Level 2
      */
     it("testBooleanToStringRejectsArgumentsCompileConstraint", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Passing arguments to instance.toString() is rejected by ArkTS static checking.
       expect(new Boolean(true).toString()).assertEqual("true");
     })
 
