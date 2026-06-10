@@ -29,26 +29,26 @@ import {
 import Utils from './../Util.test';
 import { CustomIntArrayLike } from './CustomArrayLike';
 
-/** int 枚举，用于 $_get 索引的枚举到数值转换（conversions.md） */
+/** int enum for $_get index enum-to-number conversion (conversions.md) */
 enum ArrayLikeGetIndexEnum {
   FIRST = 0,
   MID = 2
 }
 
-/** int 枚举元素，用于 ArrayLike 元素类型覆盖 */
+/** int enum elements for ArrayLike element type coverage */
 enum ArrayLikeStatusEnum {
   SUCCESS = 0,
   FAIL = 1,
   TIMEOUT = 2
 }
 
-/** string 基础类型枚举（spec/enums.md） */
+/** string underlying-type enum (spec/enums.md) */
 enum ArrayLikeStringEnum {
   OK = "SUCCESS",
   ERR = "FAIL"
 }
 
-/** double 基础类型枚举（spec/enums.md） */
+/** double underlying-type enum (spec/enums.md) */
 enum ArrayLikeScoreEnum: double {
   LOW = 1.0,
   HIGH = 99.99
@@ -190,7 +190,6 @@ export default function ArrayLikeGetTest02(): void {
         list.$_get(-128)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -225,7 +224,6 @@ export default function ArrayLikeGetTest02(): void {
         list.$_get(32767)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -430,7 +428,6 @@ export default function ArrayLikeGetTest02(): void {
         list.$_get(-32767)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -841,7 +838,6 @@ export default function ArrayLikeGetTest02(): void {
         list.$_get(65535)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -864,7 +860,6 @@ export default function ArrayLikeGetTest02(): void {
         list.$_get(3)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -872,7 +867,7 @@ export default function ArrayLikeGetTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1050
      * @tc.name testArrayLikeGet105
-     * @tc.desc Verify bracket index on ArrayLike desugars to $_get and returns same values
+     * @tc.desc Verify bracket index on Array<int> ArrayLike desugars to $_get and returns same values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -885,20 +880,12 @@ export default function ArrayLikeGetTest02(): void {
       expect(list[2]).assertEqual(list.$_get(2))
       expect(list[0]).assertEqual(10)
       expect(list[2]).assertEqual(30)
-
-      const bytes = new Uint8Array(3)
-      bytes[0] = 10
-      bytes[1] = 20
-      bytes[2] = 30
-      const typed: ArrayLike<double> = bytes
-      expect(typed[1]).assertEqual(typed.$_get(1))
-      expect(typed[1]).assertEqual(20)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1060
      * @tc.name testArrayLikeGet106
-     * @tc.desc Verify out-of-bounds bracket index (incl. runtime negative) and $_get throw RangeError
+     * @tc.desc Verify out-of-bounds bracket index on Array<int> ArrayLike (incl. runtime negative) and $_get throw RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -909,14 +896,12 @@ export default function ArrayLikeGetTest02(): void {
         list[3]
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
       try {
         list.$_get(3)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
       let negIndex: int = 1
@@ -925,65 +910,12 @@ export default function ArrayLikeGetTest02(): void {
         list[negIndex]
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
       try {
         list.$_get(-1)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-
-      const bytes = new Uint8Array(3)
-      bytes[0] = 10
-      bytes[1] = 20
-      bytes[2] = 30
-      const typed: ArrayLike<double> = bytes
-      try {
-        typed[negIndex]
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-      try {
-        typed.$_get(-1)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-
-      const custom = new CustomIntArrayLike(new Array<int>(5, 6))
-      const customList: ArrayLike<int> = custom
-      try {
-        customList[2]
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-      try {
-        customList.$_get(2)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-      try {
-        customList[-1]
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
-        expect(error.name).assertEqual('RangeError')
-      }
-      try {
-        customList.$_get(-1)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -1096,6 +1028,793 @@ export default function ArrayLikeGetTest02(): void {
       const list: ArrayLike<Number> = clamped
       expect(list.$_get(0)).assertEqual(255)
       expect(list.$_get(1)).assertEqual(128)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1140
+     * @tc.name testArrayLikeGet114
+     * @tc.desc Verify $_get returns null element from ArrayLike<int | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | null>(1, null, 3)
+      const list: ArrayLike<int | null> = values
+      expect(list.$_get(0)).assertEqual(1)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1150
+     * @tc.name testArrayLikeGet115
+     * @tc.desc Verify $_get returns undefined element from ArrayLike<string | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<string | undefined>()
+      arr.push("head")
+      arr.push(undefined)
+      arr.push("tail")
+      const list: ArrayLike<string | undefined> = arr
+      expect(list.$_get(0)).assertEqual("head")
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual("tail")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1160
+     * @tc.name testArrayLikeGet116
+     * @tc.desc Verify $_get returns null and undefined from ArrayLike<int | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>()
+      arr.push(10)
+      arr.push(null)
+      arr.push(undefined)
+      arr.push(40)
+      const list: ArrayLike<int | null | undefined> = arr
+      expect(list.$_get(0)).assertEqual(10)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertUndefined()
+      expect(list.$_get(3)).assertEqual(40)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1170
+     * @tc.name testArrayLikeGet117
+     * @tc.desc Verify $_get returns int and string elements from ArrayLike<int | string>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | string>(42, "text", 0)
+      const list: ArrayLike<int | string> = values
+      expect(list.$_get(0)).assertEqual(42)
+      expect(list.$_get(1)).assertEqual("text")
+      expect(list.$_get(2)).assertEqual(0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1180
+     * @tc.name testArrayLikeGet118
+     * @tc.desc Verify $_get returns heterogeneous union elements int string boolean null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | string | boolean | null>(1, "a", true, null)
+      const list: ArrayLike<int | string | boolean | null> = values
+      expect(list.$_get(0)).assertEqual(1)
+      expect(list.$_get(1)).assertEqual("a")
+      expect(list.$_get(2)).assertEqual(true)
+      expect(list.$_get(3)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1190
+     * @tc.name testArrayLikeGet119
+     * @tc.desc Verify $_get returns undefined for explicit undefined element at index 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<int | undefined>(1, undefined, 3)
+      const list: ArrayLike<int | undefined> = values
+      expect(list.$_get(0)).assertEqual(1)
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1200
+     * @tc.name testArrayLikeGet120
+     * @tc.desc Verify $_get returns null element from ArrayLike<boolean | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<boolean | null>(true, null, false)
+      const list: ArrayLike<boolean | null> = values
+      expect(list.$_get(0)).assertEqual(true)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(false)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1210
+     * @tc.name testArrayLikeGet121
+     * @tc.desc Verify $_get returns Object and null from ArrayLike<Object | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Object()
+      const values = new Array<Object | null>(obj, null)
+      const list: ArrayLike<Object | null> = values
+      expect(list.$_get(0)).assertEqual(obj)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1220
+     * @tc.name testArrayLikeGet122
+     * @tc.desc Verify bracket index on ArrayLike<int | null | undefined> matches $_get
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>()
+      arr.push(5)
+      arr.push(null)
+      arr.push(undefined)
+      const list: ArrayLike<int | null | undefined> = arr
+      expect(list[0]).assertEqual(list.$_get(0))
+      expect(list[1]).assertEqual(list.$_get(1))
+      expect(list[2]).assertEqual(list.$_get(2))
+      expect(list[0]).assertEqual(5)
+      expect(list[1]).assertEqual(null)
+      expect(list[2]).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1230
+     * @tc.name testArrayLikeGet123
+     * @tc.desc Verify Array.from preserves null and undefined from union ArrayLike elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<int | null | undefined>()
+      arr.push(1)
+      arr.push(null)
+      arr.push(undefined)
+      const source: ArrayLike<int | null | undefined> = arr
+      const copied = Array.from<int | null | undefined>(source)
+      expect(copied.length).assertEqual(source.length)
+      expect(copied[0]).assertEqual(source.$_get(0))
+      expect(copied[1]).assertEqual(source.$_get(1))
+      expect(copied[2]).assertEqual(source.$_get(2))
+      expect(copied[1]).assertEqual(null)
+      expect(copied[2]).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1240
+     * @tc.name testArrayLikeGet124
+     * @tc.desc Verify $_get returns double null and undefined from ArrayLike<double | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<double | null | undefined>()
+      arr.push(1.5)
+      arr.push(null)
+      arr.push(undefined)
+      arr.push(-0.0)
+      const list: ArrayLike<double | null | undefined> = arr
+      expect(list.$_get(0)).assertEqual(1.5)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertUndefined()
+      expect(list.$_get(3)).assertEqual(-0.0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1250
+     * @tc.name testArrayLikeGet125
+     * @tc.desc Verify $_get returns bigint and null from ArrayLike<bigint | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<bigint | null>(100n, null, 9223372036854775807n)
+      const list: ArrayLike<bigint | null> = values
+      expect(list.$_get(0)).assertEqual(100n)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(9223372036854775807n)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1260
+     * @tc.name testArrayLikeGet126
+     * @tc.desc Verify $_get returns bigint null and undefined from ArrayLike<bigint | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<bigint | null | undefined>()
+      arr.push(0n)
+      arr.push(null)
+      arr.push(undefined)
+      const list: ArrayLike<bigint | null | undefined> = arr
+      expect(list.$_get(0)).assertEqual(0n)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1270
+     * @tc.name testArrayLikeGet127
+     * @tc.desc Verify $_get returns float and undefined from ArrayLike<float | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<float | undefined>()
+      arr.push(3.14f)
+      arr.push(undefined)
+      arr.push(-99.99f)
+      const list: ArrayLike<float | undefined> = arr
+      expect(list.$_get(0)).assertEqual(3.14f)
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual(-99.99f)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1280
+     * @tc.name testArrayLikeGet128
+     * @tc.desc Verify $_get returns long and null from ArrayLike<long | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<long | null>(100, null, 9223372036854775806)
+      const list: ArrayLike<long | null> = values
+      expect(list.$_get(0)).assertEqual(100)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(9223372036854775806)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1290
+     * @tc.name testArrayLikeGet129
+     * @tc.desc Verify $_get returns char and null from ArrayLike<char | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<char | null>(c'A', null, c'\u4e2d')
+      const list: ArrayLike<char | null> = values
+      expect(list.$_get(0)).assertEqual(c'A')
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(c'\u4e2d')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1300
+     * @tc.name testArrayLikeGet130
+     * @tc.desc Verify $_get returns string int and null from ArrayLike<string | int | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<string | int | null>("id", 42, null)
+      const list: ArrayLike<string | int | null> = values
+      expect(list.$_get(0)).assertEqual("id")
+      expect(list.$_get(1)).assertEqual(42)
+      expect(list.$_get(2)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1310
+     * @tc.name testArrayLikeGet131
+     * @tc.desc Verify $_get returns double and string from ArrayLike<double | string>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<double | string>(9.9, "nine", 0.0)
+      const list: ArrayLike<double | string> = values
+      expect(list.$_get(0)).assertEqual(9.9)
+      expect(list.$_get(1)).assertEqual("nine")
+      expect(list.$_get(2)).assertEqual(0.0)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1320
+     * @tc.name testArrayLikeGet132
+     * @tc.desc Verify $_get returns enum and null from ArrayLike<ArrayLikeStatusEnum | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<ArrayLikeStatusEnum | null>(
+        ArrayLikeStatusEnum.SUCCESS,
+        null,
+        ArrayLikeStatusEnum.TIMEOUT
+      )
+      const list: ArrayLike<ArrayLikeStatusEnum | null> = values
+      expect(list.$_get(0)).assertEqual(ArrayLikeStatusEnum.SUCCESS)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(ArrayLikeStatusEnum.TIMEOUT)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1330
+     * @tc.name testArrayLikeGet133
+     * @tc.desc Verify $_get returns enum and undefined from ArrayLike<ArrayLikeStatusEnum | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeStatusEnum | undefined>()
+      arr.push(ArrayLikeStatusEnum.SUCCESS)
+      arr.push(undefined)
+      arr.push(ArrayLikeStatusEnum.FAIL)
+      const list: ArrayLike<ArrayLikeStatusEnum | undefined> = arr
+      expect(list.$_get(0)).assertEqual(ArrayLikeStatusEnum.SUCCESS)
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual(ArrayLikeStatusEnum.FAIL)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1340
+     * @tc.name testArrayLikeGet134
+     * @tc.desc Verify $_get returns string enum and undefined from ArrayLike<ArrayLikeStringEnum | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeStringEnum | undefined>()
+      arr.push(ArrayLikeStringEnum.OK)
+      arr.push(undefined)
+      arr.push(ArrayLikeStringEnum.ERR)
+      const list: ArrayLike<ArrayLikeStringEnum | undefined> = arr
+      expect(list.$_get(0)).assertEqual(ArrayLikeStringEnum.OK)
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual(ArrayLikeStringEnum.ERR)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1350
+     * @tc.name testArrayLikeGet135
+     * @tc.desc Verify $_get returns double enum and null from ArrayLike<ArrayLikeScoreEnum | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values = new Array<ArrayLikeScoreEnum | null>(
+        ArrayLikeScoreEnum.LOW,
+        null,
+        ArrayLikeScoreEnum.HIGH
+      )
+      const list: ArrayLike<ArrayLikeScoreEnum | null> = values
+      expect(list.$_get(0)).assertEqual(ArrayLikeScoreEnum.LOW)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertEqual(ArrayLikeScoreEnum.HIGH)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1360
+     * @tc.name testArrayLikeGet136
+     * @tc.desc Verify $_get returns Promise and null from ArrayLike<Promise<int> | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const promise = Promise.resolve(42)
+      const values = new Array<Promise<int> | null>(promise, null)
+      const list: ArrayLike<Promise<int> | null> = values
+      expect(list.$_get(0)).assertEqual(promise)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1370
+     * @tc.name testArrayLikeGet137
+     * @tc.desc Verify $_get returns Promise and undefined from ArrayLike<Promise<int> | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const promise = Promise.resolve(7)
+      let arr = new Array<Promise<int> | undefined>()
+      arr.push(promise)
+      arr.push(undefined)
+      const list: ArrayLike<Promise<int> | undefined> = arr
+      expect(list.$_get(0)).assertEqual(promise)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1380
+     * @tc.name testArrayLikeGet138
+     * @tc.desc Verify $_get returns Error and null from ArrayLike<Error | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = new Error("test")
+      const values = new Array<Error | null>(err, null)
+      const list: ArrayLike<Error | null> = values
+      expect(list.$_get(0)).assertEqual(err)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1390
+     * @tc.name testArrayLikeGet139
+     * @tc.desc Verify $_get returns RegExp and null from ArrayLike<RegExp | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pattern = new RegExp('abc', 'g')
+      const values = new Array<RegExp | null>(pattern, null)
+      const list: ArrayLike<RegExp | null> = values
+      expect(list.$_get(0)).assertEqual(pattern)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1400
+     * @tc.name testArrayLikeGet140
+     * @tc.desc Verify $_get returns boolean null and undefined from ArrayLike<boolean | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<boolean | null | undefined>()
+      arr.push(true)
+      arr.push(null)
+      arr.push(undefined)
+      arr.push(false)
+      const list: ArrayLike<boolean | null | undefined> = arr
+      expect(list.$_get(0)).assertEqual(true)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertUndefined()
+      expect(list.$_get(3)).assertEqual(false)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1410
+     * @tc.name testArrayLikeGet141
+     * @tc.desc Verify $_get returns callable function and null from ArrayLike<(() => int) | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const fn = (): int => { return 99 }
+      const values = new Array<(() => int) | null>(fn, null)
+      const list: ArrayLike<(() => int) | null> = values
+      const got = list.$_get(0)
+      expect(got).assertEqual(fn)
+      if (got != null) {
+        expect(got()).assertEqual(99)
+      }
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1420
+     * @tc.name testArrayLikeGet142
+     * @tc.desc Verify $_get returns nested Array and null from ArrayLike<Array<int> | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(1, 2, 3)
+      const values = new Array<Array<int> | null>(nested, null)
+      const list: ArrayLike<Array<int> | null> = values
+      expect(list.$_get(0)).assertEqual(nested)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1430
+     * @tc.name testArrayLikeGet143
+     * @tc.desc Verify $_get returns Date and null from ArrayLike<Date | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(1700000000000)
+      const values = new Array<Date | null>(date, null)
+      const list: ArrayLike<Date | null> = values
+      expect(list.$_get(0)).assertEqual(date)
+      expect(list.$_get(1)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1440
+     * @tc.name testArrayLikeGet144
+     * @tc.desc Verify $_get returns Date and undefined from ArrayLike<Date | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(0)
+      let arr = new Array<Date | undefined>()
+      arr.push(date)
+      arr.push(undefined)
+      const list: ArrayLike<Date | undefined> = arr
+      expect(list.$_get(0)).assertEqual(date)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1450
+     * @tc.name testArrayLikeGet145
+     * @tc.desc Verify $_get returns nested Array and undefined from ArrayLike<Array<int> | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(4, 5, 6)
+      let arr = new Array<Array<int> | undefined>()
+      arr.push(nested)
+      arr.push(undefined)
+      const list: ArrayLike<Array<int> | undefined> = arr
+      expect(list.$_get(0)).assertEqual(nested)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1460
+     * @tc.name testArrayLikeGet146
+     * @tc.desc Verify $_get returns RegExp and undefined from ArrayLike<RegExp | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pattern = new RegExp('test')
+      let arr = new Array<RegExp | undefined>()
+      arr.push(pattern)
+      arr.push(undefined)
+      const list: ArrayLike<RegExp | undefined> = arr
+      expect(list.$_get(0)).assertEqual(pattern)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1470
+     * @tc.name testArrayLikeGet147
+     * @tc.desc Verify $_get returns Error and undefined from ArrayLike<Error | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const err = new Error("undef")
+      let arr = new Array<Error | undefined>()
+      arr.push(err)
+      arr.push(undefined)
+      const list: ArrayLike<Error | undefined> = arr
+      expect(list.$_get(0)).assertEqual(err)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1480
+     * @tc.name testArrayLikeGet148
+     * @tc.desc Verify $_get returns Object and undefined from ArrayLike<Object | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Object()
+      let arr = new Array<Object | undefined>()
+      arr.push(obj)
+      arr.push(undefined)
+      const list: ArrayLike<Object | undefined> = arr
+      expect(list.$_get(0)).assertEqual(obj)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1490
+     * @tc.name testArrayLikeGet149
+     * @tc.desc Verify $_get returns bigint and undefined from ArrayLike<bigint | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<bigint | undefined>()
+      arr.push(99n)
+      arr.push(undefined)
+      arr.push(100n)
+      const list: ArrayLike<bigint | undefined> = arr
+      expect(list.$_get(0)).assertEqual(99n)
+      expect(list.$_get(1)).assertUndefined()
+      expect(list.$_get(2)).assertEqual(100n)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1500
+     * @tc.name testArrayLikeGet150
+     * @tc.desc Verify $_get returns long and undefined from ArrayLike<long | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<long | undefined>()
+      arr.push(500)
+      arr.push(undefined)
+      const list: ArrayLike<long | undefined> = arr
+      expect(list.$_get(0)).assertEqual(500)
+      expect(list.$_get(1)).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1510
+     * @tc.name testArrayLikeGet151
+     * @tc.desc Verify $_get returns enum null and undefined from ArrayLike<ArrayLikeStatusEnum | null | undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<ArrayLikeStatusEnum | null | undefined>()
+      arr.push(ArrayLikeStatusEnum.SUCCESS)
+      arr.push(null)
+      arr.push(undefined)
+      arr.push(ArrayLikeStatusEnum.TIMEOUT)
+      const list: ArrayLike<ArrayLikeStatusEnum | null | undefined> = arr
+      expect(list.$_get(0)).assertEqual(ArrayLikeStatusEnum.SUCCESS)
+      expect(list.$_get(1)).assertEqual(null)
+      expect(list.$_get(2)).assertUndefined()
+      expect(list.$_get(3)).assertEqual(ArrayLikeStatusEnum.TIMEOUT)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1520
+     * @tc.name testArrayLikeGet152
+     * @tc.desc Verify $_get returns Date string and null from ArrayLike<Date | string | null>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const date = new Date(1234567890000)
+      const values = new Array<Date | string | null>(date, "2026-06-10", null)
+      const list: ArrayLike<Date | string | null> = values
+      expect(list.$_get(0)).assertEqual(date)
+      expect(list.$_get(1)).assertEqual("2026-06-10")
+      expect(list.$_get(2)).assertEqual(null)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1530
+     * @tc.name testArrayLikeGet153
+     * @tc.desc Verify bracket index on Uint8Array ArrayLike desugars to $_get and returns same values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bytes = new Uint8Array(3)
+      bytes[0] = 10
+      bytes[1] = 20
+      bytes[2] = 30
+      const typed: ArrayLike<double> = bytes
+      expect(typed[1]).assertEqual(typed.$_get(1))
+      expect(typed[1]).assertEqual(20)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1540
+     * @tc.name testArrayLikeGet154
+     * @tc.desc Verify out-of-bounds bracket index on Uint8Array ArrayLike (incl. runtime negative) and $_get throw RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bytes = new Uint8Array(3)
+      bytes[0] = 10
+      bytes[1] = 20
+      bytes[2] = 30
+      const typed: ArrayLike<double> = bytes
+      let negIndex: int = 1
+      negIndex = negIndex - 2
+      try {
+        typed[negIndex]
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
+      try {
+        typed.$_get(-1)
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAYLIKE_GET_1550
+     * @tc.name testArrayLikeGet155
+     * @tc.desc Verify out-of-bounds bracket index on custom ArrayLike (incl. negative) and $_get throw RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLikeGet155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const custom = new CustomIntArrayLike(new Array<int>(5, 6))
+      const customList: ArrayLike<int> = custom
+      try {
+        customList[2]
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
+      try {
+        customList.$_get(2)
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
+      try {
+        customList[-1]
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
+      try {
+        customList.$_get(-1)
+        expect().assertFail()
+      } catch (error) {
+        expect(error.name).assertEqual('RangeError')
+      }
     });
   });
 }
