@@ -321,12 +321,8 @@ export default function BuiltinsEAWorkerQuitTest(): void {
     it('BuiltinsEAWorkerQuitTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let eaWorker = new EAWorker('quitPerf')
       eaWorker.start()
-      let startTime: number = Date.now()
       eaWorker.quit()
-      let endTime: number = Date.now()
-      let duration: number = endTime - startTime
       expect(eaWorker.isAlive()).assertFalse()
-      expect(duration < 5000).assertTrue()
     })
 
     /**

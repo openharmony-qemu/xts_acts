@@ -301,7 +301,7 @@ export default function BuiltinsEAWorkerPostTaskTest(): void {
     /**
      * @tc.name   BuiltinsEAWorkerPostTaskTest1500
      * @tc.number SUB_BUILTINS_EAWORKER_POSTTASK_TEST_1500
-     * @tc.desc   Verify EAWorker.postTask() performance measurement
+     * @tc.desc   Verify EAWorker.postTask() executes task successfully
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -309,12 +309,12 @@ export default function BuiltinsEAWorkerPostTaskTest(): void {
     it('BuiltinsEAWorkerPostTaskTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let eaWorker = new EAWorker('postPerf')
       eaWorker.start()
-      let startTime: number = Date.now()
-      eaWorker.postTask((): void => {})
-      let endTime: number = Date.now()
-      let duration: number = endTime - startTime
-      expect(duration < 5000).assertTrue()
+      let taskCompleted: boolean = false
+      eaWorker.postTask((): void => {
+        taskCompleted = true
+      })
       await eaWorker.join()
+      expect(taskCompleted).assertTrue()
     })
 
     /**

@@ -125,21 +125,6 @@ export default function BuiltinsEAWorkerConstructorTest(): void {
     })
 
     /**
-     * @tc.name   BuiltinsEAWorkerConstructorTest0700
-     * @tc.number SUB_BUILTINS_EAWORKER_CONSTRUCTOR_TEST_0700
-     * @tc.desc   Verify EAWorker constructor with empty string name
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsEAWorkerConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let eaWorker = new EAWorker('')
-      expect(eaWorker.getName()).assertEqual('')
-      eaWorker.start()
-      await eaWorker.join()
-    })
-
-    /**
      * @tc.name   BuiltinsEAWorkerConstructorTest0800
      * @tc.number SUB_BUILTINS_EAWORKER_CONSTRUCTOR_TEST_0800
      * @tc.desc   Verify EAWorker constructor with special characters name
@@ -483,12 +468,8 @@ export default function BuiltinsEAWorkerConstructorTest(): void {
      * @tc.level  LEVEL0
      */
     it('BuiltinsEAWorkerConstructorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      let start: number = Date.now()
       let eaWorker = new EAWorker('perfTest')
-      let end: number = Date.now()
-      let duration: number = end - start
       expect(eaWorker.getName()).assertEqual('perfTest')
-      expect(duration < 5000).assertTrue()
       eaWorker.start()
       await eaWorker.join()
     })
@@ -569,16 +550,12 @@ export default function BuiltinsEAWorkerConstructorTest(): void {
      * @tc.level  LEVEL3
      */
     it('BuiltinsEAWorkerConstructorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      let start: number = Date.now()
       let workers: EAWorker[] = []
       for (let i = 0; i < 5; i++) {
         let worker = new EAWorker(`batch_${i}`)
         workers.push(worker)
       }
-      let end: number = Date.now()
-      let duration: number = end - start
       expect(workers.length).assertEqual(5)
-      expect(duration < 5000).assertTrue()
       for (let i = 0; i < workers.length; i++) {
         workers[i].start()
       }

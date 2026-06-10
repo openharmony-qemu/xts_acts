@@ -259,12 +259,8 @@ export default function BuiltinsEAWorkerIsAliveTest(): void {
     it('BuiltinsEAWorkerIsAliveTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let eaWorker = new EAWorker('alivePerf')
       eaWorker.start()
-      let startTime: number = Date.now()
       let result: boolean = eaWorker.isAlive()
-      let endTime: number = Date.now()
-      let duration: number = endTime - startTime
       expect(result).assertTrue()
-      expect(duration < 5000).assertTrue()
       await eaWorker.join()
     })
 

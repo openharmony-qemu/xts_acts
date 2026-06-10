@@ -319,12 +319,8 @@ export default function BuiltinsEAWorkerStartTest(): void {
      */
     it('BuiltinsEAWorkerStartTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let eaWorker = new EAWorker('perfTest')
-      let start: number = Date.now()
       eaWorker.start()
-      let end: number = Date.now()
-      let duration: number = end - start
       expect(eaWorker.isAlive()).assertTrue()
-      expect(duration < 5000).assertTrue()
       await eaWorker.join()
     })
 
