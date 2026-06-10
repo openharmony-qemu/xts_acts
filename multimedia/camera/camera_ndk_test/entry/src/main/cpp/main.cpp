@@ -22,6 +22,7 @@
 
 static NDKCamera* ndkCamera_ = nullptr;
 const static int NUMBER_2 = 2;
+const static int NUMBER_3 = 3;
 struct Capture_Setting {
     int32_t quality;
     int32_t rotation;
