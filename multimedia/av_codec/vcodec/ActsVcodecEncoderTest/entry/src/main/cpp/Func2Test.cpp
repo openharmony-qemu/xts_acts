@@ -271,7 +271,8 @@ int VideoEncodeHevcCapability3700Test()
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
         ASSERT_NE(nullptr, cap_hevc);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap_hevc, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
+        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap_hevc, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;

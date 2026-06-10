@@ -437,8 +437,9 @@ int RESET_FRAMERATE_001Test()
     }
     return 0;
 }
+
 int RESET_FRAMERATE_012Test()
-{   
+{
     if (!strcmp(g_codecName, "OMX.hisi.video.encoder.avc")) {
         auto vEncSample = make_unique<VEncAPI11Sample>();
         bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CQ);
