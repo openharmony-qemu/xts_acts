@@ -1,5 +1,3 @@
-'use static'
-
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+'use static'
 
 import {
   afterEach,
@@ -36,6 +36,18 @@ export default function errorTest(): void {
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ERROR_0100
+     * @tc.name testMathError001
+     * @tc.desc Verify basic error test framework is operational
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(true).assertTrue();
+    });
 
   });
 }
