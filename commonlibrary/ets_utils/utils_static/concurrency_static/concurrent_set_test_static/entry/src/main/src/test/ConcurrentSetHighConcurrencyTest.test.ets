@@ -1,4 +1,3 @@
-﻿'use static'
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -518,7 +517,7 @@ export default function ConcurrentSetHighConcurrencyTest(): void {
       await Promise.all(promises)
       expect(addCount.load()).assertEqual(50)
       expect(hasCount.load()).assertEqual(2500)
-      expect(set.size).assertLargerOrEqual(50)
+      expect(set.size).assertEqual(100)
       Done()
     })
 

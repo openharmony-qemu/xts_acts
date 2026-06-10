@@ -233,27 +233,12 @@ export default function ConcurrentSetAddTest(): void {
     /**
      * @tc.name   ConcurrentSetAddTest1000
      * @tc.number SUB_CONCURRENTSET_ADD_TEST_1000
-     * @tc.desc   Verify ConcurrentSet add() chained call size equals number of unique elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ConcurrentSetAddTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      set.add(1).add(2).add(3)
-      expect(set.size).assertEqual(3)
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest1100
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1100
      * @tc.desc   Verify ConcurrentSet add() returns the ConcurrentSet instance itself for chaining
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetAddTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let result: containers.ConcurrentSet<number> = set.add(1)
       expect(result === set).assertTrue()
@@ -261,14 +246,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest1200
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1200
+     * @tc.name   ConcurrentSetAddTest1100
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1100
      * @tc.desc   Verify ConcurrentSet add() chained call with 5 elements all present
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetAddTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(1).add(2).add(3).add(4).add(5)
       expect(set.size).assertEqual(5)
@@ -281,14 +266,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest1300
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1300
+     * @tc.name   ConcurrentSetAddTest1200
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1200
      * @tc.desc   Verify ConcurrentSet add() chained call with duplicates only keeps unique elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetAddTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(1).add(1).add(1).add(2).add(2)
       expect(set.size).assertEqual(2)
@@ -296,14 +281,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest1400
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1400
+     * @tc.name   ConcurrentSetAddTest1300
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1300
      * @tc.desc   Verify ConcurrentSet add() chained call with 7 string elements size is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetAddTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('a').add('b').add('c').add('d').add('e').add('f').add('g')
       expect(set.size).assertEqual(7)
@@ -311,117 +296,33 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest1500
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1500
-     * @tc.desc   Verify ConcurrentSet add() single thread with number element has and size correct
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ConcurrentSetAddTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      set.add(1)
-      expect(set.has(1)).assertTrue()
-      expect(set.size).assertEqual(1)
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest1600
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1600
-     * @tc.desc   Verify ConcurrentSet add() single thread with string element has and size correct
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ConcurrentSetAddTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
-      set.add('hello')
-      expect(set.has('hello')).assertTrue()
-      expect(set.size).assertEqual(1)
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest1700
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1700
-     * @tc.desc   Verify ConcurrentSet add() single thread with boolean element has and size correct
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ConcurrentSetAddTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<boolean> = new containers.ConcurrentSet<boolean>()
-      set.add(true)
-      expect(set.has(true)).assertTrue()
-      expect(set.size).assertEqual(1)
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest1800
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1800
-     * @tc.desc   Verify ConcurrentSet add() single thread duplicate element size remains 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('ConcurrentSetAddTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      set.add(1)
-      set.add(1)
-      set.add(1)
-      expect(set.size).assertEqual(1)
-      expect(set.has(1)).assertTrue()
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest1900
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1900
-     * @tc.desc   Verify ConcurrentSet add() single thread repeated same value in loop size remains 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ConcurrentSetAddTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      for (let i = 0; i < 10; i++) {
-        set.add(100)
-      }
-      expect(set.size).assertEqual(1)
-      expect(set.has(100)).assertTrue()
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetAddTest2000
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2000
+     * @tc.name   ConcurrentSetAddTest1400
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1400
      * @tc.desc   Verify ConcurrentSet add() with 100 concurrent threads adding different elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 100; i++) {
         promises.push(addTaskNum(set, i))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(50)
+      expect(set.size).assertEqual(100)
       Done()
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2100
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2100
+     * @tc.name   ConcurrentSetAddTest1500
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1500
      * @tc.desc   Verify ConcurrentSet add() with 10 concurrent threads adding same element size is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -434,14 +335,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2200
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2200
+     * @tc.name   ConcurrentSetAddTest1600
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1600
      * @tc.desc   Verify ConcurrentSet add() with 3 concurrent threads adding different elements size is 3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 3; i++) {
@@ -453,14 +354,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2300
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2300
+     * @tc.name   ConcurrentSetAddTest1700
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1700
      * @tc.desc   Verify ConcurrentSet add() with 5 concurrent threads adding different elements size is 5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
@@ -472,14 +373,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2400
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2400
+     * @tc.name   ConcurrentSetAddTest1800
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1800
      * @tc.desc   Verify ConcurrentSet add() with 10 concurrent threads adding different elements size is 10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -491,14 +392,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2500
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2500
+     * @tc.name   ConcurrentSetAddTest1900
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_1900
      * @tc.desc   Verify ConcurrentSet add() with 10 concurrent threads adding same value size is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 10; i++) {
@@ -511,56 +412,56 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2600
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2600
+     * @tc.name   ConcurrentSetAddTest2000
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2000
      * @tc.desc   Verify ConcurrentSet add() inside TaskPool task adds 3 elements size is 3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let result: int = await outerTaskAddSize()
       expect(result).assertEqual(3)
       Done()
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2700
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2700
+     * @tc.name   ConcurrentSetAddTest2100
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2100
      * @tc.desc   Verify ConcurrentSet add() chained call inside TaskPool task size is 5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let result: int = await outerTaskChainAddSize()
       expect(result).assertEqual(5)
       Done()
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2800
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2800
+     * @tc.name   ConcurrentSetAddTest2200
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2200
      * @tc.desc   Verify ConcurrentSet add() duplicate elements inside TaskPool task size is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let result: int = await outerTaskDuplicateAddSize()
       expect(result).assertEqual(1)
       Done()
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest2900
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2900
+     * @tc.name   ConcurrentSetAddTest2300
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2300
      * @tc.desc   Verify ConcurrentSet add() inside onExecutionSucceeded callback adds elements correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(1)
       set.add(2)
@@ -570,14 +471,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest3000
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_3000
+     * @tc.name   ConcurrentSetAddTest2400
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2400
      * @tc.desc   Verify ConcurrentSet add() inside onReceiveData callback with nested tasks adds 5 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
@@ -589,14 +490,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest3100
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_3100
+     * @tc.name   ConcurrentSetAddTest2500
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2500
      * @tc.desc   Verify ConcurrentSet add() inside onReceiveData callback with same value size is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
@@ -609,33 +510,33 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest3200
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_3200
+     * @tc.name   ConcurrentSetAddTest2600
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2600
      * @tc.desc   Verify ConcurrentSet add() with 100 concurrent threads high concurrency size is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 100; i++) {
         promises.push(addTaskNum(set, i))
       }
       await Promise.all(promises)
-      expect(set.size).assertLargerOrEqual(50)
+      expect(set.size).assertEqual(100)
       Done()
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest3300
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_3300
+     * @tc.name   ConcurrentSetAddTest2700
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2700
      * @tc.desc   Verify ConcurrentSet add() inside onExecutionSucceeded callback with AtomicInt wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(1)
       set.add(2)
@@ -645,14 +546,14 @@ export default function ConcurrentSetAddTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetAddTest3400
-     * @tc.number SUB_CONCURRENTSET_ADD_TEST_3400
+     * @tc.name   ConcurrentSetAddTest2800
+     * @tc.number SUB_CONCURRENTSET_ADD_TEST_2800
      * @tc.desc   Verify ConcurrentSet add() inside onReceiveData callback with nested task pool adds 5 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetAddTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetAddTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       let promises: Promise<void>[] = []
       for (let i = 0; i < 5; i++) {
