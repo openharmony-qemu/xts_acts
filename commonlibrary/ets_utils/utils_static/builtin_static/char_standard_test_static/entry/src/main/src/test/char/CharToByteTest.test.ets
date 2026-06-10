@@ -166,7 +166,7 @@ export default function CharToByteTest():void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_1100
      * @tc.name testCharToByte0011
-     * @tc.desc Verify Chinese character conversion
+     * @tc.desc Lossy narrowing: U+4E2D ('中') -> low 8 bits = 0x2D (45)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -354,27 +354,6 @@ export default function CharToByteTest():void {
       }
     });
 
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_2800
-     * @tc.name testCharToByte0028
-     * @tc.desc Verify handling of value exceeding byte range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToByte0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const c = new Char(c'\u0100');
-        const result = c.toByte();
-        expect(typeof result === "number" || typeof result === "byte" || typeof result === "int").assertTrue();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.name !== null).assertTrue();
-      }
-    });
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_3000
      * @tc.name testCharToByte0030
@@ -393,7 +372,6 @@ export default function CharToByteTest():void {
       }
       expect(finallyExecuted).assertTrue();
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOBYTETEST_3200

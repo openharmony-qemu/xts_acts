@@ -29,7 +29,7 @@ export default function CharIsWhiteSpaceInstanceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_ISWHITESPACEINSTANCETSET_0100
+     * @tc.number SUB_COMMONLIBRARY_CHAR_ISWHITESPACEINSTANCETEST_0100
      * @tc.name testCharIsWhiteSpaceInstance0001
      * @tc.desc Verify instance method accepts no parameters
      * @tc.size MediumTest

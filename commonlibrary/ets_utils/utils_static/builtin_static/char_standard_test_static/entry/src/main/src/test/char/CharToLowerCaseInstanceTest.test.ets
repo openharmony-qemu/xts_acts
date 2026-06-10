@@ -20,7 +20,8 @@ export default function CharToLowerCaseInstanceTest(): void {
   describe('CharToLowerCaseInstanceTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -264,7 +265,7 @@ export default function CharToLowerCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOLOWERCASEINSTANCETEST_1700
      * @tc.name testCharToLowerCaseInstance0017
-     * @tc.desc Verify cannot call through static class
+     * @tc.desc Verify that the instance method toLowerCase produces the same result as the static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -367,7 +367,7 @@ export default function CharToCharStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCHARSTATICTEST_2600
      * @tc.name testCharToCharStatic0026
-     * @tc.desc Verify char return value has string length of 1
+     * @tc.desc Verify that toChar returns the correct character and its code point value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,7 +510,7 @@ export default function CharToCharStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCHARSTATICTEST_4200
      * @tc.name testCharToCharStatic0042
-     * @tc.desc Verify static toChar and toString both return string type
+     * @tc.desc Verify that the static toChar method returns the same result as the instance toChar method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -679,7 +679,7 @@ export default function CharToCharStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCHARSTATICTEST_5400
      * @tc.name testCharToCharStatic0054
-     * @tc.desc Verify toChar returns string that can use string methods
+     * @tc.desc Verify that toChar returns the correct character value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -694,7 +694,7 @@ export default function CharToCharStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCHARSTATICTEST_5500
      * @tc.name testCharToCharStatic0055
-     * @tc.desc Verify toChar result can be concatenated
+     * @tc.desc Verify that toChar returns the correct character value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -811,7 +811,7 @@ export default function CharToCharStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCHARSTATICTEST_6400
      * @tc.name testCharToCharStatic0064
-     * @tc.desc Verify static toChar and instance toString return same result
+     * @tc.desc Verify that the static toChar method returns the same result as the instance toChar method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

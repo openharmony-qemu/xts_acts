@@ -553,13 +553,10 @@ export default function CharToDoubleTest(): void {
       expect(result1).assertEqual(result2);
     });
 
-
-
-
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TODOUBLETEST_4300
      * @tc.name testCharToDouble0043
-     * @tc.desc Verify all possible char values
+     * @tc.desc Verify toDouble returns the numeric value of Unicode code points across the full BMP range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -572,7 +569,6 @@ export default function CharToDoubleTest(): void {
         expect(c.toDouble()).assertEqual(expectedVals[idx]);
       }
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TODOUBLETEST_4500

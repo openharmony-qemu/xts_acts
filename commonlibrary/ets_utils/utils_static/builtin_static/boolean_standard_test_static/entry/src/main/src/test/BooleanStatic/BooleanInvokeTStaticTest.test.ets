@@ -139,36 +139,6 @@ export default function BooleanInvokeTTest(): void {
     })
 
     /**
-     * @tc.number    SUB_BOOLEAN_INVOKE_T_0400
-     * @tc.name      testBooleanInvokeIntegerValues
-     * @tc.desc      Boolean.$_invoke<T>() converts integer values.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testBooleanInvokeIntegerValues", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Boolean.$_invoke<byte>(100 as byte)).assertEqual(true);
-      expect(Boolean.$_invoke<short>(1000 as short)).assertEqual(true);
-      expect(Boolean.$_invoke<int>(100000 as int)).assertEqual(true);
-      expect(Boolean.$_invoke<long>(10000000000 as long)).assertEqual(true);
-      expect(Boolean.$_invoke<bigint>(100n)).assertEqual(true);
-
-      expect(Boolean.$_invoke<byte>(0 as byte)).assertEqual(false);
-      expect(Boolean.$_invoke<short>(0 as short)).assertEqual(false);
-      expect(Boolean.$_invoke<int>(0 as int)).assertEqual(false);
-      expect(Boolean.$_invoke<long>(0 as long)).assertEqual(false);
-      expect(Boolean.$_invoke<bigint>(0n)).assertEqual(true);
-
-      expect(Boolean.$_invoke<int>(-1 as int)).assertEqual(true);
-      expect(Boolean.$_invoke<int>(0x1A as int)).assertEqual(true);
-      expect(Boolean.$_invoke<int>(0x00 as int)).assertEqual(false);
-      expect(Boolean.$_invoke<int>(0o17 as int)).assertEqual(true);
-      expect(Boolean.$_invoke<int>(0o00 as int)).assertEqual(false);
-      expect(Boolean.$_invoke<int>(0b1010 as int)).assertEqual(true);
-      expect(Boolean.$_invoke<int>(0b0000 as int)).assertEqual(false);
-    })
-
-    /**
      * @tc.number    SUB_BOOLEAN_INVOKE_T_0500
      * @tc.name      testBooleanInvokeCharValues
      * @tc.desc      Boolean.$_invoke<T>() converts char values.

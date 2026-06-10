@@ -278,7 +278,7 @@ export default function CharToFloatStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOFLOATSTATICTEST_2000
      * @tc.name testCharToFloatStatic0020
-     * @tc.desc Verify emoji character via surrogate pair
+     * @tc.desc Verify toFloat returns the numeric value of a high surrogate code unit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -579,7 +579,7 @@ export default function CharToFloatStaticTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOFLOATSTATICTEST_4600
      * @tc.name testCharToFloatStatic0046
-     * @tc.desc Verify float is 32-bit and double is 64-bit
+     * @tc.desc Verify that toFloat and toDouble return the same numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

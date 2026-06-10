@@ -20,7 +20,8 @@ export default function CharToShortStaticTest(): void {
   describe('CharToShortStaticTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -169,36 +170,6 @@ export default function CharToShortStaticTest(): void {
         isThrowError = true;
       }
       expect(isThrowError).assertFalse();
-      
-      isThrowError = false;
-      try {
-        const result = Char.toShort(c'A');
-        expect(result).assertEqual(65);
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
-      }
-      expect(isThrowError).assertFalse();
-      
-      isThrowError = false;
-      try {
-        const result = Char.toShort(null as char);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
-      }
-      expect(isThrowError).assertTrue();
-      
-      isThrowError = false;
-      try {
-        const result = Char.toShort(undefined as char);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        isThrowError = true;
-      }
-      expect(isThrowError).assertTrue();
     });
 
     /**

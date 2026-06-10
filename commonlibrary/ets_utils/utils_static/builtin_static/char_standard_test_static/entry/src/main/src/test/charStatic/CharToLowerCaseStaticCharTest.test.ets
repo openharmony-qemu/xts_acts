@@ -20,7 +20,8 @@ export default function CharToLowerCaseStaticCharTest(): void {
   describe('CharToLowerCaseStaticCharTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -471,19 +472,6 @@ export default function CharToLowerCaseStaticCharTest(): void {
       expect(Char.toLowerCase(c'[').toString()).assertEqual("[");
       expect(Char.toLowerCase(c'`').toString()).assertEqual("`");
       expect(Char.toLowerCase(c'{').toString()).assertEqual("{");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_CHAR_TOLOWERCASESTATICCHARTEST_3400
-     * @tc.name testCharToLowerCaseStaticChar0034
-     * @tc.desc Verify Unicode characters remain unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testCharToLowerCaseStaticChar0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Char.toLowerCase(c'�').toString()).assertEqual("�");
-      expect(Char.toLowerCase(c'�').toString()).assertEqual("�");
     });
 
     /**

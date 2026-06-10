@@ -20,7 +20,8 @@ export default function CharToShortTest(): void {
   describe('CharToShortTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -482,7 +483,7 @@ export default function CharToShortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSHORTTEST_3800
      * @tc.name testCharToShort0038
-     * @tc.desc Verify short and int ranges both include 0 to 65535
+     * @tc.desc Verify toShort and toInt return same value for ASCII character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

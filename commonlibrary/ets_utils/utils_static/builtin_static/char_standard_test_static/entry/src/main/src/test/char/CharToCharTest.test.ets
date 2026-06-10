@@ -1005,7 +1005,7 @@ export default function CharToCharTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARTOCHARTEST_CHARTOCHARTEST_8000
      * @tc.name testCharToChar0080
-     * @tc.desc Verify toChar and toString return same results
+     * @tc.desc Verify that Char.toChar and the instance toChar method return the same result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

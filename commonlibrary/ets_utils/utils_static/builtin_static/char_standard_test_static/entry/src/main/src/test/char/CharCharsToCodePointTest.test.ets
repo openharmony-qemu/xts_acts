@@ -119,7 +119,7 @@ export default function CharCharsToCodePointTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOCODETEST_0800
      * @tc.name testCharCharsToCodePoint0008
-     * @tc.desc Verify non-surrogate character parameters throw error
+     * @tc.desc Verify the calculation logic of charsToCodePoint
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

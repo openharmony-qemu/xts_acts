@@ -20,7 +20,8 @@ export default function CharToStringTest(): void {
   describe('CharToStringTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -165,7 +166,7 @@ export default function CharToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOSTRINGTEST_1100
      * @tc.name testCharToString0011
-     * @tc.desc Verify Chinese character converted to string
+     * @tc.desc Verify that an ASCII character can be correctly converted to string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

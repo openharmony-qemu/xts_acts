@@ -80,7 +80,7 @@ export default function CharGetHighSurrogateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHARGETHIGHSURROGATETEST_GETHIGHSURROGATETEST_0500
      * @tc.name testCharGetHighSurrogate0005
-     * @tc.desc Verify that illegal values throw error
+     * @tc.desc Verify that illegal values do not throw an exception and return a non-null result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

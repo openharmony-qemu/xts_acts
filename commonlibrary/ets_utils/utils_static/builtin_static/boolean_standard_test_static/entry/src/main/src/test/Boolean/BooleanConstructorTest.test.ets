@@ -1154,6 +1154,7 @@ function BooleanConstructor04Test(): void {
     beforeAll((): void => {
     })
     beforeEach(async () => {
+      await Utils.msSleep(30);
     })
     afterEach((): void => {
     })

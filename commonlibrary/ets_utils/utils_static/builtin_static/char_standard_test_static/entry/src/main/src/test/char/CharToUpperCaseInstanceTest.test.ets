@@ -20,7 +20,8 @@ export default function CharToUpperCaseInstanceTest(): void {
   describe('CharToUpperCaseInstanceTest', () => {
     beforeAll(() => {
     });
-    beforeEach(() => {
+    beforeEach(async () => {
+      await Utils.msSleep(30);
     });
     afterEach(() => {
     });
@@ -474,7 +475,7 @@ export default function CharToUpperCaseInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_CHAR_TOUPPERCASEINSTANCETEST_2900
      * @tc.name testCharToUpperCaseInstance0029
-     * @tc.desc Verify Unicode characters remain unchanged
+     * @tc.desc Verify that non-alphabetic characters remain unchanged after toUpperCase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
