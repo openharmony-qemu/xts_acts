@@ -84,7 +84,7 @@ export default function BuiltinsWorkerLocalSetTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {
-      Utils.syncSleep(200);
+      Utils.syncSleep(50);
     })
     afterAll(async (): Promise<void> => { await Utils.msSleep(100) })
 
@@ -417,12 +417,14 @@ export default function BuiltinsWorkerLocalSetTest(): void {
      */
     it('BuiltinsWorkerLocalSetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let wl: WorkerLocal<number> = new WorkerLocal<number>();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        // Expected error
+        caught = true;
       }
+      expect(caught).assertTrue();
       wl.set(100);
       expect(wl.get()).assertEqual(100);
     })
@@ -842,7 +844,6 @@ export default function BuiltinsWorkerLocalSetTest(): void {
     it('BuiltinsWorkerLocalSetTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let wl: WorkerLocal<string> = new WorkerLocal<string>(() => "async_init");
       wl.set("async_value");
-      await Utils.msSleep(500);
       expect(wl.get()).assertEqual("async_value");
     })
 

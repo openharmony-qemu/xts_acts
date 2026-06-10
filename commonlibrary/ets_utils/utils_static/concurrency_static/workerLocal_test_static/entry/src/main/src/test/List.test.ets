@@ -22,7 +22,7 @@ import builtinsWorkerLocalDeleteTest from "./BuiltinsWorkerLocalDeleteTest.test"
 import builtinsWorkerLocalGetTest from "./BuiltinsWorkerLocalGetTest.test";
 import builtinsWorkerLocalSetTest from "./BuiltinsWorkerLocalSetTest.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   workerLocalTest();
   workerLocalCoverTest();
   builtinsWorkerLocalConstructor1Test();

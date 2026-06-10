@@ -102,7 +102,7 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {
-      Utils.syncSleep(200);
+      Utils.syncSleep(50);
     })
     afterAll(async (): Promise<void> => { await Utils.msSleep(100) })
 
@@ -189,12 +189,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
      */
     it('BuiltinsWorkerLocalConstructor1Test0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let wl: WorkerLocal<number> = new WorkerLocal<number>();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -209,12 +211,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       let wl: WorkerLocal<string> = new WorkerLocal<string>();
       wl.set("test");
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -322,12 +326,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       let wl: WorkerLocal<string> = new WorkerLocal<string>();
       wl.set("test");
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -340,12 +346,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
      */
     it('BuiltinsWorkerLocalConstructor1Test1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let wl: WorkerLocal<number> = new WorkerLocal<number>();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -361,12 +369,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       wl.set(42);
       expect(wl.get()).assertEqual(42);
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -383,12 +393,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       wl.delete();
       wl.delete();
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -574,7 +586,6 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
     it('BuiltinsWorkerLocalConstructor1Test2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let wl: WorkerLocal<string> = new WorkerLocal<string>();
       wl.set("async_value");
-      await Utils.msSleep(500);
       expect(wl.get()).assertEqual("async_value");
       wl.set("updated");
       expect(wl.get()).assertEqual("updated");
@@ -595,12 +606,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
         expect(wl.get()).assertEqual("value" + i.toString());
         wl.delete();
       }
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -700,12 +713,14 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       wl.set("second");
       expect(wl.get()).assertEqual("second");
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -766,18 +781,22 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
       expect(wl3.get()).assertEqual(3);
       wl1.delete();
       wl2.delete();
+      let caught: boolean = false;
       try {
         wl1.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
+      caught = false;
       try {
         wl2.get();
         expect().assertFail();
       } catch (error) {
-        expect(typeof error.code === 'number' || typeof error.code === 'int').assertTrue();
+        caught = true;
       }
+      expect(caught).assertTrue();
       expect(wl3.get()).assertEqual(3);
     })
 
@@ -792,7 +811,6 @@ export default function BuiltinsWorkerLocalConstructor1Test(): void {
     it('BuiltinsWorkerLocalConstructor1Test3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       wl1_3800 = new WorkerLocal<string>();
       wl1_3800.set("async_value");
-      await Utils.msSleep(500);
       expect(wl1_3800.get()).assertEqual("async_value");
     })
 

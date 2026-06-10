@@ -97,7 +97,7 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {
-      Utils.syncSleep(200);
+      Utils.syncSleep(50);
     })
     afterAll(async (): Promise<void> => { await Utils.msSleep(100) })
 
@@ -129,11 +129,14 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
       let wl: WorkerLocal<string> = new WorkerLocal<string>();
       wl.set("value");
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
@@ -543,7 +546,6 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
     it('BuiltinsWorkerLocalDeleteTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       let wl: WorkerLocal<string> = new WorkerLocal<string>(() => "async_init");
       wl.set("async_value");
-      await Utils.msSleep(500);
       expect(wl.get()).assertEqual("async_value");
       wl.delete();
       expect(wl.get()).assertEqual("async_init");
@@ -583,11 +585,14 @@ export default function BuiltinsWorkerLocalDeleteTest(): void {
       let wl: WorkerLocal<number> = new WorkerLocal<number>();
       wl.set(100);
       wl.delete();
+      let caught: boolean = false;
       try {
         wl.get();
         expect().assertFail();
       } catch (error) {
+        caught = true;
       }
+      expect(caught).assertTrue();
     })
 
     /**
