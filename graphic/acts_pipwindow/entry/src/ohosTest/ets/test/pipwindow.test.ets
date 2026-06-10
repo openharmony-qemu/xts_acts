@@ -6553,10 +6553,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         try {
           pipController = await pipWindow.create(config)
           console.log(msgStr + ' startPiP_Function_Promise begin')
-          let promise = pipController.startPiP();
+          let promise = pipController?.startPiP();
           promise.then(async () => {
             console.log(msgStr + ' Succeeded in starting pip')
-            await pipController.stopPiP();
+            await pipController?.stopPiP();
             done();
           }).catch((err: BusinessError) => {
             console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
