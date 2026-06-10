@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import errorTest from './errorTest.test';
+import errorTest from './ErrorTest.test';
 
 export default function testSuite(): void {
   errorTest();

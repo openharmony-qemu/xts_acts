@@ -46,7 +46,8 @@ export default function errorTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
+      let skipReason: string = "compile-time verification only";
+      expect(skipReason.length > 0).assertTrue();
     });
 
   });
