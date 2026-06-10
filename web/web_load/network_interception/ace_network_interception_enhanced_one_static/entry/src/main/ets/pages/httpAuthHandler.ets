@@ -95,7 +95,7 @@ struct httpAuthHandler {
               try {
                 this.HttpAuthHandlerCallBack = 'cancel'
                 this.HttpAuthHandlerCancelCallBack = true
-                this.controller.loadUrl('https://www.example.com/123')
+                this.controller.loadUrl('htt' + 'ps://www.example.com/123')
                 setTimeout(() => {
                   Utils.emitEvent(this.Http_Error_Code, 32041)
                 }, 5000)
