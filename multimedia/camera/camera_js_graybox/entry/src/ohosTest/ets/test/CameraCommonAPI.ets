@@ -970,11 +970,18 @@ function previewOutputFrameStartcallback(err: BusinessError): void {
 }
 
 /**
+  * @desc 开启监听预览帧
+  * @param { camera.PreviewOutput } previewOutput 相机预览流
+  */
+export function onPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
+  previewOutput.on('frameStart', previewOutputFrameStartcallback);
+}
+
+/**
  * @desc 监听预览帧, 60s监听不到就抛异常
  * @param { camera.PreviewOutput } previewOutput 相机预览流
  */
-export async function onPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): Promise<void> {
-  previewOutput.on('frameStart', previewOutputFrameStartcallback);
+export async function waitPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): Promise<void> {
   //等待预览帧开始
   let previewOutputFrameStartTime = Date.now();
   while (!isFrameStart) {
