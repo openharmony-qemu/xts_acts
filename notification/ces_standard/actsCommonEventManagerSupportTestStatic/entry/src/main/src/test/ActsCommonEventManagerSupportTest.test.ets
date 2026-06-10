@@ -476,6 +476,8 @@ export default function ActsCommonEventManagerSupportTest() {
           .assertEqual('usual.event.data.DISK_BAD_REMOVAL')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_UNMOUNTABLE.valueOf())
           .assertEqual('usual.event.data.DISK_UNMOUNTABLE')
+        expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE.valueOf())
+          .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
         expect(commonEventManager.Support.COMMON_EVENT_DISK_EJECT.valueOf()).assertEqual('usual.event.data.DISK_EJECT')
         expect(commonEventManager.Support.COMMON_EVENT_VOLUME_REMOVED.valueOf())
           .assertEqual('usual.event.data.VOLUME_REMOVED')
@@ -1017,6 +1019,23 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
         .assertEqual('usual.event.VOLUME_DECRYPTED')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000
+     * @tc.desc   system data disk volume state changed common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DISK_VOLUME_STATE_CHANGE)
+        .assertEqual('usual.event.data.DISK_VOLUME_STATE_CHANGE')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_5000 END`)
       done()
     })
   })
