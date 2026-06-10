@@ -536,7 +536,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 }
             });
         }).catch((err: BusinessError) => {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(error)}`);
+          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           if (err?.code === 801) {
             expect(err.code).assertEqual(801);
             done();
@@ -603,7 +603,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 }
             });
         }).catch((err: BusinessError) => {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(error)}`);
+          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
           if (err?.code === 801) {
             expect(err.code).assertEqual(801);
             done();
