@@ -1,0 +1,533 @@
+'use static';
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../../hypium/index';
+import Utils from './../../Util.test';
+
+export default function StringSplitTest(): void {
+  describe('StringSplitTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0100
+     * @tc.name testSplit001
+     * @tc.desc Verify split() with comma separator splits into multiple parts
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0200
+     * @tc.name testSplit002
+     * @tc.desc Verify split() with empty separator splits each character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ABC");
+      let result: String[] = text.split("");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0300
+     * @tc.name testSplit003
+     * @tc.desc Verify split() with limit parameter caps result array size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c,d,e");
+      let result: String[] = text.split(",", 3);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0400
+     * @tc.name testSplit004
+     * @tc.desc Verify split() with separator not found returns single-element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("no-delimiter");
+      let result: String[] = text.split(".");
+      expect(result.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0500
+     * @tc.name testSplit005
+     * @tc.desc Verify split() with dot separator parses IP-like format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("192.168.1.1");
+      let result: String[] = text.split(".");
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0600
+     * @tc.name testSplit006
+     * @tc.desc Verify split() with whitespace separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello world arkts");
+      let result: String[] = text.split(" ");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0700
+     * @tc.name testSplit007
+     * @tc.desc Verify split() with tab separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a\tb\tc");
+      let result: String[] = text.split("\t");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0800
+     * @tc.name testSplit008
+     * @tc.desc Verify split() with newline separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\nline2\nline3");
+      let result: String[] = text.split("\n");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_0900
+     * @tc.name testSplit009
+     * @tc.desc Verify split() with RegExp separator matches digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a1b2c3");
+      let result: String[] = text.split(new RegExp("[0-9]"));
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1000
+     * @tc.name testSplit010
+     * @tc.desc Verify split() with underscore separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("snake_case_name");
+      let result: String[] = text.split("_");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1100
+     * @tc.name testSplit011
+     * @tc.desc Verify split() with empty string returns array with empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1200
+     * @tc.name testSplit012
+     * @tc.desc Verify split() with Chinese separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("你好,世界,测试");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1300
+     * @tc.name testSplit013
+     * @tc.desc Verify split() with consecutive separators produces empty elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,,b");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1400
+     * @tc.name testSplit014
+     * @tc.desc Verify split() with limit 1 returns single-element array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c,d");
+      let result: String[] = text.split(",", 1);
+      expect(result.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1500
+     * @tc.name testSplit015
+     * @tc.desc Verify split() accessing elements verifies correct content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("red,green,blue");
+      let result: String[] = text.split(",");
+      expect(result[0].toString()).assertEqual("red");
+      expect(result[2].toString()).assertEqual("blue");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1600
+     * @tc.name testSplit016
+     * @tc.desc Verify split() with separator at beginning produces empty first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String(",a,b");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1700
+     * @tc.name testSplit017
+     * @tc.desc Verify split() with separator at end produces empty last element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1800
+     * @tc.name testSplit018
+     * @tc.desc Verify split() with multi-character separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a::b::c");
+      let result: String[] = text.split("::");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_1900
+     * @tc.name testSplit019
+     * @tc.desc Verify split() with GBK Chinese separator splits correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("中文、测试、文本");
+      let result: String[] = text.split("、");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2000
+     * @tc.name testSplit020
+     * @tc.desc Verify split() with emoji separator splits correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a😀b😀c");
+      let result: String[] = text.split("😀");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2100
+     * @tc.name testSplit021
+     * @tc.desc Verify split() with dynamic separator and limit variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("1-2-3-4-5");
+      let sep: string = "-";
+      let limit: int = 3;
+      let result: String[] = text.split(sep, limit);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2200
+     * @tc.name testSplit022
+     * @tc.desc Verify split() with separator not found returns single element with entire string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("EntireStringHere");
+      let result: String[] = text.split(",");
+      expect(result.length).assertEqual(1);
+      expect(result[0].toString()).assertEqual("EntireStringHere");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2300
+     * @tc.name testSplit023
+     * @tc.desc Verify split() with limit 0 returns empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c");
+      let result: String[] = text.split(",", 0);
+      expect(result.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2400
+     * @tc.name testSplit024
+     * @tc.desc Verify split() with limit exceeding actual parts returns all parts
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c");
+      let result: String[] = text.split(",", 10);
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2500
+     * @tc.name testSplit025
+     * @tc.desc Verify split() with negative limit returns all parts like no limit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c,d");
+      let result: String[] = text.split(",", -1);
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2600
+     * @tc.name testSplit026
+     * @tc.desc Verify split() with RegExp digit separator and limit returns exact elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a1b2c3");
+      let result: String[] = text.split(new RegExp("[0-9]"), 2);
+      expect(result.length).assertEqual(2);
+      expect(result[0].toString()).assertEqual("a");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2700
+     * @tc.name testSplit027
+     * @tc.desc Verify split() with RegExp not matched returns single-element array with entire string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abcdef");
+      let result: String[] = text.split(new RegExp("[0-9]"));
+      expect(result.length).assertEqual(1);
+      expect(result[0].toString()).assertEqual("abcdef");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2800
+     * @tc.name testSplit028
+     * @tc.desc Verify split() with RegExp multi-char word separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("red, blue, green");
+      let result: String[] = text.split(new RegExp(", "));
+      expect(result.length).assertEqual(3);
+      expect(result[1].toString()).assertEqual("blue");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_2900
+     * @tc.name testSplit029
+     * @tc.desc Verify split() with RegExp alternation separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b-c.d");
+      let result: String[] = text.split(new RegExp("[,\\-.]"));
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_3000
+     * @tc.name testSplit030
+     * @tc.desc Verify split() with dynamic RegExp variable splits correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("x1y22z");
+      let pattern: RegExp = new RegExp("[0-9]+");
+      let result: String[] = text.split(pattern);
+      expect(result.length).assertEqual(3);
+      expect(result[0].toString()).assertEqual("x");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_3100
+     * @tc.name testSplit031
+     * @tc.desc Verify split() does not modify the original string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a,b,c");
+      let result: String[] = text.split(",");
+      expect(text.toString()).assertEqual("a,b,c");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_3200
+     * @tc.name testSplit032
+     * @tc.desc Verify split() and join() roundtrip restores original separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("apple,banana,orange");
+      let parts: String[] = text.split(",");
+      let restored: string = parts.join(",");
+      expect(restored).assertEqual("apple,banana,orange");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_3300
+     * @tc.name testSplit033
+     * @tc.desc Verify split() by whitespace to extract words
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello world arkts");
+      let words: String[] = text.split(" ");
+      expect(words.length).assertEqual(3);
+      expect(words[0].toString()).assertEqual("hello");
+      expect(words[2].toString()).assertEqual("arkts");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_3400
+     * @tc.name testSplit034
+     * @tc.desc Verify split() by newline to extract lines
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\nline2\nline3");
+      let lines: String[] = text.split("\n");
+      expect(lines.length).assertEqual(3);
+      expect(lines[1].toString()).assertEqual("line2");
+    });
+  });
+}
