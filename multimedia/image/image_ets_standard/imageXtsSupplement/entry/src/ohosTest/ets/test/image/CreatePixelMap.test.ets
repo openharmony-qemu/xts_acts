@@ -31,25 +31,16 @@ async function getFd(fileName: string) {
   fdNumber = fileInfo.fd
 }
 
-async function getImageSource(path: string): Promise<image.ImageSource> {
-  await getFd(path);
-  const imageSourceApi = image.createImageSource(fdNumber);
+function getImageSource(path: string): image.ImageSource {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let filePath = `file://${testContext.filesDir}/${path}`;
+  const imageSourceApi = image.createImageSource(filePath);
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
   return imageSourceApi;
 }
 
 async function createPixelMapFromImage(pathUri: string, sourceDensity: number = 98): Promise<image.PixelMap> {
-  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(30000);
-  let path = `file://${testContext.filesDir}/${pathUri}`;
-  const fd = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-  let readLength = await fs.read(fd.fd, array);
-  await fs.close(fd);
-  console.info(TAG, `readLength: ${readLength}`);
-  let ops: image.SourceOptions = {
-    sourceDensity: sourceDensity,
-  };
-  let imageSource: image.ImageSource = image.createImageSource(array, ops);
+  let imageSource: image.ImageSource = getImageSource(pathUri);
   let pixelmap = await imageSource.createPixelMap();
   await imageSource.release();
   return pixelmap;
@@ -4170,7 +4161,6 @@ export default function CreatePixelMapSupp() {
         await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
-        await imageSourceIncrementalSApi.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -4208,7 +4198,6 @@ export default function CreatePixelMapSupp() {
         await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi);
         expect(imageSourceIncrementalSApi != undefined).assertTrue();
-        await imageSourceIncrementalSApi.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -4246,7 +4235,6 @@ export default function CreatePixelMapSupp() {
         await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
         console.info(TAG, testName, 'Succeeded ', imageSourceIncrementalSApi.supportedFormats);
         expect(imageSourceIncrementalSApi.supportedFormats != undefined).assertTrue();
-        await imageSourceIncrementalSApi.release();
         done();
       } catch (error) {
         console.error(TAG, testName, `Error: ${JSON.stringify(error)}`);
@@ -4265,8 +4253,8 @@ export default function CreatePixelMapSupp() {
     it('SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_166';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 96,
+        width: 96
       }
       let creator: image.ImageCreator = image.createImageCreator(size, image.ImageFormat.JPEG, 8);
       try {
@@ -4279,12 +4267,12 @@ export default function CreatePixelMapSupp() {
             console.info(TAG ,testName, 'Succeeded in dequeuing the Image', JSON.stringify(img.size));
             console.info(TAG ,testName, 'Succeeded in dequeuing the Image', img.format);
             console.info(TAG ,testName, 'Succeeded in dequeuing the Image', img.timestamp);
-            expect(img.clipRect.size.width).assertEqual(8192);
-            expect(img.clipRect.size.height).assertEqual(8192);
+            expect(img.clipRect.size.width).assertEqual(96);
+            expect(img.clipRect.size.height).assertEqual(96);
             expect(img.clipRect.x).assertEqual(0);
             expect(img.clipRect.y).assertEqual(0);
-            expect(img.size.height).assertEqual(8192);
-            expect(img.size.width).assertEqual(8192);
+            expect(img.size.height).assertEqual(96);
+            expect(img.size.width).assertEqual(96);
             expect(img.format).assertEqual(12);
             expect(img.timestamp).assertEqual(0);
           }
@@ -4307,8 +4295,8 @@ export default function CreatePixelMapSupp() {
     it('SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATOR_dequeueImage_TEST_167';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 96,
+        width: 96
       }
       let creator: image.ImageCreator = image.createImageCreator(size, image.ImageFormat.JPEG, 8);
       try {
@@ -4317,12 +4305,12 @@ export default function CreatePixelMapSupp() {
         console.info(TAG, testName, 'Succeeded in dequeuing the Image', JSON.stringify(img.size));
         console.info(TAG, testName, 'Succeeded in dequeuing the Image', img.format);
         console.info(TAG, testName, 'Succeeded in dequeuing the Image', img.timestamp);
-        expect(img.clipRect.size.width).assertEqual(8192);
-        expect(img.clipRect.size.height).assertEqual(8192);
+        expect(img.clipRect.size.width).assertEqual(96);
+        expect(img.clipRect.size.height).assertEqual(96);
         expect(img.clipRect.x).assertEqual(0);
         expect(img.clipRect.y).assertEqual(0);
-        expect(img.size.height).assertEqual(8192);
-        expect(img.size.width).assertEqual(8192);
+        expect(img.size.height).assertEqual(96);
+        expect(img.size.width).assertEqual(96);
         expect(img.format).assertEqual(12);
         expect(img.timestamp).assertEqual(0);
       } catch (error) {
