@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, TextInput, InputType, Color, Search, TextArea,
   SearchController, AttributeModifier, SearchAttribute, TextAreaAttribute, TextInputAttribute, $r } from '@ohos.arkui.component'

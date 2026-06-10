@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry, Text, Column, Component, Button, ClickEvent, Row, Radio, UIContext, $r, Placement, PopupOptions,
   PopupButton, DismissPopupAction, PopupStateChangeCallback, PopupStateChangeParam, KeyboardAvoidMode, DismissReason,

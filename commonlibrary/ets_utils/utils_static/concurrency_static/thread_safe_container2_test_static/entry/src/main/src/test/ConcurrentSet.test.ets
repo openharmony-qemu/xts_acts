@@ -1,3 +1,4 @@
+'use static';
 import { describe, it, xit, expect, TestType, Size, Level, afterEach, beforeAll } from "../../../hypium/index";
 
 class Person {

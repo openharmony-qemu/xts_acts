@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import {
   NavPathStack, ButtonType, FontWeight, Component, Text, NavDestination, Column, Entry, Scroll, Button
 } from '@ohos.arkui.component'

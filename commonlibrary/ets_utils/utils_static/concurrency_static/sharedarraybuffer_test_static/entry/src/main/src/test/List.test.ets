@@ -1,3 +1,4 @@
+'use static';
 import SharedArrayBufferApiTest from './SharedArrayBufferApiTest.test';
 import SharedArrayBufferTest from './SharedArrayBufferTest.test';
 

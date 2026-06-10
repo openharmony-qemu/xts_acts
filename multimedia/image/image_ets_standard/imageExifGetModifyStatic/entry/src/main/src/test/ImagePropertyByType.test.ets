@@ -1,3 +1,4 @@
+'use static';
 import image from "@ohos.multimedia.image";
 
 interface ReadOnlyMetaDataRule {

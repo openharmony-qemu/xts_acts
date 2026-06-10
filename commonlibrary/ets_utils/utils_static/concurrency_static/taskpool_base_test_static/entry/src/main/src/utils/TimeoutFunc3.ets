@@ -1,3 +1,4 @@
+'use static';
 import { timeoutDemo2 } from './TimeoutFunc2';
 import { periodicTaskInner } from './TimeoutFuncList';
 

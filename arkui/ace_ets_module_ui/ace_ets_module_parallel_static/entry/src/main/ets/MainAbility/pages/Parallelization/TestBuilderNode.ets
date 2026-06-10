@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { UIContext, Column, Text, Button, Entry, Component, ClickEvent, Margin, NodeContainer, wrapBuilder} from '@ohos.arkui.component'
 import {BuilderNode, FrameNode, NodeController, NodeRenderType, RenderOptions, Size } from '@ohos.arkui.node'
 

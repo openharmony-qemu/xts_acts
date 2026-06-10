@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 
 import { Entry, Row, Column, Component, Button, ClickEvent,

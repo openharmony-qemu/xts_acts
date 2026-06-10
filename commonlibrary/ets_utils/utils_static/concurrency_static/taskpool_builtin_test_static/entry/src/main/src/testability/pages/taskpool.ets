@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 export function test_Global_test_001() {
   let result = encodeURI(" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEF" +

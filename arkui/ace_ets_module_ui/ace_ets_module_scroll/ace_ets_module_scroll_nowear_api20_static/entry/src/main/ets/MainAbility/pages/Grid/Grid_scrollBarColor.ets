@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 // 核心UI组件与属性（合并所有唯一项，去重后）
 import {

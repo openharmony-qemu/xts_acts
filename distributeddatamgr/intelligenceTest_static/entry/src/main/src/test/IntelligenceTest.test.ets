@@ -1,3 +1,4 @@
+'use static';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
 import intelligence from '@ohos.data.intelligence';
 import { BusinessError } from "@ohos.base";

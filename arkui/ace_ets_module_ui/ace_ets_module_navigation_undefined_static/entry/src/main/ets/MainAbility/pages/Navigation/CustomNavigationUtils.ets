@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import {
   NavPathInfo, TextAlign, ForEach, List, ListItem, HorizontalAlign, NavigationTransitionProxy,
   NavigationAnimatedTransition, NavContentInfo, Row, NavigationMenuItem, ToolbarItem, NavigationTitleMode,

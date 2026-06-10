@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import {
   Entry, Component, $r, Text, Row, Column,ClickEvent, TextInput, TextArea, Span, Search, Button,

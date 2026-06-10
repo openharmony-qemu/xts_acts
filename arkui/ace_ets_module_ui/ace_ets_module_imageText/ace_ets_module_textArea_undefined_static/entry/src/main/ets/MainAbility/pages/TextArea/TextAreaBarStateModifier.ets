@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 
 import { Entry, Text, Column, Component, TextInput, TextArea, Search,

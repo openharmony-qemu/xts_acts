@@ -1,3 +1,4 @@
+'use static';
 import BuiltinsClassGetNameTest from './class/BuiltinsClassGetNameTest.test'
 import BuiltinsClassGetSuperTest from './class/BuiltinsClassGetSuperTest.test'
 import BuiltinsClassIsSubtypeOfTest from './class/BuiltinsClassIsSubtypeOfTest.test'

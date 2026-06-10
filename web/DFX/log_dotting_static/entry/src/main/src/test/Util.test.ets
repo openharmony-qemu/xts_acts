@@ -1,3 +1,4 @@
+'use static';
 import events_emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import { RecordData } from '@ohos.base';

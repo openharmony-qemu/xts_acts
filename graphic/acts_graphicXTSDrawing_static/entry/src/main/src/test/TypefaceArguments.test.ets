@@ -1,3 +1,4 @@
+'use static';
 /**
  * @tc.name   testTypefaceArgumentsConstructorNormalStatic
  * @tc.number testTypefaceArgumentsConstructorNormalStatic

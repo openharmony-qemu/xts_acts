@@ -1,3 +1,4 @@
+'use static';
 
 import actsNotificationPriorityRefactorNoSystemTest from './ActsNotificationPriorityRefactorNoSystemTest.test'
 

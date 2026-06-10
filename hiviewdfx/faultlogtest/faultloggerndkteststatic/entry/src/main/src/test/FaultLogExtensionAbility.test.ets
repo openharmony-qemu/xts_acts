@@ -1,3 +1,4 @@
+'use static';
 import {FaultLogExtensionAbility} from '@kit.PerformanceAnalysisKit';
 import {hilog}from "@kit.PerformanceAnalysisKit"
 import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";

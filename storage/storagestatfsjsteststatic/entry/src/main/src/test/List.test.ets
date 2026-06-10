@@ -1,3 +1,4 @@
+'use static';
 import statvfs_test from './Statvfs.test';
 
 export default function testsuite() {

@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { Entry, Text, Column, Row, Component, Button, ClickEvent, Scroll, Margin, Color, $r, IDataSource,
   DataChangeListener, Swiper, SwiperController, DotIndicator, ScrollState, SwiperAnimationEvent, LazyForEach,
   TextAlign, SwiperAttribute, ArrowStyle, Curve, TabsController, AttributeModifier,Divider

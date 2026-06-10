@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { ArrayList, buffer,  Deque, HashMap, HashSet, LightWeightMap,
   LightWeightSet,
   util } from '@kit.ArkTS';

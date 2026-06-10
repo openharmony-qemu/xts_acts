@@ -1,3 +1,4 @@
+'use static';
 import hiTraceChain from '@ohos.hiTraceChain';
 import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";
 import Utils from './Util.test';

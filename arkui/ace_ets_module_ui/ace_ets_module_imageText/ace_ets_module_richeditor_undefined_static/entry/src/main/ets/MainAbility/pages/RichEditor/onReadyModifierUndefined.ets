@@ -1,4 +1,4 @@
-'use static'
+'use static';
 
 import { Entry,Text,Column,Row,Component,Button,ClickEvent,Scroll,RichEditor,RichEditorController,CutEvent,FlexAlign,
   RichEditorOptions,Color,EnterKeyType,AttributeModifier,RichEditorAttribute,TextRange,RichEditorTextSpanResult} from '@ohos.arkui.component'

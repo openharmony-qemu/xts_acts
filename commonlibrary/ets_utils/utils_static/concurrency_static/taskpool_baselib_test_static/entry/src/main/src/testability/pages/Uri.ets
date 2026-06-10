@@ -1,4 +1,4 @@
-'use static'
+'use static';
 import { uri } from '@kit.ArkTS';
 import { str2, str2Decode, str3, str3Decode } from './Testxml';
 

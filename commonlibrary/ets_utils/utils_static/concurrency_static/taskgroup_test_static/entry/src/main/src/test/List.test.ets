@@ -1,3 +1,4 @@
+'use static';
 import taskPoolTaskGroupExecuteTest from './TaskPoolTaskGroupExecute.test';
 import taskPoolErrorSuccessTest from './TaskPoolErrorSuccessTest.test';
 import taskPoolErrorSuccess2Test from './TaskPoolErrorSuccess2Test.test';
