@@ -802,16 +802,16 @@ export default function abilityTest() {
           if (err) {
             console.info(`${TAG}: setCallMetadataCallback set avatar error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
+            done();
           } else {
             console.info(`${TAG}: setCallMetadataCallback set avatar successfully`);
-            let pixMap: ESObject;
             controller.getCallMetadata((err: BusinessError, data: ESObject) => {
               if (err) {
                 console.info(`${TAG}: getCallMetadataCallback error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
               } else {
-                pixMap = data.avatar;
+                let pixMap: ESObject= data.avatar;
                 let pixelSize: ESObject = pixMap.getPixelBytesNumber();
                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                 let readBuffer = new ArrayBuffer(pixelSize);
@@ -820,6 +820,7 @@ export default function abilityTest() {
                 for (let i = 0; i < bufferArr2.length; i++) {
                   expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
                 }
+                done();
               }
             })
           }
