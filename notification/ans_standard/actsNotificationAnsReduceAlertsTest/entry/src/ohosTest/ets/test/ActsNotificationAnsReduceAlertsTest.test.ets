@@ -76,13 +76,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
 
     afterEach(async (done: Function) => {
       await sleep(1500)
-      await notificationManager.cancelAll().then(() => {
-        console.info(TEST_SUITE_NAME + `Succeeded in canceling all notification.`);
-      }).catch((err: BusinessError) => {
-        console.error(TEST_SUITE_NAME +
-          `Failed to cancel all notification. Code is ${err.code}, message is ${err.message}`);
-        expect(false).assertTrue();
-      });
+      await notificationManager.cancelAll()
       
     })
 
