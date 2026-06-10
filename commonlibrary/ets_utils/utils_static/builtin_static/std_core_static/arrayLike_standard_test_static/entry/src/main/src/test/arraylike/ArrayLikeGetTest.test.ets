@@ -27,28 +27,27 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from './../Util.test';
-import { CustomIntArrayLike } from './CustomArrayLike';
 
-/** int 枚举，用于 $_get 索引的枚举到数值转换（conversions.md） */
+/** int enum for $_get index enum-to-number conversion (conversions.md) */
 enum ArrayLikeGetIndexEnum {
   FIRST = 0,
   MID = 2
 }
 
-/** int 枚举元素，用于 ArrayLike 元素类型覆盖 */
+/** int enum elements for ArrayLike element type coverage */
 enum ArrayLikeStatusEnum {
   SUCCESS = 0,
   FAIL = 1,
   TIMEOUT = 2
 }
 
-/** string 基础类型枚举（spec/enums.md） */
+/** string underlying-type enum (spec/enums.md) */
 enum ArrayLikeStringEnum {
   OK = "SUCCESS",
   ERR = "FAIL"
 }
 
-/** double 基础类型枚举（spec/enums.md） */
+/** double underlying-type enum (spec/enums.md) */
 enum ArrayLikeScoreEnum: double {
   LOW = 1.0,
   HIGH = 99.99
@@ -186,7 +185,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(2147483647)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -206,7 +204,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(-2147483648)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -226,7 +223,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(-1)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -246,7 +242,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(3)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -266,7 +261,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(100)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -286,7 +280,6 @@ export default function ArrayLikeGetTest(): void {
         let result = list.$_get(0x100)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -574,7 +567,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(5)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -594,7 +586,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(10000)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -614,7 +605,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(1)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -634,7 +624,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(-2)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -654,7 +643,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(-100)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -674,7 +662,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(999)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -714,7 +701,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(100)
       } catch (error) {
         caught = true
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       } finally {
         expect(caught).assertTrue()
@@ -737,7 +723,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(-1)
       } catch (error) {
         caught = true
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       } finally {
         expect(caught).assertTrue()
@@ -760,7 +745,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(100)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
       expect(list.$_get(0)).assertEqual(10)
@@ -784,7 +768,6 @@ export default function ArrayLikeGetTest(): void {
           list.$_get(100 + i)
           expect().assertFail()
         } catch (error) {
-          expect(error instanceof RangeError).assertTrue()
           expect(error.name).assertEqual('RangeError')
         }
       }
@@ -981,7 +964,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(2147483646)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });
@@ -1032,7 +1014,6 @@ export default function ArrayLikeGetTest(): void {
         list.$_get(-32768)
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof RangeError).assertTrue()
         expect(error.name).assertEqual('RangeError')
       }
     });

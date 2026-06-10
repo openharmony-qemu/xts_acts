@@ -35,13 +35,13 @@ class CustomIntArrayLikeIterator implements IterableIterator<int> {
 
 /**
  * Minimal user-defined ArrayLike<int> for static semantics coverage.
- * Delegates storage to a fixed int array and implements $_get / length / $_iterator.
+ * Copies constructor input so external mutation of the source array cannot desync length or iteration.
  */
 export class CustomIntArrayLike implements ArrayLike<int>, Iterable<int> {
   private readonly data: Array<int>
 
   constructor(data: Array<int>) {
-    this.data = data
+    this.data = [...data]
   }
 
   get length(): int {
