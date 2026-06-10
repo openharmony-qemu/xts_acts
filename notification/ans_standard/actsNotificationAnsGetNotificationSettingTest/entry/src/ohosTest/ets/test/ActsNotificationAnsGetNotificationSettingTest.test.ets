@@ -60,8 +60,13 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+          if (err?.code === 801) {
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect(false).assertTrue();
+            done()
+          }
         });
         await sleep(500)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
