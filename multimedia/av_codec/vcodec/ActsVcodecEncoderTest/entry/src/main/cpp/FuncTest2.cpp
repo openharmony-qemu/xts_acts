@@ -1014,6 +1014,7 @@ int VideoEncodeSetMaxFrameDelayCount0100Test()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
     ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    return 0;
 }
 
 int VideoEncodeSetMaxFrameDelayCount0200Test()
@@ -1026,6 +1027,7 @@ int VideoEncodeSetMaxFrameDelayCount0200Test()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, -1);
     ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_Configure(venc_, format));
+    return 0;
 }
 
 int VideoEncodeSetMaxFrameDelayCount0300Test()
@@ -1038,6 +1040,7 @@ int VideoEncodeSetMaxFrameDelayCount0300Test()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, 1);
     ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    return 0;
 }
 
 int VideoEncodeSetMaxFrameDelayCount0400Test()
@@ -1050,6 +1053,7 @@ int VideoEncodeSetMaxFrameDelayCount0400Test()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_MAX_FRAME_DELAY_COUNT, 1);
     ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
+    return 0;
 }
 void InitFuncTest2()
 {
