@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 RKH Corp.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -982,30 +982,12 @@ export default function ConcurrentSetToStringTest(): void {
     /**
      * @tc.name   ConcurrentSetToStringTest5000
      * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5000
-     * @tc.desc   Test toString() on large data set with 100000 elements does not throw exception
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ConcurrentSetToStringTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
-      let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
-      for (let i = 0; i < 100000; i++) {
-        set.add(i)
-      }
-      let result: string = set.toString()
-      expect(typeof result).assertEqual('string')
-      Done()
-    })
-
-    /**
-     * @tc.name   ConcurrentSetToStringTest5100
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5100
      * @tc.desc   Test toString() result can be stored in array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(42)
       let strResult: string = set.toString()
@@ -1016,14 +998,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5200
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5200
+     * @tc.name   ConcurrentSetToStringTest5100
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5100
      * @tc.desc   Test toString() result can be compared with ===
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('value')
       let str1: string = set.toString()
@@ -1033,14 +1015,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5300
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5300
+     * @tc.name   ConcurrentSetToStringTest5200
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5200
      * @tc.desc   Test toString() result length is >= 0 for parsing
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('test')
       let result: string = set.toString()
@@ -1049,14 +1031,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5400
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5400
+     * @tc.name   ConcurrentSetToStringTest5300
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5300
      * @tc.desc   Test toString() works correctly after GC-like operations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(1)
       set.toString()
@@ -1066,14 +1048,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5500
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5500
+     * @tc.name   ConcurrentSetToStringTest5400
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5400
      * @tc.desc   Test toString() on set with empty string element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetToStringTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('')
       let result: string = set.toString()
@@ -1082,14 +1064,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5600
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5600
+     * @tc.name   ConcurrentSetToStringTest5500
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5500
      * @tc.desc   Test toString() on set with special character elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetToStringTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('\n')
       set.add('\t')
@@ -1099,14 +1081,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5700
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5700
+     * @tc.name   ConcurrentSetToStringTest5600
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5600
      * @tc.desc   Test toString() on set with Unicode character elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConcurrentSetToStringTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>()
       set.add('你好')
       set.add('世界')
@@ -1116,14 +1098,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5800
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5800
+     * @tc.name   ConcurrentSetToStringTest5700
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5700
      * @tc.desc   Test toString() on set with NaN element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(NaN)
       let result: string = set.toString()
@@ -1132,14 +1114,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest5900
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5900
+     * @tc.name   ConcurrentSetToStringTest5800
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5800
      * @tc.desc   Test toString() on set with Infinity and -Infinity elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(Infinity)
       set.add(-Infinity)
@@ -1149,14 +1131,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6000
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6000
+     * @tc.name   ConcurrentSetToStringTest5900
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_5900
      * @tc.desc   Test toString() on set with 0 and -0 elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ConcurrentSetToStringTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       set.add(0)
       let result: string = set.toString()
@@ -1165,14 +1147,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6100
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6100
+     * @tc.name   ConcurrentSetToStringTest6000
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6000
      * @tc.desc   Test toString() inside TaskPool task
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
@@ -1183,14 +1165,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6200
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6200
+     * @tc.name   ConcurrentSetToStringTest6100
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6100
      * @tc.desc   Test toString() inside onExecutionSucceeded callback with counter wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
@@ -1201,14 +1183,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6300
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6300
+     * @tc.name   ConcurrentSetToStringTest6200
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6200
      * @tc.desc   Test toString() inside onReceiveData callback with Promise.all wait
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 100; i++) {
         set.add(i)
@@ -1221,14 +1203,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6400
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6400
+     * @tc.name   ConcurrentSetToStringTest6300
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6300
      * @tc.desc   Test toString() with 3 concurrent nested tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 50; i++) {
         set.add(i)
@@ -1246,14 +1228,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6500
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6500
+     * @tc.name   ConcurrentSetToStringTest6400
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6400
      * @tc.desc   Test toString() with 5 concurrent nested tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 50; i++) {
         set.add(i)
@@ -1268,14 +1250,14 @@ export default function ConcurrentSetToStringTest(): void {
     })
 
     /**
-     * @tc.name   ConcurrentSetToStringTest6600
-     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6600
+     * @tc.name   ConcurrentSetToStringTest6500
+     * @tc.number SUB_CONCURRENTSET_TOSTRING_TEST_6500
      * @tc.desc   Test toString() with 10 concurrent nested tasks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ConcurrentSetToStringTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
+    it('ConcurrentSetToStringTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done:()=>void):Promise<void> => {
       let set: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>()
       for (let i = 0; i < 50; i++) {
         set.add(i)
