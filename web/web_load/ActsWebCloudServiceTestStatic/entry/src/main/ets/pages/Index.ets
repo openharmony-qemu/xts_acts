@@ -1,4 +1,3 @@
-'use static';
 import { Entry, Web, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
   OnProgressChangeEvent, WebResourceResponse, WebResourceRequest, SslErrorHandler,
   JsResult, HttpAuthHandler, DataResubmissionHandler, ConsoleMessage, ClientAuthenticationHandler,

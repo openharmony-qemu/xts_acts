@@ -1,4 +1,3 @@
-'use static';
 
 
 export default class Utils{

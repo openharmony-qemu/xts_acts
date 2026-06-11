@@ -1,4 +1,3 @@
-'use static';
 import globalStageTest from './GlobalStageStatic.test'
 import SevenPointZeroResMgrStageStaticTest from './SevenPointZeroResMgrStageStatic.test'
 

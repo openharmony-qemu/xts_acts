@@ -1,4 +1,3 @@
-'use static';
 import builtinsBooleanBoxBoxText from './booleanBox/BuiltinsBooleanBoxBoxTest.test';
 import builtinsBooleanBoxConstructorText from './booleanBox/BuiltinsBooleanBoxConstructorTest.test';
 import builtinsBooleanBoxGetText from './booleanBox/BuiltinsBooleanBoxGetTest.test';

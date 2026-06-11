@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 import { Entry, Text, Column, Component, Button, ClickEvent, WaterFlow, Scroller, HorizontalAlign,
   FontWeight, Divider, Color, FontWeight, ForEach, FlowItem, TextAlign } from '@ohos.arkui.component'

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 import { Entry, Row, Column, Component,Button, ClickEvent,
   Text, TextArea, TextInput, Search, ResourceStr, $r, LineBreakStrategy, CancelButtonOptions, CancelButtonSymbolOptions,
   CancelButtonStyle, IconOptions, Length, AttributeModifier, SearchAttribute, TextInputAttribute,

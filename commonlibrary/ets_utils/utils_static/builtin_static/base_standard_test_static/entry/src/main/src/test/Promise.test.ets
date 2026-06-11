@@ -1,4 +1,3 @@
-'use static';
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
 

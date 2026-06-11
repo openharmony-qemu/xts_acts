@@ -1,4 +1,3 @@
-'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import { hilog, hidebug } from '@kit.PerformanceAnalysisKit';
 import fileIo from '@ohos.file.fs';

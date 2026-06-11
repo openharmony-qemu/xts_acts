@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 import { Entry, Column, Component, Row, Toggle, Text, Button, ClickEvent, ButtonRole, Checkbox, ColumnOptions, Shape,
   Path, Builder, CheckBoxConfiguration, Margin, Visibility, LineJoinStyle, ToggleType, ContentModifier, Color,

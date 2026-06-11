@@ -1,4 +1,3 @@
-'use static';
 import actsGetLauncherAbilityInfo2Test from './GetLauncherAbilityInfo.test'
 
 export default function testsuite() {

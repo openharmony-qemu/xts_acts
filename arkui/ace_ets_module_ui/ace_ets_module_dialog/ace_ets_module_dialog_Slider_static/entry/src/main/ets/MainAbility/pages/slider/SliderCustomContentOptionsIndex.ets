@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,6 +14,7 @@
  */
 
 
+'use static';
 
 import {
   Entry,

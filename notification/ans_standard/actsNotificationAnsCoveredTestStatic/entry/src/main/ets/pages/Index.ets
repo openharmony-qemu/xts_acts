@@ -1,4 +1,3 @@
-'use static';
 // import { memo } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import {
   Entry, Text, TextAttribute, Column, Component, Button, ClickEvent

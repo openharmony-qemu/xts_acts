@@ -1,4 +1,3 @@
-'use static';
 import { describe, expect, it, Level, Size, TestType } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'

@@ -1,4 +1,3 @@
-'use static';
 import Array_Some_Test_static from './ArraySomeTest.test';
 import Array_Sort_Test_static from './ArraySortTest.test';
 import Array_Sort_Second_Test_static from './ArraySortSecondTest.test';

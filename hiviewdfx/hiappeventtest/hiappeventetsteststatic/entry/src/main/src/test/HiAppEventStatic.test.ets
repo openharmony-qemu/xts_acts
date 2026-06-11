@@ -1,4 +1,3 @@
-'use static';
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent';
 import { describe, it, TestType, Size,Level,expect } from "../../../hypium/index";
 import Utils from './Util.test';

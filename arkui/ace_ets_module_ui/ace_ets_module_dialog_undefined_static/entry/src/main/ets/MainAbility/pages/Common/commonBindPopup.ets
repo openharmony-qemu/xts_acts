@@ -1,4 +1,4 @@
-'use static';
+'use static'
 import { Entry, Component, Builder, Row, RowOptions, Flex, Image, Button, Text, Margin, $r,
   FlexDirection, PopupOptions, CustomPopupOptions, Position, Padding, KeyboardAvoidMode,
   Color, PopupStateChangeParam, Placement} from '@ohos.arkui.component';

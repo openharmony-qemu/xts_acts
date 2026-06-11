@@ -1,4 +1,3 @@
-'use static';
 import bmsZlibChecksumTest from './BmsZlibChecksum.test';
 import bmsZlibChecksumAdler32Test from './BmsZlibChecksumAdler32.test';
 import bmsZlibChecksumAdler32CombineTest from './BmsZlibChecksumAdler32Combine.test';

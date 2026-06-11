@@ -1,4 +1,3 @@
-'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import hiAppEvent from '@ohos.hiviewdfx.hiAppEvent'

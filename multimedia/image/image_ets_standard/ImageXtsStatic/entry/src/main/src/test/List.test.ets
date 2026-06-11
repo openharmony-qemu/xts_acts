@@ -1,4 +1,3 @@
-'use static';
 import CrateImageSourceTest from "./image/creatImageSource/CreatImageSource.test";
 import ImageGetComponentSupp from "./image/getComponent/GetComponent.test";
 import AuxiliaryPictureGetAuxiliaryPictureInfoTest from "./Picture/Picture.test";

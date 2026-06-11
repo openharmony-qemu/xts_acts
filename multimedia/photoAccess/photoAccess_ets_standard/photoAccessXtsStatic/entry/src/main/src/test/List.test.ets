@@ -1,4 +1,3 @@
-'use static';
 import MediaAssetChangeRequestStaticTest from "./MediaAssetChangeRequest/MediaAssetChangeRequest.test";
 import MediaAssetManagerStaticTest from "./MediaAssetManager/MediaAssetManager.test";
 import getAssetsTest from "./photoAccessHelper/PhotoAccessHelper.test";

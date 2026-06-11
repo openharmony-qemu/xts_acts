@@ -1,4 +1,3 @@
-'use static';
 export interface NormalTestObject {
   a: number;
   b: string;

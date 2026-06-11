@@ -1,4 +1,3 @@
-'use static';
 
 import ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest from './ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest.test';
 export default function testsuite() {

@@ -1,4 +1,3 @@
-'use static';
 
 import actsNotificationAnsCoveredTest from './ActsNotificationAnsCoverTest.test'
 import actsEmitterTest from'./ActsEmitterTest.test'

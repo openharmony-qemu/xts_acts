@@ -1,4 +1,3 @@
-'use static';
 // @ts-nocheck
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.

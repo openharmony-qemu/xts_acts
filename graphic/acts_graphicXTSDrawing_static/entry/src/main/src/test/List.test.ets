@@ -1,4 +1,3 @@
-'use static';
 
 import colorFilterTest from "./ColorFilter.test";
 import imageFilterTest from './ImageFilter.test'

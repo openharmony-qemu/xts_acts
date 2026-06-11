@@ -1,4 +1,3 @@
-'use static';
 import { describe, it, expect, TestType, Size, Level, beforeAll} from '../../../hypium/index';
 
 // 测试函数定义
