@@ -367,5 +367,75 @@ export default function StringToLocaleLowerCaseTest(): void {
       let result: string = text.toLocaleLowerCase();
       expect(result).assertEqual("2024-06-10 !@#$");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2400
+     * @tc.name testToLocaleLowerCase024
+     * @tc.desc Verify toLocaleLowerCase("tr") handles Turkish I/i (dotted/dotless) correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("İSTANBUL");
+      let result: string = text.toLocaleLowerCase("tr");
+      expect(result).assertEqual("istanbul");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2500
+     * @tc.name testToLocaleLowerCase025
+     * @tc.desc Verify toLocaleLowerCase("de") converts German STRASSE with ß
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("STRAßE");
+      let result: string = text.toLocaleLowerCase("de");
+      expect(result).assertEqual("straße");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2600
+     * @tc.name testToLocaleLowerCase026
+     * @tc.desc Verify toLocaleLowerCase("el") converts Greek text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ΚΑΛΗΜΕΡΑ");
+      let result: string = text.toLocaleLowerCase("el");
+      expect(result).assertEqual("καλημερα");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2700
+     * @tc.name testToLocaleLowerCase027
+     * @tc.desc Verify toLocaleLowerCase() with non-existent locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("HELLO");
+      let result: string = text.toLocaleLowerCase("zz-ZZ");
+      expect(result).assertEqual("hello");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2800
+     * @tc.name testToLocaleLowerCase028
+     * @tc.desc Verify toLocaleLowerCase() with empty string locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ABC");
+      let result: string = text.toLocaleLowerCase("");
+      expect(result).assertEqual("abc");
+    });
   });
 }

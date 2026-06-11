@@ -64,7 +64,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("الاختبار");
-      let result: number = text.localeCompare("الاختبار");
+      let result: number = text.localeCompare("الاختبار", "ar-SA");
       expect(result).assertEqual(0);
     });
 
@@ -78,7 +78,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("你好");
-      let result: number = text.localeCompare("你好");
+      let result: number = text.localeCompare("你好", "zh-Hans-CN");
       expect(result).assertEqual(0);
     });
 
@@ -138,7 +138,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("テスト");
-      let result: number = text.localeCompare("テスト");
+      let result: number = text.localeCompare("テスト", "ja-JP");
       expect(result).assertEqual(0);
     });
 
@@ -152,7 +152,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("АБВ");
-      let result: number = text.localeCompare("АБВ");
+      let result: number = text.localeCompare("АБВ", "ru-RU");
       expect(result).assertEqual(0);
     });
 
@@ -166,7 +166,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("😀🎉");
-      let result: number = text.localeCompare("😀🎉");
+      let result: number = text.localeCompare("😀🎉", "en-US");
       expect(result).assertEqual(0);
     });
 
@@ -180,7 +180,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("café");
-      let result: number = text.localeCompare("café");
+      let result: number = text.localeCompare("café", "en-US");
       expect(result).assertEqual(0);
     });
 
@@ -194,7 +194,7 @@ export default function StringLocaleCompareTest(): void {
      */
     it('testLocaleCompare011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("中文测试");
-      let result: number = text.localeCompare("中文测试");
+      let result: number = text.localeCompare("中文测试", "zh-Hans-CN");
       expect(result).assertEqual(0);
     });
 
@@ -315,6 +315,106 @@ export default function StringLocaleCompareTest(): void {
       let locales: string[] = ["en-US"];
       let result: number = text.localeCompare("abc", locales);
       expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2000
+     * @tc.name testLocaleCompare020
+     * @tc.desc Verify localeCompare() with German de-DE locale returns 0 for identical strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Straße");
+      let result: number = text.localeCompare("Straße", "de-DE");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2100
+     * @tc.name testLocaleCompare021
+     * @tc.desc Verify localeCompare() with Turkish tr-TR locale
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("İstanbul");
+      let result: number = text.localeCompare("İstanbul", "tr-TR");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2200
+     * @tc.name testLocaleCompare022
+     * @tc.desc Verify localeCompare() with Korean ko-KR locale returns 0 for identical strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("한국어");
+      let result: number = text.localeCompare("한국어", "ko-KR");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2300
+     * @tc.name testLocaleCompare023
+     * @tc.desc Verify localeCompare() with French fr-FR locale returns 0 for identical strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("français");
+      let result: number = text.localeCompare("français", "fr-FR");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2400
+     * @tc.name testLocaleCompare024
+     * @tc.desc Verify localeCompare() accepts locales as array with multiple fallback locales
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello");
+      let locales: string[] = ["de-DE", "en-US"];
+      let result: number = text.localeCompare("hello", locales);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2500
+     * @tc.name testLocaleCompare025
+     * @tc.desc Verify localeCompare() with non-existent locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello");
+      let result: number = text.localeCompare("hello", "xx-XX");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2600
+     * @tc.name testLocaleCompare026
+     * @tc.desc Verify localeCompare() with empty string locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let result: number = text.localeCompare("xyz", "");
+      let lt: boolean = result < 0;
+      expect(lt).assertTrue();
     });
   });
 }

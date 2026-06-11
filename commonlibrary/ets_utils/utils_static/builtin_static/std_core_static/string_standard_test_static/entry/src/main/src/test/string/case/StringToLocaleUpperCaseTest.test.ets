@@ -324,5 +324,75 @@ export default function StringToLocaleUpperCaseTest(): void {
       let result: string = text.toLocaleUpperCase();
       expect(result).assertEqual("ALREADY UPPERCASE TEXT");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2100
+     * @tc.name testToLocaleUpperCase021
+     * @tc.desc Verify toLocaleUpperCase("de") converts German ß to SS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("straße");
+      let result: string = text.toLocaleUpperCase("de");
+      expect(result).assertEqual("STRASSE");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2200
+     * @tc.name testToLocaleUpperCase022
+     * @tc.desc Verify toLocaleUpperCase("az") follows Azerbaijani locale rules
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("i");
+      let result: string = text.toLocaleUpperCase("az");
+      expect(result).assertEqual("İ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2300
+     * @tc.name testToLocaleUpperCase023
+     * @tc.desc Verify toLocaleUpperCase("el") converts Greek text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("καλημερα");
+      let result: string = text.toLocaleUpperCase("el");
+      expect(result).assertEqual("ΚΑΛΗΜΕΡΑ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2400
+     * @tc.name testToLocaleUpperCase024
+     * @tc.desc Verify toLocaleUpperCase() with non-existent locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello");
+      let result: string = text.toLocaleUpperCase("invalid");
+      expect(result).assertEqual("HELLO");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2500
+     * @tc.name testToLocaleUpperCase025
+     * @tc.desc Verify toLocaleUpperCase() with empty string locale falls back gracefully
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let result: string = text.toLocaleUpperCase("");
+      expect(result).assertEqual("ABC");
+    });
   });
 }

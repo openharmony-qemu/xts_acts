@@ -56,7 +56,7 @@ export default function StringIsWellFormedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_0200
      * @tc.name testIsWellFormed002
-     * @tc.desc Verify isWellFormed() on unpaired high surrogate U+D800 returns false
+     * @tc.desc Verify isWellFormed() on unpaired high surrogate (0xD800) returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -96,7 +96,7 @@ export default function StringIsWellFormedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_0500
      * @tc.name testIsWellFormed005
-     * @tc.desc Verify isWellFormed() on unpaired low surrogate U+DC00 returns false
+     * @tc.desc Verify isWellFormed() on unpaired low surrogate (0xDC00) returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

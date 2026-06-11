@@ -107,7 +107,7 @@ export default function StringStringTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStringType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let name: string = new String("ArkTS");
+      let name: String = new String("ArkTS");
       expect(name instanceof String).assertTrue();
     });
 
@@ -174,7 +174,7 @@ export default function StringStringTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStringType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = new String("hello");
+      let s: String = new String("hello");
       expect(s instanceof String).assertTrue();
       expect(s instanceof Object).assertTrue();
     });
