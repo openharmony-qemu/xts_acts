@@ -300,17 +300,16 @@ export default function StringPadEndTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_1900
      * @tc.name testPadEnd019
-     * @tc.desc Verify padEnd() with very large targetLength throws RangeError
+     * @tc.desc Verify padEnd() with large targetLength pads to requested length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testPadEnd019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Negative targetLength deterministically returns original string
       const text = new String("AB");
-      let result: string = text.padEnd(-5, "0");
-      expect(result).assertEqual("AB");
-      expect(result.length).assertEqual(2);
+      let result: string = text.padEnd(100, "0");
+      expect(result.length).assertEqual(100);
+      expect(result.startsWith("AB")).assertTrue();
     });
 
     /**

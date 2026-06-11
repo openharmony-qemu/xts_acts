@@ -175,5 +175,47 @@ export default function StringPadRightTest(): void {
       ;
       expect(result.toString()).assertEqual("***");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1300
+     * @tc.name testPadRight013
+     * @tc.desc Verify padRight() preserves ISO 8859-1 Latin-1 source content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Caf\u00E9");
+      let result: String = text.padRight(c'-', 6);
+      expect(result.toString()).assertEqual("Caf\u00E9--");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1400
+     * @tc.name testPadRight014
+     * @tc.desc Verify padRight() can use a Unicode BMP char as padChar
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let result: String = text.padRight(c'\u4E2D', 3);
+      expect(result.toString()).assertEqual("A\u4E2D\u4E2D");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1500
+     * @tc.name testPadRight015
+     * @tc.desc Verify padRight() can use tab as a C0 control padChar
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("X");
+      let result: String = text.padRight(c'\t', 3);
+      expect(result.toString()).assertEqual("X\t\t");
+    });
   });
 }

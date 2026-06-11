@@ -273,7 +273,7 @@ export default function StringRepeatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPEAT_1700
      * @tc.name testRepeat017
-     * @tc.desc Verify repeat() with count that would exceed max string length throws RangeError
+     * @tc.desc Verify repeat() with multi-character input has length count times original length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
