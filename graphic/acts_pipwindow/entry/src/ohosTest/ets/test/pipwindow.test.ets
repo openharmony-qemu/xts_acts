@@ -6627,6 +6627,9 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let STOPPED: boolean = false;
       try {
         let pipController = await pipWindow.create(config);
+
+        if (deviceType !== 'car') expect().assertFail();
+
         console.log(msgStr + 'create pip1');
         pipController.on('stateChange', (state, reason) => {
           console.log(msgStr + 'pip1 stateChange state : ' + state);
