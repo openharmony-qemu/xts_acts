@@ -386,18 +386,18 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.name   AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
-    * @tc.number AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
-    * @tc.desc   setDefaultOutputDevice with SPEAKER test.
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+    * @tc.desc   setDefaultOutputDevice with DEFAULT test.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let flag: boolean | null = null;
       let AudioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-      console.info(`AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
+      console.info(`SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_DEFAULT_0100
             outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       console.info(`${TagFrmwk}: Determine if this is a default device`)
       if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
