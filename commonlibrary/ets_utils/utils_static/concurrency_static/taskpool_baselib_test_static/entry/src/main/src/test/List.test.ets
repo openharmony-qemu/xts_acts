@@ -1,4 +1,3 @@
-'use static';
 import bufferTest from './Buffer.test';
 import ConcurrentLibTest from './ConcurrentLibTest.test';
 import xmlDynamic1 from './DynamicXml.test';

@@ -1,4 +1,3 @@
-'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,7 @@
  * LayoutPolicy fixAtIdealSize Test Page
  * 测试 LayoutPolicy.fixAtIdealSize 布局策略属性（适配手表）
  */
+'use static'
 import {
   Entry,
   Text,

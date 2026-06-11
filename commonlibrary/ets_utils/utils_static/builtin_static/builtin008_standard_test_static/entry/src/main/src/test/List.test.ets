@@ -1,4 +1,3 @@
-'use static';
 import ArrayCopyWithin from "./ArrayCopyWithin.test";
 import ArrayIncludes from "./ArrayIncludes.test";
 import BuiltinArrayAt from "./BuiltinArrayAt.test";

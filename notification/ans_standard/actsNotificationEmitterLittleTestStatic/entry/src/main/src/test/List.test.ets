@@ -1,4 +1,3 @@
-'use static';
 
 import ActsNotificationEmitterLittleStaticTest from './ActsNotificationEmitterLittleStaticTest.test';
 export default function testsuite(): void {

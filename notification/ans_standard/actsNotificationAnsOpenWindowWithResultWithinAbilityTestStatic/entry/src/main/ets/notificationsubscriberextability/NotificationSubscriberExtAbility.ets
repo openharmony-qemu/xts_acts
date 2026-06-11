@@ -1,4 +1,3 @@
-'use static';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import NotificationSubscriberExtensionAbility from '@ohos.application.NotificationSubscriberExtensionAbility'
 import extensionSubscription from '@ohos.notificationExtensionSubscription';

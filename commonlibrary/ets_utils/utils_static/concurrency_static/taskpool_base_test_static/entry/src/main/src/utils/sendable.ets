@@ -1,4 +1,3 @@
-'use static';
 export class SendableClass {
   public num: number;
   public para: undefined;

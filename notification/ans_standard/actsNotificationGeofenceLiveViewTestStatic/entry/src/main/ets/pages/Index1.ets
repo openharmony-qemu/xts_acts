@@ -1,4 +1,3 @@
-'use static';
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 

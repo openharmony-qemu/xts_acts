@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 import {
   Entry, Text, ColumnOptions, Column, Component, Button, ClickEvent, Color, Row, RichEditor, RichEditorController,

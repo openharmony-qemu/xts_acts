@@ -1,4 +1,3 @@
-'use static';
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +13,7 @@
  * limitations under the License.
  */
 
+'use static'
 
 import { Entry, Component, Column, Text, Color, TapGesture, LongPressGesture } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';

@@ -1,4 +1,3 @@
-'use static';
 import DataObjectErrTest from './DataObjectErrTest.test';
 import ObjectStoreJsunitV9 from './ObjectStoreJsunitV9.test';
 import ObjectStoreJsunitV9Ets from './ObjectStoreJsunitV9Ets.test';

@@ -1,4 +1,3 @@
-'use static';
 import ConcurrentHashMapTest from './ConcurrentHashMap.test';
 import ConcurrentSetTest from "./ConcurrentSet.test";
 

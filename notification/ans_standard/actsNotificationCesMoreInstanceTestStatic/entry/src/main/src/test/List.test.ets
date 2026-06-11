@@ -1,4 +1,3 @@
-'use static';
 
 import ActsNotificationCesMoreInstanceStaticTest from './ActsNotificationCesMoreInstanceStaticTest.test';
 export default function testsuite() {

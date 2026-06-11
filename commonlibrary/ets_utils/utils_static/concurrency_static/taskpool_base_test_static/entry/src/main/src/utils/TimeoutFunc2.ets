@@ -1,4 +1,3 @@
-'use static';
 import { asyncSleep } from './exportFunclist';
 import { level3Task } from './TimeoutFuncList';
 

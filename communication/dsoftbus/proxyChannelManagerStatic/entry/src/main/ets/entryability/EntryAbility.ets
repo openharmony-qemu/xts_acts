@@ -1,4 +1,3 @@
-'use static';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import common from "@ohos.app.ability.common";

@@ -1,4 +1,3 @@
-'use static';
 import asyncAdvancedTest from './AsyncAdvancedTest.test';
 import asyncBoundaryTest from './AsyncBoundaryTest.test';
 import asyncInteropTest from './AsyncInteropTest.test';

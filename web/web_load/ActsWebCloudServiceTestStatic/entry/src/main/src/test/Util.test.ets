@@ -1,4 +1,3 @@
-'use static';
 import { expect } from "../../../hypium/index";
 import emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
