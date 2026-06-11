@@ -27,7 +27,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0101
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0100
      * @tc.desc   Normal test: convert "123.45xyz"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -43,7 +43,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0102
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0101
      * @tc.desc   Normal test: convert "  -123.45rest"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal003
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0103
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0102
      * @tc.desc   Normal test: convert "456.75" (no endptr)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0104
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0103
      * @tc.desc   Normal test: convert "+inf"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0104
      * @tc.desc   Normal test: convert hex float
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal006
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0105
      * @tc.desc   Normal test: convert "nan(payload)rest"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal007
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0106
      * @tc.desc   Normal test: locale NULL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlNormal008
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0107
      * @tc.desc   Normal test: LC_CTYPE only locale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlAbnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0108
      * @tc.desc   Abnormal test: invalid input "xxx123.45"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0109
      * @tc.desc   Boundary test: empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0110
      * @tc.desc   Boundary test: single minus sign
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0113
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0111
      * @tc.desc   Boundary test: near LDBL_MIN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary004
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0114
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0112
      * @tc.desc   Boundary test: near LDBL_MAX
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary005
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0115
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0113
      * @tc.desc   Boundary test: overflow to inf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary006
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0116
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0114
      * @tc.desc   Boundary test: no integer part ".5"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -267,7 +267,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlBoundary007
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0117
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0115
      * @tc.desc   Boundary test: extreme hex float
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0118
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0116
      * @tc.desc   Functional test: multiple valid conversions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc002
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0119
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0117
      * @tc.desc   Functional test: French locale with comma decimal (always success)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -315,7 +315,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc003
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0120
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0118
      * @tc.desc   Functional test: French locale hex float (always success)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc004
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0121
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0119
      * @tc.desc   Functional test: overflow/underflow detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc005
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0122
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0120
      * @tc.desc   Functional test: complex scientific notation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc006
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0123
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0121
      * @tc.desc   Functional test: signed zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -379,7 +379,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlFunc007
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0124
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0122
      * @tc.desc   Functional test: high precision hex floats (depends on LDBL_MANT_DIG)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -395,7 +395,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlStable001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0125
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0123
      * @tc.desc   Stability: repeated conversions 10000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -411,7 +411,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlStable002
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0126
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0124
      * @tc.desc   Stability: multi-threaded conversions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -427,7 +427,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0127
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0125
      * @tc.desc   Stability: very long string (8192 X's then number)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlStable004
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0128
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0126
      * @tc.desc   Stability: repeated locale creation and conversion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -459,7 +459,7 @@ export default function wcstoldlNdkTest() {
 
     /**
      * @tc.name   testWcstoldlStable005
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0129
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0127
      * @tc.desc   Stability: stub mode consistency check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -474,4 +474,3 @@ export default function wcstoldlNdkTest() {
     });
   });
 }
-

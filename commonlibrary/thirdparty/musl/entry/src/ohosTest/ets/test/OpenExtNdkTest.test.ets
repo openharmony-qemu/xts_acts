@@ -75,7 +75,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Abnormal004
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0105
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0103
      * @tc.desc   Abnormal test: empty path (should fail with ENOENT)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Abnormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0106
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0104
      * @tc.desc   Abnormal test: invalid flags (EINVAL expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Abnormal006
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0107
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0105
      * @tc.desc   Abnormal test: non-existent file (ENOENT expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Abnormal007
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0108
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0106
      * @tc.desc   Abnormal test: open directory with O_WRONLY (EISDIR expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Boundary001
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0109
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0107
      * @tc.desc   Boundary test: path length > PATH_MAX (ENAMETOOLONG expected)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Boundary002
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0110
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0108
      * @tc.desc   Boundary test: flags = 0 (O_RDONLY)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Boundary003
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0111
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0109
      * @tc.desc   Boundary test: O_CLOEXEC flag, verify FD_CLOEXEC set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Boundary005
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0112
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0110
      * @tc.desc   Boundary test: symlink test (skipped, always success in full mode)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Func001
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0113
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0111
      * @tc.desc   Functional: compare open2 with standard open
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Func003
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0114
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0112
      * @tc.desc   Functional: verify function works in full mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Func004
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0115
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0113
      * @tc.desc   Functional: O_DIRECT flag test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -251,7 +251,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Stable001
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0116
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0114
      * @tc.desc   Stability: repeated open/close 10000 times
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -267,7 +267,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Stable002
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0117
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0115
      * @tc.desc   Stability: multi-threaded concurrent open/close
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Stable003
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0118
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0116
      * @tc.desc   Stability: exhaust file descriptors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function openExtNdkTest() {
 
     /**
      * @tc.name   testOpen2Stable004
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0119
+     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0117
      * @tc.desc   Stability: stub mode repeated calls consistency
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

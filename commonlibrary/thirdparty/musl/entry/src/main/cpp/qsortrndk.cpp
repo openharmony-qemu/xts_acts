@@ -249,6 +249,7 @@ static napi_value QsortR(napi_env env, napi_callback_info info)
         int values[] = {9, 2, 7, 11, 3, 87, 34, 6};
         size_t size = sizeof(values) / sizeof(values[0]);
         int descending = 1;
+        errno = 0;  // Clear errno before call
         qsortR(values, size, sizeof(values[0]), CompareInts, &descending);
         res = IsSortedDescending(values, size) ? 1 : 0;
     }

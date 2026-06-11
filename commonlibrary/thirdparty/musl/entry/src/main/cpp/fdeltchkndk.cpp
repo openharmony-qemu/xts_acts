@@ -23,6 +23,7 @@
 #include <climits>
 #include <thread>
 #include <vector>
+#include <atomic>
 
 static constexpr int RANGE_OFFSET = 10;
 static constexpr int STABLE_LOOP_10000 = 10000;
@@ -316,14 +317,19 @@ static napi_value FdeltChkStable002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return Ret(env, 0);
     }
+    std::atomic<bool> allSuccess(true);
     std::vector<std::thread> threads;
     for (int t = 0; t < THREAD_COUNT; ++t) {
-        threads.emplace_back([]() { StableWorkerFunc(); });
+        threads.emplace_back([&allSuccess]() {
+            if (!StableWorkerFunc()) {
+                allSuccess.store(false);
+            }
+        });
     }
     for (auto& th : threads) {
         th.join();
     }
-    return Ret(env, 1);
+    return Ret(env, allSuccess.load() ? 1 : 0);
 }
 
 static napi_value FdeltChkStable003(napi_env env, napi_callback_info info)
@@ -386,4 +392,3 @@ extern "C" __attribute__((constructor)) void RegisterModule(void)
 {
     napi_module_register(&demoModule);
 }
-

@@ -23,6 +23,7 @@
 #include <thread>
 #include <algorithm>
 #include <vector>
+#include <atomic>
 
 static constexpr int BUF_SIZE_10 = 10;
 static constexpr int TEST_LEN_5 = 5;
@@ -263,10 +264,10 @@ static napi_value ExplicitBzeroChkFunc002(napi_env env, napi_callback_info info)
     return Ret(env, 0);
 }
 
+// In stub mode, the function returns ENOSYS and does not modify memory; this test expects that behavior.
 static napi_value ExplicitBzeroChkFunc003(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        // In full mode, the function should work normally; this test is not applicable
         return Ret(env, 0);
     }
     char buf[BUF_SIZE_10];
@@ -333,14 +334,19 @@ static napi_value ExplicitBzeroChkStable002(napi_env env, napi_callback_info inf
     if (IsStubMode()) {
         return Ret(env, 0);
     }
+    std::atomic<bool> allSuccess(true);
     std::vector<std::thread> threads;
     for (int t = 0; t < THREAD_COUNT; ++t) {
-        threads.emplace_back([]() { StableWorkerFunc(); });
+        threads.emplace_back([&allSuccess]() {
+            if (!StableWorkerFunc()) {
+                allSuccess.store(false);
+            }
+        });
     }
     for (auto& th : threads) {
         th.join();
     }
-    return Ret(env, 1);
+    return Ret(env, allSuccess.load() ? 1 : 0);
 }
 
 static napi_value ExplicitBzeroChkStable004(napi_env env, napi_callback_info info)
@@ -357,7 +363,7 @@ static napi_value ExplicitBzeroChkStable004(napi_env env, napi_callback_info inf
             if (buf[j] != 0) {
                 Ret(env, 0);
             }
-        }  
+        }
     }
     return Ret(env, 1);
 }

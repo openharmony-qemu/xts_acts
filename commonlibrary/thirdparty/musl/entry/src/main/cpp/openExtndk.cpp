@@ -24,6 +24,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <atomic>
 
 static constexpr int LONG_PATH_LEN = 4097;
 static constexpr int STABLE_LOOP_10000 = 10000;
@@ -315,12 +316,15 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
     if (IsStubMode()) {
         return Ret(env, 0);
     }
-    auto worker = [](int) {
+    std::atomic<bool> allSuccess(true);
+    auto worker = [&allSuccess](int) {
         for (int i = 0; i < THREAD_WORK_LOOP; ++i) {
             int fd = CallOpen2("/dev/null", O_RDONLY);
-            if (fd >= 0) {
-                close(fd);
+            if (fd < 0) {
+                allSuccess.store(false);
+                break;
             }
+            close(fd);
         }
     };
     std::vector<std::thread> threads;
@@ -330,7 +334,7 @@ static napi_value Open2Stable002(napi_env env, napi_callback_info info)
     for (auto& t : threads) {
         t.join();
     }
-    return Ret(env, 1);
+    return Ret(env, allSuccess.load() ? 1 : 0);
 }
 
 static napi_value Open2Stable003(napi_env env, napi_callback_info info)
