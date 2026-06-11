@@ -48,14 +48,14 @@ struct MonitorNull {
     });
   }
 
-  @Monitor("", "")
+  @Monitor('', '')
   onChange4(mon: IMonitor) {
     mon.dirty.forEach((path: string) => {
       console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
     });
   }
 
-  @Monitor("")
+  @Monitor('')
   onChange5(mon: IMonitor) {
     mon.dirty.forEach((path: string) => {
       console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
