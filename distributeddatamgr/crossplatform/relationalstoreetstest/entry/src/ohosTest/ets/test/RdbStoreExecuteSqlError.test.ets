@@ -141,7 +141,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError001, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code == 401).assertTrue();
         done();
       }
       console.log(TAG + "************* testRdbStoreExecuteSqlError001 end *************");
@@ -163,7 +163,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done()
       } catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError002, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code == 401).assertTrue();
         done();
       }
       console.log(TAG + "************* testRdbStoreExecuteSqlError002 end *************");
@@ -185,7 +185,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done()
       } catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError003, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual("401");
+        expect(err.code == 401).assertTrue();
         done();
       }
       console.log(TAG + "************* testRdbStoreExecuteSqlError003 end *************");
@@ -207,7 +207,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError004, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14800000);
+        expect(err.code == 14800000).assertTrue();
         done();
       }
       console.log(TAG + "************* testRdbStoreExecuteSqlError004 end *************");
@@ -229,7 +229,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError005, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14800000);
+        expect(err.code == 14800000).assertTrue();
         done();
       }
       console.log(TAG + "************* testRdbStoreExecuteSqlError005 end *************");
@@ -250,7 +250,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("DELETE FROM test WHERE age = ? OR age = ?", ["18", "28"]);
       }catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError006, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual("14800014");
+        expect(err.code == 14800014).assertTrue();
         done();
       }
       console.info(TAG + "************* testRdbStoreExecuteSqlError006 end *************");
@@ -271,7 +271,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("DELETE FROM test WHERE age = ? OR age = ?", ["18", "28"]);
       }catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError007, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual("14800014");
+        expect(err.code == 14800014).assertTrue();
         done();
       }
       console.info(TAG + "************* testRdbStoreExecuteSqlError007 end *************");
@@ -292,7 +292,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testGetRdbStoreError0800, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError0800 end   *************");
@@ -313,7 +313,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testGetRdbStoreError0900, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError0900 end   *************");
@@ -339,7 +339,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }catch (e) {
         console.error(TAG + `testGetRdbStoreError1000 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("14800010");
+        expect(e.code == 14800010).assertTrue();
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError1000 end   *************");
@@ -362,7 +362,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0300, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0300 end   *************");
@@ -385,7 +385,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0400, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0400 end   *************");
@@ -411,7 +411,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0500, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('14800010')
+        expect(err.code == 14800010).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0500 end   *************");
@@ -432,7 +432,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_S2)
@@ -454,7 +454,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfig0200 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_S3)
@@ -476,7 +476,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfig0300 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_S4)
@@ -505,7 +505,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0400 end-----")
@@ -531,7 +531,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500 end-----")
@@ -557,7 +557,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0600 end-----")
@@ -584,7 +584,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         }catch(err) {
           console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual(14800000);
+          expect(err.code == 14800000).assertTrue();
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700 end-----")
       })
@@ -609,7 +609,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800 end-----")
@@ -635,7 +635,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0900 end-----")
@@ -661,7 +661,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1000 end-----")
@@ -687,7 +687,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1100 end-----")
@@ -713,7 +713,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1200 end-----")
@@ -739,7 +739,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_1300 end-----")
@@ -771,7 +771,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0900 end-----")
       })
@@ -802,7 +802,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1000 end-----")
       })
@@ -834,7 +834,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1100 end-----")
       })
@@ -860,7 +860,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1200 end-----")
       })
@@ -886,7 +886,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1300 end-----")
       })
@@ -912,7 +912,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1400 end-----")
       })
@@ -939,7 +939,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1500 end-----")
       })
@@ -963,7 +963,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             (store as relationalStore.RdbStore).on(null, progressDetail);
           } catch (err) {
             console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1600 end-----")
@@ -988,7 +988,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             (store as relationalStore.RdbStore).on(undefined, progressDetail);
           } catch (err) {
             console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1700 end-----")
@@ -1019,7 +1019,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1800 end-----")
       })
@@ -1049,7 +1049,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_1900 end-----")
       })
@@ -1080,7 +1080,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2000 end-----")
       })
@@ -1111,7 +1111,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2100 end-----")
       })
@@ -1139,7 +1139,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2200 end-----")
       })
@@ -1167,7 +1167,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2300 end-----")
       })
@@ -1196,7 +1196,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2400 end-----")
       })
@@ -1227,7 +1227,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401");
+          expect(err.code == 401).assertTrue();
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0900 end-----")
       })
@@ -1258,7 +1258,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401");
+          expect(err.code == 401).assertTrue();
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1000 end-----")
       })
@@ -1290,7 +1290,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1100 end-----")
       })
@@ -1316,7 +1316,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1200 end-----")
       })
@@ -1342,7 +1342,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1300 end-----")
       })
@@ -1369,7 +1369,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1400 end-----")
       })
@@ -1395,7 +1395,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1500 end-----")
       })
@@ -1421,7 +1421,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1600 end-----")
       })
@@ -1448,7 +1448,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1700 end-----")
       })
@@ -1475,7 +1475,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1800 end-----")
       })
@@ -1498,7 +1498,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_1900 end-----")
       })
@@ -1522,7 +1522,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2000 end-----")
       })
@@ -1546,7 +1546,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to off.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2100 end-----")
       })
@@ -1575,7 +1575,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("14800014")
+          expect(err.code == 14800014).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2200 end-----")
       })
@@ -1603,7 +1603,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2300 end-----")
       })
@@ -1631,7 +1631,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2400 end-----")
       })
@@ -1661,7 +1661,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2500 end-----")
       })
@@ -1691,7 +1691,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2600 end-----")
       })
@@ -1718,7 +1718,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2700 end-----")
       })
@@ -1745,7 +1745,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_2800 end-----")
       })
@@ -1772,7 +1772,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_2900 end-----")
       })
@@ -1799,7 +1799,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           }
         } catch (err) {
           console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_3000 end-----")
       })
@@ -1822,7 +1822,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect(num).assertEqual(1)
           } catch (err) {
             console.error(TAG + 'Failed to emit.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_emit_ErrTest_0400 end-----")
@@ -1847,7 +1847,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             console.info(TAG + 'queryLockedRow success')
           } catch (err) {
             console.error(TAG + 'Failed to queryLockedRow.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0200 end-----")
@@ -1872,7 +1872,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             console.info(TAG + 'queryLockedRow success')
           } catch (err) {
             console.error(TAG + 'Failed to queryLockedRow.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0300 end-----")
@@ -1897,7 +1897,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             console.info(TAG + 'queryLockedRow success')
           } catch (err) {
             console.error(TAG + 'Failed to queryLockedRow.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0400 end-----")
@@ -1950,11 +1950,11 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to insert.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual("401");
+                expect(err.code == 401).assertTrue();
               });
           }).catch((err: BusinessError) => {
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           });
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_insert_ErrTest_0200 end-----")
@@ -1988,7 +1988,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to insert.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               });
             transaction.insert(null, valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ABORT)
               .then((rowId: number) => {
@@ -1998,7 +1998,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to insert.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               });
             transaction.insert(undefined, valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_IGNORE)
               .then((rowId: number) => {
@@ -2008,7 +2008,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to insert.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               });
           }).catch((err: BusinessError) => {
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
@@ -2039,10 +2039,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to insertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2077,10 +2077,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to insertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2115,10 +2115,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to insertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2153,10 +2153,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to insertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401')
+            expect(err.code == 401).assertTrue()
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2182,10 +2182,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             }).catch((err: BusinessError) => {
               console.error(TAG + 'Failed to batchInsert.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2218,10 +2218,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             }).catch((err: BusinessError) => {
               console.error(TAG + 'Failed to batchInsert.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2256,10 +2256,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             }).catch((err: BusinessError) => {
               console.error(TAG + 'Failed to batchInsert.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2293,10 +2293,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             }).catch((err: BusinessError) => {
               console.error(TAG + 'Failed to batchInsert.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2324,10 +2324,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to batchInsertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2361,10 +2361,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to batchInsertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual(14800000);
+              expect(err.code == 14800000).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -2399,10 +2399,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to batchInsertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual("401");
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -2437,10 +2437,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to batchInsertSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual("401");
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -2471,10 +2471,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to update.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual('401');
+                expect(err.code == 401).assertTrue();
               });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2512,10 +2512,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to update.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual("401");
+                expect(err.code == 401).assertTrue();
               });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2553,10 +2553,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
               .catch((err: BusinessError) => {
                 console.error(TAG + 'Failed to update.Code: ' + err.code + ',message:' + err.message);
                 transaction.rollback();
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2594,10 +2594,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to updateSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual("401");
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2635,10 +2635,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to updateSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual("401");
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2669,10 +2669,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to updateSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2699,10 +2699,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             }).catch((err: BusinessError) => {
               console.error(TAG + 'Failed to delete.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             });
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2730,10 +2730,10 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             } catch (err) {
               console.error(TAG + 'Failed to deleteSync.Code: ' + err.code + ',message:' + err.message);
               transaction.rollback();
-              expect(err.code).assertEqual('401');
+              expect(err.code == 401).assertTrue();
             }
           }).catch((err: BusinessError) => {
-            expect(err.code).assertEqual('401');
+            expect(err.code == 401).assertTrue();
             console.error(TAG + `createTransaction failed, code is ${err.code},message is ${err.message}`);
           });
         }
@@ -2761,7 +2761,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail()
           } catch (err) {
             console.error(TAG + 'Failed to lockedRow Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         }
@@ -2788,7 +2788,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail()
           } catch (err) {
             console.error(TAG + 'Failed to lockedRow Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         }
@@ -2815,7 +2815,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail()
           } catch (err) {
             console.error(TAG + 'Failed to lockedRow Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         }
@@ -2842,7 +2842,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect().assertFail()
           } catch (err) {
             console.error(TAG + 'Failed to lockedRow Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401")
+            expect(err.code == 401).assertTrue()
           }
           await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         }
@@ -2870,7 +2870,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           });
         } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_createTransaction_ErrTest_0100 end-----")
@@ -2897,7 +2897,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           });
         } catch (err) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
         await relationalStore.deleteRdbStore(context, STORE_CONFIG);
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_createTransaction_ErrTest_0200 end-----")
@@ -2920,7 +2920,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(14800030);
+        expect(err.code == 14800030).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG2);
       console.info(TAG + "************* testReadOnly2100 end *************");
@@ -2943,7 +2943,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(14800030);
+        expect(err.code == 14800030).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG2);
       console.info(TAG + "************* testReadOnly2200 end *************");
@@ -2966,7 +2966,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual(14800030);
+        expect(err.code == 14800030).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG2);
       console.info(TAG + "************* testReadOnly2300 end *************");
@@ -2989,7 +2989,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect(pr).assertEqual(0);
       } catch (err) {
         console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual("14800014");
+        expect(err.code == 14800014).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testReadOnly2400 end *************");
@@ -3013,14 +3013,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch (err) {
         console.error(TAG, `set user_version failed, errCode:${err.code}, message:${err.message}`);
-        expect(err.code).assertEqual("14800014");
+        expect(err.code == 14800014).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testReadOnly2500 end *************");
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0100
-     * @tc.number ExcuteSqlErrorTest0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0100
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3033,7 +3033,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql(null);
         expect(null).assertFail();
       } catch (err) {
-        expect('401').assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3041,7 +3041,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0200
-     * @tc.number ExcuteSqlErrorTest0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0200
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3054,7 +3054,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql(undefined);
         expect(null).assertFail();
       } catch (err) {
-        expect('401').assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3062,7 +3062,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0300
-     * @tc.number ExcuteSqlErrorTest0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0300
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3075,7 +3075,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("");
         expect(null).assertFail();
       } catch (err) {
-        expect('401').assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3083,7 +3083,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0400
-     * @tc.number ExcuteSqlErrorTest0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0400
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3096,7 +3096,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)", null);
         expect(null).assertFail();
       } catch (err) {
-        expect(14800000).assertEqual(err.code);
+        expect(err.code == 14800000).assertTrue()
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3104,7 +3104,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0500
-     * @tc.number ExcuteSqlErrorTest0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0500
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3117,7 +3117,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)", undefined);
         expect(null).assertFail();
       } catch (err) {
-        expect(14800000).assertEqual(err.code);
+        expect(err.code == 14800000).assertTrue()
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3125,7 +3125,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   ExcuteSqlErrorTest0600
-     * @tc.number ExcuteSqlErrorTest0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ExcuteSqlErrorTest_0600
      * @tc.desc   1. Insert data and set sql as null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3138,7 +3138,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         await rdbStore.executeSql("INSERT INTO test (name, age, salary) VALUES (?, ?, ?)", []);
         expect(null).assertFail();
       } catch (err) {
-        expect(14800000).assertEqual(err.code);
+        expect(err.code == 14800000).assertTrue()
         console.error(`insert data failed, code:${err.code}, message: ${err.message}`);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3146,7 +3146,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   testExecuteError0100
-     * @tc.number testExecuteError0100
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0100
      * @tc.desc   execute sql with "" or null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3162,14 +3162,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       }catch(err){
         console.error(TAG + `testExecuteError0100 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect("401").assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testExecuteError0100 end   *************");
     })
     /**
      * @tc.name   testExecuteError0200
-     * @tc.number testExecuteError0200
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0200
      * @tc.desc   execute sql with "" or null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3185,7 +3185,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       }catch(err){
         console.error(TAG + `testExecuteError0200 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect("401").assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
       }
 
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3193,7 +3193,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     })
     /**
      * @tc.name   testExecuteError0300
-     * @tc.number testExecuteError0300
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0300
      * @tc.desc   execute sql with "" or null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3209,14 +3209,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       }catch(err){
         console.error(TAG + `testExecuteError0300 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect("401").assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testExecuteError0300 end   *************");
     })
     /**
      * @tc.name   testExecuteError0400
-     * @tc.number testExecuteError0400
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0400
      * @tc.desc   execute err.code 14800000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3232,14 +3232,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       }catch(err){
         console.error(TAG + `testExecuteError0400 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect(err.code).assertEqual(14800000);
+        expect(err.code == 14800000).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testExecuteError0400 end   *************");
     })
     /**
      * @tc.name   testExecuteError0500
-     * @tc.number testExecuteError0500
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0500
      * @tc.desc   execute err.code 14800000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3255,7 +3255,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect(pr).assertEqual(1);
       }catch(err){
         console.error(TAG + `testExecuteError0500 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect("401").assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testExecuteError0500 end   *************");
@@ -3277,12 +3277,12 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           RdbStore.restore("",  (err: BusinessError) => {
             if (err) {
               console.error(TAG + `Restore failed, code is ${err.code},message is ${err.message}`);
-              expect(err.code).assertEqual("401")
+              expect(err.code == 401).assertTrue()
             }
           })
         }catch(err){
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
       })
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3305,12 +3305,12 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           RdbStore.restore(undefined, (err: BusinessError) => {
             if (err) {
               console.error(TAG + `Restore failed, code is ${err.code},message is ${err.message}`);
-              expect(err.code).assertEqual("401")
+              expect(err.code == 401).assertTrue()
             }
           })
         }catch(err){
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
       })
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3333,12 +3333,12 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
           RdbStore.restore(null, (err: BusinessError) => {
             if (err) {
               console.error(TAG + `Restore failed, code is ${err.code},message is ${err.message}`);
-              expect(err.code).assertEqual("401")
+              expect(err.code == 401).assertTrue()
             }
           })
         }catch(err){
           console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual("401")
+          expect(err.code == 401).assertTrue()
         }
       })
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3363,7 +3363,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         })
       }).catch((err: BusinessError) => {
         console.error(TAG + `Backup failed, code is ${err.code},message is ${err.message}`);
-        expect(err.code).assertEqual("14800014");
+        expect(err.code == 14800014).assertTrue();
       });
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* RdbBackupRestoreErrorTest0400 end *************")
@@ -3386,7 +3386,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail()
       } catch(err) {
         console.info(TAG + "error RdbBackupRestoreErrorTest0500" + JSON.stringify(err))
-        expect(err.code).assertEqual("14800014")
+        expect(err.code == 14800014).assertTrue()
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* RdbBackupRestoreErrorTest0500 end *************")
@@ -3408,7 +3408,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch(err) {
         console.info(TAG + "error RdbBackupRestoreErrorTest0600" + JSON.stringify(err))
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* RdbBackupRestoreErrorTest0600 end *************")
@@ -3430,7 +3430,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch(err) {
         console.info(TAG + "error RdbBackupRestoreErrorTest0700" + JSON.stringify(err))
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* RdbBackupRestoreErrorTest0700 end *************")
@@ -3452,14 +3452,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       } catch(err) {
         console.info(TAG + "error RdbBackupRestoreErrorTest0800" + JSON.stringify(err))
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* RdbBackupRestoreErrorTest0800 end *************")
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0800
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionErrcode_0800
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3475,14 +3475,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0800 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode0900
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode0900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_BatchInsertWithConflictResolutionErrcode_0900
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode0900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3498,14 +3498,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode0900 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode1000
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode1000
+     * @tc.number SUB_DistributedData_RelationalStore_BatchInsertWithConflictResolutionErrcodeTest_1000
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode1000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3520,14 +3520,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode1000 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode1100
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode1100
+     * @tc.number SUB_DistributedData_RelationalStore_BatchInsertWithConflictResolutionErrcodeTest_1100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode1100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3553,14 +3553,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode1100 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode1200
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode1200
+     * @tc.number SUB_DistributedData_RelationalStore_BatchInsertWithConflictResolutionErrcodeTest_1200
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode1200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3586,14 +3586,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode1200 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionErrcode1300
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionErrcode1300
+     * @tc.number SUB_DistributedData_RelationalStore_BatchInsertWithConflictResolutionErrcodeTest_1300
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionErrcode1300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3619,14 +3619,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolution failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionErrcode1300 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0800
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0800
+     * @tc.number SUB_DistributedData_RelationalStore_eBatchInsertWithConflictResolutionSyncErrcode_0800
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0800
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3652,14 +3652,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolutionSync failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0800 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0900
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0900
+     * @tc.number SUB_DistributedData_RelationalStore_eBatchInsertWithConflictResolutionSyncErrcode_0900
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0900
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3685,14 +3685,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolutionSync failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0900 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1000
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1000
+     * @tc.number SUB_DistributedData_RelationalStore_eBatchInsertWithConflictResolutionSyncErrcode_1000
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3718,14 +3718,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolutionSync failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1000 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1100
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1100
+     * @tc.number SUB_DistributedData_RelationalStore_eBatchInsertWithConflictResolutionSyncErrcode_1100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3740,14 +3740,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolutionSync failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1100 end *************");
     })
     /**
      * @tc.name   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1200
-     * @tc.number testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1200
+     * @tc.number SUB_DistributedData_RelationalStore_eBatchInsertWithConflictResolutionSyncErrcode_1200
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3762,7 +3762,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + err +"batchInsertWithConflictResolutionSync failed" + err.code);
-        expect(err.code).assertEqual("401")
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode1200 end *************");
@@ -3788,7 +3788,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             expect(typeof(res) === "object").assertTrue();
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3813,14 +3813,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
             (store as relationalStore.RdbStore).remoteQuery("1234567", "EMPLOYEE", predicates,
               ["ID", "NAME", "AGE", "SALARY", "CODES"], (err, res)=>{
                 if(err){
-                  expect(err.code).assertEqual(14800000);
+                  expect(err.code == 14800000).assertTrue();
                 }else{
                   expect(typeof(res) === "object").assertTrue();
                 }
               });
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3828,7 +3828,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       })
     /**
      * @tc.name   testExecuteError0600
-     * @tc.number testExecuteError0600
+     *@tc.number SUB_DistributedData_RelationalStore_testExecuteErrorcodeTest_0600
      * @tc.desc   execute err.code 14800000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3843,7 +3843,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect().assertFail();
       }catch(err){
         console.error(TAG + `testExecuteError0600 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect(err.code).assertEqual(14800000);
+        expect(err.code == 14800000).assertTrue();
       }
 
       try{
@@ -3852,14 +3852,14 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         expect(pr).assertEqual(1);
       }catch(err){
         console.error(TAG + `testExecuteError0600 execute is failed, code is ${err.code},message is ${err.message}`);
-        expect("401").assertEqual(err.code);
+        expect(err.code == 401).assertTrue();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.info(TAG + "************* testExecuteError0600 end   *************");
     })
     /**
      * @tc.name   testRekeyParam0100
-     * @tc.number testRekeyParam0100
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyParamTest_0100
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3874,7 +3874,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3882,7 +3882,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     });
     /**
      * @tc.name   testRekeyParam0200
-     * @tc.number testRekeyParam0200
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyParamTest_0200
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3897,7 +3897,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3905,7 +3905,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     });
     /**
      * @tc.name   testRekeyParam0300
-     * @tc.number testRekeyParam0300
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyParamTest_0300
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3920,7 +3920,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -3928,7 +3928,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     });
     /**
      * @tc.name   testRekeyExParam0100
-     * @tc.number testRekeyExParam0100
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyExParamTest_0100
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3943,7 +3943,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_MEMORY);
@@ -3951,7 +3951,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     });
     /**
      * @tc.name   testRekeyExParam0200
-     * @tc.number testRekeyExParam0200
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyExParamTest_0200
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3966,7 +3966,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_MEMORY);
@@ -3974,7 +3974,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
     });
     /**
      * @tc.name   testRekeyExParam0300
-     * @tc.number testRekeyExParam0300
+     * @tc.number SUB_DistributedData_RelationalStore_testRekeyExParamTest_0300
      * @tc.desc   Test rekey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3989,7 +3989,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       } catch (err) {
         console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
-        expect(err.code).assertEqual(801);
+        expect(err.code == 801).assertTrue();
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_MEMORY);
