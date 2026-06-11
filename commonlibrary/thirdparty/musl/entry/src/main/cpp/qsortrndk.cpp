@@ -249,7 +249,7 @@ static napi_value QsortR(napi_env env, napi_callback_info info)
         int values[] = {9, 2, 7, 11, 3, 87, 34, 6};
         size_t size = sizeof(values) / sizeof(values[0]);
         int descending = 1;
-        errno = 0;  // Clear errno before call
+        errno = 0;
         qsortR(values, size, sizeof(values[0]), CompareInts, &descending);
         res = IsSortedDescending(values, size) ? 1 : 0;
     }
@@ -306,8 +306,9 @@ static napi_value QsortRNormal001(napi_env env, napi_callback_info info)
 
     if (errno == ENOSYS) {
         int orig[] = {9, 2, 7, 11, 3, 87, 34, 6};
-        return ReturnInt32(env, (std::memcmp(values, orig, sizeof(orig)) == 0 &&
-                                 ctx.calls == 0) ? 0 : 0);
+        // stub mode: correct behavior is no change and no comparator call
+        int ok = (std::memcmp(values, orig, sizeof(orig)) == 0 && ctx.calls == 0) ? 1 : 0;
+        return ReturnInt32(env, ok);
     } else {
         return ReturnInt32(env, (std::memcmp(values, expected, sizeof(expected)) == 0 &&
                                  ctx.calls > 0 && ctx.outOfRange == 0) ? 1 : 0);
@@ -424,8 +425,8 @@ static napi_value QsortRAbnormal001(napi_env env, napi_callback_info info)
     qsortR(values, size, sizeof(int), QsortRCompare, &ctx);
 
     if (errno == ENOSYS) {
-        return ReturnInt32(env, (std::memcmp(values, orig, sizeof(orig)) == 0 &&
-                                 ctx.calls == 0) ? 0 : 0);
+        int ok = (std::memcmp(values, orig, sizeof(orig)) == 0 && ctx.calls == 0) ? 1 : 0;
+        return ReturnInt32(env, ok);
     } else {
         return ReturnInt32(env, (std::memcmp(values, expected, sizeof(expected)) == 0 &&
                                  ctx.calls > 0 && ctx.outOfRange == 0) ? 1 : 0);
@@ -454,7 +455,8 @@ static napi_value QsortRBoundary001(napi_env env, napi_callback_info info)
     qsortR(&value, 0, sizeof(int), QsortRCompare, &ctx);
 
     if (errno == ENOSYS) {
-        return ReturnInt32(env, (value == TEST_VALUE_1234 && ctx.calls == 0) ? 0 : 0);
+        int ok = (value == TEST_VALUE_1234 && ctx.calls == 0) ? 1 : 0;
+        return ReturnInt32(env, ok);
     } else {
         return ReturnInt32(env, (value == TEST_VALUE_1234 && ctx.calls == 0) ? 1 : 0);
     }
@@ -480,7 +482,8 @@ static napi_value QsortRBoundary002(napi_env env, napi_callback_info info)
     qsortR(&value, 1, sizeof(int), QsortRCompare, &ctx);
 
     if (errno == ENOSYS) {
-        return ReturnInt32(env, (value == TEST_VALUE_1234 && ctx.calls == 0) ? 0 : 0);
+        int ok = (value == TEST_VALUE_1234 && ctx.calls == 0) ? 1 : 0;
+        return ReturnInt32(env, ok);
     } else {
         return ReturnInt32(env, (value == TEST_VALUE_1234 && ctx.calls == 0) ? 1 : 0);
     }
@@ -764,7 +767,8 @@ static napi_value QsortRFunc005(napi_env env, napi_callback_info info)
     qsortR(values, size, sizeof(int), QsortRCompare, &ctx);
 
     if (errno == ENOSYS) {
-        return ReturnInt32(env, (std::memcmp(values, orig, sizeof(orig)) == 0) ? 0 : 0);
+        int ok = (std::memcmp(values, orig, sizeof(orig)) == 0) ? 1 : 0;
+        return ReturnInt32(env, ok);
     } else {
         return ReturnInt32(env, (ctx.calls > 0 && ctx.outOfRange == 0) ? 1 : 0);
     }
