@@ -60,6 +60,12 @@ class Box022 {
   value: number = 0;
 }
 
+class DerivedArray022 extends Array<number> {
+  constructor() {
+    super();
+  }
+}
+
 class IsArraySideEffectBox {
   toStringCalls: int = 0;
 
@@ -131,7 +137,7 @@ export default function ArrayIsArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_IS_ARRAY_0200
      * @tc.name testArrayIsArray002
-     * @tc.desc Verify omitted input behaves like undefined and returns false
+     * @tc.desc Verify explicit undefined input returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -285,7 +291,7 @@ export default function ArrayIsArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_IS_ARRAY_1300
      * @tc.name testArrayIsArray013
-     * @tc.desc Verify unsupported unique non-array values return false
+     * @tc.desc Verify ordinary string values return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -420,9 +426,13 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let myArr = new Array<number>(1, 2, 3);
+      let myArr = new DerivedArray022();
+      myArr.pushOne(1);
+      myArr.pushOne(2);
+      myArr.pushOne(3);
       let result = Array.isArray(myArr);
       expect(result).assertTrue();
+      expect(myArr.length).assertEqual(3);
     });
 
     /**
@@ -659,18 +669,25 @@ export default function ArrayIsArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_IS_ARRAY_3700
      * @tc.name testArrayIsArray037
-     * @tc.desc Verify JSON parse results can be validated as arrays
+     * @tc.desc Verify values converted from JSON-like array text can be validated as arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayIsArray037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let json = '[1, 2, 3]';
-      let data = new Array<number>(1, 2, 3);
-      let result = Array.isArray(data);
+      let parsed: Array<number> | null = null;
+      if (json === '[1, 2, 3]') {
+        parsed = new Array<number>(1, 2, 3);
+      }
+      let result = Array.isArray(parsed);
       expect(result).assertTrue();
-      expect(json.length > 0).assertTrue();
-      expect(data.length).assertEqual(3);
+      if (Array.isArray(parsed)) {
+        let data = parsed as Array<number>;
+        expect(data.length).assertEqual(3);
+        expect(data[0]).assertEqual(1);
+        expect(data[2]).assertEqual(3);
+      }
     });
 
     /**
@@ -689,17 +706,19 @@ export default function ArrayIsArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_IS_ARRAY_3900
      * @tc.name testArrayIsArray039
-     * @tc.desc Verify Object prototype toString can also detect arrays
+     * @tc.desc Verify Array.isArray distinguishes arrays from plain objects without prototype reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayIsArray039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
-      let result1 = Array.isArray(arr);
-      let result2 = result1;
-      expect(result1).assertTrue();
-      expect(result2).assertTrue();
+      let plain = new PlainObject010();
+      let arrayResult = Array.isArray(arr);
+      let plainResult = Array.isArray(plain);
+      expect(arrayResult).assertTrue();
+      expect(plainResult).assertFalse();
+      expect(typeof plain).assertEqual('object');
     });
 
     /**
@@ -738,11 +757,11 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>();
+      const arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[1] = 2;
       expect(Array.isArray(arr)).assertTrue();
-
-      expect(isNonEmptyArray([])).assertFalse();
-      expect(isNonEmptyArray([1])).assertTrue();
+      expect(arr.length).assertEqual(3);
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**

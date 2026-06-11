@@ -810,8 +810,10 @@ export default function ArrayFrom5Test(): void {
      */
     it('testArrayFromFive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: FixedArray<char> = [c'A', c'B', c'C'];
-      const result = Array.from<char>(source);
+      const result = Array.from<char, string>(source, (value: char): string => value.toString());
       expect(result.toString()).assertEqual('A,B,C');
+      expect(result[0]).assertEqual('A');
+      expect(result[2]).assertEqual('C');
     });
 
     /**
@@ -822,10 +824,12 @@ export default function ArrayFrom5Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-        it('testArrayFromFive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFromFive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: FixedArray<char> = [c'\n', c'\t'];
       const result = Array.from<char>(source);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(c'\n');
+      expect(result[1]).assertEqual(c'\t');
     });
 
     /**
@@ -973,7 +977,7 @@ export default function ArrayFrom5Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_5500
      * @tc.name testArrayFromFive055
-     * @tc.desc Verify Array.from can copy fixed-array values containing zero-width chars as strings
+     * @tc.desc Verify Array.from can copy fixed-array whitespace and visible chars
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

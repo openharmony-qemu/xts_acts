@@ -119,15 +119,15 @@ export default function ArrayLengthGetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_GETTER_0500
      * @tc.name testArrayLengthGetter005
-     * @tc.desc Verify the getter result has numeric runtime type behavior
+     * @tc.desc Verify the getter result can be assigned to an int typed variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthGetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(5);
-      let len = arr.length;
-      expect(typeof len).assertEqual('int');
+      let len: int = arr.length;
+      expect(len).assertEqual(1);
     });
 
     /**

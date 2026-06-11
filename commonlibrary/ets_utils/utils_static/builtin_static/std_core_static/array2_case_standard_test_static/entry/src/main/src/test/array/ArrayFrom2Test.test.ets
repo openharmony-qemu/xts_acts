@@ -50,6 +50,10 @@ class FromLikeObjA {
   value: number = 0;
 }
 
+type NumberArrayLike020 = Array<number>;
+type OptionalNumberArrayLike020 = Array<number | undefined>;
+type StringArrayLike020 = Array<string>;
+
 function createNumberArray(size: int): Array<number> {
   return new Array<number>(size, (index: int): number => index);
 }
@@ -367,7 +371,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number>(3, (index: int): number => (index + 1) * 10);
+      let arrayLike: NumberArrayLike020 = new Array<number>(10, 20, 30);
       let arr = Array.from<number>(arrayLike);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(10);
@@ -383,7 +387,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number>();
+      let arrayLike: NumberArrayLike020 = new Array<number>();
       let arr = Array.from<number>(arrayLike);
       expect(arr.length).assertEqual(0);
     });
@@ -397,8 +401,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<string>();
-      arrayLike.pushOne('single');
+      let arrayLike: StringArrayLike020 = new Array<string>('single');
       let arr = Array.from<string>(arrayLike);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual('single');
@@ -413,7 +416,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number | undefined>(
+      let arrayLike: OptionalNumberArrayLike020 = new Array<number | undefined>(
         10000,
         (_index: int): number | undefined => undefined
       );
@@ -434,7 +437,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number | undefined>(
+      let arrayLike: OptionalNumberArrayLike020 = new Array<number | undefined>(
         5,
         (_index: int): number | undefined => undefined
       );
@@ -823,7 +826,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Array<string>('a', 'b', 'c');
+      const source: StringArrayLike020 = new Array<string>('a', 'b', 'c');
       const result = Array.from<string>(source);
       expect(result.toString()).assertEqual('a,b,c');
     });
@@ -837,7 +840,10 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Array<number | undefined>(3, (_index: int): number | undefined => undefined);
+      const source: OptionalNumberArrayLike020 = new Array<number | undefined>(
+        3,
+        (_index: int): number | undefined => undefined
+      );
       source[0] = 1;
       source[2] = 3;
       const result = Array.from<number | undefined>(source);
@@ -904,7 +910,7 @@ export default function ArrayFrom2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_TWO_5200
      * @tc.name testArrayFromTwo052
-     * @tc.desc Verify Array.from can copy an array-like object with null values
+     * @tc.desc Verify Array.from can copy a source array with null values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -912,7 +918,10 @@ export default function ArrayFrom2Test(): void {
     it('testArrayFromTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number | null>(1, null, 3);
       const result = Array.from<number | null>(source);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
       expect(result[1] === null).assertTrue();
+      expect(result[2]).assertEqual(3);
     });
 
     /**
@@ -1128,6 +1137,8 @@ export default function ArrayFrom2Test(): void {
       const source = new Array<string>('\u200B', 'x');
       const result = Array.from<string>(source);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual('\u200B');
+      expect(result[0].length).assertEqual(1);
       expect(result[1]).assertEqual('x');
     });
 
@@ -1285,7 +1296,10 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Array<number | undefined>(3, (_index: int): number | undefined => undefined);
+      const source: OptionalNumberArrayLike020 = new Array<number | undefined>(
+        3,
+        (_index: int): number | undefined => undefined
+      );
       source[2] = 9;
       const result = Array.from<number | undefined>(source);
       expect(result[0] === undefined).assertTrue();
@@ -1380,16 +1394,19 @@ export default function ArrayFrom2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_TWO_8400
      * @tc.name testArrayFromTwo084
-     * @tc.desc Verify Array.from can copy values from a Uint8Array source
+     * @tc.desc Verify Array.from can copy values from a Uint8Array subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFromTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Uint8Array([10, 20, 30]);
+      const base = new Uint8Array([10, 20, 30, 40]);
+      const source = base.subarray(1, 3);
       const result = Array.from<number>(source);
+      source[0] = 99;
       expect(result.length).assertEqual(3);
-      expect(result.toString()).assertEqual('10,20,30');
+      expect(result.toString()).assertEqual('20,30');
+      expect(base.toString()).assertEqual('10,99,30,40');
     });
 
     /**

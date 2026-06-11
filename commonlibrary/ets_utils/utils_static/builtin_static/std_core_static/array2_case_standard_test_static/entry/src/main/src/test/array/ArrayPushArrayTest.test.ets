@@ -591,20 +591,20 @@ export default function ArrayPushArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3300
      * @tc.name testArrayPushArray033
-     * @tc.desc Verify repeated pushArray calls complete within measurable time
+     * @tc.desc Verify repeated pushArray calls preserve element order across appends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPushArray033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      let startTime = Date.now();
       for (let i: int = 0; i < 100; i++) {
         arr.pushArray(i, i + 1, i + 2, i + 3, i + 4);
       }
-      let endTime = Date.now();
       expect(arr.length).assertEqual(500);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr.slice(0, 5).toString()).assertEqual('0,1,2,3,4');
+      expect(arr.slice(250, 255).toString()).assertEqual('50,51,52,53,54');
+      expect(arr.slice(495, 500).toString()).assertEqual('99,100,101,102,103');
     });
 
     /**

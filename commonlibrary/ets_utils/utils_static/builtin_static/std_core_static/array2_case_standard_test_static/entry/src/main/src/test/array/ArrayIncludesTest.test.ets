@@ -353,14 +353,14 @@ export default function ArrayIncludesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0210
      * @tc.name testArrayIncludes021
-     * @tc.desc Verify fromIndex larger than the array length returns false
+     * @tc.desc Verify fromIndex larger than the array length also returns false for NaN searches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayIncludes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, 3);
-      let result = arr.includes(2, 10);
+      let arr = new Array<number>(NaN, 1, 2);
+      let result = arr.includes(NaN, 10);
       expect(result).assertFalse();
     });
 
@@ -483,7 +483,7 @@ export default function ArrayIncludesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0300
      * @tc.name testArrayIncludes030
-     * @tc.desc Verify includes can search for undefined values
+     * @tc.desc Verify includes can search for explicit undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -491,6 +491,24 @@ export default function ArrayIncludesTest(): void {
     it('testArrayIncludes030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(1, undefined, 3);
       expect(arr.includes(undefined)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0301
+     * @tc.name testArrayIncludes0301
+     * @tc.desc Verify includes treats sparse holes as undefined and respects fromIndex
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIncludes0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 3;
+      expect(arr.indexOf(undefined)).assertEqual(1);
+      expect(arr.includes(undefined)).assertTrue();
+      expect(arr.includes(undefined, 1)).assertTrue();
+      expect(arr.includes(undefined, 2)).assertFalse();
     });
 
     /**

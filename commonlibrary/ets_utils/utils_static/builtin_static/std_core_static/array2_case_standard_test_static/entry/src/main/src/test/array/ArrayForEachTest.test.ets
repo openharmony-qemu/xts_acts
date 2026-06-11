@@ -138,7 +138,7 @@ export default function ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0300
      * @tc.name testArrayForEach003
-     * @tc.desc Verify forEach supports a thisArg callback receiver
+     * @tc.desc Verify forEach callbacks can produce side effects by closing over external state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -146,7 +146,6 @@ export default function ArrayForEachTest(): void {
     it('testArrayForEach003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let counter = new Counter003();
       let arr = new Array<number>(1, 2, 3);
-      // Current ArkTS Array.forEach typing does not expose a thisArg overload.
       arr.forEach((v: number): void => {
         counter.add(v);
       });
@@ -502,7 +501,7 @@ export default function ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2100
      * @tc.name testArrayForEach021
-     * @tc.desc Verify forEach supports function keyword callbacks
+     * @tc.desc Verify forEach accepts arrow callbacks that capture visited values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,7 +509,6 @@ export default function ArrayForEachTest(): void {
     it('testArrayForEach021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let seen: Array<number> = new Array<number>();
-      // ArkTS does not support function expressions here, so use an arrow callback.
       arr.forEach((v: number): void => {
         expect(v > 0).assertTrue();
         seen.push(v);
@@ -725,18 +723,18 @@ export default function ArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3300
      * @tc.name testArrayForEach033
-     * @tc.desc Verify forEach visits indexes in ascending order
+     * @tc.desc Verify forEach can read values from a reversed copy while preserving ascending callback indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayForEach033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10, 20, 30);
-      let indexes = new Array<int>();
+      const arr = new Array<number>(10, 20, 30).toReversed();
+      let trace = new Array<string>();
       arr.forEach((value: number, index: int): void => {
-        indexes.pushOne(index);
+        trace.pushOne(index.toString() + ':' + value.toString());
       });
-      expect(indexes.toString()).assertEqual('0,1,2');
+      expect(trace.toString()).assertEqual('0:30,1:20,2:10');
     });
 
     /**
@@ -1344,12 +1342,19 @@ export default function ArrayForEachTest(): void {
      */
     it('testArrayForEach066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2);
+      const original = arr;
       let seen = new Array<number>();
-      arr.forEach((value: number): void => {
+      let callbackStayedBound = true;
+      arr.forEach((value: number, _index: int, source: Array<number>): void => {
         seen.pushOne(value);
+        if (source !== original) {
+          callbackStayedBound = false;
+        }
         arr = new Array<number>(9, 9, 9);
       });
       expect(seen.toString()).assertEqual('1,2');
+      expect(callbackStayedBound).assertTrue();
+      expect(original.toString()).assertEqual('1,2');
       expect(arr.toString()).assertEqual('9,9,9');
     });
 

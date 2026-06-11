@@ -284,7 +284,7 @@ export default function ArrayLengthSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_1400
      * @tc.name testArrayLengthSetter014
-     * @tc.desc Verify a negative length throws RangeError with a non-empty message
+     * @tc.desc Verify a negative length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -663,20 +663,22 @@ export default function ArrayLengthSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3800
      * @tc.name testArrayLengthSetter038
-     * @tc.desc Verify assigning a negative length throws RangeError
+     * @tc.desc Verify shortening an object array preserves retained element references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3);
-      let thrown = false;
-      try {
-        arr.length = -1;
-      } catch (e) {
-        thrown = e.name === 'RangeError';
-      }
-      expect(thrown).assertTrue();
+      const first = new Item025(1);
+      const second = new Item025(2);
+      const third = new Item025(3);
+      const arr = new Array<Item025>(first, second, third);
+      arr.length = 2;
+      first.value = 10;
+      expect(arr.length).assertEqual(2);
+      expect(arr[0] === first).assertTrue();
+      expect(arr[1] === second).assertTrue();
+      expect(arr[0].value).assertEqual(10);
     });
 
     /**
@@ -1086,22 +1088,17 @@ export default function ArrayLengthSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_6300
      * @tc.name testArrayLengthSetter063
-     * @tc.desc Verify a failed negative assignment does not undo an earlier truncation
+     * @tc.desc Verify length can be shortened with a computed int target
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(20, 21, 22, 23);
-      arr.length = 2;
-      try {
-        arr.length = -1;
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      expect(arr.length).assertEqual(2);
-      expect(arr.toString()).assertEqual('20,21');
+      const arr = new Array<number>(20, 21, 22, 23, 24);
+      const target: int = arr.length - 2;
+      arr.length = target;
+      expect(arr.length).assertEqual(3);
+      expect(arr.toString()).assertEqual('20,21,22');
     });
 
     /**

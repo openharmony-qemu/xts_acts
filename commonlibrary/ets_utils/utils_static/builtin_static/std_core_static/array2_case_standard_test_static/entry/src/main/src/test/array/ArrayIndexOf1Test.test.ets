@@ -582,13 +582,28 @@ export default function ArrayIndexOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3700
      * @tc.name testArrayIndexOfOne037
-     * @tc.desc Verify indexOf can search for undefined values
+     * @tc.desc Verify indexOf can search for explicit undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(1, undefined, 3);
+      expect(arr.indexOf(undefined)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3701
+     * @tc.name testArrayIndexOfOne0371
+     * @tc.desc Verify indexOf skips sparse holes instead of matching them as undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIndexOfOne0371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 3;
       expect(arr.indexOf(undefined)).assertEqual(1);
     });
 

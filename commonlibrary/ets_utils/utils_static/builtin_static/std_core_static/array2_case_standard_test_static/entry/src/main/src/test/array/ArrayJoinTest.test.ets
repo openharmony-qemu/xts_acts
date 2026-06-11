@@ -333,6 +333,23 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0181
+     * @tc.name testArrayJoin0181
+     * @tc.desc Verify sparse holes also produce empty fields in the joined string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 3;
+      const result = arr.join(',');
+      expect(result).assertEqual('1,,3');
+      expect(arr.indexOf(undefined)).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0190
      * @tc.name testArrayJoin019
      * @tc.desc Verify zero values are preserved in the joined string
@@ -716,11 +733,10 @@ export default function ArrayJoinTest(): void {
      */
     it('testArrayJoin045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createLargeStringArray045(10000);
-      let start = Date.now();
       let result = arr.join(',');
-      let end = Date.now();
-      expect(result.length > 0).assertTrue();
-      expect(end >= start).assertTrue();
+      expect(result.indexOf('item0,item1,item2')).assertEqual(0);
+      const suffix = 'item9997,item9998,item9999';
+      expect(result.lastIndexOf(suffix)).assertEqual(result.length - suffix.length);
     });
 
     /**

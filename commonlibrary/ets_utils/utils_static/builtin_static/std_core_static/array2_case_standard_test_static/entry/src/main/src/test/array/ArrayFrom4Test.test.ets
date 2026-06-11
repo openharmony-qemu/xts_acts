@@ -416,9 +416,11 @@ export default function ArrayFrom4Test(): void {
      */
     it('testArrayFromFour019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceArray = createIntFixedArrayFromValues(new Array<int>(1, 2, 3));
+      let visited = new Array<number>();
       let caught = false;
       try {
         Array.from<int, int>(sourceArray, (v: int): int => {
+          visited.push(v);
           if (v === 2) {
             throw new Error('Test error at value 2');
           }
@@ -428,6 +430,9 @@ export default function ArrayFrom4Test(): void {
         caught = e instanceof Error;
       }
       expect(caught).assertTrue();
+      expect(visited.length).assertEqual(2);
+      expect(visited[0]).assertEqual(1);
+      expect(visited[1]).assertEqual(2);
     });
 
     /**
@@ -732,10 +737,12 @@ export default function ArrayFrom4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArray = createIntFixedArrayFromValues(new Array<int>(1, 2, 3));
+      let sourceArray = createIntFixedArrayFromValues(new Array<int>(1, 2, 3, 4));
+      let visited = new Array<number>();
       let caught = false;
       try {
         Array.from<int, number>(sourceArray, (v: int): number => {
+          visited.push(v);
           if (v > 2) {
             throw new Error('Value too large');
           }
@@ -745,6 +752,10 @@ export default function ArrayFrom4Test(): void {
         caught = e instanceof Error;
       }
       expect(caught).assertTrue();
+      expect(visited.length).assertEqual(3);
+      expect(visited[0]).assertEqual(1);
+      expect(visited[1]).assertEqual(2);
+      expect(visited[2]).assertEqual(3);
     });
 
     /**
@@ -971,9 +982,9 @@ export default function ArrayFrom4Test(): void {
      */
     it('testArrayFromFour050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: FixedArray<int> = [7, 8];
-      const result = Array.from<int, FromFixedObjA>(source, (value: int): FromFixedObjA => { const item = new FromFixedObjA(); item.label = 'v' + value.toString(); return item; });
-      expect(result[0].label).assertEqual('v7');
-      expect(result[1].label).assertEqual('v8');
+      const result = Array.from<int, FromFixedObjA>(source, (value: int): FromFixedObjA => { const item = new FromFixedObjA(); item.label = 'label_' + value.toString(); return item; });
+      expect(result[0].label).assertEqual('label_7');
+      expect(result[1].label).assertEqual('label_8');
     });
 
     /**
@@ -1026,10 +1037,12 @@ export default function ArrayFrom4Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-        it('testArrayFromFour054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFromFour054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source: FixedArray<char> = [c'\n', c'\t'];
       const result = Array.from<char, string>(source, (value: char): string => value.toString());
       expect(result.length).assertEqual(2);
+      expect(result[0].charCodeAt(0)).assertEqual(10);
+      expect(result[1].charCodeAt(0)).assertEqual(9);
     });
 
     /**
@@ -1285,6 +1298,8 @@ export default function ArrayFrom4Test(): void {
       const source: FixedArray<char> = [c'	', c' '];
       const result = Array.from<char, string>(source, (value: char): string => value.toString());
       expect(result.length).assertEqual(2);
+      expect(result[0].charCodeAt(0)).assertEqual(9);
+      expect(result[1].charCodeAt(0)).assertEqual(32);
     });
 
     /**

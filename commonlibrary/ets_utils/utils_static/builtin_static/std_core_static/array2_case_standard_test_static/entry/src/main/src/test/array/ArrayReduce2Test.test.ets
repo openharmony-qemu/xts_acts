@@ -226,6 +226,7 @@ export default function ArrayReduce2Test(): void {
       }, new PresenceMap008());
       expect(result.a).assertTrue();
       expect(result.b).assertTrue();
+      expect(result.c).assertTrue();
     });
 
     /**
@@ -475,281 +476,430 @@ export default function ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2300
      * @tc.name testArrayReduceTwo023
-     * @tc.desc Verify reduce with an explicit seed can sum range window 0
+     * @tc.desc Verify a hole-only array returns the numeric seed without callback calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(4).slice(0, 4);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(6);
+      const arr = new Array<number>(4);
+      let calls = 0;
+      const result = arr.reduce((acc: number, value: number): number => {
+        calls++;
+        return acc + value;
+      }, 7);
+      expect(result).assertEqual(7);
+      expect(calls).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2400
      * @tc.name testArrayReduceTwo024
-     * @tc.desc Verify reduce with an explicit seed can sum range window 1
+     * @tc.desc Verify a sparse array with a string seed visits only present indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(5).slice(1, 5);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(10);
+      const arr = new Array<number>(5);
+      arr[1] = 2;
+      arr[4] = 5;
+      const result = arr.reduce((acc: string, value: number, index: int): string => {
+        return acc + '[' + index.toString() + '=' + value.toString() + ']';
+      }, 'seed');
+      expect(result).assertEqual('seed[1=2][4=5]');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2500
      * @tc.name testArrayReduceTwo025
-     * @tc.desc Verify reduce with an explicit seed can sum range window 2
+     * @tc.desc Verify reduce with a seed can visit a future sparse index filled during traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(6).slice(2, 6);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(14);
+      const arr = new Array<number>(3);
+      arr[0] = 1;
+      arr[2] = 3;
+      let indexes = new Array<int>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        indexes.pushOne(index);
+        if (index === 0) {
+          source[1] = 2;
+        }
+        return acc + value;
+      }, 10);
+      expect(result).assertEqual(16);
+      expect(indexes.toString()).assertEqual('0,1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2600
      * @tc.name testArrayReduceTwo026
-     * @tc.desc Verify reduce with an explicit seed can sum range window 3
+     * @tc.desc Verify reduce with a seed skips a pending element removed by splice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(7).slice(3, 7);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(18);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.splice(1, 1);
+        }
+        return acc + value;
+      }, 5);
+      expect(result).assertEqual(13);
+      expect(visited.toString()).assertEqual('1,3,4');
+      expect(arr.toString()).assertEqual('1,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2700
      * @tc.name testArrayReduceTwo027
-     * @tc.desc Verify reduce with an explicit seed can sum range window 4
+     * @tc.desc Verify reduce with a seed skips a tail element popped before it is reached
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(8).slice(4, 8);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(22);
+      const arr = new Array<number>(1, 2, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.pop();
+        }
+        return acc + value;
+      }, 5);
+      expect(result).assertEqual(8);
+      expect(visited.toString()).assertEqual('1,2');
+      expect(arr.toString()).assertEqual('1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2800
      * @tc.name testArrayReduceTwo028
-     * @tc.desc Verify reduce with an explicit seed can sum range window 5
+     * @tc.desc Verify reduce with a seed reindexes future visits after shift removes the head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(9).slice(5, 9);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(26);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.shift();
+        }
+        return acc + value.toString();
+      }, 's');
+      expect(result).assertEqual('s134');
+      expect(visited.toString()).assertEqual('1,3,4');
+      expect(arr.toString()).assertEqual('2,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2900
      * @tc.name testArrayReduceTwo029
-     * @tc.desc Verify reduce with an explicit seed can sum range window 6
+     * @tc.desc Verify reduce with a seed does not visit values prepended before the current position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(10).slice(6, 10);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(30);
+      const arr = new Array<number>(2, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.unshift(1);
+        }
+        return acc + value.toString();
+      }, '');
+      expect(result).assertEqual('22');
+      expect(visited.toString()).assertEqual('2,2');
+      expect(arr.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3000
      * @tc.name testArrayReduceTwo030
-     * @tc.desc Verify reduce with an explicit seed can sum range window 7
+     * @tc.desc Verify reduce with a seed can visit an inserted element created inside the original length window
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(11).slice(7, 11);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(34);
+      const arr = new Array<number>(1, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.splice(1, 0, 2);
+        }
+        return acc + value;
+      }, 5);
+      expect(result).assertEqual(8);
+      expect(visited.toString()).assertEqual('1,2');
+      expect(arr.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3100
      * @tc.name testArrayReduceTwo031
-     * @tc.desc Verify reduce with an explicit seed can sum range window 8
+     * @tc.desc Verify reduce with a seed reads future indexes from the reversed array state after mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(12).slice(8, 12);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(38);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.reverse();
+        }
+        return acc + value.toString();
+      }, '');
+      expect(result).assertEqual('1321');
+      expect(visited.toString()).assertEqual('1,3,2,1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3200
      * @tc.name testArrayReduceTwo032
-     * @tc.desc Verify reduce with an explicit seed can sum range window 9
+     * @tc.desc Verify reduce with a seed observes sorted future values after the callback reorders the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(13).slice(9, 13);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(42);
+      const arr = new Array<number>(2, 3, 1);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.sort((left: number, right: number): int => {
+            if (left < right) {
+              return -1;
+            }
+            if (left > right) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        return acc + value.toString();
+      }, 'k');
+      expect(result).assertEqual('k223');
+      expect(visited.toString()).assertEqual('2,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3300
      * @tc.name testArrayReduceTwo033
-     * @tc.desc Verify reduce with an explicit seed can sum range window 10
+     * @tc.desc Verify reduce with a seed reads future values overwritten by copyWithin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(14).slice(10, 14);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(46);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        if (index === 0) {
+          source.copyWithin(2, 0, 2);
+        }
+        return acc + value.toString();
+      }, '');
+      expect(result).assertEqual('1212');
+      expect(arr.toString()).assertEqual('1,2,1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3400
      * @tc.name testArrayReduceTwo034
-     * @tc.desc Verify reduce with an explicit seed can sum range window 11
+     * @tc.desc Verify reduce with a seed reads future values overwritten by fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(15).slice(11, 15);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(50);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        if (index === 0) {
+          source.fill(9, 2, 4);
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(21);
+      expect(arr.toString()).assertEqual('1,2,9,9');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3500
      * @tc.name testArrayReduceTwo035
-     * @tc.desc Verify reduce with an explicit seed can sum range window 12
+     * @tc.desc Verify reduce with a numeric seed propagates NaN once a NaN element participates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(16).slice(12, 16);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(54);
+      const arr = new Array<number>(1, NaN, 3);
+      const result = arr.reduce((acc: number, value: number): number => acc + value, 10);
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3600
      * @tc.name testArrayReduceTwo036
-     * @tc.desc Verify reduce with an explicit seed can sum range window 13
+     * @tc.desc Verify reduce with a string seed can distinguish Infinity, negative Infinity and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(17).slice(13, 17);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(58);
+      const arr = new Array<number>(Infinity, -Infinity, 0);
+      const result = arr.reduce((acc: string, value: number): string => {
+        if (value === Infinity) {
+          return acc + 'P';
+        }
+        if (value === -Infinity) {
+          return acc + 'N';
+        }
+        return acc + 'Z';
+      }, 'seed');
+      expect(result).assertEqual('seedPNZ');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3700
      * @tc.name testArrayReduceTwo037
-     * @tc.desc Verify reduce with an explicit seed can sum range window 14
+     * @tc.desc Verify reduce with a string seed can preserve the sign information of negative zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(18).slice(14, 18);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(62);
+      const arr = new Array<number>(-0, 0);
+      const result = arr.reduce((acc: string, value: number): string => {
+        return acc + (1.0 / value === -Infinity ? 'neg' : 'pos');
+      }, '');
+      expect(result).assertEqual('negpos');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3800
      * @tc.name testArrayReduceTwo038
-     * @tc.desc Verify reduce with an explicit seed can sum range window 15
+     * @tc.desc Verify reduce with a class seed can skip null values while counting and summing numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(19).slice(15, 19);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(66);
+      const arr = new Array<number | null>(1, null, 3, null);
+      const result = arr.reduce((acc: StatsCase, value: number | null): StatsCase => {
+        if (value !== null) {
+          acc.count++;
+          acc.sum += value;
+        }
+        return acc;
+      }, new StatsCase());
+      expect(result.count).assertEqual(2);
+      expect(result.sum).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_3900
      * @tc.name testArrayReduceTwo039
-     * @tc.desc Verify reduce with an explicit seed can sum range window 16
+     * @tc.desc Verify reduce with a seed can keep the object reference that has the largest sum field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(20).slice(16, 20);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(70);
+      const seed = new StatsCase();
+      seed.sum = -1;
+      const first = new StatsCase();
+      first.sum = 4;
+      const second = new StatsCase();
+      second.sum = 9;
+      const third = new StatsCase();
+      third.sum = 7;
+      const arr = new Array<StatsCase>(first, second, third);
+      const result = arr.reduce((best: StatsCase, value: StatsCase): StatsCase => {
+        return value.sum > best.sum ? value : best;
+      }, seed);
+      expect(result === second).assertTrue();
+      expect(result.sum).assertEqual(9);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_4000
      * @tc.name testArrayReduceTwo040
-     * @tc.desc Verify reduce with an explicit seed can sum range window 17
+     * @tc.desc Verify reduce with an array seed can keep the longest nested array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(21).slice(17, 21);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(74);
+      const shortArray = new Array<number>(1);
+      const longArray = new Array<number>(1, 2, 3);
+      const medium = new Array<number>(1, 2);
+      const arr = new Array<Array<number>>(shortArray, longArray, medium);
+      const result = arr.reduce((best: Array<number>, value: Array<number>): Array<number> => {
+        return value.length > best.length ? value : best;
+      }, new Array<number>());
+      expect(result === longArray).assertTrue();
+      expect(result.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_4100
      * @tc.name testArrayReduceTwo041
-     * @tc.desc Verify reduce with an explicit seed can sum range window 18
+     * @tc.desc Verify a sparse tail element can update an object seed at its actual index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(22).slice(18, 22);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(78);
+      const arr = new Array<number>(4);
+      arr[3] = 8;
+      const seed = new ReduceStats017();
+      seed.count = 10;
+      seed.sum = 1;
+      let seenIndex = -1;
+      const result = arr.reduce((acc: ReduceStats017, value: number, index: int): ReduceStats017 => {
+        seenIndex = index;
+        acc.count++;
+        acc.sum += value;
+        return acc;
+      }, seed);
+      expect(result === seed).assertTrue();
+      expect(result.count).assertEqual(11);
+      expect(result.sum).assertEqual(9);
+      expect(seenIndex).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_4200
      * @tc.name testArrayReduceTwo042
-     * @tc.desc Verify reduce with an explicit seed can sum range window 19
+     * @tc.desc Verify reduce with a string seed can normalize spacing and case from string elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(23).slice(19, 23);
-      const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
-      expect(result).assertEqual(82);
+      const arr = new Array<string>('  alpha', 'Beta  ', ' gamma ');
+      const result = arr.reduce((acc: string, value: string): string => {
+        return acc + value.trim().toUpperCase();
+      }, 'start:');
+      expect(result).assertEqual('start:ALPHABETAGAMMA');
     });
 
     /**
@@ -1024,6 +1174,27 @@ export default function ArrayReduce2Test(): void {
       }, 0);
       expect(result).assertEqual(4);
       expect(seen).assertEqual('0u1n2u');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5710
+     * @tc.name testArrayReduceTwo0571
+     * @tc.desc Verify reduce with an initial value skips sparse holes while visiting present elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayReduceTwo0571', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number | undefined>(4, (_index) => undefined);
+      arr[1] = 2;
+      arr[3] = 4;
+      let seen = '';
+      const result = arr.reduce((acc: number, value: number | undefined, index: int): number => {
+        seen += index.toString() + (value === undefined ? 'u' : 'n');
+        return acc + (value === undefined ? 0 : value);
+      }, 1);
+      expect(result).assertEqual(7);
+      expect(seen).assertEqual('0u1n2u3n');
     });
 
     /**

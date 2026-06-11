@@ -541,14 +541,14 @@ export default function ArrayReduceRight1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceRightOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
+      const arr = new Array<number>();
       let callbackCount = 0;
       const result = arr.reduceRight((acc: number, v: number): number => {
         callbackCount++;
         return acc + v;
       }, 11);
-      expect(callbackCount).assertEqual(1);
-      expect(result).assertEqual(16);
+      expect(callbackCount).assertEqual(0);
+      expect(result).assertEqual(11);
     });
 
     /**

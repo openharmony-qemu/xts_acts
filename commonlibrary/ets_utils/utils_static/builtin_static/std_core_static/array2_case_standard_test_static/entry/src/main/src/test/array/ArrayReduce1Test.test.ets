@@ -399,281 +399,426 @@ export default function ArrayReduce1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2200
      * @tc.name testArrayReduceOne022
-     * @tc.desc Verify reduce can sum the numeric range window starting at 0
+     * @tc.desc Verify reduce without an initial value starts from the first present sparse element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(3).slice(0, 3);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(3);
+      const arr = new Array<number>(4);
+      arr[1] = 10;
+      arr[3] = 30;
+      let indexes = new Array<int>();
+      const result = arr.reduce((acc: number, value: number, index: int): number => {
+        indexes.pushOne(index);
+        return acc + value;
+      });
+      expect(result).assertEqual(40);
+      expect(indexes.toString()).assertEqual('3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2300
      * @tc.name testArrayReduceOne023
-     * @tc.desc Verify reduce can sum the numeric range window starting at 1
+     * @tc.desc Verify sparse arrays with a single present element return that element without callback calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(4).slice(1, 4);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(6);
+      const arr = new Array<number>(5);
+      arr[4] = 99;
+      let calls = 0;
+      const result = arr.reduce((acc: number, value: number): number => {
+        calls++;
+        return acc + value;
+      });
+      expect(result).assertEqual(99);
+      expect(calls).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2400
      * @tc.name testArrayReduceOne024
-     * @tc.desc Verify reduce can sum the numeric range window starting at 2
+     * @tc.desc Verify reduce with an initial value visits only present indexes in a sparse array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(5).slice(2, 5);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(9);
+      const arr = new Array<number>(5);
+      arr[0] = 1;
+      arr[3] = 4;
+      let visited = new Array<int>();
+      const result = arr.reduce((acc: number, value: number, index: int): number => {
+        visited.pushOne(index);
+        return acc + value;
+      }, 10);
+      expect(result).assertEqual(15);
+      expect(visited.toString()).assertEqual('0,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2500
      * @tc.name testArrayReduceOne025
-     * @tc.desc Verify reduce can sum the numeric range window starting at 3
+     * @tc.desc Verify reduce can visit a future sparse index filled during traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(6).slice(3, 6);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(12);
+      const arr = new Array<number>(3);
+      arr[0] = 1;
+      arr[2] = 3;
+      let visited = new Array<string>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(index.toString() + ':' + value.toString());
+        if (index === 0) {
+          source[1] = 2;
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(6);
+      expect(visited.toString()).assertEqual('0:1,1:2,2:3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2600
      * @tc.name testArrayReduceOne026
-     * @tc.desc Verify reduce can sum the numeric range window starting at 4
+     * @tc.desc Verify reduce does not revisit an index that was already processed before mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(7).slice(4, 7);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(15);
+      const arr = new Array<number>(1, 2, 3);
+      let visited = new Array<string>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(index.toString() + ':' + value.toString());
+        if (index === 1) {
+          source[0] = 100;
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(6);
+      expect(visited.toString()).assertEqual('0:1,1:2,2:3');
+      expect(arr[0]).assertEqual(100);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2700
      * @tc.name testArrayReduceOne027
-     * @tc.desc Verify reduce can sum the numeric range window starting at 5
+     * @tc.desc Verify reduce can observe future values after splice removes a pending element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(8).slice(5, 8);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(18);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.splice(1, 1);
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(8);
+      expect(visited.toString()).assertEqual('1,3,4');
+      expect(arr.toString()).assertEqual('1,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2800
      * @tc.name testArrayReduceOne028
-     * @tc.desc Verify reduce can sum the numeric range window starting at 6
+     * @tc.desc Verify reduce skips a tail element popped before that index is reached
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(9).slice(6, 9);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(21);
+      const arr = new Array<number>(1, 2, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.pop();
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(3);
+      expect(visited.toString()).assertEqual('1,2');
+      expect(arr.toString()).assertEqual('1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_2900
      * @tc.name testArrayReduceOne029
-     * @tc.desc Verify reduce can sum the numeric range window starting at 7
+     * @tc.desc Verify reduce reindexes future visits after shift removes the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(10).slice(7, 10);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(24);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.shift();
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(8);
+      expect(visited.toString()).assertEqual('1,3,4');
+      expect(arr.toString()).assertEqual('2,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3000
      * @tc.name testArrayReduceOne030
-     * @tc.desc Verify reduce can sum the numeric range window starting at 8
+     * @tc.desc Verify reduce can visit an inserted element created within the original length window
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(11).slice(8, 11);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(27);
+      const arr = new Array<number>(1, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.splice(1, 0, 2);
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(3);
+      expect(visited.toString()).assertEqual('1,2');
+      expect(arr.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3100
      * @tc.name testArrayReduceOne031
-     * @tc.desc Verify reduce can sum the numeric range window starting at 9
+     * @tc.desc Verify reduce does not visit values prepended ahead of the current traversal position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(12).slice(9, 12);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(30);
+      const arr = new Array<number>(2, 3);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.unshift(1);
+        }
+        return acc + value;
+      }, 0);
+      expect(result).assertEqual(4);
+      expect(visited.toString()).assertEqual('2,2');
+      expect(arr.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3200
      * @tc.name testArrayReduceOne032
-     * @tc.desc Verify reduce can sum the numeric range window starting at 10
+     * @tc.desc Verify reduce reads future indexes from the reversed array state after mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(13).slice(10, 13);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(33);
+      const arr = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.reverse();
+        }
+        return acc * 10 + value;
+      }, 0);
+      expect(result).assertEqual(1321);
+      expect(visited.toString()).assertEqual('1,3,2,1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3300
      * @tc.name testArrayReduceOne033
-     * @tc.desc Verify reduce can sum the numeric range window starting at 11
+     * @tc.desc Verify reduce observes sorted future values after the callback reorders the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(14).slice(11, 14);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(36);
+      const arr = new Array<number>(2, 3, 1);
+      let visited = new Array<number>();
+      const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
+        visited.pushOne(value);
+        if (index === 0) {
+          source.sort((left: number, right: number): int => {
+            if (left < right) {
+              return -1;
+            }
+            if (left > right) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        return acc + value.toString();
+      }, '');
+      expect(result).assertEqual('223');
+      expect(visited.toString()).assertEqual('2,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3400
      * @tc.name testArrayReduceOne034
-     * @tc.desc Verify reduce can sum the numeric range window starting at 12
+     * @tc.desc Verify reduce propagates NaN once a NaN element participates in accumulation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(15).slice(12, 15);
+      const arr = new Array<number>(1, NaN, 3);
       const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(39);
+      expect(Number.isNaN(result)).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3500
      * @tc.name testArrayReduceOne035
-     * @tc.desc Verify reduce can sum the numeric range window starting at 13
+     * @tc.desc Verify reduce preserves Infinity when the first element is positive Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(16).slice(13, 16);
+      const arr = new Array<number>(Infinity, -5, 10);
       const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(42);
+      expect(result).assertEqual(Infinity);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3600
      * @tc.name testArrayReduceOne036
-     * @tc.desc Verify reduce can sum the numeric range window starting at 14
+     * @tc.desc Verify reduce returns a lone negative zero element without changing its sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(17).slice(14, 17);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(45);
+      const arr = new Array<number>();
+      arr.pushOne(-0);
+      let calls = 0;
+      const result = arr.reduce((acc: number, value: number): number => {
+        calls++;
+        return acc + value;
+      });
+      expect(calls).assertEqual(0);
+      expect(1.0 / result).assertEqual(-Infinity);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3700
      * @tc.name testArrayReduceOne037
-     * @tc.desc Verify reduce can sum the numeric range window starting at 15
+     * @tc.desc Verify reduce can skip null elements while summing a union-typed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(18).slice(15, 18);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(48);
+      const arr = new Array<number | null>(1, null, 3, null);
+      const result = arr.reduce((acc: number, value: number | null): number => {
+        return value === null ? acc : acc + value;
+      }, 0);
+      expect(result).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3800
      * @tc.name testArrayReduceOne038
-     * @tc.desc Verify reduce can sum the numeric range window starting at 16
+     * @tc.desc Verify reduce can sum numeric fields from object elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(19).slice(16, 19);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(51);
+      const first = new IndexMap009();
+      first.a = 1;
+      const second = new IndexMap009();
+      second.a = 2;
+      const third = new IndexMap009();
+      third.a = 3;
+      const arr = new Array<IndexMap009>(first, second, third);
+      const result = arr.reduce((acc: number, value: IndexMap009): number => acc + value.a, 0);
+      expect(result).assertEqual(6);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_3900
      * @tc.name testArrayReduceOne039
-     * @tc.desc Verify reduce can sum the numeric range window starting at 17
+     * @tc.desc Verify reduce can keep the object reference with the highest score
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(20).slice(17, 20);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(54);
+      const arr = new Array<IndexMap009>();
+      const low = new IndexMap009();
+      low.b = 4;
+      const high = new IndexMap009();
+      high.b = 9;
+      const mid = new IndexMap009();
+      mid.b = 7;
+      arr.pushOne(low);
+      arr.pushOne(high);
+      arr.pushOne(mid);
+      const result = arr.reduce((best: IndexMap009, value: IndexMap009): IndexMap009 => {
+        return value.b > best.b ? value : best;
+      });
+      expect(result === high).assertTrue();
+      expect(result.b).assertEqual(9);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4000
      * @tc.name testArrayReduceOne040
-     * @tc.desc Verify reduce can sum the numeric range window starting at 18
+     * @tc.desc Verify reduce can keep the longest nested array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(21).slice(18, 21);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(57);
+      const shortArray = new Array<number>(1);
+      const longArray = new Array<number>(1, 2, 3);
+      const medium = new Array<number>(1, 2);
+      const arr = new Array<Array<number>>(shortArray, longArray, medium);
+      const result = arr.reduce((best: Array<number>, value: Array<number>): Array<number> => {
+        return value.length > best.length ? value : best;
+      });
+      expect(result === longArray).assertTrue();
+      expect(result.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4100
      * @tc.name testArrayReduceOne041
-     * @tc.desc Verify reduce can sum the numeric range window starting at 19
+     * @tc.desc Verify reduce returns the seed for a hole-only array when no present elements exist
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayReduceOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(22).slice(19, 22);
-      const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(60);
+      const arr = new Array<number>(4);
+      let calls = 0;
+      const result = arr.reduce((acc: number, value: number): number => {
+        calls++;
+        return acc + value;
+      }, 7);
+      expect(result).assertEqual(7);
+      expect(calls).assertEqual(0);
     });
 
     /**
@@ -914,6 +1059,27 @@ export default function ArrayReduce1Test(): void {
      */
     it('testArrayReduceOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1, undefined, 3);
+      let visited = new Array<string>();
+      const result = arr.reduce((acc: number, value: number | undefined, index: int): number => {
+        visited.pushOne(index.toString() + ':' + (value === undefined ? 'u' : value.toString()));
+        return value === undefined ? acc : acc + value;
+      }, 0);
+      expect(result).assertEqual(4);
+      expect(visited.toString()).assertEqual('0:1,1:u,2:3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5610
+     * @tc.name testArrayReduceOne0561
+     * @tc.desc Verify reduce skips sparse holes while still visiting present elements with an initial value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayReduceOne0561', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 3;
       let visited = new Array<string>();
       const result = arr.reduce((acc: number, value: number | undefined, index: int): number => {
         visited.pushOne(index.toString() + ':' + (value === undefined ? 'u' : value.toString()));

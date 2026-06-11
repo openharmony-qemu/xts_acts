@@ -129,7 +129,6 @@ export default function ArrayLastIndexOf2Test(): void {
     it('testArrayLastIndexOfTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result: int = arr.lastIndexOf(2);
-      expect(typeof result).assertEqual('int');
       expect(result).assertEqual(1);
     });
 

@@ -590,20 +590,19 @@ export default function ArrayPushTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_3300
      * @tc.name testArrayPush033
-     * @tc.desc Verify repeated push calls complete within measurable time
+     * @tc.desc Verify repeated push calls preserve length and element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPush033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      let startTime = Date.now();
       for (let i: int = 0; i < 50000; i++) {
         arr.push(i);
       }
-      let endTime = Date.now();
       expect(arr.length).assertEqual(50000);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr[0]).assertEqual(0);
+      expect(arr[49999]).assertEqual(49999);
     });
 
     /**
@@ -977,22 +976,23 @@ export default function ArrayPushTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_5700
      * @tc.name testArrayPush057
-     * @tc.desc Verify push can be followed by shift to remove the newest head when appropriate
+     * @tc.desc Verify push can be followed by shift while preserving queue order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPush057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3);
-      arr.push(4); arr.unshift(1);
+      arr.push(4);
       const value = arr.shift();
-      expect(value).assertEqual(1);
+      expect(value).assertEqual(2);
+      expect(arr.toString()).assertEqual('3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_5800
      * @tc.name testArrayPush058
-     * @tc.desc Verify push handles numeric scenario window 0 after prior mutation
+     * @tc.desc Verify push appends correctly after reverse changes element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

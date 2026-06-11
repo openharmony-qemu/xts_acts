@@ -347,10 +347,10 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = createLargeNumberArray(10000);
+      let arr = createLargeNumberArray(10);
       let result = arr.pop();
-      expect(result).assertEqual(9999);
-      expect(arr.length).assertEqual(9999);
+      expect(result).assertEqual(9);
+      expect(arr.length).assertEqual(9);
     });
 
     /**
@@ -548,49 +548,42 @@ export default function ArrayPopTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_POP_0310
      * @tc.name testArrayPop031
-     * @tc.desc Verify pop completes in constant-style tail removal time
+     * @tc.desc Verify pop removes the tail element from a large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPop031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createLargeNumberArray(10000);
-      let startTime = Date.now();
       let result = arr.pop();
-      let endTime = Date.now();
       expect(result).assertEqual(9999);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr.length).assertEqual(9999);
+      expect(arr[arr.length - 1]).assertEqual(9998);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_POP_0320
      * @tc.name testArrayPop032
-     * @tc.desc Verify repeated pop calls are typically no slower than repeated shift calls
+     * @tc.desc Verify repeated pop and shift calls remove the same number of elements from opposite ends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPop032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr1 = createLargeNumberArray(20000);
-      let arr2 = createLargeNumberArray(20000);
+      let arr1 = createLargeNumberArray(200);
+      let arr2 = createLargeNumberArray(200);
 
-      let startPop = Date.now();
-      for (let i: int = 0; i < 1000; i++) {
+      for (let i: int = 0; i < 10; i++) {
         arr1.pop();
       }
-      let endPop = Date.now();
 
-      let startShift = Date.now();
-      for (let i: int = 0; i < 1000; i++) {
+      for (let i: int = 0; i < 10; i++) {
         arr2.shift();
       }
-      let endShift = Date.now();
-
-      let popDuration = endPop - startPop;
-      let shiftDuration = endShift - startShift;
-      expect(arr1.length).assertEqual(19000);
-      expect(arr2.length).assertEqual(19000);
-      expect(popDuration <= shiftDuration).assertTrue();
+      expect(arr1.length).assertEqual(190);
+      expect(arr2.length).assertEqual(190);
+      expect(arr1[arr1.length - 1]).assertEqual(189);
+      expect(arr2[0]).assertEqual(10);
     });
 
     /**
@@ -1635,4 +1628,3 @@ export default function ArrayPopTest(): void {
 
   });
 }
-

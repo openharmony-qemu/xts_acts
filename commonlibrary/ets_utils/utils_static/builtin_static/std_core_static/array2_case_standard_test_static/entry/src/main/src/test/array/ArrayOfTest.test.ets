@@ -622,22 +622,18 @@ export default function ArrayOfTest(): void {
      */
     it('testArrayOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lastOf = Array.of<number>();
-      let start1 = Date.now();
       for (let i: int = 0; i < 10000; i++) {
         lastOf = Array.of<number>(1, 2, 3);
       }
-      let end1 = Date.now();
 
       let lastLiteral = new Array<number>();
-      let start2 = Date.now();
       for (let i: int = 0; i < 10000; i++) {
         lastLiteral = [1, 2, 3];
       }
-      let end2 = Date.now();
       expect(lastOf.length).assertEqual(3);
       expect(lastLiteral.length).assertEqual(3);
-      expect(end1 >= start1).assertTrue();
-      expect(end2 >= start2).assertTrue();
+      expect(lastOf.toString()).assertEqual('1,2,3');
+      expect(lastLiteral.toString()).assertEqual('1,2,3');
     });
 
     /**
@@ -795,6 +791,11 @@ export default function ArrayOfTest(): void {
       );
       expect(arr.length).assertEqual(6);
       expect(arr[0]).assertEqual(Number.MAX_VALUE);
+      expect(arr[1]).assertEqual(Number.MIN_VALUE);
+      expect(arr[2]).assertEqual(Number.MAX_SAFE_INTEGER);
+      expect(arr[3]).assertEqual(Number.MIN_SAFE_INTEGER);
+      expect(arr[4]).assertEqual(Number.POSITIVE_INFINITY);
+      expect(arr[5]).assertEqual(Number.NEGATIVE_INFINITY);
     });
 
     /**
@@ -809,6 +810,10 @@ export default function ArrayOfTest(): void {
       let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '你好世界');
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual('');
+      expect(arr[1]).assertEqual('a');
+      expect(arr[2]).assertEqual('long-string-value');
+      expect(arr[3]).assertEqual('\u0000');
+      expect(arr[4]).assertEqual('你好世界');
     });
 
     /**

@@ -279,13 +279,29 @@ export default function ArrayLastIndexOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_1600
      * @tc.name testArrayLastIndexOfOne016
-     * @tc.desc Verify lastIndexOf can find undefined values
+     * @tc.desc Verify lastIndexOf can find explicit undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(1, undefined, 2);
+      let result = arr.lastIndexOf(undefined);
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_1601
+     * @tc.name testArrayLastIndexOfOne0161
+     * @tc.desc Verify lastIndexOf skips sparse holes instead of matching them as undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLastIndexOfOne0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 2;
       let result = arr.lastIndexOf(undefined);
       expect(result).assertEqual(1);
     });
@@ -431,7 +447,7 @@ export default function ArrayLastIndexOf1Test(): void {
     it('testArrayLastIndexOfOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result: int = arr.lastIndexOf(2);
-      expect(typeof result).assertEqual('int');
+      expect(result).assertEqual(1);
     });
 
     /**

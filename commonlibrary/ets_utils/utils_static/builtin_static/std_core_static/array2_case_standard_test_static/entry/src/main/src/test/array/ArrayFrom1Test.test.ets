@@ -45,6 +45,8 @@ class FromIterObjA {
   value: number = 0;
 }
 
+type NumberArrayLike001 = Array<number>;
+
 function createFilledNumberArray(size: int): Array<number> {
   return new Array<number>(size, (index: int): number => index);
 }
@@ -88,7 +90,7 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number>(3, (index: int): number => (index + 1) * 10);
+      let arrayLike: NumberArrayLike001 = new Array<number>(10, 20, 30);
       let arr = Array.from<number>(arrayLike);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(10);
@@ -560,9 +562,9 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayLike = new Array<number>(0);
+      let arrayLike: NumberArrayLike001 = new Array<number>();
       let arr = Array.from<number>(arrayLike);
-      expect(arr.length).assertEqual(1);
+      expect(arr.length).assertEqual(0);
     });
 
     /**
@@ -1379,16 +1381,16 @@ export default function ArrayFrom1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_ONE_8400
      * @tc.name testArrayFromOne084
-     * @tc.desc Verify Array.from can copy values from a Uint8Array source
+     * @tc.desc Verify Array.from can preserve wrapped Uint8Array values larger than 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFromOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Uint8Array([1, 2, 3]);
+      const source = new Uint8Array([255, 256, 257]);
       const result = Array.from<number>(source);
       expect(result.length).assertEqual(3);
-      expect(result.toString()).assertEqual('1,2,3');
+      expect(result.toString()).assertEqual('255,0,1');
     });
 
     /**

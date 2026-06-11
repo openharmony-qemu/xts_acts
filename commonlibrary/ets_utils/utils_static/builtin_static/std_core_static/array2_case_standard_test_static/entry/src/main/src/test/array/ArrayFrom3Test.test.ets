@@ -428,9 +428,11 @@ export default function ArrayFrom3Test(): void {
      */
     it('testArrayFromThree019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source = new Array<number>(1, 2, 3);
+      let visited = new Array<number>();
       let caught = false;
       try {
         Array.from<number, number>(source, (v: number): number => {
+          visited.push(v);
           if (v === 2) {
             throw new Error('Test error');
           }
@@ -440,6 +442,9 @@ export default function ArrayFrom3Test(): void {
         caught = e instanceof Error;
       }
       expect(caught).assertTrue();
+      expect(visited.length).assertEqual(2);
+      expect(visited[0]).assertEqual(1);
+      expect(visited[1]).assertEqual(2);
     });
 
     /**
@@ -880,10 +885,12 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<number>(1, 2, 3);
+      let source = new Array<number>(1, 2, 3, 4);
+      let visited = new Array<number>();
       let caught = false;
       try {
         Array.from<number, number>(source, (v: number): number => {
+          visited.push(v);
           if (v > 2) {
             throw new Error('Value too large');
           }
@@ -893,6 +900,10 @@ export default function ArrayFrom3Test(): void {
         caught = e instanceof Error;
       }
       expect(caught).assertTrue();
+      expect(visited.length).assertEqual(3);
+      expect(visited[0]).assertEqual(1);
+      expect(visited[1]).assertEqual(2);
+      expect(visited[2]).assertEqual(3);
     });
 
     /**
@@ -1391,14 +1402,15 @@ export default function ArrayFrom3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_THREE_7600
      * @tc.name testArrayFromThree076
-     * @tc.desc Verify Array.from with mapper can transform zero-width space strings in an array source
+     * @tc.desc Verify Array.from with mapper preserves zero-width space content in an array source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFromThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<string, string>(new Array<string>('\u200B', 'x'), (value: string): string => value.length.toString());
-      expect(result.toString()).assertEqual('1,1');
+      const result = Array.from<string, string>(new Array<string>('\u200B', 'x'), (value: string): string => value);
+      expect(result[0].charCodeAt(0)).assertEqual(0x200B);
+      expect(result[1]).assertEqual('x');
     });
 
     /**

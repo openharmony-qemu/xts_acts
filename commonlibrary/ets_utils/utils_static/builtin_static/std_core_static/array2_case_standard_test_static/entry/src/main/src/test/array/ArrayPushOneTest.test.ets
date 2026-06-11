@@ -618,20 +618,19 @@ export default function ArrayPushOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_3400
      * @tc.name testArrayPushOne034
-     * @tc.desc Verify repeated pushOne calls complete within measurable time
+     * @tc.desc Verify repeated pushOne calls preserve length and element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayPushOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      let startTime = Date.now();
       for (let i: int = 0; i < 50000; i++) {
         arr.pushOne(i);
       }
-      let endTime = Date.now();
       expect(arr.length).assertEqual(50000);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr[0]).assertEqual(0);
+      expect(arr[49999]).assertEqual(49999);
     });
 
     /**
@@ -939,23 +938,19 @@ export default function ArrayPushOneTest(): void {
      */
     it('testArrayPushOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>();
-      let start1 = Date.now();
       for (let i: int = 0; i < 1000; i++) {
         arr1.pushOne(i);
       }
-      let end1 = Date.now();
 
       let arr2 = new Array<number>();
       let source = createLargeNumberArray(1000);
-      let start2 = Date.now();
       arr2.pushArray(...source);
-      let end2 = Date.now();
 
       expect(arr1.length).assertEqual(1000);
       expect(arr2.length).assertEqual(1000);
+      expect(arr1[0]).assertEqual(arr2[0]);
       expect(arr1[999]).assertEqual(arr2[999]);
-      expect(end1 >= start1).assertTrue();
-      expect(end2 >= start2).assertTrue();
+      expect(arr1.toString()).assertEqual(arr2.toString());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5300
@@ -1144,7 +1139,7 @@ export default function ArrayPushOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6500
      * @tc.name testArrayPushOne065
-     * @tc.desc Verify pushOne handles numeric scenario window 0 after prior mutation
+     * @tc.desc Verify pushOne appends correctly after reverse changes element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

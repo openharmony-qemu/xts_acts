@@ -514,12 +514,11 @@ export default function ArrayReverseTest(): void {
      */
     it('testArrayReverse030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createOneBasedArray(10000);
-      let start = Date.now();
       arr.reverse();
-      let end = Date.now();
       expect(arr[0]).assertEqual(10000);
+      expect(arr[1]).assertEqual(9999);
+      expect(arr[arr.length - 2]).assertEqual(2);
       expect(arr[arr.length - 1]).assertEqual(1);
-      expect(end >= start).assertTrue();
     });
 
     /**
@@ -844,7 +843,7 @@ export default function ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REVERSE_5200
      * @tc.name testArrayReverse052
-     * @tc.desc Verify reverse shows linear-time behavior with a measurable duration
+     * @tc.desc Verify reverse reorders a medium-large array while preserving both boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -854,11 +853,9 @@ export default function ArrayReverseTest(): void {
       for (let i: int = 0; i < 1000; i++) {
         arr.push(i);
       }
-      let start = Date.now();
       arr.reverse();
-      let end = Date.now();
       expect(arr[0]).assertEqual(999);
-      expect(end >= start).assertTrue();
+      expect(arr[arr.length - 1]).assertEqual(0);
     });
 
     /**
@@ -1256,11 +1253,12 @@ export default function ArrayReverseTest(): void {
      */
     it('testArrayReverse076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
-      arr[0] = undefined;
       arr[2] = 5;
       const result = arr.reverse();
       expect(result[0]).assertEqual(5);
+      expect(result[1]).assertUndefined();
       expect(result[2]).assertUndefined();
+      expect(result.indexOf(undefined)).assertEqual(1);
       expect(result.lastIndexOf(undefined)).assertEqual(2);
     });
 

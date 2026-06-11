@@ -646,7 +646,7 @@ export default function ArrayReduceRight2Test(): void {
     it('testArrayReduceRightTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3, 4);
       const result = arr.reduceRight((prev: number, curr: number): number => Math.pow(curr, prev));
-      expect(result > 100).assertTrue();
+      expect(result).assertEqual(Math.pow(2, Math.pow(3, 4)));
     });
 
     /**
@@ -659,13 +659,16 @@ export default function ArrayReduceRight2Test(): void {
      */
     it('testArrayReduceRightTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
+      const visited = new Array<string>();
       const result = arr.reduceRight((found: number, curr: number): number => {
+        visited.pushOne(curr.toString() + ':' + found.toString());
         if (found > 3) {
           return found;
         }
         return curr > 3 ? curr : found;
       });
       expect(result).assertEqual(5);
+      expect(visited.toString()).assertEqual('4:5,3:5,2:5,1:5');
     });
 
     /**

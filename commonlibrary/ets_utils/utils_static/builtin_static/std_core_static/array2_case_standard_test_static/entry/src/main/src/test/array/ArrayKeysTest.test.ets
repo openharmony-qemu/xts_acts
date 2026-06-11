@@ -28,6 +28,14 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+class ArrayKeysObjectItem {
+  id: number = 0;
+
+  constructor(id: number) {
+    this.id = id;
+  }
+}
+
 function collectKeys(iterator: IterableIterator<int>): Array<int> {
   let keys = new Array<int>();
   let next = iterator.next();
@@ -39,6 +47,17 @@ function collectKeys(iterator: IterableIterator<int>): Array<int> {
     next = iterator.next();
   }
   return keys;
+}
+
+function assertSequentialKeys(iterator: IterableIterator<int>, expectedLength: int): void {
+  for (let i: int = 0; i < expectedLength; i++) {
+    const next = iterator.next();
+    expect(next.done).assertFalse();
+    expect(next.value).assertEqual(i);
+  }
+  const completed = iterator.next();
+  expect(completed.done).assertTrue();
+  expect(completed.value).assertUndefined();
 }
 
 function createLargeIntArray(size: int): Array<int> {
@@ -249,9 +268,11 @@ export default function ArrayKeysTest(): void {
       let iterator = arr.keys();
       arr.pushOne(4);
       arr.splice(0, 1);
-      expect(iterator.next().value).assertEqual(0);
-      expect(iterator.next().value).assertEqual(1);
-      expect(iterator.next().value).assertEqual(2);
+      let keys = collectKeys(iterator);
+      let doneStep = iterator.next();
+      expect(keys.toString()).assertEqual('0,1,2');
+      expect(doneStep.done).assertTrue();
+      expect(doneStep.value).assertUndefined();
     });
 
     /**
@@ -356,7 +377,7 @@ export default function ArrayKeysTest(): void {
      * @tc.level Level 2
      */
     it('testArrayKeys017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<int | undefined>(3, (_index: int): int | undefined => undefined);
+      let arr = new Array<int | undefined>(3, (_index) => undefined);
       arr[0] = 10;
       arr[2] = 30;
       let keys = collectKeys(arr.keys());
@@ -734,9 +755,7 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: ReadonlyArray<int> = [1, 2, 3];
-      let keys = collectKeys(arr.keys());
-      expect(keys.length).assertEqual(3);
-      expect(keys[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 3);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0400
@@ -748,9 +767,7 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeIntArray(1);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(1);
-      expect(result[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 1);
     });
 
 
@@ -764,9 +781,7 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeIntArray(2);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(2);
-      expect(result[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 2);
     });
 
 
@@ -780,9 +795,7 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeIntArray(3);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(3);
-      expect(result[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 3);
     });
 
 
@@ -796,9 +809,7 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeIntArray(4);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(4);
-      expect(result[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 4);
     });
 
 
@@ -812,265 +823,306 @@ export default function ArrayKeysTest(): void {
      */
     it('testArrayKeys044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeIntArray(5);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(5);
-      expect(result[0]).assertEqual(0);
+      assertSequentialKeys(arr.keys(), 5);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0450
      * @tc.name testArrayKeys045
-     * @tc.desc Verify keys can enumerate indexes for a 6-element numeric array
+     * @tc.desc Verify keys on a sparse array still enumerates every index up to length minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(6);
+      const arr = new Array<number | undefined>(6, (_index) => undefined);
+      arr[2] = 20;
+      arr[5] = 50;
       const result = collectKeys(arr.keys());
       expect(result.length).assertEqual(6);
       expect(result[0]).assertEqual(0);
+      expect(result[5]).assertEqual(5);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0460
      * @tc.name testArrayKeys046
-     * @tc.desc Verify keys can enumerate indexes for a 7-element numeric array
+     * @tc.desc Verify keys iterator created before push observes the appended index while iterating
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(7);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(7);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(10, 20);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      arr.pushOne(30);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().value).assertEqual(2);
+      expect(iterator.next().done).assertTrue();
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0470
      * @tc.name testArrayKeys047
-     * @tc.desc Verify keys can enumerate indexes for a 8-element numeric array
+     * @tc.desc Verify keys iterator created before shrinkTo respects the shorter final length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(8);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(8);
-      expect(result[0]).assertEqual(0);
+      const arr = createLargeIntArray(5);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      arr.shrinkTo(2);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().done).assertTrue();
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0480
      * @tc.name testArrayKeys048
-     * @tc.desc Verify keys can enumerate indexes for a 9-element numeric array
+     * @tc.desc Verify keys continues to enumerate zero-based indexes after shift changes the head value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(9);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(9);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(7, 8, 9);
+      arr.shift();
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(arr[0]).assertEqual(8);
+      expect(iterator.next().value).assertEqual(1);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0490
      * @tc.name testArrayKeys049
-     * @tc.desc Verify keys can enumerate indexes for a 10-element numeric array
+     * @tc.desc Verify keys can enumerate indexes after splice inserts an extra middle element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(10);
+      const arr = new Array<number>(1, 2, 4);
+      arr.splice(2, 0, 3);
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(10);
-      expect(result[0]).assertEqual(0);
+      expect(result.toString()).assertEqual('0,1,2,3');
+      expect(arr[2]).assertEqual(3);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0500
      * @tc.name testArrayKeys050
-     * @tc.desc Verify keys can enumerate indexes for a 11-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a reversed array while values change order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(11);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(11);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(1, 2, 3);
+      arr.reverse();
+      const keys = collectKeys(arr.keys());
+      expect(keys.toString()).assertEqual('0,1,2');
+      expect(arr.toString()).assertEqual('3,2,1');
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0510
      * @tc.name testArrayKeys051
-     * @tc.desc Verify keys can enumerate indexes for a 12-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a sorted array while values become ordered
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(12);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(12);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(30, 10, 20);
+      arr.sort((left: number, right: number): int => {
+        if (left < right) {
+          return -1;
+        }
+        if (left > right) {
+          return 1;
+        }
+        return 0;
+      });
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(arr[0]).assertEqual(10);
+      expect(iterator.next().value).assertEqual(1);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0520
      * @tc.name testArrayKeys052
-     * @tc.desc Verify keys can enumerate indexes for a 13-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on arrays created by concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(13);
+      const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4, 5));
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(13);
-      expect(result[0]).assertEqual(0);
+      expect(result.length).assertEqual(5);
+      expect(result[4]).assertEqual(4);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0530
      * @tc.name testArrayKeys053
-     * @tc.desc Verify keys can enumerate indexes for a 14-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on arrays produced by Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(14);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(14);
-      expect(result[0]).assertEqual(0);
+      const arr = Array.of<number>(5, 6, 7);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().value).assertEqual(2);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0540
      * @tc.name testArrayKeys054
-     * @tc.desc Verify keys can enumerate indexes for a 15-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on arrays produced by Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(15);
+      const arr = Array.from<number>(new Array<number>(9, 8, 7, 6));
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(15);
-      expect(result[0]).assertEqual(0);
+      expect(result.toString()).assertEqual('0,1,2,3');
+      expect(arr[0]).assertEqual(9);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0550
      * @tc.name testArrayKeys055
-     * @tc.desc Verify keys can enumerate indexes for a 16-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a toReversed copy without changing the source length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(16);
+      const source = new Array<number>(1, 2, 3, 4);
+      const arr = source.toReversed();
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(16);
-      expect(result[0]).assertEqual(0);
+      expect(result.toString()).assertEqual('0,1,2,3');
+      expect(source.toString()).assertEqual('1,2,3,4');
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0560
      * @tc.name testArrayKeys056
-     * @tc.desc Verify keys can enumerate indexes for a 17-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a toSpliced copy with a changed length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(17);
+      const arr = new Array<number>(1, 2, 3).toSpliced(1, 1, 7, 8);
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(17);
-      expect(result[0]).assertEqual(0);
+      expect(result.toString()).assertEqual('0,1,2,3');
+      expect(arr.length).assertEqual(4);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0570
      * @tc.name testArrayKeys057
-     * @tc.desc Verify keys can enumerate indexes for a 18-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a with copy while preserving source contents
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(18);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(18);
-      expect(result[0]).assertEqual(0);
+      const source = new Array<number>(1, 2, 3);
+      const arr = source.with(1, 9);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(iterator.next().value).assertEqual(1);
+      expect(source[1]).assertEqual(2);
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0580
      * @tc.name testArrayKeys058
-     * @tc.desc Verify keys can enumerate indexes for a 19-element numeric array
+     * @tc.desc Verify keys can enumerate indexes on a toSorted copy while leaving source order unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(19);
+      const source = new Array<number>(4, 1, 3, 2);
+      const arr = source.toSorted((left: number, right: number): int => {
+        if (left < right) {
+          return -1;
+        }
+        if (left > right) {
+          return 1;
+        }
+        return 0;
+      });
       const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(19);
-      expect(result[0]).assertEqual(0);
+      expect(result.toString()).assertEqual('0,1,2,3');
+      expect(source.toString()).assertEqual('4,1,3,2');
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0590
      * @tc.name testArrayKeys059
-     * @tc.desc Verify keys can enumerate indexes for a 20-element numeric array
+     * @tc.desc Verify keys iterator reports done and undefined value after full consumption
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(20);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(20);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(1, 2);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(iterator.next().value).assertEqual(1);
+      const completed = iterator.next();
+      expect(completed.done).assertTrue();
+      expect(completed.value).assertUndefined();
     });
 
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0600
      * @tc.name testArrayKeys060
-     * @tc.desc Verify keys can enumerate indexes for a 21-element numeric array
+     * @tc.desc Verify multiple iterator next calls stay completed after exhaustion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(21);
-      const result = collectKeys(arr.keys());
-      expect(result.length).assertEqual(21);
-      expect(result[0]).assertEqual(0);
+      const arr = new Array<number>(1);
+      const iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      const done1 = iterator.next();
+      const done2 = iterator.next();
+      expect(done1.done).assertTrue();
+      expect(done1.value).assertUndefined();
+      expect(done2.done).assertTrue();
+      expect(done2.value).assertUndefined();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0610
@@ -1228,451 +1280,476 @@ export default function ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0710
      * @tc.name testArrayKeys071
-     * @tc.desc Verify keys can expose the first index for a 2-element generated array
+     * @tc.desc Verify a keys iterator can be drained with manual next calls into an array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1);
+      const arr = new Array<number>(10, 20, 30);
       const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(2);
+      const keys = new Array<int>();
+      let next = iterator.next();
+      while (!next.done) {
+        keys.pushOne(next.value as int);
+        next = iterator.next();
+      }
+      expect(keys.toString()).assertEqual('0,1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0720
      * @tc.name testArrayKeys072
-     * @tc.desc Verify keys can expose the first index for a 3-element generated array
+     * @tc.desc Verify keys can be reduced into the sum of all indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(3);
+      const arr = new Array<number>(5, 6, 7, 8);
+      const sum = collectKeys(arr.keys()).reduce((acc: int, key: int): int => acc + key, 0);
+      expect(sum).assertEqual(6);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0730
      * @tc.name testArrayKeys073
-     * @tc.desc Verify keys can expose the first index for a 4-element generated array
+     * @tc.desc Verify keys can be filtered to keep only odd indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(4);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const oddKeys = collectKeys(arr.keys()).filter((key: int): boolean => key % 2 === 1);
+      expect(oddKeys.toString()).assertEqual('1,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0740
      * @tc.name testArrayKeys074
-     * @tc.desc Verify keys can expose the first index for a 5-element generated array
+     * @tc.desc Verify keys can map indexes back to matching value text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(5);
+      const arr = new Array<string>('a', 'b', 'c');
+      const mapped = collectKeys(arr.keys()).map((key: int): string => key.toString() + ':' + arr[key]);
+      expect(mapped.toString()).assertEqual('0:a,1:b,2:c');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0750
      * @tc.name testArrayKeys075
-     * @tc.desc Verify keys can expose the first index for a 6-element generated array
+     * @tc.desc Verify keys on a sparse array can still drive value lookups for present slots only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(6);
+      const arr = new Array<number | undefined>(5, (_index) => undefined);
+      arr[1] = 10;
+      arr[4] = 40;
+      const present = collectKeys(arr.keys()).filter((key: int): boolean => arr[key] !== undefined);
+      expect(present.toString()).assertEqual('1,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0760
      * @tc.name testArrayKeys076
-     * @tc.desc Verify keys can expose the first index for a 7-element generated array
+     * @tc.desc Verify a partially consumed iterator does not affect a newly created iterator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(7);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const first = arr.keys();
+      first.next();
+      first.next();
+      const second = arr.keys();
+      expect(first.next().value).assertEqual(2);
+      expect(second.next().value).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0770
      * @tc.name testArrayKeys077
-     * @tc.desc Verify keys can expose the first index for a 8-element generated array
+     * @tc.desc Verify a keys iterator created before pop stops at the shorter final length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7);
+      const arr = new Array<number>(1, 2, 3);
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(8);
+      arr.pop();
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().done).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0780
      * @tc.name testArrayKeys078
-     * @tc.desc Verify keys can expose the first index for a 9-element generated array
+     * @tc.desc Verify a keys iterator created before splice can observe the new longer length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8);
+      const arr = new Array<number>(1, 4);
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(9);
+      arr.splice(1, 0, 2, 3);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().value).assertEqual(2);
+      expect(iterator.next().value).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0790
      * @tc.name testArrayKeys079
-     * @tc.desc Verify keys can expose the first index for a 10-element generated array
+     * @tc.desc Verify keys on a copyWithin-mutated array still yields continuous indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(10);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.copyWithin(1, 0, 2);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2,3');
+      expect(arr.toString()).assertEqual('1,1,2,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0800
      * @tc.name testArrayKeys080
-     * @tc.desc Verify keys can expose the first index for a 11-element generated array
+     * @tc.desc Verify keys on a fill-mutated array still matches the current length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(11);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.fill(9, 1, 3);
+      const result = collectKeys(arr.keys());
+      expect(result.length).assertEqual(arr.length);
+      expect(result.toString()).assertEqual('0,1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0810
      * @tc.name testArrayKeys081
-     * @tc.desc Verify keys can expose the first index for a 12-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by flatMap
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(12);
+      const source = new Array<number>(1, 2, 3);
+      const arr = source.flatMap((value: number): Array<number> => new Array<number>(value, value * 10));
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2,3,4,5');
+      expect(source.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0820
      * @tc.name testArrayKeys082
-     * @tc.desc Verify keys can expose the first index for a 13-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by toSpliced with extra items
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(13);
+      const arr = new Array<number>(1, 2, 3).toSpliced(1, 1, 7, 8);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2,3');
+      expect(arr.length).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0830
      * @tc.name testArrayKeys083
-     * @tc.desc Verify keys can expose the first index for a 14-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by with
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(14);
+      const source = new Array<number>(1, 2, 3);
+      const arr = source.with(2, 9);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2');
+      expect(source[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0840
      * @tc.name testArrayKeys084
-     * @tc.desc Verify keys can expose the first index for a 15-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by Array.from from typed data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(15);
+      const typed = new Uint8Array([7, 8, 9]);
+      const arr = Array.from<number>(typed);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2');
+      expect(typed[0]).assertEqual(7);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0850
      * @tc.name testArrayKeys085
-     * @tc.desc Verify keys can expose the first index for a 16-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(16);
+      const arr = Array.of<number>(3, 4, 5, 6);
+      const keys = collectKeys(arr.keys());
+      expect(keys.toString()).assertEqual('0,1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0860
      * @tc.name testArrayKeys086
-     * @tc.desc Verify keys can expose the first index for a 17-element generated array
+     * @tc.desc Verify keys can enumerate indexes on arrays returned by concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(17);
+      const arr = new Array<number>(1, 2).concat(new Array<number>(3), new Array<number>(4, 5));
+      const keys = collectKeys(arr.keys());
+      expect(keys.toString()).assertEqual('0,1,2,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0870
      * @tc.name testArrayKeys087
-     * @tc.desc Verify keys can expose the first index for a 18-element generated array
+     * @tc.desc Verify keys can be consumed after collecting values from a matching array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(18);
+      const arr = new Array<string>('x', 'y', 'z');
+      const values = new Array<string>();
+      for (const key of arr.keys()) {
+        values.pushOne(arr[key]);
+      }
+      expect(values.toString()).assertEqual('x,y,z');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0880
      * @tc.name testArrayKeys088
-     * @tc.desc Verify keys can expose the first index for a 19-element generated array
+     * @tc.desc Verify keys can drive an entries-style reconstruction of index value pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(19);
+      const arr = new Array<number>(4, 5, 6);
+      const pairs = new Array<string>();
+      for (const key of arr.keys()) {
+        pairs.pushOne(key.toString() + '=' + arr[key].toString());
+      }
+      expect(pairs.toString()).assertEqual('0=4,1=5,2=6');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0890
      * @tc.name testArrayKeys089
-     * @tc.desc Verify keys can expose the first index for a 20-element generated array
+     * @tc.desc Verify keys iterator stays valid after the source variable is reassigned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+      let arr = new Array<number>(1, 2, 3);
+      const original = arr;
       const iterator = arr.keys();
+      arr = new Array<number>(9);
       expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(20);
+      expect(iterator.next().value).assertEqual(1);
+      expect(original.length).assertEqual(3);
+      expect(arr.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0900
      * @tc.name testArrayKeys090
-     * @tc.desc Verify keys can expose the first index for a 21-element generated array
+     * @tc.desc Verify keys can iterate over readonly array aliases the same way as mutable arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(21);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const readonlyAlias: ReadonlyArray<number> = arr;
+      expect(collectKeys(readonlyAlias.keys()).toString()).assertEqual('0,1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0910
      * @tc.name testArrayKeys091
-     * @tc.desc Verify keys can expose the first index for a 22-element generated array
+     * @tc.desc Verify keys can enumerate indexes on a boolean array without depending on element truthiness
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(22);
+      const arr = new Array<boolean>(false, true, false);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0920
      * @tc.name testArrayKeys092
-     * @tc.desc Verify keys can expose the first index for a 23-element generated array
+     * @tc.desc Verify keys can enumerate indexes on a bigint array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(23);
+      const arr = new Array<bigint>(1n, 2n, 3n, 4n);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0930
      * @tc.name testArrayKeys093
-     * @tc.desc Verify keys can expose the first index for a 24-element generated array
+     * @tc.desc Verify keys can enumerate indexes on a char array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23);
+      const arr = new Array<char>(c'a', c'b', c'c');
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(24);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().value).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0940
      * @tc.name testArrayKeys094
-     * @tc.desc Verify keys can expose the first index for a 25-element generated array
+     * @tc.desc Verify keys can enumerate indexes on an array of custom object instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(25);
+      const first = new ArrayKeysObjectItem(1);
+      const second = new ArrayKeysObjectItem(2);
+      const arr = new Array<Object>(first, second);
+      expect(collectKeys(arr.keys()).toString()).assertEqual('0,1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0950
      * @tc.name testArrayKeys095
-     * @tc.desc Verify keys can expose the first index for a 26-element generated array
+     * @tc.desc Verify keys can be consumed after the array length is manually reset to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25);
+      const arr = new Array<number>(1, 2, 3);
       const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(26);
+      arr.length = 0;
+      const result = iterator.next();
+      expect(result.done).assertTrue();
+      expect(result.value).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0960
      * @tc.name testArrayKeys096
-     * @tc.desc Verify keys can expose the first index for a 27-element generated array
+     * @tc.desc Verify keys can enumerate indexes again after the array is cleared and rebuilt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26);
+      const arr = new Array<number>(1, 2, 3);
+      arr.length = 0;
+      arr.pushOne(9);
+      arr.pushOne(8);
       const iterator = arr.keys();
       expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(27);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().done).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0970
      * @tc.name testArrayKeys097
-     * @tc.desc Verify keys can expose the first index for a 28-element generated array
+     * @tc.desc Verify keys on a large generated array can confirm the last emitted index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(28);
+      const arr = createLargeIntArray(32);
+      const keys = collectKeys(arr.keys());
+      expect(keys.length).assertEqual(32);
+      expect(keys[31]).assertEqual(31);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0980
      * @tc.name testArrayKeys098
-     * @tc.desc Verify keys can expose the first index for a 29-element generated array
+     * @tc.desc Verify keys can be consumed with forEach after collection into an intermediate array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(29);
+      const arr = new Array<number>(5, 6, 7, 8);
+      let text = '';
+      collectKeys(arr.keys()).forEach((key: int): void => {
+        text += key.toString();
+      });
+      expect(text).assertEqual('0123');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0990
      * @tc.name testArrayKeys099
-     * @tc.desc Verify keys can expose the first index for a 30-element generated array
+     * @tc.desc Verify keys can cooperate with filter and map to derive selected values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(30);
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const selected = collectKeys(arr.keys())
+        .filter((key: int): boolean => key % 2 === 0)
+        .map((key: int): number => arr[key]);
+      expect(selected.toString()).assertEqual('10,30,50');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_1000
      * @tc.name testArrayKeys100
-     * @tc.desc Verify keys can expose the first index for a 31-element generated array
+     * @tc.desc Verify keys and Object keys diverge on sparse arrays because Object keys omits holes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayKeys100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30);
-      const iterator = arr.keys();
-      expect(iterator.next().value).assertEqual(0);
-      expect(arr.length).assertEqual(31);
+      const arr = new Array<number | undefined>(4, (_index) => undefined);
+      arr[1] = 10;
+      arr[3] = 30;
+      const keys = collectKeys(arr.keys());
+      const objectKeys = Object.keys(arr);
+      expect(keys.toString()).assertEqual('0,1,2,3');
+      expect(objectKeys.toString()).assertEqual('1,3');
     });
 
   });

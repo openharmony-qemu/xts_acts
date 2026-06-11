@@ -786,8 +786,10 @@ export default function ArrayMapTest(): void {
      */
     it('testArrayMap044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
+      let visited = new Array<number>();
       try {
         arr.map((v: number): number => {
+          visited.pushOne(v);
           if (v === 2) {
             throw new Error('Test error');
           }
@@ -796,13 +798,14 @@ export default function ArrayMapTest(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
+        expect(visited.toString()).assertEqual('1,2');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4500
      * @tc.name testArrayMap045
-     * @tc.desc Verify map preserves undefined slots in sparse like arrays
+     * @tc.desc Verify map preserves explicit undefined values in dense arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -818,6 +821,35 @@ export default function ArrayMapTest(): void {
       expect(result[0]).assertEqual(2);
       expect(result[1]).assertUndefined();
       expect(result[2]).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4510
+     * @tc.name testArrayMap0451
+     * @tc.desc Verify map skips sparse holes while preserving the result length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayMap0451', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<number | undefined>(3, (_index) => undefined);
+      arr[0] = 1;
+      arr[2] = 3;
+      let callbackCount = 0;
+      let result = arr.map((v: number | undefined): number | undefined => {
+        callbackCount++;
+        if (v === undefined) {
+          return undefined;
+        }
+        return v * 2;
+      });
+      expect(callbackCount).assertEqual(3);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertUndefined();
+      expect(result[2]).assertEqual(6);
+      expect(result.indexOf(undefined)).assertEqual(1);
+      expect(result.toString()).assertEqual('2,,6');
     });
 
     /**
@@ -1325,10 +1357,10 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1000, 2000);
-      const result = arr.map((value: number): number => value * 2);
-      expect(result[0]).assertEqual(2000);
-      expect(result[1]).assertEqual(4000);
+      const arr = new Array<bigint>(1000n, 2000n);
+      const result = arr.map((value: bigint): bigint => value * 2n);
+      expect(result[0]).assertEqual(2000n);
+      expect(result[1]).assertEqual(4000n);
     });
 
     /**
@@ -1538,8 +1570,8 @@ export default function ArrayMapTest(): void {
      * @tc.level Level 2
      */
     it('testArrayMap090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10, 20);
-      const result = arr.map((value: number): string => 'v' + value.toString());
+      const arr = new Array<bigint>(10n, 20n);
+      const result = arr.map((value: bigint): string => 'v' + value.toString());
       expect(result.toString()).assertEqual('v10,v20');
     });
 
