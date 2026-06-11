@@ -438,8 +438,6 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG_S4)
-
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG_S4)
       console.info(TAG + "************* testGetRdbStoreConfig0300 end   *************");
     });
     /**
