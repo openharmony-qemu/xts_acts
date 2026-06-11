@@ -396,15 +396,15 @@ export default function StringSubstrTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTR_2600
      * @tc.name testSubstr026
-     * @tc.desc Verify substr() with very large length extracts to end
+     * @tc.desc Verify substr() with negative start and very large length extracts suffix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSubstr026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ABC");
-      let result: string = text.substr(1, 100);
-      expect(result).assertEqual("BC");
+      const text = new String("ABCDEF");
+      let result: string = text.substr(-2, 100);
+      expect(result).assertEqual("EF");
     });
 
     /**

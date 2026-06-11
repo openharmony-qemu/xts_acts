@@ -92,7 +92,7 @@ export default function StringSubstringTest(): void {
      */
     it('testSubstring004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ab😀cd");
-      let result: String = text.substring(0, 3);
+      let result: String = text.substring(0, 4);
       expect(result.toString()).assertEqual("ab😀");
     });
 
@@ -248,7 +248,9 @@ export default function StringSubstringTest(): void {
     it('testSubstring015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("A😀B");
       let result: String = text.substring(0, 2);
-      expect(result.toString()).assertEqual("A😀");
+      expect(result.getLength()).assertEqual(2);
+      expect(result.toString().charCodeAt(0)).assertEqual(65);
+      expect(result.toString().charCodeAt(1)).assertEqual(0xD83D);
     });
 
     /**
@@ -484,6 +486,20 @@ export default function StringSubstringTest(): void {
       let first: string = text.substring(0, 7);
       let second: string = first.substring(1, 4);
       expect(second).assertEqual("ell");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_3200
+     * @tc.name testSubstring032
+     * @tc.desc Verify substring() extracts a range across mixed character sets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstring032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u4E2D\u0391\u0410\u0627\u05D0Z");
+      let result: string = text.substring(1, 6);
+      expect(result).assertEqual("\u4E2D\u0391\u0410\u0627\u05D0");
     });
   });
 }

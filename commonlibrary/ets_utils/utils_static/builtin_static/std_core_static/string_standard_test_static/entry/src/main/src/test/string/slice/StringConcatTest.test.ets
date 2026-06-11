@@ -274,84 +274,85 @@ export default function StringConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_1700
      * @tc.name testConcat017
-     * @tc.desc Verify + operator concatenates two strings
+     * @tc.desc Verify concat() concatenates two strings with a separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str1: string = 'Hello';
-      let str2: string = 'World';
-      let result: string = str1 + ' ' + str2;
-      expect(result).assertEqual('Hello World');
+      const str1 = new String('Hello');
+      let result: String = str1.concat(' ').concat('World');
+      expect(result.toString()).assertEqual('Hello World');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_1800
      * @tc.name testConcat018
-     * @tc.desc Verify += operator appends to string
+     * @tc.desc Verify concat() appends to string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: string = 'Hello';
-      str += ' World';
-      expect(str).assertEqual('Hello World');
+      const str = new String('Hello');
+      let result: String = str.concat(' World');
+      expect(result.toString()).assertEqual('Hello World');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_1900
      * @tc.name testConcat019
-     * @tc.desc Verify + operator concatenates string with number
+     * @tc.desc Verify concat() concatenates string with number converted to string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: string = 'Value: ' + 42;
-      expect(str).assertEqual('Value: 42');
+      const str = new String('Value: ');
+      let result: String = str.concat(new String('42'));
+      expect(result.toString()).assertEqual('Value: 42');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2000
      * @tc.name testConcat020
-     * @tc.desc Verify + operator concatenates string with boolean
+     * @tc.desc Verify concat() concatenates string with boolean converted to string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: string = 'Result: ' + true;
-      expect(str).assertEqual('Result: true');
+      const str = new String('Result: ');
+      let result: String = str.concat(new String('true'));
+      expect(result.toString()).assertEqual('Result: true');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2100
      * @tc.name testConcat021
-     * @tc.desc Verify + operator concatenates string with null
+     * @tc.desc Verify concat() concatenates string with null text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: string = 'Value: ' + null;
-      expect(str).assertEqual('Value: null');
+      const str = new String('Value: ');
+      let result: String = str.concat(new String('null'));
+      expect(result.toString()).assertEqual('Value: null');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2200
      * @tc.name testConcat022
-     * @tc.desc Verify + operator with mixed single/double quote strings
+     * @tc.desc Verify concat() with mixed single/double quote strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str1: string = 'Hello';
-      let str2: string = "World";
-      let result: string = str1 + ' ' + str2;
-      expect(result).assertEqual('Hello World');
+      const str1 = new String('Hello');
+      let result: String = str1.concat(" ").concat("World");
+      expect(result.toString()).assertEqual('Hello World');
     });
 
     /**
@@ -394,6 +395,82 @@ export default function StringConcatTest(): void {
       const text = new String("hello");
       let result: String = text.concat(" world").toUpperCase();
       expect(result.toString()).assertEqual("HELLO WORLD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2600
+     * @tc.name testConcat026
+     * @tc.desc Verify concat() preserves ordering across mixed character sets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let step1: String = text.concat("\u4E2D");
+      let step2: String = step1.concat("\u0391");
+      let step3: String = step2.concat("\u0627");
+      let result: String = step3.concat("\u05D0");
+      expect(result.toString()).assertEqual("A\u4E2D\u0391\u0627\u05D0");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2700
+     * @tc.name testConcat027
+     * @tc.desc Verify concat() on empty source appends argument content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("");
+      let result: String = text.concat("suffix");
+      expect(result.toString()).assertEqual("suffix");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2800
+     * @tc.name testConcat028
+     * @tc.desc Verify concat() preserves backslash characters in path-like text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("C:");
+      let result: String = text.concat("\\temp");
+      expect(result.toString()).assertEqual("C:\\temp");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2900
+     * @tc.name testConcat029
+     * @tc.desc Verify concat() with surrogate pair between BMP characters preserves code units
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let result: String = text.concat("\uD83D\uDE00").concat("B");
+      expect(result.toString()).assertEqual("A\uD83D\uDE00B");
+      expect(result.getLength()).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_3000
+     * @tc.name testConcat030
+     * @tc.desc Verify concat() with long suffix preserves resulting length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let suffix: string = "b".repeat(100);
+      let result: String = text.concat(suffix);
+      expect(result.getLength()).assertEqual(101);
+      expect(result.charAt(0)).assertEqual(c'A');
     });
   });
 }
