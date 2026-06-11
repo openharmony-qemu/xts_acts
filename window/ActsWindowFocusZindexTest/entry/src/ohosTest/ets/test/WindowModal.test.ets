@@ -52,10 +52,9 @@ async function sleep(time: number) {
 }
 
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
-  let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
   let want: Want = {
     bundleName: AppStorage.get('bundleName'),
-    abilityName: 'StartAbility'
+    abilityName: 'StartTestAbility'
   };
   if (options) {
     await context.startAbility(want, options).then(() => {
@@ -71,37 +70,17 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
     });
   }
   await sleep(1000)
-  AppStorage.setOrCreate('startNum', startNum + 1)
-  let windowStageStart = AppStorage.get('windowStageStart') as ohosWindow.WindowStage;
+  let windowStageStart = AppStorage.get('windowStageStartTest') as window.WindowStage;
   return windowStageStart
 }
 
-async function terminateAbilityCycle(caseName: string) {
-  let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
-  console.log(`${caseName} startNum = ${startNum}`)
-  while (startNum) {
-    let pageContext = AppStorage.get('pageContext') as common.UIAbilityContext
-    await pageContext.terminateSelf().then(() => {
-      console.log(`${caseName} terminateSelf success`);
-      // startNum -= 1
-      startNum--;
-    }).catch((err: BusinessError) => {
-      console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
-    });
-    await sleep(1000)
-  }
-  AppStorage.delete('startNum')
-}
-
 async function terminateAbility(caseName: string) {
-  let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
-  let pageContext = AppStorage.get('pageContext') as common.UIAbilityContext
+  let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
   await pageContext.terminateSelf().then(() => {
     console.log(`${caseName} terminateSelf success`);
   }).catch((err: BusinessError) => {
     console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
   });
-  AppStorage.setOrCreate('startNum', startNum - 1)
   await sleep(1000)
 }
 export default function windowModalTest() {

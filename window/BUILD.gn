@@ -30,7 +30,7 @@ group("window") {
     "ActsWindowErrorCodeTestStatic:ActsWindowErrorCodeStaticTest",
     "ActsWindowEnterpriseTestStatic:ActsWindowEnterpriseStaticTest",
     "FloatingBallTestStatic:ActsFloatingBallStaticTest",
-    "ActsWindowFocusZindexTestStatic:ActsWindowFocusZindexTestStaticTest",
+    "ActsWindowFocusZindexTestStatic:ActsWindowFocusZindexStaticTest",
     "ActsWindowKeyBoardTestStatic:ActsWindowKeyBoardStaticTest",
     "ActsWindowOrientationTestStatic:ActsWindowOrientationStaticTest",
     "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
