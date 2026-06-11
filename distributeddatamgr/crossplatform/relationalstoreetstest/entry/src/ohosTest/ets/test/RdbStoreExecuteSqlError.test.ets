@@ -226,6 +226,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       try {
         await rdbStore.close();
         await rdbStore.executeSql("DELETE FROM test WHERE age = ? OR age = ?", ["18", "28"]);
+        done();
       }catch (err) {
         console.error(TAG + `testRdbStoreExecuteSqlError006, errcode:${JSON.stringify(err)}`);
         expect(err.code == 14800014).assertTrue();
