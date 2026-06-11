@@ -375,8 +375,7 @@ export default function StringSearchTest(): void {
     it('testSearch024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Password1");
       let pos: int = text.search(new RegExp("\\d"));
-      let hasDigit: boolean = pos !== -1;
-      expect(hasDigit).assertTrue();
+      expect(pos).assertEqual(8);
     });
 
     /**
@@ -561,8 +560,7 @@ export default function StringSearchTest(): void {
      */
     it('testSearch037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Passw0rd");
-      let hasUpper: boolean = text.search(new RegExp("[A-Z]")) !== -1;
-      expect(hasUpper).assertTrue();
+      expect(text.search(new RegExp("[A-Z]"))).assertEqual(0);
     });
 
     /**
@@ -575,8 +573,7 @@ export default function StringSearchTest(): void {
      */
     it('testSearch038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Pass@word");
-      let hasSpecial: boolean = text.search(new RegExp("[!@#$%^&*]")) !== -1;
-      expect(hasSpecial).assertTrue();
+      expect(text.search(new RegExp("[!@#$%^&*]"))).assertEqual(4);
     });
 
     /**
@@ -775,6 +772,48 @@ export default function StringSearchTest(): void {
       const text = new String("radar");
       let pos: int = text.search(new RegExp("^r.*r$"));
       expect(pos).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5300
+     * @tc.name testSearch053
+     * @tc.desc Verify search() with RegExp anchors does not match literal anchor text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("before ^abc$ after");
+      let pos: int = text.search(new RegExp("^abc$"));
+      expect(pos).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5400
+     * @tc.name testSearch054
+     * @tc.desc Verify search() with ASCII uppercase class does not match Greek uppercase letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0391\u0392\u0393");
+      let pos: int = text.search(new RegExp("[A-Z]+"));
+      expect(pos).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5500
+     * @tc.name testSearch055
+     * @tc.desc Verify search() with anchored CJK RegExp does not match literal anchor characters in CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587^$\u6D4B\u8BD5");
+      let pos: int = text.search(new RegExp("^\\u4E2D\\u6587$"));
+      expect(pos).assertEqual(-1);
     });
   });
 }

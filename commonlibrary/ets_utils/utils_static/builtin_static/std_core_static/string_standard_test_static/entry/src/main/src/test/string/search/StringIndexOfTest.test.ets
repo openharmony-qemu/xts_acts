@@ -495,8 +495,7 @@ export default function StringIndexOfTest(): void {
     it('testIndexOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("hello world");
       let prefix: string = "hello";
-      let isPrefix: boolean = text.indexOf(prefix) === 0;
-      expect(isPrefix).assertTrue();
+      expect(text.indexOf(prefix)).assertEqual(0);
     });
 
     /**
@@ -529,6 +528,64 @@ export default function StringIndexOfTest(): void {
       let notFound: number = text.indexOf("xyz");
       expect(typeof found).assertEqual("number");
       expect(typeof notFound).assertEqual("number");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3500
+     * @tc.name testIndexOf035
+     * @tc.desc Verify indexOf() finds substring spanning mixed character sets
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("EN-\u4E2D\u6587-\u0391\u03B2-\u0627\u0644");
+      let pos: int = text.indexOf("\u0391\u03B2-\u0627");
+      let notFound: int = text.indexOf("\u05D0\u05D1");
+      expect(pos).assertEqual(6);
+      expect(notFound).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3600
+     * @tc.name testIndexOf036
+     * @tc.desc Verify indexOf() finds overlapping substring from explicit fromIndex
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("aaaa");
+      let pos: int = text.indexOf("aa", 1);
+      expect(pos).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3700
+     * @tc.name testIndexOf037
+     * @tc.desc Verify indexOf() with non-empty search and fromIndex equal to length returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello");
+      let pos: int = text.indexOf("o", 5);
+      expect(pos).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3800
+     * @tc.name testIndexOf038
+     * @tc.desc Verify indexOf() can find low surrogate code unit inside emoji pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\uD83D\uDE00B");
+      let pos: int = text.indexOf("\uDE00");
+      expect(pos).assertEqual(2);
     });
   });
 }

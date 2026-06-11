@@ -194,5 +194,49 @@ export default function StringTrimLeftTest(): void {
       let result: string = text.trimLeft();
       expect(result).assertEqual("data");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMLEFT_1500
+     * @tc.name testTrimLeft015
+     * @tc.desc Verify trimLeft() removes a UTF-8 BOM before JSON payload text
+     */
+    it('testTrimLeft015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\uFEFF{\"id\":1}");
+      let result: string = text.trimLeft();
+      expect(result).assertEqual("{\"id\":1}");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMLEFT_1600
+     * @tc.name testTrimLeft016
+     * @tc.desc Verify trimLeft() cleans leading whitespace before a command option
+     */
+    it('testTrimLeft016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\t  --mode=debug");
+      let result: string = text.trimLeft();
+      expect(result).assertEqual("--mode=debug");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMLEFT_1700
+     * @tc.name testTrimLeft017
+     * @tc.desc Verify trimLeft() cleans a CSV field while preserving trailing spaces
+     */
+    it('testTrimLeft017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  user@example.com  ");
+      let result: string = text.trimLeft();
+      expect(result).assertEqual("user@example.com  ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMLEFT_1800
+     * @tc.name testTrimLeft018
+     * @tc.desc Verify trimLeft() removes form-feed and vertical-tab before an imported SKU
+     */
+    it('testTrimLeft018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\f\vsku-001");
+      let result: string = text.trimLeft();
+      expect(result).assertEqual("sku-001");
+    });
   });
 }

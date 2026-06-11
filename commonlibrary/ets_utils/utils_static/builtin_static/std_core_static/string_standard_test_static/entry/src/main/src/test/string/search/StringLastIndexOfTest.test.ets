@@ -211,7 +211,7 @@ export default function StringLastIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_1300
      * @tc.name testLastIndexOf013
-     * @tc.desc Verify lastIndexOf() with negative fromIndex returns -1
+     * @tc.desc Verify lastIndexOf() with negative fromIndex clamps search to index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -292,8 +292,7 @@ export default function StringLastIndexOfTest(): void {
       const text = new String("hello world");
       let suffix: string = "world";
       let pos: int = text.lastIndexOf(suffix);
-      let isSuffix: boolean = pos === text.length - suffix.length;
-      expect(isSuffix).assertTrue();
+      expect(pos).assertEqual(text.length - suffix.length);
     });
 
     /**
@@ -310,6 +309,90 @@ export default function StringLastIndexOfTest(): void {
       let firstDot: int = text.search(new RegExp("\\."));
       expect(lastDot).assertEqual(7);
       expect(firstDot).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2000
+     * @tc.name testLastIndexOf020
+     * @tc.desc Verify lastIndexOf() with negative fromIndex returns -1 when index 0 does not match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hello");
+      let pos: int = text.lastIndexOf("e", -1);
+      expect(pos).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2100
+     * @tc.name testLastIndexOf021
+     * @tc.desc Verify lastIndexOf() with empty search and explicit fromIndex returns that bounded index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abcdef");
+      let pos: int = text.lastIndexOf("", 3);
+      expect(pos).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2200
+     * @tc.name testLastIndexOf022
+     * @tc.desc Verify lastIndexOf() finds last overlapping substring occurrence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("aaaa");
+      let pos: int = text.lastIndexOf("aa");
+      expect(pos).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2300
+     * @tc.name testLastIndexOf023
+     * @tc.desc Verify lastIndexOf() honors fromIndex for overlapping substring
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("aaaa");
+      let pos: int = text.lastIndexOf("aa", 1);
+      expect(pos).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2400
+     * @tc.name testLastIndexOf024
+     * @tc.desc Verify lastIndexOf() with empty search and fromIndex beyond length returns length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let pos: int = text.lastIndexOf("", 99);
+      expect(pos).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2500
+     * @tc.name testLastIndexOf025
+     * @tc.desc Verify lastIndexOf() finds last mixed character set occurrence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u4E2D-A\u4E2D-\u05D0");
+      let pos: int = text.lastIndexOf("A\u4E2D");
+      expect(pos).assertEqual(3);
     });
   });
 }

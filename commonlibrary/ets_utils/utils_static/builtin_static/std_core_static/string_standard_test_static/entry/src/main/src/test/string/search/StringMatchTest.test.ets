@@ -392,5 +392,296 @@ export default function StringMatchTest(): void {
       expect(notNull).assertTrue();
       expect(m![0]).assertEqual("cat");
     });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2300
+     * @tc.name testMatch023
+     * @tc.desc Verify match() with string pattern uses regex metacharacter semantics
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a.b");
+      let m: RegExpMatchArray | null = text.match(".");
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("a");
+      expect(m!.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2400
+     * @tc.name testMatch024
+     * @tc.desc Verify match() with escaped RegExp pattern matches a literal dot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a.b");
+      let m: RegExpMatchArray | null = text.match(new RegExp("\\."));
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual(".");
+      expect(m!.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2500
+     * @tc.name testMatch025
+     * @tc.desc Verify match() with RegExp quantifier braces does not match literal brace text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value a{2}");
+      let m: RegExpMatchArray | null = text.match(new RegExp("a{2}"));
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2600
+     * @tc.name testMatch026
+     * @tc.desc Verify match() with parentheses and plus RegExp metacharacters does not match literal expression text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("calc(1+2)");
+      let m: RegExpMatchArray | null = text.match(new RegExp("calc(1+2)"));
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2700
+     * @tc.name testMatch027
+     * @tc.desc Verify match() with hex escape RegExp does not match literal escape text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value=\\x41");
+      let m: RegExpMatchArray | null = text.match(new RegExp("\\x41"));
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2800
+     * @tc.name testMatch028
+     * @tc.desc Verify match() with string pattern escaped dot matches a literal dot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a.b");
+      let m: RegExpMatchArray | null = text.match("\\.");
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual(".");
+      expect(m!.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2900
+     * @tc.name testMatch029
+     * @tc.desc Verify match() with string digit-class pattern returns matched digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("order42done");
+      let m: RegExpMatchArray | null = text.match("\\d+");
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("42");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3000
+     * @tc.name testMatch030
+     * @tc.desc Verify match() with string anchor pattern matches the whole string only
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let m: RegExpMatchArray | null = text.match("^abc$");
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("abc");
+      expect(m!.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3100
+     * @tc.name testMatch031
+     * @tc.desc Verify match() with string anchor pattern does not match embedded text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("before abc after");
+      let m: RegExpMatchArray | null = text.match("^abc$");
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3200
+     * @tc.name testMatch032
+     * @tc.desc Verify match() with string pattern escaped dollar matches literal currency text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("price$100");
+      let m: RegExpMatchArray | null = text.match("price\\$\\d+");
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("price$100");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3300
+     * @tc.name testMatch033
+     * @tc.desc Verify match() with RegExp anchor pattern matches the whole string only
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let m: RegExpMatchArray | null = text.match(new RegExp("^abc$"));
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("abc");
+      expect(m!.index).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3400
+     * @tc.name testMatch034
+     * @tc.desc Verify match() with RegExp anchor pattern does not match embedded text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("before abc after");
+      let m: RegExpMatchArray | null = text.match(new RegExp("^abc$"));
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3500
+     * @tc.name testMatch035
+     * @tc.desc Verify match() with escaped RegExp dollar pattern matches literal currency text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("price$100");
+      let m: RegExpMatchArray | null = text.match(new RegExp("price\\$\\d+"));
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual("price$100");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3600
+     * @tc.name testMatch036
+     * @tc.desc Verify match() with ASCII uppercase class does not match Cyrillic uppercase letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0410\u0411\u0412");
+      let m: RegExpMatchArray | null = text.match(new RegExp("[A-Z]+"));
+      expect(m === null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3700
+     * @tc.name testMatch037
+     * @tc.desc Verify match() with RegExp supplementary-plane emoji pattern returns emoji match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let emoji: string = String.fromCodePoint(128512);
+      const text = new String("A" + emoji + "B");
+      let m: RegExpMatchArray | null = text.match(new RegExp(emoji));
+      let notNull: boolean = m !== null;
+      expect(notNull).assertTrue();
+      expect(m![0]).assertEqual(emoji);
+      expect(m!.index).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3800
+     * @tc.name testMatch038
+     * @tc.desc Verify match() with malformed RegExp char class throws before matching
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let thrown: boolean = false;
+      try {
+        let m: RegExpMatchArray | null = text.match(new RegExp("[abc"));
+      } catch (_error) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_3900
+     * @tc.name testMatch039
+     * @tc.desc Verify match() with malformed RegExp capture group throws before matching
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let thrown: boolean = false;
+      try {
+        let m: RegExpMatchArray | null = text.match(new RegExp("(abc"));
+      } catch (_error) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_4000
+     * @tc.name testMatch040
+     * @tc.desc Verify match() with malformed RegExp quantifier throws before matching
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let thrown: boolean = false;
+      try {
+        let m: RegExpMatchArray | null = text.match(new RegExp("a**"));
+      } catch (_error) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
   });
 }

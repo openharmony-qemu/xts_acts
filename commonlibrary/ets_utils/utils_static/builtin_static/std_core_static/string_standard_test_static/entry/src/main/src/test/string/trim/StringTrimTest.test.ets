@@ -256,7 +256,7 @@ export default function StringTrimTest(): void {
       const b = new String("hello");
       let ta: string = a.trim().toLowerCase();
       let tb: string = b.trim().toLowerCase();
-      expect(ta === tb).assertTrue();
+      expect(ta).assertEqual(tb);
     });
 
     /**

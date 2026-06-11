@@ -194,5 +194,49 @@ export default function StringTrimRightTest(): void {
       let result: string = text.trimRight();
       expect(result).assertEqual("data");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1500
+     * @tc.name testTrimRight015
+     * @tc.desc Verify trimRight() removes CRLF from a protocol header line
+     */
+    it('testTrimRight015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("Content-Length: 12\r\n");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("Content-Length: 12");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1600
+     * @tc.name testTrimRight016
+     * @tc.desc Verify trimRight() removes trailing blanks while preserving YAML indentation
+     */
+    it('testTrimRight016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  child: value   ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("  child: value");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1700
+     * @tc.name testTrimRight017
+     * @tc.desc Verify trimRight() cleans a CSV field while preserving leading spaces
+     */
+    it('testTrimRight017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  user@example.com  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("  user@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1800
+     * @tc.name testTrimRight018
+     * @tc.desc Verify trimRight() removes a trailing BOM marker from imported text
+     */
+    it('testTrimRight018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("token\uFEFF");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("token");
+    });
   });
 }
