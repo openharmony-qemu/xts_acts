@@ -571,7 +571,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       })
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800
      * @tc.desc   Test remoteQuery callback columns with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
