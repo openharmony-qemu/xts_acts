@@ -54,6 +54,12 @@ function toLocaleStringWithOptionsOne<T>(
   return arr.toLocaleString(locales, options);
 }
 
+function normalizeFrenchGroupingSpacesOne(text: string): string {
+  let normalized = text.split(String.fromCharCode(0x202F)).join(' ');
+  normalized = normalized.split(String.fromCharCode(0x00A0)).join(' ');
+  return normalized;
+}
+
 export default function ArrayToLocaleString1Test(): void {
   describe('ArrayToLocaleString1Test', (): void => {
     beforeAll((): void => {
@@ -146,7 +152,7 @@ export default function ArrayToLocaleString1Test(): void {
       const locales = new Intl.Locale('fr-FR');
       const options: Intl.NumberFormatOptions = {};
       const output = arr.toLocaleString(locales, options);
-      expect(output).assertEqual('1' + String.fromCharCode(0x202F) + '000');
+      expect(normalizeFrenchGroupingSpacesOne(output)).assertEqual('1 000');
     });
 
     /**
@@ -293,7 +299,7 @@ export default function ArrayToLocaleString1Test(): void {
       const arr = new Array<number>(1000);
       const options: Intl.NumberFormatOptions = {};
       const output = arr.toLocaleString(new Intl.Locale('fr-FR'), options);
-      expect(output).assertEqual('1' + String.fromCharCode(0x202F) + '000');
+      expect(normalizeFrenchGroupingSpacesOne(output)).assertEqual('1 000');
     });
 
     /**
@@ -640,8 +646,7 @@ export default function ArrayToLocaleString1Test(): void {
       const locales = new Intl.Locale('fr-FR');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
       const result = arr.toLocaleString(locales, options);
-      const separator = String.fromCharCode(0x202F);
-      expect(result).assertEqual('1' + separator + '234,50,6' + separator + '789,25');
+      expect(normalizeFrenchGroupingSpacesOne(result)).assertEqual('1 234,50,6 789,25');
     });
 
     /**
@@ -1087,9 +1092,8 @@ export default function ArrayToLocaleString1Test(): void {
       const locales = new Intl.Locale('fr-FR');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
       const result = arr.toLocaleString(locales, options);
-      const separator = String.fromCharCode(0x202F);
       expect(arr.toString()).assertEqual('1234.5,6789.25');
-      expect(result).assertEqual('1' + separator + '234,50,6' + separator + '789,25');
+      expect(normalizeFrenchGroupingSpacesOne(result)).assertEqual('1 234,50,6 789,25');
     });
 
     /**

@@ -757,14 +757,15 @@ export default function ArrayShrinkToTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4000
      * @tc.name testArrayShrinkTo040
-     * @tc.desc Verify shrinkTo returns void and therefore cannot be chained directly
+     * @tc.desc Verify shrinkTo returns undefined while the shortened array remains usable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
-      arr.shrinkTo(3);
+      const result = arr.shrinkTo(3);
+      expect(result).assertUndefined();
       arr.pushOne(6);
       expect(arr.length).assertEqual(4);
       expect(arr[3]).assertEqual(6);
@@ -814,271 +815,321 @@ export default function ArrayShrinkToTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4300
      * @tc.name testArrayShrinkTo043
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 2, 3, 4
+     * @tc.desc Verify shrinkTo keeps a NaN value in the retained prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(2, 3, 4);
+      const arr = new Array<number>(NaN, 2, 3);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('2,3');
+      expect(Number.isNaN(arr[0])).assertTrue();
+      expect(arr[1]).assertEqual(2);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4400
      * @tc.name testArrayShrinkTo044
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 3, 4, 5
+     * @tc.desc Verify shrinkTo preserves Infinity and negative Infinity when both remain in the prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3, 4, 5);
+      const arr = new Array<number>(Infinity, -Infinity, 0);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('3,4');
+      expect(arr[0]).assertEqual(Infinity);
+      expect(arr[1]).assertEqual(-Infinity);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4500
      * @tc.name testArrayShrinkTo045
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 4, 5, 6
+     * @tc.desc Verify shrinkTo preserves the sign of a retained negative zero value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4, 5, 6);
+      const arr = new Array<number>(-0, 1, 2);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('4,5');
+      expect(1.0 / arr[0]).assertEqual(-Infinity);
+      expect(arr[1]).assertEqual(1);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4600
      * @tc.name testArrayShrinkTo046
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 5, 6, 7
+     * @tc.desc Verify shrinkTo keeps sparse holes inside the retained prefix without materializing extra values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5, 6, 7);
+      const arr = new Array<number | undefined>(5);
+      arr[1] = 10;
+      arr[4] = 40;
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('5,6');
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertUndefined();
+      expect(arr[1]).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4700
      * @tc.name testArrayShrinkTo047
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 6, 7, 8
+     * @tc.desc Verify shrinkTo keeps the rewritten prefix after copyWithin changes the front of the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(6, 7, 8);
-      arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('6,7');
-      expect(arr.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.copyWithin(0, 2, 4);
+      arr.shrinkTo(3);
+      expect(arr.toString()).assertEqual('3,4,3');
+      expect(arr.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4800
      * @tc.name testArrayShrinkTo048
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 7, 8, 9
+     * @tc.desc Verify shrinkTo keeps values written into the retained prefix by fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(7, 8, 9);
-      arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('7,8');
-      expect(arr.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.fill(9, 1, 4);
+      arr.shrinkTo(3);
+      expect(arr.toString()).assertEqual('1,9,9');
+      expect(arr.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4900
      * @tc.name testArrayShrinkTo049
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 8, 9, 10
+     * @tc.desc Verify shrinkTo preserves nested array references in the retained prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(8, 9, 10);
+      const first = new Array<number>(1);
+      const second = new Array<number>(2, 3);
+      const third = new Array<number>(4);
+      const arr = new Array<Array<number>>(first, second, third);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('8,9');
+      expect(arr[0] === first).assertTrue();
+      expect(arr[1] === second).assertTrue();
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5000
      * @tc.name testArrayShrinkTo050
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 9, 10, 11
+     * @tc.desc Verify shrinkTo preserves duplicate references when the same object occupies the kept prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(9, 10, 11);
+      const shared = new ShrinkRefCase028();
+      shared.value = 7;
+      const tail = new ShrinkRefCase028();
+      tail.value = 9;
+      const arr = new Array<ShrinkRefCase028>(shared, shared, tail);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('9,10');
+      expect(arr[0] === shared).assertTrue();
+      expect(arr[1] === shared).assertTrue();
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5100
      * @tc.name testArrayShrinkTo051
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 10, 11, 12
+     * @tc.desc Verify retained object references remain writable after shrinkTo drops later objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10, 11, 12);
+      const kept = new ShrinkRefCase028();
+      kept.value = 1;
+      const removed = new ShrinkRefCase028();
+      removed.value = 2;
+      const arr = new Array<ShrinkRefCase028>(kept, removed);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('10,11');
-      expect(arr.length).assertEqual(2);
+      arr.shrinkTo(1);
+      arr[0].value = 99;
+      expect(kept.value).assertEqual(99);
+      expect(removed.value).assertEqual(2);
+      expect(arr.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5200
      * @tc.name testArrayShrinkTo052
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 11, 12, 13
+     * @tc.desc Verify shrinkTo keeps a mixed union prefix with both object and primitive values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(11, 12, 13);
+      const ref = new ShrinkRefCase028();
+      ref.value = 5;
+      const arr = new Array<ShrinkRefCase028 | string | number>(ref, 'two', 3);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('11,12');
+      expect(arr[0] === ref).assertTrue();
+      expect(arr[1]).assertEqual('two');
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5300
      * @tc.name testArrayShrinkTo053
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 12, 13, 14
+     * @tc.desc Verify shrinkTo preserves surrounding whitespace in retained string prefixes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(12, 13, 14);
+      const arr = new Array<string>('  alpha', 'beta  ', ' gamma ');
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('12,13');
+      expect(arr[0]).assertEqual('  alpha');
+      expect(arr[1]).assertEqual('beta  ');
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5400
      * @tc.name testArrayShrinkTo054
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 13, 14, 15
+     * @tc.desc Verify shrinkTo preserves negative bigint and zero values in the kept prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(13, 14, 15);
+      const arr = new Array<bigint>(-1n, 0n, 1n);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('13,14');
+      expect(arr[0]).assertEqual(-1n);
+      expect(arr[1]).assertEqual(0n);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5500
      * @tc.name testArrayShrinkTo055
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 14, 15, 16
+     * @tc.desc Verify shrinkTo removes a defined sparse tail element that lies beyond the retained boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(14, 15, 16);
+      const arr = new Array<number | undefined>(5);
+      arr[0] = 1;
+      arr[4] = 9;
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('14,15');
       expect(arr.length).assertEqual(2);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertUndefined();
+      expect(arr.includes(9)).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5600
      * @tc.name testArrayShrinkTo056
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 15, 16, 17
+     * @tc.desc Verify shrinkTo keeps an inserted head prefix after splice prepends a value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(15, 16, 17);
-      arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('15,16');
-      expect(arr.length).assertEqual(2);
+      const arr = new Array<number>(2, 3, 4);
+      arr.splice(0, 0, 1);
+      arr.shrinkTo(3);
+      expect(arr.toString()).assertEqual('1,2,3');
+      expect(arr.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5700
      * @tc.name testArrayShrinkTo057
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 16, 17, 18
+     * @tc.desc Verify shrinkTo on a mapped copy does not alter the original source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(16, 17, 18);
+      const source = new Array<number>(1, 2, 3);
+      const arr = source.map((value: number): number => value * 10);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('16,17');
+      expect(arr.toString()).assertEqual('10,20');
+      expect(source.toString()).assertEqual('1,2,3');
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5800
      * @tc.name testArrayShrinkTo058
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 17, 18, 19
+     * @tc.desc Verify shrinkTo on an Array.from copy of a typed array leaves the typed source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(17, 18, 19);
+      const typed = new Uint8Array([5, 6, 7]);
+      const arr = Array.from<number>(typed);
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('17,18');
+      expect(arr.toString()).assertEqual('5,6');
+      expect(typed[2]).assertEqual(7);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_5900
      * @tc.name testArrayShrinkTo059
-     * @tc.desc Verify shrinkTo can keep the leading pair from numeric triple 18, 19, 20
+     * @tc.desc Verify shrinkTo on a descending toSorted copy keeps the reordered prefix while source stays unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(18, 19, 20);
+      const source = new Array<number>(1, 4, 2, 3);
+      const arr = source.toSorted((left: number, right: number): int => {
+        if (left > right) {
+          return -1;
+        }
+        if (left < right) {
+          return 1;
+        }
+        return 0;
+      });
       arr.shrinkTo(2);
-      expect(arr.toString()).assertEqual('18,19');
+      expect(arr.toString()).assertEqual('4,3');
+      expect(source.toString()).assertEqual('1,4,2,3');
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_6000
      * @tc.name testArrayShrinkTo060
-     * @tc.desc Verify shrinkTo keeps the leading pair from numeric triple 2, 3, 4
+     * @tc.desc Verify shrinkTo can keep a rebuilt prefix after manual length truncation and later append
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShrinkTo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(2, 3, 4);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.length = 2;
+      arr.pushOne(9);
       arr.shrinkTo(2);
+      expect(arr.toString()).assertEqual('1,2');
       expect(arr.length).assertEqual(2);
-      expect(arr.toString()).assertEqual('2,3');
     });
 
     /**

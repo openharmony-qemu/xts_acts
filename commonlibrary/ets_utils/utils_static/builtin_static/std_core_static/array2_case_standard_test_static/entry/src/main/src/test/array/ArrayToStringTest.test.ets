@@ -202,8 +202,9 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeNumberArray(1000);
       const result = arr.toString();
-      expect(result.length > 0).assertTrue();
-      expect(result.indexOf(',') >= 0).assertTrue();
+      expect(result.indexOf('0,1,2,3,4')).assertEqual(0);
+      const suffix = '995,996,997,998,999';
+      expect(result.lastIndexOf(suffix)).assertEqual(result.length - suffix.length);
     });
 
     /**
@@ -677,7 +678,9 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeNumberArray(10000);
       const result = arr.toString();
-      expect(result.length > 0).assertTrue();
+      expect(result.indexOf('0,1,2,3,4')).assertEqual(0);
+      const suffix = '9995,9996,9997,9998,9999';
+      expect(result.lastIndexOf(suffix)).assertEqual(result.length - suffix.length);
     });
 
     /**
@@ -795,6 +798,7 @@ export default function ArrayToStringTest(): void {
       const result = arr.toString();
       expect(result).assertEqual('1,,3');
       expect(result).assertEqual(arr.join());
+      expect(arr.indexOf(undefined)).assertEqual(1);
     });
 
     /**
@@ -811,6 +815,7 @@ export default function ArrayToStringTest(): void {
       const result = arr.toString();
       expect(result).assertEqual('1,');
       expect(result).assertEqual(arr.join(','));
+      expect(arr.indexOf(undefined)).assertEqual(1);
     });
 
     /**
@@ -827,6 +832,7 @@ export default function ArrayToStringTest(): void {
       const result = arr.toString();
       expect(result).assertEqual(',2');
       expect(result).assertEqual(arr.join());
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**
@@ -842,6 +848,7 @@ export default function ArrayToStringTest(): void {
       const result = arr.toString();
       expect(result).assertEqual(',,');
       expect(result).assertEqual(arr.join(','));
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**
@@ -859,6 +866,8 @@ export default function ArrayToStringTest(): void {
       sparse[2] = 3;
       expect(explicit.toString()).assertEqual('1,,3');
       expect(sparse.toString()).assertEqual(explicit.toString());
+      expect(explicit.indexOf(undefined)).assertEqual(1);
+      expect(sparse.indexOf(undefined)).assertEqual(1);
     });
 
     /**
@@ -1492,6 +1501,7 @@ export default function ArrayToStringTest(): void {
       nested[2] = 3;
       const arr = new Array<Object>(nested);
       expect(arr.toString()).assertEqual('1,,3');
+      expect(nested.indexOf(undefined)).assertEqual(1);
     });
 
     /**

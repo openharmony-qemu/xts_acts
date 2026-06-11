@@ -56,6 +56,18 @@ function isNegativeZero(value: number): boolean {
   return value === 0 && 1 / value === -Infinity;
 }
 
+function isFullyReversed(source: Array<number>, result: Array<number>): boolean {
+  if (source.length !== result.length) {
+    return false;
+  }
+  for (let i: int = 0; i < source.length; i++) {
+    if (result[i] !== source[source.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 export default function ArrayToReversedTest(): void {
   describe('ArrayToReversedTest', (): void => {
     beforeAll((): void => {});
@@ -595,19 +607,15 @@ export default function ArrayToReversedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_REVERSED_3400
      * @tc.name testArrayToReversed034
-     * @tc.desc Verify large arrays keep correct boundary values after toReversed
+     * @tc.desc Verify large arrays are fully reversed by toReversed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayToReversed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createOneBasedArray(10000);
-      const start = Date.now();
       const result = arr.toReversed();
-      const end = Date.now();
-      expect(result[0]).assertEqual(10000);
-      expect(result[result.length - 1]).assertEqual(1);
-      expect(end >= start).assertTrue();
+      expect(isFullyReversed(arr, result)).assertTrue();
     });
 
     /**

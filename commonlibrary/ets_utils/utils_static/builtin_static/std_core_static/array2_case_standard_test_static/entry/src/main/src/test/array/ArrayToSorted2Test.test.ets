@@ -94,6 +94,24 @@ function createPseudoRandomNumbersTwo(size: int, modulo: int): Array<number> {
   return arr;
 }
 
+function isAscendingSequenceTwo(values: Array<number>, firstValue: number): boolean {
+  for (let i: int = 0; i < values.length; i++) {
+    if (values[i] !== firstValue + i) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isSortedByComparatorTwo<T>(values: Array<T>, compare: (a: T, b: T) => number): boolean {
+  for (let i: int = 1; i < values.length; i++) {
+    if (compare(values[i - 1], values[i]) > 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 export default function ArrayToSorted2Test(): void {
   describe('ArrayToSorted2Test', (): void => {
     beforeAll((): void => {});
@@ -790,14 +808,13 @@ export default function ArrayToSorted2Test(): void {
     it('testArrayToSortedTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createDescendingRangeTwo(1000);
       const result = arr.toSorted(compareNumbersAscendingTwo);
-      expect(result[0]).assertEqual(1);
-      expect(result[999]).assertEqual(1000);
+      expect(isAscendingSequenceTwo(result, 1)).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4200
      * @tc.name testArrayToSortedTwo042
-     * @tc.desc Verify complex comparator logic still returns the expected array size
+     * @tc.desc Verify complex comparator logic orders values by modulo bucket and numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -813,7 +830,11 @@ export default function ArrayToSorted2Test(): void {
         return a - b;
       };
       const result = arr.toSorted(toIntComparator(comparator));
+      const normalizedResult = result.toSorted(compareNumbersAscendingTwo);
+      const normalizedSource = arr.toSorted(compareNumbersAscendingTwo);
       expect(result.length).assertEqual(100);
+      expect(isSortedByComparatorTwo(result, comparator)).assertTrue();
+      expect(normalizedResult.toString()).assertEqual(normalizedSource.toString());
     });
 
     /**
@@ -1200,7 +1221,7 @@ export default function ArrayToSorted2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6200
      * @tc.name testArrayToSortedTwo062
-     * @tc.desc Verify nullish comparator handling places null before numbers and undefined last
+     * @tc.desc Verify nullish comparator handling orders null before numbers and undefined last
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

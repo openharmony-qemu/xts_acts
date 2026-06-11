@@ -66,7 +66,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_0100
      * @tc.name testArrayToSplicedOne001
-     * @tc.desc Verify toSpliced returns an empty array when called without parameters
+     * @tc.desc Verify toSpliced returns an unchanged copy when called without parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -340,7 +340,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_1900
      * @tc.name testArrayToSplicedOne019
-     * @tc.desc Verify fractional start values are handled consistently
+     * @tc.desc Verify start values supplied by int variables are handled consistently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -357,7 +357,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_2000
      * @tc.name testArrayToSplicedOne020
-     * @tc.desc Verify fractional delete counts are handled consistently
+     * @tc.desc Verify delete counts supplied by int variables are handled consistently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -374,7 +374,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_2100
      * @tc.name testArrayToSplicedOne021
-     * @tc.desc Verify NaN start values are handled without growing the result
+     * @tc.desc Verify zero start values remove from the beginning without mutating the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -390,7 +390,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_2200
      * @tc.name testArrayToSplicedOne022
-     * @tc.desc Verify Infinity start values leave the array contents unchanged
+     * @tc.desc Verify start values at array length leave the array contents unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -655,6 +655,10 @@ export default function ArrayToSpliced1Test(): void {
       const arr = createSequentialArray(10000);
       const result = arr.toSpliced(1000, 5000);
       expect(result.length).assertEqual(5000);
+      expect(result[0]).assertEqual(0);
+      expect(result[999]).assertEqual(999);
+      expect(result[1000]).assertEqual(6000);
+      expect(result[4999]).assertEqual(9999);
     });
 
     /**
@@ -799,6 +803,7 @@ export default function ArrayToSpliced1Test(): void {
       expect(result[0]).assertUndefined();
       expect(result[1]).assertEqual(1);
       expect(result[2]).assertUndefined();
+      expect(arr.indexOf(undefined)).assertEqual(0);
       expect(result.lastIndexOf(undefined)).assertEqual(2);
     });
 

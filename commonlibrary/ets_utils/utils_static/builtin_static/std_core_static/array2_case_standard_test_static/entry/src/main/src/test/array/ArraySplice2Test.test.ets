@@ -582,19 +582,19 @@ export default function ArraySplice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_TWO_3300
      * @tc.name testArraySpliceTwo033
-     * @tc.desc Verify splice with one start argument moves remaining elements by changing the length
+     * @tc.desc Verify splice with one start argument returns the removed suffix and updates remaining boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySpliceTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createRangeArray(10000);
-      const startTime = Date.now();
       const removed = arr.splice(5000);
-      const endTime = Date.now();
       expect(arr.length).assertEqual(5000);
+      expect(arr[4999]).assertEqual(4999);
       expect(removed.length).assertEqual(5000);
-      expect(endTime >= startTime).assertTrue();
+      expect(removed[0]).assertEqual(5000);
+      expect(removed[4999]).assertEqual(9999);
     });
 
     /**
@@ -1048,6 +1048,7 @@ export default function ArraySplice2Test(): void {
       removed.pushOne(4);
       expect(arr.length).assertEqual(3);
       expect(arr[2]).assertEqual(3);
+      expect(arr.indexOf(undefined)).assertEqual(1);
       expect(removed.toString()).assertEqual('4');
     });
 

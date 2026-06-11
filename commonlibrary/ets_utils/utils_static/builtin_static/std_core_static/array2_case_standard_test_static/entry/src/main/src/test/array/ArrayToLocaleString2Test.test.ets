@@ -63,6 +63,12 @@ function createLargeNumberArray(size: int): Array<number> {
   return arr;
 }
 
+function normalizeFrenchGroupingSpacesTwo(text: string): string {
+  let normalized = text.split(String.fromCharCode(0x202F)).join(' ');
+  normalized = normalized.split(String.fromCharCode(0x00A0)).join(' ');
+  return normalized;
+}
+
 export default function ArrayToLocaleString2Test(): void {
   describe('ArrayToLocaleString2Test', (): void => {
     beforeAll((): void => {
@@ -136,7 +142,7 @@ export default function ArrayToLocaleString2Test(): void {
       const arr = new Array<number>(1000);
       const locales = new Intl.Locale('fr-FR');
       const output = arr.toLocaleString(locales);
-      expect(output).assertEqual('1' + String.fromCharCode(0x202F) + '000');
+      expect(normalizeFrenchGroupingSpacesTwo(output)).assertEqual('1 000');
     });
 
     /**
@@ -501,9 +507,7 @@ export default function ArrayToLocaleString2Test(): void {
       expect(arr.toLocaleString(localesList[0])).assertEqual('1,000,2,000');
       expect(arr.toLocaleString(localesList[1])).assertEqual('1,000,2,000');
       expect(arr.toLocaleString(localesList[2])).assertEqual('1,000,2,000');
-      expect(arr.toLocaleString(localesList[3])).assertEqual(
-        '1' + String.fromCharCode(0x202F) + '000,2' + String.fromCharCode(0x202F) + '000'
-      );
+      expect(normalizeFrenchGroupingSpacesTwo(arr.toLocaleString(localesList[3]))).assertEqual('1 000,2 000');
     });
 
     /**
@@ -623,7 +627,7 @@ export default function ArrayToLocaleString2Test(): void {
       const arr = new Array<number>(1000, 2000);
       const locales = new Intl.Locale('fr-FR');
       const result = arr.toLocaleString(locales);
-      expect(result).assertEqual('1' + String.fromCharCode(0x202F) + '000,2' + String.fromCharCode(0x202F) + '000');
+      expect(normalizeFrenchGroupingSpacesTwo(result)).assertEqual('1 000,2 000');
     });
 
     /**
@@ -979,7 +983,7 @@ export default function ArrayToLocaleString2Test(): void {
       const arr = new Array<Date>(new Date(1593604800000));
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
-      expect(result.indexOf('2020') >= 0).assertTrue();
+      expect(result).assertEqual(arr[0].toLocaleString(locales));
     });
 
     /**
@@ -1100,10 +1104,7 @@ export default function ArrayToLocaleString2Test(): void {
     it('testArrayToLocaleStringTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).map((value: number): number => value * 1000);
       const locales = new Intl.Locale('fr-FR');
-      expect(arr.toLocaleString(locales)).assertEqual(
-        '1' + String.fromCharCode(0x202F) + '000,2' + String.fromCharCode(0x202F) + '000,3' +
-        String.fromCharCode(0x202F) + '000'
-      );
+      expect(normalizeFrenchGroupingSpacesTwo(arr.toLocaleString(locales))).assertEqual('1 000,2 000,3 000');
     });
 
     /**

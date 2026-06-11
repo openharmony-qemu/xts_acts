@@ -625,6 +625,9 @@ export default function ArrayToSpliced4Test(): void {
       const start: int = 5000;
       const result = arr.toSpliced(start);
       expect(result.length).assertEqual(5000);
+      expect(result[0]).assertEqual(0);
+      expect(result[4999]).assertEqual(4999);
+      expect(arr[5000]).assertEqual(5000);
     });
 
     /**

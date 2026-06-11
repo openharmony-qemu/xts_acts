@@ -240,6 +240,28 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1110
+     * @tc.name testArrayShift0111
+     * @tc.desc Verify shift on a sparse array reindexes present elements without materializing holes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayShift0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<number | undefined>(4, (_index) => undefined);
+      arr[1] = 1;
+      arr[3] = 3;
+      let result = arr.shift();
+      expect(result).assertUndefined();
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertUndefined();
+      expect(arr[2]).assertEqual(3);
+      expect(arr.includes(undefined)).assertTrue();
+      expect(arr.indexOf(undefined)).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1200
      * @tc.name testArrayShift012
      * @tc.desc Verify the return value can be annotated as element type or undefined
@@ -500,19 +522,18 @@ export default function ArrayShiftTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2800
      * @tc.name testArrayShift028
-     * @tc.desc Verify shift shows measurable linear-time behavior on large arrays
+     * @tc.desc Verify shift updates boundaries correctly on large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createLargeNumberArray(10000);
-      let startTime = Date.now();
       let result = arr.shift();
-      let endTime = Date.now();
       expect(result).assertEqual(0);
+      expect(arr.length).assertEqual(9999);
       expect(arr[0]).assertEqual(1);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr[arr.length - 1]).assertEqual(9999);
     });
 
     /**
@@ -548,7 +569,7 @@ export default function ArrayShiftTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3100
      * @tc.name testArrayShift031
-     * @tc.desc Verify shift results cannot directly chain array methods
+     * @tc.desc Verify shift on a numeric array returns a numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -557,6 +578,7 @@ export default function ArrayShiftTest(): void {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.shift();
       expect(typeof result).assertEqual('number');
+      expect(arr.length).assertEqual(2);
     });
 
     /**
@@ -583,285 +605,359 @@ export default function ArrayShiftTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3300
      * @tc.name testArrayShift033
-     * @tc.desc Verify shift removes the first value from numeric window 1
+     * @tc.desc Verify shift can return NaN while exposing the next numeric head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(4).slice(1, 4);
+      const arr = new Array<number>(NaN, 1, 2);
       const value = arr.shift();
-      expect(value).assertEqual(1);
+      expect(value !== undefined).assertTrue();
+      if (value !== undefined) {
+        expect(Number.isNaN(value)).assertTrue();
+      }
+      expect(arr[0]).assertEqual(1);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3400
      * @tc.name testArrayShift034
-     * @tc.desc Verify shift removes the first value from numeric window 2
+     * @tc.desc Verify shift can remove positive Infinity and expose negative Infinity next
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(5).slice(2, 5);
+      const arr = new Array<number>(Infinity, -Infinity, 0);
       const value = arr.shift();
-      expect(value).assertEqual(2);
+      expect(value).assertEqual(Infinity);
+      expect(arr[0]).assertEqual(-Infinity);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3500
      * @tc.name testArrayShift035
-     * @tc.desc Verify shift removes the first value from numeric window 3
+     * @tc.desc Verify shift preserves the sign of a negative zero boundary value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(6).slice(3, 6);
+      const arr = new Array<number>(-0, 1);
       const value = arr.shift();
-      expect(value).assertEqual(3);
-      expect(arr.length).assertEqual(2);
+      expect(value !== undefined).assertTrue();
+      if (value !== undefined) {
+        expect(1.0 / value).assertEqual(-Infinity);
+      }
+      expect(arr[0]).assertEqual(1);
+      expect(arr.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3600
      * @tc.name testArrayShift036
-     * @tc.desc Verify shift removes the first value from numeric window 4
+     * @tc.desc Verify shift removes a head value after fill rewrites the prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(7).slice(4, 7);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.fill(9, 0, 2);
       const value = arr.shift();
-      expect(value).assertEqual(4);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(9);
+      expect(arr.toString()).assertEqual('9,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3700
      * @tc.name testArrayShift037
-     * @tc.desc Verify shift removes the first value from numeric window 5
+     * @tc.desc Verify shift removes the copied head value after copyWithin reorders the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(8).slice(5, 8);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.copyWithin(0, 2, 4);
       const value = arr.shift();
-      expect(value).assertEqual(5);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(3);
+      expect(arr.toString()).assertEqual('4,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3800
      * @tc.name testArrayShift038
-     * @tc.desc Verify shift removes the first value from numeric window 6
+     * @tc.desc Verify shift removes the maximum value after a descending numeric sort
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(9).slice(6, 9);
+      const arr = new Array<number>(3, 1, 2);
+      arr.sort((left: number, right: number): int => {
+        if (left > right) {
+          return -1;
+        }
+        if (left < right) {
+          return 1;
+        }
+        return 0;
+      });
       const value = arr.shift();
-      expect(value).assertEqual(6);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(3);
+      expect(arr.toString()).assertEqual('2,1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3900
      * @tc.name testArrayShift039
-     * @tc.desc Verify shift removes the first value from numeric window 7
+     * @tc.desc Verify shift returns the first nested array reference without cloning it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(10).slice(7, 10);
+      const first = new Array<number>(1, 2);
+      const second = new Array<number>(3);
+      const arr = new Array<Array<number>>(first, second);
       const value = arr.shift();
-      expect(value).assertEqual(7);
-      expect(arr.length).assertEqual(2);
+      expect(value !== undefined).assertTrue();
+      if (value !== undefined) {
+        expect(value === first).assertTrue();
+        value.pushOne(9);
+      }
+      expect(first.toString()).assertEqual('1,2,9');
+      expect(arr[0] === second).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4000
      * @tc.name testArrayShift040
-     * @tc.desc Verify shift removes the first value from numeric window 8
+     * @tc.desc Verify shift removes only one entry when the same object reference appears twice at the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(11).slice(8, 11);
+      const shared = new ShiftRefCase006();
+      shared.value = 7;
+      const tail = new ShiftRefCase006();
+      tail.value = 9;
+      const arr = new Array<ShiftRefCase006>(shared, shared, tail);
       const value = arr.shift();
-      expect(value).assertEqual(8);
+      expect(value === shared).assertTrue();
+      expect(arr[0] === shared).assertTrue();
+      expect(arr[1] === tail).assertTrue();
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4100
      * @tc.name testArrayShift041
-     * @tc.desc Verify shift removes the first value from numeric window 9
+     * @tc.desc Verify mutating the shifted object does not affect the next distinct object instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(12).slice(9, 12);
+      const first = new Person005();
+      first.name = 'Alice';
+      const second = new Person005();
+      second.name = 'Bob';
+      const arr = new Array<Person005>(first, second);
       const value = arr.shift();
-      expect(value).assertEqual(9);
-      expect(arr.length).assertEqual(2);
+      expect(value !== undefined).assertTrue();
+      if (value !== undefined) {
+        value.name = 'Changed';
+      }
+      expect(first.name).assertEqual('Changed');
+      expect(arr[0].name).assertEqual('Bob');
+      expect(arr.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4200
      * @tc.name testArrayShift042
-     * @tc.desc Verify shift removes the first value from numeric window 10
+     * @tc.desc Verify shift can remove an object boundary from a union-typed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(13).slice(10, 13);
+      const person = new Person005();
+      person.name = 'Lead';
+      const arr = new Array<Person005 | string | number>(person, 'next', 3);
       const value = arr.shift();
-      expect(value).assertEqual(10);
+      expect(value === person).assertTrue();
+      expect(arr[0]).assertEqual('next');
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4300
      * @tc.name testArrayShift043
-     * @tc.desc Verify shift removes the first value from numeric window 11
+     * @tc.desc Verify shift preserves surrounding whitespace in the removed string value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(14).slice(11, 14);
+      const arr = new Array<string>('  lead', 'trail  ');
       const value = arr.shift();
-      expect(value).assertEqual(11);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual('  lead');
+      expect(arr[0]).assertEqual('trail  ');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4400
      * @tc.name testArrayShift044
-     * @tc.desc Verify shift removes the first value from numeric window 12
+     * @tc.desc Verify shift removes a negative bigint head and exposes the remaining bigint values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(15).slice(12, 15);
+      const arr = new Array<bigint>(-1n, 0n, 1n);
       const value = arr.shift();
-      expect(value).assertEqual(12);
+      expect(value).assertEqual(-1n);
+      expect(arr[0]).assertEqual(0n);
       expect(arr.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4500
      * @tc.name testArrayShift045
-     * @tc.desc Verify shift removes the first value from numeric window 13
+     * @tc.desc Verify shift reindexes a sparse array whose distant tail element stays present
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(16).slice(13, 16);
+      const arr = new Array<number | undefined>(5);
+      arr[0] = 10;
+      arr[4] = 50;
       const value = arr.shift();
-      expect(value).assertEqual(13);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(10);
+      expect(arr.length).assertEqual(4);
+      expect(arr[0]).assertUndefined();
+      expect(arr[3]).assertEqual(50);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4600
      * @tc.name testArrayShift046
-     * @tc.desc Verify shift removes the first value from numeric window 14
+     * @tc.desc Verify shift removes a head value inserted at index zero by splice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(17).slice(14, 17);
+      const arr = new Array<number>(2, 3, 4);
+      arr.splice(0, 0, 1);
       const value = arr.shift();
-      expect(value).assertEqual(14);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(1);
+      expect(arr.toString()).assertEqual('2,3,4');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4700
      * @tc.name testArrayShift047
-     * @tc.desc Verify shift removes the first value from numeric window 15
+     * @tc.desc Verify shift on a toSorted copy leaves the unsorted source array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(18).slice(15, 18);
-      const value = arr.shift();
-      expect(value).assertEqual(15);
-      expect(arr.length).assertEqual(2);
+      const source = new Array<number>(4, 1, 3, 2);
+      const sorted = source.toSorted((left: number, right: number): int => {
+        if (left < right) {
+          return -1;
+        }
+        if (left > right) {
+          return 1;
+        }
+        return 0;
+      });
+      const value = sorted.shift();
+      expect(value).assertEqual(1);
+      expect(sorted.toString()).assertEqual('2,3,4');
+      expect(source.toString()).assertEqual('4,1,3,2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4800
      * @tc.name testArrayShift048
-     * @tc.desc Verify shift removes the first value from numeric window 16
+     * @tc.desc Verify shift on a mapped copy does not change the original source values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(19).slice(16, 19);
-      const value = arr.shift();
-      expect(value).assertEqual(16);
-      expect(arr.length).assertEqual(2);
+      const source = new Array<number>(1, 2, 3);
+      const mapped = source.map((value: number): number => value * 10);
+      const value = mapped.shift();
+      expect(value).assertEqual(10);
+      expect(mapped.toString()).assertEqual('20,30');
+      expect(source.toString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4900
      * @tc.name testArrayShift049
-     * @tc.desc Verify shift removes the first value from numeric window 17
+     * @tc.desc Verify shift on an Array.from copy of a typed array leaves the typed source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(20).slice(17, 20);
+      const typed = new Uint8Array([5, 6, 7]);
+      const arr = Array.from<number>(typed);
       const value = arr.shift();
-      expect(value).assertEqual(17);
-      expect(arr.length).assertEqual(2);
+      expect(value).assertEqual(5);
+      expect(arr.toString()).assertEqual('6,7');
+      expect(typed[0]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5000
      * @tc.name testArrayShift050
-     * @tc.desc Verify shift removes the first value from numeric window 18
+     * @tc.desc Verify shift on concatenated nested arrays returns the first nested reference from the left input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(21).slice(18, 21);
-      const value = arr.shift();
-      expect(value).assertEqual(18);
-      expect(arr.length).assertEqual(2);
+      const left = new Array<Array<number>>(new Array<number>(1));
+      const right = new Array<Array<number>>(new Array<number>(2, 3));
+      const merged = left.concat(right);
+      const value = merged.shift();
+      expect(value !== undefined).assertTrue();
+      if (value !== undefined) {
+        expect(value === left[0]).assertTrue();
+      }
+      expect(merged[0] === right[0]).assertTrue();
+      expect(right[0].toString()).assertEqual('2,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5100
      * @tc.name testArrayShift051
-     * @tc.desc Verify shift removes the first value from numeric window 19
+     * @tc.desc Verify shift still works after manual length truncation followed by appending a new tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayShift051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(22).slice(19, 22);
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.length = 2;
+      arr.pushOne(9);
       const value = arr.shift();
-      expect(value).assertEqual(19);
+      expect(value).assertEqual(1);
+      expect(arr.toString()).assertEqual('2,9');
       expect(arr.length).assertEqual(2);
     });
 

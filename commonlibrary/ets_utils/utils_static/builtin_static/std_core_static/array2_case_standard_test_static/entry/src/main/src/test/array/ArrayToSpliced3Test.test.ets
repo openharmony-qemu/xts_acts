@@ -32,6 +32,14 @@ class ToSplicedThreeItem {
   value: number = 0;
 }
 
+class ToSplicedThreeNestedArrayItem {
+  values: Array<number> = new Array<number>();
+
+  constructor(values: Array<number>) {
+    this.values = values;
+  }
+}
+
 function createLargeIntArray(size: int): Array<int> {
   let arr = new Array<int>();
   for (let i: int = 0; i < size; i++) {
@@ -836,6 +844,7 @@ export default function ArrayToSpliced3Test(): void {
       expect(result[0]).assertEqual(5);
       expect(result[1]).assertUndefined();
       expect(result[2]).assertEqual(7);
+      expect(arr.indexOf(undefined)).assertEqual(1);
       expect(result.lastIndexOf(undefined)).assertEqual(1);
     });
 
@@ -857,6 +866,7 @@ export default function ArrayToSpliced3Test(): void {
       const items: FixedArray<number | undefined> = [2, 3];
       const result = arr.toSpliced(start, deleteCount, ...items);
       expect(result.toString()).assertEqual('1,2,3,4,5');
+      expect(arr.indexOf(undefined)).assertEqual(1);
       expect(result.lastIndexOf(undefined)).assertEqual(-1);
     });
 
@@ -899,19 +909,19 @@ export default function ArrayToSpliced3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayToSplicedThree051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const first = new Array<number>(1);
-      const second = new Array<number>(2);
-      const inserted = new Array<number>(3);
-      const arr = new Array<Array<number>>(first, second);
+      const first = new ToSplicedThreeNestedArrayItem(new Array<number>(1));
+      const second = new ToSplicedThreeNestedArrayItem(new Array<number>(2));
+      const inserted = new ToSplicedThreeNestedArrayItem(new Array<number>(3));
+      const arr = new Array<ToSplicedThreeNestedArrayItem>(first, second);
       const start: int = 1;
       const deleteCount: int = 1;
-      const items: FixedArray<Array<number>> = [inserted];
+      const items: FixedArray<ToSplicedThreeNestedArrayItem> = [inserted];
       const result = arr.toSpliced(start, deleteCount, ...items);
       expect(result[0] === first).assertTrue();
       expect(result[1] === inserted).assertTrue();
-      result[0][0] = 8;
-      expect(arr[0][0]).assertEqual(8);
-      expect(second[0]).assertEqual(2);
+      result[0].values[0] = 8;
+      expect(arr[0].values[0]).assertEqual(8);
+      expect(second.values[0]).assertEqual(2);
     });
 
     /**

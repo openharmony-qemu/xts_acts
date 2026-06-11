@@ -579,14 +579,9 @@ export default function ArrayToSorted1Test(): void {
      */
     it('testArrayToSortedOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createDescendingRange(1000);
-      console.log('======' + arr)
-      // arr 1000~1
       const result = arr.toSorted(compareNumbersAscending);
-      console.log('result======' + result)
-      // result 1,10,100,1000,101,102,103,104,105,106,107,108,109,11,110,111,112,113,114,115,116,1
       expect(result[0]).assertEqual(1);
       expect(result[999]).assertEqual(1000);
-      // result[999] is expected to remain the largest numeric value.
     });
 
     /**
@@ -615,11 +610,9 @@ export default function ArrayToSorted1Test(): void {
      */
     it('testArrayToSortedOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createPseudoRandomNumbers(100, 1000);
-      const start = Date.now();
       const result = arr.toSorted();
-      const end = Date.now();
       expect(result.length).assertEqual(100);
-      expect(end >= start).assertTrue();
+      expect(result.toString()).assertEqual(arr.sort().toString());
     });
 
     /**

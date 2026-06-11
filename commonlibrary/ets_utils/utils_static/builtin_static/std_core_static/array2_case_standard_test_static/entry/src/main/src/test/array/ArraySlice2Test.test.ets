@@ -495,13 +495,12 @@ export default function ArraySlice2Test(): void {
      */
     it('testArraySliceTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createOneBasedArray(10000);
-      let startTime = Date.now();
       let result = arr.slice(1000, 9000);
-      let endTime = Date.now();
       expect(result.length).assertEqual(8000);
       expect(result[0]).assertEqual(1001);
       expect(result[7999]).assertEqual(9000);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr[0]).assertEqual(1);
+      expect(arr.length).assertEqual(10000);
     });
 
     /**
@@ -644,7 +643,10 @@ export default function ArraySlice2Test(): void {
      */
     it('testArraySliceTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
-      let [first, second, third] = arr.slice(0, 3);
+      const sliced = arr.slice(0, 3);
+      const first = sliced[0];
+      const second = sliced[1];
+      const third = sliced[2];
       expect(first).assertEqual(1);
       expect(second).assertEqual(2);
       expect(third).assertEqual(3);
@@ -1230,11 +1232,12 @@ export default function ArraySlice2Test(): void {
     it('testArraySliceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
-      arr[1] = undefined;
       const result = arr.slice();
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(1);
       expect(result[1]).assertUndefined();
+      expect(result[2]).assertUndefined();
+      expect(result.indexOf(undefined)).assertEqual(1);
       expect(result.lastIndexOf(undefined)).assertEqual(2);
     });
 

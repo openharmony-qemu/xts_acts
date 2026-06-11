@@ -157,6 +157,10 @@ function createLargeSequentialArray(size: int): Array<number> {
   return arr;
 }
 
+function buildNumberLocaleString(values: Array<number>): string {
+  return values.map((value: number): string => value.toLocaleString()).join(',');
+}
+
 export default function ArrayToLocaleString3Test(): void {
   describe('ArrayToLocaleString3Test', (): void => {
     beforeAll((): void => {
@@ -274,7 +278,7 @@ export default function ArrayToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_0800
      * @tc.name testArrayToLocaleStringThree008
-     * @tc.desc Verify a large array produces non-empty output
+     * @tc.desc Verify a large array serializes every value into the locale string result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -282,8 +286,7 @@ export default function ArrayToLocaleString3Test(): void {
     it('testArrayToLocaleStringThree008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createSequentialArray(1000);
       const result = arr.toLocaleString();
-      expect(result.length > 0).assertTrue();
-      expect(result.indexOf(',') >= 0).assertTrue();
+      expect(result).assertEqual(buildNumberLocaleString(arr));
     });
 
     /**
@@ -732,18 +735,19 @@ export default function ArrayToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3900
      * @tc.name testArrayToLocaleStringThree039
-     * @tc.desc Verify toLocaleString produces non-empty output for large arrays
+     * @tc.desc Verify toLocaleString preserves representative prefix and suffix output for large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayToLocaleStringThree039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeSequentialArray(10000);
-      const start = Date.now();
       const result = arr.toLocaleString();
-      const end = Date.now();
-      expect(result.length > 0).assertTrue();
-      expect(end >= start).assertTrue();
+      const expectedPrefix = buildNumberLocaleString(arr.slice(0, 5));
+      const expectedSuffix = buildNumberLocaleString(arr.slice(9995));
+      expect(result.substring(0, expectedPrefix.length)).assertEqual(expectedPrefix);
+      expect(result.substring(result.length - expectedSuffix.length)).assertEqual(expectedSuffix);
+      expect(result.indexOf('1,000') >= 0).assertTrue();
     });
 
     /**

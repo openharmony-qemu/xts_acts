@@ -1283,7 +1283,7 @@ export default function ArrayValuesTest(): void {
       expect(hole.done).assertFalse();
       expect(iterator.next().value).assertEqual(3);
       expect(iterator.next().done).assertTrue();
-      expect(arr.lastIndexOf(undefined)).assertEqual(1);
+      expect(arr.indexOf(undefined)).assertEqual(1);
     });
 
     /**
@@ -1304,6 +1304,7 @@ export default function ArrayValuesTest(): void {
       expect(first.done).assertFalse();
       expect(iterator.next().value).assertEqual(2);
       expect(iterator.next().value).assertEqual(3);
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**
@@ -1328,6 +1329,7 @@ export default function ArrayValuesTest(): void {
       expect(secondHole.value).assertUndefined();
       expect(secondHole.done).assertFalse();
       expect(iterator.next().done).assertTrue();
+      expect(arr.indexOf(undefined)).assertEqual(2);
     });
 
     /**
@@ -1699,6 +1701,7 @@ export default function ArrayValuesTest(): void {
       expect(steps).assertEqual(3);
       expect(undefinedCount).assertEqual(1);
       expect(sum).assertEqual(4);
+      expect(arr.indexOf(undefined)).assertEqual(1);
     });
 
     /**
@@ -1756,6 +1759,7 @@ export default function ArrayValuesTest(): void {
         result = iterator.next();
       }
       expect(count).assertEqual(1000);
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**
@@ -1835,6 +1839,7 @@ export default function ArrayValuesTest(): void {
       expect(sparseStep.done).assertFalse();
       expect(iterator.next().value).assertEqual(2);
       expect(iterator.next().done).assertTrue();
+      expect(arr.indexOf(undefined)).assertEqual(0);
     });
 
     /**

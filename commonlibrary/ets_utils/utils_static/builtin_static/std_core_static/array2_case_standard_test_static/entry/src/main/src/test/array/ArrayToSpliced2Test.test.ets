@@ -730,6 +730,10 @@ export default function ArrayToSpliced2Test(): void {
       const items: FixedArray<number> = [99999];
       const result = toSplicedWithItems(arr, 1000, 1000, items);
       expect(result.length).assertEqual(9001);
+      expect(result[999]).assertEqual(999);
+      expect(result[1000]).assertEqual(99999);
+      expect(result[1001]).assertEqual(2000);
+      expect(result[9000]).assertEqual(9999);
     });
 
     /**
@@ -1004,6 +1008,7 @@ export default function ArrayToSpliced2Test(): void {
       expect(result[0]).assertUndefined();
       expect(result[1]).assertUndefined();
       expect(result[2]).assertEqual(7);
+      expect(arr.indexOf(undefined)).assertEqual(0);
       expect(result.lastIndexOf(undefined)).assertEqual(1);
     });
 

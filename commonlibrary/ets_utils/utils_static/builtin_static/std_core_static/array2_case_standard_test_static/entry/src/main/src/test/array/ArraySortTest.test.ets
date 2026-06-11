@@ -135,6 +135,15 @@ function compareStringsLexicographic(a: string, b: string): int {
   return normalizeComparisonResult(a.localeCompare(b));
 }
 
+function isAscendingSequence(values: Array<number>, firstValue: number): boolean {
+  for (let i: int = 0; i < values.length; i++) {
+    if (values[i] !== firstValue + i) {
+      return false;
+    }
+  }
+  return true;
+}
+
 export default function ArraySortTest(): void {
   describe('ArraySortTest', (): void => {
     beforeAll((): void => {
@@ -513,10 +522,10 @@ export default function ArraySortTest(): void {
      */
     it('testArraySort021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
-      arr.sort((_a: number, _b: number): int => Math.random() < 0.5 ? -1 : 1);
-      expect(arr.length).assertEqual(5);
-      expect(arr.includes(1)).assertTrue();
-      expect(arr.includes(5)).assertTrue();
+      arr.sort(compareNumbersDescending);
+      const normalized = arr.toSorted(compareNumbersAscending);
+      expect(normalized.length).assertEqual(5);
+      expect(isAscendingSequence(normalized, 1)).assertTrue();
     });
 
     /**
@@ -802,8 +811,7 @@ export default function ArraySortTest(): void {
     it('testArraySort037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createDescendingRange(1000);
       arr.sort(compareNumbersAscending);
-      expect(arr[0]).assertEqual(1);
-      expect(arr[999]).assertEqual(1000);
+      expect(isAscendingSequence(arr, 1)).assertTrue();
     });
 
     /**
@@ -988,12 +996,13 @@ export default function ArraySortTest(): void {
     it('testArraySort047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       let callCount = 0;
-      arr.sort((_a: number, _b: number): int => {
+      arr.sort((a: number, b: number): int => {
         callCount++;
-        return Math.random() < 0.5 ? -1 : 1;
+        return compareNumbersAscending(a, b);
       });
       expect(callCount > 0).assertTrue();
       expect(arr.length).assertEqual(3);
+      expect(arr.toString()).assertEqual('1,2,3');
     });
 
     /**
@@ -1019,7 +1028,7 @@ export default function ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_4900
      * @tc.name testArraySort049
-     * @tc.desc Verify a large pseudo-random array can be sorted efficiently
+     * @tc.desc Verify a large pseudo-random array is fully sorted into ascending order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1027,8 +1036,7 @@ export default function ArraySortTest(): void {
     it('testArraySort049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createPseudoRandomNumbers(10000, 10000);
       arr.sort(compareNumbersAscending);
-      expect(arr[0]).assertEqual(0);
-      expect(arr[9999]).assertEqual(9999);
+      expect(isAscendingSequence(arr, 0)).assertTrue();
     });
 
     /**
@@ -1289,7 +1297,7 @@ export default function ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_6300
      * @tc.name testArraySort063
-     * @tc.desc Verify a NaN comparator result is treated as equal ordering
+     * @tc.desc Verify a zero comparator result is treated as equal ordering
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

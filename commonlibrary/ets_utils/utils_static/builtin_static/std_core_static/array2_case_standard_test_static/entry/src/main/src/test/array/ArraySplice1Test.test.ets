@@ -580,19 +580,21 @@ export default function ArraySplice1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_ONE_3400
      * @tc.name testArraySpliceOne034
-     * @tc.desc Verify splice moves tail elements and can be observed with timing data
+     * @tc.desc Verify splice moves tail elements into the removed result and closes the source gap
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySpliceOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(10000);
-      const startTime = Date.now();
+      let arr = new Array<number>();
+      for (let i: int = 0; i < 10000; i++) {
+        arr.pushOne(i);
+      }
       const result = arr.splice(5000, 1);
-      const endTime = Date.now();
       expect(result[0]).assertEqual(5000);
       expect(arr.length).assertEqual(9999);
-      expect(endTime >= startTime).assertTrue();
+      expect(arr[4999]).assertEqual(4999);
+      expect(arr[5000]).assertEqual(5001);
     });
 
     /**
@@ -604,7 +606,10 @@ export default function ArraySplice1Test(): void {
      * @tc.level Level 2
      */
     it('testArraySpliceOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createRangeArray(10000);
+      let arr = new Array<number>();
+      for (let i: int = 0; i < 10000; i++) {
+        arr.pushOne(i);
+      }
       arr.splice(1000, 8000);
       expect(arr.length).assertEqual(2000);
       expect(arr[999]).assertEqual(999);
@@ -980,7 +985,7 @@ export default function ArraySplice1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_ONE_5800
      * @tc.name testArraySpliceOne058
-     * @tc.desc Verify negative start insertion places the new value before the counted-from-end element
+     * @tc.desc Verify negative start insertion adds the new value before the counted-from-end element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1134,12 +1139,19 @@ export default function ArraySplice1Test(): void {
      * @tc.level Level 2
      */
     it('testArraySpliceOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(1, undefined);
-      const removed = arr.splice(1, 1);
-      expect(arr.toString()).assertEqual('1');
-      expect(removed.length).assertEqual(1);
-      expect(removed[0]).assertUndefined();
-      expect(removed.lastIndexOf(undefined)).assertEqual(0);
+      const explicit = new Array<number | undefined>(1, undefined);
+      const explicitRemoved = explicit.splice(1, 1);
+      const filled = new Array<number | undefined>(2, (_index) => undefined);
+      filled[0] = 1;
+      const filledRemoved = filled.splice(1, 1);
+      expect(explicit.toString()).assertEqual('1');
+      expect(filled.toString()).assertEqual('1');
+      expect(explicitRemoved.length).assertEqual(1);
+      expect(filledRemoved.length).assertEqual(1);
+      expect(explicitRemoved[0]).assertUndefined();
+      expect(filledRemoved[0]).assertUndefined();
+      expect(explicitRemoved.indexOf(undefined)).assertEqual(0);
+      expect(filledRemoved.indexOf(undefined)).assertEqual(0);
     });
 
   });
