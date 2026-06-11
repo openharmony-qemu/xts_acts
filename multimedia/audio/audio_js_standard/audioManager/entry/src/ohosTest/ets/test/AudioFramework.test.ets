@@ -145,7 +145,15 @@ export default function audioFramework() {
       sleep(500);
       await getAudioManager();
       await getVolumeGroupManager();
-      await audioManager.setVolume(audioMedia, maxVolPc);
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          await audioManager.setVolume(audioMedia, maxVolPc);
+      }
       console.info(`come in driveFn`);
       let driver = await Driver.create();
       console.info(`driver is ${JSON.stringify(driver)}`);

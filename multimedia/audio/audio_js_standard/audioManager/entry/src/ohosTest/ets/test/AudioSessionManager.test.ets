@@ -386,6 +386,41 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+    * @tc.name   AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100
+    * @tc.number AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100
+    * @tc.desc   setDefaultOutputDevice with SPEAKER test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean | null = null;
+      let AudioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_SPEAKER_0100
+            outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+        outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+        flag = true;
+      } else {
+        console.info(`this device has one outputdevice,not suit this case`);
+        done();
+        return
+      }
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SPEAKER: PASS`);
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwk}: setDefaultOutputDevice with SPEAKER: FAIL :${err.message}`)
+        expect().assertFail();
+        done();
+      }
+      done();
+    })
+
+    /**
     * @tc.name   AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
     * @tc.number AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_WIRED_HEADSET_0100
     * @tc.desc   setDefaultOutputDevice with WIRED_HEADSET test.
