@@ -332,7 +332,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton10 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3' + '_button3' + '_button3' + '_button3', 10, "")));
+      console.info("testButton10 click result is: " + JSON.stringify(sendEventByKey('button3_button3', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton10] END');
     });
@@ -377,7 +377,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton11 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button3' + '_button3' + '_button3' + '_button3' + '_button2', 10, "")));
+      console.info("testButton11 click result is: " + JSON.stringify(sendEventByKey('button3_button2', 10, "")));
       await CommonFunc.sleep(1000);
       console.info('[testButton11] END');
     });
@@ -552,7 +552,7 @@ export default function button3Jsunit() {
       } catch (err) {
         console.info("testButton15 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button3' + '_button3' + '_button3' + '_button4', 10, "")));
+      console.info("testButton15 click result is: " + JSON.stringify(sendEventByKey('button3_button4', 10, "")));
     });
   })
 }

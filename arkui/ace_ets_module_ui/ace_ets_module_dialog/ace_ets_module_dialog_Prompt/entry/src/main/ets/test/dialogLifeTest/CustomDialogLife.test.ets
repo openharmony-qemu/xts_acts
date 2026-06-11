@@ -26,9 +26,15 @@ export default function CustomDialogLifeTest() {
         url: 'MainAbility/pages/dialogLife/CustomDialogLife',
       }
       try {
-        let result = await router.push(options);
-        await Utils.sleep(5000);
-        console.info('push CustomDialogLifeTest page result:' + JSON.stringify(result));
+        router.clear();
+        let pages = router.getState();
+        console.info('get CustomDialogLifeTest state pages:' + JSON.stringify(pages));
+        if (!('CustomDialogLife' == pages.name)) {
+          console.info('get CustomDialogLifeTest pages.name:' + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await Utils.sleep(2500);
+          console.info('push CustomDialogLifeTest page result:' + JSON.stringify(result));
+        }
       } catch (err) {
         console.error('push CustomDialogLifeTest page error:' + err);
       }
@@ -48,10 +54,7 @@ export default function CustomDialogLifeTest() {
       console.info('CustomDialogLife_0101 START');
       await CommonFunc.sleep(1000);
       sendEventByKey('CustomDialogLife' + '_CustomDialog_02', 10, '');
-      let driverOpen: Driver = Driver.create();
-      let openBtn: Component = await driverOpen.findComponent(ON.id('customDialogLifeOpen'));
-      await openBtn.click();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       console.info('CustomDialogLife_0101 click after')
       let customDialogFlag1 = getInspectorByKey('customDialogFlag1');
       expect(JSON.parse(customDialogFlag1).$attrs.content).assertEqual('true');
