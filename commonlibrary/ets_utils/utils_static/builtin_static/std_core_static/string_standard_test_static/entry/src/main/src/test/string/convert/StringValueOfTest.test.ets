@@ -285,7 +285,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1800
      * @tc.name testValueOf018
      * @tc.desc Verify valueOf() with backslash character preserved
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1900
      * @tc.name testValueOf019
      * @tc.desc Verify valueOf() on pure numeric string preserved
      * @tc.size MediumTest
@@ -313,7 +313,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2000
      * @tc.name testValueOf020
      * @tc.desc Verify valueOf() result used with includes deterministically
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2100
      * @tc.name testValueOf021
      * @tc.desc Verify valueOf() on spaces-only string preserved
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2200
      * @tc.name testValueOf022
      * @tc.desc Verify valueOf() with newline characters preserved
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function StringValueOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2300
      * @tc.name testValueOf023
      * @tc.desc Verify valueOf() returns string type not object
      * @tc.size MediumTest

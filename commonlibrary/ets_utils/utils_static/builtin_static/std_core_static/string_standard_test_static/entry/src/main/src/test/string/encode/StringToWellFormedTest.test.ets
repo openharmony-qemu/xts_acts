@@ -283,5 +283,62 @@ export default function StringToWellFormedTest(): void {
       let twice: string = text1.toWellFormed();
       expect(twice).assertEqual(once);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_1800
+     * @tc.name testToWellFormed018
+     * @tc.desc Verify toWellFormed() repairs a truncated surrogate inside an API payload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("id=7\uD800,status=ok");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("id=7\uFFFD,status=ok");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_1900
+     * @tc.name testToWellFormed019
+     * @tc.desc Verify toWellFormed() repairs a low surrogate at the start of a log line
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uDE00 received");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\uFFFD received");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2000
+     * @tc.name testToWellFormed020
+     * @tc.desc Verify toWellFormed() preserves a valid emoji pair in notification text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00 done");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\uD83D\uDE00 done");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2100
+     * @tc.name testToWellFormed021
+     * @tc.desc Verify toWellFormed() output is well-formed after repairing reversed surrogate order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uDE00\uD83D order");
+      let result: string = text.toWellFormed();
+      const repaired = new String(result);
+      expect(repaired.isWellFormed()).assertTrue();
+    });
   });
 }

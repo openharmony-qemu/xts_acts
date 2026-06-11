@@ -286,5 +286,93 @@ export default function StringNormalizeTest(): void {
         expect(error.name).assertEqual("RangeError");
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_1700
+     * @tc.name testNormalize017
+     * @tc.desc Verify normalize(NFKC) expands Latin ligature compatibility character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFB01le");
+      let result: string = text.normalize("NFKC");
+      expect(result).assertEqual("file");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_1800
+     * @tc.name testNormalize018
+     * @tc.desc Verify normalize(NFKD) expands Latin ligature compatibility character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFB01le");
+      let result: string = text.normalize("NFKD");
+      expect(result).assertEqual("file");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_1900
+     * @tc.name testNormalize019
+     * @tc.desc Verify normalize(NFC) makes composed and decomposed user names comparable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const stored = new String("caf\u00E9");
+      const typed = new String("cafe\u0301");
+      let storedName: string = stored.normalize("NFC");
+      let typedName: string = typed.normalize("NFC");
+      expect(storedName).assertEqual(typedName);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2000
+     * @tc.name testNormalize020
+     * @tc.desc Verify normalize(NFKC) converts fullwidth order code characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFF21\uFF22-\uFF11\uFF12");
+      let result: string = text.normalize("NFKC");
+      expect(result).assertEqual("AB-12");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2100
+     * @tc.name testNormalize021
+     * @tc.desc Verify normalize(NFKC) converts circled list numbers to plain digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2460 item");
+      let result: string = text.normalize("NFKC");
+      expect(result).assertEqual("1 item");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2200
+     * @tc.name testNormalize022
+     * @tc.desc Verify normalize(NFD) decomposes an accent in an SKU while preserving delimiters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("SKU-\u00E9-01");
+      let result: string = text.normalize("NFD");
+      expect(result.startsWith("SKU-")).assertTrue();
+      expect(result.endsWith("-01")).assertTrue();
+      expect(result.length).assertEqual(9);
+    });
   });
 }

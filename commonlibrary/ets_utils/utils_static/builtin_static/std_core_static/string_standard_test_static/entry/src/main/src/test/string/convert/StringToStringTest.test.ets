@@ -226,7 +226,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1400
      * @tc.name testToString014
      * @tc.desc Verify toString() with half-width katakana content preserved
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1500
      * @tc.name testToString015
      * @tc.desc Verify toString() with emoji content preserved
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1600
      * @tc.name testToString016
      * @tc.desc Verify toString() does NOT alter the original source (negative)
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1700
      * @tc.name testToString017
      * @tc.desc Verify toString() called twice returns identical content (idempotent)
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1800
      * @tc.name testToString018
      * @tc.desc Verify toString() with NUL character \\0 in content preserved
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1900
      * @tc.name testToString019
      * @tc.desc Verify toString() with backslash character in content preserved
      * @tc.size MediumTest
@@ -311,7 +311,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2000
      * @tc.name testToString020
      * @tc.desc Verify toString() with mixed ASCII + CJK + Emoji content preserved
      * @tc.size MediumTest
@@ -325,7 +325,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2100
      * @tc.name testToString021
      * @tc.desc Verify toString() and valueOf() return same content
      * @tc.size MediumTest
@@ -340,7 +340,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2200
      * @tc.name testToString022
      * @tc.desc Verify toString() returns primitive string type not object
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2300
      * @tc.name testToString023
      * @tc.desc Verify toString() on numbers-only string
      * @tc.size MediumTest
@@ -368,7 +368,7 @@ export default function StringToStringTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2400
      * @tc.name testToString024
      * @tc.desc Verify toString() on very long string
      * @tc.size MediumTest

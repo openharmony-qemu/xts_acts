@@ -70,7 +70,7 @@ export default function StringIsWellFormedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_0300
      * @tc.name testIsWellFormed003
-     * @tc.desc Verify isWellFormed() on empty string returns true
+     * @tc.desc Verify isWellFormed() on no-arg constructed empty string returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -223,7 +223,59 @@ export default function StringIsWellFormedTest(): void {
      * @tc.level Level 2
      */
     it('testIsWellFormed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("");
+      const text = new String();
+      expect(text.isWellFormed()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_1500
+     * @tc.name testIsWellFormed015
+     * @tc.desc Verify isWellFormed() accepts an API payload with a valid emoji surrogate pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("message=\uD83D\uDE00;status=ok");
+      expect(text.isWellFormed()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_1600
+     * @tc.name testIsWellFormed016
+     * @tc.desc Verify isWellFormed() rejects reversed surrogate order in imported data
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uDE00\uD83D");
+      expect(text.isWellFormed()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_1700
+     * @tc.name testIsWellFormed017
+     * @tc.desc Verify isWellFormed() rejects a truncated surrogate before a CSV delimiter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("id=7\uD800,name=ark");
+      expect(text.isWellFormed()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_1800
+     * @tc.name testIsWellFormed018
+     * @tc.desc Verify isWellFormed() accepts multiple valid emoji pairs in notification text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00\uD83D\uDE03 ready");
       expect(text.isWellFormed()).assertTrue();
     });
   });

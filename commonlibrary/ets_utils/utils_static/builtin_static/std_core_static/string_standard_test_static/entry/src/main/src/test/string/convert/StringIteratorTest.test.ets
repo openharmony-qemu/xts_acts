@@ -130,7 +130,7 @@ export default function StringIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_0600
      * @tc.name testIterator006
-     * @tc.desc Verify $_iterator() on emoji string iterates surrogate code units separately
+     * @tc.desc Verify $_iterator() on emoji string iterates emoji and ASCII values separately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -139,13 +139,16 @@ export default function StringIteratorTest(): void {
       const emojiStr: string = String.fromCodePoint(128512);
       const text = new String(emojiStr + "A");
       let it: IterableIterator<String> = text.$_iterator();
-      let count: int = 0;
-      let nextVal = it.next();
-      while (!nextVal.done) {
-        count = count + 1;
-        nextVal = it.next();
-      }
-      expect(count).assertEqual(3);
+      let first = it.next();
+      let second = it.next();
+      let third = it.next();
+      let firstVal: String = first.value as Object as String;
+      let secondVal: String = second.value as Object as String;
+      expect(first.done).assertFalse();
+      expect(firstVal.toString()).assertEqual(emojiStr);
+      expect(second.done).assertFalse();
+      expect(secondVal.toString()).assertEqual("A");
+      expect(third.done).assertTrue();
     });
 
     /**
@@ -269,6 +272,28 @@ export default function StringIteratorTest(): void {
         nextVal = it.next();
       }
       expect(count).assertEqual(text.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1400
+     * @tc.name testIterator014
+     * @tc.desc Verify $_iterator() counts Unicode code points differently from UTF-16 length for emoji
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const emoji: string = String.fromCodePoint(128512);
+      const text = new String("A" + emoji + "B");
+      let it: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextVal = it.next();
+      while (!nextVal.done) {
+        count = count + 1;
+        nextVal = it.next();
+      }
+      expect(text.length).assertEqual(4);
+      expect(count).assertEqual(3);
     });
   });
 }
