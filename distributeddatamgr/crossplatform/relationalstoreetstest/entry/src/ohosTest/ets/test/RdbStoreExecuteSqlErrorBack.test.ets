@@ -188,7 +188,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testGetRdbStoreError0500 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("14800010");
+        expect(e.code == 14800010).assertTrue();
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError0500 end   *************");
@@ -236,7 +236,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         });
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0200, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0200 end   *************");
@@ -263,7 +263,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         });
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0600, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('14800010')
+        expect(err.code == 14800010).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0600 end   *************");
@@ -419,7 +419,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.deleteRdbStore(context, STORE_CONFIG_S4, async (err: BusinessError) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code).assertEqual(801);
             done();
           }else{
             expect(num).assertEqual(1);
@@ -428,14 +428,14 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testDeleteRdbStoreConfig0300 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code).assertEqual(801);
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreConfig0300 end   *************");
     });
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300
      * @tc.desc   Test remoteQuery callback device with null or undefined or ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -455,7 +455,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.info(TAG + "Remote query error" + err);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         if (store != undefined) {
@@ -466,7 +466,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.info(TAG + "Remote query error" + err);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         if (store != undefined) {
@@ -477,14 +477,14 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.info(TAG + "Remote query error" + err);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300 end-----")
       })
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500
      * @tc.desc   Test remoteQuery callback table with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -504,7 +504,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         if (store != undefined) {
@@ -515,7 +515,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         if (store != undefined) {
@@ -526,14 +526,14 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500 end-----")
       })
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700
      * @tc.desc   Test remoteQuery callback predicates with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -553,7 +553,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         if (store != undefined) {
@@ -564,7 +564,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual("401");
+            expect(err.code == 401).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700 end-----")
@@ -587,33 +587,33 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
           try{
             (store as relationalStore.RdbStore).remoteQuery("12345789", "EMPLOYEE", predicates,
               [], (err) => {
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("123456789", "EMPLOYEE", predicates,
               null, (err) => {
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("123456789", "EMPLOYEE", predicates,
               undefined, (err) => {
-                expect(err.code).assertEqual(14800000);
+                expect(err.code == 14800000).assertTrue();
               })
           }catch(err) {
             console.error(TAG + 'Failed to remoteQuery.Code: ' + err.code + ',message:' + err.message);
-            expect(err.code).assertEqual(14800000);
+            expect(err.code == 14800000).assertTrue();
           }
         }
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800 end-----")
