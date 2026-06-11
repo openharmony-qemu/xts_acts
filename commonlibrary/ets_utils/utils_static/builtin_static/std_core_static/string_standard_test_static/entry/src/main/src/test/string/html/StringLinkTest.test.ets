@@ -57,16 +57,15 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_0200
      * @tc.name testLink002
-     * @tc.desc Verify link() without arguments causes compile error (missing required param)
+     * @tc.desc Verify link() with URL containing encoded space preserves href
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // 错误：缺少必填参数url
-      // text.link();
-      return;
+      let text: string = "ArkTS";
+      let result: string = text.link("/docs/a%20b");
+      expect(result).assertEqual('<a href="/docs/a%20b">ArkTS</a>');
     });
 
     /**
@@ -86,15 +85,15 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_0400
      * @tc.name testLink004
-     * @tc.desc Verify link() with https protocol URL
+     * @tc.desc Verify link() with https protocol URL and path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
-      let result: string = text.link("https://example.com");
-      expect(result).assertEqual('<a href="https://example.com">ArkTS</a>');
+      let result: string = text.link("https://secure.example.org/login");
+      expect(result).assertEqual('<a href="https://secure.example.org/login">ArkTS</a>');
     });
 
     /**
@@ -221,7 +220,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("https://example.com");
       let t: string = typeof result;
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
@@ -484,7 +483,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3200
      * @tc.name testLink032
      * @tc.desc Verify link() with ISO 8859-1 Latin accented content
      * @tc.size MediumTest
@@ -497,7 +496,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3300
      * @tc.name testLink033
      * @tc.desc Verify link() with half-width katakana content
      * @tc.size MediumTest
@@ -510,7 +509,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3400
      * @tc.name testLink034
      * @tc.desc Verify link() with GBK Chinese text content
      * @tc.size MediumTest
@@ -523,7 +522,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3500
      * @tc.name testLink035
      * @tc.desc Verify link() does NOT modify the original content string (negative)
      * @tc.size MediumTest
@@ -537,7 +536,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3600
      * @tc.name testLink036
      * @tc.desc Verify link() with dynamic url and content variables
      * @tc.size MediumTest
@@ -552,7 +551,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3700
      * @tc.name testLink037
      * @tc.desc Verify link() with NUL character \\0 in content
      * @tc.size MediumTest
@@ -566,7 +565,7 @@ export default function StringLinkTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3800
      * @tc.name testLink038
      * @tc.desc Verify link() with mixed ASCII + CJK + Emoji content
      * @tc.size MediumTest

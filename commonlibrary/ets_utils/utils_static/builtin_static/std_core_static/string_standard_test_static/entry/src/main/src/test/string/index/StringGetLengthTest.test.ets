@@ -83,13 +83,13 @@ export default function StringGetLengthTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_0400
      * @tc.name testGetLength004
-     * @tc.desc Verify length property returns correct int value
+     * @tc.desc Verify getLength() returns correct int value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new String("ArkTS").length).assertEqual(5);
+      expect(new String("ArkTS").getLength()).assertEqual(5);
     });
 
     /**
@@ -108,92 +108,92 @@ export default function StringGetLengthTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_0600
      * @tc.name testGetLength006
-     * @tc.desc Verify length is 0 for empty or newly constructed
+     * @tc.desc Verify getLength() is 0 for empty or newly constructed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new String().length).assertEqual(0);
-      expect(new String("").length).assertEqual(0);
+      expect(new String().getLength()).assertEqual(0);
+      expect(new String("").getLength()).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_0700
      * @tc.name testGetLength007
-     * @tc.desc Verify length with escape characters
+     * @tc.desc Verify getLength() with escape characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new String("\n\t\r").length).assertEqual(3);
+      expect(new String("\n\t\r").getLength()).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_0800
      * @tc.name testGetLength008
-     * @tc.desc Verify length of combining character sequence
+     * @tc.desc Verify getLength() of combining character sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new String("é").length).assertEqual(2);
+      expect(new String("é").getLength()).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_0900
      * @tc.name testGetLength009
-     * @tc.desc Verify length of string with null byte in middle
+     * @tc.desc Verify getLength() of string with null byte in middle
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new String("A\0B").length).assertEqual(3);
+      expect(new String("A\0B").getLength()).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_1000
      * @tc.name testGetLength010
-     * @tc.desc Verify length consistency after multiple calls
+     * @tc.desc Verify getLength() consistency after multiple calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ArkTS");
-      let l1: int = text.length;
-      let l2: int = text.length;
+      let l1: int = text.getLength();
+      let l2: int = text.getLength();
       expect(l1).assertEqual(l2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_1100
      * @tc.name testGetLength011
-     * @tc.desc Verify length of GBK-misdecoded garbled text counts code units
+     * @tc.desc Verify getLength() of GBK-misdecoded garbled text counts code units
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("æµè¯");
-      let len: int = text.length;
+      let len: int = text.getLength();
       expect(len).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_1200
      * @tc.name testGetLength012
-     * @tc.desc Verify length of emoji surrogate pair equals 2 code units
+     * @tc.desc Verify getLength() of emoji surrogate pair equals 2 code units
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetLength012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("😀");
-      expect(text.length).assertEqual(2);
+      expect(text.getLength()).assertEqual(2);
     });
 
     /**
@@ -315,7 +315,7 @@ export default function StringGetLengthTest(): void {
     it('testGetLength021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new String("");
       const b = new String("data");
-      expect(a.getLength() === 0).assertTrue();
+      expect(a.getLength()).assertEqual(0);
       expect(b.getLength() > 0).assertTrue();
     });
 
@@ -392,6 +392,67 @@ export default function StringGetLengthTest(): void {
         chars += String(text.charAt(i));
       }
       expect(chars).assertEqual("ABC");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_2700
+     * @tc.name testGetLength027
+     * @tc.desc Verify getLength() counts zero-width and BOM characters as code units
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const zeroWidthSpace = new String("\u200B");
+      const zeroWidthNonJoiner = new String("\u200C");
+      const zeroWidthJoiner = new String("\u200D");
+      const byteOrderMark = new String("\uFEFF");
+      expect(zeroWidthSpace.getLength()).assertEqual(1);
+      expect(zeroWidthNonJoiner.getLength()).assertEqual(1);
+      expect(zeroWidthJoiner.getLength()).assertEqual(1);
+      expect(byteOrderMark.getLength()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_2800
+     * @tc.name testGetLength028
+     * @tc.desc Verify getLength() includes embedded zero-width characters between visible characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a\u200Bb");
+      expect(text.getLength()).assertEqual(3);
+      expect(text.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_2900
+     * @tc.name testGetLength029
+     * @tc.desc Verify getLength() counts mixed character sets by UTF-16 code units
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u4E2D\u0391\u0410\u0627\u05D0\uD83D\uDE00");
+      expect(text.getLength()).assertEqual(8);
+      expect(text.length).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_3000
+     * @tc.name testGetLength030
+     * @tc.desc Verify getLength() counts CRLF as two code units
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a\r\nb");
+      expect(text.getLength()).assertEqual(4);
+      expect(text.length).assertEqual(4);
     });
   });
 }

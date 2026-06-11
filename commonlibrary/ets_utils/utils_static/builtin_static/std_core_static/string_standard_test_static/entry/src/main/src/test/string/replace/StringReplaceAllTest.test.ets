@@ -269,7 +269,7 @@ export default function StringReplaceAllTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_1700
      * @tc.name testReplaceAll017
-     * @tc.desc Verify replaceAll() with RegExp without global flag throws TypeError
+     * @tc.desc Verify replaceAll() with RegExp without global flag throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -744,15 +744,15 @@ export default function StringReplaceAllTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_5000
      * @tc.name testReplaceAll050
-     * @tc.desc Verify replaceAll() removes all spaces from string
+     * @tc.desc Verify replaceAll() replaces repeated double-space separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplaceAll050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("a b c d e");
-      let result: string = text.replaceAll(" ", "");
-      expect(result).assertEqual("abcde");
+      const text = new String("a  b  c");
+      let result: string = text.replaceAll("  ", "_");
+      expect(result).assertEqual("a_b_c");
     });
 
     /**
@@ -908,6 +908,75 @@ export default function StringReplaceAllTest(): void {
       const text = new String("$100 and ¥1000");
       let result: string = text.replaceAll("$", "USD ").replaceAll("¥", "JPY ");
       expect(result).assertEqual("USD 100 and JPY 1000");
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6200
+     * @tc.name testReplaceAll062
+     * @tc.desc Verify replaceAll() with string search treats regex metacharacters as literal text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value=42; pattern=[0-9]+; next=[0-9]+");
+      let result: string = text.replaceAll("[0-9]+", "NUMBER_PATTERN");
+      expect(result).assertEqual("value=42; pattern=NUMBER_PATTERN; next=NUMBER_PATTERN");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6300
+     * @tc.name testReplaceAll063
+     * @tc.desc Verify replaceAll() with global RegExp search uses regex metacharacters to match all digit groups
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value=42; pattern=[0-9]+; next=007");
+      let result: string = text.replaceAll(new RegExp("[0-9]+", "g"), "NUMBER");
+      expect(result).assertEqual("value=NUMBER; pattern=[NUMBER-NUMBER]+; next=NUMBER");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6400
+     * @tc.name testReplaceAll064
+     * @tc.desc Verify replaceAll() with global RegExp plus quantifier does not match literal plus text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a+b; c+d");
+      let result: string = text.replaceAll(new RegExp("a+b", "g"), "X");
+      expect(result).assertEqual("a+b; c+d");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6500
+     * @tc.name testReplaceAll065
+     * @tc.desc Verify replaceAll() with bracket and dot RegExp metacharacters does not match literal path text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("item[0].value; item[1].value");
+      let result: string = text.replaceAll(new RegExp("item[0].value", "g"), "ITEM");
+      expect(result).assertEqual("item[0].value; item[1].value");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6600
+     * @tc.name testReplaceAll066
+     * @tc.desc Verify replaceAll() with hex escape RegExp does not match literal escape text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hex=\\x41; hex=\\x41");
+      let result: string = text.replaceAll(new RegExp("\\x41", "g"), "A");
+      expect(result).assertEqual("hex=\\x41; hex=\\x41");
     });
   });
 }

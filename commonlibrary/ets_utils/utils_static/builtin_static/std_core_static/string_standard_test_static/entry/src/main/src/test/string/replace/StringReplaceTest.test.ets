@@ -62,34 +62,34 @@ export default function StringReplaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0300
      * @tc.name testReplace003
-     * @tc.desc Verify replaceAll() replaces all occurrences of search string
+     * @tc.desc Verify replace() with global RegExp replaces all occurrences of search string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ArkTS ArkTS");
-      let result: string = text.replaceAll("Ark", "Static");
+      let result: string = text.replace(new RegExp("Ark", "g"), "Static");
       expect(result).assertEqual("StaticTS StaticTS");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0400
      * @tc.name testReplace004
-     * @tc.desc Verify replaceAll() with not-found string returns original unchanged
+     * @tc.desc Verify replace() with not-found global RegExp returns original unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ArkTS");
-      let result: string = text.replaceAll("XYZ", "ABC");
+      let result: string = text.replace(new RegExp("XYZ", "g"), "ABC");
       expect(result).assertEqual("ArkTS");
     });
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0500
      * @tc.name testReplace005
      * @tc.desc Verify replace() with empty search string
      * @tc.size MediumTest
@@ -103,7 +103,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0600
      * @tc.name testReplace006
      * @tc.desc Verify replace() with Chinese characters
      * @tc.size MediumTest
@@ -117,7 +117,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0700
      * @tc.name testReplace007
      * @tc.desc Verify replace() with emoji replacement
      * @tc.size MediumTest
@@ -131,21 +131,21 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0800
      * @tc.name testReplace008
-     * @tc.desc Verify replaceAll() with carriage return \\r
+     * @tc.desc Verify replace() with global RegExp carriage return \\r
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a\rb\rc");
-      let result: string = text.replaceAll("\r", "|");
+      let result: string = text.replace(new RegExp("\r", "g"), "|");
       expect(result).assertEqual("a|b|c");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0900
      * @tc.name testReplace009
      * @tc.desc Verify replace() with combining character target
      * @tc.size MediumTest
@@ -159,21 +159,22 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1000
      * @tc.name testReplace010
-     * @tc.desc Verify replaceAll() with BOM character U+FEFF
+     * @tc.desc Verify replace() with global RegExp BOM character U+FEFF
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("﻿A﻿");
-      let result: string = text.replaceAll("﻿", "");
+      let bom: string = String.fromCharCode(0xFEFF);
+      let result: string = text.replace(new RegExp(bom, "g"), "");
       expect(result).assertEqual("A");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1100
      * @tc.name testReplace011
      * @tc.desc Verify replace() with vertical tab \\v target
      * @tc.size MediumTest
@@ -187,7 +188,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1200
      * @tc.name testReplace012
      * @tc.desc Verify replace() at the beginning of string
      * @tc.size MediumTest
@@ -201,7 +202,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1300
      * @tc.name testReplace013
      * @tc.desc Verify replace() at the end of string
      * @tc.size MediumTest
@@ -215,7 +216,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1400
      * @tc.name testReplace014
      * @tc.desc Verify replace() in the middle of string
      * @tc.size MediumTest
@@ -229,7 +230,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1500
      * @tc.name testReplace015
      * @tc.desc Verify replace() with numeric substring
      * @tc.size MediumTest
@@ -243,7 +244,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1600
      * @tc.name testReplace016
      * @tc.desc Verify replace() with date format string
      * @tc.size MediumTest
@@ -257,21 +258,21 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1700
      * @tc.name testReplace017
-     * @tc.desc Verify replaceAll() with pattern appearing at start, middle and end
+     * @tc.desc Verify replace() with global RegExp pattern appearing at start, middle and end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("XaXbXcX");
-      let result: string = text.replaceAll("X", "0");
+      let result: string = text.replace(new RegExp("X", "g"), "0");
       expect(result).assertEqual("0a0b0c0");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1800
      * @tc.name testReplace018
      * @tc.desc Verify replace() matching entire string
      * @tc.size MediumTest
@@ -285,7 +286,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_1900
      * @tc.name testReplace019
      * @tc.desc Verify replace() with replacement longer than target (expansion)
      * @tc.size MediumTest
@@ -299,7 +300,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2000
      * @tc.name testReplace020
      * @tc.desc Verify replace() with replacement shorter than target (contraction)
      * @tc.size MediumTest
@@ -313,9 +314,9 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2100
      * @tc.name testReplace021
-     * @tc.desc Verify replaceAll() replacing all digit characters
+     * @tc.desc Verify replace() replacing a phone number substring
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -327,7 +328,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2200
      * @tc.name testReplace022
      * @tc.desc Verify replace() with same value replacement (identity)
      * @tc.size MediumTest
@@ -343,14 +344,14 @@ export default function StringReplaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2300
      * @tc.name testReplace023
-     * @tc.desc Verify replaceAll() removing all occurrences of a character
+     * @tc.desc Verify replace() with global RegExp removing all occurrences of a character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a,b,c,d,e");
-      let result: string = text.replaceAll(",", "");
+      let result: string = text.replace(new RegExp(",", "g"), "");
       expect(result).assertEqual("abcde");
     });
 
@@ -369,21 +370,21 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2500
      * @tc.name testReplace025
-     * @tc.desc Verify replaceAll() with RegExp pattern
+     * @tc.desc Verify replace() with global RegExp pattern
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a1b2c3");
-      let result: string = text.replaceAll(new RegExp("[0-9]", "g"), "X");
+      let result: string = text.replace(new RegExp("[0-9]", "g"), "X");
       expect(result).assertEqual("aXbXcX");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2600
      * @tc.name testReplace026
      * @tc.desc Verify replace() with literal dot character
      * @tc.size MediumTest
@@ -397,50 +398,50 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2700
      * @tc.name testReplace027
-     * @tc.desc Verify replaceAll() with asterisk wildcard character
+     * @tc.desc Verify replace() with global RegExp escaped asterisk character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a*b*c");
-      let result: string = text.replaceAll("*", "+");
+      let result: string = text.replace(new RegExp("\\*", "g"), "+");
       expect(result).assertEqual("a+b+c");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2800
      * @tc.name testReplace028
-     * @tc.desc Verify replaceAll() with tab and newline sequence replacement
+     * @tc.desc Verify replace() with tab and newline sequence replacement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("col1\tcol2\ncol3");
-      let result: string = text.replaceAll("\t", ",");
-      let result2: string = result.replaceAll("\n", ";");
+      let result: string = text.replace(new RegExp("\t", "g"), ",");
+      let result2: string = result.replace(new RegExp("\n", "g"), ";");
       expect(result2).assertEqual("col1,col2;col3");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_2900
      * @tc.name testReplace029
-     * @tc.desc Verify replaceAll() deleting all spaces
+     * @tc.desc Verify replace() with global RegExp deleting all spaces
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a b c d e");
-      let result: string = text.replaceAll(" ", "");
+      let result: string = text.replace(new RegExp(" ", "g"), "");
       expect(result).assertEqual("abcde");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3000
      * @tc.name testReplace030
      * @tc.desc Verify replace() with RegExp matching multiple digits
      * @tc.size MediumTest
@@ -454,7 +455,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3100
      * @tc.name testReplace031
      * @tc.desc Verify replace() with question mark character
      * @tc.size MediumTest
@@ -468,35 +469,35 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3200
      * @tc.name testReplace032
-     * @tc.desc Verify replaceAll() with underscore to space
+     * @tc.desc Verify replace() with global RegExp underscore to space
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("snake_case_name");
-      let result: string = text.replaceAll("_", " ");
+      let result: string = text.replace(new RegExp("_", "g"), " ");
       expect(result).assertEqual("snake case name");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3300
      * @tc.name testReplace033
-     * @tc.desc Verify replaceAll() with RegExp removing all non-digit characters
+     * @tc.desc Verify replace() with global RegExp removing all non-digit characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("tel:138-0013-8000");
-      let result: string = text.replaceAll(new RegExp("[^0-9]", "g"), "");
+      let result: string = text.replace(new RegExp("[^0-9]", "g"), "");
       expect(result).assertEqual("13800138000");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3400
      * @tc.name testReplace034
      * @tc.desc Verify replace() with backslash character
      * @tc.size MediumTest
@@ -510,22 +511,22 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3500
      * @tc.name testReplace035
-     * @tc.desc Verify replaceAll() with square bracket characters
+     * @tc.desc Verify replace() with global RegExp square bracket characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testReplace035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("[tag]content[/tag]");
-      let r1: string = text.replaceAll("[", "<");
-      let result: string = r1.replaceAll("]", ">");
+      let r1: string = text.replace(new RegExp("\\[", "g"), "<");
+      let result: string = r1.replace(new RegExp("\\]", "g"), ">");
       expect(result).assertEqual("<tag>content</tag>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3600
      * @tc.name testReplace036
      * @tc.desc Verify replace() with dollar sign in replacement string
      * @tc.size MediumTest
@@ -539,7 +540,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3700
      * @tc.name testReplace037
      * @tc.desc Verify replace() with caret and pipe characters
      * @tc.size MediumTest
@@ -554,7 +555,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3800
      * @tc.name testReplace038
      * @tc.desc Verify replace() with GBK Chinese text replaces correctly
      * @tc.size MediumTest
@@ -568,7 +569,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_3900
      * @tc.name testReplace039
      * @tc.desc Verify replace() with dynamic search and replacement variables
      * @tc.size MediumTest
@@ -584,7 +585,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4000
      * @tc.name testReplace040
      * @tc.desc Verify replace() with RegExp dot wildcard matches any single character
      * @tc.size MediumTest
@@ -598,7 +599,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4100
      * @tc.name testReplace041
      * @tc.desc Verify replace() with RegExp start anchor ^ matches only at beginning
      * @tc.size MediumTest
@@ -612,7 +613,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4200
      * @tc.name testReplace042
      * @tc.desc Verify replace() with RegExp end anchor $ matches only at end
      * @tc.size MediumTest
@@ -626,7 +627,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4300
      * @tc.name testReplace043
      * @tc.desc Verify replace() with RegExp alternation pipe matches first alternative
      * @tc.size MediumTest
@@ -640,9 +641,9 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4400
      * @tc.name testReplace044
-     * @tc.desc Verify replace() with string pattern and replacer Function callback
+     * @tc.desc Verify replace() with RegExp pattern and replacer Function callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -656,7 +657,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4500
      * @tc.name testReplace045
      * @tc.desc Verify $& references the entire matched substring in replacement
      * @tc.size MediumTest
@@ -670,7 +671,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4600
      * @tc.name testReplace046
      * @tc.desc Verify $n references capture groups in replacement
      * @tc.size MediumTest
@@ -684,7 +685,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4700
      * @tc.name testReplace047
      * @tc.desc Verify replace() only replaces first occurrence, unlike replaceAll
      * @tc.size MediumTest
@@ -700,7 +701,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4800
      * @tc.name testReplace048
      * @tc.desc Verify replace() does not modify the original string
      * @tc.size MediumTest
@@ -715,7 +716,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_4900
      * @tc.name testReplace049
      * @tc.desc Verify replace() compresses multiple spaces to single space with regex
      * @tc.size MediumTest
@@ -729,7 +730,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5000
      * @tc.name testReplace050
      * @tc.desc Verify replace() converts camelCase to kebab-case
      * @tc.size MediumTest
@@ -743,7 +744,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5100
      * @tc.name testReplace051
      * @tc.desc Verify replace() keeps only alphanumeric characters
      * @tc.size MediumTest
@@ -757,7 +758,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5200
      * @tc.name testReplace052
      * @tc.desc Verify replace() converts date format YYYY-MM-DD to DD/MM/YYYY
      * @tc.size MediumTest
@@ -771,7 +772,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5300
      * @tc.name testReplace053
      * @tc.desc Verify replace() returns string type even for no-match
      * @tc.size MediumTest
@@ -786,7 +787,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5400
      * @tc.name testReplace054
      * @tc.desc Verify replace() with m flag: ^ matches start of each line
      * @tc.size MediumTest
@@ -800,7 +801,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5500
      * @tc.name testReplace055
      * @tc.desc Verify replace() converts kebab-case to camelCase
      * @tc.size MediumTest
@@ -816,7 +817,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5600
      * @tc.name testReplace056
      * @tc.desc Verify replace() masks middle 4 digits of a phone-like number
      * @tc.size MediumTest
@@ -830,7 +831,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5700
      * @tc.name testReplace057
      * @tc.desc Verify replace() normalizes different newline formats to \\n
      * @tc.size MediumTest
@@ -844,7 +845,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5800
      * @tc.name testReplace058
      * @tc.desc Verify replace() on string with only spaces returns original when no match
      * @tc.size MediumTest
@@ -858,7 +859,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_5900
      * @tc.name testReplace059
      * @tc.desc Verify replace() with very long string does not crash
      * @tc.size MediumTest
@@ -873,7 +874,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6000
      * @tc.name testReplace060
      * @tc.desc Verify replace() with s flag: dot matches newline character
      * @tc.size MediumTest
@@ -887,7 +888,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6100
      * @tc.name testReplace061
      * @tc.desc Verify replace() for template variable substitution: {{key}} → value
      * @tc.size MediumTest
@@ -901,7 +902,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6200
      * @tc.name testReplace062
      * @tc.desc Verify replace() converts snake_case to camelCase
      * @tc.size MediumTest
@@ -917,7 +918,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6300
      * @tc.name testReplace063
      * @tc.desc Verify replace() handles string with only special characters
      * @tc.size MediumTest
@@ -931,7 +932,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6400
      * @tc.name testReplace064
      * @tc.desc Verify chaining multiple replace() calls
      * @tc.size MediumTest
@@ -945,7 +946,7 @@ export default function StringReplaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6500
      * @tc.name testReplace065
      * @tc.desc Verify replace escape characters: tab to space
      * @tc.size MediumTest
@@ -956,6 +957,76 @@ export default function StringReplaceTest(): void {
       const text = new String("col1\tcol2\tcol3");
       let result: string = text.replace(new RegExp("\t", "g"), "    ");
       expect(result).assertEqual("col1    col2    col3");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6600
+     * @tc.name testReplace066
+     * @tc.desc Verify replace() with string search treats regex metacharacters as literal text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value=42; pattern=[0-9]+");
+      let result: string = text.replace("[0-9]+", "NUMBER_PATTERN");
+      expect(result).assertEqual("value=42; pattern=NUMBER_PATTERN");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6700
+     * @tc.name testReplace067
+     * @tc.desc Verify replace() with RegExp search uses regex metacharacters to match digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value=42; pattern=[0-9]+");
+      let result: string = text.replace(new RegExp("[0-9]+"), "NUMBER");
+      expect(result).assertEqual("value=NUMBER; pattern=[0-9]+");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6800
+     * @tc.name testReplace068
+     * @tc.desc Verify replace() with RegExp plus quantifier does not match literal plus text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a+b");
+      let result: string = text.replace(new RegExp("a+b"), "X");
+      expect(result).assertEqual("a+b");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_6900
+     * @tc.name testReplace069
+     * @tc.desc Verify replace() with mixed RegExp metacharacters does not match literal file name text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("file?.ts");
+      let result: string = text.replace(new RegExp("file?.ts"), "MATCH");
+      expect(result).assertEqual("file?.ts");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_7000
+     * @tc.name testReplace070
+     * @tc.desc Verify replace() with Unicode escape RegExp does not match literal escape text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("code=\\u4E2D");
+      let result: string = text.replace(new RegExp("\\u4E2D"), "ZH");
+      expect(result).assertEqual("code=\\u4E2D");
     });
   });
 }

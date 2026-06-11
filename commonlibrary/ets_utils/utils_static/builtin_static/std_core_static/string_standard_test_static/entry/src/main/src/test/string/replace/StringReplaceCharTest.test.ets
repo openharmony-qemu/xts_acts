@@ -280,5 +280,89 @@ export default function StringReplaceCharTest(): void {
       expect(text.toString()).assertEqual("TypeScript");
       expect(result.toString()).assertEqual("typeScript");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_1800
+     * @tc.name testReplaceChar018
+     * @tc.desc Verify replaceChar() replaces single-character string boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a");
+      let result: String = text.replaceChar(c'a', c'b');
+      expect(result.toString()).assertEqual("b");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_1900
+     * @tc.name testReplaceChar019
+     * @tc.desc Verify replaceChar() replaces every character when all source chars match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("aaaa");
+      let result: String = text.replaceChar(c'a', c'b');
+      expect(result.toString()).assertEqual("bbbb");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2000
+     * @tc.name testReplaceChar020
+     * @tc.desc Verify replaceChar() returns unchanged content when oldChar equals newChar
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("banana");
+      let result: String = text.replaceChar(c'a', c'a');
+      expect(result.toString()).assertEqual("banana");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2100
+     * @tc.name testReplaceChar021
+     * @tc.desc Verify replaceChar() treats regex metacharacter dot as a plain char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a.b.c");
+      let result: String = text.replaceChar(c'.', c'|');
+      expect(result.toString()).assertEqual("a|b|c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2200
+     * @tc.name testReplaceChar022
+     * @tc.desc Verify replaceChar() replaces escaped backslash char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("C:\\temp\\file");
+      let result: String = text.replaceChar(c'\\', c'/');
+      expect(result.toString()).assertEqual("C:/temp/file");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2300
+     * @tc.name testReplaceChar023
+     * @tc.desc Verify replaceChar() replaces C0 control carriage return char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\rline2");
+      let result: String = text.replaceChar(c'\r', c'\n');
+      expect(result.toString()).assertEqual("line1\nline2");
+    });
   });
 }

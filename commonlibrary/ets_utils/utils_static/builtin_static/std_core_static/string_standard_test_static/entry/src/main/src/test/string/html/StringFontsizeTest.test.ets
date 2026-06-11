@@ -57,16 +57,15 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_0200
      * @tc.name testFontsize002
-     * @tc.desc Verify fontsize() without arguments causes compile error
+     * @tc.desc Verify fontsize() with plus-prefixed string size preserves value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // 编译错误：缺少必填参数
-      // text.fontsize();
-      return;
+      let text: string = "ArkTS";
+      let result: string = text.fontsize("+2");
+      expect(result).assertEqual('<font size="+2">ArkTS</font>');
     });
 
     /**
@@ -321,7 +320,7 @@ export default function StringFontsizeTest(): void {
       let text: string = "ArkTS";
       let result: string = text.fontsize(3);
       let t: string = typeof result;
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
@@ -539,7 +538,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3600
      * @tc.name testFontsize036
      * @tc.desc Verify fontsize() with ISO 8859-1 Latin accented content
      * @tc.size MediumTest
@@ -552,7 +551,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3700
      * @tc.name testFontsize037
      * @tc.desc Verify fontsize() with half-width katakana content
      * @tc.size MediumTest
@@ -565,7 +564,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3800
      * @tc.name testFontsize038
      * @tc.desc Verify fontsize() with GBK Chinese text content
      * @tc.size MediumTest
@@ -578,7 +577,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3900
      * @tc.name testFontsize039
      * @tc.desc Verify fontsize() does NOT modify the original content string (negative)
      * @tc.size MediumTest
@@ -592,7 +591,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4000
      * @tc.name testFontsize040
      * @tc.desc Verify fontsize() with dynamic size and content variables
      * @tc.size MediumTest
@@ -607,7 +606,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4100
      * @tc.name testFontsize041
      * @tc.desc Verify fontsize() chained with replace() strips tags to recover original
      */
@@ -618,7 +617,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4200
      * @tc.name testFontsize042
      * @tc.desc Verify fontsize() with NUL character \\0 in content
      * @tc.size MediumTest
@@ -632,7 +631,7 @@ export default function StringFontsizeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4300
      * @tc.name testFontsize043
      * @tc.desc Verify fontsize() with mixed ASCII + CJK + Emoji content
      * @tc.size MediumTest

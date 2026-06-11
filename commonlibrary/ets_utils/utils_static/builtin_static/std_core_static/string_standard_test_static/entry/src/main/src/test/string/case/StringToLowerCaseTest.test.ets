@@ -173,8 +173,7 @@ export default function StringToLowerCaseTest(): void {
     it('testToLowerCase010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new String("Hello");
       const b = new String("HELLO");
-      let eq: boolean = a.toLowerCase().toString() === b.toLowerCase().toString();
-      expect(eq).assertTrue();
+      expect(a.toLowerCase().toString()).assertEqual(b.toLowerCase().toString());
     });
 
     /**

@@ -97,110 +97,90 @@ export default function StringSmallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0500
      * @tc.name testSmall005
-     * @tc.desc Verify small() return type is string via typeof check
+     * @tc.desc Verify small() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSmall005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".small();
-      expect(t === "string").assertTrue();
+      let result: string = "test".small();
+      expect(result).assertEqual("<small>test</small>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0600
      * @tc.name testSmall006
-     * @tc.desc Verify small() result is not null or undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testSmall006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".small();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0700
-     * @tc.name testSmall007
      * @tc.desc Verify small() with empty string returns <small></small>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "".small();
       expect(result).assertEqual("<small></small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0800
-     * @tc.name testSmall008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0700
+     * @tc.name testSmall007
      * @tc.desc Verify small() with single character string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "A".small();
       expect(result).assertEqual("<small>A</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0900
-     * @tc.name testSmall009
-     * @tc.desc Verify small() result is not undefined or null
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0800
+     * @tc.name testSmall008
+     * @tc.desc Verify small() preserves mixed-case ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".small();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
+    it('testSmall008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = "TeSt".small();
+      expect(result).assertEqual("<small>TeSt</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1000
-     * @tc.name testSmall010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0900
+     * @tc.name testSmall009
      * @tc.desc Verify small() with HTML special characters preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "<div>".small();
       expect(result).assertEqual("<small><div></small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1100
-     * @tc.name testSmall011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1000
+     * @tc.name testSmall010
      * @tc.desc Verify small() result length correctness
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "".small();
-      let eq: boolean = r1.length === "<small></small>".length;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("<small></small>".length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1200
-     * @tc.name testSmall012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1100
+     * @tc.name testSmall011
      * @tc.desc Verify small() preserves newline and tab characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "line1\nline2".small();
       expect(r1).assertEqual("<small>line1\nline2</small>");
       let r2: string = "col1\tcol2".small();
@@ -208,40 +188,40 @@ export default function StringSmallTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1300
-     * @tc.name testSmall013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1200
+     * @tc.name testSmall012
      * @tc.desc Verify small() with Chinese characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "你好世界".small();
       expect(result).assertEqual("<small>你好世界</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1400
-     * @tc.name testSmall014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1300
+     * @tc.name testSmall013
      * @tc.desc Verify small() with emoji characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "😀🎉".small();
       expect(result).assertEqual("<small>😀🎉</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1500
-     * @tc.name testSmall015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1400
+     * @tc.name testSmall014
      * @tc.desc Verify small() with long string (1000 chars)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longStr: string = "a".repeat(1000);
       let result: string = longStr.small();
       let starts: boolean = result.startsWith("<small>");
@@ -251,170 +231,170 @@ export default function StringSmallTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1600
-     * @tc.name testSmall016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1500
+     * @tc.name testSmall015
      * @tc.desc Verify small() with long string (10000 chars) result length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longStr: string = "b".repeat(10000);
       let result: string = longStr.small();
       expect(result.length).assertEqual(10000 + 15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1700
-     * @tc.name testSmall017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1600
+     * @tc.name testSmall016
      * @tc.desc Verify small() with emoji characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello 🌍🎉".small();
       expect(result).assertEqual("<small>Hello 🌍🎉</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1800
-     * @tc.name testSmall018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1700
+     * @tc.name testSmall017
      * @tc.desc Verify small() with multilingual characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "こんにちは 안녕".small();
       expect(result).assertEqual("<small>こんにちは 안녕</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1900
-     * @tc.name testSmall019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1800
+     * @tc.name testSmall018
      * @tc.desc Verify small() with long string (10000 chars)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longStr: string = "a".repeat(10000);
       let result: string = longStr.small();
       let starts: boolean = result.startsWith("<small>");
       expect(starts).assertTrue();
       let ends: boolean = result.endsWith("</small>");
       expect(ends).assertTrue();
-      expect(result.length === 10000 + "<small></small>".length).assertTrue();
+      expect(result.length).assertEqual(10000 + "<small></small>".length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2000
-     * @tc.name testSmall020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1900
+     * @tc.name testSmall019
      * @tc.desc Verify small() with very long string (100000 chars)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longStr: string = "x".repeat(100000);
       let result: string = longStr.small();
-      expect(result.length === 100000 + "<small></small>".length).assertTrue();
+      expect(result.length).assertEqual(100000 + "<small></small>".length);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2100
-     * @tc.name testSmall021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2000
+     * @tc.name testSmall020
      * @tc.desc Verify small() chained with bold()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "ArkTS".small();
       let result: string = r1.bold();
       expect(result).assertEqual("<b><small>ArkTS</small></b>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2200
-     * @tc.name testSmall022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2100
+     * @tc.name testSmall021
      * @tc.desc Verify small() chained with concat()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "hello".small();
       let result: string = r1.concat(" world");
       expect(result).assertEqual("<small>hello</small> world");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2300
-     * @tc.name testSmall023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2200
+     * @tc.name testSmall022
      * @tc.desc Verify small() with carriage return \\r in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "a\rb";
       let result: string = text.small();
       expect(result).assertEqual("<small>a\rb</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2400
-     * @tc.name testSmall024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2300
+     * @tc.name testSmall023
      * @tc.desc Verify small() with emoji in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "😀";
       let result: string = text.small();
       expect(result).assertEqual("<small>😀</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2500
-     * @tc.name testSmall025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2400
+     * @tc.name testSmall024
      * @tc.desc Verify small() with full-width characters in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ＦＷ";
       let result: string = text.small();
       expect(result).assertEqual("<small>ＦＷ</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2600
-     * @tc.name testSmall026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2500
+     * @tc.name testSmall025
      * @tc.desc Verify small() result indexOf finds original text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "target".small();
       let pos: int = result.indexOf("target");
       expect(pos).assertEqual(7);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2700
-     * @tc.name testSmall027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2600
+     * @tc.name testSmall026
      * @tc.desc Verify small() does not modify the original string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: string = "ArkTS";
       let result: string = original.small();
       expect(original).assertEqual("ArkTS");
@@ -422,104 +402,107 @@ export default function StringSmallTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2800
-     * @tc.name testSmall028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2700
+     * @tc.name testSmall027
      * @tc.desc Verify small() with mixed multilingual characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello你好World世界".small();
       expect(result).assertEqual("<small>Hello你好World世界</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2900
-     * @tc.name testSmall029
-     * @tc.desc Verify small() with null value via optional chaining (compile error)
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2800
+     * @tc.name testSmall028
+     * @tc.desc Verify small() with substring result wraps extracted content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+    it('testSmall028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let source: string = "OpenHarmony";
+      let part: string = source.substring(4, 11);
+      let result: string = part.small();
+      expect(result).assertEqual("<small>Harmony</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3000
-     * @tc.name testSmall030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2900
+     * @tc.name testSmall029
      * @tc.desc Verify small() with mixed Unicode and ASCII
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Testテスト".small();
       expect(result).assertEqual("<small>Testテスト</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3100
-     * @tc.name testSmall031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3000
+     * @tc.name testSmall030
      * @tc.desc Verify small() with Japanese characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "こんにちは".small();
       expect(result).assertEqual("<small>こんにちは</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3200
-     * @tc.name testSmall032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3100
+     * @tc.name testSmall031
      * @tc.desc Verify small() with Korean characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "안녕하세요".small();
       expect(result).assertEqual("<small>안녕하세요</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3300
-     * @tc.name testSmall033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3200
+     * @tc.name testSmall032
      * @tc.desc Verify small() with RTL Arabic text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "مرحبا".small();
       expect(result).assertEqual("<small>مرحبا</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3400
-     * @tc.name testSmall034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3300
+     * @tc.name testSmall033
      * @tc.desc Verify small() with surrogate pair Unicode
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "𐍈".small();
       expect(result).assertEqual("<small>𐍈</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3500
-     * @tc.name testSmall035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3400
+     * @tc.name testSmall034
      * @tc.desc Verify small() chained with toUpperCase() via variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "hello";
       let r1: string = text.small();
       let result: string = r1.toUpperCase();
@@ -527,14 +510,14 @@ export default function StringSmallTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3600
-     * @tc.name testSmall036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3500
+     * @tc.name testSmall035
      * @tc.desc Verify small() called multiple times returns consistent results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "test";
       let r1: string = text.small();
       let r2: string = text.small();
@@ -542,227 +525,227 @@ export default function StringSmallTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3700
-     * @tc.name testSmall037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3600
+     * @tc.name testSmall036
      * @tc.desc Verify small() with bell character \\a in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "beep\a".small();
       expect(result).assertEqual("<small>beep\a</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3800
-     * @tc.name testSmall038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3700
+     * @tc.name testSmall037
      * @tc.desc Verify small() with vertical tab \\v in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\vb".small();
       expect(result).assertEqual("<small>a\vb</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3900
-     * @tc.name testSmall039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3800
+     * @tc.name testSmall038
      * @tc.desc Verify small() with form feed \\f in text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\fb".small();
       expect(result).assertEqual("<small>a\fb</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4000
-     * @tc.name testSmall040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_3900
+     * @tc.name testSmall039
      * @tc.desc Verify small() with all-punctuation content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "!@#$%".small();
       expect(result).assertEqual("<small>!@#$%</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4100
-     * @tc.name testSmall041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4000
+     * @tc.name testSmall040
      * @tc.desc Verify small() with only a less-than character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "<".small();
       expect(result).assertEqual("<small><</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4110
-     * @tc.name testSmall042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4100
+     * @tc.name testSmall041
      * @tc.desc Verify small() with ISO 8859-1 Latin accented content (café)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "café".small();
       expect(result).assertEqual("<small>café</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4120
-     * @tc.name testSmall043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4200
+     * @tc.name testSmall042
      * @tc.desc Verify small() with half-width katakana content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ﾊﾝｶｸ".small();
       expect(result).assertEqual("<small>ﾊﾝｶｸ</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4130
-     * @tc.name testSmall044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4300
+     * @tc.name testSmall043
      * @tc.desc Verify small() with GBK Chinese text content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "中文测试".small();
       expect(result).assertEqual("<small>中文测试</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4140
-     * @tc.name testSmall045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4400
+     * @tc.name testSmall044
      * @tc.desc Verify small() does NOT modify the original content string (negative)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: string = "ArkTS";
       let result: string = original.small();
       expect(original).assertEqual("ArkTS");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4150
-     * @tc.name testSmall046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4500
+     * @tc.name testSmall045
      * @tc.desc Verify small() inner content between tags matches original via extraction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "core".small();
       let inner: string = result.substring(7, result.length - 8);
       expect(inner).assertEqual("core");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4160
-     * @tc.name testSmall047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4600
+     * @tc.name testSmall046
      * @tc.desc Verify small() with dynamic content variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "Dynamic";
       let result: string = text.small();
       expect(result).assertEqual("<small>Dynamic</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4170
-     * @tc.name testSmall048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4700
+     * @tc.name testSmall047
      * @tc.desc Verify small() with NUL character \\0 in content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\0b".small();
       let starts: boolean = result.startsWith("<small>");
       expect(starts).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4180
-     * @tc.name testSmall049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4800
+     * @tc.name testSmall048
      * @tc.desc Verify small() with backslash character in content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\\b".small();
       expect(result).assertEqual("<small>a\\b</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4190
-     * @tc.name testSmall050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4900
+     * @tc.name testSmall049
      * @tc.desc Verify small() with only whitespace content preserves spaces
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "   ".small();
       expect(result).assertEqual("<small>   </small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4200
-     * @tc.name testSmall051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5000
+     * @tc.name testSmall050
      * @tc.desc Verify small() chained with replace() strips tags to recover original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "data".small();
       let result: string = r1.replace("<small>", "").replace("</small>", "");
       expect(result).assertEqual("data");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4210
-     * @tc.name testSmall052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5100
+     * @tc.name testSmall051
      * @tc.desc Verify small() with tilde character in content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "~home".small();
       expect(result).assertEqual("<small>~home</small>");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_4220
-     * @tc.name testSmall053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5200
+     * @tc.name testSmall052
      * @tc.desc Verify small() with path-like content (/usr/local/bin)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSmall053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSmall052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "/usr/local/bin".small();
       expect(result).assertEqual("<small>/usr/local/bin</small>");
     });

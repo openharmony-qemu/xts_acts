@@ -291,5 +291,61 @@ export default function StringGetBytesTest(): void {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_1800
+     * @tc.name testGetBytes018
+     * @tc.desc Verify getBytes(1, length) returns bytes after first ASCII character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ArkTS");
+      let bytes: byte[] = text.getBytes(1, text.length);
+      expect(bytes.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_1900
+     * @tc.name testGetBytes019
+     * @tc.desc Verify getBytes(length, length) returns empty array at end boundary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ArkTS");
+      let bytes: byte[] = text.getBytes(text.length, text.length);
+      expect(bytes.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2000
+     * @tc.name testGetBytes020
+     * @tc.desc Verify getBytes(0, 1) on emoji returns high-surrogate byte
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("馃榾");
+      let bytes: byte[] = text.getBytes(0, 1);
+      expect(bytes.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2100
+     * @tc.name testGetBytes021
+     * @tc.desc Verify getBytes() range includes C0 control characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\n\t");
+      let bytes: byte[] = text.getBytes(1, text.length);
+      expect(bytes.length).assertEqual(2);
+    });
   });
 }

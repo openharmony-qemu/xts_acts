@@ -319,16 +319,19 @@ export default function StringCodePointCountTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2000
      * @tc.name testCodePointCount020
-     * @tc.desc Verify codePointCount() with beginIndex > endIndex throws StringIndexOutOfBoundsError
+     * @tc.desc Verify codePointCount() with beginIndex > endIndex throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testCodePointCount020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // beginIndex at last valid position, endIndex = length
       const text = new String("OpenHarmony");
-      let result: int = text.codePointCount(7, text.length);
-      expect(result).assertEqual(4);
+      try {
+        let result: int = text.codePointCount(7, 4);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual("RangeError");
+      }
     });
 
     /**

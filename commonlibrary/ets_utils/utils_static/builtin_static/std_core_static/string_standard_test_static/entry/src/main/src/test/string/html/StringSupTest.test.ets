@@ -57,13 +57,15 @@ export default function StringSupTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0200
      * @tc.name testSup002
-     * @tc.desc Verify sup() with extra argument causes compile error
+     * @tc.desc Verify sup() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSup002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let trimmed: string = "  sup  ".trim();
+      let result: string = trimmed.sup();
+      expect(result).assertEqual("<sup>sup</sup>");
     });
 
     /**
@@ -99,20 +101,17 @@ export default function StringSupTest(): void {
      */
     it('testSup005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "test".sup();
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0600
      * @tc.name testSup006
-     * @tc.desc Verify sup() result is not null or undefined
+     * @tc.desc Verify sup() wraps lowercase ASCII content exactly
      */
     it('testSup006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "abc".sup();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
+      expect(result).assertEqual("<sup>abc</sup>");
     });
 
     /**
@@ -122,17 +121,18 @@ export default function StringSupTest(): void {
      */
     it('testSup007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "hi".sup();
-      let eq: boolean = r1.length === 2 + 11;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual(2 + 11);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0800
      * @tc.name testSup008
-     * @tc.desc Verify sup() with argument causes compile error
+     * @tc.desc Verify sup() on repeat result wraps repeated content
      */
     it('testSup008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let repeated: string = "x".repeat(3);
+      let result: string = repeated.sup();
+      expect(result).assertEqual("<sup>xxx</sup>");
     });
 
     /**
@@ -226,8 +226,7 @@ export default function StringSupTest(): void {
      */
     it('testSup017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "ok".sup();
-      let eq: boolean = r1.length === "<sup>ok</sup>".length;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("<sup>ok</sup>".length);
     });
 
     /**

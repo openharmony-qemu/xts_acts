@@ -174,8 +174,7 @@ export default function StringToUpperCaseTest(): void {
     it('testToUpperCase010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new String("hello");
       const b = new String("HELLO");
-      let eq: boolean = a.toUpperCase().toString() === b.toUpperCase().toString();
-      expect(eq).assertTrue();
+      expect(a.toUpperCase().toString()).assertEqual(b.toUpperCase().toString());
     });
 
     /**

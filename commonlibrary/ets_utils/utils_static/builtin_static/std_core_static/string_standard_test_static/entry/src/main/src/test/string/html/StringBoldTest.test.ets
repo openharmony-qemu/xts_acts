@@ -137,7 +137,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_0800
      * @tc.name testBold008
      * @tc.desc Verify bold() with empty string returns <b></b>
      * @tc.size MediumTest
@@ -150,7 +150,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_0900
      * @tc.name testBold009
      * @tc.desc Verify bold() with single character string
      * @tc.size MediumTest
@@ -163,7 +163,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1000
      * @tc.name testBold010
      * @tc.desc Verify bold() with string containing leading/trailing spaces
      * @tc.size MediumTest
@@ -178,7 +178,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1100
      * @tc.name testBold011
      * @tc.desc Verify bold() with HTML special characters < > & \" '
      * @tc.size MediumTest
@@ -195,7 +195,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1200
      * @tc.name testBold012
      * @tc.desc Verify bold() with newline and tab escape characters
      * @tc.size MediumTest
@@ -210,7 +210,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1300
      * @tc.name testBold013
      * @tc.desc Verify bold() with Unicode characters (Japanese, Russian)
      * @tc.size MediumTest
@@ -225,7 +225,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1400
      * @tc.name testBold014
      * @tc.desc Verify bold() with emoji characters
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1500
      * @tc.name testBold015
      * @tc.desc Verify bold() with very long string (10000+ characters)
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1600
      * @tc.name testBold016
      * @tc.desc Verify bold() preserves zero-width space \\u200B
      * @tc.size MediumTest
@@ -271,7 +271,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1700
      * @tc.name testBold017
      * @tc.desc Verify bold() does not escape existing HTML tags in original string
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1800
      * @tc.name testBold018
      * @tc.desc Verify bold() called multiple times on same string returns consistent results
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_1900
      * @tc.name testBold019
      * @tc.desc Verify bold() result length equals original length plus 7
      * @tc.size MediumTest
@@ -313,7 +313,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2000
      * @tc.name testBold020
      * @tc.desc Verify bold() chained with italics() produces nested tags
      * @tc.size MediumTest
@@ -327,7 +327,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2100
      * @tc.name testBold021
      * @tc.desc Verify bold() chained with toUpperCase() transforms tag and content
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2200
      * @tc.name testBold022
      * @tc.desc Verify bold() called via string variable
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2300
      * @tc.name testBold023
      * @tc.desc Verify bold() called via const string constant
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2400
      * @tc.name testBold024
      * @tc.desc Verify bold() called directly on string literal
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2500
      * @tc.name testBold025
      * @tc.desc Verify bold() called on concatenated string result
      * @tc.size MediumTest
@@ -397,7 +397,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2600
      * @tc.name testBold026
      * @tc.desc Verify bold() does not modify the original string
      * @tc.size MediumTest
@@ -412,7 +412,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2700
      * @tc.name testBold027
      * @tc.desc Verify bold() preserves carriage return \\r in text
      * @tc.size MediumTest
@@ -426,7 +426,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2800
      * @tc.name testBold028
      * @tc.desc Verify bold() with full-width characters in text
      * @tc.size MediumTest
@@ -440,7 +440,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_2900
      * @tc.name testBold029
      * @tc.desc Verify bold() chained with toLowerCase()
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3000
      * @tc.name testBold030
      * @tc.desc Verify bold() with all-punctuation content
      * @tc.size MediumTest
@@ -469,7 +469,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3100
      * @tc.name testBold031
      * @tc.desc Verify bold() deep chain 5 levels
      * @tc.size MediumTest
@@ -486,7 +486,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3200
      * @tc.name testBold032
      * @tc.desc Verify bold() with vertical tab \\v in text
      * @tc.size MediumTest
@@ -500,7 +500,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3300
      * @tc.name testBold033
      * @tc.desc Verify bold() with form feed \\f in text
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3400
      * @tc.name testBold034
      * @tc.desc Verify bold() with null byte \\0 in middle of text
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3500
      * @tc.name testBold035
      * @tc.desc Verify bold() with </b> in caller produces malformed close
      * @tc.size MediumTest
@@ -541,7 +541,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3600
      * @tc.name testBold036
      * @tc.desc Verify bold() with bare ampersand preserved without escaping
      * @tc.size MediumTest
@@ -554,7 +554,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3700
      * @tc.name testBold037
      * @tc.desc Verify bold() with ISO 8859-1 Latin accented content (café)
      * @tc.size MediumTest
@@ -567,7 +567,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3800
      * @tc.name testBold038
      * @tc.desc Verify bold() with half-width katakana content
      * @tc.size MediumTest
@@ -580,7 +580,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_3900
      * @tc.name testBold039
      * @tc.desc Verify bold() with GBK Chinese text content
      * @tc.size MediumTest
@@ -593,7 +593,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4000
      * @tc.name testBold040
      * @tc.desc Verify bold() chained with replace() strips tags to recover original
      * @tc.size MediumTest
@@ -607,7 +607,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4100
      * @tc.name testBold041
      * @tc.desc Verify bold() with backslash character in content
      * @tc.size MediumTest
@@ -620,7 +620,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4200
      * @tc.name testBold042
      * @tc.desc Verify bold() with tilde character in content
      * @tc.size MediumTest
@@ -633,7 +633,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4300
      * @tc.name testBold043
      * @tc.desc Verify bold() with path-like content
      * @tc.size MediumTest
@@ -646,7 +646,7 @@ export default function StringBoldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_5280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BOLD_4400
      * @tc.name testBold044
      * @tc.desc Verify bold() with mixed ASCII + CJK + Emoji content
      * @tc.size MediumTest

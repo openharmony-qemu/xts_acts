@@ -56,31 +56,27 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_0200
      * @tc.name testFontcolor002
-     * @tc.desc Verify fontcolor() without arguments causes compile error (missing required param)
+     * @tc.desc Verify fontcolor() with slash color value preserves it as-is
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // 编译错误，缺少必填参数color
-      // "hello".fontcolor();
-      return;
+      let result: string = "text".fontcolor("red/blue");
+      expect(result).assertEqual('<font color="red/blue">text</font>');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_0300
      * @tc.name testFontcolor003
-     * @tc.desc Verify fontcolor() with extra arguments causes compile error
+     * @tc.desc Verify fontcolor() with colon color value preserves it as-is
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // 编译错误，参数个数过多
-      // "ArkTS".fontcolor("red", "blue");
-      return;
+      let result: string = "text".fontcolor("theme:primary");
+      expect(result).assertEqual('<font color="theme:primary">text</font>');
     });
 
     /**
@@ -316,7 +312,7 @@ export default function StringFontcolorTest(): void {
      */
     it('testFontcolor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "hello".fontcolor("red");
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**

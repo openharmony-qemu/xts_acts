@@ -57,13 +57,15 @@ export default function StringFixedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_0200
      * @tc.name testFixed002
-     * @tc.desc Verify fixed() with extra argument causes compile error
+     * @tc.desc Verify fixed() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let trimmed: string = "  fixed  ".trim();
+      let result: string = trimmed.fixed();
+      expect(result).assertEqual("<tt>fixed</tt>");
     });
 
     /**
@@ -105,23 +107,20 @@ export default function StringFixedTest(): void {
      */
     it('testFixed005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "test".fixed();
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_0600
      * @tc.name testFixed006
-     * @tc.desc Verify fixed() result is not null or undefined
+     * @tc.desc Verify fixed() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "abc".fixed();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
+      expect(result).assertEqual("<tt>abc</tt>");
     });
 
     /**
@@ -245,8 +244,7 @@ export default function StringFixedTest(): void {
      */
     it('testFixed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "test".fixed();
-      let eq: boolean = r1.length === "<tt>test</tt>".length;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("<tt>test</tt>".length);
     });
 
     /**
@@ -321,13 +319,16 @@ export default function StringFixedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_2100
      * @tc.name testFixed021
-     * @tc.desc Verify fixed() with null value via optional chaining (compile error)
+     * @tc.desc Verify fixed() with substring result wraps extracted content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let source: string = "OpenHarmony";
+      let part: string = source.substring(0, 4);
+      let result: string = part.fixed();
+      expect(result).assertEqual("<tt>Open</tt>");
     });
 
     /**

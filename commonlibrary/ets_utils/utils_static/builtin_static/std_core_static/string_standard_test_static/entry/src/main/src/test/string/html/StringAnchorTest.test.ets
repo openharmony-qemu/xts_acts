@@ -94,7 +94,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0600
      * @tc.name testAnchor006
      * @tc.desc Verify anchor() with tab character in name
      * @tc.size MediumTest
@@ -108,7 +108,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0700
      * @tc.name testAnchor007
      * @tc.desc Verify anchor() with newline character in name
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0800
      * @tc.name testAnchor008
      * @tc.desc Verify anchor() with zero-width space in name
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0900
      * @tc.name testAnchor009
      * @tc.desc Verify anchor() with special symbols in name
      * @tc.size MediumTest
@@ -166,7 +166,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1100
      * @tc.name testAnchor011
      * @tc.desc Verify anchor() with XSS script tag string as name
      * @tc.size MediumTest
@@ -181,7 +181,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1200
      * @tc.name testAnchor012
      * @tc.desc Verify anchor() with HTML img tag injection as name
      * @tc.size MediumTest
@@ -196,7 +196,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1300
      * @tc.name testAnchor013
      * @tc.desc Verify anchor() with double quote in name (attribute value conflict)
      * @tc.size MediumTest
@@ -211,7 +211,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1400
      * @tc.name testAnchor014
      * @tc.desc Verify anchor() with single quote in name
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1500
      * @tc.name testAnchor015
      * @tc.desc Verify anchor() with angle brackets in name
      * @tc.size MediumTest
@@ -241,22 +241,22 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_600
-     * @tc.name testAnchor023
-     * @tc.desc Verify anchor() return value format <a name="...">original</a>
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1600
+     * @tc.name testAnchor016
+     * @tc.desc Verify anchor() return value format with hyphenated name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testAnchor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "ArkTS";
-      let result: string = text.anchor("top");
+      let text: string = "Header";
+      let result: string = text.anchor("chapter-1");
 
-      expect(result).assertEqual('<a name="top">ArkTS</a>');
+      expect(result).assertEqual('<a name="chapter-1">Header</a>');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1700
      * @tc.name testAnchor017
      * @tc.desc Verify anchor() return type is string
      * @tc.size MediumTest
@@ -267,11 +267,11 @@ export default function StringAnchorTest(): void {
       let text: string = "ArkTS";
       let result: string = text.anchor("top");
       let t: string = typeof result;
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1800
      * @tc.name testAnchor018
      * @tc.desc Verify anchor() preserves original string content
      * @tc.size MediumTest
@@ -285,7 +285,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1900
      * @tc.name testAnchor019
      * @tc.desc Verify anchor() preserves HTML special chars in original string
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2000
      * @tc.name testAnchor020
      * @tc.desc Verify anchor() with empty string preserves empty content
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2400
      * @tc.name testAnchor024
      * @tc.desc Verify anchor() with carriage return \\r in name
      * @tc.size MediumTest
@@ -373,7 +373,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2500
      * @tc.name testAnchor025
      * @tc.desc Verify anchor() with backslash in name
      * @tc.size MediumTest
@@ -388,7 +388,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2600
      * @tc.name testAnchor026
      * @tc.desc Verify anchor() with null character \\0 in name
      * @tc.size MediumTest
@@ -402,7 +402,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2700
      * @tc.name testAnchor027
      * @tc.desc Verify anchor() with isolated surrogate pair \\udc04 in name
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_2800
      * @tc.name testAnchor028
      * @tc.desc Verify anchor() with ampersand in name
      * @tc.size MediumTest
@@ -447,7 +447,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3000
      * @tc.name testAnchor030
      * @tc.desc Verify anchor() with SQL injection string in name
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3100
      * @tc.name testAnchor031
      * @tc.desc Verify anchor() with backtick in name
      * @tc.size MediumTest
@@ -477,7 +477,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3200
      * @tc.name testAnchor032
      * @tc.desc Verify anchor() result indexOf finds name substring position
      * @tc.size MediumTest
@@ -492,7 +492,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3300
      * @tc.name testAnchor033
      * @tc.desc Verify anchor() result includes original text substring
      * @tc.size MediumTest
@@ -507,7 +507,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3400
      * @tc.name testAnchor034
      * @tc.desc Verify anchor() with bold() chain produces correct nesting
      * @tc.size MediumTest
@@ -521,7 +521,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3500
      * @tc.name testAnchor035
      * @tc.desc Verify anchor() with 65535-character name (database varchar limit)
      * @tc.size MediumTest
@@ -537,7 +537,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3600
      * @tc.name testAnchor036
      * @tc.desc Verify anchor() with vertical tab \\v in name parameter
      * @tc.size MediumTest
@@ -552,7 +552,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3700
      * @tc.name testAnchor037
      * @tc.desc Verify anchor() with form feed \\f in name parameter
      * @tc.size MediumTest
@@ -567,7 +567,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3800
      * @tc.name testAnchor038
      * @tc.desc Verify anchor() with replacement character U+FFFD in name
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3900
      * @tc.name testAnchor039
      * @tc.desc Verify anchor() with HTML onclick event injection in name
      * @tc.size MediumTest
@@ -598,7 +598,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4000
      * @tc.name testAnchor040
      * @tc.desc Verify anchor() with equal sign in name
      * @tc.size MediumTest
@@ -688,7 +688,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4600
      * @tc.name testAnchor046
      * @tc.desc Verify anchor() with null byte \\0 in text content
      * @tc.size MediumTest
@@ -702,7 +702,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_RENUM_600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4700
      * @tc.name testAnchor047
      * @tc.desc Verify anchor() with both name and text containing special characters
      * @tc.size MediumTest
@@ -716,7 +716,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_RENUM_700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4800
      * @tc.name testAnchor048
      * @tc.desc Verify anchor() with CJK Unicode BMP name wraps correctly
      */
@@ -726,7 +726,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4900
      * @tc.name testAnchor049
      * @tc.desc Verify anchor() with GBK Chinese name wraps correctly
      */
@@ -736,7 +736,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5000
      * @tc.name testAnchor050
      * @tc.desc Verify anchor() with emoji name preserves emoji in name attribute
      */
@@ -746,7 +746,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5100
      * @tc.name testAnchor051
      * @tc.desc Verify anchor() with ISO 8859-1 Latin accented name wraps correctly
      */
@@ -756,7 +756,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5200
      * @tc.name testAnchor052
      * @tc.desc Verify anchor() with half-width katakana name wraps correctly
      */
@@ -766,7 +766,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5300
      * @tc.name testAnchor053
      * @tc.desc Verify anchor() with CJK Unicode BMP content wrapped in anchor
      */
@@ -776,7 +776,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5400
      * @tc.name testAnchor054
      * @tc.desc Verify anchor() with GBK Chinese content wrapped in anchor
      */
@@ -786,7 +786,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5500
      * @tc.name testAnchor055
      * @tc.desc Verify anchor() with emoji content wrapped in anchor
      */
@@ -796,7 +796,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5600
      * @tc.name testAnchor056
      * @tc.desc Verify anchor() with ISO 8859-1 Latin accented content wrapped in anchor
      */
@@ -806,7 +806,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5700
      * @tc.name testAnchor057
      * @tc.desc Verify anchor() with half-width katakana content wrapped in anchor
      */
@@ -816,7 +816,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_RENUM_800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5800
      * @tc.name testAnchor058
      * @tc.desc Verify anchor() with full-width characters in content wrapped in anchor
      */
@@ -826,7 +826,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5900
      * @tc.name testAnchor059
      * @tc.desc Verify anchor() with CJK name and CJK content together
      */
@@ -836,7 +836,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6000
      * @tc.name testAnchor060
      * @tc.desc Verify anchor() with emoji name and emoji content together
      */
@@ -846,7 +846,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6100
      * @tc.name testAnchor061
      * @tc.desc Verify anchor() with GBK name and GBK content together
      */
@@ -856,7 +856,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6200
      * @tc.name testAnchor062
      * @tc.desc Verify anchor() with newline character in text content preserved
      */
@@ -866,7 +866,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6300
      * @tc.name testAnchor063
      * @tc.desc Verify anchor() with tab character in text content preserved
      */
@@ -876,7 +876,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6400
      * @tc.name testAnchor064
      * @tc.desc Verify anchor() with carriage-return in text content preserved
      */
@@ -886,7 +886,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6500
      * @tc.name testAnchor065
      * @tc.desc Verify anchor() with leading and trailing spaces in content preserved
      */
@@ -896,7 +896,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6600
      * @tc.name testAnchor066
      * @tc.desc Verify anchor() with mixed ASCII and CJK in content
      */
@@ -906,7 +906,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6700
      * @tc.name testAnchor067
      * @tc.desc Verify anchor() with mixed ASCII and emoji in content
      */
@@ -916,7 +916,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6800
      * @tc.name testAnchor068
      * @tc.desc Verify anchor() with dynamic name variable from parameter
      */
@@ -927,7 +927,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6900
      * @tc.name testAnchor069
      * @tc.desc Verify anchor() with dynamic text content variable
      */
@@ -938,7 +938,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7000
      * @tc.name testAnchor070
      * @tc.desc Verify anchor() with both name and text as dynamic variables
      */
@@ -950,7 +950,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7100
      * @tc.name testAnchor071
      * @tc.desc Verify anchor() result length equals content length plus name length plus 15
      */
@@ -963,7 +963,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7200
      * @tc.name testAnchor072
      * @tc.desc Verify anchor() result format: starts with <a name=\" and ends with </a>
      */
@@ -976,7 +976,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7300
      * @tc.name testAnchor073
      * @tc.desc Verify anchor() with dot character in name
      */
@@ -986,7 +986,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6860
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7400
      * @tc.name testAnchor074
      * @tc.desc Verify anchor() with colon character in name
      */
@@ -996,7 +996,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6870
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7500
      * @tc.name testAnchor075
      * @tc.desc Verify anchor() with hyphen and underscore in name
      */
@@ -1006,7 +1006,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6880
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7600
      * @tc.name testAnchor076
      * @tc.desc Verify anchor() with URL-like name preserves slashes and colons
      */
@@ -1016,7 +1016,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6890
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7700
      * @tc.name testAnchor077
      * @tc.desc Verify anchor() with regex metacharacter star in name
      */
@@ -1026,7 +1026,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_RENUM_900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7800
      * @tc.name testAnchor078
      * @tc.desc Verify anchor() with regex metacharacter plus in name
      */
@@ -1036,7 +1036,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6910
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7900
      * @tc.name testAnchor079
      * @tc.desc Verify anchor() with regex metacharacter question in name
      */
@@ -1046,7 +1046,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6920
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8000
      * @tc.name testAnchor080
      * @tc.desc Verify anchor() with regex metacharacter pipe in name
      */
@@ -1056,7 +1056,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6930
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8100
      * @tc.name testAnchor081
      * @tc.desc Verify anchor() with regex metacharacter caret in name
      */
@@ -1066,7 +1066,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6940
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8200
      * @tc.name testAnchor082
      * @tc.desc Verify anchor() with regex metacharacter dollar in name
      */
@@ -1076,7 +1076,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6950
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8300
      * @tc.name testAnchor083
      * @tc.desc Verify anchor() with bracket characters in name
      */
@@ -1086,7 +1086,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6960
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8400
      * @tc.name testAnchor084
      * @tc.desc Verify anchor() with curly brace characters in name
      */
@@ -1096,7 +1096,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6970
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8500
      * @tc.name testAnchor085
      * @tc.desc Verify anchor() with leading spaces in content preserved
      */
@@ -1106,7 +1106,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6980
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8600
      * @tc.name testAnchor086
      * @tc.desc Verify anchor() with trailing spaces in content preserved
      */
@@ -1116,7 +1116,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6990
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8700
      * @tc.name testAnchor087
      * @tc.desc Verify anchor() with only punctuation marks in content
      */
@@ -1126,7 +1126,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_RENUM_RENUM_RENUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8800
      * @tc.name testAnchor088
      * @tc.desc Verify anchor() with ampersand entity in content preserved without escaping
      */
@@ -1136,7 +1136,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8900
      * @tc.name testAnchor089
      * @tc.desc Verify anchor() with Unicode escape sequence \\u0041\\u0042 in name
      */
@@ -1146,7 +1146,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9000
      * @tc.name testAnchor090
      * @tc.desc Verify anchor() with hash fragment identifier style name
      */
@@ -1156,9 +1156,9 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9100
      * @tc.name testAnchor091
-     * @tc.desc Verify anchor() with single character content and single character name
+     * @tc.desc Verify anchor() with single digit content and single digit name
      */
     it('testAnchor091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "X".anchor("Y");
@@ -1166,17 +1166,17 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9200
      * @tc.name testAnchor092
      * @tc.desc Verify anchor() with single character content and single character name
      */
     it('testAnchor092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "X".anchor("Y");
-      expect(result).assertEqual('<a name="Y">X</a>');
+      let result: string = "7".anchor("1");
+      expect(result).assertEqual('<a name="1">7</a>');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9300
      * @tc.name testAnchor093
      * @tc.desc Verify anchor() with whitespace-only content wraps correctly
      */
@@ -1186,7 +1186,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9400
      * @tc.name testAnchor094
      * @tc.desc Verify anchor() with name containing spaces at start and end preserved
      */
@@ -1196,7 +1196,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9500
      * @tc.name testAnchor095
      * @tc.desc Verify anchor() result contains the name substring at correct position
      */
@@ -1209,7 +1209,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9600
      * @tc.name testAnchor096
      * @tc.desc Verify anchor() result can be split on anchor tag boundaries
      */
@@ -1220,7 +1220,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9700
      * @tc.name testAnchor097
      * @tc.desc Verify anchor() called on string literal directly
      */
@@ -1230,7 +1230,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_RENUM_RENUM_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9800
      * @tc.name testAnchor098
      * @tc.desc Verify anchor() with semicolon in name
      */

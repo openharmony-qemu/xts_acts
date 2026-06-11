@@ -56,16 +56,16 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_0200
      * @tc.name testItalics002
-     * @tc.desc Verify italics() with extra argument causes compile error
+     * @tc.desc Verify italics() on substring result wraps the extracted content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // ArkTS-Sta编译错误：italics()不期望参数
-      // "ArkTS".italics("extra");
-      return;
+      let source: string = "ArkTS Static";
+      let part: string = source.substring(0, 5);
+      let result: string = part.italics();
+      expect(result).assertEqual("<i>ArkTS</i>");
     });
 
     /**
@@ -161,35 +161,33 @@ export default function StringItalicsTest(): void {
     it('testItalics009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "test".italics();
       let t: string = typeof result;
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_1000
      * @tc.name testItalics010
-     * @tc.desc Verify italics() does not return undefined
+     * @tc.desc Verify italics() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "test".italics();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
+      expect(result).assertEqual("<i>test</i>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_1100
      * @tc.name testItalics011
-     * @tc.desc Verify italics() does not return null
+     * @tc.desc Verify italics() preserves hyphenated content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".italics();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
+      let result: string = "a-b".italics();
+      expect(result).assertEqual("<i>a-b</i>");
     });
 
     /**
@@ -371,44 +369,43 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_2400
      * @tc.name testItalics024
-     * @tc.desc Verify italics() with argument causes compile error
+     * @tc.desc Verify italics() on repeat result wraps repeated content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // "test".italics("arg");
-      return;
+      let repeated: string = "ab".repeat(2);
+      let result: string = repeated.italics();
+      expect(result).assertEqual("<i>abab</i>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_2500
      * @tc.name testItalics025
-     * @tc.desc Verify italics() with multiple arguments causes compile error
+     * @tc.desc Verify italics() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // "test".italics("arg1", "arg2");
-      return;
+      let trimmed: string = "  trim  ".trim();
+      let result: string = trimmed.italics();
+      expect(result).assertEqual("<i>trim</i>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_2600
      * @tc.name testItalics026
-     * @tc.desc Verify italics() does not exist on non-String types (compile error)
+     * @tc.desc Verify italics() on replace result wraps replaced content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // let n: number = 123;
-      // n.italics();
-      return;
+      let replaced: string = "Ark-TS".replace("-", "");
+      let result: string = replaced.italics();
+      expect(result).assertEqual("<i>ArkTS</i>");
     });
 
     /**
@@ -635,7 +632,7 @@ export default function StringItalicsTest(): void {
      */
     it('testItalics042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".italics();
-      expect(result).assertEqual("<italics>ab</italics>");
+      expect(result).assertEqual("<i>ab</i>");
     });
 
     /**
@@ -648,7 +645,7 @@ export default function StringItalicsTest(): void {
      */
     it('testItalics043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".italics();
-      expect(result).assertEqual("<italics>ab</italics>");
+      expect(result).assertEqual("<i>ab</i>");
     });
 
     /**
@@ -661,7 +658,7 @@ export default function StringItalicsTest(): void {
      */
     it('testItalics044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "!@#$%".italics();
-      expect(result).assertEqual("<italics>!@#$%</italics>");
+      expect(result).assertEqual("<i>!@#$%</i>");
     });
 
     /**
@@ -674,7 +671,7 @@ export default function StringItalicsTest(): void {
      */
     it('testItalics045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "<".italics();
-      expect(result).assertEqual("<italics><</italics>");
+      expect(result).assertEqual("<i><</i>");
     });
   });
 }

@@ -56,16 +56,15 @@ export default function StringStrikeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_0200
      * @tc.name testStrike002
-     * @tc.desc Verify strike() with extra argument causes compile error
+     * @tc.desc Verify strike() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // ArkTS-Sta编译报错，strike不接受参数
-      // "test".strike('extra');
-      return;
+      let trimmed: string = "  strike  ".trim();
+      let result: string = trimmed.strike();
+      expect(result).assertEqual("<strike>strike</strike>");
     });
 
     /**
@@ -163,23 +162,20 @@ export default function StringStrikeTest(): void {
      */
     it('testStrike009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "test".strike();
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_1000
      * @tc.name testStrike010
-     * @tc.desc Verify strike() result is not undefined or null
+     * @tc.desc Verify strike() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "test".strike();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
+      expect(result).assertEqual("<strike>test</strike>");
     });
 
     /**
@@ -193,8 +189,7 @@ export default function StringStrikeTest(): void {
     it('testStrike011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tagLen: number = "<strike></strike>".length;
       let r1: string = "ab".strike();
-      let eq: boolean = r1.length === "ab".length + tagLen;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("ab".length + tagLen);
     });
 
     /**
@@ -280,8 +275,7 @@ export default function StringStrikeTest(): void {
     it('testStrike017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let prefixLen: number = "<strike>".length;
       let r1: string = "hello".strike();
-      let eq: boolean = r1.indexOf("hello") === prefixLen;
-      expect(eq).assertTrue();
+      expect(r1.indexOf("hello")).assertEqual(prefixLen);
     });
 
     /**

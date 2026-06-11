@@ -262,9 +262,8 @@ export default function StringCodePointAtTest(): void {
       const text = new String("😀");
       let cp: int | undefined = text.codePointAt(0);
       let cc: number = text.charCodeAt(0);
-      expect(cp!).assertLarger(0xFFFF);
-      expect(cc).assertLarger(0xD800);
-      expect(cp! !== cc).assertTrue();
+      expect(cp!).assertEqual(0x1F600);
+      expect(cc).assertEqual(0xD83D);
     });
 
     /**

@@ -52,9 +52,9 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ArkTS");
-      expect(text.charAt(0)).assertEqual("A");
-      expect(text.charAt(1)).assertEqual("r");
-      expect(text.charAt(4)).assertEqual("S");
+      expect(text.charAt(0).toString()).assertEqual("A");
+      expect(text.charAt(1).toString()).assertEqual("r");
+      expect(text.charAt(4).toString()).assertEqual("S");
     });
 
     /**
@@ -67,8 +67,8 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ABCDE");
-      expect(text.charAt(0)).assertEqual("A");
-      expect(text.charAt(4)).assertEqual("E");
+      expect(text.charAt(0).toString()).assertEqual("A");
+      expect(text.charAt(4).toString()).assertEqual("E");
     });
 
     /**
@@ -81,8 +81,8 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("你好");
-      expect(text.charAt(0)).assertEqual("你");
-      expect(text.charAt(1)).assertEqual("好");
+      expect(text.charAt(0).toString()).assertEqual("你");
+      expect(text.charAt(1).toString()).assertEqual("好");
     });
 
     /**
@@ -95,7 +95,7 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ＦＵＬＬ");
-      expect(text.charAt(0)).assertEqual("Ｆ");
+      expect(text.charAt(0).toString()).assertEqual("Ｆ");
     });
 
     /**
@@ -137,7 +137,7 @@ export default function StringCharAtTest(): void {
     it('testCharAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let acute: string = String.fromCharCode(769);
       const text = new String("e" + acute);
-      expect(text.charAt(0)).assertEqual("e");
+      expect(text.charAt(0).toString()).assertEqual("e");
     });
 
     /**
@@ -179,7 +179,7 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ﾊﾝｶｸ");
-      expect(text.charAt(0)).assertEqual("ﾊ");
+      expect(text.charAt(0).toString()).assertEqual("ﾊ");
     });
 
     /**
@@ -201,7 +201,7 @@ export default function StringCharAtTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1200
      * @tc.name testCharAt012
      * @tc.desc Verify charAt(0) on all-spaces string returns space character
      * @tc.size MediumTest
@@ -210,10 +210,10 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("   ");
-      expect(text.charAt(0)).assertEqual(" ");
+      expect(text.charAt(0).toString()).assertEqual(" ");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1300
      * @tc.name testCharAt013
      * @tc.desc Verify charAt(length) throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function StringCharAtTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1400
      * @tc.name testCharAt014
      * @tc.desc Verify charAt(0) on single-character string returns that character
      * @tc.size MediumTest
@@ -240,11 +240,11 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("X");
-      expect(text.charAt(0)).assertEqual("X");
+      expect(text.charAt(0).toString()).assertEqual("X");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1500
      * @tc.name testCharAt015
      * @tc.desc Verify charAt() accepts short type index parameter
      * @tc.size MediumTest
@@ -254,11 +254,11 @@ export default function StringCharAtTest(): void {
     it('testCharAt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let idx: short = 0;
       const text = new String("AB");
-      expect(text.charAt(idx)).assertEqual("A");
+      expect(text.charAt(idx).toString()).assertEqual("A");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1600
      * @tc.name testCharAt016
      * @tc.desc Verify charAt() accepts byte type index parameter
      * @tc.size MediumTest
@@ -268,11 +268,11 @@ export default function StringCharAtTest(): void {
     it('testCharAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let idx: byte = 0;
       const text = new String("AB");
-      expect(text.charAt(idx)).assertEqual("A");
+      expect(text.charAt(idx).toString()).assertEqual("A");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1700
      * @tc.name testCharAt017
      * @tc.desc Verify charAt() with negative index throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
@@ -290,7 +290,7 @@ export default function StringCharAtTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1800
      * @tc.name testCharAt018
      * @tc.desc Verify charAt(1) on GBK Chinese text returns second character
      * @tc.size MediumTest
@@ -299,11 +299,11 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("中文测试");
-      expect(text.charAt(2)).assertEqual("测");
+      expect(text.charAt(2).toString()).assertEqual("测");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1900
      * @tc.name testCharAt019
      * @tc.desc Verify charAt(3) on ISO 8859-1 Latin text returns accented é
      * @tc.size MediumTest
@@ -312,11 +312,11 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("café");
-      expect(text.charAt(3)).assertEqual("é");
+      expect(text.charAt(3).toString()).assertEqual("é");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2000
      * @tc.name testCharAt020
      * @tc.desc Verify charAt(1) on string with newline returns newline character
      * @tc.size MediumTest
@@ -326,12 +326,12 @@ export default function StringCharAtTest(): void {
     it('testCharAt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("a\nb");
       let result: string = text.charAt(1).toString();
-      let code: number = text.charCodeAt(1);
+      let code: number = result.charCodeAt(0);
       expect(code).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2100
      * @tc.name testCharAt021
      * @tc.desc Verify charAt(1) on string with tab returns tab character
      * @tc.size MediumTest
@@ -340,12 +340,13 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("x\ty");
-      let code: number = text.charCodeAt(1);
+      let result: string = text.charAt(1).toString();
+      let code: number = result.charCodeAt(0);
       expect(code).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_RENUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2200
      * @tc.name testCharAt022
      * @tc.desc Verify charAt(3) on 7-char string returns middle character D
      * @tc.size MediumTest
@@ -354,11 +355,11 @@ export default function StringCharAtTest(): void {
      */
     it('testCharAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("ABCDEFG");
-      expect(text.charAt(3)).assertEqual("D");
+      expect(text.charAt(3).toString()).assertEqual("D");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2300
      * @tc.name testCharAt023
      * @tc.desc Verify charAt() with dynamic index variable returns correct character
      * @tc.size MediumTest
@@ -368,7 +369,74 @@ export default function StringCharAtTest(): void {
     it('testCharAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("TypeScript");
       let idx: int = 4;
-      expect(text.charAt(idx)).assertEqual("S");
+      expect(text.charAt(idx).toString()).assertEqual("S");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2400
+     * @tc.name testCharAt024
+     * @tc.desc Verify charAt() returns chars at first and last valid indices
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ArkTS");
+      let first: string = text.charAt(0).toString();
+      let last: string = text.charAt(text.length - 1).toString();
+      expect(first).assertEqual("A");
+      expect(last).assertEqual("S");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2500
+     * @tc.name testCharAt025
+     * @tc.desc Verify charAt() returns C0 NUL character at requested index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let value: string = text.charAt(1).toString();
+      let code: number = value.charCodeAt(0);
+      expect(code).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2600
+     * @tc.name testCharAt026
+     * @tc.desc Verify charAt() with negative index throws StringIndexOutOfBoundsError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("AB");
+      try {
+        let value = text.charAt(-1);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual("StringIndexOutOfBoundsError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2700
+     * @tc.name testCharAt027
+     * @tc.desc Verify charAt() with index equal to length throws StringIndexOutOfBoundsError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("AB");
+      try {
+        let value = text.charAt(text.length);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual("StringIndexOutOfBoundsError");
+      }
     });
   });
 }

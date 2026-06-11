@@ -57,13 +57,15 @@ export default function StringSubTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUB_0200
      * @tc.name testSub002
-     * @tc.desc Verify sub() with extra argument causes compile error
+     * @tc.desc Verify sub() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSub002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let trimmed: string = "  sub  ".trim();
+      let result: string = trimmed.sub();
+      expect(result).assertEqual("<sub>sub</sub>");
     });
 
     /**
@@ -105,23 +107,20 @@ export default function StringSubTest(): void {
      */
     it('testSub005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "test".sub();
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUB_0600
      * @tc.name testSub006
-     * @tc.desc Verify sub() result is not null or undefined
+     * @tc.desc Verify sub() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSub006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "abc".sub();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
+      expect(result).assertEqual("<sub>abc</sub>");
     });
 
     /**
@@ -301,8 +300,7 @@ export default function StringSubTest(): void {
      */
     it('testSub019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "text".sub();
-      let eq: boolean = r1.length === "<sub>text</sub>".length;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("<sub>text</sub>".length);
     });
 
     /**

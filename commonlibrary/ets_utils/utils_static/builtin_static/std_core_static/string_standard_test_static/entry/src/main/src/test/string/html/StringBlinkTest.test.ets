@@ -57,13 +57,15 @@ export default function StringBlinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_0200
      * @tc.name testBlink002
-     * @tc.desc Verify blink() with extra argument causes compile error
+     * @tc.desc Verify blink() on trim result wraps trimmed content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let trimmed: string = "  blink  ".trim();
+      let result: string = trimmed.blink();
+      expect(result).assertEqual("<blink>blink</blink>");
     });
 
     /**
@@ -105,23 +107,20 @@ export default function StringBlinkTest(): void {
      */
     it('testBlink005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let t: string = typeof "test".blink();
-      expect(t === "string").assertTrue();
+      expect(t).assertEqual("string");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_0600
      * @tc.name testBlink006
-     * @tc.desc Verify blink() result is not null or undefined
+     * @tc.desc Verify blink() wraps lowercase ASCII content exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "abc".blink();
-      let notNull: boolean = result !== null;
-      expect(notNull).assertTrue();
-      let notUndef: boolean = result !== undefined;
-      expect(notUndef).assertTrue();
+      expect(result).assertEqual("<blink>abc</blink>");
     });
 
     /**
@@ -174,8 +173,7 @@ export default function StringBlinkTest(): void {
     it('testBlink010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tagLen: number = "<blink></blink>".length;
       let r1: string = "ab".blink();
-      let eq: boolean = r1.length === "ab".length + tagLen;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual("ab".length + tagLen);
     });
 
     /**
@@ -231,8 +229,7 @@ export default function StringBlinkTest(): void {
       let tagLen: number = "<blink></blink>".length;
       let r1: string = "x".repeat(1000);
       let r2: string = r1.blink();
-      let eq: boolean = r2.length === 1000 + tagLen;
-      expect(eq).assertTrue();
+      expect(r2.length).assertEqual(1000 + tagLen);
     });
 
     /**
@@ -260,8 +257,7 @@ export default function StringBlinkTest(): void {
     it('testBlink016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tagLen: number = "<blink></blink>".length;
       let r1: string = "test".blink();
-      let eq: boolean = r1.length === tagLen + 4;
-      expect(eq).assertTrue();
+      expect(r1.length).assertEqual(tagLen + 4);
     });
 
     /**
@@ -437,13 +433,16 @@ export default function StringBlinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_2900
      * @tc.name testBlink029
-     * @tc.desc Verify blink() with null value via optional chaining (compile error)
+     * @tc.desc Verify blink() with substring result wraps extracted content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+      let source: string = "OpenHarmony";
+      let part: string = source.substring(4, 11);
+      let result: string = part.blink();
+      expect(result).assertEqual("<blink>Harmony</blink>");
     });
 
     /**
