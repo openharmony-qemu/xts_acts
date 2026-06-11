@@ -138,7 +138,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         });
       } catch (err) {
         console.error(TAG + `testGetRdbStoreError0100, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError0100 end   *************");
@@ -161,7 +161,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         });
       } catch (err) {
         console.error(TAG + `testGetRdbStoreError0200, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testGetRdbStoreError0200 end   *************");
@@ -212,7 +212,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         });
       } catch (err) {
         console.error(TAG + `testDeleteRdbStoreError0100, errcode:${JSON.stringify(err)}`);
-        expect(err.code).assertEqual('401')
+        expect(err.code == 401).assertTrue()
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreError0100 end   *************");
@@ -281,7 +281,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.getRdbStore(context, STORE_CONFIG_S2, (err, store) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(typeof(store) === "object").assertTrue();
@@ -290,7 +290,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfigCallBack0100 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testGetRdbStoreConfigCallBack0100 end   *************");
@@ -308,7 +308,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.getRdbStore(context, STORE_CONFIG_S3, (err, store) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(typeof(store) === "object").assertTrue();
@@ -317,7 +317,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfigCallBack0200 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testGetRdbStoreConfigCallBack0200 end   *************");
@@ -335,7 +335,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.getRdbStore(context, STORE_CONFIG_S4, (err, store) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(typeof(store) === "object").assertTrue();
@@ -344,7 +344,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testGetRdbStoreConfigCallBack0300 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testGetRdbStoreConfigCallBack0300 end   *************");
@@ -363,7 +363,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.deleteRdbStore(context, STORE_CONFIG_S3, async (err: BusinessError) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(num).assertEqual(1);
@@ -372,7 +372,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testDeleteRdbStoreConfig0100 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreConfig0100 end   *************");
@@ -391,7 +391,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.deleteRdbStore(context, STORE_CONFIG_S2, async (err: BusinessError) => {
           if(err){
-            expect(err.code).assertEqual("801");
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(num).assertEqual(1);
@@ -400,7 +400,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testDeleteRdbStoreConfig0200 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("801");
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreConfig0200 end   *************");
@@ -419,7 +419,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       try{
         relationalStore.deleteRdbStore(context, STORE_CONFIG_S4, async (err: BusinessError) => {
           if(err){
-            expect(err.code).assertEqual(801);
+            expect(err.code == 801).assertTrue();
             done();
           }else{
             expect(num).assertEqual(1);
@@ -428,7 +428,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
         })
       }catch (e) {
         console.error(TAG + `testDeleteRdbStoreConfig0300 failed, code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(801);
+        expect(e.code == 801).assertTrue();
         done();
       }
       console.info(TAG + "************* testDeleteRdbStoreConfig0300 end   *************");
