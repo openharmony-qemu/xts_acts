@@ -159,5 +159,125 @@ export default function StringContentEqualsTest(): void {
       let result: boolean = text.contentEquals(sb);
       expect(result).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1000
+     * @tc.name testContentEquals010
+     * @tc.desc Verify contentEquals() with emoji surrogate pair content returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\uD83D\uDE00B");
+      let sb: StringBuilder = new StringBuilder("A\uD83D\uDE00B");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1100
+     * @tc.name testContentEquals011
+     * @tc.desc Verify contentEquals() detects zero-width character difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ArkTS");
+      let sb: StringBuilder = new StringBuilder("Ark\u200BTS");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1200
+     * @tc.name testContentEquals012
+     * @tc.desc Verify contentEquals() with embedded NUL character returns true for exact match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let sb: StringBuilder = new StringBuilder("A\0B");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1300
+     * @tc.name testContentEquals013
+     * @tc.desc Verify contentEquals() with mixed character sets returns true for exact match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u4E2D\u0391\u0627\u05D0");
+      let sb: StringBuilder = new StringBuilder("A\u4E2D\u0391\u0627\u05D0");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1400
+     * @tc.name testContentEquals014
+     * @tc.desc Verify contentEquals() returns false for same prefix with different suffix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("prefix-value-A");
+      let sb: StringBuilder = new StringBuilder("prefix-value-B");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1500
+     * @tc.name testContentEquals015
+     * @tc.desc Verify contentEquals() with newline content returns true for exact match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\nline2");
+      let sb: StringBuilder = new StringBuilder("line1\nline2");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1600
+     * @tc.name testContentEquals016
+     * @tc.desc Verify contentEquals() with ISO 8859-1 Latin-1 accented content returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Caf\u00E9");
+      let sb: StringBuilder = new StringBuilder("Caf\u00E9");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1700
+     * @tc.name testContentEquals017
+     * @tc.desc Verify contentEquals() detects missing Latin-1 accent difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Cafe");
+      let sb: StringBuilder = new StringBuilder("Caf\u00E9");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertFalse();
+    });
   });
 }

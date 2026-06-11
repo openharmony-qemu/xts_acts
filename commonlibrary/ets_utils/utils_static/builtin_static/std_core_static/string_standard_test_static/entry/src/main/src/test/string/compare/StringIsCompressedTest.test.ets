@@ -208,5 +208,33 @@ export default function StringIsCompressedTest(): void {
       let result: boolean = text.isCompressed();
       expect(result).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1300
+     * @tc.name testIsCompressed013
+     * @tc.desc Verify isCompressed() on CJK text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1400
+     * @tc.name testIsCompressed014
+     * @tc.desc Verify isCompressed() on mixed ASCII and CJK text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ID-\u4E2D\u6587-001");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
   });
 }

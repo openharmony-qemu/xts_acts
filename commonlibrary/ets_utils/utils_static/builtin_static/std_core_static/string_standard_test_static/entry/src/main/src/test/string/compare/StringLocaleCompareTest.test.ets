@@ -271,5 +271,50 @@ export default function StringLocaleCompareTest(): void {
       let result: number = text.localeCompare("a");
       expect(result > 0).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_1700
+     * @tc.name testLocaleCompare017
+     * @tc.desc Verify localeCompare() compares explicit null string conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("null");
+      let converted: string = String(null);
+      let result: number = text.localeCompare(converted);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_1800
+     * @tc.name testLocaleCompare018
+     * @tc.desc Verify localeCompare() compares explicit undefined string conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("undefined");
+      let converted: string = String(undefined);
+      let result: number = text.localeCompare(converted);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_1900
+     * @tc.name testLocaleCompare019
+     * @tc.desc Verify localeCompare() accepts locales as a string array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("abc");
+      let locales: string[] = ["en-US"];
+      let result: number = text.localeCompare("abc", locales);
+      expect(result).assertEqual(0);
+    });
   });
 }

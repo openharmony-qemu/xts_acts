@@ -216,26 +216,27 @@ export default function StringIsEmptyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_1400
      * @tc.name testIsEmpty014
-     * @tc.desc Verify new String() default constructor creates empty
+     * @tc.desc Verify isEmpty() returns true for a substring-derived empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsEmpty014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String();
+      let raw: string = "X";
+      const text = new String(raw.substring(1));
       expect(text.isEmpty()).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_1500
      * @tc.name testIsEmpty015
-     * @tc.desc Verify isEmpty() on single character returns false
+     * @tc.desc Verify isEmpty() on single ISO 8859-1 Latin-1 character returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsEmpty015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("A");
+      const text = new String("\u00E9");
       expect(text.isEmpty()).assertFalse();
     });
 

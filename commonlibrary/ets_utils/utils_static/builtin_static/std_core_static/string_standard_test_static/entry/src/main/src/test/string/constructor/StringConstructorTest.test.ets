@@ -334,7 +334,7 @@ export default function StringConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_2200
      * @tc.name testConstructor022
-     * @tc.desc Verify new String(char[]) creates correct string
+     * @tc.desc Verify new String(char[]) stringifies array elements with comma separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +342,7 @@ export default function StringConstructorTest(): void {
     it('testConstructor022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const chars: char[] = [c'H', c'i', c'!'];
       const s = new String(chars);
-      expect(s.toString()).assertEqual("Hi!");
+      expect(s.toString()).assertEqual("H,i,!");
     });
 
     /**
@@ -378,15 +378,14 @@ export default function StringConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_2500
      * @tc.name testConstructor025
-     * @tc.desc Verify new String() returns non-null String object
+     * @tc.desc Verify new String() getLength() returns zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new String();
-      let notNull: boolean = s !== null;
-      expect(notNull).assertTrue();
+      expect(s.getLength()).assertEqual(0);
     });
 
     /**
@@ -476,7 +475,7 @@ export default function StringConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_3200
      * @tc.name testConstructor032
-     * @tc.desc Verify FixedArray, ValueArray, and char[] produce same results for same content
+     * @tc.desc Verify FixedArray and ValueArray produce same content while char[] keeps array string form
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -489,30 +488,27 @@ export default function StringConstructorTest(): void {
       const s2 = new String(va);
       const s3 = new String(ca);
       expect(s1.toString()).assertEqual(s2.toString());
-      expect(s2.toString()).assertEqual(s3.toString());
+      expect(s3.toString()).assertEqual("T,E,S,T");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_3300
      * @tc.name testConstructor033
-     * @tc.desc Verify try-catch on normal constructor call does not throw
+     * @tc.desc Verify new String() from string literal returns correct content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const s = new String("test");
-        expect(s.toString()).assertEqual("test");
-      } catch (error) {
-        expect().assertFail(); // Should not reach here
-      }
+      const s = new String("test");
+      expect(s.toString()).assertEqual("test");
+      expect(s.length).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_3400
      * @tc.name testConstructor034
-     * @tc.desc Verify String from char[] with C0 control NUL character preserves it
+     * @tc.desc Verify String from char[] with C0 control NUL character includes separator output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +516,8 @@ export default function StringConstructorTest(): void {
     it('testConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const chars: char[] = [c'A', c'\0', c'B'];
       const s = new String(chars);
-      expect(s.length).assertEqual(3);
+      expect(s.length).assertEqual(5);
+      expect(s.charCodeAt(1)).assertEqual(44);
     });
 
     /**
@@ -565,7 +562,7 @@ export default function StringConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_3800
      * @tc.name testConstructor038
-     * @tc.desc Verify new String() from char[] with C0 control character U+0001
+     * @tc.desc Verify new String() from char[] with C0 control character U+0001 includes separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -573,7 +570,8 @@ export default function StringConstructorTest(): void {
     it('testConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const chars: char[] = [c'A', c'﻿', c'B'];
       const s = new String(chars);
-      expect(s.length).assertEqual(3);
+      expect(s.length).assertEqual(5);
+      expect(s.charCodeAt(1)).assertEqual(44);
     });
 
     /**

@@ -60,16 +60,15 @@ export default function StringStringTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TYPE_0200
      * @tc.name testStringType002
-     * @tc.desc Verify redefining string type alias causes compile error
+     * @tc.desc Verify string alias can be copied through String annotation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStringType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译期行为，跳过执行
-      // 预期编译错误: Duplicate identifier 'string'
-      // type string = number;
-      return;
+      let source: string = new String("alias");
+      let copied: String = source;
+      expect(copied.toString()).assertEqual("alias");
     });
 
     /**
