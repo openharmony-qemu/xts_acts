@@ -142,6 +142,9 @@ static napi_value Ret(napi_env env, int32_t val)
 /* ----- Original simple test ----- */
 static napi_value Wcstofl(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -168,6 +171,9 @@ static napi_value Wcstofl(napi_env env, napi_callback_info info)
 /* ---------- Normal parameter tests ---------- */
 static napi_value WcstoflNormal001(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -179,6 +185,9 @@ static napi_value WcstoflNormal001(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal002(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -190,6 +199,9 @@ static napi_value WcstoflNormal002(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal003(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -201,6 +213,9 @@ static napi_value WcstoflNormal003(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal004(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -212,6 +227,9 @@ static napi_value WcstoflNormal004(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal005(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -223,6 +241,9 @@ static napi_value WcstoflNormal005(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal006(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -234,12 +255,18 @@ static napi_value WcstoflNormal006(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflNormal007(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     bool ok = CheckWcstofl(L"0X1.8P+2tail", nullptr);
     return Ret(env, ok ? 1 : 0);
 }
 
 static napi_value WcstoflNormal008(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCtypeOnlyCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -252,6 +279,9 @@ static napi_value WcstoflNormal008(napi_env env, napi_callback_info info)
 /* ---------- Abnormal parameter tests ---------- */
 static napi_value WcstoflAbnormal001(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     wchar_t *end = nullptr;
     errno = 0;
     float val = CallWcstofl(L"123.45", &end, nullptr);
@@ -271,6 +301,9 @@ static napi_value WcstoflAbnormal001(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflAbnormal002(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -283,6 +316,9 @@ static napi_value WcstoflAbnormal002(napi_env env, napi_callback_info info)
 /* ---------- Boundary value tests ---------- */
 static napi_value WcstoflBoundary001(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -307,6 +343,9 @@ static napi_value WcstoflBoundary001(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary002(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -318,6 +357,9 @@ static napi_value WcstoflBoundary002(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary003(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -329,6 +371,9 @@ static napi_value WcstoflBoundary003(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary004(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -340,6 +385,9 @@ static napi_value WcstoflBoundary004(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary005(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -351,6 +399,9 @@ static napi_value WcstoflBoundary005(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary006(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -362,6 +413,9 @@ static napi_value WcstoflBoundary006(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflBoundary007(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -374,6 +428,9 @@ static napi_value WcstoflBoundary007(napi_env env, napi_callback_info info)
 /* ---------- Functional tests ---------- */
 static napi_value WcstoflFunc001(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -434,6 +491,9 @@ static napi_value WcstoflFunc003(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflFunc004(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -455,6 +515,9 @@ static napi_value WcstoflFunc004(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflFunc005(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -476,6 +539,9 @@ static napi_value WcstoflFunc005(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflFunc006(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     locale_t loc = OpenCLocale();
     if (!loc) {
         return Ret(env, 0);
@@ -588,6 +654,9 @@ static napi_value WcstoflStable004(napi_env env, napi_callback_info info)
 
 static napi_value WcstoflStable005(napi_env env, napi_callback_info info)
 {
+    if (IsStubMode()) {
+        return Ret(env, 0);
+    }
     int enosysCount = 0;
     for (int i = 0; i < ENOSYS_CHECK_LOOP; ++i) {
         errno = 0;

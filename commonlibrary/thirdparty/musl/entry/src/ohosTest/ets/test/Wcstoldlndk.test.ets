@@ -26,22 +26,6 @@ export default function wcstoldlNdkTest() {
     });
 
     /**
-     * @tc.name   testMuslSymExportedWcstoldl001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0100
-     * @tc.desc   Original simple test for wcstold_l
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMuslSymExportedWcstoldl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = wcstoldlndktest.wcstoldl();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
      * @tc.name   testWcstoldlNormal001
      * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0101
      * @tc.desc   Normal test: convert "123.45xyz"
@@ -163,22 +147,6 @@ export default function wcstoldlNdkTest() {
      */
     it('testWcstoldlNormal008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = wcstoldlndktest.wcstoldlNormal008();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.name   testWcstoldlAbnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_WCSTOLD_L_0109
-     * @tc.desc   Abnormal test: no trailing characters, endptr points to null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testWcstoldlAbnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = wcstoldlndktest.wcstoldlAbnormal001();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();

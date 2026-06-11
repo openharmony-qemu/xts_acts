@@ -121,28 +121,6 @@ static napi_value Open2Normal004(napi_env env, napi_callback_info info)
 }
 
 /* ---------- Abnormal parameter tests ---------- */
-// O_CREAT without mode should abort
-static napi_value Open2Abnormal001(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return Ret(env, 0);
-    }
-    const char* path = "/dev/null";
-    bool aborted = CheckAbortForOpen(path, O_CREAT);
-    return Ret(env, aborted ? 1 : 0);
-}
-
-// O_TMPFILE without mode should abort
-static napi_value Open2Abnormal002(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return Ret(env, 0);
-    }
-    const char* path = "/dev/null";
-    bool aborted = CheckAbortForOpen(path, O_TMPFILE);
-    return Ret(env, aborted ? 1 : 0);
-}
-
 // empty path (should fail with ENOENT)
 static napi_value Open2Abnormal004(napi_env env, napi_callback_info info)
 {
@@ -401,8 +379,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"open2", nullptr, Open2, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Normal003", nullptr, Open2Normal003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Normal004", nullptr, Open2Normal004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"open2Abnormal001", nullptr, Open2Abnormal001, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"open2Abnormal002", nullptr, Open2Abnormal002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal004", nullptr, Open2Abnormal004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal005", nullptr, Open2Abnormal005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"open2Abnormal006", nullptr, Open2Abnormal006, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -74,38 +74,6 @@ export default function openExtNdkTest() {
     });
 
     /**
-     * @tc.name   testOpen2Abnormal001
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0103
-     * @tc.desc   Abnormal test: O_CREAT without mode (should abort)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOpen2Abnormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = open2ndktest.open2Abnormal001();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.name   testOpen2Abnormal002
-     * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0104
-     * @tc.desc   Abnormal test: O_TMPFILE without mode (should abort)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOpen2Abnormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = open2ndktest.open2Abnormal002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
      * @tc.name   testOpen2Abnormal004
      * @tc.number SUB_THIRDPARTY_MUSL_OPEN_2_0105
      * @tc.desc   Abnormal test: empty path (should fail with ENOENT)

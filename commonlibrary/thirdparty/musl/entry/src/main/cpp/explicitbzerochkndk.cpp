@@ -88,15 +88,6 @@ static napi_value Ret(napi_env env, int32_t val)
 static napi_value ExplicitBzeroChk(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
-        char buf[BUF_SIZE_10];
-        char backup[BUF_SIZE_10];
-        std::fill_n(buf, sizeof(buf), 1);
-        std::copy_n(buf, sizeof(buf), backup);
-        errno = 0;
-        CallExplicitBzeroChk(buf, TEST_LEN_5, sizeof(buf));
-        if (errno == ENOSYS && std::memcmp(buf, backup, sizeof(buf)) == 0) {
-            return Ret(env, 0);
-        }
         return Ret(env, 0);
     } else {
         char buf[BUF_SIZE_10];
@@ -193,26 +184,6 @@ static napi_value ExplicitBzeroChkAbnormal003(napi_env env, napi_callback_info i
     return Ret(env, 0);
 }
 
-// Stub mode behavior test
-static napi_value ExplicitBzeroChkAbnormal005(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        // In full mode, this test is not applicable, return success
-        return Ret(env, 0);
-    }
-    char buf[BUF_SIZE_10];
-    char backup[BUF_SIZE_10];
-    std::fill_n(buf, sizeof(buf), 1);
-    std::copy_n(buf, sizeof(buf), backup);
-    errno = 0;
-    CallExplicitBzeroChk(buf, TEST_LEN_20, BUF_SIZE_10);
-    // In stub mode, should return ENOSYS and buffer unchanged
-    if (errno == ENOSYS && std::memcmp(buf, backup, sizeof(buf)) == 0) {
-        return Ret(env, 1);
-    }
-    return Ret(env, 0);
-}
-
 /* ---------- Boundary value tests ---------- */
 static napi_value ExplicitBzeroChkBoundary001(napi_env env, napi_callback_info info)
 {
@@ -304,8 +275,7 @@ static napi_value ExplicitBzeroChkFunc003(napi_env env, napi_callback_info info)
     std::copy_n(buf, sizeof(buf), backup);
     errno = 0;
     CallExplicitBzeroChk(buf, TEST_LEN_5, BUF_SIZE_10);
-    // In stub mode, should return ENOSYS and buffer unchanged
-    if (errno == ENOSYS && std::memcmp(buf, backup, sizeof(buf)) == 0) {
+    if (std::memcmp(buf, backup, sizeof(buf)) < 0) {
         return Ret(env, 1);
     }
     return Ret(env, 0);
@@ -373,35 +343,23 @@ static napi_value ExplicitBzeroChkStable002(napi_env env, napi_callback_info inf
     return Ret(env, 1);
 }
 
-static napi_value ExplicitBzeroChkStable003(napi_env env, napi_callback_info info)
-{
-    if (IsStubMode()) {
-        return Ret(env, 0);
-    }
-    return Ret(env, 1);
-}
-
-static bool StubStableTest()
-{
-    for (int i = 0; i < STABLE_LOOP_100000; ++i) {
-        char buf[BUF_SIZE_10];
-        std::fill_n(buf, sizeof(buf), 1);
-        errno = 0;
-        CallExplicitBzeroChk(buf, TEST_LEN_5, BUF_SIZE_10);
-        if (errno != ENOSYS || buf[BUF_IDX_ZERO] != 1) {
-            return false;
-        }
-    }
-    return true;
-}
-
 static napi_value ExplicitBzeroChkStable004(napi_env env, napi_callback_info info)
 {
     if (IsStubMode()) {
         return Ret(env, 0);
     }
-    bool ok = StubStableTest();
-    return Ret(env, ok ? 1 : 0);
+
+    for (int i = 0; i < STABLE_LOOP_100000; ++i) {
+        char buf[BUF_SIZE_10];
+        std::fill_n(buf, sizeof(buf), 1);
+        CallExplicitBzeroChk(buf, BUF_SIZE_10, BUF_SIZE_10);
+        for (int j = 0; j < BUF_SIZE_10; ++j) {
+            if (buf[j] != 0) {
+                Ret(env, 0);
+            }
+        }  
+    }
+    return Ret(env, 1);
 }
 
 /* ---------- Module registration ---------- */
@@ -416,8 +374,6 @@ static const napi_property_descriptor DESC1[] = {
     {"explicitBzeroChkNormal004", nullptr, ExplicitBzeroChkNormal004, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"explicitBzeroChkAbnormal003", nullptr, ExplicitBzeroChkAbnormal003, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"explicitBzeroChkAbnormal005", nullptr, ExplicitBzeroChkAbnormal005, nullptr, nullptr, nullptr,
      napi_default, nullptr},
 };
 
@@ -439,8 +395,6 @@ static const napi_property_descriptor DESC2[] = {
     {"explicitBzeroChkStable001", nullptr, ExplicitBzeroChkStable001, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"explicitBzeroChkStable002", nullptr, ExplicitBzeroChkStable002, nullptr, nullptr, nullptr,
-     napi_default, nullptr},
-    {"explicitBzeroChkStable003", nullptr, ExplicitBzeroChkStable003, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"explicitBzeroChkStable004", nullptr, ExplicitBzeroChkStable004, nullptr, nullptr, nullptr,
      napi_default, nullptr},

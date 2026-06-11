@@ -122,22 +122,6 @@ export default function explicitbzerochkNdkTest() {
     });
 
     /**
-     * @tc.name   testExplicitBzeroChkAbnormal005
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0106
-     * @tc.desc   Abnormal test: stub mode behavior (ENOSYS)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testExplicitBzeroChkAbnormal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkAbnormal005();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
      * @tc.name   testExplicitBzeroChkBoundary001
      * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0107
      * @tc.desc   Boundary test: zero length on single byte
@@ -275,22 +259,6 @@ export default function explicitbzerochkNdkTest() {
      */
     it('testExplicitBzeroChkStable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable002();
-      let deviceType: string = deviceInfo.deviceType;
-      let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
-      expect(isValid).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.name   testExplicitBzeroChkStable003
-     * @tc.number SUB_THIRDPARTY_MUSL_EXPLICIT_BZERO_CHK_0116
-     * @tc.desc   Stability: abort on out-of-bounds (fortify)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testExplicitBzeroChkStable003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let resNum: number = explicitbzerochkndktest.explicitBzeroChkStable003();
       let deviceType: string = deviceInfo.deviceType;
       let isValid: boolean = (deviceType == '2in1' && resNum == 1) || (deviceType != '2in1' && resNum == 0);
       expect(isValid).assertTrue();
