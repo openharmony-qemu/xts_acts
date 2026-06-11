@@ -76,7 +76,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
 
     afterEach(async () => {
       await sleep(1500)
-    });
     })
 
     /**
@@ -1607,7 +1606,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       }
 
     })
-
 
   })
 }
