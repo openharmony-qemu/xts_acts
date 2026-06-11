@@ -38,6 +38,62 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
     afterEach(async () => {
       await sleep(2000)
     })
+    
+    /**
+     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1200
+     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1200
+     * @tc.desc   [Stability] The openNotificationSettingsWithResult API is called 500 times in a loop, and no crash, freeze, or black screen occurs on the device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Notification_Ans_openWindow_WithResult_1200', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1200'
+      let driver: Driver = Driver.create();
+      let num= 0
+      try {
+        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
+        for (let index = 0; index < 500; index++) {
+          await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+            num++
+            expect(num).assertEqual(1);
+            done()
+            hilog.info(0x0000, 'testTag',
+              `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
+          }).catch(async (e: Error) => {
+            let err: BusinessError = e as BusinessError
+            hilog.error(0x0000, 'testTag',
+              `${testNum} ${index} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else if (index === 499) {
+              expect(err.code).assertEqual(1600018);
+              await sleep(500)
+              let button6 = await driver.findComponent(ON.text('确定'));
+              console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
+              if (button6 !== null) {
+                console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
+                sleep(1000);
+                (await button6).click()
+                sleep(100)
+              }
+            } else {
+              expect(err.code).assertEqual(1600018);
+            }
+          });
+        }
+      } catch (err) {
+        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(false).assertTrue();
+          done()
+        }
+      }
+    })
 
     /**
      * @tc.name   SUB_Notification_Ans_openWindow_WithResult_0700
@@ -52,7 +108,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       let driver: Driver = Driver.create();
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.vibrationEnabled).assertEqual(true)
@@ -104,7 +160,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.notificationEnabled).assertEqual(true)
@@ -179,7 +235,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(true)
@@ -247,7 +303,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_0300'
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
+        await notificationExtensionSubscription.openSubscriptionSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(false).assertTrue();
@@ -291,7 +347,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
@@ -340,7 +396,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           await sleep(1000)
         }
         await sleep(2000)
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(false)
@@ -402,7 +458,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       };
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+        await notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data.bannerEnabled).assertEqual(true)
@@ -476,60 +532,5 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
       }
     })
 
-    /**
-     * @tc.name   SUB_Notification_Ans_openWindow_WithResult_1200
-     * @tc.number SUB_Notification_Ans_openWindow_WithResult_1200
-     * @tc.desc   [Stability] The openNotificationSettingsWithResult API is called 500 times in a loop, and no crash, freeze, or black screen occurs on the device.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Notification_Ans_openWindow_WithResult_1200', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1200'
-      let driver: Driver = Driver.create();
-      let num= 0
-      try {
-        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        for (let index = 0; index < 500; index++) {
-          notificationManager.openNotificationSettingsWithResult(context).then((data) => {
-            num++
-            expect(num).assertEqual(1);
-            done()
-            hilog.info(0x0000, 'testTag',
-              `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          }).catch(async (e: Error) => {
-            let err: BusinessError = e as BusinessError
-            hilog.error(0x0000, 'testTag',
-              `${testNum} ${index} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err?.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else if (index === 499) {
-              expect(err.code).assertEqual(1600018);
-              await sleep(500)
-              let button6 = await driver.findComponent(ON.text('确定'));
-              console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
-              if (button6 !== null) {
-                console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
-                sleep(1000);
-                (await button6).click()
-                sleep(100)
-              }
-            } else {
-              expect(err.code).assertEqual(1600018);
-            }
-          });
-        }
-      } catch (err) {
-        console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
-        if (err?.code === 801) {
-          expect(err.code).assertEqual(801);
-          done();
-        } else {
-          expect(false).assertTrue();
-          done()
-        }
-      }
-    })
   })
 }
