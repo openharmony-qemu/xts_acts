@@ -444,6 +444,8 @@ export default function GridStyleTest() {
       expect(textComp).not().assertUndefined();
       await textComp.click();
       await Utils.sleep(1500);
+      let copyBtn = await driver.findComponent(ON.text('复制'))
+      await copyBtn.click();
 
       let resultText = await driver.findComponent(ON.id('result_text'));
       expect(resultText).not().assertUndefined();
@@ -451,7 +453,6 @@ export default function GridStyleTest() {
       expect(resultStr.indexOf('No gridStyle')).assertLarger(-1);
 
       await Utils.sleep(1500);
-      await textComp.click();
       console.info('GridStyleTest_Default_0100 result: ' + resultStr);
 
       console.info('GridStyleTest_Default_0100 END');
