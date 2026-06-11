@@ -199,7 +199,7 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
      * @tc.level  LEVEL2
      */
     it("testRdbStoreExecuteSqlError004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
-      console.info(TAG + "************* testRdbStoreExecuteSqlError002 start *************");
+      console.info(TAG + "************* testRdbStoreExecuteSqlError004 start *************");
       rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
       try {
         await rdbStore?.executeSql("DELETE FROM test WHERE age = ? OR age = ?", undefined);
