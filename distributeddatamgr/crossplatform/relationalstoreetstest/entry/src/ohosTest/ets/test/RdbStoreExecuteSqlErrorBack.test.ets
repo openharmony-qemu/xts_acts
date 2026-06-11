@@ -270,7 +270,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
     });
     /**
      * @tc.name   testGetRdbStoreConfigCallBack0100
-     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPITest_0100
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPICallBackTest_0100
      * @tc.desc   getRdbStore promise with
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -297,7 +297,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
     });
     /**
      * @tc.name   testGetRdbStoreConfigCallBack0200
-     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPITest_0200
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPICallBackTest_0200
      * @tc.desc   getRdbStore promise with
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
     });
     /**
      * @tc.name   testGetRdbStoreConfigCallBack0300
-     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPITest_0300
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_GetRdbStoreConfigAPICallBackTest_0300
      * @tc.desc   getRdbStore promise with
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
