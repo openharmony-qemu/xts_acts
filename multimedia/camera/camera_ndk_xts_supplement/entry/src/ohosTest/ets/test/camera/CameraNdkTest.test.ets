@@ -1377,15 +1377,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETBOUNĐINGBOX_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETBOUNĐINGBOX_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100
      * @tc.desc     OH_MetadataObjectExt_GetBoundingBox- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETBOUNĐINGBOX_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETBOUNĐINGBOX_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_BOUNDING_BOX_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetBoundingBox(1);
       console.info(TAG, testName, result);
@@ -1393,15 +1393,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETEMOTION_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETEMOTION_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_EMOTION_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_EMOTION_0100
      * @tc.desc     OH_MetadataObjectExt_GetEmotion- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETEMOTION_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETEMOTION_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_EMOTION_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_EMOTION_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetEmotion(1);
       console.info(TAG, testName, result);
@@ -1409,15 +1409,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETLEFTEYEBOUNĐINGBOX_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETLEFTEYEBOUNĐINGBOX_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_LEFT_EYE_BOUNDING_BOX_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_LEFT_EYE_BOUNDING_BOX_0100
      * @tc.desc     OH_MetadataObjectExt_GetLeftEyeBoundingBox- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETLEFTEYEBOUNĐINGBOX_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETLEFTEYEBOUNĐINGBOX_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_LEFT_EYE_BOUNDING_BOX_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_LEFT_EYE_BOUNDING_BOX_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetLeftEyeBoundingBox(1);
       console.info(TAG, testName, result);
@@ -1425,15 +1425,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETMETADATAOBJECTTYPE_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETMETADATAOBJECTTYPE_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_METADATA_OBJECT_TYPE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_METADATA_OBJECT_TYPE_0100
      * @tc.desc     OH_MetadataObjectExt_GetMetadataObjectType- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETMETADATAOBJECTTYPE_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETMETADATAOBJECTTYPE_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_METADATA_OBJECT_TYPE_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_METADATA_OBJECT_TYPE_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetMetadataObjectType(1);
       console.info(TAG, testName, result);
@@ -1441,15 +1441,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETPITCHANGLE_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETPITCHANGLE_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0100
      * @tc.desc     OH_MetadataObjectExt_GetPitchAngle- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETPITCHANGLE_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETPITCHANGLE_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_PITCH_ANGLE_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetPitchAngle(1);
       console.info(TAG, testName, result);
@@ -1457,15 +1457,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETRIGHTEYEBOUNĐINGBOX_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETRIGHTEYEBOUNĐINGBOX_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100
      * @tc.desc     OH_MetadataObjectExt_GetRightEyeBoundingBox- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETRIGHTEYEBOUNĐINGBOX_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETRIGHTEYEBOUNĐINGBOX_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_RIGHT_EYE_BOUNDING_BOX_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetRightEyeBoundingBox(1);
       console.info(TAG, testName, result);
@@ -1473,15 +1473,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETROLLANGLE_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETROLLANGLE_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0100
      * @tc.desc     OH_MetadataObjectExt_GetRollAngle- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETROLLANGLE_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETROLLANGLE_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_ROLL_ANGLE_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetRollAngle(1);
       console.info(TAG, testName, result);
@@ -1489,15 +1489,15 @@ export default function CameraNdkTest() {
     });
     
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETTIMESTAMP_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETTIMESTAMP_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100
      * @tc.desc     OH_MetadataObjectExt_GetTimestamp- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETTIMESTAMP_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETTIMESTAMP_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_TIMESTAMP_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetTimestamp(1);
       console.info(TAG, testName, result);
@@ -1505,15 +1505,15 @@ export default function CameraNdkTest() {
     });
 
     /**
-     * @tc.number   SUB_OH_METADATAOBJECTEXT_GETYAWANGLE_0100
-     * @tc.name     SUB_OH_METADATAOBJECTEXT_GETYAWANGLE_0100
+     * @tc.number   SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0100
      * @tc.desc     OH_MetadataObjectExt_GetYawAngle- CAMERA_INVALID_ARGUMENT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 0
      */
-    it('SUB_OH_METADATAOBJECTEXT_GETYAWANGLE_0100', Level.LEVEL0, async () => {
-      let testName = "SUB_OH_METADATAOBJECTEXT_GETYAWANGLE_0100";
+    it('SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0100', Level.LEVEL0, async () => {
+      let testName = "SUB_MULTIMEDIA_OH_METADATA_OBJECT_GET_YAW_ANGLE_0100";
       console.info(TAG, testName, "start");
       let result = await cameraObj.TestOHMetadataObjectExtGetYawAngle(1);
       console.info(TAG, testName, result);
