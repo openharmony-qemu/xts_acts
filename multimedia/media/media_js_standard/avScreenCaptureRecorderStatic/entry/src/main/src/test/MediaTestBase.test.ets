@@ -56,6 +56,8 @@ export default class MediaTestBase {
   ADDWATERMARK_EVENT = 'handleWaterMark';
   ADDWATERMARK_ERRSTATE_EVENT = 'handleWaterMarkErrorState';
   ADDWATERMARK_OUTRANGE_EVENT = 'handleWaterMarkOutRange';
+  SET_CONTENT_AUTO_ROTATION = 'setContentAutoRotation';
+  SET_CONTENT_AUTO_ROTATION_ERRCODE = 'setContentAutoRotationErrCode';
   END_EVENT = 'end';
   FAIL_EVENT = 'fail';
   AV_CREATEAVPLAYER = 'createAVPlayer';
@@ -284,6 +286,39 @@ export default class MediaTestBase {
         }).catch((err: Error) => {
           console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
           expect().assertFail()
+        })
+        break;
+      case 'setContentAutoRotation':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setContentAutoRotation(false).then(() => {
+          console.info('avScreenCaptureRecorder setContentAutoRotation success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail()
+        })
+        await avScreenCaptureRecorder!!.setContentAutoRotation(true).then(() => {
+          console.info('avScreenCaptureRecorder setContentAutoRotation success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+          expect().assertFail()
+        })
+        break;
+      case 'setContentAutoRotationErrCode':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setContentAutoRotation(true).then(() => {
+          console.info('avScreenCaptureRecorder setContentAutoRotation success');
+          expect().assertFail()
+          done();
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.code);
+          if (err.code == 5400102) {
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error('avScreenCaptureRecorder setContentAutoRotation failed, error: ' + err.message);
+            expect().assertFail()
+            done();
+          }
         })
         break;
       case 'setPickerMode':
