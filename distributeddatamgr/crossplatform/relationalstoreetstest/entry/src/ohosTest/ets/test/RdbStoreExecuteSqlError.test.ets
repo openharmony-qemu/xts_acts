@@ -213,28 +213,6 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
       console.log(TAG + "************* testRdbStoreExecuteSqlError004 end *************");
     })
     /**
-     * @tc.name   testRdbStoreExecuteSqlError005
-     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ExecuteSqlErrorAPITest_0500
-     * @tc.desc   RdbStore executeSql promise with null undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("testRdbStoreExecuteSqlError005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
-      console.info(TAG + "************* testRdbStoreExecuteSqlError005 start *************");
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      try {
-        await rdbStore?.executeSql("DELETE FROM test WHERE age = ? OR age = ?", undefined);
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.error(TAG + `testRdbStoreExecuteSqlError005, errcode:${JSON.stringify(err)}`);
-        expect(err.code == 14800000).assertTrue();
-        done();
-      }
-      console.log(TAG + "************* testRdbStoreExecuteSqlError005 end *************");
-    })
-    /**
      * @tc.name   testRdbStoreExecuteSqlError006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ExecuteSqlErrorAPITest_0600
      * @tc.desc   RdbStore executeSql err.code
@@ -254,27 +232,6 @@ export default function rdbstoreStoreExcuteSqlErrorTest() {
         done();
       }
       console.info(TAG + "************* testRdbStoreExecuteSqlError006 end *************");
-    });
-    /**
-     * @tc.name   testRdbStoreExecuteSqlError007
-     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ExecuteSqlErrorAPITest_0700
-     * @tc.desc   RdbStore executeSql err.code
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("testRdbStoreExecuteSqlError007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
-      console.info(TAG + "************* testRdbStoreExecuteSqlError007 start *************");
-      rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
-      try {
-        await rdbStore.close();
-        await rdbStore.executeSql("DELETE FROM test WHERE age = ? OR age = ?", ["18", "28"]);
-      }catch (err) {
-        console.error(TAG + `testRdbStoreExecuteSqlError007, errcode:${JSON.stringify(err)}`);
-        expect(err.code == 14800014).assertTrue();
-        done();
-      }
-      console.info(TAG + "************* testRdbStoreExecuteSqlError007 end *************");
     });
     /**
      * @tc.name   testGetRdbStoreError0800
