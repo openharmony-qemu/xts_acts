@@ -128,6 +128,9 @@ export default function StringContentEqualsTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_0700
      * @tc.name testContentEquals007
      * @tc.desc Verify contentEquals() with dynamic variable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testContentEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("GitHub");
@@ -140,6 +143,9 @@ export default function StringContentEqualsTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_0800
      * @tc.name testContentEquals008
      * @tc.desc Verify contentEquals() returns false for different content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testContentEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("TypeScript");
@@ -152,6 +158,9 @@ export default function StringContentEqualsTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_0900
      * @tc.name testContentEquals009
      * @tc.desc Verify contentEquals() returns false for different length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testContentEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("OpenHarmony");

@@ -211,7 +211,7 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_1300
      * @tc.name testGetBytes013
-     * @tc.desc Verify getBytes(0, 0) on non-empty string returns empty byte array
+     * @tc.desc Verify getBytes(2, 2) on non-empty string returns empty byte array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

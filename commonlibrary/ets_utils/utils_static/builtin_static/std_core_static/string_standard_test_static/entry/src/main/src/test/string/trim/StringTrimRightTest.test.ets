@@ -44,6 +44,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0100
      * @tc.name testTrimRight001
      * @tc.desc Verify trimRight() removes trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  ArkTS  ");
@@ -55,6 +58,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0200
      * @tc.name testTrimRight002
      * @tc.desc Verify trimRight() removes trailing carriage-return
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("value\r");
@@ -66,6 +72,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0300
      * @tc.name testTrimRight003
      * @tc.desc Verify trimRight() removes trailing newline and tab
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("data\n\t");
@@ -77,18 +86,25 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0400
      * @tc.name testTrimRight004
      * @tc.desc Verify trimRight() and trimEnd() produce same result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("\t ArkTS");
+      let str: String = new String("\t ArkTS  ");
       let r1: string = str.trimRight();
       let r2: string = str.trimEnd();
       expect(r1).assertEqual(r2);
+      expect(r1).assertEqual("\t ArkTS");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0500
      * @tc.name testTrimRight005
      * @tc.desc Verify trimRight() does NOT change string with whitespace only on left
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  abc");
@@ -100,6 +116,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0600
      * @tc.name testTrimRight006
      * @tc.desc Verify trimRight() does NOT change string with no whitespace at all
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("plain");
@@ -111,6 +130,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0700
      * @tc.name testTrimRight007
      * @tc.desc Verify trimRight() on GBK text with trailing whitespace removes only trailing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("中文测试  ");
@@ -122,6 +144,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0800
      * @tc.name testTrimRight008
      * @tc.desc Verify trimRight() on CJK text with trailing tab removes it
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("中文测试\t");
@@ -133,6 +158,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_0900
      * @tc.name testTrimRight009
      * @tc.desc Verify trimRight() on emoji text with trailing spaces removes only trailing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("😀🎉  ");
@@ -144,6 +172,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1000
      * @tc.name testTrimRight010
      * @tc.desc Verify trimRight() on ISO 8859-1 Latin accented text with trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("café   ");
@@ -155,6 +186,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1100
      * @tc.name testTrimRight011
      * @tc.desc Verify trimRight() on half-width katakana with trailing tab
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("ﾊﾝｶｸ\t");
@@ -166,6 +200,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1200
      * @tc.name testTrimRight012
      * @tc.desc Verify trimRight() on empty string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("");
@@ -177,6 +214,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1300
      * @tc.name testTrimRight013
      * @tc.desc Verify trimRight() on all-whitespace string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("   \t   ");
@@ -188,6 +228,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1400
      * @tc.name testTrimRight014
      * @tc.desc Verify trimRight() with dynamic variable returns correct result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("data  ");
@@ -199,6 +242,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1500
      * @tc.name testTrimRight015
      * @tc.desc Verify trimRight() removes CRLF from a protocol header line
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("Content-Length: 12\r\n");
@@ -210,6 +256,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1600
      * @tc.name testTrimRight016
      * @tc.desc Verify trimRight() removes trailing blanks while preserving YAML indentation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("  child: value   ");
@@ -221,6 +270,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1700
      * @tc.name testTrimRight017
      * @tc.desc Verify trimRight() cleans a CSV field while preserving leading spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("  user@example.com  ");
@@ -232,6 +284,9 @@ export default function StringTrimRightTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1800
      * @tc.name testTrimRight018
      * @tc.desc Verify trimRight() removes a trailing BOM marker from imported text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimRight018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("token\uFEFF");

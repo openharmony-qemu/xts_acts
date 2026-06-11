@@ -153,15 +153,14 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_0900
      * @tc.name testItalics009
-     * @tc.desc Verify italics() return type is string via typeof check
+     * @tc.desc Verify italics() returns <i>test</i> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "test".italics();
-      let t: string = typeof result;
-      expect(t).assertEqual("string");
+      expect(result).assertEqual("<i>test</i>");
     });
 
     /**

@@ -155,14 +155,14 @@ export default function StringStrikeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_0900
      * @tc.name testStrike009
-     * @tc.desc Verify strike() return type is string via typeof check
+     * @tc.desc Verify strike() returns <strike>test</strike> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".strike();
-      expect(t).assertEqual("string");
+      let result: string = "test".strike();
+      expect(result).assertEqual("<strike>test</strike>");
     });
 
     /**
@@ -373,8 +373,8 @@ export default function StringStrikeTest(): void {
      * @tc.level Level 2
      */
     it('testStrike024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "test";
-      expect(text.strike()).assertEqual(text.strike());
+      let text: string = "ﾊﾝｶｸ";
+      expect(text.strike()).assertEqual("<strike>ﾊﾝｶｸ</strike>");
     });
 
     /**
@@ -498,6 +498,19 @@ export default function StringStrikeTest(): void {
     it('testStrike033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "<".strike();
       expect(result).assertEqual("<strike><</strike>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_3400
+     * @tc.name testStrike034
+     * @tc.desc Verify strike() with null byte in string preserves it
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStrike034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = "a\0b".strike();
+      expect(result).assertEqual("<strike>a\0b</strike>");
     });
   });
 }

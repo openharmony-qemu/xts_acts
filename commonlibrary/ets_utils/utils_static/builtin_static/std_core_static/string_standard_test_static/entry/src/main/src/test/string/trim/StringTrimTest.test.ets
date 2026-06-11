@@ -45,6 +45,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0100
      * @tc.name testTrim001
      * @tc.desc Verify trim() removes leading and trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  ArkTS  ");
@@ -56,6 +59,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0200
      * @tc.name testTrim002
      * @tc.desc Verify trim() removes all whitespace types: tab newline carriage-return space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\t\n\r ArkTS \t\n\r");
@@ -67,6 +73,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0300
      * @tc.name testTrim003
      * @tc.desc Verify trim() on all-whitespace string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("   \t   ");
@@ -78,6 +87,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0400
      * @tc.name testTrim004
      * @tc.desc Verify trim() on string with no whitespace returns unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("ArkTS");
@@ -89,6 +101,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0500
      * @tc.name testTrim005
      * @tc.desc Verify trim() on empty string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("");
@@ -100,6 +115,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0600
      * @tc.name testTrim006
      * @tc.desc Verify trim() with vertical tab and form feed whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\v\fArkTS\v\f");
@@ -111,6 +129,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0700
      * @tc.name testTrim007
      * @tc.desc Verify trim() on CJK and GBK text with surrounding whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  中文测试  ");
@@ -122,6 +143,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0800
      * @tc.name testTrim008
      * @tc.desc Verify trim() with dynamic variable returns correct result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("  data  ");
@@ -133,6 +157,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_0900
      * @tc.name testTrim009
      * @tc.desc Verify trim() does NOT change string when whitespace is only in the middle
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("Ark TS");
@@ -144,6 +171,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1000
      * @tc.name testTrim010
      * @tc.desc Verify trim() does NOT change string with tab between words
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("col1\tcol2");
@@ -155,6 +185,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1100
      * @tc.name testTrim011
      * @tc.desc Verify trim() does NOT change string with newline only between lines
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("line1\nline2");
@@ -166,6 +199,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1200
      * @tc.name testTrim012
      * @tc.desc Verify trim() does NOT change CJK text with whitespace only in middle
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("中文 测试");
@@ -177,6 +213,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1300
      * @tc.name testTrim013
      * @tc.desc Verify trim() does NOT change numeric string with spaces only in middle
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("2026 06 09");
@@ -188,6 +227,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1400
      * @tc.name testTrim014
      * @tc.desc Verify trim() removes edges but preserves internal spaces: "  a  b  " → "a  b"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  a  b  ");
@@ -199,6 +241,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1500
      * @tc.name testTrim015
      * @tc.desc Verify trim() does NOT collapse multiple consecutive internal spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("x    y");
@@ -210,6 +255,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1600
      * @tc.name testTrim016
      * @tc.desc Verify trim() removes mixed whitespace at edges, preserves internal mixed whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\t\n a\tb \r");
@@ -221,6 +269,9 @@ export default function StringTrimTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_1700
      * @tc.name testTrim017
      * @tc.desc Verify trim() removes whitespace around emoji content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrim017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  😀🎉  ");

@@ -302,7 +302,7 @@ export default function StringConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_1900
      * @tc.name testConcat019
-     * @tc.desc Verify concat() concatenates string with number converted to string
+     * @tc.desc Verify concat() with String containing numeric text '42'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -316,7 +316,7 @@ export default function StringConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2000
      * @tc.name testConcat020
-     * @tc.desc Verify concat() concatenates string with boolean converted to string
+     * @tc.desc Verify concat() with String containing boolean text 'true'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -330,7 +330,7 @@ export default function StringConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2100
      * @tc.name testConcat021
-     * @tc.desc Verify concat() concatenates string with null text
+     * @tc.desc Verify concat() with String containing null text 'null'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

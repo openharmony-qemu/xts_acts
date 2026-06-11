@@ -390,8 +390,8 @@ export default function StringIndexOfTest(): void {
      * @tc.level Level 2
      */
     it('testIndexOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("HarmonyOS");
-      let pos: int = text.indexOf("HarmonyOS");
+      const text = new String("OpenHarmony");
+      let pos: int = text.indexOf("OpenHarmony");
       expect(pos).assertEqual(0);
     });
 
@@ -517,7 +517,7 @@ export default function StringIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3400
      * @tc.name testIndexOf034
-     * @tc.desc Verify indexOf() returns value of type number
+     * @tc.desc Verify indexOf() returns correct index and -1 when not found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -526,8 +526,8 @@ export default function StringIndexOfTest(): void {
       const text = new String("hello world");
       let found: number = text.indexOf("world");
       let notFound: number = text.indexOf("xyz");
-      expect(typeof found).assertEqual("number");
-      expect(typeof notFound).assertEqual("number");
+      expect(found).assertEqual(6);
+      expect(notFound).assertEqual(-1);
     });
 
     /**

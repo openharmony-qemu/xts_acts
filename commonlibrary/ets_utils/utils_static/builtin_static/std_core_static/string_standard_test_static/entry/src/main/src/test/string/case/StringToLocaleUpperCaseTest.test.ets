@@ -186,15 +186,15 @@ export default function StringToLocaleUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_1100
      * @tc.name testToLocaleUpperCase011
-     * @tc.desc Verify toLocaleUpperCase() with Turkish locale: i becomes İ
+     * @tc.desc Verify toLocaleUpperCase() with Turkish locale "tr": i becomes İ
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLocaleUpperCase011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("i");
-      let result: string = text.toLocaleUpperCase();
-      expect(result).assertEqual("I");
+      let result: string = text.toLocaleUpperCase("tr");
+      expect(result).assertEqual("İ");
     });
 
     /**

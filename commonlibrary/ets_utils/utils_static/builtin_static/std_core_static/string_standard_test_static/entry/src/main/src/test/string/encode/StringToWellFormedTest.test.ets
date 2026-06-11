@@ -57,7 +57,7 @@ export default function StringToWellFormedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_0200
      * @tc.name testToWellFormed002
-     * @tc.desc Verify toWellFormed() replaces lone high surrogate U+D800 with U+FFFD
+     * @tc.desc Verify toWellFormed() replaces lone high surrogate with replacement character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -279,8 +279,7 @@ export default function StringToWellFormedTest(): void {
     it('testToWellFormed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("\uD800AB\uDC00");
       let once: string = text.toWellFormed();
-      const text1 = new String(once);
-      let twice: string = text1.toWellFormed();
+      let twice: string = once.toWellFormed();
       expect(twice).assertEqual(once);
     });
 

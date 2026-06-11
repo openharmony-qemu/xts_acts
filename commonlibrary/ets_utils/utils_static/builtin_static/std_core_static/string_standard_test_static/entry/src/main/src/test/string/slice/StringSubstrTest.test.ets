@@ -419,8 +419,8 @@ export default function StringSubstrTest(): void {
       const text = new String("Hello");
       let r1: string = text.substr(0, 3);
       let r2: string = text.substr(10);
-      expect(typeof r1).assertEqual("string");
-      expect(typeof r2).assertEqual("string");
+      expect(r1).assertEqual("Hel");
+      expect(r2).assertEqual("");
     });
 
     /**

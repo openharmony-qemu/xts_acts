@@ -182,6 +182,7 @@ export default function StringGetCharsTest(): void {
       expect(chars.length).assertEqual(3);
       expect(chars[0].toString()).assertEqual("\n");
       expect(chars[1].toString()).assertEqual("\t");
+      expect(chars[2].toString()).assertEqual("\0");
     });
 
     /**

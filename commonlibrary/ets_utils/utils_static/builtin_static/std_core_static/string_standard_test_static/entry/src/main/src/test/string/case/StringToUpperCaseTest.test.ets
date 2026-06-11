@@ -43,7 +43,7 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0100
      * @tc.name testToUpperCase001
-     * @tc.desc Verify toUpperCase() method
+     * @tc.desc Verify toUpperCase() converts lowercase to uppercase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,7 +56,7 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0200
      * @tc.name testToUpperCase002
-     * @tc.desc Verify toUpperCase() method
+     * @tc.desc Verify toUpperCase() on empty string returns empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -69,7 +69,7 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0300
      * @tc.name testToUpperCase003
-     * @tc.desc Verify toUpperCase() method
+     * @tc.desc Verify toUpperCase() on already uppercase returns unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -82,7 +82,7 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0400
      * @tc.name testToUpperCase004
-     * @tc.desc Verify toUpperCase() method
+     * @tc.desc Verify toUpperCase() with mixed alphanumeric input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -95,7 +95,7 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0500
      * @tc.name testToUpperCase005
-     * @tc.desc Verify toUpperCase() method
+     * @tc.desc Verify toUpperCase() converts single lowercase character to uppercase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

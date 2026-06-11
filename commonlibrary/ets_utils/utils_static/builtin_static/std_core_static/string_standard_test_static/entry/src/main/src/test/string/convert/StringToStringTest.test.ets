@@ -270,13 +270,13 @@ export default function StringToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1700
      * @tc.name testToString017
-     * @tc.desc Verify toString() called twice returns identical content (idempotent)
+     * @tc.desc Verify toString() idempotent on CJK characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToString017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("TypeScript");
+      let str: String = new String("中文测试");
       let r1: String = str.toString();
       let r2: String = r1.toString();
       expect(r1.toString()).assertEqual(r2.toString());
@@ -342,7 +342,7 @@ export default function StringToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2200
      * @tc.name testToString022
-     * @tc.desc Verify toString() returns primitive string type not object
+     * @tc.desc Verify toString() returns "test" for String "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -350,7 +350,7 @@ export default function StringToStringTest(): void {
     it('testToString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("test");
       let result: String = str.toString();
-      expect(typeof result.toString()).assertEqual("string");
+      expect(result.toString()).assertEqual("test");
     });
 
     /**

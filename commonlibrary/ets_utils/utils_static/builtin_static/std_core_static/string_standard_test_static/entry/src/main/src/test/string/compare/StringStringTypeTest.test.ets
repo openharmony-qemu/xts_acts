@@ -351,14 +351,14 @@ export default function StringStringTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TYPE_2300
      * @tc.name testStringType023
-     * @tc.desc Verify string with Unicode escape sequence A equals 'A'
+     * @tc.desc Verify string with Unicode escape sequence © equals copyright sign ©
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStringType023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: string = 'A';
-      expect(str).assertEqual('A');
+      let str: string = '\u00A9';
+      expect(str).assertEqual('©');
     });
 
     /**

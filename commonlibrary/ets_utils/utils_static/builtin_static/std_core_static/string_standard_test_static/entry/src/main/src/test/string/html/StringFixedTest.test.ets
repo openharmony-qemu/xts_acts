@@ -100,14 +100,14 @@ export default function StringFixedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_0500
      * @tc.name testFixed005
-     * @tc.desc Verify fixed() return type is string via typeof check
+     * @tc.desc Verify fixed() returns <tt>test</tt> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".fixed();
-      expect(t).assertEqual("string");
+      let result: string = "test".fixed();
+      expect(result).assertEqual("<tt>test</tt>");
     });
 
     /**

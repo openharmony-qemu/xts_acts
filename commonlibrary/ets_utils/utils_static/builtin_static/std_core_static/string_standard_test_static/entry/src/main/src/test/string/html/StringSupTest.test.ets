@@ -97,11 +97,11 @@ export default function StringSupTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0500
      * @tc.name testSup005
-     * @tc.desc Verify sup() return type is string via typeof check
+     * @tc.desc Verify sup() returns <sup>test</sup> for input "test"
      */
     it('testSup005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".sup();
-      expect(t).assertEqual("string");
+      let result: string = "test".sup();
+      expect(result).assertEqual("<sup>test</sup>");
     });
 
     /**

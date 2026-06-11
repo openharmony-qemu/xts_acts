@@ -259,8 +259,8 @@ export default function StringContainsTest(): void {
      * @tc.level Level 2
      */
     it('testContains016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("HarmonyOS");
-      let inc: boolean = text.contains(new String("HarmonyOS"), 0);
+      const text = new String("OpenHarmony");
+      let inc: boolean = text.contains(new String("OpenHarmony"), 0);
       expect(inc).assertTrue();
     });
 

@@ -305,14 +305,14 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_2100
      * @tc.name testFontcolor021
-     * @tc.desc Verify fontcolor() return type is string
+     * @tc.desc Verify fontcolor("red") returns <font color="red">hello</font>
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "hello".fontcolor("red");
-      expect(t).assertEqual("string");
+      let result: string = "hello".fontcolor("red");
+      expect(result).assertEqual('<font color="red">hello</font>');
     });
 
     /**

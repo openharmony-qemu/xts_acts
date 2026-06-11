@@ -100,14 +100,14 @@ export default function StringBlinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_0500
      * @tc.name testBlink005
-     * @tc.desc Verify blink() return type is string via typeof check
+     * @tc.desc Verify blink() returns <blink>test</blink> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".blink();
-      expect(t).assertEqual("string");
+      let result: string = "test".blink();
+      expect(result).assertEqual("<blink>test</blink>");
     });
 
     /**

@@ -44,6 +44,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0100
      * @tc.name testTrimEnd001
      * @tc.desc Verify trimEnd() removes trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  ArkTS  ");
@@ -55,6 +58,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0200
      * @tc.name testTrimEnd002
      * @tc.desc Verify trimEnd() removes trailing carriage-return and space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("ArkTS\r ");
@@ -66,6 +72,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0300
      * @tc.name testTrimEnd003
      * @tc.desc Verify trimEnd() removes trailing vertical-tab and newline
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("data\v\n");
@@ -77,29 +86,39 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0400
      * @tc.name testTrimEnd004
      * @tc.desc Verify trimEnd() and trimRight() produce same result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("\t ArkTS");
+      let str: String = new String("\t ArkTS  ");
       let r1: string = str.trimEnd();
       let r2: string = str.trimRight();
       expect(r1).assertEqual(r2);
+      expect(r1).assertEqual("\t ArkTS");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0500
      * @tc.name testTrimEnd005
      * @tc.desc Verify trimEnd() does NOT change string when whitespace is only at the start
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("Open Harmony");
+      let str: String = new String("  OpenHarmony");
       let result: string = str.trimEnd();
-      expect(result).assertEqual("Open Harmony");
+      expect(result).assertEqual("  OpenHarmony");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0600
      * @tc.name testTrimEnd006
      * @tc.desc Verify trimEnd() does NOT change string with no whitespace at all
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("clean");
@@ -111,6 +130,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0700
      * @tc.name testTrimEnd007
      * @tc.desc Verify trimEnd() on GBK text with trailing whitespace removes only trailing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("中文测试  ");
@@ -122,6 +144,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0800
      * @tc.name testTrimEnd008
      * @tc.desc Verify trimEnd() on CJK text with trailing tab removes it
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("中文测试\t");
@@ -133,6 +158,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_0900
      * @tc.name testTrimEnd009
      * @tc.desc Verify trimEnd() on emoji text with trailing spaces removes only trailing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("😀🎉  ");
@@ -144,6 +172,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_1000
      * @tc.name testTrimEnd010
      * @tc.desc Verify trimEnd() on ISO 8859-1 Latin accented text with trailing newline
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("café\n");
@@ -155,6 +186,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_1100
      * @tc.name testTrimEnd011
      * @tc.desc Verify trimEnd() on half-width katakana text with trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("ﾊﾝｶｸ  ");
@@ -166,6 +200,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_1200
      * @tc.name testTrimEnd012
      * @tc.desc Verify trimEnd() on empty string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("");
@@ -177,6 +214,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_1300
      * @tc.name testTrimEnd013
      * @tc.desc Verify trimEnd() on all-whitespace string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("   \t   ");
@@ -188,6 +228,9 @@ export default function StringTrimEndTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_1400
      * @tc.name testTrimEnd014
      * @tc.desc Verify trimEnd() with dynamic variable returns correct result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimEnd014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("data  ");

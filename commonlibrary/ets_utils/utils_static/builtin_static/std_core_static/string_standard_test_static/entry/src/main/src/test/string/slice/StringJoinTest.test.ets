@@ -337,43 +337,43 @@ export default function StringJoinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2100
      * @tc.name testJoin021
-     * @tc.desc Verify String.join() with empty array returns empty string
+     * @tc.desc Verify String.join() with array of all-empty-string elements produces correct separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testJoin021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values: String[] = [];
+      const values: String[] = [new String(""), new String(""), new String("")];
       let result: String = String.join(values, ",");
-      expect(result.toString()).assertEqual("");
+      expect(result.toString()).assertEqual(",,");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2200
      * @tc.name testJoin022
-     * @tc.desc Verify String.join() with single element returns that element without separator
+     * @tc.desc Verify String.join() with single element containing separator returns element verbatim
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testJoin022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values: String[] = [new String("only")];
+      const values: String[] = [new String("a,b")];
       let result: String = String.join(values, ",");
-      expect(result.toString()).assertEqual("only");
+      expect(result.toString()).assertEqual("a,b");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2300
      * @tc.name testJoin023
-     * @tc.desc Verify String.join() with empty separator concatenates directly
+     * @tc.desc Verify String.join() with single empty string element returns empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testJoin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values: String[] = [new String("a"), new String("b"), new String("c")];
-      let result: String = String.join(values, "");
-      expect(result.toString()).assertEqual("abc");
+      const values: String[] = [new String("")];
+      let result: String = String.join(values, ";");
+      expect(result.toString()).assertEqual("");
     });
   });
 }

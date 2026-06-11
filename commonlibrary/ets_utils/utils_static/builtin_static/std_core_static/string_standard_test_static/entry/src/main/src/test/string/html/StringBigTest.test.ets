@@ -160,14 +160,14 @@ export default function StringBigTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_1000
      * @tc.name testBig010
-     * @tc.desc Verify big() return type is string via typeof check
+     * @tc.desc Verify big() returns <big>test</big> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBig010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".big();
-      expect(t).assertEqual("string");
+      let result: string = "test".big();
+      expect(result).assertEqual("<big>test</big>");
     });
 
     /**

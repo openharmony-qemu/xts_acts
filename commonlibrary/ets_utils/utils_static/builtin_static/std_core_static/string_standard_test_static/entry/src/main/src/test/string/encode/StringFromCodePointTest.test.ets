@@ -297,14 +297,14 @@ export default function StringFromCodePointTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2100
      * @tc.name testFromCodePoint021
-     * @tc.desc Verify String.fromCodePoint() returns string type
+     * @tc.desc Verify String.fromCodePoint(65) returns "A"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCodePoint021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(65);
-      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("A");
     });
 
     /**
@@ -318,6 +318,7 @@ export default function StringFromCodePointTest(): void {
     it('testFromCodePoint022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(0x20AC);
       expect(result.length).assertEqual(1);
+      expect(result).assertEqual("€");
     });
 
     /**

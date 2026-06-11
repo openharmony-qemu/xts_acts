@@ -292,14 +292,14 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2000
      * @tc.name testFromCharCode020
-     * @tc.desc Verify String.fromCharCode() returns string type
+     * @tc.desc Verify String.fromCharCode(65) returns "A"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCharCode(65);
-      expect(typeof result).assertEqual("string");
+      expect(result).assertEqual("A");
     });
   });
 }

@@ -171,8 +171,7 @@ export default function StringPadRightTest(): void {
      */
     it('testPadRight012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("");
-      let result: String = text.padRight(c'*', 3)
-      ;
+      let result: String = text.padRight(c'*', 3);
       expect(result.toString()).assertEqual("***");
     });
 

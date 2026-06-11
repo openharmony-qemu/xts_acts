@@ -43,7 +43,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0100
      * @tc.name testToLowerCase001
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() converts mixed case to lowercase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,7 +56,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0200
      * @tc.name testToLowerCase002
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() on empty string returns empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -69,7 +69,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0300
      * @tc.name testToLowerCase003
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() on already lowercase returns unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -82,7 +82,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0400
      * @tc.name testToLowerCase004
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() on numbers returns unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -95,7 +95,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0500
      * @tc.name testToLowerCase005
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() converts full-width uppercase to lowercase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -108,7 +108,7 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0600
      * @tc.name testToLowerCase006
-     * @tc.desc Verify toLowerCase() method
+     * @tc.desc Verify toLowerCase() converts single uppercase character to lowercase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

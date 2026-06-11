@@ -334,7 +334,7 @@ export default function StringEqualsTest(): void {
     it('testEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new String("  hello  ");
       const b = new String("hello");
-      let eq: boolean = new String(a.trim()).equals(b);
+      let eq: boolean = a.trim().equals(b);
       expect(eq).assertTrue();
     });
   });

@@ -220,6 +220,7 @@ export default function StringMatchAllTest(): void {
         let all: IterableIterator<RegExpMatchArray> = text.matchAll(new RegExp("a"));
         expect().assertFail();
       } catch (error) {
+        console.info("testMatchAll010 error.name: " + error.name);
         expect(error.name).assertEqual("Error");
       }
     });
@@ -542,6 +543,7 @@ export default function StringMatchAllTest(): void {
       }
       expect(count).assertEqual(3);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCHALL_2800
      * @tc.name testMatchAll028

@@ -100,14 +100,14 @@ export default function StringSubTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUB_0500
      * @tc.name testSub005
-     * @tc.desc Verify sub() return type is string via typeof check
+     * @tc.desc Verify sub() returns <sub>test</sub> for input "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSub005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: string = typeof "test".sub();
-      expect(t).assertEqual("string");
+      let result: string = "test".sub();
+      expect(result).assertEqual("<sub>test</sub>");
     });
 
     /**

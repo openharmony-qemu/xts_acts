@@ -470,7 +470,7 @@ export default function StringRepeatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPEAT_3000
      * @tc.name testRepeat030
-     * @tc.desc Verify repeat() result always string type
+     * @tc.desc Verify repeat() returns "" for count 0 and "xxx" for count 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,8 +479,8 @@ export default function StringRepeatTest(): void {
       const text = new String("x");
       let r0: string = text.repeat(0);
       let r3: string = text.repeat(3);
-      expect(typeof r0).assertEqual("string");
-      expect(typeof r3).assertEqual("string");
+      expect(r0).assertEqual("");
+      expect(r3).assertEqual("xxx");
     });
   });
 }

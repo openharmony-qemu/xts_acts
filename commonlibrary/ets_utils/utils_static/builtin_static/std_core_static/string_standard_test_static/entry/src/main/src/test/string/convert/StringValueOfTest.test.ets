@@ -358,7 +358,7 @@ export default function StringValueOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2300
      * @tc.name testValueOf023
-     * @tc.desc Verify valueOf() returns string type not object
+     * @tc.desc Verify valueOf() returns "test" for String "test"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -366,7 +366,7 @@ export default function StringValueOfTest(): void {
     it('testValueOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("test");
       let val: String = str.valueOf();
-      expect(typeof val.toString()).assertEqual("string");
+      expect(val.toString()).assertEqual("test");
     });
   });
 }

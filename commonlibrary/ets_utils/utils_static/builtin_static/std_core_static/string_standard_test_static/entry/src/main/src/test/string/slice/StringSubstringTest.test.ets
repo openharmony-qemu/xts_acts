@@ -354,7 +354,7 @@ export default function StringSubstringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_2300
      * @tc.name testSubstring023
-     * @tc.desc Verify substring() with negative end index returns empty string
+     * @tc.desc Verify substring() with negative end index swaps start/end and returns "A"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

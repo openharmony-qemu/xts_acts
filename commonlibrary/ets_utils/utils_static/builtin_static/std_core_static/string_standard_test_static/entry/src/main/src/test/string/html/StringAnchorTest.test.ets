@@ -14,7 +14,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../../hypium/index';
 import Utils from './../../Util.test';
 
 export default function StringAnchorTest(): void {
@@ -44,11 +55,13 @@ export default function StringAnchorTest(): void {
     });
 
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0200
      * @tc.name testAnchor002
      * @tc.desc Verify anchor() with percent sign in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("20%25");
@@ -59,6 +72,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0300
      * @tc.name testAnchor003
      * @tc.desc Verify anchor() with at-sign in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("@mention");
@@ -266,8 +282,7 @@ export default function StringAnchorTest(): void {
     it('testAnchor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
       let result: string = text.anchor("top");
-      let t: string = typeof result;
-      expect(t).assertEqual("string");
+      expect(result).assertEqual('<a name="top">ArkTS</a>');
     });
 
     /**
@@ -398,7 +413,7 @@ export default function StringAnchorTest(): void {
     it('testAnchor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
       let result: string = text.anchor("a\0b");
-      expect(result.getLength()).assertEqual(23);
+      expect(result.length).assertEqual(23);
     });
 
     /**
@@ -698,7 +713,7 @@ export default function StringAnchorTest(): void {
     it('testAnchor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "A\0B";
       let result: string = text.anchor("pos");
-      expect(result.getLength()).assertEqual(21);
+      expect(result.length).assertEqual(21);
     });
 
     /**
@@ -719,6 +734,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4800
      * @tc.name testAnchor048
      * @tc.desc Verify anchor() with CJK Unicode BMP name wraps correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ArkTS".anchor("锚点");
@@ -729,6 +747,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4900
      * @tc.name testAnchor049
      * @tc.desc Verify anchor() with GBK Chinese name wraps correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello".anchor("中文锚点");
@@ -739,6 +760,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5000
      * @tc.name testAnchor050
      * @tc.desc Verify anchor() with emoji name preserves emoji in name attribute
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "X".anchor("😀");
@@ -749,6 +773,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5100
      * @tc.name testAnchor051
      * @tc.desc Verify anchor() with ISO 8859-1 Latin accented name wraps correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("café");
@@ -759,6 +786,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5200
      * @tc.name testAnchor052
      * @tc.desc Verify anchor() with half-width katakana name wraps correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("ﾊﾝｶｸ");
@@ -769,6 +799,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5300
      * @tc.name testAnchor053
      * @tc.desc Verify anchor() with CJK Unicode BMP content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "你好世界".anchor("top");
@@ -779,6 +812,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5400
      * @tc.name testAnchor054
      * @tc.desc Verify anchor() with GBK Chinese content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "中文测试内容".anchor("a");
@@ -789,6 +825,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5500
      * @tc.name testAnchor055
      * @tc.desc Verify anchor() with emoji content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "😀🎉".anchor("top");
@@ -799,6 +838,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5600
      * @tc.name testAnchor056
      * @tc.desc Verify anchor() with ISO 8859-1 Latin accented content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "café au lait".anchor("a");
@@ -809,6 +851,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5700
      * @tc.name testAnchor057
      * @tc.desc Verify anchor() with half-width katakana content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ﾊﾝｶｸ".anchor("a");
@@ -819,6 +864,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5800
      * @tc.name testAnchor058
      * @tc.desc Verify anchor() with full-width characters in content wrapped in anchor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ＦＵＬＬ".anchor("pos");
@@ -829,6 +877,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_5900
      * @tc.name testAnchor059
      * @tc.desc Verify anchor() with CJK name and CJK content together
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "中文内容".anchor("中文锚点");
@@ -839,6 +890,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6000
      * @tc.name testAnchor060
      * @tc.desc Verify anchor() with emoji name and emoji content together
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "😀".anchor("🎉");
@@ -849,6 +903,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6100
      * @tc.name testAnchor061
      * @tc.desc Verify anchor() with GBK name and GBK content together
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "中文内容".anchor("中文测试");
@@ -859,6 +916,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6200
      * @tc.name testAnchor062
      * @tc.desc Verify anchor() with newline character in text content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "line1\nline2".anchor("sec");
@@ -869,6 +929,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6300
      * @tc.name testAnchor063
      * @tc.desc Verify anchor() with tab character in text content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "col1\tcol2".anchor("tbl");
@@ -879,6 +942,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6400
      * @tc.name testAnchor064
      * @tc.desc Verify anchor() with carriage-return in text content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\rb".anchor("pos");
@@ -889,6 +955,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6500
      * @tc.name testAnchor065
      * @tc.desc Verify anchor() with leading and trailing spaces in content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = " hello ".anchor("id");
@@ -899,6 +968,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6600
      * @tc.name testAnchor066
      * @tc.desc Verify anchor() with mixed ASCII and CJK in content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello你好World世界".anchor("pos");
@@ -909,6 +981,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6700
      * @tc.name testAnchor067
      * @tc.desc Verify anchor() with mixed ASCII and emoji in content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Party🎉Time".anchor("p");
@@ -919,6 +994,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6800
      * @tc.name testAnchor068
      * @tc.desc Verify anchor() with dynamic name variable from parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let name: string = "dynamicSection";
@@ -930,6 +1008,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_6900
      * @tc.name testAnchor069
      * @tc.desc Verify anchor() with dynamic text content variable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "Variable";
@@ -941,6 +1022,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7000
      * @tc.name testAnchor070
      * @tc.desc Verify anchor() with both name and text as dynamic variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "content";
@@ -953,6 +1037,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7100
      * @tc.name testAnchor071
      * @tc.desc Verify anchor() result length equals content length plus name length plus 15
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "Hi";
@@ -966,6 +1053,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7200
      * @tc.name testAnchor072
      * @tc.desc Verify anchor() result format: starts with <a name=\" and ends with </a>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "test".anchor("id");
@@ -979,6 +1069,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7300
      * @tc.name testAnchor073
      * @tc.desc Verify anchor() with dot character in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ArkTS".anchor("section.1");
@@ -989,6 +1082,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7400
      * @tc.name testAnchor074
      * @tc.desc Verify anchor() with colon character in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ArkTS".anchor("ch:1");
@@ -999,6 +1095,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7500
      * @tc.name testAnchor075
      * @tc.desc Verify anchor() with hyphen and underscore in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ArkTS".anchor("my-section_id");
@@ -1009,6 +1108,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7600
      * @tc.name testAnchor076
      * @tc.desc Verify anchor() with URL-like name preserves slashes and colons
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "link".anchor("https://example.com/page");
@@ -1019,6 +1121,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7700
      * @tc.name testAnchor077
      * @tc.desc Verify anchor() with regex metacharacter star in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("a*b");
@@ -1029,6 +1134,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7800
      * @tc.name testAnchor078
      * @tc.desc Verify anchor() with regex metacharacter plus in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("a+b");
@@ -1039,6 +1147,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_7900
      * @tc.name testAnchor079
      * @tc.desc Verify anchor() with regex metacharacter question in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("a?");
@@ -1049,6 +1160,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8000
      * @tc.name testAnchor080
      * @tc.desc Verify anchor() with regex metacharacter pipe in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("a|b");
@@ -1059,6 +1173,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8100
      * @tc.name testAnchor081
      * @tc.desc Verify anchor() with regex metacharacter caret in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("^start");
@@ -1069,6 +1186,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8200
      * @tc.name testAnchor082
      * @tc.desc Verify anchor() with regex metacharacter dollar in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("end$");
@@ -1079,6 +1199,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8300
      * @tc.name testAnchor083
      * @tc.desc Verify anchor() with bracket characters in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("[section]");
@@ -1089,6 +1212,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8400
      * @tc.name testAnchor084
      * @tc.desc Verify anchor() with curly brace characters in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("{code}");
@@ -1099,6 +1225,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8500
      * @tc.name testAnchor085
      * @tc.desc Verify anchor() with leading spaces in content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "  leading".anchor("a");
@@ -1109,6 +1238,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8600
      * @tc.name testAnchor086
      * @tc.desc Verify anchor() with trailing spaces in content preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "trailing  ".anchor("a");
@@ -1119,6 +1251,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8700
      * @tc.name testAnchor087
      * @tc.desc Verify anchor() with only punctuation marks in content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "!@#$%".anchor("punct");
@@ -1129,6 +1264,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8800
      * @tc.name testAnchor088
      * @tc.desc Verify anchor() with ampersand entity in content preserved without escaping
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a&b".anchor("x");
@@ -1138,10 +1276,13 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_8900
      * @tc.name testAnchor089
-     * @tc.desc Verify anchor() with Unicode escape sequence \\u0041\\u0042 in name
+     * @tc.desc Verify anchor() with Unicode escape sequence \u0041\u0042 in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".anchor("AB");
+      let result: string = "text".anchor("\u0041\u0042");
       expect(result).assertEqual('<a name="AB">text</a>');
     });
 
@@ -1149,6 +1290,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9000
      * @tc.name testAnchor090
      * @tc.desc Verify anchor() with hash fragment identifier style name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("#fragment");
@@ -1159,6 +1303,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9100
      * @tc.name testAnchor091
      * @tc.desc Verify anchor() with single digit content and single digit name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "X".anchor("Y");
@@ -1169,6 +1316,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9200
      * @tc.name testAnchor092
      * @tc.desc Verify anchor() with single character content and single character name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "7".anchor("1");
@@ -1179,6 +1329,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9300
      * @tc.name testAnchor093
      * @tc.desc Verify anchor() with whitespace-only content wraps correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "   ".anchor("sp");
@@ -1189,6 +1342,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9400
      * @tc.name testAnchor094
      * @tc.desc Verify anchor() with name containing spaces at start and end preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor(" a ");
@@ -1199,6 +1355,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9500
      * @tc.name testAnchor095
      * @tc.desc Verify anchor() result contains the name substring at correct position
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello".anchor("xyz");
@@ -1212,6 +1371,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9600
      * @tc.name testAnchor096
      * @tc.desc Verify anchor() result can be split on anchor tag boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "data".anchor("mid");
@@ -1223,6 +1385,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9700
      * @tc.name testAnchor097
      * @tc.desc Verify anchor() called on string literal directly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Literal".anchor("lit");
@@ -1233,6 +1398,9 @@ export default function StringAnchorTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9800
      * @tc.name testAnchor098
      * @tc.desc Verify anchor() with semicolon in name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testAnchor098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "text".anchor("a;b");

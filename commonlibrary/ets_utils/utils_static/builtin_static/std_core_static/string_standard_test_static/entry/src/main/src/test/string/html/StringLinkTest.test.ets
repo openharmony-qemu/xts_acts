@@ -219,8 +219,7 @@ export default function StringLinkTest(): void {
     it('testLink013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
       let result: string = text.link("https://example.com");
-      let t: string = typeof result;
-      expect(t).assertEqual("string");
+      expect(result).assertEqual('<a href="https://example.com">ArkTS</a>');
     });
 
     /**

@@ -292,7 +292,7 @@ export default function StringIsEmptyTest(): void {
      * @tc.level Level 2
      */
     it('testIsEmpty019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("   ");
+      const text = new String("\t\n\r ");
       let trimmed: string = text.trim();
       const text3 = new String(trimmed);
       let empty: boolean = text3.isEmpty();

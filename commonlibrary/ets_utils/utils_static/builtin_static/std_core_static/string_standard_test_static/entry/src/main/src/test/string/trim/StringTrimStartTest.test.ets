@@ -45,6 +45,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0100
      * @tc.name testTrimStart001
      * @tc.desc Verify trimStart() removes leading spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  ArkTS  ");
@@ -56,6 +59,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0200
      * @tc.name testTrimStart002
      * @tc.desc Verify trimStart() removes leading tab and newline
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\t\nArkTS");
@@ -67,6 +73,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0300
      * @tc.name testTrimStart003
      * @tc.desc Verify trimStart() removes leading carriage-return and form-feed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\r\fdata");
@@ -78,6 +87,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0400
      * @tc.name testTrimStart004
      * @tc.desc Verify trimStart() and trimLeft() produce same result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\t ArkTS");
@@ -90,6 +102,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0500
      * @tc.name testTrimStart005
      * @tc.desc Verify trimStart() does NOT change string when whitespace is only at the end
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("Hello World");
@@ -101,6 +116,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0600
      * @tc.name testTrimStart006
      * @tc.desc Verify trimStart() does NOT change string with no whitespace at all
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("clean");
@@ -112,6 +130,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0700
      * @tc.name testTrimStart007
      * @tc.desc Verify trimStart() on CJK text with leading whitespace removes only leading
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  中文测试");
@@ -123,6 +144,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0800
      * @tc.name testTrimStart008
      * @tc.desc Verify trimStart() on GBK text with leading tab removes it
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\t中文测试");
@@ -134,6 +158,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_0900
      * @tc.name testTrimStart009
      * @tc.desc Verify trimStart() on emoji text with leading spaces removes only leading
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("  😀🎉");
@@ -145,6 +172,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_1000
      * @tc.name testTrimStart010
      * @tc.desc Verify trimStart() on ISO 8859-1 Latin accented text with leading tab
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("\tcafé");
@@ -156,6 +186,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_1100
      * @tc.name testTrimStart011
      * @tc.desc Verify trimStart() on empty string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("");
@@ -167,6 +200,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_1200
      * @tc.name testTrimStart012
      * @tc.desc Verify trimStart() on all-whitespace string returns empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: String = new String("   \t   ");
@@ -178,6 +214,9 @@ export default function StringTrimStartTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_1300
      * @tc.name testTrimStart013
      * @tc.desc Verify trimStart() with dynamic variable returns correct result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testTrimStart013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String("  data");

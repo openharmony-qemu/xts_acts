@@ -305,11 +305,11 @@ export default function StringPadStartTest(): void {
      * @tc.level Level 2
      */
     it('testPadStart019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // targetLength less than string length deterministically returns original
       const text = new String("Hello");
-      let result: string = text.padStart(3, "0");
-      expect(result).assertEqual("Hello");
-      expect(result.length).assertEqual(5);
+      let result: string = text.padStart(10000, "0");
+      expect(result.length).assertEqual(10000);
+      expect(result.startsWith("0".repeat(9995))).assertTrue();
+      expect(result.endsWith("Hello")).assertTrue();
     });
 
     /**
