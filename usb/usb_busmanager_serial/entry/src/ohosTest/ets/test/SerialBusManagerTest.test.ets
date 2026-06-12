@@ -2096,6 +2096,9 @@ export default function SerialBusManagerTest() {
           if (portInfo.manufacturer !== undefined) {
             expect(typeof portInfo.manufacturer).assertEqual('string');
           }
+        } else {
+          console.info(TAG, 'testSerialPortInfo002 portList is empty, skip assertions');
+          }
         }
         let config: serial.SerialConfigs = {
           baudRate: 115200,
