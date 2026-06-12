@@ -37,7 +37,7 @@ import ImageGetImagePropertySyncEnumFlashEmpty from  "./testStatic/image/imageSo
 import ImageGetImagePropertySyncEnumFrontCamera from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumFrontCamera.test"
 import ImagePropertyKeySyncEnumGPS from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPS.test"
 import ImageGetImagePropertySyncEnumGPSStatus from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatus.test"
-import ImageGetImagePropertySyncEnumGPSStatusEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatusEmpty.test"
+import ImageGetImagePropertySyncEnumGPSStatusEmpty from "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPStatusEmpty.test"
 import ImageGetImagePropertySyncEnumISO from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumISO.test"
 import ImageGetImagePropertySyncEnumLength from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLength.test"
 import ImageGetImagePropertySyncEnumLightSource from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLightSource.test"
@@ -64,6 +64,31 @@ import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getA
 import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
 import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
 import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
+import ImageEnumSupp from './testStatic/image/image/ImageEnum.test';
+import ImageSourceGetDisposalTypeListTest from "./testStatic/image/ImageSource/getDisposalTypeList.test";
+import ImageSourceGetFrameCountTest from "./testStatic/image/ImageSource/getFrameCount.test";
+import ImageSourceGetImageInfoTest from "./testStatic/image/ImageSource/getImageInfo.test";
+import ImageSourceGetImageInfoSyncTest from "./testStatic/image/ImageSource/getImageInfoSync.test";
+import ImageSourceGetImagePropertiesTest from "./testStatic/image/ImageSource/getImageProperties.test";
+import ImageSourceReleaseTest from "./testStatic/image/ImageSource/release.test";
+import ImagePixelMapConvertPixelFormatTest from "./testStatic/image/pixelMap/convertPixelFormat.Test.test";
+import createAlphaPixelmapTest from "./testStatic/image/pixelMap/createAlphaPixelmap.test";
+import createAlphaPixelmapSyncTest from "./testStatic/image/pixelMap/createAlphaPixelmapSync.test";
+import createScaledPixelMapSyncTest from "./testStatic/image/pixelMap/createScaledPixelMapSync.test";
+import pixelMapScaleTest from "./testStatic/image/pixelMap/scale.test";
+import pixelMapTranslateTest from "./testStatic/image/pixelMap/translate.test";
+import pixelMapRotateTest from "./testStatic/image/pixelMap/rotate.test";
+import pixelMapFlipTest from "./testStatic/image/pixelMap/flip.test";
+import pixelMapCropTest from "./testStatic/image/pixelMap/crop.test";
+import pixelMapCloneTest from "./testStatic/image/pixelMap/clone.test";
+import createScaledPixelMapTest from "./testStatic/image/pixelMap/createScaledPixelMap.test";
+import pixelMapGetBytesNumberPerRowTest from "./testStatic/image/pixelMap/getBytesNumberPerRow.test";
+import pixelMapGetImageInfoTest from "./testStatic/image/pixelMap/getImageInfo.test";
+import pixelMapGetImageInfoSyncTest from "./testStatic/image/pixelMap/getImageInfoSync.test";
+import pixelMapOpacityTest from "./testStatic/image/pixelMap/opacity.test";
+import pixelMapReadPixelsTest from "./testStatic/image/pixelMap/readPixels.test";
+import pixelMapWritePixelsTest from "./testStatic/image/pixelMap/writePixels.test";
+
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -119,7 +144,6 @@ export default function testsuite(): void {
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImageSourceCreatePixelMapUsingAllocatorSyncTest();
   ImageSourceGetDelayTimeListTest();
-
   MetaDataSetBlobStaticSuppTest();
   imagePackerPackToFileAbnormalStaticSuppTest();
   imagePackerPackToFileStaticSuppTest();
@@ -128,6 +152,30 @@ export default function testsuite(): void {
   metaDataGetPropertiesTestStatic();
   setPropertiesStaticSuppTest();
   metadataCloneStaticSuppTest();
+  ImageEnumSupp();
+  ImageSourceGetDisposalTypeListTest();
+  ImageSourceGetFrameCountTest();
+  ImageSourceGetImageInfoTest();
+  ImageSourceGetImageInfoSyncTest();
+  ImageSourceGetImagePropertiesTest();
+  ImageSourceReleaseTest();
+  pixelMapCloneTest();
+  ImagePixelMapConvertPixelFormatTest();
+  createAlphaPixelmapTest();
+  createAlphaPixelmapSyncTest();
+  createScaledPixelMapTest();
+  createScaledPixelMapSyncTest();
+  pixelMapCropTest();
+  pixelMapFlipTest();
+  pixelMapGetBytesNumberPerRowTest();
+  pixelMapGetImageInfoTest();
+  pixelMapGetImageInfoSyncTest();
+  pixelMapOpacityTest();
+  pixelMapReadPixelsTest();
+  pixelMapRotateTest();
+  pixelMapScaleTest();
+  pixelMapTranslateTest();
+  pixelMapWritePixelsTest();
 }
 
 
