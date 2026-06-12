@@ -66,11 +66,11 @@ import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setProperti
 import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
 import ImageEnumSupp from './testStatic/image/image/ImageEnum.test';
 import ImageSourceGetDisposalTypeListTest from './testStatic/image/imageSource/getDisposalTypeList.test';
-import ImageSourceGetFrameCountTest from './testStatic/image/ImageSource/getFrameCount.test';
-import ImageSourceGetImageInfoTest from './testStatic/image/ImageSource/getImageInfo.test';
-import ImageSourceGetImageInfoSyncTest from './testStatic/image/ImageSource/getImageInfoSync.test';
-import ImageSourceGetImagePropertiesTest from './testStatic/image/ImageSource/getImageProperties.test';
-import ImageSourceReleaseTest from './testStatic/image/ImageSource/release.test';
+import ImageSourceGetFrameCountTest from './testStatic/image/imageSource/getFrameCount.test';
+import ImageSourceGetImageInfoTest from './testStatic/image/imageSource/getImageInfo.test';
+import ImageSourceGetImageInfoSyncTest from './testStatic/image/imageSource/getImageInfoSync.test';
+import ImageSourceGetImagePropertiesTest from './testStatic/image/imageSource/getImageProperties.test';
+import ImageSourceReleaseTest from './testStatic/image/imageSource/release.test';
 import pixelMapCloneTest from './testStatic/image/pixelMap/clone.test';
 import ImagePixelMapConvertPixelFormatTest from './testStatic/image/pixelMap/convertPixelFormat.Test.test';
 import createAlphaPixelmapTest from './testStatic/image/pixelMap/createAlphaPixelmap.test';
@@ -88,6 +88,8 @@ import pixelMapRotateTest from './testStatic/image/pixelMap/rotate.test';
 import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
+import ImageGetImagePropertySyncEnumGPSStatusEmpty
+  from './testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPStatusEmpty.test';
 
 
 
