@@ -47,7 +47,7 @@ async function getComponent(driver: Driver, onType: On) {
 // 点击同步对话框的"同步"按钮（弹窗3秒后可点击）
 async function clickSyncButtonOnDialog(): Promise<void> {
   try {
-    await sleep(3100); // 等待3秒+100ms缓冲
+    await sleep(3500); // 等待3秒+500ms缓冲
     let driver: Driver = Driver.create();
     let onSync: On = ON.text('同步');
     await getComponent(driver, onSync);
@@ -200,6 +200,39 @@ export default function ContactSyncTest() {
       }
     });
 
+    /**
+     * @tc.name testQueryContactReturn0100
+     * @tc.number SUB_Telephony_Contact_QueryContactReturn_0100
+     * @tc.desc Test queryContactSyncInfo return check
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testQueryContactReturn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testQueryContactReturn0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        try {
+          await sleep(500);
+          let promise = contact.queryContactSyncInfo(null);
+          promise.then((data: contact.ContactSyncInfo[]) => {
+            console.log(`${caseName} success: data>${JSON.stringify(data)}`);
+            expect(data.length).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
     // ============================================
     // syncContacts - MODE_INCREMENTAL 增量同步模式测试
     // ============================================
@@ -218,8 +251,8 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
-        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 1);
+        let syncId: number = 100;
+        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 3);
         try {
           await sleep(500);
           let promise = contact.syncContacts(context, MODE_INCREMENTAL, progress, contacts);
@@ -257,8 +290,8 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
-        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 2);
+        let syncId: number = 100;
+        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 2, 3);
         try {
           await sleep(500);
           let promise = contact.syncContacts(context, MODE_INCREMENTAL, progress, contacts);
@@ -294,8 +327,8 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
-        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 2, 3);
+        let syncId: number = 100;
+        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 3, 3);
         try {
           await sleep(500);
           let promise = contact.syncContacts(context, MODE_INCREMENTAL, progress, contacts);
@@ -335,8 +368,8 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
-        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 1);
+        let syncId: number = 200;
+        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 3);
         try {
           await sleep(500);
           let promise = contact.syncContacts(context, MODE_CLOUD_BASED, progress, contacts);
@@ -372,8 +405,8 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
-        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 1, 2);
+        let syncId: number = 200;
+        let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 2, 3);
         try {
           await sleep(500);
           let promise = contact.syncContacts(context, MODE_CLOUD_BASED, progress, contacts);
@@ -409,7 +442,7 @@ export default function ContactSyncTest() {
         console.info(`${caseName} test start`);
         let context: Context = AppStorage.get('UIContext') as Context;
         let contacts: contact.Contact[] = [createContact(`${TEST_CONTACT_NAME}1`, TEST_PHONE_NUMBER)];
-        let syncId: number = Date.now() / 1000;
+        let syncId: number = 200;
         let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, 3, 3);
         try {
           await sleep(500);
@@ -546,14 +579,13 @@ export default function ContactSyncTest() {
         }
 
         console.info(`${caseName}: Starting batch sync, ${TOTAL_BATCHES} batches of ${BATCH_SIZE} contacts each`);
-
+        let syncId: number = Date.now() / 1000;
         // 逐批执行同步
         for (let batchIndex = 0; batchIndex < TOTAL_BATCHES; batchIndex++) {
           // 截取当前批次的联系人
           let startIdx = batchIndex * BATCH_SIZE;
           let endIdx = startIdx + BATCH_SIZE;
           let batchContacts: contact.Contact[] = allContacts.slice(startIdx, endIdx);
-          let syncId: number = Date.now() / 1000;
 
           // 创建当前批次的进度信息
           let progress: contact.ContactSyncProgress = createContactSyncProgress(syncId, batchIndex + 1, TOTAL_BATCHES);
@@ -1083,6 +1115,416 @@ it('testContactSyncModeValues2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.
             done();
           }).catch((err: BusinessError) => {
             console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testSyncContactsParamCheck0100
+     * @tc.number SUB_Telephony_Contact_SyncContacts_ParamCheck_0100
+     * @tc.desc check progress
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsParamCheck0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsParamCheck0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = Date.now() / 1000;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 1
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, MODE_INCREMENTAL, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testSyncContactsParamCheck0200
+     * @tc.number SUB_Telephony_Contact_SyncContacts_ParamCheck_0200
+     * @tc.desc check MODE_INCREMENTAL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsParamCheck0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsParamCheck0200';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = Date.now() / 1000;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 1
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_INCREMENTAL, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testSyncContactsParamCheck0300
+     * @tc.number SUB_Telephony_Contact_SyncContacts_ParamCheck_0300
+     * @tc.desc check MODE_CLOUD_BASED
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsParamCheck0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsParamCheck0300';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = Date.now() / 1000;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 1
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_INCREMENTAL, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+    
+    /**
+     * @tc.name testSyncContactsParamCheck0400
+     * @tc.number SUB_Telephony_Contact_SyncContacts_ParamCheck_0400
+     * @tc.desc check ContactSyncInfo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsParamCheck0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsParamCheck0400';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = Date.now() / 1000;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 1
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_INCREMENTAL, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testSyncContactsReturn0100
+     * @tc.number SUB_Telephony_Contact_SyncContacts_Return_0100
+     * @tc.desc check ContactSyncInfo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsReturn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsReturn0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        let syncId: number = Date.now() / 1000;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 1
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_INCREMENTAL, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testSyncContactsReturn0200
+     * @tc.number SUB_Telephony_Contact_SyncContacts_Return_0200
+     * @tc.desc check ContactSyncInfo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testSyncContactsReturn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testSyncContactsReturn0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = 300;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 1,
+          totalBatches: 2
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_CLOUD_BASED, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testQueryContactParamCheck0100
+     * @tc.number SUB_Telephony_Contact_QueryContactParamCheck_0100
+     * @tc.desc Test queryContactSyncInfo with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testQueryContactParamCheck0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testQueryContactSyncInfo0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        try {
+          await sleep(500);
+          let promise = contact.queryContactSyncInfo(null);
+          promise.then((data: contact.ContactSyncInfo[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data !== null).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testQueryContactParamCheck0200
+     * @tc.number SUB_Telephony_Contact_QueryContactParamCheck_0200
+     * @tc.desc Test queryContactSyncInfo with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testQueryContactParamCheck0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testQueryContactSyncInfo0200';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        try {
+          await sleep(500);
+          let promise = contact.queryContactSyncInfo(undefined);
+          promise.then((data: contact.ContactSyncInfo[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data !== null).assertTrue();
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testQueryContactReturn0200
+     * @tc.number SUB_Telephony_Contact_QueryContactReturn_0200
+     * @tc.desc Test queryContactSyncInfo return check
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testQueryContactReturn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testQueryContactReturn0200';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        try {
+          await sleep(500);
+          let promise = contact.queryContactSyncInfo(context);
+          promise.then((data: contact.ContactSyncInfo[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            let contactSyncInfo:contact.ContactSyncInfo = data[data.length -1];
+            expect(contactSyncInfo.mode).assertEqual(contact.ContactSyncMode.MODE_CLOUD_BASED);
+            expect(contactSyncInfo.syncId).assertLarger(0);
+            expect(contactSyncInfo.totalBatches).assertLarger(0);
+            expect(contactSyncInfo.completedBatches.length).assertLarger(0);
+            expect(contactSyncInfo.lastSyncTime).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          });
+        } catch (err) {
+          console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        }
+        console.info(`${caseName} test end`);
+      })
+
+    /**
+     * @tc.name testQueryContactRecover0100
+     * @tc.number SUB_Telephony_Contact_QueryContactRecover_0100
+     * @tc.desc Test queryContactSyncInfo Recover
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('testQueryContactRecover0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        const caseName: string = 'testQueryContactRecover0100';
+        console.info(`${caseName} test start`);
+        let context: Context = AppStorage.get('UIContext') as Context;
+        let contacts: contact.Contact[] = [];
+        for (let i = 0; i < 400; i++) {
+          contacts.push(createContact(`${TEST_CONTACT_NAME}${i}`, `${TEST_PHONE_NUMBER}`));
+        }
+        let syncId: number = 300;
+        let progress: contact.ContactSyncProgress = {
+          syncId: syncId,
+          currentBatch: 2,
+          totalBatches: 2
+        };
+        try {
+          await sleep(500);
+          let promise = contact.syncContacts(context, contact.ContactSyncMode.MODE_CLOUD_BASED, progress, contacts);
+          clickSyncButtonOnDialog();
+          promise.then((data: number[]) => {
+            console.log(`${caseName} success: data->${JSON.stringify(data)}`);
+            expect(data.length).assertLarger(0);
+            done();
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} fail: err->${JSON.stringify(err)}`);
             ExpectFail();
             done();
           });
