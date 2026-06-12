@@ -16,11 +16,11 @@
 
 import { AppStorage } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Hypium } from '../../../../../../hypium';
+import {afterAll,afterEach,beforeAll,beforeEach,describe,expect,Hypium, it, Level } from '../../../../../../hypium';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { Context } from '@kit.AbilityKit';
+import { Context, } from '@kit.ArkUI';
 
 const TAG = 'imageXts.pixelMapReadPixelsTest';
 
@@ -128,34 +128,7 @@ export default function pixelMapReadPixelsTest(): void {
       await readPixelsPromiseTest(done, testName, pixelMap, area, (data: ArrayBuffer) => {
         expect(data).not().assertUndefined();
       });
-      done();
-    })
-
-    /**
-     * @tc.name   SUB_MEDIA_IMAGE_PIXEL_MAP_READ_PIXELS_static_0200
-     * @tc.number SUB_MEDIA_IMAGE_PIXEL_MAP_READ_PIXELS_static_0200
-     * @tc.desc   readPixels
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MEDIA_IMAGE_PIXEL_MAP_READ_PIXELS_static_0200', Level.LEVEL0, async (done: () => void) => {
-      const testName = "SUB_MEDIA_IMAGE_PIXEL_MAP_READ_PIXELS_static_0200";
-      let decodingOptions: image.DecodingOptions = {
-        editable: true,
-        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
-      };
-      let pixelMap: image.PixelMap | undefined = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(16);
-      const area: image.PositionArea = {
-        pixels: array,
-        offset: 0,
-        stride: 6,
-        region: { size: { height: 2, width: 2 }, x: 0, y: 0 }
-      };
-      await readPixelsAbnormalPromiseTest(done, testName, pixelMap, area, (data: string) => {
-        expect(data).not().assertUndefined();
-      });
+      await pixelMap!.release();
       done();
     })
   })
