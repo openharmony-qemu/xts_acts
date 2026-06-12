@@ -757,6 +757,7 @@ export default function wifiSta() {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0006';
       console.info(`${caseName} test start`);
       try {
+        await sleep(10000);//用例弹框影响--消除影响
         let config:wifiMg.WifiDeviceConfig = {
           ssid: 'test_ssid_with_action',
           preSharedKey: 'test_password',
