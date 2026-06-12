@@ -106,7 +106,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_001
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0100
      * @tc.name TypeSafeFieldInheritanceRt001
      * @tc.desc test derived field value is consistent when read through both derived and base references
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_002
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0200
      * @tc.name TypeSafeFieldInheritanceRt002
      * @tc.desc test write through base reference updates the overridden field visible from derived reference
      * @tc.size MediumTest
@@ -137,7 +137,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_003
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0300
      * @tc.name TypeSafeFieldInheritanceRt003
      * @tc.desc test field value consistency across derived class, base class, and interface references
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_004
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0400
      * @tc.name TypeSafeFieldInheritanceRt004
      * @tc.desc test initializer execution order: base initializer runs before derived initializer
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_005
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0500
      * @tc.name TypeSafeFieldInheritanceRt005
      * @tc.desc test field consistency after cast from base to derived and write through interface reference
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function TypeSafeFieldInheritanceRt(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCERT_006
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCERT_0600
      * @tc.name TypeSafeFieldInheritanceRt006
      * @tc.desc test grandchild overrides root field, consistent read through root reference skipping middle
      * @tc.size MediumTest

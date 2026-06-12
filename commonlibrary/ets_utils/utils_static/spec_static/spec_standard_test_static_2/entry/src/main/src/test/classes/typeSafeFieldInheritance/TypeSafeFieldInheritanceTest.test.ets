@@ -307,7 +307,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_001
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0100
      * @tc.name TypeSafeFieldInheritance001
      * @tc.desc test explicit override of public field with same type in derived class
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_002
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0200
      * @tc.name TypeSafeFieldInheritance002
      * @tc.desc test implicit override of public field with same type in derived class
      * @tc.size MediumTest
@@ -333,7 +333,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_003
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0300
      * @tc.name TypeSafeFieldInheritance003
      * @tc.desc test protected field override with same access modifier and type
      * @tc.size MediumTest
@@ -345,7 +345,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_004
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0400
      * @tc.name TypeSafeFieldInheritance004
      * @tc.desc test override field initialized in constructor
      * @tc.size MediumTest
@@ -357,7 +357,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_005
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0500
      * @tc.name TypeSafeFieldInheritance005
      * @tc.desc test class field implements interface property and overrides base class field
      * @tc.size MediumTest
@@ -370,7 +370,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_006
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0600
      * @tc.name TypeSafeFieldInheritance006
      * @tc.desc test inherited interface property field accessed through interface reference
      * @tc.size MediumTest
@@ -383,7 +383,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_007
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0700
      * @tc.name TypeSafeFieldInheritance007
      * @tc.desc test readonly field override with same readonly modifier and same type
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_008
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0800
      * @tc.name TypeSafeFieldInheritance008
      * @tc.desc test generic field override with same type substitution in derived generic class
      * @tc.size MediumTest
@@ -408,7 +408,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_009
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_0900
      * @tc.name TypeSafeFieldInheritance009
      * @tc.desc test optional field override with same optional modifier and same type
      * @tc.size MediumTest
@@ -420,7 +420,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_010
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1000
      * @tc.name TypeSafeFieldInheritance010
      * @tc.desc test union type field override with exact same union type
      * @tc.size MediumTest
@@ -432,7 +432,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_011
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1100
      * @tc.name TypeSafeFieldInheritance011
      * @tc.desc test multilevel field override through three levels of inheritance
      * @tc.size MediumTest
@@ -444,7 +444,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_012
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1200
      * @tc.name TypeSafeFieldInheritance012
      * @tc.desc test class implementing two interfaces with same property type
      * @tc.size MediumTest
@@ -456,7 +456,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_013
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1300
      * @tc.name TypeSafeFieldInheritance013
      * @tc.desc test writable field implements readonly interface property, modification visible via interface
      * @tc.size MediumTest
@@ -471,7 +471,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_014
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1400
      * @tc.name TypeSafeFieldInheritance014
      * @tc.desc test readonly field implements readonly interface property
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_015
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1500
      * @tc.name TypeSafeFieldInheritance015
      * @tc.desc test class field implements getter-only interface property, modification visible via interface getter
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_016
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1600
      * @tc.name TypeSafeFieldInheritance016
      * @tc.desc test class field implements setter-only interface property, write via interface setter visible
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_017
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1700
      * @tc.name TypeSafeFieldInheritance017
      * @tc.desc test optional interface property uses default implementation, value is undefined
      * @tc.size MediumTest
@@ -527,7 +527,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_018
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1800
      * @tc.name TypeSafeFieldInheritance018
      * @tc.desc test optional interface property implemented by optional field with initial value
      * @tc.size MediumTest
@@ -540,7 +540,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_019
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_1900
      * @tc.name TypeSafeFieldInheritance019
      * @tc.desc test late-init field override with same type, initialized in constructor
      * @tc.size MediumTest
@@ -552,7 +552,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_020
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2000
      * @tc.name TypeSafeFieldInheritance020
      * @tc.desc test nullable type field override with exact same nullable type
      * @tc.size MediumTest
@@ -564,7 +564,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_021
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2100
      * @tc.name TypeSafeFieldInheritance021
      * @tc.desc test generic class instance field override with exact same parameterized type
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_022
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2200
      * @tc.name TypeSafeFieldInheritance022
      * @tc.desc test array type field override with exact same array type
      * @tc.size MediumTest
@@ -588,7 +588,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_023
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2300
      * @tc.name TypeSafeFieldInheritance023
      * @tc.desc test tuple type field override with exact same tuple type
      * @tc.size MediumTest
@@ -600,7 +600,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_024
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2400
      * @tc.name TypeSafeFieldInheritance024
      * @tc.desc test late-init field overrides normal field, initialized in constructor
      * @tc.size MediumTest
@@ -612,7 +612,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_025
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2500
      * @tc.name TypeSafeFieldInheritance025
      * @tc.desc test normal field overrides late-init field with initializer
      * @tc.size MediumTest
@@ -624,7 +624,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_026
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2600
      * @tc.name TypeSafeFieldInheritance026
      * @tc.desc test static field in base coexists with instance field of same name in derived
      * @tc.size MediumTest
@@ -638,7 +638,7 @@ export default function TypeSafeFieldInheritance(): void {
     })
 
     /**
-     * @tc.number SUB_RUNTIME_SPEC_ARKSTATIC_TYPESAFEFIELDINHERITANCE_027
+     * @tc.number SUB_STATIC_SPEC_TYPESAFEFIELDINHERITANCE_2700
      * @tc.name TypeSafeFieldInheritance027
      * @tc.desc test instance field in base coexists with static field of same name in derived
      * @tc.size MediumTest
