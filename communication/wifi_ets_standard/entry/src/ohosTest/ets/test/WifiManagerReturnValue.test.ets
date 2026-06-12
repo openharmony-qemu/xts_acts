@@ -189,6 +189,7 @@ export default function wifiManagerTest() {
           expect(typeof result.randomGlobalIpv6Address === 'string').assertTrue();
           expect(typeof result.gateway === 'string').assertTrue();
           expect(typeof result.netmask === 'string').assertTrue();
+          expect(result.netmask.length > 0).assertTrue();
           expect(typeof result.primaryDNS === 'string').assertTrue();
           expect(typeof result.secondDNS === 'string').assertTrue();
         } catch (error) {
