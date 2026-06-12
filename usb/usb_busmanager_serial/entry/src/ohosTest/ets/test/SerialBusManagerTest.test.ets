@@ -2096,9 +2096,6 @@ export default function SerialBusManagerTest() {
           if (portInfo.manufacturer !== undefined) {
             expect(typeof portInfo.manufacturer).assertEqual('string');
           }
-        } else {
-          console.info(TAG, 'testSerialPortInfo002 portList is empty, skip assertions');
-          }
         }
         let config: serial.SerialConfigs = {
           baudRate: 115200,
@@ -2172,7 +2169,7 @@ export default function SerialBusManagerTest() {
           baudRate: 115200,
           dataBits: serial.DataBits.SIX,
           stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE
+          parity: serial.Parity.EVEN
         };
         gPort!.open(config);
         await driveFn();
@@ -2206,7 +2203,7 @@ export default function SerialBusManagerTest() {
           baudRate: 115200,
           dataBits: serial.DataBits.SEVEN,
           stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE
+          parity: serial.Parity.ODD
         };
         gPort!.open(config);
         await driveFn();
@@ -2240,7 +2237,7 @@ export default function SerialBusManagerTest() {
           baudRate: 115200,
           dataBits: serial.DataBits.FIVE,
           stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE
+          parity: serial.Parity.MARK
         };
         gPort!.open(config);
         await driveFn();
@@ -2274,8 +2271,8 @@ export default function SerialBusManagerTest() {
         let config: serial.SerialConfigs = {
           baudRate: 115200,
           dataBits: serial.DataBits.EIGHT,
-          stopBits: serial.StopBits.ONE,
-          parity: serial.Parity.NONE
+          stopBits: serial.StopBits.TWO,
+          parity: serial.Parity.SPACE
         };
         gPort!.open(config);
         await driveFn();
