@@ -242,17 +242,17 @@ export default function StringToLocaleLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_1500
      * @tc.name testToLocaleLowerCase015
-     * @tc.desc Verify toLocaleLowerCase() for case-insensitive search
+     * @tc.desc Verify toLocaleLowerCase() without parameter matches explicit default locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLocaleLowerCase015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("Blue Whale");
-      let lowered: string = text.toLocaleLowerCase();
-      const text2 = new String(lowered);
-      let inc: boolean = text2.includes("blue");
-      expect(inc).assertTrue();
+      const text = new String("DIL");
+      let result: string = text.toLocaleLowerCase();
+      let defaultLocale: string = Intl.DateTimeFormat().resolvedOptions().locale;
+      expect(result).assertEqual("dil");
+      expect(result).assertEqual(text.toLocaleLowerCase(defaultLocale));
     });
 
     /**

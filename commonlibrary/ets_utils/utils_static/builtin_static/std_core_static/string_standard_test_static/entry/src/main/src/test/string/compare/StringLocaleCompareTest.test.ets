@@ -232,16 +232,17 @@ export default function StringLocaleCompareTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_1400
      * @tc.name testLocaleCompare014
-     * @tc.desc Verify localeCompare() with dynamic variable returns correct comparison
+     * @tc.desc Verify localeCompare() without locale parameter matches explicit default locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLocaleCompare014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: String = new String("ArkTS");
-      let other: string = "ArkTS";
-      let result: number = text.localeCompare(other);
-      expect(result).assertEqual(0);
+      const text = new String("hello");
+      let defaultLocale: string = Intl.DateTimeFormat().resolvedOptions().locale;
+      let result: number = text.localeCompare("hello");
+      let explicitResult: number = text.localeCompare("hello", defaultLocale);
+      expect(result).assertEqual(explicitResult);
     });
 
     /**

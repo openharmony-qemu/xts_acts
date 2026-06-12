@@ -170,7 +170,7 @@ export default function StringCharCodeAtTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_1000
      * @tc.name testCharCodeAt010
-     * @tc.desc Verify charCodeAt(0) on half-width katakana returns 65498
+     * @tc.desc Verify charCodeAt(0) on half-width katakana returns 65418
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -310,7 +310,7 @@ export default function StringCharCodeAtTest(): void {
      * @tc.level Level 2
      */
     it('testCharCodeAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("AB");
+      const text = new String("ERR");
       try {
         let result = text.charCodeAt(-1);
         expect().assertFail();
@@ -371,7 +371,7 @@ export default function StringCharCodeAtTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2300
      * @tc.name testCharCodeAt023
-     * @tc.desc Verify charCodeAt() returns number type
+     * @tc.desc Verify charCodeAt() returns correct code point for ASCII character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -379,7 +379,7 @@ export default function StringCharCodeAtTest(): void {
     it('testCharCodeAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("A");
       let result: number = text.charCodeAt(0);
-      expect(typeof result).assertEqual("number");
+      expect(result).assertEqual(65);
     });
 
     /**

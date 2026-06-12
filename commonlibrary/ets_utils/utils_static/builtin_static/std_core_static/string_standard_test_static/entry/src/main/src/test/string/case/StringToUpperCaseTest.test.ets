@@ -230,9 +230,7 @@ export default function StringToUpperCaseTest(): void {
     it('testToUpperCase014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("hello world");
       let upper: string = text.toUpperCase().toString();
-      const text1 = new String(upper);
-      let inc: boolean = text1.includes("HELLO");
-      expect(inc).assertTrue();
+      expect(upper).assertEqual("HELLO WORLD");
     });
 
     /**

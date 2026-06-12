@@ -128,7 +128,7 @@ export default function StringIsCompressedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_0700
      * @tc.name testIsCompressed007
-     * @tc.desc Verify isCompressed() on ISO 8859-1 Latin precomposed character returns false as only ASCII is compressed
+     * @tc.desc Verify isCompressed() on Latin-1 character (U+00E9) returns false, confirming ArkTS restricts compression to ASCII (≤127) unlike Java which uses Latin-1 (≤255)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

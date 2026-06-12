@@ -212,7 +212,7 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_1300
      * @tc.name testFontsize013
-     * @tc.desc Verify fontsize() preserves double-quote event-handler injection in size without encoding
+     * @tc.desc Verify fontsize() encodes double-quote event-handler injection in size to &quot;
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +254,7 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_1600
      * @tc.name testFontsize016
-     * @tc.desc Verify fontsize() preserves tag-closing script injection in size without encoding
+     * @tc.desc Verify fontsize() encodes tag-closing script injection in size to &quot;
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

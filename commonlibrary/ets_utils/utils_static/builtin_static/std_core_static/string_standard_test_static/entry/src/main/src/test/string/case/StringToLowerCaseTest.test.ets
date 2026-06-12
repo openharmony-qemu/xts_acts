@@ -187,9 +187,7 @@ export default function StringToLowerCaseTest(): void {
     it('testToLowerCase011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Blue Whale");
       let lowered: string = text.toLowerCase().toString();
-      const text1 = new String(lowered);
-      let inc: boolean = text1.includes("blue");
-      expect(inc).assertTrue();
+      expect(lowered).assertEqual("blue whale");
     });
 
     /**

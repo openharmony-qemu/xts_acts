@@ -67,8 +67,7 @@ export default function StringCompareToTest(): void {
       const a2 = new String("abc");
       const b2 = new String("xyz");
       let result: int = a2.compareTo(b2);
-      let lt: boolean = result < 0;
-      expect(lt).assertTrue();
+      expect(result).assertEqual(-23);
     });
 
     /**
@@ -83,8 +82,7 @@ export default function StringCompareToTest(): void {
       const a3 = new String("xyz");
       const b3 = new String("abc");
       let result: int = a3.compareTo(b3);
-      let gt: boolean = result > 0;
-      expect(gt).assertTrue();
+      expect(result).assertEqual(23);
     });
 
     /**
@@ -144,8 +142,7 @@ export default function StringCompareToTest(): void {
       const a7 = new String("10");
       const b7 = new String("2");
       let result: int = a7.compareTo(b7);
-      let lt: boolean = result < 0;
-      expect(lt).assertTrue();
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -237,8 +234,7 @@ export default function StringCompareToTest(): void {
       const a13 = new String("中");
       const b13 = new String("A");
       let result: int = a13.compareTo(b13);
-      let gt: boolean = result > 0;
-      expect(gt).assertTrue();
+      expect(result).assertEqual(19948);
     });
 
     /**
@@ -268,8 +264,7 @@ export default function StringCompareToTest(): void {
       const a15 = new String("é");
       const b15 = new String("f");
       let result: int = a15.compareTo(b15);
-      let gt: boolean = result > 0;
-      expect(gt).assertTrue();
+      expect(result).assertEqual(131);
     });
 
     /**
@@ -284,8 +279,7 @@ export default function StringCompareToTest(): void {
       const a16 = new String("啊");
       const b16 = new String("吧");
       let result: int = a16.compareTo(b16);
-      let gt: boolean = result > 0;
-      expect(gt).assertTrue();
+      expect(result).assertEqual(291);
     });
 
     /**
@@ -314,8 +308,7 @@ export default function StringCompareToTest(): void {
       const str1: String = new String("hello");
       const str2: String = new String("world");
       let result: int = str1.compareTo(str2);
-      let lt: boolean = result < 0;
-      expect(lt).assertTrue();
+      expect(result).assertEqual(-15);
     });
 
     /**
@@ -330,8 +323,7 @@ export default function StringCompareToTest(): void {
       const a17 = new String("\t");
       const b17 = new String(" ");
       let result: int = a17.compareTo(b17);
-      let lt: boolean = result < 0;
-      expect(lt).assertTrue();
+      expect(result).assertEqual(-23);
     });
 
     /**
@@ -361,8 +353,7 @@ export default function StringCompareToTest(): void {
       const a19 = new String("\0");
       const b19 = new String(" ");
       let result: int = a19.compareTo(b19);
-      let lt: boolean = result < 0;
-      expect(lt).assertTrue();
+      expect(result).assertEqual(-32);
     });
 
     /**
@@ -377,8 +368,7 @@ export default function StringCompareToTest(): void {
       const a20 = new String("a\n");
       const b20 = new String("a\t");
       let result: int = a20.compareTo(b20);
-      let gt: boolean = result > 0;
-      expect(gt).assertTrue();
+      expect(result).assertEqual(1);
     });
 
     /**
@@ -396,10 +386,8 @@ export default function StringCompareToTest(): void {
       const a2 = new String("backup_01.zip");
       const b2 = new String("backup_02.zip");
       let r2: int = a2.compareTo(b2);
-      let lt1: boolean = r1 < 0;
-      let lt2: boolean = r2 < 0;
-      expect(lt1).assertTrue();
-      expect(lt2).assertTrue();
+      expect(r1).assertEqual(-1);
+      expect(r2).assertEqual(-1);
     });
 
     /**
@@ -417,10 +405,8 @@ export default function StringCompareToTest(): void {
       const a2 = new String("2024-12-31");
       const b2 = new String("2025-01-01");
       let r2: int = a2.compareTo(b2);
-      let gt: boolean = r1 > 0;
-      let lt: boolean = r2 < 0;
-      expect(gt).assertTrue();
-      expect(lt).assertTrue();
+      expect(r1).assertEqual(2);
+      expect(r2).assertEqual(-1);
     });
   });
 }

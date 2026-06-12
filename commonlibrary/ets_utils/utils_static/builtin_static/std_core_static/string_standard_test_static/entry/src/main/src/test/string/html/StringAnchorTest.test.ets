@@ -54,7 +54,6 @@ export default function StringAnchorTest(): void {
       expect(result).assertEqual('<a name="top">ArkTS</a>');
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_0200
      * @tc.name testAnchor002
@@ -1301,7 +1300,7 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9100
      * @tc.name testAnchor091
-     * @tc.desc Verify anchor() with single digit content and single digit name
+     * @tc.desc Verify anchor() with single character content and single character name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1314,7 +1313,7 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9200
      * @tc.name testAnchor092
-     * @tc.desc Verify anchor() with single character content and single character name
+     * @tc.desc Verify anchor() with single digit content and single digit name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1376,7 +1375,7 @@ export default function StringAnchorTest(): void {
      */
     it('testAnchor096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "data".anchor("mid");
-      let parts: String[] = result.split("\"");
+      let parts: string[] = result.split("\"");
       expect(parts[1].toString()).assertEqual("mid");
     });
 

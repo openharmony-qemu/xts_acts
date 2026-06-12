@@ -337,17 +337,17 @@ export default function StringSliceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2100
      * @tc.name testSlice021
-     * @tc.desc Verify slice() return type is always string
+     * @tc.desc Verify slice() returns empty string when start equals string length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSlice021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Hello");
-      let r1: string = text.slice(0, 3);
-      let r2: string = text.slice(10);
-      expect(typeof r1).assertEqual("string");
-      expect(typeof r2).assertEqual("string");
+      let r1: string = text.slice(5);
+      let r2: string = text.slice(5, 10);
+      expect(r1).assertEqual("");
+      expect(r2).assertEqual("");
     });
   });
 }

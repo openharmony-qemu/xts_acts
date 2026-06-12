@@ -29,7 +29,6 @@ export default function StringReplaceTest(): void {
     afterAll((): void => {
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0100
      * @tc.name testReplace001
@@ -58,7 +57,6 @@ export default function StringReplaceTest(): void {
       expect(result).assertEqual("ArkTS");
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0300
      * @tc.name testReplace003
@@ -86,7 +84,6 @@ export default function StringReplaceTest(): void {
       let result: string = text.replace(new RegExp("XYZ", "g"), "ABC");
       expect(result).assertEqual("ArkTS");
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_0500
@@ -782,7 +779,6 @@ export default function StringReplaceTest(): void {
     it('testReplace053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("hello");
       let result: string = text.replace("xyz", "abc");
-      expect(typeof result).assertEqual("string");
       expect(result).assertEqual("hello");
     });
 

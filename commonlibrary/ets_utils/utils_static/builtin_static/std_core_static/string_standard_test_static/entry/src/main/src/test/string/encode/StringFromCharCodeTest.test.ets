@@ -56,40 +56,40 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_0200
      * @tc.name testFromCharCode002
-     * @tc.desc Verify String.fromCharCode(97) returns ASCII lowercase a
+     * @tc.desc Verify String.fromCharCode() with multiple parameters returns concatenated string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(97);
-      expect(result).assertEqual("a");
+      let result: string = String.fromCharCode(65, 97, 48);
+      expect(result).assertEqual("Aa0");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_0300
      * @tc.name testFromCharCode003
-     * @tc.desc Verify String.fromCharCode(48) returns ASCII digit 0
+     * @tc.desc Verify String.fromCharCode() accepts Unicode noncharacter code point
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(48);
-      expect(result).assertEqual("0");
+      let result: string = String.fromCharCode(64976);
+      expect(result).assertEqual("﷐");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_0400
      * @tc.name testFromCharCode004
-     * @tc.desc Verify String.fromCharCode(0) returns C0 control NUL character
+     * @tc.desc Verify String.fromCharCode() handles negative wrap and overflow truncation in the same call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(0);
-      expect(result).assertEqual("\0");
+      let result: string = String.fromCharCode(-1, 65536);
+      expect(result).assertEqual("￿\0");
     });
 
     /**
@@ -186,7 +186,7 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_1200
      * @tc.name testFromCharCode012
-     * @tc.desc Verify String.fromCharCode(65535) returns BMP boundary character U+FFFF
+     * @tc.desc Verify String.fromCharCode() returns BMP boundary character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,16 +239,14 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_1600
      * @tc.name testFromCharCode016
-     * @tc.desc Verify String.fromCharCode() accepts a computed code unit value
+     * @tc.desc Verify String.fromCharCode() wraps negative value to unsigned 16-bit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let base: int = 65;
-      let code: int = base + 23;
-      let result: string = String.fromCharCode(code);
-      expect(result).assertEqual("X");
+      let result: string = String.fromCharCode(-1);
+      expect(result).assertEqual("￿");
     });
 
     /**
@@ -267,27 +265,27 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_1800
      * @tc.name testFromCharCode018
-     * @tc.desc Verify String.fromCharCode() creates "Hello" from individual code units
+     * @tc.desc Verify String.fromCharCode() truncates overflow per argument in mixed valid and overflow parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(72, 101, 108, 108, 111);
-      expect(result).assertEqual("Hello");
+      let result: string = String.fromCharCode(65, 65536, 67);
+      expect(result).assertEqual("A\0C");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_1900
      * @tc.name testFromCharCode019
-     * @tc.desc Verify String.fromCharCode() with hexadecimal parameter
+     * @tc.desc Verify String.fromCharCode() truncates value exceeding BMP range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(0x41);
-      expect(result).assertEqual("A");
+      let result: string = String.fromCharCode(65536);
+      expect(result).assertEqual("\0");
     });
 
     /**

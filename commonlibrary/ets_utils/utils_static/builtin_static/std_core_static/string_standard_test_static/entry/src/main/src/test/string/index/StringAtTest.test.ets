@@ -172,7 +172,7 @@ export default function StringAtTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_1000
      * @tc.name testAt010
-     * @tc.desc Verify at() return type is string when index is valid
+     * @tc.desc Verify at() with valid index returns correct character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -180,8 +180,7 @@ export default function StringAtTest(): void {
     it('testAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("Hello");
       let result: string | undefined = text.at(1);
-      expect(result !== undefined).assertTrue();
-      expect(typeof result!).assertEqual("string");
+      expect(result!).assertEqual("e");
     });
 
     /**

@@ -71,15 +71,16 @@ export default function StringToLocaleUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_0300
      * @tc.name testToLocaleUpperCase003
-     * @tc.desc Verify toLocaleUpperCase() on already-uppercase string returns unchanged
+     * @tc.desc Verify toLocaleUpperCase() without parameter matches explicit default locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLocaleUpperCase003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ARKTS");
+      const text = new String("hello");
       let result: string = text.toLocaleUpperCase();
-      expect(result).assertEqual("ARKTS");
+      let defaultLocale: string = Intl.DateTimeFormat().resolvedOptions().locale;
+      expect(result).assertEqual(text.toLocaleUpperCase(defaultLocale));
     });
 
     /**
