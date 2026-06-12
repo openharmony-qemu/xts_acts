@@ -66,7 +66,8 @@ async function releaseCallbackTest(done: () => void, testName: string): Promise<
           });
         } catch (error) {
           console.info(TAG, 'Succeeded in releasing the ImageReceiver.');
-        }      }
+        }
+      }
       done();
     });
   } catch (error) {
