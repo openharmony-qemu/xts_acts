@@ -279,7 +279,6 @@ export default function EncodeUriTest(): void {
     it('testEncodeUri018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = encodeURI("");
       expect(result).assertEqual("");
-      expect(result.length).assertEqual(0);
     });
 
     /**

@@ -84,7 +84,6 @@ export default function DecodeUriComponentTest(): void {
     it('testDecodeUriComponent004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = decodeURIComponent("");
       expect(result).assertEqual("");
-      expect(result.length).assertEqual(0);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECODE_URI_COMPONENT_0050
@@ -812,7 +811,7 @@ export default function DecodeUriComponentTest(): void {
       let encoded: string = encodeURIComponent("中文");
       expect(encoded).assertEqual("%E4%B8%AD%E6%96%87");
       expect(decodeURIComponent(encoded)).assertEqual("中文");
-      expect(unescape(encoded)).assertEqual("\u00E4\u00B8\u00AD\u00E6\u0095\u0086");
+      expect(unescape(encoded)).assertEqual("\u00E4\u00B8\u00AD\u00E6\u0096\u0087");
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECODE_URI_COMPONENT_0630
@@ -1278,7 +1277,7 @@ export default function DecodeUriComponentTest(): void {
      * @tc.level Level 2
      */
     it('testDecodeUriComponent099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(decodeURIComponent("%E2%80%94")).assertEqual("\u2013");
+      expect(decodeURIComponent("%E2%80%94")).assertEqual("\u2014");
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECODE_URI_COMPONENT_1000
