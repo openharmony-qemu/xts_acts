@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -2118,7 +2118,7 @@ export default function SerialBusManagerTest() {
     /**
      * @tc.name   testDataBitsEnum001
      * @tc.number SUB_BusManager_Serial_JS_DataBits_Enum_0100
-     * @tc.desc   verify DataBits enum values, open with config.
+     * @tc.desc   verify DataBits.EIGHT enum value, open with config.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2130,9 +2130,6 @@ export default function SerialBusManagerTest() {
         return;
       }
       try {
-        expect(serial.DataBits.FIVE).assertEqual(5);
-        expect(serial.DataBits.SIX).assertEqual(6);
-        expect(serial.DataBits.SEVEN).assertEqual(7);
         expect(serial.DataBits.EIGHT).assertEqual(8);
         let config: serial.SerialConfigs = {
           baudRate: 115200,
@@ -2147,6 +2144,143 @@ export default function SerialBusManagerTest() {
         done();
       } catch (err) {
         console.error(TAG, 'testDataBitsEnum001 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testDataBitsEnum002
+     * @tc.number SUB_BusManager_Serial_JS_DataBits_Enum_0200
+     * @tc.desc   verify DataBits.SIX enum value, open with config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testDataBitsEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testDataBitsEnum002 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        expect(serial.DataBits.SIX).assertEqual(6);
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.SIX,
+          stopBits: serial.StopBits.ONE,
+          parity: serial.Parity.NONE
+        };
+        gPort!.open(config);
+        await driveFn();
+        console.info(TAG, 'testDataBitsEnum002 open success');
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testDataBitsEnum002 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testDataBitsEnum003
+     * @tc.number SUB_BusManager_Serial_JS_DataBits_Enum_0300
+     * @tc.desc   verify DataBits.SEVEN enum value, open with config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testDataBitsEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testDataBitsEnum003 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        expect(serial.DataBits.SEVEN).assertEqual(7);
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.SEVEN,
+          stopBits: serial.StopBits.ONE,
+          parity: serial.Parity.NONE
+        };
+        gPort!.open(config);
+        await driveFn();
+        console.info(TAG, 'testDataBitsEnum003 open success');
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testDataBitsEnum003 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testDataBitsEnum004
+     * @tc.number SUB_BusManager_Serial_JS_DataBits_Enum_0400
+     * @tc.desc   verify DataBits.FIVE enum value, open with config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testDataBitsEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testDataBitsEnum004 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        expect(serial.DataBits.FIVE).assertEqual(5);
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.FIVE,
+          stopBits: serial.StopBits.ONE,
+          parity: serial.Parity.NONE
+        };
+        gPort!.open(config);
+        await driveFn();
+        console.info(TAG, 'testDataBitsEnum004 open success');
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testDataBitsEnum004 catch err: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testStopBitsEnum001
+     * @tc.number SUB_BusManager_Serial_JS_StopBits_Enum_0100
+     * @tc.desc   verify StopBits enum values, open with config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStopBitsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, 'testStopBitsEnum001 start');
+      if (await checkDevice() === false) {
+        done();
+        return;
+      }
+      try {
+        expect(serial.StopBits.ONE).assertEqual(1);
+        expect(serial.StopBits.TWO).assertEqual(2);
+        let config: serial.SerialConfigs = {
+          baudRate: 115200,
+          dataBits: serial.DataBits.EIGHT,
+          stopBits: serial.StopBits.ONE,
+          parity: serial.Parity.NONE
+        };
+        gPort!.open(config);
+        await driveFn();
+        console.info(TAG, 'testStopBitsEnum001 open success');
+        await gPort!.close();
+        done();
+      } catch (err) {
+        console.error(TAG, 'testStopBitsEnum001 catch err: ', JSON.stringify(err));
         expect().assertFail();
         done();
       }
