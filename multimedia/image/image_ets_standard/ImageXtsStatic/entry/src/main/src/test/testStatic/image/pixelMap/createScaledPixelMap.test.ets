@@ -184,8 +184,8 @@ export default function createScaledPixelMapTest(): void {
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_082', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_CREATE_SCALED_PIXELMAP_TEST_082';
+    it('SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_static_0500', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_SCALED_PIXELMAP_static_0500';
       const pathUri = 'test_exif_v2.webp';
       const pixelMap = await createPixelMapFromImage(pathUri);
       console.info(TAG, testName, `pixelmap创建成功`);
