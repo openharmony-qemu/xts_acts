@@ -37,7 +37,7 @@ import ImageGetImagePropertySyncEnumFlashEmpty from  "./testStatic/image/imageSo
 import ImageGetImagePropertySyncEnumFrontCamera from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumFrontCamera.test"
 import ImagePropertyKeySyncEnumGPS from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPS.test"
 import ImageGetImagePropertySyncEnumGPSStatus from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatus.test"
-import ImageGetImagePropertySyncEnumGPSStatusEmpty from "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPStatusEmpty.test"
+import ImageGetImagePropertySyncEnumGPSStatusEmpty from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPSStatusEmpty.test"
 import ImageGetImagePropertySyncEnumISO from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumISO.test"
 import ImageGetImagePropertySyncEnumLength from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLength.test"
 import ImageGetImagePropertySyncEnumLightSource from  "./testStatic/image/imageSource/ImageGetImagePropertySyncEnumLightSource.test"
