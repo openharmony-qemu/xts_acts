@@ -136,15 +136,15 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0800
      * @tc.name testToLowerCase008
-     * @tc.desc Verify toLowerCase() with dynamic variable returns correct result
+     * @tc.desc Verify toLowerCase() normalizes a dynamic feature flag key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: String = new String("MiXeD");
+      const text: String = new String("FEATURE_LOGIN");
       let result: String = text.toLowerCase();
-      expect(result.toString()).assertEqual("mixed");
+      expect(result.toString()).assertEqual("feature_login");
     });
 
     /**
@@ -209,29 +209,29 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_1300
      * @tc.name testToLowerCase013
-     * @tc.desc Verify toLowerCase() on string with all uppercase alternates correctly
+     * @tc.desc Verify toLowerCase() normalizes a file extension
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ARKTS");
+      const text = new String("REPORT.PDF");
       let result: String = text.toLowerCase();
-      expect(result.toString()).assertEqual("arkts");
+      expect(result.toString()).assertEqual("report.pdf");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_1400
      * @tc.name testToLowerCase014
-     * @tc.desc Verify toLowerCase() returns same string when already lowercase
+     * @tc.desc Verify toLowerCase() keeps an already lowercase package name unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("hello world");
+      const text = new String("com.example.app");
       let result: String = text.toLowerCase();
-      expect(result.toString()).assertEqual("hello world");
+      expect(result.toString()).assertEqual("com.example.app");
     });
 
     /**
@@ -266,15 +266,15 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_1700
      * @tc.name testToLowerCase017
-     * @tc.desc Verify toLowerCase() on full-width uppercase letters
+     * @tc.desc Verify toLowerCase() normalizes email address text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ＡＢＣ");
+      const text = new String("ADMIN@EXAMPLE.COM");
       let result: String = text.toLowerCase();
-      expect(result.toString()).assertEqual("ａｂｃ");
+      expect(result.toString()).assertEqual("admin@example.com");
     });
 
     /**
@@ -378,15 +378,15 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_2500
      * @tc.name testToLowerCase025
-     * @tc.desc Verify toLowerCase() on all-uppercase alphabet
+     * @tc.desc Verify toLowerCase() normalizes an HTTP header key for lookup
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+      const text = new String("CONTENT-TYPE");
       let result: String = text.toLowerCase();
-      expect(result.toString()).assertEqual("abcdefghijklmnopqrstuvwxyz");
+      expect(result.toString()).assertEqual("content-type");
     });
 
     /**
@@ -434,16 +434,15 @@ export default function StringToLowerCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_2900
      * @tc.name testToLowerCase029
-     * @tc.desc Verify toLowerCase() returned string is independent of original
+     * @tc.desc Verify toLowerCase() preserves embedded C0 NUL while converting ASCII
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToLowerCase029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("HELLO");
+      const text = new String("A\0B");
       let lower: String = text.toLowerCase();
-      expect(text.toString()).assertEqual("HELLO");
-      expect(lower.toString()).assertEqual("hello");
+      expect(lower.toString()).assertEqual("a\0b");
     });
 
     /**

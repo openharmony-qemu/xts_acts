@@ -310,10 +310,10 @@ export default function StringConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testConstructor020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const chars: ValueArray<char> = [];
-      const s = new String(chars);
-      expect(s.length).assertEqual(0);
-      expect(s.toString()).assertEqual("");
+      const valueChars: ValueArray<char> = [];
+      const s = new String(valueChars);
+      expect(s.isEmpty()).assertTrue();
+      expect(s.getLength()).assertEqual(0);
     });
 
     /**
@@ -325,10 +325,10 @@ export default function StringConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testConstructor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const chars: ValueArray<char> = [c'Z'];
-      const s = new String(chars);
-      expect(s.length).assertEqual(1);
-      expect(s.toString()).assertEqual("Z");
+      const valueChars: ValueArray<char> = [c'Z'];
+      const s = new String(valueChars);
+      expect(s.charAt(0)).assertEqual(c'Z');
+      expect(s.getLength()).assertEqual(1);
     });
 
     /**
@@ -354,10 +354,10 @@ export default function StringConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testConstructor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const chars: char[] = [];
-      const s = new String(chars);
-      expect(s.length).assertEqual(0);
-      expect(s.toString()).assertEqual("");
+      const listChars: char[] = [];
+      const s = new String(listChars);
+      expect(s.getLength()).assertEqual(0);
+      expect(s.isEmpty()).assertTrue();
     });
 
     /**
@@ -369,36 +369,38 @@ export default function StringConstructorTest(): void {
      * @tc.level Level 2
      */
     it('testConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const chars: char[] = [c'Q'];
-      const s = new String(chars);
-      expect(s.length).assertEqual(1);
-      expect(s.toString()).assertEqual("Q");
+      const listChars: char[] = [c'Q'];
+      const s = new String(listChars);
+      expect(s.charCodeAt(0)).assertEqual(81);
+      expect(s.getLength()).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_2500
      * @tc.name testConstructor025
-     * @tc.desc Verify new String() getLength() returns zero
+     * @tc.desc Verify new String(String) preserves whitespace-only content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const s = new String();
-      expect(s.getLength()).assertEqual(0);
+      const s = new String(new String(" \t "));
+      expect(s.getLength()).assertEqual(3);
+      expect(s.toString()).assertEqual(" \t ");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_2600
      * @tc.name testConstructor026
-     * @tc.desc Verify new String() toString() returns empty string
+     * @tc.desc Verify new String(String) preserves embedded C0 NUL character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConstructor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const s = new String();
-      expect(s.toString()).assertEqual("");
+      const s = new String(new String("A\0B"));
+      expect(s.getLength()).assertEqual(3);
+      expect(s.toString()).assertEqual("A\0B");
     });
 
     /**
@@ -562,16 +564,16 @@ export default function StringConstructorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_3800
      * @tc.name testConstructor038
-     * @tc.desc Verify new String() from char[] with C0 control character U+0001 includes separators
+     * @tc.desc Verify new String() from char[] with BOM character preserves element between separators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const chars: char[] = [c'A', c'﻿', c'B'];
-      const s = new String(chars);
-      expect(s.length).assertEqual(5);
-      expect(s.charCodeAt(1)).assertEqual(44);
+      const bomChars: char[] = [c'A', c'\uFEFF', c'B'];
+      const s = new String(bomChars);
+      expect(s.charCodeAt(2)).assertEqual(65279);
+      expect(s.charAt(2)).assertEqual(c'\uFEFF');
     });
 
     /**

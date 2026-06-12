@@ -88,6 +88,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0400
      * @tc.name testSup004
      * @tc.desc Verify sup() preserves original string content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hello World".sup();
@@ -97,27 +100,36 @@ export default function StringSupTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0500
      * @tc.name testSup005
-     * @tc.desc Verify sup() returns <sup>test</sup> for input "test"
+     * @tc.desc Verify sup() wraps a power exponent digit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".sup();
-      expect(result).assertEqual("<sup>test</sup>");
+      let result: string = "2".sup();
+      expect(result).assertEqual("<sup>2</sup>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0600
      * @tc.name testSup006
-     * @tc.desc Verify sup() wraps lowercase ASCII content exactly
+     * @tc.desc Verify sup() wraps an ordinal suffix exactly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "abc".sup();
-      expect(result).assertEqual("<sup>abc</sup>");
+      let result: string = "th".sup();
+      expect(result).assertEqual("<sup>th</sup>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0700
      * @tc.name testSup007
      * @tc.desc Verify sup() result length equals original length + 11
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "hi".sup();
@@ -128,6 +140,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0800
      * @tc.name testSup008
      * @tc.desc Verify sup() on repeat result wraps repeated content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let repeated: string = "x".repeat(3);
@@ -139,6 +154,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_0900
      * @tc.name testSup009
      * @tc.desc Verify sup() with empty string returns <sup></sup>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "".sup();
@@ -149,6 +167,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1000
      * @tc.name testSup010
      * @tc.desc Verify sup() with single character string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "A".sup();
@@ -159,6 +180,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1100
      * @tc.name testSup011
      * @tc.desc Verify sup() with HTML special characters preserved
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "<div>".sup();
@@ -169,6 +193,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1200
      * @tc.name testSup012
      * @tc.desc Verify sup() preserves newline and tab characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "line1\nline2".sup();
@@ -181,6 +208,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1300
      * @tc.name testSup013
      * @tc.desc Verify sup() with Chinese characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "你好世界".sup();
@@ -191,6 +221,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1400
      * @tc.name testSup014
      * @tc.desc Verify sup() chained with toLowerCase()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "HELLO".sup();
@@ -202,6 +235,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1500
      * @tc.name testSup015
      * @tc.desc Verify sup() chained after toLowerCase()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "HELLO".toLowerCase().sup();
@@ -212,6 +248,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1600
      * @tc.name testSup016
      * @tc.desc Verify sup() called twice produces nested tags
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "a".sup();
@@ -223,6 +262,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1700
      * @tc.name testSup017
      * @tc.desc Verify sup() result length matches expected
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "ok".sup();
@@ -233,6 +275,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1800
      * @tc.name testSup018
      * @tc.desc Verify sup() with carriage return \\r in text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "a\rb";
@@ -244,6 +289,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_1900
      * @tc.name testSup019
      * @tc.desc Verify sup() with emoji in text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "😀";
@@ -255,6 +303,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2000
      * @tc.name testSup020
      * @tc.desc Verify sup() with full-width characters in text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ＦＷ";
@@ -266,6 +317,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2100
      * @tc.name testSup021
      * @tc.desc Verify sup() does not modify the original string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: string = "ArkTS";
@@ -278,6 +332,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2200
      * @tc.name testSup022
      * @tc.desc Verify sup() with ISO 8859-1 Latin accented content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "café".sup();
@@ -288,6 +345,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2300
      * @tc.name testSup023
      * @tc.desc Verify sup() with half-width katakana content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ﾊﾝｶｸ".sup();
@@ -298,6 +358,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2400
      * @tc.name testSup024
      * @tc.desc Verify sup() with GBK Chinese text content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "中文测试".sup();
@@ -308,6 +371,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2500
      * @tc.name testSup025
      * @tc.desc Verify sup() chained with replace() strips tags
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1: string = "data".sup();
@@ -319,6 +385,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2600
      * @tc.name testSup026
      * @tc.desc Verify sup() with NUL character \\0 in content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "a\0b".sup();
@@ -330,6 +399,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2700
      * @tc.name testSup027
      * @tc.desc Verify sup() with backslash in content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "x\\y".sup();
@@ -340,6 +412,9 @@ export default function StringSupTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUP_2800
      * @tc.name testSup028
      * @tc.desc Verify sup() with mixed ASCII + CJK + Emoji content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testSup028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "E=mc² 中文 😀".sup();

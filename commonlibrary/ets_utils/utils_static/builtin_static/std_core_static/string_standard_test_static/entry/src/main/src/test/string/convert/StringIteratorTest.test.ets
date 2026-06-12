@@ -295,5 +295,64 @@ export default function StringIteratorTest(): void {
       expect(text.length).assertEqual(4);
       expect(count).assertEqual(3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1500
+     * @tc.name testIterator015
+     * @tc.desc Verify $_iterator() treats CRLF as two separate control characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let it: IterableIterator<String> = text.$_iterator();
+      let first = it.next();
+      let cr = it.next();
+      let lf = it.next();
+      let fourth = it.next();
+      let crVal: String = cr.value as Object as String;
+      let lfVal: String = lf.value as Object as String;
+      expect(first.done).assertFalse();
+      expect(crVal.toString().charCodeAt(0)).assertEqual(13);
+      expect(lfVal.toString().charCodeAt(0)).assertEqual(10);
+      expect(fourth.done).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1600
+     * @tc.name testIterator016
+     * @tc.desc Verify two iterators from the same string keep independent positions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("CACHE");
+      let left: IterableIterator<String> = text.$_iterator();
+      let right: IterableIterator<String> = text.$_iterator();
+      let leftFirst: String = left.next().value as Object as String;
+      let rightFirst: String = right.next().value as Object as String;
+      let leftSecond: String = left.next().value as Object as String;
+      expect(leftFirst.toString()).assertEqual("C");
+      expect(rightFirst.toString()).assertEqual("C");
+      expect(leftSecond.toString()).assertEqual("A");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1700
+     * @tc.name testIterator017
+     * @tc.desc Verify $_iterator() remains done after the iterator is exhausted
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Z");
+      let it: IterableIterator<String> = text.$_iterator();
+      expect(it.next().done).assertFalse();
+      expect(it.next().done).assertTrue();
+      expect(it.next().done).assertTrue();
+    });
   });
 }

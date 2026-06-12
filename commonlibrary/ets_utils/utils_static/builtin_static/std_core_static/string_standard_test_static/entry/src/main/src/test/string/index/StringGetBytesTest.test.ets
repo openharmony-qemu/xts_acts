@@ -43,7 +43,7 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_0100
      * @tc.name testGetBytes001
-     * @tc.desc Verify getBytes(0, length) on 5 ASCII chars returns 5 bytes
+     * @tc.desc Verify getBytes(0, length) on 5 ASCII chars returns expected bytes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -52,6 +52,8 @@ export default function StringGetBytesTest(): void {
       const text = new String("ArkTS");
       let bytes: byte[] = text.getBytes(0, text.length);
       expect(bytes.length).assertEqual(5);
+      expect(bytes[0]).assertEqual(65);
+      expect(bytes[4]).assertEqual(83);
     });
 
     /**
@@ -85,7 +87,7 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_0400
      * @tc.name testGetBytes004
-     * @tc.desc Verify getBytes(0, 2) partial range on "ABCD" returns 2 bytes
+     * @tc.desc Verify getBytes(0, 2) partial range on "ABCD" returns byte values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -94,6 +96,8 @@ export default function StringGetBytesTest(): void {
       const text = new String("ABCD");
       let bytes: byte[] = text.getBytes(0, 2);
       expect(bytes.length).assertEqual(2);
+      expect(bytes[0]).assertEqual(65);
+      expect(bytes[1]).assertEqual(66);
     });
 
     /**
@@ -169,7 +173,7 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_1000
      * @tc.name testGetBytes010
-     * @tc.desc Verify getBytes(0, length) on C0 control characters newline and tab returns 2 bytes
+     * @tc.desc Verify getBytes(0, length) on C0 newline and tab returns byte values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -178,6 +182,8 @@ export default function StringGetBytesTest(): void {
       const text = new String("\n\t");
       let bytes: byte[] = text.getBytes(0, text.length);
       expect(bytes.length).assertEqual(2);
+      expect(bytes[0]).assertEqual(10);
+      expect(bytes[1]).assertEqual(9);
     });
 
     /**
@@ -265,9 +271,9 @@ export default function StringGetBytesTest(): void {
      * @tc.level Level 2
      */
     it('testGetBytes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ABC");
+      const text = new String("AB");
       try {
-        let bytes: byte[] = text.getBytes(0, 10);
+        let bytes: byte[] = text.getBytes(0, 5);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
@@ -283,9 +289,9 @@ export default function StringGetBytesTest(): void {
      * @tc.level Level 2
      */
     it('testGetBytes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ABC");
+      const text = new String("ABCDE");
       try {
-        let bytes: byte[] = text.getBytes(3, 1);
+        let bytes: byte[] = text.getBytes(4, 2);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
@@ -295,7 +301,7 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_1800
      * @tc.name testGetBytes018
-     * @tc.desc Verify getBytes(1, length) returns bytes after first ASCII character
+     * @tc.desc Verify getBytes(1, length) returns expected bytes after first ASCII character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -304,6 +310,8 @@ export default function StringGetBytesTest(): void {
       const text = new String("ArkTS");
       let bytes: byte[] = text.getBytes(1, text.length);
       expect(bytes.length).assertEqual(4);
+      expect(bytes[0]).assertEqual(114);
+      expect(bytes[3]).assertEqual(83);
     });
 
     /**
@@ -323,15 +331,16 @@ export default function StringGetBytesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2000
      * @tc.name testGetBytes020
-     * @tc.desc Verify getBytes(0, 1) on emoji returns high-surrogate byte
+     * @tc.desc Verify getBytes() preserves selected embedded C0 NUL byte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetBytes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("馃榾");
-      let bytes: byte[] = text.getBytes(0, 1);
+      const text = new String("A\0B");
+      let bytes: byte[] = text.getBytes(1, 2);
       expect(bytes.length).assertEqual(1);
+      expect(bytes[0]).assertEqual(0);
     });
 
     /**
@@ -346,6 +355,8 @@ export default function StringGetBytesTest(): void {
       const text = new String("A\n\t");
       let bytes: byte[] = text.getBytes(1, text.length);
       expect(bytes.length).assertEqual(2);
+      expect(bytes[0]).assertEqual(10);
+      expect(bytes[1]).assertEqual(9);
     });
   });
 }

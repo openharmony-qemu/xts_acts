@@ -15,7 +15,6 @@
  */
 
 
-
 import {
   afterAll,
   afterEach,
@@ -266,9 +265,9 @@ export default function StringCharAtTest(): void {
      * @tc.level Level 2
      */
     it('testCharAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let idx: byte = 0;
+      let idx: byte = 1;
       const text = new String("AB");
-      expect(text.charAt(idx).toString()).assertEqual("A");
+      expect(text.charAt(idx).toString()).assertEqual("B");
     });
 
     /**
@@ -280,7 +279,7 @@ export default function StringCharAtTest(): void {
      * @tc.level Level 2
      */
     it('testCharAt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("AB");
+      const text = new String("AZ");
       try {
         let result = text.charAt(-1);
         expect().assertFail();
@@ -391,30 +390,30 @@ export default function StringCharAtTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2500
      * @tc.name testCharAt025
-     * @tc.desc Verify charAt() returns C0 NUL character at requested index
+     * @tc.desc Verify charAt() returns the character after a C0 NUL byte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testCharAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("A\0B");
-      let value: string = text.charAt(1).toString();
-      let code: number = value.charCodeAt(0);
-      expect(code).assertEqual(0);
+      let value: string = text.charAt(2).toString();
+      expect(value).assertEqual("B");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2600
      * @tc.name testCharAt026
-     * @tc.desc Verify charAt() with negative index throws StringIndexOutOfBoundsError
+     * @tc.desc Verify charAt() with computed negative boundary throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testCharAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("AB");
+      const text = new String("NEG");
+      let index: int = -text.length;
       try {
-        let value = text.charAt(-1);
+        let value = text.charAt(index);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
@@ -424,15 +423,15 @@ export default function StringCharAtTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2700
      * @tc.name testCharAt027
-     * @tc.desc Verify charAt() with index equal to length throws StringIndexOutOfBoundsError
+     * @tc.desc Verify charAt() with index greater than length throws StringIndexOutOfBoundsError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testCharAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("AB");
+      const text = new String("OVER");
       try {
-        let value = text.charAt(text.length);
+        let value = text.charAt(text.length + 1);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");

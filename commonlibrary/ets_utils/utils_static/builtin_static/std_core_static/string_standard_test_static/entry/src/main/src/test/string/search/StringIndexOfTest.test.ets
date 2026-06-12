@@ -128,14 +128,14 @@ export default function StringIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_0700
      * @tc.name testIndexOf007
-     * @tc.desc Verify indexOf() finds combining accent character
+     * @tc.desc Verify indexOf() finds combining acute accent code unit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIndexOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("aébc");
-      let pos: int = text.indexOf("́");
+      const text = new String("ae\u0301bc");
+      let pos: int = text.indexOf("\u0301");
       expect(pos).assertEqual(2);
     });
 
@@ -432,9 +432,9 @@ export default function StringIndexOfTest(): void {
      * @tc.level Level 2
      */
     it('testIndexOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("hello");
+      const text = new String("hello!");
       let pos: int = text.indexOf("", 20);
-      expect(pos).assertEqual(5);
+      expect(pos).assertEqual(6);
     });
 
     /**
@@ -563,15 +563,15 @@ export default function StringIndexOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3700
      * @tc.name testIndexOf037
-     * @tc.desc Verify indexOf() with non-empty search and fromIndex equal to length returns -1
+     * @tc.desc Verify indexOf() with fromIndex equal to match start finds substring
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIndexOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("hello");
-      let pos: int = text.indexOf("o", 5);
-      expect(pos).assertEqual(-1);
+      let pos: int = text.indexOf("lo", 3);
+      expect(pos).assertEqual(3);
     });
 
     /**

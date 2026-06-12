@@ -212,15 +212,15 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_1300
      * @tc.name testFontsize013
-     * @tc.desc Verify fontsize() with non-numeric string "abc" "test"
+     * @tc.desc Verify fontsize() preserves double-quote event-handler injection in size without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
-      expect(text.fontsize("abc")).assertEqual('<font size="abc">ArkTS</font>');
-      expect(text.fontsize("test")).assertEqual('<font size="test">ArkTS</font>');
+      let result: string = text.fontsize("5\" onclick=\"alert(1)\"");
+      expect(result).assertEqual('<font size="5&quot; onclick=&quot;alert(1)&quot;">ArkTS</font>');
     });
 
     /**
@@ -254,15 +254,15 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_1600
      * @tc.name testFontsize016
-     * @tc.desc Verify fontsize() with special symbol characters
+     * @tc.desc Verify fontsize() preserves tag-closing script injection in size without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "ArkTS";
-      let result: string = text.fontsize("!@#$%");
-      expect(result).assertEqual('<font size="!@#$%">ArkTS</font>');
+      let result: string = text.fontsize('5"><script>alert(1)</script>');
+      expect(result).assertEqual('<font size="5&quot;><script>alert(1)</script>">ArkTS</font>');
     });
 
     /**
@@ -312,29 +312,29 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_2000
      * @tc.name testFontsize020
-     * @tc.desc Verify fontsize(3) returns <font size="3">ArkTS</font>
+     * @tc.desc Verify fontsize(3) wraps body label content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "ArkTS";
+      let text: string = "body-copy";
       let result: string = text.fontsize(3);
-      expect(result).assertEqual('<font size="3">ArkTS</font>');
+      expect(result).assertEqual('<font size="3">body-copy</font>');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_2100
      * @tc.name testFontsize021
-     * @tc.desc Verify fontsize() preserves original string content
+     * @tc.desc Verify fontsize() preserves heading label content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "Hello World";
+      let text: string = "Section 2";
       let result: string = text.fontsize(2);
-      expect(result).assertEqual('<font size="2">Hello World</font>');
+      expect(result).assertEqual('<font size="2">Section 2</font>');
     });
 
     /**
@@ -482,15 +482,15 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_3200
      * @tc.name testFontsize032
-     * @tc.desc Verify fontsize() result indexOf finds original text
+     * @tc.desc Verify fontsize() result indexOf finds token text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "target";
+      let text: string = "badge:new";
       let result: string = text.fontsize(5);
-      let pos: int = result.indexOf("target");
+      let pos: int = result.indexOf("badge:new");
       expect(pos).assertEqual(15);
     });
 
@@ -622,15 +622,15 @@ export default function StringFontsizeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4200
      * @tc.name testFontsize042
-     * @tc.desc Verify fontsize() with NUL character \\0 in content
+     * @tc.desc Verify fontsize() preserves NUL byte inside size parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontsize042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "a\0b".fontsize(3);
-      let starts: boolean = result.startsWith('<font size="');
-      expect(starts).assertTrue();
+      let result: string = "text".fontsize("5\0px");
+      expect(result.charCodeAt(13)).assertEqual(0);
+      expect(result).assertEqual('<font size="5\0px">text</font>');
     });
 
     /**

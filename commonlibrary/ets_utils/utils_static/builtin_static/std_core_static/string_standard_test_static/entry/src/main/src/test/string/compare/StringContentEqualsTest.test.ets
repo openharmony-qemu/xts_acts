@@ -288,5 +288,50 @@ export default function StringContentEqualsTest(): void {
       let result: boolean = text.contentEquals(sb);
       expect(result).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1800
+     * @tc.name testContentEquals018
+     * @tc.desc Verify contentEquals() with path-like cache key returns true for exact match
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("/data/app/cache/index.json");
+      let sb: StringBuilder = new StringBuilder("/data/app/cache/index.json");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_1900
+     * @tc.name testContentEquals019
+     * @tc.desc Verify contentEquals() detects trailing space difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("token");
+      let sb: StringBuilder = new StringBuilder("token ");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2000
+     * @tc.name testContentEquals020
+     * @tc.desc Verify contentEquals() treats CRLF and LF line endings as different content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\r\nline2");
+      let sb: StringBuilder = new StringBuilder("line1\nline2");
+      let result: boolean = text.contentEquals(sb);
+      expect(result).assertFalse();
+    });
   });
 }

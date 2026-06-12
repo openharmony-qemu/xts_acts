@@ -65,11 +65,12 @@ export default function StringPadRightTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_0300
      * @tc.name testPadRight003
-     * @tc.desc Verify padRight() with punctuation char as padChar
+     * @tc.desc Verify padRight() aligns a CSV header field to fixed display width
      */
     it('testPadRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("col");
       let result: String = text.padRight(c' ', 5);
+      expect(result.toString()).assertEqual("col  ");
       expect(result.getLength()).assertEqual(5);
     });
 
@@ -167,12 +168,12 @@ export default function StringPadRightTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1200
      * @tc.name testPadRight012
-     * @tc.desc Verify padRight() on empty string creates padding-only result
+     * @tc.desc Verify padRight() formats a log level column without changing the token
      */
     it('testPadRight012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("");
-      let result: String = text.padRight(c'*', 3);
-      expect(result.toString()).assertEqual("***");
+      const level = new String("WARN");
+      let result: String = level.padRight(c' ', 7);
+      expect(result.toString()).assertEqual("WARN   ");
     });
 
     /**
@@ -215,6 +216,50 @@ export default function StringPadRightTest(): void {
       const text = new String("X");
       let result: String = text.padRight(c'\t', 3);
       expect(result.toString()).assertEqual("X\t\t");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1600
+     * @tc.name testPadRight016
+     * @tc.desc Verify padRight() formats a version prefix into a fixed-width label
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const version = new String("v1");
+      let result: String = version.padRight(c'.', 4);
+      expect(result.toString()).assertEqual("v1..");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1700
+     * @tc.name testPadRight017
+     * @tc.desc Verify padRight() aligns a command token in a fixed-width terminal column
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const command = new String("RUN");
+      let result: String = command.padRight(c' ', 6);
+      expect(result.toString()).assertEqual("RUN   ");
+      expect(result.charCodeAt(5)).assertEqual(32);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADRIGHT_1800
+     * @tc.name testPadRight018
+     * @tc.desc Verify padRight() can use NUL as a C0 control padChar
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadRight018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let result: String = text.padRight(c'\0', 3);
+      expect(result.getLength()).assertEqual(3);
+      expect(result.charCodeAt(1)).assertEqual(0);
     });
   });
 }

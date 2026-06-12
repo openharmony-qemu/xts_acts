@@ -239,13 +239,14 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_1600
      * @tc.name testFromCharCode016
-     * @tc.desc Verify String.fromCharCode() with dynamic variable code unit parameter
+     * @tc.desc Verify String.fromCharCode() accepts a computed code unit value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let code: int = 88;
+      let base: int = 65;
+      let code: int = base + 23;
       let result: string = String.fromCharCode(code);
       expect(result).assertEqual("X");
     });
@@ -292,14 +293,14 @@ export default function StringFromCharCodeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2000
      * @tc.name testFromCharCode020
-     * @tc.desc Verify String.fromCharCode(65) returns "A"
+     * @tc.desc Verify String.fromCharCode() builds a compact date token from numeric code units
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCharCode020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCharCode(65);
-      expect(result).assertEqual("A");
+      let result: string = String.fromCharCode(50, 48, 50, 54, 45, 48, 54, 45, 49, 50);
+      expect(result).assertEqual("2026-06-12");
     });
   });
 }

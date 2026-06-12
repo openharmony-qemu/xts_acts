@@ -277,14 +277,14 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_1900
      * @tc.name testFontcolor019
-     * @tc.desc Verify fontcolor() with XSS script tag string as color
+     * @tc.desc Verify fontcolor() preserves tag-closing script injection in color without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".fontcolor("<script>alert(1)</script>");
-      expect(result.startsWith('<font color="')).assertTrue();
+      let result: string = "text".fontcolor('red"><script>alert(1)</script>');
+      expect(result).assertEqual('<font color="red"><script>alert(1)</script>">text</font>');
     });
 
     /**
@@ -331,14 +331,14 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_2300
      * @tc.name testFontcolor023
-     * @tc.desc Verify fontcolor() preserves original string content
+     * @tc.desc Verify fontcolor() preserves status message content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "Hello World".fontcolor("red");
-      expect(result).assertEqual('<font color="red">Hello World</font>');
+      let result: string = "Warning: disk full".fontcolor("red");
+      expect(result).assertEqual('<font color="red">Warning: disk full</font>');
     });
 
     /**
@@ -455,28 +455,28 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_3200
      * @tc.name testFontcolor032
-     * @tc.desc Verify fontcolor() result indexOf finds original text
+     * @tc.desc Verify fontcolor() result indexOf finds error code text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "target".fontcolor("blue");
-      let pos: int = result.indexOf("target");
+      let result: string = "ERR_500".fontcolor("blue");
+      let pos: int = result.indexOf("ERR_500");
       expect(pos).assertEqual(19);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_3300
      * @tc.name testFontcolor033
-     * @tc.desc Verify fontcolor() with CSS named color "cyan"
+     * @tc.desc Verify fontcolor() with CSS named color "cyan" on status text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".fontcolor("cyan");
-      expect(result).assertEqual('<font color="cyan">text</font>');
+      let result: string = "status:ok".fontcolor("cyan");
+      expect(result).assertEqual('<font color="cyan">status:ok</font>');
     });
 
     /**
@@ -495,29 +495,28 @@ export default function StringFontcolorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_3500
      * @tc.name testFontcolor035
-     * @tc.desc Verify fontcolor() with color containing double-quote breaks attribute boundary
+     * @tc.desc Verify fontcolor() preserves double-quote event-handler injection in color without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".fontcolor("red\" onmouseover=\"alert(1)");
-      let starts: boolean = result.startsWith('<font color="');
-      expect(starts).assertTrue();
+      let result: string = "text".fontcolor("red\" onmouseover=\"alert(1)\"");
+      expect(result).assertEqual('<font color="red" onmouseover="alert(1)"">text</font>');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_3600
      * @tc.name testFontcolor036
-     * @tc.desc Verify fontcolor() with color containing > that could close tag
+     * @tc.desc Verify fontcolor() preserves NUL byte inside color parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFontcolor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".fontcolor(">");
-      let starts: boolean = result.startsWith('<font color="');
-      expect(starts).assertTrue();
+      let result: string = "text".fontcolor("red\0blue");
+      expect(result.charCodeAt(16)).assertEqual(0);
+      expect(result).assertEqual('<font color="red\0blue">text</font>');
     });
 
     /**

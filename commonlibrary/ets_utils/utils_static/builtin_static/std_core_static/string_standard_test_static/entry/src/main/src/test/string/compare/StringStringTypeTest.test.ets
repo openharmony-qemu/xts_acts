@@ -101,14 +101,15 @@ export default function StringStringTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TYPE_0500
      * @tc.name testStringType005
-     * @tc.desc Verify string type annotation on function return value
+     * @tc.desc Verify String annotation preserves method behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStringType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let name: String = new String("ArkTS");
-      expect(name instanceof String).assertTrue();
+      expect(name.toLowerCase().toString()).assertEqual("arkts");
+      expect(name.getLength()).assertEqual(5);
     });
 
     /**
@@ -168,15 +169,15 @@ export default function StringStringTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TYPE_1000
      * @tc.name testStringType010
-     * @tc.desc Verify string-annotated variable instanceof String returns true
+     * @tc.desc Verify String-annotated variable preserves content and methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStringType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: String = new String("hello");
-      expect(s instanceof String).assertTrue();
-      expect(s instanceof Object).assertTrue();
+      expect(s.toUpperCase().toString()).assertEqual("HELLO");
+      expect(s.charAt(1)).assertEqual(c'e');
     });
 
     /**

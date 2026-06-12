@@ -297,14 +297,14 @@ export default function StringFromCodePointTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2100
      * @tc.name testFromCodePoint021
-     * @tc.desc Verify String.fromCodePoint(65) returns "A"
+     * @tc.desc Verify String.fromCodePoint() builds a protocol token from mixed code points
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFromCodePoint021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = String.fromCodePoint(65);
-      expect(result).assertEqual("A");
+      let result: string = String.fromCodePoint(79, 75, 45, 20013);
+      expect(result).assertEqual("OK-中");
     });
 
     /**

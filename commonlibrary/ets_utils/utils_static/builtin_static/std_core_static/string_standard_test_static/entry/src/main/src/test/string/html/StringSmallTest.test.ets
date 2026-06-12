@@ -97,14 +97,14 @@ export default function StringSmallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0500
      * @tc.name testSmall005
-     * @tc.desc Verify small() wraps lowercase ASCII content exactly
+     * @tc.desc Verify small() wraps a compact footnote marker exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSmall005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".small();
-      expect(result).assertEqual("<small>test</small>");
+      let result: string = "fn:1".small();
+      expect(result).assertEqual("<small>fn:1</small>");
     });
 
     /**
@@ -136,14 +136,14 @@ export default function StringSmallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0800
      * @tc.name testSmall008
-     * @tc.desc Verify small() preserves mixed-case ASCII content exactly
+     * @tc.desc Verify small() preserves a mixed-case product code exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSmall008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "TeSt".small();
-      expect(result).assertEqual("<small>TeSt</small>");
+      let result: string = "SkuX9".small();
+      expect(result).assertEqual("<small>SkuX9</small>");
     });
 
     /**
@@ -247,7 +247,7 @@ export default function StringSmallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_1600
      * @tc.name testSmall016
-     * @tc.desc Verify small() with emoji characters
+     * @tc.desc Verify small() with emoji mixed with ASCII label text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -375,14 +375,14 @@ export default function StringSmallTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_2500
      * @tc.name testSmall025
-     * @tc.desc Verify small() result indexOf finds original text
+     * @tc.desc Verify small() result indexOf finds an original note id
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSmall025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "target".small();
-      let pos: int = result.indexOf("target");
+      let result: string = "note-7".small();
+      let pos: int = result.indexOf("note-7");
       expect(pos).assertEqual(7);
     });
 

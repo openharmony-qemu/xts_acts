@@ -100,27 +100,27 @@ export default function StringSubTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUB_0500
      * @tc.name testSub005
-     * @tc.desc Verify sub() returns <sub>test</sub> for input "test"
+     * @tc.desc Verify sub() wraps a chemical formula digit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSub005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".sub();
-      expect(result).assertEqual("<sub>test</sub>");
+      let result: string = "2".sub();
+      expect(result).assertEqual("<sub>2</sub>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUB_0600
      * @tc.name testSub006
-     * @tc.desc Verify sub() wraps lowercase ASCII content exactly
+     * @tc.desc Verify sub() wraps a variable suffix exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSub006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "abc".sub();
-      expect(result).assertEqual("<sub>abc</sub>");
+      let result: string = "n+1".sub();
+      expect(result).assertEqual("<sub>n+1</sub>");
     });
 
     /**

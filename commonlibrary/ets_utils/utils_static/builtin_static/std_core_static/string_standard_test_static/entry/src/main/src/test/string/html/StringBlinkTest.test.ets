@@ -100,27 +100,27 @@ export default function StringBlinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_0500
      * @tc.name testBlink005
-     * @tc.desc Verify blink() returns <blink>test</blink> for input "test"
+     * @tc.desc Verify blink() preserves an alert status token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".blink();
-      expect(result).assertEqual("<blink>test</blink>");
+      let result: string = "alert:stale".blink();
+      expect(result).assertEqual("<blink>alert:stale</blink>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_0600
      * @tc.name testBlink006
-     * @tc.desc Verify blink() wraps lowercase ASCII content exactly
+     * @tc.desc Verify blink() preserves a route-like lowercase token exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "abc".blink();
-      expect(result).assertEqual("<blink>abc</blink>");
+      let result: string = "home/settings".blink();
+      expect(result).assertEqual("<blink>home/settings</blink>");
     });
 
     /**
@@ -528,13 +528,13 @@ export default function StringBlinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BLINK_3600
      * @tc.name testBlink036
-     * @tc.desc Verify blink() called multiple times returns consistent results
+     * @tc.desc Verify blink() called multiple times on a timer label returns consistent results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBlink036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "test";
+      let text: string = "retry-30s";
       let r1: string = text.blink();
       let r2: string = text.blink();
       expect(r1).assertEqual(r2);

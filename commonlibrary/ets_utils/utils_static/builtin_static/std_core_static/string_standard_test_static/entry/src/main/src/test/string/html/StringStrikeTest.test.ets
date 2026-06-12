@@ -98,14 +98,14 @@ export default function StringStrikeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_0500
      * @tc.name testStrike005
-     * @tc.desc Verify strike() returns complete tag-wrapped string
+     * @tc.desc Verify strike() wraps a deprecated API name completely
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "hello".strike();
-      expect(result).assertEqual("<strike>hello</strike>");
+      let result: string = "oldApi".strike();
+      expect(result).assertEqual("<strike>oldApi</strike>");
     });
 
     /**
@@ -155,27 +155,27 @@ export default function StringStrikeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_0900
      * @tc.name testStrike009
-     * @tc.desc Verify strike() returns <strike>test</strike> for input "test"
+     * @tc.desc Verify strike() preserves a removal marker token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".strike();
-      expect(result).assertEqual("<strike>test</strike>");
+      let result: string = "-removed-".strike();
+      expect(result).assertEqual("<strike>-removed-</strike>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_1000
      * @tc.name testStrike010
-     * @tc.desc Verify strike() wraps lowercase ASCII content exactly
+     * @tc.desc Verify strike() preserves status token punctuation literally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".strike();
-      expect(result).assertEqual("<strike>test</strike>");
+      let result: string = "old_value".strike();
+      expect(result).assertEqual("<strike>old_value</strike>");
     });
 
     /**
@@ -437,14 +437,14 @@ export default function StringStrikeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_2900
      * @tc.name testStrike029
-     * @tc.desc Verify strike() result indexOf finds original text
+     * @tc.desc Verify strike() result indexOf finds an original issue id
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testStrike029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "target".strike();
-      let pos: int = result.indexOf("target");
+      let result: string = "ISSUE-1024".strike();
+      let pos: int = result.indexOf("ISSUE-1024");
       expect(pos).assertEqual(8);
     });
 
@@ -459,6 +459,7 @@ export default function StringStrikeTest(): void {
     it('testStrike030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".strike();
       expect(result).assertEqual("<strike>ab</strike>");
+      expect(result.charCodeAt(9)).assertEqual(11);
     });
 
     /**
@@ -472,6 +473,7 @@ export default function StringStrikeTest(): void {
     it('testStrike031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".strike();
       expect(result).assertEqual("<strike>ab</strike>");
+      expect(result.charCodeAt(9)).assertEqual(12);
     });
 
     /**

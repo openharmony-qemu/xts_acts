@@ -182,6 +182,7 @@ export default function StringIsEmptyTest(): void {
     it('testIsEmpty011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String(" ");
       expect(text.isEmpty()).assertFalse();
+      expect(text.getLength()).assertEqual(1);
     });
 
     /**
@@ -256,15 +257,15 @@ export default function StringIsEmptyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_1700
      * @tc.name testIsEmpty017
-     * @tc.desc Verify isEmpty() on substring result that is empty
+     * @tc.desc Verify isEmpty() after replaceAll removes every character
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsEmpty017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("abc");
-      let sub: string = text.substring(1, 1);
-      const text2 = new String(sub);
+      const text = new String("----");
+      let removed: string = text.replaceAll("-", "");
+      const text2 = new String(removed);
       let empty: boolean = text2.isEmpty();
       expect(empty).assertTrue();
     });
@@ -302,17 +303,16 @@ export default function StringIsEmptyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2000
      * @tc.name testIsEmpty020
-     * @tc.desc Verify isEmpty() after substring that results in empty
+     * @tc.desc Verify isEmpty() on zero-width space returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsEmpty020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("hello");
-      let sub: string = text.substring(2, 2);
-      const text4 = new String(sub);
-      let empty: boolean = text4.isEmpty();
-      expect(empty).assertTrue();
+      const text = new String("\u200B");
+      let empty: boolean = text.isEmpty();
+      expect(empty).assertFalse();
+      expect(text.length).assertEqual(1);
     });
 
     /**

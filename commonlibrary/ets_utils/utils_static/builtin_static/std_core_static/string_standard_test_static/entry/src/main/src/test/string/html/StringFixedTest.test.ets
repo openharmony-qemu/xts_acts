@@ -100,27 +100,27 @@ export default function StringFixedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_0500
      * @tc.name testFixed005
-     * @tc.desc Verify fixed() returns <tt>test</tt> for input "test"
+     * @tc.desc Verify fixed() preserves a command-line option token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".fixed();
-      expect(result).assertEqual("<tt>test</tt>");
+      let result: string = "--verbose".fixed();
+      expect(result).assertEqual("<tt>--verbose</tt>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_0600
      * @tc.name testFixed006
-     * @tc.desc Verify fixed() wraps lowercase ASCII content exactly
+     * @tc.desc Verify fixed() wraps a dotted identifier exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "abc".fixed();
-      expect(result).assertEqual("<tt>abc</tt>");
+      let result: string = "app.cache.key".fixed();
+      expect(result).assertEqual("<tt>app.cache.key</tt>");
     });
 
     /**
@@ -292,14 +292,14 @@ export default function StringFixedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_1900
      * @tc.name testFixed019
-     * @tc.desc Verify fixed() result includes original text via includes
+     * @tc.desc Verify fixed() result includes an original error code via includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFixed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r1: string = "test".fixed();
-      let inc: boolean = r1.includes("test");
+      let r1: string = "ERR_404".fixed();
+      let inc: boolean = r1.includes("ERR_404");
       expect(inc).assertTrue();
     });
 

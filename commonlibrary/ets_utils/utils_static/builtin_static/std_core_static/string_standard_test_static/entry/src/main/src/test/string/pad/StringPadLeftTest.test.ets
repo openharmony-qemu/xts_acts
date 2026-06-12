@@ -168,15 +168,15 @@ export default function StringPadLeftTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADLEFT_1100
      * @tc.name testPadLeft011
-     * @tc.desc Verify padLeft() with ASCII digit padChar
+     * @tc.desc Verify padLeft() formats an order number to fixed width
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testPadLeft011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("5");
-      let result: String = text.padLeft(c'0', 3);
-      expect(result.toString()).assertEqual("005");
+      const orderId = new String("57");
+      let result: String = orderId.padLeft(c'0', 6);
+      expect(result.toString()).assertEqual("000057");
     });
 
     /**
@@ -196,15 +196,15 @@ export default function StringPadLeftTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADLEFT_1300
      * @tc.name testPadLeft013
-     * @tc.desc Verify padLeft() preserves ISO 8859-1 Latin-1 source content
+     * @tc.desc Verify padLeft() aligns a signed balance in a fixed-width report column
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testPadLeft013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("Caf\u00E9");
-      let result: String = text.padLeft(c'-', 6);
-      expect(result.toString()).assertEqual("--Caf\u00E9");
+      const balance = new String("-42");
+      let result: String = balance.padLeft(c' ', 6);
+      expect(result.toString()).assertEqual("   -42");
     });
 
     /**
@@ -233,6 +233,49 @@ export default function StringPadLeftTest(): void {
       const text = new String("X");
       let result: String = text.padLeft(c'\t', 3);
       expect(result.toString()).assertEqual("\t\tX");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADLEFT_1600
+     * @tc.name testPadLeft016
+     * @tc.desc Verify padLeft() formats a day-of-month field to two digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadLeft016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const day = new String("9");
+      let result: String = day.padLeft(c'0', 2);
+      expect(result.toString()).assertEqual("09");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADLEFT_1700
+     * @tc.name testPadLeft017
+     * @tc.desc Verify padLeft() formats a numeric permission token to fixed width
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadLeft017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const mode = new String("755");
+      let result: String = mode.padLeft(c'0', 4);
+      expect(result.toString()).assertEqual("0755");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADLEFT_1800
+     * @tc.name testPadLeft018
+     * @tc.desc Verify padLeft() can use NUL as a C0 control padChar
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadLeft018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let result: String = text.padLeft(c'\0', 3);
+      expect(result.getLength()).assertEqual(3);
+      expect(result.charCodeAt(0)).assertEqual(0);
     });
   });
 }

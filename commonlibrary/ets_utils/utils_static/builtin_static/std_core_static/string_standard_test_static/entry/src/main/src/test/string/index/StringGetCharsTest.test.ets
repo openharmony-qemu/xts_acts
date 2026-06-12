@@ -273,5 +273,52 @@ export default function StringGetCharsTest(): void {
       }
       expect(result).assertEqual("TypeScript");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_1700
+     * @tc.name testGetChars017
+     * @tc.desc Verify getChars() exposes CRLF as carriage-return and newline chars
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(4);
+      expect(chars[1].toString().charCodeAt(0)).assertEqual(13);
+      expect(chars[2].toString().charCodeAt(0)).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_1800
+     * @tc.name testGetChars018
+     * @tc.desc Verify getChars() includes zero-width space between visible characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(3);
+      expect(chars[1].toString().charCodeAt(0)).assertEqual(8203);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_1900
+     * @tc.name testGetChars019
+     * @tc.desc Verify modifying getChars() result does not change the original string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ABC");
+      let chars: char[] = text.getChars();
+      chars[0] = c'Z';
+      expect(text.toString()).assertEqual("ABC");
+      expect(chars[0].toString()).assertEqual("Z");
+    });
   });
 }

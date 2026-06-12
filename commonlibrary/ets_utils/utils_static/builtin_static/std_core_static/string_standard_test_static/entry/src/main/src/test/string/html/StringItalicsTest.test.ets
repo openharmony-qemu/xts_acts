@@ -153,27 +153,27 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_0900
      * @tc.name testItalics009
-     * @tc.desc Verify italics() returns <i>test</i> for input "test"
+     * @tc.desc Verify italics() preserves a quoted status phrase
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".italics();
-      expect(result).assertEqual("<i>test</i>");
+      let result: string = "\"draft\"".italics();
+      expect(result).assertEqual("<i>\"draft\"</i>");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_1000
      * @tc.name testItalics010
-     * @tc.desc Verify italics() wraps lowercase ASCII content exactly
+     * @tc.desc Verify italics() preserves markdown-like marker content literally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".italics();
-      expect(result).assertEqual("<i>test</i>");
+      let result: string = "*draft*".italics();
+      expect(result).assertEqual("<i>*draft*</i>");
     });
 
     /**
@@ -339,13 +339,13 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_2200
      * @tc.name testItalics022
-     * @tc.desc Verify italics() called multiple times returns consistent results
+     * @tc.desc Verify italics() called multiple times on a note id returns consistent results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "test";
+      let text: string = "note-42";
       let r1: string = text.italics();
       let r2: string = text.italics();
       expect(r1).assertEqual(r2);
@@ -396,15 +396,15 @@ export default function StringItalicsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_2600
      * @tc.name testItalics026
-     * @tc.desc Verify italics() on replace result wraps replaced content
+     * @tc.desc Verify italics() on sanitized identifier wraps replaced content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testItalics026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let replaced: string = "Ark-TS".replace("-", "");
+      let replaced: string = "user id".replace(" ", "_");
       let result: string = replaced.italics();
-      expect(result).assertEqual("<i>ArkTS</i>");
+      expect(result).assertEqual("<i>user_id</i>");
     });
 
     /**
@@ -632,6 +632,7 @@ export default function StringItalicsTest(): void {
     it('testItalics042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".italics();
       expect(result).assertEqual("<i>ab</i>");
+      expect(result.charCodeAt(4)).assertEqual(11);
     });
 
     /**
@@ -645,6 +646,7 @@ export default function StringItalicsTest(): void {
     it('testItalics043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "ab".italics();
       expect(result).assertEqual("<i>ab</i>");
+      expect(result.charCodeAt(4)).assertEqual(12);
     });
 
     /**

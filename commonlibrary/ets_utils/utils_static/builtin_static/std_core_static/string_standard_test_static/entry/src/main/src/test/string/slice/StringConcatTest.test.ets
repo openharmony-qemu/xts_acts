@@ -344,15 +344,15 @@ export default function StringConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_2200
      * @tc.name testConcat022
-     * @tc.desc Verify concat() with mixed single/double quote strings
+     * @tc.desc Verify concat() builds URL query text from multiple segments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testConcat022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const str1 = new String('Hello');
-      let result: String = str1.concat(" ").concat("World");
-      expect(result.toString()).assertEqual('Hello World');
+      const path = new String("/search");
+      let result: String = path.concat("?q=").concat("arkts").concat("&page=1");
+      expect(result.toString()).assertEqual("/search?q=arkts&page=1");
     });
 
     /**

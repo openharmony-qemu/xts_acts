@@ -274,29 +274,29 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1700
      * @tc.name testAnchor017
-     * @tc.desc Verify anchor() return type is string
+     * @tc.desc Verify anchor() wraps documentation section id without changing content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testAnchor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "ArkTS";
-      let result: string = text.anchor("top");
-      expect(result).assertEqual('<a name="top">ArkTS</a>');
+      let text: string = "Overview";
+      let result: string = text.anchor("docs-overview");
+      expect(result).assertEqual('<a name="docs-overview">Overview</a>');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1800
      * @tc.name testAnchor018
-     * @tc.desc Verify anchor() preserves original string content
+     * @tc.desc Verify anchor() preserves release note title content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testAnchor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "Hello World";
-      let result: string = text.anchor("pos");
-      expect(result).assertEqual('<a name="pos">Hello World</a>');
+      let text: string = "Release Notes";
+      let result: string = text.anchor("release-notes");
+      expect(result).assertEqual('<a name="release-notes">Release Notes</a>');
     });
 
     /**
@@ -599,17 +599,16 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_3900
      * @tc.name testAnchor039
-     * @tc.desc Verify anchor() with HTML onclick event injection in name
+     * @tc.desc Verify anchor() preserves double-quote onclick injection in name without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testAnchor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let text: string = "safe";
-      let name: string = "\" onclick=\"alert(1)\"";
+      let name: string = "a\" onclick=\"alert(1)\"";
       let result: string = text.anchor(name);
-      let starts: boolean = result.startsWith('<a name="');
-      expect(starts).assertTrue();
+      expect(result).assertEqual('<a name="a" onclick="alert(1)"">safe</a>');
     });
 
     /**
@@ -719,15 +718,15 @@ export default function StringAnchorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_4700
      * @tc.name testAnchor047
-     * @tc.desc Verify anchor() with both name and text containing special characters
+     * @tc.desc Verify anchor() preserves tag-closing script injection in name without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testAnchor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "<div>";
-      let result: string = text.anchor("\"test\"");
-      expect(result).assertEqual('<a name="\"test\""><div></a>');
+      let text: string = "safe";
+      let result: string = text.anchor('a"><script>alert(1)</script>');
+      expect(result).assertEqual('<a name="a"><script>alert(1)</script>">safe</a>');
     });
 
     /**
@@ -1377,7 +1376,7 @@ export default function StringAnchorTest(): void {
      */
     it('testAnchor096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "data".anchor("mid");
-      let parts: String[] = result.split('"');
+      let parts: String[] = result.split("\"");
       expect(parts[1].toString()).assertEqual("mid");
     });
 

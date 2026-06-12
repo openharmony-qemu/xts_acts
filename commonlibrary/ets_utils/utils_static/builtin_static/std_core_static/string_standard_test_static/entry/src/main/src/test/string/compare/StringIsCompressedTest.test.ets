@@ -85,16 +85,16 @@ export default function StringIsCompressedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_0400
      * @tc.name testIsCompressed004
-     * @tc.desc Verify isCompressed() consistency returns same result on repeated calls
+     * @tc.desc Verify isCompressed() on ASCII substring result returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsCompressed004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("Same");
-      let r1: boolean = text.isCompressed();
-      let r2: boolean = text.isCompressed();
-      expect(r1).assertEqual(r2);
+      const source = new String("prefix-ASCII-suffix");
+      const text = new String(source.substring(7, 12));
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
     });
 
     /**
@@ -184,13 +184,13 @@ export default function StringIsCompressedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1100
      * @tc.name testIsCompressed011
-     * @tc.desc Verify isCompressed() on empty string returns true
+     * @tc.desc Verify isCompressed() on an ASCII string derived from trim returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIsCompressed011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("");
+      const text = new String("  OK  ".trim());
       let result: boolean = text.isCompressed();
       expect(result).assertTrue();
     });
@@ -235,6 +235,48 @@ export default function StringIsCompressedTest(): void {
       const text = new String("ID-\u4E2D\u6587-001");
       let result: boolean = text.isCompressed();
       expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1500
+     * @tc.name testIsCompressed015
+     * @tc.desc Verify isCompressed() on ASCII log tag with digits and separators returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("WARN-2026-06-12T08:30:00Z");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1600
+     * @tc.name testIsCompressed016
+     * @tc.desc Verify isCompressed() on zero-width space inside ASCII text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1700
+     * @tc.name testIsCompressed017
+     * @tc.desc Verify isCompressed() on CRLF-delimited ASCII text returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("line1\r\nline2");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
     });
   });
 }

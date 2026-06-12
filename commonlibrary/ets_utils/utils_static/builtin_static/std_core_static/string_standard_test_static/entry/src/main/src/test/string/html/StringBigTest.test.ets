@@ -95,14 +95,14 @@ export default function StringBigTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_0500
      * @tc.name testBig005
-     * @tc.desc Verify big() preserves content with numbers
+     * @tc.desc Verify big() preserves a semantic version token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBig005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "123abc".big();
-      expect(result).assertEqual("<big>123abc</big>");
+      let result: string = "v1.2.3".big();
+      expect(result).assertEqual("<big>v1.2.3</big>");
     });
 
     /**
@@ -160,14 +160,14 @@ export default function StringBigTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_1000
      * @tc.name testBig010
-     * @tc.desc Verify big() returns <big>test</big> for input "test"
+     * @tc.desc Verify big() preserves a feature flag token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBig010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "test".big();
-      expect(result).assertEqual("<big>test</big>");
+      let result: string = "feature:beta".big();
+      expect(result).assertEqual("<big>feature:beta</big>");
     });
 
     /**
@@ -398,15 +398,15 @@ export default function StringBigTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_2800
      * @tc.name testBig028
-     * @tc.desc Verify big() chained with bold() produces correctly nested tags
+     * @tc.desc Verify big() chained with bold() preserves a file extension label
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBig028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r1: string = "test".big();
+      let r1: string = "report.csv".big();
       let result: string = r1.bold();
-      expect(result).assertEqual("<b><big>test</big></b>");
+      expect(result).assertEqual("<b><big>report.csv</big></b>");
     });
 
     /**
@@ -751,13 +751,13 @@ export default function StringBigTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_5400
      * @tc.name testBig054
-     * @tc.desc Verify big() called twice on same string returns identical results
+     * @tc.desc Verify big() called twice on the same status token returns identical results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBig054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "test";
+      let text: string = "status:ready";
       let r1: string = text.big();
       let r2: string = text.big();
       expect(r1).assertEqual(r2);

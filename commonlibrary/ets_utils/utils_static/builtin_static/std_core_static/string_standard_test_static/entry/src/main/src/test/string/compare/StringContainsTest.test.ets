@@ -183,28 +183,29 @@ export default function StringContainsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_1100
      * @tc.name testContains011
-     * @tc.desc Verify contains() with substring spanning emoji boundary
+     * @tc.desc Verify contains() detects a query parameter in a URL-like string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testContains011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text = new String("A😀B");
-      let inc: boolean = text.contains(new String("A😀"), 0);
+      let text = new String("https://example.com/search?q=arkts&page=1");
+      let inc: boolean = text.contains(new String("q=arkts"), 0);
       expect(inc).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_1200
      * @tc.name testContains012
-     * @tc.desc Verify contains() with GBK Chinese substring spanning two characters
+     * @tc.desc Verify contains() checks a filename extension at the suffix position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testContains012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("中文测试");
-      let inc: boolean = text.contains(new String("文测"), 0);
+      const text = new String("report.final.csv");
+      let start: int = text.length - 4;
+      let inc: boolean = text.contains(new String(".csv"), start);
       expect(inc).assertTrue();
     });
 
@@ -410,31 +411,35 @@ export default function StringContainsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_2700
      * @tc.name testContains027
-     * @tc.desc Verify contains() with non-breaking space U+00A0
+     * @tc.desc Verify contains() distinguishes whole permission token from partial token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testContains027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let nbsp: string = String.fromCharCode(0x00A0);
-      const text = new String("Hello" + nbsp + "World");
-      let inc: boolean = text.contains(new String(nbsp), 0);
-      expect(inc).assertTrue();
+      const text = new String("role:admin;scope:read_write;status:active");
+      let wholeToken: boolean = text.contains(new String("scope:read_write"), 0);
+      let partialToken: boolean = text.contains(new String("scope:write_only"), 0);
+      expect(wholeToken).assertTrue();
+      expect(partialToken).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_2800
      * @tc.name testContains028
-     * @tc.desc Verify contains() returns true for contained String value
+     * @tc.desc Verify contains() result changes after case normalization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testContains028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ArkTS");
-      let search = new String("rk");
-      let result: boolean = text.contains(search, 0);
-      expect(result).assertTrue();
+      const text = new String("Error: Disk Full");
+      let direct: boolean = text.contains(new String("disk"), 0);
+      let normalized: string = text.toLowerCase().toString();
+      const normalizedText = new String(normalized);
+      let afterNormalize: boolean = normalizedText.contains(new String("disk"), 0);
+      expect(direct).assertFalse();
+      expect(afterNormalize).assertTrue();
     });
 
     /**

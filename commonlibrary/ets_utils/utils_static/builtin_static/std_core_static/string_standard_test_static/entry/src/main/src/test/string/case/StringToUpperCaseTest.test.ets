@@ -137,15 +137,15 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0800
      * @tc.name testToUpperCase008
-     * @tc.desc Verify toUpperCase() with dynamic variable returns correct result
+     * @tc.desc Verify toUpperCase() normalizes a dynamic environment variable key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToUpperCase008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: String = new String("MiXeD");
+      const text: String = new String("path_home");
       let result: String = text.toUpperCase();
-      expect(result.toString()).assertEqual("MIXED");
+      expect(result.toString()).assertEqual("PATH_HOME");
     });
 
     /**
@@ -194,29 +194,29 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_1200
      * @tc.name testToUpperCase012
-     * @tc.desc Verify toUpperCase() on already uppercase returns same
+     * @tc.desc Verify toUpperCase() keeps an already uppercase permission token unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToUpperCase012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("ARKTS");
+      const text = new String("READ_ONLY");
       let result: String = text.toUpperCase();
-      expect(result.toString()).assertEqual("ARKTS");
+      expect(result.toString()).assertEqual("READ_ONLY");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_1300
      * @tc.name testToUpperCase013
-     * @tc.desc Verify toUpperCase() on single character
+     * @tc.desc Verify toUpperCase() normalizes an HTTP method token
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToUpperCase013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("hello world");
+      const text = new String("post");
       let result: String = text.toUpperCase();
-      expect(result.toString()).assertEqual("HELLO WORLD");
+      expect(result.toString()).assertEqual("POST");
     });
 
     /**
@@ -407,15 +407,15 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_2700
      * @tc.name testToUpperCase027
-     * @tc.desc Verify toUpperCase() on all-lowercase alphabet
+     * @tc.desc Verify toUpperCase() normalizes a log level token for comparison
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToUpperCase027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("abcdefghijklmnopqrstuvwxyz");
+      const text = new String("warning");
       let result: String = text.toUpperCase();
-      expect(result.toString()).assertEqual("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+      expect(result.toString()).assertEqual("WARNING");
     });
 
     /**
@@ -435,16 +435,15 @@ export default function StringToUpperCaseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_2900
      * @tc.name testToUpperCase029
-     * @tc.desc Verify toUpperCase() returned string is independent of original
+     * @tc.desc Verify toUpperCase() preserves embedded C0 NUL while converting ASCII
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToUpperCase029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("hello");
+      const text = new String("ok\0done");
       let upper: String = text.toUpperCase();
-      expect(text.toString()).assertEqual("hello");
-      expect(upper.toString()).assertEqual("HELLO");
+      expect(upper.toString()).assertEqual("OK\0DONE");
     });
 
     /**

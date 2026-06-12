@@ -214,15 +214,15 @@ export default function StringToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_1300
      * @tc.name testToString013
-     * @tc.desc Verify toString() with dynamic variable preserves content
+     * @tc.desc Verify toString() with dynamic configuration path preserves content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: String = new String("GitHub");
+      const text: String = new String("config.path=/data/app");
       let result: String = text.toString();
-      expect(result.toString()).assertEqual("GitHub");
+      expect(result.toString()).assertEqual("config.path=/data/app");
     });
 
     /**
@@ -333,7 +333,7 @@ export default function StringToStringTest(): void {
      * @tc.level Level 2
      */
     it('testToString021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("ArkTS");
+      let str: String = new String("cache-key");
       let ts: String = str.toString();
       let vo: String = str.valueOf();
       expect(ts.toString()).assertEqual(vo.toString());
@@ -342,15 +342,15 @@ export default function StringToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOSTRING_2200
      * @tc.name testToString022
-     * @tc.desc Verify toString() returns "test" for String "test"
+     * @tc.desc Verify toString() returns mode flag string unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testToString022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let str: String = new String("test");
+      let str: String = new String("mode=debug");
       let result: String = str.toString();
-      expect(result.toString()).assertEqual("test");
+      expect(result.toString()).assertEqual("mode=debug");
     });
 
     /**

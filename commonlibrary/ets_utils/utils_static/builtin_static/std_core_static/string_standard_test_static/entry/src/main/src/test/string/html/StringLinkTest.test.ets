@@ -94,6 +94,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("https://secure.example.org/login");
       expect(result).assertEqual('<a href="https://secure.example.org/login">ArkTS</a>');
+      expect(result.indexOf("secure.example.org")).assertLarger(0);
     });
 
     /**
@@ -150,6 +151,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("http://localhost:8080");
       expect(result).assertEqual('<a href="http://localhost:8080">ArkTS</a>');
+      expect(result.indexOf(":8080")).assertLarger(0);
     });
 
     /**
@@ -164,6 +166,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("https://example.com?name=test&age=20");
       expect(result).assertEqual('<a href="https://example.com?name=test&age=20">ArkTS</a>');
+      expect(result.indexOf("name=test&age=20")).assertLarger(0);
     });
 
     /**
@@ -178,6 +181,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("https://example.com/page#top");
       expect(result).assertEqual('<a href="https://example.com/page#top">ArkTS</a>');
+      expect(result.indexOf("#top")).assertLarger(0);
     });
 
     /**
@@ -211,15 +215,15 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_1300
      * @tc.name testLink013
-     * @tc.desc Verify link() return type is string
+     * @tc.desc Verify link() preserves mailto href scheme literally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let text: string = "ArkTS";
-      let result: string = text.link("https://example.com");
-      expect(result).assertEqual('<a href="https://example.com">ArkTS</a>');
+      let text: string = "Contact";
+      let result: string = text.link("mailto:test@example.com");
+      expect(result).assertEqual('<a href="mailto:test@example.com">Contact</a>');
     });
 
     /**
@@ -354,6 +358,7 @@ export default function StringLinkTest(): void {
       let text: string = "ArkTS";
       let result: string = text.link("https://a.com").link("https://b.com");
       expect(result).assertEqual('<a href="https://b.com"><a href="https://a.com">ArkTS</a></a>');
+      expect(result.indexOf("b.com")).assertLarger(0);
     });
 
     /**
@@ -470,15 +475,14 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3100
      * @tc.name testLink031
-     * @tc.desc Verify link() with href attribute injection in URL
+     * @tc.desc Verify link() preserves double-quote onclick injection in href without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "text".link("\" onclick=\"alert(1)");
-      let starts: boolean = result.startsWith('<a href="');
-      expect(starts).assertTrue();
+      let result: string = "text".link("a\" onclick=\"alert(1)\"");
+      expect(result).assertEqual('<a href="a" onclick="alert(1)"">text</a>');
     });
 
     /**
@@ -510,14 +514,14 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3400
      * @tc.name testLink034
-     * @tc.desc Verify link() with GBK Chinese text content
+     * @tc.desc Verify link() preserves tag-closing script injection in href without encoding
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "中文测试".link("https://example.com/page");
-      expect(result).assertEqual('<a href="https://example.com/page">中文测试</a>');
+      let result: string = "safe".link('a"><script>alert(1)</script>');
+      expect(result).assertEqual('<a href="a"><script>alert(1)</script>">safe</a>');
     });
 
     /**
@@ -552,15 +556,15 @@ export default function StringLinkTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3700
      * @tc.name testLink037
-     * @tc.desc Verify link() with NUL character \\0 in content
+     * @tc.desc Verify link() preserves NUL byte inside href parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testLink037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: string = "a\0b".link("https://x.com");
-      let starts: boolean = result.startsWith('<a href="');
-      expect(starts).assertTrue();
+      let result: string = "text".link("safe\0url");
+      expect(result.charCodeAt(13)).assertEqual(0);
+      expect(result).assertEqual('<a href="safe\0url">text</a>');
     });
 
     /**
