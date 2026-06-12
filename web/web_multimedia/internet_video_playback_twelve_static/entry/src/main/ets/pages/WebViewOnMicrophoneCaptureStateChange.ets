@@ -88,7 +88,7 @@ struct webViewController {
                 } else {
                   this.controller.pauseMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251229);
+                    Utils.emitEvent(MicrophoneCaptureState.PAUSED, 20251229);
                   }, 1000)
                 }
 
@@ -104,7 +104,7 @@ struct webViewController {
                 } else {
                   this.controller.resumeMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.newState, 20251230);
+                    Utils.emitEvent(MicrophoneCaptureState.ACTIVE, 20251230);
                   },1000)
                 }
 
