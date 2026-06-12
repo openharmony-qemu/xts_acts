@@ -599,9 +599,9 @@ export default function wifiSta() {
         } else {
           console.info(`${caseName} The user does not respond.`);
           expect(err.code).assertEqual(2501005);
+          await clickText('取消');
         }
       }
-      await clickText('取消');
       console.info(`${caseName} test end`);
       done();
     });
