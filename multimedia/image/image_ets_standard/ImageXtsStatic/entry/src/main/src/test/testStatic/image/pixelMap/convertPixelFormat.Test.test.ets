@@ -58,7 +58,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.ASTC_4x4);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -86,7 +88,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.YCBCR_P010);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -114,7 +118,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.RGBA_1010102);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -142,7 +148,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.UNKNOWN);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -170,7 +178,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.ARGB_8888);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -198,7 +208,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.ALPHA_8);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
@@ -226,7 +238,9 @@ export default function ImagePixelMapConvertPixelFormatTest(): void {
         let pixelMap: PixelMap = await image.createPixelMap(color, opts);
         console.info(TAG,'pixelMap')
         pixelMap.convertPixelFormat(image.PixelMapFormat.YCRCB_P010);
-        console.info(TAG,'Success convertPixelFormat')
+        console.info(TAG,'Success convertPixelFormat');
+        expect(pixelMap != undefined).assertTrue();
+        await pixelMap!.release();
         done();
       } catch (error) {
         console.error(TAG, testName, 'failed; error:', JSON.stringify(error), error.code);
