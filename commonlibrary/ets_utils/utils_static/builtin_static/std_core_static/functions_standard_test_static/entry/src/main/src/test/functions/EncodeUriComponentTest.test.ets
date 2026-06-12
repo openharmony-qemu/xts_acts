@@ -36,7 +36,7 @@ export default function EncodeUriComponentTest(): void {
     });
 
 /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0010
      * @tc.name testEncodeUriComponent001
      * @tc.desc Verify encodeURIComponent normal call when passing one String argument
      * @tc.size MediumTest
@@ -48,7 +48,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("hello%20world");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0020
      * @tc.name testEncodeUriComponent002
      * @tc.desc Verify encodeURIComponent not encoded when passing ASCII alphanumeric
      * @tc.size MediumTest
@@ -60,7 +60,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0030
      * @tc.name testEncodeUriComponent003
      * @tc.desc Verify encodeURIComponent multibyte encoding when passing emoji string
      * @tc.size MediumTest
@@ -72,7 +72,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("Hello%20%F0%9F%98%80%F0%9F%8E%89");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0040
      * @tc.name testEncodeUriComponent004
      * @tc.desc Verify encodeURIComponent colon is encoded when passing string with colon
      * @tc.size MediumTest
@@ -84,7 +84,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("http%3A%2F%2Fexample.com");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0050
      * @tc.name testEncodeUriComponent005
      * @tc.desc Verify encodeURIComponent they are encoded when passing string with / ? #
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("path%2Fto%3Fq%3Dquery%23frag");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0060
      * @tc.name testEncodeUriComponent006
      * @tc.desc Verify encodeURIComponent query delimiters encoded when passing string with &=
      * @tc.size MediumTest
@@ -108,7 +108,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("key1%3Dvalue1%26key2%3Dvalue2");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0070
      * @tc.name testEncodeUriComponent007
      * @tc.desc Verify encodeURIComponent encoding when passing special symbols !@#$%^*()
      * @tc.size MediumTest
@@ -120,7 +120,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("!%40%23%24%25%5E*()");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0080
      * @tc.name testEncodeUriComponent008
      * @tc.desc Verify encodeURIComponent encoding when passing control chars \n \t
      * @tc.size MediumTest
@@ -132,7 +132,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("line1%0Aline2%09tab");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0090
      * @tc.name testEncodeUriComponent009
      * @tc.desc Verify encodeURIComponent behavior when passing null
      * @tc.size MediumTest
@@ -145,7 +145,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0100
      * @tc.name testEncodeUriComponent010
      * @tc.desc Verify encodeURIComponent behavior when passing undefined
      * @tc.size MediumTest
@@ -158,7 +158,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0110
      * @tc.name testEncodeUriComponent011
      * @tc.desc Verify encodeURIComponent special characters are encoded when passing XSS-like string
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(enc)).assertEqual(payload);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0120
      * @tc.name testEncodeUriComponent012
      * @tc.desc Verify encodeURIComponent encoding when passing negative -456
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("-456");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0130
      * @tc.name testEncodeUriComponent013
      * @tc.desc Verify encodeURIComponent encoding when passing float 3.14
      * @tc.size MediumTest
@@ -196,7 +196,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("3.14");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0140
      * @tc.name testEncodeUriComponent014
      * @tc.desc Verify encodeURIComponent zero encoding when passing 0
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("0");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0150
      * @tc.name testEncodeUriComponent015
      * @tc.desc Verify encodeURIComponent encoding when passing Double.MAX_VALUE
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("1.7976931348623157e%2B308");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0160
      * @tc.name testEncodeUriComponent016
      * @tc.desc Verify encodeURIComponent encoding when passing Double.MIN_VALUE
      * @tc.size MediumTest
@@ -232,7 +232,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("5e-324");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0170
      * @tc.name testEncodeUriComponent017
      * @tc.desc Verify encodeURIComponent negative zero encoding when passing -0
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("0");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0180
      * @tc.name testEncodeUriComponent018
      * @tc.desc Verify encodeURIComponent encoding when passing Double.POSITIVE_INFINITY
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("Infinity");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0190
      * @tc.name testEncodeUriComponent019
      * @tc.desc Verify encodeURIComponent encoding when passing Double.NEGATIVE_INFINITY
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("-Infinity");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0200
      * @tc.name testEncodeUriComponent020
      * @tc.desc Verify encodeURIComponent encoding when passing Double.NaN
      * @tc.size MediumTest
@@ -280,7 +280,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("NaN");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0210
      * @tc.name testEncodeUriComponent021
      * @tc.desc Verify encodeURIComponent scientific notation encoding when passing tiny float 1e-10
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("1e-10");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0220
      * @tc.name testEncodeUriComponent022
      * @tc.desc Verify encodeURIComponent chinese encoded as UTF-8 %XX byte sequence
      * @tc.size MediumTest
@@ -304,7 +304,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%E4%B8%AD%E6%96%87");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0230
      * @tc.name testEncodeUriComponent023
      * @tc.desc Verify colon encoded as %3A (unlike encodeURI)
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%3A");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0240
      * @tc.name testEncodeUriComponent024
      * @tc.desc Verify encodeURIComponent slash encoded as %2F
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%2F");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0250
      * @tc.name testEncodeUriComponent025
      * @tc.desc Verify encodeURIComponent question mark encoded as %3F
      * @tc.size MediumTest
@@ -340,7 +340,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%3F");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0260
      * @tc.name testEncodeUriComponent026
      * @tc.desc Verify hash encoded as %23
      * @tc.size MediumTest
@@ -352,7 +352,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%23");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0270
      * @tc.name testEncodeUriComponent027
      * @tc.desc Verify ampersand encoded as %26
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%26");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0280
      * @tc.name testEncodeUriComponent028
      * @tc.desc Verify equals encoded as %3D
      * @tc.size MediumTest
@@ -376,7 +376,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%3D");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0290
      * @tc.name testEncodeUriComponent029
      * @tc.desc Verify encoding behavior for single and double quotes; double quote round-trips
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("\""))).assertEqual("\"");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0300
      * @tc.name testEncodeUriComponent030
      * @tc.desc Verify backslash encoded as %5C
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%5C");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0310
      * @tc.name testEncodeUriComponent031
      * @tc.desc Verify at sign encoded as %40
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%40");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0320
      * @tc.name testEncodeUriComponent032
      * @tc.desc Verify encodeURIComponent no error when passing valid surrogate pair emoji
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function EncodeUriComponentTest(): void {
       expect(result).assertEqual("%F0%9F%98%80");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0330
      * @tc.name testEncodeUriComponent033
      * @tc.desc Verify encodeURIComponent behavior when passing array
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0340
      * @tc.name testEncodeUriComponent034
      * @tc.desc Verify encodeURIComponent behavior when passing plain object
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0350
      * @tc.name testEncodeUriComponent035
      * @tc.desc Verify encodeURIComponent behavior when passing function
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0360
      * @tc.name testEncodeUriComponent036
      * @tc.desc Verify encodeURIComponent URIError when passing lone high surrogate \uD800
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0370
      * @tc.name testEncodeUriComponent037
      * @tc.desc Verify encodeURIComponent URIError when passing lone low surrogate \uDC00
      * @tc.size MediumTest
@@ -494,7 +494,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0380
      * @tc.name testEncodeUriComponent038
      * @tc.desc Verify encodeURIComponent URIError when passing lone surrogate between ASCII
      * @tc.size MediumTest
@@ -507,7 +507,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0390
      * @tc.name testEncodeUriComponent039
      * @tc.desc Verify encodeURIComponent throws ClassCastError when passing empty array
      * @tc.size MediumTest
@@ -521,7 +521,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0400
      * @tc.name testEncodeUriComponent040
      * @tc.desc Verify encodeURIComponent digits unchanged when passing ID card string
      * @tc.size MediumTest
@@ -532,7 +532,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("310101199001011234")).assertEqual("310101199001011234");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0410
      * @tc.name testEncodeUriComponent041
      * @tc.desc Verify encodeURIComponent asterisks unchanged (unreserved) when passing masked bank card
      * @tc.size MediumTest
@@ -545,7 +545,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0420
      * @tc.name testEncodeUriComponent042
      * @tc.desc Verify encodeURIComponent leaves alphanumeric digit strings 0123 and 0b1010 unchanged
      * @tc.size MediumTest
@@ -557,7 +557,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("0b1010")).assertEqual("0b1010");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0430
      * @tc.name testEncodeUriComponent043
      * @tc.desc Verify encodeURIComponent encodes scientific notation string 123.45e6
      * @tc.size MediumTest
@@ -568,7 +568,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("123.45e6")).assertEqual("123.45e6");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0440
      * @tc.name testEncodeUriComponent044
      * @tc.desc Verify encodeURIComponent percent-encodes lone tab and newline characters
      * @tc.size MediumTest
@@ -580,7 +580,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("\n")).assertEqual("%0A");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0450
      * @tc.name testEncodeUriComponent045
      * @tc.desc Verify encodeURIComponent UTF-8 encodes U+FFFD replacement character
      * @tc.size MediumTest
@@ -591,7 +591,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("\uFFFD")).assertEqual("%EF%BF%BD");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0460
      * @tc.name testEncodeUriComponent046
      * @tc.desc Verify encodeURIComponent encodes plus sign in URI component
      * @tc.size MediumTest
@@ -602,7 +602,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("a+b")).assertEqual("a%2Bb");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0470
      * @tc.name testEncodeUriComponent047
      * @tc.desc Verify encodeURIComponent encoded as decimal string via Number overload when passing long 9007199254740991
      * @tc.size MediumTest
@@ -615,7 +615,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(maxSafe))).assertEqual("9007199254740991");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0480
      * @tc.name testEncodeUriComponent048
      * @tc.desc Verify encodeURI keeps ? in component-like string, encodeURIComponent encodes
      * @tc.size MediumTest
@@ -628,7 +628,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(s)).assertEqual("%3Fx%3D1");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0490
      * @tc.name testEncodeUriComponent049
      * @tc.desc Verify double quote encoded as %22 in phrase
      * @tc.size MediumTest
@@ -639,7 +639,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("say \"hi\"")).assertEqual("say%20%22hi%22");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0500
      * @tc.name testEncodeUriComponent050
      * @tc.desc Verify encodeURIComponent int literal 42 accepted per String|Number|Boolean API
      * @tc.size MediumTest
@@ -650,7 +650,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(42)).assertEqual("42");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0510
      * @tc.name testEncodeUriComponent051
      * @tc.desc Verify long CJK string round-trip
      * @tc.size MediumTest
@@ -662,7 +662,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0520
      * @tc.name testEncodeUriComponent052
      * @tc.desc Verify tilde not encoded in component (unreserved subset)
      * @tc.size MediumTest
@@ -673,7 +673,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("a~b")).assertEqual("a~b");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0530
      * @tc.name testEncodeUriComponent053
      * @tc.desc Verify percent sign encoded as %25
      * @tc.size MediumTest
@@ -684,7 +684,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("%")).assertEqual("%25");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0540
      * @tc.name testEncodeUriComponent054
      * @tc.desc Verify encodeURIComponent semicolon and comma encoded in component
      * @tc.size MediumTest
@@ -695,7 +695,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(";,")).assertEqual("%3B%2C");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0550
      * @tc.name testEncodeUriComponent055
      * @tc.desc Verify encodeURIComponent double-encoding: second encodeURIComponent wraps percents
      * @tc.size MediumTest
@@ -708,7 +708,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(once)).assertEqual("%2520");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0560
      * @tc.name testEncodeUriComponent056
      * @tc.desc Verify encodeURIComponent encoded as decimal string via Number overload when passing long -9007199254740991
      * @tc.size MediumTest
@@ -721,7 +721,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(minSafe))).assertEqual("-9007199254740991");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0570
      * @tc.name testEncodeUriComponent057
      * @tc.desc Verify encodeURIComponent int literal 2147483647 accepted as Number overload
      * @tc.size MediumTest
@@ -732,7 +732,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(2147483647)).assertEqual("2147483647");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0580
      * @tc.name testEncodeUriComponent058
      * @tc.desc Verify full query pair from API doc as single component
      * @tc.size MediumTest
@@ -745,7 +745,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(component)).assertEqual("q=ArkTS 文档");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0590
      * @tc.name testEncodeUriComponent059
      * @tc.desc Verify encodeURI keeps & and =; encodeURIComponent encodes them
      * @tc.size MediumTest
@@ -758,7 +758,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(s)).assertEqual("a%26b%3Dc");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0600
      * @tc.name testEncodeUriComponent060
      * @tc.desc Verify encodeURIComponent unreserved charset A-Z a-z 0-9 - _ . ! ~ * ' ( ) unchanged
      * @tc.size MediumTest
@@ -770,7 +770,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(input)).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0610
      * @tc.name testEncodeUriComponent061
      * @tc.desc Verify encodeURIComponent multilingual JP+KR+AR component round-trips via decodeURIComponent
      * @tc.size MediumTest
@@ -782,7 +782,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0620
      * @tc.name testEncodeUriComponent062
      * @tc.desc Verify encodeURI keeps semicolon; encodeURIComponent encodes as %3B
      * @tc.size MediumTest
@@ -795,7 +795,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(s)).assertEqual("a%3Bb");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0630
      * @tc.name testEncodeUriComponent063
      * @tc.desc Verify encodeURIComponent int overflow literal string 2147483648 unchanged as String overload
      * @tc.size MediumTest
@@ -807,7 +807,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("2147483648"))).assertEqual("2147483648");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0640
      * @tc.name testEncodeUriComponent064
      * @tc.desc Verify encodeURIComponent encodes @ in email component as %40
      * @tc.size MediumTest
@@ -819,7 +819,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("test@example.com"))).assertEqual("test@example.com");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0650
      * @tc.name testEncodeUriComponent065
      * @tc.desc Verify encodeURI keeps hash; encodeURIComponent encodes as %23
      * @tc.size MediumTest
@@ -832,7 +832,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(s)).assertEqual("a%23b");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0660
      * @tc.name testEncodeUriComponent066
      * @tc.desc Verify carriage return and CRLF encode as %0D and %0D%0A
      * @tc.size MediumTest
@@ -844,7 +844,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("\r\n")).assertEqual("%0D%0A");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0670
      * @tc.name testEncodeUriComponent067
      * @tc.desc Verify encodeURIComponent pipe character encodes as %7C in component
      * @tc.size MediumTest
@@ -856,7 +856,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("a|b"))).assertEqual("a|b");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0680
      * @tc.name testEncodeUriComponent068
      * @tc.desc Verify encodeURIComponent square brackets encode as %5B and %5D
      * @tc.size MediumTest
@@ -867,7 +867,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("[x]")).assertEqual("%5Bx%5D");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0690
      * @tc.name testEncodeUriComponent069
      * @tc.desc Verify accented Latin UTF-8 percent encoding and round-trip
      * @tc.size MediumTest
@@ -880,7 +880,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0700
      * @tc.name testEncodeUriComponent070
      * @tc.desc Verify encodeURIComponent positive scientific notation Number; plus sign encodes as %2B
      * @tc.size MediumTest
@@ -891,7 +891,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(1e+21)).assertEqual("1e%2B21");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0710
      * @tc.name testEncodeUriComponent071
      * @tc.desc Verify encodeURIComponent int literal -2147483648 accepted as Number overload
      * @tc.size MediumTest
@@ -902,7 +902,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(-2147483648)).assertEqual("-2147483648");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0720
      * @tc.name testEncodeUriComponent072
      * @tc.desc Verify full URL string encoded as single URI component
      * @tc.size MediumTest
@@ -916,7 +916,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encoded)).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0730
      * @tc.name testEncodeUriComponent073
      * @tc.desc Verify mixed punctuation round-trips via decodeURIComponent
      * @tc.size MediumTest
@@ -928,7 +928,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0740
      * @tc.name testEncodeUriComponent074
      * @tc.desc Verify angle brackets encode as %3C and %3E
      * @tc.size MediumTest
@@ -939,7 +939,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("<>")).assertEqual("%3C%3E");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0750
      * @tc.name testEncodeUriComponent075
      * @tc.desc Verify encodeURIComponent zero-width space U+200B UTF-8 encoding and round-trip
      * @tc.size MediumTest
@@ -952,7 +952,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0760
      * @tc.name testEncodeUriComponent076
      * @tc.desc Verify backspace control char encodes as %08
      * @tc.size MediumTest
@@ -963,7 +963,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent("\b")).assertEqual("%08");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0770
      * @tc.name testEncodeUriComponent077
      * @tc.desc Verify encodeURIComponent throws ClassCastError when passing number (not Number overload)
      * @tc.size MediumTest
@@ -976,7 +976,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0780
      * @tc.name testEncodeUriComponent078
      * @tc.desc Verify encodeURIComponent throws ClassCastError when passing boolean (not Boolean overload)
      * @tc.size MediumTest
@@ -989,7 +989,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0790
      * @tc.name testEncodeUriComponent079
      * @tc.desc Verify encodeURIComponent throws ClassCastError when passing helper object (toString not used)
      * @tc.size MediumTest
@@ -1003,7 +1003,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('ClassCastError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0800
      * @tc.name testEncodeUriComponent080
      * @tc.desc Verify path segment value with slash encodes per component rules
      * @tc.size MediumTest
@@ -1016,7 +1016,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(segment))).assertEqual(segment);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0810
      * @tc.name testEncodeUriComponent081
      * @tc.desc Verify form feed and vertical tab encode as %0C/%0B and round-trip
      * @tc.size MediumTest
@@ -1029,7 +1029,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("\f\v"))).assertEqual("\f\v");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0820
      * @tc.name testEncodeUriComponent082
      * @tc.desc Verify encodeURIComponent fragment content per API doc (section/Chinese text)
      * @tc.size MediumTest
@@ -1042,7 +1042,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(fragment))).assertEqual(fragment);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0830
      * @tc.name testEncodeUriComponent083
      * @tc.desc Verify encodeURIComponent query param value only (API documentation) per API doc
      * @tc.size MediumTest
@@ -1055,7 +1055,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(value))).assertEqual(value);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0840
      * @tc.name testEncodeUriComponent084
      * @tc.desc Verify encodeURIComponent boolean true coerced to string per API doc
      * @tc.size MediumTest
@@ -1066,7 +1066,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(true)).assertEqual("true");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0850
      * @tc.name testEncodeUriComponent085
      * @tc.desc Verify encodeURIComponent("") returns empty string and round-trips via decodeURIComponent
      * @tc.size MediumTest
@@ -1078,7 +1078,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(""))).assertEqual("");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0860
      * @tc.name testEncodeUriComponent086
      * @tc.desc Verify encodeURIComponent encodes = for query pair key=value assembly
      * @tc.size MediumTest
@@ -1091,7 +1091,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(pair))).assertEqual(pair);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0870
      * @tc.name testEncodeUriComponent087
      * @tc.desc Verify encodeURIComponent(false) coerced to string per API doc
      * @tc.size MediumTest
@@ -1102,7 +1102,7 @@ export default function EncodeUriComponentTest(): void {
       expect(encodeURIComponent(false)).assertEqual("false");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0880
      * @tc.name testEncodeUriComponent088
      * @tc.desc Verify build full search URI from encodeURIComponent query value per arkts-sta-functions.md
      * @tc.size MediumTest
@@ -1117,7 +1117,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURI(full)).assertEqual("https://example.test/search?q=ArkTS 文档");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0890
      * @tc.name testEncodeUriComponent089
      * @tc.desc Verify encodeURIComponent(Number MAX_SAFE_INTEGER+1) coerced to decimal string
      * @tc.size MediumTest
@@ -1129,7 +1129,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(9007199254740992))).assertEqual("9007199254740992");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0900
      * @tc.name testEncodeUriComponent090
      * @tc.desc Verify encodeURIComponent(-9007199254740992) round-trip via decodeURIComponent
      * @tc.size MediumTest
@@ -1141,7 +1141,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(-9007199254740992))).assertEqual("-9007199254740992");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0910
      * @tc.name testEncodeUriComponent091
      * @tc.desc Verify decodeURI(encodeURIComponent) decodes space but keeps encoded slash in path segment
      * @tc.size MediumTest
@@ -1156,7 +1156,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encoded)).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0920
      * @tc.name testEncodeUriComponent092
      * @tc.desc Verify 65535-char ASCII component boundary (static input data); round-trip via decodeURIComponent
      * @tc.size MediumTest
@@ -1168,7 +1168,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(longStr))).assertEqual(longStr);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0930
      * @tc.name testEncodeUriComponent093
      * @tc.desc Verify encodeURIComponent(0x123) coerces Number to decimal string 291
      * @tc.size MediumTest
@@ -1180,7 +1180,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(0x123))).assertEqual("291");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0940
      * @tc.name testEncodeUriComponent094
      * @tc.desc Verify static input date boundaries 0000-00-00, 2099-12-31, 2024-02-29, 2026-13-01; encodeURIComponent round-trip unchanged
      * @tc.size MediumTest
@@ -1195,7 +1195,7 @@ export default function EncodeUriComponentTest(): void {
       }
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0950
      * @tc.name testEncodeUriComponent095
      * @tc.desc Verify GBK mojibake string æµè¯ from static input data; encodeURIComponent UTF-8 round-trip
      * @tc.size MediumTest
@@ -1208,7 +1208,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0960
      * @tc.name testEncodeUriComponent096
      * @tc.desc Verify mixed-locale English and Chinese test string from static input data round-trips via encodeURIComponent UTF-8 encoding
      * @tc.size MediumTest
@@ -1221,7 +1221,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0970
      * @tc.name testEncodeUriComponent097
      * @tc.desc Verify device emoji 📱📞 from static input data; encodeURIComponent UTF-8 round-trip
      * @tc.size MediumTest
@@ -1234,7 +1234,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0980
      * @tc.name testEncodeUriComponent098
      * @tc.desc Verify business URL https://www.baidu.com from static input data; encodeURIComponent full-string round-trip
      * @tc.size MediumTest
@@ -1247,7 +1247,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_0990
      * @tc.name testEncodeUriComponent099
      * @tc.desc Verify encodeURIComponent throws URIError when passing incomplete emoji lone high surrogate \uD83D from static input data
      * @tc.size MediumTest
@@ -1260,7 +1260,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1000
      * @tc.name testEncodeUriComponent100
      * @tc.desc Verify thai string from static input data; encodeURIComponent UTF-8 round-trip
      * @tc.size MediumTest
@@ -1273,7 +1273,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1010
      * @tc.name testEncodeUriComponent101
      * @tc.desc Verify encodeURIComponent number overload: 0x0A and 0b1010 coerce to 10, -1 to string per API doc
      * @tc.size MediumTest
@@ -1287,7 +1287,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(-1))).assertEqual("-1");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1020
      * @tc.name testEncodeUriComponent102
      * @tc.desc Verify encodeURIComponent(13800138000) coerces mobile Number to decimal string per API doc
      * @tc.size MediumTest
@@ -1299,7 +1299,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(13800138000))).assertEqual("13800138000");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1030
      * @tc.name testEncodeUriComponent103
      * @tc.desc Verify encodeURIComponent invalid month date 2026-13-05 from static input data unchanged
      * @tc.size MediumTest
@@ -1311,7 +1311,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("2026-13-05"))).assertEqual("2026-13-05");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1040
      * @tc.name testEncodeUriComponent104
      * @tc.desc Verify encodeURIComponent invalid time 25:00:00 from static input data; colon encoded as %3A
      * @tc.size MediumTest
@@ -1323,7 +1323,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("25:00:00"))).assertEqual("25:00:00");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1050
      * @tc.name testEncodeUriComponent105
      * @tc.desc Verify encodeURIComponent iSO-8601 datetime string from static input data business format
      * @tc.size MediumTest
@@ -1336,7 +1336,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1060
      * @tc.name testEncodeUriComponent106
      * @tc.desc Verify encodeURIComponent nUL code unit U+0000 as %00 on component input
      * @tc.size MediumTest
@@ -1348,7 +1348,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("\u0000"))).assertEqual("\u0000");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1070
      * @tc.name testEncodeUriComponent107
      * @tc.desc Verify encodeURIComponent slash-separated date 2026/03/05 encodes each slash as %2F
      * @tc.size MediumTest
@@ -1361,7 +1361,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent(input))).assertEqual(input);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1080
      * @tc.name testEncodeUriComponent108
      * @tc.desc Verify encodeURIComponent invalid day date 2026-02-30 from static inputs remains unchanged
      * @tc.size MediumTest
@@ -1373,7 +1373,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("2026-02-30"))).assertEqual("2026-02-30");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1090
      * @tc.name testEncodeUriComponent109
      * @tc.desc Verify encodeURIComponent encodes @ in malformed email-like string test@ as %40
      * @tc.size MediumTest
@@ -1385,7 +1385,7 @@ export default function EncodeUriComponentTest(): void {
       expect(decodeURIComponent(encodeURIComponent("test@"))).assertEqual("test@");
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1100
      * @tc.name testEncodeUriComponent110
      * @tc.desc Verify encodeURIComponent URIError when passing reversed surrogate pair \uDC00\uD800
      * @tc.size MediumTest
@@ -1398,7 +1398,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_11100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1110
      * @tc.name testEncodeUriComponent111
      * @tc.desc Verify encodeURIComponent URIError when passing multiple consecutive lone high surrogates
      * @tc.size MediumTest
@@ -1411,7 +1411,7 @@ export default function EncodeUriComponentTest(): void {
       }).assertThrowError('URIError');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_11200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ENCODE_URI_COMPONENT_1120
      * @tc.name testEncodeUriComponent112
      * @tc.desc Verify u+2014 em dash from static input data; encodeURIComponent UTF-8 round-trip
      * @tc.size MediumTest
