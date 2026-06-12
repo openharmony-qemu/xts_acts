@@ -17,6 +17,8 @@ import TextAreaEnumTest from "./TextAreaTest/TextAreaEnum.test"
 import TextAreaGradientTest from "./TextAreaTest/TextAreaGradient.test"
 import TextInputEnumTest from "./TextInputTest/TextInputEnum.test"
 import TextInputGradientTest from "./TextInputTest/TextInputGradient.test"
+import RichEditorPunctuationOverflowTest from "./RichEditorTest/RichEditorPunctuationOverflow.test"
+import RichEditorScrollToVisibleTest from "./RichEditorTest/RichEditorScrollToVisible.test"
 
 export default function testsuite() {
   TextEnumTest();
@@ -24,4 +26,6 @@ export default function testsuite() {
   TextAreaGradientTest();
   TextInputEnumTest();
   TextInputGradientTest();
+  RichEditorPunctuationOverflowTest();
+  RichEditorScrollToVisibleTest();
 }

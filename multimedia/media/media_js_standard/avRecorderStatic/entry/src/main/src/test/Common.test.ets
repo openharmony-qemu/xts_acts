@@ -2914,6 +2914,7 @@ export default class Commmon {
       expect().assertFail();
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400102);
     }
   }
@@ -2947,53 +2948,97 @@ export default class Commmon {
       } 
     } catch (error) {
       console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(typeof error.code).assertEqual('number');
       expect(error.code).assertEqual(5400108);
     }
   }
 
-  async avRecorderAddWatermarkTest(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMark(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTest res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMark(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
-  async avRecorderAddWatermarkTestErrorState(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTestErrorState(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMarkErrorState(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTestErrorState res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTestErrorState failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        await this.handleWaterMarkErrorState(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
-  async avRecorderAddWatermarkTestOutRange(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
-    done: () => void) {
+  async avRecorderAddWatermarkTestOutRange(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void) {
     let result = false;
-    avRecorder = await this.idle(avRecorder);
-    await this.handleWaterMarkOutRange(avRecorder).then((res) => {
-      console.info('avRecorderAddWatermarkTestOutRange res is ' + res);
-      result = true;
-    }).catch((err: Error) => {
-      console.info('avRecorderAddWatermarkTestOutRange failed and catch error is ' + err.message);
-      result = false;
-    });
-    expect(result).assertEqual(true);
-    await this.releaseDone(avRecorder, done);
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        avRecorder = await this.idle(avRecorder);
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.handleWaterMarkOutRange(avRecorder).then((res) => {
+          console.info('avRecorderAddWatermarkTest res is ' + res);
+          result = true;
+        }).catch((err: Error) => {
+          console.info('avRecorderAddWatermarkTest failed and catch error is ' + err.message);
+          result = false;
+        });
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await this.releaseDone(avRecorder, done);
+      } catch (err) {
+        console.error('avRecorderSetMetadataOversizedValueTest failed with error: ' + (err as Error).message);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+    }
   }
 
   AV_RECORDER_AUDIO_STATE: AudioRecorderState = {

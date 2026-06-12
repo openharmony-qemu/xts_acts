@@ -162,7 +162,7 @@ struct setOnGridIndex01 {
       .id('key_gridItem_set')
       .columnsTemplate('1r')
       .edgeEffect(EdgeEffect.None)
-      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): ScrollResult => {
+      .onWillScroll((scrollOff: Double, scrollState: ScrollState, scrollSource: ScrollSource): undefined => {
         console.log(`Grid:: onWillScroll 1 scrollOff=${scrollOff}, scrollState=${scrollState}, scrollSource=${scrollSource}`)
       })
       .onDidScroll((scrollOff: Double, scrollState: ScrollState): void => {

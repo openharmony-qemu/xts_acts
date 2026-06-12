@@ -18,6 +18,8 @@
 #include "TextArea/TextAreaGradientTest.cpp"
 #include "TextInput/TextInputEnumTest.cpp"
 #include "TextInput/TextInputGradientTest.cpp"
+#include "Richeditor/RichEditorPunctuationOverflowTest.cpp"
+#include "Richeditor/RichEditorScrollToVisibleTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -82,6 +84,18 @@ static napi_value Init(napi_env env, napi_value exports)
 
         {"TextInputGradientTest_001", nullptr, TextInputGradientTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextInputGradientTest_002", nullptr, TextInputGradientTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RichEditorPunctuationOverflowTest_001", nullptr, RichEditorPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorPunctuationOverflowTest_002", nullptr, RichEditorPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorPunctuationOverflowTest_003", nullptr, RichEditorPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorPunctuationOverflowTest_004", nullptr, RichEditorPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorPunctuationOverflowTest_005", nullptr, RichEditorPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"RichEditorScrollToVisibleTest_001", nullptr, RichEditorScrollToVisibleTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorScrollToVisibleTest_002", nullptr, RichEditorScrollToVisibleTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorScrollToVisibleTest_003", nullptr, RichEditorScrollToVisibleTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorScrollToVisibleTest_004", nullptr, RichEditorScrollToVisibleTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RichEditorScrollToVisibleTest_005", nullptr, RichEditorScrollToVisibleTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -3,7 +3,7 @@ import { connection, http } from "@kit.NetworkKit";
 import { BusinessError } from "@kit.BasicServicesKit";
 import { JSON } from "@kit.ArkTS";
 
-export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();

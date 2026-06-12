@@ -29,8 +29,8 @@ import {
   genIvParamsSpec,
   genGcmOrCcmParamsSpec,
   encryptDecryptMessageSync,
-  tagGcmEncryptDecryptMessageSync,
-  dataGcmSpec,
+  tagEncryptDecryptMessageSync,
+  dataGcmOrCCMSpec,
   dataSpec,
 } from './utils/syncSymEncAndDec/syncSymEncAndDecUtils'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -253,7 +253,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             let paramSpec: cryptoFramework.GcmParamsSpec = genGcmOrCcmParamsSpec(iv, aad, tag, specAlgName);
             let expectCipher: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.cipherText);
             let plainText: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.plainText)
-            let cipherData: dataGcmSpec = tagGcmEncryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
+            let cipherData: dataGcmOrCCMSpec = tagEncryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
             console.info("################### cipherData.paramSpec.authTag:" + commonUtils.decToHexString({data:cipherData.paramSpec.authTag.data}))
             console.info("################### tag                         :" + tag)
             console.info("################### expectCipher                :" + expectCipher.data)

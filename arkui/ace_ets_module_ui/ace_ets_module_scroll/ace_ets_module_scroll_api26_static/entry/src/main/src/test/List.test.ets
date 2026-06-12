@@ -32,6 +32,9 @@ import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test'
 import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
 import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 import gridEnableEditMode from './Grid/gridEnableEditMode.test'
+import gridEditModeChange from './Grid/gridEditModeChange.test'
+import listEnableEditMode from './List/listEnableEditMode.test'
+import listEditModeChange from './List/listEditModeChange.test'
 import LazyColumnLayoutProperties from './LazyColumnLayout/LazyColumnLayoutProperties.test'
 import LazyVWaterFlowLayoutProperties from './LazyVWaterFlowLayout/LazyVWaterFlowLayoutProperties.test'
 import headerFooterStickyGrid from './LazyVGridLayout/headerFooterStickyGrid.test'
@@ -57,6 +60,9 @@ export default function testsuite() {
   arcSwiperBoolean();
   arcSwiperEffectMode();
   gridEnableEditMode();
+  gridEditModeChange();
+  listEnableEditMode();
+  listEditModeChange();
   LazyColumnLayoutProperties();
   LazyVWaterFlowLayoutProperties();
   headerFooterStickyGrid();
