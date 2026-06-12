@@ -434,16 +434,16 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
       console.info(TAG + "************* testDeleteRdbStoreConfig0300 end   *************");
     });
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300
      * @tc.desc   Test remoteQuery callback device with null or undefined or ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300',
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300 start-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300 start-----")
         let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
         predicates.greaterThan("id", 0);
         let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -458,6 +458,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0300 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0400
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0400
+     * @tc.desc   Test remoteQuery callback device with null or undefined or ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0400 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery(null, "EMPLOYEE", predicates,
@@ -469,6 +485,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0400 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500
+     * @tc.desc   Test remoteQuery callback device with null or undefined or ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery(undefined, "EMPLOYEE", predicates,
@@ -480,19 +512,19 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0300 end-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500 end-----")
       })
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0500
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0600
      * @tc.desc   Test remoteQuery callback table with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500',
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100 start-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0600 start-----")
         let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
         predicates.greaterThan("id", 0);
         let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -507,6 +539,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0600 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700
+     * @tc.desc   Test remoteQuery callback table with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("12345678", null, predicates,
@@ -518,6 +566,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800
+     * @tc.desc   Test remoteQuery callback table with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("12345678", undefined, predicates,
@@ -529,19 +593,19 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0500 end-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800 end-----")
       })
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0700
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0900
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0900
      * @tc.desc   Test remoteQuery callback predicates with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700',
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700 start-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0900 start-----")
         let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
         predicates.greaterThan("id", 0);
         let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -556,6 +620,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0900 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1000
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1000
+     * @tc.desc   Test remoteQuery callback predicates with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1000 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("123456789", "EMPLOYEE", undefined,
@@ -567,19 +647,19 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 401).assertTrue();
           }
         }
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0700 end-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1000 end-----")
       })
     /**
-     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800
-     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_0800
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1100
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1100
      * @tc.desc   Test remoteQuery callback columns with null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800',
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800 start-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1100 start-----")
         let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
         predicates.greaterThan("id", 0);
         let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
@@ -594,6 +674,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 14800000).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1100 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1200
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1200
+     * @tc.desc   Test remoteQuery callback columns with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1200 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("123456789", "EMPLOYEE", predicates,
@@ -605,6 +701,22 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 14800000).assertTrue();
           }
         }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1200 end-----")
+      })
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1300
+     * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1300
+     * @tc.desc   Test remoteQuery callback columns with null or undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1300 start-----")
+        let predicates = new relationalStore.RdbPredicates('EMPLOYEE');
+        predicates.greaterThan("id", 0);
+        let store = await relationalStore.getRdbStore(context, STORE_CONFIG);
         if (store != undefined) {
           try{
             (store as relationalStore.RdbStore).remoteQuery("123456789", "EMPLOYEE", predicates,
@@ -616,7 +728,7 @@ export default function rdbstoreStoreExcuteSqlErrorCallBackTest() {
             expect(err.code == 14800000).assertTrue();
           }
         }
-        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0800 end-----")
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_remoteQuery_ErrCallBackTest_1300 end-----")
       })
   });
 }
