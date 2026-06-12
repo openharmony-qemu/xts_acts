@@ -40,12 +40,17 @@ import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getD
 import MetaDataSetBlobStaticSuppTest from './testStatic/image/Metadata/MetaDataSetBlobTest.test';
 import imagePackerPackToFileAbnormalStaticSuppTest from './testStatic/image/ImagePacker/packToFileAbnormalStatic.test';
 import imagePackerPackToFileStaticSuppTest from './testStatic/image/ImagePacker/packToFileNormalStatic.test';
-import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
 import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getAllPropertiesStatic.test';
 import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
 import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
 import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
-
+import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
+import PicturePackingPixMapSuppStatic from './testStatic/image/ImagerPackerSupplement/PicturePackingStatic.test';
+import PicturePackingPixelMapFirTestSupp
+  from './testStatic/image/ImagerPackerSupplement/PicturePackToFilePixMapStatic.test';
+import PicturePackToFileSuppImageSourceTestStatic
+  from './testStatic/image/ImagerPackerSupplement/PicturePackToFileSuppStatic.test';
+import ImageSourceCreatePixelMapListSuppStatic from './testStatic/image/imageSource/ImageSourceCreatePixelMapListStatic.test';
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -82,15 +87,18 @@ export default function testsuite(): void {
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImageSourceCreatePixelMapUsingAllocatorSyncTest();
   ImageSourceGetDelayTimeListTest();
-
-  MetaDataSetBlobStaticSuppTest();
   imagePackerPackToFileAbnormalStaticSuppTest();
-  imagePackerPackToFileStaticSuppTest();
   imagePackerPackToFilePictureStaticSuppTest();
-  metaDatagetAllPropertiesStaticTest();
-  metaDataGetPropertiesTestStatic();
   setPropertiesStaticSuppTest();
+  MetaDataSetBlobStaticSuppTest();
+  metaDatagetAllPropertiesStaticTest();
+  imagePackerPackToFileStaticSuppTest();
+  metaDataGetPropertiesTestStatic();
   metadataCloneStaticSuppTest();
+  PicturePackingPixMapSuppStatic();
+  PicturePackingPixelMapFirTestSupp();
+  PicturePackToFileSuppImageSourceTestStatic();
+  ImageSourceCreatePixelMapListSuppStatic();
 }
 
 
