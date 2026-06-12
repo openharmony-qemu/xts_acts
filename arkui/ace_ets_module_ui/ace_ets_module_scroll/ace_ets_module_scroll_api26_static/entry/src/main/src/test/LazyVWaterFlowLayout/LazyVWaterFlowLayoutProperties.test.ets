@@ -163,6 +163,7 @@ export default function LazyVWaterFlowLayoutProperties() {
       console.info("[lazyVWaterFlowColumnsTemplate_static_0500] columnsTemplate: " +
         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate'))
+        .assertEqual("1fr");
       console.info('[lazyVWaterFlowColumnsTemplate_static_0500] END');
       done();
     });
