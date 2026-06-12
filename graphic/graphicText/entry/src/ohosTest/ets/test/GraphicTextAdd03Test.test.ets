@@ -910,7 +910,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontStyleNormal
-     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFinalTest_02600
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFinalTest_2600
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
