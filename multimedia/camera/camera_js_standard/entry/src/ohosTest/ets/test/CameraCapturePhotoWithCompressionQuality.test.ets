@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -305,7 +305,6 @@ export default function CameraCapturePhotoWithCompressionQuality() {
     console.info(TAG + "Enter stopCameraSession");
     await releaseInput();
     await releaseOutput();
-    await mCameraSession?.release();
     console.info(TAG + "Exit stopCameraSession");
     return true;
   }
@@ -349,9 +348,6 @@ export default function CameraCapturePhotoWithCompressionQuality() {
     })
 
     afterAll(async () => {
-      await stopCameraSession()
-      await releaseCameraSessionInstance();
-      await sleep(1000);
       console.info('afterAll case');
     })
 
