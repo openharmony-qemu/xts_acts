@@ -48,7 +48,6 @@ async function getComponentPromiseTest(done: () => void, testName: string): Prom
           console.info(TAG, 'Succeeded getComponent_promise in dequeuing the Image.');
           done();
         }).catch((error) => {
-          // let error1 = error as BusinessError
           console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
           expect().assertFail();
           done();
@@ -79,7 +78,6 @@ async function getComponentAbnormalPromiseTest(done: () => void, testName: strin
           console.info(TAG, 'Succeeded getComponent_promise_abnormal in dequeuing the Image.');
           done();
         }).catch((error) => {
-          // let error1 = error as BusinessError
           console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
           expect().assertFail();
           done();
@@ -142,7 +140,6 @@ async function getComponentAbnormalCallbackTest(done: () => void, testName: stri
         console.info('Succeeded in dequeuing the Image.');
         img?.getComponent(componentType, (error: BusinessError | null, component: image.Component | undefined) => {
           if (error) {
-            // let error = err as BusinessError;
             console.error(TAG, `Failed to get the component.code ${error.code},message is ${error.message}`);
             expect().assertFail();
             done();
