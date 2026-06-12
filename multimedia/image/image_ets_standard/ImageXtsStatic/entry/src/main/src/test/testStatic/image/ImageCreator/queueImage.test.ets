@@ -24,20 +24,20 @@ async function queueImagePromiseTest(done: () => void, testName: string, size: i
   try {
     const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
     await creator.dequeueImage().then(async (img: image.Image) => {
-      //绘制图片。
       await img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
         let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
         for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 0; //B
-          bufferArr[i + 1] = 0; //G
-          bufferArr[i + 2] = 255; //R
-          bufferArr[i + 3] = 255; //A
+          bufferArr[i] = 0;
+          bufferArr[i + 1] = 0;
+          bufferArr[i + 2] = 255;
+          bufferArr[i + 3] = 255;
         }
       })
       await creator.queueImage(img).then(() => {
+        expect(img.size.width > 0).assertTrue();
+        expect(img.size.height > 0).assertTrue();
         console.info('Succeeded promise in queuing the Image.');
       }).catch((error) => {
-        // let error1 = error as BusinessError
         console.error(`Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
       })
@@ -54,14 +54,13 @@ async function queueImageCallbackTest(done: () => void, testName: string, size: 
   try {
     const creator: image.ImageCreator = await image.createImageCreator(size, image.ImageFormat.JPEG, 8);
     await creator.dequeueImage().then(async (img: image.Image) => {
-      //绘制图片。
       await img.getComponent(image.ComponentType.JPEG).then((component: image.Component) => {
         let bufferArr: Uint8Array = new Uint8Array(component.byteBuffer);
         for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 0; //B
-          bufferArr[i + 1] = 0; //G
-          bufferArr[i + 2] = 255; //R
-          bufferArr[i + 3] = 255; //A
+          bufferArr[i] = 0;
+          bufferArr[i + 1] = 0;
+          bufferArr[i + 2] = 255;
+          bufferArr[i + 3] = 255;
         }
       })
       creator.queueImage(img, (err: BusinessError<void> | null) => {
@@ -69,6 +68,8 @@ async function queueImageCallbackTest(done: () => void, testName: string, size: 
           console.error(`Failed to queue the Image.code ${err.code},message is ${err.message}`);
           expect().assertFail();
         } else {
+          expect(img!.size.width > 0).assertTrue();
+          expect(img!.size.height > 0).assertTrue();
           console.info('Succeeded callback in queuing the Image.');
         }
         done();
@@ -140,7 +141,6 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImagePromiseTest(done, testName, size);
       } catch (error) {
-        // const err = error as BusinessError;
         console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
@@ -164,7 +164,6 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImageCallbackTest(done, testName, size);
       } catch (error) {
-        // const err = error as BusinessError;
         console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();
@@ -188,7 +187,6 @@ export default function ImageCreatorQueueImageTest(): void {
       try {
         await queueImageCallbackTest(done, testName, size);
       } catch (error) {
-        // const err = error as BusinessError;
         console.error(TAG, `Failed to queue the Image.code ${error.code},message is ${error.message}`);
         expect().assertFail();
         done();

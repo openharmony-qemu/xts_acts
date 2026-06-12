@@ -119,7 +119,6 @@ export default function testsuite(): void {
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImageSourceCreatePixelMapUsingAllocatorSyncTest();
   ImageSourceGetDelayTimeListTest();
-
   MetaDataSetBlobStaticSuppTest();
   imagePackerPackToFileAbnormalStaticSuppTest();
   imagePackerPackToFileStaticSuppTest();
