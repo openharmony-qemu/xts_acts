@@ -21,7 +21,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 
 const TAG = 'ProviderNullUndefinedTest';
 const DOMAIN = 0x0000;
-let driver: Driver;
+
 
 export default function providerNullUndefinedTest() {
   describe('ProviderNullUndefinedTest', () => {
@@ -107,7 +107,8 @@ export default function providerNullUndefinedTest() {
      */
     it('ProviderNullUndefined_003', Level.LEVEL0, async () => {
       hilog.info(DOMAIN, TAG, 'ProviderNullUndefined_003 START');
-
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('parent_button'));
       await button.click();
       await CommonFunc.sleep(1000);
