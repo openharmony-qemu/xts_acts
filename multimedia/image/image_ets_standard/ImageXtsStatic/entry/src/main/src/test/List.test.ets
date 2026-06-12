@@ -88,8 +88,6 @@ import pixelMapRotateTest from './testStatic/image/pixelMap/rotate.test';
 import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
-import ImageGetImagePropertySyncEnumGPSStatusEmpty
-  from './testStatic/image/imageSource/ImageGetImagePropertySyncEnumGPStatusEmpty.test';
 
 
 
@@ -180,7 +178,3 @@ export default function testsuite(): void {
   pixelMapTranslateTest();
   pixelMapWritePixelsTest();
 }
-
-
-
-
