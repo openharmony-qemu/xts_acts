@@ -33,13 +33,13 @@ export default function GraphicTextParagraphBuilder() {
 
     /**
      * @tc.name   testCreateParagraphBuilderStatic
-     * @tc.number testCreateParagraphBuilderStatic
+     * @tc.number SUB_GRAPHIC_Text_TestCreateParagraphBuilderStatic_0100
      * @tc.desc   To test for create a paragraphBuilder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testCreateParagraphBuilderStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateParagraphBuilderStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let fontCollection = text.FontCollection.getGlobalInstance()
