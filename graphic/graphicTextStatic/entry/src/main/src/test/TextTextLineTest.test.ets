@@ -287,7 +287,7 @@ export default function TextTextLineTest() {
 
     /**
      * @tc.name   testGetTextLinesStatic
-     * @tc.number testGetTextLinesStatic
+     * @tc.number SUB_GRAPHIC_Text_TestGetTextLinesStatic_0100
      * @tc.desc   To test method getTextLine font paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

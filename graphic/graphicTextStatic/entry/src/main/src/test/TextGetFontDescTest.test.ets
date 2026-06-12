@@ -71,7 +71,7 @@ export default function TextGetFontDescTest() {
   describe("TextGetFontDescTest", (): void => {
     /**
      * @tc.name   testGetFontDescStatic
-     * @tc.number testGetFontDescStatic
+     * @tc.number SUB_GRAPHIC_Text_TestGetFontDescStatic_0100
      * @tc.desc   To test method get font desc
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

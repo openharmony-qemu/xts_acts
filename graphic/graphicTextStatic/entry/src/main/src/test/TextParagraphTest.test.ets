@@ -162,7 +162,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testCreateParagraphStatic
-     * @tc.number testCreateParagraphStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testCreateParagraph_Static_0100
      * @tc.desc   To test create a paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetMaxWidthStatic
-     * @tc.number testGetMaxWidthStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetMaxWidth_Static_0200
      * @tc.desc   To test method getMaxWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetHeightStatic
-     * @tc.number testGetHeightStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetHeight_Static_0300
      * @tc.desc   To test method getHeight for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetLongestLineStatic_001
-     * @tc.number testGetLongestLineStatic_001
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLongestLine_Static_0400
      * @tc.desc   To test method getLongestLine for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,7 +253,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetLongestLineWithIndentStatic
-     * @tc.number testGetLongestLineWithIndentStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLongestLineWithIndent_Static_0500
      * @tc.desc   To test method getLongestLineWithIndent for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetMinIntrinsicWidthStatic
-     * @tc.number testGetMinIntrinsicWidthStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetMinIntrinsicWidth_Static_0600
      * @tc.desc   To test method getMinIntrinsicWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -297,7 +297,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetMaxIntrinsicWidthStatic
-     * @tc.number testGetMaxIntrinsicWidthStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetMaxIntrinsicWidth_Static_0700
      * @tc.desc   To test method getMaxIntrinsicWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -319,7 +319,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetAlphabeticBaselineStatic
-     * @tc.number testGetAlphabeticBaselineStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetAlphabeticBaseline_Static_0800
      * @tc.desc   To test method getAlphabeticBaseline for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetRectsForRangeStatic
-     * @tc.number testGetRectsForRangeStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetRectsForRange_Static_0900
      * @tc.desc   To test method getRectsForRange for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,7 +367,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetRectsForPlaceholdersStatic
-     * @tc.number testGetRectsForPlaceholdersStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetRectsForPlaceholders_Static_1000
      * @tc.desc   To test method getRectsForPlaceholders for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -392,7 +392,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetGlyphPositionAtCoordinateStatic
-     * @tc.number testGetGlyphPositionAtCoordinateStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetGlyphPositionAtCoordinate_Static_1100
      * @tc.desc   To test method getGlyphPositionAtCoordinate for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetLongestLineStatic
-     * @tc.number testGetLongestLineStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLongestLine_Static_1200
      * @tc.desc   To test method getLongestLine for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetLineMetricsStatic
-     * @tc.number testGetLineMetricsStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLineMetrics_Static_1300
      * @tc.desc   To test method getLineMetrics for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -549,7 +549,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testGetLineMetricsAtStatic
-     * @tc.number testGetLineMetricsAtStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLineMetricsAt_Static_1400
      * @tc.desc   To test method getLineMetricsAt for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -635,7 +635,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testPaintStatic
-     * @tc.number testPaintStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaint_Static_1500
      * @tc.desc   To test method paint for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function TextParagraphTest() {
 
     /**
      * @tc.name   testPaintOnPathStatic_01
-     * @tc.number testPaintOnPathStatic_01
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaintOnPath_Static_1600
      * @tc.desc   To test method paintOnPath for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

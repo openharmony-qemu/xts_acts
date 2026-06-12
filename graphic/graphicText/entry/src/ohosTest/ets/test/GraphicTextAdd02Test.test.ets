@@ -23,7 +23,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameNormal
-     * @tc.number fontCollectionMethodsTest_001
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0100
      * @tc.desc   FontCollection getFontDescriptorByFullName normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -48,7 +48,7 @@ export default function GraphicTextAdd02Test() {
       });
     /**
      * @tc.name   getFontDescriptorByFullNameCustomized
-     * @tc.number fontCollectionMethodsTest_001_1
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0200
      * @tc.desc   FontCollection getFontDescriptorByFullName normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFullNameEmpty401
-     * @tc.number fontCollectionMethodsTest_002
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0300
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFullNameNull401
-     * @tc.number fontCollectionMethodsTest_003
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0400
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFullNameUndefined401
-     * @tc.number fontCollectionMethodsTest_003_1
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0500
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFontTypeStylish
-     * @tc.number fontCollectionMethodsTest_004
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0600
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType STYLISH test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFontTypeGeneric
-     * @tc.number fontCollectionMethodsTest_005
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0700
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType GENERIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -208,7 +208,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameFontTypeInstalled
-     * @tc.number fontCollectionMethodsTest_006
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0800
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType INSTALLED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorByFullNameAllFontTypes
-     * @tc.number fontCollectionMethodsTest_007
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_0900
      * @tc.desc   FontCollection getFontDescriptorByFullName all font types test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsNormal
-     * @tc.number fontCollectionMethodsTest_008
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1000
      * @tc.desc   FontCollection matchFontDescriptors normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -286,7 +286,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsFullNameEmpty401
-     * @tc.number fontCollectionMethodsTest_009
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1100
      * @tc.desc   FontCollection matchFontDescriptors fullName empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -310,7 +310,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsFontSubfamilyEmpty401
-     * @tc.number fontCollectionMethodsTest_010
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_120
      * @tc.desc   FontCollection matchFontDescriptors fontSubfamily empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsFontSubfamilyNotNull
-     * @tc.number fontCollectionMethodsTest_011
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1300
      * @tc.desc   FontCollection matchFontDescriptors fontSubfamily not null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW100
-     * @tc.number fontCollectionMethodsTest_012
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1400
      * @tc.desc   FontCollection matchFontDescriptors weight W100 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW200
-     * @tc.number fontCollectionMethodsTest_013
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1500
      * @tc.desc   FontCollection matchFontDescriptors weight W200 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -439,7 +439,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW300
-     * @tc.number fontCollectionMethodsTest_014
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1600
      * @tc.desc   FontCollection matchFontDescriptors weight W300 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -477,7 +477,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW400
-     * @tc.number fontCollectionMethodsTest_015
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1700
      * @tc.desc   FontCollection matchFontDescriptors weight W400 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -506,7 +506,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW500
-     * @tc.number fontCollectionMethodsTest_016
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1800
      * @tc.desc   FontCollection matchFontDescriptors weight W500 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -535,7 +535,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW600
-     * @tc.number fontCollectionMethodsTest_017
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_1900
      * @tc.desc   FontCollection matchFontDescriptors weight W600 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -564,7 +564,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW700
-     * @tc.number fontCollectionMethodsTest_018
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2000
      * @tc.desc   FontCollection matchFontDescriptors weight W700 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -593,7 +593,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW800
-     * @tc.number fontCollectionMethodsTest_019
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2100
      * @tc.desc   FontCollection matchFontDescriptors weight W800 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +622,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsWeightW900
-     * @tc.number fontCollectionMethodsTest_020
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2200
      * @tc.desc   FontCollection matchFontDescriptors weight W900 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsMonoSpaceTrue
-     * @tc.number fontCollectionMethodsTest_021
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2300
      * @tc.desc   FontCollection matchFontDescriptors monoSpace true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -680,7 +680,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsMonoSpaceFalse
-     * @tc.number fontCollectionMethodsTest_022
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2400
      * @tc.desc   FontCollection matchFontDescriptors monoSpace false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -709,7 +709,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsSymbolicTrue
-     * @tc.number fontCollectionMethodsTest_023
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2500
      * @tc.desc   FontCollection matchFontDescriptors symbolic true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -738,7 +738,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsSymbolicFalse
-     * @tc.number fontCollectionMethodsTest_024
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2600
      * @tc.desc   FontCollection matchFontDescriptors symbolic false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -767,7 +767,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsLocalPostscriptNameEmpty
-     * @tc.number fontCollectionMethodsTest_025
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2700
      * @tc.desc   FontCollection matchFontDescriptors localPostscriptName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -797,7 +797,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsLocalFullNameEmpty
-     * @tc.number fontCollectionMethodsTest_026
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2800
      * @tc.desc   FontCollection matchFontDescriptors localFullName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -826,7 +826,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsLocalFamilyNameEmpty
-     * @tc.number fontCollectionMethodsTest_027
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_2900
      * @tc.desc   FontCollection matchFontDescriptors localFamilyName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -855,7 +855,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsLocalSubFamilyNameEmpty
-     * @tc.number fontCollectionMethodsTest_028
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3000
      * @tc.desc   FontCollection matchFontDescriptors localSubFamilyName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -885,7 +885,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsVersionEmpty
-     * @tc.number fontCollectionMethodsTest_029
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3100
      * @tc.desc   FontCollection matchFontDescriptors version empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -914,7 +914,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsManufactureEmpty
-     * @tc.number fontCollectionMethodsTest_030
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3200
      * @tc.desc   FontCollection matchFontDescriptors manufacture empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -943,7 +943,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsCopyrightEmpty
-     * @tc.number fontCollectionMethodsTest_031
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3300
      * @tc.desc   FontCollection matchFontDescriptors copyright empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -972,7 +972,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsTrademarkEmpty
-     * @tc.number fontCollectionMethodsTest_032
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3400
      * @tc.desc   FontCollection matchFontDescriptors trademark empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1001,7 +1001,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   matchFontDescriptorsLicenseEmpty
-     * @tc.number fontCollectionMethodsTest_033
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3500
      * @tc.desc   FontCollection matchFontDescriptors license empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1030,7 +1030,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorsFromPathNormal
-     * @tc.number fontCollectionMethodsTest_034
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3600
      * @tc.desc   FontCollection getFontDescriptorsFromPath normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1055,7 +1055,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorsFromPathNull401
-     * @tc.number fontCollectionMethodsTest_035
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3700
      * @tc.desc   FontCollection getFontDescriptorsFromPath path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1078,7 +1078,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontDescriptorsFromPathUndefined401
-     * @tc.number fontCollectionMethodsTest_036
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3800
      * @tc.desc   FontCollection getFontDescriptorsFromPath path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1101,7 +1101,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   isFontSupportedStringNormal
-     * @tc.number fontCollectionMethodsTest_037
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_3900
      * @tc.desc   FontCollection isFontSupported string normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1124,7 +1124,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   isFontSupportedStringEmpty401
-     * @tc.number fontCollectionMethodsTest_038
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4000
      * @tc.desc   FontCollection isFontSupported string empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1147,7 +1147,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   isFontSupportedStringNull401
-     * @tc.number fontCollectionMethodsTest_039
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4100
      * @tc.desc   FontCollection isFontSupported string null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1170,7 +1170,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   isFontSupportedStringUndefined401
-     * @tc.number fontCollectionMethodsTest_040
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4200
      * @tc.desc   FontCollection isFontSupported string undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1193,7 +1193,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontUnicodeSetNormal
-     * @tc.number fontCollectionMethodsTest_041
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4300
      * @tc.desc   FontCollection getFontUnicodeSet normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1218,7 +1218,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontUnicodeSetPathNull401
-     * @tc.number fontCollectionMethodsTest_042
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4400
      * @tc.desc   FontCollection getFontUnicodeSet path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1241,7 +1241,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontUnicodeSetPathUndefined401
-     * @tc.number fontCollectionMethodsTest_043
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4500
      * @tc.desc   FontCollection getFontUnicodeSet path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1264,7 +1264,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontUnicodeSetIndexNull401
-     * @tc.number fontCollectionMethodsTest_044
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4600
      * @tc.desc   FontCollection getFontUnicodeSet index null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1287,7 +1287,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontUnicodeSetIndexUndefined401
-     * @tc.number fontCollectionMethodsTest_045
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4700
      * @tc.desc   FontCollection getFontUnicodeSet index undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1310,7 +1310,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontCountNormal
-     * @tc.number fontCollectionMethodsTest_046
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4800
      * @tc.desc   FontCollection getFontCount normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1333,7 +1333,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontCountPathNull401
-     * @tc.number fontCollectionMethodsTest_047
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_4900
      * @tc.desc   FontCollection getFontCount path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1356,7 +1356,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontCountPathUndefined401
-     * @tc.number fontCollectionMethodsTest_048
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_5000
      * @tc.desc   FontCollection getFontCount path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1379,7 +1379,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontPathsByTypeStylish
-     * @tc.number fontCollectionMethodsTest_049
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_5100
      * @tc.desc   FontCollection getFontPathsByType STYLISH test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1404,7 +1404,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontPathsByTypeGeneric
-     * @tc.number fontCollectionMethodsTest_050
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_5200
      * @tc.desc   FontCollection getFontPathsByType GENERIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getFontPathsByTypeInstalled
-     * @tc.number fontCollectionMethodsTest_051
+     * @tc.number SUB_GRAPHIC_Text_FontCollectionMethodsTest_5300
      * @tc.desc   FontCollection getFontPathsByType INSTALLED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1454,7 +1454,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeNormal
-     * @tc.number textLineGetTextRangeTest_001
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0100
      * @tc.desc   TextLine getTextRange normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1493,7 +1493,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeStartProperty
-     * @tc.number textLineGetTextRangeTest_002
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0200
      * @tc.desc   TextLine getTextRange start property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1529,7 +1529,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeEndProperty
-     * @tc.number textLineGetTextRangeTest_003
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0300
      * @tc.desc   TextLine getTextRange end property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1565,7 +1565,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeMultipleLines
-     * @tc.number textLineGetTextRangeTest_004
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0400
      * @tc.desc   TextLine getTextRange multiple lines test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1607,7 +1607,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeEmptyText
-     * @tc.number textLineGetTextRangeTest_005
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0500
      * @tc.desc   TextLine getTextRange empty text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1643,7 +1643,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeLongText
-     * @tc.number textLineGetTextRangeTest_006
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0600
      * @tc.desc   TextLine getTextRange long text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1683,7 +1683,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeWithSpaces
-     * @tc.number textLineGetTextRangeTest_007
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0700
      * @tc.desc   TextLine getTextRange with spaces test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1721,7 +1721,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeSingleCharacter
-     * @tc.number textLineGetTextRangeTest_008
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0800
      * @tc.desc   TextLine getTextRange single character test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1759,7 +1759,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeSpecialCharacters
-     * @tc.number textLineGetTextRangeTest_009
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_0900
      * @tc.desc   TextLine getTextRange special characters test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1796,7 +1796,7 @@ export default function GraphicTextAdd02Test() {
 
     /**
      * @tc.name   getTextRangeZeroStart
-     * @tc.number textLineGetTextRangeTest_010
+     * @tc.number SUB_GRAPHIC_Text_TextLineGetTextRangeTest_1000
      * @tc.desc   TextLine getTextRange zero start test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -201,7 +201,7 @@ export default function TextLineParagraphTest() {
 
     /**
      * @tc.name   testCreateLineParagraphStatic
-     * @tc.number testCreateLineParagraphStatic
+     * @tc.number SUB_GRAPHIC_Text_TestCreateLineParagraphStatic_0100
      * @tc.desc   To test metchod create line paragraph for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

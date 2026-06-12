@@ -33,7 +33,7 @@ export default function GraphicTextParagraphBuilder() {
 
     /**
      * @tc.name   testCreateParagraphBuilderStatic
-     * @tc.number testCreateParagraphBuilderStatic
+     * @tc.number SUB_GRAPHIC_Text_TestCreateParagraphBuilderStatic_0100
      * @tc.desc   To test for create a paragraphBuilder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

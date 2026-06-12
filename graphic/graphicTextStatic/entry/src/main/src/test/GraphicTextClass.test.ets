@@ -39,7 +39,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLayoutSyncStatic
-     * @tc.number testLayoutSyncStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLayoutSync_Static_0100
      * @tc.desc   To test Paragraph layoutSyncSync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPaintStatic_02
-     * @tc.number testPaintStatic_02
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaint_Static_0200
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPaintOnPathStatic_02
-     * @tc.number testPaintOnPathStatic_02
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPaintOnPath_Static_0300
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testParagraphBuilder_AonstructorAndAddTextStatic
-     * @tc.number testParagraphBuilder_AonstructorAndAddTextStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testParagraphBuilder_AonstructorAndAddText_Static_0400
      * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testGetLongestLineStatic_01
-     * @tc.number testGetLongestLineStatic_01
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetLongestLine_Static_0500
      * @tc.desc   To test Paragraph GetLongestLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -205,7 +205,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testPlaceholderSpanStatic
-     * @tc.number testPlaceholderSpanStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testPlaceholderSpan_Static_0600
      * @tc.desc   test for PlaceholderSpan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +263,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLineTypesetStatic
-     * @tc.number testLineTypesetStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLineTypeset_Static_0700
      * @tc.desc   test for LineTypeset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -301,7 +301,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testLayoutStatic
-     * @tc.number testLayoutStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testLayout_Static_0800
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +333,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testAddSymbolStatic
-     * @tc.number testAddSymbolStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testAddSymbol_Static_0900
      * @tc.desc   test for addSymbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function GraphicTextClass() {
 
     /**
      * @tc.name   testGetFullNameStatic
-     * @tc.number testGetFullNameStatic
+     * @tc.number SUB_GRAPHIC_Text_Dynamic_testGetFullName_Static_1000
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

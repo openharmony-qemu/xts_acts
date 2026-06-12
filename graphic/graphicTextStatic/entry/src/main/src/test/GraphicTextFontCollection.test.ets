@@ -32,7 +32,7 @@ export default function GraphicTextFontCollection() {
 
     /**
      * @tc.name   testGetGlobalInstanceStatic_01
-     * @tc.number testGetGlobalInstanceStatic_01
+     * @tc.number SUB_GRAPHIC_Text_TestGetGlobalInstanceStatic_0100
      * @tc.desc   To test interface getGlobalInstance of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -55,7 +55,7 @@ export default function GraphicTextFontCollection() {
 
     /**
      * @tc.name   testNewFontCollectionStatic
-     * @tc.number testNewFontCollectionStatic
+     * @tc.number SUB_GRAPHIC_Text_TestNewFontCollectionStatic_0100
      * @tc.desc   To test interface new FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function GraphicTextFontCollection() {
 
     /**
      * @tc.name   testLoadFontStatic
-     * @tc.number testLoadFontStatic
+     * @tc.number SUB_GRAPHIC_Text_TestLoadFontStatic_0100
      * @tc.desc   To test interface loadFont of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -103,7 +103,7 @@ export default function GraphicTextFontCollection() {
 
     /**
      * @tc.name   testclearCachesStatic
-     * @tc.number testclearCachesStatic
+     * @tc.number SUB_GRAPHIC_Text_TestclearCachesStatic_0100
      * @tc.desc   To test interface clearCaches of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

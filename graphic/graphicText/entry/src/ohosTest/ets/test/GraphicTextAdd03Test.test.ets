@@ -23,7 +23,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationNone
-     * @tc.number paragraphBuilderPushStyleTest_001
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0100
      * @tc.desc   ParagraphBuilder pushStyle textDecoration NONE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -64,7 +64,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationSolid
-     * @tc.number paragraphBuilderPushStyleTest_002
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0200
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle SOLID test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationOverLine
-     * @tc.number paragraphBuilderPushStyleTest_overline_001
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_overline_0300
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle SOLID test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationDouble
-     * @tc.number paragraphBuilderPushStyleTest_003
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0400
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle DOUBLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -185,7 +185,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationDotted
-     * @tc.number paragraphBuilderPushStyleTest_004
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0500
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle DOTTED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +225,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationDashed
-     * @tc.number paragraphBuilderPushStyleTest_005
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0600
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle DASHED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -265,7 +265,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleDecorationWavy
-     * @tc.number paragraphBuilderPushStyleTest_006
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0700
      * @tc.desc   ParagraphBuilder pushStyle decorationStyle WAVY test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -305,7 +305,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeight
-     * @tc.number paragraphBuilderPushStyleTest_007
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0800
      * @tc.desc   ParagraphBuilder pushStyle fontWeight test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -339,7 +339,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleBaseline
-     * @tc.number paragraphBuilderPushStyleTest_008
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_0900
      * @tc.desc   ParagraphBuilder pushStyle baseline IDEOGRAPHIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -374,7 +374,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesEmpty
-     * @tc.number paragraphBuilderPushStyleTest_009
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1000
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesNonEmpty
-     * @tc.number paragraphBuilderPushStyleTest_010
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1100
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies non-empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleLocaleEmpty
-     * @tc.number paragraphBuilderPushStyleTest_011
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1200
      * @tc.desc   ParagraphBuilder pushStyle locale empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -476,7 +476,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleLocaleNonEmpty
-     * @tc.number paragraphBuilderPushStyleTest_012
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1300
      * @tc.desc   ParagraphBuilder pushStyle locale non-empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -511,7 +511,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWidth
-     * @tc.number paragraphBuilderPushStyleTest_022
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1400
      * @tc.desc   ParagraphBuilder pushStyle fontWidth test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -546,7 +546,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleHalfLeading
-     * @tc.number paragraphBuilderPushStyleTest_023
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1500
      * @tc.desc   ParagraphBuilder pushStyle halfLeading true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -581,7 +581,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleHalfLeadingFalse
-     * @tc.number paragraphBuilderPushStyleTest_024
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1600
      * @tc.desc   ParagraphBuilder pushStyle halfLeading false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -616,7 +616,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleHeightOnly
-     * @tc.number paragraphBuilderPushStyleTest_025
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1700
      * @tc.desc   ParagraphBuilder pushStyle heightOnly true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -654,7 +654,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleHeightOnlyFalse
-     * @tc.number paragraphBuilderPushStyleTest_026
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1800
      * @tc.desc   ParagraphBuilder pushStyle heightOnly false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -689,7 +689,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisEmpty
-     * @tc.number paragraphBuilderPushStyleTest_027
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_1900
      * @tc.desc   ParagraphBuilder pushStyle ellipsis empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -724,7 +724,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisNonEmpty
-     * @tc.number paragraphBuilderPushStyleTest_028
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2000
      * @tc.desc   ParagraphBuilder pushStyle ellipsis non-empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -758,7 +758,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeStart
-     * @tc.number paragraphBuilderPushStyleTest_029
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2100
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode START test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -792,7 +792,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeMiddle
-     * @tc.number paragraphBuilderPushStyleTest_030
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2200
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -826,7 +826,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeEnd
-     * @tc.number paragraphBuilderPushStyleTest_031
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2300
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode END test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -860,7 +860,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleTextNull401
-     * @tc.number paragraphBuilderPushStyleTest_032
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2400
      * @tc.desc   ParagraphBuilder pushStyle null parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -885,7 +885,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleTextUndefined401
-     * @tc.number paragraphBuilderPushStyleTest_033
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_2500
      * @tc.desc   ParagraphBuilder pushStyle undefined parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -910,7 +910,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontStyleNormal
-     * @tc.number paragraphBuilderPushStyleFinalTest_001
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFinalTest_02600
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -944,7 +944,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontStyleItalic
-     * @tc.number paragraphBuilderPushStyleFinalTest_002
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFinalTest_2700
      * @tc.desc   ParagraphBuilder pushStyle fontStyle ITALIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -978,7 +978,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleBaselineAlphabetic
-     * @tc.number paragraphBuilderPushStyleFinalTest_003
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFinalTest_2800
      * @tc.desc   ParagraphBuilder pushStyle baseline ALPHABETIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1012,7 +1012,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW100
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_001
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_2900
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W100 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1046,7 +1046,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW200
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_002
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3000
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W200 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1080,7 +1080,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW300
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_003
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3100
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W300 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1114,7 +1114,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW400
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_004
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3200
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W400 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1148,7 +1148,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW500
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_005
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3300
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W500 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW600
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_006
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3400
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W600 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1216,7 +1216,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW700
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_007
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3500
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W700 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1250,7 +1250,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW800
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_008
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3600
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W800 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1284,7 +1284,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWeightW900
-     * @tc.number paragraphBuilderPushStyleFontWeightTest_009
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWeightTest_3700
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W900 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1318,7 +1318,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesEmptyString
-     * @tc.number paragraphBuilderPushStyleTest_013
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_3800
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1352,7 +1352,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesNull
-     * @tc.number paragraphBuilderPushStyleTest_014
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_3900
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1381,7 +1381,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontFamiliesUndefined
-     * @tc.number paragraphBuilderPushStyleTest_015
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleTest_4000
      * @tc.desc   ParagraphBuilder pushStyle fontFamilies empty array test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1409,7 +1409,7 @@ export default function GraphicTextAdd03Test() {
       });
     /**
      * @tc.name   pushStyleFontStyleSlant
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_001
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4100
      * @tc.desc   ParagraphBuilder pushStyle fontStyle SLANT test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1443,7 +1443,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeMultilineStart
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_002
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4200
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MULTILINE_START test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1477,7 +1477,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeMultilineMiddle
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_003
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4300
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MULTILINE_MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1511,7 +1511,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleEllipsisModeMultilineEnd
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_004
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4400
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MULTILINE_END test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1545,7 +1545,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWidthUltraCondensed
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_005
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4500
      * @tc.desc   ParagraphBuilder pushStyle fontWidth ULTRA_CONDENSED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1579,7 +1579,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWidthExtraCondensed
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_006
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4600
      * @tc.desc   ParagraphBuilder pushStyle fontWidth EXTRA_CONDENSED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1613,7 +1613,7 @@ export default function GraphicTextAdd03Test() {
 
     /**
      * @tc.name   pushStyleFontWidthCondensed
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_007
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4700
      * @tc.desc   ParagraphBuilder pushStyle fontWidth CONDENSED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1647,7 +1647,7 @@ export default function GraphicTextAdd03Test() {
 
 /**
      * @tc.name   pushStyleFontWidthSemiCondensed
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_008
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4800
      * @tc.desc   ParagraphBuilder pushStyle fontWidth SEMI_CONDENSED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1681,7 +1681,7 @@ const textStyle: text.TextStyle = {
 
     /**
      * @tc.name   pushStyleFontWidthExpanded
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_009
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_4900
      * @tc.desc   ParagraphBuilder pushStyle fontWidth EXPANDED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1715,7 +1715,7 @@ const textStyle: text.TextStyle = {
 
     /**
      * @tc.name   pushStyleFontWidthExtraExpanded
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_010
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_5000
      * @tc.desc   ParagraphBuilder pushStyle fontWidth EXTRA_EXPANDED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1749,7 +1749,7 @@ const textStyle: text.TextStyle = {
 
     /**
      * @tc.name   pushStyleFontWidthUltraExpanded
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_011
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_5100
      * @tc.desc   ParagraphBuilder pushStyle fontWidth ULTRA_EXPANDED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1783,7 +1783,7 @@ const textStyle: text.TextStyle = {
 
     /**
      * @tc.name   pushStyleComplexProperties
-     * @tc.number paragraphBuilderPushStyleFontStyleAndWidthTest_012
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontStyleAndWidthTest_5200
      * @tc.desc   ParagraphBuilder pushStyle complex properties test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1825,7 +1825,7 @@ const textStyle: text.TextStyle = {
 
     /**
      * @tc.name   pushStyleFontWidthNormal
-     * @tc.number paragraphBuilderPushStyleFontWidthTest_004
+     * @tc.number SUB_GRAPHIC_Text_ParagraphBuilderPushStyleFontWidthTest_5300
      * @tc.desc   ParagraphBuilder pushStyle fontWidth NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

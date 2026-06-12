@@ -322,7 +322,7 @@ export default function TextRunTest() {
 
     /**
      * @tc.name   testGetGlyphRunsStatic
-     * @tc.number testGetGlyphRunsStatic
+     * @tc.number SUB_GRAPHIC_Text_TestGetGlyphRunsStatic_0100
      * @tc.desc   To test method getGlyphRuns desc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

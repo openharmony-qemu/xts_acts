@@ -36,7 +36,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintCanvasNull401
-     * @tc.number runTest_001
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0100
      * @tc.desc   Run paint canvas parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintCanvasUndefined401
-     * @tc.number runTest_002
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0200
      * @tc.desc   Run paint canvas parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -110,7 +110,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintXNull401
-     * @tc.number runTest_003
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0300
      * @tc.desc   Run paint x parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +147,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintXUndefined401
-     * @tc.number runTest_004
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0400
      * @tc.desc   Run paint x parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +184,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintYNull401
-     * @tc.number runTest_005
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0500
      * @tc.desc   Run paint y parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -221,7 +221,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintYUndefined401
-     * @tc.number runTest_006
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0600
      * @tc.desc   Run paint y parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runPaintNormal
-     * @tc.number runTest_007
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0700
      * @tc.desc   Run paint normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsNormal
-     * @tc.number runTest_008
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0800
      * @tc.desc   Run getImageBounds normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -340,7 +340,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsLeftProperty
-     * @tc.number runTest_009
+     * @tc.number SUB_GRAPHIC_Text_RunTest_0900
      * @tc.desc   Run getImageBounds left property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -377,7 +377,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsTopProperty
-     * @tc.number runTest_010
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1000
      * @tc.desc   Run getImageBounds top property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsRightProperty
-     * @tc.number runTest_011
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1100
      * @tc.desc   Run getImageBounds right property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsBottomProperty
-     * @tc.number runTest_012
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1200
      * @tc.desc   Run getImageBounds bottom property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsEmptyText
-     * @tc.number runTest_013
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1300
      * @tc.desc   Run getImageBounds empty text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsLongText
-     * @tc.number runTest_014
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1400
      * @tc.desc   Run getImageBounds long text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -564,7 +564,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetImageBoundsWithSpaces
-     * @tc.number runTest_015
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1500
      * @tc.desc   Run getImageBounds with spaces test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,7 +604,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetAdvancesRangeNull401
-     * @tc.number runTest_016
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1600
      * @tc.desc   Run getAdvances range parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -638,7 +638,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetAdvancesRangeUndefined401
-     * @tc.number runTest_017
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1700
      * @tc.desc   Run getAdvances range parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -672,7 +672,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetAdvancesNormal
-     * @tc.number runTest_018
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1800
      * @tc.desc   Run getAdvances normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -711,7 +711,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetAdvancesPartialRange
-     * @tc.number runTest_019
+     * @tc.number SUB_GRAPHIC_Text_RunTest_1900
      * @tc.desc   Run getAdvances partial range test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -750,7 +750,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   runGetAdvancesPointTypes
-     * @tc.number runTest_020
+     * @tc.number SUB_GRAPHIC_Text_RunTest_2000
      * @tc.desc   Run getAdvances point types test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -793,7 +793,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintCanvasNull401
-     * @tc.number textLineTest_001
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0100
      * @tc.desc   TextLine paint canvas parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintCanvasUndefined401
-     * @tc.number textLineTest_002
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0200
      * @tc.desc   TextLine paint canvas parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -861,7 +861,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintXNull401
-     * @tc.number textLineTest_003
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0300
      * @tc.desc   TextLine paint x parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -895,7 +895,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintXUndefined401
-     * @tc.number textLineTest_004
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0400
      * @tc.desc   TextLine paint x parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -929,7 +929,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintYNull401
-     * @tc.number textLineTest_005
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0500
      * @tc.desc   TextLine paint y parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -963,7 +963,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   paintYUndefined401
-     * @tc.number textLineTest_006
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0600
      * @tc.desc   TextLine paint y parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -997,7 +997,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisEmpty
-     * @tc.number textLineTest_007
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0700
      * @tc.desc   TextLine createTruncatedLine ellipsis empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1030,7 +1030,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisNull401
-     * @tc.number textLineTest_008
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0800
      * @tc.desc   TextLine createTruncatedLine ellipsis null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1063,7 +1063,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisUndefined401
-     * @tc.number textLineTest_009
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_0900
      * @tc.desc   TextLine createTruncatedLine ellipsis undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1096,7 +1096,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisModeStart
-     * @tc.number textLineTest_010
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1000
      * @tc.desc   TextLine createTruncatedLine ellipsisMode START test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1129,7 +1129,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisModeMiddle
-     * @tc.number textLineTest_011
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1100
      * @tc.desc   TextLine createTruncatedLine ellipsisMode MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1162,7 +1162,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   createTruncatedLineEllipsisModeEnd
-     * @tc.number textLineTest_012
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1200
      * @tc.desc   TextLine createTruncatedLine ellipsisMode END test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1195,7 +1195,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getAlignmentOffsetAlignmentFactorNull401
-     * @tc.number textLineTest_013
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1300
      * @tc.desc   TextLine getAlignmentOffset alignmentFactor parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1228,7 +1228,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getAlignmentOffsetAlignmentFactorUndefined401
-     * @tc.number textLineTest_014
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1400
      * @tc.desc   TextLine getAlignmentOffset alignmentFactor parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1261,7 +1261,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getAlignmentOffsetNormal
-     * @tc.number textLineTest_015
+     * @tc.number SUB_GRAPHIC_Text_TextLineTest_1500
      * @tc.desc   TextLine getAlignmentOffset normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1294,7 +1294,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getLineMetricsAdd05
-     * @tc.number getLineMetricsAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetLineMetricsAdd_0100
      * @tc.desc   TextLine getLineMetrics normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1340,7 +1340,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getImageBoundsAdd05
-     * @tc.number getImageBoundsAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetImageBoundsAdd_0100
      * @tc.desc   run getImageBounds normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1385,7 +1385,7 @@ export default function GraphicTextAdd05Test() {
       
     /**
      * @tc.name   getFontDescriptorByFullNameAdd05
-     * @tc.number getFontDescriptorByFullNameAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetFontDescriptorByFullNameAdd_0100
      * @tc.desc   text getFontDescriptorByFullName test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1445,7 +1445,7 @@ export default function GraphicTextAdd05Test() {
       
     /**
      * @tc.name   getFontDescriptorsFromPathAdd05
-     * @tc.number getFontDescriptorsFromPathAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetFontDescriptorsFromPathAdd_0100
      * @tc.desc   text getFontDescriptorsFromPath test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1468,7 +1468,7 @@ export default function GraphicTextAdd05Test() {
     
     /**
      * @tc.name   getFontUnicodeSetAdd05
-     * @tc.number getFontUnicodeSetAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetFontUnicodeSetAdd_0100
      * @tc.desc   text getFontUnicodeSet test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1490,7 +1490,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   getFontCountAdd05
-     * @tc.number getFontCountAdd05
+     * @tc.number SUB_GRAPHIC_Text_GetFontCountAdd_0100
      * @tc.desc   text getFontCount test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1513,7 +1513,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   testGraphicTextAdd05_getRectsForRange
-     * @tc.number testGraphicTextAdd05_getRectsForRange
+     * @tc.number SUB_GRAPHIC_Text_GetRectsForRangeAdd_0100
      * @tc.desc   getRectsForRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1551,7 +1551,7 @@ export default function GraphicTextAdd05Test() {
 
     /**
      * @tc.name   testGraphicTextAdd05_createTruncatedLine
-     * @tc.number testGraphicTextAdd05_createTruncatedLine
+     * @tc.number SUB_GRAPHIC_Text_CreateTruncatedLineAdd_0100
      * @tc.desc   test createTruncatedLine.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
