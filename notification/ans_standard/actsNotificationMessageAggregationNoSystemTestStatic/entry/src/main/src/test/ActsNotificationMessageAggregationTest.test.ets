@@ -67,16 +67,16 @@ export default function actsNotificationMessageAggregationTest():void{
 
 
     /**
-     * @tc.name   Sub_Notification_Ans_Message_Aggregation_static_1300
-     * @tc.number Sub_Notification_Ans_Message_Aggregation_static_1300
+     * @tc.name   SUB_Notification_Ans_Message_Aggregation_static_1300
+     * @tc.number SUB_Notification_Ans_Message_Aggregation_static_1300
      * @tc.desc   【强基】【setNotificationSwitch】三方应用调用请求接口，报错202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_Message_Aggregation_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_Notification_Ans_Message_Aggregation_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let Tag: string = 'Sub_Notification_Ans_Message_Aggregation_static_1300'
+        let Tag: string = 'SUB_Notification_Ans_Message_Aggregation_static_1300'
        try{
          let switchName: string = 'LOGISTICS';
          let switchState: boolean = true;
@@ -105,16 +105,16 @@ export default function actsNotificationMessageAggregationTest():void{
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Message_Aggregation_static_2300
-     * @tc.number Sub_Notification_Ans_Message_Aggregation_static_2300
+     * @tc.name   SUB_Notification_Ans_Message_Aggregation_static_1300
+     * @tc.number SUB_Notification_Ans_Message_Aggregation_static_1300
      * @tc.desc   【强基】【getNotificationSwitch】三方应用调用请求接口，报错202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_Message_Aggregation_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_Notification_Ans_Message_Aggregation_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        let Tag: string = 'Sub_Notification_Ans_Message_Aggregation_static_2300'
+        let Tag: string = 'SUB_Notification_Ans_Message_Aggregation_static_1300'
         try{
           let switchName: string = 'DEAL';
           let switchState: boolean = true;
