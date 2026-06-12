@@ -333,7 +333,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0190
      * @tc.name testArrayJoin0181
      * @tc.desc Verify sparse holes also produce empty fields in the joined string
      * @tc.size MediumTest
@@ -350,7 +350,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0200
      * @tc.name testArrayJoin019
      * @tc.desc Verify zero values are preserved in the joined string
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0210
      * @tc.name testArrayJoin020
      * @tc.desc Verify empty string elements keep their position in the result
      * @tc.size MediumTest
@@ -378,7 +378,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0220
      * @tc.name testArrayJoin021
      * @tc.desc Verify boolean values are converted to their string forms
      * @tc.size MediumTest
@@ -392,7 +392,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0230
      * @tc.name testArrayJoin022
      * @tc.desc Verify object elements use their string representation when joined
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0240
      * @tc.name testArrayJoin023
      * @tc.desc Verify omitted separator uses a comma for number arrays
      * @tc.size MediumTest
@@ -420,7 +420,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0250
      * @tc.name testArrayJoin024
      * @tc.desc Verify empty separators can build compact strings
      * @tc.size MediumTest
@@ -434,7 +434,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0260
      * @tc.name testArrayJoin025
      * @tc.desc Verify spaces can be used as separators
      * @tc.size MediumTest
@@ -448,7 +448,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0270
      * @tc.name testArrayJoin026
      * @tc.desc Verify newline separators are preserved in the joined string
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0280
      * @tc.name testArrayJoin027
      * @tc.desc Verify html like separators are preserved in the joined string
      * @tc.size MediumTest
@@ -476,7 +476,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0290
      * @tc.name testArrayJoin028
      * @tc.desc Verify join without a separator matches toString output
      * @tc.size MediumTest
@@ -491,7 +491,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0300
      * @tc.name testArrayJoin029
      * @tc.desc Verify custom separators produce results different from toString
      * @tc.size MediumTest
@@ -507,7 +507,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0310
      * @tc.name testArrayJoin030
      * @tc.desc Verify integer arrays join into comma separated strings
      * @tc.size MediumTest
@@ -521,7 +521,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0320
      * @tc.name testArrayJoin031
      * @tc.desc Verify floating point arrays join into comma separated strings
      * @tc.size MediumTest
@@ -535,7 +535,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0330
      * @tc.name testArrayJoin032
      * @tc.desc Verify negative numbers are preserved in joined strings
      * @tc.size MediumTest
@@ -549,7 +549,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0340
      * @tc.name testArrayJoin033
      * @tc.desc Verify positive zero and negative values retain their order
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0350
      * @tc.name testArrayJoin034
      * @tc.desc Verify nested arrays are stringified through their own toString
      * @tc.size MediumTest
@@ -578,7 +578,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0360
      * @tc.name testArrayJoin035
      * @tc.desc Verify multi level nested arrays still produce a string result
      * @tc.size MediumTest
@@ -594,7 +594,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0370
      * @tc.name testArrayJoin036
      * @tc.desc Verify join does not modify the original array
      * @tc.size MediumTest
@@ -611,7 +611,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0380
      * @tc.name testArrayJoin037
      * @tc.desc Verify repeated join calls return the same result for unchanged arrays
      * @tc.size MediumTest
@@ -626,7 +626,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0390
      * @tc.name testArrayJoin038
      * @tc.desc Verify join can build a csv header line
      * @tc.size MediumTest
@@ -640,7 +640,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0400
      * @tc.name testArrayJoin039
      * @tc.desc Verify join can build slash separated paths
      * @tc.size MediumTest
@@ -654,7 +654,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0410
      * @tc.name testArrayJoin040
      * @tc.desc Verify join can build query parameter strings
      * @tc.size MediumTest
@@ -668,7 +668,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0420
      * @tc.name testArrayJoin041
      * @tc.desc Verify join can build spaced sentences
      * @tc.size MediumTest
@@ -682,7 +682,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0430
      * @tc.name testArrayJoin042
      * @tc.desc Verify join can build css class name strings
      * @tc.size MediumTest
@@ -696,7 +696,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0440
      * @tc.name testArrayJoin043
      * @tc.desc Verify the joined string can be chained with string methods
      * @tc.size MediumTest
@@ -710,7 +710,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0450
      * @tc.name testArrayJoin044
      * @tc.desc Verify joined strings can be passed as function arguments
      * @tc.size MediumTest
@@ -724,7 +724,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0460
      * @tc.name testArrayJoin045
      * @tc.desc Verify large string arrays can be joined successfully
      * @tc.size MediumTest
@@ -740,7 +740,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0470
      * @tc.name testArrayJoin046
      * @tc.desc Verify different separators produce different result lengths
      * @tc.size MediumTest
@@ -756,7 +756,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0480
      * @tc.name testArrayJoin047
      * @tc.desc Verify generic arrays of different element types still return strings
      * @tc.size MediumTest
@@ -774,7 +774,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0490
      * @tc.name testArrayJoin048
      * @tc.desc Verify union typed arrays join all elements in order
      * @tc.size MediumTest
@@ -787,7 +787,7 @@ export default function ArrayJoinTest(): void {
       expect(result).assertEqual('1,two,3');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0500
      * @tc.name testArrayJoin049
      * @tc.desc Verify join preserves empty string elements at every position
      * @tc.size MediumTest
@@ -801,7 +801,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0510
      * @tc.name testArrayJoin050
      * @tc.desc Verify join converts NaN elements to the string NaN
      * @tc.size MediumTest
@@ -815,7 +815,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0520
      * @tc.name testArrayJoin051
      * @tc.desc Verify join converts Infinity elements to their string form
      * @tc.size MediumTest
@@ -829,7 +829,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0530
      * @tc.name testArrayJoin052
      * @tc.desc Verify join stringifies negative zero as plain zero
      * @tc.size MediumTest
@@ -843,7 +843,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0540
      * @tc.name testArrayJoin053
      * @tc.desc Verify a single null element joins into an empty string
      * @tc.size MediumTest
@@ -858,7 +858,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0550
      * @tc.name testArrayJoin054
      * @tc.desc Verify a single undefined element joins into an empty string
      * @tc.size MediumTest
@@ -873,7 +873,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0560
      * @tc.name testArrayJoin055
      * @tc.desc Verify null and undefined both become empty fields during join
      * @tc.size MediumTest
@@ -889,7 +889,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0570
      * @tc.name testArrayJoin056
      * @tc.desc Verify explicitly passing undefined uses the default comma separator
      * @tc.size MediumTest
@@ -903,7 +903,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0580
      * @tc.name testArrayJoin057
      * @tc.desc Verify ordinary separator text is preserved literally during join
      * @tc.size MediumTest
@@ -917,7 +917,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0590
      * @tc.name testArrayJoin058
      * @tc.desc Verify emoji elements remain intact after join
      * @tc.size MediumTest
@@ -931,7 +931,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0600
      * @tc.name testArrayJoin059
      * @tc.desc Verify emoji separators remain intact after join
      * @tc.size MediumTest
@@ -945,7 +945,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0610
      * @tc.name testArrayJoin060
      * @tc.desc Verify unicode escape sequences are joined as decoded characters
      * @tc.size MediumTest
@@ -958,7 +958,7 @@ export default function ArrayJoinTest(): void {
       expect(result).assertEqual('A,B');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0620
      * @tc.name testArrayJoin061
      * @tc.desc Verify join uses the default comma separator for positive numbers
      * @tc.size MediumTest
@@ -971,7 +971,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0630
      * @tc.name testArrayJoin062
      * @tc.desc Verify join supports slash separators
      * @tc.size MediumTest
@@ -984,7 +984,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0640
      * @tc.name testArrayJoin063
      * @tc.desc Verify join supports empty string separators
      * @tc.size MediumTest
@@ -997,7 +997,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0650
      * @tc.name testArrayJoin064
      * @tc.desc Verify join preserves empty string elements
      * @tc.size MediumTest
@@ -1010,7 +1010,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0660
      * @tc.name testArrayJoin065
      * @tc.desc Verify join supports boolean arrays
      * @tc.size MediumTest
@@ -1023,7 +1023,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0670
      * @tc.name testArrayJoin066
      * @tc.desc Verify join supports bigint arrays
      * @tc.size MediumTest
@@ -1036,7 +1036,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0680
      * @tc.name testArrayJoin067
      * @tc.desc Verify join on a single-element array returns that element text only
      * @tc.size MediumTest
@@ -1049,7 +1049,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0690
      * @tc.name testArrayJoin068
      * @tc.desc Verify join on an empty array returns an empty string
      * @tc.size MediumTest
@@ -1062,7 +1062,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0700
      * @tc.name testArrayJoin069
      * @tc.desc Verify join reads arrays returned by slice
      * @tc.size MediumTest
@@ -1075,7 +1075,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0710
      * @tc.name testArrayJoin070
      * @tc.desc Verify join reads arrays returned by map
      * @tc.size MediumTest
@@ -1088,7 +1088,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0720
      * @tc.name testArrayJoin071
      * @tc.desc Verify join leaves the source array unchanged
      * @tc.size MediumTest
@@ -1104,7 +1104,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0730
      * @tc.name testArrayJoin072
      * @tc.desc Verify join supports object arrays through element toString conversion
      * @tc.size MediumTest
@@ -1121,7 +1121,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0740
      * @tc.name testArrayJoin073
      * @tc.desc Verify join supports Unicode string content
      * @tc.size MediumTest
@@ -1134,7 +1134,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0750
      * @tc.name testArrayJoin074
      * @tc.desc Verify join supports separators containing spaces
      * @tc.size MediumTest
@@ -1147,7 +1147,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0760
      * @tc.name testArrayJoin075
      * @tc.desc Verify join can serialize repeated values distinctly
      * @tc.size MediumTest
@@ -1160,7 +1160,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0770
      * @tc.name testArrayJoin076
      * @tc.desc Verify join can serialize negative values and zero
      * @tc.size MediumTest
@@ -1173,7 +1173,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0780
      * @tc.name testArrayJoin077
      * @tc.desc Verify join can be used after reverse mutates the source order
      * @tc.size MediumTest
@@ -1187,7 +1187,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0790
      * @tc.name testArrayJoin078
      * @tc.desc Verify join can be compared with toString using the default separator
      * @tc.size MediumTest
@@ -1200,7 +1200,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0800
      * @tc.name testArrayJoin079
      * @tc.desc Verify join can serialize arrays after shift removes the head
      * @tc.size MediumTest
@@ -1214,7 +1214,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0810
      * @tc.name testArrayJoin080
      * @tc.desc Verify join can serialize arrays after pop removes the tail
      * @tc.size MediumTest
@@ -1228,7 +1228,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0820
      * @tc.name testArrayJoin081
      * @tc.desc Verify join can serialize arrays after unshift prepends values
      * @tc.size MediumTest
@@ -1242,7 +1242,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0830
      * @tc.name testArrayJoin082
      * @tc.desc Verify join can serialize arrays after push appends values
      * @tc.size MediumTest
@@ -1256,7 +1256,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0840
      * @tc.name testArrayJoin083
      * @tc.desc Verify join can serialize arrays after splice replacement
      * @tc.size MediumTest
@@ -1270,7 +1270,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0850
      * @tc.name testArrayJoin084
      * @tc.desc Verify join can serialize arrays after toReversed creates a copy
      * @tc.size MediumTest
@@ -1283,7 +1283,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0860
      * @tc.name testArrayJoin085
      * @tc.desc Verify join can serialize arrays after toSorted creates an ordered copy
      * @tc.size MediumTest
@@ -1304,7 +1304,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0860
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0870
      * @tc.name testArrayJoin086
      * @tc.desc Verify join can serialize arrays after toSpliced removal
      * @tc.size MediumTest
@@ -1317,7 +1317,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0870
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0880
      * @tc.name testArrayJoin087
      * @tc.desc Verify join can serialize arrays after with replacement
      * @tc.size MediumTest
@@ -1330,7 +1330,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0880
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0890
      * @tc.name testArrayJoin088
      * @tc.desc Verify join can serialize long numeric arrays with a custom separator
      * @tc.size MediumTest
@@ -1343,7 +1343,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0890
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0900
      * @tc.name testArrayJoin089
      * @tc.desc Verify join can serialize arrays containing boundary-style magnitudes
      * @tc.size MediumTest
@@ -1356,7 +1356,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0910
      * @tc.name testArrayJoin090
      * @tc.desc Verify join can serialize arrays produced by filter with no skipped matches
      * @tc.size MediumTest
@@ -1369,7 +1369,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0910
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0920
      * @tc.name testArrayJoin091
      * @tc.desc Verify join can serialize arrays produced by concat
      * @tc.size MediumTest
@@ -1383,7 +1383,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0920
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0930
      * @tc.name testArrayJoin092
      * @tc.desc Verify join can serialize arrays after length truncation
      * @tc.size MediumTest
@@ -1397,7 +1397,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0930
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0940
      * @tc.name testArrayJoin093
      * @tc.desc Verify join can serialize arrays after shrinkTo truncation
      * @tc.size MediumTest
@@ -1411,7 +1411,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0940
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0950
      * @tc.name testArrayJoin094
      * @tc.desc Verify join can serialize arrays after slice with an omitted end parameter
      * @tc.size MediumTest
@@ -1424,7 +1424,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0950
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0960
      * @tc.name testArrayJoin095
      * @tc.desc Verify join can serialize arrays containing duplicate strings
      * @tc.size MediumTest
@@ -1437,7 +1437,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0960
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0970
      * @tc.name testArrayJoin096
      * @tc.desc Verify join can serialize arrays containing booleans after map string conversion
      * @tc.size MediumTest
@@ -1450,7 +1450,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0970
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0980
      * @tc.name testArrayJoin097
      * @tc.desc Verify join can serialize arrays containing bigint values after slice
      * @tc.size MediumTest
@@ -1463,7 +1463,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0980
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0990
      * @tc.name testArrayJoin098
      * @tc.desc Verify join can serialize arrays after sorting strings lexicographically
      * @tc.size MediumTest
@@ -1477,7 +1477,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0990
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1000
      * @tc.name testArrayJoin099
      * @tc.desc Verify join can serialize arrays after nested pipeline operations
      * @tc.size MediumTest
@@ -1490,7 +1490,7 @@ export default function ArrayJoinTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1010
      * @tc.name testArrayJoin100
      * @tc.desc Verify join can serialize arrays built from Array.of
      * @tc.size MediumTest

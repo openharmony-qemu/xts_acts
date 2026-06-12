@@ -1404,7 +1404,7 @@ export default function ArrayFrom2Test(): void {
       const source = base.subarray(1, 3);
       const result = Array.from<number>(source);
       source[0] = 99;
-      expect(result.length).assertEqual(3);
+      expect(result.length).assertEqual(2);
       expect(result.toString()).assertEqual('20,30');
       expect(base.toString()).assertEqual('10,99,30,40');
     });

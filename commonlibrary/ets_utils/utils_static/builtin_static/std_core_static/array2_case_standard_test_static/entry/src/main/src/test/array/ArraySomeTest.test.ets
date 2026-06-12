@@ -64,7 +64,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0010
      * @tc.name testArraySome001
      * @tc.desc Verify some returns true when one element satisfies the predicate
      * @tc.size MediumTest
@@ -78,7 +78,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0020
      * @tc.name testArraySome002
      * @tc.desc Verify some returns false when no element satisfies the predicate
      * @tc.size MediumTest
@@ -92,7 +92,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0030
      * @tc.name testArraySome003
      * @tc.desc Verify some can match falsy numeric values through an explicit boolean predicate
      * @tc.size MediumTest
@@ -108,7 +108,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0040
      * @tc.name testArraySome004
      * @tc.desc Verify some short-circuits after the first element satisfies the predicate
      * @tc.size MediumTest
@@ -127,7 +127,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0050
      * @tc.name testArraySome005
      * @tc.desc Verify some visits elements until the middle matching element is reached
      * @tc.size MediumTest
@@ -146,7 +146,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0060
      * @tc.name testArraySome006
      * @tc.desc Verify some visits every element when no element satisfies the predicate
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0070
      * @tc.name testArraySome007
      * @tc.desc Verify some returns false for an empty array and does not run the predicate
      * @tc.size MediumTest
@@ -184,7 +184,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0080
      * @tc.name testArraySome008
      * @tc.desc Verify some observes explicit undefined elements in a dense array
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0090
      * @tc.name testArraySome009
      * @tc.desc Verify some can find an explicit undefined value in a dense slot
      * @tc.size MediumTest
@@ -224,7 +224,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0100
      * @tc.name testArraySome010
      * @tc.desc Verify some stops after the first explicit undefined value
      * @tc.size MediumTest
@@ -243,7 +243,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0110
      * @tc.name testArraySome011
      * @tc.desc Verify elements appended during iteration are outside the initial traversal range
      * @tc.size MediumTest
@@ -266,7 +266,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0120
      * @tc.name testArraySome012
      * @tc.desc Verify removing an unvisited tail element prevents it from being visited
      * @tc.size MediumTest
@@ -289,7 +289,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0130
      * @tc.name testArraySome013
      * @tc.desc Verify mutating an unvisited element is observed when that index is reached
      * @tc.size MediumTest
@@ -311,7 +311,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0140
      * @tc.name testArraySome014
      * @tc.desc Verify filling a sparse slot before it is visited makes some observe it
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0150
      * @tc.name testArraySome015
      * @tc.desc Verify truncating length during iteration removes later elements from traversal
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0160
      * @tc.name testArraySome016
      * @tc.desc Verify the predicate receives value, index, and original array arguments
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0170
      * @tc.name testArraySome017
      * @tc.desc Verify some works on readonly arrays without mutating the source
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0180
      * @tc.name testArraySome018
      * @tc.desc Verify some supports union-typed arrays
      * @tc.size MediumTest
@@ -409,7 +409,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0190
      * @tc.name testArraySome019
      * @tc.desc Verify some short-circuits early on a large array when the first element matches
      * @tc.size MediumTest
@@ -429,7 +429,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0200
      * @tc.name testArraySome020
      * @tc.desc Verify some scans every element on a large array when the last element matches
      * @tc.size MediumTest
@@ -449,7 +449,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0210
      * @tc.name testArraySome021
      * @tc.desc Verify errors thrown by the predicate propagate to the caller
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0220
      * @tc.name testArraySome022
      * @tc.desc Verify some treats numeric one as truthy through Boolean conversion
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0230
      * @tc.name testArraySome023
      * @tc.desc Verify some treats numeric zero as falsy through Boolean conversion
      * @tc.size MediumTest
@@ -498,7 +498,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0240
      * @tc.name testArraySome024
      * @tc.desc Verify some treats null as falsy through Boolean conversion
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0250
      * @tc.name testArraySome025
      * @tc.desc Verify some treats undefined as falsy through Boolean conversion
      * @tc.size MediumTest
@@ -524,7 +524,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0260
      * @tc.name testArraySome026
      * @tc.desc Verify some treats an empty string as falsy through Boolean conversion
      * @tc.size MediumTest
@@ -537,7 +537,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0270
      * @tc.name testArraySome027
      * @tc.desc Verify some treats a non-empty string as truthy through Boolean conversion
      * @tc.size MediumTest
@@ -550,7 +550,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0280
      * @tc.name testArraySome028
      * @tc.desc Verify some can observe object instances as present values
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0290
      * @tc.name testArraySome029
      * @tc.desc Verify some can observe nested array values
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0300
      * @tc.name testArraySome030
      * @tc.desc Verify some returns false for a single false boolean
      * @tc.size MediumTest
@@ -589,7 +589,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0310
      * @tc.name testArraySome031
      * @tc.desc Verify some returns true for a single true boolean
      * @tc.size MediumTest
@@ -602,7 +602,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0320
      * @tc.name testArraySome032
      * @tc.desc Verify negating a truthy number yields false in some
      * @tc.size MediumTest
@@ -615,7 +615,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0330
      * @tc.name testArraySome033
      * @tc.desc Verify double-Boolean keeps a truthy number true in some
      * @tc.size MediumTest
@@ -628,7 +628,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0340
      * @tc.name testArraySome034
      * @tc.desc Verify some can match a positive comparison on a single number
      * @tc.size MediumTest
@@ -641,7 +641,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0350
      * @tc.name testArraySome035
      * @tc.desc Verify some can reject a negative comparison on a single number
      * @tc.size MediumTest
@@ -654,7 +654,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0360
      * @tc.name testArraySome036
      * @tc.desc Verify some returns false for zero and negative zero under a positive comparison
      * @tc.size MediumTest
@@ -667,7 +667,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0370
      * @tc.name testArraySome037
      * @tc.desc Verify some can find a truthy value after a falsy value
      * @tc.size MediumTest
@@ -680,7 +680,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0380
      * @tc.name testArraySome038
      * @tc.desc Verify some treats NaN as falsy under Boolean conversion
      * @tc.size MediumTest
@@ -693,7 +693,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0390
      * @tc.name testArraySome039
      * @tc.desc Verify some can match the middle value in a numeric array
      * @tc.size MediumTest
@@ -706,7 +706,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0400
      * @tc.name testArraySome040
      * @tc.desc Verify some returns false when a numeric array does not contain the target value
      * @tc.size MediumTest
@@ -719,7 +719,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0410
      * @tc.name testArraySome041
      * @tc.desc Verify some stops after the first true predicate result
      * @tc.size MediumTest
@@ -738,7 +738,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0420
      * @tc.name testArraySome042
      * @tc.desc Verify some stops after the second callback when the second value matches
      * @tc.size MediumTest
@@ -757,7 +757,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0430
      * @tc.name testArraySome043
      * @tc.desc Verify some stops after the third callback when the third value matches
      * @tc.size MediumTest
@@ -776,7 +776,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0440
      * @tc.name testArraySome044
      * @tc.desc Verify some can match the first callback index
      * @tc.size MediumTest
@@ -789,7 +789,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0450
      * @tc.name testArraySome045
      * @tc.desc Verify some can match the second callback index
      * @tc.size MediumTest
@@ -802,7 +802,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0460
      * @tc.name testArraySome046
      * @tc.desc Verify some returns false for an index that is never visited
      * @tc.size MediumTest
@@ -815,7 +815,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0470
      * @tc.name testArraySome047
      * @tc.desc Verify some exposes the current array length through the third callback parameter
      * @tc.size MediumTest
@@ -828,7 +828,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0480
      * @tc.name testArraySome048
      * @tc.desc Verify some can find an explicit undefined element in a dense array
      * @tc.size MediumTest
@@ -841,7 +841,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0490
      * @tc.name testArraySome049
      * @tc.desc Verify some can find an explicit null element in a dense array
      * @tc.size MediumTest
@@ -854,7 +854,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0500
      * @tc.name testArraySome050
      * @tc.desc Verify some can find NaN through Number.isNaN
      * @tc.size MediumTest
@@ -867,7 +867,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0510
      * @tc.name testArraySome051
      * @tc.desc Verify some can match zero through strict equality
      * @tc.size MediumTest
@@ -880,7 +880,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0520
      * @tc.name testArraySome052
      * @tc.desc Verify some can match the first value in a two-element array
      * @tc.size MediumTest
@@ -893,7 +893,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0530
      * @tc.name testArraySome053
      * @tc.desc Verify some can match the second value in a two-element array
      * @tc.size MediumTest
@@ -906,7 +906,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0540
      * @tc.name testArraySome054
      * @tc.desc Verify some returns false when a two-element array does not contain the target value
      * @tc.size MediumTest
@@ -919,7 +919,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0550
      * @tc.name testArraySome055
      * @tc.desc Verify some returns true when every value is positive because at least one matches
      * @tc.size MediumTest
@@ -932,7 +932,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0560
      * @tc.name testArraySome056
      * @tc.desc Verify some returns false when no value is negative
      * @tc.size MediumTest
@@ -945,7 +945,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0570
      * @tc.name testArraySome057
      * @tc.desc Verify some supports greater-than-or-equal numeric comparisons
      * @tc.size MediumTest
@@ -958,7 +958,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0580
      * @tc.name testArraySome058
      * @tc.desc Verify some supports less-than-or-equal numeric comparisons
      * @tc.size MediumTest
@@ -971,7 +971,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0590
      * @tc.name testArraySome059
      * @tc.desc Verify some can find an even number through modulo
      * @tc.size MediumTest
@@ -984,7 +984,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0600
      * @tc.name testArraySome060
      * @tc.desc Verify some can find an odd number through modulo
      * @tc.size MediumTest
@@ -997,7 +997,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0610
      * @tc.name testArraySome061
      * @tc.desc Verify some can match the first string in a string array
      * @tc.size MediumTest
@@ -1010,7 +1010,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0620
      * @tc.name testArraySome062
      * @tc.desc Verify some returns false when a string array does not contain the target text
      * @tc.size MediumTest
@@ -1023,7 +1023,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0630
      * @tc.name testArraySome063
      * @tc.desc Verify some can match true in a boolean array
      * @tc.size MediumTest
@@ -1036,7 +1036,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0640
      * @tc.name testArraySome064
      * @tc.desc Verify some can match false in a boolean array
      * @tc.size MediumTest
@@ -1049,7 +1049,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0650
      * @tc.name testArraySome065
      * @tc.desc Verify some returns false when no number is greater than five
      * @tc.size MediumTest
@@ -1062,7 +1062,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0660
      * @tc.name testArraySome066
      * @tc.desc Verify some can combine index and value checks for the first element
      * @tc.size MediumTest
@@ -1075,7 +1075,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0670
      * @tc.name testArraySome067
      * @tc.desc Verify some can combine index and value checks for the second element
      * @tc.size MediumTest
@@ -1088,7 +1088,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0680
      * @tc.name testArraySome068
      * @tc.desc Verify some returns false when a mismatched value is paired with the first index
      * @tc.size MediumTest
@@ -1101,7 +1101,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0690
      * @tc.name testArraySome069
      * @tc.desc Verify some returns false when a mismatched value is paired with the second index
      * @tc.size MediumTest
@@ -1114,7 +1114,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0700
      * @tc.name testArraySome070
      * @tc.desc Verify some can validate the type of a numeric element
      * @tc.size MediumTest
@@ -1127,7 +1127,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0710
      * @tc.name testArraySome071
      * @tc.desc Verify some can validate the type of a string element
      * @tc.size MediumTest
@@ -1140,7 +1140,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0720
      * @tc.name testArraySome072
      * @tc.desc Verify some can identify class instances through instanceof
      * @tc.size MediumTest
@@ -1153,7 +1153,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0730
      * @tc.name testArraySome073
      * @tc.desc Verify some can identify array elements through Array.isArray
      * @tc.size MediumTest
@@ -1166,7 +1166,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0740
      * @tc.name testArraySome074
      * @tc.desc Verify some can compare indexOf results against the current index
      * @tc.size MediumTest
@@ -1179,7 +1179,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0750
      * @tc.name testArraySome075
      * @tc.desc Verify some can detect duplicate values through indexOf mismatch
      * @tc.size MediumTest
@@ -1192,7 +1192,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0760
      * @tc.name testArraySome076
      * @tc.desc Verify some supports multiplication-based numeric predicates
      * @tc.size MediumTest
@@ -1205,7 +1205,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0770
      * @tc.name testArraySome077
      * @tc.desc Verify some supports addition-based numeric predicates
      * @tc.size MediumTest
@@ -1218,7 +1218,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0780
      * @tc.name testArraySome078
      * @tc.desc Verify some supports subtraction-based numeric predicates
      * @tc.size MediumTest
@@ -1231,7 +1231,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0790
      * @tc.name testArraySome079
      * @tc.desc Verify some supports division-based numeric predicates
      * @tc.size MediumTest
@@ -1244,7 +1244,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0800
      * @tc.name testArraySome080
      * @tc.desc Verify some supports Math.abs in numeric predicates
      * @tc.size MediumTest
@@ -1257,7 +1257,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0810
      * @tc.name testArraySome081
      * @tc.desc Verify some supports Math.pow in numeric predicates
      * @tc.size MediumTest
@@ -1270,7 +1270,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0820
      * @tc.name testArraySome082
      * @tc.desc Verify some supports Math.sqrt in numeric predicates
      * @tc.size MediumTest
@@ -1283,7 +1283,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0830
      * @tc.name testArraySome083
      * @tc.desc Verify some can compare numeric text through toString
      * @tc.size MediumTest
@@ -1296,7 +1296,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0840
      * @tc.name testArraySome084
      * @tc.desc Verify some can compare Boolean conversion against true
      * @tc.size MediumTest
@@ -1309,7 +1309,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0850
      * @tc.name testArraySome085
      * @tc.desc Verify some can compare Boolean conversion against false
      * @tc.size MediumTest
@@ -1322,7 +1322,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0860
      * @tc.name testArraySome086
      * @tc.desc Verify some can compare Number conversion on a numeric element
      * @tc.size MediumTest
@@ -1335,7 +1335,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0870
      * @tc.name testArraySome087
      * @tc.desc Verify some can compare Number conversion on a numeric string
      * @tc.size MediumTest
@@ -1348,7 +1348,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0880
      * @tc.name testArraySome088
      * @tc.desc Verify some can compare parsed integer text from a number
      * @tc.size MediumTest
@@ -1361,7 +1361,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0890
      * @tc.name testArraySome089
      * @tc.desc Verify some can compare parsed floating-point text from a number
      * @tc.size MediumTest
@@ -1374,7 +1374,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0900
      * @tc.name testArraySome090
      * @tc.desc Verify some can compare fixed-point numeric text
      * @tc.size MediumTest
@@ -1387,7 +1387,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0910
      * @tc.name testArraySome091
      * @tc.desc Verify some can compare precision-formatted numeric text
      * @tc.size MediumTest
@@ -1400,7 +1400,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0920
      * @tc.name testArraySome092
      * @tc.desc Verify some can compare exponential-formatted numeric text
      * @tc.size MediumTest
@@ -1413,7 +1413,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0930
      * @tc.name testArraySome093
      * @tc.desc Verify some can compare locale-formatted numeric text
      * @tc.size MediumTest
@@ -1426,7 +1426,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0940
      * @tc.name testArraySome094
      * @tc.desc Verify some can compare valueOf on a number
      * @tc.size MediumTest
@@ -1439,7 +1439,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0950
      * @tc.name testArraySome095
      * @tc.desc Verify some supports conjunction-based predicates
      * @tc.size MediumTest
@@ -1452,7 +1452,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0960
      * @tc.name testArraySome096
      * @tc.desc Verify some supports disjunction-based predicates with the first branch
      * @tc.size MediumTest
@@ -1465,7 +1465,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0970
      * @tc.name testArraySome097
      * @tc.desc Verify some supports disjunction-based predicates with the second branch
      * @tc.size MediumTest
@@ -1478,7 +1478,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0980
      * @tc.name testArraySome098
      * @tc.desc Verify appended elements are still outside the initial traversal range in a single-element array
      * @tc.size MediumTest
@@ -1496,7 +1496,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_0990
      * @tc.name testArraySome099
      * @tc.desc Verify changing a future element can make some match that new future value
      * @tc.size MediumTest
@@ -1515,7 +1515,7 @@ export default function ArraySomeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SOME_1000
      * @tc.name testArraySome100
      * @tc.desc Verify multiple some invocations on the same array remain independent
      * @tc.size MediumTest

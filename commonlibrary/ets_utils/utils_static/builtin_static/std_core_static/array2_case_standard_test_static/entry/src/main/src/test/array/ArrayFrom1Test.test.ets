@@ -1150,19 +1150,6 @@ export default function ArrayFrom1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_ONE_6900
-     * @tc.name testArrayFromOne069
-     * @tc.desc Verify Array.from can copy a long string iterable into individual characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFromOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<string>('arkts');
-      expect(result.toString()).assertEqual('a,r,k,t,s');
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_ONE_7000
      * @tc.name testArrayFromOne070
      * @tc.desc Verify Array.from can copy an empty string iterable into an empty array

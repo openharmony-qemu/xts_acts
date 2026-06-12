@@ -151,20 +151,6 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_0600
-     * @tc.name testArrayShift006
-     * @tc.desc Verify shift returns undefined for an empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayShift006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>();
-      let result = arr.shift();
-      expect(result).assertUndefined();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_0700
      * @tc.name testArrayShift007
      * @tc.desc Verify shift returns null when the first element is null
@@ -240,7 +226,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1200
      * @tc.name testArrayShift0111
      * @tc.desc Verify shift on a sparse array reindexes present elements without materializing holes
      * @tc.size MediumTest
@@ -262,7 +248,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1300
      * @tc.name testArrayShift012
      * @tc.desc Verify the return value can be annotated as element type or undefined
      * @tc.size MediumTest
@@ -279,7 +265,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1400
      * @tc.name testArrayShift013
      * @tc.desc Verify type inference produces a value usable with number checks
      * @tc.size MediumTest
@@ -297,7 +283,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1500
      * @tc.name testArrayShift014
      * @tc.desc Verify single-element arrays become empty after shift
      * @tc.size MediumTest
@@ -312,7 +298,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1600
      * @tc.name testArrayShift015
      * @tc.desc Verify large arrays can remove the first element correctly
      * @tc.size MediumTest
@@ -328,7 +314,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1700
      * @tc.name testArrayShift016
      * @tc.desc Verify shift does not throw for empty arrays
      * @tc.size MediumTest
@@ -348,7 +334,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1800
      * @tc.name testArrayShift017
      * @tc.desc Verify shifting a mutable copy does not change the readonly source data
      * @tc.size MediumTest
@@ -365,7 +351,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1900
      * @tc.name testArrayShift018
      * @tc.desc Verify shift is an array instance method
      * @tc.size MediumTest
@@ -378,7 +364,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2000
      * @tc.name testArrayShift019
      * @tc.desc Verify shift executes synchronously and changes length immediately
      * @tc.size MediumTest
@@ -395,7 +381,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2100
      * @tc.name testArrayShift020
      * @tc.desc Verify shift decreases the array length
      * @tc.size MediumTest
@@ -410,7 +396,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2200
      * @tc.name testArrayShift021
      * @tc.desc Verify remaining elements shift forward after removing the first element
      * @tc.size MediumTest
@@ -427,7 +413,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2300
      * @tc.name testArrayShift022
      * @tc.desc Verify shift mutates the original array without creating a new one
      * @tc.size MediumTest
@@ -442,7 +428,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2400
      * @tc.name testArrayShift023
      * @tc.desc Verify empty arrays remain empty after shift
      * @tc.size MediumTest
@@ -457,7 +443,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2500
      * @tc.name testArrayShift024
      * @tc.desc Verify repeated shift calls can empty the array
      * @tc.size MediumTest
@@ -474,7 +460,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2600
      * @tc.name testArrayShift025
      * @tc.desc Verify shift works for char arrays
      * @tc.size MediumTest
@@ -490,7 +476,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2700
      * @tc.name testArrayShift026
      * @tc.desc Verify shift works for boolean arrays
      * @tc.size MediumTest
@@ -505,7 +491,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2800
      * @tc.name testArrayShift027
      * @tc.desc Verify shift works for bigint arrays
      * @tc.size MediumTest
@@ -520,7 +506,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2900
      * @tc.name testArrayShift028
      * @tc.desc Verify shift updates boundaries correctly on large arrays
      * @tc.size MediumTest
@@ -537,7 +523,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3000
      * @tc.name testArrayShift029
      * @tc.desc Verify shift works for union-typed arrays
      * @tc.size MediumTest
@@ -552,7 +538,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3100
      * @tc.name testArrayShift030
      * @tc.desc Verify heterogeneous arrays work with a broad union accumulator type
      * @tc.size MediumTest
@@ -567,7 +553,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3200
      * @tc.name testArrayShift031
      * @tc.desc Verify shift on a numeric array returns a numeric value
      * @tc.size MediumTest
@@ -582,7 +568,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3300
      * @tc.name testArrayShift032
      * @tc.desc Verify shift during traversal changes the remaining iteration data
      * @tc.size MediumTest
@@ -603,7 +589,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3400
      * @tc.name testArrayShift033
      * @tc.desc Verify shift can return NaN while exposing the next numeric head
      * @tc.size MediumTest
@@ -622,7 +608,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3500
      * @tc.name testArrayShift034
      * @tc.desc Verify shift can remove positive Infinity and expose negative Infinity next
      * @tc.size MediumTest
@@ -638,7 +624,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3600
      * @tc.name testArrayShift035
      * @tc.desc Verify shift preserves the sign of a negative zero boundary value
      * @tc.size MediumTest
@@ -657,7 +643,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3700
      * @tc.name testArrayShift036
      * @tc.desc Verify shift removes a head value after fill rewrites the prefix
      * @tc.size MediumTest
@@ -673,7 +659,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3800
      * @tc.name testArrayShift037
      * @tc.desc Verify shift removes the copied head value after copyWithin reorders the front
      * @tc.size MediumTest
@@ -689,7 +675,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3900
      * @tc.name testArrayShift038
      * @tc.desc Verify shift removes the maximum value after a descending numeric sort
      * @tc.size MediumTest
@@ -713,7 +699,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4000
      * @tc.name testArrayShift039
      * @tc.desc Verify shift returns the first nested array reference without cloning it
      * @tc.size MediumTest
@@ -735,7 +721,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4100
      * @tc.name testArrayShift040
      * @tc.desc Verify shift removes only one entry when the same object reference appears twice at the front
      * @tc.size MediumTest
@@ -756,7 +742,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4200
      * @tc.name testArrayShift041
      * @tc.desc Verify mutating the shifted object does not affect the next distinct object instance
      * @tc.size MediumTest
@@ -780,7 +766,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4300
      * @tc.name testArrayShift042
      * @tc.desc Verify shift can remove an object boundary from a union-typed array
      * @tc.size MediumTest
@@ -798,7 +784,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4400
      * @tc.name testArrayShift043
      * @tc.desc Verify shift preserves surrounding whitespace in the removed string value
      * @tc.size MediumTest
@@ -813,7 +799,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4500
      * @tc.name testArrayShift044
      * @tc.desc Verify shift removes a negative bigint head and exposes the remaining bigint values
      * @tc.size MediumTest
@@ -829,7 +815,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4600
      * @tc.name testArrayShift045
      * @tc.desc Verify shift reindexes a sparse array whose distant tail element stays present
      * @tc.size MediumTest
@@ -837,7 +823,7 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(5);
+      const arr = new Array<number | undefined>(5, (_index) => undefined);
       arr[0] = 10;
       arr[4] = 50;
       const value = arr.shift();
@@ -848,7 +834,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4700
      * @tc.name testArrayShift046
      * @tc.desc Verify shift removes a head value inserted at index zero by splice
      * @tc.size MediumTest
@@ -864,7 +850,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4800
      * @tc.name testArrayShift047
      * @tc.desc Verify shift on a toSorted copy leaves the unsorted source array unchanged
      * @tc.size MediumTest
@@ -889,7 +875,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4900
      * @tc.name testArrayShift048
      * @tc.desc Verify shift on a mapped copy does not change the original source values
      * @tc.size MediumTest
@@ -906,7 +892,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5000
      * @tc.name testArrayShift049
      * @tc.desc Verify shift on an Array.from copy of a typed array leaves the typed source unchanged
      * @tc.size MediumTest
@@ -923,7 +909,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5100
      * @tc.name testArrayShift050
      * @tc.desc Verify shift on concatenated nested arrays returns the first nested reference from the left input
      * @tc.size MediumTest
@@ -944,7 +930,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5200
      * @tc.name testArrayShift051
      * @tc.desc Verify shift still works after manual length truncation followed by appending a new tail
      * @tc.size MediumTest
@@ -962,7 +948,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5300
      * @tc.name testArrayShift052
      * @tc.desc Verify shift returns undefined for an empty array
      * @tc.size MediumTest
@@ -977,7 +963,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5400
      * @tc.name testArrayShift053
      * @tc.desc Verify shift after push removes the original head and preserves the appended tail
      * @tc.size MediumTest
@@ -994,7 +980,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5500
      * @tc.name testArrayShift054
      * @tc.desc Verify shift removes prepended values in their inserted order
      * @tc.size MediumTest
@@ -1010,7 +996,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5600
      * @tc.name testArrayShift055
      * @tc.desc Verify shifting a slice result does not change the original array
      * @tc.size MediumTest
@@ -1026,7 +1012,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5700
      * @tc.name testArrayShift056
      * @tc.desc Verify shift after reverse removes the former tail value
      * @tc.size MediumTest
@@ -1043,7 +1029,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5800
      * @tc.name testArrayShift057
      * @tc.desc Verify shift after sort removes the sorted minimum value
      * @tc.size MediumTest
@@ -1067,7 +1053,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5900
      * @tc.name testArrayShift058
      * @tc.desc Verify shift after splice removes the newly inserted head value
      * @tc.size MediumTest
@@ -1084,7 +1070,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6000
      * @tc.name testArrayShift059
      * @tc.desc Verify shift removes head value 2 from numeric triple 2, 3, 4
      * @tc.size MediumTest
@@ -1099,7 +1085,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6100
      * @tc.name testArrayShift060
      * @tc.desc Verify shift removes head value 3 from numeric triple 3, 4, 5
      * @tc.size MediumTest
@@ -1114,7 +1100,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6200
      * @tc.name testArrayShift061
      * @tc.desc Verify shift removes the expected element from a three-number array
      * @tc.size MediumTest
@@ -1129,20 +1115,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6200
-     * @tc.name testArrayShift062
-     * @tc.desc Verify shift returns undefined for an empty number array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayShift062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>();
-      expect(arr.shift() === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6400
      * @tc.name testArrayShift063
      * @tc.desc Verify shift empties a single-element number array
      * @tc.size MediumTest
@@ -1156,7 +1129,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6500
      * @tc.name testArrayShift064
      * @tc.desc Verify shift returns the boundary element from a string array
      * @tc.size MediumTest
@@ -1169,7 +1142,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6600
      * @tc.name testArrayShift065
      * @tc.desc Verify shift returns the boundary element from a boolean array
      * @tc.size MediumTest
@@ -1182,7 +1155,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6700
      * @tc.name testArrayShift066
      * @tc.desc Verify shift returns the boundary element from a bigint array
      * @tc.size MediumTest
@@ -1199,7 +1172,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6800
      * @tc.name testArrayShift067
      * @tc.desc Verify shift preserves object references when removing the boundary object
      * @tc.size MediumTest
@@ -1215,7 +1188,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6900
      * @tc.name testArrayShift068
      * @tc.desc Verify shift returns null when the boundary element is null
      * @tc.size MediumTest
@@ -1228,7 +1201,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7000
      * @tc.name testArrayShift069
      * @tc.desc Verify shift returns undefined when the boundary element is undefined
      * @tc.size MediumTest
@@ -1241,7 +1214,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7100
      * @tc.name testArrayShift070
      * @tc.desc Verify shift returns zero correctly
      * @tc.size MediumTest
@@ -1254,7 +1227,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7200
      * @tc.name testArrayShift071
      * @tc.desc Verify shift returns false correctly
      * @tc.size MediumTest
@@ -1267,7 +1240,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7300
      * @tc.name testArrayShift072
      * @tc.desc Verify shift works after push appends values
      * @tc.size MediumTest
@@ -1281,7 +1254,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7400
      * @tc.name testArrayShift073
      * @tc.desc Verify shift works after unshift prepends values
      * @tc.size MediumTest
@@ -1295,7 +1268,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7500
      * @tc.name testArrayShift074
      * @tc.desc Verify shift works after reverse changes order
      * @tc.size MediumTest
@@ -1309,7 +1282,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7600
      * @tc.name testArrayShift075
      * @tc.desc Verify shift works after sort orders numeric values
      * @tc.size MediumTest
@@ -1331,7 +1304,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7700
      * @tc.name testArrayShift076
      * @tc.desc Verify shift works after splice inserts middle values
      * @tc.size MediumTest
@@ -1345,7 +1318,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7800
      * @tc.name testArrayShift077
      * @tc.desc Verify shift after shrinkTo walks through only the retained prefix
      * @tc.size MediumTest
@@ -1361,7 +1334,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7900
      * @tc.name testArrayShift078
      * @tc.desc Verify shift works on a slice result
      * @tc.size MediumTest
@@ -1374,7 +1347,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8000
      * @tc.name testArrayShift079
      * @tc.desc Verify shift works on a filter result
      * @tc.size MediumTest
@@ -1387,7 +1360,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8100
      * @tc.name testArrayShift080
      * @tc.desc Verify shift works on a concat result
      * @tc.size MediumTest
@@ -1400,7 +1373,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8200
      * @tc.name testArrayShift081
      * @tc.desc Verify shift works on a toReversed copy
      * @tc.size MediumTest
@@ -1413,7 +1386,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8300
      * @tc.name testArrayShift082
      * @tc.desc Verify shift works on a toSpliced copy
      * @tc.size MediumTest
@@ -1426,7 +1399,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8400
      * @tc.name testArrayShift083
      * @tc.desc Verify shift works on a with replacement copy
      * @tc.size MediumTest
@@ -1439,7 +1412,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8500
      * @tc.name testArrayShift084
      * @tc.desc Verify shift updates length and exposes the next head after one removal
      * @tc.size MediumTest
@@ -1454,7 +1427,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8600
      * @tc.name testArrayShift085
      * @tc.desc Verify shift can be called twice in sequence
      * @tc.size MediumTest
@@ -1469,7 +1442,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8700
      * @tc.name testArrayShift086
      * @tc.desc Verify shift leaves the remaining array searchable with indexOf
      * @tc.size MediumTest
@@ -1483,7 +1456,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8800
      * @tc.name testArrayShift087
      * @tc.desc Verify shift leaves the remaining array joinable
      * @tc.size MediumTest
@@ -1497,7 +1470,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8900
      * @tc.name testArrayShift088
      * @tc.desc Verify shift works on arrays created by Array.of
      * @tc.size MediumTest
@@ -1510,7 +1483,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9000
      * @tc.name testArrayShift089
      * @tc.desc Verify shift works on arrays created by Array.from
      * @tc.size MediumTest
@@ -1523,7 +1496,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9100
      * @tc.name testArrayShift090
      * @tc.desc Verify shift works on a large generated array
      * @tc.size MediumTest
@@ -1539,7 +1512,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9200
      * @tc.name testArrayShift091
      * @tc.desc Verify shift preserves duplicate values remaining after boundary removal
      * @tc.size MediumTest
@@ -1553,7 +1526,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9300
      * @tc.name testArrayShift092
      * @tc.desc Verify shift removes a false boundary while keeping the next boolean head
      * @tc.size MediumTest
@@ -1568,7 +1541,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9400
      * @tc.name testArrayShift093
      * @tc.desc Verify shift can continue after clearing length and rebuilding
      * @tc.size MediumTest
@@ -1584,7 +1557,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9500
      * @tc.name testArrayShift094
      * @tc.desc Verify shift can remove values after shrinkTo followed by pushOne
      * @tc.size MediumTest
@@ -1599,7 +1572,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9600
      * @tc.name testArrayShift095
      * @tc.desc Verify shift can remove values after reverse and push
      * @tc.size MediumTest
@@ -1614,7 +1587,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9700
      * @tc.name testArrayShift096
      * @tc.desc Verify shift does not change array identity
      * @tc.size MediumTest
@@ -1629,7 +1602,7 @@ export default function ArrayShiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHIFT_9800
      * @tc.name testArrayShift097
      * @tc.desc Verify shift leaves the original array reusable for a later unshift
      * @tc.size MediumTest

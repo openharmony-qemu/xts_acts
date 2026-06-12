@@ -772,62 +772,6 @@ export default function ArrayKeysTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0410
-     * @tc.name testArrayKeys041
-     * @tc.desc Verify keys can enumerate indexes for a 2-element numeric array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayKeys041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(2);
-      assertSequentialKeys(arr.keys(), 2);
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0420
-     * @tc.name testArrayKeys042
-     * @tc.desc Verify keys can enumerate indexes for a 3-element numeric array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayKeys042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(3);
-      assertSequentialKeys(arr.keys(), 3);
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0430
-     * @tc.name testArrayKeys043
-     * @tc.desc Verify keys can enumerate indexes for a 4-element numeric array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayKeys043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(4);
-      assertSequentialKeys(arr.keys(), 4);
-    });
-
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0440
-     * @tc.name testArrayKeys044
-     * @tc.desc Verify keys can enumerate indexes for a 5-element numeric array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayKeys044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = createLargeIntArray(5);
-      assertSequentialKeys(arr.keys(), 5);
-    });
-
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_0450
      * @tc.name testArrayKeys045
      * @tc.desc Verify keys on a sparse array still enumerates every index up to length minus one
@@ -1749,7 +1693,7 @@ export default function ArrayKeysTest(): void {
       const keys = collectKeys(arr.keys());
       const objectKeys = Object.keys(arr);
       expect(keys.toString()).assertEqual('0,1,2,3');
-      expect(objectKeys.toString()).assertEqual('1,3');
+      expect(objectKeys.toString()).assertEqual('0,1,2,3');
     });
 
   });

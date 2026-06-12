@@ -494,7 +494,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0301
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0310
      * @tc.name testArrayIncludes0301
      * @tc.desc Verify includes treats sparse holes as undefined and respects fromIndex
      * @tc.size MediumTest
@@ -512,7 +512,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0320
      * @tc.name testArrayIncludes031
      * @tc.desc Verify includes can search for zero values
      * @tc.size MediumTest
@@ -525,7 +525,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0330
      * @tc.name testArrayIncludes032
      * @tc.desc Verify includes can search for empty strings
      * @tc.size MediumTest
@@ -538,7 +538,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0340
      * @tc.name testArrayIncludes033
      * @tc.desc Verify includes uses SameValueZero to handle NaN correctly
      * @tc.size MediumTest
@@ -551,7 +551,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0350
      * @tc.name testArrayIncludes034
      * @tc.desc Verify includes leaves the original array completely unchanged
      * @tc.size MediumTest
@@ -570,7 +570,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0360
      * @tc.name testArrayIncludes035
      * @tc.desc Verify repeated includes calls return the same result
      * @tc.size MediumTest
@@ -585,7 +585,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0370
      * @tc.name testArrayIncludes036
      * @tc.desc Verify includes can be used to check whether a value exists
      * @tc.size MediumTest
@@ -599,7 +599,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0380
      * @tc.name testArrayIncludes037
      * @tc.desc Verify includes results can drive conditional logic
      * @tc.size MediumTest
@@ -616,7 +616,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0390
      * @tc.name testArrayIncludes038
      * @tc.desc Verify includes can be used to prevent duplicates
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0400
      * @tc.name testArrayIncludes039
      * @tc.desc Verify searching can start from a specified index
      * @tc.size MediumTest
@@ -648,7 +648,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0410
      * @tc.name testArrayIncludes040
      * @tc.desc Verify includes works correctly with large arrays
      * @tc.size MediumTest
@@ -662,7 +662,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0420
      * @tc.name testArrayIncludes041
      * @tc.desc Verify includes returns true after finding an early matching element
      * @tc.size MediumTest
@@ -676,7 +676,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0430
      * @tc.name testArrayIncludes042
      * @tc.desc Verify includes and indexOf return different result types
      * @tc.size MediumTest
@@ -692,7 +692,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0440
      * @tc.name testArrayIncludes043
      * @tc.desc Verify includes matches indexOf not equal minus one for ordinary values
      * @tc.size MediumTest
@@ -708,7 +708,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0450
      * @tc.name testArrayIncludes044
      * @tc.desc Verify includes works correctly for single element arrays
      * @tc.size MediumTest
@@ -722,7 +722,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0460
      * @tc.name testArrayIncludes045
      * @tc.desc Verify includes handles all search cases for two element arrays
      * @tc.size MediumTest
@@ -737,7 +737,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0470
      * @tc.name testArrayIncludes046
      * @tc.desc Verify includes handles different fromIndex values correctly
      * @tc.size MediumTest
@@ -753,7 +753,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0480
      * @tc.name testArrayIncludes047
      * @tc.desc Verify includes handles negative fromIndex values correctly
      * @tc.size MediumTest
@@ -771,7 +771,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0490
      * @tc.name testArrayIncludes048
      * @tc.desc Verify inferred includes calls work with char arrays
      * @tc.size MediumTest
@@ -785,7 +785,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0500
      * @tc.name testArrayIncludes049
      * @tc.desc Verify includes works with union typed arrays
      * @tc.size MediumTest
@@ -800,7 +800,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0510
      * @tc.name testArrayIncludes050
      * @tc.desc Verify includes handles last value when scanning the full array
      * @tc.size MediumTest
@@ -815,7 +815,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0520
      * @tc.name testArrayIncludes051
      * @tc.desc Verify includes handles duplicate values after a positive starting index
      * @tc.size MediumTest
@@ -830,7 +830,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0530
      * @tc.name testArrayIncludes052
      * @tc.desc Verify includes handles no later match after the final duplicate is skipped
      * @tc.size MediumTest
@@ -845,7 +845,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0540
      * @tc.name testArrayIncludes053
      * @tc.desc Verify includes handles negative start values that normalize near the tail
      * @tc.size MediumTest
@@ -860,7 +860,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0550
      * @tc.name testArrayIncludes054
      * @tc.desc Verify includes handles negative starts that exclude the front prefix
      * @tc.size MediumTest
@@ -875,7 +875,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0560
      * @tc.name testArrayIncludes055
      * @tc.desc Verify includes handles searches for absent values
      * @tc.size MediumTest
@@ -890,7 +890,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0570
      * @tc.name testArrayIncludes056
      * @tc.desc Verify includes handles fromIndex values larger than the array length
      * @tc.size MediumTest
@@ -905,7 +905,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0580
      * @tc.name testArrayIncludes057
      * @tc.desc Verify includes handles single-element arrays when the element matches
      * @tc.size MediumTest
@@ -920,7 +920,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0590
      * @tc.name testArrayIncludes058
      * @tc.desc Verify includes handles single-element arrays when the element does not match
      * @tc.size MediumTest
@@ -935,7 +935,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0600
      * @tc.name testArrayIncludes059
      * @tc.desc Verify includes supports repeated string values
      * @tc.size MediumTest
@@ -949,7 +949,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0610
      * @tc.name testArrayIncludes060
      * @tc.desc Verify includes supports string searches after skipping the first duplicate
      * @tc.size MediumTest
@@ -963,7 +963,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0620
      * @tc.name testArrayIncludes061
      * @tc.desc Verify includes supports missing string values
      * @tc.size MediumTest
@@ -977,7 +977,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0630
      * @tc.name testArrayIncludes062
      * @tc.desc Verify includes supports empty strings in later positions
      * @tc.size MediumTest
@@ -991,7 +991,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0640
      * @tc.name testArrayIncludes063
      * @tc.desc Verify includes supports case-sensitive string values
      * @tc.size MediumTest
@@ -1005,7 +1005,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0650
      * @tc.name testArrayIncludes064
      * @tc.desc Verify includes supports boolean arrays with a later true value
      * @tc.size MediumTest
@@ -1019,7 +1019,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0660
      * @tc.name testArrayIncludes065
      * @tc.desc Verify includes supports bigint arrays with repeated values
      * @tc.size MediumTest
@@ -1033,7 +1033,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0670
      * @tc.name testArrayIncludes066
      * @tc.desc Verify includes treats a very negative starting index as the full-array search
      * @tc.size MediumTest
@@ -1047,7 +1047,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0680
      * @tc.name testArrayIncludes067
      * @tc.desc Verify includes works on arrays rebuilt after clearing length
      * @tc.size MediumTest
@@ -1064,7 +1064,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0690
      * @tc.name testArrayIncludes068
      * @tc.desc Verify includes can search the result of a slice operation
      * @tc.size MediumTest
@@ -1079,7 +1079,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0700
      * @tc.name testArrayIncludes069
      * @tc.desc Verify includes ignores later array mutations that happen after the call result is stored
      * @tc.size MediumTest
@@ -1094,7 +1094,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0710
      * @tc.name testArrayIncludes070
      * @tc.desc Verify includes returns the same outcome as the default search when fromIndex is minus zero
      * @tc.size MediumTest
@@ -1109,7 +1109,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0720
      * @tc.name testArrayIncludes071
      * @tc.desc Verify includes can find repeated value 3 after a positive fromIndex
      * @tc.size MediumTest
@@ -1123,7 +1123,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0730
      * @tc.name testArrayIncludes072
      * @tc.desc Verify includes can find repeated value 4 after a positive fromIndex
      * @tc.size MediumTest
@@ -1137,7 +1137,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0740
      * @tc.name testArrayIncludes073
      * @tc.desc Verify includes handles first position in a numeric array
      * @tc.size MediumTest
@@ -1151,7 +1151,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0750
      * @tc.name testArrayIncludes074
      * @tc.desc Verify includes handles last position in a numeric array
      * @tc.size MediumTest
@@ -1165,7 +1165,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0760
      * @tc.name testArrayIncludes075
      * @tc.desc Verify includes handles missing values in a numeric array
      * @tc.size MediumTest
@@ -1179,7 +1179,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0770
      * @tc.name testArrayIncludes076
      * @tc.desc Verify includes handles duplicate numeric values
      * @tc.size MediumTest
@@ -1193,7 +1193,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0780
      * @tc.name testArrayIncludes077
      * @tc.desc Verify includes handles string arrays
      * @tc.size MediumTest
@@ -1207,7 +1207,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0790
      * @tc.name testArrayIncludes078
      * @tc.desc Verify includes handles boolean arrays
      * @tc.size MediumTest
@@ -1221,7 +1221,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0800
      * @tc.name testArrayIncludes079
      * @tc.desc Verify includes handles bigint arrays
      * @tc.size MediumTest
@@ -1235,7 +1235,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0810
      * @tc.name testArrayIncludes080
      * @tc.desc Verify includes handles negative fromIndex normalization near the tail
      * @tc.size MediumTest
@@ -1249,7 +1249,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0820
      * @tc.name testArrayIncludes081
      * @tc.desc Verify includes handles very large positive fromIndex values
      * @tc.size MediumTest
@@ -1263,7 +1263,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0830
      * @tc.name testArrayIncludes082
      * @tc.desc Verify includes handles single-element matching arrays
      * @tc.size MediumTest
@@ -1277,7 +1277,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0840
      * @tc.name testArrayIncludes083
      * @tc.desc Verify includes handles single-element non-matching arrays
      * @tc.size MediumTest
@@ -1291,7 +1291,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0850
      * @tc.name testArrayIncludes084
      * @tc.desc Verify includes handles arrays produced by slice
      * @tc.size MediumTest
@@ -1305,7 +1305,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0860
      * @tc.name testArrayIncludes085
      * @tc.desc Verify includes handles arrays produced by filter
      * @tc.size MediumTest
@@ -1319,7 +1319,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0860
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0870
      * @tc.name testArrayIncludes086
      * @tc.desc Verify includes handles arrays reversed in place
      * @tc.size MediumTest
@@ -1334,7 +1334,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0870
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0880
      * @tc.name testArrayIncludes087
      * @tc.desc Verify includes handles arrays sorted in place
      * @tc.size MediumTest
@@ -1357,7 +1357,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0880
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0890
      * @tc.name testArrayIncludes088
      * @tc.desc Verify includes handles arrays rebuilt after clearing and repopulating
      * @tc.size MediumTest
@@ -1371,7 +1371,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0890
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0900
      * @tc.name testArrayIncludes089
      * @tc.desc Verify includes works on object arrays when the same reference is searched
      * @tc.size MediumTest
@@ -1390,7 +1390,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0910
      * @tc.name testArrayIncludes090
      * @tc.desc Verify includes can find values in Uint8Array instances
      * @tc.size MediumTest
@@ -1404,7 +1404,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0910
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0920
      * @tc.name testArrayIncludes091
      * @tc.desc Verify includes uses SameValueZero for NaN in Float64Array instances
      * @tc.size MediumTest
@@ -1418,7 +1418,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0920
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0930
      * @tc.name testArrayIncludes092
      * @tc.desc Verify typed arrays normalize negative fromIndex values when searching
      * @tc.size MediumTest
@@ -1432,7 +1432,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0930
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0940
      * @tc.name testArrayIncludes093
      * @tc.desc Verify includes treats Infinity and negative Infinity as different numeric values
      * @tc.size MediumTest
@@ -1447,7 +1447,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0940
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0950
      * @tc.name testArrayIncludes094
      * @tc.desc Verify includes treats positive zero and negative zero as the same value
      * @tc.size MediumTest
@@ -1462,7 +1462,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0950
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0960
      * @tc.name testArrayIncludes095
      * @tc.desc Verify includes compares wrapper objects and primitive values by reference and type
      * @tc.size MediumTest
@@ -1482,7 +1482,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0960
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0970
      * @tc.name testArrayIncludes096
      * @tc.desc Verify includes does not match a different object instance with the same field value
      * @tc.size MediumTest
@@ -1500,7 +1500,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0970
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0980
      * @tc.name testArrayIncludes097
      * @tc.desc Verify includes can distinguish custom object references after mutation
      * @tc.size MediumTest
@@ -1519,7 +1519,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0980
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0990
      * @tc.name testArrayIncludes098
      * @tc.desc Verify includes rejects an uninserted custom object even when stored values match
      * @tc.size MediumTest
@@ -1535,7 +1535,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_0990
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1000
      * @tc.name testArrayIncludes099
      * @tc.desc Verify includes can find the array itself when stored as a self reference
      * @tc.size MediumTest
@@ -1550,7 +1550,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1010
      * @tc.name testArrayIncludes100
      * @tc.desc Verify includes can search large arrays correctly
      * @tc.size MediumTest
@@ -1568,7 +1568,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1020
      * @tc.name testArrayIncludes101
      * @tc.desc Verify includes works with ReadonlyArray views
      * @tc.size MediumTest
@@ -1582,7 +1582,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1030
      * @tc.name testArrayIncludes102
      * @tc.desc Verify includes works with readonly arrays that use union element types
      * @tc.size MediumTest
@@ -1596,7 +1596,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1040
      * @tc.name testArrayIncludes103
      * @tc.desc Verify includes returns false for same-shaped objects with different references
      * @tc.size MediumTest
@@ -1614,7 +1614,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1050
      * @tc.name testArrayIncludes104
      * @tc.desc Verify includes compares function values by reference
      * @tc.size MediumTest
@@ -1630,7 +1630,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1060
      * @tc.name testArrayIncludes105
      * @tc.desc Verify typed arrays return false when the searched value is absent after fromIndex normalization
      * @tc.size MediumTest
@@ -1644,7 +1644,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1070
      * @tc.name testArrayIncludes106
      * @tc.desc Verify Float64Array includes returns false for NaN when NaN is not present
      * @tc.size MediumTest
@@ -1658,7 +1658,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1080
      * @tc.name testArrayIncludes107
      * @tc.desc Verify includes can search bigint arrays with negative fromIndex values
      * @tc.size MediumTest
@@ -1672,7 +1672,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1090
      * @tc.name testArrayIncludes108
      * @tc.desc Verify includes can search char arrays with positive fromIndex values
      * @tc.size MediumTest
@@ -1686,7 +1686,7 @@ export default function ArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1100
      * @tc.name testArrayIncludes109
      * @tc.desc Verify derived array instances inherit includes behavior
      * @tc.size MediumTest

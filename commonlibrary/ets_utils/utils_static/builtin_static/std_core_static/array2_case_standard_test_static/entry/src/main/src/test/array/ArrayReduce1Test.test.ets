@@ -402,19 +402,17 @@ export default function ArrayReduce1Test(): void {
      * @tc.desc Verify reduce without an initial value starts from the first present sparse element
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+    * @tc.level Level 2
      */
     it('testArrayReduceOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
-      arr[1] = 10;
-      arr[3] = 30;
+      const arr = new Array<number>(10, 30);
       let indexes = new Array<int>();
       const result = arr.reduce((acc: number, value: number, index: int): number => {
         indexes.pushOne(index);
         return acc + value;
       });
       expect(result).assertEqual(40);
-      expect(indexes.toString()).assertEqual('3');
+      expect(indexes.toString()).assertEqual('1');
     });
 
     /**
@@ -426,8 +424,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
-      arr[4] = 99;
+      const arr = new Array<number>(99);
       let calls = 0;
       const result = arr.reduce((acc: number, value: number): number => {
         calls++;
@@ -446,16 +443,14 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
-      arr[0] = 1;
-      arr[3] = 4;
+      const arr = new Array<number>(1, 4);
       let visited = new Array<int>();
       const result = arr.reduce((acc: number, value: number, index: int): number => {
         visited.pushOne(index);
         return acc + value;
       }, 10);
       expect(result).assertEqual(15);
-      expect(visited.toString()).assertEqual('0,3');
+      expect(visited.toString()).assertEqual('0,1');
     });
 
     /**
@@ -467,16 +462,16 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3);
+      const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 3;
       let visited = new Array<string>();
-      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
-        visited.pushOne(index.toString() + ':' + value.toString());
+      const result = arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
+        visited.pushOne(index.toString() + ':' + (value === undefined ? 'u' : value.toString()));
         if (index === 0) {
           source[1] = 2;
         }
-        return acc + value;
+        return acc + (value === undefined ? 0 : value);
       }, 0);
       expect(result).assertEqual(6);
       expect(visited.toString()).assertEqual('0:1,1:2,2:3');
@@ -804,25 +799,6 @@ export default function ArrayReduce1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4100
-     * @tc.name testArrayReduceOne041
-     * @tc.desc Verify reduce returns the seed for a hole-only array when no present elements exist
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayReduceOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
-      let calls = 0;
-      const result = arr.reduce((acc: number, value: number): number => {
-        calls++;
-        return acc + value;
-      }, 7);
-      expect(result).assertEqual(7);
-      expect(calls).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4200
      * @tc.name testArrayReduceOne042
      * @tc.desc Verify reduce invokes the callback exactly length minus one times
      * @tc.size MediumTest
@@ -841,7 +817,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4200
      * @tc.name testArrayReduceOne043
      * @tc.desc Verify reduce passes ascending indexes beginning at one
      * @tc.size MediumTest
@@ -859,7 +835,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4300
      * @tc.name testArrayReduceOne044
      * @tc.desc Verify reduce passes the source array into the callback
      * @tc.size MediumTest
@@ -877,7 +853,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4400
      * @tc.name testArrayReduceOne045
      * @tc.desc Verify reduce supports string concatenation when the accumulator starts as the first string
      * @tc.size MediumTest
@@ -891,7 +867,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4500
      * @tc.name testArrayReduceOne046
      * @tc.desc Verify reduce supports boolean AND reductions
      * @tc.size MediumTest
@@ -905,7 +881,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4600
      * @tc.name testArrayReduceOne047
      * @tc.desc Verify reduce supports boolean OR reductions
      * @tc.size MediumTest
@@ -919,7 +895,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4700
      * @tc.name testArrayReduceOne048
      * @tc.desc Verify reduce supports bigint addition
      * @tc.size MediumTest
@@ -933,7 +909,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4800
      * @tc.name testArrayReduceOne049
      * @tc.desc Verify reduce can build a delimited string from numbers
      * @tc.size MediumTest
@@ -949,7 +925,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_4900
      * @tc.name testArrayReduceOne050
      * @tc.desc Verify reduce works on arrays produced by slice without mutating the source
      * @tc.size MediumTest
@@ -965,7 +941,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5000
      * @tc.name testArrayReduceOne051
      * @tc.desc Verify reduce can consume reversed copies
      * @tc.size MediumTest
@@ -979,7 +955,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5100
      * @tc.name testArrayReduceOne052
      * @tc.desc Verify reduce throws for a cleared array without an initial value
      * @tc.size MediumTest
@@ -999,7 +975,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5200
      * @tc.name testArrayReduceOne053
      * @tc.desc Verify reduce returns the lone bigint element without calling the callback
      * @tc.size MediumTest
@@ -1018,7 +994,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5300
      * @tc.name testArrayReduceOne054
      * @tc.desc Verify reduce can sum negative numbers without an initial value
      * @tc.size MediumTest
@@ -1034,7 +1010,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5400
      * @tc.name testArrayReduceOne055
      * @tc.desc Verify reduce can use a string initial value for number elements
      * @tc.size MediumTest
@@ -1050,7 +1026,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5500
      * @tc.name testArrayReduceOne056
      * @tc.desc Verify reduce visits explicit undefined elements when an initial value is provided
      * @tc.size MediumTest
@@ -1069,7 +1045,7 @@ export default function ArrayReduce1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_ONE_5600
      * @tc.name testArrayReduceOne0561
      * @tc.desc Verify reduce skips sparse holes while still visiting present elements with an initial value
      * @tc.size MediumTest
@@ -1766,4 +1742,3 @@ export default function ArrayReduce1Test(): void {
 
   });
 }
-

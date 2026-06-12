@@ -593,7 +593,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3701
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3800
      * @tc.name testArrayIndexOfOne0371
      * @tc.desc Verify indexOf skips sparse holes instead of matching them as undefined
      * @tc.size MediumTest
@@ -608,7 +608,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3900
      * @tc.name testArrayIndexOfOne038
      * @tc.desc Verify indexOf can search for zero values
      * @tc.size MediumTest
@@ -621,7 +621,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4000
      * @tc.name testArrayIndexOfOne039
      * @tc.desc Verify indexOf can search for empty strings
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4100
      * @tc.name testArrayIndexOfOne040
      * @tc.desc Verify indexOf does not match NaN because it uses strict equality
      * @tc.size MediumTest
@@ -647,7 +647,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4200
      * @tc.name testArrayIndexOfOne041
      * @tc.desc Verify indexOf leaves the original array completely unchanged
      * @tc.size MediumTest
@@ -666,7 +666,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4300
      * @tc.name testArrayIndexOfOne042
      * @tc.desc Verify repeated indexOf calls return the same result
      * @tc.size MediumTest
@@ -681,7 +681,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4400
      * @tc.name testArrayIndexOfOne043
      * @tc.desc Verify indexOf can get the position of an element
      * @tc.size MediumTest
@@ -695,7 +695,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4500
      * @tc.name testArrayIndexOfOne044
      * @tc.desc Verify indexOf can be used to check whether an element exists
      * @tc.size MediumTest
@@ -709,7 +709,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4600
      * @tc.name testArrayIndexOfOne045
      * @tc.desc Verify fromIndex can find later duplicate occurrences
      * @tc.size MediumTest
@@ -725,7 +725,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4700
      * @tc.name testArrayIndexOfOne046
      * @tc.desc Verify conditional logic can use indexOf results
      * @tc.size MediumTest
@@ -743,7 +743,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4800
      * @tc.name testArrayIndexOfOne047
      * @tc.desc Verify indexOf works correctly with large arrays
      * @tc.size MediumTest
@@ -757,7 +757,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4900
      * @tc.name testArrayIndexOfOne048
      * @tc.desc Verify indexOf can find a boolean match near the start of the array
      * @tc.size MediumTest
@@ -771,7 +771,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5000
      * @tc.name testArrayIndexOfOne049
      * @tc.desc Verify indexOf and includes return different result types
      * @tc.size MediumTest
@@ -788,7 +788,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5100
      * @tc.name testArrayIndexOfOne050
      * @tc.desc Verify indexOf searches from the front while lastIndexOf searches from the back
      * @tc.size MediumTest
@@ -804,7 +804,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5200
      * @tc.name testArrayIndexOfOne051
      * @tc.desc Verify indexOf searches values while findIndex searches by condition
      * @tc.size MediumTest
@@ -820,7 +820,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5300
      * @tc.name testArrayIndexOfOne052
      * @tc.desc Verify indexOf handles all search cases for two element arrays
      * @tc.size MediumTest
@@ -835,7 +835,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5400
      * @tc.name testArrayIndexOfOne053
      * @tc.desc Verify indexOf handles different fromIndex values correctly
      * @tc.size MediumTest
@@ -851,7 +851,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5500
      * @tc.name testArrayIndexOfOne054
      * @tc.desc Verify the returned index points to the requested value
      * @tc.size MediumTest
@@ -865,7 +865,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5600
      * @tc.name testArrayIndexOfOne055
      * @tc.desc Verify the return type is explicitly int compatible
      * @tc.size MediumTest
@@ -879,7 +879,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5700
      * @tc.name testArrayIndexOfOne056
      * @tc.desc Verify indexOf works with union typed arrays
      * @tc.size MediumTest
@@ -894,7 +894,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5800
      * @tc.name testArrayIndexOfOne057
      * @tc.desc Verify array length values can be used to compute fromIndex
      * @tc.size MediumTest
@@ -909,7 +909,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5900
      * @tc.name testArrayIndexOfOne058
      * @tc.desc Verify negative integer fromIndex values are computed from the end
      * @tc.size MediumTest
@@ -924,7 +924,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6000
      * @tc.name testArrayIndexOfOne059
      * @tc.desc Verify indexOf handles last value when scanning the full array
      * @tc.size MediumTest
@@ -939,7 +939,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6100
      * @tc.name testArrayIndexOfOne060
      * @tc.desc Verify indexOf handles duplicate values after a positive starting index
      * @tc.size MediumTest
@@ -954,7 +954,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6200
      * @tc.name testArrayIndexOfOne061
      * @tc.desc Verify indexOf handles no later match after the final duplicate is skipped
      * @tc.size MediumTest
@@ -969,7 +969,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6300
      * @tc.name testArrayIndexOfOne062
      * @tc.desc Verify indexOf handles negative start values that normalize near the tail
      * @tc.size MediumTest
@@ -984,7 +984,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6400
      * @tc.name testArrayIndexOfOne063
      * @tc.desc Verify indexOf handles negative starts that exclude the front prefix
      * @tc.size MediumTest
@@ -999,7 +999,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6500
      * @tc.name testArrayIndexOfOne064
      * @tc.desc Verify indexOf handles searches for absent values
      * @tc.size MediumTest
@@ -1014,7 +1014,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6600
      * @tc.name testArrayIndexOfOne065
      * @tc.desc Verify indexOf handles fromIndex values larger than the array length
      * @tc.size MediumTest
@@ -1029,7 +1029,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6700
      * @tc.name testArrayIndexOfOne066
      * @tc.desc Verify indexOf handles single-element arrays when the element matches
      * @tc.size MediumTest
@@ -1044,7 +1044,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6800
      * @tc.name testArrayIndexOfOne067
      * @tc.desc Verify indexOf handles single-element arrays when the element does not match
      * @tc.size MediumTest
@@ -1059,7 +1059,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6900
      * @tc.name testArrayIndexOfOne068
      * @tc.desc Verify indexOf supports repeated string values
      * @tc.size MediumTest
@@ -1073,7 +1073,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7000
      * @tc.name testArrayIndexOfOne069
      * @tc.desc Verify indexOf supports string searches after skipping the first duplicate
      * @tc.size MediumTest
@@ -1087,7 +1087,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7100
      * @tc.name testArrayIndexOfOne070
      * @tc.desc Verify indexOf supports missing string values
      * @tc.size MediumTest
@@ -1101,7 +1101,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7200
      * @tc.name testArrayIndexOfOne071
      * @tc.desc Verify indexOf supports empty strings in later positions
      * @tc.size MediumTest
@@ -1115,7 +1115,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7300
      * @tc.name testArrayIndexOfOne072
      * @tc.desc Verify indexOf supports case-sensitive string values
      * @tc.size MediumTest
@@ -1129,7 +1129,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7400
      * @tc.name testArrayIndexOfOne073
      * @tc.desc Verify indexOf supports boolean arrays with a later true value
      * @tc.size MediumTest
@@ -1143,7 +1143,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7500
      * @tc.name testArrayIndexOfOne074
      * @tc.desc Verify indexOf supports bigint arrays with repeated values
      * @tc.size MediumTest
@@ -1157,7 +1157,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7600
      * @tc.name testArrayIndexOfOne075
      * @tc.desc Verify indexOf treats a very negative starting index as the full-array search
      * @tc.size MediumTest
@@ -1171,7 +1171,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7700
      * @tc.name testArrayIndexOfOne076
      * @tc.desc Verify indexOf works on arrays rebuilt after clearing length
      * @tc.size MediumTest
@@ -1188,7 +1188,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7800
      * @tc.name testArrayIndexOfOne077
      * @tc.desc Verify indexOf can search the result of a slice operation
      * @tc.size MediumTest
@@ -1203,7 +1203,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7900
      * @tc.name testArrayIndexOfOne078
      * @tc.desc Verify indexOf ignores later array mutations that happen after the call result is stored
      * @tc.size MediumTest
@@ -1218,7 +1218,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8000
      * @tc.name testArrayIndexOfOne079
      * @tc.desc Verify indexOf returns the same outcome as the default search when fromIndex is minus zero
      * @tc.size MediumTest
@@ -1233,7 +1233,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8100
      * @tc.name testArrayIndexOfOne080
      * @tc.desc Verify indexOf can match a duplicate exactly at the positive start index
      * @tc.size MediumTest
@@ -1247,7 +1247,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8200
      * @tc.name testArrayIndexOfOne081
      * @tc.desc Verify indexOf returns minus one when positive fromIndex skips all matches
      * @tc.size MediumTest
@@ -1261,7 +1261,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8300
      * @tc.name testArrayIndexOfOne082
      * @tc.desc Verify indexOf can find the tail value when fromIndex equals the last index
      * @tc.size MediumTest
@@ -1275,7 +1275,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8400
      * @tc.name testArrayIndexOfOne083
      * @tc.desc Verify indexOf returns minus one for empty arrays with a positive fromIndex
      * @tc.size MediumTest
@@ -1289,7 +1289,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8500
      * @tc.name testArrayIndexOfOne084
      * @tc.desc Verify indexOf returns minus one for empty arrays with an oversized positive fromIndex
      * @tc.size MediumTest
@@ -1303,7 +1303,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8600
      * @tc.name testArrayIndexOfOne085
      * @tc.desc Verify indexOf can search only the last element when fromIndex is minus one
      * @tc.size MediumTest
@@ -1317,7 +1317,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8700
      * @tc.name testArrayIndexOfOne086
      * @tc.desc Verify indexOf does not search earlier elements when fromIndex is minus one
      * @tc.size MediumTest
@@ -1331,7 +1331,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8800
      * @tc.name testArrayIndexOfOne087
      * @tc.desc Verify indexOf can find a tail duplicate when fromIndex normalizes from the end
      * @tc.size MediumTest
@@ -1345,7 +1345,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8900
      * @tc.name testArrayIndexOfOne088
      * @tc.desc Verify indexOf treats negative fromIndex equal to minus length as zero
      * @tc.size MediumTest
@@ -1359,7 +1359,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9000
      * @tc.name testArrayIndexOfOne089
      * @tc.desc Verify indexOf resets overly negative fromIndex values to zero
      * @tc.size MediumTest
@@ -1373,7 +1373,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9100
      * @tc.name testArrayIndexOfOne090
      * @tc.desc Verify indexOf can still find the tail value after a very negative fromIndex reset
      * @tc.size MediumTest
@@ -1387,7 +1387,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9200
      * @tc.name testArrayIndexOfOne091
      * @tc.desc Verify indexOf returns minus one for empty arrays with a negative fromIndex
      * @tc.size MediumTest
@@ -1401,7 +1401,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9300
      * @tc.name testArrayIndexOfOne092
      * @tc.desc Verify indexOf can find a single element when fromIndex is minus one
      * @tc.size MediumTest
@@ -1415,7 +1415,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9400
      * @tc.name testArrayIndexOfOne093
      * @tc.desc Verify indexOf resets overly negative fromIndex values on single element arrays
      * @tc.size MediumTest
@@ -1429,7 +1429,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9500
      * @tc.name testArrayIndexOfOne094
      * @tc.desc Verify indexOf can land exactly on a target after negative offset normalization
      * @tc.size MediumTest
@@ -1443,7 +1443,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9600
      * @tc.name testArrayIndexOfOne095
      * @tc.desc Verify indexOf treats explicit plus zero fromIndex as a normal full search
      * @tc.size MediumTest
@@ -1457,7 +1457,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9700
      * @tc.name testArrayIndexOfOne096
      * @tc.desc Verify indexOf returns the first duplicate when fromIndex is zero
      * @tc.size MediumTest
@@ -1471,7 +1471,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9800
      * @tc.name testArrayIndexOfOne097
      * @tc.desc Verify indexOf can find the second duplicate when fromIndex starts at that position
      * @tc.size MediumTest
@@ -1485,7 +1485,7 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9900
      * @tc.name testArrayIndexOfOne098
      * @tc.desc Verify indexOf can find a later duplicate after a negative fromIndex skips the prefix
      * @tc.size MediumTest

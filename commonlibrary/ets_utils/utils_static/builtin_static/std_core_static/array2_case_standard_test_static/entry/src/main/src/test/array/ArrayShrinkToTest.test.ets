@@ -869,7 +869,7 @@ export default function ArrayShrinkToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShrinkTo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(5);
+      const arr = new Array<number | undefined>(5, (_index) => undefined);
       arr[1] = 10;
       arr[4] = 40;
       arr.shrinkTo(2);
@@ -1030,7 +1030,7 @@ export default function ArrayShrinkToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShrinkTo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(5);
+      const arr = new Array<number | undefined>(5, (_index) => undefined);
       arr[0] = 1;
       arr[4] = 9;
       arr.shrinkTo(2);

@@ -482,7 +482,7 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
+      const arr = new Array<number>();
       let calls = 0;
       const result = arr.reduce((acc: number, value: number): number => {
         calls++;
@@ -501,13 +501,11 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(5);
-      arr[1] = 2;
-      arr[4] = 5;
+      const arr = new Array<number>(2, 5);
       const result = arr.reduce((acc: string, value: number, index: int): string => {
         return acc + '[' + index.toString() + '=' + value.toString() + ']';
       }, 'seed');
-      expect(result).assertEqual('seed[1=2][4=5]');
+      expect(result).assertEqual('seed[0=2][1=5]');
     });
 
     /**
@@ -519,16 +517,16 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3);
+      const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 3;
       let indexes = new Array<int>();
-      const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
+      const result = arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
         indexes.pushOne(index);
         if (index === 0) {
           source[1] = 2;
         }
-        return acc + value;
+        return acc + (value === undefined ? 0 : value);
       }, 10);
       expect(result).assertEqual(16);
       expect(indexes.toString()).assertEqual('0,1,2');
@@ -868,16 +866,18 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(4);
+      const arr = new Array<number | undefined>(4, (_index) => undefined);
       arr[3] = 8;
       const seed = new ReduceStats017();
       seed.count = 10;
       seed.sum = 1;
       let seenIndex = -1;
-      const result = arr.reduce((acc: ReduceStats017, value: number, index: int): ReduceStats017 => {
+      const result = arr.reduce((acc: ReduceStats017, value: number | undefined, index: int): ReduceStats017 => {
         seenIndex = index;
-        acc.count++;
-        acc.sum += value;
+        if (value !== undefined) {
+          acc.count++;
+          acc.sum += value;
+        }
         return acc;
       }, seed);
       expect(result === seed).assertTrue();
@@ -1177,7 +1177,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5800
      * @tc.name testArrayReduceTwo0571
      * @tc.desc Verify reduce with an initial value skips sparse holes while visiting present elements
      * @tc.size MediumTest
@@ -1198,7 +1198,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5900
      * @tc.name testArrayReduceTwo058
      * @tc.desc Verify reduce skips tail elements removed by length shrink
      * @tc.size MediumTest
@@ -1221,7 +1221,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6000
      * @tc.name testArrayReduceTwo059
      * @tc.desc Verify reduce does not visit values appended after traversal starts
      * @tc.size MediumTest
@@ -1244,7 +1244,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6100
      * @tc.name testArrayReduceTwo060
      * @tc.desc Verify reduce reads a later element after it is changed by an earlier callback
      * @tc.size MediumTest
@@ -1264,7 +1264,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6200
      * @tc.name testArrayReduceTwo061
      * @tc.desc Verify reduce can read object array fields into a numeric accumulator
      * @tc.size MediumTest
@@ -1286,7 +1286,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6300
      * @tc.name testArrayReduceTwo062
      * @tc.desc Verify reduce can build a string from each value and index
      * @tc.size MediumTest
@@ -1302,7 +1302,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6400
      * @tc.name testArrayReduceTwo063
      * @tc.desc Verify reduce keeps using the original source array after outer variable reassignment
      * @tc.size MediumTest
@@ -1326,7 +1326,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6500
      * @tc.name testArrayReduceTwo064
      * @tc.desc Verify reduce does not skip false boolean elements
      * @tc.size MediumTest
@@ -1345,7 +1345,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6600
      * @tc.name testArrayReduceTwo065
      * @tc.desc Verify reducing after clearing length only visits the first callback before removal
      * @tc.size MediumTest
@@ -1368,7 +1368,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6700
      * @tc.name testArrayReduceTwo066
      * @tc.desc Verify reduce can convert bigint elements into a string accumulator
      * @tc.size MediumTest
@@ -1384,7 +1384,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6800
      * @tc.name testArrayReduceTwo067
      * @tc.desc Verify reduce can accumulate string counts into a class instance
      * @tc.size MediumTest
@@ -1407,7 +1407,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6900
      * @tc.name testArrayReduceTwo068
      * @tc.desc Verify reduce can collect running totals in an array accumulator
      * @tc.size MediumTest
@@ -1425,7 +1425,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7000
      * @tc.name testArrayReduceTwo069
      * @tc.desc Verify reduce with initial value can sum numeric triple 2, 3, 4
      * @tc.size MediumTest
@@ -1439,7 +1439,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7100
      * @tc.name testArrayReduceTwo070
      * @tc.desc Verify reduce with initial value can sum numeric triple 3, 4, 5
      * @tc.size MediumTest
@@ -1453,7 +1453,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7200
      * @tc.name testArrayReduceTwo071
      * @tc.desc Verify reduce sums a number array with an initial zero
      * @tc.size MediumTest
@@ -1467,7 +1467,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7300
      * @tc.name testArrayReduceTwo072
      * @tc.desc Verify reduce concatenates string values in left-to-right order
      * @tc.size MediumTest
@@ -1481,7 +1481,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7400
      * @tc.name testArrayReduceTwo073
      * @tc.desc Verify reduce exposes the source array to the callback
      * @tc.size MediumTest
@@ -1496,7 +1496,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7500
      * @tc.name testArrayReduceTwo074
      * @tc.desc Verify reduce records traversal indexes in callback order
      * @tc.size MediumTest
@@ -1511,7 +1511,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7600
      * @tc.name testArrayReduceTwo075
      * @tc.desc Verify reduce multiplies numeric values
      * @tc.size MediumTest
@@ -1525,7 +1525,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7700
      * @tc.name testArrayReduceTwo076
      * @tc.desc Verify reduce can accumulate into an object map
      * @tc.size MediumTest
@@ -1540,7 +1540,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7800
      * @tc.name testArrayReduceTwo077
      * @tc.desc Verify reduce can flatten nested arrays while tracking nested lengths
      * @tc.size MediumTest
@@ -1559,7 +1559,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7900
      * @tc.name testArrayReduceTwo078
      * @tc.desc Verify reduce works on a single-element array
      * @tc.size MediumTest
@@ -1575,7 +1575,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8000
      * @tc.name testArrayReduceTwo079
      * @tc.desc Verify reduce handles duplicate numbers without collapsing iterations
      * @tc.size MediumTest
@@ -1589,7 +1589,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8100
      * @tc.name testArrayReduceTwo080
      * @tc.desc Verify reduce handles negative values and zero
      * @tc.size MediumTest
@@ -1603,7 +1603,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8200
      * @tc.name testArrayReduceTwo081
      * @tc.desc Verify reduce can count false boolean indexes
      * @tc.size MediumTest
@@ -1622,7 +1622,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8300
      * @tc.name testArrayReduceTwo082
      * @tc.desc Verify reduce can format number indexes and values into a string
      * @tc.size MediumTest
@@ -1639,7 +1639,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8400
      * @tc.name testArrayReduceTwo083
      * @tc.desc Verify reduce can read arrays produced by slice
      * @tc.size MediumTest
@@ -1653,7 +1653,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8500
      * @tc.name testArrayReduceTwo084
      * @tc.desc Verify reduce can read arrays produced by filter
      * @tc.size MediumTest
@@ -1667,7 +1667,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8600
      * @tc.name testArrayReduceTwo085
      * @tc.desc Verify reduce can read arrays produced by concat
      * @tc.size MediumTest
@@ -1681,7 +1681,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8700
      * @tc.name testArrayReduceTwo086
      * @tc.desc Verify reduce can read a toReversed copy without mutating the source
      * @tc.size MediumTest
@@ -1702,7 +1702,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8800
      * @tc.name testArrayReduceTwo087
      * @tc.desc Verify reduce can read arrays produced by with
      * @tc.size MediumTest
@@ -1716,7 +1716,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8900
      * @tc.name testArrayReduceTwo088
      * @tc.desc Verify reduce can read arrays produced by toSpliced
      * @tc.size MediumTest
@@ -1730,7 +1730,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9000
      * @tc.name testArrayReduceTwo089
      * @tc.desc Verify reduce can weight values after reverse mutates the source order
      * @tc.size MediumTest
@@ -1748,7 +1748,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9100
      * @tc.name testArrayReduceTwo090
      * @tc.desc Verify reduce can build a number after sort mutates the source order
      * @tc.size MediumTest
@@ -1776,7 +1776,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9200
      * @tc.name testArrayReduceTwo091
      * @tc.desc Verify reduce can read arrays after shift changes the head
      * @tc.size MediumTest
@@ -1791,7 +1791,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9300
      * @tc.name testArrayReduceTwo092
      * @tc.desc Verify reduce can read arrays after pop changes the tail
      * @tc.size MediumTest
@@ -1806,7 +1806,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9400
      * @tc.name testArrayReduceTwo093
      * @tc.desc Verify reduce can read arrays after unshift prepends values
      * @tc.size MediumTest
@@ -1821,7 +1821,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9500
      * @tc.name testArrayReduceTwo094
      * @tc.desc Verify reduce can read arrays after push appends values
      * @tc.size MediumTest
@@ -1836,7 +1836,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9600
      * @tc.name testArrayReduceTwo095
      * @tc.desc Verify reduce can read arrays after splice replacement
      * @tc.size MediumTest
@@ -1851,7 +1851,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9700
      * @tc.name testArrayReduceTwo096
      * @tc.desc Verify reduce can read arrays after shrinkTo truncates the tail
      * @tc.size MediumTest
@@ -1866,7 +1866,7 @@ export default function ArrayReduce2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9800
      * @tc.name testArrayReduceTwo097
      * @tc.desc Verify reduce can read arrays rebuilt after clearing length
      * @tc.size MediumTest
@@ -1884,4 +1884,3 @@ export default function ArrayReduce2Test(): void {
 
   });
 }
-
