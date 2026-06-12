@@ -2264,13 +2264,13 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0100"
-      let manufactureValueBuffers = new Uint8Array(171);
+      let advManufactureValueBuffers = new Uint8Array(171);
       for (let count = 0; count < 171; count++) {
-        manufactureValueBuffers[count] = (count+1);
+        advManufactureValueBuffers[count] = (count+1);
       }
-      let manufactureDataUnits: bluetooth.ManufactureData = {
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
         manufactureId:4567,
-        manufactureValue:manufactureValueBuffers.buffer
+        manufactureValue:advManufactureValueBuffers.buffer
       };
       let serviceValueBuffer = new Uint8Array(4);
       serviceValueBuffer[0] = 4;
@@ -2293,7 +2293,7 @@ export default function bluetoothAdvertisingTest() {
       };
       let advData: bluetooth.AdvertiseData = {
         serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnits],
+        manufactureData:[advManufactureDataUnits],
         serviceData:[serviceDataUnit],
         includeDeviceName:false,
         includeTxPower:false
@@ -2313,8 +2313,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} test start`);
         let advHandle = await bluetooth.startAdvertising(advertisingParams);
         console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        await sleep(500);
-        await sleep(900);
+        await sleep(1500);
         await bluetooth.stopAdvertising(advHandle);
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
@@ -2340,13 +2339,13 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0200"
-      let manufactureValueBuffers = new Uint8Array(191);
+      let advManufactureValueBuffers = new Uint8Array(191);
       for (let count = 0; count < 191; count++) {
-        manufactureValueBuffers[count] = (count+1);
+        advManufactureValueBuffers[count] = (count+1);
       }
-      let manufactureDataUnits: bluetooth.ManufactureData = {
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
         manufactureId:4567,
-        manufactureValue:manufactureValueBuffers.buffer
+        manufactureValue:advManufactureValueBuffers.buffer
       };
       let serviceValueBuffer = new Uint8Array(4);
       serviceValueBuffer[0] = 4;
@@ -2369,7 +2368,7 @@ export default function bluetoothAdvertisingTest() {
       };
       let advData: bluetooth.AdvertiseData = {
         serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnits],
+        manufactureData:[advManufactureDataUnits],
         serviceData:[serviceDataUnit],
         includeDeviceName:false,
         includeTxPower:false
@@ -2389,8 +2388,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} test start`)
         let advHandle = await bluetooth.startAdvertising(advertisingParams);
         console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        await sleep(500);
-        await sleep(900);
+        await sleep(1500);
         await bluetooth.stopAdvertising(advHandle);
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
         expect().assertFail();
@@ -2417,13 +2415,13 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0300"
-      let manufactureValueBuffers = new Uint8Array(170);
+      let advManufactureValueBuffers = new Uint8Array(170);
       for (let count = 0; count < 170; count++) {
-        manufactureValueBuffers[count] = (count+1);
+        advManufactureValueBuffers[count] = (count+1);
       }
-      let manufactureDataUnits: bluetooth.ManufactureData = {
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
         manufactureId:4567,
-        manufactureValue:manufactureValueBuffers.buffer
+        manufactureValue:advManufactureValueBuffers.buffer
       };
       let serviceValueBuffer = new Uint8Array(4);
       serviceValueBuffer[0] = 4;
@@ -2446,7 +2444,7 @@ export default function bluetoothAdvertisingTest() {
       };
       let advData: bluetooth.AdvertiseData = {
         serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnits],
+        manufactureData:[advManufactureDataUnits],
         serviceData:[serviceDataUnit],
         includeDeviceName:false,
         includeTxPower:false
@@ -2466,8 +2464,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} test start`)
         let advHandle = await bluetooth.startAdvertising(advertisingParams);
         console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        await sleep(500);
-        await sleep(900);
+        await sleep(1500);
         await bluetooth.stopAdvertising(advHandle);
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
@@ -2493,13 +2490,13 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_isExtended_0400"
-      let manufactureValueBuffers = new Uint8Array(10);
+      let advManufactureValueBuffers = new Uint8Array(10);
       for (let count = 0; count < 10; count++) {
-        manufactureValueBuffers[count] = (count+1);
+        advManufactureValueBuffers[count] = (count+1);
       }
-      let manufactureDataUnits: bluetooth.ManufactureData = {
+      let advManufactureDataUnits: bluetooth.ManufactureData = {
         manufactureId:4567,
-        manufactureValue:manufactureValueBuffers.buffer
+        manufactureValue:advManufactureValueBuffers.buffer
       };
       let serviceValueBuffer = new Uint8Array(4);
       serviceValueBuffer[0] = 4;
@@ -2522,7 +2519,7 @@ export default function bluetoothAdvertisingTest() {
       };
       let advData: bluetooth.AdvertiseData = {
         serviceUuids:["00001888-0000-1000-8000-00805f9b34fb"],
-        manufactureData:[manufactureDataUnits],
+        manufactureData:[advManufactureDataUnits],
         serviceData:[serviceDataUnit],
         includeDeviceName:false,
         includeTxPower:false
@@ -2542,8 +2539,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} test start`)
         let advHandle = await bluetooth.startAdvertising(advertisingParams);
         console.info(`${caseName} ` +'[bluetooth_js]startAdvertising promise info02:'+JSON.stringify(advHandle));
-        await sleep(500);
-        await sleep(900);
+        await sleep(1500);
         await bluetooth.stopAdvertising(advHandle);
         console.info(`${caseName} ` +'[bluetooth_js] stopAdvertising promise success: ');
       }catch (err) {
