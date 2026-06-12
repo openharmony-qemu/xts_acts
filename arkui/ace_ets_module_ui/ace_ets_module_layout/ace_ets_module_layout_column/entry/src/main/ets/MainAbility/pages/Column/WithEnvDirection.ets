@@ -14,38 +14,75 @@
  */
 
 import { WithEnv,WithEnvAttribute } from '@ohos.arkui.WithEnv'
+import i18n from '@ohos.i18n'
 
 @Entry
 @Component
 struct WithEnvDirection {
   @State dirProvider:Direction|undefined = undefined
+  @State languageValue: string = ''
+
+  aboutToAppear() {
+    this.languageValue = i18n.System.getAppPreferredLanguage()
+  }
 
   build() {
-    Column() {
-      Button('dirProvider=' + this.dirProvider)
-       .id('WithEnvDirectionButton')
-      .onClick(()=>{
-        if(this.dirProvider == undefined) {
-          this.dirProvider = Direction.Auto
-        } else if(this.dirProvider == Direction.Auto) {
-          this.dirProvider = Direction.Ltr
-        } else if(this.dirProvider == Direction.Ltr) {
-          this.dirProvider = Direction.Rtl
-        } else if(this.dirProvider == Direction.Rtl) {
-          this.dirProvider = undefined
-        }
-      })
+    Column({space:3}) {
+      Row(){
+        Button('SetLtr')
+          .id('SetDirectionLtrButton')
+          .onClick(()=>{
+            this.dirProvider = Direction.Ltr
+          })
+          .width(80)
+          .height(15)
+        Button('SetAuto')
+          .id('SetDirectionAutoButton')
+          .onClick(()=>{
+            this.dirProvider = Direction.Auto
+          })
+          .width(80)
+          .height(15)
+      }
+      Row(){
+        Button('SetRtl')
+          .id('SetDirectionRtlButton')
+          .onClick(()=>{
+            this.dirProvider = Direction.Rtl
+          })
+          .width(80)
+          .height(15)
+        Button('SetUndefined')
+          .id('SetDirectionUndefinedButton')
+          .onClick(()=>{
+            this.dirProvider = undefined
+          })
+          .width(90)
+          .height(15)
+      }
+      Button('设置维吾尔语')
+        .id('SetLanguageUg')
+        .onClick(() => {
+          console.log('getAppPreferredLanguage last ' + i18n.System.getAppPreferredLanguage())
+          i18n.System.setAppPreferredLanguage('ug')
+        })
+        .width(100)
+        .height(15)
+      Button('设置汉语')
+        .id('SetLanguageUg')
+        .onClick(() => {
+          console.log('getAppPreferredLanguage last ' + i18n.System.getAppPreferredLanguage())
+          i18n.System.setAppPreferredLanguage('zh-Hans')
+        })
+        .width(100)
+        .height(15)
 
       WithEnv(){
-        Row(){
-          Text('01').width('20%').backgroundColor(0xF5DEB3).id('WithEnvDirectionText1')
-          Text('23').width('20%').backgroundColor(0xD2B48C)
-          Text('45').width('20%').backgroundColor(0xF5DEB3)
-          Text('67').width('20%').backgroundColor(0xD2B48C)
+        Row({space:3}){
+          Text('01').width(60).backgroundColor(0xF5DEB3).id('WithEnvDirectionText1')
+          Text('02').width(60).backgroundColor(0xD2B48C).id('WithEnvDirectionText2')
         }
-        .padding(10)
-        .width('100%')
-        .justifyContent(FlexAlign.SpaceEvenly)
+        .padding(5)
         .backgroundColor('#77000000')
       }
       .env(WritableEnvKey.DIRECTION,this.dirProvider)
