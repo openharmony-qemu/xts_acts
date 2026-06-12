@@ -130,7 +130,7 @@ export default function WithEnvDirectionTest() {
       let strJson2 = getInspectorByKey('WithEnvDirectionText1');
       let strJson3 = getInspectorByKey('WithEnvDirectionText2');
 
-      let button2 = await driver.findComponent(ON.id('SetDirectionRtrButton'));
+      let button2 = await driver.findComponent(ON.id('SetDirectionRtlButton'));
       await button2.click();
       await CommonFunc.sleep(2000);
       let strJson4 = getInspectorByKey('WithEnvDirectionText1');
