@@ -52,15 +52,15 @@ export default function actsNotificationAnsMessageAggregationNoSystemTest() {
 
 
     /**
-     * @tc.name   Sub_Notification_Ans_Message_Aggregation_1300
-     * @tc.number Sub_Notification_Ans_Message_Aggregation_1300
+     * @tc.name   SUB_Notification_Ans_Message_Aggregation_1300
+     * @tc.number SUB_Notification_Ans_Message_Aggregation_1300
      * @tc.desc   [setNotificationSwitch]三方应用调用请求接口，报错202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_Message_Aggregation_1300', Level.LEVEL1, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Message_Aggregation_1300';
+    it('SUB_Notification_Ans_Message_Aggregation_1300', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Message_Aggregation_1300';
       let num = 0
       let switchName: string = 'LOGISTICS';
       let switchState: boolean = true;
@@ -89,15 +89,15 @@ export default function actsNotificationAnsMessageAggregationNoSystemTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Message_Aggregation_2600
-     * @tc.number Sub_Notification_Ans_Message_Aggregation_2600
+     * @tc.name   SUB_Notification_Ans_Message_Aggregation_2600
+     * @tc.number SUB_Notification_Ans_Message_Aggregation_2600
      * @tc.desc   [getNotificationSwitch]三方应用调用请求接口，报错202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_Message_Aggregation_2600', Level.LEVEL1, async (done: Function) => {
-      const testNum = 'Sub_Notification_Ans_Message_Aggregation_2600';
+    it('SUB_Notification_Ans_Message_Aggregation_2600', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'SUB_Notification_Ans_Message_Aggregation_2600';
       let switchName: string = 'DEAL';
       let userId: number = 100;
 
