@@ -36,9 +36,9 @@ export default function GraphicTextFontCollection() {
      * @tc.desc   To test interface getGlobalInstance of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetGlobalInstanceStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetGlobalInstanceStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let fontCollection = text.FontCollection.getGlobalInstance();
@@ -59,9 +59,9 @@ export default function GraphicTextFontCollection() {
      * @tc.desc   To test interface new FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testNewFontCollectionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testNewFontCollectionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let fontCollection = new text.FontCollection;
@@ -82,9 +82,9 @@ export default function GraphicTextFontCollection() {
      * @tc.desc   To test interface loadFont of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let fontCollection = new text.FontCollection;
@@ -107,9 +107,9 @@ export default function GraphicTextFontCollection() {
      * @tc.desc   To test interface clearCaches of FontCollection.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testclearCachesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testclearCachesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let fontCollection = new text.FontCollection;

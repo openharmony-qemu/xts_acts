@@ -26,7 +26,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFont path parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('fontCollectionLoadFontPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -52,7 +52,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFont path parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('fontCollectionLoadFontPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -77,7 +77,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFont path parameter empty string test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('fontCollectionLoadFontPathEmptyString401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -102,7 +102,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFont invalid path parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('fontCollectionLoadFontInvalidPath401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
@@ -126,7 +126,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck name parameter empty string test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckNameEmptyString25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -153,7 +153,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck name parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckNameNull401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -180,7 +180,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck name parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckNameUndefined401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -207,7 +207,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck path parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckPathNull401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -234,7 +234,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck path parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckPathUndefined401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -261,7 +261,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck path parameter empty string test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckPathEmptyString25900001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -288,7 +288,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck index parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckIndexNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -311,7 +311,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck index parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckIndexUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -334,7 +334,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck file not found test 25900002.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckFileNotFound25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -362,7 +362,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck failed to open file test 25900003.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckFailedToOpen25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -390,7 +390,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck empty file test 25900007.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckEmptyFile25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -418,7 +418,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontSyncWithCheck corrupt file test 25900008.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontSyncWithCheckCorruptFile25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -448,7 +448,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck name parameter empty string test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckNameEmptyString25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -475,7 +475,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck name parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckNameNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -500,7 +500,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck name parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckNameUndefined401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -527,7 +527,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck path parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -552,7 +552,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck path parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckPathUndefined401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -579,7 +579,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck path parameter empty string test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckPathEmptyString401',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -606,7 +606,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck index parameter null test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckIndexNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
@@ -629,7 +629,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck index parameter undefined test 25900001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckIndexUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       try {
@@ -652,7 +652,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck file not found test 25900002.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckFileNotFound25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -680,7 +680,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck failed to open file test 25900003.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckFailedToOpen25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -708,7 +708,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck empty file test 25900007.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckEmptyFile25900002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
@@ -736,7 +736,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   FontCollection loadFontWithCheck corrupt file test 25900008.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('loadFontWithCheckCorruptFile25900002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -763,9 +763,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontStyleNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontStyleNormal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -797,9 +797,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontStyle ITALIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontStyleItalic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontStyleItalic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -831,9 +831,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontStyle OBLIQUE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontStyleOblique', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontStyleOblique', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -865,9 +865,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode START test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleEllipsisModeStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleEllipsisModeStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -899,9 +899,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleEllipsisModeMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleEllipsisModeMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -933,9 +933,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode END test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleEllipsisModeEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleEllipsisModeEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -967,9 +967,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MULTILINE_START test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleEllipsisModeMultilineStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleEllipsisModeMultilineStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1001,9 +1001,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle ellipsisMode MULTILINE_MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleEllipsisModeMultilineMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleEllipsisModeMultilineMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1035,9 +1035,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontStyle and ellipsisMode combined test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontStyleAndEllipsisModeCombined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontStyleAndEllipsisModeCombined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1072,9 +1072,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle all font styles test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleAllFontStylesTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleAllFontStylesTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1127,9 +1127,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle all ellipsis modes test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleAllEllipsisModesTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleAllEllipsisModesTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1213,9 +1213,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addText empty string test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addTextEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addTextEmptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1241,7 +1241,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addText null parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addTextNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1266,7 +1266,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addText undefined parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addTextUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1292,9 +1292,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addSymbol valid parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addSymbolValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addSymbolValid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1320,7 +1320,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addSymbol null parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addSymbolNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1345,7 +1345,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addSymbol undefined parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addSymbolUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1370,9 +1370,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addSymbol zero parameter test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addSymbolZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addSymbolZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1397,9 +1397,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder align OFFSET_AT_BASELINE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderAlignOffsetAtBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderAlignOffsetAtBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1433,9 +1433,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder align BELOW_BASELINE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderAlignBelowBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderAlignBelowBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1469,9 +1469,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder align TOP_OF_ROW_BOX test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderAlignTopOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderAlignTopOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1505,9 +1505,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder align BOTTOM_OF_ROW_BOX test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderAlignBottomOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderAlignBottomOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1541,9 +1541,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder align CENTER_OF_ROW_BOX test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderAlignCenterOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderAlignCenterOfRowBox', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1577,9 +1577,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder baseline IDEOGRAPHIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('addPlaceholderBaselineIdeographic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('addPlaceholderBaselineIdeographic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1613,7 +1613,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder null parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addPlaceholderNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1638,7 +1638,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder addPlaceholder undefined parameter test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('addPlaceholderUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1663,9 +1663,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontStyle NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontStyleNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontStyleNormal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1697,9 +1697,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontWeight W100 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontWeightW100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontWeightW100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1731,9 +1731,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontWidth NORMAL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontWidthNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontWidthNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1765,9 +1765,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontWidth CONDENSED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontWidthCondensed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontWidthCondensed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1799,9 +1799,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle fontWidth SEMI_EXPANDED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleFontWidthSemiExpanded', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleFontWidthSemiExpanded', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1833,9 +1833,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   ParagraphBuilder pushStyle complex properties test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('pushStyleComplexProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('pushStyleComplexProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1870,9 +1870,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration textDecoration NONE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('updateDecorationTextDecorationNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('updateDecorationTextDecorationNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1907,9 +1907,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration decorationStyle SOLID test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('updateDecorationDecorationStyleSolid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('updateDecorationDecorationStyleSolid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1944,9 +1944,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration decorationStyle DOUBLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('updateDecorationDecorationStyleDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('updateDecorationDecorationStyleDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1981,7 +1981,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration decoration parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('updateDecorationDecorationNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -2011,7 +2011,7 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration decoration parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('updateDecorationDecorationUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -2041,9 +2041,9 @@ export default function GraphicTextAdd01Test() {
      * @tc.desc   Paragraph updateDecoration with all properties test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('updateDecorationComplete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('updateDecorationComplete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();

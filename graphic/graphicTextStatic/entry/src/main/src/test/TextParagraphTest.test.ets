@@ -166,9 +166,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test create a paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testCreateParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
@@ -191,9 +191,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getMaxWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetMaxWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -213,9 +213,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getHeight for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetHeightStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetHeightStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -235,9 +235,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getLongestLine for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLineStatic_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLongestLineStatic_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -257,9 +257,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getLongestLineWithIndent for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLineWithIndentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLongestLineWithIndentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -279,9 +279,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getMinIntrinsicWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMinIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetMinIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -301,9 +301,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getMaxIntrinsicWidth for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetMaxIntrinsicWidthStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -323,9 +323,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getAlphabeticBaseline for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetAlphabeticBaselineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetAlphabeticBaselineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -345,9 +345,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getRectsForRange for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForRangeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetRectsForRangeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -371,9 +371,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getRectsForPlaceholders for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForPlaceholdersStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetRectsForPlaceholdersStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -396,9 +396,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getGlyphPositionAtCoordinate for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetGlyphPositionAtCoordinateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetGlyphPositionAtCoordinateStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           globalParagraph?.layoutSync(100);
@@ -418,9 +418,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getLongestLine for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLongestLineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let paragraphBuilder = new text.ParagraphBuilder(globalParagraphStyle!, globalFontCollection!)
@@ -446,9 +446,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getLineMetrics for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineMetricsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLineMetricsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
@@ -553,9 +553,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method getLineMetricsAt for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineMetricsAtStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLineMetricsAtStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
@@ -639,9 +639,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method paint for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);
@@ -667,9 +667,9 @@ export default function TextParagraphTest() {
      * @tc.desc   To test method paintOnPath for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintOnPathStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintOnPathStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           hilog.error(0x0000, 'Text', 'MM_LOG print maxLines: %{public}f', globalParagraphStyle!.maxLines);

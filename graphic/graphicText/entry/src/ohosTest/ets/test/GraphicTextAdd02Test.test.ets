@@ -27,9 +27,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const descriptor = await text.getFontDescriptorByFullName(
@@ -52,9 +52,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameCustomized', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameCustomized', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let fontCollection: text.FontCollection = new text.FontCollection();
@@ -85,7 +85,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontDescriptorByFullNameFullNameEmpty401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -110,7 +110,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontDescriptorByFullNameFullNameNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -135,7 +135,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fullName null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontDescriptorByFullNameFullNameUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -161,9 +161,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType STYLISH test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameFontTypeStylish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameFontTypeStylish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const descriptor = await text.getFontDescriptorByFullName(
@@ -186,9 +186,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType GENERIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameFontTypeGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameFontTypeGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const descriptor = await text.getFontDescriptorByFullName(
@@ -212,9 +212,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName fontType INSTALLED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameFontTypeInstalled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameFontTypeInstalled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const descriptor = await text.getFontDescriptorByFullName(
@@ -237,9 +237,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorByFullName all font types test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorByFullNameAllFontTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorByFullNameAllFontTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontTypes = [text.SystemFontType.STYLISH, text.SystemFontType.GENERIC, text.SystemFontType.INSTALLED];
@@ -263,9 +263,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = { fullName: 'Arial', weight: text.FontWeight.W500 };
@@ -290,7 +290,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors fullName empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('matchFontDescriptorsFullNameEmpty401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -314,7 +314,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors fontSubfamily empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('matchFontDescriptorsFontSubfamilyEmpty401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -338,9 +338,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors fontSubfamily not null test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsFontSubfamilyNotNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsFontSubfamilyNotNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -367,9 +367,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W100 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -405,9 +405,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W200 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -443,9 +443,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W300 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -481,9 +481,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W400 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -510,9 +510,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W500 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -539,9 +539,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W600 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -568,9 +568,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W700 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -597,9 +597,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W800 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -626,9 +626,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors weight W900 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsWeightW900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsWeightW900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -655,9 +655,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors monoSpace true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsMonoSpaceTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsMonoSpaceTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -684,9 +684,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors monoSpace false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsMonoSpaceFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsMonoSpaceFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -713,9 +713,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors symbolic true test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsSymbolicTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsSymbolicTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -742,9 +742,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors symbolic false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsSymbolicFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsSymbolicFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -771,9 +771,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors localPostscriptName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsLocalPostscriptNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsLocalPostscriptNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -801,9 +801,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors localFullName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsLocalFullNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsLocalFullNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -830,9 +830,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors localFamilyName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsLocalFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsLocalFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -859,9 +859,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors localSubFamilyName empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsLocalSubFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsLocalSubFamilyNameEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -889,9 +889,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors version empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsVersionEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsVersionEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -918,9 +918,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors manufacture empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsManufactureEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsManufactureEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -947,9 +947,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors copyright empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsCopyrightEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsCopyrightEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -976,9 +976,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors trademark empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsTrademarkEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsTrademarkEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -1005,9 +1005,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection matchFontDescriptors license empty test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('matchFontDescriptorsLicenseEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('matchFontDescriptorsLicenseEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const desc: text.FontDescriptor = {
@@ -1034,9 +1034,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorsFromPath normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontDescriptorsFromPathNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontDescriptorsFromPathNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const descriptors: text.FontDescriptor[] = await text.getFontDescriptorsFromPath('/data/local/tmp/fonts');
@@ -1059,7 +1059,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorsFromPath path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontDescriptorsFromPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1082,7 +1082,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontDescriptorsFromPath path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontDescriptorsFromPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1105,9 +1105,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection isFontSupported string normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('isFontSupportedStringNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('isFontSupportedStringNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const isSupported: boolean = text.isFontSupported('/data/local/tmp/test.ttf');
@@ -1128,7 +1128,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection isFontSupported string empty test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('isFontSupportedStringEmpty401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1151,7 +1151,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection isFontSupported string null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('isFontSupportedStringNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1174,7 +1174,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection isFontSupported string undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('isFontSupportedStringUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1197,9 +1197,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontUnicodeSet normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontUnicodeSetNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontUnicodeSetNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const unicodeSet: number[] = await text.getFontUnicodeSet('/data/local/tmp/test.ttf', 0);
@@ -1222,7 +1222,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontUnicodeSet path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontUnicodeSetPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1245,7 +1245,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontUnicodeSet path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontUnicodeSetPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1268,7 +1268,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontUnicodeSet index null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontUnicodeSetIndexNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1291,7 +1291,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontUnicodeSet index undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontUnicodeSetIndexUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1314,9 +1314,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontCount normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontCountNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontCountNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const count: number = text.getFontCount('/data/local/tmp/fonts');
@@ -1337,7 +1337,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontCount path null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontCountPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1360,7 +1360,7 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontCount path undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getFontCountPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1383,9 +1383,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontPathsByType STYLISH test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontPathsByTypeStylish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontPathsByTypeStylish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.STYLISH);
@@ -1408,9 +1408,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontPathsByType GENERIC test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontPathsByTypeGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontPathsByTypeGeneric', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.GENERIC);
@@ -1433,9 +1433,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   FontCollection getFontPathsByType INSTALLED test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getFontPathsByTypeInstalled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getFontPathsByTypeInstalled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const paths: string[] = text.getFontPathsByType(text.SystemFontType.INSTALLED);
@@ -1458,9 +1458,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1497,9 +1497,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange start property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1533,9 +1533,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange end property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1569,9 +1569,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange multiple lines test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeMultipleLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeMultipleLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1611,9 +1611,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange empty text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeEmptyText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeEmptyText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1647,9 +1647,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange long text test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeLongText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeLongText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1687,9 +1687,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange with spaces test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeWithSpaces', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeWithSpaces', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1725,9 +1725,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange single character test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeSingleCharacter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeSingleCharacter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1763,9 +1763,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange special characters test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeSpecialCharacters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeSpecialCharacters', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1800,9 +1800,9 @@ export default function GraphicTextAdd02Test() {
      * @tc.desc   TextLine getTextRange zero start test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getTextRangeZeroStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getTextRangeZeroStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();

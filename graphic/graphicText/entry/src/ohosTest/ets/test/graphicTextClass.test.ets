@@ -53,9 +53,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutSyncSync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutSync"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -72,9 +72,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPaint"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -92,9 +92,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetMaxWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMaxWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMaxWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -112,9 +112,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetHeight interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetHeight"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -132,9 +132,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetLongestLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLongestLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLongestLine"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -153,9 +153,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetMinIntrinsicWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMinIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMinIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMinIntrinsicWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -173,9 +173,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetMaxIntrinsicWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMaxIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMaxIntrinsicWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -193,9 +193,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetAlphabeticBaseline interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetAlphabeticBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetAlphabeticBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetAlphabeticBaseline"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -214,9 +214,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetIdeographicBaseline interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetIdeographicBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetIdeographicBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetIdeographicBaseline"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -234,9 +234,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetRectsForRange interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetRectsForRange"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -257,9 +257,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetRectsForPlaceholders interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForPlaceholders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetRectsForPlaceholders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetRectsForPlaceholders"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -277,9 +277,9 @@ export default function graphicTextClass() {
      * @tc.desc   To To test Paragraph GetGlyphPositionAtCoordinate interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetGlyphPositionAtCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetGlyphPositionAtCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetGlyphPositionAtCoordinate"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -297,9 +297,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetWordBoundary interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetWordBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetWordBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetWordBoundary"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -317,9 +317,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetLineCount interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineCount"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -337,9 +337,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetLineHeight interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineHeight"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -357,9 +357,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph GetLineWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -377,9 +377,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph DidExceedMaxLines interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testDidExceedMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testDidExceedMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testDidExceedMaxLines"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -397,9 +397,9 @@ export default function graphicTextClass() {
      * @tc.desc   test TextLine GlyphCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testText_GetGlyphCount"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -427,9 +427,9 @@ export default function graphicTextClass() {
      * @tc.desc   test TextLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextLine_GetTextRange"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -457,9 +457,9 @@ export default function graphicTextClass() {
      * @tc.desc   test TextLine Paint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextLine_Paint"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -487,9 +487,9 @@ export default function graphicTextClass() {
      * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testParagraphBuilder_AonstructorAndAddText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testParagraphBuilder_AonstructorAndAddText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -570,9 +570,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetGlyphCount interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTexRun_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTexRun_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphCount';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -604,9 +604,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetGlyphs interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel);
@@ -637,9 +637,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetPositions interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetPositions';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -670,9 +670,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetOffsets interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetOffsets';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -703,9 +703,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetFont interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetFont', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetFont', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetFont';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -736,9 +736,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_Paint';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -768,9 +768,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetGlyphs interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetGlyphsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetGlyphsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -830,9 +830,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run GetPositions interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetPositionsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetPositionsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetPositions';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -892,9 +892,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run getStringIndices interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getStringIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=>{
+    it('testTextRun_getStringIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=>{
       let msg = 'testTextRun_getStringIndices';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -960,9 +960,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run getStringRange interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getStringRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getStringRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getStringRange';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -994,9 +994,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run getImageBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getImageBounds';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -1033,9 +1033,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Run getTypographicBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getTypographicBounds';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -1084,9 +1084,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_1 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1104,9 +1104,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_2 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1125,9 +1125,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_3 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1146,9 +1146,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_4 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1167,9 +1167,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_5 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1187,9 +1187,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_6 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1207,9 +1207,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_7 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1227,9 +1227,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_8 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1247,9 +1247,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_9 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1268,9 +1268,9 @@ export default function graphicTextClass() {
      * @tc.desc   Constructs a LineTypeset object test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_1"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1322,9 +1322,9 @@ export default function graphicTextClass() {
      * @tc.desc   getLineBreak interface abnormal parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_2"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1370,9 +1370,9 @@ export default function graphicTextClass() {
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_3"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1442,9 +1442,9 @@ export default function graphicTextClass() {
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_4"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1490,9 +1490,9 @@ export default function graphicTextClass() {
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_5"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1538,9 +1538,9 @@ export default function graphicTextClass() {
      * @tc.desc   Constructs a LineTypeset object test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_6"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1586,9 +1586,9 @@ export default function graphicTextClass() {
      * @tc.desc   createLine interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1658,9 +1658,9 @@ export default function graphicTextClass() {
      * @tc.desc   createLine interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1722,9 +1722,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line CreateTruncatedLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_CreateTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_CreateTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_CreateTruncatedLine';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1815,9 +1815,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetTypographicBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetTypographicBounds';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1863,9 +1863,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetImageBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetImageBounds';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1911,9 +1911,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetTrailingSpaceWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTrailingSpaceWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTrailingSpaceWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetTrailingSpaceWidth';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1941,9 +1941,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetStringIndexForPosition interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetStringIndexForPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetStringIndexForPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetStringIndexForPosition';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -2002,9 +2002,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetOffsetForStringIndex interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetOffsetForStringIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetOffsetForStringIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetOffsetForStringIndex';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -2060,9 +2060,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line EnumerateCaretOffsets interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_EnumerateCaretOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_EnumerateCaretOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_EnumerateCaretOffsets';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -2124,9 +2124,9 @@ export default function graphicTextClass() {
      * @tc.desc   To test Line GetAlignmentOffset interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetAlignmentOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetAlignmentOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetAlignmentOffset';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)

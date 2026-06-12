@@ -43,9 +43,9 @@ export default function GraphicTextClass() {
      * @tc.desc   To test Paragraph layoutSyncSync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLayoutSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLayoutSyncStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testLayoutSync"
       console.info(msg + 'begin');
@@ -65,9 +65,9 @@ export default function GraphicTextClass() {
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
@@ -89,9 +89,9 @@ export default function GraphicTextClass() {
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const msg = 'testCanvasConstructorNormalStatic';
         let canvas = new drawing.Canvas(pixel!)
@@ -114,9 +114,9 @@ export default function GraphicTextClass() {
      * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testParagraphBuilder_AonstructorAndAddTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testParagraphBuilder_AonstructorAndAddTextStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
       console.info(msg + 'begin');
@@ -186,9 +186,9 @@ export default function GraphicTextClass() {
      * @tc.desc   To test Paragraph GetLongestLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLineStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetLongestLineStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       let msg = "testGetLongestLine"
       console.info(msg + 'begin');
@@ -209,9 +209,9 @@ export default function GraphicTextClass() {
      * @tc.desc   test for PlaceholderSpan
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testPlaceholderSpanStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testPlaceholderSpanStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -267,9 +267,9 @@ export default function GraphicTextClass() {
      * @tc.desc   test for LineTypeset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLineTypesetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testLineTypesetStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -305,9 +305,9 @@ export default function GraphicTextClass() {
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testLayoutStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let msg = "testLayoutStatic"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -337,9 +337,9 @@ export default function GraphicTextClass() {
      * @tc.desc   test for addSymbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testAddSymbolStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = "testAddSymbolStatic"
         console.info(msg + 'begin');
@@ -372,9 +372,9 @@ export default function GraphicTextClass() {
      * @tc.desc   test for Layout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
         let msg = "www data testGetFullNameStatic "
         console.info(msg + 'www data begin');

@@ -27,7 +27,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange range parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getRectsForRangeRangeNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -58,7 +58,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange range parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getRectsForRangeRangeUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -89,9 +89,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange widthStyle MAX test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeWidthStyleMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeWidthStyleMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -121,9 +121,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange heightStyle MAX test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeHeightStyleMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeHeightStyleMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -153,9 +153,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange heightStyle INCLUDE_LINE_SPACE_MIDDLE test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeHeightStyleIncludeLineSpaceMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeHeightStyleIncludeLineSpaceMiddle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -187,9 +187,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange heightStyle INCLUDE_LINE_SPACE_TOP test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeHeightStyleIncludeLineSpaceTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeHeightStyleIncludeLineSpaceTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -221,9 +221,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange heightStyle INCLUDE_LINE_SPACE_BOTTOM test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeHeightStyleIncludeLineSpaceBottom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeHeightStyleIncludeLineSpaceBottom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -255,9 +255,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getRectsForRange heightStyle STRUT test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getRectsForRangeHeightStyleStrut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getRectsForRangeHeightStyleStrut', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -287,7 +287,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate x parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getGlyphPositionAtCoordinateXNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -318,7 +318,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate x parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getGlyphPositionAtCoordinateXUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -349,7 +349,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate y parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getGlyphPositionAtCoordinateYNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -380,7 +380,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate y parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getGlyphPositionAtCoordinateYUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -411,7 +411,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getWordBoundary offset parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getWordBoundaryOffsetNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -442,7 +442,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getWordBoundary offset parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getWordBoundaryOffsetUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -473,7 +473,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineHeight line parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineHeightLineNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -504,7 +504,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineHeight line parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineHeightLineUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -535,7 +535,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineWidth line parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineWidthLineNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -566,7 +566,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineWidth line parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineWidthLineUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -597,7 +597,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange lineNumber parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getActualTextRangeLineNumberNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -628,7 +628,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange lineNumber parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getActualTextRangeLineNumberUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -659,9 +659,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange includeSpaces false test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getActualTextRangeIncludeSpacesFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getActualTextRangeIncludeSpacesFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -690,7 +690,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics lineNumber parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineMetricsLineNumberNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -721,7 +721,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics lineNumber parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('getLineMetricsLineNumberUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -752,7 +752,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph updateColor color parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('updateColorColorNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -783,7 +783,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph updateColor color parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('updateColorColorUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -879,9 +879,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath path parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('paragraphPaintOnPathPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('paragraphPaintOnPathPathNull401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       try {
         const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -915,9 +915,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath path parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('paragraphPaintOnPathPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('paragraphPaintOnPathPathUndefined401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       try {
         const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -951,7 +951,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath hOffset parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('paragraphPaintOnPathHOffsetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -988,7 +988,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath hOffset parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('paragraphPaintOnPathHOffsetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1025,7 +1025,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath vOffset parameter null test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('paragraphPaintOnPathVOffsetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1062,7 +1062,7 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph paintOnPath vOffset parameter undefined test 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
     it('paragraphPaintOnPathVOffsetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1098,9 +1098,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getGlyphPositionAtCoordinateNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getGlyphPositionAtCoordinateNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1136,9 +1136,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate position property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getGlyphPositionAtCoordinatePositionProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getGlyphPositionAtCoordinatePositionProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1172,9 +1172,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate affinity property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getGlyphPositionAtCoordinateAffinityProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getGlyphPositionAtCoordinateAffinityProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1207,9 +1207,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate x zero test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getGlyphPositionAtCoordinateXZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getGlyphPositionAtCoordinateXZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1240,9 +1240,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate y zero test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getGlyphPositionAtCoordinateYZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getGlyphPositionAtCoordinateYZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1273,9 +1273,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getWordBoundary normal test.
      @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getWordBoundaryNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getWordBoundaryNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1311,9 +1311,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getWordBoundary start property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getWordBoundaryStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getWordBoundaryStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1346,9 +1346,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getWordBoundary end property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getWordBoundaryEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getWordBoundaryEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1381,9 +1381,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getActualTextRangeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getActualTextRangeNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1419,9 +1419,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange start property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getActualTextRangeStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getActualTextRangeStartProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1454,9 +1454,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getActualTextRange end property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getActualTextRangeEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getActualTextRangeEndProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1489,9 +1489,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics normal test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1523,9 +1523,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics startIndex property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsStartIndexProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsStartIndexProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1560,9 +1560,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics endIndex property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsEndIndexProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsEndIndexProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1596,9 +1596,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics ascent property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsAscentProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsAscentProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1631,9 +1631,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getLineMetrics descent property test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsDescentProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsDescentProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1666,9 +1666,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate affinity UPSTREAM test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('getLineMetricsWithAffinityTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsWithAffinityTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
@@ -1696,9 +1696,9 @@ export default function GraphicTextAdd04Test() {
      * @tc.desc   Paragraph getGlyphPositionAtCoordinate affinity DOWNSTREAM test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     @tc.level  LEVEL1
+     @tc.level  LEVEL0
      */
-    it('getLineMetricsWithAffinityFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('getLineMetricsWithAffinityFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           const fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
