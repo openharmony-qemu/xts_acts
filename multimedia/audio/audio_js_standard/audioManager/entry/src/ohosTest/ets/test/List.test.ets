@@ -60,8 +60,6 @@ async function driveFn() {
 }
 
 export default function testsuite() {
-  getPermission();
-  driveFn();
   audioSessionManagerTest();
   audioDeviceEnhanceManager();
   audioDebuggingManager();
