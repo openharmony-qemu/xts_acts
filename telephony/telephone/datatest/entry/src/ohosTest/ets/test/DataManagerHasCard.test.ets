@@ -19,6 +19,14 @@ import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
 import { common } from '@kit.AbilityKit';
 
+const ExpectFail: () => void = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info(`expectFail failed err: ${JSON.stringify(err)}`);
+  }
+};
+
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
     expect(n).assertTrue();
