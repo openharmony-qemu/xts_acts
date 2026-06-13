@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongMulTest(): void {
   describe('LongMulTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const MUL_NEG_6: long = -6;
     const MUL_NEG_5: long = -5;
     const MUL_NEG_4: long = -4;
@@ -145,7 +155,6 @@ export default function LongMulTest(): void {
      */
     it('testLongMul008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MAX_VALUE).mul(new Long(MUL_2));
-      // This test depends on 64-bit signed integer overflow wrap-around behavior
       expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(MUL_STR_NEG_2);
     });
@@ -160,7 +169,6 @@ export default function LongMulTest(): void {
      */
     it('testLongMul009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MIN_VALUE).mul(new Long(MUL_NEG_1));
-      // This test depends on 64-bit signed integer overflow wrap-around behavior
       expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(Long.MIN_VALUE.toString());
     });
@@ -243,6 +251,21 @@ export default function LongMulTest(): void {
       const result: Long = new Long(MUL_2).mul(new Long(MUL_3)).add(new Long(MUL_4));
       expect(result.toString()).assertEqual(MUL_STR_10);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_MUL_1600
+     * @tc.name testLongMul016
+     * @tc.desc Verify mul commutativity: a.mul(b) equals b.mul(a)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongMul016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Long = new Long(MUL_2);
+      const b: Long = new Long(MUL_3);
+      const ab: Long = a.mul(b);
+      const ba: Long = b.mul(a);
+      expect(ab.toString()).assertEqual(ba.toString());
+    });
   });
 }
-

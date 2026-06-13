@@ -13,12 +13,34 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCompareToTest(): void {
   describe('LongCompareToTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     const CT_NEG_100: long = -100;
     const CT_NEG_10: long = -10;
@@ -189,7 +211,8 @@ export default function LongCompareToTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongCompareTo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const values: Long[] = [new Long(CT_NEG_100), new Long(CT_NEG_1), new Long(CT_0), new Long(CT_1), new Long(CT_100)];
+      const values: Long[] =
+        [new Long(CT_NEG_100), new Long(CT_NEG_1), new Long(CT_0), new Long(CT_1), new Long(CT_100)];
       for (let i: int = 0; i < values.length; i++) {
         for (let j: int = 0; j < values.length; j++) {
           const result: int = values[i].compareTo(values[j]);
@@ -209,7 +232,7 @@ export default function LongCompareToTest(): void {
     it('testLongCompareTo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(CT_5);
       const result: int = value.compareTo(new Long(CT_3));
-      expect(result === 1).assertTrue();
+      expect(result).assertEqual(1);
     });
 
     /**
@@ -269,9 +292,9 @@ export default function LongCompareToTest(): void {
       const a: Long = new Long(CT_5);
       const b: Long = new Long(CT_0);
       const c: Long = new Long(CT_NEG_5);
-      expect(a.compareTo(b)).assertEqual(CT_1);   // 5 > 0
-      expect(b.compareTo(c)).assertEqual(CT_1);   // 0 > -5
-      expect(a.compareTo(c)).assertEqual(CT_1);   // 5 > -5
+      expect(a.compareTo(b)).assertEqual(CT_1);
+      expect(b.compareTo(c)).assertEqual(CT_1);
+      expect(a.compareTo(c)).assertEqual(CT_1);
     });
 
     /**
@@ -303,12 +326,10 @@ export default function LongCompareToTest(): void {
      */
     it('testLongCompareTo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Long = new Long(CT_5);
-      const b: Long = new Long(CT_5);   // equal
-      const c: Long = new Long(CT_3);   // less
-      // a equals b <=> compareTo 0
+      const b: Long = new Long(CT_5);
+      const c: Long = new Long(CT_3);
       expect(a.equals(b)).assertTrue();
       expect(a.compareTo(b)).assertEqual(CT_0);
-      // a not equals c <=> compareTo != 0
       expect(a.equals(c)).assertFalse();
       expect(a.compareTo(c) !== 0).assertTrue();
     });

@@ -13,12 +13,35 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongEqualsTest(): void {
   describe('LongEqualsTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     const EQ_NEG_100: long = -100;
     const EQ_NEG_10: long = -10;
@@ -309,6 +332,217 @@ export default function LongEqualsTest(): void {
       const left = new Long(Long.MAX_VALUE);
       const right = new Long(Long.MIN_VALUE);
       const result: boolean = left.equals(right);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2000
+     * @tc.name testLongEquals020
+     * @tc.desc Verify equals returns true for byte primitive value with the same numeric value (basic type 1/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: byte = 10 as byte;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2100
+     * @tc.name testLongEquals021
+     * @tc.desc Verify equals returns true for short primitive value with the same numeric value (basic type 2/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: short = 10 as short;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2200
+     * @tc.name testLongEquals022
+     * @tc.desc Verify equals returns true for int primitive value with the same numeric value (basic type 3/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: int = 10;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2300
+     * @tc.name testLongEquals023
+     * @tc.desc Verify equals returns true for float primitive value with the same numeric value (basic type 5/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: float = 10.0 as float;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2400
+     * @tc.name testLongEquals024
+     * @tc.desc Verify equals returns true for double primitive value with the same numeric value (basic type 6/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: double = 10.0;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2500
+     * @tc.name testLongEquals025
+     * @tc.desc Verify equals returns false for char primitive value with a different numeric code point (basic type 7/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: char = c'A';
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2600
+     * @tc.name testLongEquals026
+     * @tc.desc Verify equals returns true for Byte wrapper instance with the same numeric value (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Byte = new Byte(10 as byte);
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2700
+     * @tc.name testLongEquals027
+     * @tc.desc Verify equals returns true for Short wrapper instance with the same numeric value (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Short = new Short(10 as short);
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2800
+     * @tc.name testLongEquals028
+     * @tc.desc Verify equals returns true for Int wrapper instance with the same numeric value (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Int = new Int(10);
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_2900
+     * @tc.name testLongEquals029
+     * @tc.desc Verify equals returns true for Float wrapper instance with the same numeric value (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Float = new Float(10.0 as float);
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3000
+     * @tc.name testLongEquals030
+     * @tc.desc Verify equals returns true for Double wrapper instance with the same numeric value (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Double = new Double(10.0);
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3100
+     * @tc.name testLongEquals031
+     * @tc.desc Verify equals returns false for Boolean wrapper instance (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Boolean = new Boolean(true);
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3200
+     * @tc.name testLongEquals032
+     * @tc.desc Verify equals returns false for Char wrapper instance (wrapper type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Char = new Char(c'A');
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3300
+     * @tc.name testLongEquals033
+     * @tc.desc Verify equals returns false for Map container instance (collection type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Map<string, long> = new Map<string, long>();
+      obj.set("k", EQ_10);
+      const result: boolean = value.equals(obj);
       expect(result).assertFalse();
     });
 

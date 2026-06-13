@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongStaticConstantTest(): void {
@@ -26,7 +26,18 @@ export default function LongStaticConstantTest(): void {
     const SC_STR_MIN: string = "-9223372036854775808";
     const SC_STR_MAX: string = "9223372036854775807";
 
-    beforeEach(async () => { await Utils.msSleep(SC_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(SC_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_STATIC_CONSTANT_0100
@@ -87,7 +98,7 @@ export default function LongStaticConstantTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongStaticConstant005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.BIT_SIZE === SC_64).assertTrue();
+      expect(Long.BIT_SIZE).assertEqual(SC_64);
     });
 
     /**
@@ -99,7 +110,7 @@ export default function LongStaticConstantTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongStaticConstant006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.BYTE_SIZE === SC_8).assertTrue();
+      expect(Long.BYTE_SIZE).assertEqual(SC_8);
     });
 
     /**
@@ -111,7 +122,7 @@ export default function LongStaticConstantTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongStaticConstant007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Long.BIT_SIZE === Long.BYTE_SIZE * SC_8).assertTrue();
+      expect(Long.BIT_SIZE).assertEqual(Long.BYTE_SIZE * SC_8);
     });
 
     /**
@@ -125,7 +136,7 @@ export default function LongStaticConstantTest(): void {
     it('testLongStaticConstant008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const min: long = Long.MIN_VALUE;
       const max: long = Long.MAX_VALUE;
-      expect(min + max === SC_NEG_1).assertTrue();
+      expect(min + max).assertEqual(SC_NEG_1);
     });
 
     /**

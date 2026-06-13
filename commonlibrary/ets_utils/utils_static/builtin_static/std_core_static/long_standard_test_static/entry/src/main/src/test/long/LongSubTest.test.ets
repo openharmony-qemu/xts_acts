@@ -13,20 +13,29 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongSubTest(): void {
   describe('LongSubTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const SUB_NEG_100: long = -100;
     const SUB_NEG_50: long = -50;
     const SUB_NEG_20: long = -20;
     const SUB_NEG_10: long = -10;
     const SUB_NEG_1: long = -1;
     const SUB_0: long = 0;
-    const SUB_1: long = 1;
     const SUB_3: long = 3;
     const SUB_4: long = 4;
     const SUB_5: long = 5;

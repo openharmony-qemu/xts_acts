@@ -13,12 +13,34 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongBoundaryTest(): void {
   describe('LongBoundaryTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     const B_MAX: long = Long.MAX_VALUE;
     const B_MIN: long = Long.MIN_VALUE;
@@ -149,7 +171,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_1).div(new Long(B_2));
-      expect(result.toLong() === B_0).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
     });
 
     /**
@@ -162,7 +184,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_NEG_1).div(new Long(B_2));
-      expect(result.toLong() === B_0).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
     });
 
     /**
@@ -175,7 +197,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MIN).div(new Long(B_1));
-      expect(result.toLong() === B_MIN).assertTrue();
+      expect(result.toLong()).assertEqual(B_MIN);
     });
 
     /**
@@ -188,7 +210,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MAX).div(new Long(B_1));
-      expect(result.toLong() === B_MAX).assertTrue();
+      expect(result.toLong()).assertEqual(B_MAX);
     });
 
     /**
@@ -201,7 +223,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MAX).sub(new Long(B_MAX));
-      expect(result.toLong() === B_0).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
     });
 
     /**
@@ -214,7 +236,7 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MIN).sub(new Long(B_MIN));
-      expect(result.toLong() === B_0).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
     });
 
     /**
@@ -293,7 +315,137 @@ export default function LongBoundaryTest(): void {
      */
     it('testLongBoundary020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_0).mul(new Long(B_MAX));
-      expect(result.toLong() === B_0).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2100
+     * @tc.name testLongBoundary021
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).div(1) wraps to Long.MIN_VALUE then identity-divides
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_MAX).add(new Long(B_1)).div(new Long(B_1));
+      expect(result.toString()).assertEqual(B_STR_MIN);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2200
+     * @tc.name testLongBoundary022
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).mul(1) wraps then identity-multiplies to MIN
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_MAX).add(new Long(B_1)).mul(new Long(B_1));
+      expect(result.toString()).assertEqual(B_STR_MIN);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2300
+     * @tc.name testLongBoundary023
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).sub(1) wraps then subtracts back to MAX
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_MAX).add(new Long(B_1)).sub(new Long(B_1));
+      expect(result.toString()).assertEqual(B_STR_MAX);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2400
+     * @tc.name testLongBoundary024
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).toLong() returns Long.MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = new Long(B_MAX).add(new Long(B_1)).toLong();
+      expect(result).assertEqual(B_MIN);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2500
+     * @tc.name testLongBoundary025
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).compareTo(MIN) returns 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: int = new Long(B_MAX).add(new Long(B_1)).compareTo(new Long(B_MIN));
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2600
+     * @tc.name testLongBoundary026
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).equals(new Long(MIN)) is true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(B_MAX).add(new Long(B_1)).equals(new Long(B_MIN));
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2700
+     * @tc.name testLongBoundary027
+     * @tc.desc Verify boundary chain: Long.MAX_VALUE.add(1).isLessThan(0) is true after sign flip via overflow
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: boolean = new Long(B_MAX).add(new Long(B_1)).isLessThan(new Long(B_0));
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2800
+     * @tc.name testLongBoundary028
+     * @tc.desc Verify boundary chain: Long.MIN_VALUE.sub(1).div(-1) underflows to MAX then divides to -MAX
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_MIN).sub(new Long(B_1)).div(new Long(B_NEG_1));
+      expect(result.toString()).assertEqual(B_STR_NEG_MAX);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_2900
+     * @tc.name testLongBoundary029
+     * @tc.desc Verify boundary chain: Long.MIN_VALUE.sub(1).mul(-1) underflows to MAX then sign-flips to -MAX
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_MIN).sub(new Long(B_1)).mul(new Long(B_NEG_1));
+      expect(result.toString()).assertEqual(B_STR_NEG_MAX);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_3000
+     * @tc.name testLongBoundary030
+     * @tc.desc Verify boundary chain: ((MAX/2)*2).add(1) reaches Long.MAX_VALUE without overflow
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongBoundary030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(B_HALF_MAX).mul(new Long(B_2)).add(new Long(B_1));
+      expect(result.toString()).assertEqual(B_STR_MAX);
     });
   });
 }
