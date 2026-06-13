@@ -582,10 +582,6 @@ export class KeyboardController {
           console.debug(TAG + '====>Sub_InputMethod_IMF_PerceptionScreen_0600 event:' + data.event);
           that.Sub_InputMethod_IMF_PerceptionScreen_0600();
           break;
-        case 566:
-          console.debug(TAG + '====>Sub_InputMethod_IME_FullScreenAbnormal_0501 event:' + data.event);
-          that.Sub_InputMethod_IME_FullScreenAbnormal_0501();
-          break;
       }
     }
 
@@ -2367,30 +2363,6 @@ export class KeyboardController {
       }
     };
     commoneventmanager.publish('Sub_InputMethod_IME_FullScreenAbnormal_0500', commonEventPublishData, this.publishCallback);
-  } 
-
-  private async Sub_InputMethod_IME_FullScreenAbnormal_0501(): Promise<void> {
-    console.info(TAG + '====>receive Sub_InputMethod_IME_FullScreenAbnormal_0501 data');
-    let commonEventPublishData = {
-        data: 'FAILED'
-    };
-    try {
-      let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 0, top: 3000, width: this.display_info.height + 2000, height: this.display_info.width + 2000},
-        portraitRect: { left: 0, top: 3000, width: this.display_info.width + 2000, height: this.display_info.height + 2000},
-      };
-      this.softKeyboardPanel.adjustPanelRect(0, keyboardRect);
-      console.info(TAG + '====>Sub_InputMethod_IME_FullScreenAbnormal_0501 success ');
-    } catch (err) {
-      console.info(TAG + '====>Sub_InputMethod_IME_FullScreenAbnormal_0501 cathch err: ' + JSON.stringify(err));
-      if (err.code === 401) {
-        console.info(TAG + '====>Sub_InputMethod_IME_FullScreenAbnormal_0501 Failed to adjustPanelRect err is ' + err);
-        commonEventPublishData = {
-          data: 'SUCCESS'
-        };
-      }
-    };
-    commoneventmanager.publish('Sub_InputMethod_IME_FullScreenAbnormal_0501', commonEventPublishData, this.publishCallback);
   } 
 
   private async Sub_InputMethod_IME_FullScreenAbnormal_0400(): Promise<void> {
