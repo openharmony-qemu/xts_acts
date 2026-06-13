@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToString2Test(): void {
@@ -35,7 +35,18 @@ export default function LongToString2Test(): void {
     const T2S_STR_200: string = "200";
     const T2S_STR_MIN_VALUE: string = "-9223372036854775808";
 
-    beforeEach(async () => { await Utils.msSleep(T2S_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(T2S_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING2_0100

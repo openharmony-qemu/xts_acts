@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToString3Test(): void {
@@ -36,14 +36,23 @@ export default function LongToString3Test(): void {
     const TS3_STR_0: string = "0";
     const TS3_STR_1: string = "1";
     const TS3_STR_101: string = "101";
-    const TS3_STR_11111111: string = "11111111";
-    const TS3_STR_255: string = "255";
     const TS3_STR_Z: string = "z";
     const TS3_STR_ZZ: string = "zz";
     const TS3_STR_BIN_32ONES: string = "11111111111111111111111111111111";
     const TS3_STR_MAX_HEX: string = "7fffffffffffffff";
     const TS3_STR_NEG_FF: string = "-ff";
-    beforeEach(async () => { await Utils.msSleep(TS3_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(TS3_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0100
@@ -241,6 +250,21 @@ export default function LongToString3Test(): void {
       const value: Long = new Long(TS3_NEG_255);
       const result: string = value.toString(TS3_16);
       expect(result).assertEqual(TS3_STR_NEG_FF);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_1400
+     * @tc.name testLongToString3014
+     * @tc.desc Verify new Long(Long.MIN_VALUE).toString(10) returns a negative-prefixed string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToString3014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MIN_VALUE);
+      const result: string = value.toString(TS3_10);
+      expect(typeof result).assertEqual('string');
+      expect(result.indexOf("-")).assertEqual(0);
     });
   });
 }

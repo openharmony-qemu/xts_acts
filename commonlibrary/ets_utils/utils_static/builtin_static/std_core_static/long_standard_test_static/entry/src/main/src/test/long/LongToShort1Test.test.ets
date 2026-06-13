@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToShort1Test(): void {
   describe('LongToShort1Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TS1_OVERFLOW_BELOW_MIN: long = -32769;
     const TS1_SHORT_MIN: long = -32768;
     const TS1_NEG_100: long = -100;
@@ -42,7 +52,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_123);
       const result: short = value.toShort();
-      expect(result === TS1_123).assertTrue();
+      expect(result).assertEqual(TS1_123);
     });
 
     /**
@@ -56,7 +66,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_0);
       const result: short = value.toShort();
-      expect(result === TS1_0).assertTrue();
+      expect(result).assertEqual(TS1_0);
     });
 
     /**
@@ -70,7 +80,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_NEG_100);
       const result: short = value.toShort();
-      expect(result === TS1_NEG_100).assertTrue();
+      expect(result).assertEqual(TS1_NEG_100);
     });
 
     /**
@@ -84,7 +94,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_SHORT_MAX);
       const result: short = value.toShort();
-      expect(result === TS1_SHORT_MAX).assertTrue();
+      expect(result).assertEqual(TS1_SHORT_MAX);
     });
 
     /**
@@ -98,7 +108,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_SHORT_MIN);
       const result: short = value.toShort();
-      expect(result === TS1_SHORT_MIN).assertTrue();
+      expect(result).assertEqual(TS1_SHORT_MIN);
     });
 
     /**
@@ -112,7 +122,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_1);
       const result: short = value.toShort();
-      expect(result === TS1_1).assertTrue();
+      expect(result).assertEqual(TS1_1);
     });
 
     /**
@@ -126,7 +136,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_NEG_1);
       const result: short = value.toShort();
-      expect(result === TS1_NEG_1).assertTrue();
+      expect(result).assertEqual(TS1_NEG_1);
     });
 
     /**
@@ -140,7 +150,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_OVERFLOW_ABOVE_MAX);
       const result: short = value.toShort();
-      expect(result === TS1_SHORT_MIN).assertTrue();
+      expect(result).assertEqual(TS1_SHORT_MIN);
       expect(result >= TS1_SHORT_MIN).assertTrue();
       expect(result <= TS1_SHORT_MAX).assertTrue();
     });
@@ -156,7 +166,7 @@ export default function LongToShort1Test(): void {
     it('testLongToShort1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TS1_OVERFLOW_BELOW_MIN);
       const result: short = value.toShort();
-      expect(result === TS1_SHORT_MAX).assertTrue();
+      expect(result).assertEqual(TS1_SHORT_MAX);
       expect(result >= TS1_SHORT_MIN).assertTrue();
       expect(result <= TS1_SHORT_MAX).assertTrue();
     });
@@ -173,7 +183,7 @@ export default function LongToShort1Test(): void {
       const value = new Long(TS1_LARGE_POS);
       const result: short = value.toShort();
       expect(result !== TS1_LARGE_POS).assertTrue();
-      expect(result === -31072).assertTrue();
+      expect(result).assertEqual(-31072);
       expect(result >= TS1_SHORT_MIN).assertTrue();
       expect(result <= TS1_SHORT_MAX).assertTrue();
     });
@@ -190,8 +200,8 @@ export default function LongToShort1Test(): void {
       const value = new Long(TS1_123);
       const result1: short = value.toShort();
       const result2: short = value.toShort();
-      expect(result1 === result2).assertTrue();
-      expect(result1 === TS1_123).assertTrue();
+      expect(result1).assertEqual(result2);
+      expect(result1).assertEqual(TS1_123);
     });
 
     /**

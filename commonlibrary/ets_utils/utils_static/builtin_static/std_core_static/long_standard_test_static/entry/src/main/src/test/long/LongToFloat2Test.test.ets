@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToFloat2Test(): void {
   describe('LongToFloat2Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TF2_NEG_100: long = -100;
     const TF2_NEG_1: long = -1;
     const TF2_0: long = 0;
@@ -43,7 +53,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_9);
-      expect(result === TF2_9).assertTrue();
+      expect(result).assertEqual(TF2_9);
     });
 
     /**
@@ -56,7 +66,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_0);
-      expect(result === TF2_0).assertTrue();
+      expect(result).assertEqual(TF2_0);
     });
 
     /**
@@ -69,7 +79,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_100);
-      expect(result === TF2_100).assertTrue();
+      expect(result).assertEqual(TF2_100);
     });
 
     /**
@@ -82,7 +92,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_NEG_100);
-      expect(result === TF2_NEG_100).assertTrue();
+      expect(result).assertEqual(TF2_NEG_100);
     });
 
     /**
@@ -95,7 +105,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_1);
-      expect(result === TF2_1).assertTrue();
+      expect(result).assertEqual(TF2_1);
     });
 
     /**
@@ -108,7 +118,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_NEG_1);
-      expect(result === TF2_NEG_1).assertTrue();
+      expect(result).assertEqual(TF2_NEG_1);
     });
 
     /**
@@ -121,7 +131,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_FLOAT_EXACT_BOUNDARY);
-      expect(result === TF2_FLOAT_16777216).assertTrue();
+      expect(result).assertEqual(TF2_FLOAT_16777216);
     });
 
     /**
@@ -134,7 +144,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_FLOAT_PRECISION_LOSS);
-      expect(result === TF2_FLOAT_16777216).assertTrue();
+      expect(result).assertEqual(TF2_FLOAT_16777216);
     });
 
     /**
@@ -147,7 +157,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_12345);
-      expect(result === TF2_12345).assertTrue();
+      expect(result).assertEqual(TF2_12345);
     });
 
     /**
@@ -173,7 +183,7 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_1000000);
-      expect(result === TF2_1000000).assertTrue();
+      expect(result).assertEqual(TF2_1000000);
     });
 
     /**
@@ -186,7 +196,33 @@ export default function LongToFloat2Test(): void {
      */
     it('testLongToFloat2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: float = Long.toFloat(TF2_NEG_1000000);
-      expect(result === TF2_NEG_1000000).assertTrue();
+      expect(result).assertEqual(TF2_NEG_1000000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_1300
+     * @tc.name testLongToFloat2013
+     * @tc.desc Verify Long.toFloat(Long.MAX_VALUE) returns float (precision loss expected)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToFloat2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: float = Long.toFloat(Long.MAX_VALUE);
+      expect(typeof result).assertEqual('float');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOFLOAT2_1400
+     * @tc.name testLongToFloat2014
+     * @tc.desc Verify Long.toFloat(Long.MIN_VALUE) returns float (precision loss expected)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToFloat2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: float = Long.toFloat(Long.MIN_VALUE);
+      expect(typeof result).assertEqual('float');
     });
   });
 }

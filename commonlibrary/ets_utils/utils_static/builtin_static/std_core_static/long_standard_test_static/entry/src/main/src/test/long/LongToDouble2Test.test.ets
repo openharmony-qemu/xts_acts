@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToDouble2Test(): void {
   describe('LongToDouble2Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TD2_LARGE_NEG: long = -999999999999;
     const TD2_NEG_100: long = -100;
     const TD2_NEG_1: long = -1;
@@ -43,7 +53,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_9);
-      expect(result === TD2_9).assertTrue();
+      expect(result).assertEqual(TD2_9);
     });
 
     /**
@@ -56,7 +66,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_0);
-      expect(result === TD2_0).assertTrue();
+      expect(result).assertEqual(TD2_0);
     });
 
     /**
@@ -69,7 +79,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_100);
-      expect(result === TD2_100).assertTrue();
+      expect(result).assertEqual(TD2_100);
     });
 
     /**
@@ -82,7 +92,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_NEG_100);
-      expect(result === TD2_NEG_100).assertTrue();
+      expect(result).assertEqual(TD2_NEG_100);
     });
 
     /**
@@ -95,7 +105,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_1);
-      expect(result === TD2_1).assertTrue();
+      expect(result).assertEqual(TD2_1);
     });
 
     /**
@@ -108,7 +118,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_NEG_1);
-      expect(result === TD2_NEG_1).assertTrue();
+      expect(result).assertEqual(TD2_NEG_1);
     });
 
     /**
@@ -121,7 +131,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_LARGE);
-      expect(result === TD2_LARGE).assertTrue();
+      expect(result).assertEqual(TD2_LARGE);
     });
 
     /**
@@ -134,7 +144,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_LARGE_NEG);
-      expect(result === TD2_LARGE_NEG).assertTrue();
+      expect(result).assertEqual(TD2_LARGE_NEG);
     });
 
     /**
@@ -147,7 +157,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_42);
-      expect(result === TD2_42).assertTrue();
+      expect(result).assertEqual(TD2_42);
     });
 
     /**
@@ -173,7 +183,7 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_DOUBLE_EXACT_BOUNDARY);
-      expect(result === TD2_DOUBLE_EXACT_BOUNDARY_VAL).assertTrue();
+      expect(result).assertEqual(TD2_DOUBLE_EXACT_BOUNDARY_VAL);
     });
 
     /**
@@ -186,7 +196,33 @@ export default function LongToDouble2Test(): void {
      */
     it('testLongToDouble2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: double = Long.toDouble(TD2_DOUBLE_PRECISION_LOSS);
-      expect(result === TD2_DOUBLE_EXACT_BOUNDARY_VAL).assertTrue();
+      expect(result).assertEqual(TD2_DOUBLE_EXACT_BOUNDARY_VAL);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE2_1300
+     * @tc.name testLongToDouble2013
+     * @tc.desc Verify Long.toDouble(Long.MAX_VALUE) returns finite double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: double = Long.toDouble(Long.MAX_VALUE);
+      expect(isFinite(result)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE2_1400
+     * @tc.name testLongToDouble2014
+     * @tc.desc Verify Long.toDouble(Long.MIN_VALUE) returns finite double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: double = Long.toDouble(Long.MIN_VALUE);
+      expect(isFinite(result)).assertTrue();
     });
   });
 }

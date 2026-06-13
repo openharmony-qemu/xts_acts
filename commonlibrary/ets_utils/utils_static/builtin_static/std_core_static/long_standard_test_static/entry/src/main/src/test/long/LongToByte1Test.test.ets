@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToByte1Test(): void {
   describe('LongToByte1Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TB1_OVERFLOW_BELOW_MIN: long = -129;
     const TB1_BYTE_MIN: long = -128;
     const TB1_NEG_1: long = -1;
@@ -41,7 +51,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_12);
       const result: byte = value.toByte();
-      expect(result === TB1_12).assertTrue();
+      expect(result).assertEqual(TB1_12);
     });
 
     /**
@@ -55,7 +65,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_1);
       const result: byte = value.toByte();
-      expect(result === TB1_1).assertTrue();
+      expect(result).assertEqual(TB1_1);
     });
 
     /**
@@ -69,7 +79,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_NEG_1);
       const result: byte = value.toByte();
-      expect(result === TB1_NEG_1).assertTrue();
+      expect(result).assertEqual(TB1_NEG_1);
     });
 
     /**
@@ -83,7 +93,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_0);
       const result: byte = value.toByte();
-      expect(result === TB1_0).assertTrue();
+      expect(result).assertEqual(TB1_0);
     });
 
     /**
@@ -97,7 +107,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_BYTE_MIN);
       const result: byte = value.toByte();
-      expect(result === TB1_BYTE_MIN).assertTrue();
+      expect(result).assertEqual(TB1_BYTE_MIN);
     });
 
     /**
@@ -111,7 +121,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_BYTE_MAX);
       const result: byte = value.toByte();
-      expect(result === TB1_BYTE_MAX).assertTrue();
+      expect(result).assertEqual(TB1_BYTE_MAX);
     });
 
     /**
@@ -125,7 +135,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_OVERFLOW_ABOVE_MAX);
       const result: byte = value.toByte();
-      expect(result === TB1_BYTE_MIN).assertTrue();
+      expect(result).assertEqual(TB1_BYTE_MIN);
     });
 
     /**
@@ -139,7 +149,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_OVERFLOW_BELOW_MIN);
       const result: byte = value.toByte();
-      expect(result === TB1_BYTE_MAX).assertTrue();
+      expect(result).assertEqual(TB1_BYTE_MAX);
     });
 
     /**
@@ -153,7 +163,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(TB1_WRAP_TO_ZERO);
       const result: byte = value.toByte();
-      expect(result === TB1_0).assertTrue();
+      expect(result).assertEqual(TB1_0);
     });
 
     /**
@@ -169,9 +179,9 @@ export default function LongToByte1Test(): void {
       const result1: byte = value.toByte();
       const result2: byte = value.toByte();
       const result3: byte = value.toByte();
-      expect(result1 === result2).assertTrue();
-      expect(result2 === result3).assertTrue();
-      expect(result1 === TB1_12).assertTrue();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertEqual(TB1_12);
     });
 
     /**
@@ -187,8 +197,8 @@ export default function LongToByte1Test(): void {
       const value2: Long = new Long(TB1_BYTE_MAX);
       const result1: byte = value1.toByte();
       const result2: byte = value2.toByte();
-      expect(result1 === TB1_12).assertTrue();
-      expect(result2 === TB1_BYTE_MAX).assertTrue();
+      expect(result1).assertEqual(TB1_12);
+      expect(result2).assertEqual(TB1_BYTE_MAX);
     });
 
     /**
@@ -202,7 +212,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: byte = value.toByte();
-      expect(result === TB1_NEG_1).assertTrue();
+      expect(result).assertEqual(TB1_NEG_1);
     });
 
     /**
@@ -216,7 +226,7 @@ export default function LongToByte1Test(): void {
     it('testLongToByte1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MIN_VALUE);
       const result: byte = value.toByte();
-      expect(result === TB1_0).assertTrue();
+      expect(result).assertEqual(TB1_0);
     });
   });
 }

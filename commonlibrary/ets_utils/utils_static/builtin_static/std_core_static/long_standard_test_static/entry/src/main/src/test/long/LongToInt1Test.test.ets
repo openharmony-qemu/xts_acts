@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToInt1Test(): void {
   describe('LongToInt1Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TI1_OVERFLOW_BELOW_MIN: long = -2147483649;
     const TI1_INT_MIN: long = -2147483648;
     const TI1_NEG_100: long = -100;
@@ -42,7 +52,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_1234);
       const result: int = value.toInt();
-      expect(result === TI1_1234).assertTrue();
+      expect(result).assertEqual(TI1_1234);
     });
 
     /**
@@ -56,7 +66,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_0);
       const result: int = value.toInt();
-      expect(result === TI1_0).assertTrue();
+      expect(result).assertEqual(TI1_0);
     });
 
     /**
@@ -70,7 +80,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_NEG_100);
       const result: int = value.toInt();
-      expect(result === TI1_NEG_100).assertTrue();
+      expect(result).assertEqual(TI1_NEG_100);
     });
 
     /**
@@ -84,7 +94,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_1);
       const result: int = value.toInt();
-      expect(result === TI1_1).assertTrue();
+      expect(result).assertEqual(TI1_1);
     });
 
     /**
@@ -98,7 +108,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_NEG_1);
       const result: int = value.toInt();
-      expect(result === TI1_NEG_1).assertTrue();
+      expect(result).assertEqual(TI1_NEG_1);
     });
 
     /**
@@ -112,7 +122,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_INT_MAX);
       const result: int = value.toInt();
-      expect(result === TI1_INT_MAX).assertTrue();
+      expect(result).assertEqual(TI1_INT_MAX);
     });
 
     /**
@@ -126,7 +136,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_INT_MIN);
       const result: int = value.toInt();
-      expect(result === TI1_INT_MIN).assertTrue();
+      expect(result).assertEqual(TI1_INT_MIN);
     });
 
     /**
@@ -140,7 +150,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_OVERFLOW_ABOVE_MAX);
       const result: int = value.toInt();
-      expect(result === TI1_INT_MIN).assertTrue();
+      expect(result).assertEqual(TI1_INT_MIN);
     });
 
     /**
@@ -154,7 +164,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TI1_OVERFLOW_BELOW_MIN);
       const result: int = value.toInt();
-      expect(result === TI1_INT_MAX).assertTrue();
+      expect(result).assertEqual(TI1_INT_MAX);
     });
 
     /**
@@ -169,7 +179,7 @@ export default function LongToInt1Test(): void {
       const value = new Long(TI1_LARGE_POS);
       const result: int = value.toInt();
       expect(result !== TI1_LARGE_POS).assertTrue();
-      expect(result === 1410065408).assertTrue();
+      expect(result).assertEqual(1410065408);
     });
 
     /**
@@ -185,8 +195,8 @@ export default function LongToInt1Test(): void {
       const result1: int = value.toInt();
       const result2: int = value.toInt();
       const result3: int = value.toInt();
-      expect(result1 === result2).assertTrue();
-      expect(result2 === result3).assertTrue();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
     });
 
     /**
@@ -200,7 +210,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MAX_VALUE);
       const result: int = value.toInt();
-      expect(result === TI1_NEG_1).assertTrue();
+      expect(result).assertEqual(TI1_NEG_1);
     });
 
     /**
@@ -214,7 +224,7 @@ export default function LongToInt1Test(): void {
     it('testLongToInt1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MIN_VALUE);
       const result: int = value.toInt();
-      expect(result === TI1_0).assertTrue();
+      expect(result).assertEqual(TI1_0);
     });
   });
 }

@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToLong2Test(): void {
   describe('LongToLong2Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TL2_LARGE_NEG: long = -922337203685477580;
     const TL2_NEG_500: long = -500;
     const TL2_NEG_1: long = -1;
@@ -39,7 +49,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_256);
-      expect(result === TL2_256).assertTrue();
+      expect(result).assertEqual(TL2_256);
     });
 
     /**
@@ -52,7 +62,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_0);
-      expect(result === TL2_0).assertTrue();
+      expect(result).assertEqual(TL2_0);
     });
 
     /**
@@ -65,7 +75,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_500);
-      expect(result === TL2_500).assertTrue();
+      expect(result).assertEqual(TL2_500);
     });
 
     /**
@@ -78,7 +88,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_NEG_500);
-      expect(result === TL2_NEG_500).assertTrue();
+      expect(result).assertEqual(TL2_NEG_500);
     });
 
     /**
@@ -91,7 +101,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_1);
-      expect(result === TL2_1).assertTrue();
+      expect(result).assertEqual(TL2_1);
     });
 
     /**
@@ -104,7 +114,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_NEG_1);
-      expect(result === TL2_NEG_1).assertTrue();
+      expect(result).assertEqual(TL2_NEG_1);
     });
 
     /**
@@ -117,7 +127,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_LARGE_POS);
-      expect(result === TL2_LARGE_POS).assertTrue();
+      expect(result).assertEqual(TL2_LARGE_POS);
     });
 
     /**
@@ -130,7 +140,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(TL2_LARGE_NEG);
-      expect(result === TL2_LARGE_NEG).assertTrue();
+      expect(result).assertEqual(TL2_LARGE_NEG);
     });
 
     /**
@@ -143,7 +153,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(Long.MAX_VALUE);
-      expect(result === Long.MAX_VALUE).assertTrue();
+      expect(result).assertEqual(Long.MAX_VALUE);
     });
 
     /**
@@ -156,7 +166,7 @@ export default function LongToLong2Test(): void {
      */
     it('testLongToLong2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.toLong(Long.MIN_VALUE);
-      expect(result === Long.MIN_VALUE).assertTrue();
+      expect(result).assertEqual(Long.MIN_VALUE);
     });
   });
 }

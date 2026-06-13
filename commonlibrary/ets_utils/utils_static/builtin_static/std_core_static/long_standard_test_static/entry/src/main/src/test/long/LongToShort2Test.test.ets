@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToShort2Test(): void {
   describe('LongToShort2Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TS2_OVERFLOW_BELOW_MIN: long = -32769;
     const TS2_SHORT_MIN: long = -32768;
     const TS2_NEG_500: long = -500;
@@ -41,7 +51,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_1024);
-      expect(result === TS2_1024).assertTrue();
+      expect(result).assertEqual(TS2_1024);
     });
 
     /**
@@ -54,7 +64,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_0);
-      expect(result === TS2_0).assertTrue();
+      expect(result).assertEqual(TS2_0);
     });
 
     /**
@@ -67,7 +77,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_NEG_500);
-      expect(result === TS2_NEG_500).assertTrue();
+      expect(result).assertEqual(TS2_NEG_500);
     });
 
     /**
@@ -80,7 +90,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_SHORT_MAX);
-      expect(result === TS2_SHORT_MAX).assertTrue();
+      expect(result).assertEqual(TS2_SHORT_MAX);
     });
 
     /**
@@ -93,7 +103,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_SHORT_MIN);
-      expect(result === TS2_SHORT_MIN).assertTrue();
+      expect(result).assertEqual(TS2_SHORT_MIN);
     });
 
     /**
@@ -106,7 +116,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_1);
-      expect(result === TS2_1).assertTrue();
+      expect(result).assertEqual(TS2_1);
     });
 
     /**
@@ -119,7 +129,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_NEG_1);
-      expect(result === TS2_NEG_1).assertTrue();
+      expect(result).assertEqual(TS2_NEG_1);
     });
 
     /**
@@ -132,7 +142,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_OVERFLOW_ABOVE_MAX);
-      expect(result === TS2_SHORT_MIN).assertTrue();
+      expect(result).assertEqual(TS2_SHORT_MIN);
       expect(result >= TS2_SHORT_MIN).assertTrue();
       expect(result <= TS2_SHORT_MAX).assertTrue();
     });
@@ -147,7 +157,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_OVERFLOW_BELOW_MIN);
-      expect(result === TS2_SHORT_MAX).assertTrue();
+      expect(result).assertEqual(TS2_SHORT_MAX);
       expect(result >= TS2_SHORT_MIN).assertTrue();
       expect(result <= TS2_SHORT_MAX).assertTrue();
     });
@@ -162,7 +172,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(TS2_WRAP_TO_ZERO);
-      expect(result === TS2_0).assertTrue();
+      expect(result).assertEqual(TS2_0);
       expect(result >= TS2_SHORT_MIN).assertTrue();
       expect(result <= TS2_SHORT_MAX).assertTrue();
     });
@@ -177,8 +187,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(Long.MAX_VALUE);
-      // MAX_VALUE low 16 bits = 0xFFFF → -1 as signed short
-      expect(result === TS2_NEG_1).assertTrue();
+      expect(result).assertEqual(TS2_NEG_1);
     });
 
     /**
@@ -191,9 +200,7 @@ export default function LongToShort2Test(): void {
      */
     it('testLongToShort2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: short = Long.toShort(Long.MIN_VALUE);
-      // MIN_VALUE low 16 bits = 0x0000 → 0 as signed short
-      expect(result === TS2_0).assertTrue();
+      expect(result).assertEqual(TS2_0);
     });
   });
 }
-

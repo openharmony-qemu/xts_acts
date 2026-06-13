@@ -13,12 +13,35 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToLong1Test(): void {
   describe('LongToLong1Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     const TL1_LARGE_NEG: long = -922337203685477580;
     const TL1_NEG_100: long = -100;
@@ -40,7 +63,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_1234);
       const result: long = value.toLong();
-      expect(result === TL1_1234).assertTrue();
+      expect(result).assertEqual(TL1_1234);
     });
 
     /**
@@ -54,7 +77,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_0);
       const result: long = value.toLong();
-      expect(result === TL1_0).assertTrue();
+      expect(result).assertEqual(TL1_0);
     });
 
     /**
@@ -68,7 +91,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_100);
       const result: long = value.toLong();
-      expect(result === TL1_100).assertTrue();
+      expect(result).assertEqual(TL1_100);
     });
 
     /**
@@ -82,7 +105,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_NEG_100);
       const result: long = value.toLong();
-      expect(result === TL1_NEG_100).assertTrue();
+      expect(result).assertEqual(TL1_NEG_100);
     });
 
     /**
@@ -96,7 +119,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_LARGE_POS);
       const result: long = value.toLong();
-      expect(result === TL1_LARGE_POS).assertTrue();
+      expect(result).assertEqual(TL1_LARGE_POS);
     });
 
     /**
@@ -110,7 +133,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_LARGE_NEG);
       const result: long = value.toLong();
-      expect(result === TL1_LARGE_NEG).assertTrue();
+      expect(result).assertEqual(TL1_LARGE_NEG);
     });
 
     /**
@@ -124,7 +147,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_1);
       const result: long = value.toLong();
-      expect(result === TL1_1).assertTrue();
+      expect(result).assertEqual(TL1_1);
     });
 
     /**
@@ -138,7 +161,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(TL1_NEG_1);
       const result: long = value.toLong();
-      expect(result === TL1_NEG_1).assertTrue();
+      expect(result).assertEqual(TL1_NEG_1);
     });
 
     /**
@@ -154,8 +177,8 @@ export default function LongToLong1Test(): void {
       const result1: long = value.toLong();
       const result2: long = value.toLong();
       const result3: long = value.toLong();
-      expect(result1 === result2).assertTrue();
-      expect(result2 === result3).assertTrue();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
     });
 
     /**
@@ -169,7 +192,7 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MAX_VALUE);
       const result: long = value.toLong();
-      expect(result === Long.MAX_VALUE).assertTrue();
+      expect(result).assertEqual(Long.MAX_VALUE);
     });
 
     /**
@@ -183,7 +206,21 @@ export default function LongToLong1Test(): void {
     it('testLongToLong1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = new Long(Long.MIN_VALUE);
       const result: long = value.toLong();
-      expect(result === Long.MIN_VALUE).assertTrue();
+      expect(result).assertEqual(Long.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOLONG1_1200
+     * @tc.name testLongToLong1012
+     * @tc.desc Verify toLong() return value typeof is numeric long primitive
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLong1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TL1_1234);
+      const result: long = value.toLong();
+      expect(typeof result).assertEqual('long');
     });
   });
 }

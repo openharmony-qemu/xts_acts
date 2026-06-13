@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToByte2Test(): void {
   describe('LongToByte2Test', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const TB2_LARGE_NEG: long = -100000;
     const TB2_OVERFLOW_BELOW_MIN: long = -129;
     const TB2_BYTE_MIN: long = -128;
@@ -43,7 +53,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_8);
-      expect(result === TB2_8).assertTrue();
+      expect(result).assertEqual(TB2_8);
     });
 
     /**
@@ -56,7 +66,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_0);
-      expect(result === TB2_0).assertTrue();
+      expect(result).assertEqual(TB2_0);
     });
 
     /**
@@ -69,7 +79,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_BYTE_MAX);
-      expect(result === TB2_BYTE_MAX).assertTrue();
+      expect(result).assertEqual(TB2_BYTE_MAX);
     });
 
     /**
@@ -82,7 +92,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_BYTE_MIN);
-      expect(result === TB2_BYTE_MIN).assertTrue();
+      expect(result).assertEqual(TB2_BYTE_MIN);
     });
 
     /**
@@ -95,7 +105,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_NEG_1);
-      expect(result === TB2_NEG_1).assertTrue();
+      expect(result).assertEqual(TB2_NEG_1);
     });
 
     /**
@@ -108,7 +118,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_1);
-      expect(result === TB2_1).assertTrue();
+      expect(result).assertEqual(TB2_1);
     });
 
     /**
@@ -121,7 +131,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_OVERFLOW_ABOVE_MAX);
-      expect(result === TB2_BYTE_MIN).assertTrue();
+      expect(result).assertEqual(TB2_BYTE_MIN);
     });
 
     /**
@@ -134,7 +144,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_OVERFLOW_BELOW_MIN);
-      expect(result === TB2_BYTE_MAX).assertTrue();
+      expect(result).assertEqual(TB2_BYTE_MAX);
     });
 
     /**
@@ -148,7 +158,7 @@ export default function LongToByte2Test(): void {
     it('testLongToByte2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_LARGE_POS);
       expect(result !== TB2_LARGE_POS).assertTrue();
-      expect(result === TB2_EXPECTED_NEG_96).assertTrue();
+      expect(result).assertEqual(TB2_EXPECTED_NEG_96);
     });
 
     /**
@@ -162,7 +172,7 @@ export default function LongToByte2Test(): void {
     it('testLongToByte2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(TB2_LARGE_NEG);
       expect(result !== TB2_LARGE_NEG).assertTrue();
-      expect(result === TB2_EXPECTED_96).assertTrue();
+      expect(result).assertEqual(TB2_EXPECTED_96);
     });
 
     /**
@@ -175,8 +185,7 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(Long.MAX_VALUE);
-      // MAX_VALUE low 8 bits = 0xFF → -1 as signed byte
-      expect(result === -1).assertTrue();
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -189,10 +198,8 @@ export default function LongToByte2Test(): void {
      */
     it('testLongToByte2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: byte = Long.toByte(Long.MIN_VALUE);
-      // MIN_VALUE low 8 bits = 0x00 → 0 as signed byte
-      expect(result === 0).assertTrue();
+      expect(result).assertEqual(0);
     });
 
   });
 }
-

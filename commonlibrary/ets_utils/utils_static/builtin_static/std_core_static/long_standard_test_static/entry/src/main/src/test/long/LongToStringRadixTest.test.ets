@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToStringRadixTest(): void {
@@ -94,7 +94,18 @@ export default function LongToStringRadixTest(): void {
 
     const SLEEP_30: int = 30;
 
-    beforeEach(async () => { await Utils.msSleep(SLEEP_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(SLEEP_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_0100
@@ -337,7 +348,7 @@ export default function LongToStringRadixTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_1800
      * @tc.name testLongToStringRadix018
-     * @tc.desc Verify new Long(255).toString(19), actual result is "d" & "8" but only check length due to WordsTool gate rule
+     * @tc.desc Verify new Long(255).toString(19) returns exact "d8" (13*19 + 8 = 255)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -345,7 +356,7 @@ export default function LongToStringRadixTest(): void {
     it('testLongToStringRadix018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(RADIX_VAL);
       const result: string = value.toString(RADIX_19);
-      expect(result.length > 0).assertTrue();
+      expect(result).assertEqual("d8");
     });
 
     /**
@@ -616,7 +627,7 @@ export default function LongToStringRadixTest(): void {
       expect(zeroVal.toString(RADIX_2)).assertEqual("0");
       expect(zeroVal.toString(RADIX_16)).assertEqual("0");
       const maxVal: Long = new Long(Long.MAX_VALUE);
-      expect(maxVal.toString(RADIX_16).length > 0).assertTrue();
+      expect(maxVal.toString(RADIX_16)).assertEqual("7fffffffffffffff");
     });
 
     /**
@@ -671,6 +682,21 @@ export default function LongToStringRadixTest(): void {
       } catch (e) {
         expect(e instanceof RangeError).assertTrue();
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_4100
+     * @tc.name testLongToStringRadix041
+     * @tc.desc Verify new Long(Long.MIN_VALUE).toString(10) returns a negative-prefixed string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToStringRadix041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MIN_VALUE);
+      const result: string = value.toString(RADIX_10);
+      expect(typeof result).assertEqual('string');
+      expect(result.indexOf("-")).assertEqual(0);
     });
   });
 }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToLocaleString2Test(): void {
@@ -27,7 +27,18 @@ export default function LongToLocaleString2Test(): void {
     const LOC2_EN_US: string = "en-US";
     const LOC2_DE_DE: string = "de-DE";
 
-    beforeEach(async () => { await Utils.msSleep(LOC2_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(LOC2_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING2_0100
@@ -40,7 +51,6 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_1234);
       const result: string = value.toLocaleString(LOC2_DE_DE);
-      // de-DE locale uses "." as thousands separator, so 1234 should be "1.234"
       expect(result).assertEqual(LOC2_STR_1234_DOT);
     });
 
@@ -55,7 +65,6 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_0);
       const result: string = value.toLocaleString(LOC2_EN_US);
-      // Zero should format to "0" in en-US
       expect(result).assertEqual("0");
     });
 
@@ -70,15 +79,13 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_NEG_1234);
       const result: string = value.toLocaleString(LOC2_EN_US);
-      // Negative value should contain "-" in en-US
-      expect(result.length > 0).assertTrue();
-      expect(result.indexOf("-") !== -1).assertTrue();
+      expect(result).assertEqual("-1,234");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING2_0400
      * @tc.name testLongToLocaleString2004
-     * @tc.desc Verify return type is String
+     * @tc.desc Verify toLocaleString("en-US") with 1234 returns "1,234"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -86,8 +93,7 @@ export default function LongToLocaleString2Test(): void {
     it('testLongToLocaleString2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(LOC2_1234);
       const result: string = value.toLocaleString(LOC2_EN_US);
-      // Verify the result is a non-empty string (return type check)
-      expect(result.length > 0).assertTrue();
+      expect(result).assertEqual("1,234");
     });
 
     /**
@@ -103,8 +109,35 @@ export default function LongToLocaleString2Test(): void {
       const r1: string = value.toLocaleString(LOC2_EN_US);
       const r2: string = value.toLocaleString(LOC2_DE_DE);
       expect(r1 !== r2).assertTrue();
-      // en-US should use comma as thousands separator for 1234567
       expect(r1.indexOf(",") !== -1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING2_0600
+     * @tc.name testLongToLocaleString2006
+     * @tc.desc Verify toLocaleString("en-US") with Long.MAX_VALUE returns a string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLocaleString2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MAX_VALUE);
+      const result: string = value.toLocaleString(LOC2_EN_US);
+      expect(typeof result).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING2_0700
+     * @tc.name testLongToLocaleString2007
+     * @tc.desc Verify toLocaleString("en-US") with Long.MIN_VALUE returns a string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToLocaleString2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MIN_VALUE);
+      const result: string = value.toLocaleString(LOC2_EN_US);
+      expect(typeof result).assertEqual('string');
     });
   });
 }
