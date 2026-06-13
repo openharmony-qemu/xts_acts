@@ -28,7 +28,7 @@ const TAG = 'keyboardControllerHotArea';
 
 let panelInfo = {
   type: inputmethodengine.PanelType.SOFT_KEYBOARD,
-  flag: inputmethodengine.PanelFlag.FLA_FIXED
+  flag: inputmethodengine.PanelFlag.FLG_FIXED
 };
 
 let disp = display.getDefaultDisplaySync();

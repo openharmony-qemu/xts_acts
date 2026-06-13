@@ -40,7 +40,7 @@ struct hotArea {
             .backgroundColor(this.keyBgc)
             .borderRadius(6)
             .margin({right: '5vp'})
-            .onChange(() => {
+            .onClick(() => {
               console.info('====>click  text1');
               keyboardController.insertText('1');
             })
@@ -54,7 +54,7 @@ struct hotArea {
             .backgroundColor(this.keyBgc)
             .borderRadius(6)
             .margin({right: '5vp'})
-            .onChange(() => {
+            .onClick(() => {
               console.info('====>click  text2');
               keyboardController.insertText('2');
             })
@@ -71,7 +71,7 @@ struct hotArea {
             .backgroundColor(this.keyBgc)
             .borderRadius(6)
             .margin({right: '5vp'})
-            .onChange(() => {
+            .onClick(() => {
               console.info('====>click  text3');
               keyboardController.insertText('3');
             })
@@ -85,7 +85,7 @@ struct hotArea {
             .backgroundColor(this.keyBgc)
             .borderRadius(6)
             .margin({right: '5vp'})
-            .onChange(() => {
+            .onClick(() => {
               console.info('====>click  text4');
               keyboardController.insertText('4');
             })
