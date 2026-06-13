@@ -835,7 +835,7 @@ export default function dataManagerTest() {
     /**
      * @tc.name   testTelephonyDataShowSystemApnSettings0100
      * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0100
-     * @tc.desc   Test ShowAppNetPolicySetting undefined
+     * @tc.desc   Test ShowSystemApnSettings undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
@@ -866,7 +866,7 @@ export default function dataManagerTest() {
     /**
      * @tc.name   testTelephonyDataShowSystemApnSettings0200
      * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0200
-     * @tc.desc   Test ShowAppNetPolicySetting null
+     * @tc.desc   Test ShowSystemApnSettings null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
