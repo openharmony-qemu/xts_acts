@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
+import { SLEEP_MS } from './LongTestConstants';
 
 export default function LongConstructor2Test(): void {
   describe('LongConstructor2Test', () => {
@@ -23,14 +24,24 @@ export default function LongConstructor2Test(): void {
     const CON2_NEG_1: long = -1;
     const CON2_0: long = 0;
     const CON2_1: long = 1;
-    const CON2_30: int = 30;
     const CON2_42: long = 42;
     const CON2_100: long = 100;
     const CON2_200: long = 200;
     const CON2_256: long = 256;
     const CON2_922337203685477580: long = 922337203685477580;
 
-    beforeEach(async () => { await Utils.msSleep(CON2_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(SLEEP_MS);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR2_0100
@@ -43,7 +54,7 @@ export default function LongConstructor2Test(): void {
     it('testLongConstructor2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_42);
       expect(value instanceof Long).assertTrue();
-      expect(value.toLong() === CON2_42).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_42);
     });
 
     /**
@@ -70,7 +81,7 @@ export default function LongConstructor2Test(): void {
     it('testLongConstructor2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_NEG_100);
       expect(value instanceof Long).assertTrue();
-      expect(value.toLong() === CON2_NEG_100).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_NEG_100);
     });
 
     /**
@@ -96,7 +107,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_1);
-      expect(value.toLong() === CON2_1).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_1);
     });
 
     /**
@@ -109,7 +120,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_NEG_1);
-      expect(value.toLong() === CON2_NEG_1).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_NEG_1);
     });
 
     /**
@@ -122,7 +133,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_922337203685477580);
-      expect(value.toLong() === CON2_922337203685477580).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_922337203685477580);
     });
 
     /**
@@ -135,7 +146,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_NEG_922337203685477580);
-      expect(value.toLong() === CON2_NEG_922337203685477580).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_NEG_922337203685477580);
     });
 
     /**
@@ -148,7 +159,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(CON2_256);
-      expect(value.toLong() === CON2_256).assertTrue();
+      expect(value.toLong()).assertEqual(CON2_256);
     });
 
     /**
@@ -163,8 +174,8 @@ export default function LongConstructor2Test(): void {
       const v1: Long = new Long(CON2_100);
       const v2: Long = new Long(CON2_200);
       expect(v1 !== v2).assertTrue();
-      expect(v1.toLong() === CON2_100).assertTrue();
-      expect(v2.toLong() === CON2_200).assertTrue();
+      expect(v1.toLong()).assertEqual(CON2_100);
+      expect(v2.toLong()).assertEqual(CON2_200);
     });
 
     /**
@@ -190,7 +201,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
-      expect(value.toLong() === Long.MAX_VALUE).assertTrue();
+      expect(value.toLong()).assertEqual(Long.MAX_VALUE);
     });
 
     /**
@@ -203,7 +214,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MIN_VALUE);
-      expect(value.toLong() === Long.MIN_VALUE).assertTrue();
+      expect(value.toLong()).assertEqual(Long.MIN_VALUE);
     });
 
     /**
@@ -216,7 +227,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(42 as int);
-      expect(value.toLong() === 42).assertTrue();
+      expect(value.toLong()).assertEqual(42 as long);
     });
 
     /**
@@ -229,7 +240,7 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(42 as byte);
-      expect(value.toLong() === 42).assertTrue();
+      expect(value.toLong()).assertEqual(42 as long);
     });
 
     /**
@@ -242,37 +253,33 @@ export default function LongConstructor2Test(): void {
      */
     it('testLongConstructor2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(42 as short);
-      expect(value.toLong() === 42).assertTrue();
+      expect(value.toLong()).assertEqual(42 as long);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR2_1700
      * @tc.name testLongConstructor2017
-     * @tc.desc Verify Long constructor string overload — compile-time verification (ArkTS Long has no string constructor)
+     * @tc.desc Verify Long constructor with long parameter equal to MAX_VALUE preserves the boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS Long class does not support string constructor; compile-time verification only
-      let skipReason: string = "compile-time verification only — Long(string) not supported";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      const value: Long = new Long(Long.MAX_VALUE as long);
+      expect(value.toLong()).assertEqual(Long.MAX_VALUE);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR2_1800
      * @tc.name testLongConstructor2018
-     * @tc.desc Verify Long constructor float overload — compile-time verification (ArkTS Long has no float constructor)
+     * @tc.desc Verify Long constructor with long parameter equal to MIN_VALUE preserves the boundary value
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS Long class does not support float constructor; compile-time verification only
-      let skipReason: string = "compile-time verification only — Long(float) not supported";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      const value: Long = new Long(Long.MIN_VALUE as long);
+      expect(value.toLong()).assertEqual(Long.MIN_VALUE);
     });
   });
 }

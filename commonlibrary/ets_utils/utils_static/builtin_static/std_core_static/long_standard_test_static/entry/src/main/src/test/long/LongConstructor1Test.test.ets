@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongConstructor1Test(): void {
@@ -38,7 +38,18 @@ export default function LongConstructor1Test(): void {
     const CON1_STR_5: string = "5";
     const CON1_STR_EN_US: string = "en-US";
 
-    beforeEach(async () => { await Utils.msSleep(CON1_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(CON1_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_0100
@@ -94,7 +105,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: byte = value.toByte();
-      expect(result === CON1_0_BYTE).assertTrue();
+      expect(result).assertEqual(CON1_0_BYTE);
     });
 
     /**
@@ -108,7 +119,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: short = value.toShort();
-      expect(result === CON1_0_SHORT).assertTrue();
+      expect(result).assertEqual(CON1_0_SHORT);
     });
 
     /**
@@ -122,7 +133,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: int = value.toInt();
-      expect(result === CON1_0_INT).assertTrue();
+      expect(result).assertEqual(CON1_0_INT);
     });
 
     /**
@@ -136,7 +147,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: long = value.toLong();
-      expect(result === CON1_0_LONG).assertTrue();
+      expect(result).assertEqual(CON1_0_LONG);
     });
 
     /**
@@ -150,7 +161,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: float = value.toFloat();
-      expect(result === CON1_0_FLOAT).assertTrue();
+      expect(result).assertEqual(CON1_0_FLOAT);
     });
 
     /**
@@ -164,7 +175,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: double = value.toDouble();
-      expect(result === CON1_0_DOUBLE).assertTrue();
+      expect(result).assertEqual(CON1_0_DOUBLE);
     });
 
     /**
@@ -178,7 +189,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: char = value.toChar();
-      expect(result === CON1_CHAR_NULL).assertTrue();
+      expect(result).assertEqual(CON1_CHAR_NULL);
     });
 
     /**
@@ -669,7 +680,7 @@ export default function LongConstructor1Test(): void {
     it('testLongConstructor1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
       const result: string = value.toLocaleString();
-      expect(result.length > 0).assertTrue();
+      expect(result.indexOf("0") >= 0).assertTrue();
     });
 
     /**

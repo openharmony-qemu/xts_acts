@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongIsGreaterEqualThanTest(): void {
   describe('LongIsGreaterEqualThanTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const GE_NEG_10: long = -10;
     const GE_NEG_5: long = -5;
     const GE_NEG_3: long = -3;
@@ -264,6 +274,23 @@ export default function LongIsGreaterEqualThanTest(): void {
     it('testLongIsGreaterEqualThan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: boolean = new Long(Long.MIN_VALUE).isGreaterEqualThan(new Long(Long.MIN_VALUE));
       expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ISGREATEREQUALTHAN_1900
+     * @tc.name testLongIsGreaterEqualThan019
+     * @tc.desc Verify antisymmetry: when a != b, exactly one of a >= b and b >= a holds
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongIsGreaterEqualThan019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a: Long = new Long(10 as long);
+      const b: Long = new Long(5 as long);
+      const aGeqB: boolean = a.isGreaterEqualThan(b);
+      const bGeqA: boolean = b.isGreaterEqualThan(a);
+      expect(aGeqB).assertTrue();
+      expect(bGeqA).assertFalse();
     });
 
   });

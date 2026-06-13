@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongParseIntRadixTest(): void {
@@ -21,7 +21,6 @@ export default function LongParseIntRadixTest(): void {
     const PARSE_STR_10: string = "10";
     const PARSE_STR_NEG_10: string = "-10";
     const PARSE_STR_NEG_FF: string = "-ff";
-    const PARSE_STR_FF: string = "ff";
 
     const PARSE_2: int = 2;
     const PARSE_3: int = 3;
@@ -62,7 +61,18 @@ export default function LongParseIntRadixTest(): void {
 
     const SLEEP_30: int = 30;
 
-    beforeEach(async () => { await Utils.msSleep(SLEEP_30); });
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(SLEEP_30);
+    });
+
+    afterEach(() => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0100
@@ -74,7 +84,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_2);
-      expect(result === 2).assertTrue();
+      expect(result).assertEqual(2);
     });
 
     /**
@@ -87,7 +97,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_3);
-      expect(result === 3).assertTrue();
+      expect(result).assertEqual(3);
     });
 
     /**
@@ -100,7 +110,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_4);
-      expect(result === 4).assertTrue();
+      expect(result).assertEqual(4);
     });
 
     /**
@@ -113,7 +123,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_5);
-      expect(result === 5).assertTrue();
+      expect(result).assertEqual(5);
     });
 
     /**
@@ -126,7 +136,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_6);
-      expect(result === 6).assertTrue();
+      expect(result).assertEqual(6);
     });
 
     /**
@@ -139,7 +149,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_7);
-      expect(result === 7).assertTrue();
+      expect(result).assertEqual(7);
     });
 
     /**
@@ -152,7 +162,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_8);
-      expect(result === 8).assertTrue();
+      expect(result).assertEqual(8);
     });
 
     /**
@@ -165,7 +175,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_9);
-      expect(result === 9).assertTrue();
+      expect(result).assertEqual(9);
     });
 
     /**
@@ -178,7 +188,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_10);
-      expect(result === 10).assertTrue();
+      expect(result).assertEqual(10);
     });
 
     /**
@@ -191,7 +201,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_11);
-      expect(result === 11).assertTrue();
+      expect(result).assertEqual(11);
     });
 
     /**
@@ -204,7 +214,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_12);
-      expect(result === 12).assertTrue();
+      expect(result).assertEqual(12);
     });
 
     /**
@@ -217,7 +227,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_13);
-      expect(result === 13).assertTrue();
+      expect(result).assertEqual(13);
     });
 
     /**
@@ -230,7 +240,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_14);
-      expect(result === 14).assertTrue();
+      expect(result).assertEqual(14);
     });
 
     /**
@@ -243,7 +253,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_15);
-      expect(result === 15).assertTrue();
+      expect(result).assertEqual(15);
     });
 
     /**
@@ -256,7 +266,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_16);
-      expect(result === 16).assertTrue();
+      expect(result).assertEqual(16);
     });
 
     /**
@@ -269,7 +279,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_17);
-      expect(result === 17).assertTrue();
+      expect(result).assertEqual(17);
     });
 
     /**
@@ -282,7 +292,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_18);
-      expect(result === 18).assertTrue();
+      expect(result).assertEqual(18);
     });
 
     /**
@@ -295,7 +305,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_19);
-      expect(result === 19).assertTrue();
+      expect(result).assertEqual(19);
     });
 
     /**
@@ -308,7 +318,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_20);
-      expect(result === 20).assertTrue();
+      expect(result).assertEqual(20);
     });
 
     /**
@@ -321,7 +331,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_21);
-      expect(result === 21).assertTrue();
+      expect(result).assertEqual(21);
     });
 
     /**
@@ -334,7 +344,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_22);
-      expect(result === 22).assertTrue();
+      expect(result).assertEqual(22);
     });
 
     /**
@@ -347,7 +357,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_23);
-      expect(result === 23).assertTrue();
+      expect(result).assertEqual(23);
     });
 
     /**
@@ -360,7 +370,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_24);
-      expect(result === 24).assertTrue();
+      expect(result).assertEqual(24);
     });
 
     /**
@@ -373,7 +383,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_25);
-      expect(result === 25).assertTrue();
+      expect(result).assertEqual(25);
     });
 
     /**
@@ -386,7 +396,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_26);
-      expect(result === 26).assertTrue();
+      expect(result).assertEqual(26);
     });
 
     /**
@@ -399,7 +409,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_27);
-      expect(result === 27).assertTrue();
+      expect(result).assertEqual(27);
     });
 
     /**
@@ -412,7 +422,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_28);
-      expect(result === 28).assertTrue();
+      expect(result).assertEqual(28);
     });
 
     /**
@@ -425,7 +435,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_29);
-      expect(result === 29).assertTrue();
+      expect(result).assertEqual(29);
     });
 
     /**
@@ -438,7 +448,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_30);
-      expect(result === 30).assertTrue();
+      expect(result).assertEqual(30);
     });
 
     /**
@@ -451,7 +461,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_31);
-      expect(result === 31).assertTrue();
+      expect(result).assertEqual(31);
     });
 
     /**
@@ -464,7 +474,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_32);
-      expect(result === 32).assertTrue();
+      expect(result).assertEqual(32);
     });
 
     /**
@@ -477,7 +487,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_33);
-      expect(result === 33).assertTrue();
+      expect(result).assertEqual(33);
     });
 
     /**
@@ -490,7 +500,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_34);
-      expect(result === 34).assertTrue();
+      expect(result).assertEqual(34);
     });
 
     /**
@@ -503,7 +513,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_35);
-      expect(result === 35).assertTrue();
+      expect(result).assertEqual(35);
     });
 
     /**
@@ -516,7 +526,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_10, PARSE_36);
-      expect(result === 36).assertTrue();
+      expect(result).assertEqual(36);
     });
 
     /**
@@ -529,7 +539,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_NEG_10, PARSE_10);
-      expect(result === -10).assertTrue();
+      expect(result).assertEqual(-10);
     });
 
     /**
@@ -542,7 +552,7 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_NEG_10, PARSE_16);
-      expect(result === -16).assertTrue();
+      expect(result).assertEqual(-16);
     });
 
     /**
@@ -555,7 +565,67 @@ export default function LongParseIntRadixTest(): void {
      */
     it('testLongParseIntRadix038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: long = Long.parseInt(PARSE_STR_NEG_FF, PARSE_16);
-      expect(result === -255).assertTrue();
+      expect(result).assertEqual(-255);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_3900
+     * @tc.name testLongParseIntRadix039
+     * @tc.desc Verify Long.parseInt(Long.MAX_VALUE.toString(), 10) returns Long.MAX_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(Long.MAX_VALUE.toString(), PARSE_10);
+      expect(result).assertEqual(Long.MAX_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4000
+     * @tc.name testLongParseIntRadix040
+     * @tc.desc Verify Long.parseInt(Long.MIN_VALUE.toString(), 10) returns Long.MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(Long.MIN_VALUE.toString(), PARSE_10);
+      expect(result).assertEqual(Long.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4100
+     * @tc.name testLongParseIntRadix041
+     * @tc.desc Verify Long.parseInt("9223372036854775808", 10) — MAX+1 overflow throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("9223372036854775808", PARSE_10);
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(typeof (e as Error).name).assertEqual('string');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4200
+     * @tc.name testLongParseIntRadix042
+     * @tc.desc Verify Long.parseInt("-9223372036854775809", 10) — MIN-1 underflow throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("-9223372036854775809", PARSE_10);
+        expect(false).assertTrue();
+      } catch (e) {
+        expect(typeof (e as Error).name).assertEqual('string');
+      }
     });
 
   });

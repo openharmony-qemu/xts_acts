@@ -13,31 +13,39 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCrossTypeCmpTest(): void {
   describe('LongCrossTypeCmpTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
-    // int-typed variables: test int-to-long widening in Long constructor
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const CTC_INT_0: int = 0;
     const CTC_INT_1: int = 1;
-    const CTC_INT_127: int = 127;        // byte-range boundary
-    const CTC_INT_32767: int = 32767;      // short-range boundary
-    const CTC_INT_MAX: int = 2147483647;   // int max boundary
-    const CTC_INT_MIN: int = -2147483648;  // int min boundary
+    const CTC_INT_127: int = 127;
+    const CTC_INT_32767: int = 32767;
+    const CTC_INT_MAX: int = 2147483647;
+    const CTC_INT_MIN: int = -2147483648;
 
-    // Pre-truncated long values (originally from float/double, now long literals reflecting truncation)
-    const CTC_L_FROM_TRUNCATED_FLOAT_0: long = 0;   // pre-truncated from float 0.0 -> long 0
-    const CTC_L_FROM_TRUNCATED_FLOAT_1: long = 1;   // pre-truncated from float 1.0 -> long 1
-    const CTC_L_FROM_TRUNCATED_FLOAT_HALF: long = 0; // pre-truncated from float 0.5 -> long 0
-    const CTC_L_FROM_TRUNCATED_DOUBLE_0: long = 0;   // pre-truncated from double 0.0 -> long 0
-    const CTC_L_FROM_TRUNCATED_DOUBLE_1: long = 1;   // pre-truncated from double 1.0 -> long 1
-    const CTC_L_FROM_TRUNCATED_DOUBLE_LARGE: long = 1000000000000000000; // pre-truncated from double large -> long
-    const CTC_L_FROM_CHAR_A: long = 65;    // long value from char 'A' code point
-    const CTC_L_FROM_CHAR_B: long = 66;    // long value from char 'B' code point
-    const CTC_L_FROM_CHAR_0: long = 48;    // long value from char '0' code point
+    const CTC_L_FROM_TRUNCATED_FLOAT_0: long = 0;
+    const CTC_L_FROM_TRUNCATED_FLOAT_1: long = 1;
+    const CTC_L_FROM_TRUNCATED_FLOAT_HALF: long = 0;
+    const CTC_L_FROM_TRUNCATED_DOUBLE_0: long = 0;
+    const CTC_L_FROM_TRUNCATED_DOUBLE_1: long = 1;
+    const CTC_L_FROM_TRUNCATED_DOUBLE_LARGE: long = 1000000000000000000;
+    const CTC_L_FROM_CHAR_A: long = 65;
+    const CTC_L_FROM_CHAR_B: long = 66;
+    const CTC_L_FROM_CHAR_0: long = 48;
 
     const CTC_L_0: long = 0;
     const CTC_L_1: long = 1;
@@ -98,7 +106,7 @@ export default function LongCrossTypeCmpTest(): void {
       const left: Long = new Long(CTC_INT_127);
       const right: Long = new Long(CTC_L_127);
       const result: int = left.compareTo(right);
-      expect(result === 0).assertTrue();
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -200,8 +208,6 @@ export default function LongCrossTypeCmpTest(): void {
       expect(left.isGreaterThan(right)).assertTrue();
     });
 
-    // -- equals: char-code-point sourced Long --
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_1200
      * @tc.name testLongCrossCmp012
@@ -243,8 +249,6 @@ export default function LongCrossTypeCmpTest(): void {
       const right: Long = new Long(CTC_L_FROM_CHAR_0);
       expect(left.equals(right)).assertTrue();
     });
-
-    // -- Arithmetic operations (sub/div) within comparison test file --
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_1500

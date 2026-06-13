@@ -13,13 +13,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongIsLessEqualThanTest(): void {
   describe('LongIsLessEqualThanTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const LE_NEG_10: long = -10;
     const LE_NEG_5: long = -5;
     const LE_NEG_3: long = -3;

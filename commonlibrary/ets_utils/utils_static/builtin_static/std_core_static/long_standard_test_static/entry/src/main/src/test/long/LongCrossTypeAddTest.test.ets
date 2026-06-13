@@ -13,28 +13,36 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCrossTypeAddTest(): void {
   describe('LongCrossTypeAddTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+    beforeAll(() => {
+    });
 
-    // int-typed variables: test int-to-long widening in Long constructor
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
     const CTA_INT_0: int = 0;
-    const CTA_INT_127: int = 127;       // byte-range boundary
-    const CTA_INT_32767: int = 32767;     // short-range boundary
-    const CTA_INT_MAX: int = 2147483647;  // int max boundary
+    const CTA_INT_127: int = 127;
+    const CTA_INT_32767: int = 32767;
+    const CTA_INT_MAX: int = 2147483647;
 
-    // Pre-truncated long values (originally from float/double, now long literals reflecting truncation)
-    const CTA_L_FROM_TRUNCATED_FLOAT_0: long = 0;                       // pre-truncated from float 0.0 -> long 0
-    const CTA_L_FROM_TRUNCATED_FLOAT_1: long = 1;                       // pre-truncated from float 1.0 -> long 1
-    const CTA_L_FROM_TRUNCATED_FLOAT_HALF: long = 0;                    // pre-truncated from float 0.5 -> long 0
-    const CTA_L_FROM_TRUNCATED_DOUBLE_0: long = 0;                      // pre-truncated from double 0.0 -> long 0
-    const CTA_L_FROM_TRUNCATED_DOUBLE_1: long = 1;                      // pre-truncated from double 1.0 -> long 1
-    const CTA_L_FROM_TRUNCATED_DOUBLE_LARGE: long = 1000000000000000000; // pre-truncated from double large -> long
-    const CTA_L_FROM_CHAR_A: long = 65;                       // long value from char 'A' code point
-    const CTA_L_FROM_CHAR_0: long = 48;                       // long value from char '0' code point
+    const CTA_L_FROM_TRUNCATED_FLOAT_0: long = 0;
+    const CTA_L_FROM_TRUNCATED_FLOAT_1: long = 1;
+    const CTA_L_FROM_TRUNCATED_FLOAT_HALF: long = 0;
+    const CTA_L_FROM_TRUNCATED_DOUBLE_0: long = 0;
+    const CTA_L_FROM_TRUNCATED_DOUBLE_1: long = 1;
+    const CTA_L_FROM_TRUNCATED_DOUBLE_LARGE: long = 1000000000000000000;
+    const CTA_L_FROM_CHAR_A: long = 65;
+    const CTA_L_FROM_CHAR_0: long = 48;
 
     const CTA_L_0: long = 0;
     const CTA_L_1: long = 1;
@@ -194,8 +202,6 @@ export default function LongCrossTypeAddTest(): void {
       const result: Long = new Long(CTA_L_FROM_TRUNCATED_DOUBLE_LARGE).add(new Long(CTA_L_0));
       expect(result.toString()).assertEqual(CTA_STR_DOUBLE_LARGE);
     });
-
-    // -- Cross-type add: char-code-point sourced Long --
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1200
