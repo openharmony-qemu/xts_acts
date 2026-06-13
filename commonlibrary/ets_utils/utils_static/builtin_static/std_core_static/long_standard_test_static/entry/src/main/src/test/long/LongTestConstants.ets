@@ -14,29 +14,49 @@
  */
 
 export const L_0: long = 0;
+
 export const L_1: long = 1;
+
 export const L_2: long = 2;
+
 export const L_3: long = 3;
+
 export const L_4: long = 4;
+
 export const L_5: long = 5;
+
 export const L_6: long = 6;
+
 export const L_7: long = 7;
+
 export const L_10: long = 10;
+
 export const L_100: long = 100;
+
 export const L_200: long = 200;
 
 export const L_NEG_50: long = -50;
+
 export const L_NEG_100: long = -100;
+
 export const L_NEG_200: long = -200;
 
 export const S_NEG_1: string = "-1";
+
 export const S_NEG_300: string = "-300";
+
 export const S_0: string = "0";
+
 export const S_6: string = "6";
+
 export const S_10: string = "10";
+
 export const S_14: string = "14";
+
 export const S_50: string = "50";
+
 export const S_100: string = "100";
+
 export const S_300: string = "300";
 
 export const S_LONG_MAX: string = "9223372036854775807";

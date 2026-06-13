@@ -13,13 +13,34 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongChainTest(): void {
   describe('LongChainTest', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
     beforeEach(async () => {
       await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
     });
 
     const CH_0: long = 0;
@@ -1339,7 +1360,7 @@ export default function LongChainTest(): void {
      */
     it('testLongChain096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(Long.MIN_VALUE).toString(CH_2_INT).length;
-      expect(result > 0).assertTrue();
+      expect(result).assertEqual(64);
     });
 
     /**

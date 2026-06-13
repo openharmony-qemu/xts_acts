@@ -13,19 +13,22 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToLocaleString2Test(): void {
   describe('LongToLocaleString2Test', () => {
-    const LOC2_NEG_1234: long = -1234;
-    const LOC2_0: long = 0;
-    const LOC2_30: int = 30;
-    const LOC2_1234: long = 1234;
-    const LOC2_1234567: long = 1234567;
-    const LOC2_STR_1234_DOT: string = "1.234";
-    const LOC2_EN_US: string = "en-US";
-    const LOC2_DE_DE: string = "de-DE";
 
     beforeAll(() => {
     });
@@ -34,11 +37,19 @@ export default function LongToLocaleString2Test(): void {
     });
 
     beforeEach(async () => {
-      await Utils.msSleep(LOC2_30);
+      await Utils.msSleep(30);
     });
 
     afterEach(() => {
     });
+
+    const LOC2_NEG_1234: long = -1234;
+    const LOC2_0: long = 0;
+    const LOC2_1234: long = 1234;
+    const LOC2_1234567: long = 1234567;
+    const LOC2_STR_1234_DOT: string = "1.234";
+    const LOC2_EN_US: string = "en-US";
+    const LOC2_DE_DE: string = "de-DE";
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_LOCALE_STRING2_0100

@@ -27,6 +27,13 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+class LongEqualsCustomClass {
+  value: long = 0;
+  constructor(v: long) {
+    this.value = v;
+  }
+}
+
 export default function LongEqualsTest(): void {
   describe('LongEqualsTest', () => {
 
@@ -542,6 +549,83 @@ export default function LongEqualsTest(): void {
       const value = new Long(EQ_10);
       const obj: Map<string, long> = new Map<string, long>();
       obj.set("k", EQ_10);
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3400
+     * @tc.name testLongEquals034
+     * @tc.desc Verify equals returns true for primitive long with the same numeric value (basic type 4/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: long = EQ_10;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3500
+     * @tc.name testLongEquals035
+     * @tc.desc Verify equals returns true for number primitive with the same numeric value (basic type 8/8)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: number = 10;
+      const result: boolean = value.equals(obj);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3600
+     * @tc.name testLongEquals036
+     * @tc.desc Verify equals returns false for Set container instance (collection type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Set<long> = new Set<long>();
+      obj.add(EQ_10);
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3700
+     * @tc.name testLongEquals037
+     * @tc.desc Verify equals returns false for typed Array<long> instance (collection type)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: Array<long> = new Array<long>();
+      obj.push(EQ_10);
+      const result: boolean = value.equals(obj);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_EQUALS_3800
+     * @tc.name testLongEquals038
+     * @tc.desc Verify equals returns false for a custom class instance carrying the same long value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongEquals038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(EQ_10);
+      const obj: LongEqualsCustomClass = new LongEqualsCustomClass(EQ_10);
       const result: boolean = value.equals(obj);
       expect(result).assertFalse();
     });

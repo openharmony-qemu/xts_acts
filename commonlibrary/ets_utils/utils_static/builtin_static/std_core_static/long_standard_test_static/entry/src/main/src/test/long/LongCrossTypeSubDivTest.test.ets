@@ -13,16 +13,37 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCrossTypeSubDivTest(): void {
   describe('LongCrossTypeSubDivTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
 
-    // int-typed variables: test int-to-long widening
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
     const CSD_INT_0: int = 0;
-    const CSD_INT_1: int = 1;
     const CSD_INT_127: int = 127;
     const CSD_INT_NEG_128: int = -128;
     const CSD_INT_32767: int = 32767;
@@ -30,18 +51,24 @@ export default function LongCrossTypeSubDivTest(): void {
     const CSD_INT_MAX: int = 2147483647;
     const CSD_INT_MIN: int = -2147483648;
 
-    // long-typed variables covering values from float/double/char ranges
-    const CSD_L_FLOAT_0: long = 0;          // float 0.0 → long 0
-    const CSD_L_FLOAT_1: long = 1;          // float 1.0 → long 1
-    const CSD_L_DOUBLE_0: long = 0;         // double 0.0 → long 0
-    const CSD_L_FROM_CHAR_A: long = 65;     // char 'A' code point
-    const CSD_L_FROM_CHAR_0: long = 48;     // char '0' code point
+    const CSD_L_FLOAT_0: long = 0;
+    const CSD_L_FLOAT_1: long = 1;
+    const CSD_L_DOUBLE_0: long = 0;
+    const CSD_L_FROM_CHAR_A: long = 65;
+    const CSD_L_FROM_CHAR_0: long = 48;
 
-    // long reference values
     const CSD_L_0: long = 0;
     const CSD_L_1: long = 1;
 
-    // ── Cross-type sub: int-sourced Long ──
+    const CSD_SHORT_0: short = 0 as short;
+    const CSD_SHORT_50: short = 50 as short;
+    const CSD_SHORT_100: short = 100 as short;
+    const CSD_SHORT_200: short = 200 as short;
+    const CSD_SHORT_32767: short = 32767 as short;
+    const CSD_INT_30: int = 30;
+    const CSD_INT_100: int = 100;
+    const CSD_INT_1000: int = 1000;
+    const CSD_INT_NEG_1: int = -1;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_0100
@@ -98,17 +125,16 @@ export default function LongCrossTypeSubDivTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_0500
      * @tc.name testLongCrossSubDiv005
-     * @tc.desc Verify Long(int 127) sub Long(Long.MAX_VALUE) returns Long instance (extreme operand)
+     * @tc.desc Verify Long(int 127) sub Long(Long.MAX_VALUE) equals 127 - Long.MAX_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossSubDiv005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CSD_INT_127).sub(new Long(Long.MAX_VALUE));
-      expect(result instanceof Long).assertTrue();
+      const expected: long = (CSD_INT_127 as long) - Long.MAX_VALUE;
+      expect(result.toLong()).assertEqual(expected);
     });
-
-    // ── Cross-type sub: float/double/char-range sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_0600
@@ -175,8 +201,6 @@ export default function LongCrossTypeSubDivTest(): void {
       expect(result.toString()).assertEqual("64");
     });
 
-    // ── Cross-type div: int-sourced Long ──
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_1100
      * @tc.name testLongCrossSubDiv011
@@ -241,8 +265,6 @@ export default function LongCrossTypeSubDivTest(): void {
       const result: Long = new Long(CSD_INT_127).div(new Long(Long.MAX_VALUE));
       expect(result.toString()).assertEqual("0");
     });
-
-    // ── Cross-type div: float/double/char-range sourced Long ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_1600
@@ -321,8 +343,6 @@ export default function LongCrossTypeSubDivTest(): void {
       const result: Long = new Long(CSD_INT_0).div(new Long(Long.MIN_VALUE));
       expect(result.toString()).assertEqual("0");
     });
-
-    // ── Cross-type conversion: Long to narrow types ──
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_2200
@@ -438,7 +458,7 @@ export default function LongCrossTypeSubDivTest(): void {
      */
     it('testLongCrossSubDiv030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: int = new Long(Long.MAX_VALUE).toInt();
-      expect(result).assertEqual(-1);  // MAX_VALUE low 32 bits = -1 as int
+      expect(result).assertEqual(-1);
     });
 
     /**
@@ -451,7 +471,7 @@ export default function LongCrossTypeSubDivTest(): void {
      */
     it('testLongCrossSubDiv031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: int = new Long(Long.MIN_VALUE).toInt();
-      expect(result).assertEqual(0);  // MIN_VALUE low 32 bits = 0 as int
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -491,14 +511,8 @@ export default function LongCrossTypeSubDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongCrossSubDiv034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(65);
-      let toCharThrew: boolean = false;
-      try {
-        const result: char = value.toChar();
-      } catch (e) {
-        toCharThrew = true;
-      }
-      expect(toCharThrew).assertFalse();
+      const result: char = new Long(65).toChar();
+      expect(result).assertEqual(c'A');
     });
 
     /**
@@ -510,33 +524,125 @@ export default function LongCrossTypeSubDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongCrossSubDiv035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(48);
-      let toCharThrew: boolean = false;
-      try {
-        const result: char = value.toChar();
-      } catch (e) {
-        toCharThrew = true;
-      }
-      expect(toCharThrew).assertFalse();
+      const result: char = new Long(48).toChar();
+      expect(result).assertEqual(c'0');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_3600
      * @tc.name testLongCrossSubDiv036
-     * @tc.desc Verify new Long(-1).toChar() wraps around to max char (negative truncation)
+     * @tc.desc Verify new Long(-1).toChar() wraps around to max char (0xFFFF)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossSubDiv036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value: Long = new Long(-1);
-      let toCharThrew: boolean = false;
-      try {
-        const result: char = value.toChar();
-      } catch (e) {
-        toCharThrew = true;
-      }
-      expect(toCharThrew).assertFalse();
+      const result: char = new Long(-1).toChar();
+      expect(result).assertEqual(c'￿');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_3700
+     * @tc.name testLongCrossSubDiv037
+     * @tc.desc Verify Long(int 100) sub Long(int 30) returns "70" (both operands int-sourced)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_INT_100).sub(new Long(CSD_INT_30));
+      expect(result.toString()).assertEqual("70");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_3800
+     * @tc.name testLongCrossSubDiv038
+     * @tc.desc Verify Long(short 200) sub Long(short 50) returns "150" (both operands short-sourced)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_SHORT_200).sub(new Long(CSD_SHORT_50));
+      expect(result.toString()).assertEqual("150");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_3900
+     * @tc.name testLongCrossSubDiv039
+     * @tc.desc Verify Long(int MAX) sub Long(short 32767) preserves int-short cross-type sub
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_INT_MAX).sub(new Long(CSD_SHORT_32767));
+      expect(result.toString()).assertEqual("2147450880");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_4000
+     * @tc.name testLongCrossSubDiv040
+     * @tc.desc Verify Long(short 0) sub Long(int -1) returns "1" (short-int cross-type sub with negative)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_SHORT_0).sub(new Long(CSD_INT_NEG_1));
+      expect(result.toString()).assertEqual("1");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_4100
+     * @tc.name testLongCrossSubDiv041
+     * @tc.desc Verify Long(int 1000) div Long(int 100) returns "10" (both operands int-sourced)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_INT_1000).div(new Long(CSD_INT_100));
+      expect(result.toString()).assertEqual("10");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_4200
+     * @tc.name testLongCrossSubDiv042
+     * @tc.desc Verify Long(short 200) div Long(short 50) returns "4" (both operands short-sourced)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_SHORT_200).div(new Long(CSD_SHORT_50));
+      expect(result.toString()).assertEqual("4");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_4300
+     * @tc.name testLongCrossSubDiv043
+     * @tc.desc Verify Long(int 1000) div Long(short 100) returns "10" (int-short cross-type div)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_INT_1000).div(new Long(CSD_SHORT_100));
+      expect(result.toString()).assertEqual("10");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_SUBDIV_4400
+     * @tc.name testLongCrossSubDiv044
+     * @tc.desc Verify Long(short 100) div Long(int 30) returns "3" (short-int cross-type integer div truncation)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCrossSubDiv044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(CSD_SHORT_100).div(new Long(CSD_INT_30));
+      expect(result.toString()).assertEqual("3");
     });
   });
 }

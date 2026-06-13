@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongSubTest(): void {
@@ -30,12 +41,14 @@ export default function LongSubTest(): void {
 
     afterEach(() => {
     });
+
     const SUB_NEG_100: long = -100;
     const SUB_NEG_50: long = -50;
     const SUB_NEG_20: long = -20;
     const SUB_NEG_10: long = -10;
     const SUB_NEG_1: long = -1;
     const SUB_0: long = 0;
+    const SUB_1: long = 1;
     const SUB_3: long = 3;
     const SUB_4: long = 4;
     const SUB_5: long = 5;
@@ -175,14 +188,14 @@ export default function LongSubTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1000
      * @tc.name testLongSub010
-     * @tc.desc Verify sub returns a Long instance
+     * @tc.desc Verify sub result toLong: 10 - 3 = 7
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongSub010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(SUB_10).sub(new Long(SUB_3));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(SUB_10 - SUB_3);
     });
 
     /**
@@ -237,6 +250,85 @@ export default function LongSubTest(): void {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: Long = value.sub(new Long(SUB_NEG_1));
       expect(result.toString()).assertEqual(Long.MIN_VALUE.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1500
+     * @tc.name testLongSub015
+     * @tc.desc Verify MIN_VALUE - 1 underflows to MAX_VALUE (mirror of test014)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value: Long = new Long(Long.MIN_VALUE);
+      const result: Long = value.sub(new Long(SUB_1));
+      expect(result.toString()).assertEqual(Long.MAX_VALUE.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1600
+     * @tc.name testLongSub016
+     * @tc.desc Verify MAX_VALUE - 1 stays in range and equals MAX_VALUE - 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(Long.MAX_VALUE).sub(new Long(SUB_1));
+      expect(result.toLong()).assertEqual(Long.MAX_VALUE - 1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1700
+     * @tc.name testLongSub017
+     * @tc.desc Verify MIN_VALUE - (-1) stays in range and equals MIN_VALUE + 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(Long.MIN_VALUE).sub(new Long(SUB_NEG_1));
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE + 1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1800
+     * @tc.name testLongSub018
+     * @tc.desc Verify 0 - MAX_VALUE equals -MAX_VALUE which is MIN_VALUE + 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(SUB_0).sub(new Long(Long.MAX_VALUE));
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE + 1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_1900
+     * @tc.name testLongSub019
+     * @tc.desc Verify 0 - MIN_VALUE wraps back to MIN_VALUE because |MIN_VALUE| > MAX_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(SUB_0).sub(new Long(Long.MIN_VALUE));
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_SUB_2000
+     * @tc.name testLongSub020
+     * @tc.desc Verify MAX_VALUE - MIN_VALUE overflows by twos-complement and wraps to -1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongSub020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(Long.MAX_VALUE).sub(new Long(Long.MIN_VALUE));
+      expect(result.toLong()).assertEqual(SUB_NEG_1);
     });
   });
 }

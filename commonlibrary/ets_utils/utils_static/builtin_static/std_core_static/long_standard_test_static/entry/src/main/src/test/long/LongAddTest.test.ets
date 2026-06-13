@@ -204,14 +204,14 @@ export default function LongAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_1100
      * @tc.name testLongAdd011
-     * @tc.desc Verify add returns a Long instance
+     * @tc.desc Verify add result toString: 3 + 7 = "10"
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongAdd011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(L_3).add(new Long(L_7));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toString()).assertEqual(S_10);
     });
 
     /**
@@ -434,6 +434,60 @@ export default function LongAddTest(): void {
       const ab: Long = a.add(b);
       const ba: Long = b.add(a);
       expect(ab.toLong()).assertEqual(ba.toLong());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_2800
+     * @tc.name testLongAdd028
+     * @tc.desc Verify boundary identity: Long.MIN_VALUE + 0 equals Long.MIN_VALUE (no wrap)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongAdd028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(Long.MIN_VALUE).add(new Long(L_0));
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_2900
+     * @tc.name testLongAdd029
+     * @tc.desc Verify boundary identity: Long.MAX_VALUE + 0 equals Long.MAX_VALUE (no wrap)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongAdd029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: Long = new Long(Long.MAX_VALUE).add(new Long(L_0));
+      expect(result.toLong()).assertEqual(Long.MAX_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_3000
+     * @tc.name testLongAdd030
+     * @tc.desc Verify near-boundary non-wrapping add: Long.MIN_VALUE + 1 equals Long.MIN_VALUE + 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongAdd030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: long = Long.MIN_VALUE + 1;
+      const result: Long = new Long(Long.MIN_VALUE).add(new Long(L_1));
+      expect(result.toLong()).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_ADD_3100
+     * @tc.name testLongAdd031
+     * @tc.desc Verify near-boundary negative add: Long.MAX_VALUE + (-100) equals Long.MAX_VALUE - 100 (no wrap)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongAdd031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: long = Long.MAX_VALUE - 100;
+      const result: Long = new Long(Long.MAX_VALUE).add(new Long(L_NEG_100));
+      expect(result.toLong()).assertEqual(expected);
     });
   });
 }

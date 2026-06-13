@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongConstructor1Test(): void {
@@ -428,14 +439,14 @@ export default function LongConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CONSTRUCTOR1_2700
      * @tc.name testLongConstructor1027
-     * @tc.desc Verify default constructor instance is instanceof Long type
+     * @tc.desc Verify default constructor produces Long whose toLong() returns 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongConstructor1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long();
-      expect(value instanceof Long).assertTrue();
+      expect(value.toLong()).assertEqual(0);
     });
 
     /**

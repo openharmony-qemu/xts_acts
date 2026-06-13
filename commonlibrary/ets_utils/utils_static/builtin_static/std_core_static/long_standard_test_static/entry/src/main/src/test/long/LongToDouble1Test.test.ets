@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToDouble1Test(): void {
@@ -41,6 +52,13 @@ export default function LongToDouble1Test(): void {
     const TD1_DOUBLE_EXACT_BOUNDARY: long = 9007199254740992;
     const TD1_DOUBLE_PRECISION_LOSS: long = 9007199254740993;
     const TD1_DOUBLE_EXACT_BOUNDARY_VAL: double = 9007199254740992.0;
+    const TD1_MAX_MINUS_1: long = 9223372036854775806;
+    const TD1_MIN_PLUS_1: long = -9223372036854775807;
+    const TD1_DOUBLE_EXACT_MINUS_1: long = 9007199254740991;
+    const TD1_DOUBLE_EXACT_MINUS_1_VAL: double = 9007199254740991.0;
+    const TD1_DOUBLE_EXACT_NEG: long = -9007199254740992;
+    const TD1_DOUBLE_EXACT_NEG_VAL: double = -9007199254740992.0;
+    const TD1_DOUBLE_PRECISION_LOSS_NEG: long = -9007199254740993;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_0100
@@ -223,6 +241,78 @@ export default function LongToDouble1Test(): void {
       const value = new Long(Long.MIN_VALUE);
       const result: double = value.toDouble();
       expect(isFinite(result)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1400
+     * @tc.name testLongToDouble1014
+     * @tc.desc Verify toDouble() with Long.MAX_VALUE - 1 (adjacent to MAX) returns finite positive double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_MAX_MINUS_1);
+      const result: double = value.toDouble();
+      expect(isFinite(result)).assertTrue();
+      expect(result > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1500
+     * @tc.name testLongToDouble1015
+     * @tc.desc Verify toDouble() with Long.MIN_VALUE + 1 (adjacent to MIN) returns finite negative double
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_MIN_PLUS_1);
+      const result: double = value.toDouble();
+      expect(isFinite(result)).assertTrue();
+      expect(result < 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1600
+     * @tc.name testLongToDouble1016
+     * @tc.desc Verify toDouble() at 2^53 - 1 max exact representable below double boundary
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_DOUBLE_EXACT_MINUS_1);
+      const result: double = value.toDouble();
+      expect(result).assertEqual(TD1_DOUBLE_EXACT_MINUS_1_VAL);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1700
+     * @tc.name testLongToDouble1017
+     * @tc.desc Verify toDouble() at -(2^53) negative double exact boundary
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_DOUBLE_EXACT_NEG);
+      const result: double = value.toDouble();
+      expect(result).assertEqual(TD1_DOUBLE_EXACT_NEG_VAL);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TODOUBLE1_1800
+     * @tc.name testLongToDouble1018
+     * @tc.desc Verify toDouble() at -(2^53 + 1) precision loss converges to -(2^53)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongToDouble1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = new Long(TD1_DOUBLE_PRECISION_LOSS_NEG);
+      const result: double = value.toDouble();
+      expect(result).assertEqual(TD1_DOUBLE_EXACT_NEG_VAL);
     });
   });
 }

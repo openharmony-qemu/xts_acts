@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCrossTypeCmpTest(): void {
@@ -30,6 +41,7 @@ export default function LongCrossTypeCmpTest(): void {
 
     afterEach(() => {
     });
+
     const CTC_INT_0: int = 0;
     const CTC_INT_1: int = 1;
     const CTC_INT_127: int = 127;
@@ -289,14 +301,13 @@ export default function LongCrossTypeCmpTest(): void {
     it('testLongCrossCmp017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTC_L_FROM_TRUNCATED_FLOAT_1);
       const result: Long = left.sub(new Long(CTC_L_0));
-      expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual("1");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_CMP_1800
      * @tc.name testLongCrossCmp018
-     * @tc.desc Verify arithmetic: Long(pre-truncated double 0.0 as long 0) sub Long(Long.MIN_VALUE) returns Long instance
+     * @tc.desc Verify arithmetic: Long(pre-truncated double 0.0 as long 0) sub Long(Long.MIN_VALUE) overflows back to Long.MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -304,7 +315,7 @@ export default function LongCrossTypeCmpTest(): void {
     it('testLongCrossCmp018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left: Long = new Long(CTC_L_FROM_TRUNCATED_DOUBLE_0);
       const result: Long = left.sub(new Long(Long.MIN_VALUE));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE);
     });
 
     /**

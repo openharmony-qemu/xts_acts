@@ -13,13 +13,37 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToStringRadixTest(): void {
   describe('LongToStringRadixTest', () => {
-    const RADIX_VAL: long = 255;
 
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
+    const RADIX_VAL: long = 255;
     const RADIX_2: int = 2;
     const RADIX_3: int = 3;
     const RADIX_4: int = 4;
@@ -91,21 +115,6 @@ export default function LongToStringRadixTest(): void {
     const RADIX_STR_34: string = "7h";
     const RADIX_STR_35: string = "7a";
     const RADIX_STR_36: string = "73";
-
-    const SLEEP_30: int = 30;
-
-    beforeAll(() => {
-    });
-
-    afterAll(() => {
-    });
-
-    beforeEach(async () => {
-      await Utils.msSleep(SLEEP_30);
-    });
-
-    afterEach(() => {
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_0100
@@ -644,7 +653,7 @@ export default function LongToStringRadixTest(): void {
         value.toString(1);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -662,7 +671,7 @@ export default function LongToStringRadixTest(): void {
         value.toString(37);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -680,7 +689,7 @@ export default function LongToStringRadixTest(): void {
         value.toString(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

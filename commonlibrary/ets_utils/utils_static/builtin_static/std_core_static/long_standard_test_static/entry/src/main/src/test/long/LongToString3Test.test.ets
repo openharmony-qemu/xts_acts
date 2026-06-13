@@ -13,11 +13,36 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToString3Test(): void {
   describe('LongToString3Test', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
     const TS3_NEG_255: int = -255;
     const TS3_NEG_1: int = -1;
     const TS3_0: int = 0;
@@ -26,7 +51,6 @@ export default function LongToString3Test(): void {
     const TS3_3: int = 3;
     const TS3_10: int = 10;
     const TS3_16: int = 16;
-    const TS3_30: int = 30;
     const TS3_35: int = 35;
     const TS3_36: int = 36;
     const TS3_37: int = 37;
@@ -41,18 +65,6 @@ export default function LongToString3Test(): void {
     const TS3_STR_BIN_32ONES: string = "11111111111111111111111111111111";
     const TS3_STR_MAX_HEX: string = "7fffffffffffffff";
     const TS3_STR_NEG_FF: string = "-ff";
-    beforeAll(() => {
-    });
-
-    afterAll(() => {
-    });
-
-    beforeEach(async () => {
-      await Utils.msSleep(TS3_30);
-    });
-
-    afterEach(() => {
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING3_0100
@@ -152,7 +164,7 @@ export default function LongToString3Test(): void {
         value.toString(TS3_1);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -170,7 +182,7 @@ export default function LongToString3Test(): void {
         value.toString(TS3_37);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -188,7 +200,7 @@ export default function LongToString3Test(): void {
         value.toString(TS3_NEG_1);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
@@ -206,7 +218,7 @@ export default function LongToString3Test(): void {
         value.toString(TS3_0);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

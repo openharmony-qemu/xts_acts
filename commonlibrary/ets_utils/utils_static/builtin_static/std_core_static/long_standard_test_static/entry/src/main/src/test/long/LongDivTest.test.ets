@@ -13,12 +13,35 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongDivTest(): void {
   describe('LongDivTest', () => {
-    beforeEach(async () => { await Utils.msSleep(30); });
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
 
     const DIV_NEG_100: long = -100;
     const DIV_NEG_7: long = -7;
@@ -42,7 +65,6 @@ export default function LongDivTest(): void {
     const DIV_STR_3: string = "3";
     const DIV_STR_20: string = "20";
     const DIV_STR_100: string = "100";
-    const DIV_STR_MIN_VALUE: string = "-9223372036854775808";
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_0100
@@ -185,23 +207,23 @@ export default function LongDivTest(): void {
     it('testLongDiv011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Long(DIV_1).div(new Long(DIV_0));
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("ArithmeticError");
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_DIV_1200
      * @tc.name testLongDiv012
-     * @tc.desc Verify div returns a Long instance
+     * @tc.desc Verify div result toLong: 8 / 4 = 2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongDiv012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(DIV_8).div(new Long(DIV_4));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(DIV_8 / DIV_4);
     });
 
     /**
@@ -242,9 +264,9 @@ export default function LongDivTest(): void {
     it('testLongDiv015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Long(DIV_0).div(new Long(DIV_0));
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("ArithmeticError");
       }
     });
 
@@ -259,9 +281,9 @@ export default function LongDivTest(): void {
     it('testLongDiv016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Long(DIV_NEG_1).div(new Long(DIV_0));
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("ArithmeticError");
       }
     });
 
@@ -276,9 +298,9 @@ export default function LongDivTest(): void {
     it('testLongDiv017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Long(Long.MIN_VALUE).div(new Long(DIV_0));
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e.name).assertEqual("ArithmeticError");
       }
     });
   });

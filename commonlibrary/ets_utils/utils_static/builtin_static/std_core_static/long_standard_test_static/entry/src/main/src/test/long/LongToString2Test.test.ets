@@ -13,16 +13,40 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToString2Test(): void {
   describe('LongToString2Test', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
     const T2S_NEG_456: long = -456;
     const T2S_NEG_1: long = -1;
     const T2S_0: long = 0;
     const T2S_1: long = 1;
-    const T2S_30: int = 30;
     const T2S_100: long = 100;
     const T2S_123: long = 123;
     const T2S_200: long = 200;
@@ -34,19 +58,6 @@ export default function LongToString2Test(): void {
     const T2S_STR_123: string = "123";
     const T2S_STR_200: string = "200";
     const T2S_STR_MIN_VALUE: string = "-9223372036854775808";
-
-    beforeAll(() => {
-    });
-
-    afterAll(() => {
-    });
-
-    beforeEach(async () => {
-      await Utils.msSleep(T2S_30);
-    });
-
-    afterEach(() => {
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING2_0100

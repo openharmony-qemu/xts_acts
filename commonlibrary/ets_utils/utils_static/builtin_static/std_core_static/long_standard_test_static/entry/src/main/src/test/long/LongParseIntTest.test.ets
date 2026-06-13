@@ -13,12 +13,37 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { SLEEP_MS } from './LongTestConstants';
 
 export default function LongParseIntTest(): void {
   describe('LongParseIntTest', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(SLEEP_MS);
+    });
+
+    afterEach(() => {
+    });
+
     const PI_NEG_1: int = -1;
     const PI_0: int = 0;
     const PI_1: int = 1;
@@ -47,19 +72,6 @@ export default function LongParseIntTest(): void {
     const PI_STR_ABC: string = "abc";
     const PI_STR_FF: string = "ff";
     const PI_STR_Z: string = "z";
-
-    beforeAll(() => {
-    });
-
-    afterAll(() => {
-    });
-
-    beforeEach(async () => {
-      await Utils.msSleep(SLEEP_MS);
-    });
-
-    afterEach(() => {
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_0100
@@ -247,9 +259,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_1);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
       }
     });
 
@@ -264,9 +276,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_37);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
       }
     });
 
@@ -281,9 +293,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_0, PI_NEG_1);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
       }
     });
 
@@ -298,9 +310,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt(PI_STR_ABC, PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -315,9 +327,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("", PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -345,9 +357,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("  ", PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -375,9 +387,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("9223372036854775808", PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -392,9 +404,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("null", PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -422,9 +434,9 @@ export default function LongParseIntTest(): void {
     it('testLongParseInt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("-9223372036854775809", PI_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
   });

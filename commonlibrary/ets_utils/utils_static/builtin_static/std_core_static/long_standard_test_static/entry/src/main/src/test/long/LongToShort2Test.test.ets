@@ -13,11 +13,23 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToShort2Test(): void {
   describe('LongToShort2Test', () => {
+
     beforeAll(() => {
     });
 
@@ -30,6 +42,7 @@ export default function LongToShort2Test(): void {
 
     afterEach(() => {
     });
+
     const TS2_OVERFLOW_BELOW_MIN: long = -32769;
     const TS2_SHORT_MIN: long = -32768;
     const TS2_NEG_500: long = -500;

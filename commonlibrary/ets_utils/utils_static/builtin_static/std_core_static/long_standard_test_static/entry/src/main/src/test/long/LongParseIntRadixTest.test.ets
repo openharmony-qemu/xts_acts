@@ -13,15 +13,39 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongParseIntRadixTest(): void {
   describe('LongParseIntRadixTest', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
     const PARSE_STR_10: string = "10";
     const PARSE_STR_NEG_10: string = "-10";
     const PARSE_STR_NEG_FF: string = "-ff";
-
     const PARSE_2: int = 2;
     const PARSE_3: int = 3;
     const PARSE_4: int = 4;
@@ -57,22 +81,6 @@ export default function LongParseIntRadixTest(): void {
     const PARSE_34: int = 34;
     const PARSE_35: int = 35;
     const PARSE_36: int = 36;
-
-
-    const SLEEP_30: int = 30;
-
-    beforeAll(() => {
-    });
-
-    afterAll(() => {
-    });
-
-    beforeEach(async () => {
-      await Utils.msSleep(SLEEP_30);
-    });
-
-    afterEach(() => {
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_0100
@@ -605,9 +613,9 @@ export default function LongParseIntRadixTest(): void {
     it('testLongParseIntRadix041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("9223372036854775808", PARSE_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
     });
 
@@ -622,10 +630,172 @@ export default function LongParseIntRadixTest(): void {
     it('testLongParseIntRadix042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Long.parseInt("-9223372036854775809", PARSE_10);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (e) {
-        expect(typeof (e as Error).name).assertEqual('string');
+        expect(e.name).assertEqual('FormatError');
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4300
+     * @tc.name testLongParseIntRadix043
+     * @tc.desc Verify Long.parseInt("9", 8) — digit '9' is not valid in octal radix, throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("9", PARSE_8);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4400
+     * @tc.name testLongParseIntRadix044
+     * @tc.desc Verify Long.parseInt("ff", 10) — letters are not valid in decimal radix, throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("ff", PARSE_10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4500
+     * @tc.name testLongParseIntRadix045
+     * @tc.desc Verify Long.parseInt("z", 16) — letter 'z' exceeds hex radix range, throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("z", PARSE_16);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4600
+     * @tc.name testLongParseIntRadix046
+     * @tc.desc Verify Long.parseInt("10", 1) — radix below valid lower bound (2), throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt(PARSE_STR_10, 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4700
+     * @tc.name testLongParseIntRadix047
+     * @tc.desc Verify Long.parseInt("10", 37) — radix above valid upper bound (36), throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt(PARSE_STR_10, 37);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4800
+     * @tc.name testLongParseIntRadix048
+     * @tc.desc Verify Long.parseInt("10", -1) — negative radix is invalid, throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt(PARSE_STR_10, -1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ArgumentOutOfRangeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_4900
+     * @tc.name testLongParseIntRadix049
+     * @tc.desc Verify Long.parseInt("", 10) — empty string throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("", PARSE_10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_5000
+     * @tc.name testLongParseIntRadix050
+     * @tc.desc Verify Long.parseInt("10.5", 10) prefix-parses up to the decimal point and returns 10
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt("10.5", PARSE_10);
+      expect(result).assertEqual(10 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_5100
+     * @tc.name testLongParseIntRadix051
+     * @tc.desc Verify Long.parseInt("abc", 10) — pure letters under decimal radix, throws an error
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Long.parseInt("abc", PARSE_10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('FormatError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_PARSE_INT_RADIX_5200
+     * @tc.name testLongParseIntRadix052
+     * @tc.desc Verify Long.parseInt(" 10", 10) skips the leading whitespace and returns 10
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongParseIntRadix052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result: long = Long.parseInt(" 10", PARSE_10);
+      expect(result).assertEqual(10 as long);
     });
 
   });

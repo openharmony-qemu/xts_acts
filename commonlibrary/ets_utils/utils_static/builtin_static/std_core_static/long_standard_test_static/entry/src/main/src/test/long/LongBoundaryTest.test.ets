@@ -54,6 +54,7 @@ export default function LongBoundaryTest(): void {
     const B_STR_MIN_PLUS_1: string = "-9223372036854775807";
     const B_HALF_MAX: long = 4611686018427387903;
     const B_STR_MAX_MINUS_1: string = "9223372036854775806";
+    const B_NEG_2: long = -2;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_0100
@@ -84,27 +85,27 @@ export default function LongBoundaryTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_0300
      * @tc.name testLongBoundary003
-     * @tc.desc Verify Long.MAX_VALUE * 2 overflows and returns a Long instance
+     * @tc.desc Verify Long.MAX_VALUE * 2 overflows to -2
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongBoundary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MAX).mul(new Long(B_2));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(B_NEG_2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_0400
      * @tc.name testLongBoundary004
-     * @tc.desc Verify Long.MIN_VALUE * 2 overflows and returns a Long instance
+     * @tc.desc Verify Long.MIN_VALUE * 2 overflows to 0
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongBoundary004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(B_MIN).mul(new Long(B_2));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(B_0);
     });
 
     /**
@@ -242,7 +243,7 @@ export default function LongBoundaryTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_BOUNDARY_1500
      * @tc.name testLongBoundary015
-     * @tc.desc Verify (MAX/2 + 1) * 2 overflows and returns a Long instance
+     * @tc.desc Verify (HALF_MAX + 1) * 2 overflows to Long.MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -250,7 +251,7 @@ export default function LongBoundaryTest(): void {
     it('testLongBoundary015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const halfMaxPlus1: long = B_HALF_MAX + B_1;
       const result: Long = new Long(halfMaxPlus1).mul(new Long(B_2));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toString()).assertEqual(B_STR_MIN);
     });
 
     /**

@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongMulTest(): void {
@@ -155,7 +166,6 @@ export default function LongMulTest(): void {
      */
     it('testLongMul008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MAX_VALUE).mul(new Long(MUL_2));
-      expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(MUL_STR_NEG_2);
     });
 
@@ -169,7 +179,6 @@ export default function LongMulTest(): void {
      */
     it('testLongMul009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(Long.MIN_VALUE).mul(new Long(MUL_NEG_1));
-      expect(result instanceof Long).assertTrue();
       expect(result.toString()).assertEqual(Long.MIN_VALUE.toString());
     });
 
@@ -189,14 +198,14 @@ export default function LongMulTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_MUL_1100
      * @tc.name testLongMul011
-     * @tc.desc Verify mul returns a Long instance
+     * @tc.desc Verify mul result toLong: 6 * 4 = 24
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongMul011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(MUL_6).mul(new Long(MUL_4));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(MUL_6 * MUL_4);
     });
 
     /**

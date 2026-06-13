@@ -13,7 +13,12 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongCrossTypeAddTest(): void {
@@ -30,6 +35,7 @@ export default function LongCrossTypeAddTest(): void {
 
     afterEach(() => {
     });
+
     const CTA_INT_0: int = 0;
     const CTA_INT_127: int = 127;
     const CTA_INT_32767: int = 32767;
@@ -89,14 +95,14 @@ export default function LongCrossTypeAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_0300
      * @tc.name testLongCrossAdd003
-     * @tc.desc Verify Long(int 0) add Long(Long.MIN_VALUE) returns Long instance
+     * @tc.desc Verify Long(int 0) add Long(Long.MIN_VALUE) equals Long.MIN_VALUE
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_0).add(new Long(Long.MIN_VALUE));
-      expect(result instanceof Long).assertTrue();
+      expect(result.toLong()).assertEqual(Long.MIN_VALUE);
     });
 
     /**
@@ -258,14 +264,15 @@ export default function LongCrossTypeAddTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CROSS_ADD_1600
      * @tc.name testLongCrossAdd016
-     * @tc.desc Verify cross-type multiplication: Long(int MAX) mul Long(Long.MAX_VALUE) returns Long instance (overflow)
+     * @tc.desc Verify cross-type multiplication: Long(int MAX) mul Long(Long.MAX_VALUE) matches modular long product
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testLongCrossAdd016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result: Long = new Long(CTA_INT_MAX).mul(new Long(Long.MAX_VALUE));
-      expect(result instanceof Long).assertTrue();
+      const expected: long = (CTA_INT_MAX as long) * Long.MAX_VALUE;
+      expect(result.toLong()).assertEqual(expected);
     });
 
     /**

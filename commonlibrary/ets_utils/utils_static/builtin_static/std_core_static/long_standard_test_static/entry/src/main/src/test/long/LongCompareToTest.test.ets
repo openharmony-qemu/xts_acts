@@ -333,5 +333,52 @@ export default function LongCompareToTest(): void {
       expect(a.equals(c)).assertFalse();
       expect(a.compareTo(c) !== 0).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_1900
+     * @tc.name testLongCompareTo019
+     * @tc.desc Verify compareTo with long literal cast as constructor input: new Long(100 as long).compareTo(new Long(99 as long)) === 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left: Long = new Long(100 as long);
+      const right: Long = new Long(99 as long);
+      const result: int = left.compareTo(right);
+      expect(result).assertEqual(CT_1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_2000
+     * @tc.name testLongCompareTo020
+     * @tc.desc Verify long primitive comparison and Long.compareTo direction stay consistent for the same pair
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const lp: long = CT_100;
+      const rp: long = CT_3;
+      const primitiveGreater: boolean = lp > rp;
+      const boxedResult: int = new Long(lp).compareTo(new Long(rp));
+      expect(primitiveGreater).assertTrue();
+      expect(boxedResult).assertEqual(CT_1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_COMPARE_TO_2100
+     * @tc.name testLongCompareTo021
+     * @tc.desc Verify compareTo with long boundary literals (MAX_VALUE as long, MIN_VALUE as long) directly boxed into Long
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongCompareTo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left: Long = new Long(Long.MAX_VALUE as long);
+      const right: Long = new Long(Long.MIN_VALUE as long);
+      const result: int = left.compareTo(right);
+      expect(result).assertEqual(CT_1);
+    });
   });
 }

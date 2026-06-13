@@ -13,11 +13,36 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function LongToString1Test(): void {
   describe('LongToString1Test', () => {
+
+    beforeAll(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    beforeEach(async () => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach(() => {
+    });
+
     const TS1_NEG_10000000000: long = -10000000000;
     const TS1_NEG_456: long = -456;
     const TS1_NEG_1: long = -1;
@@ -33,7 +58,6 @@ export default function LongToString1Test(): void {
     const TS1_STR_1: string = "1";
     const TS1_STR_123: string = "123";
     const TS1_STR_10000000000: string = "10000000000";
-    beforeEach(async () => { await Utils.msSleep(TS1_30); });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING1_0100
