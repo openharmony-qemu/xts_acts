@@ -54,7 +54,7 @@ let panelFlag: inputmethodengine.PanelFlag = inputmethodengine.PanelFlag.FLA_FIX
 let panelRect: inputmethodengine.PanelRect = {
   landscapeRect: landscapeRect1,
   portraitRect: portraitRect1,
-}
+};
 
 export class KeyboardControllerNew {
   private mContext: InputMethodExtensionContext | undefined = undefined;
@@ -93,7 +93,7 @@ export class KeyboardControllerNew {
           subscriber = data;
           commoneventmanager.subscribe(subscriber, subscriberCallback);
           console.info(TAG + '====>scene subscribe finish====');
-        })
+        });
       } catch (err) {
         console.info(TAG + '====>createSubscriber err:' + JSON.stringify(err.message));
       }
