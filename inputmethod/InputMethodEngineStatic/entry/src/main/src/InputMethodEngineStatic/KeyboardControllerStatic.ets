@@ -34,7 +34,7 @@ export class KeyboardControllerStatic {
   private STATUS_BARPanel: inputMethodEngine.Panel | null = null;
   private immersive: int = 0;
   private storage: LocalStorage;
-  private consumeKeyEvents: boolean = true;
+  private consumeKeyEvents: boolean | undefined = true;
 
 
   constructor(context: InputMethodExtensionContext) {

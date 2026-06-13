@@ -427,12 +427,12 @@ export class KeyboardControllerStatic {
     };
     try {
       let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int },
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 }],
-        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width as int, height: 760 }],
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() },
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 }],
+        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width.toInt(), height: 760 }],
         fullScreenMode: false
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
@@ -456,11 +456,11 @@ export class KeyboardControllerStatic {
         landscapeRect: { left: 0, top: 500, width: 400, height: 300 },
         portraitRect: { left: 0, top: 1500, width: 300, height: 1000 },
         landscapeAvoidY: 500,
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 },
-        { left: 0, top: 247, width: this.displayInfo!.height as int, height: 150 }],
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
         portraitAvoidY: 1950,
-        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width as int, height: 760 },
-        { left: 0, top: 1695, width: this.displayInfo!.width as int, height: 150 }],
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
         fullScreenMode: true
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, enhancedPanelRect);
@@ -483,14 +483,14 @@ export class KeyboardControllerStatic {
     };
     try {
       let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
-        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.5 as int },
+        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.5).toInt() },
         landscapeAvoidY: 500,
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 },
-        { left: 0, top: 247, width: this.displayInfo!.height as int, height: 150 }],
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
         portraitAvoidY: 1960,
-        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width as int, height: 760 },
-        { left: 0, top: 1695, width: this.displayInfo!.width as int, height: 150 }],
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0400 updatePanelRectSync success');
@@ -533,10 +533,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int }
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
       commonEventPublishData = {
@@ -556,10 +556,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int }
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, keyboardRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0700 updatePanelRectSync success');
@@ -581,10 +581,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width * 10 as int,
-        height: this.displayInfo!.height * 10 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 10 as int,
-        height: this.displayInfo!.width * 10 as int }
+        landscapeRect: { left: 100, top: 100, width: (this.displayInfo!.width * 10).toInt(),
+        height: (this.displayInfo!.height * 10).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 10).toInt(),
+        height: (this.displayInfo!.width * 10).toInt() }
       };
       this.softKeyboardPanel!.updatePanelRectSync(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_0800 updatePanelRectSync success');
@@ -628,10 +628,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int }
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
       commonEventPublishData = {
@@ -652,10 +652,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int }
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() }
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, keyboardRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1100 updatePanelRectSync success');
@@ -678,10 +678,10 @@ export class KeyboardControllerStatic {
     };
     try {
       let keyboardRect: inputMethodEngine.PanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width * 10 as int,
-        height: this.displayInfo!.height * 10 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 10 as int,
-        height: this.displayInfo!.width * 10 as int }
+        landscapeRect: { left: 100, top: 100, width: (this.displayInfo!.width * 10).toInt(),
+        height: (this.displayInfo!.height * 10).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 10).toInt(),
+        height: (this.displayInfo!.width * 10).toInt() }
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, keyboardRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1200 updatePanelRectSync success');
@@ -729,12 +729,12 @@ export class KeyboardControllerStatic {
     };
     try {
       let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
-        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.4 as int },
-        portraitRect: { left: 100, top: 100, width: this.displayInfo!.height * 0.4 as int,
-        height: this.displayInfo!.width as int },
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 as int }],
-        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width as int, height: 760 as int }],
+        landscapeRect: { left: 100, top: 100, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.4).toInt() },
+        portraitRect: { left: 100, top: 100, width: (this.displayInfo!.height * 0.4).toInt(),
+        height: this.displayInfo!.width.toInt() },
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 }],
+        portraitInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.width.toInt(), height: 760 }],
         fullScreenMode: false
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
@@ -759,11 +759,11 @@ export class KeyboardControllerStatic {
         landscapeRect: { left: 0, top: 500, width: 400, height: 300 },
         portraitRect: { left: 0, top: 1500, width: 300, height: 1000 },
         landscapeAvoidY: 500,
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 },
-        { left: 0, top: 247, width: this.displayInfo!.height as int, height: 150 }],
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
         portraitAvoidY: 1950,
-        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width as int, height: 760 },
-        { left: 0, top: 1695, width: this.displayInfo!.width as int, height: 150 }],
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
         fullScreenMode: true
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLAG_CANDIDATE, enhancedPanelRect);
@@ -787,14 +787,14 @@ export class KeyboardControllerStatic {
     };
     try {
       let enhancedPanelRect: inputMethodEngine.EnhancedPanelRect = {
-        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width as int,
-        height: this.displayInfo!.height * 0.5 as int },
+        portraitRect: { left: 0, top: 0, width: this.displayInfo!.width.toInt(),
+        height: (this.displayInfo!.height * 0.5).toInt() },
         landscapeAvoidY: 500,
-        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height as int, height: 600 },
-        { left: 0, top: 247, width: this.displayInfo!.height as int, height: 150 }],
+        landscapeInputRegion: [{ left: 0, top: 500, width: this.displayInfo!.height.toInt(), height: 600 },
+        { left: 0, top: 247, width: this.displayInfo!.height.toInt(), height: 150 }],
         portraitAvoidY: 1960,
-        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width as int, height: 760 },
-        { left: 0, top: 1695, width: this.displayInfo!.width as int, height: 150 }],
+        portraitInputRegion: [{ left: 0, top: 1960, width: this.displayInfo!.width.toInt(), height: 760 },
+        { left: 0, top: 1695, width: this.displayInfo!.width.toInt(), height: 150 }],
       };
       await this.softKeyboardPanel!.updatePanelRect(inputMethodEngine.PanelFlag.FLG_FLOATING, enhancedPanelRect);
       console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_static_1600 updatePanelRectSync success');
