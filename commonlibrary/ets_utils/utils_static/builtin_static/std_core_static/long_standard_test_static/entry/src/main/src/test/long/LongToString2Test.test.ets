@@ -58,6 +58,7 @@ export default function LongToString2Test(): void {
     const T2S_STR_123: string = "123";
     const T2S_STR_200: string = "200";
     const T2S_STR_MIN_VALUE: string = "-9223372036854775808";
+    const T2S_STR_MAX_VALUE: string = "9223372036854775807";
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING2_0100
@@ -186,7 +187,7 @@ export default function LongToString2Test(): void {
     it('testLongToString2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(Long.MAX_VALUE);
       const result: string = value.toString();
-      expect(result).assertEqual("9223372036854775807");
+      expect(result).assertEqual(T2S_STR_MAX_VALUE);
     });
   });
 }

@@ -51,6 +51,7 @@ export default function LongToInt1Test(): void {
     const TI1_INT_MAX: long = 2147483647;
     const TI1_OVERFLOW_ABOVE_MAX: long = 2147483648;
     const TI1_LARGE_POS: long = 10000000000;
+    const TI1_LARGE_POS_TRUNCATED_INT: int = 1410065408;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOINT1_0100
@@ -190,7 +191,7 @@ export default function LongToInt1Test(): void {
       const value = new Long(TI1_LARGE_POS);
       const result: int = value.toInt();
       expect(result !== TI1_LARGE_POS).assertTrue();
-      expect(result).assertEqual(1410065408);
+      expect(result).assertEqual(TI1_LARGE_POS_TRUNCATED_INT);
     });
 
     /**

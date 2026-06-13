@@ -1390,7 +1390,7 @@ export default function LongChainTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0990
      * @tc.name testLongChain99
      * @tc.desc Verify equals: MAX.equals(MAX) && MIN.equals(MIN) = true
      * @tc.size MEDIUMTEST

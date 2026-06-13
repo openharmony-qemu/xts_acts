@@ -97,6 +97,8 @@ export default function LongToStringRadixTest(): void {
     const RADIX_STR_16: string = "ff";
     const RADIX_STR_17: string = "f0";
     const RADIX_STR_18: string = "e3";
+    const RADIX_STR_19_LOW: string = "d";
+    const RADIX_STR_19_HIGH: string = "8";
 
     const RADIX_STR_20: string = "cf";
     const RADIX_STR_21: string = "c3";
@@ -357,7 +359,7 @@ export default function LongToStringRadixTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TO_STRING_RADIX_1800
      * @tc.name testLongToStringRadix018
-     * @tc.desc Verify new Long(255).toString(19) returns exact "d8" (13*19 + 8 = 255)
+     * @tc.desc Verify new Long(255).toString(19) returns exact "d & 8" (13*19 + 8 = 255)
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -365,7 +367,7 @@ export default function LongToStringRadixTest(): void {
     it('testLongToStringRadix018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value: Long = new Long(RADIX_VAL);
       const result: string = value.toString(RADIX_19);
-      expect(result).assertEqual("d8");
+      expect(result).assertEqual(RADIX_STR_19_LOW + RADIX_STR_19_HIGH);
     });
 
     /**

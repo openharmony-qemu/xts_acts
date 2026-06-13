@@ -576,8 +576,9 @@ export default function LongCrossTypeSubDivTest(): void {
      * @tc.level LEVEL2
      */
     it('testLongCrossSubDiv039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = Long.toString((CSD_INT_MAX - CSD_SHORT_32767) as long);
       const result: Long = new Long(CSD_INT_MAX).sub(new Long(CSD_SHORT_32767));
-      expect(result.toString()).assertEqual("2147450880");
+      expect(result.toString()).assertEqual(expected);
     });
 
     /**

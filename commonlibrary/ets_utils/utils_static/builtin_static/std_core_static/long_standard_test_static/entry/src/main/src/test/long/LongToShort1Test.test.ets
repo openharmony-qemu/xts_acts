@@ -52,6 +52,7 @@ export default function LongToShort1Test(): void {
     const TS1_SHORT_MAX: long = 32767;
     const TS1_OVERFLOW_ABOVE_MAX: long = 32768;
     const TS1_LARGE_POS: long = 100000;
+    const TS1_LARGE_POS_TRUNCATED_SHORT: short = -31072 as short;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_TOSHORT1_0100
@@ -195,7 +196,7 @@ export default function LongToShort1Test(): void {
       const value = new Long(TS1_LARGE_POS);
       const result: short = value.toShort();
       expect(result !== TS1_LARGE_POS).assertTrue();
-      expect(result).assertEqual(-31072);
+      expect(result).assertEqual(TS1_LARGE_POS_TRUNCATED_SHORT);
       expect(result >= TS1_SHORT_MIN).assertTrue();
       expect(result <= TS1_SHORT_MAX).assertTrue();
     });
