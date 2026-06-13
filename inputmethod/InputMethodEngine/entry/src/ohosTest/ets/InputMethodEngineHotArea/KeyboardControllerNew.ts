@@ -31,6 +31,31 @@ let panelInfo = {
   flag: inputmethodengine.PanelFlag.FLA_FIXED
 };
 
+let disp = display.getDefaultDisplaySync();
+let portraitHeight = Math.floor((disp.height > disp.width ? disp.height : disp.width) * 0.4);
+let portraitWidth = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.7);
+let portraitTop = Math.floor((disp.height > disp.width ? disp.height : disp.width) - portraitHeight);
+let landscapeHeight = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.4);
+let landscapeWidth = Math.floor((disp.height > disp.width ? disp.height : disp.height) * 0.7);
+let landscapeTop = Math.floor((disp.height > disp.width ? disp.width : disp.height) - landscapeHeight);
+let landscapeRect1: window.Rect = {
+  left: 100,
+  top: landscapeTop,
+  width: landscapeWidth,
+  height: landscapeHeight
+};
+let portraitRect1: window.Rect = {
+  left: 100,
+  top: portraitTop,
+  width: portraitWidth,
+  height: portraitHeight
+};
+let panelFlag: inputmethodengine.PanelFlag = inputmethodengine.PanelFlag.FLA_FIXED;
+let panelRect: inputmethodengine.PanelRect = {
+  landscapeRect: landscapeRect1,
+  portraitRect: portraitRect1,
+}
+
 export class KeyboardControllerNew {
   private mContext: InputMethodExtensionContext | undefined = undefined;
   private softKeyboardPanel: inputmethodengine.Panel = null;
@@ -43,51 +68,16 @@ export class KeyboardControllerNew {
 
   public onCreate(context: InputMethodExtensionContext): void {
     this.mContext = context;
-    this.windowHeight = this.display_info.width;
-    this.windowWidth = this.display_info.height * 0.4;
     let that = this;
     inputMethodAbility.on('inputStop', () => {
       this.mContext.destroy((err, data) => {
-        console.info(TAG + '====>inputMethodEngine destorey err:' + JSON.stringify(err));
-        console.info(TAG + '====>inputMethodEngine destorey data:' + JSON.stringify(data));
+        console.info(TAG + `====>inputStop err:${JSON.stringify(err)},data:${JSON.stringify(data)}`);
       });
-    });
-
-    inputMethodEngine.on('inputStart', async (keyboardController, TextInputClient) => {
-      this.keyboardController = keyboardController;
-      this.TextInputClient = TextInputClient;
-      console.info(TAG + '====>inputMethodEngine inputStart into');
     });
     inputMethodAbility.on('inputStart', async (keyboardController, InputClient) => {
       this.InputClient = InputClient;
       console.info(TAG + '====>inputMethodAbility inputStart into');
     });
-
-    let disp = display.getDefaultDisplaySync();
-    let portraitHeight = Math.floor((disp.height > disp.width ? disp.height : disp.width) * 0.4);
-    let portraitWidth = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.7);
-    let portraitTop = Math.floor((disp.height > disp.width ? disp.height : disp.width) - portraitHeight);
-    let landscapeHeight = Math.floor((disp.height > disp.width ? disp.width : disp.height) * 0.4);
-    let landscapeWidth = Math.floor((disp.height > disp.width ? disp.height : disp.height) * 0.7);
-    let landscapeTop = Math.floor((disp.height > disp.width ? disp.width : disp.height) - landscapeHeight);
-    let landscapeRect1: window.Rect = {
-      left: 100,
-      top: landscapeTop,
-      width: landscapeWidth,
-      height: landscapeHeight
-    };
-    let portraitRect1: window.Rect = {
-      left: 100,
-      top: portraitTop,
-      width: portraitWidth,
-      height: portraitHeight
-    };
-    let panelFlag: inputmethodengine.PanelFlag = inputmethodengine.PanelFlag.FLA_FIXED;
-    let panelRect: inputmethodengine.PanelRect = {
-      landscapeRect: landscapeRect1,
-      portraitRect: portraitRect1,
-    }
-
     inputMethodAbility.createPanel(this.mContext, panelInfo).then(async (inputPanel: inputmethodengine.Panel) => {
       this.softKeyboardPanel = inputPanel;
       console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
@@ -95,11 +85,10 @@ export class KeyboardControllerNew {
       console.info(TAG + '====>ssetUiContent start====');
       await this.softKeyboardPanel.setUiContent('testability/pages/HotArea');
       console.info(TAG + '====>createPanel success====');
-      try{
+      try {
         let commonEventSubscribeInfo = {
           events: ['inputMethodEngineHotAreaTest']
-        };
-        
+        }; 
         commoneventmanager.createSubscriber(commonEventSubscribeInfo).then(function (data) {
           subscriber = data;
           commoneventmanager.subscribe(subscriber, subscriberCallback);
@@ -111,7 +100,6 @@ export class KeyboardControllerNew {
     }).catch((err) => {
       console.info(TAG + `====>createPanel catch code: ${err.code}, message: ${err.message}`);
     });
-
     function subscriberCallback(err, data): void {
       console.info(TAG + '====>receive event err: ' + JSON.stringify(err));
       console.info(TAG + '====>receive event data ' + JSON.stringify(data));
@@ -122,17 +110,7 @@ export class KeyboardControllerNew {
           break;
       }
     }
-
-    let commonEventSubscribeInfo = {
-      events: ['inputMethodEngineHotAreaTest']
-    };
-
     let subscriber;
-    commoneventmanager.createSubscriber(commonEventSubscribeInfo).then(function (data) {
-      subscriber = data;
-      commoneventmanager.subscribe(subscriber, subscriberCallback);
-      console.info(TAG + '====>scene subscribe finish====');
-    });
   }
 
   private publishCallback(err): void {
