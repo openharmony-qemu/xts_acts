@@ -50,7 +50,7 @@ let portraitRect1: window.Rect = {
   width: portraitWidth,
   height: portraitHeight
 };
-let panelFlag: inputmethodengine.PanelFlag = inputmethodengine.PanelFlag.FLA_FIXED;
+let panelFlag: inputmethodengine.PanelFlag = inputmethodengine.PanelFlag.FLG_FIXED;
 let panelRect: inputmethodengine.PanelRect = {
   landscapeRect: landscapeRect1,
   portraitRect: portraitRect1,
