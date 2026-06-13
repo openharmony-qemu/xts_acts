@@ -17,7 +17,7 @@ import { describe, it, expect, beforeAll, afterAll , Level, Size, TestType} from
 import data from '@ohos.telephony.data';
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import {common } from '@kit.AbilityKit';
+import { common } from '@kit.AbilityKit';
 
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
