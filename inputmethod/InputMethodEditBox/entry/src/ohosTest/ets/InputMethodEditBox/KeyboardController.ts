@@ -2088,7 +2088,7 @@ export class KeyboardController {
   }
 
   private async Sub_InputMethod_IME_updatePanelRectSync_2100(): Promise<void> {
-    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_1300 data');
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_2100 data');
     let commonEventPublishData = {
       data: 'FAILED'
     };
@@ -2101,21 +2101,21 @@ export class KeyboardController {
         fullScreenMode: false
       };
       await this.softKeyboardPanel.updatePanelRect(undefined, enhancedPanelRect);
-      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_1300 updatePanelRectSync success');
-      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_1300', commonEventPublishData, this.publishCallback);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_2100 updatePanelRectSync success');
+      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_2100', commonEventPublishData, this.publishCallback);
     } catch (err) {
-      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_1300 err.code:${err.code},err.message:${err.message}`);
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_2100 err.code:${err.code},err.message:${err.message}`);
       if (err.code === 401) {
         commonEventPublishData = {
           data: 'SUCCESS'
         };
       }
-      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_1300', commonEventPublishData, this.publishCallback);
+      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_2100', commonEventPublishData, this.publishCallback);
     };
   }
 
   private async Sub_InputMethod_IME_updatePanelRectSync_2200(): Promise<void> {
-    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_1300 data');
+    console.info(TAG + '====>receive Sub_InputMethod_IME_updatePanelRectSync_2200 data');
     let commonEventPublishData = {
       data: 'FAILED'
     };
@@ -2128,16 +2128,16 @@ export class KeyboardController {
         fullScreenMode: false
       };
       await this.softKeyboardPanel.updatePanelRect(null, enhancedPanelRect);
-      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_1300 updatePanelRectSync success');
-      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_1300', commonEventPublishData, this.publishCallback);
+      console.info(TAG + '====>Sub_InputMethod_IME_updatePanelRectSync_2200 updatePanelRectSync success');
+      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_2200', commonEventPublishData, this.publishCallback);
     } catch (err) {
-      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_1300 err.code:${err.code},err.message:${err.message}`);
+      console.info(TAG + `====>Sub_InputMethod_IME_updatePanelRectSync_2200 err.code:${err.code},err.message:${err.message}`);
       if (err.code === 401) {
         commonEventPublishData = {
           data: 'SUCCESS'
         };
       }
-      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_1300', commonEventPublishData, this.publishCallback);
+      commoneventmanager.publish('Sub_InputMethod_IME_updatePanelRectSync_2200', commonEventPublishData, this.publishCallback);
     };
   }
 
