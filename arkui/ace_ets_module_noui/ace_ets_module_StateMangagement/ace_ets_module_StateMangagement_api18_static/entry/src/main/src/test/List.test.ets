@@ -53,6 +53,10 @@ import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVD
 import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
 import AppStorageV2Api from './AppStorageV2/AppStorageV2Api.test';
 import DumpObject from './DumpObjectTest/DumpObject.test';
+import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
+import GlobalReusePool002Test from './uiutilsTest/GlobalReusePool002.test';
+import GlobalReusePool003Test from './uiutilsTest/GlobalReusePool003.test';
+
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -94,4 +98,7 @@ export default function testsuite() {
   SVDeepListenObservedBuiltInTest();
   AppStorageV2Api();
   DumpObject();
+  GlobalReusePool002Test();
+  GlobalReusePool003Test();
+  GlobalReusePoolTest();
 }
