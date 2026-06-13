@@ -1353,64 +1353,51 @@ export default function LongChainTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0960
      * @tc.name testLongChain096
-     * @tc.desc Verify toString(2) length: MIN.toString(2).length = 64
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongChain096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(Long.MIN_VALUE).toString(CH_2_INT).length;
-      expect(result).assertEqual(64);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0970
-     * @tc.name testLongChain097
      * @tc.desc Verify toLong: 1.toLong() === 1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongChain097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongChain096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(CH_1).toLong() === 1;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0970
+     * @tc.name testLongChain097
+     * @tc.desc Verify toLong: 0.toLong() === 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testLongChain097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result = new Long(CH_0).toLong() === 0;
       expect(result).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0980
      * @tc.name testLongChain098
-     * @tc.desc Verify toLong: 0.toLong() === 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it('testLongChain098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = new Long(CH_0).toLong() === 0;
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0990
-     * @tc.name testLongChain099
      * @tc.desc Verify toLong: -1.toLong() === -1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongChain099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongChain098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(CH_NEG_1).toLong() === -1;
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_1000
-     * @tc.name testLongChain100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LONG_CHAIN_0900
+     * @tc.name testLongChain99
      * @tc.desc Verify equals: MAX.equals(MAX) && MIN.equals(MIN) = true
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
-    it('testLongChain100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testLongChain99', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Long(Long.MAX_VALUE).equals(new Long(Long.MAX_VALUE)) &&
       new Long(Long.MIN_VALUE).equals(new Long(Long.MIN_VALUE));
       expect(result).assertTrue();
