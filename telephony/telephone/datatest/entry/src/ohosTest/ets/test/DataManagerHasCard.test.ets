@@ -830,7 +830,68 @@ export default function dataManagerTest() {
       }
       console.info(`${caseName} test end `);
     });
-    
+
+    /**
+     * @tc.name   testTelephonyDataShowSystemApnSettings0100
+     * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0100
+     * @tc.desc   Test ShowAppNetPolicySetting undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyDataShowSystemApnSettings0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testTelephonyDataShowSystemApnSettings0100";
+      console.info(`${caseName} test start `);
+      try{
+        let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+        data.showSystemApnSettings(undefined).then(() => {
+          console.info(`${caseName} showSystemApnSettings success`);
+          ExpectFail();
+          done();
+        }).catch((error: BusinessError)=>{
+          console.info(`${caseName} showSystemApnSettings failed, error:${JSON.stringify(error)}`);
+          console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+          ExpectTrue(error == null);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test end `);
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyDataShowSystemApnSettings0200
+     * @tc.number SUB_Telephony_Data_ShowSystemApnSettings_0200
+     * @tc.desc   Test ShowAppNetPolicySetting null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testTelephonyDataShowSystemApnSettings0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testTelephonyDataShowSystemApnSettings0200";
+      console.info(`${caseName} test start `);
+      try{
+        let context:common.UIAbilityContext = getContext() as common.UIAbilityContext;
+        data.showSystemApnSettings(null).then(() => {
+          console.info(`${caseName} showSystemApnSettings success`);
+          ExpectFail();
+          done();
+        }).catch((error: BusinessError)=>{
+          console.info(`${caseName} showSystemApnSettings failed, error:${JSON.stringify(error)}`);
+          console.info(`${caseName} fail, errInfo ->${JSON.stringify(error)}`);
+          ExpectTrue(error == null);
+          done();
+        })
+      } catch (err) {
+        console.info(`${caseName} err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test end `);
+      }
+    });
   });
 }
 
