@@ -174,7 +174,7 @@ export default function audioFramework() {
       await sleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info(`${TagFrmwk}: afterAll: Test suite-level cleanup condition`);
     })
 
