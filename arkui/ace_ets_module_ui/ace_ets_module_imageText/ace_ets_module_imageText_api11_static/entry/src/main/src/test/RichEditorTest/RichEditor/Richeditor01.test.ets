@@ -324,7 +324,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_0900 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_0900 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -353,7 +353,7 @@ export default function ActsRichEditorTest() {
     //     // expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1000 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1000 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -374,7 +374,7 @@ export default function ActsRichEditorTest() {
     //     // expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1100 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1100 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -398,7 +398,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1200 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1200 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -419,7 +419,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1300 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1300 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -440,7 +440,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1400 END ');
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1400 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -724,7 +724,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2200 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2200 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -764,7 +764,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2300 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -796,7 +796,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2400 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2400 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -823,7 +823,7 @@ export default function ActsRichEditorTest() {
     //       expect(RichEditorSelection.spans).assertEqual(null)
     //       console.info('Stage_RichEditor_Test_2500 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -866,7 +866,7 @@ export default function ActsRichEditorTest() {
     //       expect(RichEditorImageSpanResult.offsetInSpan[1]).assertEqual(100)
     //       console.info('Stage_RichEditor_Test_2600 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2600 ERR  ' + JSON.stringify(err));
     //     }
     //     done();

@@ -88,6 +88,7 @@ it('testCounterGetInspectorByKey_static_010', Level.LEVEL0, async (done: () => v
         console.info("component obj is: " + JSON.stringify(obj));
         expect(strJson).not().assertUndefined();
       }catch(error) {
+        expect(false).assertEqual(true);
         console.info('testCounterGetInspectorByKey_static_010 error:' + JSON.stringify(error));
       }
       console.info('testGetInspectorByKey END');

@@ -37,7 +37,7 @@ export default function editMenuOptions() {
         }
       } catch (err) {
         console.error("push editMenuOptions page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
       done();
     });

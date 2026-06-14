@@ -36,7 +36,7 @@ export default function TextClockJsunit() {
         }
       } catch (err) {
         console.error("push TextClock page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
       done();
     });

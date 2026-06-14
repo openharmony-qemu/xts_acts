@@ -193,7 +193,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -247,7 +247,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0700 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -299,7 +299,7 @@ export default function textInputTest() {
     //       expect(obj.getElement('$attrs').getString('caretPosition')).assertEqual("0");
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_TextInput_CaretPosition_static_0900 ERR  ' + JSON.stringify(err));
     //     }
     //     done();

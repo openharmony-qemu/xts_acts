@@ -73,6 +73,7 @@ export default function search_center() {
           console.info("push search_center page 2");
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push search_center page error:" + err);
       }
       console.info("search_center beforeEach end");

@@ -1902,7 +1902,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
-          //  expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
+          // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 END ');
           done();
         } catch (err) {

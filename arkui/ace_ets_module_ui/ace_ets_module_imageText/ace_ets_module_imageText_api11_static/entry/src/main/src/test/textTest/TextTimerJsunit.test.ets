@@ -143,6 +143,7 @@ export default function textTimerJsunit() {
           done();
       } catch (error) {
         console.error("textTimer_static_0300 error:" + error);
+        expect(false).assertEqual(true);
       }
     });
   })

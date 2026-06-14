@@ -37,7 +37,7 @@ export default function SetMenuOptionsTest() {
         }
       } catch (err) {
         console.error("push SetMenuOptionsTest page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
       done();
     });

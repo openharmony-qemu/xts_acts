@@ -72,7 +72,7 @@ export default function marqueeUIJsunit() {
         }
       } catch (err) {
           console.error("push marqueeUIJsunit page error:" + err);
-          
+          expect(false).assertEqual(true);
       }
     });
 

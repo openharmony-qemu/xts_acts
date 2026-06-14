@@ -84,7 +84,7 @@ export default function checkBoxGroupTest() {
         expect(obj.$attrs.unselectedColor).assertEqual('#FF123456');
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001 END ');
       } catch (err) {
-        
+        expect(false).assertEqual(true);
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -108,7 +108,7 @@ export default function checkBoxGroupTest() {
         expect(obj.$attrs.selectAll).assertEqual('true');
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002 END ');
       } catch (err) {
-        
+        expect(false).assertEqual(true);
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -132,7 +132,7 @@ export default function checkBoxGroupTest() {
         expect(obj.$attrs.selectedColor).assertEqual('#FF321456');
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003 END ');
       } catch (err) {
-        
+        expect(false).assertEqual(true);
         console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003 ERR  ' + JSON.stringify(err));
       }
       done();

@@ -70,7 +70,7 @@ export default function search_caret() {
         }
       } catch (err) {
         console.error("push search_caret page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
     });
 

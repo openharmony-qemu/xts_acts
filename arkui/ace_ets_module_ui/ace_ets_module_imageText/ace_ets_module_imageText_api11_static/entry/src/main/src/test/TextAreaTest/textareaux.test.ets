@@ -146,7 +146,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_MaxLength_static_0300 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -193,7 +193,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_MaxLength_static_0500 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -382,7 +382,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0300 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -405,7 +405,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0400 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -428,7 +428,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0500 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -499,7 +499,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     
+    //     expect(false).assertEqual(true);
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0800 err  :' + JSON.stringify(err))
     //     done()
     //   }

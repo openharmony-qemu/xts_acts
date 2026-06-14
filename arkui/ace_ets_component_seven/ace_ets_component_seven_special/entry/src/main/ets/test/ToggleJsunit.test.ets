@@ -37,7 +37,7 @@ export default function toggleJsunit() {
         }
       } catch (err) {
         console.error("push Toggle page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
       done();
     });

@@ -1322,7 +1322,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("20.00fp");
     //       console.info('ArkUX_Stage_Span_Font_FontSize_static_1000 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontSize_static_1000 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1406,7 +1406,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0300 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1462,7 +1462,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0500 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1574,7 +1574,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0300 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1630,7 +1630,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0500 END ');
     //     } catch (err) {
-    //       
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();

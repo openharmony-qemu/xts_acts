@@ -57,7 +57,7 @@ export default function ContainerSpanModifierTest() {
         }
       } catch (err) {
         console.error("push ContainerSpanModifierTest page error: " + err);
-        
+        expect(false).assertEqual(true);
       }
     });
 
