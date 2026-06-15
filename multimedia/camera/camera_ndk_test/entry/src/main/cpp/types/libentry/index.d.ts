@@ -687,12 +687,6 @@ export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
 
-export const getAutomotiveCameraPosition: () => number;
-
-export const getAutomotiveCameraPositionErrorParameter: () => number;
-
-export const enumTestAutomotiveCameraPosition: () => number;
-
 export const getEnumNotificationName: (index: number) => number;
 
 export const getEnumProximityStateForFocus: (index: number) => number;
@@ -720,3 +714,9 @@ export const setMirror: (index: number, isMirror: boolean) => number;
 export const setLocation: (index: number, latitude: number, longitude: number, altitude: number) => number;
 
 export const captureWithCaptureSettingExt: (index: number) => number;
+
+export const getAutomotiveCameraPosition: () => number;
+
+export const getAutomotiveCameraPositionErrorParameter: () => number;
+
+export const enumTestAutomotiveCameraPosition: () => number;

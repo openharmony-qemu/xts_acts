@@ -464,7 +464,7 @@ Camera_ErrorCode NDKCamera::GetAutomotiveCameraPosition(void)
             LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition position: %{public}d", position);
             break;
         default:
-            return -1;
+            break;
     }
     if (ret_ != CAMERA_OK) {
         LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition failed.");
@@ -479,6 +479,7 @@ Camera_ErrorCode NDKCamera::GetAutomotiveCameraPositionErrorParameter(void)
         LOG("ndkXTS OH_CameraDevice_GetAutomotiveCameraPosition with null params failed as expected.");
     }
     return ret_;
+}
 
 Camera_ErrorCode NDKCamera::TestOHGetSensorPixelArraySizeWithoutCamera(void)
 {
