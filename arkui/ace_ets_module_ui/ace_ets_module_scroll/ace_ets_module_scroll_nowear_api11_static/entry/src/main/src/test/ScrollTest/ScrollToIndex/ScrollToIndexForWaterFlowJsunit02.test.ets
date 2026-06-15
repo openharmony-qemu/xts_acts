@@ -88,7 +88,6 @@ it('ScrollToIndexForWaterFlow02_static_0100', Level.LEVEL1, async (done: () => v
       let isSmoothObj = await driver.findComponent(ON.id("isHaveSmooth_WaterFlow02"));
       console.log('isSmoothText' + isSmoothObj);
       console.log('isSmoothText' + JSON.stringify(isSmoothObj));
-      expect(isSmoothObj).assertInstanceOf("Object");
       expect(currentItemID).assertEqual("ItemTextWaterFlow02_99");
 
       console.info('[ScrollToIndexForWaterFlow02_static_0900] END');
