@@ -542,9 +542,9 @@ int VideoEncodeHevcCapability0200Test()
 
 int VideoEncodeHevcCapability0300Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_IsHardware(cap));
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
+        ASSERT_EQ(true, OH_AVCapability_IsHardware(cap_hevc));
         return 0;
     }
     return 0;
@@ -552,9 +552,9 @@ int VideoEncodeHevcCapability0300Test()
 
 int VideoEncodeHevcCapability0400Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        const char *name = OH_AVCapability_GetName(cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
+        const char *name = OH_AVCapability_GetName(cap_hevc);
         ASSERT_NE(name, nullptr);
         ASSERT_GT(strlen(name), 0);
         return 0;
