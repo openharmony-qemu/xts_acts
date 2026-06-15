@@ -62,6 +62,10 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     var cmd = 'aa start -d 0 -a com.open.harmony.actsacejumpbetweenwebdevthreetest.MainAbility' + ' -b '
       + abilityDelegatorArguments.bundleName
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
+    var user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     var debug = abilityDelegatorArguments.parameters["-D"];
     if (debug == 'true') {
       cmd += ' -D';

@@ -6524,5 +6524,252 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDebuggingManager with valid parameter.
+     *            测试点：正常获取音频调试管理器
+     *            测试输入：有效的输出参数指针
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS，manager 不为 nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100
+     * @tc.desc   Test OH_AudioManager_GetAudioDebuggingManager with nullptr parameter.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 输出参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_GETMANAGER_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintAppInfo with valid parameters and fd=-1.
+     *            测试点：正常打印应用快照到日志
+     *            测试输入：有效的 manager，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintAppInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，fd=-1
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTAPPINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with valid parameters and fd=-1.
+     *            测试点：正常打印音频播放快照到日志
+     *            测试输入：有效的 manager，有效的 renderer，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 renderer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintRendererInfo with nullptr renderer.
+     *            测试点：renderer 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 renderer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTRENDERERINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with valid parameters and fd=-1.
+     *            测试点：正常打印录音快照到日志
+     *            测试输入：有效的 manager，有效的 capturer，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 capturer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintCapturerInfo with nullptr capturer.
+     *            测试点：capturer 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 capturer 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTCAPTURERINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with valid parameters and fd=-1.
+     *            测试点：正常打印音频会话快照到日志
+     *            测试输入：有效的 manager，有效的 session，fd=-1（输出到日志）
+     *            测试输出：返回 AUDIOCOMMON_RESULT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_RETURN_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with nullptr manager.
+     *            测试点：manager 参数为 nullptr 时返回错误码
+     *            测试输入：nullptr 作为 manager 参数，nullptr 作为 session 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200
+     * @tc.desc   Test OH_AudioDebuggingManager_PrintSessionInfo with nullptr session.
+     *            测试点：session 参数为 nullptr 时返回错误码
+     *            测试输入：有效的 manager，nullptr 作为 session 参数
+     *            测试输出：返回 AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIODEBUGGINGMANAGER_PRINTSESSIONINFO_PARAM_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }

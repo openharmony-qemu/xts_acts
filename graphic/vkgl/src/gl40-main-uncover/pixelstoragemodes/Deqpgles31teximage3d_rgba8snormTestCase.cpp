@@ -1,0 +1,64 @@
+/*
+ * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <climits>
+#include <gtest/gtest.h>
+#include "../Deqpgles31BaseFunc.h"
+#include "../ActsDeqpgles310010TestSuite.h"
+#include "shrinkdefine.h"
+
+using namespace std;
+using namespace testing::ext;
+using namespace OHOS;
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009592,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.0_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009593,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.1_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009594,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.16_0_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009595,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.1_1_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009596,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.16_1_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009597,
+        "KHR-GL40.pixelstoragemodes.t",
+        "eximage3d.rgba8snorm.16_16_0");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009598,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.1_1_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009599,
+        "KHR-GL40.pixelstoragemodes.",
+        "teximage3d.rgba8snorm.16_1_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009600,
+        "KHR-GL40.pixelstoragemodes.t",
+        "eximage3d.rgba8snorm.16_16_1");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310010TestSuite, TestCase_009601,
+        "KHR-GL40.pixelstoragemodes.t",
+        "eximage3d.rgba8snorm.16_16_4");

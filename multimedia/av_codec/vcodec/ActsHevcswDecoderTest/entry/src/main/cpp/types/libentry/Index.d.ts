@@ -18,4 +18,18 @@
  * @param caseNumber 测试用例编号 (0-2)
  * @returns 测试结果，0 表示成功，-1 表示失败
  */
-export const runFuncTest: (caseNumber: number) => Promise<number>;
+export const VideoDecodeSyncSs265Func0010Test: () => number;
+export const VideoDecodeSyncSs265Func0020Test: () => number;
+export const VideoSwdecH265BlankFrame0010Test: () => number;
+export const VideoSwdecH265Speed0010Test: () => number;
+export const VideoSwdecH265Speed0020Test: () => number;
+export const VideoSwdecH265Speed0030Test: () => number;
+export const VideoSwdecH265Speed0040Test: () => number;
+export const VideoSwdecH265Speed0050Test: () => number;
+export const VideoSwdecH265Speed0060Test: () => number;
+export const VideoSwdecH265Speed0070Test: () => number;
+export const VideoSwdecH265Speed0080Test: () => number;
+export const VideoSwdecH265Speed0090Test: () => number;
+export const VideoSwdecH265SurfExpired0010Test: () => number;
+export const VideoSwdecH265SetMaxInputSize0010Test: () => number;
+export const VideoSwdecH265GetCropSize0010Test: () => number;

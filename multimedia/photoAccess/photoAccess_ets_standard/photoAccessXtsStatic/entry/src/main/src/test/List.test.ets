@@ -9,6 +9,15 @@ import getAlbumIdByLPathTest from "./photoAccessHelper/getAlbumIdByLPath.test";
 import PhotoGetAssetsTestSupp from "./photoAccessHelper/PhotoGetAssets.test";
 import MediaLibraryAvailabilitySupp from "./photoAccessHelper/MediaLibraryAvailability.test";
 import photoMediaLibraryNoPermissionStatic from "./photoAccessHelper/MediaLibraryAvailabilityNoPermission.test";
+import getAssetsByPredicatesTest from "./photoAccessHelper/getAssetsByPredicates.test";
+import createPhotoAssetTest from "./photoAccessHelper/createPhotoAsset.test";
+import createAssetTest from "./photoAccessHelper/createAsset.test";
+import getAlbumsStaticTest from "./photoAccessHelper/getAlbums.test";
+import getAssetsStaticTest from "./photoAccessHelper/getAssets.test";
+import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
+import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
+import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
+import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
@@ -22,4 +31,13 @@ export default function testsuite(): void {
   FetchResultStatic();
   PhotoGetAssetsTestSupp();
   getAlbumIdByLPathTest();
+  getThumbnailStaticTest();
+  MediaAssetRequestImageSuppStatic();
+  createPhotoAssetTest();
+  getAssetsByPredicatesTest();
+  createAssetTest();
+  getAlbumsStaticTest();
+  getAssetsStaticTest();
+  AddResourceChangeRequestUrlSuppTest();
+  CommitModifySuppTest();
 }

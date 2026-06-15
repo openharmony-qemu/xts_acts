@@ -43,7 +43,7 @@ class Parent {
 class Child extends Parent {
 }
 
-export default function MapGetTest() {
+export default function MapGetTest(): void {
   describe('MapGetTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

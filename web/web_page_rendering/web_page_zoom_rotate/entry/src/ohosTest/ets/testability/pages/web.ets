@@ -18,11 +18,13 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct Index {
   controller: WebController = new WebController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitInitialScale";
   @State loadedResource: string = "";
   @State progress: string = "";
@@ -70,6 +72,10 @@ struct Index {
     events_emitter.off(153080)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -114,7 +120,7 @@ struct Index {
               this.scaleChange = true;
               await waitForExist(() => this.scaleChange, this.str,"true");
               this.isComplete = -1;
-              this.controller.loadUrl({ url: "https://gitee.com/" })
+              this.controller.loadUrl({ url: $rawfile('index.html') })
               await waitForExist(() => this.isComplete, this.str, 0);
               break;
             }

@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-void test_call(void);
-void get_call(void);
+void TestCall(void);
+void GetCall(void);
 
 void TestC(void)
 {
-    test_call();
-    get_call();
+    TestCall();
+    GetCall();
 }

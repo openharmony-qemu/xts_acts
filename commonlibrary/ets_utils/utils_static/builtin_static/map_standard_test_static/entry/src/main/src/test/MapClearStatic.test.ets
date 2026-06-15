@@ -21,7 +21,7 @@ class TestClass2 {
   a:int;
   b:int;
 }
-export default function MapClearTest() {
+export default function MapClearTest(): void {
   describe('MapClearTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

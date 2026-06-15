@@ -15,6 +15,10 @@
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { buffer } from '@kit.ArkTS';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function bufferTest() {
   describe("ActsBufferTest", () => {
     /**

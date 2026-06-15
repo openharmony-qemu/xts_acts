@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -149,7 +150,7 @@ export default function ImageGetComponentSupp(): void {
       getSupportedCameraDeviceArray();
       getCameraInput();
 
-      const size: image.Size = { height: 8192, width: 8192 };
+      const size: image.Size = { height: 480, width: 480 };
       mImageReceiver = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       mReceiverSurfaceId =await mImageReceiver?.getReceivingSurfaceId();
       console.info(TAG, 'mReceiverSurfaceId:', mReceiverSurfaceId);
@@ -160,10 +161,11 @@ export default function ImageGetComponentSupp(): void {
     })
     afterEach(async (): Promise<void> => {
       console.info('afterEach case');
-      await sleep(500)
+      await sleep(500);
     })
     afterAll(async (): Promise<void> => {
       console.info('afterAll case');
+      await sleep(500);
     })
 
     /**
@@ -177,8 +179,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -221,8 +223,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0200';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -265,8 +267,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0300';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -311,8 +313,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_AsyncCallback_static_0400';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -356,8 +358,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_release_callback_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_release_callback_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -400,8 +402,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_release_callback_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_release_callback_static_0200';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -437,8 +439,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_Promise_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_Promise_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -474,8 +476,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_Promise_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_Promise_static_0200';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -512,8 +514,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_Promise_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_Promise_static_0300';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -550,8 +552,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_Promise_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_Promise_static_0400';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -587,8 +589,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getComponent_Promise_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getComponent_Promise_static_0500';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -622,8 +624,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_readNextImage_Promise_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_readNextImage_Promise_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       receiver!.onImageArrival(() => {
@@ -657,8 +659,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getBufferData_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getBufferData_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       try {
@@ -705,8 +707,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getBufferData_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getBufferData_static_0200';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       try {
@@ -755,8 +757,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getBufferData_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getBufferData_static_0300';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       try {
@@ -803,8 +805,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getMetadata_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getMetadata_static_0100';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       try {
@@ -854,8 +856,8 @@ export default function ImageGetComponentSupp(): void {
     it('SUB_MEDIA_IMAGE_getBufferData_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const testName = 'SUB_MEDIA_IMAGE_getBufferData_static_0400';
       let size: image.Size = {
-        height: 8192,
-        width: 8192
+        height: 480,
+        width: 480
       }
       let receiver: image.ImageReceiver | undefined = image.createImageReceiver(size, image.ImageFormat.JPEG, 8);
       try {

@@ -103,7 +103,7 @@ export default function textObscuredTest() {
           expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual("30");
           console.info('ArkUX_Redacted_Text_static_0090 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Redacted_Text_static_0090 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -131,7 +131,7 @@ export default function textObscuredTest() {
           expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual("0");
           console.info('ArkUX_Redacted_Text_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Redacted_Text_static_0100 ERR  ' + err);
         }
         done();
@@ -159,7 +159,7 @@ export default function textObscuredTest() {
           expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual("100");
           console.info('ArkUX_Redacted_Text_static_0110 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Redacted_Text_static_0110 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -190,7 +190,7 @@ export default function textObscuredTest() {
           expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual("1000");
           console.info('ArkUX_Redacted_Text_static_0120 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Redacted_Text_static_0120 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -217,7 +217,7 @@ export default function textObscuredTest() {
           expect(obj.getElement('$attrs').getString('baselineOffset')).assertEqual("1");
           console.info('ArkUX_Redacted_Text_static_0130 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Redacted_Text_static_0130 ERR  ' + JSON.stringify(err));
         }
         done();

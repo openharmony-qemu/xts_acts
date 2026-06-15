@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,6 +55,49 @@ async function clickButtonDriver(){
 
 }
 
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+  
+  let want: Want = {
+    bundleName: "com.example.actswindowtest.static",
+    abilityName: 'StartAbility'
+  };
+  if (options) {
+    context.startAbility(want, options).then(() => {
+      hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+    }).catch((err: Error):PromiseLike<void>|undefined => {
+      hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    context.startAbility(want).then(() => {
+      hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+    }).catch((err: Error):PromiseLike<void>|undefined => {
+      hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await Utils.msSleep(1000)
+  let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+  return windowStageStart;
+
+}
+
+async function terminateAbility(caseName: string) {
+let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+try {
+  if (pageContext !== null && pageContext !== undefined) {
+    hilog.info(domain, tag,`${caseName} terminateSelf begin`);
+  }
+  pageContext.terminateSelf().then(() => {
+    hilog.info(domain, tag,`${caseName} terminateSelf success`);
+  }).catch((err: Error):PromiseLike<void>|undefined => {
+    hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+} catch (e) {
+  hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+}
+await Utils.msSleep(1000)
+}
+
+
 export default function FloatingBallTest(): void {
   describe('FloatingBallTest', (): void => {
     hilog.info(domain, tag, 'FloatingBallTest start');
@@ -69,7 +113,12 @@ export default function FloatingBallTest(): void {
     let pixelMapIcon1:image.PixelMap|undefined;
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, 'beforeAll start');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.actswindowtest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       await Utils.msSleep(2000);
       driver = Driver.create();
@@ -128,6 +177,242 @@ export default function FloatingBallTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+
+    /**
+     * @tc.name   test_Create_FloatingBall_animation_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_animation_0100
+     * @tc.desc   test_Create_FloatingBall_animation_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_FloatingBall_animation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_Create_FloatingBall_animation_0100 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'animation_0100',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_NONE,
+      };
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                 done();
+              }).catch((err: Error) => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch((err: Error) => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_Create_FloatingBall_animation_0200
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_animation_0200
+     * @tc.desc   test_Create_FloatingBall_animation_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_Create_FloatingBall_animation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_Create_FloatingBall_animation_0200 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.EMPHATIC,
+        title: 'title',
+        content: 'animation_0200',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_OPACITY,
+      };
+
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          floatingBall.create(config).then((data: floatingBall.FloatingBallController) => {
+            let floatingBallController: floatingBall.FloatingBallController = data;
+            console.info(CaseName+ ` Succeeded in creating floating ball controller. Data: ${data}`);
+            floatingBallController.startFloatingBall(startParams).then(() => {
+              console.info(CaseName+' Succeeded in starting floating ball.');
+              expect(issupportFloatingBall).assertEqual(true);
+              floatingBallController.stopFloatingBall().then(() => {
+                console.info(CaseName+ 'Succeeded in stopping floating ball.');
+                 done();
+              }).catch((err: Error) => {
+                console.error(CaseName+ `Failed to stop floating ball. Cause:${err.code}, message:${err.message}`);
+                expect(false).assertTrue();
+                done();
+              });
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+  
+          }).catch((err: Error) => {
+            console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+      
+    })
+
+    /**
+     * @tc.name   test_updateFloatingBall_ANIMATION_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ANIMATION_0100
+     * @tc.desc   test_updateFloatingBall_ANIMATION_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_updateFloatingBall_ANIMATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(800);
+      let CaseName:string = 'test_updateFloatingBall_ANIMATION_0100 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008E',
+        content:'ANIMATION_0100'
+      };
+      let updateParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title2',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008EF5',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_NONE,
+      };
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (issupportFloatingBall) {
+        try {
+          let floatingBallController = await floatingBall.create(config);
+          floatingBallController.startFloatingBall(startParams).then(async () => {
+            console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+            floatingBallController.updateFloatingBall(updateParams).then(async () => {
+              console.info(CaseName+ ' Succeeded in updating floating ball.');
+              await floatingBallController.stopFloatingBall();
+               done();
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch(async (err: Error) => {
+            console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            expect(false).assertTrue();
+            done()
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_updateFloatingBall_ANIMATION_0200
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_ANIMATION_0200
+     * @tc.desc   test_updateFloatingBall_ANIMATION_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_updateFloatingBall_ANIMATION_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_updateFloatingBall_ANIMATION_0200 ';
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008E',
+        content:'content'
+      };
+      let updateParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.NORMAL,
+        title: 'title2',
+        icon:pixelMapIcon as image.PixelMap,
+        backgroundColor:'#FF008EF5',
+        textUpdateAnimationType: floatingBall.FloatingBallTextUpdateAnimationType.ANIMATION_OPACITY,
+      };
+      let issupportFloatingBall = floatingBall.isFloatingBallEnabled();
+      if (!issupportFloatingBall) {
+        done();
+      } else {
+        try {
+          let floatingBallController = await floatingBall.create(config);
+          floatingBallController.startFloatingBall(startParams).then(async () => {
+            console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
+            floatingBallController.updateFloatingBall(updateParams).then(async () => {
+              console.info(CaseName+ ' Succeeded in updating floating ball.');
+              await floatingBallController.stopFloatingBall();
+               done();
+            }).catch((err: Error) => {
+              console.error(CaseName+ ` Failed to update floating ball. Cause:${err.code}, message:${err.message}`);
+              expect(err.message!=null).assertTrue();
+              expect(false).assertTrue();
+              done();
+            });
+          }).catch(async (err: Error) => {
+            console.error(CaseName+ ` floatingBallController Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
+            expect(err.message!=null).assertTrue();
+            expect(false).assertTrue();
+            done()
+          });
+        } catch(e) {
+          console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    
 
     /**
      * @tc.name   test_FloatingBallTemplate_Enum
@@ -211,7 +496,7 @@ export default function FloatingBallTest(): void {
     it('test_Create_oneFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_Create_oneFloatingBall';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -244,7 +529,7 @@ export default function FloatingBallTest(): void {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             expect(issupportFloatingBall).assertEqual(false);
             done();
           }else{
@@ -272,7 +557,7 @@ export default function FloatingBallTest(): void {
     it('test_Create_MultFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_Create_MultFloatingBall';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       try {
         let floatingBallController1: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -286,7 +571,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -306,7 +591,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_1300019';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -336,7 +621,7 @@ export default function FloatingBallTest(): void {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             done();
           }else{
             expect(false).assertTrue();
@@ -362,7 +647,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_1300021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_1300021';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -397,7 +682,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -416,7 +701,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_1300022';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -449,7 +734,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -469,7 +754,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_title_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_title_null';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
 
       let startParams: floatingBall.FloatingBallParams = {
@@ -499,7 +784,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -518,7 +803,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_title_more_than_64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_title_more_than_64';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
 
       let startParams: floatingBall.FloatingBallParams = {
@@ -548,7 +833,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -567,7 +852,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_content_more_than_64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_content_more_than_64';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
 
       let startParams: floatingBall.FloatingBallParams = {
@@ -598,7 +883,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -617,7 +902,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_content_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_content_null';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -641,7 +926,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -661,7 +946,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_backgroundColor_FF0000FF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_backgroundColor_FF0000FF';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -690,7 +975,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -709,7 +994,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_backgroundColor_invalid_string', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_backgroundColor_invalid_string';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
 
       let startParams: floatingBall.FloatingBallParams = {
@@ -739,7 +1024,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -758,7 +1043,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_STATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_STATIC_5_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -783,7 +1068,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -805,7 +1090,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_STATIC_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_STATIC_4_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -829,7 +1114,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -850,7 +1135,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_STATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_STATIC_3_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -873,7 +1158,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -894,7 +1179,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_STATIC_No_icon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_STATIC_No_icon';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -921,7 +1206,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -940,7 +1225,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_NORMAL_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_5_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -948,6 +1233,8 @@ export default function FloatingBallTest(): void {
         content: 'content',
         icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
+        titleColor: '#008EF5',
+        contentColor: '#008EF5'
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -965,7 +1252,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -987,7 +1274,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_NORMAL_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_4_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1011,7 +1298,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1032,7 +1319,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_NORMAL_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_3_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1055,7 +1342,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1076,7 +1363,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_NORMAL_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_2_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1098,7 +1385,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1119,7 +1406,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_EMPHATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_5_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -1144,7 +1431,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1166,7 +1453,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_EMPHATIC_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_4_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -1190,7 +1477,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1211,7 +1498,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_EMPHATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_3_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -1234,7 +1521,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1255,7 +1542,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_EMPHATIC_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_2_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -1277,7 +1564,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1298,7 +1585,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_SIMPLE_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_5_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1323,7 +1610,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1345,7 +1632,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_SIMPLE_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_4_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1369,7 +1656,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1390,7 +1677,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_SIMPLE_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_3_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1413,7 +1700,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1434,7 +1721,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_SIMPLE_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_2_Params';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1456,7 +1743,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1477,7 +1764,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_1300019';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1512,7 +1799,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1532,7 +1819,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_1300025';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1559,7 +1846,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1580,7 +1867,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_STATIC_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_STATIC_NORMAL';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -1617,7 +1904,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1637,7 +1924,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL_EMPHATIC';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1672,7 +1959,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1692,7 +1979,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_STATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_STATIC';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
@@ -1731,7 +2018,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1751,7 +2038,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1790,7 +2077,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1810,7 +2097,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_EMPHATIC';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -1850,7 +2137,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1870,7 +2157,7 @@ export default function FloatingBallTest(): void {
     it('test_updateFloatingBall_SIMPLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_updateFloatingBall_SIMPLE';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1910,7 +2197,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1930,7 +2217,7 @@ export default function FloatingBallTest(): void {
     it('test_stopFloatingBall_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_stopFloatingBall_1300022';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -1966,7 +2253,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1985,7 +2272,7 @@ export default function FloatingBallTest(): void {
     it('test_stopFloatingBall_1300024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_stopFloatingBall_1300024';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -2001,7 +2288,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2020,7 +2307,7 @@ export default function FloatingBallTest(): void {
     it('test_startFloatingBall_after_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_startFloatingBall_after_stop';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2066,7 +2353,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2086,7 +2373,7 @@ export default function FloatingBallTest(): void {
     it('test_on_stateChange_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_on_stateChange_1300022';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2115,7 +2402,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2135,7 +2422,7 @@ export default function FloatingBallTest(): void {
       let CaseName:string = 'test_on_stateChange_start_stop';
       let FloatBallstate:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2160,7 +2447,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2180,7 +2467,7 @@ export default function FloatingBallTest(): void {
       let CaseName:string = 'test_on_stateChange_two_callback';
       let time:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2214,7 +2501,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2234,7 +2521,7 @@ export default function FloatingBallTest(): void {
       let CaseName:string = 'test_on_stateChange_off_callback1';
       let time:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2269,7 +2556,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2288,7 +2575,7 @@ export default function FloatingBallTest(): void {
     it('test_on_click_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_on_click_1300022';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2317,7 +2604,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2337,7 +2624,7 @@ export default function FloatingBallTest(): void {
       let CaseName:string = 'test_on_click_two_callback';
       let time:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2382,7 +2669,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2402,7 +2689,7 @@ export default function FloatingBallTest(): void {
       let CaseName:string = 'test_on_click_off_callback1';
       let time:number = 0;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2448,7 +2735,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2468,7 +2755,7 @@ export default function FloatingBallTest(): void {
     it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_getFloatingBallWindowInfo_1300025';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2490,7 +2777,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2509,7 +2796,7 @@ export default function FloatingBallTest(): void {
     it('test_getFloatingBallWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_getFloatingBallWindowInfo';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2550,7 +2837,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2570,7 +2857,7 @@ export default function FloatingBallTest(): void {
     it('test_restoreMainWindow_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_restoreMainWindow_1300019';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2605,7 +2892,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2625,7 +2912,7 @@ export default function FloatingBallTest(): void {
     it('test_restoreMainWindow_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_restoreMainWindow_1300025';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let want: Want = {
         bundleName: 'com.example.actswindowtest.static',
@@ -2651,7 +2938,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2671,7 +2958,7 @@ export default function FloatingBallTest(): void {
     it('test_restoreMainWindow_load_not_exist_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_restoreMainWindow_load_not_exist_ability';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let want: Want = {
         bundleName: 'xxx.xxx.xxx',
@@ -2708,7 +2995,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2729,7 +3016,7 @@ export default function FloatingBallTest(): void {
     it('test_restoreMainWindow_not_click', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_restoreMainWindow_not_click';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let want: Want = {
         bundleName: 'com.example.actswindowtest.static',
@@ -2759,7 +3046,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2780,7 +3067,7 @@ export default function FloatingBallTest(): void {
       let caseName: string = 'testCaptureWithBlacklistFloatBall';
       let floatingBallController: floatingBall.FloatingBallController;
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
@@ -2831,7 +3118,7 @@ export default function FloatingBallTest(): void {
           }
         }).catch((err: Error):void => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             done();
           }else{
             expect(false).assertTrue();
@@ -2864,7 +3151,7 @@ export default function FloatingBallTest(): void {
       console.log(CaseName + ' issupportFloatingBall: ' + issupportFloatingBall);
 
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
@@ -2905,6 +3192,399 @@ export default function FloatingBallTest(): void {
       }
     })
 
+
+    /**
+     * @tc.name   test_onDestroy_0100
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0100
+     * @tc.desc   test onDestroy callback triggered when floatingBall stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_0100';
+      let destroyReason: string = '';
+      let config: floatingBall.FloatingBallConfiguration = {
+         context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onDestroy = (reason: string) => {
+        console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+        destroyReason = reason;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(200);
+        await floatingBallController.stopFloatingBall();
+        console.info(CaseName + ' Succeeded in stopping floating ball.');
+        await Utils.msSleep(500);
+        expect(destroyReason).assertEqual('APP_STOP');
+        floatingBallController.offDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in unregistering destroy callback.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_1300022
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0200
+     * @tc.desc   test repeated onDestroy callback registration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_1300022';
+      let config: floatingBall.FloatingBallConfiguration = {
+         context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onDestroy = (reason: string) => {
+        console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+      };
+      let floatingBallController : floatingBall.FloatingBallController | undefined = undefined
+      try {
+        floatingBallController = await floatingBall.create(config);
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(200);
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback 1.');
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback 2.');
+        expect(false).assertTrue();
+        await floatingBallController.stopFloatingBall();
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else if(e.code == 1300022) {
+          expect(e.code).assertEqual(1300022);
+          try {
+            await floatingBallController?.stopFloatingBall();
+            floatingBallController?.offDestroy(onDestroy);
+          } catch(err) {
+            console.error(CaseName + ' Cleanup failed.');
+          }
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_two_callback
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0300
+     * @tc.desc   test register two destroy callbacks and both triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_two_callback';
+      let destroyCount: number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+         context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = (reason: string) => {
+        console.info(CaseName + ' callback1 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      let callback2 = (reason: string) => {
+        console.info(CaseName + ' callback2 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatingBallController.onDestroy(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(200);
+        await floatingBallController.stopFloatingBall();
+        console.info(CaseName + ' Succeeded in stopping floating ball.');
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyCount: ' + destroyCount);
+        expect(destroyCount).assertEqual(2);
+        floatingBallController.offDestroy();
+        console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_offDestroy_callback
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0400
+     * @tc.desc   test register two destroy callbacks and unregister one callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_offDestroy_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_offDestroy_callback';
+      let destroyCount: number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+         context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = (reason: string) => {
+        console.info(CaseName + ' callback1 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      let callback2 = (reason: string) => {
+        console.info(CaseName + ' callback2 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatingBallController.onDestroy(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(200);
+        floatingBallController.offDestroy(callback1);
+        console.info(CaseName + ' Succeeded in unregistering callback1.');
+        await floatingBallController.stopFloatingBall();
+        console.info(CaseName + ' Succeeded in stopping floating ball.');
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyCount: ' + destroyCount);
+        expect(destroyCount).assertEqual(1);
+        floatingBallController.offDestroy(callback2);
+        console.info(CaseName + ' Succeeded in unregistering callback2.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_offDestroy_all
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0500
+     * @tc.desc   test register two destroy callbacks and unregister all without parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_offDestroy_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_offDestroy_all';
+      let destroyCount: number = 0;
+      let config: floatingBall.FloatingBallConfiguration = {
+         context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let callback1 = (reason: string) => {
+        console.info(CaseName + ' callback1 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      let callback2 = (reason: string) => {
+        console.info(CaseName + ' callback2 Floating ball destroy triggered, reason: ' + reason);
+        destroyCount++;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(callback1);
+        console.info(CaseName + ' Succeeded in registering callback1.');
+        floatingBallController.onDestroy(callback2);
+        console.info(CaseName + ' Succeeded in registering callback2.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(200);
+        await floatingBallController.stopFloatingBall();
+        console.info(CaseName + ' Succeeded in stopping floating ball.');
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyCount1: ' + destroyCount);
+        expect(destroyCount).assertEqual(2);
+        destroyCount = 0;
+        floatingBallController.offDestroy();
+        console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball again.');
+        await Utils.msSleep(200);
+        await floatingBallController.stopFloatingBall();
+        console.info(CaseName + ' Succeeded in stopping floating ball again.');
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyCount2: ' + destroyCount);
+        expect(destroyCount).assertEqual(0);
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_long_press_delete
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0800
+     * @tc.desc   test onDestroy callback triggered when floatingBall deleted by long press
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_long_press_delete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_long_press_delete';
+      let destroyReason: string = '';
+      let driver: Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onDestroy = (reason: string) => {
+        console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+        destroyReason = reason;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(500);
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName + ' button: ' + button);
+        let Bounds = await button!.getBounds();
+        console.info(CaseName + ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.longClick(Bounds.left, Bounds.top);
+        console.info(CaseName + ' Succeeded in long clicking floating ball.');
+        await Utils.msSleep(1000);
+        let deleteButton = await driver.findComponent(ON.text('删除'));
+        console.info(CaseName + ' deleteButton: ' + deleteButton);
+        if (deleteButton) {
+          await deleteButton.click();
+          console.info(CaseName + ' Succeeded in clicking delete button.');
+        }
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('LONG_PRESS_SINGLE_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_main_window_destroy
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0900
+     * @tc.desc   test onDestroy callback triggered when ability is terminated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_main_window_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_main_window_destroy';
+      let destroyReason: string = '';
+      try {
+        let context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+        await startAbility(CaseName, context);
+        console.info(CaseName + ' Succeeded in starting StartAbility.');
+        await Utils.msSleep(1000);
+        let newContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext;
+        console.info(CaseName + ' Got new context: ' + newContext);
+        let config: floatingBall.FloatingBallConfiguration = {
+          context: newContext,
+        };
+        let startParams: floatingBall.FloatingBallParams = {
+          template: floatingBall.FloatingBallTemplate.SIMPLE,
+          title: 'title',
+        };
+        let floatingBallController = await floatingBall.create(config);
+        let onDestroy = (reason: string) => {
+          console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+          destroyReason = reason;
+        };
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(500);
+        await terminateAbility(CaseName);
+        console.info(CaseName + ' Succeeded in terminating StartAbility.');
+        await Utils.msSleep(1000);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('MAIN_WINDOW_DESTROY_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
     /**
      * @tc.name   test_restoreMainWindow_ability
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
@@ -2916,7 +3596,7 @@ export default function FloatingBallTest(): void {
     it('test_restoreMainWindow_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let CaseName:string = 'test_restoreMainWindow_ability';
       let config: floatingBall.FloatingBallConfiguration = {
-        context: context!,
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
       };
       let want: Want = {
         bundleName: 'com.example.actswindowtest.static',
@@ -2958,7 +3638,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{

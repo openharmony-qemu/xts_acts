@@ -1078,6 +1078,20 @@ int VideoEncodeApiDual0600()
     }
 }
 
+int VideoEncodeApiDual0700()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        const char *mime = "";
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_CreatePrimaryWithPreproc(mime, &vencCodec));
+        ASSERT_EQ(nullptr, vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
 void InitApiTest()
 {
     TestSetUpTestCase();

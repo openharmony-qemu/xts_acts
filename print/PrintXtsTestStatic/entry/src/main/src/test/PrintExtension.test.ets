@@ -71,7 +71,7 @@ export class PrintExtension extends PrintExtensionAbility {
 
 let printExtension = new PrintExtension();
 
-export default function printExtensionTest() {
+export default function printExtensionTest(): void {
   describe('printExtensionTest', (): void => {
 
     /**
@@ -185,5 +185,27 @@ export default function printExtensionTest() {
             expect().assertFail();
         }
     })
+
+     /**
+      * @tc.name   SUB_Oh_PrintExt_RequestCapability_0700
+      * @tc.number SUB_Oh_PrintExt_RequestCapability_0700
+      * @tc.desc   check onRequestPrinterCapability return value all properties
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+       it('SUB_Oh_PrintExt_RequestCapability_0700', Level.LEVEL2, ():void => {
+           try {
+               hilog.info(DOMAIN, TAG, 'SUB_Oh_PrintExt_RequestCapability_0700 onRequestPrinterCapability begin');
+               let printerId: int = 1;
+               let capability : print.PrinterCapability = printExtension.onRequestPrinterCapability(printerId);
+               if (capability) {
+                   hilog.info(DOMAIN, TAG, 'capability:%{public}s', JSON.stringify(capability));
+               }
+           } catch (err) {
+               hilog.error(DOMAIN, TAG, 'SUB_Oh_PrintExt_RequestCapability_0700 error');
+               expect().assertFail();
+           }
+       })
   })
 }

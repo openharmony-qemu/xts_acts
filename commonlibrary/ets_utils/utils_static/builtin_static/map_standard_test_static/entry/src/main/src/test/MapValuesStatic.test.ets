@@ -67,7 +67,7 @@ interface MyObj106 {
   value: string;
 }
 
-export default function MapValueTest() {
+export default function MapValueTest(): void {
   describe('MapValueTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

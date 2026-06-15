@@ -33,7 +33,12 @@ export default function abilitystaticTest() {
     beforeEach(async (): Promise<void> => {
       console.info('beforeEach start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.startSelfUIAbilityInCurrentProcess.static")
+      let cmd = "aa start -a EntryAbility -b com.example.startSelfUIAbilityInCurrentProcess.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(5000);
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('AbilityContext') as common.UIAbilityContext;
       console.info('beforeEach end');

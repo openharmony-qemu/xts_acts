@@ -91,7 +91,19 @@ group("ans_standard") {
       "actsNotificationAnsSubscribeNotificationTest:ActsNotificationAnsSubscribeNotificationTest",
       "actsNotificationAnsSubscribeNotificationNoSystemTestStatic:ActsNotificationAnsSubscribeNotificationNoSystemStaticTest",
       "actsNotificationAnsGetAppListSortingThirdTestStatic:ActsNotificationAnsGetAppListSortingThirdStaticTest",
-      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest"
+      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest",
+      "actsNotificationAnsThreePartyWatchWithinAbilityTest:ActsNotificationAnsThreePartyWatchWithinAbilityTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityTest:ActsNotificationAnsThreePartyWatchWithOutAbilityTest",
+      "actsNotificationAnsDisableNotificationFeatureNoSystemTestStatic:ActsNotificationAnsDisableNotificationFeatureNoSystemStaticTest",
+      "actsNotificationAnsNoDisplayedIconNoSystemTestStatic:ActsNotificationAnsNoDisplayedIconNoSystemStaticTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothStaticTest",
+      "actsNotificationAnsNoDisplayedIconNoSystemTest:ActsNotificationAnsNoDisplayedIconNoSystemTest",
+      "actsAnsNotificationDisableNotificationFeatureTest:ActsAnsNotificationDisableNotificationFeatureTest",
+      "actsNotificationReminderMeLaterTest:ActsNotificationReminderMeLaterTest",
+      "actsNotificationReminderMeLaterTestStatic:ActsNotificationReminderMeLaterStaticTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityLittleTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityLittleStaticTest",
+      "actsNotificationMessageAggregationNoSystemTest:ActsNotificationAnsMessageAggregationNoSystemTest",
+      "actsNotificationMessageAggregationNoSystemTestStatic:ActsNotificationMessageAggregationNoSystemStaticTest"
     ]
   }
 }

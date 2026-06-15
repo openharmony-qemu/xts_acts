@@ -61,7 +61,7 @@ export default function setDataNullAndUndefinedTest() {
       
       // 触发拖拽开始事件
       let image1 = await driver.findComponent(ON.id('image1'));
-      let button = await driver.findComponent(ON.id('testNull'));
+      let button = await driver.findComponent(ON.id('setDataNullAndUndefined_testNull'));
       await button.dragTo(image1);
       await CommonFunc.sleep(1000);
       
@@ -87,7 +87,7 @@ export default function setDataNullAndUndefinedTest() {
       
       // 触发拖拽开始事件
       let image1 = await driver.findComponent(ON.id('image1'));
-      let button = await driver.findComponent(ON.id('testUndefined'));
+      let button = await driver.findComponent(ON.id('setDataNullAndUndefined_testUndefined'));
       await button.dragTo(image1);
       await CommonFunc.sleep(1000);
       

@@ -71,7 +71,7 @@ struct ReusableChild {
 }
 
 @ReusableV2
-@ComponentV2({ reusePool: 'shared', poolAccepts: ['ReusableChild'], freezeWhenInactive: false })
+@ComponentV2({ reusePool: 'shared', poolAccepts: [ReusableChild], freezeWhenInactive: false })
 struct SubChild {
   @Consumer() provide: number = 10;
 
@@ -100,7 +100,7 @@ function preRenderBuilder() {
   SubChild()
 }
 @ReusableV2
-@ComponentV2({ reusePool: 'shared', poolAccepts: ['SubChild'], freezeWhenInactive: false })
+@ComponentV2({ reusePool: 'shared', poolAccepts: [SubChild], freezeWhenInactive: false })
 struct GlobalChild {
   @Consumer() provide: number = 10;
   aboutToAppear() {
@@ -136,7 +136,7 @@ struct GlobalChild {
 @Entry
 @ComponentV2({
   reusePool: 'perInstance',
-  poolAccepts: ['LegacyComp', 'GlobalChild', 'ReusableChild', 'SubChild'],
+  poolAccepts: [LegacyComp, GlobalChild, ReusableChild, SubChild],
   freezeWhenInactive: false
 })
 struct GlobalReusePool {
@@ -153,6 +153,8 @@ struct GlobalReusePool {
       });
     pool?.preRender(undefined, 1)
     pool?.preRender(null, 1)
+    pool?.preRender(wrapBuilder(preRenderBuilder), null)
+    pool?.preRender(wrapBuilder(preRenderBuilder), undefined)
   }
   verifyPool(compName: string, comp: Function) {
     const pool = UIUtils.getCustomComponentContext(this).getReusePool();

@@ -84,7 +84,12 @@ export default function RdbSetdistributedtableTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll');
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+            let cmd = "aa start -a EntryAbility -b com.example.relationalstore";
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            abilityDelegator.executeShellCommand(cmd)
             await Utils.msSleep(5000)
             context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         })

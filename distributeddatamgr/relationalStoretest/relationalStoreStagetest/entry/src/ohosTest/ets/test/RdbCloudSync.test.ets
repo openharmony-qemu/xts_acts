@@ -502,7 +502,7 @@ export default function RelationalStoreCloudSyncTest() {
         };
         try {
             await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
-            await rdbStore!.cloudSync(null, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(null, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync succeeded');
@@ -512,7 +512,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("401");
         }
         try {
-            await rdbStore!.cloudSync(undefined, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(undefined, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync succeeded');
@@ -524,7 +524,7 @@ export default function RelationalStoreCloudSyncTest() {
         try {
             await rdbStore!.close();
             await rdbStore!.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
-            await rdbStore!.cloudSync(config1, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config1, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync1 succeeded');
@@ -534,7 +534,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config2, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config2, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync2 succeeded');
@@ -544,7 +544,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config3, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config3, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync3 succeeded');
@@ -554,7 +554,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config4, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config4, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync4 succeeded');
@@ -564,7 +564,7 @@ export default function RelationalStoreCloudSyncTest() {
             expect(e.code).assertEqual("14800014");
         }
         try {
-            await rdbStore!.cloudSync(config5, (progressDetails: relationalStore.ProgressDetails) => {
+            await rdbStore!.cloudSyncEx(config5, (progressDetails: relationalStore.ProgressDetails) => {
                 console.info(TAG + `progress: ${progressDetails.schedule}`);
             })
             console.info(TAG + 'cloud sync5 succeeded');

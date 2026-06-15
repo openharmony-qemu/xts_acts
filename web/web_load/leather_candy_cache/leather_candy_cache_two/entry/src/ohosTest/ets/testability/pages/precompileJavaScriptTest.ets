@@ -22,11 +22,13 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { BusinessError } from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct PrecompileJavaScriptTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controller1: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -65,6 +67,13 @@ struct PrecompileJavaScriptTest {
       return 'precompileJavaScript test';
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {

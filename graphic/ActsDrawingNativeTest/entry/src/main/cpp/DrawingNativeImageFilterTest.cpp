@@ -23,9 +23,6 @@
 #define DRAWING_NUMBER_10 10
 #define DRAWING_NUMBER_200 200
 #define DRAWING_NUMBER_19937 19937
-#define DRAWING_NUMBER_0X7FFFFFFF 0x7FFFFFFF
-#define DRAWING_NUMBER_0XFF7F0000 0xFF7F0000
-#define DRAWING_NUMBER_0XFFFFFFFF 0xFFFFFFFF
 
 namespace OHOS {
 namespace Rosen {
@@ -62,15 +59,15 @@ int TestImageFilterCreateBlurNormal()
     // add assert
     EXPECT_NE(filter, nullptr);
     // 3. Pass integer values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 4. Pass NULL for input parameter in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 5. Pass non-NULL for input parameter in OH_Drawing_ImageFilterCreateBlur
-    filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, filter);
+    filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, filter);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 6. Destroy the filter object
@@ -83,12 +80,12 @@ int TestImageFilterCreateBlurNULL()
 {
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur with the first parameter being null
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(0, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR,
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(0, 1.0f, OH_Drawing_TileMode::MIRROR,
         nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 2. OH_Drawing_ImageFilterCreateBlur with the second parameter being null
-    filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, 0, OH_Drawing_TileMode::MIRROR, nullptr);
+    filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 0, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 3. Destroy the filter object
@@ -122,7 +119,7 @@ int TestImageFilterCreateBlurAbnormal()
     DrawingNativeImageFilterTestSetUp();
     // 1. Pass negative values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_ImageFilter *filter =
-        OH_Drawing_ImageFilterCreateBlur(-DRAWING_NUMBER_1, -DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(-1.0f, -1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 2. Destroy the filter object
@@ -149,8 +146,7 @@ int TestImageFilterCreateFromColorFilterNormal()
 {
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
-        OH_Drawing_TileMode::MIRROR, nullptr);
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 2. OH_Drawing_ColorFilterCreateLinearToSrgbGamma
@@ -180,8 +176,7 @@ int TestImageFilterCreateFromColorFilterNormal()
 int TestImageFilterCreateFromColorFilterNULL()
 {
     DrawingNativeImageFilterTestSetUp();
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
-        OH_Drawing_TileMode::MIRROR, nullptr);
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 1. OH_Drawing_ImageFilterCreateFromColorFilter with the first parameter being null, check the error code using
@@ -215,8 +210,7 @@ int TestImageFilterCreateFromColorFilterMultipleCalls()
 int TestImageFilterDestroyNormal()
 {
     DrawingNativeImageFilterTestSetUp();
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
-        OH_Drawing_TileMode::MIRROR, nullptr);
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     OH_Drawing_ImageFilterDestroy(filter);
@@ -238,8 +232,8 @@ int TestImageFilterDestroyMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
     // 1. Call OH_Drawing_ImageFilterCreateFromColorFilter 10 times
-    OH_Drawing_ColorFilter *colorFilters[DRAWING_NUMBER_10];
-    OH_Drawing_ImageFilter *filters[DRAWING_NUMBER_10];
+    OH_Drawing_ColorFilter *colorFilters[10];
+    OH_Drawing_ImageFilter *filters[10];
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         colorFilters[i] = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
         // add assert
@@ -255,8 +249,8 @@ int TestImageFilterDestroyMultipleCalls()
     }
     // 3. Call OH_Drawing_ImageFilterCreateBlur and OH_Drawing_ImageFilterDestroy alternately 10 times
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
-            OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilter *filter =
+            OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
         // add assert
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);
@@ -270,11 +264,11 @@ int TestImageFilterCreateOffsetNormal()
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     EXPECT_NE(imageFilter1, nullptr);
     // 2. Create an instance object through the interface OH_Drawing_ImageFilterCreateOffset.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_10, DRAWING_NUMBER_10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10.0f, 10.0f, imageFilter1);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. Destroy objects.
     OH_Drawing_ImageFilterDestroy(imageFilter1);
@@ -288,19 +282,19 @@ int TestImageFilterCreateOffsetNULL()
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     EXPECT_NE(imageFilter1, nullptr);
     // 2. The first parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to 0.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(0, DRAWING_NUMBER_10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0, 10.0f, imageFilter1);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. The second parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to 0.
     OH_Drawing_ImageFilter *imageFilter3 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_10, 0, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10.0f, 0, imageFilter1);
     EXPECT_NE(imageFilter3, nullptr);
     // 4. The third parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to nullptr.
     OH_Drawing_ImageFilter *imageFilter4 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_10, DRAWING_NUMBER_10, nullptr);
+        OH_Drawing_ImageFilterCreateOffset(10.0f, 10.0f, nullptr);
     EXPECT_NE(imageFilter4, nullptr);
     // 5. Destroy objects.
     OH_Drawing_ImageFilterDestroy(imageFilter1);
@@ -316,21 +310,21 @@ int TestImageFilterCreateOffsetAbnormal()
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     EXPECT_NE(imageFilter1, nullptr);
     // 2. The first parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_0X7FFFFFFF, DRAWING_NUMBER_10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0x7FFFFFFF, 10.0f, imageFilter1);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. The second parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter3 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_10, DRAWING_NUMBER_0X7FFFFFFF, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10.0f, 0x7FFFFFFF, imageFilter1);
     EXPECT_NE(imageFilter3, nullptr);
     OH_Drawing_ImageFilter *imageFilter4 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_0XFF7F0000, DRAWING_NUMBER_10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0xFF7F0000, 10.0f, imageFilter1);
     EXPECT_NE(imageFilter4, nullptr);
     OH_Drawing_ImageFilter *imageFilter5 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_10, DRAWING_NUMBER_0XFF7F0000, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10.0f, 0xFF7F0000, imageFilter1);
     EXPECT_NE(imageFilter5, nullptr);
     // 4. Destroy objects.
     OH_Drawing_ImageFilterDestroy(imageFilter1);
@@ -347,12 +341,12 @@ int TestImageFilterCreateOffsetMultipleCalls()
     DrawingNativeImageFilterTestSetUp();
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, OH_Drawing_TileMode::MIRROR, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     EXPECT_NE(imageFilter1, nullptr);
     // 2. OH_Drawing_ImageFilterCreateOffset is called multiple times.
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(DRAWING_NUMBER_0XFFFFFFFF, DRAWING_NUMBER_10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0xFFFFFFFF, 10.0f, imageFilter1);
         EXPECT_NE(imageFilter2, nullptr);
         OH_Drawing_ImageFilterDestroy(imageFilter2);
     }
@@ -411,13 +405,13 @@ int TestImageFilterCreateFromShderEffectMultipleCalls()
 int TestImageFilterCreateBlurWithCropNormal()
 {
     DrawingNativeImageFilterTestSetUp();
-    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200.0f, 200.0f);
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP,
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f, OH_Drawing_TileMode::CLAMP,
             nullptr, nullptr);
     // 1. The interface of OH_Drawing_ImageFilterCreateBlurWithCrop is called normally.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP,
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f, OH_Drawing_TileMode::CLAMP,
             imageFilter1, cropRect);
     EXPECT_NE(imageFilter2, nullptr);
     // 2. Destroy objects.
@@ -431,25 +425,25 @@ int TestImageFilterCreateBlurWithCropNormal()
 int TestImageFilterCreateBlurWithCropNull()
 {
     DrawingNativeImageFilterTestSetUp();
-    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200.0f, 200.0f);
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP,
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f, OH_Drawing_TileMode::CLAMP,
             nullptr, nullptr);
     // 1. The first parameter of the verification interface is passed null.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateBlurWithCrop(0, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, imageFilter1,
+        OH_Drawing_ImageFilterCreateBlurWithCrop(0, 10.0f, OH_Drawing_TileMode::CLAMP, imageFilter1,
             cropRect);
     EXPECT_NE(imageFilter2, nullptr);
     // 2. The second parameter of the verification interface is passed null.
-    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, 0, OH_Drawing_TileMode::CLAMP,
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 0, OH_Drawing_TileMode::CLAMP,
         imageFilter1, cropRect);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. The forth parameter of the verification interface is passed null.
-    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10,
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f,
         OH_Drawing_TileMode::CLAMP, nullptr, cropRect);
     EXPECT_NE(imageFilter2, nullptr);
     // 4. The fifth parameter of the verification interface is passed null.
-    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10,
+    imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f,
         OH_Drawing_TileMode::CLAMP, imageFilter1, nullptr);
     EXPECT_NE(imageFilter2, nullptr);
     // 5. Destroy objects.
@@ -463,15 +457,15 @@ int TestImageFilterCreateBlurWithCropNull()
 int TestImageFilterCreateBlurWithCropMultiCalls()
 {
     DrawingNativeImageFilterTestSetUp();
-    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_200, DRAWING_NUMBER_200);
+    OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200.0f, 200.0f);
     OH_Drawing_ImageFilter *imageFilter1 =
-        OH_Drawing_ImageFilterCreateBlurWithCrop(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP,
+        OH_Drawing_ImageFilterCreateBlurWithCrop(10.0f, 10.0f, OH_Drawing_TileMode::CLAMP,
             nullptr, nullptr);
     OH_Drawing_ImageFilter *imageFilter2 = nullptr;
     // 1. The interface of OH_Drawing_ImageFilterCreateBlurWithCrop is called 10 times.
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(
-            DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
+            10.0f, 10.0f, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
         EXPECT_NE(imageFilter2, nullptr);
     }
     // 2. Destroy objects.

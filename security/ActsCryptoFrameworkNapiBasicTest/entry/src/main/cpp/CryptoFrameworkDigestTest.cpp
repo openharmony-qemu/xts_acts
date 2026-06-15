@@ -306,7 +306,7 @@ int SubCryptoFrameworkNapiDigestTest0900()
             continue;
         }
         Crypto_DataBlob out = {.data = nullptr, .len = 0};
-        int isBlockSize = 20;
+        int isBlockSize = 1024; // 20 -> 1024 避免分片触发主线程5秒超时
         int offset = 0;
         
         ret = OH_CryptoDigest_Create(reinterpret_cast<const char*>(mdData.algName), &ctx);

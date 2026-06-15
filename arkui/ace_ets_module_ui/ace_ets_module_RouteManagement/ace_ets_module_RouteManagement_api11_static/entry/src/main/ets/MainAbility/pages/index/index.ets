@@ -32,10 +32,7 @@ import {
   ItemAlign,
   FlexAlign,
   FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FontWeight
+  ButtonType
 } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

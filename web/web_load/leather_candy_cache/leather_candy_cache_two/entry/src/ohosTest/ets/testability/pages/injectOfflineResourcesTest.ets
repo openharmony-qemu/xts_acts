@@ -24,6 +24,7 @@ import testsuite from '../../test/List.test';
 import { BusinessError } from '@ohos.base';
 import web_webview from '@ohos.web.webview';
 import { resourceConfigs } from "./Resource";
+import { XtsTestServer } from 'library';
 
 async function getData(url?: Array<string>) {
   const resourceMapArr: Array<web_webview.OfflineResourceMap> = [];
@@ -74,6 +75,7 @@ class TestObj {
 @Component
 struct injectOfflineResourcesTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerNull: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -101,6 +103,10 @@ struct injectOfflineResourcesTest {
       }
     }
   }
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   build() {
     Column() {
       Row() {
@@ -165,6 +171,32 @@ struct injectOfflineResourcesTest {
               } catch (err) {
                 console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 148406)
+              }
+              break;
+            }
+            case "testInjectOfflineResources007": {
+              let msg = "testInjectOfflineResources007"
+              try {
+                this.controller.injectOfflineResources(await getData([]));
+                Utils.emitEvent(true, 148407)
+              } catch (err) {
+                console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
+                Utils.emitEvent(err.code, 148407)
+              }
+              break;
+            }
+            case "testInjectOfflineResources008": {
+              let msg = "testInjectOfflineResources008"
+              try {
+                let resourceMaps = await getData();
+                for (let resourceMap of resourceMaps) {
+                  resourceMap.responseHeaders = [];
+                }
+                this.controller.injectOfflineResources(resourceMaps);
+                Utils.emitEvent(true, 148408)
+              } catch (err) {
+                console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
+                Utils.emitEvent(err.code, 148408)
               }
               break;
             }

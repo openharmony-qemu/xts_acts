@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -89,8 +89,34 @@ import ArrayList_09Test from "./ArrayList/ArrayListTest09.test";
 import ArrayList_10Test from "./ArrayList/ArrayListTest10.test";
 import ArrayList_11Test from "./ArrayList/ArrayListTest11.test";
 import ArrayList_12Test from "./ArrayList/ArrayListTest12.test";
+import Deque01Test from "./Deque/DequeTest01.test";
+import Deque02Test from "./Deque/DequeTest02.test";
+import Deque03Test from "./Deque/DequeTest03.test";
+import Deque04Test from "./Deque/DequeTest04.test";
+import Deque05Test from "./Deque/DequeTest05.test";
+import Deque06Test from "./Deque/DequeTest06.test";
+import LinkedListTest01 from "./LinkedList/LinkedListTest01.test";
+import LinkedListTest02 from "./LinkedList/LinkedListTest02.test";
+import LinkedListTest03 from "./LinkedList/LinkedListTest03.test";
+import LinkedListTest04 from "./LinkedList/LinkedListTest04.test";
+import LinkedListTest05 from "./LinkedList/LinkedListTest05.test";
+import LinkedListTest06 from "./LinkedList/LinkedListTest06.test";
+import LinkedListTest07 from "./LinkedList/LinkedListTest07.test";
+import LinkedListTest08 from "./LinkedList/LinkedListTest08.test";
+import LinkedListTest09 from "./LinkedList/LinkedListTest09.test";
+import LinkedListTest10 from "./LinkedList/LinkedListTest10.test";
+import LinkedListTest11 from "./LinkedList/LinkedListTest11.test";
+import LinkedListTest12 from "./LinkedList/LinkedListTest12.test";
+import LinkedListTest13 from "./LinkedList/LinkedListTest13.test";
+import LinkedListTest14 from "./LinkedList/LinkedListTest14.test";
+import LinkedListTest15 from "./LinkedList/LinkedListTest15.test";
+import LinkedListTest16 from "./LinkedList/LinkedListTest16.test";
+import LinkedListTest17 from "./LinkedList/LinkedListTest17.test";
+import LinkedListTest18 from "./LinkedList/LinkedListTest18.test";
+import LinkedListTest19 from "./LinkedList/LinkedListTest19.test";
+import LinkedListTest20 from "./LinkedList/LinkedListTest20.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArraylistTest1();
   ArraylistTest2();
   HashMapTest1();
@@ -168,5 +194,32 @@ export default function testsuite() {
   ArrayList_11Test();
   ArrayList_12Test();
 
+  Deque01Test();
+  Deque02Test();
+  Deque03Test();
+  Deque04Test();
+  Deque05Test();
+  Deque06Test();
+
+  LinkedListTest01();
+  LinkedListTest02();
+  LinkedListTest03();
+  LinkedListTest04();
+  LinkedListTest05();
+  LinkedListTest06();
+  LinkedListTest07();
+  LinkedListTest08();
+  LinkedListTest09();
+  LinkedListTest10();
+  LinkedListTest11();
+  LinkedListTest12();
+  LinkedListTest13();
+  LinkedListTest14();
+  LinkedListTest15();
+  LinkedListTest16();
+  LinkedListTest17();
+  LinkedListTest18();
+  LinkedListTest19();
+  LinkedListTest20();
 
 }

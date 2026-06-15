@@ -1340,7 +1340,7 @@ export default function taskPoolTest() {
           let waiter = new Promise<Any>((resolve)=>{
             resolver = resolve;
           })
-          await workerPromise.then((value: Any): Promise<void> => {
+          await workerPromise.then((value: Any): void => {
             const returnedWorker: EAWorker = value as EAWorker;
             returnedWorker.run<EAWorker>((): EAWorker => {
               executedFlag2 = true;

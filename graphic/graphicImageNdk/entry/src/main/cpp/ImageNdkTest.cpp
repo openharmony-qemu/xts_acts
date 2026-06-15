@@ -1068,10 +1068,15 @@ static napi_value TestNativeSetOpacityAfterRelease(napi_env env, napi_callback_i
     }
 
     OH_PixelmapNative_Release(pixelmap);
-    
+
     errCode = OH_PixelmapNative_SetOpacity(pixelmap, OPACITY_HALF);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
     if (errCode != IMAGE_PIXELMAP_RELEASED) {
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_SetOpacity after release failed, errCode: %{public}d.", errCode);
+    } else {
+        OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetOpacityAfterRelease success.");
     }
     return getJsResult(env, errCode);
 }
@@ -1216,6 +1221,8 @@ static napi_value TestNativeApplyScaleAfterRelease(napi_env env, napi_callback_i
     float scaleX = 2.0f;
     float scaleY = 2.0f;
     errCode = OH_PixelmapNative_ApplyScale(pixelmap, scaleX, scaleY);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1512,6 +1519,8 @@ static napi_value TestNativeApplyScaleWithAntiAliasingAfterRelease(napi_env env,
     const float scaleY = 2.0f;
     errCode = OH_PixelmapNative_ApplyScaleWithAntiAliasing(pixelmap, scaleX, scaleY,
         OH_PixelmapNative_AntiAliasing_HIGH);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleWithAntiAliasingAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1668,6 +1677,8 @@ static napi_value TestNativeApplyTranslateAfterRelease(napi_env env, napi_callba
     const float x = 10.0f;
     const float y = 10.0f;
     errCode = OH_PixelmapNative_ApplyTranslate(pixelmap, x, y);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyTranslateAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1727,6 +1738,8 @@ static napi_value TestNativeApplyRotateAfterRelease(napi_env env, napi_callback_
 
     const float angle = 90.0f;
     errCode = OH_PixelmapNative_ApplyRotate(pixelmap, angle);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1788,6 +1801,8 @@ static napi_value TestNativeApplyFlipAfterRelease(napi_env env, napi_callback_in
     const bool flipH = true;
     const bool flipV = true;
     errCode = OH_PixelmapNative_ApplyFlip(pixelmap, flipH, flipV);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyFlipAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1855,6 +1870,8 @@ static napi_value TestNativeApplyCropAfterRelease(napi_env env, napi_callback_in
     const uint32_t regionHeight = NUM_5;
     Image_Region region = {regionX, regionY, regionWidth, regionHeight};
     errCode = OH_PixelmapNative_ApplyCrop(pixelmap, &region);
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropAfterRelease success.");
     return getJsResult(env, errCode);
@@ -1995,7 +2012,8 @@ static napi_value TestNativeConvertAlphaTypeAfterRelease(napi_env env, napi_call
 
     const bool toPremul = false;
     errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, dstPixelmap, toPremul);
-
+    OH_PixelmapNative_Destroy(&srcPixelmap);
+    srcPixelmap = nullptr;
     OH_PixelmapNative_Destroy(&dstPixelmap);
     dstPixelmap = nullptr;
 
@@ -2280,6 +2298,20 @@ static napi_value TestNativeConvertAlphaTypeNullDst(napi_env env, napi_callback_
     return getJsResult(env, IMAGE_SUCCESS);
 }
 
+static napi_value TestNativeImageDataConversionFailedErrorCode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeImageDataConversionFailedErrorCode start.");
+    const int32_t expectedErrorCode = 7600306;
+    if (IMAGE_DATA_CONVERSION_FAILED != expectedErrorCode) {
+        OH_LOG_ERROR(LOG_APP,
+            "IMAGE_DATA_CONVERSION_FAILED value mismatch, expected: %{public}d, actual: %{public}d.",
+            expectedErrorCode, IMAGE_DATA_CONVERSION_FAILED);
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeImageDataConversionFailedErrorCode success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
 static void setInt32NamedProperty(napi_env env, napi_value object, const char *utf8name, uint32_t value)
 {
     napi_value tmp;
@@ -2442,6 +2474,8 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"testNativeConvertAlphaTypeUnsupportedDataFormat", nullptr,
      TestNativeConvertAlphaTypeUnsupportedDataFormat, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeImageDataConversionFailedErrorCode", nullptr,
+     TestNativeImageDataConversionFailedErrorCode, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

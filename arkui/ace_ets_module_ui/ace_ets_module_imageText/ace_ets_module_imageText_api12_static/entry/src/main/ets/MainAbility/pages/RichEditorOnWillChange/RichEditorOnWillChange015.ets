@@ -62,13 +62,13 @@ build() {
 
     Column() {
 
-      Text('onCut_callback:' + this.onCutCallback).id('onCut_callback')
-      Text('onPaste_callback:' + this.onPasteCallback).id('onPaste_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-      Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore')
-      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore')
-      Text('replacedSpans Callback:' + this.replacedSpansCallback).id('replacedSpansCallback')
-      Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
+      Text('onCut_callback:' + this.onCutCallback).id('onCut_callback').height('5%').clip(true)
+      Text('onPaste_callback:' + this.onPasteCallback).id('onPaste_callback').height('5%').clip(true)
+      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').height('5%').clip(true)
+      Text('onDidChange rangeBefore:' + this.onDidChangeRangeBefore).id('onDidChange_rangeBefore').height('5%').clip(true)
+      Text('onWillChange_rangeBefore:' + this.onWillChangeRangeBefore).id('onWillChange_rangeBefore').height('5%').clip(true)
+      Text('replacedSpans Callback:' + this.replacedSpansCallback).id('replacedSpansCallback').height('5%').clip(true)
+      Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter').height('5%').clip(true)
 
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

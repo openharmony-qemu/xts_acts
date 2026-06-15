@@ -1366,9 +1366,7 @@ export default function CrateImageSupp() {
           console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
           expect().assertFail();
         } finally {
-          if (imageSourceIncrementalSApi) {
-            await imageSourceIncrementalSApi.release();
-          }
+          imageSourceIncrementalSApi = null;
         }
       }
       done();
@@ -1481,17 +1479,16 @@ export default function CrateImageSupp() {
           imageSourceIncrementalSApi = image.CreateIncrementalSource(
             new ArrayBuffer(imageData[2].byteLength), sourceOptions
           );
-          await imageSourceIncrementalSApi.updateData(imageData[0], false, 0, imageData[0].byteLength);
+          await imageSourceIncrementalSApi.updateData(imageData[0], false, 0, imageData[0].byteLength); 
           await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
           console.warn(TAG, testName, `Testing format ${format} succeeded`,imageSourceIncrementalSApi.getImageInfoSync().pixelFormat);
-          expect(imageSourceIncrementalSApi.getImageInfoSync().pixelFormat == image.PixelMapFormat.RGBA_8888).assertTrue();
+          expect(imageSourceIncrementalSApi.getImageInfoSync().pixelFormat == format).assertTrue();
         } catch (error) {
           console.error(TAG, testName, `Error with format ${format}:`, JSON.stringify(error));
           expect().assertFail();
         } finally {
-          if (imageSourceIncrementalSApi) {
-            await imageSourceIncrementalSApi.release();
-          }
+          console.info(TAG, testName, `finally imageSourceIncrementalSApi.release`);
+          imageSourceIncrementalSApi = null;
         }
       }
       done();

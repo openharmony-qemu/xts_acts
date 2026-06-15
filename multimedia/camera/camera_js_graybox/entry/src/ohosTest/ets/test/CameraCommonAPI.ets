@@ -434,9 +434,9 @@ export function createCameraInput(cameraManager: camera.CameraManager, cameraDev
  * @desc 释放拍照输入流
  * @param { camera.CameraInput } inPut 拍照输入流
  */
-export function releaseInPutStream(inPut: ESObject) {
+export async function releaseInPutStream(inPut: ESObject) {
   if (inPut != undefined) {
-    inPut.close();
+    await inPut.close();
   }
 }
 
@@ -518,9 +518,9 @@ export function getPhotoOutputFromProfile(cameraManager: camera.CameraManager, p
  * @desc 释放输出流
  * @param { ESObject } outPut 相机输入流对象
  */
-export function releaseOutPutStream(outPut: ESObject) {
+export async function releaseOutPutStream(outPut: ESObject) {
   if (outPut != undefined) {
-    outPut.release();
+    await outPut.release();
   }
 }
 
@@ -576,9 +576,9 @@ export async function startSession(session: ESObject) {
  * @desc 停止当前会话
  * @param { camera.Session } session 相机会话对象
  */
-export function stopSession(session: ESObject) {
+export async function stopSession(session: ESObject) {
   if (session != undefined) {
-    session.stop();
+    await session.stop();
   }
 }
 
@@ -586,9 +586,9 @@ export function stopSession(session: ESObject) {
  * @desc 释放当前会话
  * @param { camera.Session } session 相机会话对象
  */
-export function releaseSession(session: ESObject) {
+export async function releaseSession(session: ESObject) {
   if (session != undefined) {
-    session.stop();
+    await session.release();
   }
 }
 
@@ -974,11 +974,18 @@ function previewOutputFrameStartcallback(err: BusinessError): void {
 }
 
 /**
+ * @desc 开启监听预览帧
+ * @param { camera.PreviewOutput } previewOutput 相机预览流
+ */
+export function onPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): void {
+  previewOutput.on('frameStart', previewOutputFrameStartcallback);
+}
+
+/**
  * @desc 监听预览帧, 60s监听不到就抛异常
  * @param { camera.PreviewOutput } previewOutput 相机预览流
  */
-export async function onPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): Promise<void> {
-  previewOutput.on('frameStart', previewOutputFrameStartcallback);
+export async function waitPreviewOutputFrameStart(previewOutput: camera.PreviewOutput): Promise<void> {
   //等待预览帧开始
   let previewOutputFrameStartTime = Date.now();
   while (!isFrameStart) {

@@ -26,6 +26,7 @@ const IMAGE_UNSUPPORTED_OPERATION = 7600201;
 const IMAGE_UNSUPPORTED_DATA_FORMAT = 7600207;
 const IMAGE_INVALID_REGION = 7600204;
 const IMAGE_ALLOC_FAILED = 7600301;
+const IMAGE_DATA_CONVERSION_FAILED = 7600306;
 
 export default function imageNdkTest() {
   describe('ImageNdkTest', () => {
@@ -1695,6 +1696,21 @@ export default function imageNdkTest() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testNativeConvertAlphaTypeUnsupportedDataFormat();
       expect(result).assertEqual(IMAGE_UNSUPPORTED_DATA_FORMAT);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeImageDataConversionFailedErrorCode
+     * @tc.number SUB_GRAPHIC_GRAPHIC2D_PIXELMAPCAPI_NativeImageDataConversionFailed_0100
+     * @tc.desc   test IMAGE_DATA_CONVERSION_FAILED error code value is 7600306
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeImageDataConversionFailedErrorCode',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeImageDataConversionFailedErrorCode();
+      expect(result).assertEqual(IMAGE_SUCCESS);
       done();
     })
 

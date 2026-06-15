@@ -59,7 +59,7 @@ interface testobj10 {
   max: number
 }
 
-export default function IndexedCollections16Test() {
+export default function IndexedCollections16Test(): void {
   describe('IndexedCollections16Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

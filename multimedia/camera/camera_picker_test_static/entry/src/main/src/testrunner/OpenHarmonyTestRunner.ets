@@ -53,7 +53,12 @@ export class OpenHarmonyTestRunner implements TestRunner {
     }
 
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-    abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.example.camerapicker.static')
+    let cmd = 'aa start -a EntryAbility -b com.example.camerapicker.static';
+    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
+    abilityDelegator.executeShellCommand(cmd)
     hilog.info(domain, tag, 'onRun end');
 
   }

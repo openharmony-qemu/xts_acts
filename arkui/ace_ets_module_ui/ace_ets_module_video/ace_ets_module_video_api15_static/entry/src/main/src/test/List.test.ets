@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,10 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import VideoEnableShortCutKey from './VideoEnableShortCutKey.test';
 import VideoContentTransitionEffectTest from './VideoContentTransitionEffectTest.test';
+import VideoSupportMoreNumberSpeedStaticTest from './Video/VideoSupportMoreNumberSpeedStaticTest.test';
+import videoControllerAsyncStaticTest from './Video/videoControllerAsyncStaticTest.test';
 
 export default function testsuite() {
+
   VideoEnableShortCutKey();
   VideoContentTransitionEffectTest();
+  VideoSupportMoreNumberSpeedStaticTest();
+  videoControllerAsyncStaticTest();
+  
 }

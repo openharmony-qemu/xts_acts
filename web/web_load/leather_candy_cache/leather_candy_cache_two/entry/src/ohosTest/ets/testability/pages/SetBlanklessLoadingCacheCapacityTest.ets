@@ -25,12 +25,14 @@ import { BusinessError } from '@ohos.base';
 import webview from '@ohos.web.webview';
 import testNapi from 'libentry.so'
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct setBlanklessLoadingCacheCapacityTest {
   @State webTag: string = 'WebTag';
   controller: webView.WebviewController = new webView.WebviewController(this.webTag);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   newController: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -72,6 +74,13 @@ struct setBlanklessLoadingCacheCapacityTest {
       return 'precompileJavaScript test';
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {

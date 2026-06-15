@@ -572,7 +572,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
           }
         });
       })
-      abilityDelegator.executeShellCommand('aa start -b com.example.stagecontextpropertiestest -a inputMethod')
+      let cmd = 'aa start -b com.example.stagecontextpropertiestest -a inputMethod';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
         .then(data => {
         })
         .catch((err: base.BusinessError) => {
@@ -593,7 +598,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
       TAG = "SUB_AA_OpenHarmony_Context_1500"
       console.log(TAG + "--- start");
       checkAbilityContextDir(abilityContext);
-      await abilityDelegator.executeShellCommand('aa start -b com.example.stagecontextpropertiestest -a inputMethod')
+      let cmd = 'aa start -b com.example.stagecontextpropertiestest -a inputMethod';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
         })
         .catch((err: base.BusinessError) => {
@@ -624,7 +634,12 @@ export default function stageContextPropertiesTest(abilityContext: common.UIAbil
       console.log(TAG + "--- start");
       let applicationContext = abilityContext.getApplicationContext();
       checkApplicationContextDir(applicationContext);
-      await abilityDelegator.executeShellCommand('aa start -b com.example.stagecontextpropertiestest -a inputMethod')
+      let cmd = 'aa start -b com.example.stagecontextpropertiestest -a inputMethod';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
         })
         .catch((err: base.BusinessError) => {

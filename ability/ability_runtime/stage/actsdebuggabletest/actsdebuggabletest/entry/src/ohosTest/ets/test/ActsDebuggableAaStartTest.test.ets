@@ -67,7 +67,12 @@ export default function actsDebuggableAaStartTest() {
       let promiseOnCreate = EventBusPlus.onWait('timeoutOnCreate');
       let promiseOnDestroy = EventBusPlus.onWait('onDestroy')
       let res = '';
-      await abilityDelegator.executeShellCommand('aa start -b com.example.timeout -a EntryAbility').then(data => {
+      let cmd = 'aa start -b com.example.timeout -a EntryAbility';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         res = data.stdResult;
       }).catch((err:base.BusinessError) => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
@@ -90,7 +95,12 @@ export default function actsDebuggableAaStartTest() {
      */
     it('SUB_AA_AMS_Debuggable_0400', Level.LEVEL1, async (done: Function) => {
       let res = '';
-      await abilityDelegator.executeShellCommand('aa start -b com.example.timeout -a EntryAbility -S -p')
+      let cmd = 'aa start -b com.example.timeout -a EntryAbility -S -p';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd)
         .then(data => {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_AA_AMS_Debuggable_0400 data is: ' + JSON.stringify(data));
@@ -114,7 +124,12 @@ export default function actsDebuggableAaStartTest() {
      */
     it('SUB_AA_AMS_Debuggable_2600', Level.LEVEL1, async (done: Function) => {
       let res = '';
-      await abilityDelegator.executeShellCommand('aa start -h').then(data => {
+      let cmd = 'aa start -h';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd).then(data => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
           'SUB_AA_AMS_Debuggable_2600 aa process data is: ' + data.stdResult);
         res = data.stdResult;

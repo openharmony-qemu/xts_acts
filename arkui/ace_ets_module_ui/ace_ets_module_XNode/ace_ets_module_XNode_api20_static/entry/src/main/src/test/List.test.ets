@@ -48,7 +48,7 @@ import FrameNodeCreateRelativeContainerNode from './FrameNode/FrameNodeCreateRel
 import FrameNodeCreateRowNode from './FrameNode/FrameNodeCreateRowNode.test';
 import FrameNodeCreateScrollNode from './FrameNode/FrameNodeCreateScrollNode.test';
 import FrameNodeCreateSliderNode from './FrameNode/FrameNodeCreateSliderNode.test';
-import FrameNodecreateStackNode from './FrameNode/FrameNodecreateStackNode.test';
+import FrameNodeCreateStackNode from './FrameNode/FrameNodeCreateStackNode.test';
 import FrameNodeCreateSwiperNode from './FrameNode/FrameNodeCreateSwiperNode.test';
 import FrameNodeCreateTextAreaNode from './FrameNode/FrameNodeCreateTextAreaNode.test';
 import FrameNodeCreateTextInputNode from './FrameNode/FrameNodeCreateTextInputNode.test';
@@ -95,7 +95,7 @@ export default function testsuite() {
     FrameNodeCreateRowNode();
     FrameNodeCreateScrollNode();
     FrameNodeCreateSliderNode();
-    FrameNodecreateStackNode();
+    FrameNodeCreateStackNode();
     FrameNodeCreateSwiperNode();
     FrameNodeCreateTextAreaNode();
     FrameNodeCreateTextInputNode();

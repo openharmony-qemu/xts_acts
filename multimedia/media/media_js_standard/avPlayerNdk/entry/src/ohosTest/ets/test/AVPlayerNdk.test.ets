@@ -2395,5 +2395,170 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0100
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMOutputCallback();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0200
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerSetPCMOutputCallbackErr();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0300
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0300', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerSetPCMOutputCallbackError();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0300 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorCallback_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_CALLBACK_0100
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorCallback_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorCallback();
+      console.info(`testOhAvPlayerSetPCMProcessorCallback_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorCallback_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_CALLBACK_0200
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorCallback value is null
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorCallback_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorCallbackVal();
+      console.info(`testOhAvPlayerSetPCMProcessorCallback_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorCallback_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_CALLBACK_0300
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorCallback Error Code is NotPermit
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorCallback_0300', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorCallbackNotPermit();
+      console.info(`testOhAvPlayerSetPCMProcessorCallback_0300 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0100
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLen();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0200
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen value is 0MB
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLenVal();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0300
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen value is 6MB
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0300', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLenValErr();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0300 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0400
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0400
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen Error Code is NotPermit
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0400', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLenNotPermit();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0400 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0500
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0500
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen value is 0
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0500', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLenValError();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0500 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

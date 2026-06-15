@@ -344,7 +344,6 @@ export default function cameraSessionZoomRatioTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('  cameraSessionZoomRatioTest afterAll case');
     })

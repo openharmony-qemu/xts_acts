@@ -47,7 +47,12 @@ export default function webController() {
           console.log('BusinessError  end')
         });
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsacenetworkinterceptionenhancedtest.static')
+        let cmd = 'aa start -a EntryAbility -b com.open.harmony.actsacenetworkinterceptionenhancedtest.static';
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', 'Succeed!')
       } catch (error) {

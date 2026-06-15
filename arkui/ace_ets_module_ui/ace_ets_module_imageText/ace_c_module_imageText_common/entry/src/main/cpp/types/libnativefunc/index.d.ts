@@ -60,3 +60,21 @@ export const TextInputEnumTest_002: () => number;
 export const TextInputEnumTest_003: () => number;
 export const TextInputEnumTest_004: () => number;
 export const TextInputEnumTest_005: () => number;
+
+export const TextAreaGradientTest_001: () => number;
+export const TextAreaGradientTest_002: () => number;
+
+export const TextInputGradientTest_001: () => number;
+export const TextInputGradientTest_002: () => number;
+
+export const RichEditorPunctuationOverflowTest_001: () => number;
+export const RichEditorPunctuationOverflowTest_002: () => number;
+export const RichEditorPunctuationOverflowTest_003: () => number;
+export const RichEditorPunctuationOverflowTest_004: () => number;
+export const RichEditorPunctuationOverflowTest_005: () => number;
+
+export const RichEditorScrollToVisibleTest_001: () => number;
+export const RichEditorScrollToVisibleTest_002: () => number;
+export const RichEditorScrollToVisibleTest_003: () => number;
+export const RichEditorScrollToVisibleTest_004: () => number;
+export const RichEditorScrollToVisibleTest_005: () => number;

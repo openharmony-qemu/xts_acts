@@ -86,7 +86,7 @@ export default function enumsCancelJsunit() {
 it('testenumsCancel_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('enumsCancel testenumsCancel0001 START');
       await Utils.sleep(2000);
-      let strJson: string = inspector.getInspectorByKey('HighlightText');
+      let strJson: string = inspector.getInspectorByKey('enums_HighlightText');
       console.info("[testenumsCancel0001] component width strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('hoverEffect')).assertEqual("HoverEffect.Highlight");

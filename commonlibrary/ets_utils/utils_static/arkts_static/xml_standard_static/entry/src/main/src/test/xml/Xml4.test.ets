@@ -25,15 +25,7 @@ import {
   Size,
   Level
 } from '../../../../hypium/index';
-
-export async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
-
+import Utils from '../Util.test';
 
 let str = "";
 
@@ -64,15 +56,16 @@ function tagValueFuncB(name: string, value: string): boolean {
   return true;
 }
 
-export default function actsXml4Test() {
+export default function actsXml4Test(): void {
   describe('actsXml4Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async () => {
       str = "";
+      await Utils.msSleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

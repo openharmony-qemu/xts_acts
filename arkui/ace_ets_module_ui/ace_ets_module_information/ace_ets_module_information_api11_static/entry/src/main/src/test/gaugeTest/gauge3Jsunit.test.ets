@@ -59,7 +59,7 @@ export default function gauge3Jsunit() {
         }
       } catch (err) {
           console.error("push gauge3Jsunit page error:" + err);
-	        expect().assertFail();
+	        expect(false).assertEqual(true);
       }
     });
 

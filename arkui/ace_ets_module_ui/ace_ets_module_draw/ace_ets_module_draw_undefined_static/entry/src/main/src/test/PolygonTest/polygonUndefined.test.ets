@@ -83,20 +83,30 @@ export default function PolygonUndefinedTest() {
     it('PolygonUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[PolygonUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
+      const uiContext = AppStorage.get<UIContext>('uiContent')!;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Polygon');
+      let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
 
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('points')))
-        .assertEqual('true');
+      console.info('[PolygonUndefinedTest_static_0100] points 1 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points')));
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(0);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(0);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(50);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(0);
 
       let changeBtn = await driver.findComponent(ON.id('Polygon_points'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('Polygon');
+      obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
-      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('points')))
-        .assertEqual('false');
+
+      console.info('[PolygonUndefinedTest_static_0100] points 2 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points')));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points'))).assertEqual('[]');
+
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       console.info('[PolygonUndefinedTest_static_0100] END');

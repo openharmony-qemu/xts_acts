@@ -448,7 +448,6 @@ export default function cameraSessionFlashTest() {
     })
 
     afterAll(async (): Promise<void> => {
-      await releaseVideoReceiveSurface();
       await releaseCameraSessionInstance();
       Utils.msSleep(1000);
       console.info('afterAll case');

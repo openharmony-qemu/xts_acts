@@ -3123,8 +3123,13 @@ export default function PhotoTest() {
         sessionCommitConfig();
 
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.getColorTintRange()
-        console.info(`getColorTintRange, ret: ${ret}`)
+        let ret = cameraObj.getColorTintRange();
+        console.info(`getColorTintRange, ret: ${ret}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3150,12 +3155,16 @@ export default function PhotoTest() {
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
-        let ret: number = 0
         createCaptureSession()
 
         //--------------------------------------------测试过程------------------------------------------------------
-        ret = cameraObj.getColorTintRange()
-        console.info(`getColorTintRange, ret: ${ret}`)
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`)
+        if (ret === -1) {
+          console.info(`does not support color tint`)
+          done();
+          return
+        }
         expect(ret).assertEqual(7400103);
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3185,10 +3194,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(0)
+        ret = cameraObj.setColorTint(0);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3219,10 +3233,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(1)
+        ret = cameraObj.setColorTint(1);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3253,10 +3272,15 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
-        cameraObj.getColorTintRange();
-
+        let ret = cameraObj.getColorTintRange();
+        console.info(`colorTintRange is: ${JSON.stringify(ret)}`);
+        if (ret === -1) {
+          console.info(`does not support color tint`);
+          done();
+          return
+        }
         //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(2)
+        ret = cameraObj.setColorTint(2);
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
@@ -3323,39 +3347,6 @@ export default function PhotoTest() {
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(4)
-        console.info(`setColorTint, ret: ${ret}`)
-        expect(ret).assertEqual(7400101);
-        console.info(`${caseName} PASSED`)
-      } catch (error) {
-        console.error(`${caseName} FAILED`)
-        expect().assertFail()
-      } finally {
-        //--------------------------------------------后置处理------------------------------------------------------
-        console.info(`Exit ${caseName}`)
-        done()
-      }
-    })
-
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with second param null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800"
-      try {
-        //--------------------------------------------预置条件------------------------------------------------------
-        console.info(`Enter ${caseName}`)
-        captureSessionstart();
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-
-        //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(5)
         console.info(`setColorTint, ret: ${ret}`)
         expect(ret).assertEqual(7400101);
         console.info(`${caseName} PASSED`)
@@ -3486,6 +3477,11 @@ export default function PhotoTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.getZoomPointInfos(0)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === 7400102) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
         ret = cameraObj.deleteZoomPointInfo(0)
         console.info(`deleteZoomPointInfo, ret: ${ret}`)
@@ -3651,6 +3647,11 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === 7400102) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
@@ -3687,6 +3688,11 @@ export default function PhotoTest() {
         sessionCommitConfig();
         let ret = cameraObj.getZoomPointInfos(Parameter_Setting.ALL_PARAMETER_OK)
         console.info(`getZoomPointInfos, ret: ${ret}`)
+        if (ret === 7400102) {
+          console.info(`${caseName} does not support get zoom point`);
+          done();
+          return
+        }
         expect(ret).assertEqual(0);
 
         //--------------------------------------------测试过程------------------------------------------------------
@@ -3703,5 +3709,403 @@ export default function PhotoTest() {
         done()
       }
     })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100
+     * @tc.desc      test sub multimedia camera enum notification
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0100"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let enumVal = cameraObj.getEnumNotificationName(0)
+        console.info("camera NotificationName DEFOCUS_FROM_PROXIMITY: ", enumVal)
+        expect(enumVal).assertEqual(0)
+        enumVal = cameraObj.getEnumProximityStateForFocus(0)
+        console.info("camera ProximityStateForFocus IN_RANGE_RAISE_NONE: ", enumVal)
+        expect(enumVal).assertEqual(0)
+        enumVal = cameraObj.getEnumProximityStateForFocus(1)
+        console.info("camera ProximityStateForFocus OUT_OF_RANGE_RAISE_REQUIRED: ", enumVal)
+        expect(enumVal).assertEqual(1)
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200
+     * @tc.desc      test sub multimedia camera on NotificationReceived
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0200"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300
+     * @tc.desc      test sub multimedia camera on NotificationReceived with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0300"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret: number = 0
+        createCaptureSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400
+     * @tc.desc      test sub multimedia camera on NotificationReceived with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0400"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret: number = 0
+        createCaptureSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500
+     * @tc.desc      test sub multimedia camera off NotificationReceived
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500', Level.LEVEL0, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0500"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret: number = 0
+        createCaptureSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        ret = cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(`unregisterNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600
+     * @tc.desc      test sub multimedia camera off NotificationReceived with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0600"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret: number = 0
+        createCaptureSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        ret = cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.FIRST_PARAMETER_ERROR);
+        console.info(`unregisterNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700
+     * @tc.desc      test sub multimedia camera off NotificationReceived with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700', Level.LEVEL2, async () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0700"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        let ret: number = 0
+        createCaptureSession()
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        ret = cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(`unregisterNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800
+     * @tc.desc      test sub multimedia camera GetNotificationName with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0800"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        ret = cameraObj.getNotificationName(Parameter_Setting.FIRST_PARAMETER_ERROR)
+        console.info(`getNotificationName, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900
+     * @tc.desc      test sub multimedia camera GetNotificationName with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_0900"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        ret = cameraObj.getNotificationName(Parameter_Setting.SECOND_PARAMETER_ERROR)
+        console.info(`getNotificationName, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000
+     * @tc.desc      test sub multimedia camera GetProximityStateForFocus with first param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000', Level.LEVEL0, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1000"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        ret = cameraObj.getProximityStateForFocus(Parameter_Setting.FIRST_PARAMETER_ERROR)
+        console.info(`getProximityStateForFocus, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100
+     * @tc.desc      test sub multimedia camera GetProximityStateForFocus with second param null
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1100"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        ret = cameraObj.getProximityStateForFocus(Parameter_Setting.SECOND_PARAMETER_ERROR)
+        console.info(`getProximityStateForFocus, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200
+     * @tc.desc      test sub multimedia camera CameraNotificationInfo_Destroy
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200', Level.LEVEL2, () => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_NOTIFICATION_RECEIVE_1200"
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        captureSessionstart();
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionStart();
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let ret = cameraObj.registerNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`registerNotificationReceivedCallback, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        ret = cameraObj.destroyCameraNotificationInfo(Parameter_Setting.ALL_PARAMETER_OK)
+        console.info(`destroyCameraNotificationInfo, ret: ${ret}`)
+        expect(ret).assertEqual(CAMERA_OK);
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        cameraObj.unregisterNotificationReceivedCallback(Parameter_Setting.ALL_PARAMETER_OK);
+      }
+    })
+
   })
 }

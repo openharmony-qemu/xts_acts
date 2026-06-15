@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 112090;
 
@@ -28,6 +29,7 @@ interface objectCss {
 @Component
 struct webViewContStoreWebArchiveError {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = "";
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
@@ -65,6 +67,10 @@ struct webViewContStoreWebArchiveError {
         this.isReceive = 1;
       }
     }
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -316,7 +322,7 @@ struct webViewContStoreWebArchiveError {
         })
       }
 
-      Web({ src: $rawfile('index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)

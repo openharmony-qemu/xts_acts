@@ -6,6 +6,10 @@
     "MainAbility/pages/counter/ActsAceCounterComponentTest",
     "MainAbility/pages/counter/CounterComponentTest",
     "MainAbility/pages/counter/CounterEnableTest",
-    "MainAbility/pages/counter/CounterJsunitTest"
+    "MainAbility/pages/counter/CounterJsunitTest",
+    "MainAbility/pages/CounterV2/ActsAceCounterV2ComponentTest",
+    "MainAbility/pages/CounterV2/CounterV2Api",
+    "MainAbility/pages/CounterV2/CounterV2ComponentTest",
+    "MainAbility/pages/CounterV2/CounterV2Direction"
   ]
 }

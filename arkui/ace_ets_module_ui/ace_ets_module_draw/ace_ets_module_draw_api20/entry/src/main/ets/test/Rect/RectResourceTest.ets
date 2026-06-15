@@ -84,7 +84,7 @@ export default function RectResourceTest() {
 
       expect(JSON.parse(strJson2).$attrs.width).assertEqual(JSON.parse(strJson4).$attrs.width);
       expect(JSON.parse(strJson2).$attrs.height).assertEqual(JSON.parse(strJson4).$attrs.height);
-      expect(JSON.parse(strJson2).$attrs.radius).assertEqual(JSON.parse(strJson4).$attrs.radius);
+      expect(JSON.stringify(JSON.parse(strJson2).$attrs.radius)).assertEqual(JSON.stringify(JSON.parse(strJson4).$attrs.radius));
     
       console.info('[RectResourceTest_0100] END');
       done();

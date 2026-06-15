@@ -61,7 +61,7 @@ struct comSizeAbilityTest_08 {
                   //     }.padding({ left: 15 })
                   //   }.backgroundColor('#ccc').height(200).width(300)
                   // }
-                  // .key("Navigation_Size")
+                  // .key("comSizeAbilityTest_08_Navigation_Size_01")
                   // .onStateChange((isActivated: boolean) => {
                   //   this.dex = index
                   // })
@@ -70,7 +70,7 @@ struct comSizeAbilityTest_08 {
             }
           }
           .backgroundColor('red')
-          .key("Navigation_Size")
+          .key("comSizeAbilityTest_08_Navigation_Size_02")
           .size({ width: 100, height: 100 })
           .translate({ x: 1, y: 1, z: 1 })
           .scale({

@@ -23,7 +23,6 @@ import {
   timedTaskError
 } from '../testability/pages/TaskMethodTest';
 import { BusinessError } from '@ohos.base';
-import { Count1 } from '../testability/pages/DataFlg';
 import { sleep } from '../testability/pages/Utils';
 
 export default function taskPoolExecuteDelayedTimeConsumTest() {
@@ -57,7 +56,7 @@ export default function taskPoolExecuteDelayedTimeConsumTest() {
      * @tc.level Level 2
      */
     it('taskPoolExecuteDelayedTimeConsumTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      Count1.count = 0
+      let completedCount: number = 0;
       // 创建一个任务
       let task: taskpool.Task = new taskpool.Task(printArgs, 100 as Number); // 100: 测试参数
       // 记录任务开始时间
@@ -68,14 +67,14 @@ export default function taskPoolExecuteDelayedTimeConsumTest() {
           let endTime: number = Date.now();
           let elapsedTime: number = endTime - startTime;
           console.info('taskpool elapsed time is: ' + elapsedTime + 'ms');
-          Count1.count++
+          completedCount++
         });
 
-      while ((Count1.count as number) < 1) {
+      while (completedCount < 1) {
         await sleep(100)
       }
 
-      expect(1).assertEqual(Count1.count)
+      expect(1).assertEqual(completedCount)
       done()
     });
 
@@ -92,7 +91,7 @@ export default function taskPoolExecuteDelayedTimeConsumTest() {
       let flag:boolean=false;
       let startTime: number = Date.now();
       console.info('taskpool start time is: ' + startTime);
-      let task: taskpool.Task = new taskpool.Task(printArgsError, 100);
+      let task: taskpool.Task = new taskpool.Task(printArgsError, -100); // -100: 触发参数校验失败
        await taskpool.executeDelayed(1000, task)
         .catch((e: Error):void => {
           flag = true;
@@ -140,24 +139,24 @@ export default function taskPoolExecuteDelayedTimeConsumTest() {
       let startTime: number = Date.now();
       console.info('taskpool start time is: ' + startTime);
 
+      let completedCount: number = 0;
       // 创建一个任务
       let task: taskpool.Task = new taskpool.Task(longTask, 100); // 100: 测试参数
-      Count1.count = 0
       // 使用 executeDelayed 延时执行任务
       await taskpool.executeDelayed(1000, task) // 1000: 延时 1000ms
         .then(() => {
           let endTime: number = Date.now();
           let elapsedTime: number = endTime - startTime;
           console.info('taskpool elapsed time is: ' + elapsedTime + 'ms');
-          Count1.count++
+          completedCount++
         })
         .catch((e: Error):void => {
         });
-      while (Count1.count < 1) {
+      while (completedCount < 1) {
         await sleep(100)
       }
 
-      expect(1).assertEqual(Count1.count)
+      expect(1).assertEqual(completedCount)
       done();
     });
 

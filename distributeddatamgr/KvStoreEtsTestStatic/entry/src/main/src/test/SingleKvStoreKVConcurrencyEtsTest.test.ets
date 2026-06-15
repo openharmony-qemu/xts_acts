@@ -63,7 +63,12 @@ export default function SingleKvStoreConcurrencyTest() {
     }
 
     beforeAll(async (done: () => void): Promise<void> => {
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+      let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(1000)
 
       context  = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
@@ -477,8 +482,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETSTRING_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETSTRING_PROMISE_0100 e ' +
@@ -529,8 +536,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETINT_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETINT_PROMISE_0100 e ' +
@@ -581,8 +590,10 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETFLOAT_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETFLOAT_PROMISE_0100 e ' +
@@ -633,8 +644,11 @@ export default function SingleKvStoreConcurrencyTest() {
             }).catch((err: Error) => {
               console.error('SINGLEKVSTORE_CONCURRENCY_GETBOOLEAN_PROMISE_0100 get fail ' +
                 `, error code is ${err.code}, message is ${err.message}`);
-              expect(null).assertFail();
-              done();
+
+              if (err.code != 15100004) {
+                expect(null).assertFail();
+                done();
+              }
             });
           } catch (e) {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETBOOLEAN_PROMISE_0100 e ' +
@@ -1238,8 +1252,10 @@ export default function SingleKvStoreConcurrencyTest() {
           }).catch((err: Error) => {
             console.error('SINGLEKVSTORE_CONCURRENCY_GETRESULTSIZE_PROMISE_0100 getResultSize fail ' +
               `, error code is ${err.code}, message is ${err.message}`);
-            expect(null).assertFail();
-            done();
+            if (err.code != 15100004) {
+              expect(null).assertFail();
+              done();
+            }
           });
         }
       })

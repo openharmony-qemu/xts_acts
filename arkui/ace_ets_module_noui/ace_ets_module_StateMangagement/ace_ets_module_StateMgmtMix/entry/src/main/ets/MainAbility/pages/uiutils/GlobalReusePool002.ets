@@ -66,7 +66,7 @@ struct SubChildGlobal001 {
 }
 
 @Entry
-@ComponentV2({ reusePool: 'perInstance', poolAccepts: ['SubChildGlobal001'], freezeWhenInactive: false })
+@ComponentV2({ reusePool: 'perInstance', poolAccepts: [SubChildGlobal001], freezeWhenInactive: false })
 struct GlobalReuse002 {
   @Provider() provide: number = 100;
   @Local boolVal: boolean = false;

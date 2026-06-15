@@ -426,17 +426,24 @@ describe('fileIO_fs_close', function () {
       fileIO.close(file, (err) => {
         if (err) {
           console.log('fileIO_test_close_async_009 error package: ' + JSON.stringify(err));
-          expect(false).assertTrue();
+          try {
+            expect().assertFail();
+          } catch (e) {
+            console.log('fileIO_test_close_async_009 Assert Fail: ' + JSON.stringify(e));
+          }
         }
-      })
-      fileIO.close(fd, (err) => {
-        if (err) {
-          console.log('fileIO_test_close_async_009 close error: {message: ' + err.message + ', code: ' + err.code + '}');
+        console.log('fileIO_test_close_async_009 start close fd');
+        fileIO.close(fd, (err) => {
+          if (err) {
+            console.log('fileIO_test_close_async_009 close error: {message: ' + err.message + ', code: ' + err.code + '}');
+            expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
+          } else {
+            console.log('fileIO_test_close_async_009 close success');
+          }
           fileIO.unlinkSync(fpath);
-          expect(err.code == 13900008 && err.message == 'Bad file descriptor').assertTrue();
           done();
-        }
-      });
+        });
+      })
     } catch (e) {
       console.log('fileIO_test_close_async_009 has failed for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();

@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { PlainArray } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface GeneratedObjectLiteralInterface_1 {
   name: string;
@@ -254,20 +255,12 @@ class ComplexObject_2 {
   }
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
-
 export default function PlainArray04Test(): void {
   describe('PlainArray04Test', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

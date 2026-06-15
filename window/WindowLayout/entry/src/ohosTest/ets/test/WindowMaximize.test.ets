@@ -1556,7 +1556,15 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         let mainWindow = windowStageStart.getMainWindowSync();
         let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
         console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
-        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+        let flag = true;
+        try{
+          display999 = display.getDisplayByIdSync(999);
+          flag = true;
+        }catch(err){
+          console.error(caseName + ' failed, err: ' + `code: ${err.code} ,  message: ${err.message}`);
+          flag = false;
+        }
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED && flag ) {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
           await sleep(1000);
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
@@ -1635,7 +1643,15 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
         let mainWindow = windowStageStart.getMainWindowSync();
         let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
         console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
-        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+        let flag = true;
+        try{
+          display999 = display.getDisplayByIdSync(999);
+          flag = true;
+        }catch(err){
+          console.error(caseName + ' failed, err: ' + `code: ${err.code} ,  message: ${err.message}`);
+          flag = false;
+        }
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED&& flag) {
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
           await sleep(1000);
           let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();

@@ -260,6 +260,10 @@ export default function AbilityDelegatorStageTest() {
           })
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         executeShellCmd(cmd, abilityDelegator);
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
@@ -584,6 +588,10 @@ export default function AbilityDelegatorStageTest() {
       try {
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         let timeout = 1;
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -614,6 +622,10 @@ export default function AbilityDelegatorStageTest() {
       try {
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
+        let user = abilityDelegatorArguments.parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         let timeout = 3;
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -763,6 +775,10 @@ export default function AbilityDelegatorStageTest() {
       try {
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
           '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700 -s timeout 15000 -z test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         await abilityDelegator.executeShellCommand(cmd)
@@ -794,6 +810,10 @@ export default function AbilityDelegatorStageTest() {
       try {
         let cmd = 'aa test -b invalid -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
           '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800 -s timeout 15000';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
@@ -1000,6 +1020,10 @@ export default function AbilityDelegatorStageTest() {
         const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200';
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
           '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200 -s timeout 15000 -w invalid';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
         let result = -1;

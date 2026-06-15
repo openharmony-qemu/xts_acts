@@ -47,11 +47,11 @@ export default function SetBlanklessLoadingWithKey() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithKey001', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey001', 0, 148510, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey001', 0, 148510, done); 
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(8000);
-      done()
+      done();
     })
 
     /**
@@ -66,11 +66,11 @@ export default function SetBlanklessLoadingWithKey() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithKey002', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey002', -2, 148520, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey002', -2, 148520, done); 
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
-      done()
+      done();
     })
 
     /**
@@ -85,11 +85,11 @@ export default function SetBlanklessLoadingWithKey() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithKey003', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey003', -3, 148530, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey003', -3, 148530, done); 
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
-      done()
+      done();
     })
 
     /**
@@ -104,11 +104,11 @@ export default function SetBlanklessLoadingWithKey() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithKey004', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey004', -4, 148540, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey004', -4, 148540, done); 
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
-      done()
+      done();
     })
 
     /**
@@ -123,12 +123,50 @@ export default function SetBlanklessLoadingWithKey() {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithKey005', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey005', -5, 148550, done);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey005', -5, 148550, done); 
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
-      done()
+      done();
     })
 
+    /**
+     * @tc.name   testClearBlanklessLoadingCacheNoArgsStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_NOARGS_0100
+     * @tc.desc   test clearBlanklessLoadingCache with no args (undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearBlanklessLoadingCacheNoArgsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCacheNoArgs001', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCacheNoArgs001', true, 148560, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(4000);
+      done();
+    })
+
+    /**
+     * @tc.name   testClearBlanklessLoadingCacheEmptyArrayStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_EMPTYARRAY_0100
+     * @tc.desc   test clearBlanklessLoadingCache with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearBlanklessLoadingCacheEmptyArrayStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCacheEmptyArray001', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCacheEmptyArray001', true, 148570, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(4000);
+    })
   })
 }

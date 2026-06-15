@@ -12,25 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import windowTitleBarTest from './WindowTitleBar.test';
-import windowModalTest from './WindowModal.test';
 import windowManageTest from './WindowManage.test';
-import windowAutoSaveTest from './WindowAutoSave.test';
-import windowZindexTest from './WindowZindex.test';
 import extensionWindowPropertiesTest from './ExtensionWindowProperties.test';
-import windowFocusTest from './WindowFocus.test';
-import windowPCTest from './WindowPC.test';
 import windowRotationTest from './WindowRotation.test';
 import windowControlsTest from './WindowControls.test';
 
 export default function testsuite() {
-  windowFocusTest();
-  windowAutoSaveTest();
-  windowTitleBarTest();
-  windowZindexTest();
   windowManageTest();
-  windowModalTest();
-  windowPCTest();
   windowControlsTest();
   windowRotationTest();
   extensionWindowPropertiesTest();

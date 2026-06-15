@@ -19,6 +19,7 @@ import AVCodeTest3 from "./AVCode/AVCodeTest3.test";
 import AVCodeBaseTest from "./AVCode/AVCodeBase.test";
 import AVCodeBaseTwoTest from "./AVCode/AVCodeBaseTwo.test";
 import AVCodeBaseThreeTest from "./AVCode/AVCodeBaseThree.test";
+import AVCodeAudioEncoderTest from "./AVCode/AVCodeAudioEncoderTest.test";
 
 export default function testsuite() {
   AVCodeBaseThreeTest()
@@ -27,4 +28,5 @@ export default function testsuite() {
   AVCodeTest2()
   AVCodeTest3()
   AVCodeBaseTest()
+  AVCodeAudioEncoderTest()
 }
