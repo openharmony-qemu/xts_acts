@@ -83,10 +83,10 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_static_0100', Level.LEVEL
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Padding_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding_bt1');
-      let RelativeContainer_AnchorPoint_Padding_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding_tx2');
-      let RelativeContainer_AnchorPoint_Padding_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding_r1');
-      let RelativeContainer_AnchorPoint_Padding_row1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding_row1');
+      let RelativeContainer_AnchorPoint_Padding_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding' + '_bt1');
+      let RelativeContainer_AnchorPoint_Padding_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding' + '_tx2');
+      let RelativeContainer_AnchorPoint_Padding_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding' + '_r1');
+      let RelativeContainer_AnchorPoint_Padding_row1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Padding' + '_row1');
 
 
       console.log('assert position')

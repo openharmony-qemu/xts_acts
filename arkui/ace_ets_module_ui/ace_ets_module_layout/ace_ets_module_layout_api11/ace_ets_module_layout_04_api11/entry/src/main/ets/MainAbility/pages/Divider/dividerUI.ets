@@ -71,7 +71,7 @@ struct DividerExample {
               .fontColor('#007DFF')
               .fontWeight(500)
               .backgroundColor(Color.Transparent)
-            Divider().vertical(this.vertical).height(22).color(this.color).width(this.widthK).margin({ left: 8, right: 8 }).strokeWidth(this.strokeWidth).lineCap(this.lineCapStyle).key("divider")
+            Divider().vertical(this.vertical).height(22).color(this.color).width(this.widthK).margin({ left: 8, right: 8 }).strokeWidth(this.strokeWidth).lineCap(this.lineCapStyle).key("dividerUI_divider")
             Button('Button')
               .width(136)
               .height(22)

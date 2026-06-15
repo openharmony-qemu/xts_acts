@@ -90,8 +90,8 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
       firstText = await CommonFunc.getComponentRect('Row_TextOffset1');
       secondText = await CommonFunc.getComponentRect('Row_TextOffset2');
       let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextOffset3');
-      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextOffset_Container01');
-      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextOffset_Container01');
+      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextOffset' + '_Container01');
+      let rowContainerStrJson = inspector.getInspectorByKey('Row_TextOffset' + '_Container01');
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');
 

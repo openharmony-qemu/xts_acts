@@ -67,8 +67,8 @@ export default function grid_RowCol_ItemOffsetTest() {
       secondGridItem = CommonFunc.getComponentRect('Grid_RowCol_ItemOffset02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemOffset03');
       let fourthGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemOffset04');
-      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemOffset_Container01');
-      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemOffset_Container01');
+      let gridContainer: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemOffset' + '_Container01');
+      let gridContainerStrJson = getInspectorByKey('Grid_RowCol_ItemOffset' + '_Container01');
 
       expect(JSON.parse(gridContainerStrJson).$type).assertEqual('Grid');
 
