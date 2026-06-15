@@ -53,7 +53,7 @@ function getReversedCopy051<T>(arr: Array<T>): Array<T> {
 }
 
 function isNegativeZero(value: number): boolean {
-  return value === 0 && 1 / value === -Infinity;
+  return value === 0 && 1 / value === -Double.POSITIVE_INFINITY;
 }
 
 function isFullyReversed(source: Array<number>, result: Array<number>): boolean {
@@ -70,15 +70,18 @@ function isFullyReversed(source: Array<number>, result: Array<number>): boolean 
 
 export default function ArrayToReversedTest(): void {
   describe('ArrayToReversedTest', (): void => {
-    beforeAll((): void => {});
+    beforeAll((): void => {
+    });
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {});
+    afterEach((): void => {
+    });
 
-    afterAll((): void => {});
+    afterAll((): void => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_REVERSED_0100

@@ -646,9 +646,9 @@ export default function ArrayIsArrayTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIsArray035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Array.isArray(NaN)).assertFalse();
-      expect(Array.isArray(Infinity)).assertFalse();
-      expect(Array.isArray(-Infinity)).assertFalse();
+      expect(Array.isArray(Double.NaN)).assertFalse();
+      expect(Array.isArray(Double.POSITIVE_INFINITY)).assertFalse();
+      expect(Array.isArray(-Double.POSITIVE_INFINITY)).assertFalse();
     });
 
     /**

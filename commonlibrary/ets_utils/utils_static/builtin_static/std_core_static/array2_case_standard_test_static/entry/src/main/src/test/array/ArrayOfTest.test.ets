@@ -300,7 +300,7 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Array.of<number>(1, NaN, 3);
+      let arr = Array.of<number>(1, Double.NaN, 3);
       expect(arr.length).assertEqual(3);
       expect(Number.isNaN(arr[1])).assertTrue();
     });
@@ -314,10 +314,10 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Array.of<number>(1, Infinity, -Infinity);
+      let arr = Array.of<number>(1, Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(3);
-      expect(arr[1]).assertEqual(Infinity);
-      expect(arr[2]).assertEqual(-Infinity);
+      expect(arr[1]).assertEqual(Double.POSITIVE_INFINITY);
+      expect(arr[2]).assertEqual(-Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -1013,7 +1013,7 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Array.of<number>(NaN);
+      const arr = Array.of<number>(Double.NaN);
       expect(arr.length).assertEqual(1);
       expect(Number.isNaN(arr[0])).assertTrue();
     });
@@ -1027,9 +1027,9 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Array.of<number>(Infinity);
+      const arr = Array.of<number>(Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(1);
-      expect(arr[0]).assertEqual(Infinity);
+      expect(arr[0]).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**

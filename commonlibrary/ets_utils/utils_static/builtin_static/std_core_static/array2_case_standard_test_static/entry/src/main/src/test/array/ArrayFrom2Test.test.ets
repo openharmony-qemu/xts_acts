@@ -212,7 +212,7 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArr = new Array<number>(1, NaN, 3);
+      let sourceArr = new Array<number>(1, Double.NaN, 3);
       let arr = Array.from<number>(sourceArr);
       expect(isValueNaN(arr[1])).assertTrue();
     });
@@ -226,10 +226,10 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let sourceArr = new Array<number>(Infinity, -Infinity);
+      let sourceArr = new Array<number>(Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY);
       let arr = Array.from<number>(sourceArr);
-      expect(arr[0]).assertEqual(Infinity);
-      expect(arr[1]).assertEqual(-Infinity);
+      expect(arr[0]).assertEqual(Double.POSITIVE_INFINITY);
+      expect(arr[1]).assertEqual(-Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -564,7 +564,7 @@ export default function ArrayFrom2Test(): void {
       expect(Array.isArray(arr)).assertTrue();
       expect(arr.map((x: number): number => x * 2)[0]).assertEqual(20);
     });
-    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_TWO_3100
      * @tc.name testArrayFromTwo031
@@ -1098,9 +1098,9 @@ export default function ArrayFrom2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = new Array<number>(Infinity, NaN);
+      const source = new Array<number>(Double.POSITIVE_INFINITY, Double.NaN);
       const result = Array.from<number>(source);
-      expect(result[0]).assertEqual(Infinity);
+      expect(result[0]).assertEqual(Double.POSITIVE_INFINITY);
       expect(result[1] !== result[1]).assertTrue();
     });
 

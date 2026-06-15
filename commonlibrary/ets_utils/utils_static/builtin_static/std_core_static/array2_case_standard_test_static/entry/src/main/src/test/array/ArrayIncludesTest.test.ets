@@ -316,8 +316,8 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(NaN, 1, 2);
-      let result = arr.includes(NaN, 10);
+      let arr = new Array<number>(Double.NaN, 1, 2);
+      let result = arr.includes(Double.NaN, 10);
       expect(result).assertFalse();
     });
 
@@ -503,8 +503,8 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, NaN, 3);
-      expect(arr.includes(NaN)).assertTrue();
+      let arr = new Array<number>(1, Double.NaN, 3);
+      expect(arr.includes(Double.NaN)).assertTrue();
     });
 
     /**
@@ -1369,8 +1369,8 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Float64Array([NaN, 1, 2]);
-      const result = arr.includes(NaN);
+      const arr = new Float64Array([Double.NaN, 1, 2]);
+      const result = arr.includes(Double.NaN);
       expect(result).assertTrue();
     });
 
@@ -1397,10 +1397,10 @@ export default function ArrayIncludesTest(): void {
      * @tc.level Level 2
      */
     it('testArrayIncludes091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, 0, -Infinity);
-      expect(arr.includes(Infinity)).assertTrue();
-      expect(arr.includes(-Infinity)).assertTrue();
-      expect(arr.includes(-Infinity, 0)).assertTrue();
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, 0, -Double.POSITIVE_INFINITY);
+      expect(arr.includes(Double.POSITIVE_INFINITY)).assertTrue();
+      expect(arr.includes(-Double.POSITIVE_INFINITY)).assertTrue();
+      expect(arr.includes(-Double.POSITIVE_INFINITY, 0)).assertTrue();
     });
 
     /**

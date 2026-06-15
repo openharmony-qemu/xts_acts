@@ -613,8 +613,8 @@ export default function ArrayIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, NaN, 3);
-      expect(arr.indexOf(NaN)).assertEqual(-1);
+      let arr = new Array<number>(1, Double.NaN, 3);
+      expect(arr.indexOf(Double.NaN)).assertEqual(-1);
     });
 
     /**

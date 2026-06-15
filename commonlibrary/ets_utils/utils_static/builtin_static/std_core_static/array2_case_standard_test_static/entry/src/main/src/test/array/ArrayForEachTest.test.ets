@@ -1121,7 +1121,8 @@ export default function ArrayForEachTest(): void {
      * @tc.level Level 2
      */
     it('testArrayForEach054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(collectText<string>(new Array<string>('x', 'y', 'z'), (value: string): string => value)).assertEqual('xyz');
+      expect(collectText<string>(new Array<string>('x', 'y', 'z'), (value: string): string => value))
+        .assertEqual('xyz');
     });
 
     /**
@@ -1167,7 +1168,7 @@ export default function ArrayForEachTest(): void {
      * @tc.level Level 2
      */
     it('testArrayForEach057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN, 2);
+      const arr = new Array<number>(Double.NaN, 2);
       let sawNaN = false;
       let count = 0;
       arr.forEach((value: number): void => {

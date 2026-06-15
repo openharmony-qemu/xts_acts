@@ -282,7 +282,7 @@ export default function ArrayPushTest(): void {
      */
     it('testArrayPush013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      arr.push(NaN);
+      arr.push(Double.NaN);
       expect(Number.isNaN(arr[0])).assertTrue();
     });
 
@@ -296,10 +296,10 @@ export default function ArrayPushTest(): void {
      */
     it('testArrayPush014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      arr.push(Infinity);
-      arr.push(-Infinity);
-      expect(arr[0]).assertEqual(Infinity);
-      expect(arr[1]).assertEqual(-Infinity);
+      arr.push(Double.POSITIVE_INFINITY);
+      arr.push(-Double.POSITIVE_INFINITY);
+      expect(arr[0]).assertEqual(Double.POSITIVE_INFINITY);
+      expect(arr[1]).assertEqual(-Double.POSITIVE_INFINITY);
     });
 
     /**

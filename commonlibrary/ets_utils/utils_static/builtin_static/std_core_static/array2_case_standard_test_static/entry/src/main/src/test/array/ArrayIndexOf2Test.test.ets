@@ -209,8 +209,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, Infinity, 3);
-      expect(arr.indexOf(Infinity)).assertEqual(1);
+      let arr = new Array<number>(1, Double.POSITIVE_INFINITY, 3);
+      expect(arr.indexOf(Double.POSITIVE_INFINITY)).assertEqual(1);
     });
 
     /**
@@ -684,8 +684,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(-Infinity, 1, 2);
-      expect(arr.indexOf(-Infinity)).assertEqual(0);
+      const arr = new Array<number>(-Double.POSITIVE_INFINITY, 1, 2);
+      expect(arr.indexOf(-Double.POSITIVE_INFINITY)).assertEqual(0);
     });
 
     /**
@@ -697,8 +697,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, 1);
-      expect(arr.indexOf(-Infinity)).assertEqual(-1);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, 1);
+      expect(arr.indexOf(-Double.POSITIVE_INFINITY)).assertEqual(-1);
     });
 
     /**

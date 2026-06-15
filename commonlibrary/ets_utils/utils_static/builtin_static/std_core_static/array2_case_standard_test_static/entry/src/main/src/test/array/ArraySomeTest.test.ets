@@ -100,7 +100,7 @@ export default function ArraySomeTest(): void {
      * @tc.level Level 2
      */
     it('testArraySome003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, -0, NaN);
+      const arr = new Array<number>(0, -0, Double.NaN);
       const hasNaN = arr.some((value: number): boolean => Number.isNaN(value));
       const hasPositive = arr.some((value: number): boolean => value > 0);
       expect(hasNaN).assertTrue();

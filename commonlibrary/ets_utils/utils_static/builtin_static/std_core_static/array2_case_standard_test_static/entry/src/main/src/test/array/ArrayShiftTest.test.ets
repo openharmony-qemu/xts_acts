@@ -596,7 +596,7 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN, 1, 2);
+      const arr = new Array<number>(Double.NaN, 1, 2);
       const value = arr.shift();
       if (value === undefined) {
         expect().assertFail();
@@ -616,10 +616,10 @@ export default function ArrayShiftTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShift034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, -Infinity, 0);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY, 0);
       const value = arr.shift();
-      expect(value).assertEqual(Infinity);
-      expect(arr[0]).assertEqual(-Infinity);
+      expect(value).assertEqual(Double.POSITIVE_INFINITY);
+      expect(arr[0]).assertEqual(-Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(2);
     });
 

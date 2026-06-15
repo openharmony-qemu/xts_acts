@@ -82,7 +82,7 @@ function getSortedCopy<T>(arr: Array<T>): Array<T> {
 }
 
 function isNegativeZeroToSorted(value: number): boolean {
-  return value === 0 && 1 / value === -Infinity;
+  return value === 0 && 1 / value === -Double.POSITIVE_INFINITY;
 }
 
 export default function ArrayToSorted1Test(): void {

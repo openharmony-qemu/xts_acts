@@ -385,7 +385,7 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<number>(1, NaN, 3);
+      let source = new Array<number>(1, Double.NaN, 3);
       let arr = Array.from<number, string>(source, (v: number): string => {
         return isValueNaN(v) ? 'NaN' : v.toString();
       });
@@ -403,12 +403,12 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<number>(1, Infinity, -Infinity);
+      let source = new Array<number>(1, Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY);
       let arr = Array.from<number, string>(source, (v: number): string => {
-        if (v === Infinity) {
+        if (v === Double.POSITIVE_INFINITY) {
           return 'Inf';
         }
-        if (v === -Infinity) {
+        if (v === -Double.POSITIVE_INFINITY) {
           return '-Inf';
         }
         return v.toString();

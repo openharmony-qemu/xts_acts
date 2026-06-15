@@ -268,7 +268,7 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<number>(1, NaN, 3);
+      let source = new Array<number>(1, Double.NaN, 3);
       let arr = Array.from<number>(source);
       expect(isNaN(arr[1])).assertTrue();
     });
@@ -282,10 +282,10 @@ export default function ArrayFrom1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source = new Array<number>(1, Infinity, -Infinity);
+      let source = new Array<number>(1, Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY);
       let arr = Array.from<number>(source);
-      expect(arr[1]).assertEqual(Infinity);
-      expect(arr[2]).assertEqual(-Infinity);
+      expect(arr[1]).assertEqual(Double.POSITIVE_INFINITY);
+      expect(arr[2]).assertEqual(-Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -1223,7 +1223,7 @@ export default function ArrayFrom1Test(): void {
      */
     it('testArrayFromOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>();
-      set.add(NaN);
+      set.add(Double.NaN);
       const result = Array.from<number>(set);
       expect(result.length).assertEqual(1);
       expect(result[0] !== result[0]).assertTrue();

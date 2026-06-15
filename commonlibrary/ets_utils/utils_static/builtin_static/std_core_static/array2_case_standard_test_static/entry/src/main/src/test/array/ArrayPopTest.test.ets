@@ -253,7 +253,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, NaN);
+      let arr = new Array<number>(1, 2, Double.NaN);
       let result = arr.pop();
       if (result === undefined) {
         expect().assertFail();
@@ -271,9 +271,9 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, Infinity);
+      let arr = new Array<number>(1, 2, Double.POSITIVE_INFINITY);
       let result = arr.pop();
-      expect(result).assertEqual(Infinity);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(2);
     });
 
@@ -286,9 +286,9 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, -Infinity);
+      let arr = new Array<number>(1, 2, -Double.POSITIVE_INFINITY);
       let result = arr.pop();
-      expect(result).assertEqual(-Infinity);
+      expect(result).assertEqual(-Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(2);
     });
 
@@ -785,7 +785,7 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN);
+      const arr = new Array<number>(Double.NaN);
       const value = arr.pop();
       if (value === undefined) {
         expect().assertFail();
@@ -804,9 +804,9 @@ export default function ArrayPopTest(): void {
      * @tc.level Level 2
      */
     it('testArrayPop045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY);
       const value = arr.pop();
-      expect(value).assertEqual(Infinity);
+      expect(value).assertEqual(Double.POSITIVE_INFINITY);
       expect(arr.length).assertEqual(0);
     });
 

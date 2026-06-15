@@ -821,7 +821,7 @@ export default function ArrayShrinkToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayShrinkTo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN, 2, 3);
+      const arr = new Array<number>(Double.NaN, 2, 3);
       arr.shrinkTo(2);
       expect(Number.isNaN(arr[0])).assertTrue();
       expect(arr[1]).assertEqual(2);

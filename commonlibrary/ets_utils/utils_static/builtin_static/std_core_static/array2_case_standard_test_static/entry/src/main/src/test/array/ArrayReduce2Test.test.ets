@@ -521,13 +521,14 @@ export default function ArrayReduce2Test(): void {
       arr[0] = 1;
       arr[2] = 3;
       let indexes = new Array<int>();
-      const result = arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
-        indexes.pushOne(index);
-        if (index === 0) {
-          source[1] = 2;
-        }
-        return acc + (value === undefined ? 0 : value);
-      }, 10);
+      const result =
+        arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
+          indexes.pushOne(index);
+          if (index === 0) {
+            source[1] = 2;
+          }
+          return acc + (value === undefined ? 0 : value);
+        }, 10);
       expect(result).assertEqual(16);
       expect(indexes.toString()).assertEqual('0,1,2');
     });
@@ -762,12 +763,12 @@ export default function ArrayReduce2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceTwo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, -Infinity, 0);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY, 0);
       const result = arr.reduce((acc: string, value: number): string => {
-        if (value === Infinity) {
+        if (value === Double.POSITIVE_INFINITY) {
           return acc + 'P';
         }
-        if (value === -Infinity) {
+        if (value === -Double.POSITIVE_INFINITY) {
           return acc + 'N';
         }
         return acc + 'Z';
@@ -1494,7 +1495,10 @@ export default function ArrayReduce2Test(): void {
     it('testArrayReduceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       let same = false;
-      arr.reduce((acc: number, cur: number, index: int, source: Array<number>): number => { same = source === arr; return acc + cur; }, 0);
+      arr.reduce((acc: number, cur: number, index: int, source: Array<number>): number => {
+        same = source === arr;
+        return acc + cur;
+      }, 0);
       expect(same).assertTrue();
     });
 
@@ -1509,7 +1513,10 @@ export default function ArrayReduce2Test(): void {
     it('testArrayReduceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       let text = '';
-      arr.reduce((acc: number, cur: number, index: int): number => { text += index.toString(); return acc + cur; }, 0);
+      arr.reduce((acc: number, cur: number, index: int): number => {
+        text += index.toString();
+        return acc + cur;
+      }, 0);
       expect(text).assertEqual("012");
     });
 
@@ -1537,7 +1544,16 @@ export default function ArrayReduce2Test(): void {
      */
     it('testArrayReduceTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
-      const result = arr.reduce((acc: ReduceMap018, cur: string, index: int): ReduceMap018 => { if (cur === 'a') { acc.a = index; } else if (cur === 'b') { acc.b = index; } else { acc.c = index; } return acc; }, new ReduceMap018());
+      const result = arr.reduce((acc: ReduceMap018, cur: string, index: int): ReduceMap018 => {
+        if (cur === 'a') {
+          acc.a = index;
+        } else if (cur === 'b') {
+          acc.b = index;
+        } else {
+          acc.c = index;
+        }
+        return acc;
+      }, new ReduceMap018());
       expect(result.a).assertEqual(0);
       expect(result.c).assertEqual(2);
     });
@@ -1572,7 +1588,10 @@ export default function ArrayReduce2Test(): void {
     it('testArrayReduceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(9);
       let calls = 0;
-      const result = arr.reduce((acc: number, cur: number): number => { calls++; return acc + cur; }, 1);
+      const result = arr.reduce((acc: number, cur: number): number => {
+        calls++;
+        return acc + cur;
+      }, 1);
       expect(result).assertEqual(10);
       expect(calls).assertEqual(1);
     });

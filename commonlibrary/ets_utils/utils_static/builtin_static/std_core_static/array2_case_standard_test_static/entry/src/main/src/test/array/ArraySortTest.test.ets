@@ -396,7 +396,7 @@ export default function ArraySortTest(): void {
      * @tc.level Level 2
      */
     it('testArraySort015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, NaN, 2, NaN, 3);
+      const arr = new Array<number>(1, Double.NaN, 2, Double.NaN, 3);
       arr.sort((a: number, b: number): int => {
         if (Number.isNaN(a)) {
           return 1;
@@ -422,12 +422,12 @@ export default function ArraySortTest(): void {
      * @tc.level Level 2
      */
     it('testArraySort016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, Infinity, -Infinity, 2);
+      const arr = new Array<number>(1, Double.POSITIVE_INFINITY, -Double.POSITIVE_INFINITY, 2);
       arr.sort(compareNumbersAscending);
-      expect(arr[0]).assertEqual(-Infinity);
+      expect(arr[0]).assertEqual(-Double.POSITIVE_INFINITY);
       expect(arr[1]).assertEqual(1);
       expect(arr[2]).assertEqual(2);
-      expect(arr[3]).assertEqual(Infinity);
+      expect(arr[3]).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**

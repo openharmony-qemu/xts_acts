@@ -289,7 +289,7 @@ export default function ArraySplice1Test(): void {
      */
     it('testArraySpliceOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
-      arr.splice(1, 1, NaN);
+      arr.splice(1, 1, Double.NaN);
       expect(Number.isNaN(arr[1])).assertTrue();
     });
 

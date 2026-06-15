@@ -601,7 +601,7 @@ export default function ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testArrayReverse036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, NaN, 3);
+      let arr = new Array<number>(1, Double.NaN, 3);
       arr.reverse();
       expect(arr[0]).assertEqual(3);
       expect(Number.isNaN(arr[1])).assertTrue();
@@ -631,10 +631,10 @@ export default function ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testArrayReverse038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(Infinity, 1, 2);
+      let arr = new Array<number>(Double.POSITIVE_INFINITY, 1, 2);
       arr.reverse();
       expect(arr[0]).assertEqual(2);
-      expect(arr[2]).assertEqual(Infinity);
+      expect(arr[2]).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -1082,10 +1082,10 @@ export default function ArrayReverseTest(): void {
      * @tc.level Level 2
      */
     it('testArrayReverse066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN, Infinity, 0);
+      const arr = new Array<number>(NaN, Double.POSITIVE_INFINITY, 0);
       const result = arr.reverse();
       expect(result[0]).assertEqual(0);
-      expect(result[1]).assertEqual(Infinity);
+      expect(result[1]).assertEqual(Double.POSITIVE_INFINITY);
       expect(Number.isNaN(result[2])).assertTrue();
     });
 

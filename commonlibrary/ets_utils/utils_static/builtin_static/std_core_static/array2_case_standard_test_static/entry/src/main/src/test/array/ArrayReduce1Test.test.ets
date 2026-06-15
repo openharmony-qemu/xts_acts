@@ -402,7 +402,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.desc Verify reduce without an initial value starts callback iteration at index 1 for a two-element array
      * @tc.size MediumTest
      * @tc.type Function
-    * @tc.level Level 2
+     * @tc.level Level 2
      */
     it('testArrayReduceOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 30);
@@ -466,13 +466,14 @@ export default function ArrayReduce1Test(): void {
       arr[0] = 1;
       arr[2] = 3;
       let visited = new Array<string>();
-      const result = arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
-        visited.pushOne(index.toString() + ':' + (value === undefined ? 'u' : value.toString()));
-        if (index === 0) {
-          source[1] = 2;
-        }
-        return acc + (value === undefined ? 0 : value);
-      }, 0);
+      const result =
+        arr.reduce((acc: number, value: number | undefined, index: int, source: Array<number | undefined>): number => {
+          visited.pushOne(index.toString() + ':' + (value === undefined ? 'u' : value.toString()));
+          if (index === 0) {
+            source[1] = 2;
+          }
+          return acc + (value === undefined ? 0 : value);
+        }, 0);
       expect(result).assertEqual(6);
       expect(visited.toString()).assertEqual('0:1,1:2,2:3');
     });
@@ -676,7 +677,7 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, NaN, 3);
+      const arr = new Array<number>(1, Double.NaN, 3);
       const result = arr.reduce((acc: number, value: number): number => acc + value);
       expect(Number.isNaN(result)).assertTrue();
     });
@@ -690,9 +691,9 @@ export default function ArrayReduce1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayReduceOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, -5, 10);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, -5, 10);
       const result = arr.reduce((acc: number, value: number): number => acc + value);
-      expect(result).assertEqual(Infinity);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -712,7 +713,7 @@ export default function ArrayReduce1Test(): void {
         return acc + value;
       });
       expect(calls).assertEqual(0);
-      expect(1.0 / result).assertEqual(-Infinity);
+      expect(1.0 / result).assertEqual(-Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -1385,7 +1386,10 @@ export default function ArrayReduce1Test(): void {
     it('testArrayReduceOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       let same = false;
-      arr.reduce((acc: number, cur: number, index: int, source: Array<number>): number => { same = source === arr; return acc + cur; });
+      arr.reduce((acc: number, cur: number, index: int, source: Array<number>): number => {
+        same = source === arr;
+        return acc + cur;
+      });
       expect(same).assertTrue();
     });
 
@@ -1400,7 +1404,10 @@ export default function ArrayReduce1Test(): void {
     it('testArrayReduceOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       let text = '';
-      arr.reduce((acc: number, cur: number, index: int): number => { text += index.toString(); return acc + cur; });
+      arr.reduce((acc: number, cur: number, index: int): number => {
+        text += index.toString();
+        return acc + cur;
+      });
       expect(text).assertEqual("12");
     });
 
@@ -1428,7 +1435,16 @@ export default function ArrayReduce1Test(): void {
      */
     it('testArrayReduceOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
-      const result = arr.reduce((acc: IndexMap009, cur: string, index: int): IndexMap009 => { if (cur === 'a') { acc.a = index; } else if (cur === 'b') { acc.b = index; } else { acc.c = index; } return acc; }, new IndexMap009());
+      const result = arr.reduce((acc: IndexMap009, cur: string, index: int): IndexMap009 => {
+        if (cur === 'a') {
+          acc.a = index;
+        } else if (cur === 'b') {
+          acc.b = index;
+        } else {
+          acc.c = index;
+        }
+        return acc;
+      }, new IndexMap009());
       expect(result.a).assertEqual(0);
       expect(result.c).assertEqual(2);
     });
@@ -1443,7 +1459,9 @@ export default function ArrayReduce1Test(): void {
      */
     it('testArrayReduceOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(3, 4));
-      const result = arr.reduce((acc: Array<number>, cur: Array<number>): Array<number> => false ? cur.concat(acc) : acc.concat(cur), new Array<number>());
+      const result =
+        arr.reduce((acc: Array<number>, cur: Array<number>): Array<number> => false ? cur.concat(acc) : acc.concat(cur),
+          new Array<number>());
       expect(result.toString()).assertEqual("1,2,3,4");
     });
 
@@ -1458,7 +1476,10 @@ export default function ArrayReduce1Test(): void {
     it('testArrayReduceOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(9);
       let calls = 0;
-      const result = arr.reduce((acc: number, cur: number): number => { calls++; return acc + cur; });
+      const result = arr.reduce((acc: number, cur: number): number => {
+        calls++;
+        return acc + cur;
+      });
       expect(result).assertEqual(9);
       expect(calls).assertEqual(0);
     });
@@ -1515,7 +1536,9 @@ export default function ArrayReduce1Test(): void {
      */
     it('testArrayReduceOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      const result = arr.reduce((acc: string, cur: number): string => acc.length === 0 ? cur.toString() : acc + '-' + cur.toString(), '');
+      const result =
+        arr.reduce((acc: string, cur: number): string => acc.length === 0 ? cur.toString() : acc + '-' + cur.toString(),
+          '');
       expect(result).assertEqual("1-2-3");
     });
 

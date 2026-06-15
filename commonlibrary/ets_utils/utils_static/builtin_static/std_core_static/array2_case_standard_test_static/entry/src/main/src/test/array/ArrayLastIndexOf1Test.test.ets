@@ -271,8 +271,8 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, NaN, 2, NaN);
-      let result = arr.lastIndexOf(NaN);
+      let arr = new Array<number>(1, Double.NaN, 2, Double.NaN);
+      let result = arr.lastIndexOf(Double.NaN);
       expect(result).assertEqual(-1);
     });
 

@@ -809,7 +809,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(NaN, 1);
+      const arr = new Array<number>(Double.NaN, 1);
       const result = arr.join('-');
       expect(result).assertEqual('NaN-1');
     });
@@ -823,7 +823,7 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(Infinity, 1);
+      const arr = new Array<number>(Double.POSITIVE_INFINITY, 1);
       const result = arr.join('-');
       expect(result).assertEqual('Infinity-1');
     });
