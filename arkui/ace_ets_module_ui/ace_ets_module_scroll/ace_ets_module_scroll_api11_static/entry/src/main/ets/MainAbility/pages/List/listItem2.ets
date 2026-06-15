@@ -92,7 +92,7 @@ struct ListItemExample2 {
             .onClick((e: ClickEvent) => {
               this.editFlag = !this.editFlag
             })
-        }.key('ListItem')
+        }.key('listItem2_ListItem')
 
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {

@@ -68,11 +68,11 @@ export default function TimePickerJsunit() {
       // switch 12-hour
       console.info('[TimePickerJsunit_0100] START');
       let driver = await Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await timePicker.getBounds();
       let left = rect.left
       let top = rect.top
@@ -81,7 +81,7 @@ export default function TimePickerJsunit() {
       let middle = (top + bottom) / 2
 
       // Verify AM or PM
-      let hour = await driver.findComponent(ON.id('hour'));
+      let hour = await driver.findComponent(ON.id('TimePickerPage' + '_hour'));
       let hour1 = await hour.getText();
       console.info("[TimePickerJsunit_0100] hour1: " + JSON.stringify(hour1));
       expect(hour1).assertEqual('hour:8');
@@ -101,7 +101,7 @@ export default function TimePickerJsunit() {
       expect(hour2 == hour3).assertFalse();
 
       // Verify minute
-      let minute = await driver.findComponent(ON.id('minute'));
+      let minute = await driver.findComponent(ON.id('TimePickerPage' + '_minute'));
       let minute1 = await minute.getText();
       console.info("[TimePickerJsunit_0100] minute1: " + JSON.stringify(minute1));
       expect(minute1).assertEqual('minute:0');
@@ -128,7 +128,7 @@ export default function TimePickerJsunit() {
       console.info('[TimePickerJsunit_0200] START');
       // Verify switch 24-hour
       let driver = await UiDriver.create()
-      let switchButton = await driver.findComponent(BY.key('button'));
+      let switchButton = await driver.findComponent(BY.key('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('mode');
@@ -159,11 +159,11 @@ export default function TimePickerJsunit() {
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_0300] START');
       let driver = await Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await timePicker.getBounds();
       let left = rect.left
       let top = rect.top
@@ -172,19 +172,19 @@ export default function TimePickerJsunit() {
       let middle = (top + bottom) / 2
 
       // Verify hour
-      let hour = await driver.findComponent(ON.id('hour'));
+      let hour = await driver.findComponent(ON.id('TimePickerPage' + '_hour'));
       let hour1 = await hour.getText();
       console.info("[TimePickerJsunit_0300] hour1: " + JSON.stringify(hour1));
       await driver.swipe(Math.round(left + (right - left) / 4), Math.round(top + (bottom - top) / 2),
         Math.round(left + (right - left) / 4), Math.round(0));
       await CommonFunc.sleep(6000);
-      let hourComponent = await driver.findComponent(ON.id('hour'));
+      let hourComponent = await driver.findComponent(ON.id('TimePickerPage' + '_hour'));
       let hour2 = await hourComponent.getText();
       console.info("[TimePickerJsunit_0300] hour2: " + JSON.stringify(hour2));
       expect(hour1 == hour2).assertFalse();
 
       // Verify minute
-      let minute = await driver.findComponent(ON.id('minute'));
+      let minute = await driver.findComponent(ON.id('TimePickerPage' + '_minute'));
       let minute1 = await minute.getText();
       console.info("[TimePickerJsunit_0300] minute1: " + JSON.stringify(minute1));
       await driver.swipe(Math.round(left + (right - left) * 0.75), Math.round(top + (bottom - top) / 2),

@@ -50,7 +50,7 @@ struct onGetIrregular2 {
       .width(400)
       .backgroundColor(0xFAEEE0)
       .height(300)
-      .key('GridItem2')
+      .key('onGetIrregular2_GridItem2')
     }.width('100%').margin({ top: 5 })
   }
 }

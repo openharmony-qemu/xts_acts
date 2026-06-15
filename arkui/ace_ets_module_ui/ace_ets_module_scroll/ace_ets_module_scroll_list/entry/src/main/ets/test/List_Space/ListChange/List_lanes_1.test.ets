@@ -55,14 +55,14 @@ export default function List_lanes_1() {
     it('testListLanesToOne',  Level.LEVEL0, async (done: Function) => {
       console.info('testListLanesToOne START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_lanes_1_01');
+      let strJson = getInspectorByKey('List_lanes_1' + '_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
       let List_lanes_011 = CommonFunc.getComponentRect('List_lanes_001');
       let List_lanes_012 = CommonFunc.getComponentRect('List_lanes_002');
       let List_lanes_013 = CommonFunc.getComponentRect('List_lanes_003');
       let List_lanes_014 = CommonFunc.getComponentRect('List_lanes_004');
-      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes_1_01');
+      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes_1' + '_01');
       let width: number = List_lanes_01.right - List_lanes_01.left;
       let height: number = List_lanes_01.bottom - List_lanes_01.top;
 

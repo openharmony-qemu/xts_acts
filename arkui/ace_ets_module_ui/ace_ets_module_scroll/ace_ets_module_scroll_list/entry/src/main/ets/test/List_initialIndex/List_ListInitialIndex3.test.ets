@@ -82,8 +82,8 @@ export default function list_ListInitialIndex3Test() {
       let tenthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_10');
       let eleventhListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_11');
       let twelfthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_12');
-      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_Container01');
-      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex3_Container01');
+      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3' + '_Container01');
+      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex3' + '_Container01');
 
       expect(JSON.parse(listContainerStrJson).$type).assertEqual('List');
 
@@ -144,7 +144,7 @@ export default function list_ListInitialIndex3Test() {
       fifthListItem = CommonFunc.getComponentRect('List_ListInitialIndex3_5');
       sixthListItem = CommonFunc.getComponentRect('List_ListInitialIndex3_6');
       seventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex3_7');
-      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex3_Container01');
+      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex3' + '_Container01');
 
       expect(Math.abs(Math.floor(sixthListItem.top - fifthListItem.bottom - vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(sixthListItem.left - listContainer.left) <= 1).assertTrue();

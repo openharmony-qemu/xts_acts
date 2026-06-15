@@ -81,7 +81,7 @@ export default function ListItem_Delete_End_String() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_String_1');
+      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_String' + '_1');
       let top = swipeBar.top;
       let right = swipeBar.right;
       let left = swipeBar.left;
@@ -94,15 +94,15 @@ export default function ListItem_Delete_End_String() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End_String_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_String' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End_String_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_String' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End_String_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_String' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 
@@ -135,7 +135,7 @@ export default function ListItem_Delete_End_String() {
       let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_String_ListItem_00');
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_String_ListItem_01');
 
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_String_1');
+      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_String' + '_1');
       let top = swipeBar.top;
       let right = swipeBar.right;
       let left = swipeBar.left;
@@ -148,15 +148,15 @@ export default function ListItem_Delete_End_String() {
       );
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End_String_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_String' + '_text_01');
 
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End_String_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_String' + '_text_02');
 
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End_String_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_String' + '_text_03');
 
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
 

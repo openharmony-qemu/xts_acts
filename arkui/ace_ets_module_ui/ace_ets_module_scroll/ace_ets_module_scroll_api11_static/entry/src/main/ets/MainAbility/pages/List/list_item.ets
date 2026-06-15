@@ -77,7 +77,7 @@ struct List_itemOnSelect {
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
         }
-        .key("ListItem")
+        .key("list_item_ListItem")
         .selectable(false)
         .swipeAction({ end: this.itemEnd })
       }

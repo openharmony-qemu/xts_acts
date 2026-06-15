@@ -30,7 +30,7 @@ class timePickerPropertiesModifier implements AttributeModifier<TimePickerAttrib
     build() {
       Column() {
         TimePicker({ selected: this.selectedTime })
-          .key('timePickerDefault')
+          .key('timePickerPropertiesModifier_timePickerDefault')
           .attributeModifier(this.timePickerModifier)
       }
     }

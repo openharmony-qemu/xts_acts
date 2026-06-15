@@ -84,7 +84,7 @@ it('tabsApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(6000);
 
-      let text1 = inspector.getInspectorByKey('tabsApi1_text1');
+      let text1 = inspector.getInspectorByKey('tabsApi1' + '_text1');
       let Obj1 = JSON.parseJsonElement(text1);
       expect(Obj1.getElement('$attrs').getString('content')).assertEqual('222');
 

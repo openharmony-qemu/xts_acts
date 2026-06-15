@@ -201,7 +201,7 @@ struct GridOnDidStopFlingDemoModifier {
       Text(this.statusText)
         .fontSize(16)
         .fontColor(Color.Blue)
-        .key('onDidStopFling')
+        .key('GridModifier_onDidStopFling_onDidStopFling')
 
       Text(`Fling回调触发次数: ${this.flingTriggerCount}`)
         .fontSize(14)
@@ -225,7 +225,7 @@ struct GridOnDidStopFlingDemoModifier {
       .width('100%')
       .height(400)
       .backgroundColor(0xF5F5F5)
-      .key('grid_dragging_fling')
+      .key('GridModifier_onDidStopFling_grid_dragging_fling')
 
       // 操作区域
       Row() {
