@@ -3,6 +3,8 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/counter/CounterDirection",
     "MainAbility/pages/ArrayLike/ArrayLikeString",
-    "MainAbility/pages/counter/CounterAttrsPage"
+    "MainAbility/pages/counter/CounterAttrsPage",
+    "MainAbility/pages/CounterV2/CounterV2AttrsPage",
+    "MainAbility/pages/CounterV2/CounterV2Direction"
   ]
 }
