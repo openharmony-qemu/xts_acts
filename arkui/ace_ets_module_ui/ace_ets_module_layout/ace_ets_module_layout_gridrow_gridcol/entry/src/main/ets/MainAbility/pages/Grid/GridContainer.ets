@@ -52,7 +52,7 @@ struct gridContainer {
 
                 .height(50).backgroundColor(0x4682B4).textAlign(TextAlign.Center)
             }
-          }.key('gridContainer')
+          }.key('GridContainer_gridContainer')
           .width('90%')
           .alignItems(HorizontalAlign.Start)
 

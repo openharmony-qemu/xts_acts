@@ -63,10 +63,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
 
       console.log('assert space')
@@ -98,10 +98,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
 
       console.log('assert space')
@@ -133,10 +133,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Order_GridColColumnOption_04.top - Grid_Col_Order_GridColColumnOption_01.bottom) - vp2px(10))) <= 1)
@@ -167,10 +167,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Order_GridColColumnOption_01.top - Grid_Col_Order_GridColColumnOption_04.bottom) - vp2px(10))) <= 1)
@@ -201,10 +201,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - vp2px(10))) <= 1)
@@ -235,10 +235,10 @@ export default function Grid_Col_Order_GridColColumnOption() {
       await CommonFunc.sleep(3000);
 
       console.log('get Initial value')
-      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_01');
-      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_02');
-      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_03');
-      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption_04');
+      let Grid_Col_Order_GridColColumnOption_01: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_01');
+      let Grid_Col_Order_GridColColumnOption_02: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_02');
+      let Grid_Col_Order_GridColColumnOption_03: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_03');
+      let Grid_Col_Order_GridColColumnOption_04: RectValue = CommonFunc.getComponentRect('Grid_Col_Order_GridColColumnOption' + '_04');
 
       console.log('assert space')
       expect(Math.floor(Math.abs((Grid_Col_Order_GridColColumnOption_03.top - Grid_Col_Order_GridColColumnOption_02.bottom) - vp2px(10))) <= 1)

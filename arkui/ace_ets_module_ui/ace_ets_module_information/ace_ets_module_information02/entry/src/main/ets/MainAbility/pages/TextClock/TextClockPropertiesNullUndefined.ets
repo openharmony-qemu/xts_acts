@@ -33,12 +33,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontColor_default')
+              .key('TextClock_fontColor_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontColor_null')
+              .key('TextClock_fontColor_null')
               .fontColor(null)
 
             // Undefined
@@ -46,6 +48,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontColor_undefined')
+              .key('TextClock_fontColor_undefined')
               .fontColor(undefined)
 
             // Empty String
@@ -53,6 +56,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontColor_empty')
+              .key('TextClock_fontColor_empty')
               .fontColor('')
           }
           .width('100%')
@@ -69,12 +73,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontSize_default')
+              .key('TextClock_fontSize_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontSize_null')
+              .key('TextClock_fontSize_null')
               .fontSize(null)
 
             // Undefined
@@ -82,6 +88,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontSize_undefined')
+              .key('TextClock_fontSize_undefined')
               .fontSize(undefined)
 
             // Empty String
@@ -89,6 +96,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontSize_empty')
+              .key('TextClock_fontSize_empty')
               .fontSize('')
           }
           .width('100%')
@@ -105,12 +113,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontStyle_default')
+              .key('TextClock_fontStyle_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontStyle_null')
+              .key('TextClock_fontStyle_null')
               .fontStyle(null)
 
             // Undefined
@@ -118,6 +128,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontStyle_undefined')
+              .key('TextClock_fontStyle_undefined')
               .fontStyle(undefined)
           }
           .width('100%')
@@ -134,12 +145,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontWeight_default')
+              .key('TextClock_fontWeight_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontWeight_null')
+              .key('TextClock_fontWeight_null')
               .fontWeight(null)
 
             // Undefined
@@ -147,6 +160,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontWeight_undefined')
+              .key('TextClock_fontWeight_undefined')
               .fontWeight(undefined)
 
             // Empty String
@@ -154,6 +168,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontWeight_empty')
+              .key('TextClock_fontWeight_empty')
               .fontWeight('')
           }
           .width('100%')
@@ -170,12 +185,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFamily_default')
+              .key('TextClock_fontFamily_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontFamily_null')
+              .key('TextClock_fontFamily_null')
               .fontFamily(null)
 
             // Undefined
@@ -183,6 +200,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFamily_undefined')
+              .key('TextClock_fontFamily_undefined')
               .fontFamily(undefined)
 
             // Empty String
@@ -190,6 +208,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFamily_empty')
+              .key('TextClock_fontFamily_empty')
               .fontFamily('')
           }
           .width('100%')
@@ -206,12 +225,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_textShadow_default')
+              .key('TextClock_textShadow_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_textShadow_null')
+              .key('TextClock_textShadow_null')
               .textShadow(null)
 
             // Undefined
@@ -219,6 +240,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_textShadow_undefined')
+              .key('TextClock_textShadow_undefined')
               .textShadow(undefined)
           }
           .width('100%')
@@ -235,12 +257,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_contentModifier_default')
+              .key('TextClock_contentModifier_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_contentModifier_null')
+              .key('TextClock_contentModifier_null')
               .contentModifier(null)
 
             // Undefined
@@ -248,6 +272,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_contentModifier_undefined')
+              .key('TextClock_contentModifier_undefined')
               .contentModifier(undefined)
           }
           .width('100%')
@@ -264,12 +289,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFeature_default')
+              .key('TextClock_fontFeature_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_fontFeature_null')
+              .key('TextClock_fontFeature_null')
               .fontFeature(null)
 
             // Undefined
@@ -277,6 +304,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFeature_undefined')
+              .key('TextClock_fontFeature_undefined')
               .fontFeature(undefined)
 
             // Empty String
@@ -284,6 +312,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_fontFeature_empty')
+              .key('TextClock_fontFeature_empty')
               .fontFeature('')
           }
           .width('100%')
@@ -300,12 +329,14 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_dateTimeOptions_default')
+              .key('TextClock_dateTimeOptions_default')
 
             // Null
             TextClock()
               .width('30%')
               .height('5%')
               .id('TextClock_dateTimeOptions_null')
+              .key('TextClock_dateTimeOptions_null')
               .dateTimeOptions(null)
 
             // Undefined
@@ -313,6 +344,7 @@ struct TextClockPropertiesNullUndefinedTest {
               .width('30%')
               .height('5%')
               .id('TextClock_dateTimeOptions_undefined')
+              .key('TextClock_dateTimeOptions_undefined')
               .dateTimeOptions(undefined)
           }
           .width('100%')
