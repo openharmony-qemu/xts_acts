@@ -827,7 +827,7 @@ export default function ArrayToSpliced3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_THREE_4800
      * @tc.name testArrayToSplicedThree048
-     * @tc.desc Verify a sparse copied prefix is materialized as undefined
+     * @tc.desc Verify an explicit undefined value in the copied prefix is preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -851,7 +851,7 @@ export default function ArrayToSpliced3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_THREE_4900
      * @tc.name testArrayToSplicedThree049
-     * @tc.desc Verify sparse holes in a deleted span are not copied into the result
+     * @tc.desc Verify explicit undefined values in a deleted span are not copied into the result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -945,7 +945,7 @@ export default function ArrayToSpliced3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_THREE_5300
      * @tc.name testArrayToSplicedThree053
-     * @tc.desc Verify negative start equal to length targets the first element
+     * @tc.desc Verify negative start equal to negative length targets the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1614,7 +1614,7 @@ export default function ArrayToSpliced3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_THREE_9000
      * @tc.name testArrayToSplicedThree090
-     * @tc.desc Verify toSpliced kind 3 can operate on stringified number duplicates
+     * @tc.desc Verify toSpliced kind 3 can operate on duplicate number values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -771,7 +771,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_4600
      * @tc.name testArrayToSplicedOne046
-     * @tc.desc Verify replacing the tail still densifies earlier sparse holes
+     * @tc.desc Verify replacing the tail preserves an earlier explicit undefined element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -791,7 +791,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_4700
      * @tc.name testArrayToSplicedOne047
-     * @tc.desc Verify inserting into a fully sparse array creates dense undefined edges
+     * @tc.desc Verify inserting into an all-undefined dense array keeps undefined values on both sides
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -908,7 +908,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_5400
      * @tc.name testArrayToSplicedOne054
-     * @tc.desc Verify deleting after a sparse hole densifies the kept prefix
+     * @tc.desc Verify deleting the tail preserves an earlier explicit undefined value in the kept prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -929,7 +929,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_5500
      * @tc.name testArrayToSplicedOne055
-     * @tc.desc Verify sparse suffix holes become dense undefined after middle deletion
+     * @tc.desc Verify middle deletion preserves an explicit undefined suffix element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -967,7 +967,7 @@ export default function ArrayToSpliced1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_ONE_5700
      * @tc.name testArrayToSplicedOne057
-     * @tc.desc Verify one-argument sparse slicing densifies kept prefix holes
+     * @tc.desc Verify one-argument toSpliced keeps explicit undefined values in the copied prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

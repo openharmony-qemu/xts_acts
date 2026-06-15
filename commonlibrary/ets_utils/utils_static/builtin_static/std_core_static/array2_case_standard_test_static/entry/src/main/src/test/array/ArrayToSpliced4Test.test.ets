@@ -60,7 +60,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0100
      * @tc.name testArrayToSplicedFour001
      * @tc.desc Verify toSpliced accepts one required int start parameter
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0200
      * @tc.name testArrayToSplicedFour002
      * @tc.desc Verify start can be passed through an int variable
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0300
      * @tc.name testArrayToSplicedFour003
      * @tc.desc Verify examples use the one-argument form when start is required
      * @tc.size MediumTest
@@ -100,13 +100,12 @@ export default function ArrayToSpliced4Test(): void {
      */
     it('testArrayToSplicedFour003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      // The int overload requires start, so this case keeps a valid call only.
       const result = arr.toSpliced(1);
       expect(result.toString()).assertEqual('1');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0400
      * @tc.name testArrayToSplicedFour004
      * @tc.desc Verify int start values produce the expected remaining prefix length
      * @tc.size MediumTest
@@ -121,7 +120,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0500
      * @tc.name testArrayToSplicedFour005
      * @tc.desc Verify a zero start removes elements from the beginning through the end
      * @tc.size MediumTest
@@ -136,7 +135,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0600
      * @tc.name testArrayToSplicedFour006
      * @tc.desc Verify toSpliced returns a new array instance
      * @tc.size MediumTest
@@ -151,7 +150,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0700
      * @tc.name testArrayToSplicedFour007
      * @tc.desc Verify toSpliced leaves the original array unchanged
      * @tc.size MediumTest
@@ -166,7 +165,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0800
      * @tc.name testArrayToSplicedFour008
      * @tc.desc Verify toSpliced keeps the prefix before start and removes the tail
      * @tc.size MediumTest
@@ -180,7 +179,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0900
      * @tc.name testArrayToSplicedFour009
      * @tc.desc Verify start one keeps only the first element
      * @tc.size MediumTest
@@ -194,7 +193,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1000
      * @tc.name testArrayToSplicedFour010
      * @tc.desc Verify start at length minus one keeps all but the last element
      * @tc.size MediumTest
@@ -209,7 +208,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1100
      * @tc.name testArrayToSplicedFour011
      * @tc.desc Verify start equal to the array length deletes nothing
      * @tc.size MediumTest
@@ -224,7 +223,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1200
      * @tc.name testArrayToSplicedFour012
      * @tc.desc Verify start values greater than the array length delete nothing
      * @tc.size MediumTest
@@ -238,7 +237,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1300
      * @tc.name testArrayToSplicedFour013
      * @tc.desc Verify negative start values count from the end of the array
      * @tc.size MediumTest
@@ -253,7 +252,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1400
      * @tc.name testArrayToSplicedFour014
      * @tc.desc Verify start zero produces an empty returned array
      * @tc.size MediumTest
@@ -267,7 +266,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1500
      * @tc.name testArrayToSplicedFour015
      * @tc.desc Verify the one-argument form differs from the no-argument form
      * @tc.size MediumTest
@@ -284,7 +283,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1600
      * @tc.name testArrayToSplicedFour016
      * @tc.desc Verify the one-argument form differs from the items overload
      * @tc.size MediumTest
@@ -301,7 +300,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1700
      * @tc.name testArrayToSplicedFour017
      * @tc.desc Verify the int overload keeps the expected prefix content
      * @tc.size MediumTest
@@ -316,7 +315,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1800
      * @tc.name testArrayToSplicedFour018
      * @tc.desc Verify toSpliced does not change original length or boundary values
      * @tc.size MediumTest
@@ -335,7 +334,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1900
      * @tc.name testArrayToSplicedFour019
      * @tc.desc Verify the returned array is independent from the source array
      * @tc.size MediumTest
@@ -350,7 +349,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2000
      * @tc.name testArrayToSplicedFour020
      * @tc.desc Verify toSpliced can keep the first half of an array
      * @tc.size MediumTest
@@ -365,7 +364,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2100
      * @tc.name testArrayToSplicedFour021
      * @tc.desc Verify toSpliced can remove the tail after a chosen index
      * @tc.size MediumTest
@@ -379,7 +378,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2200
      * @tc.name testArrayToSplicedFour022
      * @tc.desc Verify toSpliced can keep elements through a specified index boundary
      * @tc.size MediumTest
@@ -394,7 +393,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2300
      * @tc.name testArrayToSplicedFour023
      * @tc.desc Verify a start computed from array length can remove the last items
      * @tc.size MediumTest
@@ -410,7 +409,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2400
      * @tc.name testArrayToSplicedFour024
      * @tc.desc Verify chained toSpliced calls can keep a narrowed prefix
      * @tc.size MediumTest
@@ -424,7 +423,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2500
      * @tc.name testArrayToSplicedFour025
      * @tc.desc Verify integer start values can be reused across calls
      * @tc.size MediumTest
@@ -441,7 +440,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2600
      * @tc.name testArrayToSplicedFour026
      * @tc.desc Verify start can be calculated from the array length
      * @tc.size MediumTest
@@ -457,7 +456,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2700
      * @tc.name testArrayToSplicedFour027
      * @tc.desc Verify toSpliced on a single-element array with start zero returns empty
      * @tc.size MediumTest
@@ -471,7 +470,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2800
      * @tc.name testArrayToSplicedFour028
      * @tc.desc Verify toSpliced on a single-element array with start one keeps the element
      * @tc.size MediumTest
@@ -485,7 +484,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_2900
      * @tc.name testArrayToSplicedFour029
      * @tc.desc Verify two-element arrays handle several start positions consistently
      * @tc.size MediumTest
@@ -500,7 +499,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3000
      * @tc.name testArrayToSplicedFour030
      * @tc.desc Verify toSpliced can be combined with map
      * @tc.size MediumTest
@@ -514,7 +513,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3100
      * @tc.name testArrayToSplicedFour031
      * @tc.desc Verify toSpliced can be combined with filter
      * @tc.size MediumTest
@@ -528,7 +527,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3200
      * @tc.name testArrayToSplicedFour032
      * @tc.desc Verify sliced arrays can call toSpliced afterward
      * @tc.size MediumTest
@@ -543,7 +542,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3300
      * @tc.name testArrayToSplicedFour033
      * @tc.desc Verify toSpliced reflects earlier push operations without mutating the source
      * @tc.size MediumTest
@@ -559,7 +558,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3400
      * @tc.name testArrayToSplicedFour034
      * @tc.desc Verify the return type preserves the generic element type
      * @tc.size MediumTest
@@ -575,7 +574,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3500
      * @tc.name testArrayToSplicedFour035
      * @tc.desc Verify different generic array element types keep the expected prefix
      * @tc.size MediumTest
@@ -592,7 +591,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3600
      * @tc.name testArrayToSplicedFour036
      * @tc.desc Verify object arrays keep the remaining object references after deletion
      * @tc.size MediumTest
@@ -613,7 +612,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3700
      * @tc.name testArrayToSplicedFour037
      * @tc.desc Verify large arrays support removing all elements from a later start index
      * @tc.size MediumTest
@@ -631,7 +630,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3800
      * @tc.name testArrayToSplicedFour038
      * @tc.desc Verify toSpliced allocates a new array object
      * @tc.size MediumTest
@@ -646,7 +645,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_3900
      * @tc.name testArrayToSplicedFour039
      * @tc.desc Verify several start values produce the expected prefixes
      * @tc.size MediumTest
@@ -665,7 +664,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4000
      * @tc.name testArrayToSplicedFour040
      * @tc.desc Verify negative start values normalize relative to the array length
      * @tc.size MediumTest
@@ -681,7 +680,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4100
      * @tc.name testArrayToSplicedFour041
      * @tc.desc Verify toSpliced and slice keep different sides of the boundary
      * @tc.size MediumTest
@@ -698,7 +697,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4200
      * @tc.name testArrayToSplicedFour042
      * @tc.desc Verify slice can reproduce the same prefix as toSpliced with one start argument
      * @tc.size MediumTest
@@ -712,7 +711,7 @@ export default function ArrayToSpliced4Test(): void {
       expect(r1.toString()).assertEqual(r2.toString());
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4300
      * @tc.name testArrayToSplicedFour043
      * @tc.desc Verify one-argument toSpliced far negative start removes the whole array
      * @tc.size MediumTest
@@ -729,7 +728,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4400
      * @tc.name testArrayToSplicedFour044
      * @tc.desc Verify one-argument toSpliced far positive start returns a full copy
      * @tc.size MediumTest
@@ -747,7 +746,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4500
      * @tc.name testArrayToSplicedFour045
      * @tc.desc Verify one-argument toSpliced preserves undefined in the kept prefix
      * @tc.size MediumTest
@@ -766,7 +765,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4600
      * @tc.name testArrayToSplicedFour046
      * @tc.desc Verify one-argument toSpliced preserves null in the kept prefix
      * @tc.size MediumTest
@@ -784,7 +783,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4700
      * @tc.name testArrayToSplicedFour047
      * @tc.desc Verify one-argument toSpliced preserves explicit undefined values in the copied prefix
      * @tc.size MediumTest
@@ -806,7 +805,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4800
      * @tc.name testArrayToSplicedFour048
      * @tc.desc Verify one-argument toSpliced can keep only an empty string prefix item
      * @tc.size MediumTest
@@ -824,7 +823,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_4900
      * @tc.name testArrayToSplicedFour049
      * @tc.desc Verify one-argument toSpliced can keep an empty string and a space
      * @tc.size MediumTest
@@ -842,7 +841,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5000
      * @tc.name testArrayToSplicedFour050
      * @tc.desc Verify one-argument toSpliced preserves object references in the prefix
      * @tc.size MediumTest
@@ -865,7 +864,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5100
      * @tc.name testArrayToSplicedFour051
      * @tc.desc Verify one-argument toSpliced keeps nested array references shallow
      * @tc.size MediumTest
@@ -886,7 +885,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5200
      * @tc.name testArrayToSplicedFour052
      * @tc.desc Verify one-argument toSpliced result mutation does not change primitive source values
      * @tc.size MediumTest
@@ -904,7 +903,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5300
      * @tc.name testArrayToSplicedFour053
      * @tc.desc Verify one-argument toSpliced start equal to length returns an independent full copy
      * @tc.size MediumTest
@@ -922,7 +921,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5400
      * @tc.name testArrayToSplicedFour054
      * @tc.desc Verify one-argument toSpliced negative start equal to length deletes all items
      * @tc.size MediumTest
@@ -939,7 +938,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5500
      * @tc.name testArrayToSplicedFour055
      * @tc.desc Verify one-argument toSpliced negative start keeps the prefix before the tail
      * @tc.size MediumTest
@@ -956,7 +955,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5600
      * @tc.name testArrayToSplicedFour056
      * @tc.desc Verify one-argument toSpliced can keep boolean prefixes
      * @tc.size MediumTest
@@ -973,7 +972,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5700
      * @tc.name testArrayToSplicedFour057
      * @tc.desc Verify one-argument toSpliced can keep bigint prefixes
      * @tc.size MediumTest
@@ -991,7 +990,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5800
      * @tc.name testArrayToSplicedFour058
      * @tc.desc Verify one-argument toSpliced on an empty array returns a new empty array
      * @tc.size MediumTest
@@ -1008,7 +1007,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_5900
      * @tc.name testArrayToSplicedFour059
      * @tc.desc Verify one-argument toSpliced after push keeps the computed prefix
      * @tc.size MediumTest
@@ -1027,7 +1026,7 @@ export default function ArrayToSpliced4Test(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6000
      * @tc.name testArrayToSplicedFour060
      * @tc.desc Verify one-argument toSpliced can isolate a long numeric prefix
      * @tc.size MediumTest
@@ -1044,7 +1043,7 @@ export default function ArrayToSpliced4Test(): void {
       expect(arr.length).assertEqual(20);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6100
      * @tc.name testArrayToSplicedFour061
      * @tc.desc Verify one-argument toSpliced with int start zero removes the whole array
      * @tc.size MediumTest
@@ -1060,7 +1059,7 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6200
      * @tc.name testArrayToSplicedFour062
      * @tc.desc Verify one-argument toSpliced with int start one keeps only the first element
      * @tc.size MediumTest
@@ -1075,29 +1074,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6300
      * @tc.name testArrayToSplicedFour063
-     * @tc.desc Verify one-argument toSpliced with int start in the middle keeps the prefix
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToSplicedFour063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const start: int = 3;
-      const result = arr.toSpliced(start);
-      expect(result.toString()).assertEqual('1,2,3');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0640
-     * @tc.name testArrayToSplicedFour064
      * @tc.desc Verify one-argument toSpliced with int start equal to length returns an independent copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = arr.length;
       const result = arr.toSpliced(start);
@@ -1108,14 +1092,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0650
-     * @tc.name testArrayToSplicedFour065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6400
+     * @tc.name testArrayToSplicedFour064
      * @tc.desc Verify one-argument toSpliced with int start beyond length keeps the whole array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = 10;
       const result = arr.toSpliced(start);
@@ -1123,14 +1107,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0660
-     * @tc.name testArrayToSplicedFour066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6500
+     * @tc.name testArrayToSplicedFour065
      * @tc.desc Verify one-argument toSpliced with negative int start does not mutate the original tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30, 40);
       const start: int = -1;
       const result = arr.toSpliced(start);
@@ -1139,14 +1123,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0670
-     * @tc.name testArrayToSplicedFour067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6600
+     * @tc.name testArrayToSplicedFour066
      * @tc.desc Verify one-argument toSpliced works for string arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c', 'd');
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1154,14 +1138,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0680
-     * @tc.name testArrayToSplicedFour068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6700
+     * @tc.name testArrayToSplicedFour067
      * @tc.desc Verify one-argument toSpliced works for boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false, true, false);
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1169,14 +1153,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0690
-     * @tc.name testArrayToSplicedFour069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6800
+     * @tc.name testArrayToSplicedFour068
      * @tc.desc Verify one-argument toSpliced works for bigint arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(1n, 2n, 3n, 4n);
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1184,14 +1168,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0700
-     * @tc.name testArrayToSplicedFour070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_6900
+     * @tc.name testArrayToSplicedFour069
      * @tc.desc Verify one-argument toSpliced preserves object references in the kept prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new ToSplicedFourItem036();
       const second = new ToSplicedFourItem036();
       const arr = new Array<ToSplicedFourItem036>(first, second);
@@ -1201,14 +1185,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0710
-     * @tc.name testArrayToSplicedFour071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7000
+     * @tc.name testArrayToSplicedFour070
      * @tc.desc Verify one-argument toSpliced works on a slice result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(0, 4);
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1216,14 +1200,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0720
-     * @tc.name testArrayToSplicedFour072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7100
+     * @tc.name testArrayToSplicedFour071
      * @tc.desc Verify one-argument toSpliced works on a filter result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).filter((value: number): boolean => value >= 1);
       const start: int = 3;
       const result = arr.toSpliced(start);
@@ -1231,14 +1215,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0730
-     * @tc.name testArrayToSplicedFour073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7200
+     * @tc.name testArrayToSplicedFour072
      * @tc.desc Verify one-argument toSpliced works on a concat result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4));
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1246,14 +1230,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0740
-     * @tc.name testArrayToSplicedFour074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7300
+     * @tc.name testArrayToSplicedFour073
      * @tc.desc Verify one-argument toSpliced works on a toReversed copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).toReversed();
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1261,14 +1245,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0750
-     * @tc.name testArrayToSplicedFour075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7400
+     * @tc.name testArrayToSplicedFour074
      * @tc.desc Verify one-argument toSpliced works after reverse mutates the source first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.reverse();
       const start: int = 2;
@@ -1277,14 +1261,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0760
-     * @tc.name testArrayToSplicedFour076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7500
+     * @tc.name testArrayToSplicedFour075
      * @tc.desc Verify one-argument toSpliced works after sort mutates the source first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(4, 1, 3, 2);
       arr.sort((left: number, right: number): int => {
         if (left < right) {
@@ -1301,14 +1285,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0770
-     * @tc.name testArrayToSplicedFour077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7600
+     * @tc.name testArrayToSplicedFour076
      * @tc.desc Verify one-argument toSpliced works after shift changes the source head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shift();
       const start: int = 2;
@@ -1317,14 +1301,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0780
-     * @tc.name testArrayToSplicedFour078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7700
+     * @tc.name testArrayToSplicedFour077
      * @tc.desc Verify one-argument toSpliced works after pop changes the source tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.pop();
       const start: int = 2;
@@ -1333,14 +1317,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0790
-     * @tc.name testArrayToSplicedFour079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7800
+     * @tc.name testArrayToSplicedFour078
      * @tc.desc Verify one-argument toSpliced works after unshift prepends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 4);
       arr.unshift(1, 2);
       const start: int = 2;
@@ -1349,14 +1333,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0800
-     * @tc.name testArrayToSplicedFour080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_7900
+     * @tc.name testArrayToSplicedFour079
      * @tc.desc Verify one-argument toSpliced works after push appends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.push(3, 4);
       const start: int = 2;
@@ -1365,14 +1349,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0810
-     * @tc.name testArrayToSplicedFour081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8000
+     * @tc.name testArrayToSplicedFour080
      * @tc.desc Verify one-argument toSpliced works after splice inserts middle values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.splice(1, 1, 8, 9);
       const start: int = 2;
@@ -1381,14 +1365,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0820
-     * @tc.name testArrayToSplicedFour082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8100
+     * @tc.name testArrayToSplicedFour081
      * @tc.desc Verify one-argument toSpliced works after shrinkTo truncates the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shrinkTo(3);
       const start: int = 2;
@@ -1397,14 +1381,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0830
-     * @tc.name testArrayToSplicedFour083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8200
+     * @tc.name testArrayToSplicedFour082
      * @tc.desc Verify one-argument toSpliced works on Array.of results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.of<number>(5, 6, 7, 8);
       const start: int = 3;
       const result = arr.toSpliced(start);
@@ -1412,14 +1396,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0840
-     * @tc.name testArrayToSplicedFour084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8300
+     * @tc.name testArrayToSplicedFour083
      * @tc.desc Verify one-argument toSpliced works on Array.from results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.from<number>(new Array<number>(2, 4, 6, 8));
       const start: int = 3;
       const result = arr.toSpliced(start);
@@ -1427,14 +1411,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0850
-     * @tc.name testArrayToSplicedFour085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8400
+     * @tc.name testArrayToSplicedFour084
      * @tc.desc Verify one-argument toSpliced works on a rebuilt array after length reset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(7);
@@ -1446,14 +1430,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0860
-     * @tc.name testArrayToSplicedFour086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8500
+     * @tc.name testArrayToSplicedFour085
      * @tc.desc Verify one-argument toSpliced keeps duplicate prefix values intact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 2, 2, 3);
       const start: int = 3;
       const result = arr.toSpliced(start);
@@ -1461,14 +1445,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0870
-     * @tc.name testArrayToSplicedFour087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8600
+     * @tc.name testArrayToSplicedFour086
      * @tc.desc Verify one-argument toSpliced keeps negative and zero prefix values intact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-3, 0, 3, 6);
       const start: int = 2;
       const result = arr.toSpliced(start);
@@ -1476,14 +1460,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0880
-     * @tc.name testArrayToSplicedFour088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8700
+     * @tc.name testArrayToSplicedFour087
      * @tc.desc Verify one-argument toSpliced returns a new array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = 1;
       const result = arr.toSpliced(start);
@@ -1491,14 +1475,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0890
-     * @tc.name testArrayToSplicedFour089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8800
+     * @tc.name testArrayToSplicedFour088
      * @tc.desc Verify one-argument toSpliced leaves the source array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const before = arr.toString();
       const start: int = 1;
@@ -1507,14 +1491,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0900
-     * @tc.name testArrayToSplicedFour090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_8900
+     * @tc.name testArrayToSplicedFour089
      * @tc.desc Verify one-argument toSpliced can be followed by join on the prefix copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const start: int = 3;
       const result = arr.toSpliced(start);
@@ -1522,14 +1506,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0910
-     * @tc.name testArrayToSplicedFour091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9000
+     * @tc.name testArrayToSplicedFour090
      * @tc.desc Verify one-argument toSpliced can be followed by with on the prefix copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const start: int = 3;
       const result = arr.toSpliced(start).with(1, 9);
@@ -1537,14 +1521,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0920
-     * @tc.name testArrayToSplicedFour092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9100
+     * @tc.name testArrayToSplicedFour091
      * @tc.desc Verify one-argument toSpliced can be followed by slice on the prefix copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const start: int = 3;
       const result = arr.toSpliced(start).slice(1);
@@ -1552,14 +1536,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0930
-     * @tc.name testArrayToSplicedFour093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9200
+     * @tc.name testArrayToSplicedFour092
      * @tc.desc Verify one-argument toSpliced can isolate a single leading element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       const start: int = 1;
       const result = arr.toSpliced(start);
@@ -1567,14 +1551,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0940
-     * @tc.name testArrayToSplicedFour094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9300
+     * @tc.name testArrayToSplicedFour093
      * @tc.desc Verify one-argument toSpliced can preserve the full prefix for a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       const start: int = 1;
       const result = arr.toSpliced(start);
@@ -1582,14 +1566,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0950
-     * @tc.name testArrayToSplicedFour095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9400
+     * @tc.name testArrayToSplicedFour094
      * @tc.desc Verify one-argument toSpliced can remove the whole single-element array from start zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       const start: int = 0;
       const result = arr.toSpliced(start);
@@ -1597,14 +1581,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0960
-     * @tc.name testArrayToSplicedFour096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9500
+     * @tc.name testArrayToSplicedFour095
      * @tc.desc Verify one-argument toSpliced works on a large generated array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i: int = 0; i < 12; i++) {
         arr.pushOne(i);
@@ -1615,14 +1599,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0970
-     * @tc.name testArrayToSplicedFour097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9600
+     * @tc.name testArrayToSplicedFour096
      * @tc.desc Verify one-argument toSpliced preserves array element type information
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = 2;
       const result: Array<number> = arr.toSpliced(start);
@@ -1630,14 +1614,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0980
-     * @tc.name testArrayToSplicedFour098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9700
+     * @tc.name testArrayToSplicedFour097
      * @tc.desc Verify one-argument toSpliced keeps the original array usable after the copy is built
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = 2;
       arr.toSpliced(start);
@@ -1646,14 +1630,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_0990
-     * @tc.name testArrayToSplicedFour099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9800
+     * @tc.name testArrayToSplicedFour098
      * @tc.desc Verify one-argument toSpliced handles a computed int start from length minus two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30, 40);
       const start: int = arr.length - 2;
       const result = arr.toSpliced(start);
@@ -1661,14 +1645,14 @@ export default function ArrayToSpliced4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_1000
-     * @tc.name testArrayToSplicedFour100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_FOUR_9900
+     * @tc.name testArrayToSplicedFour099
      * @tc.desc Verify one-argument toSpliced preserves array identity separation from the returned copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSplicedFour100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSplicedFour099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const start: int = 1;
       const result = arr.toSpliced(start);

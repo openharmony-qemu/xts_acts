@@ -787,7 +787,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_4400
      * @tc.name testArrayToSplicedTwo044
-     * @tc.desc Verify inserting at the head densifies sparse source holes
+     * @tc.desc Verify inserting at the head preserves an explicit undefined middle element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -808,7 +808,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_4500
      * @tc.name testArrayToSplicedTwo045
-     * @tc.desc Verify inserting before a sparse hole keeps inserted items before dense undefined
+     * @tc.desc Verify inserting before an explicit undefined element keeps the inserted item before that undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -828,7 +828,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_4600
      * @tc.name testArrayToSplicedTwo046
-     * @tc.desc Verify replacing the tail with many items densifies earlier sparse holes
+     * @tc.desc Verify replacing the tail with many items preserves an earlier explicit undefined element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -848,7 +848,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_4700
      * @tc.name testArrayToSplicedTwo047
-     * @tc.desc Verify appending beyond length keeps sparse holes as dense undefined
+     * @tc.desc Verify appending beyond length preserves an explicit undefined middle element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -868,7 +868,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_4800
      * @tc.name testArrayToSplicedTwo048
-     * @tc.desc Verify far negative insertion clamps to the head before copying holes
+     * @tc.desc Verify far negative insertion clamps to the head and preserves explicit undefined elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1068,7 +1068,7 @@ export default function ArrayToSpliced2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SPLICED_TWO_5900
      * @tc.name testArrayToSplicedTwo059
-     * @tc.desc Verify inserting many literal values only reads existing elements once into the copy
+     * @tc.desc Verify inserting many literal values returns the expected copied array and leaves the source array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

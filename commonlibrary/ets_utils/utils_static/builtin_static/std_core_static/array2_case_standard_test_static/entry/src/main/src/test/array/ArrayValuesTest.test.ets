@@ -1123,7 +1123,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0620
      * @tc.name testArrayValues062
-     * @tc.desc Verify a generated sparse array yields undefined before completion
+     * @tc.desc Verify an array initialized with undefined yields undefined values before completion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1289,7 +1289,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0710
      * @tc.name testArrayValues071
-     * @tc.desc Verify a leading sparse hole is still a yielded step
+     * @tc.desc Verify a leading explicit undefined value is still a yielded step
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1310,7 +1310,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0720
      * @tc.name testArrayValues072
-     * @tc.desc Verify trailing sparse holes are yielded before completion
+     * @tc.desc Verify trailing explicit undefined values are yielded before completion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1678,7 +1678,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0920
      * @tc.name testArrayValues092
-     * @tc.desc Verify for-of over values includes sparse undefined steps
+     * @tc.desc Verify for-of over values includes explicit undefined steps
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1744,7 +1744,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0950
      * @tc.name testArrayValues095
-     * @tc.desc Verify a large generated sparse array yields one step per index
+     * @tc.desc Verify a large array initialized with undefined yields one step per index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1825,7 +1825,7 @@ export default function ArrayValuesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_VALUES_0990
      * @tc.name testArrayValues099
-     * @tc.desc Verify a sparse yielded step still advances before later pushed values
+     * @tc.desc Verify an undefined yielded step still advances before later pushed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

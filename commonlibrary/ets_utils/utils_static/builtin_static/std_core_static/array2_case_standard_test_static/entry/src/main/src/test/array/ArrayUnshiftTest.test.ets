@@ -66,7 +66,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0100
      * @tc.name testArrayUnshift001
      * @tc.desc Verify unshift without arguments returns the current array length
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0200
      * @tc.name testArrayUnshift002
      * @tc.desc Verify unshift accepts a single argument
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0300
      * @tc.name testArrayUnshift003
      * @tc.desc Verify unshift accepts multiple arguments
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0400
      * @tc.name testArrayUnshift004
      * @tc.desc Verify unshift prepends number elements
      * @tc.size MediumTest
@@ -127,7 +127,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0500
      * @tc.name testArrayUnshift005
      * @tc.desc Verify unshift prepends string elements
      * @tc.size MediumTest
@@ -141,7 +141,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0600
      * @tc.name testArrayUnshift006
      * @tc.desc Verify unshift prepends boolean elements
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0700
      * @tc.name testArrayUnshift007
      * @tc.desc Verify unshift prepends char elements using char literals
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0800
      * @tc.name testArrayUnshift008
      * @tc.desc Verify unshift prepends bigint elements
      * @tc.size MediumTest
@@ -183,7 +183,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0900
      * @tc.name testArrayUnshift009
      * @tc.desc Verify unshift prepends object elements
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1000
      * @tc.name testArrayUnshift010
      * @tc.desc Verify unshift works with union-typed arrays
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1100
      * @tc.name testArrayUnshift011
      * @tc.desc Verify unshift supports spread arguments
      * @tc.size MediumTest
@@ -233,7 +233,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1200
      * @tc.name testArrayUnshift012
      * @tc.desc Verify unshift supports mixed spread and direct arguments
      * @tc.size MediumTest
@@ -250,7 +250,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1300
      * @tc.name testArrayUnshift013
      * @tc.desc Verify unshift can prepend null elements
      * @tc.size MediumTest
@@ -264,7 +264,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1400
      * @tc.name testArrayUnshift014
      * @tc.desc Verify unshift can prepend undefined elements
      * @tc.size MediumTest
@@ -278,7 +278,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1500
      * @tc.name testArrayUnshift015
      * @tc.desc Verify unshift can prepend NaN values
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1600
      * @tc.name testArrayUnshift016
      * @tc.desc Verify unshift can prepend Infinity values
      * @tc.size MediumTest
@@ -307,7 +307,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1700
      * @tc.name testArrayUnshift017
      * @tc.desc Verify unshift preserves zero values at the front
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1800
      * @tc.name testArrayUnshift018
      * @tc.desc Verify unshift preserves empty-string elements
      * @tc.size MediumTest
@@ -337,7 +337,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1900
      * @tc.name testArrayUnshift019
      * @tc.desc Verify unshift returns the new length after one insertion
      * @tc.size MediumTest
@@ -352,7 +352,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2000
      * @tc.name testArrayUnshift020
      * @tc.desc Verify unshift returns the accumulated length after many insertions
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2100
      * @tc.name testArrayUnshift021
      * @tc.desc Verify unshift on an empty array returns the inserted count
      * @tc.size MediumTest
@@ -381,7 +381,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2200
      * @tc.name testArrayUnshift022
      * @tc.desc Verify unshift returns a number value
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2300
      * @tc.name testArrayUnshift023
      * @tc.desc Verify unshift increases the array length
      * @tc.size MediumTest
@@ -410,7 +410,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2400
      * @tc.name testArrayUnshift024
      * @tc.desc Verify unshift inserts elements at the beginning
      * @tc.size MediumTest
@@ -426,7 +426,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2500
      * @tc.name testArrayUnshift025
      * @tc.desc Verify original elements shift to higher indexes after unshift
      * @tc.size MediumTest
@@ -442,7 +442,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2600
      * @tc.name testArrayUnshift026
      * @tc.desc Verify unshift mutates the original array rather than creating a new one
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2700
      * @tc.name testArrayUnshift027
      * @tc.desc Verify existing element values are preserved after unshift
      * @tc.size MediumTest
@@ -473,7 +473,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0280
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2800
      * @tc.name testArrayUnshift028
      * @tc.desc Verify unshift works on empty arrays
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_2900
      * @tc.name testArrayUnshift029
      * @tc.desc Verify unshift works on single-element arrays
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3000
      * @tc.name testArrayUnshift030
      * @tc.desc Verify repeated unshift calls continue prepending elements
      * @tc.size MediumTest
@@ -523,7 +523,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3100
      * @tc.name testArrayUnshift031
      * @tc.desc Verify unshift supports many inserted elements
      * @tc.size MediumTest
@@ -539,7 +539,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3200
      * @tc.name testArrayUnshift032
      * @tc.desc Verify unshift adds to the front while push adds to the end
      * @tc.size MediumTest
@@ -559,7 +559,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3300
      * @tc.name testArrayUnshift033
      * @tc.desc Verify unshift and shift can model queue-like front operations
      * @tc.size MediumTest
@@ -577,7 +577,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3400
      * @tc.name testArrayUnshift034
      * @tc.desc Verify unshift stores object references rather than cloning objects
      * @tc.size MediumTest
@@ -594,7 +594,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3500
      * @tc.name testArrayUnshift035
      * @tc.desc Verify unshift returns the expanded length after inserting multiple elements
      * @tc.size MediumTest
@@ -609,7 +609,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3600
      * @tc.name testArrayUnshift036
      * @tc.desc Verify unshift updates large arrays correctly
      * @tc.size MediumTest
@@ -625,7 +625,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3700
      * @tc.name testArrayUnshift037
      * @tc.desc Verify generic element typing is preserved for numeric arrays
      * @tc.size MediumTest
@@ -640,7 +640,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3800
      * @tc.name testArrayUnshift038
      * @tc.desc Verify union-typed arrays can prepend several value kinds
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_3900
      * @tc.name testArrayUnshift039
      * @tc.desc Verify unshift returns the same new length exposed by the array
      * @tc.size MediumTest
@@ -672,7 +672,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4000
      * @tc.name testArrayUnshift040
      * @tc.desc Verify index access reflects shifted original elements
      * @tc.size MediumTest
@@ -688,7 +688,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4100
      * @tc.name testArrayUnshift041
      * @tc.desc Verify slice can read prepended values after unshift
      * @tc.size MediumTest
@@ -704,7 +704,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4200
      * @tc.name testArrayUnshift042
      * @tc.desc Verify unshift handles number boundary values
      * @tc.size MediumTest
@@ -719,7 +719,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4300
      * @tc.name testArrayUnshift043
      * @tc.desc Verify unshift handles string boundary values
      * @tc.size MediumTest
@@ -734,7 +734,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4400
      * @tc.name testArrayUnshift044
      * @tc.desc Verify a mutable copy created from a readonly array can be unshifted without changing the source
      * @tc.size MediumTest
@@ -752,7 +752,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4500
      * @tc.name testArrayUnshift045
      * @tc.desc Verify unshift inserts a numeric value at the beginning of a numeric array
      * @tc.size MediumTest
@@ -767,7 +767,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4600
      * @tc.name testArrayUnshift046
      * @tc.desc Verify unshift and shift can implement front-loaded history behavior
      * @tc.size MediumTest
@@ -783,7 +783,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4700
      * @tc.name testArrayUnshift047
      * @tc.desc Verify unshift can prepend latest history records
      * @tc.size MediumTest
@@ -797,7 +797,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4800
      * @tc.name testArrayUnshift048
      * @tc.desc Verify enum arrays support unshift
      * @tc.size MediumTest
@@ -812,7 +812,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_4900
      * @tc.name testArrayUnshift049
      * @tc.desc Verify arrays extended with extendTo can still unshift values
      * @tc.size MediumTest
@@ -829,7 +829,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5000
      * @tc.name testArrayUnshift050
      * @tc.desc Verify arrays reduced with shrinkTo can still unshift values
      * @tc.size MediumTest
@@ -846,7 +846,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5100
      * @tc.name testArrayUnshift051
      * @tc.desc Verify unshift mutates the source while concat returns a new array
      * @tc.size MediumTest
@@ -866,7 +866,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5200
      * @tc.name testArrayUnshift052
      * @tc.desc Verify manual reconstruction can prepend values without mutating the source
      * @tc.size MediumTest
@@ -885,7 +885,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5300
      * @tc.name testArrayUnshift053
      * @tc.desc Verify repeated unshift operations can build a long ordered prefix
      * @tc.size MediumTest
@@ -903,7 +903,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5400
      * @tc.name testArrayUnshift054
      * @tc.desc Verify unshift and push can be mixed on both ends of the array
      * @tc.size MediumTest
@@ -923,7 +923,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5500
      * @tc.name testArrayUnshift055
      * @tc.desc Verify unshift mutates the source while toSpliced returns a new array
      * @tc.size MediumTest
@@ -941,7 +941,7 @@ export default function ArrayUnshiftTest(): void {
       expect(arr3[0]).assertEqual(1);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5600
      * @tc.name testArrayUnshift056
      * @tc.desc Verify unshift without arguments returns zero for an empty array
      * @tc.size MediumTest
@@ -957,7 +957,7 @@ export default function ArrayUnshiftTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5700
      * @tc.name testArrayUnshift057
      * @tc.desc Verify an array argument is inserted as one reference and is not spread
      * @tc.size MediumTest
@@ -975,7 +975,7 @@ export default function ArrayUnshiftTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5800
      * @tc.name testArrayUnshift058
      * @tc.desc Verify spreading an empty array inserts nothing and keeps the source unchanged
      * @tc.size MediumTest
@@ -992,7 +992,7 @@ export default function ArrayUnshiftTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_5900
      * @tc.name testArrayUnshift059
      * @tc.desc Verify unshift can store the array itself as a circular reference
      * @tc.size MediumTest
@@ -1009,7 +1009,7 @@ export default function ArrayUnshiftTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6000
      * @tc.name testArrayUnshift060
      * @tc.desc Verify an existing object reference remains identical after it shifts right
      * @tc.size MediumTest
@@ -1030,7 +1030,7 @@ export default function ArrayUnshiftTest(): void {
       expect(arr[1].value).assertEqual(7);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0610
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6100
      * @tc.name testArrayUnshift061
      * @tc.desc Verify unshift can prepend values spread from a materialized values iterator
      * @tc.size MediumTest
@@ -1048,7 +1048,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0620
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6200
      * @tc.name testArrayUnshift062
      * @tc.desc Verify unshift after length is reset to zero starts a fresh prefix
      * @tc.size MediumTest
@@ -1064,7 +1064,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0630
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6300
      * @tc.name testArrayUnshift063
      * @tc.desc Verify unshift after shrinkTo shifts only the retained values
      * @tc.size MediumTest
@@ -1080,7 +1080,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0640
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6400
      * @tc.name testArrayUnshift064
      * @tc.desc Verify unshift on a slice copy leaves the original source unchanged
      * @tc.size MediumTest
@@ -1097,7 +1097,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0650
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6500
      * @tc.name testArrayUnshift065
      * @tc.desc Verify unshift supports object arrays
      * @tc.size MediumTest
@@ -1118,7 +1118,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0660
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6600
      * @tc.name testArrayUnshift066
      * @tc.desc Verify unshift can spread the remaining portion of a values iterator
      * @tc.size MediumTest
@@ -1137,7 +1137,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0670
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6700
      * @tc.name testArrayUnshift067
      * @tc.desc Verify unshift after shrinkTo preserves object references that remain
      * @tc.size MediumTest
@@ -1160,7 +1160,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0680
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6800
      * @tc.name testArrayUnshift068
      * @tc.desc Verify unshift on a slice copy can be mutated independently after insertion
      * @tc.size MediumTest
@@ -1178,7 +1178,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0690
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_6900
      * @tc.name testArrayUnshift069
      * @tc.desc Verify unshift preserves insertion order for repeated values
      * @tc.size MediumTest
@@ -1192,7 +1192,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7000
      * @tc.name testArrayUnshift070
      * @tc.desc Verify unshift can be followed by pop to remove the newest tail
      * @tc.size MediumTest
@@ -1207,7 +1207,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0710
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7100
      * @tc.name testArrayUnshift071
      * @tc.desc Verify unshift can be followed by shift to remove the newest head when appropriate
      * @tc.size MediumTest
@@ -1222,7 +1222,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0720
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7200
      * @tc.name testArrayUnshift072
      * @tc.desc Verify unshift preserves explicit undefined and null order at the head
      * @tc.size MediumTest
@@ -1238,7 +1238,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0730
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7300
      * @tc.name testArrayUnshift073
      * @tc.desc Verify direct and spread arguments preserve one-pass insertion order
      * @tc.size MediumTest
@@ -1254,7 +1254,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0740
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7400
      * @tc.name testArrayUnshift074
      * @tc.desc Verify spreading the same array snapshots values before unshift mutates it
      * @tc.size MediumTest
@@ -1269,7 +1269,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0750
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7500
      * @tc.name testArrayUnshift075
      * @tc.desc Verify nested unshift uses the inner return length as the outer inserted value
      * @tc.size MediumTest
@@ -1284,7 +1284,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0760
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7600
      * @tc.name testArrayUnshift076
      * @tc.desc Verify a value captured before spread remains first in the composed result
      * @tc.size MediumTest
@@ -1300,7 +1300,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0770
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7700
      * @tc.name testArrayUnshift077
      * @tc.desc Verify unshift preserves embedded null-byte string content
      * @tc.size MediumTest
@@ -1317,7 +1317,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0780
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7800
      * @tc.name testArrayUnshift078
      * @tc.desc Verify unshift preserves a supplementary-plane string value
      * @tc.size MediumTest
@@ -1333,7 +1333,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0790
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_7900
      * @tc.name testArrayUnshift079
      * @tc.desc Verify nested array references are inserted and shifted without cloning
      * @tc.size MediumTest
@@ -1351,7 +1351,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8000
      * @tc.name testArrayUnshift080
      * @tc.desc Verify object references remain stable after two right shifts
      * @tc.size MediumTest
@@ -1369,7 +1369,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0810
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8100
      * @tc.name testArrayUnshift081
      * @tc.desc Verify explicit undefined middle values remain searchable after shifting right
      * @tc.size MediumTest
@@ -1389,7 +1389,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0820
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8200
      * @tc.name testArrayUnshift082
      * @tc.desc Verify alternating explicit undefined values keep their positions after unshift
      * @tc.size MediumTest
@@ -1407,7 +1407,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0830
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8300
      * @tc.name testArrayUnshift083
      * @tc.desc Verify all-undefined arrays keep undefined tail values after unshift
      * @tc.size MediumTest
@@ -1423,7 +1423,7 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0840
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8400
      * @tc.name testArrayUnshift084
      * @tc.desc Verify generated undefined arrays expand with inserted dense prefix
      * @tc.size MediumTest
@@ -1440,30 +1440,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0850
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8500
      * @tc.name testArrayUnshift085
-     * @tc.desc Verify explicit undefined tail elements remain searchable after unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayUnshift085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(3, (_index) => undefined);
-      const result = arr.unshift(1);
-      expect(result).assertEqual(4);
-      expect(arr[0]).assertEqual(1);
-      expect(arr.lastIndexOf(undefined)).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0860
-     * @tc.name testArrayUnshift086
      * @tc.desc Verify explicit undefined remains searchable after it shifts right
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1, undefined, 3);
       const result = arr.unshift(0);
       expect(result).assertEqual(4);
@@ -1472,14 +1456,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0870
-     * @tc.name testArrayUnshift087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8600
+     * @tc.name testArrayUnshift086
      * @tc.desc Verify an explicit undefined suffix remains searchable after an inserted prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[1] = 2;
@@ -1490,14 +1474,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0880
-     * @tc.name testArrayUnshift088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8700
+     * @tc.name testArrayUnshift087
      * @tc.desc Verify Set-derived values can be spread into unshift in insertion order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = Array.from<number>(new Set<number>(new Array<number>(1, 1, 2)));
       const arr = new Array<number>(3);
       const result = arr.unshift(...values);
@@ -1506,14 +1490,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0890
-     * @tc.name testArrayUnshift089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8800
+     * @tc.name testArrayUnshift088
      * @tc.desc Verify float arrays can accept an integer prefix without losing values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1.1, 2.2);
       const result = arr.unshift(0);
       expect(result).assertEqual(3);
@@ -1523,14 +1507,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0900
-     * @tc.name testArrayUnshift090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_8900
+     * @tc.name testArrayUnshift089
      * @tc.desc Verify mixed primitive arrays keep direct argument ordering
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string | boolean>(1);
       const result = arr.unshift('', 'a', true);
       expect(result).assertEqual(4);
@@ -1540,14 +1524,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0910
-     * @tc.name testArrayUnshift091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9000
+     * @tc.name testArrayUnshift090
      * @tc.desc Verify unshift prepends into arrays produced by Array.from Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.from<number>(new Set<number>(new Array<number>(2, 1, 2)));
       const result = arr.unshift(0);
       expect(result).assertEqual(3);
@@ -1555,14 +1539,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0920
-     * @tc.name testArrayUnshift092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9100
+     * @tc.name testArrayUnshift091
      * @tc.desc Verify BigInt arrays preserve all prepended values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(3n);
       const result = arr.unshift(1n, 2n);
       expect(result).assertEqual(3);
@@ -1572,14 +1556,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0930
-     * @tc.name testArrayUnshift093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9200
+     * @tc.name testArrayUnshift092
      * @tc.desc Verify char arrays preserve prepended code unit order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<char>(c'C');
       const result = arr.unshift(c'A', c'B');
       expect(result).assertEqual(3);
@@ -1589,14 +1573,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0940
-     * @tc.name testArrayUnshift094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9300
+     * @tc.name testArrayUnshift093
      * @tc.desc Verify long dense arrays move populated indexes to the right
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(101, (_index) => undefined);
       arr[100] = 1;
       const result = arr.unshift(0);
@@ -1607,14 +1591,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0950
-     * @tc.name testArrayUnshift095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9400
+     * @tc.name testArrayUnshift094
      * @tc.desc Verify many unshift operations preserve ascending order at the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i: int = 200; i >= 1; i--) {
         arr.unshift(i);
@@ -1625,14 +1609,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0960
-     * @tc.name testArrayUnshift096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9500
+     * @tc.name testArrayUnshift095
      * @tc.desc Verify large dense arrays shift boundaries after a head insertion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createRangeArray(5000);
       const result = arr.unshift(-1);
       expect(result).assertEqual(5001);
@@ -1642,14 +1626,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0970
-     * @tc.name testArrayUnshift097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9600
+     * @tc.name testArrayUnshift096
      * @tc.desc Verify mixed object and number arrays keep the object reference at the head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new UnshiftItem034();
       item.value = 1;
       const arr = new Array<number | UnshiftItem034>(2);
@@ -1660,14 +1644,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0980
-     * @tc.name testArrayUnshift098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9700
+     * @tc.name testArrayUnshift097
      * @tc.desc Verify an enum prefix shifts existing enum values to the right
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<UnshiftColor048>(UnshiftColor048.Green, UnshiftColor048.Blue);
       const result = arr.unshift(UnshiftColor048.Red);
       expect(result).assertEqual(3);
@@ -1676,14 +1660,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_0990
-     * @tc.name testArrayUnshift099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9800
+     * @tc.name testArrayUnshift098
      * @tc.desc Verify toString observes generated and explicit undefined consistently after unshift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const sparse = new Array<number | undefined>(2, (_index) => undefined);
       sparse[1] = 2;
       sparse.unshift(0);
@@ -1696,14 +1680,14 @@ export default function ArrayUnshiftTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_1000
-     * @tc.name testArrayUnshift100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNSHIFT_9900
+     * @tc.name testArrayUnshift099
      * @tc.desc Verify unshift remains mutating while copied arrays keep their previous order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayUnshift100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayUnshift099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3);
       const copy = arr.slice();
       const result = arr.unshift(1);

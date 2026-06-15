@@ -58,15 +58,18 @@ function createLargeNumberArrayTwo(size: int): Array<number> {
 
 export default function ArrayWith2Test(): void {
   describe('ArrayWith2Test', (): void => {
-    beforeAll((): void => {});
+    beforeAll((): void => {
+    });
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {});
+    afterEach((): void => {
+    });
 
-    afterAll((): void => {});
+    afterAll((): void => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_0100
@@ -1394,29 +1397,12 @@ export default function ArrayWith2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_7800
      * @tc.name testArrayWithTwo078
-     * @tc.desc Verify negative int indexes use the current length after shrinkTo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayWithTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4);
-      arr.shrinkTo(3);
-      const index: int = -1;
-      const result = arr.with(index, 8);
-      expect(result.toString()).assertEqual('1,2,8');
-      expect(arr.toString()).assertEqual('1,2,3');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_7900
-     * @tc.name testArrayWithTwo079
      * @tc.desc Verify with on a slice copy keeps the original source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(1, 2, 3, 4);
       const arr = source.slice(0, 3);
       const index: int = -1;
@@ -1427,14 +1413,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8000
-     * @tc.name testArrayWithTwo080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_7900
+     * @tc.name testArrayWithTwo079
      * @tc.desc Verify with on a filtered result keeps the filtered array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6).filter((value: number): boolean => value % 2 === 0);
       const index: int = -arr.length;
       const result = arr.with(index, 8);
@@ -1443,14 +1429,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8100
-     * @tc.name testArrayWithTwo081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8000
+     * @tc.name testArrayWithTwo080
      * @tc.desc Verify with on a concat result does not mutate either source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const left = new Array<number>(1, 2);
       const right = new Array<number>(3, 4);
       const arr = left.concat(right);
@@ -1463,14 +1449,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8200
-     * @tc.name testArrayWithTwo082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8100
+     * @tc.name testArrayWithTwo081
      * @tc.desc Verify with on a toReversed copy preserves the original source order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(1, 2, 3);
       const arr = source.toReversed();
       const index: int = -arr.length;
@@ -1481,14 +1467,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8300
-     * @tc.name testArrayWithTwo083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8200
+     * @tc.name testArrayWithTwo082
      * @tc.desc Verify with on a toSpliced copy can replace only the inserted value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(1, 2, 3, 4);
       const arr = source.toSpliced(2, 0, 7);
       const index: int = 2;
@@ -1499,30 +1485,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8400
-     * @tc.name testArrayWithTwo084
-     * @tc.desc Verify with on Array.of can replace through a negative computed head index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayWithTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Array.of<number>(4, 5, 6);
-      const index: int = -arr.length;
-      const result = arr.with(index, 8);
-      expect(result.toString()).assertEqual('8,5,6');
-      expect(arr.toString()).assertEqual('4,5,6');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8500
-     * @tc.name testArrayWithTwo085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8300
+     * @tc.name testArrayWithTwo083
      * @tc.desc Verify with on Array.from consumes Set insertion order before replacement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Set<number>(new Array<number>(2, 1, 2, 3));
       const arr = Array.from<number>(source);
       const index: int = 1;
@@ -1532,14 +1502,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8600
-     * @tc.name testArrayWithTwo086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8400
+     * @tc.name testArrayWithTwo084
      * @tc.desc Verify with after length reset rejects indexes from the old length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(4);
@@ -1557,14 +1527,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8700
-     * @tc.name testArrayWithTwo087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8500
+     * @tc.name testArrayWithTwo085
      * @tc.desc Verify with preserves source and result lengths for negative int indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const index: int = -2;
       const result = arr.with(index, 8);
@@ -1574,14 +1544,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8800
-     * @tc.name testArrayWithTwo088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8600
+     * @tc.name testArrayWithTwo086
      * @tc.desc Verify with returns a new instance even when negative index writes the same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const index: int = -1;
       const result = arr.with(index, 3);
@@ -1590,14 +1560,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8900
-     * @tc.name testArrayWithTwo089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8700
+     * @tc.name testArrayWithTwo087
      * @tc.desc Verify mutating the with result after replacement still leaves the source unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const before = arr.join('|');
       const index: int = 1;
@@ -1608,14 +1578,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9000
-     * @tc.name testArrayWithTwo090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8800
+     * @tc.name testArrayWithTwo088
      * @tc.desc Verify with can replace the only string element through negative one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('only');
       const index: int = -1;
       const result = arr.with(index, 'next');
@@ -1624,14 +1594,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9100
-     * @tc.name testArrayWithTwo091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_8900
+     * @tc.name testArrayWithTwo089
      * @tc.desc Verify with can replace the last element through negative one with a computed sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 4, 9);
       const index: int = -1;
       const result = arr.with(index, arr[0] + arr[1]);
@@ -1640,14 +1610,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9200
-     * @tc.name testArrayWithTwo092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9000
+     * @tc.name testArrayWithTwo090
      * @tc.desc Verify with can be chained with join after a string replacement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const index: int = -2;
       const result = arr.with(index, 'x');
@@ -1656,14 +1626,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9300
-     * @tc.name testArrayWithTwo093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9100
+     * @tc.name testArrayWithTwo091
      * @tc.desc Verify with can be chained with slice after replacing the head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const index: int = 0;
       const result = arr.with(index, 8);
@@ -1672,14 +1642,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9400
-     * @tc.name testArrayWithTwo094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9200
+     * @tc.name testArrayWithTwo092
      * @tc.desc Verify indexOf on the with result reflects the removed tail value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const index: int = -1;
       const result = arr.with(index, 8);
@@ -1688,14 +1658,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9500
-     * @tc.name testArrayWithTwo095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9300
+     * @tc.name testArrayWithTwo093
      * @tc.desc Verify with handles generated arrays through a negative int index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i: int = 0; i < 12; i++) {
         arr.pushOne(i);
@@ -1707,14 +1677,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9600
-     * @tc.name testArrayWithTwo096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9400
+     * @tc.name testArrayWithTwo094
      * @tc.desc Verify with can replace a string tail with a multi-character value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('A', 'B', 'C', 'D');
       const index: int = arr.length - 1;
       const result = arr.with(index, 'END');
@@ -1723,14 +1693,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9700
-     * @tc.name testArrayWithTwo097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9500
+     * @tc.name testArrayWithTwo095
      * @tc.desc Verify with can replace the tail after concat and toReversed are combined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4)).toReversed();
       const index: int = -1;
       const result = arr.with(index, 8);
@@ -1739,14 +1709,14 @@ export default function ArrayWith2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9800
-     * @tc.name testArrayWithTwo098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_WITH_TWO_9600
+     * @tc.name testArrayWithTwo096
      * @tc.desc Verify with can replace a computed middle index with a computed value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayWithTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayWithTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30, 40, 50);
       const index: int = (arr.length - 1) / 2;
       const result = arr.with(index, arr[index] + arr[index + 1]);

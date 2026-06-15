@@ -116,7 +116,6 @@ export default function ArrayToStringTest(): void {
      */
     it('testArrayToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b');
-      // arr.toString(','); // Invalid for the ArkTS signature.
       const result = arr.toString();
       expect(result).assertEqual('a,b');
     });
@@ -786,7 +785,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4800
      * @tc.name testArrayToString048
-     * @tc.desc Verify sparse middle holes follow join-style empty-field behavior
+     * @tc.desc Verify explicit undefined middle values follow join-style empty-field behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -804,7 +803,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_4900
      * @tc.name testArrayToString049
-     * @tc.desc Verify sparse tail holes leave a trailing empty field
+     * @tc.desc Verify an explicit undefined tail value leaves a trailing empty field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -821,7 +820,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5000
      * @tc.name testArrayToString050
-     * @tc.desc Verify sparse head holes leave a leading empty field
+     * @tc.desc Verify an explicit undefined head value leaves a leading empty field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -838,7 +837,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5100
      * @tc.name testArrayToString051
-     * @tc.desc Verify fully sparse arrays serialize as separators only
+     * @tc.desc Verify arrays filled with explicit undefined serialize as separators only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -854,7 +853,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_5200
      * @tc.name testArrayToString052
-     * @tc.desc Verify explicit undefined and sparse holes serialize the same way
+     * @tc.desc Verify direct and generated explicit undefined values serialize the same way
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1490,7 +1489,7 @@ export default function ArrayToStringTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_STRING_9300
      * @tc.name testArrayToString093
-     * @tc.desc Verify nested sparse arrays keep empty fields when flattened
+     * @tc.desc Verify nested arrays with explicit undefined keep empty fields when flattened
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

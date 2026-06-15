@@ -114,15 +114,18 @@ function isSortedByComparatorTwo<T>(values: Array<T>, compare: (a: T, b: T) => n
 
 export default function ArrayToSorted2Test(): void {
   describe('ArrayToSorted2Test', (): void => {
-    beforeAll((): void => {});
+    beforeAll((): void => {
+    });
 
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach((): void => {});
+    afterEach((): void => {
+    });
 
-    afterAll((): void => {});
+    afterAll((): void => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_0100
@@ -166,8 +169,6 @@ export default function ArrayToSorted2Test(): void {
     it('testArrayToSortedTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const comparator = (a: number, b: number): number => a - b;
-      // The no-argument form resolves to another overload:
-      // arr.toSorted();
       const result = arr.toSorted(toIntComparator(comparator));
       expect(result.length).assertEqual(3);
     });
@@ -748,26 +749,12 @@ export default function ArrayToSorted2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_3800
      * @tc.name testArrayToSortedTwo038
-     * @tc.desc Verify comparator sorting can implement descending order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToSortedTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const descending = arr.toSorted(compareNumbersDescendingTwo);
-      expect(descending.toString()).assertEqual('5,4,3,2,1');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_3900
-     * @tc.name testArrayToSortedTwo039
      * @tc.desc Verify custom business rules can be expressed through comparators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let task1 = new SortTwoTask039();
       task1.priority = 2;
       task1.name = 'Low';
@@ -784,42 +771,42 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4000
-     * @tc.name testArrayToSortedTwo040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_3900
+     * @tc.name testArrayToSortedTwo039
      * @tc.desc Verify toSorted can be chained with map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const result = arr.toSorted(compareNumbersAscendingTwo).map((v: number): number => v * 2);
       expect(result.toString()).assertEqual('2,4,6');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4100
-     * @tc.name testArrayToSortedTwo041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4000
+     * @tc.name testArrayToSortedTwo040
      * @tc.desc Verify large descending arrays can be sorted with a comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createDescendingRangeTwo(1000);
       const result = arr.toSorted(compareNumbersAscendingTwo);
       expect(isAscendingSequenceTwo(result, 1)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4200
-     * @tc.name testArrayToSortedTwo042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4100
+     * @tc.name testArrayToSortedTwo041
      * @tc.desc Verify complex comparator logic orders values by modulo bucket and numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createPseudoRandomNumbersTwo(100, 1000);
       const comparator = (a: number, b: number): number => {
         const aMod = a % 10;
@@ -838,14 +825,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4300
-     * @tc.name testArrayToSortedTwo043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4200
+     * @tc.name testArrayToSortedTwo042
      * @tc.desc Verify generic result arrays preserve element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const comparator = (a: number, b: number): number => a - b;
       const result: Array<number> = arr.toSorted(toIntComparator(comparator));
@@ -853,28 +840,28 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4400
-     * @tc.name testArrayToSortedTwo044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4300
+     * @tc.name testArrayToSortedTwo043
      * @tc.desc Verify comparator parameter types can be inferred automatically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const result = arr.toSorted(compareNumbersAscendingTwo);
       expect(result[0]).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4500
-     * @tc.name testArrayToSortedTwo045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4400
+     * @tc.name testArrayToSortedTwo044
      * @tc.desc Verify multiple generic array types support comparator sorting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(3, 1, 2);
       const r1 = arr1.toSorted(compareNumbersAscendingTwo);
       expect(r1.toString()).assertEqual('1,2,3');
@@ -885,14 +872,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4600
-     * @tc.name testArrayToSortedTwo046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4500
+     * @tc.name testArrayToSortedTwo045
      * @tc.desc Verify toSorted can be combined with filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 2, 8, 1, 9);
       const filtered = arr.filter((v: number): boolean => v > 2);
       const result = filtered.toSorted(compareNumbersAscendingTwo);
@@ -900,14 +887,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4700
-     * @tc.name testArrayToSortedTwo047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4600
+     * @tc.name testArrayToSortedTwo046
      * @tc.desc Verify toSorted can be combined with slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 2, 8, 1, 9);
       const sliced = arr.slice(0, 3);
       const result = sliced.toSorted(compareNumbersAscendingTwo);
@@ -915,14 +902,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4800
-     * @tc.name testArrayToSortedTwo048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4700
+     * @tc.name testArrayToSortedTwo047
      * @tc.desc Verify several array methods can be chained around toSorted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 2, 8, 1, 9, 3);
       const result = arr
         .filter((v: number): boolean => v > 1)
@@ -932,14 +919,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4900
-     * @tc.name testArrayToSortedTwo049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4800
+     * @tc.name testArrayToSortedTwo048
      * @tc.desc Verify arrays can be sorted by absolute value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-3, 1, -2, 3, 2);
       const result = arr.toSorted(toIntComparator((a: number, b: number): number => Math.abs(a) - Math.abs(b)));
       expect(result[0]).assertEqual(1);
@@ -947,14 +934,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5000
-     * @tc.name testArrayToSortedTwo050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_4900
+     * @tc.name testArrayToSortedTwo049
      * @tc.desc Verify string arrays can be sorted case-insensitively
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('Zebra', 'apple', 'Banana');
       const result = arr.toSorted(
         toIntComparator((a: string, b: string): number => {
@@ -965,28 +952,28 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5100
-     * @tc.name testArrayToSortedTwo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5000
+     * @tc.name testArrayToSortedTwo050
      * @tc.desc Verify numeric date-like values can be sorted with a comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000, 500, 1500);
       const result = arr.toSorted(compareNumbersAscendingTwo);
       expect(result[0]).assertEqual(500);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5200
-     * @tc.name testArrayToSortedTwo052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5100
+     * @tc.name testArrayToSortedTwo051
      * @tc.desc Verify custom comparators can partition values deterministically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const comparator = (a: number, b: number): number => {
         const aEven = a % 2 === 0;
@@ -1005,14 +992,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5300
-     * @tc.name testArrayToSortedTwo053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5200
+     * @tc.name testArrayToSortedTwo052
      * @tc.desc Verify comparator overloads remain more flexible than the no-argument overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const r1 = arr.toSorted();
       const arr2 = new Array<number>(3, 1, 2);
@@ -1022,14 +1009,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5400
-     * @tc.name testArrayToSortedTwo054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5300
+     * @tc.name testArrayToSortedTwo053
      * @tc.desc Verify custom comparators can sort numeric strings by numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('100', '20', '3');
       const r1 = arr.toSorted();
       expect(r1.toString()).assertEqual('100,20,3');
@@ -1044,14 +1031,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5500
-     * @tc.name testArrayToSortedTwo055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5400
+     * @tc.name testArrayToSortedTwo054
      * @tc.desc Verify helper comparators can be reused with toSorted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nums = new Array<number>(9, 4, 7, 1);
       const asc = nums.toSorted(compareNumbersAscendingTwo);
       const desc = nums.toSorted(compareNumbersDescendingTwo);
@@ -1063,14 +1050,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5600
-     * @tc.name testArrayToSortedTwo056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5500
+     * @tc.name testArrayToSortedTwo055
      * @tc.desc Verify comparator large positive and negative values determine order by sign
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       const result = arr.toSorted((left: number, right: number): int => {
         if (left < right) {
@@ -1086,14 +1073,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5700
-     * @tc.name testArrayToSortedTwo057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5600
+     * @tc.name testArrayToSortedTwo056
      * @tc.desc Verify a single-element array does not invoke the comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       let callCount: int = 0;
       const result = arr.toSorted((_left: number, _right: number): int => {
@@ -1106,14 +1093,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5800
-     * @tc.name testArrayToSortedTwo058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5700
+     * @tc.name testArrayToSortedTwo057
      * @tc.desc Verify comparator can sort objects by an external rank table
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const low = new ToSortedRankItemTwo();
       low.name = 'low';
       low.rank = 2;
@@ -1135,14 +1122,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5900
-     * @tc.name testArrayToSortedTwo059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5800
+     * @tc.name testArrayToSortedTwo058
      * @tc.desc Verify comparator can group mixed primitive values by type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | number | boolean>('b', 2, false, 'a', 1, true);
       const result = arr.toSorted((left: string | number | boolean, right: string | number | boolean): int => {
         const leftType = typeof left;
@@ -1170,14 +1157,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6000
-     * @tc.name testArrayToSortedTwo060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_5900
+     * @tc.name testArrayToSortedTwo059
      * @tc.desc Verify comparator sorting object references remains shallow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new ToSortedStableItemTwo();
       first.key = 2;
       first.id = 1;
@@ -1196,14 +1183,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6100
-     * @tc.name testArrayToSortedTwo061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6000
+     * @tc.name testArrayToSortedTwo060
      * @tc.desc Verify comparator sorting nested arrays uses inner values without deep copying
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const high = new Array<number>(9, 1);
       const low = new Array<number>(1, 9);
       const mid = new Array<number>(5, 5);
@@ -1219,14 +1206,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6200
-     * @tc.name testArrayToSortedTwo062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6100
+     * @tc.name testArrayToSortedTwo061
      * @tc.desc Verify nullish comparator handling orders null before numbers and undefined last
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null | undefined>(2, undefined, null, 1);
       const result = arr.toSorted((left: number | null | undefined, right: number | null | undefined): int => {
         if (left === null) {
@@ -1248,14 +1235,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6300
-     * @tc.name testArrayToSortedTwo063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6200
+     * @tc.name testArrayToSortedTwo062
      * @tc.desc Verify comparator can order negative values by absolute magnitude while preserving the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-4, 1, -2, 3);
       const result = arr.toSorted((left: number, right: number): int => {
         const leftAbs = Math.abs(left);
@@ -1273,14 +1260,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6400
-     * @tc.name testArrayToSortedTwo064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6300
+     * @tc.name testArrayToSortedTwo063
      * @tc.desc Verify comparator can order string arrays by length and keep equal lengths stable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('pear', 'fig', 'plum', 'kiwi');
       const result = arr.toSorted((left: string, right: string): int => {
         if (left.length < right.length) {
@@ -1296,14 +1283,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6500
-     * @tc.name testArrayToSortedTwo065
-     * @tc.desc Verify comparator sorting is stable for equal projected boolean values
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6400
+     * @tc.name testArrayToSortedTwo064
+     * @tc.desc Verify comparator sorting is stable for equal numeric key values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new ToSortedStableItemTwo();
       first.key = 2;
       first.id = 1;
@@ -1330,14 +1317,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6600
-     * @tc.name testArrayToSortedTwo066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6500
+     * @tc.name testArrayToSortedTwo065
      * @tc.desc Verify undefined elements are placed after ordinary values even with a comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(2, undefined, 1);
       const result = arr.toSorted((_left: number | undefined, _right: number | undefined): int => -1);
       expect(result[0]).assertEqual(1);
@@ -1347,14 +1334,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6700
-     * @tc.name testArrayToSortedTwo067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6600
+     * @tc.name testArrayToSortedTwo066
      * @tc.desc Verify explicit undefined values are moved after comparator-sorted numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 2;
       arr[2] = 1;
@@ -1375,14 +1362,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6800
-     * @tc.name testArrayToSortedTwo068
-     * @tc.desc Verify a fully sparse array is densified without invoking the comparator
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6700
+     * @tc.name testArrayToSortedTwo067
+     * @tc.desc Verify an all-undefined dense array is returned without invoking the comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       let callCount: int = 0;
       const result = arr.toSorted((_left: number | undefined, _right: number | undefined): int => {
@@ -1398,14 +1385,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6900
-     * @tc.name testArrayToSortedTwo069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6800
+     * @tc.name testArrayToSortedTwo068
      * @tc.desc Verify arrays containing only explicit undefined values do not call the comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(undefined, undefined);
       let callCount: int = 0;
       const result = arr.toSorted((_left: number | undefined, _right: number | undefined): int => {
@@ -1419,14 +1406,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7000
-     * @tc.name testArrayToSortedTwo070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_6900
+     * @tc.name testArrayToSortedTwo069
      * @tc.desc Verify null remains an ordinary comparable value before undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null | undefined>(undefined, null);
       const result = arr.toSorted((_left: number | null | undefined, _right: number | null | undefined): int => 1);
       expect(result[0]).assertNull();
@@ -1434,14 +1421,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7100
-     * @tc.name testArrayToSortedTwo071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7000
+     * @tc.name testArrayToSortedTwo070
      * @tc.desc Verify a zero comparator result preserves stable object order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new ToSortedStableItemTwo();
       first.key = 1;
       first.id = 1;
@@ -1456,14 +1443,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7200
-     * @tc.name testArrayToSortedTwo072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7100
+     * @tc.name testArrayToSortedTwo071
      * @tc.desc Verify short equal-key object runs keep stable relative order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<ToSortedStableItemTwo>();
       for (let i: int = 0; i < 10; i++) {
         const item = new ToSortedStableItemTwo();
@@ -1480,14 +1467,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7300
-     * @tc.name testArrayToSortedTwo073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7200
+     * @tc.name testArrayToSortedTwo072
      * @tc.desc Verify longer equal-key object runs keep stable relative order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<ToSortedStableItemTwo>();
       for (let i: int = 0; i < 200; i++) {
         const item = new ToSortedStableItemTwo();
@@ -1505,14 +1492,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7400
-     * @tc.name testArrayToSortedTwo074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7300
+     * @tc.name testArrayToSortedTwo073
      * @tc.desc Verify mixed equal and descending keys are merged stably
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const equal0 = new ToSortedStableItemTwo();
       equal0.key = 1;
       equal0.id = 0;
@@ -1536,14 +1523,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7500
-     * @tc.name testArrayToSortedTwo075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7400
+     * @tc.name testArrayToSortedTwo074
      * @tc.desc Verify comparator exceptions propagate while the original array stays intact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 1, 3);
       let thrown = false;
       try {
@@ -1558,14 +1545,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7600
-     * @tc.name testArrayToSortedTwo076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7500
+     * @tc.name testArrayToSortedTwo075
      * @tc.desc Verify mutating the source during comparison does not affect copied sort inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 1);
       let mutated = false;
       const result = arr.toSorted((left: number, right: number): int => {
@@ -1580,14 +1567,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7700
-     * @tc.name testArrayToSortedTwo077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7600
+     * @tc.name testArrayToSortedTwo076
      * @tc.desc Verify pushing during comparison is ignored by the returned sorted copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 1);
       let pushed = false;
       const result = arr.toSorted((left: number, right: number): int => {
@@ -1602,14 +1589,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7800
-     * @tc.name testArrayToSortedTwo078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7700
+     * @tc.name testArrayToSortedTwo077
      * @tc.desc Verify truncating source length during comparison does not shorten the returned copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 2, 1);
       let truncated = false;
       const result = arr.toSorted((left: number, right: number): int => {
@@ -1624,14 +1611,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7900
-     * @tc.name testArrayToSortedTwo079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7800
+     * @tc.name testArrayToSortedTwo078
      * @tc.desc Verify omitting the comparator uses default sorting rules
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 2, 1);
       const result = arr.toSorted();
       expect(result.toString()).assertEqual('1,10,2');
@@ -1639,14 +1626,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8000
-     * @tc.name testArrayToSortedTwo080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_7900
+     * @tc.name testArrayToSortedTwo079
      * @tc.desc Verify comparator is called with exactly two ordered element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 1);
       let sawPair = false;
       const result = arr.toSorted((left: number, right: number): int => {
@@ -1658,14 +1645,14 @@ export default function ArrayToSorted2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8100
-     * @tc.name testArrayToSortedTwo081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_TWO_8000
+     * @tc.name testArrayToSortedTwo080
      * @tc.desc Verify bigint values can be sorted with an explicit comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToSortedTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToSortedTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(10n, 5n, 20n);
       const result = arr.toSorted((left: bigint, right: bigint): int => {
         if (left < right) {
