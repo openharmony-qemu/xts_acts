@@ -851,6 +851,5 @@ export default function packBinaryImageToTiffTest() {
       await imageSourceApi.release();
       done();
     })
-
   })
 }
