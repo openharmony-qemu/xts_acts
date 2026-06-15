@@ -83,7 +83,7 @@ struct ChipV2Api1 {
           enabled: true,
           activated: true,
           backgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_button_normal')),
-          activatedBackgroundColor: ColorMetrics.resourceColor("#FFFF0000"),
+          activatedBackgroundColor: ColorMetrics.resourceColor('#FFFF0000'),
           borderRadius: LengthMetrics.resource($r('sys.float.ohos_id_corner_radius_button')),
           onClose: () => {
             console.log('chip on close')
