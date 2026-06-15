@@ -1,0 +1,146 @@
+/**
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+class helper {
+  static standardCnt: number = 0;
+}
+
+class NavParamOne {
+  desc: string = 'NavParamOne'
+}
+
+class NavParamTwo {
+  desc: string = 'NavParamTwo'
+}
+
+@Entry
+@ComponentV2
+struct configurationSaveState {
+  @Provider('navigationStack') stack: NavPathStack = new NavPathStack()
+  @Provider('stackSizeLimit') stackSizeLimit_: number = 1;
+  @Local allDestinations: string = '[]'
+  @Local saveStateTxt: string = 'init'
+  @Local restoreStateTxt: string = 'init'
+
+  aboutToAppear(): void {
+    this.getUIContext().getUIObserver().on('navDestinationUpdate', () => {
+      this.allDestinations = JSON.stringify(this.stack.getAllPathName());
+    })
+  }
+
+  @Builder
+  pageMap(name: string) {
+    if (name) {
+      NavDest({
+        name: name,
+        mode: name.substring(0, 8) === 'STANDARD' ? NavDestinationMode.STANDARD : NavDestinationMode.DIALOG
+      })
+    }
+  }
+
+  build() {
+    Column({space: 10}) {
+      Text(this.allDestinations)
+        .id('all_destinations_text')
+        .fontSize(20)
+
+      Navigation(this.stack) {
+        NavBody()
+      }
+      .title('NavBar')
+      .height('80%')
+      .titleMode(NavigationTitleMode.Mini)
+      .navDestination(this.pageMap)
+      .configuration({stackSizeLimit: this.stackSizeLimit_})
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+
+@ComponentV2
+struct NavDest {
+  @Param name: string = ''
+  @Param mode: NavDestinationMode = NavDestinationMode.STANDARD;
+  @Local saveStateTxt: string = 'init'
+  @Local restoreStateTxt: string = 'init'
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text(`saveState: ${this.saveStateTxt}`)
+          .id('nav_save_state_text')
+          .fontSize(14)
+        Text(`restoreState: ${this.restoreStateTxt}`)
+          .id('nav_restore_state_text')
+          .fontSize(14)
+        NavBody()
+      }
+    }
+    .mode(this.mode)
+    .title(this.name)
+    .onSaveState(() => {
+      this.saveStateTxt = 'onSaveState success'
+      console.info('[NavState]', `${this.name} onSaveState`);
+      let record: Record<string, Object> = {
+        'objOne': new NavParamOne(),
+        'objTwo': new NavParamTwo(),
+      };
+      return record;
+    })
+    .onRestoreState((saveState: Record<string, Object>) => {
+      this.restoreStateTxt = 'onRestoreState success'
+      console.info('[NavState]', `${this.name} onRestoreState`);
+      if (!saveState) {
+        console.error('[NavState]', `-- save state is null or undefined`);
+        return;
+      }
+      console.info('[NavState]', `-- save state: ${JSON.stringify(saveState)}`);
+    })
+  }
+}
+
+@ComponentV2
+struct NavBody {
+  @Consumer('navigationStack') stack: NavPathStack = new NavPathStack()
+  @Consumer('stackSizeLimit') stackSizeLimit_: number = 0;
+
+  build() {
+    Scroll() {
+      Column() {
+        Button(`limit [${this.stackSizeLimit_}]`)
+          .id('stack_limit_btn')
+          .backgroundColor('#ccc')
+        Row({space: 5}) {
+          Button('push STANDARD')
+            .id('push_standard_btn')
+            .onClick(() => {
+              this.stack.pushPath({name: 'STANDARD ' + JSON.stringify(helper.standardCnt++)})
+            })
+          Button('replacePath')
+            .id('replace_restore_btn')
+            .onClick(() => {
+              this.stack.replacePath({name: 'NavParamOne'})
+            })
+        }
+        .border({width: 1})
+        .padding(10)
+        .margin(10)
+      }
+
+    }
+
+  }
+}

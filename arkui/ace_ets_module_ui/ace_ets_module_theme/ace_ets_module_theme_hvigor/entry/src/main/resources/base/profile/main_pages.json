@@ -4,6 +4,7 @@
           "MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage",
           "MainAbility/pages/themeTokensPages/SystemThemeTestPage",
           "MainAbility/pages/themeTokensPages/WithThemeTestPage",
+          "MainAbility/pages/themeTokensPages/themeTokenType",
           "MainAbility/pages/components/AlphabetIndexerPage",
           "MainAbility/pages/components/BadgePage",
           "MainAbility/pages/components/ButtonPage",
