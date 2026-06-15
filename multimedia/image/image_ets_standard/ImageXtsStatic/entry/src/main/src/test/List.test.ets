@@ -59,11 +59,17 @@ import ImageSourceGetDelayTimeListTest from "./testStatic/image/imageSource/getD
 import MetaDataSetBlobStaticSuppTest from './testStatic/image/Metadata/MetaDataSetBlobTest.test';
 import imagePackerPackToFileAbnormalStaticSuppTest from './testStatic/image/ImagePacker/packToFileAbnormalStatic.test';
 import imagePackerPackToFileStaticSuppTest from './testStatic/image/ImagePacker/packToFileNormalStatic.test';
-import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
 import metaDatagetAllPropertiesStaticTest from './testStatic/image/Metadata/getAllPropertiesStatic.test';
 import metaDataGetPropertiesTestStatic from './testStatic/image/Metadata/getPropertiesStatic.test';
 import setPropertiesStaticSuppTest from './testStatic/image/Metadata/setPropertiesStatic.test';
 import metadataCloneStaticSuppTest from './testStatic/image/Metadata/cloneStatic.test';
+import imagePackerPackToFilePictureStaticSuppTest from './testStatic/image/ImagePacker/packToFilePictureStatic.test';
+import PicturePackingPixMapSuppStatic from './testStatic/image/ImagerPackerSupplement/PicturePackingStatic.test';
+import PicturePackingPixelMapFirTestSupp
+  from './testStatic/image/ImagerPackerSupplement/PicturePackToFilePixMapStatic.test';
+import PicturePackToFileSuppImageSourceTestStatic
+  from './testStatic/image/ImagerPackerSupplement/PicturePackToFileSuppStatic.test';
+import ImageSourceCreatePixelMapListSuppStatic from './testStatic/image/imageSource/ImageSourceCreatePixelMapListStatic.test';
 import ImageEnumSupp from './testStatic/image/image/ImageEnum.test';
 import ImageSourceGetDisposalTypeListTest from './testStatic/image/imageSource/getDisposalTypeList.test';
 import ImageSourceGetFrameCountTest from './testStatic/image/imageSource/getFrameCount.test';
@@ -88,7 +94,6 @@ import pixelMapRotateTest from './testStatic/image/pixelMap/rotate.test';
 import pixelMapScaleTest from './testStatic/image/pixelMap/scale.test';
 import pixelMapTranslateTest from './testStatic/image/pixelMap/translate.test';
 import pixelMapWritePixelsTest from './testStatic/image/pixelMap/writePixels.test';
-
 
 
 export default function testsuite(): void {
@@ -147,12 +152,17 @@ export default function testsuite(): void {
   ImageSourceGetDelayTimeListTest();
   MetaDataSetBlobStaticSuppTest();
   imagePackerPackToFileAbnormalStaticSuppTest();
-  imagePackerPackToFileStaticSuppTest();
   imagePackerPackToFilePictureStaticSuppTest();
-  metaDatagetAllPropertiesStaticTest();
-  metaDataGetPropertiesTestStatic();
   setPropertiesStaticSuppTest();
+  MetaDataSetBlobStaticSuppTest();
+  metaDatagetAllPropertiesStaticTest();
+  imagePackerPackToFileStaticSuppTest();
+  metaDataGetPropertiesTestStatic();
   metadataCloneStaticSuppTest();
+  PicturePackingPixMapSuppStatic();
+  PicturePackingPixelMapFirTestSupp();
+  PicturePackToFileSuppImageSourceTestStatic();
+  ImageSourceCreatePixelMapListSuppStatic();
   ImageEnumSupp();
   ImageSourceGetDisposalTypeListTest();
   ImageSourceGetFrameCountTest();
@@ -178,3 +188,4 @@ export default function testsuite(): void {
   pixelMapTranslateTest();
   pixelMapWritePixelsTest();
 }
+
