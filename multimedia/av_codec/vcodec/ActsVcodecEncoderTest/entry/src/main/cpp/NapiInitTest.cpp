@@ -359,7 +359,11 @@ static std::vector<TestFunction> GetFuncTest2Part2()
     VideoEncodeHevcCapability2700Test,
     VideoEncodeHevcCapability2800Test,
     VideoEncodeHevcCapability2900Test,
-    VideoEncodeHevcCapability3000Test
+    VideoEncodeHevcCapability3000Test,
+    VideoEncodeSetMaxFrameDelayCount0100Test,
+    VideoEncodeSetMaxFrameDelayCount0200Test,
+    VideoEncodeSetMaxFrameDelayCount0300Test,
+    VideoEncodeSetMaxFrameDelayCount0400Test
     };
 }
 

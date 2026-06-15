@@ -799,5 +799,53 @@ export default function VideoEncoderFuncTest2() {
       let result: number = await testNapi.runFuncTest2(64);
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0100
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest2(65);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0200
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest2(66);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest2(67);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0400
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_HEVC_SET_MAX_FRAME_DELAY_COUNT_0400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest2(68);
+      expect(result).assertEqual(0);
+    });
   });
 }
