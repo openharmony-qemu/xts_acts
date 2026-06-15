@@ -65,6 +65,7 @@ import PhotoSetTitleTestSupp from './photoAccess/PhotoAccessHelperSetTitle.test'
 import SendAblePhotoAssertHelperSuppTest from './photoAccess/SendAblePhotoAssertHelperSuppTest.test';
 import PhotoAccessHelperGetAlbumsSupp from './photoAccess/PhotoAccessHelperGetAlbumsTest.test';
 import PhotoNoPermissionSupp from './photoAccess/PhotoAccessHelperNoPermission.test';
+import photoExtraSuppTest from './photoAccess/photoAccessHelperExtra.test';
 
 export default function testsuite() {
   PhotoNoPermissionSupp();
@@ -128,4 +129,5 @@ export default function testsuite() {
   requestImageTest();
   PhotoSetTitleTestSupp();
   PhotoGetAssetsTestSupp();
+  photoExtraSuppTest();
 }
