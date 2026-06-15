@@ -698,6 +698,50 @@ export default function SparseArrayOfTest(): void {
         expect(arr[2]).assertEqual(0o3)
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_OF_5100
+     * @tc.name testSparseArrayOf051
+     * @tc.desc SparseArray.of with char values stores char order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayOf051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = SparseArray.of<char>(c'A', c'Z')
+        expect(arr.length).assertEqual(2)
+        expect(arr[0]).assertEqual(c'A')
+        expect(arr[1]).assertEqual(c'Z')
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_OF_5200
+     * @tc.name testSparseArrayOf052
+     * @tc.desc SparseArray.of with explicit undefined element stores undefined slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayOf052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = SparseArray.of<int | undefined>(1, undefined, 3)
+        expect(arr.length).assertEqual(3)
+        expect(arr[1]).assertUndefined()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_OF_5300
+     * @tc.name testSparseArrayOf053
+     * @tc.desc SparseArray.of with byte boundary values stores byte elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayOf053', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = SparseArray.of<byte>(127 as byte, (-128 as byte))
+        expect(arr.length).assertEqual(2)
+        expect(arr[0]).assertEqual(127 as byte)
+        expect(arr[1]).assertEqual(-128 as byte)
+    });
+
 
   });
 }

@@ -37,7 +37,7 @@ export default function SparseArrayLastIndexOf2Test(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -104,7 +104,7 @@ export default function SparseArrayLastIndexOf2Test(): void {
       const arr = new SparseArray<int>(42);
       const result = arr.lastIndexOf(42);
       expect(result).assertEqual(-1);
-    
+
     });
 
     /**
@@ -119,7 +119,7 @@ export default function SparseArrayLastIndexOf2Test(): void {
       const arr = new SparseArray<string>("a", "b", "a");
       const result = arr.lastIndexOf("a", 1);
       expect(result).assertEqual(0);
-    
+
     });
 
     /**
@@ -491,6 +491,67 @@ export default function SparseArrayLastIndexOf2Test(): void {
     it('testSparseArrayLastIndexOf030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(0xFF, 1, 0xFF);
         expect(arr.lastIndexOf(0xFF)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_2_0031
+     * @tc.name testSparseArrayLastIndexOf031
+     * @tc.desc lastIndexOf char element compares one-parameter and fromIndex-limited calls
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'A', c'C');
+        expect(arr.lastIndexOf(c'A')).assertEqual(2);
+        expect(arr.lastIndexOf(c'A', 1)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_2_0032
+     * @tc.name testSparseArrayLastIndexOf032
+     * @tc.desc lastIndexOf boolean false compares full search and fromIndex 0 search
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(false, true, false);
+        expect(arr.lastIndexOf(false)).assertEqual(2);
+        expect(arr.lastIndexOf(false, 0)).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_2_0033
+     * @tc.name testSparseArrayLastIndexOf033
+     * @tc.desc lastIndexOf explicitly stored undefined compares full search and fromIndex-limited search
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(5);
+        arr[1] = undefined;
+        arr[4] = undefined;
+        expect(arr.lastIndexOf(undefined)).assertEqual(4);
+        expect(arr.lastIndexOf(undefined, 3)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_2_0034
+     * @tc.name testSparseArrayLastIndexOf034
+     * @tc.desc lastIndexOf byte element compares full search and sparse fromIndex-limited search
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const target: byte = 7 as byte;
+        const arr = new SparseArray<byte>(8);
+        arr[2] = target;
+        arr[6] = target;
+        expect(arr.lastIndexOf(target)).assertEqual(6);
+        expect(arr.lastIndexOf(target, 5)).assertEqual(2);
     });
 
   });

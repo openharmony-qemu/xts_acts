@@ -23,7 +23,7 @@ export default function SparseArrayReverseTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -44,7 +44,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr[0]).assertEqual(3);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0200
@@ -59,7 +59,7 @@ export default function SparseArrayReverseTest(): void {
         const result = arr.reverse();
         expect(result).assertEqual(arr);
         expect(arr[0]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0300
@@ -74,7 +74,7 @@ export default function SparseArrayReverseTest(): void {
         const result = arr.reverse();
         expect(result).assertEqual(arr);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0400
@@ -88,7 +88,7 @@ export default function SparseArrayReverseTest(): void {
         const arr = new SparseArray<int>(42);
         arr.reverse();
         expect(arr.length).assertEqual(42);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0500
@@ -106,7 +106,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(3);
         expect(arr[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0600
@@ -121,7 +121,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse().reverse();
         expect(arr[0]).assertEqual(1);
         expect(arr[3]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0700
@@ -137,7 +137,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr[0]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
         expect(result).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0800
@@ -156,7 +156,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr.length).assertEqual(1000);
         expect(arr[0]).assertEqual(999);
         expect(arr[999]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_0900
@@ -174,7 +174,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(20);
         expect(arr[2]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1000
@@ -192,7 +192,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(30);
         expect(arr[2]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1100
@@ -208,7 +208,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr.length).assertEqual(10);
         expect(arr[0]).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1200
@@ -223,7 +223,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(5);
         expect(arr[4]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1300
@@ -238,7 +238,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(3.3);
         expect(arr[2]).assertEqual(1.1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1400
@@ -253,7 +253,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual("c");
         expect(arr[2]).assertEqual("a");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1500
@@ -269,7 +269,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr[0]).assertEqual(true);
         expect(arr[1]).assertEqual(false);
         expect(arr[2]).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1600
@@ -285,7 +285,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr[0]).assertEqual(true);
         expect(arr[1]).assertEqual("a");
         expect(arr[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1700
@@ -301,7 +301,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(1);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1800
@@ -316,7 +316,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse().reverse().reverse();
         expect(arr[0]).assertEqual(3);
         expect(arr[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_1900
@@ -335,7 +335,7 @@ export default function SparseArrayReverseTest(): void {
         arr.push(4);
         expect(arr.length).assertEqual(4);
         expect(arr[3]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2000
@@ -354,7 +354,7 @@ export default function SparseArrayReverseTest(): void {
         const popped = arr.pop();
         expect(popped).assertEqual(1);
         expect(arr.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2100
@@ -371,7 +371,7 @@ export default function SparseArrayReverseTest(): void {
         expect(arr[0]).assertEqual(5);
         expect(arr[1]).assertEqual(99);
         expect(arr[2]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2200
@@ -387,7 +387,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr.length).assertEqual(10000);
         expect(arr[0]).assertEqual(42);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2300
@@ -404,7 +404,7 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(2);
         expect(arr[999]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2400
@@ -420,7 +420,7 @@ export default function SparseArrayReverseTest(): void {
         arr1.reverse();
         expect(arr2[0]).assertEqual(3);
         expect(arr2[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2500
@@ -440,7 +440,7 @@ export default function SparseArrayReverseTest(): void {
         const toReversedArr = arr2.toReversed();
         expect(toReversedArr[0]).assertEqual(3);
         expect(arr2[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2600
@@ -463,7 +463,7 @@ export default function SparseArrayReverseTest(): void {
         const arr3 = SparseArray.of<int>(1, 2, 3);
         arr3.reverse();
         expect(arr3[0]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2700
@@ -484,7 +484,7 @@ export default function SparseArrayReverseTest(): void {
         const arr3 = SparseArray.of<int>(1, 2, 3);
         arr3.reverse();
         expect(arr3.toString()).assertEqual('3,2,1');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2800
@@ -498,7 +498,7 @@ export default function SparseArrayReverseTest(): void {
         const arr = SparseArray.from<int>([1, 2, 3, 4, 5]);
         arr.reverse();
         expect(arr.toString()).assertEqual('5,4,3,2,1');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_2900
@@ -527,6 +527,70 @@ export default function SparseArrayReverseTest(): void {
         arr.reverse();
         expect(arr[0]).assertEqual(0o5);
         expect(arr[2]).assertEqual(0x3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_3100
+     * @tc.name testSparseArrayReverse031
+     * @tc.desc reverse on SparseArray<char> reverses char element order in place
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReverse031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const result = arr.reverse();
+        expect(result).assertEqual(arr);
+        expect(arr[0]).assertEqual(c'C');
+        expect(arr[2]).assertEqual(c'A');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_3200
+     * @tc.name testSparseArrayReverse032
+     * @tc.desc reverse on SparseArray<boolean> preserves false value after reversal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReverse032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        arr.reverse();
+        expect(arr.length).assertEqual(3);
+        expect(arr[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_3300
+     * @tc.name testSparseArrayReverse033
+     * @tc.desc reverse preserves explicit undefined element in SparseArray<int|undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReverse033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(1, undefined, 3);
+        arr.reverse();
+        expect(arr[0]).assertEqual(3);
+        expect(arr[1]).assertUndefined();
+        expect(arr[2]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REVERSE_3400
+     * @tc.name testSparseArrayReverse034
+     * @tc.desc reverse moves high sparse assigned value to index 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReverse034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(6);
+        arr[5] = "tail";
+        arr.reverse();
+        expect(arr.length).assertEqual(6);
+        expect(arr[0]).assertEqual("tail");
+        expect(arr[5]).assertUndefined();
     });
 
 

@@ -35,7 +35,7 @@ export default function SparseArrayPushTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -987,6 +987,54 @@ export default function SparseArrayPushTest(): void {
         const arr = new SparseArray<Color019>();
         arr.push(0x1 as Color019);
         expect(arr[0]).assertEqual(Color019.Green);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_PUSH_0112
+     * @tc.name testSparseArrayPush067
+     * @tc.desc push char values returns updated length and stores char order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPush067', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>();
+        const len = arr.push(c'A', c'B');
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertEqual(c'A');
+        expect(arr[1]).assertEqual(c'B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_PUSH_0113
+     * @tc.name testSparseArrayPush068
+     * @tc.desc push explicit undefined into SparseArray<int|undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPush068', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>();
+        const len = arr.push(undefined, 7);
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertUndefined();
+        expect(arr[1]).assertEqual(7);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_PUSH_0114
+     * @tc.name testSparseArrayPush069
+     * @tc.desc push byte boundary values returns updated length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPush069', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>();
+        const len = arr.push(127 as byte, (-128 as byte));
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertEqual(127 as byte);
+        expect(arr[1]).assertEqual(-128 as byte);
     });
 
   });

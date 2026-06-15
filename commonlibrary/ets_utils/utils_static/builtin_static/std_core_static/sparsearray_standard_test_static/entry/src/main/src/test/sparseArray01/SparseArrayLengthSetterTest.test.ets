@@ -23,7 +23,7 @@ export default function SparseArrayLengthSetterTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -74,7 +74,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         arr.length = 0;
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0004
@@ -93,7 +93,7 @@ export default function SparseArrayLengthSetterTest(): void {
           expect(error.name).assertEqual("RangeError");
         }
         expect(arr.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0005
@@ -107,7 +107,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const arr = new SparseArray<int>();
         arr.length = 10000;
         expect(arr.length).assertEqual(10000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0006
@@ -121,7 +121,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const arr = new SparseArray<int>();
         arr.length = 0x7FFFFFFF;
         expect(arr.length).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0007
@@ -153,7 +153,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const wrapped: int = ((-2147483648 as int) - (1 as int)) as int;
         expect(wrapped).assertEqual(2147483647 as int);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0009
@@ -200,7 +200,7 @@ export default function SparseArrayLengthSetterTest(): void {
         arr.length = 10;
         expect(arr.length).assertEqual(10);
         expect(arr[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0012
@@ -214,7 +214,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.length = 5;
         expect(result).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0013
@@ -232,7 +232,7 @@ export default function SparseArrayLengthSetterTest(): void {
         expect(arr.length).assertEqual(2);
         arr.length = 8;
         expect(arr.length).assertEqual(8);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0014
@@ -248,7 +248,7 @@ export default function SparseArrayLengthSetterTest(): void {
         expect(arr.length).assertEqual(10);
         arr.length = 5;
         expect(arr.length).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0015
@@ -267,7 +267,7 @@ export default function SparseArrayLengthSetterTest(): void {
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(1);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0016
@@ -284,7 +284,7 @@ export default function SparseArrayLengthSetterTest(): void {
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0017
@@ -306,7 +306,7 @@ export default function SparseArrayLengthSetterTest(): void {
         const boolArr = new SparseArray<boolean>(true, false);
         boolArr.length = 3;
         expect(boolArr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -372,6 +372,71 @@ export default function SparseArrayLengthSetterTest(): void {
         arr.length = 2;
         expect(arr[0]).assertEqual(" ");
         expect(arr[1]).assertEqual("\t");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0022
+     * @tc.name testSparseArrayLengthSetter022
+     * @tc.desc length setter truncates char elements beyond new length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthSetter022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        arr.length = 2;
+        expect(arr.length).assertEqual(2);
+        expect(arr[0]).assertEqual(c'A');
+        expect(arr[2]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0023
+     * @tc.name testSparseArrayLengthSetter023
+     * @tc.desc length setter extends SparseArray<boolean> and preserves existing false value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthSetter023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(false);
+        arr.length = 4;
+        expect(arr.length).assertEqual(4);
+        expect(arr[0]).assertEqual(false);
+        expect(arr[3]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0024
+     * @tc.name testSparseArrayLengthSetter024
+     * @tc.desc length setter to zero clears assigned sparse elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthSetter024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(5);
+        arr[0] = 10;
+        arr[4] = 40;
+        arr.length = 0;
+        expect(arr.length).assertEqual(0);
+        expect(arr[0]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_SETTER_0025
+     * @tc.name testSparseArrayLengthSetter025
+     * @tc.desc length setter shrink removes high sparse string index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthSetter025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>();
+        arr[8] = "tail";
+        arr.length = 4;
+        expect(arr.length).assertEqual(4);
+        expect(arr[8]).assertUndefined();
     });
 
   });

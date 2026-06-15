@@ -35,7 +35,7 @@ export default function SparseArrayReduceRightTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -54,7 +54,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3);
       expect(arr instanceof SparseArray).assertTrue();
       expect(reduceRightIntSum(arr)).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0200
@@ -75,7 +75,7 @@ export default function SparseArrayReduceRightTest(): void {
       expect(indices.length).assertEqual(2);
       expect(indices[0]).assertEqual(1);
       expect(indices[1]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0300
@@ -89,7 +89,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3, 4);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(result).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0400
@@ -103,7 +103,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<string>("a", "b", "c");
       const result = arr.reduceRight((acc: string, curr: string, _i: int, _a: SparseArray<string>): string => acc + curr);
       expect(result).assertEqual("cba");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0500
@@ -117,7 +117,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<string>("x", "y", "z");
       const out = arr.reduceRight((acc: string, curr: string, _i: int, _a: SparseArray<string>): string => acc + curr);
       expect(out).assertEqual("zyx");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0600
@@ -134,7 +134,7 @@ export default function SparseArrayReduceRightTest(): void {
       arr[4] = 3;
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0700
@@ -148,7 +148,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(-1, 2, -3, 4);
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0800
@@ -162,7 +162,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<boolean>(true, true, false);
       const allTrue = arr.reduceRight((acc: boolean, curr: boolean, _i: int, _a: SparseArray<boolean>): boolean => acc && curr);
       expect(allTrue).assertFalse();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_0900
@@ -195,7 +195,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(10, 1, 2, 3);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(result).assertEqual(16);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1100
@@ -209,7 +209,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<number>(1.5, 2.5, 3.5);
       const result = arr.reduceRight((acc: number, curr: number, _i: int, _a: SparseArray<number>): number => acc + curr);
       expect(result).assertEqual(7.5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1200
@@ -241,7 +241,7 @@ export default function SparseArrayReduceRightTest(): void {
       arr.push(42);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(result).assertEqual(42);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1400
@@ -255,7 +255,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3, 4, 5);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(result).assertEqual(15);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1500
@@ -268,7 +268,7 @@ export default function SparseArrayReduceRightTest(): void {
     it('testSparseArrayReduceRight015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<int>(10, 20, 30);
       expect(reduceRightIntSum(arr)).assertEqual(60);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1600
@@ -282,7 +282,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(3, 1, 4, 2);
       const minVal = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => (curr < acc ? curr : acc));
       expect(minVal).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1700
@@ -303,7 +303,7 @@ export default function SparseArrayReduceRightTest(): void {
       expect(indices[0]).assertEqual(2);
       expect(indices[1]).assertEqual(1);
       expect(indices[2]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1800
@@ -317,7 +317,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<string>("a", "b", "c", "d");
       const result = arr.reduceRight((acc: string, curr: string, _i: int, _a: SparseArray<string>): string => acc + curr);
       expect(result).assertEqual("dcba");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_1900
@@ -331,7 +331,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(result).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2000
@@ -345,7 +345,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3, 4);
       const product = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc * curr);
       expect(product).assertEqual(24);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2100
@@ -359,7 +359,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<string>("Hello", " ", "World");
       const result = arr.reduceRight((acc: string, curr: string, _i: int, _a: SparseArray<string>): string => acc + curr);
       expect(result).assertEqual("World Hello");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2200
@@ -376,7 +376,7 @@ export default function SparseArrayReduceRightTest(): void {
         return acc + curr;
       });
       expect(sum).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2300
@@ -390,7 +390,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3, 4);
       const product = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc * curr);
       expect(product).assertEqual(24);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2400
@@ -410,7 +410,7 @@ export default function SparseArrayReduceRightTest(): void {
       });
       expect(result).assertEqual(6);
       expect(arr.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2500
@@ -430,7 +430,7 @@ export default function SparseArrayReduceRightTest(): void {
       expect(values.length).assertEqual(2);
       expect(values[0]).assertEqual(20);
       expect(values[1]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2600
@@ -444,7 +444,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(3, 1, 4, 2);
       const maxVal = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => (curr > acc ? curr : acc));
       expect(maxVal).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2700
@@ -461,7 +461,7 @@ export default function SparseArrayReduceRightTest(): void {
         return acc;
       });
       expect(arr instanceof SparseArray).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2800
@@ -478,7 +478,7 @@ export default function SparseArrayReduceRightTest(): void {
       }
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(4950);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_2900
@@ -492,7 +492,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 0, 2, 0, 3);
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3000
@@ -506,7 +506,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, -2, 3, -4, 5);
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3100
@@ -520,7 +520,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1000, 2000);
       const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr);
       expect(sum).assertEqual(3000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3200
@@ -534,7 +534,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3);
       const combined = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc * 10 + curr);
       expect(combined).assertEqual(321);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3300
@@ -568,7 +568,7 @@ export default function SparseArrayReduceRightTest(): void {
       const weighted = arr.reduceRight((acc: int, curr: int, index: int, _a: SparseArray<int>): int => acc + curr * index);
       // 无初值时末元为 acc，自右向左累加 curr*index → 4+6+2+0=12
       expect(weighted).assertEqual(12);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3500
@@ -582,7 +582,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(2, 3, 4);
       const product = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc * curr);
       expect(product).assertEqual(24);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3600
@@ -605,7 +605,7 @@ export default function SparseArrayReduceRightTest(): void {
       expect(indices.length).assertEqual(2);
       expect(indices[0]).assertEqual(2);
       expect(indices[1]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3700
@@ -619,7 +619,7 @@ export default function SparseArrayReduceRightTest(): void {
       const arr = new SparseArray<int>(1, 2, 3, 4);
       const result = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => acc + curr) * 2;
       expect(result).assertEqual(20);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_3800
@@ -811,6 +811,60 @@ export default function SparseArrayReduceRightTest(): void {
       } catch (error) {
         expect(error.name).assertEqual("TypeError");
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_5000
+     * @tc.name testSparseArrayReduceRight050
+     * @tc.desc reduceRight boolean values with logical or operation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReduceRight050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new SparseArray<boolean>(false, false, true);
+      const result = arr.reduceRight((acc: boolean, curr: boolean, _i: int, _a: SparseArray<boolean>): boolean => acc || curr);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_5100
+     * @tc.name testSparseArrayReduceRight051
+     * @tc.desc reduceRight char values returns highest char value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReduceRight051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new SparseArray<char>(c'A', c'C', c'B');
+      const result = arr.reduceRight((acc: char, curr: char, _i: int, _a: SparseArray<char>): char => {
+        if (curr > acc) {
+          return curr;
+        }
+        return acc;
+      });
+      expect(result).assertEqual(c'C');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_REDUCE_RIGHT_5200
+     * @tc.name testSparseArrayReduceRight052
+     * @tc.desc reduceRight skips sparse holes when summing assigned values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayReduceRight052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new SparseArray<int>(6);
+      arr[1] = 10;
+      arr[5] = 30;
+      let callCount = 0;
+      const sum = arr.reduceRight((acc: int, curr: int, _i: int, _a: SparseArray<int>): int => {
+        callCount++;
+        return acc + curr;
+      });
+      expect(sum).assertEqual(40);
+      expect(callCount).assertEqual(1);
     });
 
 

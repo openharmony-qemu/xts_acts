@@ -23,7 +23,7 @@ export default function SparseArrayLengthGetTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -63,7 +63,7 @@ export default function SparseArrayLengthGetTest(): void {
         expect(arr2.length).assertEqual(5);
         const arr3 = new SparseArray<int>(1, 2, 3);
         expect(arr3.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -78,7 +78,7 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(10);
         arr.length = 5;
         expect(arr.length).assertEqual(5);
-    
+
     });
 
     /**
@@ -95,7 +95,7 @@ export default function SparseArrayLengthGetTest(): void {
         expect(arr.length).assertEqual(1);
         arr.push(2, 3);
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -110,7 +110,7 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         arr.pop();
         expect(arr.length).assertEqual(2);
-    
+
     });
 
     /**
@@ -125,7 +125,7 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50);
         arr.splice(2);
         expect(arr.length).assertEqual(2);
-    
+
     });
 
     /**
@@ -139,7 +139,7 @@ export default function SparseArrayLengthGetTest(): void {
     it('testSparseArrayLengthGet007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10000);
         expect(arr.length).assertEqual(10000);
-    
+
     });
 
     /**
@@ -155,7 +155,7 @@ export default function SparseArrayLengthGetTest(): void {
         arr[2] = 10;
         arr[4] = 20;
         expect(arr.length).assertEqual(6);
-    
+
     });
 
     /**
@@ -169,7 +169,7 @@ export default function SparseArrayLengthGetTest(): void {
     it('testSparseArrayLengthGet009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = SparseArray.of<int>(1, 2, 3, 4, 5);
         expect(arr.length).assertEqual(5);
-    
+
     });
 
     /**
@@ -184,7 +184,7 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(3, 4);
         arr.unshift(1, 2);
         expect(arr.length).assertEqual(4);
-    
+
     });
 
     /**
@@ -199,7 +199,7 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         arr.shift();
         expect(arr.length).assertEqual(2);
-    
+
     });
 
     /**
@@ -222,7 +222,7 @@ export default function SparseArrayLengthGetTest(): void {
 
         const arr4 = new SparseArray<SparseArray<int>>(5);
         expect(arr4.length).assertEqual(5);
-    
+
     });
 
     /**
@@ -244,7 +244,7 @@ export default function SparseArrayLengthGetTest(): void {
         expect(arr.length).assertEqual(2);
         arr.unshift(0);
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -261,7 +261,7 @@ export default function SparseArrayLengthGetTest(): void {
 
         arr[5] = 100;
         expect(arr.length).assertEqual(10);
-    
+
     });
 
     /**
@@ -274,9 +274,9 @@ export default function SparseArrayLengthGetTest(): void {
      */
     it('testSparseArrayLengthGet015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
-        arr[10] = 100; 
-        expect(arr.length).assertEqual(11); 
-    
+        arr[10] = 100;
+        expect(arr.length).assertEqual(11);
+
     });
 
     /**
@@ -291,8 +291,8 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const sliced = arr.slice(1, 3);
         expect(sliced.length).assertEqual(2);
-        expect(arr.length).assertEqual(5); 
-    
+        expect(arr.length).assertEqual(5);
+
     });
 
     /**
@@ -307,9 +307,9 @@ export default function SparseArrayLengthGetTest(): void {
         const arr1 = new SparseArray<int>(1, 2);
         const arr2 = [3, 4] as Array<int>;
         const newArr = arr1.concat(arr2);
-        expect(arr1.length).assertEqual(2); 
-        expect(newArr.length).assertEqual(4); 
-    
+        expect(arr1.length).assertEqual(2);
+        expect(newArr.length).assertEqual(4);
+
     });
 
     /**
@@ -372,6 +372,64 @@ export default function SparseArrayLengthGetTest(): void {
         const arr = new SparseArray<int>(0x1, 0b10);
         expect(arr.length).assertEqual(2);
         expect(arr[0x1]).assertEqual(0b10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_GET_0022
+     * @tc.name testSparseArrayLengthGet022
+     * @tc.desc length getter on SparseArray<char> reflects char element count
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthGet022', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        expect(arr.length).assertEqual(3);
+        expect(arr[2]).assertEqual(c'C');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_GET_0023
+     * @tc.name testSparseArrayLengthGet023
+     * @tc.desc length getter on SparseArray<boolean> reflects false element slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthGet023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false);
+        expect(arr.length).assertEqual(2);
+        expect(arr[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_GET_0024
+     * @tc.name testSparseArrayLengthGet024
+     * @tc.desc length getter expands to high sparse assigned index plus one
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthGet024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>();
+        arr[31] = "tail";
+        expect(arr.length).assertEqual(32);
+        expect(arr[30]).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LENGTH_GET_0025
+     * @tc.name testSparseArrayLengthGet025
+     * @tc.desc length getter decreases after shift removes first element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLengthGet025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(10, 20, 30);
+        const first = arr.shift();
+        expect(first).assertEqual(10);
+        expect(arr.length).assertEqual(2);
     });
 
   });

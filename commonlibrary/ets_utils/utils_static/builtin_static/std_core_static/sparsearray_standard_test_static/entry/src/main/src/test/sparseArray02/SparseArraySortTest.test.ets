@@ -141,7 +141,7 @@ export default function SparseArraySortTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -158,11 +158,10 @@ export default function SparseArraySortTest(): void {
      */
     it('testSparseArraySort001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number>(10, 2, 8, 5);
-        // 使用显式数值比较函数，避免默认 sort 按字符串 Unicode 排序
         const result = arr.sort(cmpNumber);
         expect(result).assertEqual(arr);
         expect(arr[0]).assertEqual(2);
-    
+
     });
 
     /**
@@ -178,7 +177,7 @@ export default function SparseArraySortTest(): void {
         const result = arr.sort(cmpDouble);
         expect(result).assertEqual(arr);
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -193,7 +192,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<number>(5, 3, 1, 4, 2);
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -208,7 +207,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<number>(3, 2, 1);
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -226,7 +225,7 @@ export default function SparseArraySortTest(): void {
         expect(arr.length).assertEqual(2);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
-    
+
     });
 
     /**
@@ -257,7 +256,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<number>(1, 2, 3);
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -271,13 +270,12 @@ export default function SparseArraySortTest(): void {
     it('testSparseArraySort008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<number>(10, 2, 5);
         expect(arr instanceof SparseArray).assertTrue();
-        // 显式数值比较：默认 sort 按元素字符串 Unicode 排序（见 API 文档）
         arr.sort(cmpNumber);
         expect(arr.length).assertEqual(3);
         expect(arr[0]).assertEqual(2);
         expect(arr[1]).assertEqual(5);
         expect(arr[2]).assertEqual(10);
-    
+
     });
 
     /**
@@ -308,7 +306,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<number>(1, 2);
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -324,7 +322,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
         expect(arr[4]).assertEqual(5);
-    
+
     });
 
     /**
@@ -341,7 +339,7 @@ export default function SparseArraySortTest(): void {
         expect(arr[0]).assertEqual("apple");
         expect(arr[1]).assertEqual("banana");
         expect(arr[2]).assertEqual("cherry");
-    
+
     });
 
     /**
@@ -357,7 +355,7 @@ export default function SparseArraySortTest(): void {
         const result = arr.sort();
         expect(result).assertEqual(arr);
         expect(arr.length).assertEqual(0);
-    
+
     });
 
     /**
@@ -374,7 +372,7 @@ export default function SparseArraySortTest(): void {
         const result = arr.sort();
         expect(result).assertEqual(arr);
         expect(arr[0]).assertEqual(42);
-    
+
     });
 
     /**
@@ -396,7 +394,7 @@ export default function SparseArraySortTest(): void {
         expect(arr[0]).assertEqual(10);
         expect(arr[2]).assertEqual(20);
         expect(arr[4]).assertEqual(30);
-    
+
     });
 
     /**
@@ -412,7 +410,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(1);
-    
+
     });
 
     /**
@@ -428,7 +426,7 @@ export default function SparseArraySortTest(): void {
         const result = arr.sort(cmpDouble);
         expect(result).assertEqual(arr);
         expect(result === arr).assertTrue();
-    
+
     });
 
     /**
@@ -445,7 +443,7 @@ export default function SparseArraySortTest(): void {
            .sort(cmpDoubleDesc);
         expect(arr[0]).assertEqual(4);
         expect(arr[2]).assertEqual(1);
-    
+
     });
 
     /**
@@ -461,7 +459,7 @@ export default function SparseArraySortTest(): void {
         const originalRef = arr;
         arr.sort();
         expect(arr).assertEqual(originalRef);
-    
+
     });
 
     /**
@@ -477,7 +475,7 @@ export default function SparseArraySortTest(): void {
         const arr2 = arr1;
         arr1.sort(cmpDouble);
         expect(arr2[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -492,7 +490,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<number>(3, 1, 2);
         const result: SparseArray<number> = arr.sort();
         expect(result!.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -511,7 +509,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(1);
         expect(arr[999]).assertEqual(1000);
-    
+
     });
 
     /**
@@ -533,7 +531,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpDouble);
         expect(arr[0]).assertEqual(-1);
         expect(arr[4]).assertEqual(Number.MAX_VALUE);
-    
+
     });
 
     /**
@@ -651,7 +649,7 @@ export default function SparseArraySortTest(): void {
         expect((e0 as SortEntry029).index).assertEqual(0);
         expect((e1 as SortEntry029).index).assertEqual(1);
         expect((e2 as SortEntry029).index).assertEqual(2);
-    
+
     });
 
     /**
@@ -667,7 +665,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpIntDesc);
         expect(arr[0]).assertEqual(5);
         expect(arr[4]).assertEqual(1);
-    
+
     });
 
     /**
@@ -686,7 +684,7 @@ export default function SparseArraySortTest(): void {
         expect(head != null).assertTrue();
         expect((head as Person031).name).assertEqual("Bob");
         expect((head as Person031).age).assertEqual(25);
-    
+
     });
 
     /**
@@ -702,7 +700,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpStringLower);
         expect(arr[0]).assertEqual("apple");
         expect(arr[1]).assertEqual("Banana");
-    
+
     });
 
     /**
@@ -715,11 +713,10 @@ export default function SparseArraySortTest(): void {
      */
     it('testSparseArraySort033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 2, 100, 1);
-        // 显式数值比较：默认 sort 按元素字符串 Unicode 排序（见 API 文档）
         arr.sort(cmpInt);
         expect(arr[0]).assertEqual(1);
         expect(arr[3]).assertEqual(100);
-    
+
     });
 
     /**
@@ -734,7 +731,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         expect(arr instanceof SparseArray).assertTrue();
         arr.sort();
-    
+
     });
 
     /**
@@ -757,7 +754,7 @@ export default function SparseArraySortTest(): void {
           return cmpDouble(a, b);
         });
         expect(arr[0]).assertEqual(1.0);
-    
+
     });
 
     /**
@@ -780,7 +777,7 @@ export default function SparseArraySortTest(): void {
           return cmpInt(a, b);
         });
         expect(arr[0]).assertEqual(1);
-    
+
     });
 
     /**
@@ -800,8 +797,8 @@ export default function SparseArraySortTest(): void {
         const startTime = Date.now();
         arr.sort(cmpInt);
         const endTime = Date.now();
-        expect(endTime - startTime).assertLess(5000); 
-    
+        expect(endTime - startTime).assertLess(5000);
+
     });
 
     /**
@@ -820,7 +817,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpInt);
         expect(arr[0]).assertEqual(0);
         expect(arr[999]).assertEqual(999);
-    
+
     });
 
     /**
@@ -839,7 +836,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpInt);
         expect(arr[0]).assertEqual(1);
         expect(arr[999]).assertEqual(1000);
-    
+
     });
 
     /**
@@ -855,7 +852,7 @@ export default function SparseArraySortTest(): void {
         const original = arr.toString();
         arr.sort((a: int, b: int): int => 0);
         expect(arr.toString()).assertEqual(original);
-    
+
     });
 
     /**
@@ -874,7 +871,7 @@ export default function SparseArraySortTest(): void {
           return callCount % 2 === 0 ? 1 : -1;
         });
         expect(callCount).assertLarger(0);
-    
+
     });
 
     /**
@@ -889,7 +886,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<int>(5, 3, 8, 1, 9, 2, 7, 4, 6);
         arr.sort(cmpInt);
         expect(arr.toString()).assertEqual("1,2,3,4,5,6,7,8,9");
-    
+
     });
 
     /**
@@ -904,7 +901,7 @@ export default function SparseArraySortTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         arr.sort(cmpIntDesc);
         expect(arr.toString()).assertEqual("5,4,3,2,1");
-    
+
     });
 
     /**
@@ -920,7 +917,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpInt);
         expect(arr[0]).assertEqual(-5);
         expect(arr[5]).assertEqual(3);
-    
+
     });
 
     /**
@@ -937,7 +934,7 @@ export default function SparseArraySortTest(): void {
         expect(arr[0]).assertEqual("apple");
         expect(arr[1]).assertEqual("banana");
         expect(arr[2]).assertEqual("orange");
-    
+
     });
 
     /**
@@ -953,7 +950,7 @@ export default function SparseArraySortTest(): void {
         arr.sort(cmpStringLen);
         expect(arr[0]).assertEqual("a");
         expect(arr[4]).assertEqual("dddd");
-    
+
     });
 
     /**
@@ -975,7 +972,7 @@ export default function SparseArraySortTest(): void {
         expect((p0 as Product047).price).assertEqual(50);
         expect((p1 as Product047).price).assertEqual(75);
         expect((p2 as Product047).price).assertEqual(100);
-    
+
     });
 
     /**
@@ -997,7 +994,7 @@ export default function SparseArraySortTest(): void {
         expect((i0 as Item048).name).assertEqual("C");
         expect((i1 as Item048).name).assertEqual("A");
         expect((i2 as Item048).name).assertEqual("B");
-    
+
     });
 
     /**
@@ -1054,6 +1051,126 @@ export default function SparseArraySortTest(): void {
         expect(arr[1]).assertEqual(0b10);
         expect(arr[2]).assertEqual(0x3);
         expect(arr[3]).assertEqual(0x7);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SORT_5100
+     * @tc.name testSparseArraySort051
+     * @tc.desc sort on SparseArray<boolean> orders false before true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySort051', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        arr.sort((a: boolean, b: boolean): int => {
+          if (a === b) {
+            return 0;
+          }
+          if (!a && b) {
+            return -1;
+          }
+          return 1;
+        });
+        expect(arr[0]).assertFalse();
+        expect(arr[1]).assertTrue();
+        expect(arr[2]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SORT_5200
+     * @tc.name testSparseArraySort052
+     * @tc.desc sort on SparseArray<byte> orders byte boundary values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySort052', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(127 as byte, 0 as byte, (-128 as byte));
+        arr.sort((a: byte, b: byte): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(-128 as byte);
+        expect(arr[1]).assertEqual(0 as byte);
+        expect(arr[2]).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SORT_5300
+     * @tc.name testSparseArraySort053
+     * @tc.desc sort on SparseArray<short> orders short values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySort053', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(300 as short, 100 as short, 200 as short);
+        arr.sort((a: short, b: short): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(100 as short);
+        expect(arr[1]).assertEqual(200 as short);
+        expect(arr[2]).assertEqual(300 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SORT_5400
+     * @tc.name testSparseArraySort054
+     * @tc.desc sort on SparseArray<long> orders long values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySort054', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(30000000000 as long, 10000000000 as long, 20000000000 as long);
+        arr.sort((a: long, b: long): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(10000000000 as long);
+        expect(arr[1]).assertEqual(20000000000 as long);
+        expect(arr[2]).assertEqual(30000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SORT_5500
+     * @tc.name testSparseArraySort055
+     * @tc.desc sort on SparseArray<char> orders char elements ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySort055', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'C', c'A', c'B');
+        arr.sort((a: char, b: char): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(c'A');
+        expect(arr[1]).assertEqual(c'B');
+        expect(arr[2]).assertEqual(c'C');
     });
 
   });

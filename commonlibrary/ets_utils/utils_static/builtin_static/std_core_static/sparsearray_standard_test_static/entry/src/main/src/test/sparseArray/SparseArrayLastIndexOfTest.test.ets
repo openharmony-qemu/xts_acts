@@ -37,7 +37,7 @@ export default function SparseArrayLastIndexOfTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -56,7 +56,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const index = arr.lastIndexOf(2);
         expect(index).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0002
@@ -70,7 +70,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 2, 4);
         const index = arr.lastIndexOf(2);
         expect(index).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0003
@@ -84,7 +84,7 @@ export default function SparseArrayLastIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9);
       const result = arr.lastIndexOf(7);
       expect(result).assertEqual(-1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0004
@@ -99,7 +99,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         arr[0] = 2147483647;
         const index = arr.lastIndexOf(2147483647);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0005
@@ -113,7 +113,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(-1, -2, -3);
         const index = arr.lastIndexOf(-2);
         expect(index).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0006
@@ -127,7 +127,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(0, 1, 2);
         const index = arr.lastIndexOf(0);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0007
@@ -141,7 +141,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<string>("a", "b", "c");
         const index = arr.lastIndexOf("b");
         expect(index).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0008
@@ -155,7 +155,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<string>("", "a", "");
         const index = arr.lastIndexOf("");
         expect(index).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0009
@@ -171,7 +171,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<LastIndexOfName>(obj1, obj2);
         const index = arr.lastIndexOf(obj1);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0010
@@ -185,7 +185,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int | undefined>(undefined, 1, undefined);
         const index = arr.lastIndexOf(undefined);
         expect(index).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0011
@@ -199,7 +199,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 2);
         const index = arr.lastIndexOf(2);
         expect(index).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0012
@@ -227,7 +227,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(5, 5, 5, 5);
         const index = arr.lastIndexOf(5);
         expect(index).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0014
@@ -241,7 +241,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const index = arr.lastIndexOf(999);
         expect(index).assertEqual(-1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0015
@@ -255,7 +255,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>();
         const index = arr.lastIndexOf(1);
         expect(index).assertEqual(-1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0016
@@ -269,7 +269,7 @@ export default function SparseArrayLastIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9, 2);
       const result = arr.lastIndexOf(2, 2);
       expect(result).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0017
@@ -283,7 +283,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<boolean>(false, true);
         const index = arr.lastIndexOf(false);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0018
@@ -297,7 +297,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(10, 20, 30);
         const index = arr.lastIndexOf(10);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0019
@@ -311,7 +311,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(10, 20, 30);
         const index = arr.lastIndexOf(30);
         expect(index).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0020
@@ -328,7 +328,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         arr[4] = 30;
         const index = arr.lastIndexOf(20);
         expect(index).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0021
@@ -344,7 +344,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         arr[2] = 2;
         const index = arr.lastIndexOf(1);
         expect(index).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0022
@@ -358,7 +358,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int>(1, 2, 1, 2, 1);
         const index = arr.lastIndexOf(1);
         expect(index).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0023
@@ -375,7 +375,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         arr[4] = 1;
         const index = arr.lastIndexOf(1);
         expect(index).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0024
@@ -389,7 +389,7 @@ export default function SparseArrayLastIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9, 2);
       const result = arr.lastIndexOf(2);
       expect(result).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0025
@@ -403,7 +403,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<string>("x", "y", "z");
         const index = arr.lastIndexOf("y");
         expect(index).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0026
@@ -417,7 +417,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<int | string>(1, "a", 2, "a");
         const index = arr.lastIndexOf("a");
         expect(index).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0027
@@ -432,7 +432,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         const arr = new SparseArray<LastIndexOfIdBox>(new LastIndexOfIdBox(0), obj);
         const index = arr.lastIndexOf(obj);
         expect(index).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0028
@@ -449,7 +449,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         }
         const index = arr.lastIndexOf(5);
         expect(index).assertEqual(995);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0029
@@ -465,7 +465,7 @@ export default function SparseArrayLastIndexOfTest(): void {
         arr[9999] = 1;
         const index = arr.lastIndexOf(1);
         expect(index).assertEqual(9999);
-    
+
     });
 
     /**
@@ -509,6 +509,94 @@ export default function SparseArrayLastIndexOfTest(): void {
     it('testSparseArrayLastIndexOf032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 0o5, 3);
         expect(arr.lastIndexOf(0o5)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0033
+     * @tc.name testSparseArrayLastIndexOf033
+     * @tc.desc Compare one-argument and two-argument lastIndexOf on repeated int elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3, 2, 4);
+        expect(arr.lastIndexOf(2)).assertEqual(3);
+        expect(arr.lastIndexOf(2, 2)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0034
+     * @tc.name testSparseArrayLastIndexOf034
+     * @tc.desc Compare one-argument and two-argument lastIndexOf when fromIndex is the last index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3, 2);
+        expect(arr.lastIndexOf(2)).assertEqual(3);
+        expect(arr.lastIndexOf(2, 3)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0035
+     * @tc.name testSparseArrayLastIndexOf035
+     * @tc.desc Compare one-argument and two-argument lastIndexOf when fromIndex is 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(5, 2, 9, 2);
+        expect(arr.lastIndexOf(2)).assertEqual(3);
+        expect(arr.lastIndexOf(2, 0)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0036
+     * @tc.name testSparseArrayLastIndexOf036
+     * @tc.desc Compare one-argument and two-argument lastIndexOf on sparse int elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(8);
+        arr[0] = 7;
+        arr[3] = 7;
+        arr[6] = 7;
+        expect(arr.lastIndexOf(7)).assertEqual(6);
+        expect(arr.lastIndexOf(7, 4)).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0037
+     * @tc.name testSparseArrayLastIndexOf037
+     * @tc.desc Compare one-argument and two-argument lastIndexOf on repeated string elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>("x", "y", "x", "z", "x");
+        expect(arr.lastIndexOf("x")).assertEqual(4);
+        expect(arr.lastIndexOf("x", 2)).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_LAST_INDEX_OF_0038
+     * @tc.name testSparseArrayLastIndexOf038
+     * @tc.desc Compare one-argument and two-argument lastIndexOf on repeated object references
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayLastIndexOf038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const target = new LastIndexOfIdBox(7);
+        const arr = new SparseArray<LastIndexOfIdBox>(target, new LastIndexOfIdBox(8), target);
+        expect(arr.lastIndexOf(target)).assertEqual(2);
+        expect(arr.lastIndexOf(target, 1)).assertEqual(0);
     });
 
   });

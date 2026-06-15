@@ -40,7 +40,7 @@ export default function SparseArraySomeTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -59,7 +59,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const ok = arr.some((v: int, _i: int, _a: SparseArray<int>): boolean => v > 0);
         expect(ok).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_0200
@@ -116,7 +116,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const ok = arr.some((v: int, _i: int, _a: SparseArray<int>): boolean => v === 2);
         expect(ok).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_0600
@@ -170,7 +170,7 @@ export default function SparseArraySomeTest(): void {
           return false;
         });
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_0900
@@ -184,7 +184,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.some((v: int, i: int): boolean => v > 1 && i > 0);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1000
@@ -214,7 +214,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>();
         const result = arr.some((v: int): boolean => v > 0);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1200
@@ -227,11 +227,11 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
         arr[0] = 1;
-        arr[2] = 3;  
-        arr[4] = 5;  
+        arr[2] = 3;
+        arr[4] = 5;
         const result = arr.some((v: int): boolean => v > 2);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1300
@@ -244,11 +244,11 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
         arr[0] = 1;
-        arr[2] = 2;  
-        arr[4] = 3;  
+        arr[2] = 2;
+        arr[4] = 3;
         const result = arr.some((v: int): boolean => v > 5);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1400
@@ -261,7 +261,7 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
         arr[0] = 1;
-        arr[2] = 3;  
+        arr[2] = 3;
         let count = 0;
         const result = arr.some((v: int, i: int): boolean => {
           count++;
@@ -269,7 +269,7 @@ export default function SparseArraySomeTest(): void {
         });
         expect(count).assertEqual(2);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1500
@@ -283,7 +283,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(5);
         const result = arr.some((v: int): boolean => v > 2);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1600
@@ -297,7 +297,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1);
         const result = arr.some((v: int): boolean => v > 2);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1700
@@ -311,7 +311,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.some((v: int): boolean => false);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1800
@@ -325,7 +325,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.some((v: int): boolean => true);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_1900
@@ -342,7 +342,7 @@ export default function SparseArraySomeTest(): void {
         }
         const result = arr.some((v: int): boolean => v > 500);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2000
@@ -359,7 +359,7 @@ export default function SparseArraySomeTest(): void {
         arr[999] = 3;
         const result = arr.some((v: int): boolean => v > 2);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2100
@@ -402,7 +402,7 @@ export default function SparseArraySomeTest(): void {
           finallyExecuted = true;
         }
         expect(finallyExecuted).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2300
@@ -415,8 +415,8 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
         arr[0] = 1;
-        arr[2] = 3;  
-        arr[4] = 5;  
+        arr[2] = 3;
+        arr[4] = 5;
         const visited: int[] = [];
         const result = arr.some((v: int, i: int): boolean => {
           visited.push(i);
@@ -426,7 +426,7 @@ export default function SparseArraySomeTest(): void {
         expect(visited[0]).assertEqual(0);
         expect(visited[1]).assertEqual(2);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2400
@@ -450,7 +450,7 @@ export default function SparseArraySomeTest(): void {
         expect(indices[0]).assertEqual(2);
         expect(indices[1]).assertEqual(5);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2500
@@ -463,8 +463,8 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10);
         arr[0] = 10;
-        arr[3] = 30;  
-        arr[6] = 60;  
+        arr[3] = 30;
+        arr[6] = 60;
         const indices: int[] = [];
         arr.some((v: int, i: int): boolean => {
           indices.push(i);
@@ -474,7 +474,7 @@ export default function SparseArraySomeTest(): void {
         expect(indices[0]).assertEqual(0);
         expect(indices[1]).assertEqual(3);
         expect(indices[2]).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2600
@@ -493,7 +493,7 @@ export default function SparseArraySomeTest(): void {
           return false;
         });
         expect(arr[0]).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2700
@@ -507,7 +507,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<string>("apple", "banana", "cherry");
         const result = arr.some((v: string): boolean => v.length > 5);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2800
@@ -521,7 +521,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<Item028>(new Item028(1, "one"), new Item028(2, "two"));
         const result = arr.some((v: Item028): boolean => v.id > 1);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_2900
@@ -535,7 +535,7 @@ export default function SparseArraySomeTest(): void {
         const arr = new SparseArray<int | string>(1, "two", 3);
         const result = arr.some((v: int | string): boolean => typeof v == "string");
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3000
@@ -550,14 +550,14 @@ export default function SparseArraySomeTest(): void {
         const visited: int[] = [];
         const result = arr.some((v: int): boolean => {
           visited.push(v);
-          return v === 3;  
+          return v === 3;
         });
         expect(visited.length).assertEqual(3);
         expect(visited[0]).assertEqual(1);
         expect(visited[1]).assertEqual(2);
         expect(visited[2]).assertEqual(3);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3100
@@ -576,7 +576,7 @@ export default function SparseArraySomeTest(): void {
         });
         expect(count).assertEqual(1);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3200
@@ -598,7 +598,7 @@ export default function SparseArraySomeTest(): void {
           expect(visited[i]).assertEqual(i + 1);
         }
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3300
@@ -620,7 +620,7 @@ export default function SparseArraySomeTest(): void {
           expect(visited[i]).assertEqual(i + 1);
         }
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3400
@@ -639,7 +639,7 @@ export default function SparseArraySomeTest(): void {
         });
         expect(called).assertEqual(false);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3500
@@ -674,12 +674,12 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
         arr[0] = 1;
-        arr[2] = 3;  
+        arr[2] = 3;
         arr.some((v: int): boolean => v > 2);
         expect(arr[0]).assertEqual(1);
         expect(arr[1] === undefined).assertEqual(true);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3700
@@ -697,7 +697,7 @@ export default function SparseArraySomeTest(): void {
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(true);
         expect(result3).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3800
@@ -714,7 +714,7 @@ export default function SparseArraySomeTest(): void {
         }
         const result = arr.some((v: int): boolean => v > 9999);
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_3900
@@ -731,7 +731,7 @@ export default function SparseArraySomeTest(): void {
         }
         const result = arr.some((v: int): boolean => v > 5000);
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_4000
@@ -743,7 +743,7 @@ export default function SparseArraySomeTest(): void {
      */
     it('testSparseArraySome040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
-        arr.push(100000);  
+        arr.push(100000);
         for (let i = 0; i < 99999; i++) {
           arr.push(i);
         }
@@ -754,7 +754,7 @@ export default function SparseArraySomeTest(): void {
         });
         expect(count).assertEqual(1);
         expect(result).assertEqual(true);
-    
+
     });
 
     /**
@@ -824,6 +824,76 @@ export default function SparseArraySomeTest(): void {
     it('testSparseArraySome045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<string>("a", " ", "b");
         expect(arr.some((v: string): boolean => v === " ")).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_4600
+     * @tc.name testSparseArraySome046
+     * @tc.desc some on SparseArray<boolean> returns true for false element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySome046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const result = arr.some((v: boolean): boolean => !v);
+        expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_4700
+     * @tc.name testSparseArraySome047
+     * @tc.desc some on SparseArray<byte> finds minimum byte value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySome047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(0 as byte, (-128 as byte), 127 as byte);
+        const result = arr.some((v: byte): boolean => v === (-128 as byte));
+        expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_4800
+     * @tc.name testSparseArraySome048
+     * @tc.desc some on SparseArray<long> finds long value above threshold
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySome048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long);
+        const result = arr.some((v: long): boolean => v > (9999999999 as long));
+        expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_4900
+     * @tc.name testSparseArraySome049
+     * @tc.desc some on SparseArray<double> finds double value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySome049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const result = arr.some((v: double): boolean => v > 3.0);
+        expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SOME_5000
+     * @tc.name testSparseArraySome050
+     * @tc.desc some on SparseArray<char> finds matching char element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySome050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'_', c'Z');
+        const result = arr.some((v: char): boolean => v === c'_');
+        expect(result).assertTrue();
     });
 
   });

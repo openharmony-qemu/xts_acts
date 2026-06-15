@@ -33,7 +33,7 @@ export default function SparseArrayShiftTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -54,7 +54,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(1);
         expect(arr.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0200
@@ -70,7 +70,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual("a");
         expect(arr.length).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0300
@@ -85,7 +85,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(10);
         expect(arr.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0400
@@ -113,7 +113,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<string>("hello", "world");
         const result = arr.shift();
         expect(result).assertEqual("hello");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0600
@@ -127,7 +127,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<boolean>(true, false);
         const result = arr.shift();
         expect(result).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0700
@@ -141,7 +141,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<TestClass007>(new TestClass007());
         const result = arr.shift();
         expect(result!.value).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0800
@@ -156,7 +156,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(undefined);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_0900
@@ -172,7 +172,7 @@ export default function SparseArrayShiftTest(): void {
         const first = arr.shift();
         expect(first).assertEqual(undefined);
         expect(arr.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1000
@@ -190,7 +190,7 @@ export default function SparseArrayShiftTest(): void {
         expect(result).assertEqual(undefined);
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1100
@@ -219,7 +219,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int>(0, 1, 2);
         const result = arr.shift();
         expect(result).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1300
@@ -233,7 +233,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<boolean>(false, true);
         const result = arr.shift();
         expect(result).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1400
@@ -247,7 +247,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<string>("", "non-empty");
         const result = arr.shift();
         expect(result).assertEqual("");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1500
@@ -276,7 +276,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int>();
         const result = arr.shift();
         expect(result).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1700
@@ -292,7 +292,7 @@ export default function SparseArrayShiftTest(): void {
         expect(result1).assertEqual(1);
         const result2 = arr.shift();
         expect(result2).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1800
@@ -306,7 +306,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int>(1000, 0);
         const result = arr.shift();
         expect(result).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_1900
@@ -320,7 +320,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int>(-1000, 0);
         const result = arr.shift();
         expect(result).assertEqual(-1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2000
@@ -337,7 +337,7 @@ export default function SparseArrayShiftTest(): void {
         expect(arr.shift()).assertEqual(3);
         expect(arr.shift()).assertEqual(undefined);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2100
@@ -352,7 +352,7 @@ export default function SparseArrayShiftTest(): void {
         const oldLength = arr.length;
         arr.shift();
         expect(arr.length).assertEqual(oldLength - 1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2200
@@ -366,7 +366,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int>();
         arr.shift();
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2300
@@ -382,7 +382,7 @@ export default function SparseArrayShiftTest(): void {
         expect(arr[0]).assertEqual(20);
         expect(arr[1]).assertEqual(30);
         expect(arr[2]).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2400
@@ -401,7 +401,7 @@ export default function SparseArrayShiftTest(): void {
         expect(arr[0]).assertEqual(undefined);
         expect(arr[1]).assertEqual(30);
         expect(arr[3]).assertEqual(50);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2500
@@ -415,7 +415,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<string>("a", "b", "c");
         const result = arr.shift();
         expect(result).assertEqual("a");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2600
@@ -445,7 +445,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<int | undefined>(1, undefined, 2);
         const result = arr.shift();
         expect(result).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2800
@@ -459,7 +459,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<string | null>("hello", null);
         const result = arr.shift();
         expect(result).assertEqual("hello");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_2900
@@ -473,7 +473,7 @@ export default function SparseArrayShiftTest(): void {
         const arr = new SparseArray<Person025>(new Person025());
         const result = arr.shift();
         expect(result!.name).assertEqual("test");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3000
@@ -490,7 +490,7 @@ export default function SparseArrayShiftTest(): void {
         );
         const result = arr.shift();
         expect(result!.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3100
@@ -507,7 +507,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(10);
         expect(arr.length).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3200
@@ -523,7 +523,7 @@ export default function SparseArrayShiftTest(): void {
         arr[6] = 60;
         const result = arr.shift();
         expect(result).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3300
@@ -539,7 +539,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(1);
         expect(arr.length).assertEqual(9999);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3400
@@ -557,7 +557,7 @@ export default function SparseArrayShiftTest(): void {
         expect(arr.shift()).assertEqual(2);
         expect(arr.shift()).assertEqual(3);
         expect(arr.shift()).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3500
@@ -572,7 +572,7 @@ export default function SparseArrayShiftTest(): void {
         const result = arr.shift();
         expect(result).assertEqual(1);
         expect(arr instanceof SparseArray).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3600
@@ -587,7 +587,7 @@ export default function SparseArrayShiftTest(): void {
         const r = arr.shift();
         expect(r === undefined).assertTrue();
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3700
@@ -603,7 +603,7 @@ export default function SparseArrayShiftTest(): void {
           arr.shift();
         }
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3800
@@ -619,7 +619,7 @@ export default function SparseArrayShiftTest(): void {
         const result: int | undefined = arr.shift();
         expect(result).assertUndefined();
         expect(arr.length).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_3900
@@ -635,7 +635,7 @@ export default function SparseArrayShiftTest(): void {
         const first = queue.shift();
         expect(first).assertEqual(1);
         expect(queue.length).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4000
@@ -655,7 +655,7 @@ export default function SparseArrayShiftTest(): void {
           }
         }
         expect(count).assertEqual(60);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4100
@@ -700,6 +700,70 @@ export default function SparseArrayShiftTest(): void {
         const first = arr.shift();
         expect(first).assertEqual(0xFF);
         expect(arr[0]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4400
+     * @tc.name testSparseArrayShift044
+     * @tc.desc shift removes first char element and shifts remaining char value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayShift044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const first = arr.shift();
+        expect(first).assertEqual(c'A');
+        expect(arr.length).assertEqual(1);
+        expect(arr[0]).assertEqual(c'B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4500
+     * @tc.name testSparseArrayShift045
+     * @tc.desc shift removes false boolean element and shifts true value to index 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayShift045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(false, true);
+        const first = arr.shift();
+        expect(first).assertEqual(false);
+        expect(arr[0]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4600
+     * @tc.name testSparseArrayShift046
+     * @tc.desc shift returns explicit undefined then shifts following value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayShift046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(undefined, 7);
+        const first = arr.shift();
+        expect(first).assertUndefined();
+        expect(arr.length).assertEqual(1);
+        expect(arr[0]).assertEqual(7);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SHIFT_4700
+     * @tc.name testSparseArrayShift047
+     * @tc.desc shift on sparse array with hole at first slot returns undefined and decrements length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayShift047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(3);
+        arr[2] = "tail";
+        const first = arr.shift();
+        expect(first).assertUndefined();
+        expect(arr.length).assertEqual(2);
+        expect(arr[1]).assertEqual("tail");
     });
 
 

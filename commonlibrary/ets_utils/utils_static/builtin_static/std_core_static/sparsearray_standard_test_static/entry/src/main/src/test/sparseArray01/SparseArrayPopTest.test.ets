@@ -38,15 +38,15 @@ class TestClass042 {
 
 class UndoStack063 {
     private history: SparseArray<string> = new SparseArray<string>()
-    
+
     pushState(state: string): void {
       this.history.push(state)
     }
-    
+
     undo(): string | undefined {
       return this.history.pop()
     }
-    
+
     canUndo(): boolean {
       return this.history.length > 0
     }
@@ -54,15 +54,15 @@ class UndoStack063 {
 
 class TaskQueue064 {
     private tasks: SparseArray<int> = new SparseArray<int>()
-    
+
     addTask(taskId: int): void {
       this.tasks.push(taskId)
     }
-    
+
     getNextTask(): int | undefined {
       return this.tasks.pop()
     }
-    
+
     hasTasks(): boolean {
       return this.tasks.length > 0
     }
@@ -74,7 +74,7 @@ export default function SparseArrayPopTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -484,11 +484,11 @@ export default function SparseArrayPopTest(): void {
         const arr = new SparseArray<int | undefined>(1, undefined, 3)
         arr.length = 4
         const result1 = arr.pop()
-        expect(result1).assertEqual(undefined)  
+        expect(result1).assertEqual(undefined)
         const result2 = arr.pop()
         expect(result2).assertEqual(3)
         const result3 = arr.pop()
-        expect(result3).assertEqual(undefined)  
+        expect(result3).assertEqual(undefined)
         const result4 = arr.pop()
         expect(result4).assertEqual(1)
     });
@@ -710,7 +710,7 @@ export default function SparseArrayPopTest(): void {
         const arr = new SparseArray<TestClass040>(obj)
         const result = arr.pop()
         expect(result!.value).assertEqual(42)
-        expect(result === obj).assertTrue()  
+        expect(result === obj).assertTrue()
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_4000
@@ -745,8 +745,8 @@ export default function SparseArrayPopTest(): void {
         const result = arr.pop()
         expect(result !== undefined).assertTrue()
         const r = result as TestClass042
-        r.value = 100  
-        expect(arr[0]).assertEqual(undefined)  
+        r.value = 100
+        expect(arr[0]).assertEqual(undefined)
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_4200
@@ -897,7 +897,7 @@ export default function SparseArrayPopTest(): void {
         const result = arr.pop()
         expect(result).assertEqual(3)
         const result2 = arr.pop()
-        expect(result2).assertEqual(undefined)  
+        expect(result2).assertEqual(undefined)
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_5200
@@ -974,7 +974,7 @@ export default function SparseArrayPopTest(): void {
         const result = arr.pop()
         expect(result).assertUndefined();
         expect(arr.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_5700
@@ -1027,7 +1027,7 @@ export default function SparseArrayPopTest(): void {
         expect(arr1.pop()).assertEqual(undefined)
 
         const arr2 = new SparseArray<int>(1)
-        expect(arr2.pop()).assertEqual(undefined)  
+        expect(arr2.pop()).assertEqual(undefined)
 
         const arr3 = new SparseArray<int | undefined>(undefined)
         expect(arr3.pop()).assertEqual(undefined)
@@ -1061,9 +1061,9 @@ export default function SparseArrayPopTest(): void {
         const arr = new SparseArray<int | undefined>(1, 2, undefined)
         arr.length = 4
         const last = arr.pop()
-        expect(last).assertEqual(undefined)  
+        expect(last).assertEqual(undefined)
         const newlast = arr.pop()
-        expect(newlast).assertEqual(undefined)  
+        expect(newlast).assertEqual(undefined)
         expect(arr.length).assertEqual(2)
     });
     /**
@@ -1123,7 +1123,7 @@ export default function SparseArrayPopTest(): void {
         arr.length = 5
         arr[4] = 100
 
-        expect(arr.pop()).assertEqual(100)  
+        expect(arr.pop()).assertEqual(100)
         expect(arr.pop()).assertEqual(undefined)
         expect(arr.pop()).assertEqual(undefined)
         expect(arr.pop()).assertEqual(2)
@@ -1333,6 +1333,51 @@ export default function SparseArrayPopTest(): void {
         const v = arr.pop();
         expect(v).assertEqual(0o7);
         expect(arr.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_7600
+     * @tc.name testSparseArrayPop076
+     * @tc.desc pop returns char element and decrements length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPop076', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const v = arr.pop();
+        expect(v).assertEqual(c'B');
+        expect(arr.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_7700
+     * @tc.name testSparseArrayPop077
+     * @tc.desc pop returns explicit undefined element from SparseArray<int|undefined>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPop077', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(1, undefined);
+        const v = arr.pop();
+        expect(v).assertUndefined();
+        expect(arr.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_7800
+     * @tc.name testSparseArrayPop078
+     * @tc.desc pop returns byte boundary value from SparseArray<byte>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayPop078', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(127 as byte, (-128 as byte));
+        const v = arr.pop();
+        expect(v).assertEqual(-128 as byte);
+        expect(arr.length).assertEqual(1);
     });
 
   });

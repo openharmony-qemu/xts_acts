@@ -32,7 +32,7 @@ export default function SparseArraySliceTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -51,7 +51,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice();
         expect(result!.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0002
@@ -65,7 +65,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4);
         const result = arr.slice(1);
         expect(result.toString()).assertEqual("2,3,4");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0003
@@ -79,7 +79,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4);
         const result = arr.slice(1, 3);
         expect(result.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0004
@@ -93,7 +93,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.slice(2);
         expect(result.toString()).assertEqual("3,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0005
@@ -107,7 +107,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(0, 2);
         expect(result.toString()).assertEqual("1,2");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0006
@@ -121,7 +121,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(10);
         expect(result!.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0007
@@ -135,7 +135,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(1, 1);
         expect(result!.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0008
@@ -149,7 +149,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4);
         const result = arr.slice(3, 1);
         expect(result.toString()).assertEqual("");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0009
@@ -163,7 +163,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.slice(1, 4);
         expect(result.toString()).assertEqual("2,3,4");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0010
@@ -177,7 +177,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4);
         const result = arr.slice(2);
         expect(result.toString()).assertEqual("3,4");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0011
@@ -194,7 +194,7 @@ export default function SparseArraySliceTest(): void {
         arr[4] = 5;
         const result = arr.slice(0, 5);
         expect(result.toString()).assertEqual("1,,3,,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0012
@@ -211,7 +211,7 @@ export default function SparseArraySliceTest(): void {
         arr[4] = 5;
         const result = arr.slice(1, 4);
         expect(result.toString()).assertEqual(",3,");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0013
@@ -226,7 +226,7 @@ export default function SparseArraySliceTest(): void {
         const result = arr.slice(1, 3);
         expect(result instanceof SparseArray).assertTrue();
         expect(result.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0014
@@ -241,7 +241,7 @@ export default function SparseArraySliceTest(): void {
         const result = arr.slice(1, 3);
         expect(arr.toString()).assertEqual("1,2,3,4");
         expect(arr.length).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0015
@@ -263,7 +263,7 @@ export default function SparseArraySliceTest(): void {
         const a0 = arr[0];
         expect(a0 != null).assertTrue();
         expect((a0 as Test015).value).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0016
@@ -278,7 +278,7 @@ export default function SparseArraySliceTest(): void {
         const result = arr.slice(3, 1);
         expect(result!.length).assertEqual(0);
         expect(result.toString()).assertEqual("");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0017
@@ -294,7 +294,7 @@ export default function SparseArraySliceTest(): void {
         const result2 = arr.slice(0, arr.length);
         expect(result1.toString()).assertEqual(arr.toString());
         expect(result2.toString()).assertEqual(arr.toString());
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0018
@@ -310,7 +310,7 @@ export default function SparseArraySliceTest(): void {
         expect(result instanceof SparseArray).assertTrue();
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0019
@@ -326,7 +326,7 @@ export default function SparseArraySliceTest(): void {
         const firstOpt = result[0];
         expect(firstOpt != null).assertTrue();
         expect(firstOpt as string).assertEqual("a");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0020
@@ -342,7 +342,7 @@ export default function SparseArraySliceTest(): void {
         expect(result1.toString()).assertEqual("3,4");
         const result2 = arr.slice(-10, 10);
         expect(result2.toString()).assertEqual("1,2,3,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0021
@@ -356,7 +356,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(1);
         expect(result.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0022
@@ -370,7 +370,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(1, arr.length);
         expect(result.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0023
@@ -401,7 +401,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<number>(1.5, 2.5, 3.5);
         const result = arr.slice(1, 3);
         expect(result.toString()).assertEqual("2.5,3.5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0025
@@ -415,7 +415,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<string>("a", "b", "c", "d");
         const result = arr.slice(1, 3);
         expect(result.toString()).assertEqual("b,c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0026
@@ -431,7 +431,7 @@ export default function SparseArraySliceTest(): void {
         arr.push(new Test026());
         const result = arr.slice(0, 2);
         expect(result!.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0027
@@ -445,7 +445,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int | string>(1, "a", 2, "b");
         const result = arr.slice(1, 3);
         expect(result.toString()).assertEqual("a,2");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0028
@@ -464,7 +464,7 @@ export default function SparseArraySliceTest(): void {
         const result3 = arr.slice(1);
         expect(result3.length).assertEqual(4);
         expect(result3.toString()).assertEqual(",,,");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0029
@@ -478,7 +478,7 @@ export default function SparseArraySliceTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.slice(0, 2147483647);
         expect(result.toString()).assertEqual("1,2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0030
@@ -494,7 +494,7 @@ export default function SparseArraySliceTest(): void {
         const result2 = result1.slice(1, 4);
         const result3 = result2.slice(0, 2);
         expect(result3.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0031
@@ -511,7 +511,7 @@ export default function SparseArraySliceTest(): void {
         }
         const result = arr.slice(1000, 9000);
         expect(result!.length).assertEqual(8000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0032
@@ -576,6 +576,102 @@ export default function SparseArraySliceTest(): void {
         const part = arr.slice(0, -1);
         expect(part.length).assertEqual(2);
         expect(part[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0036
+     * @tc.name testSparseArraySlice036
+     * @tc.desc slice on SparseArray<boolean> preserves false value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const result = arr.slice(1, 3);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertFalse();
+        expect(result[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0037
+     * @tc.name testSparseArraySlice037
+     * @tc.desc slice on SparseArray<byte> returns byte boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(0 as byte, (-128 as byte), 127 as byte);
+        const result = arr.slice(1);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(-128 as byte);
+        expect(result[1]).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0038
+     * @tc.name testSparseArraySlice038
+     * @tc.desc slice on SparseArray<short> returns selected short values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(10 as short, 20 as short, 30 as short);
+        const result = arr.slice(0, 2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(10 as short);
+        expect(result[1]).assertEqual(20 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0039
+     * @tc.name testSparseArraySlice039
+     * @tc.desc slice on SparseArray<float> returns float values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
+        const result = arr.slice(1, 3);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(2.5f);
+        expect(result[1]).assertEqual(3.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0040
+     * @tc.name testSparseArraySlice040
+     * @tc.desc slice on SparseArray<double> returns double values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const result = arr.slice(0, 2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(1.25);
+        expect(result[1]).assertEqual(2.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SLICE_0041
+     * @tc.name testSparseArraySlice041
+     * @tc.desc slice on SparseArray<char> returns selected char elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySlice041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const result = arr.slice(1);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(c'B');
+        expect(result[1]).assertEqual(c'C');
     });
 
   });

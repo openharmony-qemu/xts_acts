@@ -949,6 +949,58 @@ export default function SparseArrayMapTest(): void {
         expect(result![0x1]).assertEqual(0b11 * 2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_MAP_6000
+     * @tc.name testSparseArrayMap060
+     * @tc.desc map char elements to next char marker string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayMap060', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const result = arr.map<string>((v: char): string => {
+          if (v === c'A') {
+            return "A";
+          }
+          return "B";
+        });
+        expect(result[0]).assertEqual("A");
+        expect(result[1]).assertEqual("B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_MAP_6100
+     * @tc.name testSparseArrayMap061
+     * @tc.desc map boolean elements to inverted boolean values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayMap061', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false);
+        const result = arr.map<boolean>((v: boolean): boolean => !v);
+        expect(result[0]).assertEqual(false);
+        expect(result[1]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_MAP_6200
+     * @tc.name testSparseArrayMap062
+     * @tc.desc map skips sparse holes while preserving sparse array length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayMap062', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(6);
+        arr[5] = "tail";
+        const result = arr.map<string>((v: string, i: int): string => i.toString() + ":" + v);
+        expect(result.length).assertEqual(6);
+        expect(result[0]).assertUndefined();
+        expect(result[5]).assertEqual("5:tail");
+    });
+
 
   });
 }
