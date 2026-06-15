@@ -825,13 +825,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4600
-     * @tc.name testArrayMap0451
-     * @tc.desc Verify map skips sparse holes while preserving the result length
+     * @tc.name testArrayMap046
+     * @tc.desc Verify map visits explicit undefined elements and preserves the result length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap0451', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 3;
@@ -854,13 +854,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4700
-     * @tc.name testArrayMap046
+     * @tc.name testArrayMap047
      * @tc.desc Verify explicitly typed result arrays can receive mapped string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result: Array<string> = arr.map((v: number): string => 'val:' + v.toString());
       expect(typeof result[0]).assertEqual('string');
@@ -868,13 +868,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4800
-     * @tc.name testArrayMap047
+     * @tc.name testArrayMap048
      * @tc.desc Verify callback return values determine the numeric result type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.map((v: number): number => {
         return v * 2;
@@ -884,13 +884,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4900
-     * @tc.name testArrayMap048
+     * @tc.name testArrayMap049
      * @tc.desc Verify map can format data for output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let formatted = arr.map((v: number): string => 'Value: ' + v.toString());
       expect(formatted.toString()).assertEqual('Value: 1,Value: 2,Value: 3');
@@ -898,13 +898,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5000
-     * @tc.name testArrayMap049
+     * @tc.name testArrayMap050
      * @tc.desc Verify map supports batch calculations across all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let prices = new Array<int>(100, 200, 300);
       let withTax = prices.map((price: int): int => price * 110 / 100);
       expect(withTax[0]).assertEqual(110);
@@ -914,13 +914,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5100
-     * @tc.name testArrayMap050
+     * @tc.name testArrayMap051
      * @tc.desc Verify map can extract fields from complex data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let user1 = new User051();
       user1.id = 1;
       user1.name = 'Alice';
@@ -936,13 +936,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5200
-     * @tc.name testArrayMap051
+     * @tc.name testArrayMap052
      * @tc.desc Verify map can validate and convert text values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('1', '2', '3', 'abc');
       let numbers = arr.map((s: string): number => {
         let num = Number.parseInt(s);
@@ -953,13 +953,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5300
-     * @tc.name testArrayMap052
+     * @tc.name testArrayMap053
      * @tc.desc Verify map returns a new array while forEach does not
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>(1, 2, 3);
       let arr2 = new Array<number>(1, 2, 3);
       let mapped = arr1.map((v: number): number => v * 2);
@@ -973,13 +973,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5400
-     * @tc.name testArrayMap053
+     * @tc.name testArrayMap054
      * @tc.desc Verify map is preferable for transformations while forEach is suitable for side effects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let doubled = arr.map((v: number): number => v * 2);
       let sum = 0;
@@ -992,13 +992,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5500
-     * @tc.name testArrayMap054
+     * @tc.name testArrayMap055
      * @tc.desc Verify map can combine values from multiple arrays by using the index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>(1, 2, 3);
       let arr2 = new Array<number>(10, 20, 30);
       let combined = arr1.map((v: number, i: int): number => v + arr2[i]);
@@ -1007,13 +1007,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5600
-     * @tc.name testArrayMap055
+     * @tc.name testArrayMap056
      * @tc.desc Verify map can apply conditional transformations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let result = arr.map((v: number): number => {
         if (v < 4) {
@@ -1026,13 +1026,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5700
-     * @tc.name testArrayMap056
+     * @tc.name testArrayMap057
      * @tc.desc Verify map callbacks can capture external state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let multiplier = 2;
       let result = arr.map((v: number): number => v * multiplier);
@@ -1041,13 +1041,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5800
-     * @tc.name testArrayMap057
+     * @tc.name testArrayMap058
      * @tc.desc Verify map can use dynamically generated callbacks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let factor = 10;
       let callbackfn = (v: number): number => v * factor;
@@ -1057,13 +1057,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5900
-     * @tc.name testArrayMap058
+     * @tc.name testArrayMap059
      * @tc.desc Verify map can return stringified numeric values through the built-in String callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.map((value: number): string => value.toString());
       expect(result.toString()).assertEqual('1,2,3');
@@ -1071,13 +1071,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6000
-     * @tc.name testArrayMap059
+     * @tc.name testArrayMap060
      * @tc.desc Verify map can coerce numeric values through the built-in Number callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(4, 5, 6);
       const result = arr.map((value: number): number => value);
       expect(result.toString()).assertEqual('4,5,6');
@@ -1085,13 +1085,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6100
-     * @tc.name testArrayMap060
+     * @tc.name testArrayMap061
      * @tc.desc Verify map can coerce numeric values through the built-in Boolean callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(0, 1, 2);
       const result = arr.map((value: number): boolean => value !== 0);
       expect(result.toString()).assertEqual('false,true,true');
@@ -1099,13 +1099,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6200
-     * @tc.name testArrayMap061
+     * @tc.name testArrayMap062
      * @tc.desc Verify map exposes all three callback arguments to classic functions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.map((_value: number, _index: int, source: Array<number>): int => {
         return source.length;
@@ -1115,13 +1115,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6300
-     * @tc.name testArrayMap062
+     * @tc.name testArrayMap063
      * @tc.desc Verify map can return object literals from arrow callbacks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): MapValue062 => {
         let mapped = new MapValue062();
@@ -1134,13 +1134,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6400
-     * @tc.name testArrayMap063
+     * @tc.name testArrayMap064
      * @tc.desc Verify map can wrap each element into a nested array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): Array<number> => new Array<number>(value));
       expect(result.length).assertEqual(2);
@@ -1150,13 +1150,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6500
-     * @tc.name testArrayMap064
+     * @tc.name testArrayMap065
      * @tc.desc Verify parseFloat ignores the extra callback arguments passed by map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('1.1', '2.2', '3.3');
       const result = arr.map(Number.parseFloat);
       expect(result.toString()).assertEqual('1.1,2.2,3.3');
@@ -1164,13 +1164,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6600
-     * @tc.name testArrayMap065
+     * @tc.name testArrayMap066
      * @tc.desc Verify parseInt receives the index as radix when passed directly as the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('1', '2', '3');
       const result = arr.map((value: string, index: int): number => Number.parseInt(value, index));
       expect(result[0]).assertEqual(1);
@@ -1180,13 +1180,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6700
-     * @tc.name testArrayMap066
+     * @tc.name testArrayMap067
      * @tc.desc Verify parseInt can produce mixed numeric and NaN results because the index becomes the radix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('10', '10', '10');
       const result = arr.map((value: string, index: int): number => Number.parseInt(value, index));
       expect(result[0]).assertEqual(10);
@@ -1196,13 +1196,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6800
-     * @tc.name testArrayMap067
+     * @tc.name testArrayMap068
      * @tc.desc Verify map can update not-yet-visited elements and observe the new value later in traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number, index: int, source: Array<number>): number => {
         if (index === 0) {
@@ -1215,13 +1215,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6900
-     * @tc.name testArrayMap068
+     * @tc.name testArrayMap069
      * @tc.desc Verify map does not revisit already-processed elements when earlier slots are modified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number, index: int, source: Array<number>): number => {
         if (index === 1) {
@@ -1235,13 +1235,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7000
-     * @tc.name testArrayMap069
+     * @tc.name testArrayMap070
      * @tc.desc Verify map can return the original object references unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item020();
       item.value = 7;
       const arr = new Array<Item020>(item);
@@ -1251,13 +1251,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7100
-     * @tc.name testArrayMap070
+     * @tc.name testArrayMap071
      * @tc.desc Verify map can create fresh object references for every element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new Item020();
       item.value = 1;
       const arr = new Array<Item020>(item);
@@ -1272,13 +1272,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7200
-     * @tc.name testArrayMap071
+     * @tc.name testArrayMap072
      * @tc.desc Verify map can return closures that capture each iteration value independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): (() => number) => {
         return (): number => value;
@@ -1290,13 +1290,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7300
-     * @tc.name testArrayMap072
+     * @tc.name testArrayMap073
      * @tc.desc Verify map can return NaN values without failing the iteration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.map((_: number): number => Number.NaN);
       expect(Number.isNaN(result[0])).assertTrue();
@@ -1304,13 +1304,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7400
-     * @tc.name testArrayMap073
+     * @tc.name testArrayMap074
      * @tc.desc Verify map preserves negative zero when the callback returns the original numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-0);
       const result = arr.map((value: number): number => value);
       expect(1 / result[0]).assertEqual(Number.NEGATIVE_INFINITY);
@@ -1318,13 +1318,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7500
-     * @tc.name testArrayMap074
+     * @tc.name testArrayMap075
      * @tc.desc Verify map can transform nested arrays through an inner map call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>(new Array<number>(1), new Array<number>(2));
       const result = arr.map((item: Array<number>): Array<number> => item.map((value: number): number => value * 2));
       expect(result.length).assertEqual(2);
@@ -1334,13 +1334,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7600
-     * @tc.name testArrayMap075
+     * @tc.name testArrayMap076
      * @tc.desc Verify map can return Promise objects as ordinary mapped values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): Promise<number> => Promise.resolve(value));
       expect(result.length).assertEqual(2);
@@ -1350,13 +1350,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7700
-     * @tc.name testArrayMap076
+     * @tc.name testArrayMap077
      * @tc.desc Verify map can transform bigint arrays with bigint arithmetic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(1000n, 2000n);
       const result = arr.map((value: bigint): bigint => value * 2n);
       expect(result[0]).assertEqual(2000n);
@@ -1365,14 +1365,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7800
-     * @tc.name testArrayMap077
-     * @tc.desc Verify map can convert symbol values by using their string representation
+     * @tc.name testArrayMap078
+     * @tc.desc Verify map preserves string values that look like symbol text
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS does not support Symbol() API, so use explicit marker strings.
+    it('testArrayMap078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('Symbol(a)');
       const result = arr.map((value: string): string => value);
       expect(result[0]).assertEqual('Symbol(a)');
@@ -1380,13 +1379,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7900
-     * @tc.name testArrayMap078
+     * @tc.name testArrayMap079
      * @tc.desc Verify map can derive string lengths through a property access callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'ab');
       const result = arr.map((value: string): int => value.length);
       expect(result.toString()).assertEqual('1,2');
@@ -1394,13 +1393,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8000
-     * @tc.name testArrayMap079
+     * @tc.name testArrayMap080
      * @tc.desc Verify map can convert nullable objects into booleans through logical coercion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Object | null>(new Item020(), null);
       const result = arr.map((value: Object | null): boolean => value !== null);
       expect(result.toString()).assertEqual('true,false');
@@ -1408,13 +1407,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8100
-     * @tc.name testArrayMap080
+     * @tc.name testArrayMap081
      * @tc.desc Verify map callback exceptions stop later elements from being processed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       let count = 0;
       try {
@@ -1434,13 +1433,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8200
-     * @tc.name testArrayMap081
+     * @tc.name testArrayMap082
      * @tc.desc Verify map can preserve explicit undefined values while still invoking the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1, undefined, 3);
       const result = arr.map((value: number | undefined): string => value === undefined ? 'U' : value.toString());
       expect(result.toString()).assertEqual('1,U,3');
@@ -1448,13 +1447,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8300
-     * @tc.name testArrayMap082
+     * @tc.name testArrayMap083
      * @tc.desc Verify map can process explicit null values through the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null>(1, null, 3);
       const result = arr.map((value: number | null): string => value === null ? 'N' : value.toString());
       expect(result.toString()).assertEqual('1,N,3');
@@ -1462,13 +1461,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8400
-     * @tc.name testArrayMap083
+     * @tc.name testArrayMap084
      * @tc.desc Verify map can compose parseInt safely when the radix is fixed inside a closure
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('10', '10', '10');
       const result = arr.map((value: string): number => Number.parseInt(value, 10));
       expect(result.toString()).assertEqual('10,10,10');
@@ -1476,13 +1475,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8500
-     * @tc.name testArrayMap084
+     * @tc.name testArrayMap085
      * @tc.desc Verify map can read the first source element from the array callback parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((_: number, _index: int, source: Array<number>): number => source[0]);
       expect(result.toString()).assertEqual('1,1');
@@ -1490,13 +1489,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8600
-     * @tc.name testArrayMap085
+     * @tc.name testArrayMap086
      * @tc.desc Verify map can return a constant boolean for every element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((_: number): boolean => true);
       expect(result.toString()).assertEqual('true,true');
@@ -1504,13 +1503,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8700
-     * @tc.name testArrayMap086
+     * @tc.name testArrayMap087
      * @tc.desc Verify map can keep the identity transform on a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.map((value: number): number => value);
       expect(result.toString()).assertEqual('1');
@@ -1518,13 +1517,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8800
-     * @tc.name testArrayMap087
+     * @tc.name testArrayMap088
      * @tc.desc Verify map can build a new array of arrays without flattening the structure
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): Array<number> => new Array<number>(value, value));
       expect(result.length).assertEqual(2);
@@ -1534,13 +1533,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8900
-     * @tc.name testArrayMap088
+     * @tc.name testArrayMap089
      * @tc.desc Verify map can read string lengths while preserving the source strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('hello', '', 'a');
       const result = arr.map((value: string): int => value.length);
       expect(result.toString()).assertEqual('5,0,1');
@@ -1549,13 +1548,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9000
-     * @tc.name testArrayMap089
+     * @tc.name testArrayMap090
      * @tc.desc Verify map can transform booleans into descriptive text values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false);
       const result = arr.map((value: boolean): string => value ? 'yes' : 'no');
       expect(result.toString()).assertEqual('yes,no');
@@ -1563,13 +1562,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9100
-     * @tc.name testArrayMap090
+     * @tc.name testArrayMap091
      * @tc.desc Verify map can stringify bigint values without losing iteration order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(10n, 20n);
       const result = arr.map((value: bigint): string => 'v' + value.toString());
       expect(result.toString()).assertEqual('v10,v20');
@@ -1577,13 +1576,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9200
-     * @tc.name testArrayMap091
+     * @tc.name testArrayMap092
      * @tc.desc Verify map can convert every value to undefined explicitly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((_: number): undefined => undefined);
       expect(result.length).assertEqual(2);
@@ -1593,13 +1592,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9300
-     * @tc.name testArrayMap092
+     * @tc.name testArrayMap093
      * @tc.desc Verify map can convert every value to null explicitly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((_: number): null => null);
       expect(result.length).assertEqual(2);
@@ -1609,13 +1608,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9400
-     * @tc.name testArrayMap093
+     * @tc.name testArrayMap094
      * @tc.desc Verify map can keep array length aligned with object extraction results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item1 = new User051();
       item1.id = 1;
       item1.name = 'A';
@@ -1630,13 +1629,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9500
-     * @tc.name testArrayMap094
+     * @tc.name testArrayMap095
      * @tc.desc Verify map can use a branch that omits an explicit value on one side and returns undefined there
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): string | undefined => {
         if (value > 1) {
@@ -1650,13 +1649,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9600
-     * @tc.name testArrayMap095
+     * @tc.name testArrayMap096
      * @tc.desc Verify map can transform all values to the same object reference when the callback returns a shared object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       let shared = new Item020();
       shared.value = 9;
@@ -1667,13 +1666,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9700
-     * @tc.name testArrayMap096
+     * @tc.name testArrayMap097
      * @tc.desc Verify map can create distinct object wrappers for each element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.map((value: number): Item020 => {
         let item = new Item020();
@@ -1687,13 +1686,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9800
-     * @tc.name testArrayMap097
+     * @tc.name testArrayMap098
      * @tc.desc Verify map can return a stable array length when the callback appends to the source during traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.map((value: number, index: int, source: Array<number>): number => {
         if (index === 0) {
@@ -1707,13 +1706,13 @@ export default function ArrayMapTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9900
-     * @tc.name testArrayMap098
+     * @tc.name testArrayMap099
      * @tc.desc Verify map can still return the original prefix when callback mutates the source length by pushing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayMap098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayMap099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.map((value: number, index: int, source: Array<number>): number => {
         if (index === 0) {

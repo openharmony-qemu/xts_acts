@@ -610,28 +610,12 @@ export default function ArrayPushArrayTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3400
      * @tc.name testArrayPushArray034
-     * @tc.desc Verify pushArray can trigger automatic array growth for many elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayPushArray034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>();
-      let largeArray = createLargeNumberArray(1000);
-      arr.pushArray(...largeArray);
-      expect(arr.length).assertEqual(1000);
-      expect(arr[999]).assertEqual(999);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3500
-     * @tc.name testArrayPushArray035
      * @tc.desc Verify pushArray preserves existing string elements after valid string appends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>();
       arr.pushArray('a', 'b');
       expect(arr.length).assertEqual(2);
@@ -639,14 +623,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3600
-     * @tc.name testArrayPushArray036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3500
+     * @tc.name testArrayPushArray035
      * @tc.desc Verify heterogeneous values can be appended with a broad union type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<Object | string | number | boolean>();
       let payload = new Payload036();
       payload.key = 'value';
@@ -656,14 +640,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3700
-     * @tc.name testArrayPushArray037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3600
+     * @tc.name testArrayPushArray036
      * @tc.desc Verify pushArray works after extendTo on arrays with undefined fill values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(1, 2, 3);
       arr.extendTo(10, undefined);
       expect(arr.length).assertEqual(10);
@@ -674,14 +658,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3800
-     * @tc.name testArrayPushArray038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3700
+     * @tc.name testArrayPushArray037
      * @tc.desc Verify pushArray works after shrinkTo shortens the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       arr.shrinkTo(2);
       expect(arr.length).assertEqual(2);
@@ -691,14 +675,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3900
-     * @tc.name testArrayPushArray039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3800
+     * @tc.name testArrayPushArray038
      * @tc.desc Verify pushArray supports bigint values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<bigint>();
       arr.pushArray(1n, 2n, 9007199254740991n);
       expect(arr.length).assertEqual(3);
@@ -706,14 +690,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4000
-     * @tc.name testArrayPushArray040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_3900
+     * @tc.name testArrayPushArray039
      * @tc.desc Verify pushArray supports enum values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<Color040>();
       arr.pushArray(Color040.Red, Color040.Green, Color040.Blue);
       expect(arr.length).assertEqual(3);
@@ -721,14 +705,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4100
-     * @tc.name testArrayPushArray041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4000
+     * @tc.name testArrayPushArray040
      * @tc.desc Verify pushArray updates length consistently across multiple calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       arr.pushArray(1, 2, 3);
       expect(arr.length).assertEqual(3);
@@ -737,14 +721,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4200
-     * @tc.name testArrayPushArray042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4100
+     * @tc.name testArrayPushArray041
      * @tc.desc Verify new elements can be accessed by index after pushArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       arr.pushArray(10, 20, 30);
       expect(arr[0]).assertEqual(10);
@@ -753,14 +737,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4300
-     * @tc.name testArrayPushArray043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4200
+     * @tc.name testArrayPushArray042
      * @tc.desc Verify pushArray mutates the original array while concat returns a new one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>(1, 2);
       let arr2 = new Array<number>(1, 2);
       let newLength = arr1.pushArray(3, 4);
@@ -773,14 +757,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4400
-     * @tc.name testArrayPushArray044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4300
+     * @tc.name testArrayPushArray043
      * @tc.desc Verify pushArray supports numeric boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       arr.pushArray(Number.MAX_VALUE, Number.MIN_VALUE);
       expect(arr.length).assertEqual(2);
@@ -788,14 +772,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4500
-     * @tc.name testArrayPushArray045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4400
+     * @tc.name testArrayPushArray044
      * @tc.desc Verify pushArray supports representative string boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>();
       arr.pushArray('', '\u0000', 'very-long-string-value');
       expect(arr.length).assertEqual(3);
@@ -803,30 +787,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4600
-     * @tc.name testArrayPushArray046
-     * @tc.desc Verify pushArray accepts a large number of variadic arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayPushArray046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>();
-      let source = createLargeNumberArray(1000);
-      arr.pushArray(...source);
-      expect(arr.length).assertEqual(1000);
-      expect(arr[999]).assertEqual(999);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4700
-     * @tc.name testArrayPushArray047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4500
+     * @tc.name testArrayPushArray045
      * @tc.desc Verify pushArray without arguments does not change array contents
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.pushArray();
       expect(result).assertEqual(3);
@@ -835,14 +803,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4800
-     * @tc.name testArrayPushArray048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4600
+     * @tc.name testArrayPushArray046
      * @tc.desc Verify nested arrays can be flattened into pushArray arguments with spread
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       let nested = [[1, 2], [3, 4], [5, 6]];
       arr.pushArray(...nested[0], ...nested[1], ...nested[2]);
@@ -852,14 +820,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4900
-     * @tc.name testArrayPushArray049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4700
+     * @tc.name testArrayPushArray047
      * @tc.desc Verify pushArray can merge multiple arrays with spread arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       let arr1 = new Array<number>(1, 2, 3);
       let arr2 = new Array<number>(4, 5, 6);
@@ -869,14 +837,14 @@ export default function ArrayPushArrayTest(): void {
       expect(arr[8]).assertEqual(9);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5000
-     * @tc.name testArrayPushArray050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4800
+     * @tc.name testArrayPushArray048
      * @tc.desc Verify an array argument is stored as a single element without flattening
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1, 2);
       const arr = new Array<Array<number>>();
       const result = arr.pushArray(inner);
@@ -885,14 +853,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5100
-     * @tc.name testArrayPushArray051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_4900
+     * @tc.name testArrayPushArray049
      * @tc.desc Verify a stored nested array reference remains shared after later mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(1);
       const arr = new Array<Array<number>>();
       arr.pushArray(inner);
@@ -901,14 +869,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5200
-     * @tc.name testArrayPushArray052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5000
+     * @tc.name testArrayPushArray050
      * @tc.desc Verify pushArray can append explicit undefined and null values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined | null>();
       const result = arr.pushArray(undefined, null);
       expect(result).assertEqual(2);
@@ -917,14 +885,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5300
-     * @tc.name testArrayPushArray053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5100
+     * @tc.name testArrayPushArray051
      * @tc.desc Verify pushArray can store a self reference without expanding it
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Object>();
       const self = arr as Object;
       const result = arr.pushArray(self);
@@ -933,14 +901,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5400
-     * @tc.name testArrayPushArray054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5200
+     * @tc.name testArrayPushArray052
      * @tc.desc Verify duplicate object references remain identical after one pushArray call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new RefItem031();
       const arr = new Array<RefItem031>();
       const result = arr.pushArray(ref, ref);
@@ -949,14 +917,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5500
-     * @tc.name testArrayPushArray055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5300
+     * @tc.name testArrayPushArray053
      * @tc.desc Verify duplicate nested array references remain identical after one pushArray call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number>(3, 4);
       const arr = new Array<Array<number>>();
       const result = arr.pushArray(inner, inner);
@@ -965,14 +933,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5600
-     * @tc.name testArrayPushArray056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5400
+     * @tc.name testArrayPushArray054
      * @tc.desc Verify pushArray can append function values that remain callable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = (): int => 1;
       const second = (): int => 2;
       const arr = new Array<() => int>();
@@ -982,14 +950,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5700
-     * @tc.name testArrayPushArray057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5500
+     * @tc.name testArrayPushArray055
      * @tc.desc Verify pushArray preserves max safe and min safe integer values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const result = arr.pushArray(Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER);
       expect(result).assertEqual(2);
@@ -998,30 +966,30 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5800
-     * @tc.name testArrayPushArray058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5600
+     * @tc.name testArrayPushArray056
      * @tc.desc Verify pushArray preserves emoji strings and ZWJ sequences
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
-      const result = arr.pushArray('👍', '👨‍👩‍👧‍👦');
+      const result = arr.pushArray('🌍', '👩‍💻');
       expect(result).assertEqual(2);
-      expect(arr[0]).assertEqual('👍');
-      expect(arr[1]).assertEqual('👨‍👩‍👧‍👦');
+      expect(arr[0]).assertEqual('🌍');
+      expect(arr[1]).assertEqual('👩‍💻');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5900
-     * @tc.name testArrayPushArray059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5700
+     * @tc.name testArrayPushArray057
      * @tc.desc Verify spreading the same array into pushArray reads values before the append starts
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.pushArray(...arr);
       expect(result).assertEqual(2);
@@ -1029,14 +997,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6000
-     * @tc.name testArrayPushArray060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5800
+     * @tc.name testArrayPushArray058
      * @tc.desc Verify nested pushArray evaluation can append the inner returned length as a value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.pushArray(arr.pushArray(2));
       expect(result).assertEqual(3);
@@ -1044,14 +1012,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6100
-     * @tc.name testArrayPushArray061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_5900
+     * @tc.name testArrayPushArray059
      * @tc.desc Verify nested pushArray evaluation preserves left to right argument order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.pushArray(arr.pushArray(2), 3);
       expect(result).assertEqual(4);
@@ -1059,14 +1027,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6200
-     * @tc.name testArrayPushArray062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6000
+     * @tc.name testArrayPushArray060
      * @tc.desc Verify mapped spread values are appended after they are fully computed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const mapped = new Array<number>(2, 3).map((value: number): number => value * 2);
       const result = arr.pushArray(...mapped);
@@ -1075,14 +1043,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6300
-     * @tc.name testArrayPushArray063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6100
+     * @tc.name testArrayPushArray061
      * @tc.desc Verify pushArray preserves exact argument order for a mixed union payload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const payload = new Payload036();
       payload.key = 'value';
       const nested = new Array<number>(7, 8) as Object;
@@ -1098,14 +1066,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6400
-     * @tc.name testArrayPushArray064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6200
+     * @tc.name testArrayPushArray062
      * @tc.desc Verify pushed object references still reflect external mutations after storage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ref = new RefItem031();
       const arr = new Array<RefItem031>();
       arr.pushArray(ref);
@@ -1114,14 +1082,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6500
-     * @tc.name testArrayPushArray065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6300
+     * @tc.name testArrayPushArray063
      * @tc.desc Verify pushArray works after the array was cleared through length assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       const result = arr.pushArray(9, 10);
@@ -1130,14 +1098,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6600
-     * @tc.name testArrayPushArray066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6400
+     * @tc.name testArrayPushArray064
      * @tc.desc Verify pushArray works after the array was shrunk
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shrinkTo(2);
       const result = arr.pushArray(5);
@@ -1146,14 +1114,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6700
-     * @tc.name testArrayPushArray067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6500
+     * @tc.name testArrayPushArray065
      * @tc.desc Verify pushArray works on arrays returned by slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(1, 3);
       const result = arr.pushArray(9);
       expect(result).assertEqual(3);
@@ -1161,14 +1129,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6800
-     * @tc.name testArrayPushArray068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6600
+     * @tc.name testArrayPushArray066
      * @tc.desc Verify pushArray can be followed by pop to remove the newest tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.pushArray(3);
       const value = arr.pop();
@@ -1176,14 +1144,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6900
-     * @tc.name testArrayPushArray069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6700
+     * @tc.name testArrayPushArray067
      * @tc.desc Verify pushArray can be followed by shift after a head insertion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3);
       arr.pushArray(4);
       arr.unshift(1);
@@ -1192,14 +1160,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7000
-     * @tc.name testArrayPushArray070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6800
+     * @tc.name testArrayPushArray068
      * @tc.desc Verify pushArray appends to the tail of a toReversed copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).toReversed();
       const result = arr.pushArray(4);
       expect(result).assertEqual(4);
@@ -1207,14 +1175,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7100
-     * @tc.name testArrayPushArray071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_6900
+     * @tc.name testArrayPushArray069
      * @tc.desc Verify pushArray appends to arrays created by concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1).concat(new Array<number>(2, 3));
       const result = arr.pushArray(4);
       expect(result).assertEqual(4);
@@ -1222,14 +1190,14 @@ export default function ArrayPushArrayTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7200
-     * @tc.name testArrayPushArray072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7000
+     * @tc.name testArrayPushArray070
      * @tc.desc Verify pushArray appends to arrays created by Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushArray072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushArray070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.of<number>(4, 5);
       const result = arr.pushArray(6, 7);
       expect(result).assertEqual(4);

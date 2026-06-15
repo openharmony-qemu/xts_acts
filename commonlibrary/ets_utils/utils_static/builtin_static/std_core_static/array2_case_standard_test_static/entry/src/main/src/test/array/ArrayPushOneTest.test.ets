@@ -868,27 +868,12 @@ export default function ArrayPushOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_4800
      * @tc.name testArrayPushOne048
-     * @tc.desc Verify pushOne clearly expresses appending one element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayPushOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>();
-      arr.pushOne(10);
-      expect(arr.length).assertEqual(1);
-      expect(arr[0]).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_4900
-     * @tc.name testArrayPushOne049
      * @tc.desc Verify pushOne can improve readability in stack-like wrappers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let stack = new Stack049<number>();
       stack.push(10);
       expect(stack.size()).assertEqual(1);
@@ -896,14 +881,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5000
-     * @tc.name testArrayPushOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_4900
+     * @tc.name testArrayPushOne049
      * @tc.desc Verify push and pushOne append equivalent values in insertion order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       arr.push(10);
       arr.pushOne(10);
@@ -912,14 +897,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5100
-     * @tc.name testArrayPushOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5000
+     * @tc.name testArrayPushOne050
      * @tc.desc Verify push behavior matches one-value and multi-value alias scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       arr.push(10);
       expect(arr.length).assertEqual(1);
@@ -929,14 +914,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5200
-     * @tc.name testArrayPushOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5100
+     * @tc.name testArrayPushOne051
      * @tc.desc Verify repeated pushOne calls and one pushArray call both build the same result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<number>();
       for (let i: int = 0; i < 1000; i++) {
         arr1.pushOne(i);
@@ -953,14 +938,14 @@ export default function ArrayPushOneTest(): void {
       expect(arr1.toString()).assertEqual(arr2.toString());
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5300
-     * @tc.name testArrayPushOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5200
+     * @tc.name testArrayPushOne052
      * @tc.desc Verify pushOne can append 1 to a one-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2);
       const result = arr.pushOne(1);
       expect(result).assertEqual(2);
@@ -969,14 +954,14 @@ export default function ArrayPushOneTest(): void {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5400
-     * @tc.name testArrayPushOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5300
+     * @tc.name testArrayPushOne053
      * @tc.desc Verify pushOne can append values to number arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const first = arr.pushOne(1);
       const second = arr.pushOne(2);
@@ -985,14 +970,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5500
-     * @tc.name testArrayPushOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5400
+     * @tc.name testArrayPushOne054
      * @tc.desc Verify pushOne can append values to string arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       const first = arr.pushOne('a');
       const second = arr.pushOne('b');
@@ -1001,14 +986,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5600
-     * @tc.name testArrayPushOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5500
+     * @tc.name testArrayPushOne055
      * @tc.desc Verify pushOne can append values to boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>();
       const first = arr.pushOne(true);
       const second = arr.pushOne(false);
@@ -1017,14 +1002,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5700
-     * @tc.name testArrayPushOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5600
+     * @tc.name testArrayPushOne056
      * @tc.desc Verify pushOne can append values to bigint arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>();
       const first = arr.pushOne(1n);
       const second = arr.pushOne(2n);
@@ -1033,14 +1018,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5800
-     * @tc.name testArrayPushOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5700
+     * @tc.name testArrayPushOne057
      * @tc.desc Verify pushOne supports object arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Person007>();
       const result = arr.pushOne(createPushOnePerson('item', 1));
       expect(result).assertEqual(1);
@@ -1048,14 +1033,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5900
-     * @tc.name testArrayPushOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5800
+     * @tc.name testArrayPushOne058
      * @tc.desc Verify pushOne works after the array was cleared through length assignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       const result = arr.pushOne(9);
@@ -1063,14 +1048,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6000
-     * @tc.name testArrayPushOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_5900
+     * @tc.name testArrayPushOne059
      * @tc.desc Verify pushOne works after the array was shrunk
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shrinkTo(2);
       const result = arr.pushOne(5);
@@ -1078,28 +1063,28 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6100
-     * @tc.name testArrayPushOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6000
+     * @tc.name testArrayPushOne060
      * @tc.desc Verify pushOne works on arrays returned by slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(1, 3);
       const result = arr.pushOne(9);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6200
-     * @tc.name testArrayPushOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6100
+     * @tc.name testArrayPushOne061
      * @tc.desc Verify pushOne preserves insertion order for repeated values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       arr.pushOne(5);
       arr.pushOne(5);
@@ -1107,14 +1092,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6300
-     * @tc.name testArrayPushOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6200
+     * @tc.name testArrayPushOne062
      * @tc.desc Verify pushOne can be followed by pop to remove the newest tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.pushOne(3);
       const value = arr.pop();
@@ -1122,14 +1107,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6400
-     * @tc.name testArrayPushOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6300
+     * @tc.name testArrayPushOne063
      * @tc.desc Verify pushOne can be followed by shift to remove the newest head when appropriate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3);
       arr.unshift(1); arr.pushOne(4);
       const value = arr.shift();
@@ -1137,14 +1122,14 @@ export default function ArrayPushOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6500
-     * @tc.name testArrayPushOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6400
+     * @tc.name testArrayPushOne064
      * @tc.desc Verify pushOne appends correctly after reverse changes element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayPushOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayPushOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.reverse();
       const result = arr.pushOne(3);

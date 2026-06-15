@@ -726,15 +726,12 @@ export default function ArrayOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_OF_4300
      * @tc.name testArrayOf043
-     * @tc.desc Verify unsupported Symbol API examples can be represented with explicit marker strings
+     * @tc.desc Verify Array.of can create a string array from explicit string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS does not support Symbol() API.
-      // const sym1 = Symbol("test1");
-      // const sym2 = Symbol("test2");
       let arr = Array.of<string>('test1', 'test2');
       expect(arr.length).assertEqual(2);
       expect(arr[0]).assertEqual('test1');
@@ -807,13 +804,13 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '你好世界');
+      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '娴ｇ姴銈芥稉鏍櫕');
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual('');
       expect(arr[1]).assertEqual('a');
       expect(arr[2]).assertEqual('long-string-value');
       expect(arr[3]).assertEqual('\u0000');
-      expect(arr[4]).assertEqual('你好世界');
+      expect(arr[4]).assertEqual('娴ｇ姴銈芥稉鏍櫕');
     });
 
     /**
@@ -838,8 +835,6 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented unsupported example:
-      // const arr = Array.of(1, 2, 3) as const;
       let arr: ReadonlyArray<number> = Array.of<number>(1, 2, 3);
       expect(arr[0]).assertEqual(1);
     });

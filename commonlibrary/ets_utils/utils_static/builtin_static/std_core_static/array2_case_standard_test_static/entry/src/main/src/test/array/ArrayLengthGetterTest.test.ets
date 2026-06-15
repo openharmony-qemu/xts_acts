@@ -332,8 +332,7 @@ export default function ArrayLengthGetterTest(): void {
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(256);
       try {
-        const outOfBounds = arr[255];
-        expect(outOfBounds).assertEqual(256);
+        arr[255];
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');

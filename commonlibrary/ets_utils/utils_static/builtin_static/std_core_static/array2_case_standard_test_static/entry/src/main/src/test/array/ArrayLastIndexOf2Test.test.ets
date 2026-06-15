@@ -1110,7 +1110,7 @@ export default function ArrayLastIndexOf2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_TWO_7400
      * @tc.name testArrayLastIndexOfTwo074
-     * @tc.desc Verify bigint and number values do not match each other under strict equality
+     * @tc.desc Verify lastIndexOf finds the numeric 10 in a mixed bigint and number array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -44,12 +44,6 @@ function createSequentialArray(size: int): Array<number> {
   return arr;
 }
 
-function assertLengthShrinkResult(arr: Array<number>, newLength: int, expectedContent: string): void {
-  arr.length = newLength;
-  expect(arr.length).assertEqual(newLength);
-  expect(arr.toString()).assertEqual(expectedContent);
-}
-
 export default function ArrayLengthSetterTest(): void {
   describe('ArrayLengthSetterTest', (): void => {
     beforeAll((): void => {
@@ -558,66 +552,79 @@ export default function ArrayLengthSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3100
      * @tc.name testArrayLengthSetter031
-     * @tc.desc Verify assigning length 1 updates the observable array length
+     * @tc.desc Verify assigning length 1 keeps only the numeric head element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
-      assertLengthShrinkResult(arr, 1, '1');
+      arr.length = 1;
+      expect(arr.length).assertEqual(1);
+      expect(arr.toString()).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3200
      * @tc.name testArrayLengthSetter032
-     * @tc.desc Verify assigning length 2 updates the observable array length
+     * @tc.desc Verify assigning length 2 preserves an emoji element in the retained prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      assertLengthShrinkResult(arr, 2, '1,2');
+      const arr = new Array<number | string>(1, '🌍', 3, 4, 5);
+      arr.length = 2;
+      expect(arr.length).assertEqual(2);
+      expect(arr.toString()).assertEqual('1,🌍');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3300
      * @tc.name testArrayLengthSetter033
-     * @tc.desc Verify assigning length 3 updates the observable array length
+     * @tc.desc Verify assigning length 3 preserves a null entry inside the retained prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      assertLengthShrinkResult(arr, 3, '1,2,3');
+      const arr = new Array<number | null>(1, null, 3, 4, 5);
+      arr.length = 3;
+      expect(arr.length).assertEqual(3);
+      expect(arr.toString()).assertEqual('1,,3');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3400
      * @tc.name testArrayLengthSetter034
-     * @tc.desc Verify assigning length 4 updates the observable array length
+     * @tc.desc Verify assigning length 4 keeps mixed string content in the remaining segment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      assertLengthShrinkResult(arr, 4, '1,2,3,4');
+      const arr = new Array<number | string>(1, 'undefined', 3, 'tail', 5);
+      arr.length = 4;
+      expect(arr.length).assertEqual(4);
+      expect(arr.toString()).assertEqual('1,undefined,3,tail');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_3500
      * @tc.name testArrayLengthSetter035
-     * @tc.desc Verify assigning length 5 keeps the observable array unchanged
+     * @tc.desc Verify assigning length 5 keeps an object-containing array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      assertLengthShrinkResult(arr, 5, '1,2,3,4,5');
+      const marker = new Item025(2);
+      const arr = new Array<Item025 | number>(1, marker, 3, 4, 5);
+      arr.length = 5;
+      expect(arr.length).assertEqual(5);
+      expect(arr[1]).assertEqual(marker);
+      expect((arr[1] as Item025).value).assertEqual(2);
+      expect(arr.toString()).assertEqual('1,[object Object],3,4,5');
     });
 
     /**

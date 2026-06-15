@@ -476,7 +476,7 @@ export default function ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2300
      * @tc.name testArrayReduceTwo023
-     * @tc.desc Verify a hole-only array returns the numeric seed without callback calls
+     * @tc.desc Verify an empty array returns the numeric seed without callback calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -495,7 +495,7 @@ export default function ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_2400
      * @tc.name testArrayReduceTwo024
-     * @tc.desc Verify a sparse array with a string seed visits only present indexes
+     * @tc.desc Verify reduce with a string seed visits indexes 0 and 1 of a two-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -860,7 +860,7 @@ export default function ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_4100
      * @tc.name testArrayReduceTwo041
-     * @tc.desc Verify a sparse tail element can update an object seed at its actual index
+     * @tc.desc Verify a tail defined element can update an object seed at its actual index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1054,7 +1054,7 @@ export default function ArrayReduce2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5200
      * @tc.name testArrayReduceTwo052
-     * @tc.desc Verify reduce can offset sums with a non-zero initial value
+     * @tc.desc Verify reduce can seed a string accumulator and expose source length on the first callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1062,14 +1062,17 @@ export default function ArrayReduce2Test(): void {
     it('testArrayReduceTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 4, 6);
       let firstState = '';
+      let firstIndex: int = -1;
       const result = arr.reduce((acc: string, value: number, index: int, source: Array<number>): string => {
         if (index === 0) {
           firstState = acc + ':' + source.length.toString();
+          firstIndex = index;
         }
         return acc + '-' + value.toString();
       }, 'seed');
       expect(result).assertEqual('seed-2-4-6');
       expect(firstState).assertEqual('seed:3');
+      expect(firstIndex).assertEqual(0);
     });
 
     /**
@@ -1178,13 +1181,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5800
-     * @tc.name testArrayReduceTwo0571
-     * @tc.desc Verify reduce with an initial value skips sparse holes while visiting present elements
+     * @tc.name testArrayReduceTwo058
+     * @tc.desc Verify reduce with an initial value visits explicit undefined elements while accumulating present values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo0571', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(4, (_index) => undefined);
       arr[1] = 2;
       arr[3] = 4;
@@ -1199,13 +1202,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_5900
-     * @tc.name testArrayReduceTwo058
+     * @tc.name testArrayReduceTwo059
      * @tc.desc Verify reduce skips tail elements removed by length shrink
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       let indexes = new Array<int>();
       const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
@@ -1222,13 +1225,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6000
-     * @tc.name testArrayReduceTwo059
+     * @tc.name testArrayReduceTwo060
      * @tc.desc Verify reduce does not visit values appended after traversal starts
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       let visited = new Array<number>();
       const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
@@ -1245,13 +1248,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6100
-     * @tc.name testArrayReduceTwo060
+     * @tc.name testArrayReduceTwo061
      * @tc.desc Verify reduce reads a later element after it is changed by an earlier callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
         if (index === 0) {
@@ -1265,13 +1268,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6200
-     * @tc.name testArrayReduceTwo061
+     * @tc.name testArrayReduceTwo062
      * @tc.desc Verify reduce can read object array fields into a numeric accumulator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new StatsCase();
       first.count = 1;
       first.sum = 3;
@@ -1287,13 +1290,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6300
-     * @tc.name testArrayReduceTwo062
+     * @tc.name testArrayReduceTwo063
      * @tc.desc Verify reduce can build a string from each value and index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const result = arr.reduce((acc: string, value: string, index: int): string => {
         return acc + index.toString() + value;
@@ -1303,13 +1306,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6400
-     * @tc.name testArrayReduceTwo063
+     * @tc.name testArrayReduceTwo064
      * @tc.desc Verify reduce keeps using the original source array after outer variable reassignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       const original = arr;
       let sameSource = true;
@@ -1327,13 +1330,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6500
-     * @tc.name testArrayReduceTwo064
+     * @tc.name testArrayReduceTwo065
      * @tc.desc Verify reduce does not skip false boolean elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(false, false);
       let calls = 0;
       const result = arr.reduce((acc: string, value: boolean, index: int): string => {
@@ -1346,13 +1349,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6600
-     * @tc.name testArrayReduceTwo065
+     * @tc.name testArrayReduceTwo066
      * @tc.desc Verify reducing after clearing length only visits the first callback before removal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       let visited = new Array<number>();
       const result = arr.reduce((acc: number, value: number, index: int, source: Array<number>): number => {
@@ -1369,13 +1372,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6700
-     * @tc.name testArrayReduceTwo066
+     * @tc.name testArrayReduceTwo067
      * @tc.desc Verify reduce can convert bigint elements into a string accumulator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(2n, 4n);
       const result = arr.reduce((acc: string, value: bigint, index: int): string => {
         return acc + index.toString() + ':' + value.toString() + ';';
@@ -1385,13 +1388,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6800
-     * @tc.name testArrayReduceTwo067
+     * @tc.name testArrayReduceTwo068
      * @tc.desc Verify reduce can accumulate string counts into a class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'c', 'a');
       const result = arr.reduce((acc: CountMap011, value: string, index: int,
         source: Array<string>): CountMap011 => {
@@ -1408,13 +1411,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_6900
-     * @tc.name testArrayReduceTwo068
+     * @tc.name testArrayReduceTwo069
      * @tc.desc Verify reduce can collect running totals in an array accumulator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 5, 1);
       const result = arr.reduce((acc: Array<number>, value: number): Array<number> => {
         const prior = acc.length === 0 ? 0 : acc[acc.length - 1];
@@ -1426,13 +1429,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7000
-     * @tc.name testArrayReduceTwo069
+     * @tc.name testArrayReduceTwo070
      * @tc.desc Verify reduce with initial value can sum numeric triple 2, 3, 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3, 4);
       const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
       expect(result).assertEqual(9);
@@ -1440,13 +1443,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7100
-     * @tc.name testArrayReduceTwo070
+     * @tc.name testArrayReduceTwo071
      * @tc.desc Verify reduce with initial value can sum numeric triple 3, 4, 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 4, 5);
       const result = arr.reduce((acc: number, value: number): number => acc + value, 0);
       expect(result).assertEqual(12);
@@ -1454,13 +1457,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7200
-     * @tc.name testArrayReduceTwo071
+     * @tc.name testArrayReduceTwo072
      * @tc.desc Verify reduce sums a number array with an initial zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(10);
@@ -1468,13 +1471,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7300
-     * @tc.name testArrayReduceTwo072
+     * @tc.name testArrayReduceTwo073
      * @tc.desc Verify reduce concatenates string values in left-to-right order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const result = arr.reduce((acc: string, cur: string): string => acc + cur, '');
       expect(result).assertEqual("abc");
@@ -1482,13 +1485,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7400
-     * @tc.name testArrayReduceTwo073
+     * @tc.name testArrayReduceTwo074
      * @tc.desc Verify reduce exposes the source array to the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       let same = false;
       arr.reduce((acc: number, cur: number, index: int, source: Array<number>): number => { same = source === arr; return acc + cur; }, 0);
@@ -1497,13 +1500,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7500
-     * @tc.name testArrayReduceTwo074
+     * @tc.name testArrayReduceTwo075
      * @tc.desc Verify reduce records traversal indexes in callback order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       let text = '';
       arr.reduce((acc: number, cur: number, index: int): number => { text += index.toString(); return acc + cur; }, 0);
@@ -1512,13 +1515,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7600
-     * @tc.name testArrayReduceTwo075
+     * @tc.name testArrayReduceTwo076
      * @tc.desc Verify reduce multiplies numeric values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3, 4);
       const result = arr.reduce((acc: number, cur: number): number => acc * cur, 1);
       expect(result).assertEqual(24);
@@ -1526,13 +1529,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7700
-     * @tc.name testArrayReduceTwo076
+     * @tc.name testArrayReduceTwo077
      * @tc.desc Verify reduce can accumulate into an object map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const result = arr.reduce((acc: ReduceMap018, cur: string, index: int): ReduceMap018 => { if (cur === 'a') { acc.a = index; } else if (cur === 'b') { acc.b = index; } else { acc.c = index; } return acc; }, new ReduceMap018());
       expect(result.a).assertEqual(0);
@@ -1541,13 +1544,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7800
-     * @tc.name testArrayReduceTwo077
+     * @tc.name testArrayReduceTwo078
      * @tc.desc Verify reduce can flatten nested arrays while tracking nested lengths
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(), new Array<number>(3));
       let lengthMarks = new Array<number>();
       const result = arr.reduce((acc: Array<number>, cur: Array<number>, index: int): Array<number> => {
@@ -1560,13 +1563,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_7900
-     * @tc.name testArrayReduceTwo078
+     * @tc.name testArrayReduceTwo079
      * @tc.desc Verify reduce works on a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(9);
       let calls = 0;
       const result = arr.reduce((acc: number, cur: number): number => { calls++; return acc + cur; }, 1);
@@ -1576,13 +1579,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8000
-     * @tc.name testArrayReduceTwo079
+     * @tc.name testArrayReduceTwo080
      * @tc.desc Verify reduce handles duplicate numbers without collapsing iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 2, 2);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(6);
@@ -1590,13 +1593,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8100
-     * @tc.name testArrayReduceTwo080
+     * @tc.name testArrayReduceTwo081
      * @tc.desc Verify reduce handles negative values and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-2, 0, 5);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(3);
@@ -1604,13 +1607,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8200
-     * @tc.name testArrayReduceTwo081
+     * @tc.name testArrayReduceTwo082
      * @tc.desc Verify reduce can count false boolean indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false, true, false);
       let calls = 0;
       const result = arr.reduce((acc: number, cur: boolean, index: int): number => {
@@ -1623,13 +1626,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8300
-     * @tc.name testArrayReduceTwo082
+     * @tc.name testArrayReduceTwo083
      * @tc.desc Verify reduce can format number indexes and values into a string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       const result = arr.reduce((acc: string, cur: number, index: int): string => {
         const prefix = index === 0 ? '' : '|';
@@ -1640,13 +1643,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8400
-     * @tc.name testArrayReduceTwo083
+     * @tc.name testArrayReduceTwo084
      * @tc.desc Verify reduce can read arrays produced by slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(1, 4);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(9);
@@ -1654,13 +1657,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8500
-     * @tc.name testArrayReduceTwo084
+     * @tc.name testArrayReduceTwo085
      * @tc.desc Verify reduce can read arrays produced by filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5).filter((value: number): boolean => value >= 3);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(12);
@@ -1668,13 +1671,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8600
-     * @tc.name testArrayReduceTwo085
+     * @tc.name testArrayReduceTwo086
      * @tc.desc Verify reduce can read arrays produced by concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4));
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(10);
@@ -1682,13 +1685,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8700
-     * @tc.name testArrayReduceTwo086
+     * @tc.name testArrayReduceTwo087
      * @tc.desc Verify reduce can read a toReversed copy without mutating the source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(1, 2, 3);
       const arr = source.toReversed();
       let indexes = new Array<int>();
@@ -1703,13 +1706,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8800
-     * @tc.name testArrayReduceTwo087
+     * @tc.name testArrayReduceTwo088
      * @tc.desc Verify reduce can read arrays produced by with
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).with(1, 9);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(13);
@@ -1717,13 +1720,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_8900
-     * @tc.name testArrayReduceTwo088
+     * @tc.name testArrayReduceTwo089
      * @tc.desc Verify reduce can read arrays produced by toSpliced
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).toSpliced(1, 1, 7, 8);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(19);
@@ -1731,13 +1734,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9000
-     * @tc.name testArrayReduceTwo089
+     * @tc.name testArrayReduceTwo090
      * @tc.desc Verify reduce can weight values after reverse mutates the source order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.reverse();
       const result = arr.reduce((acc: number, cur: number, index: int): number => {
@@ -1749,13 +1752,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9100
-     * @tc.name testArrayReduceTwo090
+     * @tc.name testArrayReduceTwo091
      * @tc.desc Verify reduce can build a number after sort mutates the source order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       arr.sort((left: number, right: number): int => {
         if (left < right) {
@@ -1777,13 +1780,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9200
-     * @tc.name testArrayReduceTwo091
+     * @tc.name testArrayReduceTwo092
      * @tc.desc Verify reduce can read arrays after shift changes the head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shift();
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1792,13 +1795,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9300
-     * @tc.name testArrayReduceTwo092
+     * @tc.name testArrayReduceTwo093
      * @tc.desc Verify reduce can read arrays after pop changes the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.pop();
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1807,13 +1810,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9400
-     * @tc.name testArrayReduceTwo093
+     * @tc.name testArrayReduceTwo094
      * @tc.desc Verify reduce can read arrays after unshift prepends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 4);
       arr.unshift(1, 2);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1822,13 +1825,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9500
-     * @tc.name testArrayReduceTwo094
+     * @tc.name testArrayReduceTwo095
      * @tc.desc Verify reduce can read arrays after push appends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.push(3, 4);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1837,13 +1840,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9600
-     * @tc.name testArrayReduceTwo095
+     * @tc.name testArrayReduceTwo096
      * @tc.desc Verify reduce can read arrays after splice replacement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.splice(1, 1, 8, 9);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1852,13 +1855,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9700
-     * @tc.name testArrayReduceTwo096
+     * @tc.name testArrayReduceTwo097
      * @tc.desc Verify reduce can read arrays after shrinkTo truncates the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shrinkTo(2);
       const result = arr.reduce((acc: number, cur: number): number => acc + cur, 0);
@@ -1867,13 +1870,13 @@ export default function ArrayReduce2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_TWO_9800
-     * @tc.name testArrayReduceTwo097
+     * @tc.name testArrayReduceTwo098
      * @tc.desc Verify reduce can read arrays rebuilt after clearing length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceTwo097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceTwo098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(7);

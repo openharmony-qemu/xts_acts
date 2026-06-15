@@ -146,11 +146,13 @@ export default function ArrayPopTest(): void {
       person.age = 25;
       arr.push(person);
       let result = arr.pop();
-      expect(result !== null && result !== undefined).assertTrue();
-      if (result !== null && result !== undefined) {
-        expect(result.name).assertEqual('Alice');
-        expect(result.age).assertEqual(25);
+      if (result === null || result === undefined) {
+        expect().assertFail();
+        return;
       }
+      const poppedPerson = result as Person005;
+      expect(poppedPerson.name).assertEqual('Alice');
+      expect(poppedPerson.age).assertEqual(25);
     });
 
     /**
@@ -223,7 +225,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<boolean>(true, false);
       let result = arr.pop();
-      expect(result === false).assertTrue();
+      expect(result).assertFalse();
       expect(arr.length).assertEqual(1);
     });
 
@@ -253,10 +255,11 @@ export default function ArrayPopTest(): void {
     it('testArrayPop012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, NaN);
       let result = arr.pop();
-      expect(result !== undefined).assertTrue();
-      if (result !== undefined) {
-        expect(Number.isNaN(result)).assertTrue();
+      if (result === undefined) {
+        expect().assertFail();
+        return;
       }
+      expect(result).assertNaN();
     });
 
     /**
@@ -465,7 +468,7 @@ export default function ArrayPopTest(): void {
       let arr = new Array<number>(1, 2, 3);
       let originalRef = arr;
       arr.pop();
-      expect(arr === originalRef).assertTrue();
+      expect(arr).assertEqual(originalRef);
     });
 
     /**
@@ -526,7 +529,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<boolean>(true, false, true);
       let result = arr.pop();
-      expect(result === true).assertTrue();
+      expect(result).assertTrue();
       expect(arr.length).assertEqual(2);
     });
 
@@ -614,7 +617,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<Object | string | number | boolean>(1, 'two', true);
       let result = arr.pop();
-      expect(result === true).assertTrue();
+      expect(result).assertTrue();
       expect(arr.length).assertEqual(2);
     });
 
@@ -630,7 +633,8 @@ export default function ArrayPopTest(): void {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.pop();
       expect(Array.isArray(result)).assertFalse();
-      expect(typeof result === 'number' || result === undefined).assertTrue();
+      expect(result).assertEqual(3);
+      expect(typeof result).assertEqual('number');
     });
 
     /**
@@ -783,10 +787,11 @@ export default function ArrayPopTest(): void {
     it('testArrayPop044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN);
       const value = arr.pop();
-      expect(value !== undefined).assertTrue();
-      if (value !== undefined) {
-        expect(Number.isNaN(value)).assertTrue();
+      if (value === undefined) {
+        expect().assertFail();
+        return;
       }
+      expect(value).assertNaN();
       expect(arr.length).assertEqual(0);
     });
 
@@ -817,7 +822,7 @@ export default function ArrayPopTest(): void {
       const nested = new Array<number>(1, 2);
       const arr = new Array<Array<number>>(nested);
       const value = arr.pop();
-      expect(value === nested).assertTrue();
+      expect(value).assertEqual(nested);
       expect(arr.length).assertEqual(0);
     });
 
@@ -834,7 +839,7 @@ export default function ArrayPopTest(): void {
       ref.value = 7;
       const arr = new Array<PopRefCase006>(ref);
       const value = arr.pop();
-      expect(value === ref).assertTrue();
+      expect(value).assertEqual(ref);
       expect(arr.length).assertEqual(0);
     });
 
@@ -850,9 +855,9 @@ export default function ArrayPopTest(): void {
       const ref = new PopRefCase006();
       const arr = new Array<PopRefCase006>(ref, ref);
       const value = arr.pop();
-      expect(value === ref).assertTrue();
+      expect(value).assertEqual(ref);
       expect(arr.length).assertEqual(1);
-      expect(arr[0] === ref).assertTrue();
+      expect(arr[0]).assertEqual(ref);
     });
 
     /**
@@ -867,9 +872,9 @@ export default function ArrayPopTest(): void {
       const nested = new Array<number>(3, 4);
       const arr = new Array<Array<number>>(nested, nested);
       const value = arr.pop();
-      expect(value === nested).assertTrue();
+      expect(value).assertEqual(nested);
       expect(arr.length).assertEqual(1);
-      expect(arr[0] === nested).assertTrue();
+      expect(arr[0]).assertEqual(nested);
     });
 
     /**
@@ -883,7 +888,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string | boolean>(1, 'a', false);
       const value = arr.pop();
-      expect(value === false).assertTrue();
+      expect(value).assertFalse();
       expect(arr.length).assertEqual(2);
     });
 
@@ -992,10 +997,11 @@ export default function ArrayPopTest(): void {
       const fn = (): int => 8;
       const arr = new Array<() => int>(fn);
       const value = arr.pop();
-      expect(value !== undefined).assertTrue();
-      if (value !== undefined) {
-        expect(value()).assertEqual(8);
+      if (value === undefined) {
+        expect().assertFail();
+        return;
       }
+      expect(value()).assertEqual(8);
       expect(arr.length).assertEqual(0);
     });
 
@@ -1011,11 +1017,13 @@ export default function ArrayPopTest(): void {
       const nested = new Array<number>(1);
       const arr = new Array<Array<number>>(nested);
       const value = arr.pop();
-      expect(value !== undefined).assertTrue();
-      if (value !== undefined) {
-        value.pushOne(2);
-        expect(value.length).assertEqual(2);
+      if (value === undefined) {
+        expect().assertFail();
+        return;
       }
+      expect(value).assertEqual(nested);
+      value.pushOne(2);
+      expect(value.length).assertEqual(2);
       expect(arr.length).assertEqual(0);
     });
 
@@ -1034,9 +1042,9 @@ export default function ArrayPopTest(): void {
       second.value = 2;
       const arr = new Array<PopRefCase006>(first, second);
       const value = arr.pop();
-      expect(value === second).assertTrue();
+      expect(value).assertEqual(second);
       expect(arr.length).assertEqual(1);
-      expect(arr[0] === first).assertTrue();
+      expect(arr[0]).assertEqual(first);
     });
 
     /**
@@ -1080,7 +1088,7 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
-      expect(arr.pop() === undefined).assertTrue();
+      expect(arr.pop()).assertUndefined();
     });
 
     /**
@@ -1134,10 +1142,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(1n, 2n, 3n);
       const value = arr.pop();
-      expect(value !== undefined).assertTrue();
-      if (value !== undefined) {
-        expect(value.toString()).assertEqual('3');
-      }
+      expect(value).assertEqual(3n);
     });
 
     /**
@@ -1153,7 +1158,7 @@ export default function ArrayPopTest(): void {
       const second = new PopRefCase006();
       const arr = new Array<PopRefCase006>(first, second);
       const value = arr.pop();
-      expect(value === second).assertTrue();
+      expect(value).assertEqual(second);
     });
 
     /**
@@ -1166,7 +1171,7 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null>(1, null);
-      expect(arr.pop() === null).assertTrue();
+      expect(arr.pop()).assertNull();
     });
 
     /**
@@ -1179,13 +1184,13 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1, undefined);
-      expect(arr.pop() === undefined).assertTrue();
+      expect(arr.pop()).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_POP_0700
      * @tc.name testArrayPop070
-     * @tc.desc Verify pop returns zero correctly
+     * @tc.desc Verify pop returns zero when zero is the only remaining tail value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1423,7 +1428,7 @@ export default function ArrayPopTest(): void {
     it('testArrayPop086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.pop();
-      expect(arr.indexOf(2) >= 0).assertTrue();
+      expect(arr.indexOf(2)).assertEqual(1);
     });
 
     /**
@@ -1567,7 +1572,7 @@ export default function ArrayPopTest(): void {
       const arr = new Array<number>(1, 2, 3);
       const same = arr;
       arr.pop();
-      expect(arr === same).assertTrue();
+      expect(arr).assertEqual(same);
     });
 
     /**

@@ -535,7 +535,7 @@ export default function ArrayReduceRight1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_2600
      * @tc.name testArrayReduceRightOne026
-     * @tc.desc Verify an array containing only holes returns the initial value without callback execution
+     * @tc.desc Verify an empty array returns the initial value without callback execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1043,28 +1043,28 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5900
-     * @tc.name testArrayReduceRightOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5400
+     * @tc.name testArrayReduceRightOne054
      * @tc.desc Verify reduceRight can concatenate numeric triple 8, 9, 10 from right to left
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(8, 9, 10);
       const result = arr.reduceRight((acc: string, value: number): string => acc + value.toString(), '');
       expect(result.toString()).assertEqual('1098');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6000
-     * @tc.name testArrayReduceRightOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5500
+     * @tc.name testArrayReduceRightOne055
      * @tc.desc Verify reduceRight callback indexes are visited from right to left with an initial value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3, 4);
       let indexes = '';
       const result = arr.reduceRight((acc: number, value: number, index: int): number => {
@@ -1076,42 +1076,42 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6100
-     * @tc.name testArrayReduceRightOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5600
+     * @tc.name testArrayReduceRightOne056
      * @tc.desc Verify reduceRight sums a number array with an initial zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6200
-     * @tc.name testArrayReduceRightOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5700
+     * @tc.name testArrayReduceRightOne057
      * @tc.desc Verify reduceRight concatenates string values in right-to-left order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const result = arr.reduceRight((acc: string, cur: string): string => acc + cur, '');
       expect(result).assertEqual("cba");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6300
-     * @tc.name testArrayReduceRightOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5800
+     * @tc.name testArrayReduceRightOne058
      * @tc.desc Verify reduceRight exposes the source array to the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, 6, 7);
       let same = false;
       arr.reduceRight((acc: number, cur: number, index: int, source: Array<number>): number => { same = source === arr; return acc + cur; }, 0);
@@ -1119,14 +1119,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6400
-     * @tc.name testArrayReduceRightOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_5900
+     * @tc.name testArrayReduceRightOne059
      * @tc.desc Verify reduceRight records traversal indexes in callback order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       let text = '';
       arr.reduceRight((acc: number, cur: number, index: int): number => { text += index.toString(); return acc + cur; }, 0);
@@ -1134,28 +1134,28 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6500
-     * @tc.name testArrayReduceRightOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6000
+     * @tc.name testArrayReduceRightOne060
      * @tc.desc Verify reduceRight multiplies numeric values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3, 4);
       const result = arr.reduceRight((acc: number, cur: number): number => acc * cur, 1);
       expect(result).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6600
-     * @tc.name testArrayReduceRightOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6100
+     * @tc.name testArrayReduceRightOne061
      * @tc.desc Verify reduceRight can accumulate into an object map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const result = arr.reduceRight((acc: ReduceRightOneIndexMap, cur: string, index: int): ReduceRightOneIndexMap => { if (cur === 'a') { acc.a = index; } else if (cur === 'b') { acc.b = index; } else { acc.c = index; } return acc; }, new ReduceRightOneIndexMap());
       expect(result.a).assertEqual(0);
@@ -1163,28 +1163,28 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6700
-     * @tc.name testArrayReduceRightOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6200
+     * @tc.name testArrayReduceRightOne062
      * @tc.desc Verify reduceRight can flatten nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(3, 4));
       const result = arr.reduceRight((acc: Array<number>, cur: Array<number>): Array<number> => acc.concat(cur), new Array<number>());
       expect(result.toString()).assertEqual("3,4,1,2");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6800
-     * @tc.name testArrayReduceRightOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6300
+     * @tc.name testArrayReduceRightOne063
      * @tc.desc Verify reduceRight works on a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(9);
       let calls = 0;
       const result = arr.reduceRight((acc: number, cur: number): number => { calls++; return acc + cur; }, 1);
@@ -1193,154 +1193,154 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6900
-     * @tc.name testArrayReduceRightOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6400
+     * @tc.name testArrayReduceRightOne064
      * @tc.desc Verify reduceRight handles duplicate numbers without collapsing iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 2, 2);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7000
-     * @tc.name testArrayReduceRightOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6500
+     * @tc.name testArrayReduceRightOne065
      * @tc.desc Verify reduceRight handles negative values and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-2, 0, 5);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7100
-     * @tc.name testArrayReduceRightOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6600
+     * @tc.name testArrayReduceRightOne066
      * @tc.desc Verify reduceRight can count true booleans
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false, true, true);
       const result = arr.reduceRight((acc: number, cur: boolean): number => cur ? acc + 1 : acc, 0);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7200
-     * @tc.name testArrayReduceRightOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6700
+     * @tc.name testArrayReduceRightOne067
      * @tc.desc Verify reduceRight can convert numbers into a hyphen-separated string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.reduceRight((acc: string, cur: number): string => acc.length === 0 ? cur.toString() : cur.toString() + '-' + acc, '');
       expect(result).assertEqual("1-2-3");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7300
-     * @tc.name testArrayReduceRightOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6800
+     * @tc.name testArrayReduceRightOne068
      * @tc.desc Verify reduceRight can read arrays produced by slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(1, 4);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7400
-     * @tc.name testArrayReduceRightOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_6900
+     * @tc.name testArrayReduceRightOne069
      * @tc.desc Verify reduceRight can read arrays produced by filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5).filter((value: number): boolean => value >= 3);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7500
-     * @tc.name testArrayReduceRightOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7000
+     * @tc.name testArrayReduceRightOne070
      * @tc.desc Verify reduceRight can read arrays produced by concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4));
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7600
-     * @tc.name testArrayReduceRightOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7100
+     * @tc.name testArrayReduceRightOne071
      * @tc.desc Verify reduceRight can read arrays produced by toReversed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).toReversed();
       const result = arr.reduceRight((acc: string, cur: number): string => acc + cur.toString(), '');
       expect(result).assertEqual("123");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7700
-     * @tc.name testArrayReduceRightOne077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7200
+     * @tc.name testArrayReduceRightOne072
      * @tc.desc Verify reduceRight can read arrays produced by with
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).with(1, 9);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(13);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7800
-     * @tc.name testArrayReduceRightOne078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7300
+     * @tc.name testArrayReduceRightOne073
      * @tc.desc Verify reduceRight can read arrays produced by toSpliced
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).toSpliced(1, 1, 7, 8);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(19);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7900
-     * @tc.name testArrayReduceRightOne079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7400
+     * @tc.name testArrayReduceRightOne074
      * @tc.desc Verify reduceRight can read arrays mutated by reverse before reduction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.reverse();
       const result = arr.reduceRight((acc: string, cur: number): string => acc + cur.toString(), '');
@@ -1348,14 +1348,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8000
-     * @tc.name testArrayReduceRightOne080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7500
+     * @tc.name testArrayReduceRightOne075
      * @tc.desc Verify reduceRight can read arrays mutated by sort before reduction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2);
       arr.sort((left: number, right: number): int => {
         if (left < right) {
@@ -1371,14 +1371,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8100
-     * @tc.name testArrayReduceRightOne081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7600
+     * @tc.name testArrayReduceRightOne076
      * @tc.desc Verify reduceRight can read arrays after shift changes the head
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shift();
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1386,14 +1386,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8200
-     * @tc.name testArrayReduceRightOne082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7700
+     * @tc.name testArrayReduceRightOne077
      * @tc.desc Verify reduceRight can read arrays after pop changes the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.pop();
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1401,14 +1401,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8300
-     * @tc.name testArrayReduceRightOne083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7800
+     * @tc.name testArrayReduceRightOne078
      * @tc.desc Verify reduceRight can read arrays after unshift prepends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 4);
       arr.unshift(1, 2);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1416,14 +1416,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8400
-     * @tc.name testArrayReduceRightOne084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_7900
+     * @tc.name testArrayReduceRightOne079
      * @tc.desc Verify reduceRight can read arrays after push appends values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       arr.push(3, 4);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1431,14 +1431,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8500
-     * @tc.name testArrayReduceRightOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8000
+     * @tc.name testArrayReduceRightOne080
      * @tc.desc Verify reduceRight can read arrays after splice replacement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.splice(1, 1, 8, 9);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1446,14 +1446,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8600
-     * @tc.name testArrayReduceRightOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8100
+     * @tc.name testArrayReduceRightOne081
      * @tc.desc Verify reduceRight can read arrays after shrinkTo truncates the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.shrinkTo(2);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1461,14 +1461,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8700
-     * @tc.name testArrayReduceRightOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8200
+     * @tc.name testArrayReduceRightOne082
      * @tc.desc Verify reduceRight can read arrays rebuilt after clearing length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(7);
@@ -1478,42 +1478,42 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8800
-     * @tc.name testArrayReduceRightOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8300
+     * @tc.name testArrayReduceRightOne083
      * @tc.desc Verify reduceRight can read arrays created by Array.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.of<number>(4, 5, 6);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(15);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8900
-     * @tc.name testArrayReduceRightOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8400
+     * @tc.name testArrayReduceRightOne084
      * @tc.desc Verify reduceRight can read arrays created by Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.from<number>(new Array<number>(2, 4, 6));
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(12);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9000
-     * @tc.name testArrayReduceRightOne090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8500
+     * @tc.name testArrayReduceRightOne085
      * @tc.desc Verify reduceRight can count callback calls on a large generated array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i: int = 0; i < 15; i++) {
         arr.pushOne(i);
@@ -1524,14 +1524,14 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9100
-     * @tc.name testArrayReduceRightOne091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8600
+     * @tc.name testArrayReduceRightOne086
      * @tc.desc Verify reduceRight preserves the source array text after accumulation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(4, 5, 6);
       const before = arr.toString();
       arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
@@ -1539,56 +1539,56 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9200
-     * @tc.name testArrayReduceRightOne092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8700
+     * @tc.name testArrayReduceRightOne087
      * @tc.desc Verify reduceRight can compute a checksum from value and index pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 4, 6);
       const result = arr.reduceRight((acc: number, cur: number, index: int): number => acc + cur * (index + 1), 0);
       expect(result).assertEqual(28);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9300
-     * @tc.name testArrayReduceRightOne093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8800
+     * @tc.name testArrayReduceRightOne088
      * @tc.desc Verify reduceRight can count elements with a predicate accumulator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.reduceRight((acc: number, cur: number): number => cur % 2 === 0 ? acc + 1 : acc, 0);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9400
-     * @tc.name testArrayReduceRightOne094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_8900
+     * @tc.name testArrayReduceRightOne089
      * @tc.desc Verify reduceRight can accumulate absolute values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-2, -3, 4);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + Math.abs(cur), 0);
       expect(result).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9500
-     * @tc.name testArrayReduceRightOne095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9000
+     * @tc.name testArrayReduceRightOne090
      * @tc.desc Verify reduceRight can operate on a toSorted copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(4, 1, 3, 2).toSorted((left: number, right: number): int => {
         if (left < right) {
           return -1;
@@ -1603,42 +1603,42 @@ export default function ArrayReduceRight1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9600
-     * @tc.name testArrayReduceRightOne096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9100
+     * @tc.name testArrayReduceRightOne091
      * @tc.desc Verify reduceRight can operate on a copied tail from slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(9, 8, 7, 6).slice(1);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(21);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9700
-     * @tc.name testArrayReduceRightOne097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9200
+     * @tc.name testArrayReduceRightOne092
      * @tc.desc Verify reduceRight can accumulate a string array built by Array.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.from<string>('ark');
       const result = arr.reduceRight((acc: string, cur: string): string => acc + cur, '');
       expect(result).assertEqual("kra");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9800
-     * @tc.name testArrayReduceRightOne098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REDUCE_RIGHT_ONE_9300
+     * @tc.name testArrayReduceRightOne093
      * @tc.desc Verify reduceRight can accumulate over a concat plus with pipeline
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayReduceRightOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayReduceRightOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2).concat(new Array<number>(3, 4)).with(1, 9);
       const result = arr.reduceRight((acc: number, cur: number): number => acc + cur, 0);
       expect(result).assertEqual(17);

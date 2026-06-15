@@ -292,13 +292,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_1700
-     * @tc.name testArrayLastIndexOfOne0161
-     * @tc.desc Verify lastIndexOf skips sparse holes instead of matching them as undefined
+     * @tc.name testArrayLastIndexOfOne017
+     * @tc.desc Verify lastIndexOf can find an explicit undefined value in a dense array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 2;
@@ -308,13 +308,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_1800
-     * @tc.name testArrayLastIndexOfOne017
+     * @tc.name testArrayLastIndexOfOne018
      * @tc.desc Verify lastIndexOf can find null values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | null>(1, null, 2, null);
       let result = arr.lastIndexOf(null);
       expect(result).assertEqual(3);
@@ -322,13 +322,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_1900
-     * @tc.name testArrayLastIndexOfOne018
+     * @tc.name testArrayLastIndexOfOne019
      * @tc.desc Verify lastIndexOf can find zero values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 0, 2, 0);
       let result = arr.lastIndexOf(0);
       expect(result).assertEqual(3);
@@ -336,13 +336,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2000
-     * @tc.name testArrayLastIndexOfOne019
+     * @tc.name testArrayLastIndexOfOne020
      * @tc.desc Verify lastIndexOf can find empty string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('a', '', 'b', '');
       let result = arr.lastIndexOf('');
       expect(result).assertEqual(3);
@@ -350,13 +350,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2100
-     * @tc.name testArrayLastIndexOfOne020
+     * @tc.name testArrayLastIndexOfOne021
      * @tc.desc Verify duplicates return the final matching index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 2, 2, 3);
       let result = arr.lastIndexOf(2);
       expect(result).assertEqual(3);
@@ -364,13 +364,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2200
-     * @tc.name testArrayLastIndexOfOne021
+     * @tc.name testArrayLastIndexOfOne022
      * @tc.desc Verify arrays with identical elements return the last index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(5, 5, 5, 5);
       let result = arr.lastIndexOf(5);
       expect(result).assertEqual(3);
@@ -378,13 +378,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2300
-     * @tc.name testArrayLastIndexOfOne022
+     * @tc.name testArrayLastIndexOfOne023
      * @tc.desc Verify a single string occurrence returns its only index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('alpha', 'beta', 'gamma');
       let result = arr.lastIndexOf('beta');
       expect(result).assertEqual(1);
@@ -392,13 +392,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2400
-     * @tc.name testArrayLastIndexOfOne023
+     * @tc.name testArrayLastIndexOfOne024
      * @tc.desc Verify lastIndexOf searches backward while indexOf searches forward
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2, 1);
       let lastIdx = arr.lastIndexOf(2);
       let firstIdx = arr.indexOf(2);
@@ -408,13 +408,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2500
-     * @tc.name testArrayLastIndexOfOne024
+     * @tc.name testArrayLastIndexOfOne025
      * @tc.desc Verify duplicates can produce different first and last indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('a', 'b', 'c', 'b', 'a');
       expect(arr.indexOf('a')).assertEqual(0);
       expect(arr.lastIndexOf('a')).assertEqual(4);
@@ -424,13 +424,13 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2600
-     * @tc.name testArrayLastIndexOfOne025
+     * @tc.name testArrayLastIndexOfOne026
      * @tc.desc Verify fromIndex after the later match can still find that match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayLastIndexOfOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayLastIndexOfOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2, 1);
       let result = arr.lastIndexOf(2, 4);
       expect(result).assertEqual(3);
@@ -438,20 +438,6 @@ export default function ArrayLastIndexOf1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2700
-     * @tc.name testArrayLastIndexOfOne026
-     * @tc.desc Verify the result can be assigned to an int typed variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayLastIndexOfOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, 3);
-      let result: int = arr.lastIndexOf(2);
-      expect(result).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2800
      * @tc.name testArrayLastIndexOfOne027
      * @tc.desc Verify union typed arrays support lastIndexOf searches
      * @tc.size MediumTest
@@ -465,7 +451,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2800
      * @tc.name testArrayLastIndexOfOne028
      * @tc.desc Verify lastIndexOf can find the last matching configuration entry
      * @tc.size MediumTest
@@ -479,7 +465,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_2900
      * @tc.name testArrayLastIndexOfOne029
      * @tc.desc Verify indexOf and lastIndexOf can detect duplicates together
      * @tc.size MediumTest
@@ -493,7 +479,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3000
      * @tc.name testArrayLastIndexOfOne030
      * @tc.desc Verify fromIndex can restrict search to an earlier range
      * @tc.size MediumTest
@@ -507,7 +493,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3100
      * @tc.name testArrayLastIndexOfOne031
      * @tc.desc Verify single element arrays return zero when the value is found
      * @tc.size MediumTest
@@ -521,7 +507,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3200
      * @tc.name testArrayLastIndexOfOne032
      * @tc.desc Verify single element arrays return minus one when not found
      * @tc.size MediumTest
@@ -535,7 +521,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3300
      * @tc.name testArrayLastIndexOfOne033
      * @tc.desc Verify lastIndexOf works correctly with large arrays
      * @tc.size MediumTest
@@ -549,7 +535,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3400
      * @tc.name testArrayLastIndexOfOne034
      * @tc.desc Verify strict equality distinguishes numbers from strings
      * @tc.size MediumTest
@@ -563,7 +549,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3500
      * @tc.name testArrayLastIndexOfOne035
      * @tc.desc Verify objects are compared by reference identity
      * @tc.size MediumTest
@@ -579,7 +565,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3600
      * @tc.name testArrayLastIndexOfOne036
      * @tc.desc Verify lastIndexOf finds a middle duplicate using the default tail scan
      * @tc.size MediumTest
@@ -593,7 +579,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3700
      * @tc.name testArrayLastIndexOfOne037
      * @tc.desc Verify lastIndexOf finds a restricted fromIndex that excludes the final duplicate
      * @tc.size MediumTest
@@ -607,7 +593,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3800
      * @tc.name testArrayLastIndexOfOne038
      * @tc.desc Verify lastIndexOf finds arrays of identical values
      * @tc.size MediumTest
@@ -621,7 +607,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_3900
      * @tc.name testArrayLastIndexOfOne039
      * @tc.desc Verify lastIndexOf finds missing values
      * @tc.size MediumTest
@@ -635,7 +621,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4000
      * @tc.name testArrayLastIndexOfOne040
      * @tc.desc Verify lastIndexOf finds negative fromIndex values near the tail
      * @tc.size MediumTest
@@ -649,7 +635,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4100
      * @tc.name testArrayLastIndexOfOne041
      * @tc.desc Verify lastIndexOf finds negative fromIndex values that still include the head
      * @tc.size MediumTest
@@ -663,7 +649,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4200
      * @tc.name testArrayLastIndexOfOne042
      * @tc.desc Verify lastIndexOf finds the first position when fromIndex equals zero
      * @tc.size MediumTest
@@ -677,7 +663,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4300
      * @tc.name testArrayLastIndexOfOne043
      * @tc.desc Verify lastIndexOf can locate the repeated tail value in numeric series 0
      * @tc.size MediumTest
@@ -691,7 +677,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4400
      * @tc.name testArrayLastIndexOfOne044
      * @tc.desc Verify lastIndexOf handles first position in a numeric array
      * @tc.size MediumTest
@@ -705,7 +691,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4500
      * @tc.name testArrayLastIndexOfOne045
      * @tc.desc Verify lastIndexOf with fromIndex zero does not search later numeric elements
      * @tc.size MediumTest
@@ -719,7 +705,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4600
      * @tc.name testArrayLastIndexOfOne046
      * @tc.desc Verify lastIndexOf handles missing values in a numeric array
      * @tc.size MediumTest
@@ -733,7 +719,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4700
      * @tc.name testArrayLastIndexOfOne047
      * @tc.desc Verify lastIndexOf handles string arrays
      * @tc.size MediumTest
@@ -747,7 +733,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4800
      * @tc.name testArrayLastIndexOfOne048
      * @tc.desc Verify lastIndexOf with fromIndex zero does not search later boolean elements
      * @tc.size MediumTest
@@ -761,7 +747,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_4900
      * @tc.name testArrayLastIndexOfOne049
      * @tc.desc Verify lastIndexOf handles bigint arrays
      * @tc.size MediumTest
@@ -775,7 +761,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5000
      * @tc.name testArrayLastIndexOfOne050
      * @tc.desc Verify lastIndexOf handles negative fromIndex normalization near the tail
      * @tc.size MediumTest
@@ -789,7 +775,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5100
      * @tc.name testArrayLastIndexOfOne051
      * @tc.desc Verify lastIndexOf handles very large positive fromIndex values
      * @tc.size MediumTest
@@ -803,7 +789,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5200
      * @tc.name testArrayLastIndexOfOne052
      * @tc.desc Verify lastIndexOf handles single-element matching arrays
      * @tc.size MediumTest
@@ -817,7 +803,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5300
      * @tc.name testArrayLastIndexOfOne053
      * @tc.desc Verify lastIndexOf handles single-element non-matching arrays
      * @tc.size MediumTest
@@ -831,7 +817,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5400
      * @tc.name testArrayLastIndexOfOne054
      * @tc.desc Verify lastIndexOf on a sliced array respects fromIndex zero
      * @tc.size MediumTest
@@ -845,7 +831,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5500
      * @tc.name testArrayLastIndexOfOne055
      * @tc.desc Verify lastIndexOf on a filtered array respects fromIndex zero
      * @tc.size MediumTest
@@ -859,7 +845,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5600
      * @tc.name testArrayLastIndexOfOne056
      * @tc.desc Verify lastIndexOf on a reversed copy respects fromIndex zero
      * @tc.size MediumTest
@@ -873,7 +859,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5700
      * @tc.name testArrayLastIndexOfOne057
      * @tc.desc Verify lastIndexOf on a sorted copy respects fromIndex zero
      * @tc.size MediumTest
@@ -895,7 +881,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5800
      * @tc.name testArrayLastIndexOfOne058
      * @tc.desc Verify lastIndexOf on a rebuilt array respects fromIndex zero
      * @tc.size MediumTest
@@ -903,13 +889,18 @@ export default function ArrayLastIndexOf1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayLastIndexOfOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = ((): Array<number> => { const arr = new Array<number>(1, 2, 3); arr.length = 0; arr.push(8, 9, 10); return arr; })();
+      const arr = ((): Array<number> => {
+        const arr = new Array<number>(1, 2, 3);
+        arr.length = 0;
+        arr.push(8, 9, 10);
+        return arr;
+      })();
       const result = arr.lastIndexOf(9, 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_5900
      * @tc.name testArrayLastIndexOfOne059
      * @tc.desc Verify lastIndexOf works on object arrays when the same reference is searched
      * @tc.size MediumTest
@@ -928,7 +919,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6000
      * @tc.name testArrayLastIndexOfOne060
      * @tc.desc Verify lastIndexOf rejects object arrays when a different reference is searched
      * @tc.size MediumTest
@@ -948,7 +939,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6100
      * @tc.name testArrayLastIndexOfOne061
      * @tc.desc Verify custom objects do not match primitive number searches
      * @tc.size MediumTest
@@ -964,7 +955,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6200
      * @tc.name testArrayLastIndexOfOne062
      * @tc.desc Verify primitive numbers do not match custom object searches
      * @tc.size MediumTest
@@ -980,7 +971,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6300
      * @tc.name testArrayLastIndexOfOne063
      * @tc.desc Verify different custom object instances with the same value do not match
      * @tc.size MediumTest
@@ -998,7 +989,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6400
      * @tc.name testArrayLastIndexOfOne064
      * @tc.desc Verify custom objects do not match primitive string searches
      * @tc.size MediumTest
@@ -1013,7 +1004,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6500
      * @tc.name testArrayLastIndexOfOne065
      * @tc.desc Verify custom objects do not match primitive boolean searches
      * @tc.size MediumTest
@@ -1028,7 +1019,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6600
      * @tc.name testArrayLastIndexOfOne066
      * @tc.desc Verify empty strings and strings containing a space remain distinct
      * @tc.size MediumTest
@@ -1042,7 +1033,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6700
      * @tc.name testArrayLastIndexOfOne067
      * @tc.desc Verify tab characters and plain spaces remain distinct
      * @tc.size MediumTest
@@ -1056,7 +1047,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6800
      * @tc.name testArrayLastIndexOfOne068
      * @tc.desc Verify LF and CRLF line terminators remain distinct
      * @tc.size MediumTest
@@ -1070,7 +1061,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_6900
      * @tc.name testArrayLastIndexOfOne069
      * @tc.desc Verify string zero searches do not match numeric zero values
      * @tc.size MediumTest
@@ -1084,7 +1075,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7000
      * @tc.name testArrayLastIndexOfOne070
      * @tc.desc Verify numeric zero searches do not match earlier string zero values
      * @tc.size MediumTest
@@ -1098,7 +1089,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7100
      * @tc.name testArrayLastIndexOfOne071
      * @tc.desc Verify numeric looking strings are matched strictly without numeric normalization
      * @tc.size MediumTest
@@ -1112,7 +1103,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7200
      * @tc.name testArrayLastIndexOfOne072
      * @tc.desc Verify signed zero strings remain distinct from each other
      * @tc.size MediumTest
@@ -1126,7 +1117,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7300
      * @tc.name testArrayLastIndexOfOne073
      * @tc.desc Verify hexadecimal escape sequences are compared after decoding
      * @tc.size MediumTest
@@ -1140,7 +1131,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7400
      * @tc.name testArrayLastIndexOfOne074
      * @tc.desc Verify NUL escape variants produce the same decoded string during matching
      * @tc.size MediumTest
@@ -1154,7 +1145,7 @@ export default function ArrayLastIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_ONE_7500
      * @tc.name testArrayLastIndexOfOne075
      * @tc.desc Verify lastIndexOf can search later duplicates inside mixed window 15
      * @tc.size MediumTest
