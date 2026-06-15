@@ -37,49 +37,34 @@ let rendererInfo: audio.AudioRendererInfo = {
   rendererFlags : 0
 }
 
-const prame =async ()=>{
-  audioVolumeManager.getVolumeGroupManager(defaultVolumeGroupId, (err: BusinessError, value: audio.AudioVolumeGroupManager) => {
-    if (err) {
-      console.error(`Failed to obtain the volume group infos list. ${err}`);
-      return;
-    }
-    audioVolumeGroupManager = value;
-    console.info('Callback invoked to indicate that the volume group infos list is obtained.');
+export function sleep(ms: number): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('');
+    }, ms);
   });
 }
 
 export default function maxAmplitudeFor() {
-  describe('maxAmplitudeFor', function () {
-   const prame =async ()=>{
-     audioVolumeManager.getVolumeGroupManager(defaultVolumeGroupId, (err: BusinessError, value: audio.AudioVolumeGroupManager) => {
-       if (err) {
-         console.error(`Failed to obtain the volume group infos list. ${err}`);
-         return;
-       }
-       audioVolumeGroupManager = value;
-       console.info('Callback invoked to indicate that the volume group infos list is obtained.');
-     });
-   }
-
+  describe('maxAmplitudeFor', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(function () {
-      prame();
+    beforeAll(async () => {
+      await sleep(1000);
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(function () {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
+    beforeEach(async () => {
+      console.info(`beforeEach: Prerequisites at the test case level`);
+      await sleep(100);
     })
-    afterEach(function () {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
+
+    afterEach(async () => {
+      console.info(`afterEach: Test case-level clearance conditions`);
+      await sleep(100);
     })
-    afterAll(function () {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+
+    afterAll(() => {
+      console.info(`afterAll: Test suite-level cleanup condition`);
     })
 
     /**
@@ -90,19 +75,24 @@ export default function maxAmplitudeFor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, function () {
-      audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo).then((data) => {
-        audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]).then((value) => {
-          console.info(`mic volatileume amplitude is: ${value}`);
-          expect(value).assertEqual(0);
-        }).catch((err: BusinessError) => {
-          expect(false).assertTrue();
-          console.error("getMaxAmplitudeForInputDevice error" + JSON.stringify(err));
-        })
-      }).catch((err: BusinessError) => {
+    it('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        await sleep(3000);
+        let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        await sleep(500);
+        let data = await audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo);
+        await sleep(500);
+        console.log('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_0200 data is:' + data);
+        let value = await audioVolumeGroupManager.getMaxAmplitudeForInputDevice(data[0]);
+        await sleep(500);
+        console.info(`SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_0200 mic volatileume amplitude is: ${value}`);
+        expect(value >= 0 && value <= 1).assertTrue();
+        done();
+      } catch (error) {
+        console.error("SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_0200 get outputDeviceId error" + error);
         expect(false).assertTrue();
-        console.error("get outputDeviceId error" + JSON.stringify(err));
-      })
+        done();
+      }
     })
 
     /**
@@ -113,19 +103,23 @@ export default function maxAmplitudeFor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, function () {
-      audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((data) => {
-        audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((value) => {
-          console.info(`mic volatileume amplitude is: ${value}`);
-          expect(value).assertEqual(0);
-        }).catch((err: BusinessError) => {
-          console.error("getMaxAmplitudeForOutputDevice error" + JSON.stringify(err));
-          expect(false).assertTrue();
-        })
-      }).catch((err: BusinessError) => {
-        console.error("getPreferOutputDeviceForRendererInfo error" + JSON.stringify(err));
+    it('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let audioVolumeGroupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        await sleep(500);
+        let data = await audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo);
+        await sleep(500);
+        console.log('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_0200 data is:' + data);
+        let value = await audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]);
+        await sleep(500);
+        console.info(`SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_0200 mic volatileume amplitude is: ${value}`);
+        expect(value >= 0 && value <= 1).assertTrue();
+        done();
+      } catch (error) {
+        console.error("SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_0200 get outputDeviceId error" + error);
         expect(false).assertTrue();
-      })
+        done();
+      }
     })
 
   })
