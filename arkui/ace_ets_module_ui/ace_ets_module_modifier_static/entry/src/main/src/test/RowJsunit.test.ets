@@ -103,7 +103,7 @@ it('rowTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> 
 it('rowTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('rowTest_static_0003 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('row' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('row');

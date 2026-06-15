@@ -62,9 +62,9 @@ export default function SideBarContainerType_DefaultValue2() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -99,9 +99,9 @@ export default function SideBarContainerType_DefaultValue2() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue2' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);

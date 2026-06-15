@@ -93,7 +93,7 @@ it('testList_item_group_static_0007', Level.LEVEL0, async (done: () => void): Pr
 it('testList_item_group_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testList_item_group_static_0008 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('listItemGroup' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

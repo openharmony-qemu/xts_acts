@@ -92,7 +92,7 @@ struct CounterTest {
       Column() {
         Button("change value").onClick((e: ClickEvent) => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("counter_changeButton")
 
         Counter() {
           Text(this.value.toString())

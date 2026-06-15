@@ -88,7 +88,7 @@ it('NavRouterJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
 it('NavRouterJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavRouterJsunit_static_0101 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('navRouter' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

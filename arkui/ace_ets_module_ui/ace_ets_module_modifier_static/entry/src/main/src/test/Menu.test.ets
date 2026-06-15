@@ -141,7 +141,7 @@ it('ArkUX_Stage_Menu_attrs_static_0103', Level.LEVEL0, async (done: () => void):
 
       console.info('ArkUX_Stage_Menu_attrs_static_0103 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('menu' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

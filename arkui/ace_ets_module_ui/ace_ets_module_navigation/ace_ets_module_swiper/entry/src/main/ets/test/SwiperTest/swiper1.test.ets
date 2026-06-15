@@ -55,7 +55,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0001', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0001] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -74,7 +74,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0002', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0002] component cachedCount strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -94,7 +94,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0003', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0003 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0003] component index strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -114,7 +114,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0004', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0004 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0004] component autoPlay strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -134,7 +134,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0005', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0005 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0005] component interval strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -154,7 +154,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0006', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0006 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0006] component indicator strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -174,7 +174,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0007', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0007 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0007] component loop strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -194,7 +194,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0008', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0008 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0008] component duration strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -214,7 +214,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve0009', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0009 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve0009] component vertical strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -234,7 +234,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve00010', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve00010 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve00010] component itemSpace strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');
@@ -255,7 +255,7 @@ export default function swiperCurveJsunit() {
     it('testswiperCurve00011', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve00011 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('swiper');
+      let strJson = getInspectorByKey('swiperNew' + '_swiper');
       console.info("[testswiperCurve00011] component onChange strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Swiper');

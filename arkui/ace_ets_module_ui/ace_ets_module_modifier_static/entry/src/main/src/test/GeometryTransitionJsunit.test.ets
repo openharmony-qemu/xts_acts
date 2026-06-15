@@ -88,7 +88,7 @@ it('geometryTransitionTest_static_0100', Level.LEVEL0, async (done: () => void):
       } catch (err) {
         console.info("geometryTransitionTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("geometryTransitionTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
+      console.info("geometryTransitionTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('geometryTransition' + '_button', 10, "")));
      await UtilsTest.msSleep(1000);
       console.info('geometryTransitionTest_static_0100 END');
       done();

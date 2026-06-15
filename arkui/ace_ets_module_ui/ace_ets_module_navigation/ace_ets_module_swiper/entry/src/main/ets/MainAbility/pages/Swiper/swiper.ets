@@ -92,7 +92,7 @@ struct SwiperExample {
       .displayCount(this.displayCount)
       .effectMode(this.edgeEffect)
       .indicatorStyle({ top: 20, right: 20, size: 2, color: Color.Blue })
-      .key('swiper')
+      .key('swiper_swiper')
       .onChange((index: number) => {
         console.info(index.toString())
         this.onActionCalledThree = true;

@@ -309,7 +309,7 @@ it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<vo
 it('ShapeJsunit_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ShapeJsunit_static_0014 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('shape' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('ShapeKey1'); //测试组件的key名称

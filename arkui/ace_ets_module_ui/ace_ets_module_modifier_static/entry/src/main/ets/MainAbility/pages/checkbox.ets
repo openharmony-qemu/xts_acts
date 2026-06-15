@@ -53,7 +53,7 @@ struct checkBoxTest {
       Column() {
         Button("change value").onClick((e: ClickEvent) => {
           (this.customModifier as CustomModifier).onChange1();
-        }).key("changeButton")
+        }).key("checkbox_changeButton")
 
         Checkbox({ name: 'checkbox1', group: 'checkboxGroup1' })
           .key("Checkbox_0100")

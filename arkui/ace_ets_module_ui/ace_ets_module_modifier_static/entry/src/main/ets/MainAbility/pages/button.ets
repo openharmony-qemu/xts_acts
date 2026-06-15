@@ -73,13 +73,13 @@ struct ButtonExample {
       Button("change value").onClick((e: ClickEvent) => {
         (this.buttonModifier as CustomModifier).onChange1();
         (this.buttonModifier2 as CustomModifier2).onChange1();
-      }).key("changeButton")
+      }).key("button_changeButton")
 
       Button('Ok', { type: this.buttonTypeValue, stateEffect: true })
         .borderRadius(8)
         .backgroundColor(0x317aff)
         .width(90)
-        .key('button')
+        .key('button_button')
         .attributeModifier(this.buttonModifier as CustomModifier)
 
       Button('Ok2', { type: this.buttonTypeValue, stateEffect: true })

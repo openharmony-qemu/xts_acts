@@ -56,7 +56,7 @@ export default function transitionJsunit() {
      */
     it('transitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0100 START');
-      let strJson: string = getInspectorByKey('button');
+      let strJson: string = getInspectorByKey('transition' + '_button');
       console.info("transitionTest_0100 component strJson:" + strJson);
 
       console.info("transitionTest_0100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
@@ -90,7 +90,7 @@ export default function transitionJsunit() {
       } catch (err) {
         console.info("transitionTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("transitionTest_0200 click result is: " + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info("transitionTest_0200 click result is: " + JSON.stringify(sendEventByKey('transition' + '_button', 10, "")));
       await Utils.sleep(1000);
       console.info('transitionTest_0200 END');
       done();
@@ -122,7 +122,7 @@ export default function transitionJsunit() {
         console.log("transitionTest_0300 change component data error: " + (err as BusinessError).message);
       }
       await Utils.sleep(4000);
-      let strJsonNew: string = getInspectorByKey('button');
+      let strJsonNew: string = getInspectorByKey('transition' + '_button');
       console.info("transitionTest_0300 component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       //非法入参默认初始值
       expect(JSON.parse(strJsonNew).$attrs.opacity).assertEqual(1);
@@ -156,7 +156,7 @@ export default function transitionJsunit() {
         console.log("transitionTest_0400 change component data error: " + (err as BusinessError).message);
       }
       await Utils.sleep(4000);
-      let strJsonNew: string = getInspectorByKey('button');
+      let strJsonNew: string = getInspectorByKey('transition' + '_button');
       console.info("transitionTest_040 component objNew is: " + JSON.stringify(JSON.parse(strJsonNew)));
       expect(JSON.parse(strJsonNew).$attrs.opacity).assertEqual(null);
       console.info('transitionTest_0400 END');

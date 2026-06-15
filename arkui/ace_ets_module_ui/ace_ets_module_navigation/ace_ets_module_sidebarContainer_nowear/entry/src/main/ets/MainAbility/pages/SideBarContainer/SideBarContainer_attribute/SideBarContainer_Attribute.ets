@@ -57,7 +57,7 @@ struct SideBarContainerAttribute {
             this.current = item
           })
         }, (item: string) => item)
-      }.width('100%').key("SideBarContainer_Attribute_SideBar_01")
+      }.width('100%').key("SideBarContainer_Attribute_SideBarContainer_Attribute_SideBar_01")
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor('#19000000')
 

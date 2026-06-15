@@ -169,7 +169,7 @@ it('ArkUX_Stage_Checkbox_attrs_static_0200', Level.LEVEL0, async (done: () => vo
 it('ArkUX_Stage_Checkbox_attrs_static_0201', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Checkbox_attrs_static_0201 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('checkbox' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

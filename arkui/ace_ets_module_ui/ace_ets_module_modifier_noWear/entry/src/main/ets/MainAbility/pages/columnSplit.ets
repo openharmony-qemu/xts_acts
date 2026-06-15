@@ -36,7 +36,7 @@ struct ColumnSplitExample {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("columnSplit_changeButton")
 
       ColumnSplit() {
         Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)

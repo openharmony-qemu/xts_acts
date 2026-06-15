@@ -61,7 +61,7 @@ struct TestPanelPage {
 //         .attributeModifier(this.customModifier1 as CustomModifier).height('30%')
       Button("change value").onClick((e: ClickEvent) => {
 //         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("panel_changeButton")
     }
 		.width('100%')
     .height('100%')

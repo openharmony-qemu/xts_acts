@@ -202,7 +202,7 @@ it('imageAnimatorTest_static_0008', Level.LEVEL0, async (done: () => void): Prom
 
       console.info('imageAnimatorTest_static_0008 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('imageAnimator' + '_changeButton')) as Promise<Component>);
       await button.click();
       await UtilsTest.msSleep(2000)
 

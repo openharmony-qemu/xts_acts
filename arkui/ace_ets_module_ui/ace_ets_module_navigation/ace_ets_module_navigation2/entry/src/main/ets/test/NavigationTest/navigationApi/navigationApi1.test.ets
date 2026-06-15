@@ -79,7 +79,7 @@ export default function navigationApi1() {
       await btn2.click();
       await CommonFunc.sleep(1000);
 
-      let text1 = getInspectorByKey('navigationApi1_text1');
+      let text1 = getInspectorByKey('navigationApi1' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('POP');
 
       console.info('[testRichEditor_0100] END');

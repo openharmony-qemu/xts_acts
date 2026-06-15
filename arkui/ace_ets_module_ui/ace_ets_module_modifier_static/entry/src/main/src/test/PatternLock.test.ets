@@ -220,7 +220,7 @@ it('patternLockTest_static_0009', Level.LEVEL0, async (done: () => void): Promis
 
       console.info('patternLockTest_static_0009 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('patternLock' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

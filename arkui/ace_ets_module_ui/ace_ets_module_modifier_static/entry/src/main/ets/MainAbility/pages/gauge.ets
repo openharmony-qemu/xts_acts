@@ -111,7 +111,7 @@ struct GaugeExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("gauge_changeButton")
       Column() {
 
         Gauge({ value: 0, min: 0, max: 100 })

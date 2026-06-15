@@ -66,7 +66,7 @@ export default function gridRowJsunit() {
      */
 it('gridRowTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gridRowTest_static_0001 START');
-      let strJsonNew = inspector.getInspectorByKey('gridRow');
+      let strJsonNew = inspector.getInspectorByKey('gridRow' + '_gridRow_01');
       console.info("gridRowTest_static_0001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').tryGetElement('alignItems')).assertEqual(undefined);
       console.info('gridRowTest_static_0001 END');
@@ -85,11 +85,11 @@ it('gridRowTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<vo
 
       console.info('gridRowTest_static_0002 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('gridRow' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('gridRow');
+      let strJsonNew = inspector.getInspectorByKey('gridRow' + '_gridRow_01');
       console.info("gridRowTest_static_0002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
 
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').tryGetElement('alignItems')).assertEqual(undefined);

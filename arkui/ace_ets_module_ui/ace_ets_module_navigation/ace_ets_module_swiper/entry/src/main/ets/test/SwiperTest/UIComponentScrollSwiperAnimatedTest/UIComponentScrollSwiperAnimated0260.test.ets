@@ -67,7 +67,7 @@ export default function UIComponentScrollSwiperAnimated0260() {
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_0260', Level.LEVEL1, async (done: Function) => {
       console.info(`SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ANIMATED_0260 start.`);
       await CommonFunc.sleep(6000);
-      let strIndex: string = getInspectorByKey('UIComponentScrollSwiperAnimated0260_text')
+      let strIndex: string = getInspectorByKey('UIComponentScrollSwiperAnimated0260' + '_text')
       let jsonIndex: ESObject = JSON.parse(strIndex).$attrs.content;
       expect(jsonIndex).assertEqual('ContentDidScroll')
       await CommonFunc.sleep(1000);

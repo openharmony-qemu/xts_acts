@@ -33,7 +33,7 @@ struct TransitionExample {
         .height(30)
         .backgroundColor(0x317aff)
         .margin({ bottom: 50 })
-        .key('button')
+        .key('transition_button')
         .opacity(this.opacity1)
         .onClick(() => {
           this.onActionCalled = true;

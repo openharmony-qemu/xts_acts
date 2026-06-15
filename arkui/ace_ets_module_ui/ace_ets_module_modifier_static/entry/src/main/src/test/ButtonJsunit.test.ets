@@ -69,7 +69,7 @@ export default function buttonJsunit() {
      */
 it('testButtonStatic1601', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1601] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1601] component testButtonStatic1601 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('type')).assertEqual('ButtonType.Circle');
@@ -86,7 +86,7 @@ it('testButtonStatic1601', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1602', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1602] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1602] component testButtonStatic1602 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('stateEffect')).assertEqual('true');
@@ -103,7 +103,7 @@ it('testButtonStatic1602', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1603', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1603] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1603] component testButtonStatic1603 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontColor')).assertEqual('#FFCCCCCC');
@@ -120,7 +120,7 @@ it('testButtonStatic1603', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1604', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1604] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1604] component testButtonStatic1604 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontSize')).assertEqual('12.00fp');
@@ -137,7 +137,7 @@ it('testButtonStatic1604', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1605', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1605] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1605] component testButtonStatic1605 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Normal');
@@ -154,7 +154,7 @@ it('testButtonStatic1605', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1606', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1606] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1606] component testButtonStatic1606 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontFamily')).assertEqual('cursive');
@@ -171,7 +171,7 @@ it('testButtonStatic1606', Level.LEVEL0, async (done: () => void): Promise<void>
      */
 it('testButtonStatic1607', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testButtonStatic1607] START');
-      let strJsonNew = inspector.getInspectorByKey('button');
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button');
 
       console.info("[testButtonStatic1607] component testButtonStatic1607 is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Normal');
@@ -206,11 +206,11 @@ it('testButtonStatic1608', Level.LEVEL0, async (done: () => void): Promise<void>
 it('testButtonStatic1609', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testButtonStatic1609 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton')) as  Component;
+      let button = await driver.findComponent(ON.id('button' + '_changeButton')) as  Component;
       await button.click();
       await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('button'); //测试组件的key名称
+      let strJsonNew = inspector.getInspectorByKey('button' + '_button'); //测试组件的key名称
 
 
       console.info("testButtonStatic1609 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));

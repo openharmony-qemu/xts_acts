@@ -80,7 +80,7 @@ it('NavDestination_onBackPressed_static_0100', Level.LEVEL0, async (done: () => 
 
       await driver.triggerKey(2);
       await CommonFunc.sleep(300);
-      let text1 = inspector.getInspectorByKey('NavDestination_onBackPressed_text1');
+      let text1 = inspector.getInspectorByKey('NavDestination_onBackPressed' + '_text1');
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('{"number":1}');
 
       console.info('[NavDestination_onBackPressed_static_0100] END');

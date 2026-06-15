@@ -76,7 +76,7 @@ export default function navigatorJsunit() {
 it('navigatorTestStatic001', Level.LEVEL0, async (): Promise<void> => {
       console.info('++++++++++++++++ Navigator TestCase 1 START ++++++++++++++++');
       await UtilsTest.msSleep(1000)
-      let strJson = inspector.getInspectorByKey('navigator');
+      let strJson = inspector.getInspectorByKey('Navigator' + '_navigator');
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.getString('$type')))
@@ -95,7 +95,7 @@ it('navigatorTestStatic001', Level.LEVEL0, async (): Promise<void> => {
 it('navigatorTestStatic002', Level.LEVEL0, async (): Promise<void> => {
       console.info('++++++++++++++++ Navigator TestCase 2 START ++++++++++++++++');
       await UtilsTest.msSleep(1000)
-      let strJson = inspector.getInspectorByKey('navigator2');
+      let strJson = inspector.getInspectorByKey('Navigator' + '_navigator2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.getString('$type')))
@@ -114,7 +114,7 @@ it('navigatorTestStatic002', Level.LEVEL0, async (): Promise<void> => {
 it('navigatorTestStatic003', Level.LEVEL0, async (): Promise<void> => {
       console.info('++++++++++++++++ Navigator TestCase 3 START ++++++++++++++++');
       await UtilsTest.msSleep(1000)
-      let strJson = inspector.getInspectorByKey('navigator3');
+      let strJson = inspector.getInspectorByKey('Navigator' + '_navigator3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringify(obj));
       console.log(JSON.stringify(obj.getString('$type')))

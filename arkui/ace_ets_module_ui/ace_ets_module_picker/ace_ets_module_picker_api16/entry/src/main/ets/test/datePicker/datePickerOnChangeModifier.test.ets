@@ -77,7 +77,7 @@ export default function datePickerOnChangeModifierTest() {
         await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
         Math.round(0));
         await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onChangeOff');
+        let strJsonNew:string = getInspectorByKey('datePickerOnChangeModifier' + '_onChangeOff');
         console.info("DatePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
           .$attrs));
         expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');

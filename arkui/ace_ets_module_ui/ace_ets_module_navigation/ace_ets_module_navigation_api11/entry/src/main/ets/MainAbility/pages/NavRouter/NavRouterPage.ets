@@ -72,7 +72,7 @@ struct NavRouterPage {
                     Flex({ direction: FlexDirection.Row }) {
                       Row() {
                         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 })
-                        Text('Hello').fontSize(30).key('textContent')
+                        Text('Hello').fontSize(30).key('NavRouterPage_textContent')
                       }.padding({ left: 15 })
                     }
                   }.backgroundColor('#ccc')

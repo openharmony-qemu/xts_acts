@@ -271,7 +271,7 @@ it('test_panel_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
 
       console.info('test_panel_static_0011 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('panel' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

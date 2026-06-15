@@ -96,7 +96,7 @@ export struct WaterFlowView {
     Column() {
       Button("change value").onClick((e:ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("waterFlowView_changeButton")
 
       WaterFlow() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {

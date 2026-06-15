@@ -74,7 +74,7 @@ export default function timePickerOnChangeModifierTest() {
         await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
         Math.round(0));
         await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onChangeOff');
+        let strJsonNew:string = getInspectorByKey('timePickerOnChangeModifier' + '_onChangeOff');
         console.info("TimePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
           .$attrs));
         expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');
@@ -105,7 +105,7 @@ export default function timePickerOnChangeModifierTest() {
         await driver.swipe(Math.round((right-left)/2+left), Math.round(middle), Math.round((right-left)/2+left),
           Math.round(0));
         await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onChangeOff');
+        let strJsonNew:string = getInspectorByKey('timePickerOnChangeModifier' + '_onChangeOff');
         console.info("TimePicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
           .$attrs));
         expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');

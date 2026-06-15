@@ -61,7 +61,7 @@ struct ImageAnimatorExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("imageAnimator_changeButton")
 
       Column({ space: 10 } as ColumnOptions) {
         ImageAnimator()

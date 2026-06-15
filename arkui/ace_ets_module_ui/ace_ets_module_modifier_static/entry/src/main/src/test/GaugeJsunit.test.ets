@@ -230,7 +230,7 @@ it('testGaugeStatic0128', Level.LEVEL0, async (done: () => void): Promise<void> 
 it('testGaugeStatic0129', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testGaugeStatic0129 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('gauge' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

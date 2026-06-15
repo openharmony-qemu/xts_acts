@@ -51,7 +51,7 @@ struct StepperExample {
       .status(this.firstState)
       .position({ x: '35%,y:0' })
     }
-    .key('stepper')
+    .key('Stepper1_stepper')
     .onFinish(() => {
       console.info('onFinish')
     })

@@ -85,7 +85,7 @@ export default function RelativeChain() {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('RelativeChainBt_1'));
+      let button_Bottom = await driver.findComponent(ON.id('RelativeChain' + '_RelativeChainBt_1'));
       await button_Bottom.click();
       await CommonFunc.sleep(2000);
 
@@ -119,7 +119,7 @@ export default function RelativeChain() {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('RelativeChainBt_2'));
+      let button_Bottom = await driver.findComponent(ON.id('RelativeChain' + '_RelativeChainBt_2'));
       await button_Bottom.click();
       await CommonFunc.sleep(2000);
 

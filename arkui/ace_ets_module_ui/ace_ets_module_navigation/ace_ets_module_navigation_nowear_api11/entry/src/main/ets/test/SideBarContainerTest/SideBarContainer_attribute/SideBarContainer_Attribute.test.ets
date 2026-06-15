@@ -64,8 +64,8 @@ export default function SideBarContainer_AttributeTest() {
       await CommonFunc.sleep(2000);
 
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBar_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBar_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
@@ -95,8 +95,8 @@ export default function SideBarContainer_AttributeTest() {
       await CommonFunc.sleep(2000);
 
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBar_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBar_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
@@ -126,8 +126,8 @@ export default function SideBarContainer_AttributeTest() {
       await CommonFunc.sleep(2000);
 
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBar_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBar_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
@@ -156,8 +156,8 @@ export default function SideBarContainer_AttributeTest() {
       await CommonFunc.sleep(2000);
 
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBar_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBar_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainer_Attribute' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();

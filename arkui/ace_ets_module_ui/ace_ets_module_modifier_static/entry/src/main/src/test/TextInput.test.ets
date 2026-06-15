@@ -525,7 +525,7 @@ it('textInputJsunit_static_0125', Level.LEVEL0, async (done: () => void): Promis
 it('textInputJsunit_static_0127', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0127 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('textInput' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('textInputKey1');

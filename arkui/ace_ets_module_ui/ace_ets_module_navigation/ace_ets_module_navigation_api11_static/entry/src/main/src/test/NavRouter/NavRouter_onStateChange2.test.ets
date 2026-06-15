@@ -80,7 +80,7 @@ it('NavRouter_onStateChange2_static_0100', Level.LEVEL0, async (done: () => void
 
       await driver.triggerKey(2);
       await CommonFunc.sleep(300);
-      let text1 = inspector.getInspectorByKey('NavRouter_onStateChange2_text1');
+      let text1 = inspector.getInspectorByKey('NavRouter_onStateChange2' + '_text1');
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('false');
 
       console.info('[NavRouter_onStateChange2_static_0100] END');

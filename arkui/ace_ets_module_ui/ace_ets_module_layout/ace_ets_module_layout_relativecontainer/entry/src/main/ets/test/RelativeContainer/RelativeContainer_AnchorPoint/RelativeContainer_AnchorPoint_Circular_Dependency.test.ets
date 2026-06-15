@@ -59,9 +59,9 @@ export default function RelativeContainer_AnchorPoint_Circular_Dependency() {
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Circular_Dependency_row4: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_row4');
+      let RelativeContainer_AnchorPoint_Circular_Dependency_row4: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency' + '_row4');
 
-      let RelativeContainer_AnchorPoint_Circular_Dependency_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency_r1');
+      let RelativeContainer_AnchorPoint_Circular_Dependency_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Circular_Dependency' + '_r1');
 
       console.log('assert position')
 

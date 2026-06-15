@@ -69,7 +69,7 @@ export default function menuItemJsunit() {
      */
 it('menuItemJsunitStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic01] START');
-      let strJson = inspector.getInspectorByKey('menuItem_options1');
+      let strJson = inspector.getInspectorByKey('menuItem' + '_options1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuItemJsunitStatic01] obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getElement('contentFont').getString('size')).assertEqual("10.00fp");
@@ -87,7 +87,7 @@ it('menuItemJsunitStatic01', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('menuItemJsunitStatic02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic02] START');
-      let strJson = inspector.getInspectorByKey('menuItem_options1');
+      let strJson = inspector.getInspectorByKey('menuItem' + '_options1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuItemJsunitStatic02] obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getString('contentFontColor')).assertEqual("#FF0000FF");
@@ -105,7 +105,7 @@ it('menuItemJsunitStatic02', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('menuItemJsunitStatic03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic03] START');
-      let strJson = inspector.getInspectorByKey('menuItem_options1');
+      let strJson = inspector.getInspectorByKey('menuItem' + '_options1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuItemJsunitStatic03] obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getElement('labelFont')?.getString('size')).assertEqual("15.00fp");
@@ -123,7 +123,7 @@ it('menuItemJsunitStatic03', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('menuItemJsunitStatic04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic04] START');
-      let strJson = inspector.getInspectorByKey('menuItem_options1');
+      let strJson = inspector.getInspectorByKey('menuItem' + '_options1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuItemJsunitStatic04] obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getString('labelFontColor')).assertEqual("#FFFF0000");
@@ -142,7 +142,7 @@ it('menuItemJsunitStatic04', Level.LEVEL0, async (done: () => void): Promise<voi
 it('menuItemJsunitStatic05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic05] START');
       let driver = Driver.create();
-      let menuItem = await (driver.findComponent(ON.id('menuItem_options1')) as Promise<Component>);
+      let menuItem = await (driver.findComponent(ON.id('menuItem' + '_options1')) as Promise<Component>);
       let re = await menuItem.isSelected();
       expect(re).assertEqual(true);
       console.info('[menuItemJsunitStatic05] END');
@@ -159,7 +159,7 @@ it('menuItemJsunitStatic05', Level.LEVEL0, async (done: () => void): Promise<voi
      */
 it('menuItemJsunitStatic06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic06] START');
-      let strJson = inspector.getInspectorByKey('menuItem_options1');
+      let strJson = inspector.getInspectorByKey('menuItem' + '_options1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuItemJsunitStatic06] obj is: " + JSON.stringify(obj.getElement('$attrs')));
       expect(obj.getElement('$attrs').getString('selectIcon')).assertEqual("true");
@@ -179,11 +179,11 @@ it('menuItemJsunitStatic07', Level.LEVEL0, async (done: () => void): Promise<voi
 
       console.info('menuItemJsunitStatic07 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('menuItem' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 
-      let strJsonNew = inspector.getInspectorByKey('menuItem_options1');
+      let strJsonNew = inspector.getInspectorByKey('menuItem' + '_options1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("menuItemJsunitStatic07 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
       expect(objNew.getElement('$attrs').getString('labelFontColor')).assertEqual("#FFFFA500");

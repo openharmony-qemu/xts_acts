@@ -217,7 +217,7 @@ export default function SwiperLoop() {
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('swiperLoopButton4'));
+      let button_Bottom = await driver.findComponent(ON.id('SwiperLoop' + '_swiperLoopButton4_01'));
       await button_Bottom.click();
       await CommonFunc.sleep(4000);
 

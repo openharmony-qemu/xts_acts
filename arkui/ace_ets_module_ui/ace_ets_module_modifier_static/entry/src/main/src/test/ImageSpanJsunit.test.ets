@@ -107,7 +107,7 @@ it('imageSpanTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<
 
       console.info('imageSpanTest_static_0003 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('imageSpan' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

@@ -101,7 +101,7 @@ it('testCounterStatic02', Level.LEVEL0, async (done: () => void): Promise<void> 
 it('testCounterStatic03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testCounterStatic03 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('counter' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

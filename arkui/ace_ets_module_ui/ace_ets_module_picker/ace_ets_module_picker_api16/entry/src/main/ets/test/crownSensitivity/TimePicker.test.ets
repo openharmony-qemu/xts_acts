@@ -153,7 +153,7 @@ export default function TimePicker() {
         it('ArkUX_Stage_TimePicker_ComponentTest_0500', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_0500] START');
-          let strJson = getInspectorByKey('timepicker05');
+          let strJson = getInspectorByKey('TimePicker' + '_timepicker05_01');
           let obj: Record<string, ESObject> = JSON.parse(strJson);
           console.info("[ArkUX_Stage_TimePicker_ComponentTest_0500] attr: " + JSON.stringify(obj.$attrs));
           console.info("[ArkUX_Stage_TimePicker_ComponentTest_0500] digitalCrownSensitivity: " + JSON.stringify(obj.$attrs.digitalCrownSensitivity));

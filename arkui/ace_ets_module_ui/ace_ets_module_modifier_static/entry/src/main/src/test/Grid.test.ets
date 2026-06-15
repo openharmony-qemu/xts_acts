@@ -427,7 +427,7 @@ it('GridJsunit_static_0120', Level.LEVEL0, async (done: () => void): Promise<voi
 it('GridJsunit_static_0119', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridJsunit_static_0119 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('grid' + '_changeButton')) as Promise<Component>);
       console.info('GridJsunit_static_0119 findComponent');
       await button.click();
       console.info('GridJsunit_static_0119 click');

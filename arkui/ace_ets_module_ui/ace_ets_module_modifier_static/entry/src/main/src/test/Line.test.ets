@@ -103,7 +103,7 @@ it('testLineNeStatic00072', Level.LEVEL0, async (done: () => void): Promise<void
 it('testLineNeStatic00073', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testLineNeStatic00073 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('line' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

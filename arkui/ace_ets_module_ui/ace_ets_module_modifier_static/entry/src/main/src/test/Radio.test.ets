@@ -107,7 +107,7 @@ it('testRadioGroupStatic002', Level.LEVEL0, async (done: () => void): Promise<vo
 it('testRadioGroupStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testRadioGroupStatic003 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('radio' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
 

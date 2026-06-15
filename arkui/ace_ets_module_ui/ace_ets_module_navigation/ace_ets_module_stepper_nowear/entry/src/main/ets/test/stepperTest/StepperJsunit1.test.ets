@@ -63,7 +63,7 @@ export default function stepperJsunit1() {
         console.error("push stepper page error " + JSON.stringify(err));
       }
       await sleep(1);
-      let strJson: string = getInspectorByKey('stepper');
+      let strJson: string = getInspectorByKey('Stepper1' + '_stepper');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[stepper] get inspector value is: " + JSON.stringify(obj));
       expect(obj.$type).assertEqual('Stepper');

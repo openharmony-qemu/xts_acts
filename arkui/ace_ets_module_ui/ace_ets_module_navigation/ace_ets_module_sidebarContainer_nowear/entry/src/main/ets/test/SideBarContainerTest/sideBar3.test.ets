@@ -55,7 +55,7 @@ export default function sideBarShowSideBarJsunit() {
     it('testsideBarShowSideBar0001',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0001 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('SideBarContainer');
+      let strJson = getInspectorByKey('sideBar3' + '_SideBarContainer');
       console.info("[testsideBarShowSideBar0001] component showSideBar strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('SideBarContainer');
@@ -75,7 +75,7 @@ export default function sideBarShowSideBarJsunit() {
     it('testsideBarShowSideBar0002',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0002 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('SideBarContainer');
+      let strJson = getInspectorByKey('sideBar3' + '_SideBarContainer');
       console.info("[testsideBarShowSideBar0002] component autoHide strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('SideBarContainer');
@@ -95,7 +95,7 @@ export default function sideBarShowSideBarJsunit() {
     it('testsideBarShowSideBar0003',  Level.LEVEL0, async () => {
       console.info('sideBarShowSideBar testsideBarShowSideBar0003 START');
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('SideBarContainer');
+      let strJson = getInspectorByKey('sideBar3' + '_SideBarContainer');
       console.info("[testsideBarShowSideBar0003] component autoHide strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('SideBarContainer');

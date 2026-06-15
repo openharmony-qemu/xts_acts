@@ -74,7 +74,7 @@ export default function textPickerOnChangeModifierTest() {
         await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
         Math.round(0));
         await Utils.sleep(5000);
-        let strJsonNew:string = getInspectorByKey('onChangeOff');
+        let strJsonNew:string = getInspectorByKey('textPickerOnChangeModifier' + '_onChangeOff');
         console.info("TextPicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
           .$attrs));
         expect(JSON.parse(strJsonNew).$attrs.content).assertEqual('true');

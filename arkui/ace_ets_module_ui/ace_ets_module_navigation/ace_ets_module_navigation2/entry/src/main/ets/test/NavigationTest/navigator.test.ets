@@ -55,7 +55,7 @@ export default function navigatorTargetJsunit() {
     it('testnavigatorTarget0001',  Level.LEVEL0, async () => {
       console.info('navigatorTarget testnavigatorTarget0001 START');
       await Utils.sleep(2000);
-      let strJson: string = getInspectorByKey('Navigator');
+      let strJson: string = getInspectorByKey('navigator2' + '_Navigator');
       console.info("[testnavigatorTarget0001] component strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Navigator');

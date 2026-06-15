@@ -176,7 +176,7 @@ it('TextClock_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
 it('TextClock_static_0601', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextClock_static_0601 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('textClockPage' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('TextClockKey1'); //测试组件的key名称

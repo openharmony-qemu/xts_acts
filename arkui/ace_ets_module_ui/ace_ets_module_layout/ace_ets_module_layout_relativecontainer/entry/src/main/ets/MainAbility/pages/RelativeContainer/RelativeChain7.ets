@@ -56,12 +56,12 @@ struct RelativeChain7 {
 
       Row() {
         Button('SPREAD_INSIDE')
-          .key('RelativeChainBt_1')
+          .key('RelativeChain7_RelativeChainBt_1')
           .onClick(() => {
             this.RelativeChain = ChainStyle.SPREAD_INSIDE
           })
         Button('PACKED')
-          .key('RelativeChainBt_2')
+          .key('RelativeChain7_RelativeChainBt_2')
           .onClick(() => {
             this.RelativeChain = ChainStyle.PACKED
           })

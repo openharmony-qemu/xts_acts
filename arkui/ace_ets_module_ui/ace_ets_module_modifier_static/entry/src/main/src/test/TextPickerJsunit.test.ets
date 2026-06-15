@@ -186,7 +186,7 @@ it('ArkUI_textpicker_static_001', Level.LEVEL0, async (done: () => void): Promis
 it('ArkUI_textpicker_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_011] START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('textPicker' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJson = inspector.getInspectorByKey('textPicker');

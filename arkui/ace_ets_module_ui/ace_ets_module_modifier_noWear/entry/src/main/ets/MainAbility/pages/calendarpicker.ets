@@ -36,7 +36,7 @@ struct CalendarPickerExample {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("calendarpicker_changeButton")
 
       CalendarPicker({ selected: this.selectedDate })
         .key('CalendarPickerKey1')

@@ -65,9 +65,9 @@ export default function SideBarContainerType_DefaultValue1() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(Math.abs(SideBar_01.left - SideBarContainer_01.left) <= 1).assertTrue();
@@ -103,9 +103,9 @@ export default function SideBarContainerType_DefaultValue1() {
       })
       await CommonFunc.sleep(500);
       console.log("get Initial value")
-      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_SideBar_01');
-      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_sideBarContent_01');
-      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1_SideBarContainer_01');
+      let SideBar_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_SideBar_01');
+      let sideBarContent_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_sideBarContent_01');
+      let SideBarContainer_01: RectValue = CommonFunc.getComponentRect('SideBarContainerType_DefaultValue1' + '_SideBarContainer_01');
 
       console.log("assert position")
       expect(SideBar_01.left).assertEqual(SideBarContainer_01.left);
@@ -121,7 +121,7 @@ export default function SideBarContainerType_DefaultValue1() {
       expect(Math.abs(Math.round(sideBarContent_01.right - sideBarContent_01.left) - Math.round(vp2px(600))) <= 1).assertTrue();
       console.log("sideBarContent_01.right - sideBarContent_01.left" + (sideBarContent_01.right - sideBarContent_01.left))
 
-      let strJson1 = getInspectorByKey('SideBarContainerType_DefaultValue1_SideBarContainer_01');
+      let strJson1 = getInspectorByKey('SideBarContainerType_DefaultValue1' + '_SideBarContainer_01');
 
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson1).$attrs.type).assertEqual('SideBarContainerType.OVERLAY');

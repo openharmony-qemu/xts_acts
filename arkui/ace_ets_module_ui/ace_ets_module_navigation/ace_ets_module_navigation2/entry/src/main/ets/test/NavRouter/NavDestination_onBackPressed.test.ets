@@ -66,7 +66,7 @@ export default function NavDestination_onBackPressed() {
 
       await driver.triggerKey(2);
       await CommonFunc.sleep(300);
-      let text1 = getInspectorByKey('NavDestination_onBackPressed_text1');
+      let text1 = getInspectorByKey('NavDestination_onBackPressed' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('{"number":1}');
 
       console.info('[NavDestination_onBackPressed_0100] END');

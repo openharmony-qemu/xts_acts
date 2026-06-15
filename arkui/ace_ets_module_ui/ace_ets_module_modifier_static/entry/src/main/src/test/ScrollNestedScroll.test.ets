@@ -83,7 +83,7 @@ export default function scrollNestedScrollJsunit() {
 it('ArkUI_Stage_scrollNestedScroll_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] START');
      await UtilsTest.msSleep(2000)
-      let webRect = Utils.getComponentRect('ColumnSize');
+      let webRect = Utils.getComponentRect('scrollNestedScroll' + '_ColumnSize');
       console.info(`ArkUI_Stage_scrollNestedScroll_static_01 get webRect is:` + JSON.stringify(webRect));
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))

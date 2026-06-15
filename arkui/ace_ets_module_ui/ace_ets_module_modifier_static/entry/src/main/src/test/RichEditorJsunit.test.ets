@@ -85,7 +85,7 @@ it('richEditorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<
 it('richEditorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('richEditorTest_static_001 START');
       let driver = Driver.create();
-      let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button =  await (driver.findComponent(ON.id('richEditor' + '_changeButton')) as Promise<Component>);
       await button.click();
      await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('richEditor'); //测试组件的key名称

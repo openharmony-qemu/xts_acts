@@ -97,7 +97,7 @@ struct BlankExample {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
                 (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("divider_changeButton")
 
       Column() {
         Text('Horizontal divider111').fontSize(9).backgroundColor(Color.Gray)

@@ -60,12 +60,12 @@ struct TimePickerExample {
         .key('timepicker04')
 
       TimePicker({})
-        .key('timepicker05')
+        .key('TimePicker_timepicker05_01')
         .defaultFocus(false)
         .digitalCrownSensitivity(-1)
 
       TimePicker({})
-        .key('timepicker05')
+        .key('TimePicker_timepicker05_02')
         .defaultFocus(false)
         .digitalCrownSensitivity(-1)
 

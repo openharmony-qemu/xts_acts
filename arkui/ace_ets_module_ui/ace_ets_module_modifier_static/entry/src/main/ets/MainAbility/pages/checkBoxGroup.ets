@@ -54,7 +54,7 @@ struct TestCheckboxGroupPage {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("checkBoxGroup_changeButton")
 
       CheckboxGroup({ group: 'checkboxGroup' })
         .key('checkboxNO')

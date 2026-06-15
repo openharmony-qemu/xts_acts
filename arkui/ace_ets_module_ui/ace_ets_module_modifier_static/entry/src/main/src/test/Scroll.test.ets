@@ -233,7 +233,7 @@ it('testScrollStatic0010', Level.LEVEL0, async (done: () => void): Promise<void>
 it('testScrollStatic0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testScrollStatic0011 START');
       let driver = Driver.create();
-      let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
+      let button = await (driver.findComponent(ON.id('scroll' + '_changeButton')) as Promise<Component>);
       await button.click();
       await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('ScrollKey1');

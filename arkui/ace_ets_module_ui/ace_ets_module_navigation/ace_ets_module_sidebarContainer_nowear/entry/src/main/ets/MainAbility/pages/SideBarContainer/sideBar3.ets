@@ -56,7 +56,7 @@ struct SideBarShowSideBar {
         }.justifyContent(FlexAlign.Center)
       }.width('100%')
     }
-    .key('SideBarContainer')
+    .key('sideBar3_SideBarContainer')
     .showSideBar(true)
     .autoHide(false)
     .sideBarWidth(240)

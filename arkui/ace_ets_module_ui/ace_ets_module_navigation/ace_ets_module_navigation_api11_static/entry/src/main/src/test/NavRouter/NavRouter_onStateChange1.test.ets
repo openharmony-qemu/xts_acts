@@ -78,7 +78,7 @@ it('NavRouter_onStateChange1_static_0100', Level.LEVEL0, async (done: () => void
       await btn1.click();
       await CommonFunc.sleep(1000);
 
-      let text1 = inspector.getInspectorByKey('NavRouter_onStateChange1_text1');
+      let text1 = inspector.getInspectorByKey('NavRouter_onStateChange1' + '_text1');
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('[NavRouter_onStateChange1_static_0100] END');
       done();

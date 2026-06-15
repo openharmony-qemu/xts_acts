@@ -71,7 +71,7 @@ export default function NavRouterJsunit() {
       let text1 = await stateChange.getText();
       console.info("[NavRouterJsunit_0100] text1: " + JSON.stringify(text1));
       expect(text1 == 'stateChange true').assertTrue();
-      let textComponent = await scrollBar.scrollSearch(ON.id('textContent'));
+      let textComponent = await scrollBar.scrollSearch(ON.id('NavRouterPage' + '_textContent'));
       let text2 = await textComponent.getText();
       console.info("[NavRouterJsunit_0100] text2: " + JSON.stringify(text2));
       expect(text2 == 'Hello').assertTrue();

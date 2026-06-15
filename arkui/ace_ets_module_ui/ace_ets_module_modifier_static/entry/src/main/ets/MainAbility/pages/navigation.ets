@@ -57,7 +57,7 @@ struct NavigationPage {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("navigation_changeButton")
       Navigation({}) {
         Navigation({}) {
           Row() {
