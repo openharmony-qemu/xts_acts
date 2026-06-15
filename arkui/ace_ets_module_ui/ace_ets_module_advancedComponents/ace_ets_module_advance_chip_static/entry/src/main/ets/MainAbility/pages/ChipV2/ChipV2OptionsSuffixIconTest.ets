@@ -14,20 +14,45 @@
  * limitations under the License.
  */
 
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,
+import {
+  Entry,
+  ComponentV2,
+  Scroll,
+  Column,
+  ColumnOptions,
+  Text,
+  Row,
+  FontWeight,
+  LocalizedPadding,
+  ShadowStyle,
+  BlurStyle,
+  FlexAlign,
   ClickEvent,
   $r,
   Color,
   LengthMetrics
 } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
-import { ChipV2, ChipV2Options, ChipV2Size, ChipV2PrefixImageIcon, ChipV2SuffixImageIcon,
-  ChipV2Label, ChipV2LabelConfig, ChipV2LabelMarginConfig, ChipV2LocalizedLabelMarginConfig,
-  ChipV2PrefixImageIconConfig, ChipV2SuffixImageIconConfig, ChipV2ImageIconConfig, ColorMetrics, SizeT } from '@kit.ArkUI'
+import {
+  ChipV2,
+  ChipV2Options,
+  ChipV2Size,
+  ChipV2PrefixImageIcon,
+  ChipV2SuffixImageIcon,
+  ChipV2Label,
+  ChipV2LabelConfig,
+  ChipV2LabelMarginConfig,
+  ChipV2LocalizedLabelMarginConfig,
+  ChipV2PrefixImageIconConfig,
+  ChipV2SuffixImageIconConfig,
+  ChipV2ImageIconConfig,
+  ColorMetrics,
+  SizeT
+} from '@kit.ArkUI'
+
 @Entry
 @ComponentV2
 struct ChipV2OptionsSuffixIconExample {
-
   build() {
     Column({ space: 20 } as ColumnOptions) {
       ChipV2({
@@ -52,12 +77,14 @@ struct ChipV2OptionsSuffixIconExample {
             activatedFontColor: undefined,
             fontFamily: undefined,
             labelMargin: undefined,
-            localizedLabelMargin: undefined }) as ChipV2Label,
+            localizedLabelMargin: undefined
+          }) as ChipV2Label,
           suffixIcon: new ChipV2SuffixImageIcon({
             src: $r('app.media.icon'),
             size: { width: LengthMetrics.vp(16), height: LengthMetrics.vp(16) } as SizeT<LengthMetrics>,
             fillColor: ColorMetrics.resourceColor(Color.Red),
-            action: () => {},
+            action: () => {
+            },
             accessibilityText: 'accessibilityText',
             accessibilityDescription: 'accessibilityDescription',
             accessibilityLevel: 'yes'
@@ -77,7 +104,8 @@ struct ChipV2OptionsSuffixIconExample {
             activatedFontColor: undefined,
             fontFamily: undefined,
             labelMargin: undefined,
-            localizedLabelMargin: undefined }) as ChipV2Label,
+            localizedLabelMargin: undefined
+          }) as ChipV2Label,
           suffixIcon: undefined,
         })
       })

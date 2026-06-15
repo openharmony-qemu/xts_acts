@@ -15,8 +15,31 @@
  */
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import inspector from '@ohos.arkui.inspector';
-import { Entry, Column, ComponentV2, Color, $r, ColumnOptions, ChipV2, ChipV2Options, ChipV2Label, ChipV2PrefixImageIcon,ChipV2LabelConfig,Button,Text,ChipV2Size,
-  ChipV2SuffixImageIcon, LengthMetrics, ColorMetrics, Local,ChipV2PrefixImageIcon,ChipV2SuffixSymbolIcon,ChipV2PrefixSymbolIcon,ChipV2PrefixSymbolIconConfig,ChipV2SuffixSymbolIconConfig} from '@kit.ArkUI';
+import {
+  Entry,
+  Column,
+  ComponentV2,
+  Color,
+  $r,
+  ColumnOptions,
+  ChipV2,
+  ChipV2Options,
+  ChipV2Label,
+  ChipV2PrefixImageIcon,
+  ChipV2LabelConfig,
+  Button,
+  Text,
+  ChipV2Size,
+  ChipV2SuffixImageIcon,
+  LengthMetrics,
+  ColorMetrics,
+  Local,
+  ChipV2PrefixImageIcon,
+  ChipV2SuffixSymbolIcon,
+  ChipV2PrefixSymbolIcon,
+  ChipV2PrefixSymbolIconConfig,
+  ChipV2SuffixSymbolIconConfig
+} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
@@ -62,21 +85,22 @@ struct ChipV2Api1 {
           backgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_button_normal')),
           activatedBackgroundColor: ColorMetrics.resourceColor("#FFFF0000"),
           borderRadius: LengthMetrics.resource($r('sys.float.ohos_id_corner_radius_button')),
-          onClose:()=>{
+          onClose: () => {
             console.log('chip on close')
           },
-          onClicked:()=>{
+          onClicked: () => {
             console.log('chip on clicked')
           },
         })
       })
 
 
-      Button('getInspectorTree').onClick(()=>{
+      Button('getInspectorTree').onClick(() => {
         let text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getElement('$attrs').getString('backgroundColor')
+          .getArray('$children')[0]
+          .getArray('$children')[0]
+          .getElement('$attrs')
+          .getString('backgroundColor')
         this.text1 = text
       }).id('ChipV2Api1_btn1')
 

@@ -13,11 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Row, ComponentV2, Color, $r, ColumnOptions, Direction, Button, Text, LengthMetrics, FlexAlign } from '@ohos.arkui.component';
+import {
+  Entry,
+  Column,
+  Row,
+  ComponentV2,
+  Color,
+  $r,
+  ColumnOptions,
+  Direction,
+  Button,
+  Text,
+  LengthMetrics,
+  FlexAlign
+} from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
-import { ChipV2, ChipV2Size, ChipV2PrefixImageIcon, ChipV2SuffixImageIcon, ChipV2Options, ChipV2Label, 
-  ChipV2PrefixImageIconConfig, ChipV2SuffixImageIconConfig, ChipV2ImageIconConfig, ChipV2LabelConfig,
-  ChipV2LocalizedLabelMarginConfig, ColorMetrics, SizeT } from '@kit.ArkUI';
+import {
+  ChipV2,
+  ChipV2Size,
+  ChipV2PrefixImageIcon,
+  ChipV2SuffixImageIcon,
+  ChipV2Options,
+  ChipV2Label,
+  ChipV2PrefixImageIconConfig,
+  ChipV2SuffixImageIconConfig,
+  ChipV2ImageIconConfig,
+  ChipV2LabelConfig,
+  ChipV2LocalizedLabelMarginConfig,
+  ColorMetrics,
+  SizeT
+} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2

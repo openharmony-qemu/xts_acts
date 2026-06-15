@@ -16,14 +16,29 @@
 import { Entry, Column, Row, ComponentV2, Color, $r, ColumnOptions, Direction, Button } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-import { ChipV2, ChipV2Size, ChipV2PrefixImageIcon, ChipV2SuffixImageIcon, ChipV2Options, ChipV2Label, 
-  ChipV2PrefixSymbolIcon, ChipV2PrefixImageIconConfig, ChipV2SuffixImageIconConfig, 
-  ChipV2ImageIconConfig, ChipV2LabelConfig, ChipV2PrefixSymbolIconConfig, ColorMetrics, SizeT,LengthMetrics } from '@kit.ArkUI';
+import {
+  ChipV2,
+  ChipV2Size,
+  ChipV2PrefixImageIcon,
+  ChipV2SuffixImageIcon,
+  ChipV2Options,
+  ChipV2Label,
+  ChipV2PrefixSymbolIcon,
+  ChipV2PrefixImageIconConfig,
+  ChipV2SuffixImageIconConfig,
+  ChipV2ImageIconConfig,
+  ChipV2LabelConfig,
+  ChipV2PrefixSymbolIconConfig,
+  ColorMetrics,
+  SizeT,
+  LengthMetrics
+} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
 struct ChipV2PrefixIconPage {
   @Local isActivated: boolean = false;
+
   build() {
     Column({ space: 5 } as ColumnOptions) {
       ChipV2({
@@ -96,7 +111,10 @@ struct ChipV2PrefixIconPage {
         chipV2Options: new ChipV2Options({
           prefixIcon: new ChipV2PrefixImageIcon({
             src: $r('sys.media.ohos_ic_public_cut'),
-            size: { width: LengthMetrics.resource($r('app.float.icon_size')), height: LengthMetrics.resource($r('app.float.icon_size')) },
+            size: {
+              width: LengthMetrics.resource($r('app.float.icon_size')),
+              height: LengthMetrics.resource($r('app.float.icon_size'))
+            },
             fillColor: ColorMetrics.resourceColor($r('sys.color.chip_usually_icon_color')),
             activatedFillColor: ColorMetrics.resourceColor($r('sys.color.chip_active_icon_color'))
           }) as ChipV2PrefixImageIcon,
@@ -140,7 +158,7 @@ struct ChipV2PrefixIconPage {
         })
       })
 
-      Row(){
+      Row() {
         Button('activated: true').id('ChipV2PrefixIcon_isActivated_true')
           .onClick(() => {
             this.isActivated = true;

@@ -41,7 +41,7 @@ import {
 @Entry
 @ComponentV2
 struct ChipGroupV2ItemOptionsPage {
-  @Local selected_index: Array<Int> = [0, 1, 2, 3, 4, 5, 6];
+  @Local selectedIndex: Array<Int> = [0, 1, 2, 3, 4, 5, 6];
 
   build() {
     Column() {
@@ -70,7 +70,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: 10, bottom: 10 }),
@@ -108,7 +108,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: 10, bottom: 10 }),
@@ -136,7 +136,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: 10, bottom: 10 }),
@@ -158,7 +158,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, startSpace: '20vp', endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: '20vp', bottom: '20vp' }),
@@ -180,7 +180,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, startSpace: 20, endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: 20, bottom: 20 }),
@@ -203,7 +203,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, startSpace: undefined, endSpace: 0 }),
         chipGroupPadding: undefined,
@@ -226,7 +226,7 @@ struct ChipGroupV2ItemOptionsPage {
           selectedBackgroundColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_emphasize')),
           selectedFontColor: ColorMetrics.resourceColor($r('sys.color.ohos_id_color_text_primary_contrary')),
         }),
-        selectedIndexes: this.selected_index,
+        selectedIndexes: this.selectedIndex,
         multiple: false,
         chipGroupSpace: new ChipGroupV2Space({ itemSpace: 8, startSpace: '', endSpace: 0 }),
         chipGroupPadding: new ChipGroupV2Padding({ top: '', bottom: '' }),

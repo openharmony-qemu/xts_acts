@@ -14,7 +14,19 @@
  * limitations under the License.
  */
 
-import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign,
+import {
+  Entry,
+  ComponentV2,
+  Scroll,
+  Column,
+  ColumnOptions,
+  Text,
+  Row,
+  FontWeight,
+  LocalizedPadding,
+  ShadowStyle,
+  BlurStyle,
+  FlexAlign,
   ClickEvent,
   $r,
   Color,
@@ -22,14 +34,21 @@ import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Text, Row, FontWeigh
   Button
 } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
-import { ChipV2, ChipV2Options, ChipV2Size, ChipV2PrefixImageIcon,
-  ChipV2Label, ChipV2PrefixImageIconConfig, ChipV2ImageIconConfig, ColorMetrics } from '@kit.ArkUI';
+import {
+  ChipV2,
+  ChipV2Options,
+  ChipV2Size,
+  ChipV2PrefixImageIcon,
+  ChipV2Label,
+  ChipV2PrefixImageIconConfig,
+  ChipV2ImageIconConfig,
+  ColorMetrics
+} from '@kit.ArkUI';
 
 
 @Entry
 @ComponentV2
 struct ChipV2OptionsPaddingExample {
-
   build() {
     Column({ space: 20 } as ColumnOptions) {
       ChipV2({
