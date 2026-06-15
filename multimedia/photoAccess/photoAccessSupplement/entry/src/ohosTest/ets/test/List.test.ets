@@ -120,6 +120,7 @@ export default function testsuite() {
   sendablePhotoAccessHelperCreateAssetTest();
   PhotoAccessHelperRequestPhotoUrisReadPermissionSupp();
   PhotoAccessAPIEnumSupplementTest();
+  photoExtraSuppTest();
   PhotoShowAssetsFetchResultTest();
   PhotoAccessHelperReadonlyCommentSupp();
   photoFetchResultGetObjectByPositionTestSupp();
@@ -129,5 +130,4 @@ export default function testsuite() {
   requestImageTest();
   PhotoSetTitleTestSupp();
   PhotoGetAssetsTestSupp();
-  photoExtraSuppTest();
 }
