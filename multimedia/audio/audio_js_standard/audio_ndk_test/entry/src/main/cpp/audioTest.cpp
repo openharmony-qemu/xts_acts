@@ -11761,11 +11761,11 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCELLULARRECORDSECUR
 static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100(
     napi_env env, napi_callback_info info)
 {
-    int32_t AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK_TEST = 22;
+    int32_t audiostreamSourceTypeVoiceDownlinkTest = 22;
     OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK;
     LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSOURCTYPE_VOICEDOWNLINK_ENUM_0100, sourceType is: %{public}d", sourceType);
     napi_value res;
-    if (sourceType == AUDIOSTREAM_SOURCE_TYPE_VOICE_DOWNLINK_TEST) {
+    if (sourceType == audiostreamSourceTypeVoiceDownlinkTest) {
         napi_create_int32(env, TEST_PASS, &res);
     } else {
         napi_create_int32(env, TEST_FAIL, &res);
