@@ -100,6 +100,9 @@ struct DragEvent {
               if (err) {
                 AppStorage.setOrCreate('executeDrag10001', err.code)
               }
+              else {
+                AppStorage.setOrCreate('executeDrag10001', '100001')
+              }
             })
           }
           try {
