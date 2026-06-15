@@ -135,7 +135,7 @@ export default class Utils {
   static getComponentRect(key: string): RectInfo {
     let strJson: string = inspector.getInspectorByKey(key);
     //let strJson: string = getInspectorByKey(key);
-    let obj: ComponentInfo = JSON.parse<ComponentInfo>(strJson, Type.of(new ComponentInfo()))!;
+    let obj: ComponentInfo = JSON.parse<ComponentInfo>(strJson, Class.from<ComponentInfo>())!;
     console.info('[getInspectorByKey] key is: ' + key);
     return Utils.getComponentRectByObj(obj);
   }
@@ -150,12 +150,12 @@ export default class Utils {
 
   static getComponentRectByObj(obj: ComponentInfo): RectInfo {
     console.info('[getInspectorByKey] current component is: ' + obj.$type);
-    let rectInfo: Object[] = JSON.parse<Object[]>('[' + obj.$rect + ']', Type.of([] as Object[]))!;
+    let rectInfo: Object[] = JSON.parse<Object[]>('[' + obj.$rect + ']', Class.from<Object[]>())!;
     let rect_value: RectInfo = {
-      left: (JSON.parse<number[]>('[' + rectInfo[0] + ']', Type.of([] as number[]))!)[0],
-      top: (JSON.parse<number[]>('[' + rectInfo[0] + ']', Type.of([] as number[]))!)[1],
-      right: (JSON.parse<number[]>('[' + rectInfo[1] + ']', Type.of([] as number[]))!)[0],
-      bottom: (JSON.parse<number[]>('[' + rectInfo[1] + ']', Type.of([] as number[]))!)[1]
+      left: (JSON.parse<number[]>('[' + rectInfo[0] + ']', Class.from<number[]>())!)[0],
+      top: (JSON.parse<number[]>('[' + rectInfo[0] + ']', Class.from<number[]>())!)[1],
+      right: (JSON.parse<number[]>('[' + rectInfo[1] + ']', Class.from<number[]>())!)[0],
+      bottom: (JSON.parse<number[]>('[' + rectInfo[1] + ']', Class.from<number[]>())!)[1]
     } as RectInfo;
     console.info(JSON.stringify(rect_value));
     return rect_value;

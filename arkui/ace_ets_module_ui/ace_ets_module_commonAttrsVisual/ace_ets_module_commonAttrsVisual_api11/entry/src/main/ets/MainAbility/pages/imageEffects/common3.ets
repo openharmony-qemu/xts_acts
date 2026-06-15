@@ -52,7 +52,7 @@ struct CommonBackgroundBlurStyle {
       keyDownDuration: 0,
       isIntercepted: false
     }
-    let res1 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
+    
 
     let keyEventUp: inputEventClient.KeyEvent = {
       isPressed: false,
@@ -60,26 +60,9 @@ struct CommonBackgroundBlurStyle {
       keyDownDuration: 0,
       isIntercepted: false
     }
-    let res2 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
+    
   }
 
-  buttonOnKey() {
-    let keyEventDown: inputEventClient.KeyEvent = {
-      isPressed: true,
-      keyCode: 2054,
-      keyDownDuration: 0,
-      isIntercepted: false
-    }
-    let res3 = inputEventClient.injectEvent({ KeyEvent: keyEventDown });
-
-    let keyEventUp: inputEventClient.KeyEvent = {
-      isPressed: false,
-      keyCode: 2054,
-      keyDownDuration: 0,
-      isIntercepted: false
-    }
-    let res4 = inputEventClient.injectEvent({ KeyEvent: keyEventUp });
-  }
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -168,24 +151,6 @@ struct CommonBackgroundBlurStyle {
         .textOverflow({ overflow: TextOverflow.None })
         .key("onKeyEventText")
 
-      Button('common-OnKeyEvent')
-        .onClick(() => {
-          this.buttonTab()
-          this.buttonOnKey()
-        })
-        .key("onKeyEventButton")
-        .onKeyEvent((event: KeyEvent) => {
-          if (event.keyCode === 2054) {
-            console.info("onKeyEvent 2054 inject Success ");
-          }
-          if (event.type === KeyType.Down) {
-            Log.showInfo(TAG, `Down`)
-          }
-          if (event.type === KeyType.Up) {
-            Log.showInfo(TAG, `Up`)
-          }
-          Log.showInfo(TAG, 'KeyType:' + event.type + ';keyCode:' + event.keyCode + ';keyText:' + event.keyText)
-        })
 
       Text("common-TabIndex")
         .width(320)

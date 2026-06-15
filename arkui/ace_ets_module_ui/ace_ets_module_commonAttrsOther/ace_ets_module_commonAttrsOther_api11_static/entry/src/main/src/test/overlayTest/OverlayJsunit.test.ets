@@ -98,7 +98,7 @@ export default function overLayJsunit() {
 it('testOverlay_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testOverlay01] START');
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay01] JSON.parseJsonElement(strJson) is: " +
@@ -151,7 +151,7 @@ it('testOverlay_static_02', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay02] JSON.parseJsonElement(strJson) is: " +
@@ -190,7 +190,7 @@ it('testOverlay_static_03', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay03] JSON.parseJsonElement(strJson) is: " +
@@ -242,7 +242,7 @@ it('testOverlay_static_04', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay04] JSON.parseJsonElement(strJson) is: " +
@@ -281,7 +281,7 @@ it('testOverlay_static_05', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay05] JSON.parseJsonElement(strJson) is: " +
@@ -321,7 +321,7 @@ it('testOverlay_static_06', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay06] JSON.parseJsonElement(strJson) is: " +
@@ -367,7 +367,7 @@ it('testOverlay_static_07', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
 
       console.info("[testOverlay07] JSON.parseJsonElement(strJson) is: " +
@@ -407,7 +407,7 @@ it('testOverlay_static_08', Level.LEVEL0, async (done: () => void): Promise<void
         console.log("[testOverlay08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('overlay');
+      let strJson = inspector.getInspectorByKey('overlay_overlay');
       await CommonFunc.sleep(2000);
       console.info("[testOverlay08] JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('overlay')));

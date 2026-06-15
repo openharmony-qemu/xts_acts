@@ -105,5 +105,25 @@ export default function ActsAceWebViewSetScrollbarMode() {
       done();
     });
 
+    /**
+     * @tc.name   testSetScrollbarMode003
+     * @tc.number SUB_WEB_SETSCROLLBARMODE_0300
+     * @tc.desc   SetScrollbarMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollbarMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async  (done: Function) =>{
+      emitKey = 'emitSetScrollbarMode003';
+      tcName = 'testSetScrollbarMode003'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, 2, 20260525, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebViewSetScrollbarModeButton", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
+    });
+
+
   })
 }

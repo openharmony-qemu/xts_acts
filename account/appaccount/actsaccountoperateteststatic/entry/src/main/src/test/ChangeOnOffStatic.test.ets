@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let tag: string = 'testTag';
 let gContext: common.UIAbilityContext;
 
-export default function ActsAccountOnOffStatic() {
+export default function ActsAccountOnOffStatic(): void {
   describe('ActsAccountOnOffStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");
@@ -56,7 +56,12 @@ export default function ActsAccountOnOffStatic() {
     beforeAll(async (): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsaccountoperatetest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.actsaccountoperatetest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
     });

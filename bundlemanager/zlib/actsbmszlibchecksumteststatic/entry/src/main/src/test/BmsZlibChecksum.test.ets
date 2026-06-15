@@ -88,7 +88,7 @@ export default function bmsZlibChecksumTest() {
       try {
         hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_06 start`);
         let checksum: zlib.Checksum = zlib.createChecksumSync();
-        checksum.getCrcTable().then((data: Array<long>): Promise<Array<long>> =>{
+        checksum.getCrcTable().then((data: Array<long>): void =>{
           hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_06 getCrcTable data : ` + JSON.stringify(data));
           expect(checksum).not().assertUndefined();
           done();
@@ -117,7 +117,7 @@ export default function bmsZlibChecksumTest() {
         try {
           hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_08 start`);
           let checksum: zlib.Checksum = zlib.createChecksumSync();
-          await checksum.getCrcTable().then((data: Array<long>): Promise<Array<long>> => {
+          await checksum.getCrcTable().then((data: Array<long>): void => {
             hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_08 getCrcTable data : ` + JSON.stringify(data));
             expect(data.length > 0).assertTrue();
             done();
@@ -147,7 +147,7 @@ export default function bmsZlibChecksumTest() {
         try {
           hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_07 start`);
           let checksum: zlib.Checksum = zlib.createChecksumSync();
-          await checksum.getCrcTable().then((data: Array<long>): Promise<Array<long>> => {
+          await checksum.getCrcTable().then((data: Array<long>): void => {
             hilog.info(Domain, TAG, `ACTS_ChecksumTest_static_07 getCrcTable data : ` + JSON.stringify(data));
             expect(data.length !== 0).assertTrue();
             done();

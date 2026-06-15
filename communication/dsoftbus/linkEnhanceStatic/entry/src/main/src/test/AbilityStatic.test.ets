@@ -127,7 +127,12 @@ export default function LinkEnhanceAPI() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       hilog.info(domain, tag, 'getPermission beforeAll');
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.linkenhancetest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.linkenhancetest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(5000);
       await requestPermission();
       await Utils.msSleep(3000);

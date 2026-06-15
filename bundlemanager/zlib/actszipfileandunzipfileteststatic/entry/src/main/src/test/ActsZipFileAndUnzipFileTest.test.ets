@@ -39,7 +39,12 @@ export default function ActsZlibTest() {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'ActsZlibTest abilityDelegator success');
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.amsZipfileUnzipfileST.static");
+      let cmd = "aa start -a EntryAbility -b com.example.amsZipfileUnzipfileST.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(3000);
       let dirAll = AppStorage.get<string>("dir");
       if(dirAll) {

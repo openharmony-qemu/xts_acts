@@ -93,7 +93,7 @@ it('ProvideArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ProvideArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('ProvideArray_state1'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideArray');
@@ -116,7 +116,7 @@ it('ProvideArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ProvideArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('ProvideArray_state2'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideArray');
@@ -139,7 +139,7 @@ it('ProvideArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ProvideArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state3'));
+      let button = await driver.findComponent(ON.id('ProvideArray_state3'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideArray');
@@ -162,7 +162,7 @@ it('ProvideArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ProvideArray_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state4'));
+      let button = await driver.findComponent(ON.id('ProvideArray_state4'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideArrayNew');

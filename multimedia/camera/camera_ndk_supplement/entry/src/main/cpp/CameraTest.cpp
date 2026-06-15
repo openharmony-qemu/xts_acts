@@ -1024,6 +1024,9 @@ Camera_ErrorCode NDKCamera::SessionGetSupportedEffectTypes(int32_t type)
     if (type == CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING) {
         checkType = CONTROL_CENTER_EFFECT_TYPE_AUTO_FRAMING;
     }
+    if (type == CONTROL_CENTER_EFFECT_TYPE_COLOR_EFFECT) {
+        checkType = CONTROL_CENTER_EFFECT_TYPE_COLOR_EFFECT;
+    }
 
     Camera_ControlCenterEffectType *effectType = new Camera_ControlCenterEffectType[1];
     uint32_t size;

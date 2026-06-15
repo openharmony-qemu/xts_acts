@@ -101,7 +101,7 @@ export default function textAreaInputTest() {
         }
         await CommonFunc.sleep(500);
 
-        textArea1?.dragTo(textArea2!);
+        await textArea1?.dragTo(textArea2!);
         await CommonFunc.sleep(2000);
         console.info('textAreaInputTest0001 dragTo success');
         try {
@@ -134,7 +134,7 @@ export default function textAreaInputTest() {
         } catch (e) {
           console.log('复制 error')
         }
-        textArea1?.dragTo(textArea2!);
+        await textArea1?.dragTo(textArea2!);
         await CommonFunc.sleep(2000);
         try {
           let Text7: Component = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺')) as Component;

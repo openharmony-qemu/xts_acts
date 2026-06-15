@@ -67,7 +67,7 @@ export default function ParticleAnimatorTest() {
     it('ParticleAnimatorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ParticleAnimatorTest_001] START');
       await CommonFunc.sleep(500);
-      let json = getInspectorByKey('particleTest');
+      let json = getInspectorByKey('particleAnimationTest_particleTest');
       console.info('particleAnimatorTest_00_0100 :' + JSON.stringify(json));
       // test whether support the commonAttrs
       console.info('particleAnimatorTest_00_0100 :' + JSON.parse(json).$attrs.borderStyle);

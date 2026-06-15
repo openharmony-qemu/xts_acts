@@ -337,5 +337,85 @@ export default function GraphicParagraphTest() {
         }
       })
 
+    /**
+     * @tc.name   testOrphanCharOptimization_0100
+     * @tc.number SUB_GRAPHIC_Paragraph_testOrphanCharOptimization_0100
+     * @tc.desc   Test ParagraphStyle orphanCharOptimization property explicitly set to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOrphanCharOptimization_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testOrphanCharOptimization_0100===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            orphanCharOptimization: true
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('文本排版时使能孤字优化');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' orphanCharOptimization is true', resultStyle.orphanCharOptimization);
+          expect(resultStyle.orphanCharOptimization).assertEqual(true);
+          console.info(msgStr + ' orphanCharOptimization is explicitly set to true');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testOrphanCharOptimization_0200
+     * @tc.number SUB_GRAPHIC_Paragraph_testOrphanCharOptimization_0200
+     * @tc.desc   Test ParagraphStyle orphanCharOptimization property explicitly set to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOrphanCharOptimization_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testOrphanCharOptimization_0200===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            orphanCharOptimization: false
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('文本排版时不使能孤字优化');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' orphanCharOptimization is false', resultStyle.orphanCharOptimization);
+          expect(resultStyle.orphanCharOptimization).assertEqual(false);
+          console.info(msgStr + ' orphanCharOptimization is explicitly set to false');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }

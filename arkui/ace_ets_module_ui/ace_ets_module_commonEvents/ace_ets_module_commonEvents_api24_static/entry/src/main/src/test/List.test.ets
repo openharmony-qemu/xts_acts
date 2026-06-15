@@ -43,8 +43,13 @@ import getSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.tes
 import setCustomCursorundefined from './setCustomCursor/setCustomCursor_unedfined.test';
 import setCustomCursor from './setCustomCursor/setCustomCursor.test';
 import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test'
+import orphanCharOptimization from './orphanCharOptimization/orphanCharOptimization.test'
+import orphanCharOptimizationundefined from './orphanCharOptimization/orphanCharOptimization_undefined.test'
+import HoveredAttributeTest from './hoveredAttribute/HoveredAttributeTest.test'
+import EnableEventPassthroughTest from './enableEventPassthrough/EnableEventPassthroughTest.test'
 
 export default function testsuite() {
+  HoveredAttributeTest();
   getSizeLimitationTest();
   Marquee();
   DragControllerTest();
@@ -70,9 +75,12 @@ export default function testsuite() {
   getHistoricalPoints_displayY();
   getHistoricalPoints_windowX();
   getHistoricalPoints_windowY();
+  orphanCharOptimization();
   getHistoricalPoints_globalDisplayX();
   getHistoricalPoints_globalDisplayX();
   setCustomCursorundefined();
   setCustomCursor();
   shouldRecognizerParallelWith();
+  orphanCharOptimizationundefined();
+  EnableEventPassthroughTest();
 }

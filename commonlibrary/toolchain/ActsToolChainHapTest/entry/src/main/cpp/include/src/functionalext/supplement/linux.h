@@ -76,4 +76,6 @@ int TimerfdCreateTest();
 int UtimesTest();
 int VmspliceTest();
 int PpollTime64CompatTest();
+int GetprocpidTest();
+
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LINUX_H_H

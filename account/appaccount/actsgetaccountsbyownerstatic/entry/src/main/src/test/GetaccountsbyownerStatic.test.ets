@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ let tag: string = 'testTag';
 
 let gContext: common.UIAbilityContext;
 
-export default function GetAccountsByOwnerStatic() {
+export default function GetAccountsByOwnerStatic(): void {
   describe('GetAccountsByOwnerStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");
@@ -41,7 +41,12 @@ export default function GetAccountsByOwnerStatic() {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, "====>GetAccountsByOwnerStatic beforeAll start====");
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsgetaccountsbyowner.static");
+      let cmd = "aa start -a EntryAbility -b com.example.actsgetaccountsbyowner.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       let want: Want = {
         deviceId: "",

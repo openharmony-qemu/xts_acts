@@ -54,6 +54,7 @@ export default function SliderEnableHapticFeedbackTest() {
       console.info('[SliderAddEnableHapticFeedbackApi_001] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
+      await Utils.sleep(1000);
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_true'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -78,6 +79,7 @@ export default function SliderEnableHapticFeedbackTest() {
       console.info('[SliderAddEnableHapticFeedbackApi_002] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
+      await Utils.sleep(1000);
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_false'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -102,6 +104,7 @@ export default function SliderEnableHapticFeedbackTest() {
       console.info('[SliderAddEnableHapticFeedbackApi_003] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
+      await Utils.sleep(1000);
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_undefied'));
       await trueBtn.click();
       await Utils.sleep(1000);
@@ -126,6 +129,7 @@ export default function SliderEnableHapticFeedbackTest() {
       console.info('[SliderAddEnableHapticFeedbackApi_004] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
+      await Utils.sleep(1000);
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_null'));
       await trueBtn.click();
       await Utils.sleep(1000);

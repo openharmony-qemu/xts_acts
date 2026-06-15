@@ -129,6 +129,7 @@ export default function textTimerJsunit() {
           await CommonFunc.sleep(1000);
           let strJson: string = inspector.getInspectorByKey('textTimer');
           if (true) {
+            expect(strJson).not().assertUndefined();
             done();
             return Promise.resolve();
           }
@@ -141,7 +142,8 @@ export default function textTimerJsunit() {
           // textTimerAttribute.format('hh:mm:ss.ms');
           done();
       } catch (error) {
-        expect().assertFail();
+        console.error("textTimer_static_0300 error:" + error);
+        expect(false).assertEqual(true);
       }
     });
   })

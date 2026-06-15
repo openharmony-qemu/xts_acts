@@ -610,6 +610,29 @@ export default function SymbolSpanFontWeightTest() {
       console.info('[symbolSpanFontWeight_configs_default_0100] END');
     })
 
+
+    /**
+     * @tc.name   symbolSpanFontWeight_configs_null_0100
+     * @tc.number SUB_ARKUI_SYMBOLSPAN_FONTWEIGHT_CONFIGS_0400
+     * @tc.desc   Test SymbolSpan fontWeight property with null fontWeightConfigs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('symbolSpanFontWeight_configs_null_0100', Level.LEVEL2, async () => {
+      console.info('[symbolSpanFontWeight_configs_null_0100] START');
+
+      let strJson: string = getInspectorByKey('symbolSpan_fontWeight_configs_null');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[symbolSpanFontWeight_configs_null_0100] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[symbolSpanFontWeight_configs_null_0100] fontWeight is: " + obj.$attrs.fontWeight);
+
+      expect(obj.$type).assertEqual('SymbolSpan');
+      expect(obj.$attrs.fontWeight).assertEqual('300');
+      console.info('[symbolSpanFontWeight_configs_null_0100] END');
+    })
+
     /**
      * @tc.name   symbolSpanFontWeight_out_range_low_0100
      * @tc.number SUB_ARKUI_SYMBOLSPAN_FONTWEIGHT_RANGE_0100

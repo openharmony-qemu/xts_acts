@@ -100,7 +100,12 @@ export default function SingleKvStoreCallbackTest() {
       try {
         hilog.info(domain, tag, '%{public}s', '================ beforeAll start==========');
         await Utils.msSleep(2000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.kvstoreetstest.static")
+        let cmd = "aa start -a EntryAbility -b com.example.kvstoreetstest.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
 
         // await abilityDelegator.startAbility({
         //   bundleName: 'com.example.kvstoreetstest.static',
@@ -281,7 +286,7 @@ export default function SingleKvStoreCallbackTest() {
         console.info('SingleKvStoreGetStringCallbackTest002');
         try {
           kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT,
-            async (err: Error | null, data: string[] | undefined): void => {
+            (err: Error | null, data: string[] | undefined): void => {
               console.info('SingleKvStoreGetStringCallbackTest002 put success');
               expect(err == undefined).assertTrue();
               kvStore!.get(KEY_TEST_STRING_ELEMENT,
@@ -775,7 +780,7 @@ export default function SingleKvStoreCallbackTest() {
         console.info('SingleKvStoreDeleteStringCallbackTest002');
         try {
           kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT,
-            async (err: Error | null, data: string[] | undefined): void => {
+            (err: Error | null, data: string[] | undefined): void => {
               console.info('SingleKvStoreDeleteStringCallbackTest002 put success');
               expect(err == undefined).assertTrue();
               kvStore!.delete(KEY_TEST_STRING_ELEMENT, (err: Error | null, data: string[] | undefined): void => {
@@ -1011,7 +1016,7 @@ export default function SingleKvStoreCallbackTest() {
       async (done: () => void): Promise<void> => {
         console.log('SingleKvStoreDeletePredicatesCallbackTest002');
         try {
-          kvStore!.put("name", "Bob", async (err: Error | null, data: string[] | undefined): void => {
+          kvStore!.put("name", "Bob", (err: Error | null, data: string[] | undefined): void => {
             console.log('SingleKvStoreDeletePredicatesCallbackTest002 put success');
             expect(err == undefined).assertTrue();
             kvStore!.delete("name", (err: Error | null, data: string[] | undefined): void => {

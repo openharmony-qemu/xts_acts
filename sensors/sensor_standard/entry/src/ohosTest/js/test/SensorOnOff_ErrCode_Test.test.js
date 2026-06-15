@@ -90,6 +90,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -123,6 +127,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.SIGNIFICANT_MOTION,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -158,6 +166,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -191,6 +203,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -226,6 +242,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -259,6 +279,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.GYROSCOPE_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -294,6 +318,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -327,6 +355,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.HUMIDITY,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -362,6 +394,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -395,6 +431,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -430,6 +470,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -463,6 +507,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.SIGNIFICANT_MOTION,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -498,6 +546,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -531,6 +583,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -566,6 +622,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -599,6 +659,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.AMBIENT_TEMPERATURE,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -634,6 +698,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -667,6 +735,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.GRAVITY,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -702,6 +774,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -735,6 +811,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.GYROSCOPE_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -770,6 +850,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -803,6 +887,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.HALL,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -838,6 +926,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -871,6 +963,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.LINEAR_ACCELEROMETER,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -906,6 +1002,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -939,6 +1039,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -974,6 +1078,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -1007,6 +1115,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.PEDOMETER_DETECTION,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {
@@ -1042,6 +1154,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -1076,6 +1192,10 @@ export default function SensorOnOff_ErrCode_Test() {
           if (error) {
             console.info(TAG + ' error:' + error);
             done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
+            done();
           } else {
             try {
               expect(typeof(data)).assertEqual("object");
@@ -1109,6 +1229,10 @@ export default function SensorOnOff_ErrCode_Test() {
         sensor.getSingleSensor(sensor.SensorId.ACCELEROMETER,(error, data) => {
           if (error) {
             console.info(TAG + ' error:' + error);
+            done();
+          } else if (data.isMockSensor === true) {
+            console.info('isMockSensor is true');
+            expect(typeof(data)).assertEqual("object");
             done();
           } else {
             try {

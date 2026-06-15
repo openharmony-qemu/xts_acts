@@ -20,8 +20,10 @@ namespace {
 constexpr int K_MAX_QUICK_EXIT_REGISTRATIONS = 32;
 } // namespace
 
-void F1() {}
-void F2() {}
+void F1()
+{}
+void F2()
+{}
 
 /**
  * @tc.name      : AtQuickExit0100

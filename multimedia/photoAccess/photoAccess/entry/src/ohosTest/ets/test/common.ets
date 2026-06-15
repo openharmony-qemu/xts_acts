@@ -258,7 +258,12 @@ export function checkSystemAlbum(expect: Function, testNum: string, album: ESObj
   }
 }
 export async function startAbility(bundleName: string, abilityName: string): Promise<void> {
-  await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
+  let cmd = `aa start -b ${bundleName} -a ${abilityName}`;
+  let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+  if(user !== undefined){
+      cmd += ' -u ' + user;
+  }
+  await delegator.executeShellCommand(cmd).then(result => {
     console.info(`[picker] start abilityFinished: ${result}`);
   }).catch((err: BusinessError) => {
     console.error(`[picker] start abilityFailed: ${err}`);

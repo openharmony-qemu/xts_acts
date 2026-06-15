@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   ColumnOptions,
   Column,
@@ -27,6 +28,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct FlowItemView {
   @Link _position!: Position;
@@ -36,7 +38,7 @@ export struct FlowItemView {
   private parentComponentKey: string = '';
   private referenceComponentKey: string = '';
 
-  build() {
+  build():void {
     Column({ space: 2 } as ColumnOptions) {
       WaterFlow() {
         FlowItem() {
@@ -61,7 +63,7 @@ export struct FlowItemView {
         .key(this.referenceComponentKey)
       }
       .columnsTemplate('1fr 1fr')
-      .backgroundColor('0xFAEEE0')
+      .backgroundColor(0xFAEEE0)
       .width(this.parentWidth)
       .height(this.parentHeight)
       .key(this.parentComponentKey)

@@ -24,7 +24,7 @@ import { Callback, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
 import { webview } from '@kit.ArkWeb';
 
-export class StringFields {
+class StringFields {
   public str: string = '';
 }
 
@@ -111,6 +111,19 @@ struct Index {
                 web_webview.WebviewController.setScrollbarMode(web_webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR);
                 console.log("ScrollbarMode.FORCE_DISPLAY_SCROLLBAR000:", web_webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR);
                 Utils.emitEvent(web_webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR, 202512091)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+
+            case "emitSetScrollbarMode003": {
+              console.log("ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR111:", web_webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR);
+              try {
+                web_webview.WebviewController.setScrollbarMode(web_webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR);
+                Utils.emitEvent(webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR, 20260526)
+                break;
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -265,6 +278,8 @@ struct Index {
               }
               break;
             }
+
+
 
             case 'testFetchCookieIncognitoError007': {
               try {

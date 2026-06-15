@@ -107,7 +107,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
         }
         await CommonFunc.sleep(500);
 
-        textArea1?.dragTo(textArea2!) ;
+        await textArea1?.dragTo(textArea2!) ;
         await CommonFunc.sleep(2000);
         console.info('textAreaInputTest0001 dragTo success');
 
@@ -142,7 +142,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async (done: () => void): Prom
         }catch(e){
 
         }
-        textArea1?.dragTo(textArea2!);
+        await textArea1?.dragTo(textArea2!);
         await CommonFunc.sleep(2000);
 
         try{

@@ -811,6 +811,10 @@ export default function actsApplicationStartAbilityTest2() {
       let bundleName = 'com.example.actsapplicationstartabilityauxiliary'
       let abilityName = 'EntryAbility1'
       let startAbilityNoModuleNameCmd = `aa start -a ${abilityName} -b ${bundleName} `;
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          startAbilityNoModuleNameCmd += ' -u ' + user;
+      }
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_3800';
       let subscriberInfo_startdebugapp: commonEventManager.CommonEventSubscribeInfo = {
         events: ['onForegroundHap_3800'],

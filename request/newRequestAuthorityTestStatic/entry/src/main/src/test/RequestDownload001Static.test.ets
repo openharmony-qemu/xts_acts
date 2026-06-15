@@ -39,7 +39,12 @@ export default function requestDownloadOneStaticTest() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         await Utils.msSleep(1000);
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.helloworld")
+        let cmd = "aa start -a EntryAbility -b com.example.helloworld";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(4000);
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
@@ -74,7 +79,8 @@ export default function requestDownloadOneStaticTest() {
         ends: 100,
       };
       console.info("====>-------------------SUB_Misc_REQUEST_create_Callback_Static_0140 is starting---------------------");
-      request.agent.create(baseContext!, config, async (err, task):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
         try{
           if (err) {
             console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0140 create err: " + JSON.stringify(err));
@@ -110,6 +116,7 @@ export default function requestDownloadOneStaticTest() {
           console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0140 create err: " + JSON.stringify(err));
           done();
         }
+      }(err, task)
       });
     })
 
@@ -189,7 +196,8 @@ export default function requestDownloadOneStaticTest() {
         ends: -1,
       };
       console.info("====>-------------------SUB_Misc_REQUEST_create_Callback_Static_0160 is starting---------------------");
-      request.agent.create(baseContext!, config, async (err, task):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
         try{
           if (err) {
             console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0160 create err: " + JSON.stringify(err));
@@ -210,6 +218,7 @@ export default function requestDownloadOneStaticTest() {
           console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0160 create err: " + JSON.stringify(err));
           done();
         }
+      }(err, task)
       });
     })
 
@@ -277,7 +286,8 @@ export default function requestDownloadOneStaticTest() {
         ends: 60,
       };
       console.info("====>-------------------SUB_Misc_REQUEST_create_Callback_Static_0170 is starting---------------------");
-      request.agent.create(baseContext!, config, async (err, task):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
         try{
           if (err) {
             console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0170 create err: " + JSON.stringify(err));
@@ -311,6 +321,7 @@ export default function requestDownloadOneStaticTest() {
           console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0170 create err: " + JSON.stringify(err));
           done();
         }
+      }(err, task)
       });
     })
 
@@ -391,7 +402,8 @@ export default function requestDownloadOneStaticTest() {
         ends: 30,
       };
       console.info("====>-------------------SUB_Misc_REQUEST_create_Callback_Static_0180 is starting---------------------");
-      request.agent.create(baseContext!, config, async (err, task):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
         try{
           if (err) {
             console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0180 create err: " + JSON.stringify(err));
@@ -408,6 +420,7 @@ export default function requestDownloadOneStaticTest() {
           console.info("====>SUB_Misc_REQUEST_create_Callback_Static_0180 create err: " + JSON.stringify(err));
           done();
         }
+      }(err, task)
       });
     })
 
@@ -483,12 +496,14 @@ export default function requestDownloadOneStaticTest() {
       };
       console.info("====>-------------------SUB_Misc_REQUEST_create_Callback_0090 is starting---------------------");
       try{
-        request.agent.create(baseContext!, config, async(err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           if (err) {
             console.info("====>SUB_Misc_REQUEST_create_Callback_0090 create err: " + JSON.stringify(err));
             done();
           }
-          task!.start(async (err: BusinessError<void>|null): void => {
+          task!.start((err: BusinessError<void>|null): void => {
+            async (err: BusinessError<void>|null): Promise<void> => {
             if (err) {
               console.error(`====>SUB_Misc_REQUEST_create_Callback_0090 Failed to start download task, Code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
@@ -498,8 +513,9 @@ export default function requestDownloadOneStaticTest() {
             await request.agent.remove(task!.tid);
             console.info("====>----------------SUB_Misc_REQUEST_create_Callback_0090 is end-------------------");
             done();
+          }(err)
           });
-        });
+        }(err, task)});
       }catch(err){
         console.info("====>SUB_Misc_REQUEST_create_Callback_0090 create err: " + JSON.stringify(err));
         done();
@@ -539,8 +555,10 @@ export default function requestDownloadOneStaticTest() {
       };
       console.info("====>-------------------SUB_Misc_REQUEST_Create_Promise_Static_0180 is starting---------------------");
       try{
-        request.agent.create(baseContext!, config).then(async (task):void => {
-          task!.start(async (err: BusinessError<void>|null): void  => {
+        request.agent.create(baseContext!, config).then((task): void => {
+          async (task: request.agent.Task): Promise<void> => {
+          task!.start((err: BusinessError<void>|null): void => {
+            async (err: BusinessError<void>|null): Promise<void>  => {
             if (err) {
               console.error(`====>SUB_Misc_REQUEST_Create_Promise_Static_0180 Failed to start download task, Code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
@@ -550,7 +568,9 @@ export default function requestDownloadOneStaticTest() {
             await request.agent.remove(task!.tid);
             console.info("====>------------------SUB_Misc_REQUEST_Create_Promise_Static_0180 is end-------------------");
             done();
+          }(err)
           });
+        }(task)
         }).catch((err): void => {
           console.info("====>SUB_Misc_REQUEST_Create_Promise_Static_0180 create err: " + JSON.stringify(err));
           done();
@@ -717,8 +737,10 @@ export default function requestDownloadOneStaticTest() {
       };
       console.info("====>-------------------SUB_Misc_REQUEST_Create_Promise_Static_0030 is starting---------------------");
       try{
-        request.agent.create(baseContext!, config).then(async (task):void=> {
-          task!.start(async (err):void => {
+        request.agent.create(baseContext!, config).then((task): void => {
+          async (task: request.agent.Task): Promise<void> => {
+          task!.start((err): void => {
+            async (err: BusinessError<void>|null): Promise<void> => {
             if (err) {
               console.error(`====>SUB_Misc_REQUEST_Create_Promise_Static_0030  Failed to start download task, Code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
@@ -728,7 +750,9 @@ export default function requestDownloadOneStaticTest() {
             await request.agent.remove(task!.tid);
             console.info("====>--------------------SUB_Misc_REQUEST_Create_Promise_Static_0030 is end---------------------");
             done();
+          }(err)
           });
+        }(task)
         }).catch((err):void => {
           console.info("====>SUB_Misc_REQUEST_Create_Promise_Static_0030 create err: " + JSON.stringify(err));
           console.info("====>--------------------SUB_Misc_REQUEST_Create_Promise_Static_0030 is end---------------------");
@@ -809,7 +833,8 @@ export default function requestDownloadOneStaticTest() {
         network: request.agent.Network.WIFI,
       };
       console.info("====>-------------------SUB_Misc_REQUEST_Create_Callback_Static_0070 is start ---------------------");
-      request.agent.create(baseContext!, config, async (err, task):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
         try {
           if(err){
             console.info(`====>SUB_Misc_REQUEST_Create_Callback_Static_0070 task creat fail: ` + JSON.stringify(err));
@@ -822,6 +847,7 @@ export default function requestDownloadOneStaticTest() {
           console.info(`====>SUB_Misc_REQUEST_Create_Callback_Static_0070 Succeeded in starting a download task.` + JSON.stringify(err));
           done();
         }
+      }(err, task)
       });
     })
 

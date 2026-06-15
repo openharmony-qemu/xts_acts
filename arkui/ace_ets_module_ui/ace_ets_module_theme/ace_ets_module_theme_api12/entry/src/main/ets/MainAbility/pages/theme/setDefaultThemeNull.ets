@@ -13,9 +13,25 @@
  * limitations under the License.
  */
 
-import { ThemeControl } from '@kit.ArkUI';
+import { ThemeControl, UIUtils } from '@kit.ArkUI';
 
 ThemeControl.setDefaultTheme(undefined);
+
+class SymbolIcon {
+  public icon: Resource = $r('sys.symbol.collection_panel');
+}
+
+@ComponentV2
+struct TestV2 {
+  @Local icon: SymbolIcon = UIUtils.makeObserved(new SymbolIcon());
+  build() {
+    Column() {
+      SymbolGlyph(this.icon.icon)
+        .fontSize(16)
+    }
+    .width('100%')
+  }
+}
 
 @Entry
 @Component
@@ -37,6 +53,7 @@ struct SetDefaultThemeNullIndex {
           .onClick((event: ClickEvent) => {
             ThemeControl.setDefaultTheme(null);
           })
+        TestV2()
       }
       .width('100%')
     }

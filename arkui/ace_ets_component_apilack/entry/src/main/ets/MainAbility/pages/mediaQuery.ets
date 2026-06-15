@@ -59,7 +59,7 @@ struct MediaQueryOff {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("offText")
+        .key("mediaQuery_offText_01")
         .onClick(() => {
           this.listener.off('change', (mediaQueryResult) => {
             console.log(JSON.stringify(mediaQueryResult))
@@ -130,7 +130,7 @@ struct MediaQueryOff {
       //        .padding(10)
       //        .textAlign(TextAlign.Center)
       //        .textOverflow({ overflow: TextOverflow.None })
-      //        .key("offText")
+      //        .key("mediaQuery_offText_02")
 
     }.width("100%").height("100%")
   }

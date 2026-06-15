@@ -50,7 +50,12 @@ export default function requestConfigSavesStaticTest() {
         hilog.info(domain, tag, '%{public}s', 'beforeAll start');
         let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         await Utils.msSleep(1000)
-        abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.newRequestAuthority.static")
+        let cmd = "aa start -a EntryAbility -b com.acts.newRequestAuthority.static";
+        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
         await Utils.msSleep(4000)
         hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         baseContext = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
@@ -89,7 +94,8 @@ export default function requestConfigSavesStaticTest() {
           fs.unlinkSync(path);
           console.info("====>SUB_Request_Agent_TaskSaveas_Static_0100 unlinkSync file success");
         }
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -124,6 +130,7 @@ export default function requestConfigSavesStaticTest() {
               done();
             }
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0100 create catch err: " + JSON.stringify(err));
@@ -159,7 +166,8 @@ export default function requestConfigSavesStaticTest() {
           fs.unlinkSync(path);
           console.info("====>SUB_Request_Agent_TaskSaveas_0100 unlinkSync file success");
         }
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           console.info("====>SUB_Request_Agent_TaskSaveas_Static_0200 baseContext: " + JSON.stringify(baseContext!.cacheDir));
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
@@ -195,6 +203,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0200 create catch err: " + JSON.stringify(err));
@@ -224,7 +233,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -258,6 +268,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0300 create catch err: " + JSON.stringify(err));
@@ -287,7 +298,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -320,6 +332,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0400 create catch err: " + JSON.stringify(err));
@@ -349,7 +362,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -382,6 +396,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0600 create catch err: " + JSON.stringify(err));
@@ -411,7 +426,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -444,6 +460,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0700 create catch err: " + JSON.stringify(err));
@@ -473,7 +490,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -509,6 +527,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0800 create catch err: " + JSON.stringify(err));
@@ -538,7 +557,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               if(task !== undefined){
@@ -576,6 +596,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_0900 create catch err: " + JSON.stringify(err));
@@ -674,7 +695,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -707,6 +729,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_1100 create catch err: " + JSON.stringify(err));
@@ -767,7 +790,8 @@ export default function requestConfigSavesStaticTest() {
         mode:request.agent.Mode.FOREGROUND
       };
       try {
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               task?.offCompleted();
@@ -800,6 +824,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_1300 create catch err: " + JSON.stringify(err));
@@ -861,7 +886,8 @@ export default function requestConfigSavesStaticTest() {
       };
       try {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_1500 baseContext: " + JSON.stringify(baseContext!));
-        request.agent.create(baseContext!, config, async (err, task):void => {
+        request.agent.create(baseContext!, config, (err, task): void => {
+          async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
           let on_completedCallback = (pro: request.agent.Progress) => {
             try {
               if(task !== undefined){
@@ -901,6 +927,7 @@ export default function requestConfigSavesStaticTest() {
             }
             done();
           }
+        }(err, task)
         });
       } catch (err) {
         console.info("====>SUB_Request_Agent_TaskSaveas_Static_1500 create catch err: " + JSON.stringify(err));
@@ -931,7 +958,7 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_onResponse_Static_0100 create success");
-        let responseCallback_1 = async (info: request.agent.HttpResponse):void => {
+        let responseCallback_1 = async (info: request.agent.HttpResponse): Promise<void> => {
           try {
             task.offResponse();
             await removeTask(task);
@@ -946,7 +973,7 @@ export default function requestConfigSavesStaticTest() {
             done();
           }
         }
-        task.onResponse(responseCallback_1);
+        task.onResponse((info: request.agent.HttpResponse) => {responseCallback_1(info)});
         await task.start();
         console.info("====>SUB_Request_Agent_onResponse_Static_0100 task.start");
       } catch (err) {
@@ -978,7 +1005,7 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_onResponse_Static_0200 create success");
-        let responseCallback_1 = async (info: request.agent.HttpResponse):void => {
+        let responseCallback_1 = (info: request.agent.HttpResponse): void => {
           try {
             task.offResponse();
             removeTask(task);
@@ -1093,7 +1120,7 @@ export default function requestConfigSavesStaticTest() {
           }
         }
 
-        let responseCallback_3 = async (info3: request.agent.HttpResponse):void => {
+        let responseCallback_3 = async (info3: request.agent.HttpResponse): Promise<void> => {
           try {
             task.offResponse()
             await removeTask(task);
@@ -1107,9 +1134,9 @@ export default function requestConfigSavesStaticTest() {
             done();
           }
         }
-        task.onResponse(responseCallback_1);
-        task.onResponse(responseCallback_2);
-        task.onResponse(responseCallback_3);
+        task.onResponse((i: request.agent.HttpResponse) => {responseCallback_1(i)});
+        task.onResponse((i: request.agent.HttpResponse) => {responseCallback_2(i)});
+        task.onResponse((i: request.agent.HttpResponse) => {responseCallback_3(i)});
         await task.start();
         console.info("====>SUB_Request_Agent_onResponse_Static_0400 task.start");
       } catch (err) {
@@ -1196,7 +1223,7 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_onResponse_Static_0600 create success");
-        let responseCallback_1 = async (info: request.agent.HttpResponse):void => {
+        let responseCallback_1 = (info: request.agent.HttpResponse): void => {
           console.info("====>SUB_Request_Agent_onResponse_Static_0600 response info: " + JSON.stringify(info));
         }
         task.offResponse(responseCallback_1);
@@ -1234,7 +1261,7 @@ export default function requestConfigSavesStaticTest() {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_onResponse_Static_0700 create success");
 
-        let responseCallback_1 = async (info: request.agent.HttpResponse):void => {
+        let responseCallback_1 = async (info: request.agent.HttpResponse): Promise<void> => {
           try {
             task.offResponse();
             await removeTask(task);
@@ -1247,12 +1274,12 @@ export default function requestConfigSavesStaticTest() {
           }
         }
 
-        let progressCallback = async (pro: request.agent.Progress):void => {
+        let progressCallback = async (pro: request.agent.Progress): Promise<void> => {
           try {
             task.offProgress();
             console.info("====>SUB_Request_Agent_onResponse_Static_0700 pro: " + JSON.stringify(pro));
             await task.pause();
-            task.onResponse(responseCallback_1);
+            task.onResponse((info: request.agent.HttpResponse) => {responseCallback_1(info)});
             await Utils.msSleep(3000);
             await task.resume();
           } catch (err) {
@@ -1260,7 +1287,7 @@ export default function requestConfigSavesStaticTest() {
             done();
           }
         }
-        task.onProgress(progressCallback);
+        task.onProgress((pro: request.agent.Progress) => {progressCallback(pro)});
         await task.start();
       } catch (err) {
         console.info("====>SUB_Request_Agent_onResponse_Static_0700 create catch err: " + JSON.stringify(err));
@@ -1356,7 +1383,8 @@ export default function requestConfigSavesStaticTest() {
       };
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
-        task.onFailed(async (pro: request.agent.Progress):void => {
+        task.onFailed((pro: request.agent.Progress): void => {
+          async (pro: request.agent.Progress): Promise<void> => {
           try {
             task.offFailed();
             console.info('====>SUB_Request_Agent_ErrorDetailed_Static_0100 failed pro: ' + JSON.stringify(pro));
@@ -1367,6 +1395,7 @@ export default function requestConfigSavesStaticTest() {
           } catch (err) {
             console.info('====>SUB_Request_Agent_ErrorDetailed_Static_0100 err: ' + JSON.stringify(err));
           }
+        }(pro)
         })
         await task.start();
         console.info('====>SUB_Request_Agent_ErrorDetailed_Static_0100 create success');
@@ -1397,8 +1426,9 @@ export default function requestConfigSavesStaticTest() {
         overwrite: true,
         mode:request.agent.Mode.FOREGROUND
       };
-      request.agent.create(baseContext!, config, async (err, task):void => {
-        let on_completedCallback = async (pro: request.agent.Progress):void => {
+      request.agent.create(baseContext!, config, (err: BusinessError<void>|null, task: request.agent.Task|undefined): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
+        let on_completedCallback = async (pro: request.agent.Progress): Promise<void> => {
           task?.offCompleted();
           try {
             if(task !== undefined){
@@ -1423,7 +1453,7 @@ export default function requestConfigSavesStaticTest() {
             expect().assertFail();
           }
           if(task !== undefined){
-            task.onCompleted(on_completedCallback);
+            task.onCompleted((pro: request.agent.Progress) => {on_completedCallback(pro)});
             await task.start();
           }
         } catch (err) {
@@ -1433,6 +1463,7 @@ export default function requestConfigSavesStaticTest() {
           }
           done();
         }
+      }(err, task)
       });
     });
 
@@ -1500,8 +1531,9 @@ export default function requestConfigSavesStaticTest() {
         overwrite: true,
         mode:request.agent.Mode.FOREGROUND
       };
-      request.agent.create(baseContext!, config, async (err, task):void => {
-        let on_completedCallback = async (pro: request.agent.Progress):void => {
+      request.agent.create(baseContext!, config, (err, task): void => {
+        async (err: BusinessError<void>|null, task: request.agent.Task|undefined): Promise<void> => {
+        let on_completedCallback = async (pro: request.agent.Progress): Promise<void> => {
           task?.offPause();
           try {
             if(task !== undefined){
@@ -1526,7 +1558,7 @@ export default function requestConfigSavesStaticTest() {
             expect().assertFail();
           }
           if(task !== undefined){
-            task.onPause(on_completedCallback);
+            task.onPause((pro: request.agent.Progress) => {on_completedCallback(pro)});
             await task.start();
             await task.pause();
           }
@@ -1537,6 +1569,7 @@ export default function requestConfigSavesStaticTest() {
           }
           done();
         }
+      }(err, task)
       });
     });
 
@@ -1562,7 +1595,8 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_PauseError_callback_Static_0100 create success");
-        task.pause(async (err: BusinessError<void> | null):void => {
+        task.pause((err: BusinessError<void> | null): void => {
+          async (err: BusinessError<void> | null): Promise<void> => {
           try{
             if (err) {
               console.info("====>SUB_Request_Agent_PauseError_callback_Static_0100 download pause err: " + JSON.stringify(err));
@@ -1577,6 +1611,7 @@ export default function requestConfigSavesStaticTest() {
           await removeTask(task);
           console.info("====>SUB_Request_Agent_PauseError_callback_Static_0100 removeTask");
           done();
+        }(err)
         })
       } catch (err) {
         console.info("====>SUB_Request_Agent_PauseError_callback_Static_0100 create catch err: " + JSON.stringify(err));
@@ -1644,7 +1679,8 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_ResumeError_callback_Static_0100 create success");
-        task.resume(async (err: BusinessError<void> | null):void => {
+        task.resume((err: BusinessError<void> | null): void => {
+          async (err: BusinessError<void> | null): Promise<void> => {
           try{
             if(err){
               console.info("====>SUB_Request_Agent_ResumeError_callback_Static_0100 download pause err: " + JSON.stringify(err));
@@ -1659,6 +1695,7 @@ export default function requestConfigSavesStaticTest() {
           await removeTask(task);
           console.info("====>SUB_Request_Agent_ResumeError_callback_Static_0100 removeTask");
           done();
+        }(err)
         })
       } catch (err) {
         console.info("====>SUB_Request_Agent_ResumeError_callback_Static_0100 create catch err: " + JSON.stringify(err));
@@ -1726,7 +1763,8 @@ export default function requestConfigSavesStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         console.info("====>SUB_Request_Agent_StopError_callback_Static_0100 create success");
-        task.stop(async (err: BusinessError<void> | null):void => {
+        task.stop((err: BusinessError<void> | null): void => {
+          async (err: BusinessError<void> | null): Promise<void> => {
           try{
             if(err){
               console.info("====>SUB_Request_Agent_StopError_callback_Static_0100 download pause err: " + JSON.stringify(err));
@@ -1741,6 +1779,7 @@ export default function requestConfigSavesStaticTest() {
           await removeTask(task);
           console.info("====>SUB_Request_Agent_StopError_callback_Static_0100 removeTask");
           done();
+        }(err)
         })
       } catch (err) {
         console.info("====>SUB_Request_Agent_StopError_callback_Static_0100 create catch err: " + JSON.stringify(err));

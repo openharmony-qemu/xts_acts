@@ -22,11 +22,13 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { BusinessError } from '@ohos.base';
 import webView from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct clearPrefetchedResourceTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
   @State javaScriptAccess: boolean = true;
@@ -75,6 +77,13 @@ struct clearPrefetchedResourceTest {
       return 'clearPrefetchedResourceTest test';
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {

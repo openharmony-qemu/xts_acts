@@ -217,6 +217,13 @@ struct SymbolSpanFontWeight {
             .id('symbolSpan_fontWeight_configs_undefined')
         }
 
+        Text() {
+          SymbolSpan($r('sys.symbol.ohos_trash'))
+            .fontWeight(300, null)
+            .fontSize(48)
+            .id('symbolSpan_fontWeight_configs_null')
+        }
+
 
         Text() {
           SymbolSpan($r('sys.symbol.ohos_trash'))

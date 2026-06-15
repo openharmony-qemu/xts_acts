@@ -24,11 +24,15 @@ import { JsProxyObject } from '../../test/Interfaces';
 // import { BusinessError } from '@ohos.base';
 import webview from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
+import testNapi from 'libentry.so'
 
 @Entry
 @Component
 struct blankLessInfoWithKeyTest {
-  controller: webView.WebviewController = new webView.WebviewController();
+  @State webTag: string = 'WebTag';
+  controller: webView.WebviewController = new webView.WebviewController(this.webTag);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   newController: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -70,6 +74,13 @@ struct blankLessInfoWithKeyTest {
       return 'precompileJavaScript test';
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {
@@ -471,6 +482,77 @@ struct blankLessInfoWithKeyTest {
                   Utils.emitEvent(-5, 148014)
                 } else {
                   Utils.emitEvent(401, 148014)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey015': {
+              let msg = 'testblankLessInfoWithKey015'
+              try {
+                let num: number = testNapi.doblankless_SET_CONTROLLER_NOT_INITED(this.webTag);
+                console.log(msg, `预期值：-3`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-3, 148015)
+                } else {
+                  Utils.emitEvent(num, 148015)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-3, 148015)
+                } else {
+                  Utils.emitEvent(401, 148015)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey016': {
+              let msg = 'testblankLessInfoWithKey016'
+              try {
+                let num: number = testNapi.doblankless_SET_INVALID_ARGS(this.webTag);
+                console.log(msg, `预期值：-2`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-2, 148016)
+                } else {
+                  Utils.emitEvent(num, 148016)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-2, 148016)
+                } else {
+                  Utils.emitEvent(401, 148016)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testblankLessInfoWithKey017': {
+              let msg = 'testblankLessInfoWithKey017'
+              let num: number = -1
+              try {
+                this.isPageEnd = -1;
+                testNapi.clearBlanklessLoadingCache(this.webTag);
+                await this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                let num1: number = testNapi.doblankless_SET_SIGNIFICANT_CHANGE(this.webTag);
+                console.log(msg, 'first call return:' + num1);
+                this.isPageEnd = -1;
+                testNapi.clearBlanklessLoadingCache(this.webTag);
+                await this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                num = testNapi.doblankless_SET_SIGNIFICANT_CHANGE(this.webTag);
+                console.log(msg, `预期值：-5`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-5, 148017)
+                } else {
+                  Utils.emitEvent(num, 148017)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-5, 148017)
+                } else {
+                  Utils.emitEvent(401, 148017)
                 }
                 console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
               }

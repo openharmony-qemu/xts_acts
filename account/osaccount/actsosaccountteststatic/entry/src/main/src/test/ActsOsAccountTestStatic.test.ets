@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,7 +40,7 @@ let getNameLimit = async () => {
   }
 }
 
-export default function ActsOsAccountTestStatic() {
+export default function ActsOsAccountTestStatic(): void {
   describe('ActsOsAccountTestStatic', () => {
     hilog.info(0x0000, tag, "====>start describe ActsOsAccountTestStatic");
     let deviceType: string = deviceInfo.deviceType;
@@ -52,7 +52,12 @@ export default function ActsOsAccountTestStatic() {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.osaccounttest.static");
+      let cmd = "aa start -a EntryAbility -b com.acts.osaccounttest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       try {
         let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();

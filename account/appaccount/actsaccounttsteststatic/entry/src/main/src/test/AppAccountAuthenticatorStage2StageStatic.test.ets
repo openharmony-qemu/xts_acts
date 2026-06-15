@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ let tag: string = 'testTag';
 hilog.info(0x0000, tag, "====>in testPage====");
 let gContext: common.UIAbilityContext;
 
-export default function AppAccountAuthenticatorStage2StageStatic() {
+export default function AppAccountAuthenticatorStage2StageStatic(): void {
   describe('AppAccountAuthenticatorStage2StageStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");
@@ -38,7 +38,12 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
     beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage beforeAll start====");
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.accounttstest.static");
+      let cmd = "aa start -a EntryAbility -b com.example.accounttstest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      await abilityDelegator.executeShellCommand(cmd);
       await Utils.msSleep(2000);
       let wantInfo: Want = {
         deviceId: '',

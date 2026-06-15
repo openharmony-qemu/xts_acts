@@ -1216,13 +1216,15 @@ export default function WindowLifecycle() {
       console.log(msgStr + 'begin');
       let subWindow: window.Window;
       let promise = windowStage.createSubWindow('m1testWindow_on_WindowEvent_subWindow_shownySubWindow');
-      promise.then((data) => {
+      promise.then(async (data) => {
         subWindow = data;
         console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
         try {
+          await subWindow.setWindowFocusable(false);
+ 	        await sleep(300);
           subWindow.on('windowEvent', async (data) => {
             console.info(msgStr + 'Window event happened. Event:' + JSON.stringify(data));
-            expect(data).assertEqual(1);
+            expect(data).assertEqual(window.WindowEventType.WINDOW_SHOWN);
             subWindow.off('windowEvent');
             subWindow.destroyWindow();
             done();
@@ -3222,7 +3224,7 @@ export default function WindowLifecycle() {
     })
 
 
-    /**
+   /**
      * @tc.name testWindow_Front_Desk_Split_Restore_0100
      * @tc.number SUB_BASIC_WMS_WINDOW_FRONT_DESK_SPLIT_RESTORE_0100
      * @tc.desc 验证分屏状态下调用restore接口生效_辅助应用先进入分屏
@@ -3230,156 +3232,193 @@ export default function WindowLifecycle() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it("testWindow_Front_Desk_Split_Restore_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let caseName = "testWindow_Front_Desk_Split_Restore_0100";
-      console.log(caseName + " begin");
-      let driver = Driver.create()
-      let width = display.getDefaultDisplaySync().width;
-      if (deviceType === '2in1') {
-        try {
-          let mainWindowClass = windowStage.getMainWindowSync();
-          await mainWindowClass.setWindowTitle("windowClass2")
-          await context.startAbility({
-            bundleName: 'com.acts.ActsWindowLifeCycleTestDemo',
-            abilityName: 'EntryAbility',
-          }).then(() => {
-            console.log(caseName + ' - startAbility success.');
-          }).catch((err: BusinessError) => {
-            console.log(caseName + " - start failed" + JSON.stringify(err));
-            expect().assertFail()
-            done()
-          })
-          await sleep(2000);
-          // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
-          let title = await driver.findComponent(ON.text('windowClass1'))
-          console.log(caseName + " title :" + title);
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
-          await driver.click(2340, 977);
-          await sleep(3000);
-          await mainWindowClass.restore();
-          await sleep(500);
-          let isFocused = mainWindowClass.isFocused();
-          console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
-          expect(isFocused).assertEqual(true);
-          // 4、互换左右分屏位置
-          let title2 = await driver.findComponent(ON.text('windowClass1'))
-          await sleep(1000)
-          let titlePoint2 = await title2.getBounds();
-          await driver.drag(titlePoint2.right - 100, titlePoint2.top + 10, width-titlePoint2.right + 280, titlePoint2.top + 100, 100)
-          await sleep(1000)
-          await driver.click(727, 960);
-          await sleep(3000);
-          //点击辅助hap,使辅助hap获焦
-          let hollWorld = await driver.findComponent(ON.id('HelloWorld'))
-          console.log(caseName + " hollWorld :" + JSON.stringify(hollWorld));
-          await sleep(1000);
-          await hollWorld.click();
-          //主应用获焦
-          await mainWindowClass.restore();
-          await sleep(500);
-          let isFocused2 = mainWindowClass.isFocused();
-          console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
-          expect(isFocused).assertEqual(true);
-          //关掉辅助应用
-          let terminate = await driver.findComponent(ON.id('terminate'))
-          await sleep(1000);
-          await terminate.click();
-          // 5、主应用退出分屏
-          await mainWindowClass.recover();
-          done()
-        } catch (err) {
-          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      } else {
-        done();
-      }
-    });
+   it("testWindow_Front_Desk_Split_Restore_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+   async (done: Function) => {
+     let caseName = "testWindow_Front_Desk_Split_Restore_0100";
+     console.log(caseName + " begin");
+     let driver = Driver.create()
+     let displayInfo: display.Display = display.getDefaultDisplaySync()
+     console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
+     if (deviceType === '2in1') {
+       try {
+         let mainWindowClass = windowStage.getMainWindowSync();
+         await mainWindowClass.setWindowTitle("windowClass2")
+         await context.startAbility({
+           bundleName: 'com.acts.ActsWindowLifeCycleTestDemo',
+           abilityName: 'EntryAbility',
+         }).then(() => {
+           console.log(caseName + ' - startAbility success.');
+         }).catch((err: BusinessError) => {
+           console.log(caseName + " - start failed" + JSON.stringify(err));
+           expect().assertFail()
+           done()
+         })
+         await sleep(1000);
+         // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
+         let title = await driver.findComponent(ON.text('windowClass1'))
+         console.log(caseName + " title :" + title);
+         await sleep(1000)
+         let titlePoint = await title.getBounds()
+         console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
+         await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+         await sleep(1000)
+         let displayOrientation: display.Orientation = displayInfo.orientation
+         // 点击待分屏区域 形成分屏
+         let foldStatus: display.FoldStatus = display.getFoldStatus()
+         console.log(`${caseName} getFoldStatus: ${JSON.stringify(foldStatus)}`);
+         if ((displayOrientation === display.Orientation.PORTRAIT ||
+           displayOrientation === display.Orientation.PORTRAIT_INVERTED) &&
+           foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) {
+           await driver.click(displayInfo.width * 0.5, displayInfo.height * 0.75);
+         } else {
+           await driver.click(displayInfo.width * 0.75, displayInfo.height * 0.5);
+         }
+         await sleep(1000);
+         //点击辅助hap,使辅助hap获焦
+         let windowClass1Title = await driver.findComponent(ON.text('windowClass1'))
+         console.log(caseName + " windowClass1Title :" + windowClass1Title);
+         await windowClass1Title.click();
+         await sleep(1000);
+         // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
+         await mainWindowClass.restore();
+         await sleep(500);
+         let isFocused = mainWindowClass.isFocused();
+         console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
+         expect(isFocused).assertEqual(true);
+         // 4、互换左右分屏位置
+         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+         await component.longClick();
+         let enhanceMaximizeBtnPoint = await component.getBounds()
+         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
+         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 80)
+         await sleep(1000);
+         //点击辅助hap,使辅助hap获焦
+         let HelloWorld = await driver.findComponent(ON.id('HelloWorld'))
+         console.log(caseName + " HelloWorld :" + JSON.stringify(HelloWorld));
+         await HelloWorld.click();
+         await sleep(1000);
+         // //主应用获焦
+         await mainWindowClass.restore();
+         await sleep(500);
+         let isFocused2 = mainWindowClass.isFocused();
+         console.log(caseName + " mainWindowClass isFocused2: " + JSON.stringify(isFocused2));
+         expect(isFocused).assertEqual(true);
+         //关掉辅助应用
+         let terminate = await driver.findComponent(ON.id('terminate'))
+         await sleep(1000);
+         await terminate.click();
+         // 5、主应用退出分屏
+         await mainWindowClass.recover();
+         done()
+       } catch (err) {
+         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+         expect().assertFail();
+         done();
+       }
+     } else {
+       done();
+     }
+   });
 
-    /**
-     * @tc.name testWindow_Front_Desk_Split_Restore_0200
-     * @tc.number SUB_BASIC_WMS_WINDOW_FRONT_DESK_SPLIT_RESTORE_0200
-     * @tc.desc 验证分屏状态下调用restore接口生效_主应用先进入分屏
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
-     */
-    it("testWindow_Front_Desk_Split_Restore_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let caseName = "testWindow_Front_Desk_Split_Restore_0200";
-      console.log(caseName + " begin");
-      let driver = Driver.create()
-      let width = display.getDefaultDisplaySync().width;
-      if (deviceType === '2in1') {
-        try {
-          let mainWindowClass = windowStage.getMainWindowSync();
-          await mainWindowClass.setWindowTitle("windowClass2")
-          await context.startAbility({
-            bundleName: 'com.acts.ActsWindowLifeCycleTestDemo',
-            abilityName: 'EntryAbility',
-          }).then(() => {
-            console.log(caseName + ' - startAbility success.');
-          }).catch((err: BusinessError) => {
-            console.log(caseName + " - start failed" + JSON.stringify(err));
-            expect().assertFail()
-            done()
-          })
-          await sleep(2000);
-          //主应用提升层级到最上层
-          await mainWindowClass.restore();
-          await sleep(1000)
-          // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
-          let title = await driver.findComponent(ON.text('windowClass2'))
-          console.log(caseName + " title :" + title);
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
-          await driver.click(2340, 977);
-          await sleep(3000);
-          //主应用调用restore获焦
-          await mainWindowClass.restore();
-          await sleep(1000);
-          let isFocused = mainWindowClass.isFocused();
-          console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
-          expect(isFocused).assertEqual(true);
-          // 4、互换左右分屏位置
-          let title2 = await driver.findComponent(ON.text('windowClass2'))
-          await sleep(1000)
-          let titlePoint2 = await title2.getBounds();
-          await driver.drag(titlePoint2.right - 100, titlePoint2.top + 10, width-titlePoint2.right + 280, titlePoint2.top + 100, 100)
-          await sleep(1000)
-          await driver.click(727, 960);
-          await sleep(3000);
-          //主应用获焦
-          await mainWindowClass.restore();
-          await sleep(500);
-          let isFocused2 = mainWindowClass.isFocused();
-          console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
-          expect(isFocused).assertEqual(true);
-          //关掉辅助应用
-          let terminate = await driver.findComponent(ON.id('terminate'))
-          await sleep(1000);
-          await terminate.click();
-          // 5、主应用退出分屏
-          await mainWindowClass.recover();
-          done()
-        } catch (err) {
-          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      } else {
-        done();
-      }
-    });
+ /**
+  * @tc.name testWindow_Front_Desk_Split_Restore_0200
+  * @tc.number SUB_BASIC_WMS_WINDOW_FRONT_DESK_SPLIT_RESTORE_0200
+  * @tc.desc 验证分屏状态下调用restore接口生效_主应用先进入分屏
+  * @tc.type FUNCTION
+  * @tc.size MEDIUMTEST
+  * @tc.level LEVEL0
+  */
+ it("testWindow_Front_Desk_Split_Restore_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+   async (done: Function) => {
+     let caseName = "testWindow_Front_Desk_Split_Restore_0200";
+     console.log(caseName + " begin");
+     let driver = Driver.create()
+     let displayInfo: display.Display = display.getDefaultDisplaySync()
+     console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
+     if (deviceType === '2in1') {
+       try {
+         let mainWindowClass = windowStage.getMainWindowSync();
+         await mainWindowClass.setWindowTitle("windowClass2")
+         await context.startAbility({
+           bundleName: 'com.acts.ActsWindowLifeCycleTestDemo',
+           abilityName: 'EntryAbility',
+         }).then(() => {
+           console.log(caseName + ' - startAbility success.');
+         }).catch((err: BusinessError) => {
+           console.log(caseName + " - start failed" + JSON.stringify(err));
+           expect().assertFail()
+           done()
+         })
+         await sleep(1000);
+         //主应用提升层级到最上层
+         await mainWindowClass.restore();
+         await sleep(1000)
+         // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
+         let title = await driver.findComponent(ON.text('windowClass2'))
+         console.log(caseName + " title :" + title);
+         await sleep(1000)
+         let titlePoint = await title.getBounds()
+         console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
+         await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+         await sleep(1000)
+         // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
+         let displayOrientation: display.Orientation = displayInfo.orientation
+         // 点击待分屏区域 形成分屏
+         let foldStatus: display.FoldStatus = display.getFoldStatus()
+         console.log(`${caseName} getFoldStatus: ${JSON.stringify(foldStatus)}`);
+         if ((displayOrientation === display.Orientation.PORTRAIT ||
+           displayOrientation === display.Orientation.PORTRAIT_INVERTED) &&
+           foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) {
+           await driver.click(displayInfo.width * 0.5, displayInfo.height * 0.75);
+         } else {
+           await driver.click(displayInfo.width * 0.75, displayInfo.height * 0.5);
+         }
+         await sleep(1000)
+         //点击辅助hap,使辅助hap获焦
+         let windowClass1Title = await driver.findComponent(ON.text('windowClass1'))
+         console.log(caseName + " windowClass1Title :" + windowClass1Title);
+         await windowClass1Title.click();
+         await sleep(1000);
+         //主应用调用restore获焦
+         await mainWindowClass.restore();
+         await sleep(500);
+         let isFocused = mainWindowClass.isFocused();
+         console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
+         expect(isFocused).assertEqual(true);
+         // 4、互换左右分屏位置
+         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+         await component.longClick();
+         let enhanceMaximizeBtnPoint = await component.getBounds()
+         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
+         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 150)
+         await sleep(1000);
+         //点击辅助hap,使辅助hap获焦
+         let HelloWorld = await driver.findComponent(ON.id('HelloWorld'))
+         console.log(caseName + " HelloWorld :" + JSON.stringify(HelloWorld));
+         await HelloWorld.click();
+         await sleep(500);
+         //主应用获焦
+         await mainWindowClass.restore();
+         await sleep(500);
+         let isFocused2 = mainWindowClass.isFocused();
+         console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
+         expect(isFocused).assertEqual(true);
+         //关掉辅助应用
+         let terminate = await driver.findComponent(ON.id('terminate'))
+         await sleep(1000);
+         await terminate.click();
+         // 5、主应用退出分屏
+         await mainWindowClass.recover();
+         done()
+       } catch (err) {
+         console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+         expect().assertFail();
+         done();
+       }
+     } else {
+       done();
+     }
+   });
 
     /**
      * @tc.name   testRestoreMainWindow_0100
@@ -3566,31 +3605,30 @@ export default function WindowLifecycle() {
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        const callback = async (res: window.WindowEventType) => {
-          console.log(caseName + ' windowEvent callback res: ' + res)
-          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
-          mainWindow.off('windowEvent', callback)
-          await subWindowClass?.destroyWindow();
-          done()
-        }
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await subWindowClass.resize(800, 1200);
           await sleep(500);
-          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
-            console.log(`${caseName} minimize`);
+          if (canIUseRes) {
+            let mainWindowStatus = mainWindow.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
+            console.log(`${caseName} minimize`);
             await sleep(500);
             let text = await driver.findComponent(ON.id('textId'))
             console.log(`${caseName} text: ${text}`);
             await sleep(1000);
             await text.click();
             await sleep(500);
-            mainWindow.on('windowEvent', callback);
             await subWindowClass.restoreMainWindow();
             await sleep(500);
+            let mainWindowStatus2 = mainWindow.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
+            expect(mainWindowStatus).assertEqual(mainWindowStatus2);
+            await subWindowClass?.destroyWindow();
+            done();
           } else {
             await subWindowClass?.destroyWindow();
             done();
@@ -3635,34 +3673,33 @@ export default function WindowLifecycle() {
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        const callback = async (res: window.WindowEventType) => {
-          console.log(caseName + ' windowEvent callback res: ' + res)
-          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
-          mainWindow.off('windowEvent', callback)
-          await subWindowClass?.destroyWindow();
-          done();
-        }
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await subWindowClass.resize(800, 1200);
           await sleep(500);
-          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
-            console.log(`${caseName} minimize`);
+          if (canIUseRes) {
+            let mainWindowStatus = mainWindow.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
+            console.log(`${caseName} minimize success`);
             await sleep(500);
             let text = await driver.findComponent(ON.id('textId'))
             console.log(`${caseName} text: ${text}`);
             await sleep(1000);
             await text.click();
             await sleep(500);
-            mainWindow.on('windowEvent', callback);
             let param: Record<string, Object> = {
               'info': 'restoreMainWindow',
             };
             await subWindowClass.restoreMainWindow(param);
             await sleep(500)
+            let mainWindowStatus2 = mainWindow.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
+            expect(mainWindowStatus).assertEqual(mainWindowStatus2);
+            await subWindowClass?.destroyWindow();
+            done();
           } else {
             await subWindowClass?.destroyWindow();
             done();

@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,
   Button,
@@ -31,11 +32,12 @@ import {
   Color,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { StoragePropRef } from '@ohos.arkui.stateManagement';
+import { StoragePropRef,Link,PropRef } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct ListItemGroupView {
-  @StoragePropRef('_markAnchor') _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @PropRef _markAnchor!: Position;
   private componentKey: string = '';
   private parentWidth: number = 100;
   private parentHeight: number = 600;
@@ -44,7 +46,7 @@ export struct ListItemGroupView {
   private projects: string[] = new Array<string>('Chinese', 'mathematics', 'English')
 
   @Builder
-  itemHead(text: string) {
+  itemHead(text: string):void {
     Text(text)
       .fontSize(20)
       .backgroundColor(0xAABBCC)
@@ -53,7 +55,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  itemFoot(num: number) {
+  itemFoot(num: number):void {
     Text('have ' + num + 'classes')
       .fontSize(16)
       .backgroundColor(0xAABBCC)
@@ -62,7 +64,7 @@ export struct ListItemGroupView {
   }
 
   @Builder
-  content(project: string) {
+  content(project: string):void {
     Text(project)
       .width('100%')
       .height(100)
@@ -71,7 +73,7 @@ export struct ListItemGroupView {
       .backgroundColor(0xFFFFFF)
   }
 
-  build() {
+  build():void {
     List({ space: 20 }) {
       ListItemGroup({ header: ()=>{
         this.itemHead('Monday')
@@ -91,11 +93,13 @@ export struct ListItemGroupView {
       .key(this.componentKey)
       .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
 
-      ListItemGroup({ header: ()=>{
-        this.itemHead('Tuesday')
-      }, footer: ()=>{
-        this.itemFoot(this.projects.length)
-      } } as ListItemGroupOptions) {
+      ListItemGroup(
+        { header: ()=>{
+          this.itemHead('Tuesday')
+        }, footer: ()=>{
+          this.itemFoot(this.projects.length)
+        } } as ListItemGroupOptions
+      ) {
         ForEach(this.projects, (project: string) => {
           ListItem() {
             this.content(project)

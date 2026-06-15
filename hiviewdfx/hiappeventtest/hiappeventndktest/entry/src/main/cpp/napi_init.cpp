@@ -24,7 +24,11 @@
 #define SUCCESS 0
 #define PARAM_0 0
 #define PARAM_1 1
+#define PARAM_2 100
+#define PARAM_3 256
 
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0xD003200
 #undef LOG_TAG
 #define LOG_TAG "testTag"
 
@@ -2155,6 +2159,271 @@ napi_value OhHiappEventSetEventConfigMinidump(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value OhHiappEventSetEventCreateWatcher(napi_env env, napi_callback_info info) {
+
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+    int32_t value0;
+    napi_get_value_int32(env, args[0], &value0);
+    int32_t value1;
+    napi_get_value_int32(env, args[1], &value1);
+
+    HiAppEvent_Watcher* returnValue = nullptr;
+
+    switch ((int)value0) {
+    case 1: {
+        returnValue = OH_HiAppEvent_CreateWatcher(0);
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    case 2: {
+        returnValue = OH_HiAppEvent_CreateWatcher(nullptr);
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    case 3: {
+        returnValue = OH_HiAppEvent_CreateWatcher("sajd;lsjad\\ks!!@@#$%%^%^&&*");
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    case 4: {
+        returnValue = OH_HiAppEvent_CreateWatcher("11111111116546546546165198919861998198191851561115615615615115115611515159669198189181");
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    case 5: {
+        returnValue = OH_HiAppEvent_CreateWatcher("theonlyone");
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    case 6: {
+        returnValue = OH_HiAppEvent_CreateWatcher("");
+        OH_HiAppEvent_DestroyWatcher(returnValue);
+        break;
+    }
+
+    }
+
+    int ret = -1;
+
+    OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.%{public}d, ",returnValue);
+    if (returnValue == nullptr) {
+        ret = -1;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value successfully.");
+    }else{
+        ret = 0;
+        OH_LOG_INFO(LogType::LOG_APP, "Setting value fail %{public}d", ret);
+    }
+
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetTriggerCondition1(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetTriggerCondition(g_watcher, -1, -1, -1);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value SetTriggerCondition2(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetTriggerCondition(g_watcher, 0, 0, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value SetTriggerCondition3(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetTriggerCondition(g_watcher, 1, 1, 1);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value SetTriggerCondition4(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetTriggerCondition(g_watcher, NULL, NULL, NULL);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventTakeWatcherData1(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    OH_HiAppEvent_AddWatcher(g_watcher);
+    int32_t code = OH_HiAppEvent_TakeWatcherData(g_watcher, -1, OnTake);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventTakeWatcherData2(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    OH_HiAppEvent_AddWatcher(g_watcher);
+    int32_t code = OH_HiAppEvent_TakeWatcherData(g_watcher, 0, OnTake);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventTakeWatcherData3(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    OH_HiAppEvent_AddWatcher(g_watcher);
+    int32_t code = OH_HiAppEvent_TakeWatcherData(g_watcher, NULL, OnTake);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter1(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 1, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter2(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 2, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter3(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 4, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter4(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 8, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter5(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 15, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter6(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter7(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 3, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter8(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b0000, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter9(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b0001, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter10(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain_", 0b0010, {}, -1);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter11(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b0100, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+static napi_value OhHiAppEventSetAppEventFilter12(napi_env env, napi_callback_info info)
+{
+    napi_value ret;
+    g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "", 0b1111, {}, 0);
+    OH_HiAppEvent_DestroyWatcher(g_watcher);
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
 static napi_value Add(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -2178,6 +2447,122 @@ static napi_value Add(napi_env env, napi_callback_info info)
     napi_create_double(env, value0 + value1, &sum);
 
     return sum;
+}
+
+static napi_value TestHiAppEventReportFrameworkMemAnomaly1(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_SUCCESS) {
+        code = HIAPPEVENT_SUCCESS;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly2(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_REACT_NATIVE_HERMES, "0.73.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly3(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_KMP_KOTLIN, "1.9.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly4(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_INVALID_PARAM_VALUE){
+        code = HIAPPEVENT_INVALID_PARAM_VALUE;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly5(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_OPERATE_FAILED){
+        code = HIAPPEVENT_OPERATE_FAILED;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly6(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly7(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, NULL, "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly8(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", NULL);
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestHiAppEventReportFrameworkMemAnomaly9(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "a");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly10(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    char longDesc[1001] = {0};
+    memset(longDesc, 'a', PARAM_2);
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", longDesc);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly11(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "a", "test memory leak");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly12(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    char longVersion[257] = {0};
+    memset(longVersion, 'a', PARAM_3);
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, longVersion, "test memory leak");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_REPORT_FREQUENCY_EXCEEDED){
+        code = HIAPPEVENT_REPORT_FREQUENCY_EXCEEDED;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
 }
 
 static napi_value NAPI_Global_add(napi_env env, napi_callback_info info) {
@@ -2324,6 +2709,38 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OhHiappEventSetEventConfig42", nullptr, OhHiappEventSetEventConfig42, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OhHiappEventSetEventConfig43", nullptr, OhHiappEventSetEventConfig43, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"OhHiappEventSetEventConfigMinidump", nullptr, OhHiappEventSetEventConfigMinidump, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "OhHiappEventSetEventCreateWatcher", nullptr, OhHiappEventSetEventCreateWatcher, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SetTriggerCondition1", nullptr, SetTriggerCondition1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SetTriggerCondition2", nullptr, SetTriggerCondition2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SetTriggerCondition3", nullptr, SetTriggerCondition3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SetTriggerCondition4", nullptr, SetTriggerCondition4, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventTakeWatcherData1", nullptr, OhHiAppEventTakeWatcherData1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventTakeWatcherData2", nullptr, OhHiAppEventTakeWatcherData2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventTakeWatcherData3", nullptr, OhHiAppEventTakeWatcherData3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter1", nullptr, OhHiAppEventSetAppEventFilter1, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter2", nullptr, OhHiAppEventSetAppEventFilter2, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter3", nullptr, OhHiAppEventSetAppEventFilter3, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter4", nullptr, OhHiAppEventSetAppEventFilter4, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter5", nullptr, OhHiAppEventSetAppEventFilter5, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter6", nullptr, OhHiAppEventSetAppEventFilter6, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter7", nullptr, OhHiAppEventSetAppEventFilter7, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter8", nullptr, OhHiAppEventSetAppEventFilter8, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter9", nullptr, OhHiAppEventSetAppEventFilter9, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter10", nullptr, OhHiAppEventSetAppEventFilter10, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter11", nullptr, OhHiAppEventSetAppEventFilter11, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OhHiAppEventSetAppEventFilter12", nullptr, OhHiAppEventSetAppEventFilter12, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"TestHiAppEventReportFrameworkMemAnomaly1", nullptr, TestHiAppEventReportFrameworkMemAnomaly1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly2", nullptr, TestHiAppEventReportFrameworkMemAnomaly2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly3", nullptr, TestHiAppEventReportFrameworkMemAnomaly3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly4", nullptr, TestHiAppEventReportFrameworkMemAnomaly4, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly5", nullptr, TestHiAppEventReportFrameworkMemAnomaly5, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly6", nullptr, TestHiAppEventReportFrameworkMemAnomaly6, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly7", nullptr, TestHiAppEventReportFrameworkMemAnomaly7, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly8", nullptr, TestHiAppEventReportFrameworkMemAnomaly8, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly9", nullptr, TestHiAppEventReportFrameworkMemAnomaly9, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly10", nullptr, TestHiAppEventReportFrameworkMemAnomaly10, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly11", nullptr, TestHiAppEventReportFrameworkMemAnomaly11, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly12", nullptr, TestHiAppEventReportFrameworkMemAnomaly12, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

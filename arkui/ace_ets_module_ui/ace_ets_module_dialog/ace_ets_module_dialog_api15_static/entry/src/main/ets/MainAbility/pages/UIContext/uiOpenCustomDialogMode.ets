@@ -68,7 +68,7 @@ import { ImmersiveMode } from '@ohos.promptAction';
 import { LengthMetrics, ComponentContent } from '@ohos.arkui.node';
 import { BusinessError } from '@ohos.base';
 import { Callback } from '@ohos.base';
-import { Router } from '@ohos.arkui.UIContext';
+
 import promptAction from '@ohos.promptAction';
 
 let router1 = new Router()

@@ -23,9 +23,12 @@
 #include "database/udmf/utd.h"
 #include "common.h"
 #include "napi/native_api.h"
+#include "hilog/log.h"
 
 #define PARAM_0 0
 #define PARAM_1 1
+
+const char *TAG = "testTag:";
 
 static napi_value OH_Udmf_CreateUnifiedData001(napi_env env, napi_callback_info info)
 {
@@ -2870,10 +2873,32 @@ static napi_value OH_Udmf_SetUnifiedDataByOptions_013(napi_env env, napi_callbac
 
 static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info info)
 {
+    OH_UdmfOptions* options0 = OH_UdmfOptions_Create();
+    Udmf_Intention testIntention0 = UDMF_INTENTION_DATA_HUB;
+    char key[UDMF_KEY_BUFFER_LEN];
+    int setResult0 = OH_UdmfOptions_SetIntention(options0, testIntention0);
+    NAPI_ASSERT(env, setResult0  == UDMF_E_OK, "OH_UdmfO·ptions_SetIntention is fail.");
+    
+    unsigned int dataSize0 = 0;
+    OH_UdmfData* dataArray0 = nullptr;
+    int getRes0 = OH_Udmf_GetUnifiedDataByOptions(options0, &dataArray0, &dataSize0);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "OH_Udmf_GetUnifiedDataByOptions dataSize= %{public}d", dataSize0);
+    int count0 = 0;
+    for (int i = 0; i < dataSize0; i++) {
+        auto readData = OH_UDMF_GetDataElementAt(&dataArray0, i);
+        if (OH_UdmfData_HasType(readData, UDMF_META_PLAIN_TEXT) || OH_UdmfData_HasType(readData, UDMF_META_HYPERLINK)) {
+            count0++;
+        }
+    }
+
     OH_UdsPlainText* plain_text = OH_UdsPlainText_Create();
     NAPI_ASSERT(env, plain_text != nullptr, "OH_UdsPlainText_Create is fail.");
+    const char *helloworld = "Hello World!";
+    OH_UdsPlainText_SetContent(plain_text, helloworld);
     OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
     NAPI_ASSERT(env, hyperlink != nullptr, "OH_UdsHyperlink_Create is fail.");
+    char url[] = "https://hyperlink111_url";
+    OH_UdsHyperlink_SetUrl(hyperlink, url);
     OH_UdmfRecord* record = OH_UdmfRecord_Create();
     int addPlainText = OH_UdmfRecord_AddPlainText(record, plain_text);
     NAPI_ASSERT(env, addPlainText == UDMF_E_OK, "OH_UdmfRecord_AddPlainText is fail.");
@@ -2888,7 +2913,6 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
     NAPI_ASSERT(env, addRecord1 == UDMF_E_OK, "OH_UdmfData_AddRecord1 is fail.");
     OH_UdmfOptions* options = OH_UdmfOptions_Create();
     Udmf_Intention testIntention = UDMF_INTENTION_DATA_HUB;
-    char key[UDMF_KEY_BUFFER_LEN];
     int setResult = OH_UdmfOptions_SetIntention(options, testIntention);
     NAPI_ASSERT(env, setResult == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
     int setRes = OH_Udmf_SetUnifiedDataByOptions(options, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
@@ -2900,22 +2924,57 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
     int getRes = OH_Udmf_GetUnifiedDataByOptions(options, &dataArray, &dataSize);
     NAPI_ASSERT(env, getRes == UDMF_E_OK, "OH_Udmf_GetUnifiedDataByOptions is fail.");
     NAPI_ASSERT(env, dataArray != nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
-    int sizeNum = 2;
-    NAPI_ASSERT(env, dataSize == sizeNum, "OH_Udmf_GetUnifiedDataByOptions is fail.");
-    NAPI_ASSERT(env, OH_UDMF_GetDataElementAt(nullptr, 0) == nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
-    auto readData = OH_UDMF_GetDataElementAt(&dataArray, 0);
-    NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
-    NAPI_ASSERT(env, OH_UdmfData_HasType(readData, UDMF_META_PLAIN_TEXT) == true, "OH_UDMF_GetDataElementAt is fail.");
-    readData = OH_UDMF_GetDataElementAt(&dataArray, 1);
-    NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
-    NAPI_ASSERT(env, OH_UdmfData_HasType(readData, UDMF_META_HYPERLINK) == true, "OH_UDMF_GetDataElementAt is fail.");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "OH_Udmf_GetUnifiedDataByOptions dataSize= %{public}d", dataSize);
+    NAPI_ASSERT(env, dataSize - dataSize0 == 2, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+
+    int count = 0;
+    bool hasPlainTextContent = false;
+    bool hasHyperlinkUrl = false;
+    for (int i = dataSize0; i < dataSize; i++) {
+        auto readData = OH_UDMF_GetDataElementAt(&dataArray, i);
+        NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
+        if (OH_UdmfData_HasType(readData, UDMF_META_PLAIN_TEXT)) {
+            count++;
+            OH_UdsPlainText* getPlainText = OH_UdsPlainText_Create();
+            int getRes = OH_UdmfData_GetPrimaryPlainText(readData, getPlainText);
+            NAPI_ASSERT(env, getRes == UDMF_E_OK, "OH_UdmfData_GetPrimaryPlainText is fail.");
+            const char* getContent = OH_UdsPlainText_GetContent(getPlainText);
+            NAPI_ASSERT(env, getContent != nullptr, "OH_UdsPlainText_GetContent is fail.");
+            NAPI_ASSERT(env, strcmp(getContent, helloworld) == 0, "OH_UdsPlainText_GetContent content mismatch.");
+            hasPlainTextContent = true;
+            OH_UdsPlainText_Destroy(getPlainText);
+        }
+        if (OH_UdmfData_HasType(readData, UDMF_META_HYPERLINK)) {
+            count++;
+            unsigned int recordCount = OH_UdmfData_GetRecordCount(readData);
+            for (unsigned int j = 0; j < recordCount; j++) {
+                OH_UdmfRecord* record = OH_UdmfData_GetRecord(readData, j);
+                NAPI_ASSERT(env, record != nullptr, "OH_UdmfData_GetRecord is fail.");
+                OH_UdsHyperlink* getHyperlink = OH_UdsHyperlink_Create();
+                int getRes = OH_UdmfRecord_GetHyperlink(record, getHyperlink);
+                if (getRes == UDMF_E_OK) {
+                    const char* getUrl = OH_UdsHyperlink_GetUrl(getHyperlink);
+                    NAPI_ASSERT(env, getUrl != nullptr, "OH_UdsHyperlink_GetUrl is fail.");
+                    NAPI_ASSERT(env, strcmp(getUrl, url) == 0, "OH_UdsHyperlink_GetUrl url mismatch.");
+                    hasHyperlinkUrl = true;
+                }
+                OH_UdsHyperlink_Destroy(getHyperlink);
+            }
+        }
+    }
+    NAPI_ASSERT(env, count == 2, "OH_UDMF_GetDataElementAt count mismatch.");
+    NAPI_ASSERT(env, hasPlainTextContent, "OH_UDMF_GetDataElementAt plainText content not found.");
+    NAPI_ASSERT(env, hasHyperlinkUrl, "OH_UDMF_GetDataElementAt hyperlink url not found.");
+    
     unsigned int dataSize1 = 0;
     OH_UdmfData* dataArray1 = nullptr;
     int deleteRes = OH_Udmf_DeleteUnifiedData(options, &dataArray1, &dataSize1);
     NAPI_ASSERT(env, deleteRes == UDMF_E_OK, "OH_Udmf_DeleteUnifiedData is fail.");
     NAPI_ASSERT(env, dataArray1 != nullptr, "OH_Udmf_DeleteUnifiedData is fail.");
+    OH_Udmf_DestroyDataArray(&dataArray0, dataSize0);
     OH_Udmf_DestroyDataArray(&dataArray, dataSize);
     OH_Udmf_DestroyDataArray(&dataArray1, dataSize1);
+    OH_UdmfOptions_Destroy(options0);
     OH_UdmfOptions_Destroy(options);
     OH_UdsPlainText_Destroy(plain_text);
     OH_UdsHyperlink_Destroy(hyperlink);

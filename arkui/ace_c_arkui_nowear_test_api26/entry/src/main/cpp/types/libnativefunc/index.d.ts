@@ -15,3 +15,65 @@
 
 export const RenderNodeUtils_001: () => number;
 export const RenderNodeUtils_002: () => number;
+
+export const TestRenderNodeBlurStyleOption_001: () => number;
+
+export const TestRenderNodeBlurStyleOption_002: () => number;
+
+export const TestRenderNodeBlurStyleOption_003: () => number;
+
+export const TestRenderNodeBlurStyleOption_004: () => number;
+
+export const TestRenderNodeBlurStyleOption_005: () => number;
+
+export const TestRenderNodeBlurStyleOption_006: () => number;
+
+export const TestRenderNodeBlurStyleOption_007: () => number;
+
+export const TestRenderNodeBlurStyleOption_008: () => number;
+
+export const TestRenderNodeBlurStyleOption_009: () => number;
+
+export const TestRenderNodeBlurStyleOption_010: () => number;
+
+export const TestRenderNodeBlurStyleOption_011: () => number;
+
+export const TestRenderNodeBlurStyleOption_012: () => number;
+
+export const TestRenderNodeBlurStyleOption_013: () => number;
+
+export const TestRenderNodeBlurStyleOption_014: () => number;
+
+export const TestRenderNodeBlurStyleOption_015: () => number;
+
+export const TestGetChildMountPolicyInitError001: () => number;
+
+export const TestGetRenderNodeChildrenCountInitError001: () => number;
+
+export const TestGetRenderNodeAtInitError001: () => number;
+
+export const TestSetChildMountPolicy_001: () => number;
+export const TestSetChildMountPolicy_002: () => number;
+export const TestSetChildMountPolicy_003: () => number;
+export const TestSetChildMountPolicy_004: () => number;
+export const TestGetChildMountPolicy_001: () => number;
+export const TestGetChildMountPolicy_002: () => number;
+export const TestGetChildMountPolicy_003: () => number;
+export const TestGetChildMountPolicy_004: () => number;
+export const TestInsertRenderNodeAt_001: () => number;
+export const TestInsertRenderNodeAt_002: () => number;
+export const TestInsertRenderNodeAt_003: () => number;
+export const TestInsertRenderNodeAt_004: () => number;
+export const TestInsertRenderNodeAt_005: () => number;
+export const TestInsertRenderNodeAt_006: () => number;
+export const TestInsertRenderNodeAt_007: () => number;
+export const TestInsertRenderNodeAt_008: () => number;
+export const TestGetRenderNodeChildrenCount_001: () => number;
+export const TestGetRenderNodeChildrenCount_002: () => number;
+export const TestGetRenderNodeChildrenCount_003: () => number;
+export const TestGetRenderNodeChildrenCount_004: () => number;
+export const TestGetRenderNodeAt_001: () => number;
+export const TestGetRenderNodeAt_002: () => number;
+export const TestGetRenderNodeAt_003: () => number;
+export const TestGetRenderNodeAt_004: () => number;
+export const TestGetRenderNodeAt_005: () => number;

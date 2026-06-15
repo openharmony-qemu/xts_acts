@@ -10,6 +10,8 @@
         "MainAbility/pages/picker/pickerOnScrollStopTest",
         "MainAbility/pages/picker/pickerOnScrollStopModifierTest",
         "MainAbility/pages/picker/pickerIndicator",
-        "MainAbility/pages/picker/pickerIndicatorModifier"
+        "MainAbility/pages/picker/pickerIndicatorModifier",
+        "MainAbility/pages/picker/UIPickerComponentDisplayedItemCountTest",
+        "MainAbility/pages/picker/UIPickerComponentItemHeightTest"
     ]
 }

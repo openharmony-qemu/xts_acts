@@ -25,7 +25,6 @@ import {
   IDataSource,
   DataChangeListener,
   SwiperController,
-  SwiperController,
   Column,
   ColumnOptions,
   ClickEvent,

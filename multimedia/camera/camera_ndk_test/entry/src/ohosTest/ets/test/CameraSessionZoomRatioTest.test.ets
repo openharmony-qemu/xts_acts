@@ -411,5 +411,138 @@ export default function cameraSessionZoomRatioTest() {
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104 ends here");
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.desc   Check capture session get zoom point infos with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100--------------");
+      let ret = cameraObj.sessionGetZoomPointInfos(0);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 finish");
+      if (ret == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 PASSED");
+        cameraObj.sessionDeleteZoomPointInfos(0);
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 FAILED");
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0100 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101
+     * @tc.desc   Check capture session get zoom point infos with promise(session is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101--------------");
+      let ret = cameraObj.sessionGetZoomPointInfos(1);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101 finish");
+      if (ret != 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101 PASSED");
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101 FAILED");
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0101 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102
+     * @tc.desc   Check capture session get zoom point infos with promise(size is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102--------------");
+      let ret = cameraObj.sessionGetZoomPointInfos(2);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102 finish");
+      if (ret != 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102 PASSED");
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102 FAILED");
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0102 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103
+     * @tc.desc   Check capture session get zoom point infos with promise(zoomPointInfo is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103--------------");
+      let ret = cameraObj.sessionGetZoomPointInfos(3);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103 finish");
+      if (ret != 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103 PASSED");
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103 FAILED");
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_POINT_INFOS_PROMISE_0103 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100
+     * @tc.desc   Check capture session delete zoom point infos with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100--------------");
+      let ret = cameraObj.sessionGetZoomPointInfos(0);
+      if (ret == 0) {
+        ret = cameraObj.sessionDeleteZoomPointInfos(0);
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100 finish");
+        if (ret == 0) {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100 PASSED");
+        }
+        else {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100 FAILED");
+          expect().assertFail();
+        }
+      }
+      else {
+        console.info(TAG + "GetZoomPointInfos failed, skip delete test");
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0100 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101
+     * @tc.desc   Check capture session delete zoom point infos with promise(zoomPointInfo is null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101--------------");
+      let ret = cameraObj.sessionDeleteZoomPointInfos(1);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101 finish");
+      if (ret != 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101 PASSED");
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101 FAILED");
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_DELETE_ZOOM_POINT_INFOS_PROMISE_0101 ends here");
+    });
   })
 }

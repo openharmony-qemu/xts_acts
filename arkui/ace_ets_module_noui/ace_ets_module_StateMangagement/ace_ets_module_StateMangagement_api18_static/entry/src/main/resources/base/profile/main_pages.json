@@ -31,6 +31,15 @@
     "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
     "MainAbility/pages/Monitor/MonitorWildcards",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard",
-    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined"
+    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined",
+    "MainAbility/pages/lifecycle/ComponentLifecycleDecorators",
+    "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
+    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObserved",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObservedFalse",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedAndObjectlink",
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedBuiltIn",
+    "MainAbility/pages/AppStorageV2/AppStorageV2Api",
+    "MainAbility/pages/Dump/DumpObject"
   ]
 }

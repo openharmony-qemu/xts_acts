@@ -60,6 +60,7 @@ export default function windowFocusTest() {
     let windowStage: ohosWindow.WindowStage;
     let windowClass: window.Window;
     let isAutoWindow:string = '';
+    let canIUseRes = false;
     let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -80,6 +81,8 @@ export default function windowFocusTest() {
       let topWindow = await window.getLastWindow(context);
       let topWindowId = topWindow.getWindowProperties().id;
       console.info(`beforeall topWindowId: ${topWindowId}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       driver = Driver.create();
       try {
           let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
@@ -1800,14 +1803,18 @@ export default function windowFocusTest() {
       try {
         await windowClass.setWindowFocusable(false);
         await sleep(300);
-        expect(flag).assertFalse();
+        if (canIUseRes) {
+          expect(flag).assertFalse();
+        }
         await windowClass.setWindowFocusable(true);
         let subWindowClass = await windowStage.createSubWindow('ApplicationFocus1');
         console.error(`${caseName} Succeeded in creating the sub window.`);
         await subWindowClass.setUIContent('testability/pages/First/index2');
         await subWindowClass.showWindow();
         await sleep(300);
-        expect(flag).assertTrue();
+        if (canIUseRes) {
+          expect(flag).assertTrue();
+        }
         await subWindowClass.destroyWindow();
         window.offApplicationFocusStateChange();
         done();
@@ -1852,14 +1859,18 @@ export default function windowFocusTest() {
       try {
         await windowClass.setWindowFocusable(false);
         await sleep(300);
-        expect(count === -2).assertTrue();
+        if (canIUseRes) {
+          expect(count === -2).assertTrue();
+        }
         await windowClass.setWindowFocusable(true);
         let subWindowClass = await windowStage.createSubWindow('ApplicationFocus2');
         console.error(`${caseName} Succeeded in creating the sub window.`);
         await subWindowClass.setUIContent('testability/pages/First/index2');
         await subWindowClass.showWindow();
         await sleep(300);
-        expect(count === 0).assertTrue();
+        if (canIUseRes) {
+          expect(count === 0).assertTrue();
+        }
         await subWindowClass.destroyWindow();
         window.offApplicationFocusStateChange();
         done();
@@ -1909,14 +1920,18 @@ export default function windowFocusTest() {
       try {
         await windowClass.setWindowFocusable(false);
         await sleep(300);
-        expect(count === -1).assertTrue();
+        if (canIUseRes) {
+          expect(count === -1).assertTrue();
+        }
         await windowClass.setWindowFocusable(true);
         let subWindowClass = await windowStage.createSubWindow('ApplicationFocus3');
         console.error(`${caseName} Succeeded in creating the sub window.`);
         await subWindowClass.setUIContent('testability/pages/First/index2');
         await subWindowClass.showWindow();
         await sleep(300);
-        expect(count === 0).assertTrue();
+        if (canIUseRes) {
+          expect(count === 0).assertTrue();
+        }
         await subWindowClass.destroyWindow();
         window.offApplicationFocusStateChange();
         done();
@@ -1959,8 +1974,11 @@ export default function windowFocusTest() {
       let subWindow = await windowStage.createSubWindow('SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100');
       try {
         await subWindow.setUIContent('testability/pages/Index5');
+        let displayInfo: display.Display = display.getDefaultDisplaySync()
+        console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
+        await subWindow.resize(displayInfo.width,displayInfo.height)
         await subWindow.showWindow();
-        await sleep(500);
+        await sleep(1000);
         subWindow.on('windowHighlightChange', callback)
         subWindow.on('windowEvent', callback2);
         let mainWin = windowStage.getMainWindowSync();

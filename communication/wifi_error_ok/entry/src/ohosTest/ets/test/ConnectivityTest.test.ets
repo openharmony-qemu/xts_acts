@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium';
 import wifindktest from 'libwifindk.so';
 import wifiMg from '@ohos.wifiManager';
 
@@ -23,7 +23,18 @@ function sleep(delay : number) : Promise<void> {
 }
 export default function ConnectivityTest() {
   describe('ConnectivityTest', () => {
-
+    beforeAll(async (done : Function) => {
+      console.info('beforeAll called');
+      wifiMg.enableWifi();
+      await sleep(3000);
+      done();
+    });
+    afterAll(async (done : Function) =>  {
+      console.info('afterAll called');
+      wifiMg.enableWifi();
+      await sleep(3000);
+      done();
+    });
     /**
      * @tc.name   testConnectivityKitGetWifiStatus0100
      * @tc.number SUB_ConnectivityKit_GetWifiStatus_0100

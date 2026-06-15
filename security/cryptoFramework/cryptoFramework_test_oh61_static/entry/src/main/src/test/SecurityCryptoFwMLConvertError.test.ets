@@ -34,7 +34,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey(null, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       try {
@@ -42,7 +42,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         gen.convertKeySync(null, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0100_sync ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0100_sync ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -64,7 +64,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey(emptyParam, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0200 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0200 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       try {
@@ -73,7 +73,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         gen.convertKeySync(emptyParam, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0200_sync ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0200_sync ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -95,7 +95,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey(invalidPubKey, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0300_pub ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0300_pub ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
@@ -105,7 +105,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey(validPubKey, invalidPriKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0300_pri ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0300_pri ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -129,7 +129,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen2.convertKey({data: mlkemPubKey}, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0400_1 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0400_1 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
@@ -140,7 +140,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen2.convertKey({data: mldsaPubKey}, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0400_2 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0400_2 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -164,7 +164,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey({data: pubKeyData}, wrongSeed32);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0500_32 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0500_32 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
@@ -175,7 +175,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey({data: pubKeyData}, wrongSeed128);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0500_128 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0500_128 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -199,7 +199,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey({data: pubKeyData}, wrongSeed16);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0600_16 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0600_16 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
@@ -210,7 +210,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await gen.convertKey({data: pubKeyData}, wrongSeed64);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] Convert_Error_0600_64 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] Convert_Error_0600_64 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -237,7 +237,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           await gen3.convertKey({data: pubKeyData}, {data: priKeyData});
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Convert_Error_0700 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] Convert_Error_0700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
@@ -259,7 +259,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PUBLIC_RAW);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0100_pub ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetKeyData_Error_0100_pub ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       try {
@@ -268,7 +268,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_RAW);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0100_pri ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetKeyData_Error_0100_pri ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -290,7 +290,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PUBLIC_X_Y);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0200_xy ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetKeyData_Error_0200_xy ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       try {
@@ -299,7 +299,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_K);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0200_k ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] GetKeyData_Error_0200_k ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -321,7 +321,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedPem("PKCS8");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0100_mlkem ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0100_mlkem ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -330,7 +330,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedPem("PKCS8");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0100_mldsa_pkcs8 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0100_mldsa_pkcs8 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -339,7 +339,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedPem("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0100_mlkem_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0100_mlkem_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -348,7 +348,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedPem("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0100_mldsa_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0100_mldsa_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -370,7 +370,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("X509");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mlkem ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mlkem ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -379,7 +379,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("X509");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_x509 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_x509 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -388,7 +388,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mlkem_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mlkem_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -397,7 +397,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -410,7 +410,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS8", config);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_enc ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_enc ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         try {
@@ -423,7 +423,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS8", config);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedPem_Error_0200_mldkem_enc ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldkem_enc ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         done();
@@ -445,7 +445,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0100_mlkem ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0100_mlkem ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -454,7 +454,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedDer("PKCS8");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0100_mldsa_pkcs8 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0100_mldsa_pkcs8 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -463,7 +463,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedDer("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0100_mlkem_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0100_mlkem_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -472,7 +472,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.pubKey.getEncodedDer("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0100_mldsa_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0100_mldsa_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -494,7 +494,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedDer("X509");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0200_mlkem ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0200_mlkem ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -503,7 +503,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedDer("X509");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0200_mldsa_x509 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0200_mldsa_x509 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -512,7 +512,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedDer("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0200_mlkem_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0200_mlkem_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         try {
@@ -521,7 +521,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           keyPair.priKey.getEncodedDer("PKCS1");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] GetEncodedDer_Error_0200_mldsa_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] GetEncodedDer_Error_0200_mldsa_pkcs1 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -543,7 +543,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           expect(keyPair.priKey === undefined).assertFalse();
           expect(keyPair.pubKey === undefined).assertFalse();
         } catch (error) {
-          console.error(`[XTS] ConvertPemKey_Error_0100 KEM ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ConvertPemKey_Error_0100 KEM ${error}`);
           expect(null).assertFail();
         }
         try {
@@ -552,7 +552,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           expect(keyPair.priKey === undefined).assertFalse();
           expect(keyPair.pubKey === undefined).assertFalse();
         } catch (error) {
-          console.error(`[XTS] ConvertPemKey_Error_0100 DSA ${error}, error code: ${error.code}`);
+          console.error(`[XTS] ConvertPemKey_Error_0100 DSA ${error}`);
           expect(null).assertFail();
         }
         done();

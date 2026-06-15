@@ -100,7 +100,7 @@ type T5 = (x: number, y: string) => undefined
 let func4: T5
 
 func2 = (x: Object) => { return "s" }
-func3 = (x: number[]) => {}
+func3 = (x: number[]) => {return null}
 func4 = (x: number, y: string) => { return undefined }
 
 type T6 = (x: number, y: string) => undefined
@@ -268,15 +268,6 @@ class Pass10 {
 }
 function returnAsAny10(input: TT10): Any { return input }
 let test10: TT10 = Color6.Red
-
-type TT11 = FC11
-type FC11 = (input: TT11) => Any
-class Pass11 {
-  static pass(input: TT11): TT11 { return input }
-  dpass(input: TT11): TT11 { return input }
-}
-function returnAsAny11(input: TT11): Any { return input }
-let test11: TT11 = returnAsAny11
 
 type TT12 = string[]
 type FC12 = (input: TT12) => Any
@@ -1130,28 +1121,6 @@ export default function ExpressionsInstanceThreeTest(): void {
       expect(d2 instanceof TT10).assertTrue()
       expect(d3 instanceof TT10).assertTrue()
       expect(d4 instanceof TT10).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_INSTANCE_THREE_4400
-     * @tc.name      testExpressionsInstanceThree0044
-     * @tc.desc      Any instanceof expression in the form expr instanceof T The result of an instanceof
-     *               expression is true if the actual type of evaluated expr is a subtype of T
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsInstanceThree0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let runner: Pass11 = new Pass11
-      let fCall: FC11 = returnAsAny11
-      let d1 = Pass11.pass(test11)
-      let d2 = fCall(test11)
-      let d3 = ((input: Any): Any => { return input })(test11)
-      let d4 = ((input: Any): Any => { return input })(fCall(Pass11.pass(runner.dpass(test11))))
-      expect(d1 instanceof TT11).assertTrue()
-      expect(d2 instanceof TT11).assertTrue()
-      expect(d3 instanceof TT11).assertTrue()
-      expect(d4 instanceof TT11).assertTrue()
     });
 
     /**

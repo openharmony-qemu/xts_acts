@@ -146,7 +146,7 @@ it('animateToTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0100 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button1', 10, "")));
     });
 
     
@@ -175,7 +175,7 @@ it('animateToTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0200 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button2', 10, "")));
     });
 
     
@@ -207,7 +207,7 @@ it('animateToTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0300 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button3', 10, "")));
     });
 
     
@@ -235,7 +235,7 @@ it('animateToTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0400 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button4', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button4', 10, "")));
     });
 
     
@@ -263,7 +263,7 @@ it('animateToTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0500 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button5', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button5', 10, "")));
     });
 
     
@@ -306,7 +306,7 @@ it('animateToTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0600 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button11', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button11', 10, "")));
     });
 
     
@@ -350,7 +350,7 @@ it('animateToTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0700 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button12', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button12', 10, "")));
     });
 
 
@@ -395,7 +395,7 @@ it('animateToTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0800 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button13', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button13', 10, "")));
     });
 
     
@@ -439,7 +439,7 @@ it('animateToTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_0900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_0900 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button14', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button14', 10, "")));
     });
 
     
@@ -484,7 +484,7 @@ it('animateToTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1000 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button15', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button15', 10, "")));
     });
 
     
@@ -528,7 +528,7 @@ it('animateToTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1100 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1100 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button6', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button6', 10, "")));
     });
 
     
@@ -574,7 +574,7 @@ it('animateToTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1200 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1200 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button7', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button7', 10, "")));
     });
 
     
@@ -619,7 +619,7 @@ it('animateToTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1300 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1300 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button8', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button8', 10, "")));
     });
 
     
@@ -663,7 +663,7 @@ it('animateToTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1400 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1400 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button9', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button9', 10, "")));
     });
 
     
@@ -708,7 +708,7 @@ it('animateToTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1500 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1500 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button10', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button10', 10, "")));
     });
 
     
@@ -752,7 +752,7 @@ it('animateToTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1600 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1600 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button111', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button111', 10, "")));
     });
 
     
@@ -796,7 +796,7 @@ it('animateToTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1700 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1700 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button121', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button121', 10, "")));
     });
 
     
@@ -840,7 +840,7 @@ it('animateToTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1800 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1800 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button131', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button131', 10, "")));
     });
 
     
@@ -884,7 +884,7 @@ it('animateToTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_1900 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_1900 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button141', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button141', 10, "")));
     });
 
     
@@ -928,7 +928,7 @@ it('animateToTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<
         console.info("animateToTest_static_2000 on emitter err : " + JSON.stringify(err));
       }
       console.info("animateToTest_static_2000 click result is: " +
-      JSON.stringify(inspector.sendEventByKey('button151', 10, "")));
+      JSON.stringify(inspector.sendEventByKey('animateto_button151', 10, "")));
     });
 
     

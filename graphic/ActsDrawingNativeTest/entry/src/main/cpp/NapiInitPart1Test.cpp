@@ -1241,3 +1241,20 @@ napi_value DrawingFontGetWidths(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
+
+// Font GetTextPathWithFallback related functions
+napi_value DrawingFontGetTextPathWithFallback(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, FONT_GET_TEXT_PATH_WITH_FALLBACK_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackNomal,
+            OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontGetTextPathWithFallbackMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}

@@ -20,7 +20,7 @@ import hilog from '@ohos.hilog'
 
 @Entry
 @Component
-struct markAnchor {
+struct markAnchorTest {
   @State flag: boolean = true;
   @State buttonText: string = 'false'
 
@@ -29,7 +29,7 @@ struct markAnchor {
       Text('markAnchor-动态切换').fontSize(20).margin(15).width('90%')
       Button('Button'+this.buttonText)
         .fontSize(50)
-        .markAnchor(this.flag ? undefined  : { x: -50, y: -0 } as Position  )
+        .markAnchor(this.flag ? undefined  : { x: -50, y: 0 } as Position  )
         .id('common_markAnchor')
       Divider()
       Button('flag is' + this.flag).fontSize(20).id('changeButton')

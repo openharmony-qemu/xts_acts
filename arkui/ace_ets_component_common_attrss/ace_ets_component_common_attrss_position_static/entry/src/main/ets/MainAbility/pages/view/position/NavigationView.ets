@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,Flex,
   Row,
@@ -37,6 +38,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State, PropRef } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct NavigationView {
   private arr: number[] = [0, 1, 2, 3] as number[]
@@ -45,7 +47,7 @@ export struct NavigationView {
   @PropRef _position!: Position;
   private componentKey: string = '';
 
-  build() {
+  build():void {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
@@ -74,10 +76,6 @@ export struct NavigationView {
               }.backgroundColor('#ccc')
               .title(`NavDestination${item + 1}`)
             }
-            // .onStateChange((isActivated: boolean) => {
-            //   console.info('isActivated = ' + isActivated);
-            //   this.dex = index
-            // })
           }
         }, (item: number) => String(item))
       }

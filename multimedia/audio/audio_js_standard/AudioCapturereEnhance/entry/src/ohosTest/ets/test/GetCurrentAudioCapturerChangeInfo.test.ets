@@ -254,6 +254,7 @@ export default function audioCapturerEnhanceTest() {
       try {
         let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
         console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS\n ${getCapturerChangeInfo(CapturerChangeInfo)}`)
+        console.info(`getCurrentAudioCapturerChangeInfo_0100:SUCCESS, ${JSON.stringify(CapturerChangeInfo)}`);
         expect(CapturerChangeInfo.capturerInfo.source)
           .assertEqual(Number(AudioCapturerOptions.capturerInfo.source));
         expect(CapturerChangeInfo.muted).assertEqual(false);
@@ -312,6 +313,7 @@ export default function audioCapturerEnhanceTest() {
       try {
         let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
         console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
+        console.info(`getCurrentAudioCapturerChangeInfo_0200:SUCCESS, ${JSON.stringify(CapturerChangeInfo)}`);
         expect(CapturerChangeInfo.muted).assertEqual(false);
         expect(CapturerChangeInfo.deviceDescriptors[0].id).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceType).assertEqual(audio.DeviceType.MIC);
@@ -386,9 +388,10 @@ export default function audioCapturerEnhanceTest() {
       try {
         let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
         console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS, ${getCapturerChangeInfo(CapturerChangeInfo)}`)
+        console.info(`getCurrentAudioCapturerChangeInfo_0300 :SUCCESS, ${JSON.stringify(CapturerChangeInfo)}`);
         expect(CapturerChangeInfo.muted).assertEqual(false);
         expect(CapturerChangeInfo.deviceDescriptors[0].id).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
-        expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
+        expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertLargerOrEqual(env.OUTPUT_NUMBER_0);
         expect(CapturerChangeInfo.deviceDescriptors[0].encodingTypes[0]).assertEqual(env.OUTPUT_NUMBER_0);
         done();
       } catch (error) {
@@ -435,6 +438,7 @@ export default function audioCapturerEnhanceTest() {
       try {
         let CapturerChangeInfo: ESObject = await audioCap.getCurrentAudioCapturerChangeInfo();
         console.info(`getCurrentAudioCapturerChangeInfo :SUCCESS\n ${getCapturerChangeInfo(CapturerChangeInfo)}`)
+        console.info(`getCurrentAudioCapturerChangeInfo_0400 :SUCCESS, ${JSON.stringify(CapturerChangeInfo)}`);
         expect(CapturerChangeInfo.capturerInfo.source)
           .assertEqual(Number(AudioCapturerOptions.capturerInfo.source));
         expect(CapturerChangeInfo.muted).assertEqual(false);

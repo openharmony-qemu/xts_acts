@@ -77,7 +77,7 @@ export default function APITextBackgroundStyleJsunit() {
         }
       } catch (err) {
         console.error("push APITextBackgroundStyleJsunit page error:" + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

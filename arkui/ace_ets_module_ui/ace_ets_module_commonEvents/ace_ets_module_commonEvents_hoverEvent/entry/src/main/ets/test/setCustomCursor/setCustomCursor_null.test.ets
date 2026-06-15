@@ -50,10 +50,9 @@
  	      */
  	     it('SUB_ARKUI_TouchEvent_setCustomCursor_0100', Level.LEVEL0, async (done: Function) => {
   console.info('[getCurrentLocalPositionTest_0100] START');
-  let editable: boolean = true;
-  let isStrideAlignment: boolean = true;
-
   let driver = await Driver.create();
+  let editable: boolean = false;
+  let isStrideAlignment: boolean = false;
 
   let btn: Component = await driver.findComponent(ON.id('button01'));
   let rect = await btn.getBounds();

@@ -15,7 +15,7 @@
  */
 
 import { Entry, Component, AttributeModifier, ContainerSpanAttribute, Column, TextArea, Text, ContainerSpan, $r,
-  ColumnOptions, ImageSpan, ContainerSpan } from '@ohos.arkui.component';
+  ColumnOptions, ImageSpan } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 

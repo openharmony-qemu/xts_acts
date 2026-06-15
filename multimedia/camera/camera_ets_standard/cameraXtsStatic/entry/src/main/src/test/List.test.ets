@@ -6,6 +6,7 @@ import PhotoOutputStaticTest from "./cameraPhotoSession/CameraPhotoSessionTest.t
 import PhotoOutputToStaticTest from "./PhotoOutput/PhotoOutput.test";
 import CameraDeviceStaticTest from "./cameraDevice/CameraDeviceTest.test";
 import CameraEnumStaticTest from "./CameraEnum.test";
+import MetadataOutputStaticTest from "./MetadataOutput/MetadataOutput.test";
 
 export default function testsuite() {
   cameraNoPermissionStaticTest();
@@ -16,4 +17,5 @@ export default function testsuite() {
   PhotoOutputToStaticTest();
   CameraDeviceStaticTest();
   CameraEnumStaticTest();
+  MetadataOutputStaticTest();
 }

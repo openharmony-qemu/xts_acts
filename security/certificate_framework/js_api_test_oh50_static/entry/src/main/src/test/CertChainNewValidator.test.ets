@@ -261,7 +261,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([ // 01234567890123456789
@@ -270,7 +270,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -291,7 +291,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [interX509CertGm!],
             untrustedCerts: [interX509CertGm!, rootX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -301,7 +301,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -322,7 +322,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,   async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 70d62b81.0
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -331,7 +331,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]),
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -352,7 +352,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [otherrootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -362,7 +362,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -383,7 +383,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 70d62b81.0
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789 -> 01234567890123456788
@@ -393,7 +393,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -414,7 +414,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!],
             untrustedCerts: [interX509Cert!],
             userId: new Uint8Array([
@@ -423,7 +423,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509Cert!, validatorParams);
+          await validator.validateCert(leafX509Cert!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -444,7 +444,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 70d62b81.0
             untrustedCerts: [interX509CertGm!],
             partialChain: true
@@ -452,7 +452,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let userId: Uint8Array = new Uint8Array(129);
           validatorParams.userId = userId;
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -473,7 +473,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -482,7 +482,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafExpiredX509CertGm!, validatorParams);
+          await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -503,7 +503,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -512,7 +512,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafYetX509CertGm!, validatorParams);
+          await validator.validateCert(leafYetX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -533,7 +533,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -542,7 +542,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]),
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafYetX509CertGm!, validatorParams);
+          await validator.validateCert(leafYetX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -563,7 +563,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -574,7 +574,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "20260408012032Z" // YYYYMMDDHHMMSSZ
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -595,7 +595,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -605,7 +605,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "490408012032Z" // YYMMDDHHMMSSZ - RFC5280-4.1.2.5.1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -626,7 +626,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -636,7 +636,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "500408012032Z" // YYMMDDHHMMSSZ - 不符合规范要求，RFC5280-4.1.2.5.1，对比用例1600
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -657,7 +657,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -667,7 +667,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "20490408012032Z" // YYYYMMDDHHMMSSZ - 符合规范要求，RFC5280-4.1.2.5.1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -688,7 +688,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -698,7 +698,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: ["user1.example.com", "user2.example.com"] // 含匹配和不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -719,7 +719,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -729,7 +729,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: ["user2.example.com", "user1.example.cn", ".*", "*", "*.*.*"] // 不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -750,7 +750,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -760,7 +760,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin3@example.com"] // 不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -781,7 +781,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -791,7 +791,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin1@example.com", "admin2@example.com"] // 数组长度大于1，规格是1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -812,7 +812,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -822,7 +822,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin2@example.com"] // 匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -843,11 +843,11 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!, interX509Cert!],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -868,12 +868,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!, interX509Cert!],
             untrustedCerts: [interX509Cert!]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -894,12 +894,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!],
             untrustedCerts: [rootX509Cert!, interX509Cert!]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -920,13 +920,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [interX509Cert!],
             untrustedCerts: [rootX509Cert!, interX509Cert!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -947,7 +947,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -957,7 +957,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: [cert.KeyUsageType.KEYUSAGE_DECIPHER_ONLY]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafKeyUsageOnlyDecryptX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafKeyUsageOnlyDecryptX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -978,7 +978,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -991,7 +991,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1012,7 +1012,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1022,7 +1022,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: [cert.KeyUsageType.KEYUSAGE_CRL_SIGN]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafKeyUsageOnlyDecryptX509CertGm!, validatorParams);
+        await validator.validateCert(leafKeyUsageOnlyDecryptX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1043,7 +1043,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1053,7 +1053,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: []
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1074,7 +1074,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1095,7 +1095,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1116,7 +1116,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1126,7 +1126,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_HAS_EXPIRED]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafExpiredX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1147,7 +1147,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1157,7 +1157,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_NOT_YET_VALID]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafYetX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1178,7 +1178,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1189,7 +1189,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_HOSTNAME_MISMATCH] // 仅支持特定场景错误码
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1210,7 +1210,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1224,7 +1224,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafExpiredX509CertGm!, validatorParams);
+        await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1245,7 +1245,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1255,7 +1255,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: []
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafExpiredX509CertGm!, validatorParams);
+        await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1276,7 +1276,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1286,7 +1286,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           validateDate: false
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.VerifyCertResult = await validator.validate(leafExpiredX509CertGm!, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1311,7 +1311,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         for (let i = 0; i < 101; i++) {
           trustedCertsArray.push(rootX509CertGm!);
         }
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: trustedCertsArray,
           userId: new Uint8Array([
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
@@ -1319,7 +1319,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1344,7 +1344,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         for (let i = 0; i < 101; i++) {
           untrustedCertsArray.push(interX509CertGm!);
         }
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: untrustedCertsArray,
           userId: new Uint8Array([
@@ -1353,7 +1353,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1378,7 +1378,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         for (let i = 0; i < 101; i++) {
           hostnamesArray.push("example" + i + ".com");
         }
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1388,7 +1388,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           hostnames: hostnamesArray
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1410,7 +1410,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       try {
         let algName: string = "PKIX";
         let longHostname: string = "a".repeat(129) + ".com";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1420,7 +1420,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           hostnames: [longHostname]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1442,7 +1442,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       try {
         let algName: string = "PKIX";
         let longEmail: string = "a".repeat(120) + "@example.com";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1452,7 +1452,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           emailAddresses: [longEmail]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1473,7 +1473,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1483,7 +1483,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20360406132433A"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1504,7 +1504,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1514,7 +1514,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20241231Z"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1535,7 +1535,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let algName: string = "PKIX";
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1545,7 +1545,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20241231235959000Z"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1570,7 +1570,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         for (let i = 0; i < 101; i++) {
           ignoreErrsArray.push(cert.CertResult.ERR_CERT_HAS_EXPIRED);
         }
-        let validatorParams: cert.X509CertValidatorParams = {
+        let validatorParams: cert.CertValidationParams = {
           trustedCerts: [rootX509CertGm!],
           untrustedCerts: [interX509CertGm!],
           userId: new Uint8Array([
@@ -1580,7 +1580,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: ignoreErrsArray
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm!, validatorParams);
+        await validator.validateCert(leafX509CertGm!, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1601,7 +1601,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -1614,7 +1614,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1635,12 +1635,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interNoCertSignX509CertGm!]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1661,7 +1661,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -1670,7 +1670,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1691,12 +1691,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1717,7 +1717,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([
@@ -1727,7 +1727,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: ""
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1748,13 +1748,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 953b6f93.0 中间证书，未设置userId
             untrustedCerts: [inter1SystemCaX509CertGm!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafSystemCaX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafSystemCaX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1775,14 +1775,14 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 953b6f93.0 中间证书，未设置userId
             untrustedCerts: [inter1SystemCaX509CertGm!],
             userId: new Uint8Array([]),
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafSystemCaX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafSystemCaX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
           let signAlgName: string = chainResult.certChain[0].getSignatureAlgName();
           expect(signAlgName).assertEqual("SM3withSM2");
@@ -1805,7 +1805,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([
@@ -1819,7 +1819,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafExpiredX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1840,13 +1840,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!, interX509Cert!],
             untrustedCerts: [interX509Cert!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1867,13 +1867,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [leafX509Cert!],
             untrustedCerts: [interX509Cert!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(1);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1894,13 +1894,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // 根证书不存在
             untrustedCerts: [interX509CertGm2!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm2!, validatorParams);
+          await validator.validateCert(leafX509CertGm2!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1921,13 +1921,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: false, // 必须设置可信证书或者开启预置根证书能力
             untrustedCerts: [interX509CertGm2!],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm2!, validatorParams);
+          await validator.validateCert(leafX509CertGm2!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1948,12 +1948,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509Cert!],
             allowDownloadIntermediateCa: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509Cert!, validatorParams);
+          await validator.validateCert(leafX509Cert!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1974,7 +1974,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert!],
             untrustedCerts: [interExpiredX509Cert!],
             validateDate: true,
@@ -1984,7 +1984,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafYetX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2005,7 +2005,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert!],
             untrustedCerts: [interExpiredX509Cert!],
             validateDate: false,
@@ -2014,7 +2014,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafYetX509Cert!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509Cert!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2035,7 +2035,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2044,7 +2044,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2065,7 +2065,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2077,7 +2077,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2098,7 +2098,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2108,7 +2108,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2129,7 +2129,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2138,7 +2138,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2159,7 +2159,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2168,7 +2168,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2189,7 +2189,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2201,7 +2201,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2222,7 +2222,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2232,7 +2232,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2253,7 +2253,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2263,7 +2263,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2284,7 +2284,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2299,7 +2299,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2320,7 +2320,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2332,7 +2332,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2357,7 +2357,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           for (let i = 0; i < 101; i++) {
             crlsArray.push(interDefaultX509CrlGm!);
           }
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2366,7 +2366,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2391,7 +2391,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           for (let i = 0; i < 101; i++) {
             ocspResponsesArray.push(new Uint8Array([0x30, 0x03, 0x0A, 0x01, 0x00]));
           }
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2400,7 +2400,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2421,7 +2421,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2435,7 +2435,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2456,7 +2456,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             revokedParams: {
@@ -2465,7 +2465,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2486,12 +2486,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustSystemCa: true, // a9fc73bc.0 根证书签发了多本同级中间证书
             untrustedCerts: [interCaCertGm!], // 另一本中间证书 1e276aec.0
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafCaCertGm!, validatorParams);
+          await validator.validateCert(leafCaCertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2512,11 +2512,11 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             untrustedCerts: [interDefaultX509CertGm!],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2537,12 +2537,12 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [],
             untrustedCerts: [interDefaultX509CertGm!],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2563,13 +2563,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [interDefaultX509CertGm!],
             untrustedCerts: [],
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2590,7 +2590,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -2600,7 +2600,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: [""] // 空字符串
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2621,7 +2621,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootX509CertGm!],
             untrustedCerts: [interX509CertGm!],
             userId: new Uint8Array([ // 01234567890123456789
@@ -2631,7 +2631,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: [""] // 空字符串
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm!, validatorParams);
+          await validator.validateCert(leafX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2652,13 +2652,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCaCertGm!],
             untrustedCerts: [interDefaultX509CertGm!, rootDefaultX509CertGm!],
             validateDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm!, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2679,13 +2679,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             validateDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
+          await validator.validateCert(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2706,7 +2706,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "PKIX";
-          let validatorParams: cert.X509CertValidatorParams = {
+          let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
             validateDate: false,
@@ -2715,7 +2715,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.VerifyCertResult = await validator.validate(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);

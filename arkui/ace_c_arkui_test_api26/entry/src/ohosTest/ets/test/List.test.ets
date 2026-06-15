@@ -25,6 +25,8 @@ import passThroughTest from './passThrough/PassThroughTest.test'
 import GetSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test'
 import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
 import AccessibilityFocusIdTest from './accessibilityFocusId/AccessibilityFocusIdTest.test'
+import hoveredTest from './hovered/hovered.test'
+import shouldRecognizerParallelWith from "./shouldRecognizerParallelWith/shouldRecognizerParallelWith.test"
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -40,4 +42,6 @@ export default function testsuite() {
   GetSizeLimitationTest();
   InspectorLabelTest();
   AccessibilityFocusIdTest();
+  hoveredTest();
+  shouldRecognizerParallelWith();
 }

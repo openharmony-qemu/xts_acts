@@ -7,6 +7,20 @@
     "MainAbility/pages/Refresh/RefreshMaxPullDownDistance",
     "MainAbility/pages/Refresh/RefreshRefreshOffset",
     "MainAbility/pages/Scroll/scrollScrollBarWidth",
-    "MainAbility/pages/WaterFlow/waterFlowScrollBarWidth"
+    "MainAbility/pages/WaterFlow/waterFlowScrollBarWidth",
+    "MainAbility/pages/List/backPressBehaviorList",
+    "MainAbility/pages/ListItemGroup/stickyFooterGroup",
+    "MainAbility/pages/ListItemGroup/headerFooterStyle",
+    "MainAbility/pages/ArcAlp/ArcAlp",
+    "MainAbility/pages/ArcSwiper/arcSwiperDotIndicator",
+    "MainAbility/pages/ArcSwiper/arcSwiperContent",
+    "MainAbility/pages/ArcSwiper/arcSwiperEvent",
+    "MainAbility/pages/ArcSwiper/arcSwiperShow",
+    "MainAbility/pages/ArcSwiper/arcSwiperBoolean",
+    "MainAbility/pages/ArcSwiper/arcSwiperEffectMode",
+    "MainAbility/pages/Grid/gridEnableEditMode",
+    "MainAbility/pages/Grid/gridEditModeChange",
+    "MainAbility/pages/List/listEnableEditMode",
+    "MainAbility/pages/List/listEditModeChange"
   ]
 }

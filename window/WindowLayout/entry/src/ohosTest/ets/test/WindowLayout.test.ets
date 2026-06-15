@@ -20,7 +20,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
-import { StartOptions } from '@kit.AbilityKit';
+import { AbilityConstant, bundleManager, StartOptions, Want } from '@kit.AbilityKit';
 import deviceInfo from '@ohos.deviceInfo';
 import display from '@ohos.display';
 
@@ -830,22 +830,13 @@ export default function windowLayoutTest() {
         let blank = await driver.findComponent(ON.id('startMoving'))
         await sleep(1000)
         let point = await blank.getBoundsCenter();
+        console.info(`${message} point = ${JSON.stringify(point.x)},y = ${JSON.stringify(point.y)}`)
         await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
-        let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
-        let textDragged = await text.getText()
-        console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
-        if (textDragged == 'startMoving success') {
-          let windowPointDragged = windowClass.getWindowProperties().windowRect
-          console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
-          expect(windowPointDragged.left).assertEqual(windowPoint.left + 100)
-          expect(windowPointDragged.top).assertEqual(windowPoint.top + 100)
-        } else if (textDragged == 'startMoving 801') {
-          console.info(`${message}textDragged ${JSON.stringify(textDragged)}`)
-        } else {
-          console.error(`${message} Error`);
-          expect(true).assertFalse()
-        }
+        let rectNow = windowClass.getWindowProperties().windowRect
+        console.info(`${message} rectNow = ${JSON.stringify(rectNow.left)},y = ${JSON.stringify(rectNow.top)}`)
+        expect(rectNow.left).assertEqual(windowPoint.left + 100)
+        expect(rectNow.top).assertEqual(windowPoint.top + 100)
         await windowClass.destroyWindow()
         done();
       }).catch(async (err: BusinessError) => {
@@ -2965,7 +2956,7 @@ export default function windowLayoutTest() {
 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-        if (!isSyscapSessionManagerSupported || (deviceType !== '2in1' && deviceType !== 'phone' && deviceType !== 'tablet')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
@@ -3027,9 +3018,13 @@ export default function windowLayoutTest() {
         expect().assertFail();
         done();
       } catch (err) {
+        if(!isSyscapSessionManagerSupported){
+          console.error(`${caseName} device not supported, err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(801);
+          done()
+        }
         console.error(`${caseName} failed main window, err: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(1300004);
-        
       }
       // dilog窗
       let config: window.Configuration = {
@@ -3067,11 +3062,17 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
-          console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow();
-          expect(err.code).assertEqual(1300004);
-          done();
-          
+          if(deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet'){
+            console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindowClass?.destroyWindow();
+            expect(err.code).assertEqual(1300004);
+            done();
+          }else{
+            console.error(`${caseName} Failed float window1. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindowClass?.destroyWindow();
+            expect(err.code).assertEqual(1300002);
+            done();
+          }
         });
       } catch (e) {
         console.error(`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
@@ -6305,6 +6306,1504 @@ export default function windowLayoutTest() {
       }
     });
 
+     /**
+     * @tc.name maximizeWithOptionsNoParam_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0100
+     * @tc.desc maximizeWithOptions no param test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('maximizeWithOptionsNoParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'maximizeWithOptionsNoParam_0100';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let windowStatusBefore = mainWindow.getWindowStatus()
+        console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+        mainWindow!.maximizeWithOptions().then(async () => {
+          console.info(`${caseName} Succeeded in maximizing window with no param.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          await terminateAbility(caseName);
+          console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+          if (isFreeWindowMode) {
+            expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+            expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+          }else {
+            expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (!isSyscapSessionManagerSupported) {
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name maximizeWithOptionsFullConfig_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0200
+     * @tc.desc maximizeWithOptions with full config test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('maximizeWithOptionsFullConfig_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsFullConfig_0200';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE,
+          acrossDisplayPresentation: window.AcrossDisplayPresentation.EXIT_ACROSS_DISPLAY_MODE,
+          snapshotAnimationConfig: {
+            duration: 200,
+            delay: 30
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let windowStatusBefore = mainWindow.getWindowStatus()
+          console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          let displayHeight = display.getDefaultDisplaySync().height;
+          console.info(`${caseName} Succeeded in get display heigh is: ${JSON.stringify(displayHeight)} , FoldStatus is :${JSON.stringify(curFoldStatus)}`);
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window with full config.`);
+            let windowStatus = mainWindow!.getWindowStatus();
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.height;
+            console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
+            await terminateAbility(caseName);
+            console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+            if (isFreeWindowMode) {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+              expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+              if(deviceType == '2in1' && curFoldStatus == 3){
+                expect(windowHeight === displayHeight || windowHeight < displayHeight).assertTrue();
+              }
+            }else {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+            expect(exception.code).assertEqual(801)
+          }else {
+            console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsSnapshotOnly_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0300
+     * @tc.desc maximizeWithOptions with snapshotAnimationConfig only test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('maximizeWithOptionsSnapshotOnly_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsSnapshotOnly_0300';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          snapshotAnimationConfig: {
+            duration: 400,
+            delay: 350
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let windowStatusBefore = mainWindow.getWindowStatus()
+          console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window with snapshot config.`);
+            let windowStatus = mainWindow!.getWindowStatus();
+            await terminateAbility(caseName);
+            console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+            if (isFreeWindowMode) {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }else {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+            expect(exception.code).assertEqual(801)
+          }else {
+            console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsPresentationSnapshot_0400
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0400
+     * @tc.desc maximizeWithOptions with maximizePresentation and snapshotAnimationConfig test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('maximizeWithOptionsPresentationSnapshot_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsPresentationSnapshot_0400';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          maximizePresentation: window.MaximizePresentation.ENTER_IMMERSIVE,
+          snapshotAnimationConfig: {
+            duration: 0,
+            delay: 0
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let windowStatusBefore = mainWindow.getWindowStatus()
+          console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window with presentation and snapshot.`);
+            let windowStatus = mainWindow!.getWindowStatus();
+            await terminateAbility(caseName);
+            console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+            if (isFreeWindowMode) {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }else {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+            expect(exception.code).assertEqual(801)
+          }else {
+            console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsAcrossSnapshot_0500
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0500
+     * @tc.desc maximizeWithOptions with acrossDisplayPresentation and snapshotAnimationConfig test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('maximizeWithOptionsAcrossSnapshot_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsAcrossSnapshot_0500';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          acrossDisplayPresentation: window.AcrossDisplayPresentation.ENTER_ACROSS_DISPLAY_MODE,
+          snapshotAnimationConfig: {
+            duration: 100,
+            delay: 20
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          let displayHeight = display.getDefaultDisplaySync().height;
+          console.info(`${caseName} Succeeded in get display heigh is: ${JSON.stringify(displayHeight)} , FoldStatus is :${JSON.stringify(curFoldStatus)}`);
+          let windowStatusBefore = mainWindow.getWindowStatus()
+          console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window with across and snapshot.`);
+            let windowStatus = mainWindow!.getWindowStatus();
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.height;
+            console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
+            await terminateAbility(caseName);
+            console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+            if (isFreeWindowMode) {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              if(deviceType == '2in1' && curFoldStatus == 3){
+                expect(windowHeight > displayHeight).assertTrue();
+              }
+            }else {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+            expect(exception.code).assertEqual(801)
+          }else {
+            console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsParamSingle_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_PARAM_0300
+     * @tc.desc maximizeWithOptions duration=200 only test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsParamSingle_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsParamSingle_0300';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          snapshotAnimationConfig: {
+            duration: 200
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let windowStatusBefore = mainWindow.getWindowStatus()
+          console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window with single param.`);
+            let windowStatus = mainWindow!.getWindowStatus();
+            await terminateAbility(caseName);
+            console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+            if (isFreeWindowMode) {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }else {
+              expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+            }
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        } catch (exception) {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
+            expect(exception.code).assertEqual(801)
+          }else {
+            console.error(`${caseName} Failed to maximize window or getwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+          }
+          done();
+        }
+      });
+
+      /**
+     * @tc.name maximizeWithOptionsError801_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_801_0100
+     * @tc.desc maximizeWithOptions 801 window destroyed test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+   it('maximizeWithOptionsError801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError801_0100';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        mainWindow!.maximizeWithOptions().then(async () => {
+          await sleep(200)
+          console.info(`${caseName} Succeeded in maximizing window.`);
+          await terminateAbility(caseName);
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300002_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300002_0100
+     * @tc.desc maximizeWithOptions 1300002 window destroyed test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300002_0100';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            await subWindow.destroyWindow();
+            console.info(`${caseName} destroyWindow `);
+            let maximizeOptions: window.MaximizeOptions = {
+              maximizePresentation: window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING,
+          };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window`);
+              expect(true).assertFalse()
+              done()
+            }).catch((err:BusinessError)=>{
+              if (err.code === 1300002) {
+                console.info(`${caseName} window is destoryed.Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002)
+              }else {
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
+              done();
+            })
+          } catch (err) {
+              console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300004_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0100
+     * @tc.desc maximizeWithOptions 1300004 invalid window type test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300004_0100';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: false,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            let maximizeOptions: window.MaximizeOptions = {
+              maximizePresentation: window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER
+            };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window `);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              expect(true).assertFalse()
+              done()
+            }).catch(async (err:BusinessError)=>{
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (err.code === 1300004) {
+              console.info(`${caseName} window is not supported maximized.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(1300004)
+              } else {
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300004_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0200
+     * @tc.desc maximizeWithOptions 1300002 window destroyed test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300004_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300004_0200';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            let maximizeOptions: window.MaximizeOptions = {
+              acrossDisplayPresentation: window.AcrossDisplayPresentation.ENTER_ACROSS_DISPLAY_MODE,
+              snapshotAnimationConfig: {
+                duration: 200,
+                delay: 30
+              }
+            };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window `);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              expect(true).assertFalse()
+              done()
+            }).catch(async (err:BusinessError)=>{
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (err.code === 1300004) {
+                console.info(`${caseName} subwindow is not supported acrossDisplayPresentation and snapshotAnimationConfig.Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300004)
+              } else {
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300004_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0300
+     * @tc.desc maximizeWithOptions 1300004 window single param snapshotAnimationConfig.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300004_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300004_0300';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            let maximizeOptions: window.MaximizeOptions = {
+              snapshotAnimationConfig: {
+                duration: 200,
+                delay: 30
+              }
+            };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window single param snapshotAnimationConfig`);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              expect(true).assertFalse()
+              done()
+            }).catch(async (err:BusinessError)=>{
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (err.code === 1300004) {
+                console.info(`${caseName} subwindow is not supported acrossDisplayPresentation and snapshotAnimationConfig.Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300004)
+              } else {
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300016_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300016_0100
+     * @tc.desc maximizeWithOptions 1300016 duration>400 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300016_0100';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          snapshotAnimationConfig: {
+            duration: 500
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window duration>400.`);
+            await terminateAbility(caseName);
+            expect().assertFail();
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            if (!isSyscapSessionManagerSupported) {
+              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(801)
+            }else  if (err.code === 1300016) {
+              console.info(`${caseName} is not supported snapshotAnimationConfig duration>400 .Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(1300016)
+            } else {
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            done();
+          });
+        } catch (exception) {
+          console.info(`${caseName} Succeeded in catching error  Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name maximizeWithOptionsError1300016_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300016_0200
+     * @tc.desc maximizeWithOptions 1300016 delay<0 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('maximizeWithOptionsError1300016_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError1300016_0200';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let maximizeOptions: window.MaximizeOptions = {
+          snapshotAnimationConfig: {
+            delay: -1
+          }
+        };
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
+            await sleep(200)
+            console.info(`${caseName} Succeeded in maximizing window  delay<0.`);
+            await terminateAbility(caseName);
+            expect().assertFail();
+            done();
+          }).catch(async (err: BusinessError) => {
+            await terminateAbility(caseName);
+            if (!isSyscapSessionManagerSupported) {
+              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(801)
+            }else if(err.code == 1300016){
+              console.info(`${caseName} param range fail.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(1300016)
+            }else {
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
+            done();
+          });
+        } catch (exception) {
+          console.info(`${caseName} Succeeded in catching error  Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name subWindowMaximizeWithOptionsNoParam_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0100
+     * @tc.desc subWindow maximizeWithOptions no param test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('subWindowMaximizeWithOptionsNoParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'subWindowMaximizeWithOptionsNoParam_0100';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            subWindow.maximizeWithOptions().then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window`);
+              let windowStatus = subWindow!.getWindowStatus();
+              console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (isFreeWindowMode) {
+                expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              }else {
+                expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+              }
+              done()
+            }).catch((err:BusinessError)=>{
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name subWindowMaximizeWithOptionsPresentation_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0200
+     * @tc.desc subWindow maximizeWithOptions with presentation test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('subWindowMaximizeWithOptionsPresentation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'subWindowMaximizeWithOptionsPresentation_0200';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            let maximizeOptions: window.MaximizeOptions = {
+              maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE
+            };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing window with presentation`);
+              let windowStatus = subWindow!.getWindowStatus();
+              console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (isFreeWindowMode) {
+                expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+              }else {
+                expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+              }
+              done()
+            }).catch((err:BusinessError)=>{
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name subWindowMaximizeWithOptionsDefaultValue_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0300
+     * @tc.desc subWindow maximizeWithOptions with default values test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('subWindowMaximizeWithOptionsDefaultValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let caseName = 'subWindowMaximizeWithOptionsDefaultValue_0300';
+        console.info(`${caseName} begin`);
+        let subWindow:window.Window
+        let options: window.SubWindowOptions = {
+          title: caseName,
+          decorEnabled:true,
+          maximizeSupported: true,
+        };
+        windowStage.createSubWindowWithOptions(caseName,options).then(async (data)=>{
+          subWindow = data;
+          console.info(`${caseName} create subwindow`);
+          try {
+            await subWindow.setUIContent('testability/pages/Index');
+            console.info(`${caseName} setui`);
+            await subWindow.showWindow();
+            console.info(`${caseName} show page `);
+            let maximizeOptions: window.MaximizeOptions = {
+              maximizePresentation: window.MaximizePresentation.ENTER_IMMERSIVE,
+              acrossDisplayPresentation: window.AcrossDisplayPresentation.FOLLOW_ACROSS_DISPLAY_SETTING,
+              snapshotAnimationConfig: {
+                duration: 0,
+                delay: 0
+              }
+            };
+            subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
+              await sleep(200)
+              console.info(`${caseName} Succeeded in maximizing sub window with default values`);
+              let windowStatus = subWindow!.getWindowStatus();
+              console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
+              await subWindow.destroyWindow();
+              console.info(`${caseName} destroyWindow `);
+              if (isFreeWindowMode) {
+                expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              }else {
+                expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+              }
+              done()
+            }).catch((err:BusinessError)=>{
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+              done();
+            })
+          } catch (err) {
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err:BusinessError)=>{
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        })
+      });
+
+    /**
+     * @tc.name recoverDefault_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0100
+     * @tc.desc recover from maximized with default config test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('recoverDefault_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverDefault_0100';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE);
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {};
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window with default config.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverFromFullscreen_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0200
+     * @tc.desc recover from fullscreen with config test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('recoverFromFullscreen_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverFromFullscreen_0200';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize();
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 200,
+          delay: 30
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from fullscreen.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverFromSplit_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0300
+     * @tc.desc recover from split mode with config test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('recoverFromSplit_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverFromSplit_0300';
+      console.info(`${caseName} begin`);
+      let options: StartOptions = {
+        windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_PRIMARY
+      };
+      let windowStageStart = await startAbility(caseName, context , options);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let windowStatusBefore = mainWindow!.getWindowStatus();
+        console.info(`${caseName} Succeeded in getWindowStatus before ${windowStatusBefore}.`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 200,
+          delay: 30
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from  split mode.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus after ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatusBefore).assertEqual(window.WindowStatusType.SPLIT_SCREEN);
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverParamMin_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0100
+     * @tc.desc recover duration=0 delay=0 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverParamMin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamMin_0100';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize();
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 0,
+          delay: 0
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from duration=0 delay=0.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverParamMax_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0200
+     * @tc.desc recover duration=400 delay=350 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverParamMax_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamMax_0200';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER);
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 400,
+          delay: 350
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from duration=400 delay=350.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverParamSingle_0300
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0300
+     * @tc.desc recover duration=200 only test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverParamSingle_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamSingle_0300';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 200,
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from duration=200.`);
+          await sleep(200)
+          let windowStatus = mainWindow!.getWindowStatus();
+          console.info(`${caseName} Succeeded in getWindowStatus ${windowStatus}.`);
+          await terminateAbility(caseName);
+          if (isFreeWindowMode){
+            expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
+          }
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverError1300001_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300001_0100
+     * @tc.desc recover 1300001 repeated operation test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverError1300001_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300001_0100';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let windowStatusBefore = mainWindow!.getWindowStatus();
+        console.info(`${caseName} Succeeded in getWindowStatus ${windowStatusBefore}.`);
+        if (windowStatusBefore !== window.WindowStatusType.FLOATING) {
+          await mainWindow!.recover();
+          console.info(`${caseName} Succeeded in recover`);
+        }
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {};
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from duration=200.`);
+          await terminateAbility(caseName);
+          expect(true).assertFalse();
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          }else if (err.code == 1300001) {
+            console.info(`${caseName} Repeated operation.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300001)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverError1300002_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0100
+     * @tc.desc recover 1300002 window  does not support floating mode.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverError1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300002_0100';
+      console.info(`${caseName} begin`);
+      let options: StartOptions = {
+        supportWindowModes:[  bundleManager.SupportWindowMode.FULL_SCREEN,
+          bundleManager.SupportWindowMode.SPLIT]
+      };
+      let windowStageStart = await startAbility(caseName, context,options);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 200,
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window.`);
+          await terminateAbility(caseName);
+          expect(true).assertFalse()
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          }else if (err.code == 1300002){
+            console.info(`${caseName} The window does not support floating mode.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300002)
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverError1300002_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0200
+     * @tc.desc recover 1300002 window destroyed test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverError1300002_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300002_0200';
+      console.info(`${caseName} begin`);
+      windowStage.createSubWindow(caseName).then(async (data)=>{
+        try {
+          let subwindow = data;
+          await subwindow!.destroyWindow();
+          console.info(`${caseName} Succeeded in destroyWindow`);
+          let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+            duration: 200,
+          };
+          subwindow!.recover(snapshotAnimationConfig).then(async () => {
+            console.info(`${caseName} Succeeded in recovering window from duration=200.`);
+            expect(true).assertFalse()
+            done();
+          }).catch(async (err: BusinessError) => {
+            if (!isFreeWindowMode || err.code == 1300002) {
+              console.info(`${caseName} Capability not supported or The window is not created or destroyed.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code === 1300002 || err.code === 801).assertTrue()
+            }  else {
+              console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
+            }
+            done();
+          });
+        } catch (exception) {
+          console.error(`${caseName} Failed to recover window or destroyWindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
+        }
+      }).catch((exception:BusinessError)=>{
+        console.error(`${caseName} Failed to recover window or createSubWindow. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      })
+    });
+
+    /**
+     * @tc.name recoverError1300016_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300016_0100
+     * @tc.desc recover 1300016 duration>400 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverError1300016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300016_0100';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          duration: 450,
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from duration>400.`);
+          await terminateAbility(caseName);
+          expect(true).assertFalse()
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isFreeWindowMode || err.code == 1300016) {
+            console.info(`${caseName} Capability not supported or Invalid parameter range..Cause code: ${err.code}, message: ${err.message}`);
+          } else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name recoverError1300016_0200
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300016_0200
+     * @tc.desc recover 1300016 delay < 0 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('recoverError1300016_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300016_0200';
+      console.info(`${caseName} begin`);
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        await mainWindow!.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING);
+        console.info(`${caseName} Succeeded in maximized`);
+        let snapshotAnimationConfig: window.WindowSnapshotAnimationConfig = {
+          delay: -1,
+        };
+        mainWindow!.recover(snapshotAnimationConfig).then(async () => {
+          console.info(`${caseName} Succeeded in recovering window from  delay < 0.`);
+          await terminateAbility(caseName);
+          expect(true).assertFalse()
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if(err.code == 1300016){
+            console.info(`${caseName} param range fail .Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300016)
+          }else if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported or Invalid parameter range..Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code === 801).assertTrue()
+          }else {
+            console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
+      } catch (exception) {
+        await terminateAbility(caseName);
+        if (exception.code == 801){
+          console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
+          expect(exception.code).assertEqual(801)
+        }else {
+          console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+        }
+        done();
+      }
+    });
 
   })
 }

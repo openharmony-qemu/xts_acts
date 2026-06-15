@@ -27,6 +27,8 @@ import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import { canIUse } from '@internal.full.global';
+
 // import  { LocalStorage }  from '@ohos.LocalStorage';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -38,6 +40,7 @@ export default function WindowFocusTest() {
         let windowStage: window.WindowStage | undefined;
         let win: window.Window | undefined;
         let context: common.UIAbilityContext | undefined;
+        let canIUseRes: boolean = false;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -55,7 +58,8 @@ export default function WindowFocusTest() {
 
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(domain, tag,`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -350,8 +354,167 @@ export default function WindowFocusTest() {
                 done();
             }
         })
+        
+  /**
+   * @tc.name SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_One_Static_0100
+   * @tc.number SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_One_Static_0100
+   * @tc.desc 监听一次应用焦点变化
+   * @tc.type FUNCTION
+   * @tc.size MEDIUMTEST
+   * @tc.level LEVEL0
+   */
+  it('SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_One_Static_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_One_Static_0100 ';
+      console.log(caseName + 'begin');
+      let flag = true;
+      window.onApplicationFocusStateChange((data) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        flag = data;
+      })
+      try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        await windowClass.setWindowFocusable(false);
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(flag).assertFalse();
+        }
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage!.createSubWindow('ApplicationFocus1');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('pages/index2');
+        await subWindowClass.showWindow();
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(flag).assertTrue();
+        }
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect(true).assertFail();
+        done();
+      }
+    });
+
+  /**
+   * @tc.name   SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_Two_Static_0100
+   * @tc.number SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_Two_Static_0100
+   * @tc.desc   监听两次应用焦点变化
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_WINDOW_FOCUS_OnApplicationFocusStateChange_Two_Static_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testOnApplicationFocusStateChange_Two_0100 ';
+      console.log(caseName + 'begin');
+      let count = 0;
+
+      window.onApplicationFocusStateChange((focusStateChange) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${focusStateChange}`);
+        if (focusStateChange) {
+          count++;
+        } else {
+          count--;
+        }
+      })
+
+      window.onApplicationFocusStateChange((focusStateChange) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${focusStateChange}`);
+        if (focusStateChange) {
+          count++;
+        } else {
+          count--;
+        }
+      })
+      try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        await windowClass.setWindowFocusable(false);
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(count).assertEqual(-2);
+        }
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage!.createSubWindow('ApplicationFocus2');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('pages/index2');
+        await subWindowClass.showWindow();
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(count).assertEqual(0);
+        }
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect(true).assertFail();
+        done();
+      }
+    });
 
 
+  /**
+   * @tc.name   SUB_WINDOW_FOCUS_OffApplicationFocusStateChange_One_Static_0100
+   * @tc.number SUB_WINDOW_FOCUS_OffApplicationFocusStateChange_One_Static_0100
+   * @tc.desc   取消监听一次应用焦点变化
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_WINDOW_FOCUS_OffApplicationFocusStateChange_One_Static_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'SUB_WINDOW_FOCUS_OffApplicationFocusStateChange_One_Static_0100 ';
+      console.log(caseName + 'begin');
+      let count = 0;
+
+      let callback1 = (data: boolean) => {
+        console.info(`${caseName} onApplicationFocusStateChange1 ${data}`);
+        if (data) {
+          count++;
+        } else {
+          count--;
+        }
+      };
+
+      let callback2 = (data: boolean) => {
+        console.info(`${caseName} onApplicationFocusStateChange2 ${data}`);
+        if (data) {
+          count++;
+        } else {
+          count--;
+        }
+      }
+      window.onApplicationFocusStateChange(callback1);
+      window.onApplicationFocusStateChange(callback2);
+      window.offApplicationFocusStateChange(callback2);
+      try {
+        let windowClass: window.Window = windowStage!.getMainWindowSync();
+        await windowClass.setWindowFocusable(false);
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(count).assertEqual(-1);
+        }
+        await windowClass.setWindowFocusable(true);
+        let subWindowClass = await windowStage!.createSubWindow('ApplicationFocus3');
+        console.error(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('pages/index2');
+        await subWindowClass.showWindow();
+        await Utils.msSleep(500)
+        if (canIUseRes) {
+          expect(count).assertEqual(0);
+        }
+        await subWindowClass.destroyWindow();
+        window.offApplicationFocusStateChange();
+        done();
+      } catch (err) {
+        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        expect().assertFail();
+        done();
+      }
+    });
 
 
     })

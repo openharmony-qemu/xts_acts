@@ -18,7 +18,7 @@ import { AttributeModifier, CommonAttribute } from '@ohos.arkui.component'
 
 @Observed
 export class GroupDefaultFocusModifier implements AttributeModifier<CommonAttribute> {
-  @State public groupDefaultFocus: boolean | undefined = true;
+  public groupDefaultFocus: boolean | undefined = true;
 
   // 设置 groupDefaultFocus 的值
   applyNormalAttribute(instance: CommonAttribute): void {

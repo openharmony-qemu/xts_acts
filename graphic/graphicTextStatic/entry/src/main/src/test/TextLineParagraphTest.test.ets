@@ -201,13 +201,13 @@ export default function TextLineParagraphTest() {
 
     /**
      * @tc.name   testCreateLineParagraphStatic
-     * @tc.number testCreateLineParagraphStatic
+     * @tc.number SUB_GRAPHIC_Text_TestCreateLineParagraphStatic_0100
      * @tc.desc   To test metchod create line paragraph for paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testCreateLineParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testCreateLineParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let lineTypeset: text.LineTypeset = globalParagraphBuilder!.buildLineTypeset();

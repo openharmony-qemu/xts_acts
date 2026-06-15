@@ -34,38 +34,41 @@ import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test'
 import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
 import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
 import HttpRequestSocket5Test from './HttpRequestSocket5.test';
+import HttpRequestTlcpEnablePartialChainTest from './HttpRequestTlcpEnablePartialChain.test';
+import HttpRequestTlsEnablePartialChainTest from './HttpRequestTlsEnablePartialChain.test';
+import HttpBodyParametersTest from './HttpRequestBodyParams.test';
 import connection from '@ohos.net.connection';
-
 let netHandle = connection.getDefaultNetSync();
-
 export default function testsuite() {
   if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
-  HttpInterceptorForSafeCheckTest();
-  HttpRequestInterceptor();
-  HttpRequestMaxAutoRedirectsTest();
-  HttpRequestMaxAutoRedirectsWithInterceptorTest();
-  HttpRequestCustomMethodTest();
-  HttpRequestCustomResponseHeaderTest();
-  if (sim.getMaxSimCount() > 1) {
-    HttpRequestGmssl();
-    HttpRequestDataCATest();
-    HttpRequestMethodTest();
-    HttpRequestAndDestroyTest();
-    HttpRequestInStreamTest();
-    HttpRequestOptionsTest();
-    HttpRequestSniTest();
-    httpErrorCodeTest();
-    HttpRequestInactivityMsTest();
-    HttpRequestPatchTest();
-    HttpRequestSyncTest();
-    HttpRequestReuseConnectionsTest();
-    HttpRequestEnableAutoCookieTest();
-    HttpRequestSocket5Test();
-    
+    HttpInterceptorForSafeCheckTest();
+    HttpRequestInterceptor();
+    HttpRequestMaxAutoRedirectsTest();
+    HttpRequestMaxAutoRedirectsWithInterceptorTest();
+    HttpRequestCustomMethodTest();
+    HttpRequestCustomResponseHeaderTest();
+    if (sim.getMaxSimCount() > 1) {
+      HttpRequestGmssl();
+      HttpRequestDataCATest();
+      HttpRequestMethodTest();
+      HttpRequestAndDestroyTest();
+      HttpRequestInStreamTest();
+      HttpRequestOptionsTest();
+      HttpRequestSniTest();
+      httpErrorCodeTest();
+      HttpRequestInactivityMsTest();
+      HttpRequestPatchTest();
+      HttpRequestSyncTest();
+      HttpRequestReuseConnectionsTest();
+      HttpRequestEnableAutoCookieTest();
+      HttpRequestSocket5Test();
+      HttpRequestTlcpEnablePartialChainTest();
+      HttpRequestTlsEnablePartialChainTest();
+      HttpBodyParametersTest();
+    } else {
+      EmptyTest();
+    }
   } else {
     EmptyTest();
   }
-} else {
-  EmptyTest();
-}
 }

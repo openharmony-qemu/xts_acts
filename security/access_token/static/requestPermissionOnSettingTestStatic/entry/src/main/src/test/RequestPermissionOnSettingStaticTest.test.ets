@@ -93,7 +93,12 @@ export default function requestPermissionOnSettingStaticTest() {
         hilog.info(domain, tag, 'BusinessError end');
       });
       await Utils.msSleep(1000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.requestPermissionsonsettingTest.static")
+      let cmd = "aa start -a EntryAbility -b com.acts.requestPermissionsonsettingTest.static";
+      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      abilityDelegator.executeShellCommand(cmd)
       await Utils.msSleep(2000)
       try {
         await Utils.msSleep(2000)
@@ -267,8 +272,10 @@ export default function requestPermissionOnSettingStaticTest() {
               });
             });
             Utils.msSleep(3000).awaitSync()
-            clickRequest(driver, '允许');
-          });
+            if(!clickRequest(driver, '允许')){
+              clickRequest(driver, '始终允许');
+            }
+        });
         } catch (error) {
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_007 catch err" + JSON.stringify(error));
           expect(false).assertFail();
@@ -564,14 +571,22 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               }
             });
-            Utils.msSleep(2000).awaitSync()
-            if (clickRequest(driver2, '允许')) {
-              clickRequest(driver2, '确定');
-            }
-            Utils.msSleep(2000).awaitSync()
-            if (clickRequest(driver2, '允许')) {
-              clickRequest(driver2, '确定');
-            }
+            Utils.msSleep(3000).awaitSync()
+            if(!clickRequest(driver1, '允许')) {
+              if(clickRequest(driver1, '始终允许')) {
+                clickRequest(driver1, '确定');
+               }
+               } else {
+                   clickRequest(driver1, '确定');
+               }
+            Utils.msSleep(3000).awaitSync()
+            if(!clickRequest(driver1, '允许')) {
+              if(clickRequest(driver1, '始终允许')) {
+                clickRequest(driver1, '确定');
+               }
+               } else {
+                   clickRequest(driver1, '确定');
+               }
           });
           await Utils.msSleep(2000);
           if(!clickRequest(driver1, '禁止')) {

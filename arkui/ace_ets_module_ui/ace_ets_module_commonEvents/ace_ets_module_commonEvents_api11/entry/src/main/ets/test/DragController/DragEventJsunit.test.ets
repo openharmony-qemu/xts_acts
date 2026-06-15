@@ -66,11 +66,11 @@ done();
      */
     it('dragEventTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('dragEventTest_0100 START');
-      let rect: RectValue = Utils.getComponentRect('apple')
+      let rect: RectValue = Utils.getComponentRect('dragEvent_apple')
       console.info("dragEventTest_0100 rectInfo is " + JSON.stringify(rect));
       let downX: number = rect.left + (rect.right - rect.left) / 2;
       let downY = rect.top + (rect.bottom - rect.top) / 2;
-      let rectOne = Utils.getComponentRect('listItem')
+      let rectOne = Utils.getComponentRect('dragEvent_listItem')
       console.info("dragEventTest_0100 rectOneInfo is " + JSON.stringify(rectOne));
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
@@ -106,7 +106,7 @@ done();
       console.info("dragEventTest_0200 rectInfo is " + JSON.stringify(rect));
       let downX = rect.left + (rect.right - rect.left) / 2;
       let downY = rect.top + (rect.bottom - rect.top) / 2;
-      let rectOne = Utils.getComponentRect('listItem')
+      let rectOne = Utils.getComponentRect('dragEvent_listItem')
       console.info("dragEventTest_0200 rectOneInfo is " + JSON.stringify(rectOne));
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
@@ -143,7 +143,7 @@ done();
       console.info("dragEventTest_0300 rectInfo is " + JSON.stringify(rect));
       let downX = rect.left + (rect.right - rect.left) / 2;
       let downY = rect.top + (rect.bottom - rect.top) / 2;
-      let rectOne = Utils.getComponentRect('listItem')
+      let rectOne = Utils.getComponentRect('dragEvent_listItem')
       console.info("dragEventTest_0300 rectOneInfo is " + JSON.stringify(rectOne));
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
@@ -179,7 +179,7 @@ done();
       console.info("dragEventTest_0400 rectInfo is " + JSON.stringify(rect));
       let downX = rect.left + (rect.right - rect.left) / 2;
       let downY = rect.top + (rect.bottom - rect.top) / 2;
-      let rectOne = Utils.getComponentRect('listItem')
+      let rectOne = Utils.getComponentRect('dragEvent_listItem')
       console.info("dragEventTest_0400 rectOneInfo is " + JSON.stringify(rectOne));
       let upX = rectOne.right + (rect.right - rect.left);
       let upY = rectOne.bottom + (rect.bottom - rect.top);
@@ -215,7 +215,7 @@ done();
       console.info("dragEventTest_0500 rectInfo is " + JSON.stringify(rect));
       let downX = rect.left + (rect.right - rect.left) / 2;
       let downY = rect.top + (rect.bottom - rect.top) / 2;
-      let rectOne = Utils.getComponentRect('listItem')
+      let rectOne = Utils.getComponentRect('dragEvent_listItem')
       console.info("dragEventTest_0500 rectOneInfo is " + JSON.stringify(rectOne));
       let upX = rectOne.left + (rectOne.right - rectOne.left) / 2;
       let upY = rectOne.top + (rectOne.bottom - rectOne.top) / 2;
