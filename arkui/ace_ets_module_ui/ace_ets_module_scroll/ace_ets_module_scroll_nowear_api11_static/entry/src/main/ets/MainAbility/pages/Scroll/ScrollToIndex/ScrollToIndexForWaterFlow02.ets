@@ -99,14 +99,6 @@ struct ScrollToIndexForWaterFlow02 {
                             .layoutWeight(1)
                         }
                       }
-                      .onAppear(() => {
-                        // 即将触底时提前增加数据
-                        if (item + 20 == this.datasource.totalCount()) {
-                          for (let i = 0; i < 100; i++) {
-                            this.datasource.AddLastItem()
-                          }
-                        }
-                      })
                       .width('100%')
                       .height(this.itemHeightArray[(item.toInt()) % 100])
                       .backgroundColor(Color.Grey)
@@ -171,7 +163,7 @@ struct ScrollToIndexForWaterFlow02 {
             console.log('跳转到99，有动画')
             this.itemScrollerForWaterFlow.scrollToIndex(99, true)
             setTimeout(()=>{
-              const yOffsetEnd: number = this.scrollerForWaterFlow.currentOffset()!.yOffset;
+              const yOffsetEnd: number = this.itemScrollerForWaterFlow.currentOffset()!.yOffset;
               console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>'+ yOffsetEnd)
               this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
               console.info(this.isSmooth + 'isSmooth')
@@ -182,7 +174,7 @@ struct ScrollToIndexForWaterFlow02 {
           .buttonStyles()
           .onClick((e:ClickEvent) => {
             this.isSmooth = false
-            console.log('跳转到10，有动画')
+            console.log('跳转到10，无动画')
             this.itemScrollerForWaterFlow.scrollToIndex(10, false)
           }).margin({ top: 300, left: 10 } as Margin)
       }
