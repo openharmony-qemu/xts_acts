@@ -52,11 +52,11 @@ struct FlexHeightModify_Center {
           alignItems: ItemAlign.Center,
           wrap: FlexWrap.NoWrap,
         }  as FlexOptions) {
-          Text('1').width(150).height(this.testHeight).backgroundColor(Color.Red).key('textHeightModify01')
-          Text('2').width(150).height(100).backgroundColor(Color.Red).key('textHeightModify02')
-          Text('3').width(150).height(150).backgroundColor(Color.Red).key('textHeightModify03')
+          Text('1').width(150).height(this.testHeight).backgroundColor(Color.Red).key('FlexHeightModify_textHeightModify01')
+          Text('2').width(150).height(100).backgroundColor(Color.Red).key('FlexHeightModify_textHeightModify02')
+          Text('3').width(150).height(150).backgroundColor(Color.Red).key('FlexHeightModify_textHeightModify03')
         }
-        .key('flexHeightModify')
+        .key('FlexHeightModify_flexHeightModify')
         .height(200)
         .width(500)
         .backgroundColor(Color.Red)
