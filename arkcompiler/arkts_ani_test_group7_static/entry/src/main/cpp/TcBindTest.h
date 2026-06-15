@@ -124,9 +124,7 @@ void test_Log(ani_env *env, ani_object object, ani_int level, ani_string msg)
 {
     (void)object;
     std::string value = ani_tc_bind::AniStringToStdString(env, msg);
-
     int callIndex = ani_tc_bind::g_logCallCount.fetch_add(1);
-
     if (callIndex == 0) {
         ani_tc_bind::g_logFirstCallOk.store(
             level == ani_tc_bind::BIND_LOG_FIRST_LEVEL && value == "debug");
@@ -134,16 +132,13 @@ void test_Log(ani_env *env, ani_object object, ani_int level, ani_string msg)
         ani_tc_bind::g_logSecondCallOk.store(
             level == ani_tc_bind::BIND_LOG_SECOND_LEVEL && value == "info");
     }
-    
 }
 ani_boolean test_CheckLog(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-
     bool result = (ani_tc_bind::g_logCallCount.load() == ani_tc_bind::BIND_LOG_EXPECTED_COUNT &&
         ani_tc_bind::g_logFirstCallOk.load() && ani_tc_bind::g_logSecondCallOk.load());
-
     ani_tc_bind::g_logCallCount.store(0);
     ani_tc_bind::g_logFirstCallOk.store(false);
     ani_tc_bind::g_logSecondCallOk.store(false);
