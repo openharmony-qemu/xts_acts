@@ -796,7 +796,7 @@ export default function abilityTest() {
         let readBuffer0 = new ArrayBuffer(96);
         await pixelMap.readPixelsToBuffer(readBuffer0);
         let bufferArr0 = new Uint8Array(readBuffer0);
-        let callMetadata8: avSession.callMetadata = {
+        let callMetadata8: avSession.CallMetadata = {
           avatar: pixelMap
         };
         console.log('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090 getCallMetadata callMetadata8 is:' + callMetadata8 + JSON.stringify(callMetadata8));
