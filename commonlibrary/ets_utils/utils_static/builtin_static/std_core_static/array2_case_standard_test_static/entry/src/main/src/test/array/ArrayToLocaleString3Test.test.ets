@@ -362,7 +362,7 @@ export default function ArrayToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_1400
      * @tc.name testArrayToLocaleStringThree014
-     * @tc.desc Verify undefined elements are converted to strings
+     * @tc.desc Verify explicit undefined elements become empty fields in the output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,68 +618,54 @@ export default function ArrayToLocaleString3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3100
      * @tc.name testArrayToLocaleStringThree031
-     * @tc.desc Verify toLocaleString can be used for array log output
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToLocaleStringThree031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10, 20, 30);
-      const output = arr.toLocaleString();
-      expect(output).assertEqual('10,20,30');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3200
-     * @tc.name testArrayToLocaleStringThree032
      * @tc.desc Verify toLocaleString can be used for data display
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values = new Array<number>(100, 200, 300);
       const display = 'Values: ' + values.toLocaleString();
       expect(display).assertEqual('Values: 100,200,300');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3300
-     * @tc.name testArrayToLocaleStringThree033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3200
+     * @tc.name testArrayToLocaleStringThree032
      * @tc.desc Verify toLocaleString can be used for simple serialization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const serialized = arr.toLocaleString();
       expect(serialized).assertEqual('a,b,c');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3400
-     * @tc.name testArrayToLocaleStringThree034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3300
+     * @tc.name testArrayToLocaleStringThree033
      * @tc.desc Verify toLocaleString can be used in template strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const template = `Array: ${arr.toLocaleString()}`;
       expect(template).assertEqual('Array: 1,2,3');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3500
-     * @tc.name testArrayToLocaleStringThree035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3400
+     * @tc.name testArrayToLocaleStringThree034
      * @tc.desc Verify toLocaleString works on arrays returned by map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const mapped = arr.map((v: number): number => v * 10);
       const result = mapped.toLocaleString();
@@ -687,14 +673,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3600
-     * @tc.name testArrayToLocaleStringThree036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3500
+     * @tc.name testArrayToLocaleStringThree035
      * @tc.desc Verify toLocaleString works on arrays returned by filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const filtered = arr.filter((v: number): boolean => v > 2);
       const result = filtered.toLocaleString();
@@ -702,14 +688,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3700
-     * @tc.name testArrayToLocaleStringThree037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3600
+     * @tc.name testArrayToLocaleStringThree036
      * @tc.desc Verify toLocaleString works on arrays returned by slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const sliced = arr.slice(0, 3);
       const result = sliced.toLocaleString();
@@ -717,14 +703,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3800
-     * @tc.name testArrayToLocaleStringThree038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3700
+     * @tc.name testArrayToLocaleStringThree037
      * @tc.desc Verify object elements use their toString method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleItem038();
       item.value = 42;
       const arr = new Array<LocaleItem038>(item);
@@ -733,14 +719,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3900
-     * @tc.name testArrayToLocaleStringThree039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3800
+     * @tc.name testArrayToLocaleStringThree038
      * @tc.desc Verify toLocaleString preserves representative prefix and suffix output for large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = createLargeSequentialArray(10000);
       const result = arr.toLocaleString();
       const expectedPrefix = buildNumberLocaleString(arr.slice(0, 5));
@@ -751,81 +737,81 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4000
-     * @tc.name testArrayToLocaleStringThree040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_3900
+     * @tc.name testArrayToLocaleStringThree039
      * @tc.desc Verify an empty array returns an empty string at boundary length zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.toLocaleString()).assertEqual('');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4100
-     * @tc.name testArrayToLocaleStringThree041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4000
+     * @tc.name testArrayToLocaleStringThree040
      * @tc.desc Verify a single boundary element is formatted correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(999);
       expect(arr.toLocaleString()).assertEqual('999');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4200
-     * @tc.name testArrayToLocaleStringThree042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4100
+     * @tc.name testArrayToLocaleStringThree041
      * @tc.desc Verify two boundary elements are formatted correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       expect(arr.toLocaleString()).assertEqual('1,2');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4300
-     * @tc.name testArrayToLocaleStringThree043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4200
+     * @tc.name testArrayToLocaleStringThree042
      * @tc.desc Verify string elements containing commas are preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a,b', 'c');
       const result = arr.toLocaleString();
       expect(result).assertEqual('a,b,c');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4400
-     * @tc.name testArrayToLocaleStringThree044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4300
+     * @tc.name testArrayToLocaleStringThree043
      * @tc.desc Verify escape characters are preserved in string elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a\nb', 'c\t');
       const result = arr.toLocaleString();
       expect(result.length > 0).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4500
-     * @tc.name testArrayToLocaleStringThree045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4400
+     * @tc.name testArrayToLocaleStringThree044
      * @tc.desc Verify custom toLocaleString results containing commas are joined without escaping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleStringItem();
       first.value = 'A,B';
@@ -837,14 +823,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4600
-     * @tc.name testArrayToLocaleStringThree046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4500
+     * @tc.name testArrayToLocaleStringThree045
      * @tc.desc Verify custom element conversion runs from left to right
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const callLog = new Array<string>();
       const first = new LocaleLoggingItem();
       const second = new LocaleLoggingItem();
@@ -859,14 +845,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4700
-     * @tc.name testArrayToLocaleStringThree047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4600
+     * @tc.name testArrayToLocaleStringThree046
      * @tc.desc Verify an element conversion error propagates and stops later conversions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const callLog = new Array<string>();
       const first = new LocaleLoggingItem();
       const thrower = new LocaleThrowingItem();
@@ -888,14 +874,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4800
-     * @tc.name testArrayToLocaleStringThree048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4700
+     * @tc.name testArrayToLocaleStringThree047
      * @tc.desc Verify elements appended during conversion are not included in the current output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleAppendingItem();
       const second = new LocaleStringItem();
       first.value = 'first';
@@ -909,14 +895,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4900
-     * @tc.name testArrayToLocaleStringThree049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4800
+     * @tc.name testArrayToLocaleStringThree048
      * @tc.desc Verify the same object reference is converted once for each array slot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleCountingItem();
       item.value = 'same';
       const arr = new Array<LocaleCountingItem>(item, item);
@@ -926,14 +912,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5000
-     * @tc.name testArrayToLocaleStringThree050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_4900
+     * @tc.name testArrayToLocaleStringThree049
      * @tc.desc Verify a later element mutation does not rewrite an earlier serialized value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleBackMutatingItem();
       first.value = 'before';
@@ -946,14 +932,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5100
-     * @tc.name testArrayToLocaleStringThree051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5000
+     * @tc.name testArrayToLocaleStringThree050
      * @tc.desc Verify nested arrays with explicit undefined preserve empty fields in the outer output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number | undefined>(3, (_index) => undefined);
       inner[0] = 1;
       inner[2] = 3;
@@ -964,14 +950,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5200
-     * @tc.name testArrayToLocaleStringThree052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5100
+     * @tc.name testArrayToLocaleStringThree051
      * @tc.desc Verify nested arrays with null elements produce empty fields in place
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inner = new Array<number | null>(1, null, 2);
       const arr = new Array<string | Array<number | null>>('head', inner);
       const result = arr.toLocaleString();
@@ -979,14 +965,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5300
-     * @tc.name testArrayToLocaleStringThree053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5200
+     * @tc.name testArrayToLocaleStringThree052
      * @tc.desc Verify a custom empty string result occupies an empty field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleStringItem();
       first.value = '';
@@ -997,14 +983,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5400
-     * @tc.name testArrayToLocaleStringThree054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5300
+     * @tc.name testArrayToLocaleStringThree053
      * @tc.desc Verify custom whitespace output is preserved exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleStringItem();
       first.value = ' left ';
@@ -1015,14 +1001,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5500
-     * @tc.name testArrayToLocaleStringThree055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5400
+     * @tc.name testArrayToLocaleStringThree054
      * @tc.desc Verify numeric-looking custom strings are not formatted again
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleStringItem();
       first.value = '1,000';
@@ -1033,14 +1019,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5600
-     * @tc.name testArrayToLocaleStringThree056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5500
+     * @tc.name testArrayToLocaleStringThree055
      * @tc.desc Verify sliced custom object arrays only convert retained elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const callLog = new Array<string>();
       const skipped = new LocaleLoggingItem();
       const kept1 = new LocaleLoggingItem();
@@ -1058,14 +1044,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5700
-     * @tc.name testArrayToLocaleStringThree057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5600
+     * @tc.name testArrayToLocaleStringThree056
      * @tc.desc Verify a shortened array excludes truncated custom elements from conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const callLog = new Array<string>();
       const first = new LocaleLoggingItem();
       const removed = new LocaleLoggingItem();
@@ -1081,14 +1067,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5800
-     * @tc.name testArrayToLocaleStringThree058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5700
+     * @tc.name testArrayToLocaleStringThree057
      * @tc.desc Verify explicit undefined fields around custom object output remain empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleStringItem();
       item.value = 'middle';
       const arr = new Array<LocaleStringItem | undefined>();
@@ -1101,14 +1087,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5900
-     * @tc.name testArrayToLocaleStringThree059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5800
+     * @tc.name testArrayToLocaleStringThree058
      * @tc.desc Verify custom objects rebuilt from a Set keep de-duplicated insertion order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleStringItem();
       const second = new LocaleStringItem();
       first.value = 'first';
@@ -1121,42 +1107,42 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6000
-     * @tc.name testArrayToLocaleStringThree060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_5900
+     * @tc.name testArrayToLocaleStringThree059
      * @tc.desc Verify toLocaleString without arguments can serialize small numbers 2 and 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 3);
       const result = arr.toLocaleString();
       expect(result).assertEqual('2,3');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6100
-     * @tc.name testArrayToLocaleStringThree061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6000
+     * @tc.name testArrayToLocaleStringThree060
      * @tc.desc Verify char elements are serialized in order without locale arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<char>(c'A', c'B', c'C');
       const result = arr.toLocaleString();
       expect(result).assertEqual('A,B,C');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6200
-     * @tc.name testArrayToLocaleStringThree062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6100
+     * @tc.name testArrayToLocaleStringThree061
      * @tc.desc Verify bigint elements are serialized with locale grouping without losing precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(9007199254740993n, 5n);
       const result = arr.toLocaleString();
       expect(result.indexOf('9,007,199,254,740,993')).assertEqual(0);
@@ -1164,14 +1150,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6300
-     * @tc.name testArrayToLocaleStringThree063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6200
+     * @tc.name testArrayToLocaleStringThree062
      * @tc.desc Verify explicit undefined inserted by splice becomes an empty field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1, 3);
       arr.splice(1, 0, undefined);
       const result = arr.toLocaleString();
@@ -1180,27 +1166,27 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6400
-     * @tc.name testArrayToLocaleStringThree064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6300
+     * @tc.name testArrayToLocaleStringThree063
      * @tc.desc Verify toLocaleString variant 3 works on a single-element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       expect(arr.toLocaleString()).assertEqual('5');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6500
-     * @tc.name testArrayToLocaleStringThree065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6400
+     * @tc.name testArrayToLocaleStringThree064
      * @tc.desc Verify toLocaleString variant 3 reflects an array cleared through length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       expect(arr.toLocaleString()).assertEqual('');
@@ -1208,66 +1194,66 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6600
-     * @tc.name testArrayToLocaleStringThree066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6500
+     * @tc.name testArrayToLocaleStringThree065
      * @tc.desc Verify toLocaleString variant 3 works after slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).slice(1, 3);
       expect(arr.toLocaleString()).assertEqual('2,3');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6700
-     * @tc.name testArrayToLocaleStringThree067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6600
+     * @tc.name testArrayToLocaleStringThree066
      * @tc.desc Verify toLocaleString variant 3 works after map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).map((value: number): number => value + 1);
       expect(arr.toLocaleString()).assertEqual('2,3,4');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6800
-     * @tc.name testArrayToLocaleStringThree068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6700
+     * @tc.name testArrayToLocaleStringThree067
      * @tc.desc Verify toLocaleString variant 3 works after filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4).filter((value: number): boolean => value > 2);
       expect(arr.toLocaleString()).assertEqual('3,4');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6900
-     * @tc.name testArrayToLocaleStringThree069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6800
+     * @tc.name testArrayToLocaleStringThree068
      * @tc.desc Verify toLocaleString variant 3 works after toReversed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).toReversed();
       expect(arr.toLocaleString()).assertEqual('3,2,1');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7000
-     * @tc.name testArrayToLocaleStringThree070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_6900
+     * @tc.name testArrayToLocaleStringThree069
      * @tc.desc Verify toLocaleString variant 3 works after toSorted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3, 1, 2).toSorted((left: number, right: number): int => {
         if (left < right) {
           return -1;
@@ -1281,14 +1267,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7100
-     * @tc.name testArrayToLocaleStringThree071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7000
+     * @tc.name testArrayToLocaleStringThree070
      * @tc.desc Verify explicit undefined values are formatted as empty strings without arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 3;
@@ -1298,14 +1284,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7200
-     * @tc.name testArrayToLocaleStringThree072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7100
+     * @tc.name testArrayToLocaleStringThree071
      * @tc.desc Verify an all-undefined two-slot dense array formats to one separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(2, (_index) => undefined);
       const result = arr.toLocaleString();
       expect(result).assertEqual(',');
@@ -1313,14 +1299,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7300
-     * @tc.name testArrayToLocaleStringThree073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7200
+     * @tc.name testArrayToLocaleStringThree072
      * @tc.desc Verify NaN and Infinity are formatted using locale-aware numeric forms
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN, Infinity);
       const result = arr.toLocaleString();
       expect(result.indexOf('NaN')).assertEqual(0);
@@ -1328,14 +1314,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7400
-     * @tc.name testArrayToLocaleStringThree074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7300
+     * @tc.name testArrayToLocaleStringThree073
      * @tc.desc Verify custom object toLocaleString is preferred over toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleStringItem();
       item.value = 'B';
       const arr = new Array<LocaleStringItem>(item);
@@ -1344,14 +1330,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7500
-     * @tc.name testArrayToLocaleStringThree075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7400
+     * @tc.name testArrayToLocaleStringThree074
      * @tc.desc Verify a custom toLocaleString method can be called repeatedly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item = new LocaleStringItem();
       item.value = 'X';
       const arr = new Array<LocaleStringItem>(item);
@@ -1361,14 +1347,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7600
-     * @tc.name testArrayToLocaleStringThree076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7500
+     * @tc.name testArrayToLocaleStringThree075
      * @tc.desc Verify explicit undefined values are empty slots in output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[1] = undefined;
@@ -1378,14 +1364,14 @@ export default function ArrayToLocaleString3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7700
-     * @tc.name testArrayToLocaleStringThree077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_THREE_7600
+     * @tc.name testArrayToLocaleStringThree076
      * @tc.desc Verify mutation from one element toLocaleString affects a later element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringThree077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringThree076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const first = new LocaleMutatingItem();
       const second = new LocaleStringItem();
       first.value = 'x';

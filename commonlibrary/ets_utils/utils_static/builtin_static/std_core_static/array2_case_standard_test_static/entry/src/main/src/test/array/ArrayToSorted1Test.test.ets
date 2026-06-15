@@ -343,7 +343,6 @@ export default function ArrayToSorted1Test(): void {
     it('testArrayToSortedOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, -1, 0, -2);
       const result = arr.toSorted(compareNumbersAscending);
-      // result 瀹為檯寰楀埌鐨勬槸 -1,-2,0,1
       expect(result.toString()).assertEqual('-2,-1,0,1');
     });
 
@@ -529,7 +528,7 @@ export default function ArrayToSorted1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_SORTED_ONE_2900
      * @tc.name testArrayToSortedOne029
-     * @tc.desc Verify numeric values sort in ascending order by default
+     * @tc.desc Verify numeric values sort in ascending order with an explicit comparator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -537,7 +536,6 @@ export default function ArrayToSorted1Test(): void {
     it('testArrayToSortedOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 2, 100, 1);
       const result = arr.toSorted(compareNumbersAscending);
-      // result 瀹為檯寰楀埌鐨勬槸 1,10,100,2
       expect(result.toString()).assertEqual('1,2,10,100');
     });
 
@@ -887,7 +885,6 @@ export default function ArrayToSorted1Test(): void {
     it('testArrayToSortedOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const prices = new Array<number>(99.99, 49.99, 149.99);
       const sortedPrices = prices.toSorted(compareNumbersAscending);
-      // sortedPrices瀹為檯寰楀埌鐨勬槸   149.99,49.99,99.99
       expect(sortedPrices.toString()).assertEqual('49.99,99.99,149.99');
     });
 

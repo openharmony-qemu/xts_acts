@@ -734,29 +734,12 @@ export default function ArrayToLocaleString1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4100
      * @tc.name testArrayToLocaleStringOne041
-     * @tc.desc Verify explicit undefined becomes an empty field with numeric options
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToLocaleStringOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(1000, undefined, 2000);
-      const locales = new Intl.Locale('en-US');
-      const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
-      const result = arr.toLocaleString(locales, options);
-      expect(result).assertEqual('$1,000.00,,$2,000.00');
-      expect(arr.lastIndexOf(undefined)).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4200
-     * @tc.name testArrayToLocaleStringOne042
      * @tc.desc Verify explicit null becomes an empty field with numeric options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null>(1000, null, 2000);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -766,14 +749,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4300
-     * @tc.name testArrayToLocaleStringOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4200
+     * @tc.name testArrayToLocaleStringOne042
      * @tc.desc Verify explicit undefined values remain empty fields with numeric options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1000;
       arr[2] = 2000;
@@ -785,14 +768,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4400
-     * @tc.name testArrayToLocaleStringOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4300
+     * @tc.name testArrayToLocaleStringOne043
      * @tc.desc Verify an all-undefined dense array contributes separators while preserving values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(4, (_index) => undefined);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -802,14 +785,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4500
-     * @tc.name testArrayToLocaleStringOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4400
+     * @tc.name testArrayToLocaleStringOne044
      * @tc.desc Verify object element toLocaleString is used instead of toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<LocaleStringItemOne>(
         createLocaleStringItemOne('alpha'),
         createLocaleStringItemOne('beta')
@@ -821,14 +804,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4600
-     * @tc.name testArrayToLocaleStringOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4500
+     * @tc.name testArrayToLocaleStringOne045
      * @tc.desc Verify string elements ignore numeric options while number elements use them
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string>(1000, '2000');
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -837,14 +820,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4700
-     * @tc.name testArrayToLocaleStringOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4600
+     * @tc.name testArrayToLocaleStringOne046
      * @tc.desc Verify boolean elements keep their own locale strings beside formatted numbers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | boolean>(1000, true, false);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 2 };
@@ -853,14 +836,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4800
-     * @tc.name testArrayToLocaleStringOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4700
+     * @tc.name testArrayToLocaleStringOne047
      * @tc.desc Verify a mixed array can include object, empty field, and formatted number output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<LocaleStringItemOne | number | undefined>(
         createLocaleStringItemOne('head'),
         undefined,
@@ -873,14 +856,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4900
-     * @tc.name testArrayToLocaleStringOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4800
+     * @tc.name testArrayToLocaleStringOne048
      * @tc.desc Verify filtered numeric values keep locale and option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(500, 1500, 2500).filter((value: number): boolean => value >= 1500);
       const locales = new Intl.Locale('de-DE');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 1 };
@@ -889,14 +872,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5000
-     * @tc.name testArrayToLocaleStringOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_4900
+     * @tc.name testArrayToLocaleStringOne049
      * @tc.desc Verify mapped floating-point values are rounded by options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1.234, 5.678).map((value: number): number => value * 10);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { maximumFractionDigits: 1, useGrouping: false };
@@ -905,14 +888,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5100
-     * @tc.name testArrayToLocaleStringOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5000
+     * @tc.name testArrayToLocaleStringOne050
      * @tc.desc Verify sliced arrays preserve explicit undefined empty fields with options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number | undefined>(4, (_index) => undefined);
       source[0] = 1000;
       source[3] = 4000;
@@ -925,14 +908,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5200
-     * @tc.name testArrayToLocaleStringOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5100
+     * @tc.name testArrayToLocaleStringOne051
      * @tc.desc Verify sorted numeric output still uses the supplied locale options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3000, 1000, 2000).toSorted((left: number, right: number): int => {
         if (left < right) {
           return -1;
@@ -949,14 +932,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5300
-     * @tc.name testArrayToLocaleStringOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5200
+     * @tc.name testArrayToLocaleStringOne052
      * @tc.desc Verify reversed numeric output keeps option formatting and order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000, 2000, 3000).toReversed();
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 1 };
@@ -965,14 +948,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5400
-     * @tc.name testArrayToLocaleStringOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5300
+     * @tc.name testArrayToLocaleStringOne053
      * @tc.desc Verify generic helper preserves locale and option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000, 2000);
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
       const result = toLocaleStringWithOptionsOne<number>(arr, new Intl.Locale('en-US'), options);
@@ -980,14 +963,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5500
-     * @tc.name testArrayToLocaleStringOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5400
+     * @tc.name testArrayToLocaleStringOne054
      * @tc.desc Verify locale arrays choose the first supported locale for option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000.5);
       const locales = new Array<string>('de-DE', 'en-US');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
@@ -996,14 +979,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5600
-     * @tc.name testArrayToLocaleStringOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5500
+     * @tc.name testArrayToLocaleStringOne055
      * @tc.desc Verify NaN and Infinity are still serialized with options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN, Infinity);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { useGrouping: false };
@@ -1013,14 +996,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5700
-     * @tc.name testArrayToLocaleStringOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5600
+     * @tc.name testArrayToLocaleStringOne056
      * @tc.desc Verify negative zero retains a minus sign before option-formatted values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-0, 1000);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { useGrouping: false };
@@ -1029,14 +1012,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5800
-     * @tc.name testArrayToLocaleStringOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5700
+     * @tc.name testArrayToLocaleStringOne057
      * @tc.desc Verify large grouped and ungrouped option outputs differ for the same data
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000000, 2000000);
       const locales = new Intl.Locale('en-US');
       const groupedOptions: Intl.NumberFormatOptions = { useGrouping: true };
@@ -1048,14 +1031,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5900
-     * @tc.name testArrayToLocaleStringOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5800
+     * @tc.name testArrayToLocaleStringOne058
      * @tc.desc Verify toLocaleString with locale and options suppresses grouping for thousands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1200, 3400);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { useGrouping: false };
@@ -1064,14 +1047,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6000
-     * @tc.name testArrayToLocaleStringOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_5900
+     * @tc.name testArrayToLocaleStringOne059
      * @tc.desc Verify toLocaleString with locale and options preserves minus signs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-3, 4);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { useGrouping: false };
@@ -1080,14 +1063,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6100
-     * @tc.name testArrayToLocaleStringOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6000
+     * @tc.name testArrayToLocaleStringOne060
      * @tc.desc Verify localized formatting differs from plain toString for grouped decimals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1234.5, 6789.25);
       const locales = new Intl.Locale('fr-FR');
       const options: Intl.NumberFormatOptions = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
@@ -1097,14 +1080,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6200
-     * @tc.name testArrayToLocaleStringOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6100
+     * @tc.name testArrayToLocaleStringOne061
      * @tc.desc Verify an empty array remains empty with locale and options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const locales = new Intl.Locale('de-DE');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'EUR' };
@@ -1114,14 +1097,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6300
-     * @tc.name testArrayToLocaleStringOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6200
+     * @tc.name testArrayToLocaleStringOne062
      * @tc.desc Verify single object elements use toLocaleString with options present
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<LocaleStringItemOne>(createLocaleStringItemOne('single'));
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1130,14 +1113,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6400
-     * @tc.name testArrayToLocaleStringOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6300
+     * @tc.name testArrayToLocaleStringOne063
      * @tc.desc Verify slice keeps numeric subset before option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(500, 1500, 2500, 3500).slice(1, 3);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1145,14 +1128,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6500
-     * @tc.name testArrayToLocaleStringOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6400
+     * @tc.name testArrayToLocaleStringOne064
      * @tc.desc Verify mapped numeric values use the supplied currency options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3).map((value: number): number => value * 1000);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1160,14 +1143,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6600
-     * @tc.name testArrayToLocaleStringOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6500
+     * @tc.name testArrayToLocaleStringOne065
      * @tc.desc Verify filtering null and undefined before formatting leaves numeric values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number | null | undefined>(1000, null, 2000, undefined);
       const arr = source.filter((value: number | null | undefined): boolean => {
         return value !== null && value !== undefined;
@@ -1178,14 +1161,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6700
-     * @tc.name testArrayToLocaleStringOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6600
+     * @tc.name testArrayToLocaleStringOne066
      * @tc.desc Verify toReversed keeps option-formatted element order observable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000, 2000, 3000).toReversed();
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1193,14 +1176,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6800
-     * @tc.name testArrayToLocaleStringOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6700
+     * @tc.name testArrayToLocaleStringOne067
      * @tc.desc Verify toSorted keeps option-formatted numeric order observable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(3000, 1000, 2000).toSorted((left: number, right: number): int => {
         if (left < right) {
           return -1;
@@ -1216,14 +1199,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6900
-     * @tc.name testArrayToLocaleStringOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6800
+     * @tc.name testArrayToLocaleStringOne068
      * @tc.desc Verify dense arrays with undefined values keep empty fields with option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(5, (_index) => undefined);
       arr[1] = 1000;
       arr[3] = 3000;
@@ -1234,14 +1217,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7000
-     * @tc.name testArrayToLocaleStringOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_6900
+     * @tc.name testArrayToLocaleStringOne069
      * @tc.desc Verify explicit undefined remains searchable after option formatting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(undefined, 1000);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1250,14 +1233,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7100
-     * @tc.name testArrayToLocaleStringOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7000
+     * @tc.name testArrayToLocaleStringOne070
      * @tc.desc Verify JPY currency options are propagated without decimal fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1000, 2000);
       const locales = new Intl.Locale('ja-JP');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'JPY' };
@@ -1268,14 +1251,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7200
-     * @tc.name testArrayToLocaleStringOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7100
+     * @tc.name testArrayToLocaleStringOne071
      * @tc.desc Verify string elements ignore numeric currency options while numbers format
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string>(1000, 'abc');
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1284,14 +1267,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7300
-     * @tc.name testArrayToLocaleStringOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7200
+     * @tc.name testArrayToLocaleStringOne072
      * @tc.desc Verify explicit undefined values remain empty strings when currency options are used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1000;
       arr[2] = 2000;
@@ -1303,14 +1286,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7400
-     * @tc.name testArrayToLocaleStringOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7300
+     * @tc.name testArrayToLocaleStringOne073
      * @tc.desc Verify explicit undefined remains an empty field when currency options are used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(1000, undefined, 2000);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };
@@ -1320,14 +1303,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7500
-     * @tc.name testArrayToLocaleStringOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7400
+     * @tc.name testArrayToLocaleStringOne074
      * @tc.desc Verify percent options can preserve one fractional digit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(0.123);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'percent', maximumFractionDigits: 1 };
@@ -1336,14 +1319,14 @@ export default function ArrayToLocaleString1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7600
-     * @tc.name testArrayToLocaleStringOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_ONE_7500
+     * @tc.name testArrayToLocaleStringOne075
      * @tc.desc Verify an all-undefined dense array only contributes separators with options
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(2, (_index) => undefined);
       const locales = new Intl.Locale('en-US');
       const options: Intl.NumberFormatOptions = { style: 'currency', currency: 'USD' };

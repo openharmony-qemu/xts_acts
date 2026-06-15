@@ -270,6 +270,7 @@ export default function ArraySplice2Test(): void {
       const result = arr.splice(0);
       expect(typeof result.length).assertEqual('int');
       expect(arr.length).assertEqual(0);
+      expect(result.length).assertEqual(3);
       expect(result.toString()).assertEqual('10,20,30');
     });
 
@@ -1035,7 +1036,7 @@ export default function ArraySplice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_TWO_5900
      * @tc.name testArraySpliceTwo059
-     * @tc.desc Verify start equal to length returns an independent empty array for a sparse source
+     * @tc.desc Verify start equal to length returns an independent empty array for a source containing explicit undefined entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

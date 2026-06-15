@@ -515,7 +515,7 @@ export default function ArraySortTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SORT_2100
      * @tc.name testArraySort021
-     * @tc.desc Verify a random comparator still keeps all elements in the array
+     * @tc.desc Verify sorting with a descending comparator keeps all elements and can be normalized to ascending order with toSorted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

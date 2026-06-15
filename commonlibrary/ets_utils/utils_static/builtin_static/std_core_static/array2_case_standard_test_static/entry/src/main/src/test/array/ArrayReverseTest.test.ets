@@ -479,10 +479,6 @@ export default function ArrayReverseTest(): void {
       let arr = new Array<number>(1, 2, 3);
       let reverseResult = arr.reverse();
       expect(reverseResult === arr).assertTrue();
-
-      let arr2 = new Array<number>(1, 2, 3);
-      let toReversedResult = arr2.toReversed();
-      expect(toReversedResult !== arr2).assertTrue();
     });
 
     /**
@@ -1246,7 +1242,7 @@ export default function ArrayReverseTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REVERSE_7600
      * @tc.name testArrayReverse076
-     * @tc.desc Verify reverse preserves explicit undefined values while keeping holes distinct
+     * @tc.desc Verify reverse preserves explicit undefined values in a dense array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

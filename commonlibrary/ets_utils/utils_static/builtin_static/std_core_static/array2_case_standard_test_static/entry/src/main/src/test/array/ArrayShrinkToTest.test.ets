@@ -863,7 +863,7 @@ export default function ArrayShrinkToTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SHRINKTO_4600
      * @tc.name testArrayShrinkTo046
-     * @tc.desc Verify shrinkTo keeps sparse holes inside the retained prefix without materializing extra values
+     * @tc.desc Verify shrinkTo keeps explicit undefined entries inside the retained prefix without adding extra values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

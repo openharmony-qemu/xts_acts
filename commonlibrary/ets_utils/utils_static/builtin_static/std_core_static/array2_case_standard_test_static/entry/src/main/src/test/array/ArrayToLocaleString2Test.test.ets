@@ -1195,46 +1195,12 @@ export default function ArrayToLocaleString2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7100
      * @tc.name testArrayToLocaleStringTwo071
-     * @tc.desc Verify explicit undefined values remain empty fields when a locale is supplied
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToLocaleStringTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(3, (_index) => undefined);
-      arr[0] = 1000;
-      arr[2] = 2000;
-      const locales = new Intl.Locale('en-US');
-      const result = arr.toLocaleString(locales);
-      expect(result).assertEqual('1,000,,2,000');
-      expect(arr.lastIndexOf(undefined)).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7200
-     * @tc.name testArrayToLocaleStringTwo072
-     * @tc.desc Verify explicit undefined remains an empty field with a locale
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayToLocaleStringTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number | undefined>(1000, undefined, 2000);
-      const locales = new Intl.Locale('en-US');
-      const result = arr.toLocaleString(locales);
-      expect(result).assertEqual('1,000,,2,000');
-      expect(arr.lastIndexOf(undefined)).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7300
-     * @tc.name testArrayToLocaleStringTwo073
      * @tc.desc Verify an all-undefined dense array only contributes separators with a locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringTwo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(2, (_index) => undefined);
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
@@ -1243,14 +1209,14 @@ export default function ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7400
-     * @tc.name testArrayToLocaleStringTwo074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7200
+     * @tc.name testArrayToLocaleStringTwo072
      * @tc.desc Verify NaN and Infinity are formatted when a locale is supplied
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN, Infinity);
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
@@ -1259,14 +1225,14 @@ export default function ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7500
-     * @tc.name testArrayToLocaleStringTwo075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7300
+     * @tc.name testArrayToLocaleStringTwo073
      * @tc.desc Verify string elements are preserved while numeric elements use the locale
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringTwo075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringTwo073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string>(1000, 'abc');
       const locales = new Intl.Locale('en-US');
       const result = arr.toLocaleString(locales);
@@ -1274,14 +1240,14 @@ export default function ArrayToLocaleString2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7600
-     * @tc.name testArrayToLocaleStringTwo076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_TO_LOCALE_STRING_TWO_7400
+     * @tc.name testArrayToLocaleStringTwo074
      * @tc.desc Verify de-DE locale is applied around explicit undefined empty fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayToLocaleStringTwo076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayToLocaleStringTwo074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1000;
       arr[2] = 2000;

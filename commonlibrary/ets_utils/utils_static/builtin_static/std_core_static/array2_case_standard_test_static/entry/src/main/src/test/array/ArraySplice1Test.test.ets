@@ -1133,7 +1133,7 @@ export default function ArraySplice1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SPLICE_ONE_6600
      * @tc.name testArraySpliceOne066
-     * @tc.desc Verify explicit undefined deletion is distinguishable from sparse-hole deletion
+     * @tc.desc Verify deleting an explicit undefined element returns undefined in the removed array across dense constructions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -1224,7 +1224,7 @@ export default function ArraySlice2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SLICE_TWO_7300
      * @tc.name testArraySliceTwo073
-     * @tc.desc Verify slice preserves explicit undefined values distinctly from sparse holes
+     * @tc.desc Verify slice preserves multiple explicit undefined values in the copied result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
