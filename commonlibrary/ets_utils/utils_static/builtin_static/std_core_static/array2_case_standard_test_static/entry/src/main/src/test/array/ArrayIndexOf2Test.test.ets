@@ -806,8 +806,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('👍', '❤️');
-      expect(arr.indexOf('👍')).assertEqual(0);
+      const arr = new Array<string>('🌍', '👩‍💻');
+      expect(arr.indexOf('🌍')).assertEqual(0);
     });
 
     /**
@@ -819,8 +819,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('👨‍👩‍👧‍👦');
-      expect(arr.indexOf('👨')).assertEqual(-1);
+      const arr = new Array<string>('👩‍💻');
+      expect(arr.indexOf('👩')).assertEqual(-1);
     });
 
     /**
@@ -832,8 +832,8 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('\uD83D\uDE00');
-      expect(arr.indexOf('\uD83D\uDE00')).assertEqual(0);
+      const arr = new Array<string>('😀');
+      expect(arr.indexOf('😀')).assertEqual(0);
     });
 
     /**

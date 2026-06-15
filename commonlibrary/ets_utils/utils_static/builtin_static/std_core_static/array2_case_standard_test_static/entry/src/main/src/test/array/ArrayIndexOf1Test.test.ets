@@ -148,83 +148,68 @@ export default function ArrayIndexOf1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_0700
      * @tc.name testArrayIndexOfOne007
-     * @tc.desc Verify the default fromIndex value is zero
+     * @tc.desc Verify indexOf returns an int compatible result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayIndexOfOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
-      let r1 = arr.indexOf(1);
-      let r2 = arr.indexOf(1, 0);
-      expect(r1).assertEqual(r2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_0800
-     * @tc.name testArrayIndexOfOne008
-     * @tc.desc Verify indexOf returns an int compatible result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayIndexOfOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(2);
       expect(typeof result).assertEqual('int');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_0900
-     * @tc.name testArrayIndexOfOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_0800
+     * @tc.name testArrayIndexOfOne008
      * @tc.desc Verify indexOf returns the index when the value is found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4);
       let result = arr.indexOf(3);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1000
-     * @tc.name testArrayIndexOfOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_0900
+     * @tc.name testArrayIndexOfOne009
      * @tc.desc Verify indexOf returns minus one when the value is not found
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(99);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1100
-     * @tc.name testArrayIndexOfOne011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1000
+     * @tc.name testArrayIndexOfOne010
      * @tc.desc Verify indexOf returns the first matching index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 2, 3);
       let result = arr.indexOf(2);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1200
-     * @tc.name testArrayIndexOfOne012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1100
+     * @tc.name testArrayIndexOfOne011
      * @tc.desc Verify indexOf does not modify the original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let originalStr = arr.toString();
       arr.indexOf(2);
@@ -232,154 +217,154 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1300
-     * @tc.name testArrayIndexOfOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1200
+     * @tc.name testArrayIndexOfOne012
      * @tc.desc Verify empty arrays return minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
       let result = arr.indexOf(1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1400
-     * @tc.name testArrayIndexOfOne014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1300
+     * @tc.name testArrayIndexOfOne013
      * @tc.desc Verify searching from the start works with fromIndex zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(1, 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1500
-     * @tc.name testArrayIndexOfOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1400
+     * @tc.name testArrayIndexOfOne014
      * @tc.desc Verify fromIndex equal to the array length returns minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(1, 3);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1600
-     * @tc.name testArrayIndexOfOne016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1500
+     * @tc.name testArrayIndexOfOne015
      * @tc.desc Verify fromIndex beyond the array length returns minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(1, 10);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1700
-     * @tc.name testArrayIndexOfOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1600
+     * @tc.name testArrayIndexOfOne016
      * @tc.desc Verify negative fromIndex counts from the end of the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let result = arr.indexOf(4, -2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1800
-     * @tc.name testArrayIndexOfOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1700
+     * @tc.name testArrayIndexOfOne017
      * @tc.desc Verify indexOf can find the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(1);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1900
-     * @tc.name testArrayIndexOfOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1800
+     * @tc.name testArrayIndexOfOne018
      * @tc.desc Verify indexOf can find the last string element in order-sensitive arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('red', 'green', 'blue');
       let result = arr.indexOf('blue');
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2000
-     * @tc.name testArrayIndexOfOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_1900
+     * @tc.name testArrayIndexOfOne019
      * @tc.desc Verify indexOf returns minus one for values not present in the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(999);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2100
-     * @tc.name testArrayIndexOfOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2000
+     * @tc.name testArrayIndexOfOne020
      * @tc.desc Verify indexOf handles single element arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(42);
       expect(arr.indexOf(42)).assertEqual(0);
       expect(arr.indexOf(1)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2200
-     * @tc.name testArrayIndexOfOne022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2100
+     * @tc.name testArrayIndexOfOne021
      * @tc.desc Verify positive fromIndex values start searching at the given index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let result = arr.indexOf(4, 2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2300
-     * @tc.name testArrayIndexOfOne023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2200
+     * @tc.name testArrayIndexOfOne022
      * @tc.desc Verify omitting fromIndex uses the default zero value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let r1 = arr.indexOf(2);
       let r2 = arr.indexOf(2, 0);
@@ -387,70 +372,56 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2400
-     * @tc.name testArrayIndexOfOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2300
+     * @tc.name testArrayIndexOfOne023
      * @tc.desc Verify indexOf can find targets when fromIndex is before them
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4);
       let result = arr.indexOf(3, 1);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2500
-     * @tc.name testArrayIndexOfOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2400
+     * @tc.name testArrayIndexOfOne024
      * @tc.desc Verify indexOf can find later targets when fromIndex is after the first match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2);
       let result = arr.indexOf(2, 2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2600
-     * @tc.name testArrayIndexOfOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2500
+     * @tc.name testArrayIndexOfOne025
      * @tc.desc Verify indexOf returns the target index when fromIndex matches it exactly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.indexOf(2, 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2700
-     * @tc.name testArrayIndexOfOne027
-     * @tc.desc Verify fromIndex larger than the array length returns minus one
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayIndexOfOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, 3);
-      let result = arr.indexOf(2, 10);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2800
-     * @tc.name testArrayIndexOfOne028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2600
+     * @tc.name testArrayIndexOfOne026
      * @tc.desc Verify negative fromIndex values search relative to the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let r1 = arr.indexOf(5, -1);
       let r2 = arr.indexOf(3, -3);
@@ -461,98 +432,98 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2900
-     * @tc.name testArrayIndexOfOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2700
+     * @tc.name testArrayIndexOfOne027
      * @tc.desc Verify fromIndex can find a later duplicate match in string arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('a', 'b', 'b', 'c');
       let result = arr.indexOf('b', 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3000
-     * @tc.name testArrayIndexOfOne030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2800
+     * @tc.name testArrayIndexOfOne028
      * @tc.desc Verify indexOf returns minus one when fromIndex is after all matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2);
       let result = arr.indexOf(2, 4);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3100
-     * @tc.name testArrayIndexOfOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_2900
+     * @tc.name testArrayIndexOfOne029
      * @tc.desc Verify indexOf can find duplicates when fromIndex starts between matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2, 4);
       let result = arr.indexOf(2, 2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3200
-     * @tc.name testArrayIndexOfOne032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3000
+     * @tc.name testArrayIndexOfOne030
      * @tc.desc Verify indexOf works with number arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       expect(arr.indexOf(2)).assertEqual(1);
       expect(arr.indexOf(99)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3300
-     * @tc.name testArrayIndexOfOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3100
+     * @tc.name testArrayIndexOfOne031
      * @tc.desc Verify indexOf works with string arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('a', 'b', 'c');
       expect(arr.indexOf('b')).assertEqual(1);
       expect(arr.indexOf('z')).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3400
-     * @tc.name testArrayIndexOfOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3200
+     * @tc.name testArrayIndexOfOne032
      * @tc.desc Verify indexOf works with boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<boolean>(true, false, true);
       expect(arr.indexOf(true)).assertEqual(0);
       expect(arr.indexOf(false)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3500
-     * @tc.name testArrayIndexOfOne035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3300
+     * @tc.name testArrayIndexOfOne033
      * @tc.desc Verify indexOf compares objects by reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item1 = new Item035();
       item1.value = 1;
       let item2 = new Item035();
@@ -566,41 +537,41 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3600
-     * @tc.name testArrayIndexOfOne036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3400
+     * @tc.name testArrayIndexOfOne034
      * @tc.desc Verify indexOf can search for null values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | null>(1, null, 3);
       expect(arr.indexOf(null)).assertEqual(1);
       expect(arr.indexOf(0)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3700
-     * @tc.name testArrayIndexOfOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3500
+     * @tc.name testArrayIndexOfOne035
      * @tc.desc Verify indexOf can search for explicit undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(1, undefined, 3);
       expect(arr.indexOf(undefined)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3800
-     * @tc.name testArrayIndexOfOne0371
-     * @tc.desc Verify indexOf skips sparse holes instead of matching them as undefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3600
+     * @tc.name testArrayIndexOfOne036
+     * @tc.desc Verify indexOf can find an explicit undefined value in a dense array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne0371', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | undefined>(3, (_index) => undefined);
       arr[0] = 1;
       arr[2] = 3;
@@ -608,53 +579,53 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3900
-     * @tc.name testArrayIndexOfOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3700
+     * @tc.name testArrayIndexOfOne037
      * @tc.desc Verify indexOf can search for zero values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 0, 3);
       expect(arr.indexOf(0)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4000
-     * @tc.name testArrayIndexOfOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3800
+     * @tc.name testArrayIndexOfOne038
      * @tc.desc Verify indexOf can search for empty strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('a', '', 'c');
       expect(arr.indexOf('')).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4100
-     * @tc.name testArrayIndexOfOne040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_3900
+     * @tc.name testArrayIndexOfOne039
      * @tc.desc Verify indexOf does not match NaN because it uses strict equality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, NaN, 3);
       expect(arr.indexOf(NaN)).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4200
-     * @tc.name testArrayIndexOfOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4000
+     * @tc.name testArrayIndexOfOne040
      * @tc.desc Verify indexOf leaves the original array completely unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let originalLength = arr.length;
       let originalFirst = arr[0];
@@ -666,14 +637,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4300
-     * @tc.name testArrayIndexOfOne042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4100
+     * @tc.name testArrayIndexOfOne041
      * @tc.desc Verify repeated indexOf calls return the same result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let r1 = arr.indexOf(2);
       let r2 = arr.indexOf(2);
@@ -681,42 +652,42 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4400
-     * @tc.name testArrayIndexOfOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4200
+     * @tc.name testArrayIndexOfOne042
      * @tc.desc Verify indexOf can get the position of an element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(10, 20, 30, 40);
       let index = arr.indexOf(30);
       expect(index).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4500
-     * @tc.name testArrayIndexOfOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4300
+     * @tc.name testArrayIndexOfOne043
      * @tc.desc Verify indexOf can be used to check whether an element exists
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let exists = arr.indexOf(2) !== -1;
       expect(exists).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4600
-     * @tc.name testArrayIndexOfOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4400
+     * @tc.name testArrayIndexOfOne044
      * @tc.desc Verify fromIndex can find later duplicate occurrences
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2, 4);
       let firstIndex = arr.indexOf(2);
       let secondIndex = arr.indexOf(2, firstIndex + 1);
@@ -725,60 +696,56 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4700
-     * @tc.name testArrayIndexOfOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4500
+     * @tc.name testArrayIndexOfOne045
      * @tc.desc Verify conditional logic can use indexOf results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<string>('apple', 'banana', 'cherry');
       let index = arr.indexOf('banana');
-      if (index !== -1) {
-        expect(index).assertEqual(1);
-      } else {
-        expect(index).assertEqual(1);
-      }
+      expect(index).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4800
-     * @tc.name testArrayIndexOfOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4600
+     * @tc.name testArrayIndexOfOne046
      * @tc.desc Verify indexOf works correctly with large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createRangeArray(10000);
       let result = arr.indexOf(5000);
       expect(result).assertEqual(5000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4900
-     * @tc.name testArrayIndexOfOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4700
+     * @tc.name testArrayIndexOfOne047
      * @tc.desc Verify indexOf can find a boolean match near the start of the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<boolean>(false, true, false, true);
       let result = arr.indexOf(true);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5000
-     * @tc.name testArrayIndexOfOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4800
+     * @tc.name testArrayIndexOfOne048
      * @tc.desc Verify indexOf and includes return different result types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let idx = arr.indexOf(2);
       let inc = arr.includes(2);
@@ -788,14 +755,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5100
-     * @tc.name testArrayIndexOfOne050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_4900
+     * @tc.name testArrayIndexOfOne049
      * @tc.desc Verify indexOf searches from the front while lastIndexOf searches from the back
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 2);
       let idx = arr.indexOf(2);
       let lastIdx = arr.lastIndexOf(2);
@@ -804,14 +771,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5200
-     * @tc.name testArrayIndexOfOne051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5000
+     * @tc.name testArrayIndexOfOne050
      * @tc.desc Verify indexOf searches values while findIndex searches by condition
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let idx = arr.indexOf(2);
       let foundIdx = arr.findIndex((v: number): boolean => v > 1);
@@ -820,14 +787,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5300
-     * @tc.name testArrayIndexOfOne052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5100
+     * @tc.name testArrayIndexOfOne051
      * @tc.desc Verify indexOf handles all search cases for two element arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2);
       expect(arr.indexOf(1)).assertEqual(0);
       expect(arr.indexOf(2)).assertEqual(1);
@@ -835,14 +802,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5400
-     * @tc.name testArrayIndexOfOne053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5200
+     * @tc.name testArrayIndexOfOne052
      * @tc.desc Verify indexOf handles different fromIndex values correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       expect(arr.indexOf(1, 0)).assertEqual(0);
       expect(arr.indexOf(1, 1)).assertEqual(-1);
@@ -851,42 +818,42 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5500
-     * @tc.name testArrayIndexOfOne054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5300
+     * @tc.name testArrayIndexOfOne053
      * @tc.desc Verify the returned index points to the requested value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(10, 20, 30);
       let index = arr.indexOf(20);
       expect(arr[index]).assertEqual(20);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5600
-     * @tc.name testArrayIndexOfOne055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5400
+     * @tc.name testArrayIndexOfOne054
      * @tc.desc Verify the return type is explicitly int compatible
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result: int = arr.indexOf(2);
       expect(typeof result).assertEqual('int');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5700
-     * @tc.name testArrayIndexOfOne056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5500
+     * @tc.name testArrayIndexOfOne055
      * @tc.desc Verify indexOf works with union typed arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number | string>(1, 'two', 3);
       expect(arr.indexOf(1)).assertEqual(0);
       expect(arr.indexOf('two')).assertEqual(1);
@@ -894,14 +861,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5800
-     * @tc.name testArrayIndexOfOne057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5600
+     * @tc.name testArrayIndexOfOne056
      * @tc.desc Verify array length values can be used to compute fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let len: int = arr.length;
       let result = arr.indexOf(1, len);
@@ -909,14 +876,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5900
-     * @tc.name testArrayIndexOfOne058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5700
+     * @tc.name testArrayIndexOfOne057
      * @tc.desc Verify negative integer fromIndex values are computed from the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3, 4, 5);
       let fromIndex: int = -2;
       let result = arr.indexOf(4, fromIndex);
@@ -924,14 +891,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6000
-     * @tc.name testArrayIndexOfOne059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5800
+     * @tc.name testArrayIndexOfOne058
      * @tc.desc Verify indexOf handles last value when scanning the full array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const result = arr.indexOf(4, 0);
       expect(result).assertEqual(3);
@@ -939,14 +906,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6100
-     * @tc.name testArrayIndexOfOne060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_5900
+     * @tc.name testArrayIndexOfOne059
      * @tc.desc Verify indexOf handles duplicate values after a positive starting index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 2, 4);
       const result = arr.indexOf(2, 2);
       expect(result).assertEqual(3);
@@ -954,14 +921,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6200
-     * @tc.name testArrayIndexOfOne061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6000
+     * @tc.name testArrayIndexOfOne060
      * @tc.desc Verify indexOf handles no later match after the final duplicate is skipped
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 2, 4);
       const result = arr.indexOf(2, 4);
       expect(result).assertEqual(-1);
@@ -969,14 +936,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6300
-     * @tc.name testArrayIndexOfOne062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6100
+     * @tc.name testArrayIndexOfOne061
      * @tc.desc Verify indexOf handles negative start values that normalize near the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.indexOf(4, -2);
       expect(result).assertEqual(3);
@@ -984,14 +951,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6400
-     * @tc.name testArrayIndexOfOne063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6200
+     * @tc.name testArrayIndexOfOne062
      * @tc.desc Verify indexOf handles negative starts that exclude the front prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.indexOf(1, -2);
       expect(result).assertEqual(-1);
@@ -999,14 +966,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6500
-     * @tc.name testArrayIndexOfOne064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6300
+     * @tc.name testArrayIndexOfOne063
      * @tc.desc Verify indexOf handles searches for absent values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       const result = arr.indexOf(40, 0);
       expect(result).assertEqual(-1);
@@ -1014,14 +981,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6600
-     * @tc.name testArrayIndexOfOne065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6400
+     * @tc.name testArrayIndexOfOne064
      * @tc.desc Verify indexOf handles fromIndex values larger than the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       const result = arr.indexOf(20, 10);
       expect(result).assertEqual(-1);
@@ -1029,14 +996,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6700
-     * @tc.name testArrayIndexOfOne066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6500
+     * @tc.name testArrayIndexOfOne065
      * @tc.desc Verify indexOf handles single-element arrays when the element matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       const result = arr.indexOf(5, 0);
       expect(result).assertEqual(0);
@@ -1044,14 +1011,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6800
-     * @tc.name testArrayIndexOfOne067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6600
+     * @tc.name testArrayIndexOfOne066
      * @tc.desc Verify indexOf handles single-element arrays when the element does not match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5);
       const result = arr.indexOf(1, 0);
       expect(result).assertEqual(-1);
@@ -1059,126 +1026,126 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6900
-     * @tc.name testArrayIndexOfOne068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6700
+     * @tc.name testArrayIndexOfOne067
      * @tc.desc Verify indexOf supports repeated string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('alpha', 'beta', 'gamma', 'beta');
       const result = arr.indexOf('beta', 0);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7000
-     * @tc.name testArrayIndexOfOne069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6800
+     * @tc.name testArrayIndexOfOne068
      * @tc.desc Verify indexOf supports string searches after skipping the first duplicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('alpha', 'beta', 'gamma', 'beta');
       const result = arr.indexOf('beta', 2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7100
-     * @tc.name testArrayIndexOfOne070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_6900
+     * @tc.name testArrayIndexOfOne069
      * @tc.desc Verify indexOf supports missing string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('left', 'middle', 'right');
       const result = arr.indexOf('missing', 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7200
-     * @tc.name testArrayIndexOfOne071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7000
+     * @tc.name testArrayIndexOfOne070
      * @tc.desc Verify indexOf supports empty strings in later positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('', 'filled', '');
       const result = arr.indexOf('', 1);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7300
-     * @tc.name testArrayIndexOfOne072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7100
+     * @tc.name testArrayIndexOfOne071
      * @tc.desc Verify indexOf supports case-sensitive string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('A', 'a', 'A');
       const result = arr.indexOf('a', 0);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7400
-     * @tc.name testArrayIndexOfOne073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7200
+     * @tc.name testArrayIndexOfOne072
      * @tc.desc Verify indexOf supports boolean arrays with a later true value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(false, false, true, false);
       const result = arr.indexOf(true, 1);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7500
-     * @tc.name testArrayIndexOfOne074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7300
+     * @tc.name testArrayIndexOfOne073
      * @tc.desc Verify indexOf supports bigint arrays with repeated values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<bigint>(1n, 2n, 3n, 2n);
       const result = arr.indexOf(2n, 1);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7600
-     * @tc.name testArrayIndexOfOne075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7400
+     * @tc.name testArrayIndexOfOne074
      * @tc.desc Verify indexOf treats a very negative starting index as the full-array search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(7, 8, 9);
       const result = arr.indexOf(8, -100);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7700
-     * @tc.name testArrayIndexOfOne076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7500
+     * @tc.name testArrayIndexOfOne075
      * @tc.desc Verify indexOf works on arrays rebuilt after clearing length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(11);
@@ -1188,14 +1155,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7800
-     * @tc.name testArrayIndexOfOne077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7600
+     * @tc.name testArrayIndexOfOne076
      * @tc.desc Verify indexOf can search the result of a slice operation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(0, 1, 2, 3, 4, 5);
       const arr = source.slice(2);
       const result = arr.indexOf(4, 0);
@@ -1203,14 +1170,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7900
-     * @tc.name testArrayIndexOfOne078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7700
+     * @tc.name testArrayIndexOfOne077
      * @tc.desc Verify indexOf ignores later array mutations that happen after the call result is stored
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(2, 4, 6, 8);
       const first = arr.indexOf(6, 0);
       arr[2] = 100;
@@ -1218,14 +1185,14 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8000
-     * @tc.name testArrayIndexOfOne079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7800
+     * @tc.name testArrayIndexOfOne078
      * @tc.desc Verify indexOf returns the same outcome as the default search when fromIndex is minus zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 3, 5);
       const result1 = arr.indexOf(3);
       const result2 = arr.indexOf(3, -0);
@@ -1233,266 +1200,266 @@ export default function ArrayIndexOf1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8100
-     * @tc.name testArrayIndexOfOne080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_7900
+     * @tc.name testArrayIndexOfOne079
      * @tc.desc Verify indexOf can match a duplicate exactly at the positive start index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 1, 2);
       const result = arr.indexOf(1, 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8200
-     * @tc.name testArrayIndexOfOne081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8000
+     * @tc.name testArrayIndexOfOne080
      * @tc.desc Verify indexOf returns minus one when positive fromIndex skips all matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 1, 2);
       const result = arr.indexOf(1, 3);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8300
-     * @tc.name testArrayIndexOfOne082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8100
+     * @tc.name testArrayIndexOfOne081
      * @tc.desc Verify indexOf can find the tail value when fromIndex equals the last index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(3, 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8400
-     * @tc.name testArrayIndexOfOne083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8200
+     * @tc.name testArrayIndexOfOne082
      * @tc.desc Verify indexOf returns minus one for empty arrays with a positive fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const result = arr.indexOf(1, 1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8500
-     * @tc.name testArrayIndexOfOne084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8300
+     * @tc.name testArrayIndexOfOne083
      * @tc.desc Verify indexOf returns minus one for empty arrays with an oversized positive fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const result = arr.indexOf(1, 10);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8600
-     * @tc.name testArrayIndexOfOne085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8400
+     * @tc.name testArrayIndexOfOne084
      * @tc.desc Verify indexOf can search only the last element when fromIndex is minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(3, -1);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8700
-     * @tc.name testArrayIndexOfOne086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8500
+     * @tc.name testArrayIndexOfOne085
      * @tc.desc Verify indexOf does not search earlier elements when fromIndex is minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(2, -1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8800
-     * @tc.name testArrayIndexOfOne087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8600
+     * @tc.name testArrayIndexOfOne086
      * @tc.desc Verify indexOf can find a tail duplicate when fromIndex normalizes from the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 2);
       const result = arr.indexOf(2, -2);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8900
-     * @tc.name testArrayIndexOfOne088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8700
+     * @tc.name testArrayIndexOfOne087
      * @tc.desc Verify indexOf treats negative fromIndex equal to minus length as zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(1, -3);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9000
-     * @tc.name testArrayIndexOfOne089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8800
+     * @tc.name testArrayIndexOfOne088
      * @tc.desc Verify indexOf resets overly negative fromIndex values to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(1, -4);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9100
-     * @tc.name testArrayIndexOfOne090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_8900
+     * @tc.name testArrayIndexOfOne089
      * @tc.desc Verify indexOf can still find the tail value after a very negative fromIndex reset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(3, -100);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9200
-     * @tc.name testArrayIndexOfOne091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9000
+     * @tc.name testArrayIndexOfOne090
      * @tc.desc Verify indexOf returns minus one for empty arrays with a negative fromIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       const result = arr.indexOf(1, -1);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9300
-     * @tc.name testArrayIndexOfOne092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9100
+     * @tc.name testArrayIndexOfOne091
      * @tc.desc Verify indexOf can find a single element when fromIndex is minus one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.indexOf(1, -1);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9400
-     * @tc.name testArrayIndexOfOne093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9200
+     * @tc.name testArrayIndexOfOne092
      * @tc.desc Verify indexOf resets overly negative fromIndex values on single element arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1);
       const result = arr.indexOf(1, -2);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9500
-     * @tc.name testArrayIndexOfOne094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9300
+     * @tc.name testArrayIndexOfOne093
      * @tc.desc Verify indexOf can land exactly on a target after negative offset normalization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(2, -2);
       expect(result).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9600
-     * @tc.name testArrayIndexOfOne095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9400
+     * @tc.name testArrayIndexOfOne094
      * @tc.desc Verify indexOf treats explicit plus zero fromIndex as a normal full search
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.indexOf(1, +0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9700
-     * @tc.name testArrayIndexOfOne096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9500
+     * @tc.name testArrayIndexOfOne095
      * @tc.desc Verify indexOf returns the first duplicate when fromIndex is zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 10, 30);
       const result = arr.indexOf(10, 0);
       expect(result).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9800
-     * @tc.name testArrayIndexOfOne097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9600
+     * @tc.name testArrayIndexOfOne096
      * @tc.desc Verify indexOf can find the second duplicate when fromIndex starts at that position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 10, 30);
       const result = arr.indexOf(10, 2);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9900
-     * @tc.name testArrayIndexOfOne098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_ONE_9700
+     * @tc.name testArrayIndexOfOne097
      * @tc.desc Verify indexOf can find a later duplicate after a negative fromIndex skips the prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayIndexOfOne098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayIndexOfOne097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 1, 2);
       const result = arr.indexOf(1, -3);
       expect(result).assertEqual(2);
