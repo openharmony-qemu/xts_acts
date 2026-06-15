@@ -93,7 +93,7 @@ it('TimePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         let left = timePicker.left
         await driver.swipe(Math.round((right-left)/2+left).toInt(), Math.round(middle).toInt(), Math.round((right-left)/2+left).toInt(), Math.round(0).toInt());
         await Utils.sleep(5000);
-        let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
+        let strJsonNew:string = inspector.getInspectorByKey('timePickerOnChangeModifier' + '_onChangeOff');
         console.info("TimePicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
           .getElement('$attrs')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('false');
@@ -127,7 +127,7 @@ it('TimePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
         await driver.swipe(Math.round((right-left)/2+left).toInt(), Math.round(middle).toInt(), Math.round((right-left)/2+left).toInt(),
           Math.round(0).toInt());
         await Utils.sleep(5000);
-        let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
+        let strJsonNew:string = inspector.getInspectorByKey('timePickerOnChangeModifier' + '_onChangeOff');
         console.info("TimePicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
           .getElement('$attrs')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');

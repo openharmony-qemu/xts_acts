@@ -136,7 +136,7 @@ struct SwiperExample {
       //     .itemWidth(2)
       //     .itemHeight(2)
       //     .color(Color.Blue))  //导致页面白屏 注释掉
-      .key('swiper')
+      .key('swiper_swiper')
       .onChange((index: int): void => {
         console.info(index.toString())
         this.onActionCalledThree = true;

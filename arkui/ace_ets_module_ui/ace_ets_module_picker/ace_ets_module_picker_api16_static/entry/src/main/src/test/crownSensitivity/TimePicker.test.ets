@@ -180,7 +180,7 @@ it('ArkUX_Stage_TimePicker_ComponentTest_static_0500', Level.LEVEL1, async (done
 
           // Verify the functions of the ArcAlphabetIndexer component
           console.info('[ArkUX_Stage_TimePicker_ComponentTest_static_0500] START');
-          let strJson = inspector.getInspectorByKey('timepicker05');
+          let strJson = inspector.getInspectorByKey('TimePicker' + '_timepicker05_01');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUX_Stage_TimePicker_ComponentTest_static_0500] attr: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("[ArkUX_Stage_TimePicker_ComponentTest_static_0500] digitalCrownSensitivity: " + JSON.stringify(obj.getElement('$attrs').getString('digitalCrownSensitivity')));

@@ -71,7 +71,7 @@ it('themeInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       // click to change the skin
-      let button = await driver.findComponent(ON.id('themeClick'));
+      let button = await driver.findComponent(ON.id('themePageTest' + '_themeClick'));
   await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);

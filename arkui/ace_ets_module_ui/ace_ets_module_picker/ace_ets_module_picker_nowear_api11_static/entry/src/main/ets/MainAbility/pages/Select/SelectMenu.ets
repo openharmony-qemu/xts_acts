@@ -99,7 +99,7 @@ struct SelectMenuTest {
                 family: 'serif',
                 style: FontStyle.Normal
               })
-              .key('selectTest2')
+              .key('SelectMenu_selectTest2')
               .menuAlign(MenuAlignType.CENTER)
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)
@@ -127,7 +127,7 @@ struct SelectMenuTest {
                 family: 'serif',
                 style: FontStyle.Normal
               })
-              .key('selectTest3')
+              .key('SelectMenu_selectTest3')
               .menuAlign(MenuAlignType.END)
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)

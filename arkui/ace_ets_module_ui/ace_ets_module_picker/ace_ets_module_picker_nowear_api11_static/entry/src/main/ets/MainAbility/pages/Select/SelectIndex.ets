@@ -135,7 +135,7 @@ struct SelectExample {
           family: 'serif',
           style: FontStyle.Normal
         })
-        .key('selectTest2')
+        .key('SelectIndex_selectTest2')
         .onSelect((index: int, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
@@ -163,7 +163,7 @@ struct SelectExample {
           family: 'serif',
           style: FontStyle.Normal
         })
-        .key('selectTest3')
+        .key('SelectIndex_selectTest3')
         .onSelect((index: int, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)

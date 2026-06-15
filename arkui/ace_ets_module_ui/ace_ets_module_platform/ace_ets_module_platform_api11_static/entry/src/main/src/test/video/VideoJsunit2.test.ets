@@ -80,7 +80,7 @@ it('testVideoStatic01', Level.LEVEL1, async (done: () => void): Promise<void> =>
   try {
       console.info('[testVideo01] START');
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
       expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('Video');
       console.info('[testVideo01] END');
 }
@@ -115,7 +115,7 @@ it('testVideoStatic02', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
       console.info("[testVideo02] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo02] END');
       done();
@@ -146,7 +146,7 @@ it('testVideoStatic03', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
       console.info("[testVideo03] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo03] END');
       done();
@@ -177,7 +177,7 @@ it('testVideoStatic04', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
       console.info("[testVideo04] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo04] END');
       done();
@@ -208,7 +208,7 @@ it('testVideoStatic05', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo05] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo05] END');
@@ -240,7 +240,7 @@ it('testVideoStatic06', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo06] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo06] END');
@@ -272,7 +272,7 @@ it('testVideoStatic07', Level.LEVEL1, async (done: () => void): Promise<void> =>
         expect().assertFail()
       }
       await Utils.sleep(2000);
-      let strJsonNew = inspector.getInspectorByKey('video');
+      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
 
       console.info("[testVideo07] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo07] END');

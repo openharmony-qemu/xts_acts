@@ -215,7 +215,7 @@ it('ArkUI_Stage_Select2_Space_static_0300', Level.LEVEL1, async (done: () => voi
         console.log("[ArkUI_Stage_Select2_Space_static_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('selectTest2');
+      let strJson = inspector.getInspectorByKey('SelectIndex' + '_selectTest2');
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select2_Space_static_0300] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('40.00vp');
@@ -312,7 +312,7 @@ it('ArkUI_Stage_Select2_Space_static_0600', Level.LEVEL1, async (done: () => voi
         console.log("[ArkUI_Stage_Select2_Space_static_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('selectTest3');
+      let strJson = inspector.getInspectorByKey('SelectIndex' + '_selectTest3');
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select2_Space_static_0600] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('50.00vp');
@@ -344,7 +344,7 @@ it('ArkUI_Stage_Select2_Space_static_0700', Level.LEVEL1, async (done: () => voi
         console.log("[ArkUI_Stage_Select2_Space_static_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('selectTest2');
+      let strJson = inspector.getInspectorByKey('SelectIndex' + '_selectTest2');
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select2_Space_static_0700] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('40.00px');
@@ -378,7 +378,7 @@ it('ArkUI_Stage_Select2_Space_static_0800', Level.LEVEL1, async (done: () => voi
         console.log("[ArkUI_Stage_Select2_Space_static_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('selectTest2');
+      let strJson = inspector.getInspectorByKey('SelectIndex' + '_selectTest2');
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select2_Space_static_0800] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('40.00lpx');
@@ -410,7 +410,7 @@ it('ArkUI_Stage_Select2_Space_static_0900', Level.LEVEL1, async (done: () => voi
         console.log("[ArkUI_Stage_Select2_Space_static_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('selectTest2');
+      let strJson = inspector.getInspectorByKey('SelectIndex' + '_selectTest2');
       let objNew = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_Select2_Space_static_0900] space:" + objNew.getElement('$attrs').getString("space"));
       expect(objNew.getElement('$attrs').getString("space")).assertEqual('40.00fp');

@@ -234,7 +234,7 @@ struct SwiperExample3 {
               .fontSize(20)
           })
         }
-        .key("SwiperC")
+        .key("Swipersec_SwiperC_01")
         .index(0)
         .indicator(this.indicator)
         .cachedCount(1)
@@ -260,7 +260,7 @@ struct SwiperExample3 {
               .fontSize(20)
           })
         }
-        .key("SwiperC")
+        .key("Swipersec_SwiperC_02")
         .index(0)
         .indicator(this.indicator)
         .cachedCount(1)

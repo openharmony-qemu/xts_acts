@@ -93,7 +93,7 @@ it('TextPicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         await driver.swipe(Math.round( 0 +(right-left)/2+left).toInt(), Math.round( 0 +middle).toInt(),
           Math.round( 0 +(right-left)/2+left).toInt(), Math.round(0).toInt());
         await Utils.sleep(5000);
-        let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
+        let strJsonNew:string = inspector.getInspectorByKey('textPickerOnChangeModifier' + '_onChangeOff');
         console.info("TextPicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
           .getElement('$attrs')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('false');

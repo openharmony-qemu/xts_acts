@@ -103,7 +103,7 @@ struct SwiperExample2 {
             .fontSize(20)
         }, (item: number) => item.toString())
       }
-      .key('swiper')
+      .key('Swiper2_swiper')
       .cachedCount(2)
       .index(1)
       .autoPlay(true, undefined)

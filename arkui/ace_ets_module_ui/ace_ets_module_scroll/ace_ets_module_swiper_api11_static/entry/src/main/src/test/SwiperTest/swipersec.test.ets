@@ -1894,7 +1894,7 @@ it('ArkUX_Stage_Swiper_IsArrow_static_0800', Level.LEVEL0, async (): Promise<voi
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0100', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolTrue", true)
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0100 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("true")
@@ -1910,7 +1910,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0100', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0200', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolFalse", false)
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0200 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("false")
@@ -1926,7 +1926,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0200', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0300', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrStr", "true")
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0300 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("true")
@@ -1942,7 +1942,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0300', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0400', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrStr", "false")
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0400 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("false")
@@ -1958,7 +1958,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0400', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0500', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrUndefined", undefined)
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0500 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("false")
@@ -1974,7 +1974,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0500', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0600', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrNull", null)
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0600 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("false")
@@ -1990,7 +1990,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0600', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0700', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrStr", "")
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0700 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("false")
@@ -2006,7 +2006,7 @@ it('ArkUX_Stage_Swiper_IsHoverShow_static_0700', Level.LEVEL0, async (): Promise
      */
 it('ArkUX_Stage_Swiper_IsHoverShow_static_0800', Level.LEVEL0, async (): Promise<void> => {
       await setBoolean("BoolErrNum", 1)
-      let obj = JSON.parseJsonElement(inspector.getInspectorByKey("SwiperC"))
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('Swipersec' + '_SwiperC_01'))
       console.info('ArkUX_Stage_Swiper_IsHoverShow_static_0800 hoverShow :' +
       JSON.stringify(obj.getElement('$attrs').getString('hoverShow')));
       expect(obj.getElement('$attrs').getString('hoverShow')).assertEqual("true")

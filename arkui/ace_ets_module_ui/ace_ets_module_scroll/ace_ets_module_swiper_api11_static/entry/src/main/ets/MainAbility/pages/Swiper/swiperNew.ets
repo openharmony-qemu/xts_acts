@@ -118,7 +118,7 @@ struct SwiperCurve {
               .fontSize(20)
           }, (item: number) => item.toString())
         }
-        .key("swiper")
+        .key("swiperNew_swiper")
         .cachedCount(2)
         .index(1)
         .autoPlay(true)

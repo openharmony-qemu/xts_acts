@@ -70,7 +70,7 @@ struct themePage {
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themePage.themeCount;
             console.log('++++++++++++++++this.themeIndex',this.themeIndex)
-          }).key('themeClick')
+          }).key('themePageTest_themeClick')
 
         // 系统默认按钮配色
         Button('Button.style(NORMAL) with System Theme')
@@ -87,7 +87,7 @@ struct themePage {
       WithTheme({ theme: this.themeArray[this.themeIndex.toInt()] }) {
         // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
-          Text(`使用WithTheme`).key('themeText')
+          Text(`使用WithTheme`).key('themePageTest_themeText')
           Button('Button.style(NORMAL) with Custom Theme')
             .buttonStyle(ButtonStyleMode.NORMAL)
           Button('Button.style(EMP..ED) with Custom Theme')
