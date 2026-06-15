@@ -21,6 +21,7 @@ struct ImageAnimatorFillModeUndefinedAndNullTest {
     Column({ space: 10 }) {
       ImageAnimator()
         .id('fillModeUndefined')
+        .key('fillModeUndefined')
         .images([
           {
             src: $r('app.media.tree')
@@ -33,6 +34,7 @@ struct ImageAnimatorFillModeUndefinedAndNullTest {
 
       ImageAnimator()
         .id('fillModeNull')
+        .key('fillModeNull')
         .images([
           {
             src: $r('app.media.tree')

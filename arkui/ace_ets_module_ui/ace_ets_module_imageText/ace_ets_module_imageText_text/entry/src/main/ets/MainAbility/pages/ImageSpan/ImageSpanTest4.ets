@@ -25,10 +25,15 @@ struct TextImageSpan4 {
   build() {
     Column({ space: 10 }) {
       Text(this.flag1).id('ImageSpan_onComplete_41').margin({top:50})
+      .key('ImageSpan_onComplete_41')
       Text(this.flag2).id('ImageSpan_onComplete_42')
+      .key('ImageSpan_onComplete_42')
       Text(this.flag3).id('ImageSpan_onComplete_43')
+      .key('ImageSpan_onComplete_43')
       Text(this.flag4).id('ImageSpan_onComplete_44')
+      .key('ImageSpan_onComplete_44')
       Text(this.flag5).id('ImageSpan_onComplete_45')
+      .key('ImageSpan_onComplete_45')
       Text(){
         ImageSpan($r('app.media.icon')).width(100).height(100)
           .onError(()=>{

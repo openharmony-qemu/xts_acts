@@ -21,6 +21,7 @@ struct ImageAnimatorPreDecodeUndefinedAndNullTest {
     Column({ space: 10 }) {
       ImageAnimator()
         .id('preDecodeUndefined')
+        .key('preDecodeUndefined')
         .images([
           {
             src: $r('app.media.tree')
@@ -33,6 +34,7 @@ struct ImageAnimatorPreDecodeUndefinedAndNullTest {
 
       ImageAnimator()
         .id('preDecodeNull')
+        .key('preDecodeNull')
         .images([
           {
             src: $r('app.media.tree')

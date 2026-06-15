@@ -31,6 +31,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_fontSize_default')
+                .key('SymbolSpan_fontSize_default')
             }
               .width('25%')
               .height('5%')
@@ -41,6 +42,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontSize(null)
                 .id('SymbolSpan_fontSize_null')
+                .key('SymbolSpan_fontSize_null')
             }
               .width('25%')
               .height('5%')
@@ -51,6 +53,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontSize(undefined)
                 .id('SymbolSpan_fontSize_undefined')
+                .key('SymbolSpan_fontSize_undefined')
             }
               .width('25%')
               .height('5%')
@@ -61,6 +64,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontSize('')
                 .id('SymbolSpan_fontSize_empty')
+                .key('SymbolSpan_fontSize_empty')
             }
               .width('25%')
               .height('5%')
@@ -79,6 +83,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_fontColor_default')
+                .key('SymbolSpan_fontColor_default')
             }
               .width('25%')
               .height('5%')
@@ -89,6 +94,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontColor(null)
                 .id('SymbolSpan_fontColor_null')
+                .key('SymbolSpan_fontColor_null')
             }
               .width('25%')
               .height('5%')
@@ -99,6 +105,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontColor(undefined)
                 .id('SymbolSpan_fontColor_undefined')
+                .key('SymbolSpan_fontColor_undefined')
             }
               .width('25%')
               .height('5%')
@@ -109,6 +116,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontColor([])
                 .id('SymbolSpan_fontColor_empty')
+                .key('SymbolSpan_fontColor_empty')
             }
               .width('25%')
               .height('5%')
@@ -127,6 +135,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_fontWeight_default')
+                .key('SymbolSpan_fontWeight_default')
             }
               .width('20%')
               .height('5%')
@@ -137,6 +146,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontWeight(null)
                 .id('SymbolSpan_fontWeight_null')
+                .key('SymbolSpan_fontWeight_null')
             }
               .width('20%')
               .height('5%')
@@ -147,6 +157,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontWeight(undefined)
                 .id('SymbolSpan_fontWeight_undefined')
+                .key('SymbolSpan_fontWeight_undefined')
             }
               .width('20%')
               .height('5%')
@@ -157,6 +168,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontWeight('')
                 .id('SymbolSpan_fontWeight_empty')
+                .key('SymbolSpan_fontWeight_empty')
             }
               .width('20%')
               .height('5%')
@@ -166,6 +178,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .fontWeight(700)
                 .id('SymbolSpan_fontWeight_number')
+                .key('SymbolSpan_fontWeight_number')
             }
               .width('20%')
               .height('5%')
@@ -184,6 +197,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_effectStrategy_default')
+                .key('SymbolSpan_effectStrategy_default')
             }
               .width('30%')
               .height('5%')
@@ -194,6 +208,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .effectStrategy(null)
                 .id('SymbolSpan_effectStrategy_null')
+                .key('SymbolSpan_effectStrategy_null')
             }
               .width('30%')
               .height('5%')
@@ -204,6 +219,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .effectStrategy(undefined)
                 .id('SymbolSpan_effectStrategy_undefined')
+                .key('SymbolSpan_effectStrategy_undefined')
             }
               .width('30%')
               .height('5%')
@@ -222,6 +238,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_renderingStrategy_default')
+                .key('SymbolSpan_renderingStrategy_default')
             }
               .width('30%')
               .height('5%')
@@ -232,6 +249,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .renderingStrategy(null)
                 .id('SymbolSpan_renderingStrategy_null')
+                .key('SymbolSpan_renderingStrategy_null')
             }
               .width('30%')
               .height('5%')
@@ -242,6 +260,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .renderingStrategy(undefined)
                 .id('SymbolSpan_renderingStrategy_undefined')
+                .key('SymbolSpan_renderingStrategy_undefined')
             }
               .width('30%')
               .height('5%')
@@ -260,6 +279,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
             Text() {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .id('SymbolSpan_attributeModifier_default')
+                .key('SymbolSpan_attributeModifier_default')
             }
               .width('30%')
               .height('5%')
@@ -270,6 +290,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .attributeModifier(null)
                 .id('SymbolSpan_attributeModifier_null')
+                .key('SymbolSpan_attributeModifier_null')
             }
               .width('30%')
               .height('5%')
@@ -280,6 +301,7 @@ struct SymbolSpanPropertiesNullUndefinedTest {
               SymbolSpan($r('sys.symbol.ohos_trash'))
                 .attributeModifier(undefined)
                 .id('SymbolSpan_attributeModifier_undefined')
+                .key('SymbolSpan_attributeModifier_undefined')
             }
               .width('30%')
               .height('5%')

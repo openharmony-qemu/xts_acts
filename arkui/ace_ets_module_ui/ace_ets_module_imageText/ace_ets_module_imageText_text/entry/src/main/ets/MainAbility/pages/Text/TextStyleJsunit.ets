@@ -31,7 +31,7 @@ struct TextStyle {
       Text(`text font color ${this.fontColor}`)
         .fontColor('error')
         .fontSize(10)
-        .key('fontColor').height('10%').textAlign(TextAlign.Center)
+        .key('TextStyleJsunit_fontColor').height('10%').textAlign(TextAlign.Center)
 
       Text(`text font size ${this.fontSize}`)
         .fontSize('error')

@@ -22,6 +22,7 @@ struct BorderImage {
           Text('This is borderImage.').textAlign(TextAlign.Center).fontSize(20)
         }
         .id('borderImage')
+        .key('borderImage')
         .borderImage({
           source: $r('app.media.icon'),
           slice: { top: 10, bottom: 10, left: 10, right: 10 },

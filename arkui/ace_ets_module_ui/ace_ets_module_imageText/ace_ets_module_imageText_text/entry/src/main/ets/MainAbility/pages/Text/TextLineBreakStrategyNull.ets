@@ -28,18 +28,21 @@ struct TextLineBreakStrategyNull {
       // Test 1: lineBreakStrategy with null parameter
       Text('lineBreakStrategy with null')
         .id('text_lineBreakStrategy_null')
+        .key('text_lineBreakStrategy_null')
         .lineBreakStrategy(null)
         .height('5%')
 
       // Test 2: lineBreakStrategy with undefined parameter
       Text('lineBreakStrategy with undefined')
         .id('text_lineBreakStrategy_undefined')
+        .key('text_lineBreakStrategy_undefined')
         .lineBreakStrategy(undefined)
         .height('5%')
 
       // Test 3: Default lineBreakStrategy for comparison
       Text('Default lineBreakStrategy (for comparison)')
         .id('text_lineBreakStrategy_default')
+        .key('text_lineBreakStrategy_default')
         .height('5%')
     }
     .width('100%')

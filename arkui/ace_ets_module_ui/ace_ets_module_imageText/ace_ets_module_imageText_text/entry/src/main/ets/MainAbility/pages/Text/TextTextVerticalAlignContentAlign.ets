@@ -33,18 +33,21 @@ struct TextTextVerticalAlignContentAlign {
         // Test 1: textVerticalAlign with null parameter
         Text('textVerticalAlign with null\nThis is a multiline text\nto test textVerticalAlign effect')
           .id('text_textVerticalAlign_null')
+          .key('text_textVerticalAlign_null')
           .textVerticalAlign(null)
           .height('5%')
 
         // Test 2: textVerticalAlign with undefined parameter
         Text('textVerticalAlign with undefined\nThis is a multiline text\nto test textVerticalAlign effect')
           .id('text_textVerticalAlign_undefined')
+          .key('text_textVerticalAlign_undefined')
           .textVerticalAlign(undefined)
           .height('5%')
 
         // Test 3: Default textVerticalAlign for comparison
         Text('Default textVerticalAlign (for comparison)\nThis is a multiline text\nto test textVerticalAlign effect')
           .id('text_textVerticalAlign_default')
+          .key('text_textVerticalAlign_default')
           .height('5%')
       }
 
@@ -58,18 +61,21 @@ struct TextTextVerticalAlignContentAlign {
         // Test 4: textContentAlign with null parameter
         Text('textContentAlign with null\nThis is a multiline text\nto test textContentAlign effect')
           .id('text_textContentAlign_null')
+          .key('text_textContentAlign_null')
           .textContentAlign(null)
           .height('5%')
 
         // Test 5: textContentAlign with undefined parameter
         Text('textContentAlign with undefined\nThis is a multiline text\nto test textContentAlign effect')
           .id('text_textContentAlign_undefined')
+          .key('text_textContentAlign_undefined')
           .textContentAlign(undefined)
           .height('5%')
 
         // Test 6: Default textContentAlign for comparison
         Text('Default textContentAlign (for comparison)\nThis is a multiline text\nto test textContentAlign effect')
           .id('text_textContentAlign_default')
+          .key('text_textContentAlign_default')
           .height('5%')
       }
     }

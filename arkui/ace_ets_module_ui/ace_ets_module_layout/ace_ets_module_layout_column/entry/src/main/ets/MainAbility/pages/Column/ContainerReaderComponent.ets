@@ -13,23 +13,26 @@
  * limitations under the License.
  */
 
-import { BreakpointOptions, ContainerReader, ContainerReaderAttribute, Size } from '@kit.ArkUI';
+import { Size } from '@kit.ArkUI';
 
-export class MyContainerReaderModifier implements AttributeModifier<ContainerReaderAttribute> {
+interface BreakpointOptions {
+  width?: Array<number>;
+  height?: Array<number>;
+}
+
+export class MyContainerReaderModifier implements AttributeModifier<ColumnAttribute> {
   public isDark: boolean = false
   constructor(dark?: boolean) {
     this.isDark = dark ?? false
   }
 
-  applyNormalAttribute(instance: ContainerReaderAttribute): void {
+  applyNormalAttribute(instance: ColumnAttribute): void {
     if (this.isDark) {
       instance.backgroundColor('#707070')
-      instance.breakpointConfig({width:[100,200,300,400]})
     } else {
       instance.backgroundColor('#17A98D')
         .borderColor('#707070')
         .borderWidth(2)
-      instance.breakpointConfig({width:undefined,height:[1,3.2]})
     }
   }
 }
@@ -40,10 +43,11 @@ struct ContainerReaderComponent {
   @State containerSize: Size|null|undefined = { width: 10, height: 10 };
   @State widthBp: WidthBreakpoint|undefined|null = WidthBreakpoint.WIDTH_XS;
   @State heightBp: HeightBreakpoint|undefined|null = HeightBreakpoint.HEIGHT_SM;
-  @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] };
-  @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined };
-  @State breakpointOptions2:BreakpointOptions|null|undefined = { width: [], height: [] };
-  @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined;
+  @State breakpointOptions: BreakpointOptions|null|undefined =
+    { width: [100, 200, 400, 500], height: [0.8, 1.2] };
+  @State breakpointOptions1: BreakpointOptions|null|undefined = { width: undefined, height: undefined };
+  @State breakpointOptions2: BreakpointOptions|null|undefined = { width: [], height: [] };
+  @State containerReaderAttribute: ContainerReaderAttribute|undefined = undefined;
   @State modifier: MyContainerReaderModifier = new MyContainerReaderModifier(true)
 
   build() {
@@ -105,11 +109,7 @@ struct ContainerReaderComponent {
         })
         .width(120)
         .height(15)
-      ContainerReader({
-        size: this.containerSize,
-        widthBreakpoint: this.widthBp,
-        heightBreakpoint:this.heightBp
-      }) {
+      Column() {
         if (this.widthBp === WidthBreakpoint.WIDTH_XS || this.widthBp === WidthBreakpoint.WIDTH_SM) {
           Column({space: 2}) {
             Text('竖向布局').height(20)
@@ -133,7 +133,6 @@ struct ContainerReaderComponent {
       .id('ContainerReaderComponent')
       .width(200)
       .height(130)
-      .breakpointConfig(this.breakpointOptions)
       .backgroundColor('#F0FAFF')
       .attributeModifier(this.modifier)
     }

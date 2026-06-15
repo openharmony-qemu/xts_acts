@@ -45,11 +45,13 @@ struct orphanCharOptimizationExample{
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
           .id('jsText')
+          .key('jsText')
         TextArea({ text: this.message })
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
           .id('jsTextArea')
+          .key('jsTextArea')
       }
 
       Row() {
@@ -58,6 +60,7 @@ struct orphanCharOptimizationExample{
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
           .id('jsTextInput')
+          .key('jsTextInput')
         RichEditor({ controller: this.controller })
           .onReady(() => {
             this.controller.addTextSpan("凤舞龙飞凤舞龙飞凤舞",
@@ -69,6 +72,7 @@ struct orphanCharOptimizationExample{
               })
           })
           .id('jsRichEditor')
+          .key('jsRichEditor')
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
       }

@@ -53,7 +53,7 @@ export default function ImageObjectRepeatTest() {
       console.info('ImageObjectRepeatTest_0100 START');
       await CommonFunc.sleep(1000);
       // get the image component and test attribute
-      let strJson = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageObjectRepeatTest_0100 component obj is: ' + obj.$attrs.src);
       expect(obj.$attrs.src).assertEqual('resource://rawfile/test3.png');
@@ -86,7 +86,7 @@ export default function ImageObjectRepeatTest() {
         name: 'imageNamePng', value: 'test2.svg'
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageObjectRepeatTest_0200 component obj is: ' + obj.$attrs.src);
       expect(obj.$attrs.src).assertEqual('resource://rawfile/test2.svg');
@@ -95,7 +95,7 @@ export default function ImageObjectRepeatTest() {
         name: 'imageNamePng', value: 'test.gif'
       })
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson2 = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj2: ESObject = JSON.parse(strJson2);
       console.info('ImageObjectRepeatTest_0200 component obj2 is: ' + obj2.$attrs.src);
       expect(obj2.$attrs.src).assertEqual('resource://rawfile/test.gif');
@@ -104,7 +104,7 @@ export default function ImageObjectRepeatTest() {
         name: 'imageNamePng', value: 'bm.bmp'
       })
       await CommonFunc.sleep(1000);
-      let strJson3 = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson3 = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj3: ESObject = JSON.parse(strJson3);
       console.info('ImageObjectRepeatTest_0100 component obj3 is: ' + obj3.$attrs.src);
       expect(obj3.$attrs.src).assertEqual('resource://rawfile/bm.bmp');
@@ -113,7 +113,7 @@ export default function ImageObjectRepeatTest() {
         name: 'imageNamePng', value: 'bm.jpg'
       })
       await CommonFunc.sleep(1000);
-      let strJson4 = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson4 = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj4: ESObject = JSON.parse(strJson4);
       console.info('ImageObjectRepeatTest_0100 component obj4 is: ' + obj4.$attrs.src);
       expect(obj4.$attrs.src).assertEqual('resource://rawfile/bm.jpg');
@@ -136,7 +136,7 @@ export default function ImageObjectRepeatTest() {
         name: 'imageNamePng', value: 'aaa.png'
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageObjectRepeatTest_0300 component obj is: ' + obj.$attrs.src);
       expect(obj.$attrs.src).assertEqual('resource://rawfile/aaa.png');
@@ -227,7 +227,7 @@ export default function ImageObjectRepeatTest() {
         name: 'objectFit', value: 9
       })
       await CommonFunc.sleep(2000);
-      let strJson = getInspectorByKey('ImageObjectRepeat_image1');
+      let strJson = getInspectorByKey('ImageObjectRepeat' + '_image1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('ImageObjectRepeatTest_0500 component obj is: ' + obj.$attrs.objectFit);
       expect(obj.$attrs.objectFit).assertEqual('ImageFit.Cover');
