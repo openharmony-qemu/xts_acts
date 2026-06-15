@@ -53,6 +53,7 @@ group("builtin_static") {
       "int_standard_test_static:ActsIntStaticTest",
       "double_standard_test_static:ActsDoubleStaticTest",
       "deepcopy_standard_test_static:ActsDeepcopyStaticTest",
+      "eithon_standard_test_static:ActsEithonStaticTest",
     ]
   }
 }
