@@ -29,7 +29,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0100
+     * @tc.number INT_TO_STRNG_R_CHK_0100
      * @tc.name testIntToString20001
      * @tc.desc Verify that radix parameter is required
      * @tc.size MediumTest
@@ -43,21 +43,21 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0200
+     * @tc.number INT_TO_STRNG_R_CHK_0200
      * @tc.name testIntToString20002
-     * @tc.desc Verify calling without parameters invokes no-arg version
+     * @tc.desc Verify toString with radix 2 returns binary string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIntToString20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(65);
-      const result = a.toString();
-      expect(result).assertEqual("65");
+      const result = a.toString(2);
+      expect(result).assertEqual("1000001");
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0300
+     * @tc.number INT_TO_STRNG_R_CHK_0300
      * @tc.name testIntToString20003
      * @tc.desc Verify toString with radix 10 returns decimal string
      * @tc.size MediumTest
@@ -70,7 +70,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0400
+     * @tc.number INT_TO_STRNG_R_CHK_0400
      * @tc.name testIntToString20004
      * @tc.desc Verify conversion to binary string
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0500
+     * @tc.number INT_TO_STRNG_R_CHK_0500
      * @tc.name testIntToString20005
      * @tc.desc Verify binary representation of zero
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0600
+     * @tc.number INT_TO_STRNG_R_CHK_0600
      * @tc.name testIntToString20006
      * @tc.desc Verify binary representation of one
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0700
+     * @tc.number INT_TO_STRNG_R_CHK_0700
      * @tc.name testIntToString20007
      * @tc.desc Verify binary representation of large value
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0800
+     * @tc.number INT_TO_STRNG_R_CHK_0800
      * @tc.name testIntToString20008
      * @tc.desc Verify binary representation of negative number
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0900
+     * @tc.number INT_TO_STRNG_R_CHK_0900
      * @tc.name testIntToString20009
      * @tc.desc Verify conversion to octal string
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1000
+     * @tc.number INT_TO_STRNG_R_CHK_1000
      * @tc.name testIntToString20010
      * @tc.desc Verify octal representation of zero
      * @tc.size MediumTest
@@ -162,7 +162,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1100
+     * @tc.number INT_TO_STRNG_R_CHK_1100
      * @tc.name testIntToString20011
      * @tc.desc Verify octal representation of seven
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1200
+     * @tc.number INT_TO_STRNG_R_CHK_1200
      * @tc.name testIntToString20012
      * @tc.desc Verify octal representation of eight
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1300
+     * @tc.number INT_TO_STRNG_R_CHK_1300
      * @tc.name testIntToString20013
      * @tc.desc Verify octal representation of sixty-four
      * @tc.size MediumTest
@@ -201,7 +201,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1400
+     * @tc.number INT_TO_STRNG_R_CHK_1400
      * @tc.name testIntToString20014
      * @tc.desc Verify octal representation of negative number
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1600
+     * @tc.number INT_TO_STRNG_R_CHK_1600
      * @tc.name testIntToString20016
      * @tc.desc Verify decimal representation of large value
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1700
+     * @tc.number INT_TO_STRNG_R_CHK_1700
      * @tc.name testIntToString20017
      * @tc.desc Verify decimal representation of negative number
      * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1800
+     * @tc.number INT_TO_STRNG_R_CHK_1800
      * @tc.name testIntToString20018
      * @tc.desc Verify conversion to hexadecimal string in lowercase
      * @tc.size MediumTest
@@ -255,7 +255,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_1900
+     * @tc.number INT_TO_STRNG_R_CHK_1900
      * @tc.name testIntToString20019
      * @tc.desc Verify hexadecimal representation of ten
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2000
+     * @tc.number INT_TO_STRNG_R_CHK_2000
      * @tc.name testIntToString20020
      * @tc.desc Verify hexadecimal representation of fifteen
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2100
+     * @tc.number INT_TO_STRNG_R_CHK_2100
      * @tc.name testIntToString20021
      * @tc.desc Verify hexadecimal representation of sixteen
      * @tc.size MediumTest
@@ -294,7 +294,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2200
+     * @tc.number INT_TO_STRNG_R_CHK_2200
      * @tc.name testIntToString20022
      * @tc.desc Verify hexadecimal representation of 0x41
      * @tc.size MediumTest
@@ -307,7 +307,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2300
+     * @tc.number INT_TO_STRNG_R_CHK_2300
      * @tc.name testIntToString20023
      * @tc.desc Verify hexadecimal representation of large value
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2400
+     * @tc.number INT_TO_STRNG_R_CHK_2400
      * @tc.name testIntToString20024
      * @tc.desc Verify hexadecimal representation of negative number
      * @tc.size MediumTest
@@ -334,7 +334,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2500
+     * @tc.number INT_TO_STRNG_R_CHK_2500
      * @tc.name testIntToString20025
      * @tc.desc Verify conversion to base36 string as maximum radix
      * @tc.size MediumTest
@@ -347,7 +347,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2600
+     * @tc.number INT_TO_STRNG_R_CHK_2600
      * @tc.name testIntToString20026
      * @tc.desc Verify base36 representation of ten
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2800
+     * @tc.number INT_TO_STRNG_R_CHK_2800
      * @tc.name testIntToString20028
      * @tc.desc Verify base36 representation of thirty-six
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_2900
+     * @tc.number INT_TO_STRNG_R_CHK_2900
      * @tc.name testIntToString20029
      * @tc.desc Verify base36 representation of large value
      * @tc.size MediumTest
@@ -388,7 +388,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3000
+     * @tc.number INT_TO_STRNG_R_CHK_3000
      * @tc.name testIntToString20030
      * @tc.desc Verify ternary conversion with radix 3
      * @tc.size MediumTest
@@ -402,7 +402,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3100
+     * @tc.number INT_TO_STRNG_R_CHK_3100
      * @tc.name testIntToString20031
      * @tc.desc Verify quaternary conversion with radix 4
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3200
+     * @tc.number INT_TO_STRNG_R_CHK_3200
      * @tc.name testIntToString20032
      * @tc.desc Verify quinary conversion with radix 5
      * @tc.size MediumTest
@@ -428,7 +428,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3300
+     * @tc.number INT_TO_STRNG_R_CHK_3300
      * @tc.name testIntToString20033
      * @tc.desc Verify nonary conversion with radix 9
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3400
+     * @tc.number INT_TO_STRNG_R_CHK_3400
      * @tc.name testIntToString20034
      * @tc.desc Verify base32 conversion with radix 32
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3500
+     * @tc.number INT_TO_STRNG_R_CHK_3500
      * @tc.name testIntToString20035
      * @tc.desc Verify minimum valid radix 2
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3700
+     * @tc.number INT_TO_STRNG_R_CHK_3700
      * @tc.name testIntToString20037
      * @tc.desc Verify invalid radix zero throws error
      * @tc.size MediumTest
@@ -482,13 +482,14 @@ export default function IntToString2Test(): void {
         const result = a.toString(0);
         expect(result.length > 0).assertTrue();
       } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
+        caught = true;
+        expect(error.name).assertEqual('RangeError');
       }
       expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3800
+     * @tc.number INT_TO_STRNG_R_CHK_3800
      * @tc.name testIntToString20038
      * @tc.desc Verify invalid radix one throws error
      * @tc.size MediumTest
@@ -502,13 +503,14 @@ export default function IntToString2Test(): void {
         const result = a.toString(1);
         expect(result.length > 0).assertTrue();
       } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
+        caught = true;
+        expect(error.name).assertEqual('RangeError');
       }
       expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_3900
+     * @tc.number INT_TO_STRNG_R_CHK_3900
      * @tc.name testIntToString20039
      * @tc.desc Verify invalid radix thirty-seven throws error
      * @tc.size MediumTest
@@ -522,13 +524,14 @@ export default function IntToString2Test(): void {
         const result = a.toString(37);
         expect(result.length > 0).assertTrue();
       } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
+        caught = true;
+        expect(error.name).assertEqual('RangeError');
       }
       expect(caught).assertTrue();
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4000
+     * @tc.number INT_TO_STRNG_R_CHK_4000
      * @tc.name testIntToString20040
      * @tc.desc Verify negative radix throws error
      * @tc.size MediumTest
@@ -542,7 +545,8 @@ export default function IntToString2Test(): void {
         const result = a.toString(-10);
         expect(result.length > 0).assertTrue();
       } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
+        caught = true;
+        expect(error.name).assertEqual('RangeError');
       }
       expect(caught).assertTrue();
     });
@@ -552,7 +556,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4500
+     * @tc.number INT_TO_STRNG_R_CHK_4500
      * @tc.name testIntToString20045
      * @tc.desc Verify return string in specified radix
      * @tc.size MediumTest
@@ -567,7 +571,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4600
+     * @tc.number INT_TO_STRNG_R_CHK_4600
      * @tc.name testIntToString20046
      * @tc.desc Verify return type is string
      * @tc.size MediumTest
@@ -582,7 +586,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4700
+     * @tc.number INT_TO_STRNG_R_CHK_4700
      * @tc.name testIntToString20047
      * @tc.desc Verify binary conversion of powers of two
      * @tc.size MediumTest
@@ -602,7 +606,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4800
+     * @tc.number INT_TO_STRNG_R_CHK_4800
      * @tc.name testIntToString20048
      * @tc.desc Verify binary conversion of all-ones values
      * @tc.size MediumTest
@@ -621,7 +625,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_4900
+     * @tc.number INT_TO_STRNG_R_CHK_4900
      * @tc.name testIntToString20049
      * @tc.desc Verify octal conversion of powers of eight
      * @tc.size MediumTest
@@ -637,7 +641,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5000
+     * @tc.number INT_TO_STRNG_R_CHK_5000
      * @tc.name testIntToString20050
      * @tc.desc Verify decimal conversion of powers of ten
      * @tc.size MediumTest
@@ -653,7 +657,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5100
+     * @tc.number INT_TO_STRNG_R_CHK_5100
      * @tc.name testIntToString20051
      * @tc.desc Verify hexadecimal conversion of powers of sixteen
      * @tc.size MediumTest
@@ -669,7 +673,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5200
+     * @tc.number INT_TO_STRNG_R_CHK_5200
      * @tc.name testIntToString20052
      * @tc.desc Verify hexadecimal letter range from a to f
      * @tc.size MediumTest
@@ -686,7 +690,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5300
+     * @tc.number INT_TO_STRNG_R_CHK_5300
      * @tc.name testIntToString20053
      * @tc.desc Verify zero representation in various radices
      * @tc.size MediumTest
@@ -703,7 +707,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5400
+     * @tc.number INT_TO_STRNG_R_CHK_5400
      * @tc.name testIntToString20054
      * @tc.desc Verify one representation in various radices
      * @tc.size MediumTest
@@ -720,7 +724,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5500
+     * @tc.number INT_TO_STRNG_R_CHK_5500
      * @tc.name testIntToString20055
      * @tc.desc Verify radix base representation as string 10
      * @tc.size MediumTest
@@ -736,7 +740,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5600
+     * @tc.number INT_TO_STRNG_R_CHK_5600
      * @tc.name testIntToString20056
      * @tc.desc Verify lowercase letters for values 10 to 35
      * @tc.size MediumTest
@@ -750,7 +754,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5700
+     * @tc.number INT_TO_STRNG_R_CHK_5700
      * @tc.name testIntToString20057
      * @tc.desc Verify base36 letter mapping
      * @tc.size MediumTest
@@ -768,7 +772,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5800
+     * @tc.number INT_TO_STRNG_R_CHK_5800
      * @tc.name testIntToString20058
      * @tc.desc Verify instance method call requirement
      * @tc.size MediumTest
@@ -782,7 +786,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_5900
+     * @tc.number INT_TO_STRNG_R_CHK_5900
      * @tc.name testIntToString20059
      * @tc.desc Verify toString equals toString with radix 10
      * @tc.size MediumTest
@@ -797,7 +801,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6000
+     * @tc.number INT_TO_STRNG_R_CHK_6000
      * @tc.name testIntToString20060
      * @tc.desc Verify different instance creation methods
      * @tc.size MediumTest
@@ -813,7 +817,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6100
+     * @tc.number INT_TO_STRNG_R_CHK_6100
      * @tc.name testIntToString20061
      * @tc.desc Verify toString radix result for string concatenation
      * @tc.size MediumTest
@@ -827,7 +831,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6200
+     * @tc.number INT_TO_STRNG_R_CHK_6200
      * @tc.name testIntToString20062
      * @tc.desc Verify binary prefix concatenation
      * @tc.size MediumTest
@@ -841,7 +845,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6300
+     * @tc.number INT_TO_STRNG_R_CHK_6300
      * @tc.name testIntToString20063
      * @tc.desc Verify octal prefix concatenation
      * @tc.size MediumTest
@@ -855,7 +859,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6400
+     * @tc.number INT_TO_STRNG_R_CHK_6400
      * @tc.name testIntToString20064
      * @tc.desc Verify different radix strings comparison
      * @tc.size MediumTest
@@ -873,7 +877,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6500
+     * @tc.number INT_TO_STRNG_R_CHK_6500
      * @tc.name testIntToString20065
      * @tc.desc Verify different radix string lengths
      * @tc.size MediumTest
@@ -889,7 +893,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6600
+     * @tc.number INT_TO_STRNG_R_CHK_6600
      * @tc.name testIntToString20066
      * @tc.desc Verify consistent results from multiple conversions
      * @tc.size MediumTest
@@ -904,7 +908,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6700
+     * @tc.number INT_TO_STRNG_R_CHK_6700
      * @tc.name testIntToString20067
      * @tc.desc Verify consistent results across different instances with same value
      * @tc.size MediumTest
@@ -919,7 +923,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_6900
+     * @tc.number INT_TO_STRNG_R_CHK_6900
      * @tc.name testIntToString20069
      * @tc.desc Verify multiple radix conversions chain
      * @tc.size MediumTest
@@ -937,7 +941,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7000
+     * @tc.number INT_TO_STRNG_R_CHK_7000
      * @tc.name testIntToString20070
      * @tc.desc Verify decimal matches original value
      * @tc.size MediumTest
@@ -951,7 +955,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7100
+     * @tc.number INT_TO_STRNG_R_CHK_7100
      * @tc.name testIntToString20071
      * @tc.desc Verify binary output contains only 0 and 1
      * @tc.size MediumTest
@@ -965,7 +969,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7200
+     * @tc.number INT_TO_STRNG_R_CHK_7200
      * @tc.name testIntToString20072
      * @tc.desc Verify octal output contains only digits 0 to 7
      * @tc.size MediumTest
@@ -979,7 +983,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7300
+     * @tc.number INT_TO_STRNG_R_CHK_7300
      * @tc.name testIntToString20073
      * @tc.desc Verify hexadecimal output contains only 0-9 and a-f
      * @tc.size MediumTest
@@ -993,7 +997,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7400
+     * @tc.number INT_TO_STRNG_R_CHK_7400
      * @tc.name testIntToString20074
      * @tc.desc Verify base36 output contains only 0-9 and a-z
      * @tc.size MediumTest
@@ -1007,7 +1011,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7500
+     * @tc.number INT_TO_STRNG_R_CHK_7500
      * @tc.name testIntToString20075
      * @tc.desc Verify hex color value generation
      * @tc.size MediumTest
@@ -1025,7 +1029,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7600
+     * @tc.number INT_TO_STRNG_R_CHK_7600
      * @tc.name testIntToString20076
      * @tc.desc Verify binary bit display
      * @tc.size MediumTest
@@ -1039,7 +1043,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7700
+     * @tc.number INT_TO_STRNG_R_CHK_7700
      * @tc.name testIntToString20077
      * @tc.desc Verify octal permission representation
      * @tc.size MediumTest
@@ -1053,7 +1057,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7800
+     * @tc.number INT_TO_STRNG_R_CHK_7800
      * @tc.name testIntToString20078
      * @tc.desc Verify base36 compact encoding
      * @tc.size MediumTest
@@ -1068,7 +1072,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_7900
+     * @tc.number INT_TO_STRNG_R_CHK_7900
      * @tc.name testIntToString20079
      * @tc.desc Verify performance of multiple toString radix calls
      * @tc.size MediumTest
@@ -1085,7 +1089,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8000
+     * @tc.number INT_TO_STRNG_R_CHK_8000
      * @tc.name testIntToString20080
      * @tc.desc Verify batch instance creation and conversion
      * @tc.size MediumTest
@@ -1099,7 +1103,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8100
+     * @tc.number INT_TO_STRNG_R_CHK_8100
      * @tc.name testIntToString20081
      * @tc.desc Verify documentation example output 65
      * @tc.size MediumTest
@@ -1113,7 +1117,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8200
+     * @tc.number INT_TO_STRNG_R_CHK_8200
      * @tc.name testIntToString20082
      * @tc.desc Verify Int MAX_VALUE radix representations
      * @tc.size MediumTest
@@ -1130,7 +1134,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8300
+     * @tc.number INT_TO_STRNG_R_CHK_8300
      * @tc.name testIntToString20083
      * @tc.desc Verify Int MIN_VALUE radix representations
      * @tc.size MediumTest
@@ -1146,7 +1150,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8400
+     * @tc.number INT_TO_STRNG_R_CHK_8400
      * @tc.name testIntToString20084
      * @tc.desc Verify same value in different radices
      * @tc.size MediumTest
@@ -1164,7 +1168,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8500
+     * @tc.number INT_TO_STRNG_R_CHK_8500
      * @tc.name testIntToString20085
      * @tc.desc Verify radix conversion correctness
      * @tc.size MediumTest
@@ -1183,7 +1187,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8600
+     * @tc.number INT_TO_STRNG_R_CHK_8600
      * @tc.name testIntToString20086
      * @tc.desc Verify lowercase letter output
      * @tc.size MediumTest
@@ -1198,7 +1202,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8700
+     * @tc.number INT_TO_STRNG_R_CHK_8700
      * @tc.name testIntToString20087
      * @tc.desc Verify base36 lowercase letters
      * @tc.size MediumTest
@@ -1212,7 +1216,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_8800
+     * @tc.number INT_TO_STRNG_R_CHK_8800
      * @tc.name testIntToString20088
      * @tc.desc Verify radix boundary values 2 and 36
      * @tc.size MediumTest
@@ -1228,7 +1232,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9100
+     * @tc.number INT_TO_STRNG_R_CHK_9100
      * @tc.name testIntToString20091
      * @tc.desc Verify conversion result has no spaces
      * @tc.size MediumTest
@@ -1243,7 +1247,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9200
+     * @tc.number INT_TO_STRNG_R_CHK_9200
      * @tc.name testIntToString20092
      * @tc.desc Verify conversion result has no radix prefix
      * @tc.size MediumTest
@@ -1263,7 +1267,7 @@ export default function IntToString2Test(): void {
 
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9500
+     * @tc.number INT_TO_STRNG_R_CHK_9500
      * @tc.name testIntToString20095
      * @tc.desc Verify multiple values converted to same radix
      * @tc.size MediumTest
@@ -1277,7 +1281,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9600
+     * @tc.number INT_TO_STRNG_R_CHK_9600
      * @tc.name testIntToString20096
      * @tc.desc Verify single value converted to multiple radices
      * @tc.size MediumTest
@@ -1295,7 +1299,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9700
+     * @tc.number INT_TO_STRNG_R_CHK_9700
      * @tc.name testIntToString20097
      * @tc.desc Verify conversion and restoration to original value
      * @tc.size MediumTest
@@ -1311,7 +1315,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9800
+     * @tc.number INT_TO_STRNG_R_CHK_9800
      * @tc.name testIntToString20098
      * @tc.desc Verify round-trip conversion consistency
      * @tc.size MediumTest
@@ -1328,7 +1332,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_9900
+     * @tc.number INT_TO_STRNG_R_CHK_9900
      * @tc.name testIntToString20099
      * @tc.desc Verify common programmer radix conversions
      * @tc.size MediumTest
@@ -1344,7 +1348,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0000
+     * @tc.number INT_TO_STRNG_R_CHK_0000
      * @tc.name testIntToString20100
      * @tc.desc Verify MAC address hex formatting scenario
      * @tc.size MediumTest
@@ -1360,7 +1364,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0101
+     * @tc.number INT_TO_STRNG_R_CHK_0101
      * @tc.name testIntToString20101
      * @tc.desc Verify max value in different radices
      * @tc.size MediumTest
@@ -1376,7 +1380,7 @@ export default function IntToString2Test(): void {
     });
 
     /**
-     * @tc.number INT_TO_STRNG_CHK_0201
+     * @tc.number INT_TO_STRNG_R_CHK_0201
      * @tc.name testIntToString20102
      * @tc.desc Verify 0 1 and -1 in different radices
      * @tc.size MediumTest

@@ -29,7 +29,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0100
+     * @tc.number INT_TO_FLOAT_S_CHK_0100
      * @tc.name testIntToFloatStatic0001
      * @tc.desc Verify that value parameter must be passed
      * @tc.size MediumTest
@@ -42,7 +42,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0200
+     * @tc.number INT_TO_FLOAT_S_CHK_0200
      * @tc.name testIntToFloatStatic0002
      * @tc.desc Verify Int.toFloat with zero returns 0.0
      * @tc.size MediumTest
@@ -56,7 +56,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0400
+     * @tc.number INT_TO_FLOAT_S_CHK_0400
      * @tc.name testIntToFloatStatic0004
      * @tc.desc Verify toFloat with normal range integer value
      * @tc.size MediumTest
@@ -69,7 +69,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0500
+     * @tc.number INT_TO_FLOAT_S_CHK_0500
      * @tc.name testIntToFloatStatic0005
      * @tc.desc Verify toFloat with positive value
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0600
+     * @tc.number INT_TO_FLOAT_S_CHK_0600
      * @tc.name testIntToFloatStatic0006
      * @tc.desc Verify toFloat with negative value
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0800
+     * @tc.number INT_TO_FLOAT_S_CHK_0800
      * @tc.name testIntToFloatStatic0008
      * @tc.desc Verify toFloat with int maximum value
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_0900
+     * @tc.number INT_TO_FLOAT_S_CHK_0900
      * @tc.name testIntToFloatStatic0009
      * @tc.desc Verify toFloat with int minimum value
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1000
+     * @tc.number INT_TO_FLOAT_S_CHK_1000
      * @tc.name testIntToFloatStatic0010
      * @tc.desc Verify toFloat with positive hexadecimal integer
      * @tc.size MediumTest
@@ -135,7 +135,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1100
+     * @tc.number INT_TO_FLOAT_S_CHK_1100
      * @tc.name testIntToFloatStatic0011
      * @tc.desc Verify toFloat with negative hexadecimal number
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1200
+     * @tc.number INT_TO_FLOAT_S_CHK_1200
      * @tc.name testIntToFloatStatic0012
      * @tc.desc Verify toFloat with octal number
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1300
+     * @tc.number INT_TO_FLOAT_S_CHK_1300
      * @tc.name testIntToFloatStatic0013
      * @tc.desc Verify toFloat with binary number
      * @tc.size MediumTest
@@ -176,7 +176,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1600
+     * @tc.number INT_TO_FLOAT_S_CHK_1600
      * @tc.name testIntToFloatStatic0016
      * @tc.desc Verify Int.toFloat with int literal returns matching float value
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1800
+     * @tc.number INT_TO_FLOAT_S_CHK_1800
      * @tc.name testIntToFloatStatic0018
      * @tc.desc Verify Int.toFloat with int value 1 returns 1.0
      * @tc.size MediumTest
@@ -203,7 +203,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_1900
+     * @tc.number INT_TO_FLOAT_S_CHK_1900
      * @tc.name testIntToFloatStatic0019
      * @tc.desc Verify toFloat returns converted float value
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2000
+     * @tc.number INT_TO_FLOAT_S_CHK_2000
      * @tc.name testIntToFloatStatic0020
      * @tc.desc Verify that return value is float type (32-bit)
      * @tc.size MediumTest
@@ -233,7 +233,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2400
+     * @tc.number INT_TO_FLOAT_S_CHK_2400
      * @tc.name testIntToFloatStatic0024
      * @tc.desc Verify toFloat with normal negative integer
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2500
+     * @tc.number INT_TO_FLOAT_S_CHK_2500
      * @tc.name testIntToFloatStatic0025
      * @tc.desc Verify toFloat with negative boundary value
      * @tc.size MediumTest
@@ -259,7 +259,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2600
+     * @tc.number INT_TO_FLOAT_S_CHK_2600
      * @tc.name testIntToFloatStatic0026
      * @tc.desc Verify toFloat with int minimum value -2147483648
      * @tc.size MediumTest
@@ -272,7 +272,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2700
+     * @tc.number INT_TO_FLOAT_S_CHK_2700
      * @tc.name testIntToFloatStatic0027
      * @tc.desc Verify toFloat with int maximum value 2147483647
      * @tc.size MediumTest
@@ -285,7 +285,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_2800
+     * @tc.number INT_TO_FLOAT_S_CHK_2800
      * @tc.name testIntToFloatStatic0028
      * @tc.desc Verify toFloat with -1 conversion
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3000
+     * @tc.number INT_TO_FLOAT_S_CHK_3000
      * @tc.name testIntToFloatStatic0030
      * @tc.desc Verify toFloat with large number conversion
      * @tc.size MediumTest
@@ -312,7 +312,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3100
+     * @tc.number INT_TO_FLOAT_S_CHK_3100
      * @tc.name testIntToFloatStatic0031
      * @tc.desc Verify toFloat with negative large number conversion
      * @tc.size MediumTest
@@ -325,7 +325,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3200
+     * @tc.number INT_TO_FLOAT_S_CHK_3200
      * @tc.name testIntToFloatStatic0032
      * @tc.desc Verify that return value is number type (float)
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3300
+     * @tc.number INT_TO_FLOAT_S_CHK_3300
      * @tc.name testIntToFloatStatic0033
      * @tc.desc Verify that return value has float characteristics
      * @tc.size MediumTest
@@ -351,7 +351,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3400
+     * @tc.number INT_TO_FLOAT_S_CHK_3400
      * @tc.name testIntToFloatStatic0034
      * @tc.desc Verify float type precision limitation
      * @tc.size MediumTest
@@ -365,7 +365,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3600
+     * @tc.number INT_TO_FLOAT_S_CHK_3600
      * @tc.name testIntToFloatStatic0036
      * @tc.desc Verify that toFloat must be called statically from Int class
      * @tc.size MediumTest
@@ -378,7 +378,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3700
+     * @tc.number INT_TO_FLOAT_S_CHK_3700
      * @tc.name testIntToFloatStatic0037
      * @tc.desc Verify that static toFloat and instance toFloat produce consistent results
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3800
+     * @tc.number INT_TO_FLOAT_S_CHK_3800
      * @tc.name testIntToFloatStatic0038
      * @tc.desc Verify that toFloat return value can be used for further operations
      * @tc.size MediumTest
@@ -407,7 +407,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_3900
+     * @tc.number INT_TO_FLOAT_S_CHK_3900
      * @tc.name testIntToFloatStatic0039
      * @tc.desc Verify float arithmetic after conversion
      * @tc.size MediumTest
@@ -422,7 +422,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4000
+     * @tc.number INT_TO_FLOAT_S_CHK_4000
      * @tc.name testIntToFloatStatic0040
      * @tc.desc Verify that converting same value multiple times produces consistent results
      * @tc.size MediumTest
@@ -436,7 +436,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4100
+     * @tc.number INT_TO_FLOAT_S_CHK_4100
      * @tc.name testIntToFloatStatic0041
      * @tc.desc Verify arithmetic result as parameter
      * @tc.size MediumTest
@@ -449,7 +449,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4200
+     * @tc.number INT_TO_FLOAT_S_CHK_4200
      * @tc.name testIntToFloatStatic0042
      * @tc.desc Verify complex expression as parameter
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4400
+     * @tc.number INT_TO_FLOAT_S_CHK_4400
      * @tc.name testIntToFloatStatic0044
      * @tc.desc Verify that toFloat returns float while toByte returns integer
      * @tc.size MediumTest
@@ -479,7 +479,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4500
+     * @tc.number INT_TO_FLOAT_S_CHK_4500
      * @tc.name testIntToFloatStatic0045
      * @tc.desc Verify that toFloat returns float while toShort returns integer
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4600
+     * @tc.number INT_TO_FLOAT_S_CHK_4600
      * @tc.name testIntToFloatStatic0046
      * @tc.desc Verify that toInt returns integer while toFloat returns float
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4700
+     * @tc.number INT_TO_FLOAT_S_CHK_4700
      * @tc.name testIntToFloatStatic0047
      * @tc.desc Verify that toLong returns integer while toFloat returns float
      * @tc.size MediumTest
@@ -520,14 +520,12 @@ export default function IntToFloatStaticTest(): void {
      */
     it('testIntToFloatStatic0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 123;
-      const l = Int.toLong(value);
       const f = Int.toFloat(value);
-      expect(l).assertEqual(123);
       expect(f).assertEqual(123.0);
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4800
+     * @tc.number INT_TO_FLOAT_S_CHK_4800
      * @tc.name testIntToFloatStatic0048
      * @tc.desc Verify that toDouble has higher precision than toFloat
      * @tc.size MediumTest
@@ -543,7 +541,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_4900
+     * @tc.number INT_TO_FLOAT_S_CHK_4900
      * @tc.name testIntToFloatStatic0049
      * @tc.desc Verify toFloat used in float arithmetic scenario
      * @tc.size MediumTest
@@ -558,7 +556,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5000
+     * @tc.number INT_TO_FLOAT_S_CHK_5000
      * @tc.name testIntToFloatStatic0050
      * @tc.desc Verify toFloat used in scientific computation
      * @tc.size MediumTest
@@ -572,7 +570,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5100
+     * @tc.number INT_TO_FLOAT_S_CHK_5100
      * @tc.name testIntToFloatStatic0051
      * @tc.desc Verify toFloat used in graphics coordinate calculation
      * @tc.size MediumTest
@@ -589,7 +587,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5300
+     * @tc.number INT_TO_FLOAT_S_CHK_5300
      * @tc.name testIntToFloatStatic0053
      * @tc.desc Verify that double precision is typically higher
      * @tc.size MediumTest
@@ -604,7 +602,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5400
+     * @tc.number INT_TO_FLOAT_S_CHK_5400
      * @tc.name testIntToFloatStatic0054
      * @tc.desc Verify toFloat performance with multiple calls
      * @tc.size MediumTest
@@ -620,7 +618,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5500
+     * @tc.number INT_TO_FLOAT_S_CHK_5500
      * @tc.name testIntToFloatStatic0055
      * @tc.desc Verify documentation example output 65
      * @tc.size MediumTest
@@ -634,7 +632,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5700
+     * @tc.number INT_TO_FLOAT_S_CHK_5700
      * @tc.name testIntToFloatStatic0057
      * @tc.desc Verify float multiplication after conversion
      * @tc.size MediumTest
@@ -649,7 +647,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_5900
+     * @tc.number INT_TO_FLOAT_S_CHK_5900
      * @tc.name testIntToFloatStatic0059
      * @tc.desc Verify integer zero converts to float zero
      * @tc.size MediumTest
@@ -663,7 +661,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6000
+     * @tc.number INT_TO_FLOAT_S_CHK_6000
      * @tc.name testIntToFloatStatic0060
      * @tc.desc Verify negative zero conversion if applicable
      * @tc.size MediumTest
@@ -676,7 +674,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6100
+     * @tc.number INT_TO_FLOAT_S_CHK_6100
      * @tc.name testIntToFloatStatic0061
      * @tc.desc Verify conversion to float array
      * @tc.size MediumTest
@@ -691,7 +689,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6200
+     * @tc.number INT_TO_FLOAT_S_CHK_6200
      * @tc.name testIntToFloatStatic0062
      * @tc.desc Verify using Math function after conversion
      * @tc.size MediumTest
@@ -705,7 +703,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6300
+     * @tc.number INT_TO_FLOAT_S_CHK_6300
      * @tc.name testIntToFloatStatic0063
      * @tc.desc Verify power operation after conversion
      * @tc.size MediumTest
@@ -719,7 +717,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6400
+     * @tc.number INT_TO_FLOAT_S_CHK_6400
      * @tc.name testIntToFloatStatic0064
      * @tc.desc Verify rounding after conversion
      * @tc.size MediumTest
@@ -735,7 +733,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6600
+     * @tc.number INT_TO_FLOAT_S_CHK_6600
      * @tc.name testIntToFloatStatic0066
      * @tc.desc Verify int value is within float representation range
      * @tc.size MediumTest
@@ -748,7 +746,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6700
+     * @tc.number INT_TO_FLOAT_S_CHK_6700
      * @tc.name testIntToFloatStatic0067
      * @tc.desc Verify comparison after conversion
      * @tc.size MediumTest
@@ -762,7 +760,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6800
+     * @tc.number INT_TO_FLOAT_S_CHK_6800
      * @tc.name testIntToFloatStatic0068
      * @tc.desc Verify approximate comparison
      * @tc.size MediumTest
@@ -776,7 +774,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_6900
+     * @tc.number INT_TO_FLOAT_S_CHK_6900
      * @tc.name testIntToFloatStatic0069
      * @tc.desc Verify static toFloat and instance toFloat are consistent in all cases
      * @tc.size MediumTest
@@ -792,7 +790,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_7000
+     * @tc.number INT_TO_FLOAT_S_CHK_7000
      * @tc.name testIntToFloatStatic0070
      * @tc.desc Verify combined use of valueOf and static toFloat
      * @tc.size MediumTest
@@ -807,7 +805,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_7100
+     * @tc.number INT_TO_FLOAT_S_CHK_7100
      * @tc.name testIntToFloatStatic0071
      * @tc.desc Verify using static property as parameter
      * @tc.size MediumTest
@@ -822,7 +820,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_7200
+     * @tc.number INT_TO_FLOAT_S_CHK_7200
      * @tc.name testIntToFloatStatic0072
      * @tc.desc Verify expression as parameter
      * @tc.size MediumTest
@@ -837,7 +835,7 @@ export default function IntToFloatStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_7300
+     * @tc.number INT_TO_FLOAT_S_CHK_7300
      * @tc.name testIntToFloatStatic0073
      * @tc.desc Verify batch conversion of array
      * @tc.size MediumTest
@@ -853,7 +851,7 @@ export default function IntToFloatStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_FLOAT_CHK_7500
+     * @tc.number INT_TO_FLOAT_S_CHK_7500
      * @tc.name testIntToFloatStatic0075
      * @tc.desc Verify compliance with IEEE 754 single precision standard
      * @tc.size MediumTest

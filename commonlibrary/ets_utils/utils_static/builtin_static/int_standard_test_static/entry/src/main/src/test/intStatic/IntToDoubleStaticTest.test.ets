@@ -29,7 +29,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0100
+     * @tc.number INT_TO_DBL_S_CHK_0100
      * @tc.name testIntToDoubleStatic0001
      * @tc.desc Verify that value parameter must be passed
      * @tc.size MediumTest
@@ -42,7 +42,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0200
+     * @tc.number INT_TO_DBL_S_CHK_0200
      * @tc.name testIntToDoubleStatic0002
      * @tc.desc Verify that error is thrown when no parameter is passed
      * @tc.size MediumTest
@@ -56,7 +56,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0400
+     * @tc.number INT_TO_DBL_S_CHK_0400
      * @tc.name testIntToDoubleStatic0004
      * @tc.desc Verify toDouble with normal integer value
      * @tc.size MediumTest
@@ -69,7 +69,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0500
+     * @tc.number INT_TO_DBL_S_CHK_0500
      * @tc.name testIntToDoubleStatic0005
      * @tc.desc Verify toDouble with positive value
      * @tc.size MediumTest
@@ -82,7 +82,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0600
+     * @tc.number INT_TO_DBL_S_CHK_0600
      * @tc.name testIntToDoubleStatic0006
      * @tc.desc Verify toDouble with negative value
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0800
+     * @tc.number INT_TO_DBL_S_CHK_0800
      * @tc.name testIntToDoubleStatic0008
      * @tc.desc Verify toDouble with int max value
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_0900
+     * @tc.number INT_TO_DBL_S_CHK_0900
      * @tc.name testIntToDoubleStatic0009
      * @tc.desc Verify toDouble with int min value
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1000
+     * @tc.number INT_TO_DBL_S_CHK_1000
      * @tc.name testIntToDoubleStatic0010
      * @tc.desc Verify toDouble with positive hexadecimal integer
      * @tc.size MediumTest
@@ -135,7 +135,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1100
+     * @tc.number INT_TO_DBL_S_CHK_1100
      * @tc.name testIntToDoubleStatic0011
      * @tc.desc Verify toDouble with negative hexadecimal boundary
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1200
+     * @tc.number INT_TO_DBL_S_CHK_1200
      * @tc.name testIntToDoubleStatic0012
      * @tc.desc Verify toDouble with octal value
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1300
+     * @tc.number INT_TO_DBL_S_CHK_1300
      * @tc.name testIntToDoubleStatic0013
      * @tc.desc Verify toDouble with binary value
      * @tc.size MediumTest
@@ -174,7 +174,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1400
+     * @tc.number INT_TO_DBL_S_CHK_1400
      * @tc.name testIntToDoubleStatic0014
      * @tc.desc Verify toDouble with value 1
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1500
+     * @tc.number INT_TO_DBL_S_CHK_1500
      * @tc.name testIntToDoubleStatic0015
      * @tc.desc Verify toDouble with value -1
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_1800
+     * @tc.number INT_TO_DBL_S_CHK_1800
      * @tc.name testIntToDoubleStatic0018
      * @tc.desc Verify toDouble behavior when passing float
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_2100
+     * @tc.number INT_TO_DBL_S_CHK_2100
      * @tc.name testIntToDoubleStatic0021
      * @tc.desc Verify toDouble returns converted double value
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_2200
+     * @tc.number INT_TO_DBL_S_CHK_2200
      * @tc.name testIntToDoubleStatic0022
      * @tc.desc Verify toDouble return value is double type
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_2300
+     * @tc.number INT_TO_DBL_S_CHK_2300
      * @tc.name testIntToDoubleStatic0023
      * @tc.desc Verify toDouble with normal positive integer
      * @tc.size MediumTest
@@ -261,7 +261,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_2600
+     * @tc.number INT_TO_DBL_S_CHK_2600
      * @tc.name testIntToDoubleStatic0026
      * @tc.desc Verify toDouble with normal negative integer
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function IntToDoubleStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3200
+     * @tc.number INT_TO_DBL_S_CHK_3200
      * @tc.name testIntToDoubleStatic0032
      * @tc.desc Verify toDouble with large value
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3300
+     * @tc.number INT_TO_DBL_S_CHK_3300
      * @tc.name testIntToDoubleStatic0033
      * @tc.desc Verify toDouble preserves precision for all int values
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3400
+     * @tc.number INT_TO_DBL_S_CHK_3400
      * @tc.name testIntToDoubleStatic0034
      * @tc.desc Verify toDouble has no precision loss
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3500
+     * @tc.number INT_TO_DBL_S_CHK_3500
      * @tc.name testIntToDoubleStatic0035
      * @tc.desc Verify toDouble return value is number type
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3600
+     * @tc.number INT_TO_DBL_S_CHK_3600
      * @tc.name testIntToDoubleStatic0036
      * @tc.desc Verify toDouble return value can be used in floating point operations
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3700
+     * @tc.number INT_TO_DBL_S_CHK_3700
      * @tc.name testIntToDoubleStatic0037
      * @tc.desc Verify toDouble must be called as static method of Int
      * @tc.size MediumTest
@@ -362,7 +362,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3800
+     * @tc.number INT_TO_DBL_S_CHK_3800
      * @tc.name testIntToDoubleStatic0038
      * @tc.desc Verify static toDouble matches instance doubleValue
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_3900
+     * @tc.number INT_TO_DBL_S_CHK_3900
      * @tc.name testIntToDoubleStatic0039
      * @tc.desc Verify toDouble return value can be used for further operations
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4000
+     * @tc.number INT_TO_DBL_S_CHK_4000
      * @tc.name testIntToDoubleStatic0040
      * @tc.desc Verify toDouble produces consistent results for same value
      * @tc.size MediumTest
@@ -405,7 +405,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4100
+     * @tc.number INT_TO_DBL_S_CHK_4100
      * @tc.name testIntToDoubleStatic0041
      * @tc.desc Verify toDouble with arithmetic expression result as parameter
      * @tc.size MediumTest
@@ -418,7 +418,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4200
+     * @tc.number INT_TO_DBL_S_CHK_4200
      * @tc.name testIntToDoubleStatic0042
      * @tc.desc Verify toDouble with complex expression
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4300
+     * @tc.number INT_TO_DBL_S_CHK_4300
      * @tc.name testIntToDoubleStatic0043
      * @tc.desc Verify toDouble with constant as parameter
      * @tc.size MediumTest
@@ -444,7 +444,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4400
+     * @tc.number INT_TO_DBL_S_CHK_4400
      * @tc.name testIntToDoubleStatic0044
      * @tc.desc Verify toDouble has higher precision than toFloat
      * @tc.size MediumTest
@@ -459,7 +459,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4500
+     * @tc.number INT_TO_DBL_S_CHK_4500
      * @tc.name testIntToDoubleStatic0045
      * @tc.desc Verify toInt returns original int value
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4600
+     * @tc.number INT_TO_DBL_S_CHK_4600
      * @tc.name testIntToDoubleStatic0046
      * @tc.desc Verify toLong has larger range
      * @tc.size MediumTest
@@ -490,7 +490,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4700
+     * @tc.number INT_TO_DBL_S_CHK_4700
      * @tc.name testIntToDoubleStatic0047
      * @tc.desc Verify toDouble converts data for floating point operations
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4800
+     * @tc.number INT_TO_DBL_S_CHK_4800
      * @tc.name testIntToDoubleStatic0048
      * @tc.desc Verify toDouble for high precision scenarios
      * @tc.size MediumTest
@@ -518,7 +518,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_4900
+     * @tc.number INT_TO_DBL_S_CHK_4900
      * @tc.name testIntToDoubleStatic0049
      * @tc.desc Verify toDouble performance with multiple calls
      * @tc.size MediumTest
@@ -534,7 +534,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5000
+     * @tc.number INT_TO_DBL_S_CHK_5000
      * @tc.name testIntToDoubleStatic0050
      * @tc.desc Verify documentation example outputs 65
      * @tc.size MediumTest
@@ -547,7 +547,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5100
+     * @tc.number INT_TO_DBL_S_CHK_5100
      * @tc.name testIntToDoubleStatic0051
      * @tc.desc Verify static toDouble matches instance doubleValue in all cases
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5200
+     * @tc.number INT_TO_DBL_S_CHK_5200
      * @tc.name testIntToDoubleStatic0052
      * @tc.desc Verify valid input range
      * @tc.size MediumTest
@@ -578,7 +578,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5300
+     * @tc.number INT_TO_DBL_S_CHK_5300
      * @tc.name testIntToDoubleStatic0053
      * @tc.desc Verify return value is within valid double range
      * @tc.size MediumTest
@@ -592,7 +592,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5400
+     * @tc.number INT_TO_DBL_S_CHK_5400
      * @tc.name testIntToDoubleStatic0054
      * @tc.desc Verify round trip conversion
      * @tc.size MediumTest
@@ -607,7 +607,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5500
+     * @tc.number INT_TO_DBL_S_CHK_5500
      * @tc.name testIntToDoubleStatic0055
      * @tc.desc Verify combination of valueOf and static toDouble
      * @tc.size MediumTest
@@ -622,7 +622,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5600
+     * @tc.number INT_TO_DBL_S_CHK_5600
      * @tc.name testIntToDoubleStatic0056
      * @tc.desc Verify toDouble with static property as parameter
      * @tc.size MediumTest
@@ -637,7 +637,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5700
+     * @tc.number INT_TO_DBL_S_CHK_5700
      * @tc.name testIntToDoubleStatic0057
      * @tc.desc Verify toDouble with expression as parameter
      * @tc.size MediumTest
@@ -652,7 +652,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5800
+     * @tc.number INT_TO_DBL_S_CHK_5800
      * @tc.name testIntToDoubleStatic0058
      * @tc.desc Verify batch conversion of array
      * @tc.size MediumTest
@@ -667,7 +667,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_5900
+     * @tc.number INT_TO_DBL_S_CHK_5900
      * @tc.name testIntToDoubleStatic0059
      * @tc.desc Verify double range is larger than int
      * @tc.size MediumTest
@@ -681,7 +681,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_6000
+     * @tc.number INT_TO_DBL_S_CHK_6000
      * @tc.name testIntToDoubleStatic0060
      * @tc.desc Verify toDouble result participates in math operations
      * @tc.size MediumTest
@@ -695,7 +695,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_6100
+     * @tc.number INT_TO_DBL_S_CHK_6100
      * @tc.name testIntToDoubleStatic0061
      * @tc.desc Verify toDouble result operates with other double values
      * @tc.size MediumTest
@@ -710,7 +710,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_6200
+     * @tc.number INT_TO_DBL_S_CHK_6200
      * @tc.name testIntToDoubleStatic0062
      * @tc.desc Verify toDouble does not produce NaN or Infinity
      * @tc.size MediumTest
@@ -724,7 +724,7 @@ export default function IntToDoubleStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_DBL_CHK_6300
+     * @tc.number INT_TO_DBL_S_CHK_6300
      * @tc.name testIntToDoubleStatic0063
      * @tc.desc Verify minimum negative value conversion
      * @tc.size MediumTest

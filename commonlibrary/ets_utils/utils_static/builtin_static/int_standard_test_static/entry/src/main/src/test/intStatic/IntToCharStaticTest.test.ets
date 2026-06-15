@@ -29,7 +29,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0100
+     * @tc.number INT_TO_CHAR_S_CHK_0100
      * @tc.name testIntToCharStatic0001
      * @tc.desc Verify that value parameter is required
      * @tc.size MediumTest
@@ -42,7 +42,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0200
+     * @tc.number INT_TO_CHAR_S_CHK_0200
      * @tc.name testIntToCharStatic0002
      * @tc.desc Verify error when no parameter is passed
      * @tc.size MediumTest
@@ -56,7 +56,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0400
+     * @tc.number INT_TO_CHAR_S_CHK_0400
      * @tc.name testIntToCharStatic0004
      * @tc.desc Verify uppercase letters A-Z with ASCII codes 65-90
      * @tc.size MediumTest
@@ -71,7 +71,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0500
+     * @tc.number INT_TO_CHAR_S_CHK_0500
      * @tc.name testIntToCharStatic0005
      * @tc.desc Verify lowercase letters a-z with ASCII codes 97-122
      * @tc.size MediumTest
@@ -86,7 +86,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0600
+     * @tc.number INT_TO_CHAR_S_CHK_0600
      * @tc.name testIntToCharStatic0006
      * @tc.desc Verify digit characters 0-9 with ASCII codes 48-57
      * @tc.size MediumTest
@@ -102,7 +102,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0800
+     * @tc.number INT_TO_CHAR_S_CHK_0800
      * @tc.name testIntToCharStatic0008
      * @tc.desc Verify newline character with code point 10
      * @tc.size MediumTest
@@ -115,7 +115,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_0900
+     * @tc.number INT_TO_CHAR_S_CHK_0900
      * @tc.name testIntToCharStatic0009
      * @tc.desc Verify carriage return character with code point 13
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1000
+     * @tc.number INT_TO_CHAR_S_CHK_1000
      * @tc.name testIntToCharStatic0010
      * @tc.desc Verify tab character with code point 9
      * @tc.size MediumTest
@@ -141,7 +141,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1100
+     * @tc.number INT_TO_CHAR_S_CHK_1100
      * @tc.name testIntToCharStatic0011
      * @tc.desc Verify backspace character with code point 8
      * @tc.size MediumTest
@@ -154,7 +154,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1200
+     * @tc.number INT_TO_CHAR_S_CHK_1200
      * @tc.name testIntToCharStatic0012
      * @tc.desc Verify DEL character with code point 127
      * @tc.size MediumTest
@@ -167,7 +167,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1300
+     * @tc.number INT_TO_CHAR_S_CHK_1300
      * @tc.name testIntToCharStatic0013
      * @tc.desc Verify space character with code point 32
      * @tc.size MediumTest
@@ -180,7 +180,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1400
+     * @tc.number INT_TO_CHAR_S_CHK_1400
      * @tc.name testIntToCharStatic0014
      * @tc.desc Verify exclamation mark with code point 33
      * @tc.size MediumTest
@@ -193,7 +193,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1500
+     * @tc.number INT_TO_CHAR_S_CHK_1500
      * @tc.name testIntToCharStatic0015
      * @tc.desc Verify double quote with code point 34
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1600
+     * @tc.number INT_TO_CHAR_S_CHK_1600
      * @tc.name testIntToCharStatic0016
      * @tc.desc Verify single quote with code point 39
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1700
+     * @tc.number INT_TO_CHAR_S_CHK_1700
      * @tc.name testIntToCharStatic0017
      * @tc.desc Verify plus sign with code point 43
      * @tc.size MediumTest
@@ -232,7 +232,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1800
+     * @tc.number INT_TO_CHAR_S_CHK_1800
      * @tc.name testIntToCharStatic0018
      * @tc.desc Verify extended ASCII range 128-255
      * @tc.size MediumTest
@@ -245,7 +245,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_1900
+     * @tc.number INT_TO_CHAR_S_CHK_1900
      * @tc.name testIntToCharStatic0019
      * @tc.desc Verify Latin-1 supplementary character
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2000
+     * @tc.number INT_TO_CHAR_S_CHK_2000
      * @tc.name testIntToCharStatic0020
      * @tc.desc Verify basic multilingual plane character
      * @tc.size MediumTest
@@ -271,7 +271,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2100
+     * @tc.number INT_TO_CHAR_S_CHK_2100
      * @tc.name testIntToCharStatic0021
      * @tc.desc Verify Japanese Hiragana character
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2200
+     * @tc.number INT_TO_CHAR_S_CHK_2200
      * @tc.name testIntToCharStatic0022
      * @tc.desc Verify Korean character
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2300
+     * @tc.number INT_TO_CHAR_S_CHK_2300
      * @tc.name testIntToCharStatic0023
      * @tc.desc Verify Emoji beyond BMP
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2400
+     * @tc.number INT_TO_CHAR_S_CHK_2400
      * @tc.name testIntToCharStatic0024
      * @tc.desc Verify hexadecimal representation of ASCII character
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2500
+     * @tc.number INT_TO_CHAR_S_CHK_2500
      * @tc.name testIntToCharStatic0025
      * @tc.desc Verify hexadecimal representation of lowercase letter
      * @tc.size MediumTest
@@ -336,7 +336,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2600
+     * @tc.number INT_TO_CHAR_S_CHK_2600
      * @tc.name testIntToCharStatic0026
      * @tc.desc Verify octal representation of character
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2700
+     * @tc.number INT_TO_CHAR_S_CHK_2700
      * @tc.name testIntToCharStatic0027
      * @tc.desc Verify binary representation of character
      * @tc.size MediumTest
@@ -362,7 +362,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2800
+     * @tc.number INT_TO_CHAR_S_CHK_2800
      * @tc.name testIntToCharStatic0028
      * @tc.desc Verify int type maximum value
      * @tc.size MediumTest
@@ -375,7 +375,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_2900
+     * @tc.number INT_TO_CHAR_S_CHK_2900
      * @tc.name testIntToCharStatic0029
      * @tc.desc Verify int type minimum value
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3100
+     * @tc.number INT_TO_CHAR_S_CHK_3100
      * @tc.name testIntToCharStatic0031
      * @tc.desc Verify negative value
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3400
+     * @tc.number INT_TO_CHAR_S_CHK_3400
      * @tc.name testIntToCharStatic0034
      * @tc.desc Verify passing floating point number
      * @tc.size MediumTest
@@ -418,7 +418,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3600
+     * @tc.number INT_TO_CHAR_S_CHK_3600
      * @tc.name testIntToCharStatic0036
      * @tc.desc Verify passing boolean value
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3700
+     * @tc.number INT_TO_CHAR_S_CHK_3700
      * @tc.name testIntToCharStatic0037
      * @tc.desc Verify surrogate pair range 0xD800-0xDFFF
      * @tc.size MediumTest
@@ -444,7 +444,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3800
+     * @tc.number INT_TO_CHAR_S_CHK_3800
      * @tc.name testIntToCharStatic0038
      * @tc.desc Verify exceeding maximum Unicode code point
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_3900
+     * @tc.number INT_TO_CHAR_S_CHK_3900
      * @tc.name testIntToCharStatic0039
      * @tc.desc Verify returning converted char value
      * @tc.size MediumTest
@@ -471,7 +471,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4000
+     * @tc.number INT_TO_CHAR_S_CHK_4000
      * @tc.name testIntToCharStatic0040
      * @tc.desc Verify return value is char type
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4100
+     * @tc.number INT_TO_CHAR_S_CHK_4100
      * @tc.name testIntToCharStatic0041
      * @tc.desc Verify A-Z uppercase conversion
      * @tc.size MediumTest
@@ -501,7 +501,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4200
+     * @tc.number INT_TO_CHAR_S_CHK_4200
      * @tc.name testIntToCharStatic0042
      * @tc.desc Verify a-z lowercase conversion
      * @tc.size MediumTest
@@ -517,7 +517,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4300
+     * @tc.number INT_TO_CHAR_S_CHK_4300
      * @tc.name testIntToCharStatic0043
      * @tc.desc Verify 0-9 digit conversion
      * @tc.size MediumTest
@@ -537,7 +537,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4800
+     * @tc.number INT_TO_CHAR_S_CHK_4800
      * @tc.name testIntToCharStatic0048
      * @tc.desc Verify vertical tab character with code point 11
      * @tc.size MediumTest
@@ -550,7 +550,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_4900
+     * @tc.number INT_TO_CHAR_S_CHK_4900
      * @tc.name testIntToCharStatic0049
      * @tc.desc Verify form feed character with code point 12
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5000
+     * @tc.number INT_TO_CHAR_S_CHK_5000
      * @tc.name testIntToCharStatic0050
      * @tc.desc Verify Latin extended character
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5100
+     * @tc.number INT_TO_CHAR_S_CHK_5100
      * @tc.name testIntToCharStatic0051
      * @tc.desc Verify Greek letter
      * @tc.size MediumTest
@@ -589,7 +589,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5200
+     * @tc.number INT_TO_CHAR_S_CHK_5200
      * @tc.name testIntToCharStatic0052
      * @tc.desc Verify Cyrillic letter
      * @tc.size MediumTest
@@ -604,7 +604,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5500
+     * @tc.number INT_TO_CHAR_S_CHK_5500
      * @tc.name testIntToCharStatic0055
      * @tc.desc Verify return value is char type
      * @tc.size MediumTest
@@ -617,7 +617,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5600
+     * @tc.number INT_TO_CHAR_S_CHK_5600
      * @tc.name testIntToCharStatic0056
      * @tc.desc Verify most characters have length 1
      * @tc.size MediumTest
@@ -630,7 +630,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5700
+     * @tc.number INT_TO_CHAR_S_CHK_5700
      * @tc.name testIntToCharStatic0057
      * @tc.desc Verify surrogate pair character has length at least 1
      * @tc.size MediumTest
@@ -643,7 +643,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5800
+     * @tc.number INT_TO_CHAR_S_CHK_5800
      * @tc.name testIntToCharStatic0058
      * @tc.desc Verify must be called statically via Int class
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_5900
+     * @tc.number INT_TO_CHAR_S_CHK_5900
      * @tc.name testIntToCharStatic0059
      * @tc.desc Verify static toChar and instance toChar produce consistent results
      * @tc.size MediumTest
@@ -671,7 +671,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6000
+     * @tc.number INT_TO_CHAR_S_CHK_6000
      * @tc.name testIntToCharStatic0060
      * @tc.desc Verify toChar return value can be used in further operations
      * @tc.size MediumTest
@@ -685,7 +685,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6100
+     * @tc.number INT_TO_CHAR_S_CHK_6100
      * @tc.name testIntToCharStatic0061
      * @tc.desc Verify same value produces consistent results across multiple conversions
      * @tc.size MediumTest
@@ -699,7 +699,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6200
+     * @tc.number INT_TO_CHAR_S_CHK_6200
      * @tc.name testIntToCharStatic0062
      * @tc.desc Verify arithmetic expression result as parameter
      * @tc.size MediumTest
@@ -712,7 +712,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6300
+     * @tc.number INT_TO_CHAR_S_CHK_6300
      * @tc.name testIntToCharStatic0063
      * @tc.desc Verify complex expression as parameter
      * @tc.size MediumTest
@@ -725,7 +725,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6400
+     * @tc.number INT_TO_CHAR_S_CHK_6400
      * @tc.name testIntToCharStatic0064
      * @tc.desc Verify using constant as parameter
      * @tc.size MediumTest
@@ -738,7 +738,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6500
+     * @tc.number INT_TO_CHAR_S_CHK_6500
      * @tc.name testIntToCharStatic0065
      * @tc.desc Verify toChar converts to char while toByte converts to number
      * @tc.size MediumTest
@@ -754,7 +754,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6600
+     * @tc.number INT_TO_CHAR_S_CHK_6600
      * @tc.name testIntToCharStatic0066
      * @tc.desc Verify toChar converts to char while toString converts to string
      * @tc.size MediumTest
@@ -768,7 +768,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6700
+     * @tc.number INT_TO_CHAR_S_CHK_6700
      * @tc.name testIntToCharStatic0067
      * @tc.desc Verify using for string concatenation
      * @tc.size MediumTest
@@ -782,7 +782,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6800
+     * @tc.number INT_TO_CHAR_S_CHK_6800
      * @tc.name testIntToCharStatic0068
      * @tc.desc Verify comparing converted characters
      * @tc.size MediumTest
@@ -796,7 +796,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_6900
+     * @tc.number INT_TO_CHAR_S_CHK_6900
      * @tc.name testIntToCharStatic0069
      * @tc.desc Verify building character array
      * @tc.size MediumTest
@@ -811,7 +811,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7000
+     * @tc.number INT_TO_CHAR_S_CHK_7000
      * @tc.name testIntToCharStatic0070
      * @tc.desc Verify multiple toChar calls perform normally
      * @tc.size MediumTest
@@ -827,7 +827,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7100
+     * @tc.number INT_TO_CHAR_S_CHK_7100
      * @tc.name testIntToCharStatic0071
      * @tc.desc Verify documentation example outputs A
      * @tc.size MediumTest
@@ -840,7 +840,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7200
+     * @tc.number INT_TO_CHAR_S_CHK_7200
      * @tc.name testIntToCharStatic0072
      * @tc.desc Verify static and instance toChar consistency in all cases
      * @tc.size MediumTest
@@ -856,7 +856,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7300
+     * @tc.number INT_TO_CHAR_S_CHK_7300
      * @tc.name testIntToCharStatic0073
      * @tc.desc Verify ASCII range 0-127
      * @tc.size MediumTest
@@ -871,7 +871,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7400
+     * @tc.number INT_TO_CHAR_S_CHK_7400
      * @tc.name testIntToCharStatic0074
      * @tc.desc Verify extended ASCII range 128-255
      * @tc.size MediumTest
@@ -887,7 +887,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7600
+     * @tc.number INT_TO_CHAR_S_CHK_7600
      * @tc.name testIntToCharStatic0076
      * @tc.desc Verify round-trip conversion
      * @tc.size MediumTest
@@ -902,7 +902,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7700
+     * @tc.number INT_TO_CHAR_S_CHK_7700
      * @tc.name testIntToCharStatic0077
      * @tc.desc Verify combining valueOf and static toChar
      * @tc.size MediumTest
@@ -917,7 +917,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7800
+     * @tc.number INT_TO_CHAR_S_CHK_7800
      * @tc.name testIntToCharStatic0078
      * @tc.desc Verify using static property as parameter
      * @tc.size MediumTest
@@ -932,7 +932,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_7900
+     * @tc.number INT_TO_CHAR_S_CHK_7900
      * @tc.name testIntToCharStatic0079
      * @tc.desc Verify expression as parameter
      * @tc.size MediumTest
@@ -947,7 +947,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8000
+     * @tc.number INT_TO_CHAR_S_CHK_8000
      * @tc.name testIntToCharStatic0080
      * @tc.desc Verify batch conversion of array to build string
      * @tc.size MediumTest
@@ -962,7 +962,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8100
+     * @tc.number INT_TO_CHAR_S_CHK_8100
      * @tc.name testIntToCharStatic0081
      * @tc.desc Verify BMP character is 1 code unit in UTF-16
      * @tc.size MediumTest
@@ -976,7 +976,7 @@ export default function IntToCharStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8300
+     * @tc.number INT_TO_CHAR_S_CHK_8300
      * @tc.name testIntToCharStatic0083
      * @tc.desc Verify various escape sequences
      * @tc.size MediumTest
@@ -994,7 +994,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8400
+     * @tc.number INT_TO_CHAR_S_CHK_8400
      * @tc.name testIntToCharStatic0084
      * @tc.desc Verify hexadecimal escape format
      * @tc.size MediumTest
@@ -1007,7 +1007,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8500
+     * @tc.number INT_TO_CHAR_S_CHK_8500
      * @tc.name testIntToCharStatic0085
      * @tc.desc Verify Unicode escape format
      * @tc.size MediumTest
@@ -1020,7 +1020,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8600
+     * @tc.number INT_TO_CHAR_S_CHK_8600
      * @tc.name testIntToCharStatic0086
      * @tc.desc Verify letter, digit, and space characters
      * @tc.size MediumTest
@@ -1037,7 +1037,7 @@ export default function IntToCharStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_CHAR_CHK_8700
+     * @tc.number INT_TO_CHAR_S_CHK_8700
      * @tc.name testIntToCharStatic0087
      * @tc.desc Verify uppercase and lowercase difference is 32
      * @tc.size MediumTest
