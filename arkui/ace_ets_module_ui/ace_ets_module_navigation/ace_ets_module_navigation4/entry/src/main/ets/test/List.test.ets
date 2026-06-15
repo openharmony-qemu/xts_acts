@@ -37,6 +37,7 @@ import IndicatorComponentNullUndefinedTest from './Router/IndicatorComponentNull
 import SideBarContainerControlButtonNullUndefinedTest from './Router/SideBarContainerControlButtonNullUndefinedTest.test'
 import StepperItemApiNullUndefinedTest from './Router/StepperItemApiNullUndefinedTest.test'
 import NavScrollEffectOptions from './Navigation/NavScrollEffectOptions.test';
+import navigationMaterial from './Navigation/navigationMaterial.test';
 
 export default function testsuite() {
   GetStackSize()
@@ -64,4 +65,5 @@ export default function testsuite() {
   SideBarContainerControlButtonNullUndefinedTest()
   StepperItemApiNullUndefinedTest()
   NavScrollEffectOptions()
+  navigationMaterial()
 }

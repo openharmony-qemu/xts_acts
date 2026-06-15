@@ -23,7 +23,7 @@ struct EnableEdgeAutoScrollExample {
   build() {
     Column() {
       Row() {
-        Image($r('app.media.app_icon')).key('image')
+        Image($r('app.media.app_icon')).key('enableEdgeAutoScroll_image')
           .draggable(true)
           .width('15%')
           .height('10%')
@@ -50,7 +50,7 @@ struct EnableEdgeAutoScrollExample {
         .height('45%')
         .dragPreviewOptions({}, { isMultiSelectionEnabled: false, enableEdgeAutoScroll:undefined })
 
-       Column().key('Text')
+       Column().key('enableEdgeAutoScroll_Text')
 
         Column() {
           Text(this.text).key('text_undefined')

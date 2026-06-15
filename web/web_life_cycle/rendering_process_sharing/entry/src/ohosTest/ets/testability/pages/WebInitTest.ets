@@ -138,7 +138,7 @@ struct WebInitTest {
             }
           })
 
-        Web({ src: this.mServer.getAssetUrl('common_index.html'), controller: this.controller })
+        Web({ src: $rawfile('common_index.html'), controller: this.controller })
           .height('50%')
           .width('100%')
           .javaScriptAccess(true)

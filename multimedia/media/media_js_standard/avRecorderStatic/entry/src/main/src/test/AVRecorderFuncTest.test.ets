@@ -2983,11 +2983,14 @@ export default function avRecorderTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      if (avRecorder) {
-        commonFun.avRecorderAddWatermarkTest(avConfig, avRecorder, RECORDER_TIME, done);
-      }
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTest(avConfig, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0100 end')
-      done();
     })
 
     /**
@@ -3005,11 +3008,14 @@ export default function avRecorderTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      if (avRecorder) {
-        commonFun.avRecorderAddWatermarkTestErrorState(avConfig, avRecorder, RECORDER_TIME, done);
-      }
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTestErrorState(avConfig, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0200 end')
-      done();
     })
 
     /**
@@ -3027,13 +3033,15 @@ export default function avRecorderTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      if (avRecorder) {
-        commonFun.avRecorderAddWatermarkTestOutRange(avConfig, avRecorder, RECORDER_TIME, done);
-      }
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      await commonFun.avRecorderAddWatermarkTestOutRange(avConfig, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_ADDWATERMARK_static_0300 end')
-      done();
     })
-
   })
 }
 

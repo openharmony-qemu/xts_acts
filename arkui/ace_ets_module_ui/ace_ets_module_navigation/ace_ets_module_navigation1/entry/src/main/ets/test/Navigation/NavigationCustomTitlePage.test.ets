@@ -89,10 +89,9 @@ export default function NavigationCustomTitlePage() {
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-
       let push = await driver.findComponent(ON.text('push'));
       await push.click()
+      await CommonFunc.sleep(1000);
       console.info('[NavigationCustomTitlePage_0200] push click');
 
       let btn1 = await driver.findComponent(ON.id('customNavTitleId'));

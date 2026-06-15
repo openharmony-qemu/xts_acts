@@ -198,7 +198,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN0.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN0.first.valueOf()).assertEqual(0)
       expect(EnumLongN0.second.valueOf()).assertEqual(-2147483648)
-      expect(EnumLongN0.third.valueOf()).assertEqual(2147483647)
+      expect(EnumLongN0.third.valueOf()).assertEqual(-2147483649)
     });
 
     /**
@@ -238,7 +238,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN3.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN3.first.valueOf()).assertEqual(2147483637)
       expect(EnumLongN3.second.valueOf()).assertEqual(1010)
-      expect(EnumLongN3.third.valueOf()).assertEqual(-2147482649)
+      expect(EnumLongN3.third.valueOf()).assertEqual(2147484647)
     });
 
     /**

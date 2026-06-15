@@ -65,7 +65,8 @@ export default function comSizeAbilityTest_08() {
     it('comSizeAbilityTestJsunit_23', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_23 START')
       await CommonFunc.sleep(1000);
-      let modePosition: componentUtils.ComponentInfo = componentUtils.getRectangleById("Navigation_Size");
+      let modePosition: componentUtils.ComponentInfo =
+        componentUtils.getRectangleById('comSizeAbilityTest_08' + '_Navigation_Size_02');
       let modePosition1: componentUtils.ComponentInfo = componentUtils.getRectangleById("Navigation_Father");
       let Size = modePosition.size
       let SizeWidth = Size.width
@@ -78,7 +79,7 @@ export default function comSizeAbilityTest_08() {
       let Scale = modePosition.scale
       let Rotate = modePosition.rotate
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Navigation_Size'));
+      let button = await driver.findComponent(ON.id('comSizeAbilityTest_08_Navigation_Size_01'));
       let rect = await button.getBounds();
       console.info("[comSizeAbilityTestJsunit_23] component rect is: " + JSON.stringify(rect))
       console.info("[comSizeAbilityTestJsunit_23] component Size is: " + JSON.stringify(Size))

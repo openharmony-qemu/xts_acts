@@ -781,7 +781,7 @@ export default function DisplayTest():void {
          */
         it('testGetAllDisplayPhysicalResolution_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'TestGetAllDisplayPhysicalResolution_static_0100';
-            display.getAllDisplayPhysicalResolution().then((resolutionObjects:Array<display.DisplayPhysicalResolution>):PromiseLike<void>=> {
+            display.getAllDisplayPhysicalResolution().then((resolutionObjects:Array<display.DisplayPhysicalResolution>):void=> {
                 hilog.info(0x0000, '[ANI]',`${caseName} Obtaining physical resolution length: ${resolutionObjects.length}`);
                 for (let i = 0; i < resolutionObjects.length; i++) {
                     let resolutionObject:display.DisplayPhysicalResolution = resolutionObjects[i];

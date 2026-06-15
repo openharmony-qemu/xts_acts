@@ -287,13 +287,13 @@ export default function TextTextLineTest() {
 
     /**
      * @tc.name   testGetTextLinesStatic
-     * @tc.number testGetTextLinesStatic
+     * @tc.number SUB_GRAPHIC_Text_TestGetTextLinesStatic_0100
      * @tc.desc   To test method getTextLine font paragraph.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetTextLinesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testGetTextLinesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('www data textLine 000 ')
         try {

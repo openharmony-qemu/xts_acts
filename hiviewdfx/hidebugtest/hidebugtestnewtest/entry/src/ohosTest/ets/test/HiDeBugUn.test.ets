@@ -18,6 +18,10 @@ import hidebug from '@ohos.hidebug'
 import featureAbility from '@ohos.ability.featureAbility';
 import fileIo from '@ohos.file.fs';
 import fs from '@ohos.file.fs';
+@Concurrent
+export function asyncSleep(time: number): Promise<Object> {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
 export default function HidebugTest() {
   describe('HidebugTest', () => {
     /**
@@ -101,6 +105,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0002 start");
       try{
         await hidebug.dumpHeapData(undefined);
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0002 dumpHeapData undefined");
         done();
       }catch(err){
@@ -122,6 +127,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0018 start");
       try{
         await hidebug.dumpHeapData(null);
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0018 dumpHeapData null end");
         done();
       }catch(err){
@@ -143,6 +149,7 @@ export default function HidebugTest() {
       console.info("HidebugTest_0019 start");
       try{
         await hidebug.dumpHeapData("");
+        await asyncSleep(3000);
         console.info("====> HidebugTest_0019 dumpHeapData empty end");
         done();
       }catch(err){

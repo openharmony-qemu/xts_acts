@@ -78,7 +78,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_01', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_01';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -113,7 +113,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_02', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_02';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -146,7 +146,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_03', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_03';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -181,7 +181,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_04', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_04';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -216,7 +216,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_05', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_05';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -251,7 +251,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_06', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_06';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -287,7 +287,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_07', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_07';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -321,7 +321,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_08', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_08';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -356,7 +356,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_09', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_09';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           let packOpts: image.PackingOption = {
             format: "image/jpeg",
@@ -391,7 +391,7 @@ export default function PicturePackToFileTestThrSupp() {
      */
     it('SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_010', Level.LEVEL0, (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_IMAGE_ImagePacker_PACK_TO_FILE_PIXMAP_CALLBACK_010';
-      pictureCreatImageSource(done,testName ,'test.jpeg', async (file,pixelmap) => {
+      pictureCreatImageSource(done,testName ,'yuv_test_oto.jpeg', async (file,pixelmap) => {
         try {
           const imagePackerObj: image.ImagePacker = image.createImagePacker();
           imagePackerObj.packToFile(pixelmap, file.fd, null, (err: BusinessError) => {

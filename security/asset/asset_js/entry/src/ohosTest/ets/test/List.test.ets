@@ -17,8 +17,12 @@ import AssetDeleteTest from './AssetDelete.test';
 import AssetUpdateTest from './AssetUpdate.test';
 import AssetWriteAndQueryNewTest from './AssetWriteAndQuery.test';
 import AssetAuthQuery from './AssetAuthQuery.test';
-import AssetSynctest from './AssetSync.test';
+import AssetSyncTest from './AssetSync.test';
 import AssetOthers from './AssetOthers.test';
+import AssetBatchAddTest from './AssetBatchAdd.test';
+import AssetBatchRemoveTest from './AssetBatchRemove.test';
+import AssetBatchUpdateTest from './AssetBatchUpdate.test';
+import AssetApiCoverEnumTest from './AssetApiCoverEnum.test';
 
 export default function testsuite() {
 
@@ -26,6 +30,10 @@ export default function testsuite() {
   AssetUpdateTest();
   AssetWriteAndQueryNewTest();
   AssetAuthQuery();
-  AssetSynctest();
+  AssetSyncTest();
   AssetOthers();
+  AssetBatchAddTest();
+  AssetBatchRemoveTest();
+  AssetBatchUpdateTest();
+  AssetApiCoverEnumTest();
 }

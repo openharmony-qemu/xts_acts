@@ -48,6 +48,15 @@ napi_value captureCameraDeviceQueryInfo(napi_env env, napi_callback_info info);
 napi_value captureEnableBandwidthCompressionError(napi_env env, napi_callback_info info);
 napi_value captureIsGetCameraDevices(napi_env env, napi_callback_info info);
 napi_value getPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetBoundingBox(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetEmotion(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetLeftEyeBoundingBox(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetMetadataObjectType(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetPitchAngle(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetRightEyeBoundingBox(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetRollAngle(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetTimestamp(napi_env env, napi_callback_info info);
+napi_value TestOHMetadataObjectExtGetYawAngle(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

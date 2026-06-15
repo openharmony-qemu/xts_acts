@@ -17,6 +17,7 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "arrayLike_standard_test_static:ActsArrayLikeStaticTest",
       "bigint_standard_test_static:ActsBigintStandardStaticTest",
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
@@ -36,6 +37,16 @@ group("std_core_static") {
       "object_standard_test_static:ActsObjectStaticTest",
       "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
       "set_standard_test_static:ActsSetCaseStaticTest",
+      "linker_standard_test_static:ActsLinkerCaseStaticTest",
+      "parameter_standard_test_static:ActsParameterCaseStaticTest",
+      "linkererror_standard_test_static:ActsLinkererrorCaseStaticTest",
+      "readonlyArray_standard_test_static:ActsReadonlyarrayCaseStaticTest",
+      "short_standard_test_static:ActsShortCaseStaticTest",
+      "tuple_standard_test_static:ActsTupleCaseStaticTest",
+      "stringbuild_standard_test_static:ActsStringbuildCaseStaticTest",
+      "string_standard_test_static:ActsStringCaseStaticTest",
+      "type_standard_test_static:ActsTypeCaseStaticTest",
+      "value_standard_test_static:ActsValueCaseStaticTest",
     ]
   }
 }

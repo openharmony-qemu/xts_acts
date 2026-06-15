@@ -94,7 +94,7 @@ struct GestureTest2 {
         TabContent() {
           Column({space: 5} as ColumnOptions) {
             Text(`GreenTest`).fontSize(16)
-          }.width('100%').height('100%').backgroundColor(Color.Green).key("firstTabsContent")
+          }.width('100%').height('100%').backgroundColor(Color.Green).key("tabsInterceptionEnhancementcallbackTest_firstTabsContent")
 
         }
 

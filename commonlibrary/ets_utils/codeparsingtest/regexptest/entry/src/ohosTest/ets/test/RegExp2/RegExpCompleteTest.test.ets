@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { regexpSymbolMatchAll } from './RegExpSymbols';
 import {
   assignSourceStrictStillOriginal,
@@ -45,8 +45,32 @@ function supportsRegExp(pattern: string, flags: string = ''): boolean {
   }
 }
 
+function sleep(time: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
+
 export default function regExpCompleteTest() {
     describe('Instance_Methods_exec_toString', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0100
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_0100
@@ -196,6 +220,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Constructor', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0109
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_1000
@@ -305,6 +349,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Static_RegExp', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0116
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_1700
@@ -333,6 +397,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Symbol_well_known_methods', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0118
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_1900
@@ -395,6 +479,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('test_method_scenarios', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0123
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_2400
@@ -462,6 +566,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Unicode_advanced', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0127
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_2800
@@ -600,6 +724,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Advanced_syntax', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0131
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_3200
@@ -666,6 +810,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('RegExp_Boundaries', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0135
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_3600
@@ -736,6 +900,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Errors', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0140
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_4100
@@ -786,6 +970,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('Property_descriptor', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0144
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_4500
@@ -840,6 +1044,26 @@ export default function regExpCompleteTest() {
     });
 
     describe('API_integration', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      await sleep(50);
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
       /**
        * @tc.name   testRegExpComplete0148
        * @tc.number SUB_COMMONLIBRARY_REGEXP_COMPLETE_TEST_4900

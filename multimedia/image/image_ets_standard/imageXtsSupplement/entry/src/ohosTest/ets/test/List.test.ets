@@ -225,7 +225,7 @@ import ImageMetadataTest from './image/ImageMetadataTest.test';
 import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
 import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
-import ImagePictureTest from './image/ImagePictureTest.test'; 
+import ImagePictureTest from './image/ImagePictureTest.test';
 import CrateImageSupp from './image/CreateImageTest.test';
 import CreatePixelMapUsingAllocatorTest from './image/ImageCreatePixelMapUsingAllocatorTest.test';
 import ImageCreatePixelMapFromSurfaceTest from './image/ImageCreatePixelMapFromSurfaceTest.test';
@@ -448,10 +448,10 @@ export default function testsuite() {
   PicturePackingPictureSecTestSupp();
   ImageSourceModifyImagePropertySupp();
   ImagCreatePixelMapTest();
- 	ImageCreateImageSourceSuppTest();
- 	ImageHeifsTest();
+  ImageCreateImageSourceSuppTest();
+  ImageHeifsTest();
   MetaDataSetBlobTest();
- 	SendImageTest();
+  SendImageTest();
   ImageGammaSupp()
   CreatePixelMapSupp();
   GetImageInfoSupp();

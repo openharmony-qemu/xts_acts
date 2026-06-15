@@ -259,7 +259,7 @@ struct setBlanklessLoadingCacheCapacityTest {
           })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
+      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0
