@@ -750,14 +750,13 @@ export default function addWatcherTest() {
       Utils.msSleep(5000);
       if (holder1 != null) {
         let eventPkg = holder1.takeNext();
-        if (eventPkg == null) {
-            hilog.info(logDomain, tag, 'hiappevent cnm');
-        }
-        hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
-        hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
-        hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
-        for (const eventInfo of eventPkg!.data) {
-          hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
+        while ((eventPkg = holder.takeNext()) != null) {
+          hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
+          hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
+          hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
+          for (const eventInfo of eventPkg!.data) {
+            hilog.info(logDomain, tag, "eventPkg.data=" + eventInfo);
+          }
         }
       }
       setTimeout(() => {
