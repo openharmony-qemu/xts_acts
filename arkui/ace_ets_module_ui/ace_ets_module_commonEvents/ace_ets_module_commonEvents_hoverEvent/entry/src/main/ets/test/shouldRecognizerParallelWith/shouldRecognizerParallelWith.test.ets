@@ -91,7 +91,7 @@ export default function shouldRecognizerParallelWith() {
   let strJson1 = getInspectorByKey('recognizer_text');
   console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] component strJson1 is: ' + JSON.stringify(JSON.parse(strJson1)));
   console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] strJson1 content: ' + JSON.stringify(JSON.parse(strJson1).$attrs.content));
-  expect(JSON.parse(strJson1).$attrs.content).assertEqual('start');
+  expect(JSON.parse(strJson1).$attrs.content).assertEqual('valid');
 
   await CommonFunc.sleep(1000);
   console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] END');
