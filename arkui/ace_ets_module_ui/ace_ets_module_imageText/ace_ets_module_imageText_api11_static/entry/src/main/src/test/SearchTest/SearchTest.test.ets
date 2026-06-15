@@ -70,7 +70,7 @@ export default function search() {
         }
       } catch (err) {
         console.error("push SearchModifierTest page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

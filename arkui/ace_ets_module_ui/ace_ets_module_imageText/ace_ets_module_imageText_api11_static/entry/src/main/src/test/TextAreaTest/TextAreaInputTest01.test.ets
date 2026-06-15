@@ -137,12 +137,13 @@ export default function textAreaInputTest() {
             button7 ? await button7!.click() : null
           }
           await CommonFunc.sleep(1000);
+          expect(textArea1).not().assertUndefined();
           console.info('textAreaInputTest_static_0001 2 Button success');
         }
         console.info("[textAreaInputTest_static_0001] end");
       } catch (error) {
         console.log("textAreaInputTest_static_0001 " + error)
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 
