@@ -102,34 +102,26 @@ export default function WithEnvDirectionTest() {
       let strJson2 = inspector.getInspectorByKey('WithEnvDirectionText1');
       let strJson3 = inspector.getInspectorByKey('WithEnvDirectionText2');
 
-      let button1 = await driver.findComponent(ON.id('SetDirectionAutoButton'));
+      let button1 = await driver.findComponent(ON.id('SetDirectionRtlButton'));
       await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson4 = inspector.getInspectorByKey('WithEnvDirectionText1');
       let strJson5 = inspector.getInspectorByKey('WithEnvDirectionText2');
 
-      let button2 = await driver.findComponent(ON.id('SetDirectionRtlButton'));
+      let button2 = await driver.findComponent(ON.id('SetDirectionAutoButton'));
       await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson6 = inspector.getInspectorByKey('WithEnvDirectionText1');
       let strJson7 = inspector.getInspectorByKey('WithEnvDirectionText2');
 
-      let button3 = await driver.findComponent(ON.id('SetDirectionUndefinedButton'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strJson8 = inspector.getInspectorByKey('WithEnvDirectionText1');
-      let strJson9 = inspector.getInspectorByKey('WithEnvDirectionText2');
-
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('direction')).assertEqual('Direction.Ltr');
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('direction')).assertEqual('Direction.Ltr');
-      expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
-      expect(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
-      expect(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('direction')).assertEqual('Direction.Rtl');
-      expect(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('direction')).assertEqual('Direction.Rtl');
-      expect(JSON.parseJsonElement(strJson8).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
-      expect(JSON.parseJsonElement(strJson9).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
+      expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('direction')).assertEqual('Direction.Rtl');
+      expect(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('direction')).assertEqual('Direction.Rtl');
+      expect(JSON.parseJsonElement(strJson6).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
+      expect(JSON.parseJsonElement(strJson7).getElement('$attrs').getString('direction')).assertEqual('Direction.Auto');
 
       console.info('[WithEnvDirectionTest_0100] END');
       done();

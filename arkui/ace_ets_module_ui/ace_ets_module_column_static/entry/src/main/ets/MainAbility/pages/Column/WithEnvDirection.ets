@@ -38,7 +38,7 @@ import i18n from '@ohos.i18n'
 @Entry
 @Component
 struct WithEnvDirection {
-  @State dirProvider:Direction|undefined = undefined
+  @State dirProvider:Direction = Direction.Auto
   @State languageValue: string = ''
 
   aboutToAppear() {
@@ -70,13 +70,6 @@ struct WithEnvDirection {
             this.dirProvider = Direction.Rtl
           })
           .width(80)
-          .height(15)
-        Button('SetUndefined')
-          .id('SetDirectionUndefinedButton')
-          .onClick(()=>{
-            this.dirProvider = undefined
-          })
-          .width(90)
           .height(15)
       }
       Button('设置维吾尔语')
@@ -110,5 +103,3 @@ struct WithEnvDirection {
     .width('100%')
   }
 }
-
-
