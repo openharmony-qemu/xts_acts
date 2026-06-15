@@ -165,7 +165,7 @@ export default function SparseArrayPopTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_POP_0600
      * @tc.name testSparseArrayPop006
-     * @tc.desc Pop on empty SparseArray, verify returns undefined, length stays 0, no exception thrown
+     * @tc.desc Pop on empty SparseArray, verify returns undefined and length stays 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -174,14 +174,8 @@ export default function SparseArrayPopTest(): void {
 
         const arr = new SparseArray<int>()
         expect(arr.length).assertEqual(0)
-        let caught = false
-        try {
-          const result = arr.pop()
-          expect(result).assertEqual(undefined)
-        } catch (_error) {
-          caught = true
-        }
-        expect(caught).assertFalse()
+        const result = arr.pop()
+        expect(result).assertEqual(undefined)
         expect(arr.length).assertEqual(0)
 
     });
