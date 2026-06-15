@@ -163,7 +163,7 @@ struct ScrollToIndexForWaterFlow02 {
             console.log('跳转到99，有动画')
             this.itemScrollerForWaterFlow.scrollToIndex(99, true)
             setTimeout(()=>{
-              const yOffsetEnd: number = this.itemScrollerForWaterFlow.currentOffset()!.yOffset;
+              const yOffsetEnd: number = this.scrollerForWaterFlow.currentOffset()!.yOffset;
               console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>'+ yOffsetEnd)
               this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
               console.info(this.isSmooth + 'isSmooth')
