@@ -19,7 +19,11 @@ import {
   PixelMapDrawableDescriptor,
   LayeredDrawableDescriptor
 } from '@kit.ArkUI';
-import { isDrawableReleased, releaseDrawable } from '../../common/DrawableReleaseCompat';
+import {
+  hasDrawableReleaseApi,
+  isDrawableReleased,
+  releaseDrawable
+} from '../../common/DrawableReleaseCompat';
 
 @Entry
 @Component
@@ -230,6 +234,10 @@ struct DrawableDescriptorReleaseTest {
       let drawable = this.createDrawableFromRes();
       if (!drawable) {
         this.testResult001 = 'FAIL: 无法创建 DrawableDescriptor';
+        return;
+      }
+      if (!hasDrawableReleaseApi(drawable as ESObject)) {
+        this.testResult001 = 'FAIL: DrawableDescriptor 未提供 release/isReleased API';
         return;
       }
       let beforeRelease = isDrawableReleased(drawable as ESObject);
