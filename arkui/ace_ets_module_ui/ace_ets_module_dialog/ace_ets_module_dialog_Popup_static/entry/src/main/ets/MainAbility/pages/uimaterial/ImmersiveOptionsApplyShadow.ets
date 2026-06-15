@@ -77,7 +77,8 @@ struct ImmersiveOptionsApplyShadow {
         .borderRadius(20)
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THICK
+          style: uiMaterial.ImmersiveStyle.THICK,
+          lightEffect:{color:Color.Blue}
         }))
       }
 
