@@ -5157,6 +5157,1000 @@ export default function InputMethodEditBoxAbility() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1700
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_1700', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_1700 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_1700']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1700 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 163
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1800
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_1800', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_1800 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_1800']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1800 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 164
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1900
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_1900', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_1900 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_1900']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_1900 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 165
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2000
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2000', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2000 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2000']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2000 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 166
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2100
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2100', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2100 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2100']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2100 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 167
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2200
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2200', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2200 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2200']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2200 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 168
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2300
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2300', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2300 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2300']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2300 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 169
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2400
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2400', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2400 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2400']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2400 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 170
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2500
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2500', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2500 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2500']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2500 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 171
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2600
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2600', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2600 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2600']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2600 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 172
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2700
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2700', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2700 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2700']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2700 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 173
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2800
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2800', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2800 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2800']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2800 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 174
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_2900
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_2900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_2900', Level.LEVEL3, async (done: Function) => {
+      await textArea10.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_2900 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_2900']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_2900 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 175
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_3000
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_3000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IME_updatePanelRectSync_3000', Level.LEVEL3, async (done: Function) => {
+      await textArea1.click();
+      await driver.delayMs(1000);
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IME_updatePanelRectSync_3000 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        if (err) {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IME_updatePanelRectSync_3000']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IME_updatePanelRectSync_3000 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 176
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0300
      * @tc.number SUB_INPUTMETHOD_IME_CONSUMEKEYEVENTS_0300
      * @tc.desc   Function test
