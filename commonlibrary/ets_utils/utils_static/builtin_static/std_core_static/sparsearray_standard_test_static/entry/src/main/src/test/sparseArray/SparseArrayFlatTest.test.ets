@@ -17,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-/** 将多层嵌套的 SparseArray 作为 T=int|SparseArray<int> 的元素写入（push 仅接受该联合，不接受更深泛型）。 */
 function pushNestedElement(arr: SparseArray<int | SparseArray<int>>, nested: SparseArray<int | SparseArray<int>>): void {
   arr.push(nested as int | SparseArray<int>);
 }
@@ -36,7 +35,7 @@ export default function SparseArrayFlatTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -56,12 +55,12 @@ export default function SparseArrayFlatTest(): void {
         const res = arr.flat();
         expect(res instanceof SparseArray).assertTrue();
         expect(res.toString()).assertEqual('1,3,5,44,55,66');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_0200
      * @tc.name testSparseArrayFlat002
-     * @tc.desc Test SparseArray.flat(2), verify result type and flattened values; ArkTS-Sta flat 仅支持可选 depth:int
+     * @tc.desc Test SparseArray.flat(2), verify result type and flattened values with optional depth:int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -71,7 +70,7 @@ export default function SparseArrayFlatTest(): void {
         const res = arr.flat(2);
         expect(res instanceof SparseArray).assertTrue();
         expect(res.toString()).assertEqual('1,3,5,44,55,66');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_0300
@@ -90,7 +89,7 @@ export default function SparseArrayFlatTest(): void {
         expect(res0.length).assertEqual(4);
         expect(res1.toString()).assertEqual('1,3,5,44,55,66');
         expect(res2.toString()).assertEqual('1,3,5,44,55,66');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_0400
@@ -121,7 +120,7 @@ export default function SparseArrayFlatTest(): void {
         const arr = makeNestedArr();
         const res = arr.flat(2147483647);
         expect(res.toString()).assertEqual('1,3,5,44,55,66');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_0600
@@ -283,7 +282,7 @@ export default function SparseArrayFlatTest(): void {
         const res2 = arr.flat(2);
         expect(res1.length).assertLarger(3);
         expect(res2.toString()).assertEqual('1,2,3,4,5,7,8,9');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_1500
@@ -301,7 +300,7 @@ export default function SparseArrayFlatTest(): void {
         const res = arr.flat<int>(1);
         expect(res.$_get(0)).assertEqual(1);
         expect(res.$_get(1)).assertEqual(44);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_1600
@@ -315,7 +314,7 @@ export default function SparseArrayFlatTest(): void {
         const arr = new SparseArray<int | SparseArray<int>>();
         const res = arr.flat(1);
         expect(res.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_1700
@@ -329,7 +328,7 @@ export default function SparseArrayFlatTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const res = arr.flat(1);
         expect(res.toString()).assertEqual('1,2,3,4,5');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_1800
@@ -343,7 +342,7 @@ export default function SparseArrayFlatTest(): void {
         const arr = makeNestedArr();
         const res = arr.flat(2);
         expect((typeof res[0] == 'int')).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_1900
@@ -360,7 +359,7 @@ export default function SparseArrayFlatTest(): void {
         expect(arr.length).assertEqual(5);
         expect(arr.toString()).assertEqual(before);
         expect(res.toString()).assertEqual('1,3,5,44,55,66');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2000
@@ -385,7 +384,7 @@ export default function SparseArrayFlatTest(): void {
         pushNestedElement(arr, inner1);
         const res = arr.flat(10);
         expect(res.toString()).assertEqual('1,2,3,4,5,7,8,9');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2100
@@ -403,7 +402,7 @@ export default function SparseArrayFlatTest(): void {
         const res = arr.flat<double>(1);
         expect(res.length).assertEqual(5);
         expect(res.$_get(0)).assertEqual(1.1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2200
@@ -420,7 +419,7 @@ export default function SparseArrayFlatTest(): void {
         expect(res instanceof SparseArray).assertTrue();
         expect(res.length).assertEqual(res0.length);
         expect(res.toString()).assertEqual(res0.toString());
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2300
@@ -454,7 +453,7 @@ export default function SparseArrayFlatTest(): void {
         arr.push(inner);
         const res = arr.flat<double | string>(1);
         expect((res.$_get(2) as string)).assertEqual('a');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2500
@@ -475,7 +474,7 @@ export default function SparseArrayFlatTest(): void {
         }
         const res = arr.flat(1);
         expect(res.length).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2600
@@ -496,7 +495,7 @@ export default function SparseArrayFlatTest(): void {
         }
         const res = arr.flat(20);
         expect(res instanceof SparseArray).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_2700
@@ -584,6 +583,78 @@ export default function SparseArrayFlatTest(): void {
         expect(flat.length).assertEqual(2);
         expect((flat[0] as int)).assertEqual(0xA);
         expect((flat[1] as int)).assertEqual(0b101);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_3200
+     * @tc.name testSparseArrayFlat032
+     * @tc.desc flat depth 1 flattens nested SparseArray<char> into char elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlat032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const row = new SparseArray<char>(c'A', c'B');
+        const matrix = new SparseArray<SparseArray<char>>();
+        matrix.push(row);
+        const flat = matrix.flat<char>(1);
+        expect(flat.length).assertEqual(2);
+        expect(flat[0]).assertEqual(c'A');
+        expect(flat[1]).assertEqual(c'B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_3300
+     * @tc.name testSparseArrayFlat033
+     * @tc.desc flat depth 0 keeps nested SparseArray<boolean> as element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlat033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const row = new SparseArray<boolean>(true, false);
+        const matrix = new SparseArray<SparseArray<boolean>>();
+        matrix.push(row);
+        const flat = matrix.flat<SparseArray<boolean>>(0);
+        const first = flat[0] as SparseArray<boolean>;
+        expect(flat.length).assertEqual(1);
+        expect(first[0]).assertEqual(true);
+        expect(first[1]).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_3400
+     * @tc.name testSparseArrayFlat034
+     * @tc.desc flat depth 1 skips sparse holes inside nested row
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlat034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const row = new SparseArray<string>(4);
+        row[2] = "tail";
+        const matrix = new SparseArray<SparseArray<string>>();
+        matrix.push(row);
+        const flat = matrix.flat<string>(1);
+        expect(flat.length).assertEqual(1);
+        expect(flat[0]).assertEqual("tail");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_3500
+     * @tc.name testSparseArrayFlat035
+     * @tc.desc flat depth 1 skips explicitly stored undefined in nested row
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlat035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const row = new SparseArray<int | undefined>(undefined, 5);
+        const matrix = new SparseArray<SparseArray<int | undefined>>();
+        matrix.push(row);
+        const flat = matrix.flat<int | undefined>(1);
+        expect(flat.length).assertEqual(1);
+        expect(flat[0]).assertEqual(5);
     });
 
   });

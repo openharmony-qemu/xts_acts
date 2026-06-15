@@ -25,7 +25,7 @@ export default function SparseArrayFindIndexTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -45,7 +45,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[0] = 1;
         const index = arr.findIndex((v) => v === 1);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -60,7 +60,7 @@ export default function SparseArrayFindIndexTest(): void {
         const arr = new SparseArray<int>(4, 5, 3);
         const index = arr.findIndex((v) => v === 5);
         expect(index).assertEqual(1);
-    
+
     });
 
     /**
@@ -78,7 +78,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[4] = 50;
         const index = arr.findIndex((v) => v > 100);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -93,7 +93,7 @@ export default function SparseArrayFindIndexTest(): void {
         const arr = new SparseArray<int>();
         const index = arr.findIndex((v) => v > 0);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -134,7 +134,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = 30;
         const index = arr.findIndex((v): boolean => true);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -152,7 +152,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[4] = 50;
         const index = arr.findIndex((v, i) => i > 2);
         expect(index).assertEqual(4);
-    
+
     });
 
     /**
@@ -170,7 +170,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[4] = 50;
         const index = arr.findIndex((v, i, a) => a.length === 6);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -188,7 +188,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = "cherry";
         const index = arr.findIndex((v) => v.startsWith("b"));
         expect(index).assertEqual(1);
-    
+
     });
 
     /**
@@ -206,7 +206,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = -30;
         const index = arr.findIndex((v) => v < 0);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -224,7 +224,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = 30;
         const index = arr.findIndex((v) => v === 0);
         expect(index).assertEqual(1);
-    
+
     });
 
     /**
@@ -242,7 +242,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = 30;
         const index = arr.findIndex((v) => v > 40);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -260,7 +260,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = 50;
         const index = arr.findIndex((v) => v > 40);
         expect(index).assertEqual(2);
-    
+
     });
 
     /**
@@ -278,7 +278,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[2] = 30;
         const index = arr.findIndex((v) => v > 0);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -301,7 +301,7 @@ export default function SparseArrayFindIndexTest(): void {
         });
         expect(index).assertEqual(2);
         expect(callCount).assertEqual(2);
-    
+
     });
 
     /**
@@ -316,7 +316,7 @@ export default function SparseArrayFindIndexTest(): void {
         const arr = new SparseArray<int>(2, 4, 4);
         const index = arr.findIndex((v, i) => i === 2);
         expect(index).assertEqual(2);
-    
+
     });
 
     /**
@@ -333,7 +333,7 @@ export default function SparseArrayFindIndexTest(): void {
         arr[5] = 50;
         const index = arr.findIndex((v) => v === 100);
         expect(index).assertEqual(9);
-    
+
     });
 
     /**
@@ -442,6 +442,77 @@ export default function SparseArrayFindIndexTest(): void {
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_INDEX_2500
+     * @tc.name testSparseArrayFindIndex025
+     * @tc.desc findIndex locates false element in sparse SparseArray<boolean>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindIndex025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(5);
+        arr[1] = false;
+        arr[3] = true;
+        const index = arr.findIndex((v: boolean): boolean => v === false);
+        expect(index).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_INDEX_2600
+     * @tc.name testSparseArrayFindIndex026
+     * @tc.desc findIndex locates char element after sparse hole
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindIndex026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(4);
+        arr[0] = c'A';
+        arr[2] = c'C';
+        const index = arr.findIndex((v: char): boolean => v > c'B');
+        expect(index).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_INDEX_2700
+     * @tc.name testSparseArrayFindIndex027
+     * @tc.desc findIndex callback receives updated sparse array length for high index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindIndex027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>();
+        arr[0] = "head";
+        arr[16] = "tail";
+        const index = arr.findIndex((v: string, i: int, a: SparseArray<string>): boolean => {
+          return a.length === 17 && i === 16 && v === "tail";
+        });
+        expect(index).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_INDEX_2800
+     * @tc.name testSparseArrayFindIndex028
+     * @tc.desc findIndex skips holes and only invokes predicate for assigned sparse slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindIndex028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(8);
+        arr[1] = 10;
+        arr[6] = 60;
+        let callCount = 0;
+        const index = arr.findIndex((v: int): boolean => {
+          callCount++;
+          return v > 100;
+        });
+        expect(index).assertEqual(-1);
+        expect(callCount).assertEqual(2);
     });
   });
 }

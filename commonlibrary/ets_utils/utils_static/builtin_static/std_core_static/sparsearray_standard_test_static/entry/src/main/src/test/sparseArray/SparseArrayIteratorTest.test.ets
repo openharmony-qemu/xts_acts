@@ -28,7 +28,7 @@ export default function SparseArrayIteratorTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -48,7 +48,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -73,7 +73,7 @@ export default function SparseArrayIteratorTest(): void {
         }
         expect(count).assertEqual(3);
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -89,7 +89,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.value).assertEqual("apple");
-    
+
     });
 
     /**
@@ -105,7 +105,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.value).assertEqual(1);
-    
+
     });
 
     /**
@@ -121,7 +121,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.value).assertEqual(1.5);
-    
+
     });
 
     /**
@@ -137,7 +137,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.value).assertTrue();
-    
+
     });
 
     /**
@@ -154,7 +154,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result.value!.name).assertEqual("Alice");
-    
+
     });
 
     /**
@@ -179,7 +179,7 @@ export default function SparseArrayIteratorTest(): void {
         expect(result!.value).assertEqual("c");
         result = iterator.next();
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -194,7 +194,7 @@ export default function SparseArrayIteratorTest(): void {
         const arr = new SparseArray<int>(1);
         const iterator = arr.$_iterator();
         expect(typeof iterator.next).assertEqual("function");
-    
+
     });
 
     /**
@@ -213,7 +213,7 @@ export default function SparseArrayIteratorTest(): void {
         expect(result!.value).assertEqual(42);
         result = iterator.next();
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -237,7 +237,7 @@ export default function SparseArrayIteratorTest(): void {
           result = iterator.next();
         }
         expect(count).assertEqual(1000);
-    
+
     });
 
     /**
@@ -253,7 +253,7 @@ export default function SparseArrayIteratorTest(): void {
         const iterator = arr.$_iterator();
         let result = iterator.next();
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -272,7 +272,7 @@ export default function SparseArrayIteratorTest(): void {
           values.push(value);
         }
         expect(values.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -292,9 +292,9 @@ export default function SparseArrayIteratorTest(): void {
         while (!result.done) {
           result = iterator.next();
         }
-    
+
         expect(arr instanceof SparseArray).assertTrue();
-    
+
     });
 
     /**
@@ -318,7 +318,7 @@ export default function SparseArrayIteratorTest(): void {
         expect(result!.value).assertEqual(3);
         result = iterator.next();
         expect(result!.done).assertTrue();
-    
+
     });
 
     /**
@@ -336,7 +336,7 @@ export default function SparseArrayIteratorTest(): void {
         let r1 = iter1.next();
         let r2 = iter2.next();
         expect(r1.value).assertEqual(r2.value);
-    
+
     });
 
     /**
@@ -365,7 +365,7 @@ export default function SparseArrayIteratorTest(): void {
           forEachValues.push(value);
         });
         expect(iterValues.length).assertEqual(forEachValues.length);
-    
+
     });
 
     /**
@@ -391,7 +391,7 @@ export default function SparseArrayIteratorTest(): void {
         }
         const endTime = Date.now();
         expect(endTime - startTime).assertLess(1000);
-    
+
     });
 
     /**
@@ -418,7 +418,7 @@ export default function SparseArrayIteratorTest(): void {
         expect(r1.value).assertEqual(2);
         expect(r2.value).assertEqual(2);
         expect(r3.value).assertEqual(1);
-    
+
     });
 
     /**
@@ -467,6 +467,36 @@ export default function SparseArrayIteratorTest(): void {
         const it = arr.$_iterator();
         expect(it.next().value).assertEqual(0xA);
         expect(it.next().value).assertEqual(0b101);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ITERATOR_2300
+     * @tc.name testSparseArrayIterator023
+     * @tc.desc $_iterator yields char elements in insertion index order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIterator023', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const it = arr.$_iterator();
+        expect(it.next().value).assertEqual(c'A');
+        expect(it.next().value).assertEqual(c'B');
+        expect(it.next().done).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ITERATOR_2400
+     * @tc.name testSparseArrayIterator024
+     * @tc.desc $_iterator skips holes and yields high sparse index value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIterator024', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(8);
+        arr[7] = "tail";
+        const it = arr.$_iterator();
+        expect(it.next().value).assertEqual("tail");
+        expect(it.next().done).assertTrue();
     });
 
   });

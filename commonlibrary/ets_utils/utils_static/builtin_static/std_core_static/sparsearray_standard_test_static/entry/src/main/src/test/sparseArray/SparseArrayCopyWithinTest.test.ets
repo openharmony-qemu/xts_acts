@@ -22,7 +22,7 @@ export default function SparseArrayCopyWithinTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -47,7 +47,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_0200
@@ -79,7 +79,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[0]).assertEqual(3);
         expect(arr[1]).assertEqual(4);
         expect(arr[2]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_0400
@@ -169,7 +169,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_0900
@@ -188,7 +188,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1000
@@ -207,7 +207,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1100
@@ -229,7 +229,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(5);
         expect(arr[3]).assertEqual(undefined);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1200
@@ -248,7 +248,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(4);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1300
@@ -267,7 +267,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(1);
         expect(arr[4]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1400
@@ -352,7 +352,7 @@ export default function SparseArrayCopyWithinTest(): void {
         expect(arr instanceof SparseArray).assertTrue();
         arr.copyWithin(0, 5000, 10000)
         expect(arr.length).assertEqual(10000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_1800
@@ -521,9 +521,8 @@ export default function SparseArrayCopyWithinTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testSparseArrayCopyWithin029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 130 为构造函数 length 参数（预分配容量），非初始元素值
         const arr = new SparseArray<byte>(130 as int);
         arr[2] = 30 as byte;
         arr[3] = 40 as byte;
@@ -557,6 +556,108 @@ export default function SparseArrayCopyWithinTest(): void {
         const arr = new SparseArray<int>(10, 20, 30);
         arr.copyWithin(-1, 0, 1);
         expect(arr[2]).assertEqual(10);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3200
+     * @tc.name testSparseArrayCopyWithin032
+     * @tc.desc copyWithin throws ClassCastError when target is undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin((undefined as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3300
+     * @tc.name testSparseArrayCopyWithin033
+     * @tc.desc copyWithin throws ClassCastError when target is string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin(("1" as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3400
+     * @tc.name testSparseArrayCopyWithin034
+     * @tc.desc copyWithin throws ClassCastError when start is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin(0, (null as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3500
+     * @tc.name testSparseArrayCopyWithin035
+     * @tc.desc copyWithin throws ClassCastError when start is undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin(0, (undefined as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3600
+     * @tc.name testSparseArrayCopyWithin036
+     * @tc.desc copyWithin throws ClassCastError when end is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin(0, 1, (null as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_COPY_WITHIN_3700
+     * @tc.name testSparseArrayCopyWithin037
+     * @tc.desc copyWithin throws ClassCastError when end is string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayCopyWithin037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        try {
+          arr.copyWithin(0, 1, ("2" as Object as int));
+          expect().assertFail();
+        } catch (error) {
+          expect(error.name).assertEqual("ClassCastError");
+        }
     });
 
   });

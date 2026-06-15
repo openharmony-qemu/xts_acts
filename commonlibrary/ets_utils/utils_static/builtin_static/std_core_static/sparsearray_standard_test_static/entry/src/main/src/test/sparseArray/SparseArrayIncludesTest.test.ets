@@ -464,5 +464,63 @@ export default function SparseArrayIncludesTest(): void {
         expect(arr.includes(20, 2)).assertEqual(true)
         expect(arr.includes(30, 3)).assertEqual(true)
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INCLUDES_3100
+     * @tc.name testSparseArrayIncludes031
+     * @tc.desc includes matches char element with positive fromIndex
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIncludes031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C')
+        expect(arr.includes(c'B', 1)).assertEqual(true)
+        expect(arr.includes(c'A', 1)).assertEqual(false)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INCLUDES_3200
+     * @tc.name testSparseArrayIncludes032
+     * @tc.desc includes with negative fromIndex below length starts searching from index 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIncludes032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(10, 20)
+        expect(arr.includes(10, -100)).assertEqual(true)
+        expect(arr.includes(20, -100)).assertEqual(true)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INCLUDES_3300
+     * @tc.name testSparseArrayIncludes033
+     * @tc.desc includes matches explicitly stored undefined and skips later holes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIncludes033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(4)
+        arr[1] = undefined
+        expect(arr.includes(undefined)).assertEqual(true)
+        expect(arr.includes(undefined, 2)).assertEqual(false)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INCLUDES_3400
+     * @tc.name testSparseArrayIncludes034
+     * @tc.desc includes matches short element at sparse high index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIncludes034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(8)
+        arr[6] = 300 as short
+        expect(arr.includes(300 as short)).assertEqual(true)
+        expect(arr.includes(200 as short)).assertEqual(false)
+    });
   });
 }

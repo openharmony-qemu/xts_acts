@@ -22,7 +22,7 @@ export default function SparseArrayFillTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -60,7 +60,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(9);
         expect(arr[4]).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0300
@@ -78,7 +78,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0400
@@ -96,7 +96,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0500
@@ -112,7 +112,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(3);
         expect(arr[1]).assertEqual(3);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0600
@@ -128,7 +128,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(2147483647);
         expect(arr[1]).assertEqual(2147483647);
         expect(arr[2]).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0700
@@ -144,7 +144,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(-2147483648);
         expect(arr[1]).assertEqual(-2147483648);
         expect(arr[2]).assertEqual(-2147483648);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0800
@@ -160,7 +160,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(0);
         expect(arr[1]).assertEqual(0);
         expect(arr[2]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_0900
@@ -176,7 +176,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual("");
         expect(arr[1]).assertEqual("");
         expect(arr[2]).assertEqual("");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1000
@@ -192,7 +192,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual("\u4e2d\u6587");
         expect(arr[1]).assertEqual("\u4e2d\u6587");
         expect(arr[2]).assertEqual("\u4e2d\u6587");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1100
@@ -208,7 +208,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual("<script>alert(1)</script>");
         expect(arr[1]).assertEqual("<script>alert(1)</script>");
         expect(arr[2]).assertEqual("<script>alert(1)</script>");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1200
@@ -226,7 +226,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(9);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1300
@@ -244,7 +244,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(9);
         expect(arr[4]).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1400
@@ -260,7 +260,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1500
@@ -276,7 +276,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(4);
         expect(arr[2]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1600
@@ -292,7 +292,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(9);
         expect(arr[1]).assertEqual(9);
         expect(arr[2]).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1700
@@ -308,7 +308,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(9);
         expect(arr[2]).assertEqual(9);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1800
@@ -326,7 +326,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(4);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_1900
@@ -342,7 +342,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2000
@@ -358,7 +358,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2100
@@ -376,7 +376,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(9);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2200
@@ -393,7 +393,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(4);
         expect(arr[1]).assertEqual(4);
         expect(arr[2]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2300
@@ -409,7 +409,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(5);
         expect(arr[1]).assertEqual(5);
         expect(arr[2]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2400
@@ -423,7 +423,7 @@ export default function SparseArrayFillTest(): void {
         const arr = new SparseArray<int>();
         arr.fill(1);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2500
@@ -443,7 +443,7 @@ export default function SparseArrayFillTest(): void {
         expect(arr[2]).assertEqual(9);
         expect(arr[3]).assertEqual(9);
         expect(arr[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_2600
@@ -566,6 +566,75 @@ export default function SparseArrayFillTest(): void {
         expect(arr[0]).assertEqual(" ");
         expect(arr[1]).assertEqual(" ");
         expect(arr[2]).assertEqual(" ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_3400
+     * @tc.name testSparseArrayFill034
+     * @tc.desc fill SparseArray<boolean> with range and preserves values outside range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFill034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, true, true, true);
+        arr.fill(false, 1, 3);
+        expect(arr[0]).assertEqual(true);
+        expect(arr[1]).assertEqual(false);
+        expect(arr[2]).assertEqual(false);
+        expect(arr[3]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_3500
+     * @tc.name testSparseArrayFill035
+     * @tc.desc fill SparseArray<byte> with byte value over sparse length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFill035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const value: byte = 7 as byte;
+        const arr = new SparseArray<byte>(4);
+        arr[3] = 1 as byte;
+        arr.fill(value, 1);
+        expect(arr[0]).assertUndefined();
+        expect(arr[1]).assertEqual(value);
+        expect(arr[2]).assertEqual(value);
+        expect(arr[3]).assertEqual(value);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_3600
+     * @tc.name testSparseArrayFill036
+     * @tc.desc fill with start equal end leaves SparseArray unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFill036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 3);
+        const result = arr.fill(9, 2, 2);
+        expect(result).assertEqual(arr);
+        expect(arr[0]).assertEqual(1);
+        expect(arr[1]).assertEqual(2);
+        expect(arr[2]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FILL_3700
+     * @tc.name testSparseArrayFill037
+     * @tc.desc fill with negative start fills from computed start index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFill037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        arr.fill(c'Z', -2);
+        expect(arr[0]).assertEqual(c'A');
+        expect(arr[1]).assertEqual(c'Z');
+        expect(arr[2]).assertEqual(c'Z');
     });
 
   });

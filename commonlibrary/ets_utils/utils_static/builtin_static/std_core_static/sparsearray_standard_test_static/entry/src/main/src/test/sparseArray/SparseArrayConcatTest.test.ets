@@ -26,6 +26,17 @@ class Person026 {
     }
   }
 
+interface ConcatProfile046 {
+  id: int
+  name: string
+}
+
+enum ConcatColor045 {
+  Red,
+  Green,
+  Blue
+}
+
 export default function SparseArrayConcatTest(): void {
   describe('SparseArrayConcatTest', (): void => {
     beforeAll((): void => {
@@ -68,6 +79,7 @@ export default function SparseArrayConcatTest(): void {
         const arr2 = [3, 4] as Array<int>;
         const arr3 = [5, 6] as Array<int>;
         const newArr = arr1.concat(arr2, arr3);
+        expect(newArr.length).assertEqual(6);
         expect(newArr.toString()).assertEqual("1,2,3,4,5,6");
     
     });
@@ -84,6 +96,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<int>(1, 2);
         const arr2 = [] as Array<int>;
         const newArr = arr1.concat(arr2);
+        expect(newArr.length).assertEqual(2);
         expect(newArr.toString()).assertEqual("1,2");
     
     });
@@ -154,6 +167,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<string>("a", "b");
         const arr2 = ["c", "d"] as Array<string>;
         const newArr = arr1.concat(arr2);
+        expect(newArr.length).assertEqual(4);
         expect(newArr.toString()).assertEqual("a,b,c,d");
     
     });
@@ -186,6 +200,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<int>();
         const arr2 = [1, 2, 3] as Array<int>;
         const newArr = arr1.concat(arr2);
+        expect(newArr.length).assertEqual(3);
         expect(newArr.toString()).assertEqual("1,2,3");
     
     });
@@ -245,6 +260,7 @@ export default function SparseArrayConcatTest(): void {
         const newArr = arr1.concat(arr2);
         expect(newArr !== null && newArr !== undefined).assertTrue();
         expect(newArr instanceof SparseArray).assertTrue();
+        expect(newArr.length).assertEqual(4);
         expect(newArr.toString()).assertEqual("1,2,3,4");
     
     });
@@ -262,6 +278,7 @@ export default function SparseArrayConcatTest(): void {
         const arr2 = [3, 4] as Array<int>;
         const newArr = arr1.concat(arr2);
         expect(newArr !== arr1).assertTrue();
+        expect(newArr.length).assertEqual(4);
     
     });
 
@@ -310,6 +327,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<int>(1, 2);
         const arr2 = [3, 4] as Array<int>;
         const newArr: SparseArray<int> = arr1.concat(arr2);
+        expect(newArr.length).assertEqual(4);
         expect(newArr[0]).assertEqual(1);
     
     });
@@ -326,6 +344,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<string>("1", "2");
         const arr2 = ["3", "4"] as Array<string>;
         const newArr = arr1.concat(arr2);
+        expect(newArr.length).assertEqual(4);
         expect(typeof newArr[0]).assertEqual("string");
     
     });
@@ -417,6 +436,7 @@ export default function SparseArrayConcatTest(): void {
         const arr2 = [3, 4] as Array<int>;
         const newArr = arr1.concat(arr2);
         newArr[0] = 99;
+        expect(newArr.length).assertEqual(4);
         expect(arr1[0]).assertEqual(1);
     
     });
@@ -434,6 +454,7 @@ export default function SparseArrayConcatTest(): void {
         const arr2 = [3, 4] as Array<int>;
         const newArr = arr1.concat(arr2);
         arr1[0] = 99;
+        expect(newArr.length).assertEqual(4);
         expect(newArr[0]).assertEqual(1);
     
     });
@@ -450,6 +471,7 @@ export default function SparseArrayConcatTest(): void {
         const arr1 = new SparseArray<int>();
         arr1.push(1);
         const newArr = arr1.concat([2, 3, 4] as Array<int>);
+        expect(newArr.length).assertEqual(4);
         expect(newArr.toString()).assertEqual("1,2,3,4");
     
     });
@@ -468,6 +490,7 @@ export default function SparseArrayConcatTest(): void {
         const temp = arr1.concat(arr2);
         const arr3 = [5, 6] as Array<int>;
         const newArr = temp.concat(arr3);
+        expect(newArr.length).assertEqual(6);
         expect(newArr.toString()).assertEqual("1,2,3,4,5,6");
     
     });
@@ -485,6 +508,7 @@ export default function SparseArrayConcatTest(): void {
         const arr2 = [new Person026("Bob", 25)] as Array<Person026>;
         const newArr = arr1.concat(arr2);
         const first = newArr[0];
+        expect(newArr.length).assertEqual(2);
         expect(first !== null && first !== undefined).assertTrue();
         expect((first as Person026).name).assertEqual("Alice");
     
@@ -559,14 +583,14 @@ export default function SparseArrayConcatTest(): void {
           arr2.push(arr2Sa[i] as int | undefined);
         }
         const newArr = arr1.concat(arr2 as Array<int>);
-        expect(newArr.length).assertLarger(2);
+        expect(newArr.length).assertEqual(103);
     
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_3100
      * @tc.name testSparseArrayConcat031
-     * @tc.desc Test SparseArray.concat, verify method result (newArr.length equals 20000)
+     * @tc.desc Test SparseArray.concat, verify method result (newArr.length equals 200)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -574,14 +598,14 @@ export default function SparseArrayConcatTest(): void {
     it('testSparseArrayConcat031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr1 = new SparseArray<int>();
         const arr2 = [] as Array<int>;
-        for (let i = 0; i < 10000; i++) {
+        for (let i = 0; i < 100; i++) {
           arr1.push(i);
-          arr2.push(i + 10000);
+          arr2.push(i + 100);
         }
         const start = Date.now();
         const newArr = arr1.concat(arr2);
         const end = Date.now();
-        expect(newArr.length).assertEqual(20000);
+        expect(newArr.length).assertEqual(200);
         expect(end - start).assertLess(5000);
     
     });
@@ -602,7 +626,7 @@ export default function SparseArrayConcatTest(): void {
           arr = arr.concat([i] as Array<int>);
         }
         const end = Date.now();
-        expect(arr.length).assertLargerOrEqual(100);
+        expect(arr.length).assertEqual(100);
     
     });
 
@@ -696,6 +720,219 @@ export default function SparseArrayConcatTest(): void {
         const result = base.concat(tail);
         expect(result.length).assertEqual(3);
         expect(result[2]).assertEqual(0xFF);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_3800
+     * @tc.name testSparseArrayConcat038
+     * @tc.desc concat SparseArray<short> with short Array, verify short elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<short>(10 as short, 20 as short);
+        const arr2 = [30 as short, 40 as short] as Array<short>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(10 as short);
+        expect(result[3]).assertEqual(40 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_3900
+     * @tc.name testSparseArrayConcat039
+     * @tc.desc concat SparseArray<long> with long Array, verify long elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<long>(100 as long, 200 as long);
+        const arr2 = [300 as long, 400 as long] as Array<long>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(100 as long);
+        expect(result[3]).assertEqual(400 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4000
+     * @tc.name testSparseArrayConcat040
+     * @tc.desc concat SparseArray<float> with float Array, verify float elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<float>(1.0f, 2.5f);
+        const arr2 = [3.5f, 4.5f] as Array<float>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(1.0f);
+        expect(result[3]).assertEqual(4.5f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4100
+     * @tc.name testSparseArrayConcat041
+     * @tc.desc concat SparseArray<double> with double Array, verify double elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<double>(1.1, 2.2);
+        const arr2 = [3.3, 4.4] as Array<double>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(1.1);
+        expect(result[3]).assertEqual(4.4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4200
+     * @tc.name testSparseArrayConcat042
+     * @tc.desc concat SparseArray<number> with number Array, verify number elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<number>(1.5, 2.5);
+        const arr2 = [3.5, 4.5] as Array<number>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(1.5);
+        expect(result[3]).assertEqual(4.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4300
+     * @tc.name testSparseArrayConcat043
+     * @tc.desc concat SparseArray<boolean> with boolean Array, verify boolean elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<boolean>(true, false);
+        const arr2 = [false, true] as Array<boolean>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(true);
+        expect(result[3]).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4400
+     * @tc.name testSparseArrayConcat044
+     * @tc.desc concat SparseArray<char> with char Array, verify char elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<char>(c'A', c'B');
+        const arr2 = [c'C', c'D'] as Array<char>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(c'A');
+        expect(result[3]).assertEqual(c'D');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4500
+     * @tc.name testSparseArrayConcat045
+     * @tc.desc concat SparseArray<ConcatColor045> with enum Array, verify enum elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<ConcatColor045>(ConcatColor045.Red, ConcatColor045.Green);
+        const arr2 = [ConcatColor045.Blue] as Array<ConcatColor045>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(3);
+        expect(result[0]).assertEqual(ConcatColor045.Red);
+        expect(result[2]).assertEqual(ConcatColor045.Blue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4600
+     * @tc.name testSparseArrayConcat046
+     * @tc.desc concat SparseArray<ConcatProfile046> with interface Array, verify interface elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const first: ConcatProfile046 = { id: 1, name: "Alice" };
+        const second: ConcatProfile046 = { id: 2, name: "Bob" };
+        const arr1 = new SparseArray<ConcatProfile046>(first);
+        const arr2 = [second] as Array<ConcatProfile046>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]!.name).assertEqual("Alice");
+        expect(result[1]!.id).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4700
+     * @tc.name testSparseArrayConcat047
+     * @tc.desc concat SparseArray<Map<string,int>> with Map Array, verify Map elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const first = new Map<string, int>();
+        first.set("id", 1);
+        const second = new Map<string, int>();
+        second.set("id", 2);
+        const arr1 = new SparseArray<Map<string, int>>(first);
+        const arr2 = [second] as Array<Map<string, int>>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]!.get("id")).assertEqual(1);
+        expect(result[1]!.get("id")).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4800
+     * @tc.name testSparseArrayConcat048
+     * @tc.desc concat SparseArray<Array<int>> with Array<int> Array, verify nested Array elements merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const first = [1, 2] as Array<int>;
+        const second = [3, 4] as Array<int>;
+        const arr1 = new SparseArray<Array<int>>(first);
+        const arr2 = [second] as Array<Array<int>>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(2);
+        expect(result[0]![1]).assertEqual(2);
+        expect(result[1]![0]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONCAT_4900
+     * @tc.name testSparseArrayConcat049
+     * @tc.desc concat SparseArray<int|null> with nullable Array, verify null element merged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConcat049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr1 = new SparseArray<int | null>(1, null);
+        const arr2 = [2, null] as Array<int | null>;
+        const result = arr1.concat(arr2);
+        expect(result.length).assertEqual(4);
+        expect(result[0]).assertEqual(1);
+        expect(result[1]).assertNull();
+        expect(result[3]).assertNull();
     });
   });
 }

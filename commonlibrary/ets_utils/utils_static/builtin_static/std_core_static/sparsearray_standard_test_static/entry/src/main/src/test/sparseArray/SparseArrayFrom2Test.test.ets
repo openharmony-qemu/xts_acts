@@ -206,7 +206,7 @@ export default function SparseArrayFrom2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FROM_2_0011
      * @tc.name testSparseArrayFrom011
-     * @tc.desc Test SparseArray.from with string Array, verify SparseArray content (arr.length equals 2, arr[0] equals "你")
+     * @tc.desc Test SparseArray.from with localized string Array, verify SparseArray content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -457,9 +457,8 @@ export default function SparseArrayFrom2Test(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testSparseArrayFrom027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 下面的代码应该在编译时报错
         // const arr = SparseArray.from<string>([1, 2, 3])
         const arr = SparseArray.from<int, int>([1, 2, 3], (v: int, k: int): int => v)
         expect(arr instanceof SparseArray).assertTrue()

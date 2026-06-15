@@ -28,7 +28,7 @@ export default function SparseArrayEntriesTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -80,7 +80,7 @@ export default function SparseArrayEntriesTest(): void {
         expect(pair[1]).assertEqual(3);
         result = iterator.next();
         expect(result.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0300
@@ -98,7 +98,7 @@ export default function SparseArrayEntriesTest(): void {
         expect(result!.done).assertEqual(false);
         expect(pair[0]).assertEqual(0);
         expect(pair[1]).assertEqual("a");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0400
@@ -128,7 +128,7 @@ export default function SparseArrayEntriesTest(): void {
         expect(pairs[1][1]).assertEqual(30);
         expect(pairs[2][0]).assertEqual(4);
         expect(pairs[2][1]).assertEqual(50);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0500
@@ -143,7 +143,7 @@ export default function SparseArrayEntriesTest(): void {
         const iterator = arr.entries();
         const result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0600
@@ -164,7 +164,7 @@ export default function SparseArrayEntriesTest(): void {
         const tup = result.value as [int, Person006];
         expect(tup[1].name).assertEqual("Alice");
         expect(tup[1].age).assertEqual(25);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0700
@@ -181,7 +181,7 @@ export default function SparseArrayEntriesTest(): void {
         const result2 = iterator.next();
         expect(result1!.done).assertEqual(true);
         expect(result2!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0800
@@ -204,7 +204,7 @@ export default function SparseArrayEntriesTest(): void {
           result = iterator.next();
         }
         expect(count).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_0900
@@ -225,7 +225,7 @@ export default function SparseArrayEntriesTest(): void {
         expect(e1[1]).assertEqual(1);
         expect(e2[0]).assertEqual(1);
         expect(e2[1]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_1000
@@ -251,7 +251,7 @@ export default function SparseArrayEntriesTest(): void {
         expect(a2[1]).assertEqual(1);
         expect(a3[0]).assertEqual(1);
         expect(a3[1]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_1100
@@ -301,6 +301,57 @@ export default function SparseArrayEntriesTest(): void {
         pair = it.next().value as [int, int | null];
         expect(pair[0]).assertEqual(0x2);
         expect(pair[1]).assertEqual(null);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_1400
+     * @tc.name testSparseArrayEntries014
+     * @tc.desc entries iterator on SparseArray<boolean> yields false then true values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayEntries014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(false, true);
+        const iterator = arr.entries();
+        const first = iterator.next().value as [int, boolean];
+        const second = iterator.next().value as [int, boolean];
+        expect(first[0]).assertEqual(0);
+        expect(first[1]).assertFalse();
+        expect(second[0]).assertEqual(1);
+        expect(second[1]).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_1500
+     * @tc.name testSparseArrayEntries015
+     * @tc.desc entries iterator on SparseArray<char> yields char value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayEntries015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const iterator = arr.entries();
+        const first = iterator.next().value as [int, char];
+        expect(first[0]).assertEqual(0);
+        expect(first[1]).assertEqual(c'A');
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_ENTRIES_1600
+     * @tc.name testSparseArrayEntries016
+     * @tc.desc entries iterator skips holes and yields assigned high index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayEntries016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(6);
+        arr[5] = "tail";
+        const iterator = arr.entries();
+        const first = iterator.next().value as [int, string];
+        const done = iterator.next();
+        expect(first[0]).assertEqual(5);
+        expect(first[1]).assertEqual("tail");
+        expect(done.done).assertTrue();
     });
 
 

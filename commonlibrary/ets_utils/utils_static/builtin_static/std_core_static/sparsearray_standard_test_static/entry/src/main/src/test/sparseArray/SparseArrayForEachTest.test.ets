@@ -20,35 +20,35 @@ import Utils from '../Util.test';
 type SparseArrayIntForEachCallback = (value: int, index: int, array: SparseArray<int>) => void;
 
 class Point007 {
-    x: int = 0;
-    y: int = 0;
-  }
+  x: int = 0;
+  y: int = 0;
+}
 
 class CustomError050 extends Error {
-    constructor(message: string) {
-      super(message);
-      this.name = "CustomError050";
-    }
+  constructor(message: string) {
+    super(message);
+    this.name = "CustomError050";
   }
+}
 
 class Point059 {
-    x: int = 0;
-    y: int = 0;
-  }
+  x: int = 0;
+  y: int = 0;
+}
 
 class Counter065 {
-    count: int = 0;
-    increment(value: int): void {
-      this.count++;
-    }
+  count: int = 0;
+  increment(value: int): void {
+    this.count++;
   }
+}
 
 class Counter066 {
-    count: int = 0;
-    process(value: int): void {
-      this.count += value;
-    }
+  count: int = 0;
+  process(value: int): void {
+    this.count += value;
   }
+}
 
 export default function SparseArrayForEachTest(): void {
   describe('SparseArrayForEachTest', (): void => {
@@ -56,7 +56,7 @@ export default function SparseArrayForEachTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -76,7 +76,7 @@ export default function SparseArrayForEachTest(): void {
         arr.forEach((value: int, index: int, array: SparseArray<int>) => {
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -93,7 +93,7 @@ export default function SparseArrayForEachTest(): void {
           expect(typeof value).assertEqual("int");
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -110,7 +110,7 @@ export default function SparseArrayForEachTest(): void {
           expect(typeof value).assertEqual("string");
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -127,7 +127,7 @@ export default function SparseArrayForEachTest(): void {
           expect(typeof value).assertEqual("boolean");
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -146,7 +146,7 @@ export default function SparseArrayForEachTest(): void {
           expect(typeof value).assertEqual("object");
         });
         expect(arr.length).assertEqual(2);
-    
+
     });
 
     /**
@@ -163,13 +163,13 @@ export default function SparseArrayForEachTest(): void {
           expect(value !== undefined).assertTrue();
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_0700
      * @tc.name testSparseArrayForEach007
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -177,8 +177,8 @@ export default function SparseArrayForEachTest(): void {
     it('testSparseArrayForEach007', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
-        arr.forEach((null as Object) as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach((null as Object) as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -187,7 +187,7 @@ export default function SparseArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_0800
      * @tc.name testSparseArrayForEach008
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -195,8 +195,8 @@ export default function SparseArrayForEachTest(): void {
     it('testSparseArrayForEach008', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
-        arr.forEach((undefined as Object) as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach((undefined as Object) as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -205,7 +205,7 @@ export default function SparseArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_0900
      * @tc.name testSparseArrayForEach009
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,8 +213,8 @@ export default function SparseArrayForEachTest(): void {
     it('testSparseArrayForEach009', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
-        arr.forEach(("not a function" as Object) as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach(("not a function" as Object) as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -235,7 +235,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -253,7 +253,7 @@ export default function SparseArrayForEachTest(): void {
           expect(value).assertEqual(2147483647 as int);
         });
         expect(arr.length).assertEqual(1);
-    
+
     });
 
     /**
@@ -271,7 +271,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(1);
-    
+
     });
 
     /**
@@ -289,7 +289,7 @@ export default function SparseArrayForEachTest(): void {
           expect(value.length).assertEqual(10000);
         });
         expect(arr.length).assertEqual(1);
-    
+
     });
 
     /**
@@ -306,7 +306,7 @@ export default function SparseArrayForEachTest(): void {
           expect(index >= 0).assertTrue();
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -325,7 +325,7 @@ export default function SparseArrayForEachTest(): void {
           currentIndex++;
         });
         expect(currentIndex).assertEqual(4);
-    
+
     });
 
     /**
@@ -348,7 +348,7 @@ export default function SparseArrayForEachTest(): void {
           }
         });
         expect(invoked).assertTrue();
-    
+
     });
 
     /**
@@ -366,7 +366,7 @@ export default function SparseArrayForEachTest(): void {
           lastIndex = index;
         });
         expect(lastIndex).assertEqual(arr.length - 1);
-    
+
     });
 
     /**
@@ -384,7 +384,7 @@ export default function SparseArrayForEachTest(): void {
           expect(array).assertEqual(arr);
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -400,7 +400,7 @@ export default function SparseArrayForEachTest(): void {
         arr.forEach((_value: int, _index: int, _array: SparseArray<int>): void => {
         });
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -421,7 +421,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(3);
-    
+
     });
 
     /**
@@ -441,7 +441,7 @@ export default function SparseArrayForEachTest(): void {
           lastIndex = index;
         });
         expect(lastIndex).assertEqual(4);
-    
+
     });
 
     /**
@@ -461,7 +461,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(2);
-    
+
     });
 
     /**
@@ -479,7 +479,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-    
+
     });
 
     /**
@@ -497,7 +497,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(0);
-    
+
     });
 
     /**
@@ -520,7 +520,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(lastIndex).assertEqual(9);
-    
+
     });
 
     /**
@@ -543,7 +543,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(previousIndex).assertEqual(9);
-    
+
     });
 
     /**
@@ -556,10 +556,10 @@ export default function SparseArrayForEachTest(): void {
      */
     it('testSparseArrayForEach027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
-          const result = arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
+        const result = arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
         });
         expect(result).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -572,11 +572,11 @@ export default function SparseArrayForEachTest(): void {
      */
     it('testSparseArrayForEach028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
-          const result = arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
+        const result = arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
           return;
         });
         expect(result).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -593,7 +593,7 @@ export default function SparseArrayForEachTest(): void {
         arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
         });
         expect(arr.length).assertEqual(originalLength);
-    
+
     });
 
     /**
@@ -614,7 +614,7 @@ export default function SparseArrayForEachTest(): void {
           }
         });
         expect(callCount).assertEqual(3);
-    
+
     });
 
     /**
@@ -633,13 +633,13 @@ export default function SparseArrayForEachTest(): void {
         expect(arr[0]).assertEqual(2);
         expect(arr[1]).assertEqual(4);
         expect(arr[2]).assertEqual(6);
-    
+
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_3200
      * @tc.name testSparseArrayForEach032
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -647,8 +647,8 @@ export default function SparseArrayForEachTest(): void {
     it('testSparseArrayForEach032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
-        arr.forEach((123 as Object) as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach((123 as Object) as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -657,7 +657,7 @@ export default function SparseArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_3300
      * @tc.name testSparseArrayForEach033
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -666,8 +666,8 @@ export default function SparseArrayForEachTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
           const badCb: Object = new Object();
-        arr.forEach(badCb as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach(badCb as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -676,7 +676,7 @@ export default function SparseArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_3400
      * @tc.name testSparseArrayForEach034
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "ClassCastError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -685,8 +685,8 @@ export default function SparseArrayForEachTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
           const badCb: Object = new Array<int>();
-        arr.forEach(badCb as SparseArrayIntForEachCallback);
-        expect().assertFail();
+          arr.forEach(badCb as SparseArrayIntForEachCallback);
+          expect().assertFail();
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
@@ -720,7 +720,7 @@ export default function SparseArrayForEachTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FOR_EACH_3600
      * @tc.name testSparseArrayForEach036
-     * @tc.desc Test SparseArray.for Each error path, verify expected exception is thrown (assertFail is triggered, error.name equals "TypeError")
+     * @tc.desc Test SparseArray.forEach error path, verify expected exception is thrown (assertFail is triggered, error.name equals "TypeError")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -728,7 +728,7 @@ export default function SparseArrayForEachTest(): void {
     it('testSparseArrayForEach036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3);
         try {
-        arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
+          arr.forEach((value: int, _index: int, _array: SparseArray<int>) => {
             throw new TypeError("type error");
           });
           expect().assertFail();
@@ -805,7 +805,7 @@ export default function SparseArrayForEachTest(): void {
         });
         expect(callCount).assertLargerOrEqual(3);
         expect(arr.length).assertEqual(4);
-    
+
     });
 
     /**
@@ -823,7 +823,7 @@ export default function SparseArrayForEachTest(): void {
           count++;
         });
         expect(count).assertEqual(3);
-    
+
     });
 
     /**
@@ -835,19 +835,19 @@ export default function SparseArrayForEachTest(): void {
      * @tc.level Level 2
      */
     it('testSparseArrayForEach041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new SparseArray<int>(1, 2, 3);
-      let count = 0;
-      arr.forEach((value: int, index: int, array: SparseArray<int>) => {
-        expect(value).assertEqual(index + 1);
-        if (index < array.length - 1) {
-          const nextValue = array.$_get(index + 1);
-          expect(nextValue).assertEqual(value + 1);
-        }
-        count++;
-      });
-      expect(count).assertEqual(3);
-      expect(arr instanceof SparseArray).assertTrue();
-    
+        const arr = new SparseArray<int>(1, 2, 3);
+        let count = 0;
+        arr.forEach((value: int, index: int, array: SparseArray<int>) => {
+          expect(value).assertEqual(index + 1);
+          if (index < array.length - 1) {
+            const nextValue = array.$_get(index + 1);
+            expect(nextValue).assertEqual(value + 1);
+          }
+          count++;
+        });
+        expect(count).assertEqual(3);
+        expect(arr instanceof SparseArray).assertTrue();
+
     });
 
     /**
@@ -865,7 +865,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -883,7 +883,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -901,7 +901,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(4);
-    
+
     });
 
     /**
@@ -921,7 +921,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(2);
-    
+
     });
 
     /**
@@ -940,7 +940,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(1);
-    
+
     });
 
     /**
@@ -958,7 +958,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(2);
-    
+
     });
 
     /**
@@ -971,7 +971,7 @@ export default function SparseArrayForEachTest(): void {
      */
     it('testSparseArrayForEach048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
-          for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 1000; i++) {
           arr.push(i);
         }
         let callCount = 0;
@@ -979,7 +979,7 @@ export default function SparseArrayForEachTest(): void {
           callCount++;
         });
         expect(callCount).assertEqual(1000);
-    
+
     });
 
     /**
@@ -996,7 +996,7 @@ export default function SparseArrayForEachTest(): void {
         });
 
         expect(arr.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -1014,7 +1014,7 @@ export default function SparseArrayForEachTest(): void {
           counter.increment(value);
         });
         expect(counter.count).assertEqual(3);
-    
+
     });
 
     /**
@@ -1032,7 +1032,7 @@ export default function SparseArrayForEachTest(): void {
           counter.process(value);
         });
         expect(counter.count).assertEqual(6);
-    
+
     });
 
     /**

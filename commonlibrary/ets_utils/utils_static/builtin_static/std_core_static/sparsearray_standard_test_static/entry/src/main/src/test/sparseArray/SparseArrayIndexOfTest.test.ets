@@ -31,7 +31,7 @@ export default function SparseArrayIndexOfTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -52,7 +52,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[2] = 20;
         const index = arr.indexOf(20);
         expect(index).assertEqual(2);
-    
+
     });
 
     /**
@@ -69,7 +69,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[2] = 20;
         const index = arr.indexOf(20, 1);
         expect(index).assertEqual(2);
-    
+
     });
 
     /**
@@ -84,7 +84,7 @@ export default function SparseArrayIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9);
       const result = arr.indexOf(7);
       expect(result).assertEqual(-1);
-    
+
     });
 
     /**
@@ -100,7 +100,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = -2147483648;
         const index = arr.indexOf(-2147483648);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -116,7 +116,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = null;
         const index = arr.indexOf(null);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -132,7 +132,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = undefined;
         const index = arr.indexOf(undefined);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -150,7 +150,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[4] = 20;
         const index = arr.indexOf(20);
         expect(index).assertEqual(2);
-    
+
     });
 
     /**
@@ -165,7 +165,7 @@ export default function SparseArrayIndexOfTest(): void {
         const arr = new SparseArray<int>();
         const index = arr.indexOf(10);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -180,7 +180,7 @@ export default function SparseArrayIndexOfTest(): void {
         const arr = new SparseArray<int>(5);
         const index = arr.indexOf(10);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -197,7 +197,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[4] = 20;
         const index = arr.indexOf(20);
         expect(index).assertEqual(4);
-    
+
     });
 
     /**
@@ -214,7 +214,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[4] = 20;
         const index = arr.indexOf(20, 2);
         expect(index).assertEqual(4);
-    
+
     });
 
     /**
@@ -229,7 +229,7 @@ export default function SparseArrayIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9, 2);
       const result = arr.indexOf(2);
       expect(result).assertEqual(0);
-    
+
     });
 
     /**
@@ -244,7 +244,7 @@ export default function SparseArrayIndexOfTest(): void {
       const arr = new SparseArray<int>(2, 5, 9, 2);
       const result = arr.indexOf(2, 1);
       expect(result).assertEqual(3);
-    
+
     });
 
     /**
@@ -260,7 +260,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[9] = 100;
         const index = arr.indexOf(100);
         expect(index).assertEqual(9);
-    
+
     });
 
     /**
@@ -278,7 +278,7 @@ export default function SparseArrayIndexOfTest(): void {
         expect(index).assertEqual(0);
         expect(Number.isInteger(index)).assertTrue();
         expect(arr[0]).assertEqual(10);
-    
+
     });
 
     /**
@@ -293,7 +293,7 @@ export default function SparseArrayIndexOfTest(): void {
         const arr = new SparseArray<int>(42);
         const result = arr.indexOf(42);
         expect(result).assertEqual(-1);
-    
+
     });
 
     /**
@@ -309,7 +309,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = [1, 2, 3];
         const index = arr.indexOf([1, 2, 3]);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -326,7 +326,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = p;
         const index = arr.indexOf(p);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -342,7 +342,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = Double.NaN;
         const index = arr.indexOf(Double.NaN);
         expect(index).assertEqual(-1);
-    
+
     });
 
     /**
@@ -358,7 +358,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = Double.POSITIVE_INFINITY;
         const index = arr.indexOf(Double.POSITIVE_INFINITY);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -374,7 +374,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = Double.NEGATIVE_INFINITY;
         const index = arr.indexOf(Double.NEGATIVE_INFINITY);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -393,7 +393,7 @@ export default function SparseArrayIndexOfTest(): void {
         const index2 = arr.indexOf(20);
         expect(index1).assertEqual(0);
         expect(index2).assertEqual(999);
-    
+
     });
 
     /**
@@ -409,7 +409,7 @@ export default function SparseArrayIndexOfTest(): void {
         arr[0] = 10;
         const index = arr.indexOf(10, -3);
         expect(index).assertEqual(0);
-    
+
     });
 
     /**
@@ -428,7 +428,7 @@ export default function SparseArrayIndexOfTest(): void {
         expect(arr.indexOf(10, 0)).assertEqual(0);
         expect(arr.indexOf("hello", 1)).assertEqual(2);
         expect(arr.indexOf(true, 3)).assertEqual(4);
-    
+
     });
 
     /**
@@ -516,6 +516,65 @@ export default function SparseArrayIndexOfTest(): void {
         const zw = "\u200B";
         const arr = new SparseArray<string>("a", zw, "c");
         expect(arr.indexOf(zw)).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_OF_3100
+     * @tc.name testSparseArrayIndexOf031
+     * @tc.desc indexOf finds false element in SparseArray<boolean> with fromIndex
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIndexOf031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        expect(arr.indexOf(false, 1)).assertEqual(1);
+        expect(arr.indexOf(false, 2)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_OF_3200
+     * @tc.name testSparseArrayIndexOf032
+     * @tc.desc indexOf finds char element after sparse hole
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIndexOf032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(5);
+        arr[1] = c'A';
+        arr[4] = c'Z';
+        expect(arr.indexOf(c'Z')).assertEqual(4);
+        expect(arr.indexOf(c'A', 2)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_OF_3300
+     * @tc.name testSparseArrayIndexOf033
+     * @tc.desc indexOf finds explicitly stored undefined but skips later holes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIndexOf033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | undefined>(4);
+        arr[1] = undefined;
+        expect(arr.indexOf(undefined)).assertEqual(1);
+        expect(arr.indexOf(undefined, 2)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_INDEX_OF_3400
+     * @tc.name testSparseArrayIndexOf034
+     * @tc.desc indexOf with fromIndex beyond length returns -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIndexOf034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(1, 2, 1);
+        expect(arr.indexOf(1, 3)).assertEqual(-1);
+        expect(arr.indexOf(2, 100)).assertEqual(-1);
     });
   });
 }

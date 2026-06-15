@@ -138,7 +138,7 @@ export default function SparseArrayJoinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_JOIN_0800
      * @tc.name testSparseArrayJoin008
-     * @tc.desc Test SparseArray.join, verify method result (result equals "a分隔b分隔c")
+     * @tc.desc Test SparseArray.join with localized separator, verify method result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -476,7 +476,7 @@ export default function SparseArrayJoinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_JOIN_2900
      * @tc.name testSparseArrayJoin029
-     * @tc.desc Test SparseArray.join, verify method result (result equals "中文-日本語-한글")
+     * @tc.desc Test SparseArray.join with localized strings, verify method result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -30,7 +30,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -49,7 +49,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const arr = new SparseArray<int>();
         expect(arr instanceof SparseArray).assertTrue();
         expect(arr.length).assertEqual(0);
-    
+
     });
 
     /**
@@ -67,7 +67,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         expect(arr2[0]).assertUndefined();
         expect(arr1.length).assertEqual(1);
         expect(arr2.length).assertEqual(0);
-    
+
     });
 
     /**
@@ -84,7 +84,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const el = arr[0];
         expect(el !== null && el !== undefined).assertTrue();
         expect((el as MyObject003).name).assertEqual("test");
-    
+
     });
 
     /**
@@ -101,7 +101,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         arr[1] = "hello";
         expect(arr[0]).assertEqual(42);
         expect(arr[1]).assertEqual("hello");
-    
+
     });
 
     /**
@@ -116,7 +116,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const arr = new SparseArray<int>();
         expect(arr[0]).assertUndefined();
         expect(arr[100]).assertUndefined();
-    
+
     });
 
     /**
@@ -132,7 +132,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         arr[5] = 10;
         expect(arr.length).assertEqual(6);
         expect(arr[0]).assertUndefined();
-    
+
     });
 
     /**
@@ -147,7 +147,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const arr = new SparseArray<int>();
         const val = arr.$_get(0);
         expect(val).assertUndefined();
-    
+
     });
 
     /**
@@ -162,7 +162,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const arr = new SparseArray<int>();
         arr.$_set(0, 100);
         expect(arr[0]).assertEqual(100);
-    
+
     });
 
     /**
@@ -178,7 +178,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         arr[999999] = 1;
         expect(arr[999999]).assertEqual(1);
         expect(arr.length).assertEqual(1000000);
-    
+
     });
 
     /**
@@ -195,7 +195,7 @@ export default function SparseArrayConstructorNoArgTest(): void {
         const val = arr.$_get(-1);
         expect(val).assertUndefined();
         expect(arr.length).assertEqual(0);
-    
+
     });
 
     /**
@@ -211,6 +211,68 @@ export default function SparseArrayConstructorNoArgTest(): void {
         arr.$_set(0x2, 0b11);
         expect(arr.$_get(0x2)).assertEqual(0b11);
         expect(arr.length).assertEqual(3);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONSTRUCTOR_NO_ARG_0012
+     * @tc.name testSparseArrayConstructorNoArg012
+     * @tc.desc default constructor SparseArray<boolean> stores boolean values by index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConstructorNoArg012', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>();
+        arr[0] = false;
+        arr[2] = true;
+        expect(arr.length).assertEqual(3);
+        expect(arr[0]).assertFalse();
+        expect(arr[1]).assertUndefined();
+        expect(arr[2]).assertTrue();
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONSTRUCTOR_NO_ARG_0013
+     * @tc.name testSparseArrayConstructorNoArg013
+     * @tc.desc default constructor SparseArray<char> stores char value at index 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConstructorNoArg013', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>();
+        arr[0] = c'Z';
+        expect(arr.length).assertEqual(1);
+        expect(arr[0]).assertEqual(c'Z');
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONSTRUCTOR_NO_ARG_0014
+     * @tc.name testSparseArrayConstructorNoArg014
+     * @tc.desc default constructor SparseArray<long> stores long value at sparse index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConstructorNoArg014', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>();
+        arr[1] = 10000000000 as long;
+        expect(arr.length).assertEqual(2);
+        expect(arr[0]).assertUndefined();
+        expect(arr[1]).assertEqual(10000000000 as long);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_CONSTRUCTOR_NO_ARG_0015
+     * @tc.name testSparseArrayConstructorNoArg015
+     * @tc.desc default constructor SparseArray<int|null> stores null element explicitly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayConstructorNoArg015', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int | null>();
+        arr[0] = null;
+        arr[1] = 7;
+        expect(arr.length).assertEqual(2);
+        expect(arr[0]).assertEqual(null);
+        expect(arr[1]).assertEqual(7);
     });
 
   });

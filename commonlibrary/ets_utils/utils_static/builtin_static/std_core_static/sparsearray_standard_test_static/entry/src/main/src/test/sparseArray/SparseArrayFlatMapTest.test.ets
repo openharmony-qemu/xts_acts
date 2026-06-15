@@ -22,7 +22,7 @@ export default function SparseArrayFlatMapTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -45,7 +45,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result[0]).assertEqual(1);
         expect(result[1]).assertEqual(2);
         expect(result[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0200
@@ -78,7 +78,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result![0]).assertEqual(2);
         expect(result![1]).assertEqual(4);
         expect(result![2]).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0400
@@ -94,7 +94,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result![0]).assertEqual(1);
         expect(result![1]).assertEqual(3);
         expect(result![2]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0500
@@ -110,7 +110,6 @@ export default function SparseArrayFlatMapTest(): void {
         x.push(1, 3, 5);
         x.push(inner);
         let res = x.flatMap<int | SparseArray<int>>((v) => v);
-        // OH：flatMap 为逐槽映射；槽内已是 SparseArray 时 identity 不会把内层再摊成多个 int（见 testSparseArrayFlatMap012）
         expect(res instanceof SparseArray).assertTrue();
         expect(res!.length).assertEqual(4);
         expect(res![0]).assertEqual(1);
@@ -122,7 +121,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(tail006![1]).assertEqual(55);
         expect(tail006![2]).assertEqual(66);
         expect(tail006 === inner).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0600
@@ -138,7 +137,7 @@ export default function SparseArrayFlatMapTest(): void {
         const result = arr.flatMap<int>((v) => v);
         expect(result instanceof SparseArray).assertTrue();
         expect(result!.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0700
@@ -156,7 +155,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result![0]).assertNull();
         expect(result![1]).assertNull();
         expect(result![2]).assertNull();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0800
@@ -177,7 +176,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(row1 instanceof SparseArray).assertTrue();
         expect(row1![0]).assertEqual(2);
         expect(row1![1]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_0900
@@ -191,7 +190,7 @@ export default function SparseArrayFlatMapTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.flatMap<int>((_v, i, _a) => i);
         expect(result![2]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1000
@@ -207,7 +206,7 @@ export default function SparseArrayFlatMapTest(): void {
         const result = arr.flatMap<int>((v) => v * 2);
         expect(result!.length).assertEqual(1);
         expect(result![0]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1100
@@ -240,7 +239,7 @@ export default function SparseArrayFlatMapTest(): void {
               arr[2] = 3;
         const result = arr.flatMap<int | undefined>((v) => v);
         expect(result!.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1300
@@ -254,7 +253,7 @@ export default function SparseArrayFlatMapTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.flatMap<int>((v) => v * 2);
         expect(result !== arr).assertTrue();
-        expect(arr[0]).assertEqual(1); // 原数组不变
+        expect(arr[0]).assertEqual(1);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1400
@@ -272,7 +271,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result[0]).assertEqual("1");
         expect(result[1]).assertEqual("2");
         expect(result[2]).assertEqual("3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1500
@@ -287,7 +286,7 @@ export default function SparseArrayFlatMapTest(): void {
         arr[0] = 2147483647;
         const result = arr.flatMap<int>((v) => v);
         expect(result![0]).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1600
@@ -302,7 +301,7 @@ export default function SparseArrayFlatMapTest(): void {
         arr[0] = -2147483648;
         const result = arr.flatMap<int>((v) => v);
         expect(result![0]).assertEqual(-2147483648);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1700
@@ -319,7 +318,7 @@ export default function SparseArrayFlatMapTest(): void {
         }
         const result = arr.flatMap<int>((v) => v * 2);
         expect(result!.length).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_1800
@@ -356,7 +355,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result[0]).assertEqual("1");
         expect(result[1]).assertEqual("2");
         expect(result[2]).assertEqual("3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2000
@@ -375,7 +374,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(2);
         expect(result[1]).assertEqual(8);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2100
@@ -388,13 +387,13 @@ export default function SparseArrayFlatMapTest(): void {
     it('testSparseArrayFlatMap021', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int | undefined>(10);
         expect(arr instanceof SparseArray).assertTrue();
-        arr[0] = undefined; 
+        arr[0] = undefined;
         arr[2] = 2;
         const result = arr.flatMap<int | undefined>((v) => v);
         expect(result!.length).assertEqual(2);
         expect(result![0]).assertUndefined();
         expect(result![1]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2200
@@ -425,7 +424,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(tail045![0]).assertEqual(44);
         expect(tail045![1]).assertEqual(55);
         expect(tail045![2]).assertEqual(66);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2300
@@ -451,7 +450,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(inner instanceof SparseArray).assertTrue();
         expect(inner[0]).assertEqual(1);
         expect(inner[1]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2400
@@ -465,7 +464,7 @@ export default function SparseArrayFlatMapTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.flatMap<int>((v, _k, a) => v + a.length);
         expect(result![0]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2500
@@ -483,7 +482,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result[0]).assertEqual('odd:1');
         expect(result[1]).assertEqual('2');
         expect(result[2]).assertEqual('odd:3');
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2600
@@ -500,7 +499,7 @@ export default function SparseArrayFlatMapTest(): void {
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(4);
         expect(result[1]).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_2700
@@ -552,6 +551,70 @@ export default function SparseArrayFlatMapTest(): void {
           return v;
         });
         expect(result[1]).assertEqual(0b10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_3000
+     * @tc.name testSparseArrayFlatMap030
+     * @tc.desc flatMap maps SparseArray<boolean> elements to string values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlatMap030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false);
+        const result = arr.flatMap<string>((v: boolean): string => v ? "T" : "F");
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual("T");
+        expect(result[1]).assertEqual("F");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_3100
+     * @tc.name testSparseArrayFlatMap031
+     * @tc.desc flatMap preserves char values when mapping SparseArray<char>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlatMap031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        const result = arr.flatMap<char>((v: char): char => v);
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(c'A');
+        expect(result[1]).assertEqual(c'B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_3200
+     * @tc.name testSparseArrayFlatMap032
+     * @tc.desc flatMap compacts sparse high index element into first output slot
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlatMap032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<string>(8);
+        arr[6] = "tail";
+        const result = arr.flatMap<string>((v: string, k: int): string => k.toString() + ":" + v);
+        expect(result.length).assertEqual(1);
+        expect(result[0]).assertEqual("6:tail");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FLAT_MAP_3300
+     * @tc.name testSparseArrayFlatMap033
+     * @tc.desc flatMap callback receives sparse array length and original assigned index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFlatMap033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(4);
+        arr[2] = 10;
+        const result = arr.flatMap<int>((v: int, k: int, a: SparseArray<int>): int => v + k + a.length);
+        expect(result.length).assertEqual(1);
+        expect(result[0]).assertEqual(16);
     });
 
   });

@@ -21,6 +21,10 @@ class IsArrayPlainObj {
   name: string = '';
 }
 
+class IsArrayPlainArrayChild extends Array<int> {
+  label: string = 'child';
+}
+
 function isArrayProcessSparseArray(arr: Any): void {
   expect(SparseArray.isArray(arr)).assertTrue();
 }
@@ -31,7 +35,7 @@ export default function SparseArrayIsArrayTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -48,7 +52,7 @@ export default function SparseArrayIsArrayTest(): void {
      */
     it('testSparseArrayIsArray001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(SparseArray.isArray(new SparseArray<int>())).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_0200
@@ -362,10 +366,8 @@ export default function SparseArrayIsArrayTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testSparseArrayIsArray028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 注意：在ArkTS静态类型检查下，隐式类型转换可能被禁止
-        // 这里主要测试类型系统的行为
         const value: Any = 1
         expect(SparseArray.isArray(value)).assertEqual(false)
     });
@@ -402,7 +404,7 @@ export default function SparseArrayIsArrayTest(): void {
           expect(SparseArray.isArray(arr)).assertTrue()
         }
         expect(SparseArray.isArray(arr)).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3100
@@ -449,6 +451,97 @@ export default function SparseArrayIsArrayTest(): void {
      */
     it('testSparseArrayIsArray034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(SparseArray.isArray(new SparseArray<int>(0x1, 0b10))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3500
+     * @tc.name testSparseArrayIsArray035
+     * @tc.desc isArray returns false for Array subclass instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new IsArrayPlainArrayChild()
+        arr.push(1)
+        expect(arr.label).assertEqual('child')
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3600
+     * @tc.name testSparseArrayIsArray036
+     * @tc.desc isArray returns false for Array created by Array.create
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = Array.create<int>(3, 7)
+        expect(arr.length).assertEqual(3)
+        expect(arr[0]).assertEqual(7)
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+        expect(Array.isArray(arr)).assertEqual(true)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3700
+     * @tc.name testSparseArrayIsArray037
+     * @tc.desc isArray returns false for non-empty plain Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray037', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = [1, 2, 3] as Array<int>
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+        expect(Array.isArray(arr)).assertEqual(true)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3800
+     * @tc.name testSparseArrayIsArray038
+     * @tc.desc isArray returns false for nested plain Array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray038', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const first = [1, 2] as Array<int>
+        const second = [3, 4] as Array<int>
+        const arr = [first, second] as Array<Array<int>>
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+        expect(Array.isArray(arr)).assertEqual(true)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_3900
+     * @tc.name testSparseArrayIsArray039
+     * @tc.desc isArray returns false for plain Array of objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = [new IsArrayPlainObj(), new IsArrayPlainObj()] as Array<IsArrayPlainObj>
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+        expect(Array.isArray(arr)).assertEqual(true)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_IS_ARRAY_4000
+     * @tc.name testSparseArrayIsArray040
+     * @tc.desc isArray returns false for Array converted from SparseArray elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayIsArray040', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const sparseArr = new SparseArray<int>(1, 2, 3)
+        const arr = [sparseArr[0], sparseArr[1], sparseArr[2]] as Array<int | undefined>
+        expect(SparseArray.isArray(sparseArr)).assertTrue()
+        expect(SparseArray.isArray(arr)).assertEqual(false)
+        expect(Array.isArray(arr)).assertEqual(true)
     });
   });
 }

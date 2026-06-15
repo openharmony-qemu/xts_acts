@@ -39,7 +39,7 @@ export default function SparseArrayFindTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -49,18 +49,18 @@ export default function SparseArrayFindTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_0100
      * @tc.name testSparseArrayFind001
-     * @tc.desc Test SparseArray.find, verify method result (arr instanceof SparseArray is true, found equals 3)
+     * @tc.desc Test SparseArray.find, verify method result (length equals 5, found equals 3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSparseArrayFind001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(5);
-        expect(arr instanceof SparseArray).assertTrue();
+        expect(arr.length).assertEqual(5);
         arr.push(1, 2, 3, 4);
         const found = arr.find((v) => v > 2);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -81,7 +81,7 @@ export default function SparseArrayFindTest(): void {
           return value > 2 && index < 4;
         });
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -97,7 +97,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, 2, 3, 4);
         const found = arr.find(findPredGreaterThanTwo004);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -113,7 +113,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, 2, 3, 4);
         const found = arr.find(() => true);
         expect(found).assertEqual(1);
-    
+
     });
 
     /**
@@ -129,7 +129,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, 2, 3, 4);
         const found = arr.find(() => false);
         expect(found).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -166,7 +166,7 @@ export default function SparseArrayFindTest(): void {
         const arr = new SparseArray<int>();
         const found = arr.find((v) => v > 2);
         expect(found).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -182,7 +182,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(0, 2, 3, 4);
         const found = arr.find((v) => v < 1);
         expect(found).assertEqual(0);
-    
+
     });
 
     /**
@@ -198,7 +198,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(undefined, 2, 3, 4);
         const found = arr.find((v) => v === undefined);
         expect(found).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -216,7 +216,7 @@ export default function SparseArrayFindTest(): void {
         expect(found).assertEqual(3);
         found = arr.find((v) => v > 10);
         expect(found).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -232,7 +232,7 @@ export default function SparseArrayFindTest(): void {
         arr[0] = 5;
         const found = arr.find((v) => v > 2);
         expect(found).assertEqual(5);
-    
+
     });
 
     /**
@@ -250,7 +250,7 @@ export default function SparseArrayFindTest(): void {
         }
         const found = arr.find((v) => v === 500);
         expect(found).assertEqual(500);
-    
+
     });
 
     /**
@@ -266,7 +266,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         const found = arr.find((v, i) => v % 3 === 0 && i > 3);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -315,22 +315,18 @@ export default function SparseArrayFindTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_1600
      * @tc.name testSparseArrayFind016
-     * @tc.desc Test SparseArray.find, verify method result (finallyExecuted is true)
+     * @tc.desc Test SparseArray.find, verify method result (found equals 3, length keeps 9)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSparseArrayFind016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let finallyExecuted = false;
         const arr = new SparseArray<int>(5);
         arr.push(1, 2, 3, 4);
-        try {
-          arr.find((v) => v > 2);
-        } finally {
-          finallyExecuted = true;
-        }
-        expect(finallyExecuted).assertTrue();
-    
+        const found = arr.find((v) => v > 2);
+        expect(found).assertEqual(3);
+        expect(arr.length).assertEqual(9);
+
     });
 
     /**
@@ -346,7 +342,7 @@ export default function SparseArrayFindTest(): void {
         arr.push("apple", "banana", "cherry");
         const found = arr.find((s) => s.length > 5);
         expect(found).assertEqual("banana");
-    
+
     });
 
     /**
@@ -362,7 +358,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(false, false, true, true);
         const found = arr.find((b) => b === true);
         expect(found).assertEqual(true);
-    
+
     });
 
     /**
@@ -380,13 +376,13 @@ export default function SparseArrayFindTest(): void {
         arr[4] = c'E';
         const found = arr.find((ch) => ch > c'B');
         expect(found).assertEqual(c'C');
-    
+
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPARSE_ARRAY_FIND_2000
      * @tc.name testSparseArrayFind020
-     * @tc.desc Test SparseArray.find, verify method result (found !== undefined && found !== null is true, found!.name equals "Charlie")
+     * @tc.desc Test SparseArray.find, verify method result (found name equals "Charlie", age equals 35)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -397,9 +393,9 @@ export default function SparseArrayFindTest(): void {
         arr[1] = { name: "Bob", age: 30 };
         arr[2] = { name: "Charlie", age: 35 };
         const found = arr.find((p) => p.age > 30);
-        expect(found !== undefined && found !== null).assertTrue();
         expect(found!.name).assertEqual("Charlie");
-    
+        expect(found!.age).assertEqual(35);
+
     });
 
     /**
@@ -415,7 +411,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, "hello", 3, "world", 5);
         const found = arr.find((item) => (typeof item == "string"));
         expect(found).assertEqual("hello");
-    
+
     });
 
     /**
@@ -431,7 +427,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, undefined, 3, undefined, 5);
         const found = arr.find((item) => item !== undefined && item > 3);
         expect(found).assertEqual(5);
-    
+
     });
 
     /**
@@ -450,7 +446,7 @@ export default function SparseArrayFindTest(): void {
         arr[3] = 4;
         const found = arr.find((v, i) => i === 2);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -466,7 +462,7 @@ export default function SparseArrayFindTest(): void {
         arr.push(1, 2, 3, 4);
         const found = arr.find((v, i, a) => a.length > 3 && v > 2);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -489,7 +485,7 @@ export default function SparseArrayFindTest(): void {
         });
         expect(found).assertEqual(30);
         expect(callCount).assertLessOrEqual(3);
-    
+
     });
 
     /**
@@ -514,7 +510,7 @@ export default function SparseArrayFindTest(): void {
         expect(calledIndices[0]).assertEqual(0);
         expect(calledIndices[1]).assertEqual(2);
         expect(calledIndices[2]).assertEqual(4);
-    
+
     });
 
     /**
@@ -529,7 +525,7 @@ export default function SparseArrayFindTest(): void {
         const arr = new SparseArray<int>(5);
         const found = arr.find((v) => v > 2);
         expect(found).assertEqual(undefined);
-    
+
     });
 
     /**
@@ -549,7 +545,7 @@ export default function SparseArrayFindTest(): void {
         const found = arr.find((v) => v === 9999);
         const endTime = Date.now();
         expect(found).assertEqual(9999);
-    
+
     });
 
     /**
@@ -567,7 +563,7 @@ export default function SparseArrayFindTest(): void {
         }
         const found = arr.find((v) => v === 5000);
         expect(found).assertEqual(5000);
-    
+
     });
 
     /**
@@ -588,7 +584,7 @@ export default function SparseArrayFindTest(): void {
         });
         expect(found).assertEqual(3);
         expect(callCount).assertEqual(3);
-    
+
     });
 
     /**
@@ -612,7 +608,7 @@ export default function SparseArrayFindTest(): void {
           return sum > 100;
         });
         expect(found).assertEqual(15);
-    
+
     });
 
     /**

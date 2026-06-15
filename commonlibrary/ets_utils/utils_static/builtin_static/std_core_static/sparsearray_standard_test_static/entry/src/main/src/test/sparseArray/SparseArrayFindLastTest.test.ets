@@ -30,7 +30,7 @@ export default function SparseArrayFindLastTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -49,7 +49,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const found = arr.findLast((v) => v > 1);
         expect(found).assertEqual(3);
-    
+
     });
 
     /**
@@ -67,7 +67,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[4] = 50;
         const found = arr.findLast((v) => v > 20);
         expect(found).assertEqual(50);
-    
+
     });
 
     /**
@@ -82,7 +82,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const found = arr.findLast((v) => v > 100);
         expect(found).assertUndefined();
-    
+
     });
 
     /**
@@ -97,7 +97,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const found = arr.findLast((v, i) => v % 2 === 0 && i > 2);
         expect(found).assertEqual(4);
-    
+
     });
 
     /**
@@ -115,7 +115,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[5] = 30;
         const found = arr.findLast((v, i) => i === 3);
         expect(found).assertEqual(20);
-    
+
     });
 
     /**
@@ -130,7 +130,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const found = arr.findLast((v, i, a) => a.length > 4);
         expect(found).assertEqual(5);
-    
+
     });
 
     /**
@@ -149,7 +149,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr2 = new SparseArray<string>("a", "b", "c");
         const found2 = arr2.findLast((v) => v > "b");
         expect(found2).assertEqual("c");
-    
+
     });
 
     /**
@@ -164,7 +164,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<number>(1.5, 2.5, 3.5);
         const found = arr.findLast((v) => v > 2.0);
         expect(found).assertEqual(3.5);
-    
+
     });
 
     /**
@@ -186,7 +186,7 @@ export default function SparseArrayFindLastTest(): void {
         arr.push(p1, p2);
         const found = arr.findLast((v) => v.age > 25);
         expect(found).assertEqual(p2);
-    
+
     });
 
     /**
@@ -201,7 +201,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>();
         const found = arr.findLast((v) => v > 0);
         expect(found).assertUndefined();
-    
+
     });
 
     /**
@@ -217,7 +217,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[0] = 42;
         const found = arr.findLast((v) => v > 0);
         expect(found).assertEqual(42);
-    
+
     });
 
     /**
@@ -232,7 +232,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const found = arr.findLast((v) => v < 2);
         expect(found).assertEqual(1);
-    
+
     });
 
     /**
@@ -267,7 +267,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(5);
         const found = arr.findLast((v) => v > 0);
         expect(found).assertUndefined();
-    
+
     });
 
     /**
@@ -286,7 +286,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[6] = 40;
         const found = arr.findLast((v) => v > 25);
         expect(found).assertEqual(40);
-    
+
     });
 
     /**
@@ -301,7 +301,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const found = arr.findLast((v) => v > 2);
         expect(found).assertEqual(5);
-    
+
     });
 
     /**
@@ -316,7 +316,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 2, 1);
         const found = arr.findLast((v) => v === 2);
         expect(found).assertEqual(2);
-    
+
     });
 
     /**
@@ -331,7 +331,7 @@ export default function SparseArrayFindLastTest(): void {
         const arr = new SparseArray<int | null | undefined>(1, null, 2);
         const found = arr.findLast((v) => v === null);
         expect(found).assertNull();
-    
+
     });
 
     /**
@@ -349,7 +349,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[2] = 2;
         const found = arr.findLast((v) => v === undefined);
         expect(found).assertUndefined();
-    
+
     });
 
     /**
@@ -388,7 +388,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[0] = 2147483647;
         const found = arr.findLast((v) => v > 0);
         expect(found).assertEqual(2147483647);
-    
+
     });
 
     /**
@@ -404,7 +404,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[0] = -2147483648;
         const found = arr.findLast((v) => v < 0);
         expect(found).assertEqual(-2147483648);
-    
+
     });
 
     /**
@@ -425,7 +425,7 @@ export default function SparseArrayFindLastTest(): void {
         const endTime = Date.now();
         expect(found).assertEqual(9999);
         expect(endTime - startTime).assertLess(1000);
-    
+
     });
 
     /**
@@ -442,7 +442,7 @@ export default function SparseArrayFindLastTest(): void {
         arr[9999] = 2;
         const found = arr.findLast((v) => v === 2);
         expect(found).assertEqual(2);
-    
+
     });
 
     /**
@@ -507,6 +507,74 @@ export default function SparseArrayFindLastTest(): void {
         } catch (error) {
           expect(error.name).assertEqual("ClassCastError");
         }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_LAST_2900
+     * @tc.name testSparseArrayFindLast029
+     * @tc.desc findLast locates char element stored at high sparse index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindLast029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(8);
+        arr[0] = c'A';
+        arr[7] = c'Z';
+        const found = arr.findLast((v: char): boolean => v > c'M');
+        expect(found).assertEqual(c'Z');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_LAST_3000
+     * @tc.name testSparseArrayFindLast030
+     * @tc.desc findLast returns false from SparseArray<boolean> when last matching slot stores false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindLast030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(5);
+        arr[1] = true;
+        arr[3] = false;
+        const found = arr.findLast((v: boolean, i: int): boolean => i === 3 && !v);
+        expect(found).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_LAST_3100
+     * @tc.name testSparseArrayFindLast031
+     * @tc.desc findLast on SparseArray<byte> returns last byte over threshold
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindLast031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(10 as byte, 20 as byte, 30 as byte);
+        const threshold: byte = 15 as byte;
+        const found = arr.findLast((v: byte): boolean => v > threshold);
+        expect(found).assertEqual(30 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_FIND_LAST_3200
+     * @tc.name testSparseArrayFindLast032
+     * @tc.desc findLast skips holes and invokes predicate only for assigned sparse slots
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayFindLast032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<int>(10);
+        arr[2] = 20;
+        arr[7] = 70;
+        let callCount = 0;
+        const found = arr.findLast((v: int): boolean => {
+          callCount++;
+          return v > 100;
+        });
+        expect(found).assertUndefined();
+        expect(callCount).assertEqual(2);
     });
 
   });
