@@ -23,7 +23,7 @@ export default function SparseArrayToStringTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -52,7 +52,6 @@ export default function SparseArrayToStringTest(): void {
      * @tc.level Level 2
      */
     it('testSparseArrayToString002', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // toString方法无参数，无需参数类型测试
         const arr = new SparseArray<int>()
         expect(typeof arr.toString()).assertEqual('string')
     });
@@ -603,6 +602,57 @@ export default function SparseArrayToStringTest(): void {
         expect(arr.toString()).assertEqual("255");
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_STRING_4300
+     * @tc.name testSparseArrayToString043
+     * @tc.desc toString on SparseArray<long> joins long values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToString043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long);
+        expect(arr.toString()).assertEqual("1,10000000000");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_STRING_4400
+     * @tc.name testSparseArrayToString044
+     * @tc.desc toString on SparseArray<float> joins float values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToString044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f);
+        expect(arr.toString()).assertEqual("1,2.5");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_STRING_4500
+     * @tc.name testSparseArrayToString045
+     * @tc.desc toString on SparseArray<double> joins double values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToString045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5);
+        expect(arr.toString()).assertEqual("1.25,2.5");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_STRING_4600
+     * @tc.name testSparseArrayToString046
+     * @tc.desc toString on SparseArray<char> joins char values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToString046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B');
+        expect(arr.toString()).assertEqual("A,B");
+    });
 
   });
 }

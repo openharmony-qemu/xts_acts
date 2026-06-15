@@ -23,7 +23,7 @@ export default function SparseArrayValuesTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -44,7 +44,7 @@ export default function SparseArrayValuesTest(): void {
         const result = iterator.next();
         expect(result!.done).assertEqual(true);
         expect(result!.value).assertEqual(undefined);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0200
@@ -65,7 +65,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.value).assertEqual("z");
         result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0300
@@ -86,7 +86,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.value).assertEqual("c");
         result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0400
@@ -100,7 +100,7 @@ export default function SparseArrayValuesTest(): void {
         const arr = new SparseArray<int>(1, 2);
         const iterator = arr.values();
         expect(typeof iterator.next).assertEqual("function");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0500
@@ -123,7 +123,7 @@ export default function SparseArrayValuesTest(): void {
           result = iterator.next();
         }
         expect(count).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0600
@@ -138,7 +138,7 @@ export default function SparseArrayValuesTest(): void {
         const iterator = arr.values();
         const result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0700
@@ -158,7 +158,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.done).assertEqual(false);
         result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0800
@@ -175,7 +175,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.value).assertEqual(null);
         result = iterator.next();
         expect(result!.value).assertEqual("a");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_0900
@@ -196,7 +196,7 @@ export default function SparseArrayValuesTest(): void {
         iter1.next();
         const result3 = iter2.next();
         expect(result3.value).assertEqual("b");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1000
@@ -212,7 +212,7 @@ export default function SparseArrayValuesTest(): void {
         const result = iterator.next();
         expect(result.hasOwnProperty("value")).assertTrue();
         expect(result.hasOwnProperty("done")).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1100
@@ -235,7 +235,7 @@ export default function SparseArrayValuesTest(): void {
         expect(values[0]).assertEqual(1);
         expect(values[1]).assertEqual(2);
         expect(values[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1200
@@ -250,7 +250,7 @@ export default function SparseArrayValuesTest(): void {
         const iterator = arr.values();
         let result = iterator.next();
         expect(typeof result.value).assertEqual("string");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1300
@@ -266,7 +266,7 @@ export default function SparseArrayValuesTest(): void {
         const iterator = outer.values();
         const result = iterator.next();
         expect(result!.value instanceof SparseArray).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1400
@@ -283,7 +283,7 @@ export default function SparseArrayValuesTest(): void {
         arr.push(3);
         let result = iterator.next();
         expect(result!.value).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1500
@@ -299,7 +299,7 @@ export default function SparseArrayValuesTest(): void {
         arr[0] = 10;
         let result = iterator.next();
         expect(result!.value).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1600
@@ -316,7 +316,7 @@ export default function SparseArrayValuesTest(): void {
         arr.length = 1;
         let result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1700
@@ -335,7 +335,7 @@ export default function SparseArrayValuesTest(): void {
         let result = iterator.next();
         expect(result!.done).assertEqual(false);
         expect(result!.value).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1800
@@ -353,7 +353,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.value).assertEqual(1);
         result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_1900
@@ -379,7 +379,7 @@ export default function SparseArrayValuesTest(): void {
         const endTime = Date.now();
         expect(count).assertEqual(10000);
         expect(endTime - startTime).assertLess(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2000
@@ -401,7 +401,7 @@ export default function SparseArrayValuesTest(): void {
           result = iterator.next();
         }
         expect(count).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2100
@@ -417,7 +417,7 @@ export default function SparseArrayValuesTest(): void {
         const keyIter = arr.keys();
         expect(valIter.next().value).assertEqual(10);
         expect(keyIter.next().value).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2200
@@ -435,7 +435,7 @@ export default function SparseArrayValuesTest(): void {
         expect(v0.done).assertTrue();
         const entStep = entIter.next();
         expect(entStep.done).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2300
@@ -483,7 +483,7 @@ export default function SparseArrayValuesTest(): void {
         result = iterator.next();
         expect(result!.value).assertEqual(undefined);
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2500
@@ -504,7 +504,7 @@ export default function SparseArrayValuesTest(): void {
         expect(result!.value).assertEqual(10);
         result = iterator.next();
         expect(result!.done).assertEqual(true);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2600
@@ -521,7 +521,7 @@ export default function SparseArrayValuesTest(): void {
         const result = iterator.next();
         expect(result!.value).assertEqual(5);
         expect(result!.done).assertEqual(false);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_2700
@@ -546,7 +546,7 @@ export default function SparseArrayValuesTest(): void {
           result = iterator.next();
         }
         expect(count).assertEqual(1);
-    
+
     });
 
     /**
@@ -611,6 +611,81 @@ export default function SparseArrayValuesTest(): void {
         const it = arr.values();
         expect(it.next().value).assertEqual(0o5);
         expect(it.next().value).assertEqual(0b11);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_3200
+     * @tc.name testSparseArrayValues032
+     * @tc.desc values iterator on SparseArray<boolean> yields false value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayValues032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false);
+        const it = arr.values();
+        expect(it.next().value).assertTrue();
+        expect(it.next().value).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_3300
+     * @tc.name testSparseArrayValues033
+     * @tc.desc values iterator on SparseArray<byte> yields byte boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayValues033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>((-128 as byte), 127 as byte);
+        const it = arr.values();
+        expect(it.next().value).assertEqual(-128 as byte);
+        expect(it.next().value).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_3400
+     * @tc.name testSparseArrayValues034
+     * @tc.desc values iterator on SparseArray<long> yields long values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayValues034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long);
+        const it = arr.values();
+        expect(it.next().value).assertEqual(1 as long);
+        expect(it.next().value).assertEqual(10000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_3500
+     * @tc.name testSparseArrayValues035
+     * @tc.desc values iterator on SparseArray<float> yields float values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayValues035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f);
+        const it = arr.values();
+        expect(it.next().value).assertEqual(1.0f);
+        expect(it.next().value).assertEqual(2.5f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_VALUES_3600
+     * @tc.name testSparseArrayValues036
+     * @tc.desc values iterator on SparseArray<double> yields double values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayValues036', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5);
+        const it = arr.values();
+        expect(it.next().value).assertEqual(1.25);
+        expect(it.next().value).assertEqual(2.5);
     });
 
   });

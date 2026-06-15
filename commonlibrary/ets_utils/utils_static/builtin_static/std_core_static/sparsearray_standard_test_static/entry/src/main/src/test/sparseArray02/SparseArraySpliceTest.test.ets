@@ -29,7 +29,7 @@ export default function SparseArraySpliceTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -56,7 +56,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr.length).assertEqual(2);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0002
@@ -77,7 +77,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0003
@@ -98,7 +98,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[3]).assertEqual(200);
         expect(arr[4]).assertEqual(5);
 
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0004
@@ -118,7 +118,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr.length).assertEqual(2);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0005
@@ -137,7 +137,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0006
@@ -169,7 +169,7 @@ export default function SparseArraySpliceTest(): void {
       arr.splice(1, 0, 15);
       expect(arr.length).assertEqual(4);
       expect(arr[1]).assertEqual(15);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0008
@@ -185,7 +185,7 @@ export default function SparseArraySpliceTest(): void {
       expect(deleted.length).assertEqual(1);
       expect(deleted[0]).assertEqual(20);
       expect(arr.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0009
@@ -204,7 +204,7 @@ export default function SparseArraySpliceTest(): void {
         expect(result[1]).assertEqual(3);
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0010
@@ -219,7 +219,7 @@ export default function SparseArraySpliceTest(): void {
       arr.splice(0, 2, 5, 6);
       expect(arr[0]).assertEqual(5);
       expect(arr[1]).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0011
@@ -233,7 +233,7 @@ export default function SparseArraySpliceTest(): void {
         const arr = new SparseArray<int>(10, 20, 30, 40);
         const deleted = arr.splice(-2, 1);
         expect(deleted[0]).assertEqual(30);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0012
@@ -252,7 +252,7 @@ export default function SparseArraySpliceTest(): void {
         expect(result[1]).assertEqual(3);
         expect(arr.length).assertEqual(1);
         expect(arr[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0013
@@ -271,7 +271,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0014
@@ -292,7 +292,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[1]).assertEqual(" ");
         expect(arr[2]).assertEqual("  ");
         expect(arr[3]).assertEqual("c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0015
@@ -312,7 +312,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual("a");
         expect(arr[1]).assertEqual("​");
         expect(arr[2]).assertEqual("c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0016
@@ -332,7 +332,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual("a");
         expect(arr[1]).assertEqual("<script>alert(1)</script>");
         expect(arr[2]).assertEqual("c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0017
@@ -353,7 +353,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual("a");
         expect(arr[1]).assertEqual("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         expect(arr[2]).assertEqual("c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0018
@@ -373,7 +373,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(100);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0019
@@ -393,7 +393,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual("x");
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0020
@@ -413,7 +413,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(null);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0021
@@ -436,7 +436,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[2]).assertEqual(200);
         expect(arr[3]).assertEqual(300);
         expect(arr[4]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0022
@@ -457,7 +457,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr.length).assertEqual(2);
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0023
@@ -478,7 +478,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[1]).assertEqual(100);
         expect(arr[2]).assertEqual(2);
         expect(arr[3]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0024
@@ -499,7 +499,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr.length).assertEqual(5);
         expect(arr[2]).assertEqual(50);
         expect(arr[3]).assertEqual(20);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0025
@@ -518,7 +518,7 @@ export default function SparseArraySpliceTest(): void {
         expect(deleted[1]).assertEqual(2);
         expect(deleted[2]).assertEqual(3);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0026
@@ -539,7 +539,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
         expect(arr[3]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0027
@@ -560,7 +560,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(2);
         expect(arr[2]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0028
@@ -581,7 +581,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[2]).assertEqual(100);
         expect(arr[3]).assertEqual(300);
         expect(arr[4]).assertEqual(200);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0029
@@ -596,7 +596,7 @@ export default function SparseArraySpliceTest(): void {
         const result = arr.splice(1, 1, 99);
         expect(result.length).assertEqual(1);
         expect(arr[1]).assertEqual(99);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0030
@@ -612,7 +612,7 @@ export default function SparseArraySpliceTest(): void {
         const deleted = arr.splice(0, 0);
         expect(deleted.length).assertEqual(0);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0031
@@ -630,7 +630,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr.length).assertEqual(2);
         expect(arr[0]).assertEqual(100);
         expect(arr[1]).assertEqual(200);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0032
@@ -652,7 +652,7 @@ export default function SparseArraySpliceTest(): void {
         expect(deleted[2]).assertEqual(200);
         expect(deleted[4]).assertEqual(300);
         expect(arr.length).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0033
@@ -669,7 +669,7 @@ export default function SparseArraySpliceTest(): void {
         expect(deleted.length).assertEqual(0);
         expect(arr.length).assertEqual(11);
         expect(arr[5]).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0034
@@ -688,7 +688,7 @@ export default function SparseArraySpliceTest(): void {
         expect(deleted[1]).assertEqual(100);
         expect(arr.length).assertEqual(9);
         expect(arr[2]).assertEqual(200);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0035
@@ -701,16 +701,16 @@ export default function SparseArraySpliceTest(): void {
     it('testSparseArraySplice035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6);
         expect(arr instanceof SparseArray).assertTrue();
-        arr.splice(0, 2); 
-        arr.splice(1, 1, 100); 
-        arr.splice(3, 0, 200); 
+        arr.splice(0, 2);
+        arr.splice(1, 1, 100);
+        arr.splice(3, 0, 200);
         expect(arr.length).assertEqual(5);
         expect(arr[0]).assertEqual(3);
         expect(arr[1]).assertEqual(100);
         expect(arr[2]).assertEqual(5);
         expect(arr[3]).assertEqual(200);
         expect(arr[4]).assertEqual(6);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0036
@@ -732,7 +732,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[1]).assertEqual("x");
         expect(arr[2]).assertEqual("y");
         expect(arr[3]).assertEqual("d");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0037
@@ -754,7 +754,7 @@ export default function SparseArraySpliceTest(): void {
         expect(arr[1]).assertEqual(100);
         expect(arr[2]).assertEqual("x");
         expect(arr[3]).assertEqual("d");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0038
@@ -774,7 +774,7 @@ export default function SparseArraySpliceTest(): void {
         const a0 = arr[0];
         expect(d0 !== null && d0 !== undefined).assertTrue();
         expect(a0 !== null && a0 !== undefined).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0039
@@ -791,7 +791,7 @@ export default function SparseArraySpliceTest(): void {
         }
         const deleted = arr.splice(500, 100);
         expect(deleted.length).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_0040
@@ -809,7 +809,7 @@ export default function SparseArraySpliceTest(): void {
         }
         const deleted = arr.splice(1, 0, ...items);
         expect(arr.length).assertEqual(1003);
-    
+
     });
 
     /**
@@ -891,6 +891,83 @@ export default function SparseArraySpliceTest(): void {
         expect(removed.length).assertEqual(0);
         expect(arr[1]).assertEqual("");
         expect(arr.toString()).assertEqual("a,,c");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_4600
+     * @tc.name testSparseArraySplice046
+     * @tc.desc splice on SparseArray<boolean> replaces false with true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const removed = arr.splice(1, 1, true);
+        expect(removed.length).assertEqual(1);
+        expect(removed[0]).assertFalse();
+        expect(arr[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_4700
+     * @tc.name testSparseArraySplice047
+     * @tc.desc splice on SparseArray<short> inserts short value without deletion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(10 as short, 30 as short);
+        const removed = arr.splice(1, 0, 20 as short);
+        expect(removed.length).assertEqual(0);
+        expect(arr[1]).assertEqual(20 as short);
+        expect(arr[2]).assertEqual(30 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_4800
+     * @tc.name testSparseArraySplice048
+     * @tc.desc splice on SparseArray<long> replaces long value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long, 3 as long);
+        const removed = arr.splice(1, 1, 20000000000 as long);
+        expect(removed[0]).assertEqual(10000000000 as long);
+        expect(arr[1]).assertEqual(20000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_4900
+     * @tc.name testSparseArraySplice049
+     * @tc.desc splice on SparseArray<double> replaces double value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const removed = arr.splice(1, 1, 4.5);
+        expect(removed[0]).assertEqual(2.5);
+        expect(arr[1]).assertEqual(4.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_5000
+     * @tc.name testSparseArraySplice050
+     * @tc.desc splice on SparseArray<char> replaces char value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice050', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const removed = arr.splice(1, 1, c'Z');
+        expect(removed[0]).assertEqual(c'B');
+        expect(arr[1]).assertEqual(c'Z');
     });
 
   });

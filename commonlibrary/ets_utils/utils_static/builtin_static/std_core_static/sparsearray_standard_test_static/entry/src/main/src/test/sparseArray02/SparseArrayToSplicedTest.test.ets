@@ -23,7 +23,7 @@ export default function SparseArrayToSplicedTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -42,7 +42,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(0, 1);
         expect(result!.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0200
@@ -56,7 +56,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 1);
         expect(result!.length).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0300
@@ -70,7 +70,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 1, 10);
         expect(result!.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0400
@@ -84,7 +84,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 1, 10, 20, 30);
         expect(result!.length).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0500
@@ -98,7 +98,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 1);
         expect(result.toString()).assertEqual("1,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0600
@@ -112,7 +112,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(0, 1);
         expect(result.toString()).assertEqual("2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0700
@@ -126,7 +126,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(100, 1, 10);
         expect(result.toString()).assertEqual("1,2,3,10");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0800
@@ -140,7 +140,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.toSpliced(-2, 1, 20);
         expect(result.toString()).assertEqual("1,2,3,20,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_0900
@@ -154,7 +154,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(-1, 1);
         expect(result.toString()).assertEqual("1,2");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1000
@@ -185,7 +185,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 0, 10, 20);
         expect(result.toString()).assertEqual("1,10,20,2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1200
@@ -199,7 +199,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, -1, 10);
         expect(result.toString()).assertEqual("1,10,2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1300
@@ -213,7 +213,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 100);
         expect(result.toString()).assertEqual("1");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1400
@@ -261,7 +261,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.toSpliced(1, 2, 100);
         expect(result.toString()).assertEqual("1,100,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1700
@@ -275,7 +275,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(1, 1, 10, 20, 30);
         expect(result.toString()).assertEqual("1,10,20,30,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1800
@@ -289,7 +289,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<string>("a", "b", "c");
         const result = arr.toSpliced(1, 1, "x", "y");
         expect(result.toString()).assertEqual("a,x,y,c");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_1900
@@ -303,7 +303,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<string | number>(1, 2, 3);
         const result = arr.toSpliced(1, 1, "a", "b");
         expect(result.toString()).assertEqual("1,a,b,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2000
@@ -317,7 +317,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int | null>(1, 2, 3);
         const result = arr.toSpliced(1, 1, null, null);
         expect(result!.length).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2100
@@ -331,7 +331,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int | undefined>(1, 2, 3);
         const result = arr.toSpliced(1, 1, undefined);
         expect(result!.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2200
@@ -346,7 +346,7 @@ export default function SparseArrayToSplicedTest(): void {
         const result = arr.toSpliced(1, 2, 10, 20);
         expect(result instanceof SparseArray).assertTrue();
         expect(result.toString()).assertEqual("1,10,20,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2300
@@ -362,7 +362,7 @@ export default function SparseArrayToSplicedTest(): void {
         expect(arr.toString()).assertEqual("1,2,3,4,5");
         expect(result.toString()).assertEqual("1,10,4,5");
         expect(arr !== result).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2400
@@ -376,7 +376,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(0, 3);
         expect(result!.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2500
@@ -390,7 +390,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>();
         const result = arr.toSpliced(0, 0, 10);
         expect(result.toString()).assertEqual("10");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2600
@@ -407,7 +407,7 @@ export default function SparseArrayToSplicedTest(): void {
         arr[4] = 5;
         const result = arr.toSpliced(1, 2, 10);
         expect(result.toString()).assertEqual("1,10,,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2700
@@ -422,7 +422,7 @@ export default function SparseArrayToSplicedTest(): void {
         const result = arr.toSpliced(1, 1);
         expect(result instanceof SparseArray).assertTrue();
         expect(result[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2800
@@ -436,7 +436,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<string>("a", "b", "c");
         const result = arr.toSpliced(1, 1, "x");
         expect(typeof result[1]).assertEqual("string");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_2900
@@ -450,7 +450,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(2, 10, 10);
         expect(result.toString()).assertEqual("1,2,10");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3000
@@ -464,7 +464,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(10, 0, 10, 20);
         expect(result.toString()).assertEqual("1,2,3,10,20");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3100
@@ -478,7 +478,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.toSpliced(3, 5);
         expect(result.toString()).assertEqual("1,2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3200
@@ -495,7 +495,7 @@ export default function SparseArrayToSplicedTest(): void {
         const result = arr.toSpliced(1, 2, 10);
         expect(result![0]).assertEqual(1);
         expect(result[1]).assertEqual(10);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3300
@@ -511,7 +511,7 @@ export default function SparseArrayToSplicedTest(): void {
         arr[4] = 5;
         const result = arr.toSpliced(2, 1, 10);
         expect(result!.length).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3400
@@ -525,7 +525,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5, 6);
         const result = arr.toSpliced(1, 3, 10, 20, 30, 40);
         expect(result.toString()).assertEqual("1,10,20,30,40,5,6");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3500
@@ -539,7 +539,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(3, 0, 4, 5);
         expect(result.toString()).assertEqual("1,2,3,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3600
@@ -553,7 +553,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.toSpliced(-3, 2);
         expect(result.toString()).assertEqual("1,2,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3700
@@ -567,7 +567,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3, 4, 5);
         const result = arr.toSpliced(-2, 0, 100);
         expect(result.toString()).assertEqual("1,2,3,100,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3800
@@ -581,7 +581,7 @@ export default function SparseArrayToSplicedTest(): void {
         const arr = new SparseArray<int>(1, 2, 3);
         const result = arr.toSpliced(-10, 1, 10);
         expect(result.toString()).assertEqual("10,2,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_3900
@@ -613,6 +613,96 @@ export default function SparseArrayToSplicedTest(): void {
         expect(result[2]).assertEqual(2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4100
+     * @tc.name testSparseArrayToSpliced041
+     * @tc.desc toSpliced on SparseArray<boolean> replaces false without mutating source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced041', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const result = arr.toSpliced(1, 1, true);
+        expect(arr[1]).assertFalse();
+        expect(result[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4200
+     * @tc.name testSparseArrayToSpliced042
+     * @tc.desc toSpliced on SparseArray<byte> inserts byte boundary value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced042', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(0 as byte, 127 as byte);
+        const result = arr.toSpliced(1, 0, (-128 as byte));
+        expect(arr.length).assertEqual(2);
+        expect(result[1]).assertEqual(-128 as byte);
+        expect(result[2]).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4300
+     * @tc.name testSparseArrayToSpliced043
+     * @tc.desc toSpliced on SparseArray<long> replaces long value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced043', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long, 3 as long);
+        const result = arr.toSpliced(1, 1, 20000000000 as long);
+        expect(arr[1]).assertEqual(10000000000 as long);
+        expect(result[1]).assertEqual(20000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4400
+     * @tc.name testSparseArrayToSpliced044
+     * @tc.desc toSpliced on SparseArray<float> replaces float value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
+        const result = arr.toSpliced(1, 1, 4.5f);
+        expect(arr[1]).assertEqual(2.5f);
+        expect(result[1]).assertEqual(4.5f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4500
+     * @tc.name testSparseArrayToSpliced045
+     * @tc.desc toSpliced on SparseArray<double> replaces double value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const result = arr.toSpliced(1, 1, 4.5);
+        expect(arr[1]).assertEqual(2.5);
+        expect(result[1]).assertEqual(4.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SPLICED_4600
+     * @tc.name testSparseArrayToSpliced046
+     * @tc.desc toSpliced on SparseArray<char> replaces char value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSpliced046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const result = arr.toSpliced(1, 1, c'Z');
+        expect(arr[1]).assertEqual(c'B');
+        expect(result[1]).assertEqual(c'Z');
+    });
 
   });
 }

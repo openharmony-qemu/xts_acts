@@ -33,7 +33,7 @@ export default function SparseArrayToReversedTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -75,7 +75,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[0]).assertEqual(4);
         expect(reversed[2]).assertEqual(1);
         expect(reversed[4]).assertUndefined();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0300
@@ -89,7 +89,7 @@ export default function SparseArrayToReversedTest(): void {
         const arr = new SparseArray<int>()
         const reversed = arr.toReversed()
         expect(reversed.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0400
@@ -103,7 +103,7 @@ export default function SparseArrayToReversedTest(): void {
         const arr = new SparseArray<int>(42)
         const reversed = arr.toReversed()
         expect(reversed.length).assertEqual(42);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0500
@@ -118,7 +118,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed[0]).assertEqual(5);
         expect(reversed[3]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0600
@@ -133,7 +133,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed[0]).assertEqual(3);
         expect(reversed[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0700
@@ -148,7 +148,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed[0]).assertEqual(3);
         expect(reversed[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0800
@@ -163,7 +163,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed[0]).assertEqual(-1);
         expect(reversed[4]).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_0900
@@ -182,7 +182,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed.length).assertEqual(1000);
         expect(reversed[0]).assertEqual(999);
         expect(reversed[999]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1000
@@ -197,7 +197,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed[0]).assertEqual("cherry");
         expect(reversed[2]).assertEqual("apple");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1100
@@ -214,7 +214,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(arr.toString()).assertEqual(originalString);
         expect(reversed[0]).assertEqual(3);
         expect(reversed[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1200
@@ -230,7 +230,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         const r0 = reversed[0];
         expect(r0 !== null && r0 !== undefined).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1300
@@ -263,7 +263,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed.length).assertEqual(1);
         expect(reversed[0]).assertEqual(99);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1500
@@ -280,7 +280,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed.length).assertEqual(10);
         expect(reversed[4]).assertEqual(100);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1600
@@ -299,7 +299,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[0]).assertEqual(3);
         expect(reversed[1]).assertEqual(2);
         expect(reversed[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1700
@@ -316,7 +316,7 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed()
         expect(reversed.length).assertEqual(10000);
         expect(reversed[4999]).assertEqual(999);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1800
@@ -334,7 +334,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[0]).assertEqual(-3);
         expect(reversed[1]).assertEqual(-2);
         expect(reversed[2]).assertEqual(-1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_1900
@@ -352,7 +352,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[0]).assertEqual(0);
         expect(reversed[1]).assertEqual(0);
         expect(reversed[2]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2000
@@ -370,7 +370,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[0]).assertEqual(0);
         expect(reversed[1]).assertEqual(100);
         expect(reversed[2]).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2100
@@ -389,7 +389,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed.length).assertEqual(5);
         expect(reversed[3]).assertEqual(10);
         expect(reversed[1]).assertEqual(30);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2200
@@ -408,7 +408,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed.length).assertEqual(10);
         expect(reversed[7]).assertEqual(arr[2]);
         expect(reversed[9]).assertEqual(arr[0]);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2300
@@ -425,7 +425,7 @@ export default function SparseArrayToReversedTest(): void {
       expect(reversed[0]).assertEqual(5);
       expect(reversed[1]).assertEqual(2);
       expect(reversed[2]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2400
@@ -446,7 +446,7 @@ export default function SparseArrayToReversedTest(): void {
         expect(reversed[4]).assertEqual(arr[0]);
         expect(reversed[2]).assertEqual(arr[2]);
         expect(reversed[0]).assertEqual(arr[4]);
-    
+
     });
 
     /**
@@ -479,6 +479,97 @@ export default function SparseArrayToReversedTest(): void {
         const reversed = arr.toReversed();
         expect(reversed[0]).assertEqual(0b10);
         expect(reversed[1]).assertEqual(0x1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2700
+     * @tc.name testSparseArrayToReversed027
+     * @tc.desc toReversed on SparseArray<boolean> reverses false value without mutating source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false);
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertFalse();
+        expect(reversed[1]).assertTrue();
+        expect(arr[0]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2800
+     * @tc.name testSparseArrayToReversed028
+     * @tc.desc toReversed on SparseArray<byte> reverses byte boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>((-128 as byte), 0 as byte, 127 as byte);
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertEqual(127 as byte);
+        expect(reversed[2]).assertEqual(-128 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_2900
+     * @tc.name testSparseArrayToReversed029
+     * @tc.desc toReversed on SparseArray<short> reverses short values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(10 as short, 20 as short, 30 as short);
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertEqual(30 as short);
+        expect(reversed[2]).assertEqual(10 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_3000
+     * @tc.name testSparseArrayToReversed030
+     * @tc.desc toReversed on SparseArray<float> reverses float values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertEqual(3.0f);
+        expect(reversed[1]).assertEqual(2.5f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_3100
+     * @tc.name testSparseArrayToReversed031
+     * @tc.desc toReversed on SparseArray<double> reverses double values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertEqual(3.75);
+        expect(reversed[2]).assertEqual(1.25);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_REVERSED_3200
+     * @tc.name testSparseArrayToReversed032
+     * @tc.desc toReversed on SparseArray<char> reverses char elements
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToReversed032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const reversed = arr.toReversed();
+        expect(reversed[0]).assertEqual(c'C');
+        expect(reversed[2]).assertEqual(c'A');
     });
 
   });

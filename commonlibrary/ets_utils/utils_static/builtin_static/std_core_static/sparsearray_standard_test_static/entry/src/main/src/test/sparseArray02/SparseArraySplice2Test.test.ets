@@ -23,7 +23,7 @@ export default function SparseArraySplice2Test(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -40,7 +40,7 @@ export default function SparseArraySplice2Test(): void {
      */
     it('testSparseArraySplice001', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30)
-        arr.splice(1)  
+        arr.splice(1)
         expect(arr.length).assertEqual(1)
     });
     /**
@@ -142,7 +142,7 @@ export default function SparseArraySplice2Test(): void {
         expect(deleted[1]).assertEqual(20);
         expect(deleted[2]).assertEqual(30);
         expect(arr.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_0800
@@ -159,7 +159,7 @@ export default function SparseArraySplice2Test(): void {
         expect(deleted instanceof SparseArray).assertTrue();
         expect(deleted.length).assertEqual(0);
         expect(arr.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_0900
@@ -173,7 +173,7 @@ export default function SparseArraySplice2Test(): void {
         const arr = new SparseArray<int>(10, 20, 30);
         const deleted = arr.splice(10, 1);
         expect(deleted.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_1000
@@ -270,7 +270,7 @@ export default function SparseArraySplice2Test(): void {
         expect(deleted.length).assertEqual(3);
         expect(deleted[1]).assertEqual(20);
         expect(arr.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_1600
@@ -351,7 +351,6 @@ export default function SparseArraySplice2Test(): void {
     it('testSparseArraySplice020', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(10, 20, 30, 40, 50)
         const deleted = arr.splice(2)
-        // deleted是新的SparseArray，不是原数组
         expect(deleted === arr).assertFalse()
     });
     /**
@@ -414,6 +413,102 @@ export default function SparseArraySplice2Test(): void {
         expect(arr[0]).assertEqual(20);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_2500
+     * @tc.name testSparseArraySplice025
+     * @tc.desc splice from index on SparseArray<boolean> keeps false in deleted array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice025', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted.length).assertEqual(2);
+        expect(deleted[0]).assertFalse();
+        expect(deleted[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_2600
+     * @tc.name testSparseArraySplice026
+     * @tc.desc splice from index on SparseArray<byte> returns byte boundary tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice026', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(0 as byte, (-128 as byte), 127 as byte);
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted[0]).assertEqual(-128 as byte);
+        expect(deleted[1]).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_2700
+     * @tc.name testSparseArraySplice027
+     * @tc.desc splice from index on SparseArray<long> returns long tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(1 as long, 10000000000 as long, 20000000000 as long);
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted[0]).assertEqual(10000000000 as long);
+        expect(deleted[1]).assertEqual(20000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_2800
+     * @tc.name testSparseArraySplice028
+     * @tc.desc splice from index on SparseArray<float> returns float tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice028', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<float>(1.0f, 2.5f, 3.0f);
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted[0]).assertEqual(2.5f);
+        expect(deleted[1]).assertEqual(3.0f);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_2900
+     * @tc.name testSparseArraySplice029
+     * @tc.desc splice from index on SparseArray<double> returns double tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice029', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(1.25, 2.5, 3.75);
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted[0]).assertEqual(2.5);
+        expect(deleted[1]).assertEqual(3.75);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_SPLICE_2_3000
+     * @tc.name testSparseArraySplice030
+     * @tc.desc splice from index on SparseArray<char> returns char tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArraySplice030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'A', c'B', c'C');
+        const deleted = arr.splice(1);
+        expect(arr.length).assertEqual(1);
+        expect(deleted[0]).assertEqual(c'B');
+        expect(deleted[1]).assertEqual(c'C');
+    });
 
   });
 }

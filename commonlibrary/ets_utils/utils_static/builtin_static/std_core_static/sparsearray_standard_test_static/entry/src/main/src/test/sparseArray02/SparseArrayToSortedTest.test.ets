@@ -74,7 +74,7 @@ function sparseArrayToSortedSuite(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -110,7 +110,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => 1);
         expect(sorted[0]).assertEqual(3);
         expect(sorted[1]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0300
@@ -125,7 +125,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => -1);
         expect(sorted[0]).assertEqual(1);
         expect(sorted[1]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0400
@@ -141,7 +141,7 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted[0]).assertEqual(3);
         expect(sorted[1]).assertEqual(1);
         expect(sorted[2]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0500
@@ -155,7 +155,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted.toString()).assertEqual("1,2,5,8,9");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0600
@@ -169,7 +169,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>(5, 2, 8, 1, 9);
         const sorted = arr.toSorted((a: int, b: int): int => b - a);
         expect(sorted.toString()).assertEqual("9,8,5,2,1");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0700
@@ -194,7 +194,7 @@ function sparseArrayToSortedSuite(): void {
           return a - b;
         });
         expect(sorted[0]).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0800
@@ -209,7 +209,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual("apple");
         expect(sorted[2]).assertEqual("cherry");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_0900
@@ -231,7 +231,7 @@ function sparseArrayToSortedSuite(): void {
         expect(s0 != null && s2 != null).assertTrue();
         expect((s0 as Person009).name).assertEqual("Bob");
         expect((s2 as Person009).name).assertEqual("Charlie");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1000
@@ -246,7 +246,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted[0]).assertEqual(1);
         expect(sorted[1]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1100
@@ -261,7 +261,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted[0]).assertEqual(-5);
         expect(sorted[4]).assertEqual(2);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1200
@@ -276,7 +276,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted[0]).assertEqual(-1);
         expect(sorted[4]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1300
@@ -290,7 +290,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>(2147483647, 1, 100, 2147483647);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted[0]).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1400
@@ -306,7 +306,7 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted[0]).assertEqual(-10);
         expect(sorted[1]).assertEqual(-1);
         expect(sorted[2]).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1500
@@ -320,7 +320,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>(3, 1, 3, 2, 1);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted.toString()).assertEqual("1,1,2,3,3");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1600
@@ -335,7 +335,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual("123");
         expect(sorted[3]).assertEqual("测试");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1700
@@ -349,7 +349,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<string>("", "a", "", "b");
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual("");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1800
@@ -364,7 +364,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<string>(longStr, "z", longStr);
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual(longStr);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1900
@@ -379,7 +379,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual("!hello");
         expect(sorted[2]).assertEqual("#test");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2000
@@ -399,7 +399,7 @@ function sparseArrayToSortedSuite(): void {
         const head = sorted[0];
         expect(head != null).assertTrue();
         expect((head as Item020).id).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2100
@@ -419,7 +419,7 @@ function sparseArrayToSortedSuite(): void {
         const head = sorted[0];
         expect(head != null).assertTrue();
         expect((head as Container021).item.value).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2200
@@ -442,7 +442,7 @@ function sparseArrayToSortedSuite(): void {
           return valA - valB;
         });
         expect(sorted.length).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2300
@@ -456,7 +456,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>();
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted.length).assertEqual(0);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2400
@@ -479,7 +479,7 @@ function sparseArrayToSortedSuite(): void {
         });
         expect(sorted.length).assertEqual(5);
         expect(sorted.toString()).assertEqual(",,,,");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2500
@@ -503,7 +503,7 @@ function sparseArrayToSortedSuite(): void {
           return a - b;
         });
         expect(sorted.toString()).assertEqual(",,10,,20");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2600
@@ -521,7 +521,7 @@ function sparseArrayToSortedSuite(): void {
         expect(arr.length).assertEqual(originalLength);
         expect(arr[0]).assertEqual(originalFirst);
         expect(sorted !== null && sorted !== undefined).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2700
@@ -535,7 +535,7 @@ function sparseArrayToSortedSuite(): void {
         const arr = new SparseArray<int>(3, 1, 4);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted instanceof SparseArray).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2800
@@ -555,7 +555,7 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted[2]).assertEqual(3);
         expect(sorted[3]).assertEqual(4);
         expect(sorted[4]).assertEqual(5);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2900
@@ -570,7 +570,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(arr.toString()).assertEqual("3,1,4,1,5");
         expect(sorted.toString()).assertEqual("1,1,3,4,5");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3000
@@ -586,7 +586,7 @@ function sparseArrayToSortedSuite(): void {
         const v0 = sorted[0];
         expect(v0 != null).assertTrue();
         expect(v0 as int).assertEqual(1);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3100
@@ -602,7 +602,7 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted === arr).assertFalse();
         sorted[0] = 100;
         expect(arr[0]).assertEqual(3);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3200
@@ -620,7 +620,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(sorted[0]).assertEqual(1);
         expect(sorted[999]).assertEqual(1000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3300
@@ -649,7 +649,7 @@ function sparseArrayToSortedSuite(): void {
         });
         expect(sorted[0]).assertEqual(-100);
         expect(sorted[4]).assertEqual(2147483647);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3400
@@ -708,7 +708,7 @@ function sparseArrayToSortedSuite(): void {
         expect(arr1.toString()).assertEqual("3,1,4");
         expect(arr2.toString()).assertEqual("1,3,4");
         expect(sorted.toString()).assertEqual("1,3,4");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3700
@@ -725,7 +725,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted2 = arr2.sort((a: int, b: int): int => a - b);
         expect(sorted === arr1).assertFalse();
         expect(sorted2 === arr2).assertTrue();
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3800
@@ -748,7 +748,7 @@ function sparseArrayToSortedSuite(): void {
         expect(s1 != null && s2 != null).assertTrue();
         expect((s1 as StableItem038).id).assertEqual(3);
         expect((s2 as StableItem038).id).assertEqual(4);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3900
@@ -768,7 +768,7 @@ function sparseArrayToSortedSuite(): void {
         const endTime = Date.now();
         expect(sorted.length).assertEqual(100);
         expect(endTime - startTime).assertLess(5000);
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4000
@@ -783,7 +783,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted1 = arr.toSorted((a: int, b: int): int => a - b);
         const sorted2 = sorted1.toSorted((a: int, b: int): int => b - a);
         expect(sorted2.toString()).assertEqual("9,8,5,2,1");
-    
+
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4100
@@ -798,7 +798,7 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         const filtered = sorted.filter((v: int): boolean => v > 3);
         expect(filtered.length).assertEqual(3);
-    
+
     });
 
     /**
@@ -848,6 +848,147 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted[0]).assertEqual(1);
         expect(sorted[1]).assertEqual(0b10);
         expect(sorted[2]).assertEqual(0x3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4400
+     * @tc.name testSparseArrayToSorted044
+     * @tc.desc toSorted on SparseArray<boolean> orders false before true without mutating source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted044', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true, false, true);
+        const sorted = arr.toSorted((a: boolean, b: boolean): int => {
+          if (a === b) {
+            return 0;
+          }
+          if (!a && b) {
+            return -1;
+          }
+          return 1;
+        });
+        expect(arr[0]).assertTrue();
+        expect(sorted[0]).assertFalse();
+        expect(sorted[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4500
+     * @tc.name testSparseArrayToSorted045
+     * @tc.desc toSorted on SparseArray<byte> orders byte boundary values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted045', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<byte>(127 as byte, 0 as byte, (-128 as byte));
+        const sorted = arr.toSorted((a: byte, b: byte): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(127 as byte);
+        expect(sorted[0]).assertEqual(-128 as byte);
+        expect(sorted[2]).assertEqual(127 as byte);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4600
+     * @tc.name testSparseArrayToSorted046
+     * @tc.desc toSorted on SparseArray<short> orders short values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted046', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>(300 as short, 100 as short, 200 as short);
+        const sorted = arr.toSorted((a: short, b: short): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(sorted[0]).assertEqual(100 as short);
+        expect(sorted[2]).assertEqual(300 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4700
+     * @tc.name testSparseArrayToSorted047
+     * @tc.desc toSorted on SparseArray<long> orders long values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted047', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(30000000000 as long, 10000000000 as long, 20000000000 as long);
+        const sorted = arr.toSorted((a: long, b: long): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(arr[0]).assertEqual(30000000000 as long);
+        expect(sorted[0]).assertEqual(10000000000 as long);
+        expect(sorted[2]).assertEqual(30000000000 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4800
+     * @tc.name testSparseArrayToSorted048
+     * @tc.desc toSorted on SparseArray<double> orders double values ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted048', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(3.75, 1.25, 2.5);
+        const sorted = arr.toSorted((a: double, b: double): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(sorted[0]).assertEqual(1.25);
+        expect(sorted[2]).assertEqual(3.75);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_4900
+     * @tc.name testSparseArrayToSorted049
+     * @tc.desc toSorted on SparseArray<char> orders char elements ascending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayToSorted049', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<char>(c'C', c'A', c'B');
+        const sorted = arr.toSorted((a: char, b: char): int => {
+          if (a < b) {
+            return -1;
+          }
+          if (a > b) {
+            return 1;
+          }
+          return 0;
+        });
+        expect(sorted[0]).assertEqual(c'A');
+        expect(sorted[2]).assertEqual(c'C');
     });
 
 }

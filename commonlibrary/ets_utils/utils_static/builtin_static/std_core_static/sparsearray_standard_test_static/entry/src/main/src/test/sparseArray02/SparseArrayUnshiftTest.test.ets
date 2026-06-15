@@ -23,7 +23,7 @@ export default function SparseArrayUnshiftTest(): void {
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    
+
     });
     afterEach((): void => {
     });
@@ -511,6 +511,71 @@ export default function SparseArrayUnshiftTest(): void {
         arr.unshift(0xFF);
         expect(arr[0]).assertEqual(0xFF);
         expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_UNSHIFT_3100
+     * @tc.name testSparseArrayUnshift031
+     * @tc.desc unshift boolean false value to head
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayUnshift031', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<boolean>(true);
+        const len = arr.unshift(false);
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertFalse();
+        expect(arr[1]).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_UNSHIFT_3200
+     * @tc.name testSparseArrayUnshift032
+     * @tc.desc unshift short values to head
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayUnshift032', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<short>();
+        arr.push(30 as short);
+        const len = arr.unshift(10 as short, 20 as short);
+        expect(len).assertEqual(3);
+        expect(arr[0]).assertEqual(10 as short);
+        expect(arr[2]).assertEqual(30 as short);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_UNSHIFT_3300
+     * @tc.name testSparseArrayUnshift033
+     * @tc.desc unshift long value to head
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayUnshift033', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<long>(2 as long);
+        const len = arr.unshift(10000000000 as long);
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertEqual(10000000000 as long);
+        expect(arr[1]).assertEqual(2 as long);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_UNSHIFT_3400
+     * @tc.name testSparseArrayUnshift034
+     * @tc.desc unshift double value to head
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSparseArrayUnshift034', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const arr = new SparseArray<double>(2.5);
+        const len = arr.unshift(1.25);
+        expect(len).assertEqual(2);
+        expect(arr[0]).assertEqual(1.25);
+        expect(arr[1]).assertEqual(2.5);
     });
 
   });
