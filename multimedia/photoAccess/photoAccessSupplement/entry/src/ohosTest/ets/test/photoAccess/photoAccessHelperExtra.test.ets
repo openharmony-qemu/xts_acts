@@ -433,5 +433,140 @@ export default function photoExtraSuppTest() {
         done();
       }
     });
+    /**
+     * @tc.number   SUB_ON_PHOTO_CHANGE_ERR_TEST_001
+     * @tc.name     SUB_ON_PHOTO_CHANGE_ERR_TEST_001
+     * @tc.desc     onPhotoChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_ON_PHOTO_CHANGE_ERR_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_ON_PHOTO_CHANGE_ERR_TEST_001";
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+          console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+        }
+        phAccessHelper.on('photoChange', onCallback1);
+        phAccessHelper.on('photoChange', onCallback1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_OFF_PHOTO_CHANGE_ERR_TEST_001
+     * @tc.name     SUB_OFF_PHOTO_CHANGE_ERR_TEST_001
+     * @tc.desc     offPhotoChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_OFF_PHOTO_CHANGE_ERR_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_OFF_PHOTO_CHANGE_ERR_TEST_001";
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let onCallback1 = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+          console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+        }
+        phAccessHelper.off('photoChange', onCallback1);
+        phAccessHelper.off('photoChange', onCallback1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_ON_PHOTO_ALBUM_CHANGE_ERR_TEST_001
+     * @tc.name     SUB_ON_PHOTO_ALBUM_CHANGE_ERR_TEST_001
+     * @tc.desc     onPhotoAlbumChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_ON_PHOTO_ALBUM_CHANGE_ERR_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_ON_PHOTO_ALBUM_CHANGE_ERR_TEST_001";
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+          console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+        }
+        phAccessHelper.on('photoAlbumChange', onCallback1);
+        phAccessHelper.on('photoAlbumChange', onCallback1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_OFF_PHOTO_ALBUM_CHANGE_ERR_TEST_001
+     * @tc.name     SUB_OFF_PHOTO_ALBUM_CHANGE_ERR_TEST_001
+     * @tc.desc     offPhotoAlbumChange-23800151
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_OFF_PHOTO_ALBUM_CHANGE_ERR_TEST_001", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_OFF_PHOTO_ALBUM_CHANGE_ERR_TEST_001";
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let onCallback1 = (changeData: photoAccessHelper.AlbumChangeInfos) => {
+          console.info('onCallback1 success, changData: ' + JSON.stringify(changeData));
+        }
+        phAccessHelper.off('photoAlbumChange', onCallback1);
+        phAccessHelper.off('photoAlbumChange', onCallback1);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, 'Failed ', JSON.stringify(error), error.code);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.number   SUB_MEDIA_GET_LAST_OBJECT_TEST_0010
+     * @tc.name     SUB_MEDIA_GET_LAST_OBJECT_TEST_0010
+     * @tc.desc     getLastObject-14000011
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it("SUB_MEDIA_GET_LAST_OBJECT_TEST_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = "SUB_MEDIA_GET_LAST_OBJECT_TEST_0010";
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, '0007.mp4');
+      let fetchOption: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      try {
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOption);
+        let asset = await fetchResult.getLastObject();
+        fetchResult.close();
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, ' Failed ', JSON.stringify(error), error.code,error.message);
+        expect(error.code).assertEqual('14000011');
+        done();
+      }
+    });
+
   })
 }
