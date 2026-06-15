@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
-
 export default function IntConstructor2Test(): void {
   describe('IntConstructor2Test', (): void => {
     beforeAll((): void => {
@@ -33,7 +29,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0100
+     * @tc.number INT_CNSTR2_ITEM_CHK_0100
      * @tc.name testIntConstructor2001
      * @tc.desc Verify that value parameter must be passed to Int constructor
      * @tc.size MediumTest
@@ -46,7 +42,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0200
+     * @tc.number INT_CNSTR2_ITEM_CHK_0200
      * @tc.name testIntConstructor2002
      * @tc.desc Verify Int constructor without parameters returns default value 0
      * @tc.size MediumTest
@@ -60,7 +56,7 @@ export default function IntConstructor2Test(): void {
 
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0400
+     * @tc.number INT_CNSTR2_ITEM_CHK_0400
      * @tc.name testIntConstructor2004
      * @tc.desc Verify Int constructor with positive value
      * @tc.size MediumTest
@@ -73,7 +69,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0500
+     * @tc.number INT_CNSTR2_ITEM_CHK_0500
      * @tc.name testIntConstructor2005
      * @tc.desc Verify Int constructor with negative value
      * @tc.size MediumTest
@@ -86,7 +82,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0600
+     * @tc.number INT_CNSTR2_ITEM_CHK_0600
      * @tc.name testIntConstructor2006
      * @tc.desc Verify Int constructor with zero value
      * @tc.size MediumTest
@@ -99,7 +95,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0700
+     * @tc.number INT_CNSTR2_ITEM_CHK_0700
      * @tc.name testIntConstructor2007
      * @tc.desc Verify Int constructor with int max value 2147483647
      * @tc.size MediumTest
@@ -112,7 +108,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0800
+     * @tc.number INT_CNSTR2_ITEM_CHK_0800
      * @tc.name testIntConstructor2008
      * @tc.desc Verify Int constructor with int min value -2147483648
      * @tc.size MediumTest
@@ -125,7 +121,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_0900
+     * @tc.number INT_CNSTR2_ITEM_CHK_0900
      * @tc.name testIntConstructor2009
      * @tc.desc Verify Int constructor with hexadecimal positive integer
      * @tc.size MediumTest
@@ -139,7 +135,7 @@ export default function IntConstructor2Test(): void {
 
     
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1100
+     * @tc.number INT_CNSTR2_ITEM_CHK_1100
      * @tc.name testIntConstructor20011
      * @tc.desc Verify Int constructor with octal value
      * @tc.size MediumTest
@@ -152,7 +148,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1200
+     * @tc.number INT_CNSTR2_ITEM_CHK_1200
      * @tc.name testIntConstructor20012
      * @tc.desc Verify Int constructor with binary value
      * @tc.size MediumTest
@@ -165,7 +161,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1300
+     * @tc.number INT_CNSTR2_ITEM_CHK_1300
      * @tc.name testIntConstructor20013
      * @tc.desc Verify Int constructor throws error when passing null
      * @tc.size MediumTest
@@ -182,7 +178,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1400
+     * @tc.number INT_CNSTR2_ITEM_CHK_1400
      * @tc.name testIntConstructor20014
      * @tc.desc Verify Int constructor throws error when passing undefined
      * @tc.size MediumTest
@@ -201,7 +197,7 @@ export default function IntConstructor2Test(): void {
 
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1700
+     * @tc.number INT_CNSTR2_ITEM_CHK_1700
      * @tc.name testIntConstructor20017
      * @tc.desc Verify Int constructor truncates float value via Double.toInt
      * @tc.size MediumTest
@@ -214,7 +210,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1800
+     * @tc.number INT_CNSTR2_ITEM_CHK_1800
      * @tc.name testIntConstructor20018
      * @tc.desc Verify Int constructor throws error when passing string value
      * @tc.size MediumTest
@@ -231,7 +227,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_1900
+     * @tc.number INT_CNSTR2_ITEM_CHK_1900
      * @tc.name testIntConstructor20019
      * @tc.desc Verify Int constructor throws error when passing boolean value
      * @tc.size MediumTest
@@ -248,7 +244,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2000
+     * @tc.number INT_CNSTR2_ITEM_CHK_2000
      * @tc.name testIntConstructor20020
      * @tc.desc Verify Int constructor returns instance with specified value
      * @tc.size MediumTest
@@ -261,7 +257,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2100
+     * @tc.number INT_CNSTR2_ITEM_CHK_2100
      * @tc.name testIntConstructor20021
      * @tc.desc Verify Int constructor return value is object type
      * @tc.size MediumTest
@@ -274,7 +270,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2200
+     * @tc.number INT_CNSTR2_ITEM_CHK_2200
      * @tc.name testIntConstructor20022
      * @tc.desc Verify Int constructor with normal positive value
      * @tc.size MediumTest
@@ -287,7 +283,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2300
+     * @tc.number INT_CNSTR2_ITEM_CHK_2300
      * @tc.name testIntConstructor20023
      * @tc.desc Verify Int constructor with normal negative value
      * @tc.size MediumTest
@@ -301,7 +297,7 @@ export default function IntConstructor2Test(): void {
 
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2500
+     * @tc.number INT_CNSTR2_ITEM_CHK_2500
      * @tc.name testIntConstructor20025
      * @tc.desc Verify Int constructor returns instance of Int type
      * @tc.size MediumTest
@@ -314,7 +310,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2600
+     * @tc.number INT_CNSTR2_ITEM_CHK_2600
      * @tc.name testIntConstructor20026
      * @tc.desc Verify Int constructor instance has complete methods
      * @tc.size MediumTest
@@ -329,7 +325,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2700
+     * @tc.number INT_CNSTR2_ITEM_CHK_2700
      * @tc.name testIntConstructor20027
      * @tc.desc Verify Int constructor must be called with new keyword
      * @tc.size MediumTest
@@ -337,17 +333,13 @@ export default function IntConstructor2Test(): void {
      * @tc.level Level 2
      */
     it('testIntConstructor20027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid constructor call');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.toString()).assertEqual("Error: Invalid constructor call");
-      }
+      const n = new Int(7);
+      expect(n instanceof Int).assertTrue();
+      expect(n.toInt()).assertEqual(7);
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2800
+     * @tc.number INT_CNSTR2_ITEM_CHK_2800
      * @tc.name testIntConstructor20028
      * @tc.desc Verify Int constructor behavior when no parameter is passed
      * @tc.size MediumTest
@@ -356,11 +348,12 @@ export default function IntConstructor2Test(): void {
      */
     it('testIntConstructor20028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const n = new Int();
+      expect(n instanceof Int).assertTrue();
       expect(n.toInt()).assertEqual(0);
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_2900
+     * @tc.number INT_CNSTR2_ITEM_CHK_2900
      * @tc.name testIntConstructor20029
      * @tc.desc Verify Int constructor throws error when passing non-int type parameter
      * @tc.size MediumTest
@@ -377,7 +370,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3000
+     * @tc.number INT_CNSTR2_ITEM_CHK_3000
      * @tc.name testIntConstructor20030
      * @tc.desc Verify Int constructor instance valueOf method
      * @tc.size MediumTest
@@ -390,7 +383,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3100
+     * @tc.number INT_CNSTR2_ITEM_CHK_3100
      * @tc.name testIntConstructor20031
      * @tc.desc Verify Int constructor instances with same value are equal
      * @tc.size MediumTest
@@ -404,7 +397,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3200
+     * @tc.number INT_CNSTR2_ITEM_CHK_3200
      * @tc.name testIntConstructor20032
      * @tc.desc Verify Int constructor instances with different values are not equal
      * @tc.size MediumTest
@@ -418,7 +411,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3300
+     * @tc.number INT_CNSTR2_ITEM_CHK_3300
      * @tc.name testIntConstructor20033
      * @tc.desc Verify Int constructor instance toString returns correct string
      * @tc.size MediumTest
@@ -431,7 +424,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3400
+     * @tc.number INT_CNSTR2_ITEM_CHK_3400
      * @tc.name testIntConstructor20034
      * @tc.desc Verify Int constructor instance toString with negative number
      * @tc.size MediumTest
@@ -444,7 +437,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3500
+     * @tc.number INT_CNSTR2_ITEM_CHK_3500
      * @tc.name testIntConstructor20035
      * @tc.desc Verify Int constructor instance add operation
      * @tc.size MediumTest
@@ -458,7 +451,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3600
+     * @tc.number INT_CNSTR2_ITEM_CHK_3600
      * @tc.name testIntConstructor20036
      * @tc.desc Verify Int constructor instance sub operation
      * @tc.size MediumTest
@@ -472,7 +465,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3700
+     * @tc.number INT_CNSTR2_ITEM_CHK_3700
      * @tc.name testIntConstructor20037
      * @tc.desc Verify Int constructor instance mul operation
      * @tc.size MediumTest
@@ -486,7 +479,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3800
+     * @tc.number INT_CNSTR2_ITEM_CHK_3800
      * @tc.name testIntConstructor20038
      * @tc.desc Verify Int constructor instance div operation
      * @tc.size MediumTest
@@ -500,7 +493,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_3900
+     * @tc.number INT_CNSTR2_ITEM_CHK_3900
      * @tc.name testIntConstructor20039
      * @tc.desc Verify Int constructor instance compareTo operation
      * @tc.size MediumTest
@@ -515,7 +508,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4000
+     * @tc.number INT_CNSTR2_ITEM_CHK_4000
      * @tc.name testIntConstructor20040
      * @tc.desc Verify Int constructor with MAX_VALUE boundary
      * @tc.size MediumTest
@@ -529,7 +522,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4100
+     * @tc.number INT_CNSTR2_ITEM_CHK_4100
      * @tc.name testIntConstructor20041
      * @tc.desc Verify Int constructor with MIN_VALUE boundary
      * @tc.size MediumTest
@@ -543,7 +536,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4200
+     * @tc.number INT_CNSTR2_ITEM_CHK_4200
      * @tc.name testIntConstructor20042
      * @tc.desc Verify multiple Int constructor calls produce independent instances
      * @tc.size MediumTest
@@ -560,7 +553,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4300
+     * @tc.number INT_CNSTR2_ITEM_CHK_4300
      * @tc.name testIntConstructor20043
      * @tc.desc Verify Int constructor instance toByte conversion
      * @tc.size MediumTest
@@ -574,7 +567,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4400
+     * @tc.number INT_CNSTR2_ITEM_CHK_4400
      * @tc.name testIntConstructor20044
      * @tc.desc Verify Int constructor instance toShort conversion
      * @tc.size MediumTest
@@ -588,7 +581,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4500
+     * @tc.number INT_CNSTR2_ITEM_CHK_4500
      * @tc.name testIntConstructor20045
      * @tc.desc Verify Int constructor instance toLong conversion
      * @tc.size MediumTest
@@ -602,7 +595,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4600
+     * @tc.number INT_CNSTR2_ITEM_CHK_4600
      * @tc.name testIntConstructor20046
      * @tc.desc Verify Int constructor instance toFloat conversion
      * @tc.size MediumTest
@@ -616,7 +609,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4700
+     * @tc.number INT_CNSTR2_ITEM_CHK_4700
      * @tc.name testIntConstructor20047
      * @tc.desc Verify Int constructor instance toDouble conversion
      * @tc.size MediumTest
@@ -630,7 +623,7 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR_ITEM_CHK_4800
+     * @tc.number INT_CNSTR2_ITEM_CHK_4800
      * @tc.name testIntConstructor20048
      * @tc.desc Verify Int constructor instance toChar conversion
      * @tc.size MediumTest

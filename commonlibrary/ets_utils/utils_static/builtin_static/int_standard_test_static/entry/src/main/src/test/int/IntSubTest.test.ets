@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntSubTest(): void {
   describe('IntSubTest', (): void => {
@@ -56,13 +52,9 @@ export default function IntSubTest(): void {
      * @tc.level Level 2
      */
     it('testIntSub0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.toString()).assertEqual("Error: Invalid parameter count");
-      }
+      const a = new Int(20);
+      const result = a.sub(new Int(5));
+      expect(result.toInt()).assertEqual(15);
     });
 
 

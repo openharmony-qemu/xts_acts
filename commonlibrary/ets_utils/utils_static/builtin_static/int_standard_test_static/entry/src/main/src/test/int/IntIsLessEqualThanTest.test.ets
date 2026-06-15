@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntIsLessEqualThanTest(): void {
   describe('IntIsLessEqualThanTest', (): void => {
@@ -56,12 +52,9 @@ export default function IntIsLessEqualThanTest(): void {
      * @tc.level Level 2
      */
     it('testIntIsLessEqualThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
+      const a = new Int(10);
+      const b = new Int(10);
+      expect(a.isLessEqualThan(b)).assertTrue();
     });
 
 
@@ -449,7 +442,6 @@ export default function IntIsLessEqualThanTest(): void {
     it('testIntIsLessEqualThan0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(65);
       const b = new Int(75);
-      expect(a.isLessThan(b)).assertTrue();
       expect(a.isLessEqualThan(b)).assertTrue();
     });
 
@@ -464,7 +456,6 @@ export default function IntIsLessEqualThanTest(): void {
     it('testIntIsLessEqualThan0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(65);
       const b = new Int(65);
-      expect(a.isLessThan(b)).assertFalse();
       expect(a.isLessEqualThan(b)).assertTrue();
     });
 

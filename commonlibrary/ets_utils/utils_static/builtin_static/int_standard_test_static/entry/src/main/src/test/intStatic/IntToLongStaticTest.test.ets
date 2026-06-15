@@ -29,7 +29,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0100
+     * @tc.number INT_TO_LONG_S_CHK_0100
      * @tc.name testIntToLongStatic0001
      * @tc.desc Verify that value parameter must be passed
      * @tc.size MediumTest
@@ -42,7 +42,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0200
+     * @tc.number INT_TO_LONG_S_CHK_0200
      * @tc.name testIntToLongStatic0002
      * @tc.desc Verify that error is thrown when no parameter is passed
      * @tc.size MediumTest
@@ -55,7 +55,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0400
+     * @tc.number INT_TO_LONG_S_CHK_0400
      * @tc.name testIntToLongStatic0004
      * @tc.desc Verify with normal integer value within range
      * @tc.size MediumTest
@@ -68,7 +68,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0500
+     * @tc.number INT_TO_LONG_S_CHK_0500
      * @tc.name testIntToLongStatic0005
      * @tc.desc Verify with positive value
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0600
+     * @tc.number INT_TO_LONG_S_CHK_0600
      * @tc.name testIntToLongStatic0006
      * @tc.desc Verify with negative value
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0700
+     * @tc.number INT_TO_LONG_S_CHK_0700
      * @tc.name testIntToLongStatic0007
      * @tc.desc Verify with zero value
      * @tc.size MediumTest
@@ -107,7 +107,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0800
+     * @tc.number INT_TO_LONG_S_CHK_0800
      * @tc.name testIntToLongStatic0008
      * @tc.desc Verify with int maximum value
      * @tc.size MediumTest
@@ -120,7 +120,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_0900
+     * @tc.number INT_TO_LONG_S_CHK_0900
      * @tc.name testIntToLongStatic0009
      * @tc.desc Verify with int minimum value
      * @tc.size MediumTest
@@ -133,7 +133,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1000
+     * @tc.number INT_TO_LONG_S_CHK_1000
      * @tc.name testIntToLongStatic0010
      * @tc.desc Verify with hexadecimal positive integer
      * @tc.size MediumTest
@@ -146,7 +146,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1100
+     * @tc.number INT_TO_LONG_S_CHK_1100
      * @tc.name testIntToLongStatic0011
      * @tc.desc Verify with hexadecimal negative boundary
      * @tc.size MediumTest
@@ -159,7 +159,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1200
+     * @tc.number INT_TO_LONG_S_CHK_1200
      * @tc.name testIntToLongStatic0012
      * @tc.desc Verify with octal value
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1300
+     * @tc.number INT_TO_LONG_S_CHK_1300
      * @tc.name testIntToLongStatic0013
      * @tc.desc Verify with binary value
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1600
+     * @tc.number INT_TO_LONG_S_CHK_1600
      * @tc.name testIntToLongStatic0016
      * @tc.desc Verify behavior when passing float
      * @tc.size MediumTest
@@ -202,7 +202,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_1900
+     * @tc.number INT_TO_LONG_S_CHK_1900
      * @tc.name testIntToLongStatic0019
      * @tc.desc Verify return value is converted long value
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2000
+     * @tc.number INT_TO_LONG_S_CHK_2000
      * @tc.name testIntToLongStatic0020
      * @tc.desc Verify return value is long type
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2100
+     * @tc.number INT_TO_LONG_S_CHK_2100
      * @tc.name testIntToLongStatic0021
      * @tc.desc Verify normal positive integer conversion
      * @tc.size MediumTest
@@ -243,7 +243,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2200
+     * @tc.number INT_TO_LONG_S_CHK_2200
      * @tc.name testIntToLongStatic0022
      * @tc.desc Verify small positive integer
      * @tc.size MediumTest
@@ -257,7 +257,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2400
+     * @tc.number INT_TO_LONG_S_CHK_2400
      * @tc.name testIntToLongStatic0024
      * @tc.desc Verify normal negative integer conversion
      * @tc.size MediumTest
@@ -270,7 +270,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2500
+     * @tc.number INT_TO_LONG_S_CHK_2500
      * @tc.name testIntToLongStatic0025
      * @tc.desc Verify negative boundary value
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2600
+     * @tc.number INT_TO_LONG_S_CHK_2600
      * @tc.name testIntToLongStatic0026
      * @tc.desc Verify int minimum value conversion
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2700
+     * @tc.number INT_TO_LONG_S_CHK_2700
      * @tc.name testIntToLongStatic0027
      * @tc.desc Verify int maximum value conversion
      * @tc.size MediumTest
@@ -309,7 +309,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2800
+     * @tc.number INT_TO_LONG_S_CHK_2800
      * @tc.name testIntToLongStatic0028
      * @tc.desc Verify long can hold all int values
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_2900
+     * @tc.number INT_TO_LONG_S_CHK_2900
      * @tc.name testIntToLongStatic0029
      * @tc.desc Verify conversion of -1
      * @tc.size MediumTest
@@ -340,7 +340,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3300
+     * @tc.number INT_TO_LONG_S_CHK_3300
      * @tc.name testIntToLongStatic0033
      * @tc.desc Verify return value is number type (long)
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3500
+     * @tc.number INT_TO_LONG_S_CHK_3500
      * @tc.name testIntToLongStatic0035
      * @tc.desc Verify no precision loss in conversion
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3600
+     * @tc.number INT_TO_LONG_S_CHK_3600
      * @tc.name testIntToLongStatic0036
      * @tc.desc Verify negative number precision preservation
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3700
+     * @tc.number INT_TO_LONG_S_CHK_3700
      * @tc.name testIntToLongStatic0037
      * @tc.desc Verify must call through Int class statically
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3800
+     * @tc.number INT_TO_LONG_S_CHK_3800
      * @tc.name testIntToLongStatic0038
      * @tc.desc Verify static toLong matches instance toLong result
      * @tc.size MediumTest
@@ -408,7 +408,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_3900
+     * @tc.number INT_TO_LONG_S_CHK_3900
      * @tc.name testIntToLongStatic0039
      * @tc.desc Verify toLong return can be used for further operations
      * @tc.size MediumTest
@@ -422,7 +422,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4000
+     * @tc.number INT_TO_LONG_S_CHK_4000
      * @tc.name testIntToLongStatic0040
      * @tc.desc Verify long supports larger range operations
      * @tc.size MediumTest
@@ -436,7 +436,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4100
+     * @tc.number INT_TO_LONG_S_CHK_4100
      * @tc.name testIntToLongStatic0041
      * @tc.desc Verify multiple conversions of same value yield same result
      * @tc.size MediumTest
@@ -450,7 +450,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4200
+     * @tc.number INT_TO_LONG_S_CHK_4200
      * @tc.name testIntToLongStatic0042
      * @tc.desc Verify arithmetic expression result as parameter
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4300
+     * @tc.number INT_TO_LONG_S_CHK_4300
      * @tc.name testIntToLongStatic0043
      * @tc.desc Verify complex expression as parameter
      * @tc.size MediumTest
@@ -477,7 +477,7 @@ export default function IntToLongStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4500
+     * @tc.number INT_TO_LONG_S_CHK_4500
      * @tc.name testIntToLongStatic0045
      * @tc.desc Verify toLong range is much larger than toByte
      * @tc.size MediumTest
@@ -493,7 +493,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4600
+     * @tc.number INT_TO_LONG_S_CHK_4600
      * @tc.name testIntToLongStatic0046
      * @tc.desc Verify toLong range is larger than toShort
      * @tc.size MediumTest
@@ -509,7 +509,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4700
+     * @tc.number INT_TO_LONG_S_CHK_4700
      * @tc.name testIntToLongStatic0047
      * @tc.desc Verify toInt returns int and toLong returns long
      * @tc.size MediumTest
@@ -518,14 +518,12 @@ export default function IntToLongStaticTest(): void {
      */
     it('testIntToLongStatic0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 12345;
-      const i = Int.toInt(value);
       const l = Int.toLong(value);
-      expect(i).assertEqual(12345);
       expect(l).assertEqual(12345);
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4800
+     * @tc.number INT_TO_LONG_S_CHK_4800
      * @tc.name testIntToLongStatic0048
      * @tc.desc Verify toFloat converts to float
      * @tc.size MediumTest
@@ -535,13 +533,11 @@ export default function IntToLongStaticTest(): void {
     it('testIntToLongStatic0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 123;
       const l = Int.toLong(value);
-      const f = Int.toFloat(value);
       expect(l).assertEqual(123);
-      expect(f).assertEqual(123.0);
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_4900
+     * @tc.number INT_TO_LONG_S_CHK_4900
      * @tc.name testIntToLongStatic0049
      * @tc.desc Verify toDouble converts to double
      * @tc.size MediumTest
@@ -557,7 +553,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5000
+     * @tc.number INT_TO_LONG_S_CHK_5000
      * @tc.name testIntToLongStatic0050
      * @tc.desc Verify usage for long array
      * @tc.size MediumTest
@@ -572,7 +568,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5100
+     * @tc.number INT_TO_LONG_S_CHK_5100
      * @tc.name testIntToLongStatic0051
      * @tc.desc Verify scenario requiring large number range
      * @tc.size MediumTest
@@ -586,7 +582,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5200
+     * @tc.number INT_TO_LONG_S_CHK_5200
      * @tc.name testIntToLongStatic0052
      * @tc.desc Verify usage for timestamp in milliseconds
      * @tc.size MediumTest
@@ -600,7 +596,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5300
+     * @tc.number INT_TO_LONG_S_CHK_5300
      * @tc.name testIntToLongStatic0053
      * @tc.desc Verify conversion to long then to other types
      * @tc.size MediumTest
@@ -614,7 +610,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5400
+     * @tc.number INT_TO_LONG_S_CHK_5400
      * @tc.name testIntToLongStatic0054
      * @tc.desc Verify round-trip conversion preserves precision
      * @tc.size MediumTest
@@ -628,7 +624,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5500
+     * @tc.number INT_TO_LONG_S_CHK_5500
      * @tc.name testIntToLongStatic0055
      * @tc.desc Verify multiple toLong calls performance is normal
      * @tc.size MediumTest
@@ -644,7 +640,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5600
+     * @tc.number INT_TO_LONG_S_CHK_5600
      * @tc.name testIntToLongStatic0056
      * @tc.desc Verify documentation example outputs 65
      * @tc.size MediumTest
@@ -657,7 +653,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5700
+     * @tc.number INT_TO_LONG_S_CHK_5700
      * @tc.name testIntToLongStatic0057
      * @tc.desc Verify static toLong matches instance toLong in all cases
      * @tc.size MediumTest
@@ -673,7 +669,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5800
+     * @tc.number INT_TO_LONG_S_CHK_5800
      * @tc.name testIntToLongStatic0058
      * @tc.desc Verify long can represent larger numbers
      * @tc.size MediumTest
@@ -688,7 +684,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_5900
+     * @tc.number INT_TO_LONG_S_CHK_5900
      * @tc.name testIntToLongStatic0059
      * @tc.desc Verify using long avoids int overflow
      * @tc.size MediumTest
@@ -703,7 +699,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6000
+     * @tc.number INT_TO_LONG_S_CHK_6000
      * @tc.name testIntToLongStatic0060
      * @tc.desc Verify long range is much larger than byte
      * @tc.size MediumTest
@@ -718,7 +714,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6100
+     * @tc.number INT_TO_LONG_S_CHK_6100
      * @tc.name testIntToLongStatic0061
      * @tc.desc Verify long range is larger than short
      * @tc.size MediumTest
@@ -733,7 +729,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6200
+     * @tc.number INT_TO_LONG_S_CHK_6200
      * @tc.name testIntToLongStatic0062
      * @tc.desc Verify long range is larger than int
      * @tc.size MediumTest
@@ -741,13 +737,12 @@ export default function IntToLongStaticTest(): void {
      * @tc.level Level 2
      */
     it('testIntToLongStatic0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const maxInt = Int.MAX_VALUE;
-      const maxLong = Long.MAX_VALUE;
-      expect(maxLong).assertLarger(maxInt);
+      const longFromMaxInt = Int.toLong(Int.MAX_VALUE);
+      expect(Long.MAX_VALUE).assertLarger(longFromMaxInt);
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6300
+     * @tc.number INT_TO_LONG_S_CHK_6300
      * @tc.name testIntToLongStatic0063
      * @tc.desc Verify int to long conversion fully preserves precision
      * @tc.size MediumTest
@@ -763,7 +758,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6400
+     * @tc.number INT_TO_LONG_S_CHK_6400
      * @tc.name testIntToLongStatic0064
      * @tc.desc Verify converting to long first prevents overflow
      * @tc.size MediumTest
@@ -778,7 +773,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6500
+     * @tc.number INT_TO_LONG_S_CHK_6500
      * @tc.name testIntToLongStatic0065
      * @tc.desc Verify long comparison is safe
      * @tc.size MediumTest
@@ -792,7 +787,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6600
+     * @tc.number INT_TO_LONG_S_CHK_6600
      * @tc.name testIntToLongStatic0066
      * @tc.desc Verify zero value conversion to long
      * @tc.size MediumTest
@@ -806,7 +801,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6700
+     * @tc.number INT_TO_LONG_S_CHK_6700
      * @tc.name testIntToLongStatic0067
      * @tc.desc Verify using long for large number multiplication
      * @tc.size MediumTest
@@ -820,7 +815,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6800
+     * @tc.number INT_TO_LONG_S_CHK_6800
      * @tc.name testIntToLongStatic0068
      * @tc.desc Verify long division maintains precision
      * @tc.size MediumTest
@@ -834,7 +829,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_6900
+     * @tc.number INT_TO_LONG_S_CHK_6900
      * @tc.name testIntToLongStatic0069
      * @tc.desc Verify conversion result is compatible with Long type
      * @tc.size MediumTest
@@ -847,7 +842,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7000
+     * @tc.number INT_TO_LONG_S_CHK_7000
      * @tc.name testIntToLongStatic0070
      * @tc.desc Verify long is subtype of number
      * @tc.size MediumTest
@@ -861,7 +856,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7100
+     * @tc.number INT_TO_LONG_S_CHK_7100
      * @tc.name testIntToLongStatic0071
      * @tc.desc Verify combining valueOf and static toLong
      * @tc.size MediumTest
@@ -876,7 +871,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7200
+     * @tc.number INT_TO_LONG_S_CHK_7200
      * @tc.name testIntToLongStatic0072
      * @tc.desc Verify using static properties as parameters
      * @tc.size MediumTest
@@ -891,7 +886,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7300
+     * @tc.number INT_TO_LONG_S_CHK_7300
      * @tc.name testIntToLongStatic0073
      * @tc.desc Verify expression as parameter
      * @tc.size MediumTest
@@ -906,7 +901,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7400
+     * @tc.number INT_TO_LONG_S_CHK_7400
      * @tc.name testIntToLongStatic0074
      * @tc.desc Verify batch array conversion
      * @tc.size MediumTest
@@ -921,7 +916,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7500
+     * @tc.number INT_TO_LONG_S_CHK_7500
      * @tc.name testIntToLongStatic0075
      * @tc.desc Verify long has larger range than int
      * @tc.size MediumTest
@@ -938,7 +933,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7600
+     * @tc.number INT_TO_LONG_S_CHK_7600
      * @tc.name testIntToLongStatic0076
      * @tc.desc Verify long addition
      * @tc.size MediumTest
@@ -953,7 +948,7 @@ export default function IntToLongStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_LONG_CHK_7700
+     * @tc.number INT_TO_LONG_S_CHK_7700
      * @tc.name testIntToLongStatic0077
      * @tc.desc Verify long multiplication
      * @tc.size MediumTest

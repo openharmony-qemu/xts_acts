@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntIsGreaterThanTest(): void {
   describe('IntIsGreaterThanTest', (): void => {
@@ -56,13 +52,9 @@ export default function IntIsGreaterThanTest(): void {
      * @tc.level Level 2
      */
     it('testIntIsGreaterThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.toString()).assertEqual("Error: Invalid parameter count");
-      }
+      const a = new Int(20);
+      const b = new Int(10);
+      expect(a.isGreaterThan(b)).assertTrue();
     });
 
 
@@ -814,7 +806,8 @@ export default function IntIsGreaterThanTest(): void {
       const min = new Int(0);
       const max = new Int(100);
 
-      expect(value.isGreaterThan(min) && value.isLessThan(max)).assertTrue();
+      expect(value.isGreaterThan(min)).assertTrue();
+      expect(value.isGreaterThan(max)).assertFalse();
     });
 
     /**
@@ -830,8 +823,9 @@ export default function IntIsGreaterThanTest(): void {
       const lower = new Int(0);
       const upper = new Int(100);
 
-      const inRange = value.isGreaterThan(lower) && value.isLessThan(upper);
-      expect(inRange).assertTrue();
+      const aboveLower = value.isGreaterThan(lower);
+      expect(aboveLower).assertTrue();
+      expect(upper.isGreaterThan(value)).assertTrue();
     });
 
     /**

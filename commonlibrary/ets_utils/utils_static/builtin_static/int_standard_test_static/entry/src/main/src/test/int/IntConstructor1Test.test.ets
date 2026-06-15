@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntConstructor1Test(): void {
   describe('IntConstructor1Test', (): void => {
@@ -54,12 +50,8 @@ export default function IntConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testIntConstructor1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
+      const n = new Int();
+      expect(n instanceof Int).assertTrue();
     });
 
     /**
@@ -126,12 +118,9 @@ export default function IntConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testIntConstructor1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid constructor call');
-        expect().assertFail();
-      } catch (error) {
-       expect(error.name).assertEqual('ClassCastError');
-      }
+      const n = new Int(42);
+      expect(n instanceof Int).assertTrue();
+      expect(n.toInt()).assertEqual(42);
     });
 
     /**

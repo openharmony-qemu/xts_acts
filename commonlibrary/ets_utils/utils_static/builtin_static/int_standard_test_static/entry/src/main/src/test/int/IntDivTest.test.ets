@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntDivTest(): void {
   describe('IntDivTest', (): void => {
@@ -55,12 +51,9 @@ export default function IntDivTest(): void {
      * @tc.level Level 2
      */
     it('testIntDiv0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
+      const a = new Int(20);
+      const result = a.div(new Int(4));
+      expect(result.toInt()).assertEqual(5);
     });
 
 
@@ -274,7 +267,7 @@ export default function IntDivTest(): void {
         const result = a.div(b);
         expect().assertFail();
       } catch (error) {
-       expect(error.name).assertEqual('ClassCastError');
+       expect(error.name).assertEqual('ArithmeticError');
       }
     });
 
@@ -675,9 +668,7 @@ export default function IntDivTest(): void {
         const result = a.div(new Int(0));
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        const errorMessage = error.toString().toLowerCase();
-        expect(errorMessage.indexOf('zero') >= 0 || errorMessage.indexOf('0') >= 0).assertTrue();
+        expect(error.name).assertEqual('ArithmeticError');
       }
     });
 

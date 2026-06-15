@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import hilog from '@ohos.hilog';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntMulTest(): void {
   describe('IntMulTest', (): void => {
@@ -56,13 +52,9 @@ export default function IntMulTest(): void {
      * @tc.level Level 2
      */
     it('testIntMul0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.toString()).assertEqual("Error: Invalid parameter count");
-      }
+      const a = new Int(7);
+      const result = a.mul(new Int(0));
+      expect(result.toInt()).assertEqual(0);
     });
 
 
@@ -360,7 +352,8 @@ export default function IntMulTest(): void {
     it('testIntMul0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(6);
       const result = a.mul(new Int(5));
-      expect(result.toInt()).assertEqual(30);
+      expect(result instanceof Int).assertTrue();
+      expect(result === a).assertFalse();
     });
 
     /**

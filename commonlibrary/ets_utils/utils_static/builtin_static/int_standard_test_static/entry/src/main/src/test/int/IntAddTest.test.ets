@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
-
 export default function IntAddTest(): void {
   describe('IntAddTest', (): void => {
     beforeAll((): void => {
@@ -55,12 +51,9 @@ export default function IntAddTest(): void {
      * @tc.level Level 2
      */
     it('intAddParamCount00002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter count');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
+      const a = new Int(1);
+      const result = a.add(new Int(0));
+      expect(result.toInt()).assertEqual(1);
     });
 
     /**
@@ -300,12 +293,9 @@ export default function IntAddTest(): void {
      * @tc.level Level 2
      */
     it('intAddParamTypeAbnormal00001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        throwErrorHelper('Invalid parameter type');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
+      const a = new Int(5);
+      const result = a.add(new Int(-5));
+      expect(result.toInt()).assertEqual(0);
     });
 
     /**
@@ -1071,8 +1061,8 @@ export default function IntAddTest(): void {
     it('intAddSubInverse0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(100);
       const b = new Int(30);
-      const result = a.sub(b).add(b);
-      expect(result.toInt()).assertEqual(a.toInt());
+      const result = b.sub(a).add(a);
+      expect(result.toInt()).assertEqual(b.toInt());
     });
 
     /**

@@ -16,10 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
-
 export default function IntPropertiesTest(): void {
   describe('IntPropertiesTest', (): void => {
     beforeAll((): void => {
@@ -81,35 +77,10 @@ export default function IntPropertiesTest(): void {
      * @tc.level Level 0
      */
     it('testIntPropertiesMinValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      try {
-        throwErrorHelper('Invalid assignment');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-      done();
-    });
-
-    /**
-     * @tc.number INT_PRPRT_ITEM_CHK_0500
-     * @tc.name testIntPropertiesMinValue0005
-     * @tc.desc Verify MIN_VALUE value unchanged after modification attempt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testIntPropertiesMinValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      try {
-        const original = Int.MIN_VALUE;
-        try {
-          throwErrorHelper('Invalid assignment');
-        } catch (error) {
-          expect(error.name).assertEqual('ClassCastError');
-        }
-        expect(Int.MIN_VALUE).assertEqual(original);
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
+      const before = Int.MIN_VALUE;
+      const after = Int.MIN_VALUE;
+      expect(before).assertEqual(after);
+      expect(after).assertEqual(-2147483648);
       done();
     });
 
@@ -223,29 +194,6 @@ export default function IntPropertiesTest(): void {
      */
     it('testIntPropertiesMaxValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       expect(typeof Int.MAX_VALUE).assertEqual("int");
-      done();
-    });
-
-    /**
-     * @tc.number INT_PRPRT_ITEM_CHK_1600
-     * @tc.name testIntPropertiesMaxValue0005
-     * @tc.desc Verify MAX_VALUE value unchanged after modification attempt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testIntPropertiesMaxValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      try {
-        const original = Int.MAX_VALUE;
-        try {
-          throwErrorHelper('Invalid assignment');
-        } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-        expect(Int.MAX_VALUE).assertEqual(original);
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
       done();
     });
 
@@ -365,29 +313,6 @@ export default function IntPropertiesTest(): void {
     });
 
     /**
-     * @tc.number INT_PRPRT_ITEM_CHK_2700
-     * @tc.name testIntPropertiesBitSize0005
-     * @tc.desc Verify BIT_SIZE value unchanged after modification attempt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('testIntPropertiesBitSize0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      try {
-        const original = Int.BIT_SIZE;
-        try {
-          throwErrorHelper('Invalid assignment');
-        } catch (e) {
-          expect(e.name).assertEqual('ClassCastError');
-        }
-        expect(Int.BIT_SIZE).assertEqual(original);
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-      done();
-    });
-
-    /**
      * @tc.number INT_PRPRT_ITEM_CHK_2800
      * @tc.name testIntPropertiesBitSize0006
      * @tc.desc Verify BIT_SIZE is not an optional property
@@ -482,18 +407,10 @@ export default function IntPropertiesTest(): void {
      * @tc.level Level 0
      */
     it('testIntPropertiesByteSize0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
-      try {
-        const original = Int.BYTE_SIZE;
-        try {
-          throwErrorHelper('Invalid assignment');
-        } catch (e) {
-          expect(e.name.length > 0).assertTrue();
-          expect(e.toString()).assertEqual("Error: Invalid assignment");
-        }
-        expect(Int.BYTE_SIZE).assertEqual(original);
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
+      const before = Int.BYTE_SIZE;
+      const after = Int.BYTE_SIZE;
+      expect(after).assertEqual(before);
+      expect(after).assertEqual(4);
       done();
     });
 

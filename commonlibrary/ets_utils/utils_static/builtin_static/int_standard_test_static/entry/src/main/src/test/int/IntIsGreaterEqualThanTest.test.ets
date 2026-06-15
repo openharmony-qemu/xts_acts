@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,6 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-
-function throwErrorHelper(msg: string): void {
-  throw new Error(msg);
-}
 
 export default function IntIsGreaterEqualThanTest(): void {
   describe('IntIsGreaterEqualThanTest', (): void => {
@@ -53,13 +49,9 @@ export default function IntIsGreaterEqualThanTest(): void {
    * @tc.level Level 2
    */
   it('testIntIsGreaterEqualThan0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    try {
-      throwErrorHelper('Invalid parameter count');
-      expect().assertFail();
-    } catch (error) {
-      expect(error.name.length > 0).assertTrue();
-      expect(error.toString()).assertEqual("Error: Invalid parameter count");
-    }
+    const a = new Int(10);
+    const b = new Int(10);
+    expect(a.isGreaterEqualThan(b)).assertTrue();
   });
 
 
@@ -466,7 +458,6 @@ export default function IntIsGreaterEqualThanTest(): void {
   it('testIntIsGreaterEqualThan0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     const a = new Int(75);
     const b = new Int(65);
-    expect(a.isGreaterThan(b)).assertTrue();
     expect(a.isGreaterEqualThan(b)).assertTrue();
   });
 
@@ -481,7 +472,6 @@ export default function IntIsGreaterEqualThanTest(): void {
   it('testIntIsGreaterEqualThan0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     const a = new Int(65);
     const b = new Int(65);
-    expect(a.isGreaterThan(b)).assertFalse();
     expect(a.isGreaterEqualThan(b)).assertTrue();
   });
 
@@ -608,7 +598,8 @@ export default function IntIsGreaterEqualThanTest(): void {
     const value = new Int(50);
     const min = new Int(0);
     const max = new Int(100);
-    expect(value.isGreaterEqualThan(min) && value.isLessEqualThan(max)).assertTrue();
+    expect(value.isGreaterEqualThan(min)).assertTrue();
+    expect(value.isGreaterEqualThan(max)).assertFalse();
   });
 
   /**
@@ -815,14 +806,14 @@ export default function IntIsGreaterEqualThanTest(): void {
     const value = new Int(50);
     const lower = new Int(0);
     const upper = new Int(100);
-    const inRange = value.isGreaterEqualThan(lower) && value.isLessEqualThan(upper);
+    const inRange = value.isGreaterEqualThan(lower);
     expect(inRange).assertTrue();
 
     const lowerBound = new Int(0);
-    expect(lowerBound.isGreaterEqualThan(lower) && lowerBound.isLessEqualThan(upper)).assertTrue();
+    expect(lowerBound.isGreaterEqualThan(lower)).assertTrue();
 
     const upperBound = new Int(100);
-    expect(upperBound.isGreaterEqualThan(lower) && upperBound.isLessEqualThan(upper)).assertTrue();
+    expect(upperBound.isGreaterEqualThan(lower)).assertTrue();
   });
 
   /**

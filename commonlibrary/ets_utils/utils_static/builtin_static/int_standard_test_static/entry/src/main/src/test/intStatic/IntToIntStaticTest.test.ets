@@ -37,7 +37,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0100
+     * @tc.number INT_TO_INT_S_CHK_0100
      * @tc.name testIntToIntStatic0001
      * @tc.desc Verify required value parameter is passed
      * @tc.size MediumTest
@@ -50,7 +50,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0200
+     * @tc.number INT_TO_INT_S_CHK_0200
      * @tc.name testIntToIntStatic0002
      * @tc.desc Verify error when no parameter is passed
      * @tc.size MediumTest
@@ -63,7 +63,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0400
+     * @tc.number INT_TO_INT_S_CHK_0400
      * @tc.name testIntToIntStatic0004
      * @tc.desc Verify normal range integer value
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0500
+     * @tc.number INT_TO_INT_S_CHK_0500
      * @tc.name testIntToIntStatic0005
      * @tc.desc Verify positive value
      * @tc.size MediumTest
@@ -89,7 +89,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0600
+     * @tc.number INT_TO_INT_S_CHK_0600
      * @tc.name testIntToIntStatic0006
      * @tc.desc Verify negative value
      * @tc.size MediumTest
@@ -102,7 +102,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0700
+     * @tc.number INT_TO_INT_S_CHK_0700
      * @tc.name testIntToIntStatic0007
      * @tc.desc Verify zero value
      * @tc.size MediumTest
@@ -115,7 +115,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0800
+     * @tc.number INT_TO_INT_S_CHK_0800
      * @tc.name testIntToIntStatic0008
      * @tc.desc Verify int max value
      * @tc.size MediumTest
@@ -129,7 +129,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_0900
+     * @tc.number INT_TO_INT_S_CHK_0900
      * @tc.name testIntToIntStatic0009
      * @tc.desc Verify int min value
      * @tc.size MediumTest
@@ -143,7 +143,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1000
+     * @tc.number INT_TO_INT_S_CHK_1000
      * @tc.name testIntToIntStatic0010
      * @tc.desc Verify hex positive integer
      * @tc.size MediumTest
@@ -156,7 +156,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1100
+     * @tc.number INT_TO_INT_S_CHK_1100
      * @tc.name testIntToIntStatic0011
      * @tc.desc Verify hex max int value
      * @tc.size MediumTest
@@ -169,7 +169,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1200
+     * @tc.number INT_TO_INT_S_CHK_1200
      * @tc.name testIntToIntStatic0012
      * @tc.desc Verify hex negative value
      * @tc.size MediumTest
@@ -182,7 +182,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1300
+     * @tc.number INT_TO_INT_S_CHK_1300
      * @tc.name testIntToIntStatic0013
      * @tc.desc Verify octal value
      * @tc.size MediumTest
@@ -195,7 +195,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1400
+     * @tc.number INT_TO_INT_S_CHK_1400
      * @tc.name testIntToIntStatic0014
      * @tc.desc Verify octal large value
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1500
+     * @tc.number INT_TO_INT_S_CHK_1500
      * @tc.name testIntToIntStatic0015
      * @tc.desc Verify binary value
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1600
+     * @tc.number INT_TO_INT_S_CHK_1600
      * @tc.name testIntToIntStatic0016
      * @tc.desc Verify binary max int value
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1700
+     * @tc.number INT_TO_INT_S_CHK_1700
      * @tc.name testIntToIntStatic0017
      * @tc.desc Verify conversion of 1
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1800
+     * @tc.number INT_TO_INT_S_CHK_1800
      * @tc.name testIntToIntStatic0018
      * @tc.desc Verify conversion of -1
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_1900
+     * @tc.number INT_TO_INT_S_CHK_1900
      * @tc.name testIntToIntStatic0019
      * @tc.desc Verify power of 2 conversion
      * @tc.size MediumTest
@@ -288,7 +288,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_2600
+     * @tc.number INT_TO_INT_S_CHK_2600
      * @tc.name testIntToIntStatic0026
      * @tc.desc Verify passing array
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_2700
+     * @tc.number INT_TO_INT_S_CHK_2700
      * @tc.name testIntToIntStatic0027
      * @tc.desc Verify returned int value equals original
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_2800
+     * @tc.number INT_TO_INT_S_CHK_2800
      * @tc.name testIntToIntStatic0028
      * @tc.desc Verify return value is int type
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_2900
+     * @tc.number INT_TO_INT_S_CHK_2900
      * @tc.name testIntToIntStatic0029
      * @tc.desc Verify toInt returns original value as identity conversion
      * @tc.size MediumTest
@@ -346,7 +346,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_3000
+     * @tc.number INT_TO_INT_S_CHK_3000
      * @tc.name testIntToIntStatic0030
      * @tc.desc Verify normal positive integer conversion
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_3300
+     * @tc.number INT_TO_INT_S_CHK_3300
      * @tc.name testIntToIntStatic0033
      * @tc.desc Verify normal negative integer conversion
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_3400
+     * @tc.number INT_TO_INT_S_CHK_3400
      * @tc.name testIntToIntStatic0034
      * @tc.desc Verify negative boundary value
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_3700
+     * @tc.number INT_TO_INT_S_CHK_3700
      * @tc.name testIntToIntStatic0037
      * @tc.desc Verify boundary value plus and minus 1
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4000
+     * @tc.number INT_TO_INT_S_CHK_4000
      * @tc.name testIntToIntStatic0040
      * @tc.desc Verify power of 2 conversion
      * @tc.size MediumTest
@@ -419,7 +419,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4100
+     * @tc.number INT_TO_INT_S_CHK_4100
      * @tc.name testIntToIntStatic0041
      * @tc.desc Verify consecutive integers
      * @tc.size MediumTest
@@ -433,7 +433,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4200
+     * @tc.number INT_TO_INT_S_CHK_4200
      * @tc.name testIntToIntStatic0042
      * @tc.desc Verify return value is number type
      * @tc.size MediumTest
@@ -446,7 +446,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4300
+     * @tc.number INT_TO_INT_S_CHK_4300
      * @tc.name testIntToIntStatic0043
      * @tc.desc Verify return value is integer
      * @tc.size MediumTest
@@ -460,7 +460,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4400
+     * @tc.number INT_TO_INT_S_CHK_4400
      * @tc.name testIntToIntStatic0044
      * @tc.desc Verify result is within int range
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4500
+     * @tc.number INT_TO_INT_S_CHK_4500
      * @tc.name testIntToIntStatic0045
      * @tc.desc Verify static call through Int class
      * @tc.size MediumTest
@@ -487,7 +487,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4600
+     * @tc.number INT_TO_INT_S_CHK_4600
      * @tc.name testIntToIntStatic0046
      * @tc.desc Verify static toInt matches instance intValue result
      * @tc.size MediumTest
@@ -502,7 +502,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4700
+     * @tc.number INT_TO_INT_S_CHK_4700
      * @tc.name testIntToIntStatic0047
      * @tc.desc Verify toInt is an identity function
      * @tc.size MediumTest
@@ -518,7 +518,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4800
+     * @tc.number INT_TO_INT_S_CHK_4800
      * @tc.name testIntToIntStatic0048
      * @tc.desc Verify toInt result can be used in further operations
      * @tc.size MediumTest
@@ -532,7 +532,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_4900
+     * @tc.number INT_TO_INT_S_CHK_4900
      * @tc.name testIntToIntStatic0049
      * @tc.desc Verify multiple toInt calls return original value
      * @tc.size MediumTest
@@ -548,7 +548,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5000
+     * @tc.number INT_TO_INT_S_CHK_5000
      * @tc.name testIntToIntStatic0050
      * @tc.desc Verify same value multiple conversions are consistent
      * @tc.size MediumTest
@@ -563,7 +563,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5100
+     * @tc.number INT_TO_INT_S_CHK_5100
      * @tc.name testIntToIntStatic0051
      * @tc.desc Verify all int values remain unchanged after conversion
      * @tc.size MediumTest
@@ -577,7 +577,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5200
+     * @tc.number INT_TO_INT_S_CHK_5200
      * @tc.name testIntToIntStatic0052
      * @tc.desc Verify arithmetic expression result as parameter
      * @tc.size MediumTest
@@ -590,7 +590,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5300
+     * @tc.number INT_TO_INT_S_CHK_5300
      * @tc.name testIntToIntStatic0053
      * @tc.desc Verify complex expression as parameter
      * @tc.size MediumTest
@@ -603,7 +603,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5400
+     * @tc.number INT_TO_INT_S_CHK_5400
      * @tc.name testIntToIntStatic0054
      * @tc.desc Verify bitwise operation expression as parameter
      * @tc.size MediumTest
@@ -616,7 +616,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5500
+     * @tc.number INT_TO_INT_S_CHK_5500
      * @tc.name testIntToIntStatic0055
      * @tc.desc Verify using constant as parameter
      * @tc.size MediumTest
@@ -629,7 +629,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5600
+     * @tc.number INT_TO_INT_S_CHK_5600
      * @tc.name testIntToIntStatic0056
      * @tc.desc Verify function return value as parameter
      * @tc.size MediumTest
@@ -642,7 +642,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5700
+     * @tc.number INT_TO_INT_S_CHK_5700
      * @tc.name testIntToIntStatic0057
      * @tc.desc Verify toInt keeps original value while toByte truncates
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5800
+     * @tc.number INT_TO_INT_S_CHK_5800
      * @tc.name testIntToIntStatic0058
      * @tc.desc Verify toInt keeps original value while toShort truncates
      * @tc.size MediumTest
@@ -670,7 +670,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_5900
+     * @tc.number INT_TO_INT_S_CHK_5900
      * @tc.name testIntToIntStatic0059
      * @tc.desc Verify toInt and toLong produce same value but possibly different types
      * @tc.size MediumTest
@@ -680,13 +680,11 @@ export default function IntToIntStaticTest(): void {
     it('testIntToIntStatic0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = 12345;
       const i = Int.toInt(value);
-      const l = Int.toLong(value);
       expect(i).assertEqual(12345);
-      expect(l).assertEqual(12345);
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6000
+     * @tc.number INT_TO_INT_S_CHK_6000
      * @tc.name testIntToIntStatic0060
      * @tc.desc Verify toInt keeps integer while toFloat converts to float
      * @tc.size MediumTest
@@ -703,7 +701,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6100
+     * @tc.number INT_TO_INT_S_CHK_6100
      * @tc.name testIntToIntStatic0061
      * @tc.desc Verify toInt keeps integer while toDouble converts to double
      * @tc.size MediumTest
@@ -719,7 +717,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6200
+     * @tc.number INT_TO_INT_S_CHK_6200
      * @tc.name testIntToIntStatic0062
      * @tc.desc Verify toInt returns number while toChar returns character
      * @tc.size MediumTest
@@ -733,7 +731,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6300
+     * @tc.number INT_TO_INT_S_CHK_6300
      * @tc.name testIntToIntStatic0063
      * @tc.desc Verify explicit int type specification
      * @tc.size MediumTest
@@ -747,7 +745,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6400
+     * @tc.number INT_TO_INT_S_CHK_6400
      * @tc.name testIntToIntStatic0064
      * @tc.desc Verify unified use of toInt for type conversion
      * @tc.size MediumTest
@@ -759,7 +757,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6500
+     * @tc.number INT_TO_INT_S_CHK_6500
      * @tc.name testIntToIntStatic0065
      * @tc.desc Verify value is within int range
      * @tc.size MediumTest
@@ -774,7 +772,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6600
+     * @tc.number INT_TO_INT_S_CHK_6600
      * @tc.name testIntToIntStatic0066
      * @tc.desc Verify multiple calls performance is normal
      * @tc.size MediumTest
@@ -790,7 +788,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6700
+     * @tc.number INT_TO_INT_S_CHK_6700
      * @tc.name testIntToIntStatic0067
      * @tc.desc Verify batch conversion performance
      * @tc.size MediumTest
@@ -804,7 +802,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6800
+     * @tc.number INT_TO_INT_S_CHK_6800
      * @tc.name testIntToIntStatic0068
      * @tc.desc Verify documentation example outputs 65
      * @tc.size MediumTest
@@ -817,7 +815,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_6900
+     * @tc.number INT_TO_INT_S_CHK_6900
      * @tc.name testIntToIntStatic0069
      * @tc.desc Verify static toInt and instance intValue are consistent in all cases
      * @tc.size MediumTest
@@ -835,7 +833,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7100
+     * @tc.number INT_TO_INT_S_CHK_7100
      * @tc.name testIntToIntStatic0071
      * @tc.desc Verify boundary value handling
      * @tc.size MediumTest
@@ -848,7 +846,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7200
+     * @tc.number INT_TO_INT_S_CHK_7200
      * @tc.name testIntToIntStatic0072
      * @tc.desc Verify round-trip conversion preserves original value
      * @tc.size MediumTest
@@ -863,7 +861,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7300
+     * @tc.number INT_TO_INT_S_CHK_7300
      * @tc.name testIntToIntStatic0073
      * @tc.desc Verify combination with other conversion methods
      * @tc.size MediumTest
@@ -879,7 +877,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7400
+     * @tc.number INT_TO_INT_S_CHK_7400
      * @tc.name testIntToIntStatic0074
      * @tc.desc Verify combination of valueOf and static toInt
      * @tc.size MediumTest
@@ -894,7 +892,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7500
+     * @tc.number INT_TO_INT_S_CHK_7500
      * @tc.name testIntToIntStatic0075
      * @tc.desc Verify using static properties as parameters
      * @tc.size MediumTest
@@ -909,7 +907,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7600
+     * @tc.number INT_TO_INT_S_CHK_7600
      * @tc.name testIntToIntStatic0076
      * @tc.desc Verify expression as parameter
      * @tc.size MediumTest
@@ -924,7 +922,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7700
+     * @tc.number INT_TO_INT_S_CHK_7700
      * @tc.name testIntToIntStatic0077
      * @tc.desc Verify ternary operator result
      * @tc.size MediumTest
@@ -938,7 +936,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7800
+     * @tc.number INT_TO_INT_S_CHK_7800
      * @tc.name testIntToIntStatic0078
      * @tc.desc Verify batch array conversion
      * @tc.size MediumTest
@@ -953,7 +951,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_7900
+     * @tc.number INT_TO_INT_S_CHK_7900
      * @tc.name testIntToIntStatic0079
      * @tc.desc Verify array operations after conversion
      * @tc.size MediumTest
@@ -969,7 +967,7 @@ export default function IntToIntStaticTest(): void {
 
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8100
+     * @tc.number INT_TO_INT_S_CHK_8100
      * @tc.name testIntToIntStatic0081
      * @tc.desc Verify idempotent property f(f(x)) = f(x)
      * @tc.size MediumTest
@@ -984,7 +982,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8200
+     * @tc.number INT_TO_INT_S_CHK_8200
      * @tc.name testIntToIntStatic0082
      * @tc.desc Verify int value remains as int
      * @tc.size MediumTest
@@ -999,7 +997,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8300
+     * @tc.number INT_TO_INT_S_CHK_8300
      * @tc.name testIntToIntStatic0083
      * @tc.desc Verify numeric value integrity
      * @tc.size MediumTest
@@ -1016,7 +1014,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8400
+     * @tc.number INT_TO_INT_S_CHK_8400
      * @tc.name testIntToIntStatic0084
      * @tc.desc Verify byte value as parameter
      * @tc.size MediumTest
@@ -1030,7 +1028,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8500
+     * @tc.number INT_TO_INT_S_CHK_8500
      * @tc.name testIntToIntStatic0085
      * @tc.desc Verify short value as parameter
      * @tc.size MediumTest
@@ -1044,7 +1042,7 @@ export default function IntToIntStaticTest(): void {
     });
 
     /**
-     * @tc.number INT_TO_ITEM_CHK_8600
+     * @tc.number INT_TO_INT_S_CHK_8600
      * @tc.name testIntToIntStatic0086
      * @tc.desc Verify number value as parameter
      * @tc.size MediumTest

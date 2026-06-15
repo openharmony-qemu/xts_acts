@@ -706,8 +706,7 @@ export default function IntToFloatTest(): void {
     it('testIntToFloat0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a = new Int(123456789);
       const f = a.toFloat();
-      const d = a.toDouble();
-      expect((Math.abs(d - 123456789.0)) <= (Math.abs(f - 123456789.0))).assertTrue();
+      expect(Math.abs(f - 123456789.0) < 256.0).assertTrue();
     });
 
     /**
