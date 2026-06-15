@@ -20,6 +20,9 @@
 #include "TextInput/TextInputGradientTest.cpp"
 #include "Richeditor/RichEditorPunctuationOverflowTest.cpp"
 #include "Richeditor/RichEditorScrollToVisibleTest.cpp"
+#include "TextCommon/TextPunctuationOverflowTest.cpp"
+#include "TextInput/TextInputPunctuationOverflowTest.cpp"
+#include "TextArea/TextAreaPunctuationOverflowTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -96,6 +99,24 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RichEditorScrollToVisibleTest_003", nullptr, RichEditorScrollToVisibleTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorScrollToVisibleTest_004", nullptr, RichEditorScrollToVisibleTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RichEditorScrollToVisibleTest_005", nullptr, RichEditorScrollToVisibleTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextPunctuationOverflowTest_001", nullptr, TextPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_002", nullptr, TextPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_003", nullptr, TextPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_004", nullptr, TextPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextPunctuationOverflowTest_005", nullptr, TextPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextInputPunctuationOverflowTest_001", nullptr, TextInputPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_002", nullptr, TextInputPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_003", nullptr, TextInputPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_004", nullptr, TextInputPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextInputPunctuationOverflowTest_005", nullptr, TextInputPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"TextAreaPunctuationOverflowTest_001", nullptr, TextAreaPunctuationOverflowTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_002", nullptr, TextAreaPunctuationOverflowTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_003", nullptr, TextAreaPunctuationOverflowTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_004", nullptr, TextAreaPunctuationOverflowTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaPunctuationOverflowTest_005", nullptr, TextAreaPunctuationOverflowTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
