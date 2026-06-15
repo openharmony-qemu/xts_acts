@@ -27,12 +27,12 @@ struct VideoOneBoundary {
   build() {
     Column({space:3}) {
       Row() {
-        Text(this.str).height(25).id('VideoOneBoundaryText')
+        Text(this.str).height(25).id('VideoOneBoundaryText').key('VideoOneBoundaryText')
       }
       Row() {
         Button('start').onClick(() => {
           this.controller.start()
-        }).width(65).height(25).id('VideoOneBoundaryStart')
+        }).width(65).height(25).id('VideoOneBoundaryStart').key('VideoOneBoundaryStart')
       }
       Row() {
         Button('setTime_0').onClick(() => {
@@ -41,14 +41,14 @@ struct VideoOneBoundary {
         })
           .width(80)
           .height(25)
-          .id('setCurrentTime_0')
+          .id('setCurrentTime_0').key('setCurrentTime_0')
         Button('setTime_-1').onClick(() => {
           this.controller.setCurrentTime(-1);
           this.str = '-1'
         })
           .width(80)
           .height(25)
-          .id('setCurrentTime_-1')
+          .id('setCurrentTime_-1').key('setCurrentTime_-1')
       }
       Video({
         src: this.videoSrc,

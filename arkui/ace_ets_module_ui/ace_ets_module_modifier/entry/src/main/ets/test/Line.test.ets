@@ -85,7 +85,7 @@ export default function lineNeJsunit() {
     it('testLineNe00073', Level.LEVEL0, async (done: Function) => {
       console.info('testLineNe00073 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('line' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

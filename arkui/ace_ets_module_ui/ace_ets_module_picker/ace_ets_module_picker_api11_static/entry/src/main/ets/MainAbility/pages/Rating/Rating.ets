@@ -65,7 +65,7 @@ struct rating_testcase {
           .onChange((value: number): void => {
             this.rating = value
           })
-          .key('rating1')
+          .key('Rating_rating1')
         Rating({ rating: 2, indicator: true })
           .stepSize(0.5)
           .stars(5)

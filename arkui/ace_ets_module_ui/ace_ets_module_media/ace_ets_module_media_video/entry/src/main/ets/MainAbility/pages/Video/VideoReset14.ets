@@ -47,28 +47,28 @@ struct VideoReset14 {
         })
 
       Row({space:2}) {
-        Text(this.text1).id('VideoReset14_text1')
-        Text(this.text2).id('VideoReset14_text2')
+        Text(this.text1).id('VideoReset14_text1').key('VideoReset14_text1')
+        Text(this.text2).id('VideoReset14_text2').key('VideoReset14_text2')
       }
 
       Row({space:2}) {
         Button('start').onClick(() => {
           this.controller.start()
         })
-          .id('VideoReset14_start')
+          .id('VideoReset14_start').key('VideoReset14_start')
 
         Button('reset').onClick(() => {
           this.controller.reset()
           console.log('testTag:' + 'reset' )
         })
-          .id('VideoReset14_reset')
+          .id('VideoReset14_reset').key('VideoReset14_reset')
       }
 
       Button('setCurrentTime').onClick(() => {
         console.log('testTag: setCurrentTime is ' + this.timeValue.toString());
         this.controller.setCurrentTime(this.timeValue, SeekMode.Accurate)
       })
-        .id('VideoReset14_setCurrentTime')
+        .id('VideoReset14_setCurrentTime').key('VideoReset14_setCurrentTime')
 
     }.width('100%')
   }

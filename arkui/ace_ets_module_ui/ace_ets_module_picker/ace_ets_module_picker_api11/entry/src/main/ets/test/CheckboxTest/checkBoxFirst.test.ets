@@ -57,8 +57,8 @@ export default function checkBoxGroupJsunit2() {
       console.info('checkBoxGroup testcheckBoxGroup001 START');
       await Utils.sleep(2000);
       try {
-        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(sendEventByKey('CheckboxGroup', 10, "")));
-        let strJson: string = getInspectorByKey('Checkbox2');
+        console.info("testcheckBoxGroup_0011 click result is: " + JSON.stringify(sendEventByKey('checkBox2' + '_CheckboxGroup', 10, "")));
+        let strJson: string = getInspectorByKey('checkBox2' + '_Checkbox2');
         console.info("[testcheckBoxGroup001] component select strJson:" + strJson);
         expect(JSON.parse(strJson).$type).assertEqual('Checkbox');
         expect(JSON.parse(strJson).$attrs.select).assertEqual("false");

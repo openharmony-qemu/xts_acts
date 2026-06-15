@@ -86,7 +86,7 @@ export default function ratingJsunit() {
      */
 it('testGetRatingAttr010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetRatingAttr1 START');
-      let strJson = inspector.getInspectorByKey('rating1');
+      let strJson = inspector.getInspectorByKey('Rating' + '_rating1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.info("rating1 rating" + JSON.stringify(obj.getElement('$attrs').getString('rating')));

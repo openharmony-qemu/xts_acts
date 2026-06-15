@@ -51,7 +51,7 @@ struct TimePickerPage {
     Column() {
       Button('切换12小时制/24小时制')
         .fontSize(14)
-        .key('button')
+        .key('TimePickerPage_button')
         .onClick(() => {
           this.mode = !this.mode
           this.isMilitaryTime = !this.isMilitaryTime
@@ -59,7 +59,7 @@ struct TimePickerPage {
       TimePicker({
         selected: this.selectedTime,
       })
-        .key('timePicker')
+        .key('TimePickerPage_timePicker')
         .width('60%')
         .height("50%")
         .useMilitaryTime(this.isMilitaryTime)

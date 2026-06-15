@@ -66,7 +66,7 @@ export default function buttonJsunit() {
      */
     it('buttonGetInspectorByKey010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetInspectorByKey START');
-      let strJson = getInspectorByKey('button');
+      let strJson = getInspectorByKey('Button' + '_button');
       let obj: ESObject = JSON.parse(strJson);
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj));
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj.$attrs));
@@ -87,7 +87,7 @@ export default function buttonJsunit() {
      * @tc.level  LEVEL1
      */
     it('ButtonGetInspectorByKey020', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('button1');
+      let strJson = getInspectorByKey('Button' + '_button1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("cd button1 component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.type).assertEqual('ButtonType.Capsule');
@@ -105,7 +105,7 @@ export default function buttonJsunit() {
      * @tc.level  LEVEL1
      */
     it('ButtonGetInspectorByKey030', Level.LEVEL1, async (done: Function) => {
-      let strJson = getInspectorByKey('button2');
+      let strJson = getInspectorByKey('Button' + '_button2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("cd button2 component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.type).assertEqual('ButtonType.Normal');

@@ -51,7 +51,7 @@ struct RectTest {
       Column() {
         Button("change value").onClick(() => {
           (this.customModifier1 as CustomModifier).onChange();
-        }).key("changeButton")
+        }).key("rect_changeButton")
 
           Rect({ width: '80%', height: '20%' })
           .key("Rect1")

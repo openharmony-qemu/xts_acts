@@ -83,7 +83,7 @@ export default function TimePicker1Test() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_timepicker_disappearTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
@@ -120,7 +120,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0200', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.error("[ArkUI_Stage_timepicker_disappearTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
@@ -158,7 +158,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0300', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF808080');
@@ -196,7 +196,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0400', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FFFF0000');
@@ -234,7 +234,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0500', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_disappearTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF008000');
@@ -272,7 +272,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0600', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -314,7 +314,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0700', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -356,7 +356,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0800', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -393,7 +393,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0900', Level.LEVEL1, async 
         console.log("[ArkUI_Stage_timepicker_disappearTextStyle_static_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
@@ -410,7 +410,7 @@ it('ArkUI_Stage_timepicker_disappearTextStyle_static_0900', Level.LEVEL1, async 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_timepicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_textStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
@@ -449,7 +449,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.error("[ArkUI_Stage_timepicker_textStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
@@ -487,7 +487,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0300', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_textStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF808080');
@@ -525,7 +525,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0400', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_textStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF00FF00');
@@ -563,7 +563,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0500', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_textStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF008000');
@@ -601,7 +601,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0600', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -643,7 +643,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0700', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -685,7 +685,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0800', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -722,7 +722,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0900', Level.LEVEL1, async (done: ()
         console.log("[ArkUI_Stage_timepicker_textStyle_static_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
@@ -738,7 +738,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0900', Level.LEVEL1, async (done: ()
      * @tc.level    Level.LEVEL1
      */
 it('ArkUI_Stage_timepicker_selectedTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
@@ -776,7 +776,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0200] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.error("[ArkUI_Stage_timepicker_selectedTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
@@ -814,7 +814,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0300] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF808080');
@@ -852,7 +852,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0400] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF00FF00');
@@ -890,7 +890,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_timepicker_selectedTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF008000');
@@ -928,7 +928,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0600] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -970,7 +970,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0700] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
 
       let strJsonDefault = inspector.getInspectorByKey('timePickerDefault');
@@ -1012,7 +1012,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0800] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
@@ -1049,7 +1049,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (
         console.log("[ArkUI_Stage_timepicker_selectedTextStyle_static_0900] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
-      let strJson = inspector.getInspectorByKey('timePicker');
+      let strJson = inspector.getInspectorByKey('TimePicker1' + '_timePicker');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
       expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');

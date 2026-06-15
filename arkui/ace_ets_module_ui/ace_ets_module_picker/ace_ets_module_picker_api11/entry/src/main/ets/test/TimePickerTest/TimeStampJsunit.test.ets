@@ -68,7 +68,7 @@ export default function timeStampJsunit() {
       } catch (err) {
         console.info("timeStampTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("timeStampTest_0100 click result is: " + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info("timeStampTest_0100 click result is: " + JSON.stringify(sendEventByKey('timeStamp' + '_button', 10, "")));
       await Utils.sleep(1500);
       console.info('timeStampTest_0100 END');
       done();

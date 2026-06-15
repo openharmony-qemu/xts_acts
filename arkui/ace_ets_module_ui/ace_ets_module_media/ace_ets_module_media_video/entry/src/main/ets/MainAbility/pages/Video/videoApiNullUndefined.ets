@@ -34,7 +34,7 @@ struct videoApiNullUndefined {
         controller: this.controller,
         imageAIOptions: this.options
       })
-        .id('videoApiNullUndefinedFirst')
+        .id('videoApiNullUndefinedFirst').key('videoApiNullUndefinedFirst')
         .width(180)
         .height(50)
         .controls(true)
@@ -47,28 +47,28 @@ struct videoApiNullUndefined {
       Row() {
         Button('start').onClick(() => {
           this.controller.start();
-        }).id('videoStartVideo').width(65).height(20)
+        }).id('videoStartVideo').key('videoStartVideo').width(65).height(20)
         Button('Null').onClick(() => {
           this.controller.setCurrentTime(null)
           this.controller.setCurrentTime(null,null)
-        }).id('videoSetCurrentTimeNull').width(65).height(20)
+        }).id('videoSetCurrentTimeNull').key('videoSetCurrentTimeNull').width(65).height(20)
         Button('Undefined').onClick(() => {
           this.controller.setCurrentTime(undefined)
           this.controller.setCurrentTime(undefined,undefined)
-        }).id('videoSetCurrentTimeUndefined').width(65).height(20)
+        }).id('videoSetCurrentTimeUndefined').key('videoSetCurrentTimeUndefined').width(65).height(20)
       }
 
       Row() {
         Button('False').onClick(() => {
           this.controller.requestFullscreen(false);
-        }).id('videoRequestFullscreenFalse').width(65).height(20)
+        }).id('videoRequestFullscreenFalse').key('videoRequestFullscreenFalse').width(65).height(20)
       }
       Video({
         src: this.videoSrc,
         controller: this.controller,
         imageAIOptions: this.options
       })
-        .id('videoApiNullUndefinedSecond')
+        .id('videoApiNullUndefinedSecond').key('videoApiNullUndefinedSecond')
         .width(180)
         .height(50)
         .controls(false)

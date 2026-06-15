@@ -214,7 +214,7 @@ export default function scrollOnScrollBeginJsunit() {
     it('testScroll0011', Level.LEVEL0, async (done: Function) => {
       console.info('testScroll0011 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('scroll' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('ScrollKey1');

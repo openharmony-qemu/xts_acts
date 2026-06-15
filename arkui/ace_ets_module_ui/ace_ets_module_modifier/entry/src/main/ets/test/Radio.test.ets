@@ -92,7 +92,7 @@ export default function radioGroupJsunit() {
     it('testRadioGroup003', Level.LEVEL0, async (done: Function) => {
       console.info('testRadioGroup003 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('radio' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

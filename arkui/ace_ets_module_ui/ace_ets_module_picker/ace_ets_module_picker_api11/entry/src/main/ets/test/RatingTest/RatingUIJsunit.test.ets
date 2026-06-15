@@ -54,7 +54,7 @@ export default function RatingUIJsunit() {
     it('RatingUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Rating component
       console.info('[RatingUIJsunit_0100] START');
-      let strJson = getInspectorByKey('rating1');
+      let strJson = getInspectorByKey('RatingPage' + '_rating1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[RatingUIJsunit_0100] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
@@ -81,7 +81,7 @@ export default function RatingUIJsunit() {
       globalThis.value.message.notify({name:'rating',value:1})
       await CommonFunc.sleep(2000);
       // Get the rating value of the Rating component
-      let strJson = getInspectorByKey('rating1');
+      let strJson = getInspectorByKey('RatingPage' + '_rating1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[RatingUIJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.rating).assertEqual('1.000000');
@@ -143,7 +143,7 @@ export default function RatingUIJsunit() {
       globalThis.value.message.notify({name:'stars',value:7})
       await CommonFunc.sleep(2000);
       // Get the stars value of the Rating component
-      let strJson = getInspectorByKey('rating1');
+      let strJson = getInspectorByKey('RatingPage' + '_rating1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[RatingUIJsunit_0400] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.stars).assertEqual('7');
@@ -165,7 +165,7 @@ export default function RatingUIJsunit() {
       globalThis.value.message.notify({name:'stepSize',value:1})
       await CommonFunc.sleep(2000);
       // Get the stepSize value of the Rating component
-      let strJson = getInspectorByKey('rating1');
+      let strJson = getInspectorByKey('RatingPage' + '_rating1');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[RatingUIJsunit_0500] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.stepSize).assertEqual('1.000000');
@@ -194,29 +194,29 @@ export default function RatingUIJsunit() {
       await CommonFunc.sleep(2000);
 
       let driver = await UiDriver.create()
-      let textComponent1 = await driver.findComponent(BY.key('text'));
+      let textComponent1 = await driver.findComponent(BY.key('RatingPage' + '_text'));
       let text1 = await textComponent1.getText();
       console.info("[RatingUIJsunit_0600] text1: " + JSON.stringify(text1));
       expect(text1).assertEqual('no change');
 
       // Get the rating value of the Rating component
-      let strJson1 = getInspectorByKey('rating1');
+      let strJson1 = getInspectorByKey('RatingPage' + '_rating1');
       let obj: Record<string, ESObject> = JSON.parse(strJson1);
       console.info("[RatingUIJsunit_0600] component obj is: " + JSON.stringify(obj));
       let rating1: number = obj.$attrs.rating
       console.info("[RatingUIJsunit_0600] rating1: " + JSON.stringify(rating1));
       
       // Get the component Rating and click
-      let textComponent = await driver.findComponent(BY.key('rating1'));
+      let textComponent = await driver.findComponent(BY.key('RatingPage' + '_rating1'));
       await textComponent.click();
       await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('rating1');
+      let strJson2 = getInspectorByKey('RatingPage' + '_rating1');
       let obj2: Record<string, ESObject> = JSON.parse(strJson2);
       let rating2: number = obj2.$attrs.rating
       console.info("[RatingUIJsunit_0600] rating2: " + JSON.stringify(rating2));
       expect(rating1 == rating2).assertFalse();
 
-      let textComponent2 = await driver.findComponent(BY.key('text'));
+      let textComponent2 = await driver.findComponent(BY.key('RatingPage' + '_text'));
       let text2 = await textComponent2.getText();
       console.info("[RatingUIJsunit_0600] text2: " + JSON.stringify(text2));
       //expect(text2).assertEqual('change succ');

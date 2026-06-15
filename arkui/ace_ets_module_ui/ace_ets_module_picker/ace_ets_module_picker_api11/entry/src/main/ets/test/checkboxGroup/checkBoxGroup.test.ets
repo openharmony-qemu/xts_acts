@@ -56,7 +56,7 @@ export default function checkBoxGroupSelectAllJsunit() {
     it('testcheckBoxGroupSelectAll0001', Level.LEVEL1, async () => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('CheckboxGroup');
+      let strJson = getInspectorByKey('checkBoxGroup2' + '_CheckboxGroup');
       console.info("[testcheckBoxGroupSelectAll0001] component selectedColor strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('CheckboxGroup');

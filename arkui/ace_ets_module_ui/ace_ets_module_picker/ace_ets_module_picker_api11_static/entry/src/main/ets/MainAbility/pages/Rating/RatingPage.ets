@@ -74,7 +74,7 @@ struct RatingPage {
         Rating({ rating: this.rating, indicator: this.indicator })
           .stars(this.stars)
           .stepSize(this.stepSize)
-          .key('rating1')
+          .key('RatingPage_rating1')
           .id('rating1')
           .starStyle({ backgroundUri: this.backgroundUri,foregroundUri: this.foregroundUri,secondaryUri: this.secondaryUri })
           .margin({ top: 24 } as Margin)
@@ -100,7 +100,7 @@ struct RatingPage {
           .fontSize(16)
           .fontColor('rgba(24,36,49,0.60)')
           .margin({ top: 16 } as Margin)
-        Text(this.text).fontSize(20).margin(10).key('text').id('text')
+        Text(this.text).fontSize(20).margin(10).key('RatingPage_text').id('text')
       }
       .width('80%')
       .height('80%')

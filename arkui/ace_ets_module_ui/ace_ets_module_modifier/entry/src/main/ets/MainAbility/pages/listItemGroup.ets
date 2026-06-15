@@ -36,7 +36,7 @@ struct ListItemGroupExample {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("listItemGroup_changeButton")
 
       List({ space: 20 }) {
         ListItemGroup() {

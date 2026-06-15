@@ -68,11 +68,11 @@ export default function TimePickerJsunit() {
       // switch 12-hour
       console.info('[TimePickerJsunit_0100] START');
       let driver = await Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await timePicker.getBounds();
       let left = rect.left
       let top = rect.top
@@ -128,7 +128,7 @@ export default function TimePickerJsunit() {
       console.info('[TimePickerJsunit_0200] START');
       // Verify switch 24-hour
       let driver = await UiDriver.create()
-      let switchButton = await driver.findComponent(BY.key('button'));
+      let switchButton = await driver.findComponent(BY.key('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('mode');
@@ -159,11 +159,11 @@ export default function TimePickerJsunit() {
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_0300] START');
       let driver = await Driver.create()
-      let switchButton = await driver.findComponent(ON.id('button'));
+      let switchButton = await driver.findComponent(ON.id('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
 
-      let timePicker = await driver.findComponent(ON.id('timePicker'));
+      let timePicker = await driver.findComponent(ON.id('TimePickerPage' + '_timePicker'));
       let rect = await timePicker.getBounds();
       let left = rect.left
       let top = rect.top

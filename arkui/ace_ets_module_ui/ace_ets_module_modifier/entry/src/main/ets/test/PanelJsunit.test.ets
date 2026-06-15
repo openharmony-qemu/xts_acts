@@ -254,7 +254,7 @@ export default function panelJsunit() {
 
       console.info('test_panel_0011 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('panel' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

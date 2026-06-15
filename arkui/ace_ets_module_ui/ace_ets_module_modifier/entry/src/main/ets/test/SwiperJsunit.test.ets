@@ -357,7 +357,7 @@ export default function swiperJsunit() {
     it('swiperTest_018', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_018 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('swiper' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('swiper');

@@ -52,7 +52,7 @@ struct Toggle3Example {
 
   build() {
     Column({ space: 10 } as ColumnOptions) {
-      Text('type: Button').fontSize(12).fontColor(0xcccccc).width('90%').key('button')
+      Text('type: Button').fontSize(12).fontColor(0xcccccc).width('90%').key('toggle3_button')
       Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
         Toggle({ type: this.toggleType, isOn: this.isOn }) {
           Text('status button').padding({ left: 12, right: 12 } as Padding)

@@ -36,7 +36,7 @@ struct ColumnExample {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("column_changeButton")
 
       Column() {
         Column().width('50%').height(30).backgroundColor(0xAFEEEE)

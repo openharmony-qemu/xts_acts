@@ -81,7 +81,7 @@ export default function checkboxJsunit() {
 it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_100] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_100 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('grayscale')).assertEqual(0);
       console.info('testCheckbox_100 END');
@@ -100,7 +100,7 @@ it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_200] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_200 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
       console.info('testCheckbox_200 END');
@@ -119,7 +119,7 @@ it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_300 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs')
         .getElement('borderRadius')));
@@ -140,7 +140,7 @@ it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<vo
 it('testCheckbox_400_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('Checkbox1');
+      let strJson: string = inspector.getInspectorByKey('checkbox' + '_Checkbox1');
 
       console.info("testCheckbox_400 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");

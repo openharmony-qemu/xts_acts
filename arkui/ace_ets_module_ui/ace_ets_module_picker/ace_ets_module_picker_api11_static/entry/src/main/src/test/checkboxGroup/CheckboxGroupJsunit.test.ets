@@ -81,7 +81,7 @@ export default function checkboxGroupJsunit() {
 it('testCheckboxGroup_static_100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_100] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_100 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
       console.info('testCheckboxGroup_100 END');
@@ -100,7 +100,7 @@ it('testCheckboxGroup_static_100', Level.LEVEL1, async (done: () => void): Promi
 it('testCheckboxGroup_static_200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_200] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_200 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('alignSelf')).assertEqual("ItemAlign.Auto");
       console.info('testCheckboxGroup_200 END');
@@ -119,7 +119,7 @@ it('testCheckboxGroup_static_200', Level.LEVEL1, async (done: () => void): Promi
 it('testCheckboxGroup_static_300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_300] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_300 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testCheckboxGroup_300 END');
@@ -138,7 +138,7 @@ it('testCheckboxGroup_static_300', Level.LEVEL1, async (done: () => void): Promi
 it('testCheckboxGroup_static_400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_400] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_400 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('borderRadius') instanceof Object).assertTrue();
       console.info('testCheckboxGroup_400 END');
@@ -157,7 +157,7 @@ it('testCheckboxGroup_static_400', Level.LEVEL1, async (done: () => void): Promi
 it('testCheckboxGroup_static_500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_500] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_500 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis')).assertEqual("auto");
       console.info('testCheckboxGroup_500 END');
@@ -176,7 +176,7 @@ it('testCheckboxGroup_static_500', Level.LEVEL1, async (done: () => void): Promi
 it('testCheckboxGroup_static_600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_600] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
+      let strJson: string = inspector.getInspectorByKey('checkboxGroup' + '_CheckboxGroup');
       console.info("testCheckboxGroup_600 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle')).assertEqual("BorderStyle.Solid");
       console.info('testCheckboxGroup_600 END');

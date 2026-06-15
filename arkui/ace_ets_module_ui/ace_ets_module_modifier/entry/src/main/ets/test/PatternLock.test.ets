@@ -203,7 +203,7 @@ export default function patternLockJsunit() {
 
       console.info('patternLockTest_0009 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('patternLock' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

@@ -46,21 +46,21 @@ struct VideoReset4 {
         })
 
       Row({space:2}) {
-        Text(this.text1).id('VideoReset4_text1')
-        Text(this.text2).id('VideoReset4_text2')
+        Text(this.text1).id('VideoReset4_text1').key('VideoReset4_text1')
+        Text(this.text2).id('VideoReset4_text2').key('VideoReset4_text2')
       }
 
       Row({space:2}) {
         Button('start').onClick(() => {
           this.controller.start()
         })
-          .id('VideoReset4_start')
+          .id('VideoReset4_start').key('VideoReset4_start')
 
         Button('reset').onClick(() => {
           this.controller.reset()
           console.log('testTag:' + 'reset' )
         })
-          .id('VideoReset4_reset')
+          .id('VideoReset4_reset').key('VideoReset4_reset')
       }
 
       Row({space:2}) {
@@ -68,7 +68,7 @@ struct VideoReset4 {
           .onClick(() => {
           this.autoPlayValue = !this.autoPlayValue
         })
-          .id('VideoReset4_autoPlay')
+          .id('VideoReset4_autoPlay').key('VideoReset4_autoPlay')
       }
 
     }.width('100%')

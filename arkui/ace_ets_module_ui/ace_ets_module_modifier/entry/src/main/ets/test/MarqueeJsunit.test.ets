@@ -136,7 +136,7 @@ export default function marqueeJsunit() {
     it('testMarquee_04006', Level.LEVEL0, async (done: Function) => {
       console.info('testMarquee_04006 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('marquee' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

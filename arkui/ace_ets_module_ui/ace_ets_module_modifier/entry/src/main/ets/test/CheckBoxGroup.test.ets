@@ -137,7 +137,7 @@ export default function checkBoxGroupTest() {
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('checkBoxGroup' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

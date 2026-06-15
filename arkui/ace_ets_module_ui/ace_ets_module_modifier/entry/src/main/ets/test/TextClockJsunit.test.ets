@@ -171,7 +171,7 @@ export default function TextClockJsunit() {
     it('TextClock_0601', Level.LEVEL0, async (done: Function) => {
       console.info('TextClock_0601 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('textClockPage' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('TextClockKey1'); //测试组件的key名称

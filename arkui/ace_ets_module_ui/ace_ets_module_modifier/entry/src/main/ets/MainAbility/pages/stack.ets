@@ -35,7 +35,7 @@ struct RichEditorPage {
     Row(){
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("stack_changeButton")
 
       Stack(){
         Text('First child, show in bottom').width('90%').height('100%').backgroundColor(0xd2cab3).align(Alignment.Top)

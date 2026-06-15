@@ -106,7 +106,7 @@ struct CheckBoxGroupSelectAll {
         Column() {
           CheckboxGroup({ group: 'checkboxGroup' })
             .selectedColor('0xed6f21')
-            .key('CheckboxGroup')
+            .key('checkBoxGroup2_CheckboxGroup')
             .selectAll(this.isSelect)
             .onChange((itemName: CheckboxGroupResult):void => {
               console.info("TextPicker::dialogResult is" + JSON.stringify(itemName))

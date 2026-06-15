@@ -63,7 +63,7 @@ struct SliderMoving {
         step: 1,
         style: SliderStyle.OutSet
       })
-        .key("Slider")
+        .key("slider2_Slider")
         .blockColor(Color.Blue)
         .trackColor(Color.Gray)
         .selectedColor(Color.Blue)

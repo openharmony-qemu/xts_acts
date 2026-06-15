@@ -43,7 +43,7 @@ struct RadioGroup {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("groupText")
+        .key("radioFirst_groupText")
 
       Radio({ value: 'Radio1', group: 'radioGroup' })
         .checked(true)

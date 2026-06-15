@@ -34,7 +34,7 @@ struct hideTitleBarTest {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("navDestination_changeButton")
 
       NavDestination() {
         Text(`我是NavDestination第1页内容`).fontSize(50)

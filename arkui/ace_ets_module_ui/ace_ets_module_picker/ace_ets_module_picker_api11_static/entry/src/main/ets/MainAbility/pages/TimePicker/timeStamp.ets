@@ -27,7 +27,7 @@ struct TimeStampExample {
   build() {
     Column() {
       Button('Click').backgroundColor(0x2788D9)
-        .key('button')
+        .key('timeStamp_button')
         .onClick((event: ClickEvent) => {
           this.text = event.timestamp.toString()
           console.info(this.text)

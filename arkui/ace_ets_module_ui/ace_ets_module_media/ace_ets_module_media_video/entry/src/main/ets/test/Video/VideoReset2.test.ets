@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
 import CommonFunc from '../../MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import {Driver, ON, UiDriver, BY} from '@ohos.UiTest';
 
 
 export default function VideoReset2() {
@@ -59,25 +59,25 @@ export default function VideoReset2() {
       console.info('[VideoReset2_0100] START');
       await CommonFunc.sleep(5000);
 
-      let driver = Driver.create();
+      let driver = await UiDriver.create();
       await CommonFunc.sleep(1000);
 
-      let btnAutoPlay = await driver.findComponent(ON.id('VideoReset2_autoPlay'));
+      let btnAutoPlay = await driver.findComponent(BY.key('VideoReset2_autoPlay'));
       await btnAutoPlay.click()
       console.info("[VideoReset2_0100] btnAutoPlay");
       await CommonFunc.sleep(2000);
 
-      let btnLoop = await driver.findComponent(ON.id('VideoReset2_loop'));
+      let btnLoop = await driver.findComponent(BY.key('VideoReset2_loop'));
       await btnLoop.click()
       console.info("[VideoReset2_0100] btnLoop");
       await CommonFunc.sleep(2000);
 
-      let btn1 = await driver.findComponent(ON.id('VideoReset2_start'));
+      let btn1 = await driver.findComponent(BY.key('VideoReset2_start'));
       await btn1.click()
       console.info("[VideoReset2_0100] btnStart");
       await CommonFunc.sleep(16000);
 
-      let btn2 = await driver.findComponent(ON.id('VideoReset2_reset'));
+      let btn2 = await driver.findComponent(BY.key('VideoReset2_reset'));
       await btn2.click()
       console.info("[VideoReset2_0100] btnReset");
       await CommonFunc.sleep(3000);

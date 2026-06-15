@@ -54,7 +54,7 @@ export default function checkboxJsunit() {
     it('testCheckbox_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_100] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_100 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.grayscale).assertEqual(0);
       console.info('testCheckbox_100 END');
@@ -72,7 +72,7 @@ export default function checkboxJsunit() {
     it('testCheckbox_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_200] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_200 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.opacity).assertEqual(1);
       console.info('testCheckbox_200 END');
@@ -90,7 +90,7 @@ export default function checkboxJsunit() {
     it('testCheckbox_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('checkbox' + '_Checkbox1');
       console.info("testCheckbox_300 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)
         .$attrs
         .borderRadius));
@@ -110,7 +110,7 @@ export default function checkboxJsunit() {
     it('testCheckbox_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);
-      let strJson: string = getInspectorByKey('Checkbox1');
+      let strJson: string = getInspectorByKey('checkbox' + '_Checkbox1');
 
       console.info("testCheckbox_400 component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual("Visibility.Visible");

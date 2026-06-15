@@ -72,7 +72,7 @@ struct TimePickerExample1 {
         .disappearTextStyle(this.disappearTextStyle)
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
-        .key('timePicker')
+        .key('TimePicker1_timePicker')
         .onChange((date: TimePickerResult) => {
           console.info('select current date is: ' + JSON.stringify(date))
         })

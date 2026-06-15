@@ -33,6 +33,11 @@ function LayerParametersNumber(sysWidth: Resource) {
   return newStrokeWidth;
 }
 
+function layerSelectedTextSizeVp(sysWidth: Resource): string {
+  let resourceStrokeWidth = getContext().resourceManager.getNumber(sysWidth.id)
+  return Math.round(px2vp(resourceStrokeWidth)) + '.00vp';
+}
+
 export default function datepicker() {
   describe('ActsAceDatePickerTest', () => {
     beforeEach(async (done: Function) => {
@@ -94,7 +99,7 @@ export default function datepicker() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0100', Level.LEVEL1, async (done: Function) => {
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_0100] disappearColor:" + obj.$attrs.disappearTextStyle.color);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF000000');
@@ -129,7 +134,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.error("[ArkUI_Stage_dataPicker_disappearTextStyle_0200] disappearColor:" + obj.$attrs.disappearTextStyle.color);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF000000');
@@ -164,7 +169,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_0300] disappearColor:" + obj.$attrs.disappearTextStyle.color);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF808080');
@@ -199,7 +204,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_0400] disappearColor:" + obj.$attrs.disappearTextStyle.color);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FFFF0000');
@@ -234,7 +239,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_disappearTextStyle_0500] disappearColor:" + obj.$attrs.disappearTextStyle.color);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF008000');
@@ -269,7 +274,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
         let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -315,7 +320,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_disappearTextStyle_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
         let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -361,7 +366,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_dataPicker_disappearTextStyle_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.disappearTextStyle.font.size).assertEqual('20.00vp');
@@ -395,7 +400,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_dataPicker_disappearTextStyle_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.disappearTextStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.disappearTextStyle.font.size).assertEqual('15.00lpx');
@@ -412,7 +417,7 @@ export default function datepicker() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0100', Level.LEVEL1, async (done: Function) => {
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_textStyle_0100] disappearColor:" + obj.$attrs.textStyle.color);
         expect(obj.$attrs.textStyle.color).assertEqual('#FFFF0000');
@@ -447,7 +452,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.error("[ArkUI_Stage_datePicker_textStyle_0200] disappearColor:" + obj.$attrs.textStyle.color);
         expect(obj.$attrs.textStyle.color).assertEqual('#FFFF0000');
@@ -482,7 +487,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_textStyle_0300] disappearColor:" + obj.$attrs.textStyle.color);
         expect(obj.$attrs.textStyle.color).assertEqual('#FF808080');
@@ -517,7 +522,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_textStyle_0400] disappearColor:" + obj.$attrs.textStyle.color);
         expect(obj.$attrs.textStyle.color).assertEqual('#FF00FF00');
@@ -552,7 +557,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datePicker_textStyle_0500] disappearColor:" + obj.$attrs.textStyle.color);
         expect(obj.$attrs.textStyle.color).assertEqual('#FF008000');
@@ -587,7 +592,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
         let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -633,7 +638,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
         let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -679,7 +684,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.textStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.textStyle.font.size).assertEqual('20.00vp');
@@ -713,7 +718,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datePicker_textStyle_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.textStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.textStyle.font.size).assertEqual('15.00lpx');
@@ -730,7 +735,7 @@ export default function datepicker() {
      * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0100', Level.LEVEL1, async (done: Function) => {
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_0100] disappearColor:" + obj.$attrs.selectedTextStyle.color);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF0000FF');
@@ -765,7 +770,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0200] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.error("[ArkUI_Stage_datepicker_selectedTextStyle_0200] disappearColor:" + obj.$attrs.selectedTextStyle.color);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF0000FF');
@@ -800,7 +805,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0300] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_0300] disappearColor:" + obj.$attrs.selectedTextStyle.color);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF808080');
@@ -835,7 +840,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0400] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_0400] disappearColor:" + obj.$attrs.selectedTextStyle.color);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF00FF00');
@@ -870,7 +875,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0500] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info("[ArkUI_Stage_datepicker_selectedTextStyle_0500] disappearColor:" + obj.$attrs.selectedTextStyle.color);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF008000');
@@ -905,7 +910,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0600] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 
         let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -920,7 +925,10 @@ export default function datepicker() {
         console.info(" selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
 
         expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_selected_text_color')));
-        expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
+        const selectedSize = obj.$attrs.selectedTextStyle.font.size as string;
+        const sysFp = LayerParametersNumber($r('sys.float.textpicker_selected_text_size'));
+        const sysVp = layerSelectedTextSizeVp($r('sys.float.textpicker_selected_text_size'));
+        expect(selectedSize === sysFp || selectedSize === sysVp).assertTrue();
         expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Normal');
         done();
       });
@@ -951,7 +959,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0700] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(2000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
 		
 	let strJsonDefault = getInspectorByKey('datePickerDefault');
@@ -966,7 +974,10 @@ export default function datepicker() {
         console.info("selectedTextStyle font.size sys:" + LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
 
         expect(obj.$attrs.selectedTextStyle.color).assertEqual(spliceColor($r('sys.color.textpicker_selected_text_color')));
-        expect(obj.$attrs.selectedTextStyle.font.size).assertEqual(LayerParametersNumber($r('sys.float.textpicker_selected_text_size')));
+        const selectedSize = obj.$attrs.selectedTextStyle.font.size as string;
+        const sysFp = LayerParametersNumber($r('sys.float.textpicker_selected_text_size'));
+        const sysVp = layerSelectedTextSizeVp($r('sys.float.textpicker_selected_text_size'));
+        expect(selectedSize === sysFp || selectedSize === sysVp).assertTrue();
         expect(obj.$attrs.selectedTextStyle.font.weight).assertEqual('FontWeight.Lighter');
         done();
       });
@@ -997,7 +1008,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0800] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.selectedTextStyle.font.size).assertEqual('20.00vp');
@@ -1031,7 +1042,7 @@ export default function datepicker() {
           console.log("[ArkUI_Stage_datepicker_selectedTextStyle_0900] change component data error: " + (err as Error).message);
         }
         await Utils.sleep(3000);
-        let strJson = getInspectorByKey('datePicker');
+        let strJson = getInspectorByKey('DatePickerIndex' + '_datePicker');
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         expect(obj.$attrs.selectedTextStyle.color).assertEqual('#FF8A2BE2');
         expect(obj.$attrs.selectedTextStyle.font.size).assertEqual('15.00lpx');

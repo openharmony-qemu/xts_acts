@@ -76,7 +76,7 @@ struct TextPickerExample {
         .disappearTextStyle(this.disappearTextStyle)
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
-        .key('textPicker')
+        .key('Index_textPicker')
         .onChange((value: string|string[], index: number|number[]) => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })

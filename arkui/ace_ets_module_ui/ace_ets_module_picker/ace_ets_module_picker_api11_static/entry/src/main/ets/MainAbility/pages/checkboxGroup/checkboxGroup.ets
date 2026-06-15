@@ -67,7 +67,7 @@ struct CheckboxGroupExample {
       Column() {
         CheckboxGroup({ group: 'checkboxGroup' })
           .selectedColor('0xed6f21')
-          .key('CheckboxGroup')
+          .key('checkboxGroup_CheckboxGroup')
           .onChange((itemName: CheckboxGroupResult):void => {
             console.info("TextPicker::dialogResult is" + JSON.stringify(itemName))
           })

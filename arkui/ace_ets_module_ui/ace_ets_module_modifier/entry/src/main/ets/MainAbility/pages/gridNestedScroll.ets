@@ -113,6 +113,6 @@ struct GridNestedScroll {
       })
       .width('100%')
       .height('70%')
-    }.key('ColumnSize')
+    }.key('gridNestedScroll_ColumnSize')
   }
 }

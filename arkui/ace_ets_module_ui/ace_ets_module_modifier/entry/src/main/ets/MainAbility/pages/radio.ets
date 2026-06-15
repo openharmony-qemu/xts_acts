@@ -40,7 +40,7 @@ struct RadioGroup {
 
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("radio_changeButton")
 
       Text("radio-Group")
         .width(100)

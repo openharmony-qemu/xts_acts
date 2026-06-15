@@ -109,7 +109,7 @@ export default function progressStyleJsunit() {
     it('testProgressStyle0004', Level.LEVEL0, async (done: Function) => {
       console.info('testProgressStyle0004 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('progress' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

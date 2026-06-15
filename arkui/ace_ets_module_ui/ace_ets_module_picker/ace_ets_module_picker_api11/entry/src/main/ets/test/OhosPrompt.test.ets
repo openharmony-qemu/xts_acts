@@ -63,7 +63,7 @@ export default function ohosPromptJsunit() {
       console.info('ohosPromptJsunit_0100 is start');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('button1'));
+      let button = await driver.findComponent(ON.id('ohosPrompt' + '_button1'));
       await button.click();
       await Utils.sleep(1500);
 
@@ -71,7 +71,7 @@ export default function ohosPromptJsunit() {
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('#fffc0909');
 
-      console.info("ohosPromptJsunit_0100 click result is: " + JSON.stringify(sendEventByKey('button1',10,"")));
+      console.info("ohosPromptJsunit_0100 click result is: " + JSON.stringify(sendEventByKey('ohosPrompt' + '_button1',10,"")));
       await Utils.sleep(1500);
       console.info('ohosPromptJsunit_0100 END');
       done();

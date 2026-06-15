@@ -22,7 +22,7 @@ struct promptExample {
   build(){
     Column(){
       Button('showActionMenu')
-      .key('button1')
+      .key('systemPrompt_button1')
       .backgroundColor('#FF0B8FE2')
       .fontSize(20)
       .margin({top: 20})
@@ -43,10 +43,10 @@ struct promptExample {
               },
             });
       })
-      Text(this.color).id('color')
-      Text(this.text).id('text')
+      Text(this.color).id('color').key('systemPrompt_color')
+      Text(this.text).id('text').key('systemPrompt_text')
       Button('showDialog')
-      .key('button2')
+      .key('systemPrompt_button2')
       .backgroundColor('#FF0B8FE2')
       .fontSize(20)
       .margin({top: 20})

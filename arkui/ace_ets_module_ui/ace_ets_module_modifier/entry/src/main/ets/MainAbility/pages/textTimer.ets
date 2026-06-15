@@ -52,7 +52,7 @@ struct TextTimerExample {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("textTimer_changeButton")
       Button('Log Json Data')
         .onClick(() => {
           console.log(getInspectorByKey('TextTimerKey1'))

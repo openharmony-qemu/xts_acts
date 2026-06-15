@@ -26,7 +26,7 @@ struct PromptShowDialog {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
 
       Button('showActionMenu')
-        .key('button1')
+        .key('ohosPrompt_button1')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({top: 20})

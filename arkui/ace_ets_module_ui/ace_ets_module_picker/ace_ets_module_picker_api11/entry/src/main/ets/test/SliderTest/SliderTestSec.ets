@@ -133,7 +133,7 @@ export default function SliderTestSec() {
       await forKey("falseStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_0300 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_0300 obj  :' + JSON.stringify(obj));
@@ -162,7 +162,7 @@ export default function SliderTestSec() {
       await forKey("falseStr","ab$12@");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_0400 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_0400 obj  :' + JSON.stringify(obj));
@@ -219,7 +219,7 @@ export default function SliderTestSec() {
       await forKey("falseStr","");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_0600 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_0600 obj  :' + JSON.stringify(obj));
@@ -248,7 +248,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_0700 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_0700 obj  :' + JSON.stringify(obj));
@@ -277,7 +277,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","ab$12@");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_0800 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_0800 obj  :' + JSON.stringify(obj));
@@ -334,7 +334,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1000 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1000 obj  :' + JSON.stringify(obj));
@@ -364,7 +364,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1100 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1100 obj  :' + JSON.stringify(obj));
@@ -393,7 +393,7 @@ export default function SliderTestSec() {
       await forKey("false","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1200 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1200 obj  :' + JSON.stringify(obj));
@@ -422,7 +422,7 @@ export default function SliderTestSec() {
       await forKey("false","undefined");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1300 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1300 obj  :' + JSON.stringify(obj));
@@ -451,7 +451,7 @@ export default function SliderTestSec() {
       await forKey("falseNum","123");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1400 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1400 obj  :' + JSON.stringify(obj));
@@ -482,7 +482,7 @@ export default function SliderTestSec() {
       await forKey("true","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1500 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1500 obj  :' + JSON.stringify(obj));
@@ -511,7 +511,7 @@ export default function SliderTestSec() {
       await forKey("true","undefined");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1600 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1600 obj  :' + JSON.stringify(obj));
@@ -540,7 +540,7 @@ export default function SliderTestSec() {
       await forKey("trueNum","123");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1700 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1700 obj  :' + JSON.stringify(obj));
@@ -571,7 +571,7 @@ export default function SliderTestSec() {
       await forKey("true","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1800 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1800 obj  :' + JSON.stringify(obj));
@@ -602,7 +602,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_1900 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_1900 obj  :' + JSON.stringify(obj));
@@ -656,7 +656,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_2100 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_2100 obj  :' + JSON.stringify(obj));
@@ -684,7 +684,7 @@ export default function SliderTestSec() {
       await forKey("trueStr","aaa\nbbb");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = getInspectorByKey('Slider');
+        let strJson = getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_2200 START  :' + JSON.stringify(strJson));
         let obj: Record<string, ESObject> = JSON.parse(strJson);
         console.info('ArkUX_Stage_Slider_showTips_2200 obj  :' + JSON.stringify(obj));

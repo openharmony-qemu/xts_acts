@@ -91,7 +91,7 @@ export default function VideoJsunit01() {
       //      点击start按钮，测试onStart是否触发，测试onUpdate方法
       console.info('[VideoJsunit01_0200] START');
       let driver = await UiDriver.create()
-      let srcbutton = await driver.findComponent(BY.key('start'));
+      let srcbutton = await driver.findComponent(BY.key('video1' + '_start'));
       await srcbutton.click();
       await CommonFunc.sleep(1000);
 
@@ -108,7 +108,7 @@ export default function VideoJsunit01() {
       await CommonFunc.sleep(1000);
 
       //      继续点击暂停Pause按钮，测试onPause是否触发
-      let pausebutton = await driver.findComponent(BY.key('pause'));
+      let pausebutton = await driver.findComponent(BY.key('video1' + '_pause'));
       await pausebutton.click();
       await CommonFunc.sleep(1000);
 
@@ -118,7 +118,7 @@ export default function VideoJsunit01() {
       expect(obj1.$attrs.content).assertEqual('onPause_Doing');
       await CommonFunc.sleep(1000);
       //      再次点击start按钮，让它播放完【视频总长10秒，间隔13秒左右】，测试onFinish方法
-      let srcbutton2 = await driver.findComponent(BY.key('start'));
+      let srcbutton2 = await driver.findComponent(BY.key('video1' + '_start'));
       await srcbutton2.click();
       await CommonFunc.sleep(13000);
 

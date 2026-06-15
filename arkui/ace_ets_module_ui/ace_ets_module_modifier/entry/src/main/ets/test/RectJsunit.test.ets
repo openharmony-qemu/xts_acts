@@ -80,7 +80,7 @@ export default function rectJsunit() {
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[testrect_radius] obj22 is : " + JSON.stringify(obj1.$attrs));
       //json返回值与设置值不统一，所以使用与原生返回做对比验证
-      expect(obj.$attrs.radius).assertEqual(obj1.$attrs.radius);
+      expect(JSON.stringify(obj.$attrs.radius)).assertEqual(JSON.stringify(obj1.$attrs.radius));
       console.info('[testrect_radius] END');
       done();
     });
@@ -118,7 +118,7 @@ export default function rectJsunit() {
     it('testrect__001', Level.LEVEL0, async (done: Function) => {
       console.info('testrect__001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('rect' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

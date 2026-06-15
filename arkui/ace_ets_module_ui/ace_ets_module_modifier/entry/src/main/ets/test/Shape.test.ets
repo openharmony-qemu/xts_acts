@@ -290,7 +290,7 @@ export default function shape() {
     it('ShapeJsunit_0014', Level.LEVEL0, async (done: Function) => {
       console.info('ShapeJsunit_0014 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('shape' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('ShapeKey1'); //测试组件的key名称

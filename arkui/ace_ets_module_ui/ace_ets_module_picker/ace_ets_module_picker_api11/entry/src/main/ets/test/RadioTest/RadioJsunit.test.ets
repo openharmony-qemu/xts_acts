@@ -157,7 +157,7 @@ export default function RadioJsunit() {
       await radio3.click();
       await CommonFunc.sleep(1000);
 
-      let textComponent = await driver.findComponent(BY.key('text'));
+      let textComponent = await driver.findComponent(BY.key('RadioPage' + '_text'));
       let text = await textComponent.getText();
       console.info("[RadioJsunit_0400] text: " + JSON.stringify(text));
       expect(text).assertEqual('change succ');

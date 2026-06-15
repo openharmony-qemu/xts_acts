@@ -43,7 +43,7 @@ struct RichEditorPage {
     Row(){
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChangeRichEditor();
-      }).key("changeButton")
+      }).key("richEditor_changeButton")
 
     RichEditor(this.options)
       .onReady(() => {

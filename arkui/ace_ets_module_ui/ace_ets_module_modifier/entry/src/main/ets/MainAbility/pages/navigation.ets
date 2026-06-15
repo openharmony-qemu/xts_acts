@@ -47,7 +47,7 @@ struct NavigationPage {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("navigation_changeButton")
       Navigation() {
         NavRouter() {
           Row() {

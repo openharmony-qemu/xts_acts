@@ -145,7 +145,7 @@ export default function videoJsunit() {
     it('videoTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('videoTest_0006 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('video' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('video');

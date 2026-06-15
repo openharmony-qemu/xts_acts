@@ -49,7 +49,7 @@ export default function gridRowJsunit() {
      */
     it('gridRowTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('gridRowTest_0001 START');
-      let strJsonNew = getInspectorByKey('gridRow');
+      let strJsonNew = getInspectorByKey('gridRow' + '_gridRow_01');
       console.info("gridRowTest_0001 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
       expect(JSON.parse(strJsonNew).$attrs.alignItems).assertEqual(undefined);
@@ -69,11 +69,11 @@ export default function gridRowJsunit() {
 
       console.info('gridRowTest_0002 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('gridRow' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 
-      let strJsonNew = getInspectorByKey('gridRow');
+      let strJsonNew = getInspectorByKey('gridRow' + '_gridRow_01');
       console.info("gridRowTest_0002 component  is: " + JSON.stringify(JSON.parse(strJsonNew).$attrs));
 
       expect(JSON.parse(strJsonNew).$attrs.alignItems).assertEqual(undefined);

@@ -124,7 +124,7 @@ export default function timepickerJsunit() {
     it('ArkUI_Stage_timepicker_5000', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_timepicker_5000 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('timePicker' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJson = getInspectorByKey('timePickerDefault');

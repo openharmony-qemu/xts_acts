@@ -49,7 +49,7 @@ struct RatingPage {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();})
-        .key("changeButton")
+        .key("rating_changeButton")
       Column() {
         Rating({ rating: this.rating, indicator: this.indicator })
           .key('rating1')

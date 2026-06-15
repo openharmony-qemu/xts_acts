@@ -38,7 +38,7 @@ struct QrCode {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("qrCode_changeButton")
       QRCode('https://example.com')
         .key("QrCodeColorKey1")
         .attributeModifier(this.customModifier as CustomModifier)

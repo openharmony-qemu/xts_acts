@@ -36,7 +36,7 @@ struct TestHyperlinkPage {
 		Column() {
 			Button("change value").onClick(() => {
 				(this.customModifier as CustomModifier).onChange1();
-			}).key("changeButton")
+			}).key("hyperlink_changeButton")
 			Hyperlink('https://example.com/')
 				.key('HyperlinkKey1')
 				.attributeModifier(this.customModifier as CustomModifier)

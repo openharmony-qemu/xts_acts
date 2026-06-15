@@ -63,15 +63,15 @@ export default function systempromptJsunit() {
       console.info('promptTest_0100 is start');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('button1'));
+      let button = await driver.findComponent(ON.id('systemPrompt' + '_button1'));
       await button.click();
       await Utils.sleep(1500);
 
-      let strJson = getInspectorByKey('color');
+      let strJson = getInspectorByKey('systemPrompt_color');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('#fffc0909');
 
-      console.info("promptTest_0100 click result is: " + JSON.stringify(sendEventByKey('button1',10,"")));
+      console.info("promptTest_0100 click result is: " + JSON.stringify(sendEventByKey('systemPrompt' + '_button1',10,"")));
       await Utils.sleep(1500);
       console.info('promptTest_0100 END');
       done();
@@ -89,15 +89,15 @@ export default function systempromptJsunit() {
        console.info('promptTest_0200 is start');
       let driver = await Driver.create()
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('button1'));
+      let button = await driver.findComponent(ON.id('systemPrompt' + '_button1'));
       await button.click();
       await Utils.sleep(1500);
 
-      let strJson = getInspectorByKey('text');
+      let strJson = getInspectorByKey('systemPrompt_text');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('item1');
 
-      console.info("promptTest_0200 click result is: " + JSON.stringify(sendEventByKey('button1',10,"")));
+      console.info("promptTest_0200 click result is: " + JSON.stringify(sendEventByKey('systemPrompt' + '_button1',10,"")));
       await Utils.sleep(1500);
       console.info('promptTest_0200 END');
       done();

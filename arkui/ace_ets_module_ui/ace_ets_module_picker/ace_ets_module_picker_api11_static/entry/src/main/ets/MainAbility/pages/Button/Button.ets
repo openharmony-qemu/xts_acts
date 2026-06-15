@@ -79,7 +79,7 @@ struct button_testcase {
         .fontColor(0xCCCCCC)
         .height(40)
         .width(40)
-        .key('button')
+        .key('Button_button')
         .backgroundColor('#0D9FFB')
         .onClick((e:ClickEvent) => {
           let router:Router = this.getUIContext().getRouter();
@@ -93,13 +93,13 @@ struct button_testcase {
       .stateEffect(false)
       .backgroundColor('#0D9FFB')
       .padding(10)
-      .key('button1')
+      .key('Button_button1')
 
       Button("3.Normal") {
         Text("3.Normal")
       }.type(ButtonType.Normal)
       .backgroundColor('#0D9FFB')
-      .key('button2')
+      .key('Button_button2')
 
     }.key('flex')
     .width('100%')

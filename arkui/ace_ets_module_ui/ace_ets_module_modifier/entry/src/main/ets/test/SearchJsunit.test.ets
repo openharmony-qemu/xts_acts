@@ -272,7 +272,7 @@ export default function searchJsunit() {
     it('searchTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('searchTest_001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('search' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('search'); //测试组件的key名称

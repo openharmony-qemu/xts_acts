@@ -151,7 +151,7 @@ it('ArkUX_Stage_Slider_showTips_static_0200', Level.LEVEL0, async (done: () => v
 it('ArkUX_Stage_Slider_showTips_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await forKey("falseStr","test");
       await CommonFunc.sleep(1000)
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_0300 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_0300 obj  :' + JSON.stringify(obj));
@@ -178,7 +178,7 @@ it('ArkUX_Stage_Slider_showTips_static_0400', Level.LEVEL0, async (done: () => v
       await forKey("falseStr","ab$12@");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_0400 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_0400 obj  :' + JSON.stringify(obj));
@@ -236,7 +236,7 @@ it('ArkUX_Stage_Slider_showTips_static_0600', Level.LEVEL0, async (done: () => v
       await CommonFunc.sleep(1000)
       await forKey("falseStr","");
       await CommonFunc.sleep(1000)
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_0600 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_0600 obj  :' + JSON.stringify(obj));
@@ -262,7 +262,7 @@ it('ArkUX_Stage_Slider_showTips_static_0700', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_0700 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_0700 obj  :' + JSON.stringify(obj));
@@ -293,7 +293,7 @@ it('ArkUX_Stage_Slider_showTips_static_0800', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","ab$12@");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_0800 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_0800 obj  :' + JSON.stringify(obj));
@@ -354,7 +354,7 @@ it('ArkUX_Stage_Slider_showTips_static_1000', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1000 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1000 obj  :' + JSON.stringify(obj));
@@ -386,7 +386,7 @@ it('ArkUX_Stage_Slider_showTips_static_1100', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1100 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1100 obj  :' + JSON.stringify(obj));
@@ -415,7 +415,7 @@ it('ArkUX_Stage_Slider_showTips_static_1200', Level.LEVEL0, async (done: () => v
       await forKey("false","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1200 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1200 obj  :' + JSON.stringify(obj));
@@ -446,7 +446,7 @@ it('ArkUX_Stage_Slider_showTips_static_1300', Level.LEVEL0, async (done: () => v
       await forKey("false","undefined");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1300 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1300 obj  :' + JSON.stringify(obj));
@@ -477,7 +477,7 @@ it('ArkUX_Stage_Slider_showTips_static_1400', Level.LEVEL0, async (done: () => v
       await forKey("falseNum","123");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1400 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1400 obj  :' + JSON.stringify(obj));
@@ -506,7 +506,7 @@ it('ArkUX_Stage_Slider_showTips_static_1500', Level.LEVEL0, async (done: () => v
       await forKey("true","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1500 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1500 obj  :' + JSON.stringify(obj));
@@ -537,7 +537,7 @@ it('ArkUX_Stage_Slider_showTips_static_1600', Level.LEVEL0, async (done: () => v
       await forKey("true","undefined");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1600 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1600 obj  :' + JSON.stringify(obj));
@@ -568,7 +568,7 @@ it('ArkUX_Stage_Slider_showTips_static_1700', Level.LEVEL0, async (done: () => v
       await forKey("trueNum","123");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1700 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1700 obj  :' + JSON.stringify(obj));
@@ -601,7 +601,7 @@ it('ArkUX_Stage_Slider_showTips_static_1800', Level.LEVEL0, async (done: () => v
       await forKey("true","null");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1800 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1800 obj  :' + JSON.stringify(obj));
@@ -634,7 +634,7 @@ it('ArkUX_Stage_Slider_showTips_static_1900', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","test");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_1900 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_1900 obj  :' + JSON.stringify(obj));
@@ -690,7 +690,7 @@ it('ArkUX_Stage_Slider_showTips_static_2100', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_2100 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_2100 obj  :' + JSON.stringify(obj));
@@ -720,7 +720,7 @@ it('ArkUX_Stage_Slider_showTips_static_2200', Level.LEVEL0, async (done: () => v
       await forKey("trueStr","aaa\nbbb");
       await CommonFunc.sleep(1000)
       try{
-        let strJson = inspector.getInspectorByKey('Slider');
+        let strJson = inspector.getInspectorByKey('SliderTestSec' + '_Slider');
         console.info('ArkUX_Stage_Slider_showTips_static_2200 START  :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_Slider_showTips_static_2200 obj  :' + JSON.stringify(obj));

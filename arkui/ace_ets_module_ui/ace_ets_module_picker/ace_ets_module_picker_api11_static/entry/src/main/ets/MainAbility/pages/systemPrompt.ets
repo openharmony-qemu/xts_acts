@@ -24,7 +24,7 @@ struct promptExample {
   build(){
     Column(){
       Button('showActionMenu')
-      .key('button1')
+      .key('systemPrompt_button1')
       .id('button1')
       .backgroundColor('#FF0B8FE2')
       .fontSize(20)
@@ -50,7 +50,7 @@ struct promptExample {
             });
         })
       Button('showDialog')
-      .key('button2')
+      .key('systemPrompt_button2')
       .id('button2')
       .backgroundColor('#FF0B8FE2')
       .fontSize(20)

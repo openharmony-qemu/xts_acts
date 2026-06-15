@@ -35,7 +35,7 @@ struct LoadingProgressExampleAdd {
     Column({ space: 5 }) {
     Button("change value").onClick(() => {
       (this.customModifier as CustomModifier).onChange1();
-    }).key("changeButton")
+    }).key("loadingProgress_changeButton")
     Column({ space: 5 }) {
       Text('Orbital LoadingProgress ').fontSize(9).fontColor(0xCCCCCC).width('90%')
       LoadingProgress()

@@ -185,7 +185,7 @@ export default function imageAnimatorJsunit() {
 
       console.info('imageAnimatorTest_0008 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('imageAnimator' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

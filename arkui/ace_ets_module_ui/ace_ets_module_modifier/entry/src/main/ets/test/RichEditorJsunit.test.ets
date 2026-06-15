@@ -69,7 +69,7 @@ export default function richEditorJsunit() {
     it('richEditorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('richEditorTest_001 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('changeButton'));
+      let button = await driver.findComponent(ON.id('richEditor' + '_changeButton'));
       await button.click();
       await Utils.sleep(2000)
       let strJsonNew = getInspectorByKey('richEditor'); //测试组件的key名称

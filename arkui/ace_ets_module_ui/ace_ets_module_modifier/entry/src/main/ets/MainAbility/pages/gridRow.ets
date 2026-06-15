@@ -35,7 +35,7 @@ struct GridRowExample {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("gridRow_changeButton")
 
       GridRow({
         columns: 3,
@@ -46,7 +46,7 @@ struct GridRowExample {
       }){
         GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 }, offset: 0, order: 0 }) {
           Row(){Text("t")}.width("100%").height("20vp")
-        }.borderColor(Color.Brown).borderWidth(2).backgroundColor(Color.Brown).key("gridRow")
+        }.borderColor(Color.Brown).borderWidth(2).backgroundColor(Color.Brown).key("gridRow_gridRow_01")
 
         ForEach(this.bgColors, (color: Color) => {
           GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 }, offset: 0, order: 0 }) {
@@ -55,7 +55,7 @@ struct GridRowExample {
         })
       }.width("100%").height("100%")
       .attributeModifier(this.customModifier as CustomModifier)
-      // .key('gridRow')
+      // .key('gridRow_gridRow_02')
       }
       .margin({ top: 5 })
     }

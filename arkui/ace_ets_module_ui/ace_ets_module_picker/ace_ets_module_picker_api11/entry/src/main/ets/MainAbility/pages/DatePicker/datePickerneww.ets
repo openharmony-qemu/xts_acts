@@ -26,7 +26,7 @@ struct DatePickerExample01 {
         end: new Date('2200-1-1'),
         selected: this.selectedDate
       })
-        .key('datePicker')
+        .key('datePickerneww_datePicker')
         .lunar(true)
         .onChange((date: DatePickerResult) => {
           console.info('select current date is: ' + JSON.stringify(date));

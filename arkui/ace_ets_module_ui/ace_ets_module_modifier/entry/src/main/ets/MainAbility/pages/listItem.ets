@@ -48,7 +48,7 @@ struct List_itemOnSelect {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange();
-      }).key("changeButton")
+      }).key("listItem_changeButton")
 
       Button('Log Json Data')
         .onClick(() => {

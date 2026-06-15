@@ -41,12 +41,12 @@ struct VideoTest2 {
           console.info('onPause')
         })
 
-      Text(this.text).id('VideoTest2_text').height(25)
+      Text(this.text).id('VideoTest2_text').key('VideoTest2_text').height(25)
 
       Row() {
         Button('start').onClick(() => {
           this.controller.start()
-        }).margin(5).id('VideoTest2_start').height(25)
+        }).margin(5).id('VideoTest2_start').key('VideoTest2_start').height(25)
 
         Button('pause').onClick(() => {
           this.controller.pause()

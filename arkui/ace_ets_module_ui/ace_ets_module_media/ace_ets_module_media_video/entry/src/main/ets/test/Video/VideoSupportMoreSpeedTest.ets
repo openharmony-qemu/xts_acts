@@ -52,84 +52,84 @@ export default function VideoSupportMoreSpeedTest() {
      */
     it('VideoSupportMoreSpeedTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[VideoSupportMoreSpeedTest_0100] START');
-      let driver = await Driver.create()
+      let driver = await UiDriver.create()
       await CommonFunc.sleep(1000);
 
-      let button = await driver.findComponent(ON.id('VideoSupportMoreSpeedStart'));
+      let button = await driver.findComponent(BY.key('VideoSupportMoreSpeedStart'));
       await button.click();
       await Utils.sleep(1000)
 
-      let button1 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_p_0.5'));
+      let button1 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_p_0.5'));
       await button1.click();
       await Utils.sleep(1000)
       let strJson1 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button2 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_p_1.5'));
+      let button2 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_p_1.5'));
       await button2.click();
       await Utils.sleep(1000)
       let strJson2 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button3 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_p_3'));
+      let button3 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_p_3'));
       await button3.click();
       await Utils.sleep(1000)
       let strJson3 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button4 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_p_0.25'));
+      let button4 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_p_0.25'));
       await button4.click();
       await Utils.sleep(1000)
       let strJson4 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button5 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_p_0.125'));
+      let button5 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_p_0.125'));
       await button5.click();
       await Utils.sleep(1000)
       let strJson5 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button6 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_n_0.5'));
+      let button6 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_n_0.5'));
       await button6.click();
       await Utils.sleep(1000)
       let strJson6 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button7 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_n_1.5'));
+      let button7 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_n_1.5'));
       await button7.click();
       await Utils.sleep(1000)
       let strJson7 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button8 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_n_3'));
+      let button8 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_n_3'));
       await button8.click();
       await Utils.sleep(1000)
       let strJson8 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button9 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_n_0.25'));
+      let button9 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_n_0.25'));
       await button9.click();
       await Utils.sleep(1000)
       let strJson9 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button10 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_n_0.125'));
+      let button10 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_n_0.125'));
       await button10.click();
       await Utils.sleep(1000)
       let strJson10 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button11 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_s_0.5'));
+      let button11 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_s_0.5'));
       await button11.click();
       await Utils.sleep(1000)
       let strJson11 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button12 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_s_1.5'));
+      let button12 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_s_1.5'));
       await button12.click();
       await Utils.sleep(1000)
       let strJson12 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button13 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_s_3'));
+      let button13 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_s_3'));
       await button13.click();
       await Utils.sleep(1000)
       let strJson13 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button14 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_s_0.25'));
+      let button14 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_s_0.25'));
       await button14.click();
       await Utils.sleep(1000)
       let strJson14 = getInspectorByKey('VideoSupportMoreSpeedText');
 
-      let button15 = await driver.findComponent(ON.id('VideoSupportMoreSpeed_s_0.125'));
+      let button15 = await driver.findComponent(BY.key('VideoSupportMoreSpeed_s_0.125'));
       await button15.click();
       await Utils.sleep(1000)
       let strJson15 = getInspectorByKey('VideoSupportMoreSpeedText');

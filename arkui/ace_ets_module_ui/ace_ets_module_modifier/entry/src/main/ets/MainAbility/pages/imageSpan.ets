@@ -36,7 +36,7 @@ struct ImageSpanExample {
     Column({ space: 5 }) {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("imageSpan_changeButton")
       Text() {
         ImageSpan($r('app.media.icon'))
         .attributeModifier(this.customModifier as CustomModifier)

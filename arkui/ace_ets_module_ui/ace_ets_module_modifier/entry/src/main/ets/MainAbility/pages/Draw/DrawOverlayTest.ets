@@ -56,7 +56,7 @@ struct DrawModifierExample2 {
 
   build() {
     Column() {
-      Text(this.text4).key('DrawModifierDrawOverlay')
+      Text(this.text4).key('DrawOverlayTest_DrawModifierDrawOverlay_01')
       Row() {
         Text('test text')
           .width(100)
@@ -70,7 +70,7 @@ struct DrawModifierExample2 {
           .width(100)
           .height(100)
           .margin(10)
-          .key('DrawModifierDrawOverlay')
+          .key('DrawOverlayTest_DrawModifierDrawOverlay_02')
           .onClick(() => {
             this.text4 = this.fullModifier.scaleTStr
           })

@@ -68,7 +68,7 @@ export default function ratingJsunit() {
      */
     it('testGetRatingAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetRatingAttr1 START');
-      let strJson = getInspectorByKey('rating1');
+      let strJson = getInspectorByKey('Rating' + '_rating1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("component obj is: " + JSON.stringify(obj));
       console.info("rating1 rating" + JSON.stringify(obj.$attrs.rating));

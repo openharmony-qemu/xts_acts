@@ -36,7 +36,7 @@ struct ToggleTest {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
+      }).key("toggle_changeButton")
 
       Column({ space: 5 }) {
         Toggle({ type: ToggleType.Switch, isOn: false })
