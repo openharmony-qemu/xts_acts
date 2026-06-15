@@ -79,13 +79,13 @@ export default function Grid_RowCol_Gap() {
 it('testGridColGap_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridColGap_static_01] START');
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap' + '_01');
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_011');
-      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_012');
-      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_013');
-      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_014');
-      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_01');
+      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_011');
+      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_012');
+      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_013');
+      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_014');
+      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_01');
       expect(Math.abs(Grid_RowCol_Gap_011.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_013.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
 
@@ -148,14 +148,14 @@ it('testGridRowGap_static_02', Level.LEVEL0, async (done: () => void): Promise<v
         name: 'addRowGap', value: 5
       });
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_011');
-      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_012');
-      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_013');
-      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_014');
-      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_01');
+      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_011');
+      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_012');
+      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_013');
+      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_014');
+      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_01');
       expect(Math.abs(Grid_RowCol_Gap_011.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_013.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
 
@@ -218,14 +218,14 @@ it('testGridRowColGap_static_03', Level.LEVEL0, async (done: () => void): Promis
         name: 'addRowGap', value: 5
       });
       await CommonFunc.sleep(3000);
-      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap_01');
+      let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_Gap' + '_01');
       let obj = JSON.parseJsonElement(gridContainerStrJson);
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
-      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_011');
-      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_012');
-      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_013');
-      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_014');
-      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap_01');
+      let Grid_RowCol_Gap_011: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_011');
+      let Grid_RowCol_Gap_012: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_012');
+      let Grid_RowCol_Gap_013: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_013');
+      let Grid_RowCol_Gap_014: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_014');
+      let Grid_RowCol_Gap_01: RectValue = CommonFunc.getComponentRect('Grid_RowCol_Gap' + '_01');
       expect(Math.abs(Grid_RowCol_Gap_011.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
       expect(Math.abs(Grid_RowCol_Gap_013.left - Grid_RowCol_Gap_01.left) <= 1).assertTrue();
 

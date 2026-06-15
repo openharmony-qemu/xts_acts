@@ -87,7 +87,7 @@ export default function GridJsunit() {
 it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridJsunit_static_0100] START');
-      let strJson1 = inspector.getInspectorByKey('grid1');
+      let strJson1 = inspector.getInspectorByKey('GridPage' + '_grid1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
@@ -97,7 +97,7 @@ it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('multiSelectable')).assertEqual('false');
       expect(obj.getElement('$attrs').getString('supportAnimation')).assertEqual('false');
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('grid2');
+      let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('scrollBar')).assertEqual('BarState.Off');
@@ -147,14 +147,14 @@ it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(2000);
 
       
-      let strJson = inspector.getInspectorByKey('grid1');
+      let strJson = inspector.getInspectorByKey('GridPage' + '_grid1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('columnsGap')).assertEqual('15.00vp');
       expect(obj.getElement('$attrs').getString('rowsGap')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('grid2');
+      let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('scrollBarColor'))
@@ -204,14 +204,14 @@ it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(200);
 
       
-      let strJson = inspector.getInspectorByKey('grid1');
+      let strJson = inspector.getInspectorByKey('GridPage' + '_grid1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('columnsGap')).assertEqual('0.00vp');
       expect(obj.getElement('$attrs').getString('rowsGap')).assertEqual('0.00vp');
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(1);
       await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('grid2');
+      let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('scrollBar')).assertEqual('BarState.Auto');
@@ -238,7 +238,7 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
 
       
-      let grid2 = CommonFunc.getComponentRect('grid2');
+      let grid2 = CommonFunc.getComponentRect('GridPage' + '_grid2');
       let top = grid2.top
       let bottom = grid2.bottom
       let left = grid2.left
@@ -254,7 +254,7 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
       await CommonFunc.sleep(2000);
-      let onScrollIndex1:Component = await driver.findComponent(ON.id('onScrollIndex')) as Component;
+      let onScrollIndex1:Component = await driver.findComponent(ON.id('GridPage' + '_onScrollIndex')) as Component;
       let text1 = await (onScrollIndex1?.getText() as Promise<string>);
       expect(text1).assertEqual('onScrollIndex:2');
       await CommonFunc.sleep(1000);
@@ -268,15 +268,15 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
       await CommonFunc.sleep(1000);
-      let onScrollIndex2:Component = await driver.findComponent(ON.id('onScrollIndex')) as Component;
+      let onScrollIndex2:Component = await driver.findComponent(ON.id('GridPage' + '_onScrollIndex')) as Component;
       let text2 = await (onScrollIndex2?.getText() as Promise<string>);
       expect(text2).assertEqual('onScrollIndex:2');
 
 
-      let button:Component = await driver.findComponent(ON.id('button')) as Component;
+      let button:Component = await driver.findComponent(ON.id('GridPage' + '_button')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('button');
+      let strJson = inspector.getInspectorByKey('GridPage' + '_button');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('clicked');
       console.info('[GridJsunit_static_0400] END');
@@ -294,7 +294,7 @@ it('GridJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
       
       console.info('[GridJsunit_static_0500] START');
       await CommonFunc.sleep(1000);
-      let strJson1 = inspector.getInspectorByKey('grid_default');
+      let strJson1 = inspector.getInspectorByKey('GridPage' + '_grid_default');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridJsunit_static_0500] component obj is: " + JSON.stringify(obj));
       console.info("[GridJsunit_static_0500] columnsGap: " +
@@ -345,7 +345,7 @@ it('GridJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
 
       
       let driver = Driver.create()
-      let grid_1 = await driver.findComponent(ON.id('grid1'));
+      let grid_1 = await driver.findComponent(ON.id('GridPage' + '_grid1'));
       let result = await (grid_1?.isScrollable() as Promise<boolean>)
       expect(result).assertFalse();
       console.info('[GridJsunit_static_0600] END');
@@ -436,7 +436,7 @@ it('GridJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       
       let driver = Driver.create()
-      let grid_1 = await driver.findComponent(ON.id('grid1'));
+      let grid_1 = await driver.findComponent(ON.id('GridPage' + '_grid1'));
       let result = await (grid_1?.isScrollable() as Promise<boolean>)
       expect(result).assertFalse();
       console.info('[GridJsunit_static_0900] END');
