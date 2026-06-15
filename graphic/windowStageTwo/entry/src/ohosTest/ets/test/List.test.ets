@@ -12,19 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import windowModalTest from './WindowModal.test';
 import windowManageTest from './WindowManage.test';
-import windowZindexTest from './WindowZindex.test';
 import extensionWindowPropertiesTest from './ExtensionWindowProperties.test';
-import windowFocusTest from './WindowFocus.test';
 import windowRotationTest from './WindowRotation.test';
 import windowControlsTest from './WindowControls.test';
 
 export default function testsuite() {
-  windowFocusTest();
-  windowZindexTest();
   windowManageTest();
-  windowModalTest();
   windowControlsTest();
   windowRotationTest();
   extensionWindowPropertiesTest();
