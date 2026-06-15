@@ -1060,7 +1060,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, string>(new Array<number>(1, 2, 3), (value: number): string => 'n' + value.toString());
+      const result =
+        Array.from<number, string>(new Array<number>(1, 2, 3), (value: number): string => 'n' + value.toString());
       expect(result.toString()).assertEqual('n1,n2,n3');
     });
 
@@ -1073,7 +1074,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, boolean>(new Array<number>(1, 2, 3, 4), (value: number): boolean => value % 2 === 0);
+      const result =
+        Array.from<number, boolean>(new Array<number>(1, 2, 3, 4), (value: number): boolean => value % 2 === 0);
       expect(result.toString()).assertEqual('false,true,false,true');
     });
 
@@ -1086,7 +1088,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, string>(new Array<number>(5, 6, 7), (value: number, index: int): string => index.toString() + ':' + value.toString());
+      const result = Array.from<number, string>(new Array<number>(5, 6, 7),
+        (value: number, index: int): string => index.toString() + ':' + value.toString());
       expect(result.toString()).assertEqual('0:5,1:6,2:7');
     });
 
@@ -1112,7 +1115,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, number>(new Array<number>(2, 2, 2), (value: number, index: int): number => value + index);
+      const result =
+        Array.from<number, number>(new Array<number>(2, 2, 2), (value: number, index: int): number => value + index);
       expect(result.toString()).assertEqual('2,3,4');
     });
 
@@ -1341,7 +1345,11 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, FromMapObjA>(new Array<number>(1, 2), (value: number): FromMapObjA => { const item = new FromMapObjA(); item.label = 'v' + value.toString(); return item; });
+      const result = Array.from<number, FromMapObjA>(new Array<number>(1, 2), (value: number): FromMapObjA => {
+        const item = new FromMapObjA();
+        item.label = 'v' + value.toString();
+        return item;
+      });
       expect(result[0].label).assertEqual('v1');
       expect(result[1].label).assertEqual('v2');
     });
@@ -1369,7 +1377,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, number>(new Array<number>(Infinity, -Infinity), (value: number): number => value);
+      const result =
+        Array.from<number, number>(new Array<number>(Infinity, -Infinity), (value: number): number => value);
       expect(result.toString()).assertEqual('Infinity,-Infinity');
     });
 
@@ -1382,10 +1391,10 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<string, string>('中文', (value: string, index: int): string => value + index.toString());
-      expect(result.toString()).assertEqual('中0,文1');
+      const result =
+        Array.from<string, string>('😀🌍b', (value: string, index: int): string => index.toString() + ':' + value);
+      expect(result.toString()).assertEqual('0:😀,1:🌍,2:b');
     });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_THREE_7500
      * @tc.name testArrayFromThree075
@@ -1519,7 +1528,8 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<number, string>(new Array<number>(9, 8, 7), (value: number, index: int): string => (value + index).toString());
+      const result = Array.from<number, string>(new Array<number>(9, 8, 7),
+        (value: number, index: int): string => (value + index).toString());
       expect(result.toString()).assertEqual('9,9,9');
     });
 
@@ -1631,7 +1641,8 @@ export default function ArrayFrom3Test(): void {
      */
     it('testArrayFromThree091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<number>(2, 2, 2);
-      const result = Array.from<number, string>(source, (value: number, index: int): string => 'slot' + index.toString() + ':' + value.toString());
+      const result = Array.from<number, string>(source,
+        (value: number, index: int): string => 'slot' + index.toString() + ':' + value.toString());
       expect(result.toString()).assertEqual('slot0:2,slot1:2,slot2:2');
     });
 
@@ -1659,11 +1670,10 @@ export default function ArrayFrom3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFromThree093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.from<string, string>(
-        'a😊b',
-        (value: string, index: int): string => index.toString() + ':' + value
-      );
-      expect(result.toString()).assertEqual('0:a,1:😊,2:b');
+      const result =
+        Array.from<string, string>('a🌍b', (value: string, index: int): string => index.toString() + ':' + value
+        );
+      expect(result.toString()).assertEqual('0:a,1:🌍,2:b');
     });
 
     /**

@@ -80,6 +80,10 @@ function createCharFixedArrayFromValues(values: Array<char>): FixedArray<char> {
 }
 
 export default function ArrayFrom5Test(): void {
+  const invokeArrayFromFixedArray = (source: Any): Array<int> => {
+    return Array.from<int>(source as FixedArray<int>);
+  };
+
   describe('ArrayFrom5Test', (): void => {
     beforeAll((): void => {
     });
@@ -1172,10 +1176,10 @@ export default function ArrayFrom5Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-        it('testArrayFromFive068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source: FixedArray<char> = [c'中', c'文'];
+    it('testArrayFromFive068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: FixedArray<char> = [c'A', c'B'];
       const result = Array.from<char>(source);
-      expect(result.toString()).assertEqual('中,文');
+      expect(result.toString()).assertEqual('A,B');
     });
 
     /**
@@ -1282,6 +1286,58 @@ export default function ArrayFrom5Test(): void {
         return 0;
       });
       expect(result.toString()).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_7600
+     * @tc.name testArrayFromFive076
+     * @tc.desc Verify Array.from throws ClassCastError when the fixed-array source is null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayFromFive076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        invokeArrayFromFixedArray(null);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_7700
+     * @tc.name testArrayFromFive077
+     * @tc.desc Verify Array.from throws ClassCastError when the fixed-array source is undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayFromFive077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        invokeArrayFromFixedArray(undefined);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_7800
+     * @tc.name testArrayFromFive078
+     * @tc.desc Verify Array.from throws ClassCastError when the fixed-array source is a non-iterable object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayFromFive078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const invalid = new FromFixedObjB();
+      try {
+        invokeArrayFromFixedArray(invalid);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
     });
 
   });

@@ -1125,10 +1125,10 @@ export default function ArrayFrom4Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-        it('testArrayFromFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source: FixedArray<char> = [c'中', c'文'];
+    it('testArrayFromFour060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: FixedArray<char> = [c'A', c'B'];
       const result = Array.from<char, string>(source, (value: char): string => value.toString());
-      expect(result.toString()).assertEqual('中,文');
+      expect(result.toString()).assertEqual('A,B');
     });
 
     /**
