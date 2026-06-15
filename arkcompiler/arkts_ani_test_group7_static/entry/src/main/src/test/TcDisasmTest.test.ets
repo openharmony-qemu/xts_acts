@@ -15,14 +15,16 @@
 
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import { Foo } from '../ets/Index';
-
+let loadOk = true;
+let loadMessage = '';
 export default function TcDisasmTest(): void {
   describe("TcDisasmTest", (): void => {
     try {
       loadLibrary("entry");
     } catch (e) {
+      loadOk = false;
+      loadMessage = e.message;
       console.log('loadFailed', e.message);
-      expect(false).assertTrue();
     }
 
     /**

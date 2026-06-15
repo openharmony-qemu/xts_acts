@@ -26,7 +26,7 @@
 namespace ani_tc_async {
 inline std::string g_asyncSavedData;
 inline std::atomic<int> g_asyncUniqueId {0};
-inline int g_asyncRaceCounter = 0;
+inline std::atomic<int> g_asyncRaceCounter {0};
 inline std::mutex g_asyncMutex;
 inline ani_ref g_asyncStoredCallback = nullptr;
 constexpr int ASYNC_SLEEP_SHORT_MS = 50;
@@ -210,22 +210,22 @@ ani_int test_AsyncRaceIncrement(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-    int value = ani_tc_async::g_asyncRaceCounter;
     ani_tc_async::SleepMs(ani_tc_async::ASYNC_RACE_SLEEP_MS);
-    ani_tc_async::g_asyncRaceCounter = value + ani_tc_async::ASYNC_INCREMENT_ONE;
-    return ani_tc_async::g_asyncRaceCounter;
+    return ani_tc_async::g_asyncRaceCounter.fetch_add(
+        ani_tc_async::ASYNC_INCREMENT_ONE) + ani_tc_async::ASYNC_INCREMENT_ONE;
 }
 ani_int test_AsyncGetRaceCounter(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-    return ani_tc_async::g_asyncRaceCounter;
+    return ani_tc_async::g_asyncRaceCounter.load();
 }
+
 void test_AsyncResetRaceCounter(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-    ani_tc_async::g_asyncRaceCounter = 0;
+    ani_tc_async::g_asyncRaceCounter.store(0);
 }
 ani_double test_AsyncDoubleTask(ani_env *env, ani_object object, ani_double input)
 {
@@ -245,7 +245,7 @@ ani_int test_AsyncGetUniqueId(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-    return ++ani_tc_async::g_asyncUniqueId;
+    return ani_tc_async::g_asyncUniqueId.fetch_add(1) + 1;
 }
 ani_boolean test_AsyncStoreCallback(ani_env *env, ani_object object, ani_fn_object callback)
 {

@@ -37,6 +37,7 @@ import TcOptTest from "./TcOptTest.test";
 import TcLoadLibTest from "./TcLoadLibTest.test";
 import TcErrorCodeTest from "./TcErrorCodeTest.test";
 import TcErrorNoLoadLibTest from "./TcErrorNoLoadLibTest.test";
+import TcErrorTest from "./TcErrorTest.test";
 import TcDisasmTest from "./TcDisasmTest.test";
 export default function testsuite() :void{
   TcBindTest();
@@ -63,5 +64,6 @@ export default function testsuite() :void{
   TcLoadLibTest();
   TcErrorCodeTest();
   TcErrorNoLoadLibTest();
+  TcErrorTest();
   TcDisasmTest();
 }

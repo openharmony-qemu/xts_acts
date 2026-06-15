@@ -18,8 +18,8 @@ loadLibrary("entry");
 console.log("TC_LOADLIB_002 after loadLibrary");
 native function add(a: int, b: int): int;
 native function getLoadLibNativeCallCount(): int;
-native function errorAdd(a: int, b: int): int;
-native function simulateFindClassFailure(): string;
+native function test_ErrorAdd(a: int, b: int): int;
+native function test_SimulateFindClassFailure(): string;
 export enum COLOR {
   RED = 1,
   GREEN = 2
@@ -295,10 +295,10 @@ export class Foo {
     return getLoadLibNativeCallCount();
   }
   test_ErrorAdd(a: int, b: int): int {
-    return errorAdd(a, b);
+    return test_ErrorAdd(a, b);
   }
   test_SimulateFindClassFailure(): string {
-    return simulateFindClassFailure();
+    return test_SimulateFindClassFailure();
   }
   factor: int = 2;
   native test_Multiply(a: int): int;
@@ -428,6 +428,7 @@ export class Foo {
   native test_IfaceUseWrapper(obj: object): int;
   native test_IfaceDeleteWrapper(obj: object): boolean;
   native test_IfaceWrapperWithoutFinalizer(): boolean;
+  native test_IfaceCleanupNativeData(): boolean;
   native test_IfaceWrongPropertyAccess(data: IfacePoint): boolean;
   native test_IfaceWrongFieldAccess(person: IfaceGetterNamePerson): boolean;
   native test_IfaceReadDerived(obj: IfaceDerived): string;

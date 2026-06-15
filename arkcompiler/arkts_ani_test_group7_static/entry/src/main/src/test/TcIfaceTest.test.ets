@@ -230,7 +230,11 @@ export default function TcIfaceTest(): void {
      */
     it("testTcIface0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let cls = new Foo();
-      expect(cls.test_IfaceWrapperWithoutFinalizer()).assertTrue();
+      try {
+        expect(cls.test_IfaceWrapperWithoutFinalizer()).assertTrue();
+      } finally {
+        expect(cls.test_IfaceCleanupNativeData()).assertTrue();
+      }
     });
 
     /**

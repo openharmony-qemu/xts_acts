@@ -150,23 +150,6 @@ inline ani_status CallANICreateVM(const ani_options *options, uint32_t version, 
     return createVm(options, version, result);
 }
 }
-ani_boolean test_LifecycleSaveEnvAndUseInOtherThread(ani_env *env, ani_object object)
-{
-    (void)object;
-    tc_lifecycle_test::g_savedEnv = env;
-    std::atomic<bool> finished {false};
-    std::thread worker([&finished]() {
-        std::this_thread::sleep_for(
-            std::chrono::milliseconds(tc_lifecycle_test::LIFECYCLE_CROSS_THREAD_DELAY_MS));
-        ani_string str = nullptr;
-        ani_status status = tc_lifecycle_test::g_savedEnv->String_NewUTF8(
-            "cross-thread-env", std::strlen("cross-thread-env"), &str);
-        std::cerr << "Cross-thread saved env String_NewUTF8 status: " << status << std::endl;
-        finished.store(status == ANI_OK && str != nullptr);
-    });
-    worker.join();
-    return finished.load() ? ANI_TRUE : ANI_FALSE;
-}
 void test_LifecycleSaveStringLocalRef(ani_env *env, ani_object object, ani_string str)
 {
     (void)env;

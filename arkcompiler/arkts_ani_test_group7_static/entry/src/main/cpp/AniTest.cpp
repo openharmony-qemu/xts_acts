@@ -49,11 +49,11 @@ std::array loadLibModuleMethods = {
         reinterpret_cast<void *>(getLoadLibNativeCallCount)},
 };
 std::array errorModuleMethods = {
-    ani_native_function{"simulateFindClassFailure", ":C{std.core.String}",
+    ani_native_function{"test_SimulateFindClassFailure", ":C{std.core.String}",
         reinterpret_cast<void *>(simulateFindClassFailure)},
 };
 std::array errorExpectedFailureModuleMethods = {
-    ani_native_function{"errorAdd", "dd:d",
+    ani_native_function{"test_ErrorAdd", "dd:d",
         reinterpret_cast<void *>(errorAddWrongSignature)},
 };
 std::array disasmInstanceMethods = {
@@ -311,6 +311,8 @@ std::array ifaceInstanceMethods = {
         reinterpret_cast<void *>(test_IfaceDeleteWrapper)},
     ani_native_function{"test_IfaceWrapperWithoutFinalizer", ":z",
         reinterpret_cast<void *>(test_IfaceWrapperWithoutFinalizer)},
+    ani_native_function{"test_IfaceCleanupNativeData", ":z",
+        reinterpret_cast<void *>(test_IfaceCleanupNativeData)},
     ani_native_function{"test_IfaceWrongPropertyAccess",
         "C{entry.src.main.src.ets.Index.IfacePoint}:z",
         reinterpret_cast<void *>(test_IfaceWrongPropertyAccess)},

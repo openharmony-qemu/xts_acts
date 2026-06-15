@@ -22,6 +22,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <atomic>
 namespace ani_tc_bind {
 constexpr const char *FOO_CLASS_NAME = "entry.src.main.src.ets.Index.Foo";
 constexpr ani_int BIND_LOG_FIRST_LEVEL = 1;
@@ -29,9 +30,9 @@ constexpr ani_int BIND_LOG_SECOND_LEVEL = 2;
 constexpr int BIND_LOG_EXPECTED_COUNT = 2;
 inline bool g_overloadVoidCalled = false;
 inline bool g_overloadStringCalled = false;
-inline int g_logCallCount = 0;
-inline bool g_logFirstCallOk = false;
-inline bool g_logSecondCallOk = false;
+inline std::atomic<int> g_logCallCount {0};
+inline std::atomic<bool> g_logFirstCallOk {false};
+inline std::atomic<bool> g_logSecondCallOk {false};
 std::string AniStringToStdString(ani_env *env, ani_string str)
 {
     ani_size size = 0;
@@ -123,24 +124,30 @@ void test_Log(ani_env *env, ani_object object, ani_int level, ani_string msg)
 {
     (void)object;
     std::string value = ani_tc_bind::AniStringToStdString(env, msg);
-    if (ani_tc_bind::g_logCallCount == 0) {
-        ani_tc_bind::g_logFirstCallOk =
-            (level == ani_tc_bind::BIND_LOG_FIRST_LEVEL && value == "debug");
-    } else if (ani_tc_bind::g_logCallCount == 1) {
-        ani_tc_bind::g_logSecondCallOk =
-            (level == ani_tc_bind::BIND_LOG_SECOND_LEVEL && value == "info");
+
+    int callIndex = ani_tc_bind::g_logCallCount.fetch_add(1);
+
+    if (callIndex == 0) {
+        ani_tc_bind::g_logFirstCallOk.store(
+            level == ani_tc_bind::BIND_LOG_FIRST_LEVEL && value == "debug");
+    } else if (callIndex == 1) {
+        ani_tc_bind::g_logSecondCallOk.store(
+            level == ani_tc_bind::BIND_LOG_SECOND_LEVEL && value == "info");
     }
-    ani_tc_bind::g_logCallCount++;
+    
 }
 ani_boolean test_CheckLog(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-    bool result = (ani_tc_bind::g_logCallCount == ani_tc_bind::BIND_LOG_EXPECTED_COUNT &&
-        ani_tc_bind::g_logFirstCallOk && ani_tc_bind::g_logSecondCallOk);
-    ani_tc_bind::g_logCallCount = 0;
-    ani_tc_bind::g_logFirstCallOk = false;
-    ani_tc_bind::g_logSecondCallOk = false;
+
+    bool result = (ani_tc_bind::g_logCallCount.load() == ani_tc_bind::BIND_LOG_EXPECTED_COUNT &&
+        ani_tc_bind::g_logFirstCallOk.load() && ani_tc_bind::g_logSecondCallOk.load());
+
+    ani_tc_bind::g_logCallCount.store(0);
+    ani_tc_bind::g_logFirstCallOk.store(false);
+    ani_tc_bind::g_logSecondCallOk.store(false);
+
     return result ? ANI_TRUE : ANI_FALSE;
 }
 #endif

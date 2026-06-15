@@ -275,8 +275,20 @@ ani_boolean test_IfaceDeleteWrapper(ani_env *env, ani_object object, ani_object 
 ani_boolean test_IfaceWrapperWithoutFinalizer(ani_env *env, ani_object object)
 {
     ani_object wrapper = test_IfaceCreateWrapper(env, object);
-    (void)wrapper;
-    return ani_tc_iface::g_ifaceNativeData != nullptr ? ANI_TRUE : ANI_FALSE;
+    ani_boolean result = ani_tc_iface::g_ifaceNativeData != nullptr ? ANI_TRUE : ANI_FALSE;
+    if (wrapper != nullptr) {
+        env->Reference_Delete(wrapper);
+    }
+    return result;
+}
+ani_boolean test_IfaceCleanupNativeData(ani_env *env, ani_object object)
+{
+    (void)env;
+    (void)object;
+
+    delete ani_tc_iface::g_ifaceNativeData;
+    ani_tc_iface::g_ifaceNativeData = nullptr;
+    return ANI_TRUE;
 }
 ani_boolean test_IfaceWrongPropertyAccess(ani_env *env, ani_object object, ani_object data)
 {
