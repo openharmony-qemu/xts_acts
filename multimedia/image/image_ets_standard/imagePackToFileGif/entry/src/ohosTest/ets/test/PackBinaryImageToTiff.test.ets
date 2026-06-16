@@ -94,7 +94,7 @@ export default function packBinaryImageToTiff() {
                     result = false;
                 } else if (!isSupportEecode && encodeType == 'file') {
                     await packer.packBinaryImageToTiffFile(bufferInfo, file.fd);
-                    except().assertFail();
+                    expect().assertFail();
                     result = false;
                 }
             } catch (error) {
@@ -774,7 +774,7 @@ export default function packBinaryImageToTiff() {
             console.info(TAG, testName + ' begin.');
             let emptyBuffer: ArrayBuffer = new ArrayBuffer(0);
             let bufferInfo: image.BinaryBufferInfo = {
-                size: { width: 0, heigth: 0 },
+                size: { width: 0, height: 0 },
                 data: emptyBuffer
             };
             let path: string = filesDir + '/' + new Date().getTime() + 'test.tiff';
@@ -836,7 +836,7 @@ export default function packBinaryImageToTiff() {
             console.info(TAG, testName + ' begin.');
             let emptyBuffer: ArrayBuffer = new ArrayBuffer(0);
             let bufferInfo: image.BinaryBufferInfo = {
-                size: { width: 0, heigth: 0 },
+                size: { width: 0, height: 0 },
                 data: emptyBuffer
             };
             try{
@@ -1157,7 +1157,7 @@ export default function packBinaryImageToTiff() {
             try{
                 let packer: image.ImagePacker = await createImagePackerInstance();
                 await packer.packBinaryImageToTiffFile(bufferInfo, null);
-                onsole.error(TAG, testName + ' failed, expect error but success.');
+                console.error(TAG, testName + ' failed, expect error but success.');
                 expect().assertFail();
                 await packer.release();
                 done();
