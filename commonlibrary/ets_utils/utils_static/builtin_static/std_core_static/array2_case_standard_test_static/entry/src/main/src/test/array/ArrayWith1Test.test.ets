@@ -298,14 +298,12 @@ export default function ArrayWith1Test(): void {
      */
     it('testArrayWithOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      let thrown = false;
       try {
         arr.with(-10, 99);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
-        expect(e !== null && e !== undefined).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -318,14 +316,12 @@ export default function ArrayWith1Test(): void {
      */
     it('testArrayWithOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      let thrown = false;
       try {
         arr.with(10, 99);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
-        expect(e !== null && e !== undefined).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -587,14 +583,12 @@ export default function ArrayWith1Test(): void {
      */
     it('testArrayWithOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      let thrown = false;
       try {
         arr.with(-4, 99);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
-        expect(e !== null && e !== undefined).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -930,14 +924,12 @@ export default function ArrayWith1Test(): void {
      */
     it('testArrayWithOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
-      let thrown = false;
       try {
         arr.with(0, 1);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
-        expect(e !== null && e !== undefined).assertTrue();
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -951,13 +943,12 @@ export default function ArrayWith1Test(): void {
     it('testArrayWithOne056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30);
       const before = arr.toString();
-      let thrown = false;
       try {
         arr.with(arr.length, 99);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
       expect(arr.toString()).assertEqual(before);
       expect(arr.length).assertEqual(3);
     });
@@ -973,13 +964,12 @@ export default function ArrayWith1Test(): void {
     it('testArrayWithOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('head', 'tail');
       const before = arr.join('|');
-      let thrown = false;
       try {
         arr.with(-arr.length - 1, 'miss');
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
       expect(arr.join('|')).assertEqual(before);
     });
 
@@ -1076,13 +1066,12 @@ export default function ArrayWith1Test(): void {
       const result = arr.with(-1, 99);
       expect(result.toString()).assertEqual('1,99');
       expect(arr.toString()).assertEqual('1,2');
-      let thrown = false;
       try {
         arr.with(-3, 77);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(thrown).assertTrue();
     });
 
     /**
@@ -1510,14 +1499,13 @@ export default function ArrayWith1Test(): void {
       const arr = new Array<number>(1, 2, 3);
       arr.length = 0;
       arr.pushOne(7);
-      let thrown = false;
       try {
         arr.with(2, 5);
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
+        expect(e.name).assertEqual('RangeError');
       }
       const result = arr.with(0, 8);
-      expect(thrown).assertTrue();
       expect(result.toString()).assertEqual('8');
       expect(arr.toString()).assertEqual('7');
     });

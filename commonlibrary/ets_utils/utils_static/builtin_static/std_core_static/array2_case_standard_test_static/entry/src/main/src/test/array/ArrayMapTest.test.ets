@@ -798,6 +798,7 @@ export default function ArrayMapTest(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('Test error');
         expect(visited.toString()).assertEqual('1,2');
       }
     });
@@ -1427,6 +1428,7 @@ export default function ArrayMapTest(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('map stop');
       }
       expect(count).assertEqual(2);
     });

@@ -860,13 +860,14 @@ export default function ArraySortTest(): void {
       let caught = false;
       try {
         arr.sort((a: number, b: number): int => {
-          if (a === 2) {
+          if (a === 2 || b === 2) {
             throw new Error('Cannot compare 2');
           }
           return compareNumbersAscending(a, b);
         });
+        expect().assertFail();
       } catch (e) {
-        caught = e instanceof Error;
+        caught = e.name === 'Error' && e.message === 'Cannot compare 2';
       }
       expect(caught).assertTrue();
     });

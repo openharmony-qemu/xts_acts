@@ -600,9 +600,9 @@ export default function ArrayReduceRight2Test(): void {
           }
           return a + b;
         });
+        expect().assertFail();
       } catch (e) {
-        thrown = true;
-        expect(e !== null && e !== undefined).assertTrue();
+        thrown = e.name === 'Error' && e.message === 'Test error';
       }
       expect(thrown).assertTrue();
     });

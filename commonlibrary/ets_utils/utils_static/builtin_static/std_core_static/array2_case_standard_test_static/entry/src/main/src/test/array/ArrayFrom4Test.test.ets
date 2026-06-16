@@ -427,7 +427,7 @@ export default function ArrayFrom4Test(): void {
           return v * 2;
         });
       } catch (e) {
-        caught = e instanceof Error;
+        caught = e.name === 'Error' && e.message === 'Test error at value 2';
       }
       expect(caught).assertTrue();
       expect(visited.length).assertEqual(2);
@@ -749,7 +749,7 @@ export default function ArrayFrom4Test(): void {
           return v * 2;
         });
       } catch (e) {
-        caught = e instanceof Error;
+        caught = e.name === 'Error' && e.message === 'Value too large';
       }
       expect(caught).assertTrue();
       expect(visited.length).assertEqual(3);

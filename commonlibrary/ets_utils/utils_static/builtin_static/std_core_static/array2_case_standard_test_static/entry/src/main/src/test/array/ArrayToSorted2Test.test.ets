@@ -1538,7 +1538,7 @@ export default function ArrayToSorted2Test(): void {
           throw new Error('stop');
         });
       } catch (e) {
-        thrown = e instanceof Error;
+        thrown = e.name === 'Error' && e.message === 'stop';
       }
       expect(thrown).assertTrue();
       expect(arr.toString()).assertEqual('2,1,3');

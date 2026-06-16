@@ -468,6 +468,7 @@ export default function ArraySomeTest(): void {
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('stop');
       }
     });
 

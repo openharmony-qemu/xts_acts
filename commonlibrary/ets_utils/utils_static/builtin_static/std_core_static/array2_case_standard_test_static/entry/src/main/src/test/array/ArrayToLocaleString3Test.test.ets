@@ -867,7 +867,7 @@ export default function ArrayToLocaleString3Test(): void {
       try {
         arr.toLocaleString();
       } catch (e) {
-        thrown = e instanceof Error;
+        thrown = e.name === 'Error' && e.message === 'locale failure';
       }
       expect(thrown).assertTrue();
       expect(callLog.toString()).assertEqual('first,thrower');

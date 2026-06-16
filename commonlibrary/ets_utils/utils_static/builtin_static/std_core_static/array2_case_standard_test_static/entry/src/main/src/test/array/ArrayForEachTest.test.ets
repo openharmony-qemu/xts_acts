@@ -1051,7 +1051,7 @@ export default function ArrayForEachTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        thrown = e.name === 'Error';
+        thrown = e.name === 'Error' && e.message === 'ForEachStop';
       }
       expect(thrown).assertTrue();
       expect(calls).assertEqual(2);
@@ -1406,7 +1406,7 @@ export default function ArrayForEachTest(): void {
         });
         expect().assertFail();
       } catch (e) {
-        thrown = e.name === 'Error';
+        thrown = e.name === 'Error' && e.message === 'NestedStop';
       }
       expect(thrown).assertTrue();
       expect(outerCount).assertEqual(1);

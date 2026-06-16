@@ -1238,8 +1238,9 @@ export default function ArrayReduce1Test(): void {
           }
           return acc + value;
         });
-      } catch (_e) {
-        thrown = true;
+        expect().assertFail();
+      } catch (e) {
+        thrown = e.name === 'Error' && e.message === 'reduce stop';
       }
       expect(thrown).assertTrue();
     });
