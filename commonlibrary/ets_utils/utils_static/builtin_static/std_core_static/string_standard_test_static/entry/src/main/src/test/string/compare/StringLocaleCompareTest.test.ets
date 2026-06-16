@@ -417,5 +417,106 @@ export default function StringLocaleCompareTest(): void {
       let lt: boolean = result < 0;
       expect(lt).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2700
+     * @tc.name testLocaleCompare027
+     * @tc.desc Verify localeCompare() returns zero for equal Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: number = text.localeCompare("\u4E2D\u6587", "zh-Hans-CN");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2800
+     * @tc.name testLocaleCompare028
+     * @tc.desc Verify localeCompare() returns zero for equal Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: number = text.localeCompare("\u0627\u0628", "ar-SA");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_2900
+     * @tc.name testLocaleCompare029
+     * @tc.desc Verify localeCompare() handles zero-width space against empty string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u200B");
+      let result: number = text.localeCompare("");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_3000
+     * @tc.name testLocaleCompare030
+     * @tc.desc Verify localeCompare() returns zero for equal date-format strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: number = text.localeCompare("2026-03-05", "en-US");
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_3100
+     * @tc.name testLocaleCompare031
+     * @tc.desc Verify localeCompare() handles isolated low surrogate U+DC04
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uDC04");
+      let result: number = source.localeCompare(source.toString());
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_3200
+     * @tc.name testLocaleCompare032
+     * @tc.desc Verify LocaleCompare handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const source = new String(expected);
+      let result: number = source.localeCompare(expected);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LOCALECOMPARE_3300
+     * @tc.name testLocaleCompare033
+     * @tc.desc Verify LocaleCompare handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLocaleCompare033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const source = new String(expected);
+      let result: number = source.localeCompare(expected);
+      expect(result).assertEqual(0);
+    });
   });
 }

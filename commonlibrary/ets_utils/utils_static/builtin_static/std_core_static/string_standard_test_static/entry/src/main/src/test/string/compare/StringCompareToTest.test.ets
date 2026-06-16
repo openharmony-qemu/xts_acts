@@ -408,5 +408,126 @@ export default function StringCompareToTest(): void {
       expect(r1).assertEqual(2);
       expect(r2).assertEqual(-1);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_2500
+     * @tc.name testCompareTo025
+     * @tc.desc Verify compareTo() orders zero-width space after ASCII A
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("\u200B");
+      const right = new String("A");
+      let result: int = left.compareTo(right);
+      expect(result).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_2600
+     * @tc.name testCompareTo026
+     * @tc.desc Verify compareTo() orders fullwidth dash after halfwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("\u2014");
+      const right = new String("-");
+      let result: int = left.compareTo(right);
+      expect(result).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_2700
+     * @tc.name testCompareTo027
+     * @tc.desc Verify compareTo() returns zero for equal business date strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("2026-03-05");
+      const right = new String("2026-03-05");
+      let result: int = left.compareTo(right);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_2800
+     * @tc.name testCompareTo028
+     * @tc.desc Verify compareTo() orders replacement character after ASCII question mark
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("\uFFFD");
+      const right = new String("?");
+      let result: int = left.compareTo(right);
+      expect(result).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_2900
+     * @tc.name testCompareTo029
+     * @tc.desc Verify compareTo() orders Arabic text after ASCII text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("\u0627");
+      const right = new String("z");
+      let result: int = left.compareTo(right);
+      expect(result).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_3000
+     * @tc.name testCompareTo030
+     * @tc.desc Verify compareTo() orders CR before LF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const left = new String("\r");
+      const right = new String("\n");
+      let result: int = left.compareTo(right);
+      expect(result).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_3100
+     * @tc.name testCompareTo031
+     * @tc.desc Verify CompareTo handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const source = new String(expected);
+      let result: int = source.compareTo(new String(expected));
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_COMPARETO_3200
+     * @tc.name testCompareTo032
+     * @tc.desc Verify CompareTo handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCompareTo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const source = new String(expected);
+      let result: int = source.compareTo(new String(expected));
+      expect(result).assertEqual(0);
+    });
   });
 }

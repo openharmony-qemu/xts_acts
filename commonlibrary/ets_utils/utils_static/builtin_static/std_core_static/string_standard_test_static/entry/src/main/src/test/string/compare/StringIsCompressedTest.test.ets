@@ -278,5 +278,216 @@ export default function StringIsCompressedTest(): void {
       let result: boolean = text.isCompressed();
       expect(result).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1800
+     * @tc.name testIsCompressed018
+     * @tc.desc Verify isCompressed() on ASCII email string returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_1900
+     * @tc.name testIsCompressed019
+     * @tc.desc Verify isCompressed() on ASCII phone number returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("13800138000");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2000
+     * @tc.name testIsCompressed020
+     * @tc.desc Verify isCompressed() on Japanese Katakana returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u30C6\u30B9\u30C8");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2100
+     * @tc.name testIsCompressed021
+     * @tc.desc Verify isCompressed() on Korean text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD14C\uC2A4\uD2B8");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2200
+     * @tc.name testIsCompressed022
+     * @tc.desc Verify isCompressed() on replacement character returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2300
+     * @tc.name testIsCompressed023
+     * @tc.desc Verify isCompressed() on hexadecimal-looking ASCII string returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2400
+     * @tc.name testIsCompressed024
+     * @tc.desc Verify isCompressed() on Arabic text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2500
+     * @tc.name testIsCompressed025
+     * @tc.desc Verify isCompressed() on fullwidth dash returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2600
+     * @tc.name testIsCompressed026
+     * @tc.desc Verify isCompressed() on masked bank card string returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2700
+     * @tc.name testIsCompressed027
+     * @tc.desc Verify isCompressed() on C0 NUL inside ASCII text returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2800
+     * @tc.name testIsCompressed028
+     * @tc.desc Verify isCompressed() on emoji surrogate pair returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00");
+      let result: boolean = text.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_2900
+     * @tc.name testIsCompressed029
+     * @tc.desc Verify isCompressed() on scientific-notation-looking string returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("123.45e6");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_3000
+     * @tc.name testIsCompressed030
+     * @tc.desc Verify isCompressed() on octal-looking ASCII string returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0123");
+      let result: boolean = text.isCompressed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_3100
+     * @tc.name testIsCompressed031
+     * @tc.desc Verify IsCompressed handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.isCompressed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISCOMPRESSED_3200
+     * @tc.name testIsCompressed032
+     * @tc.desc Verify IsCompressed handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsCompressed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.isCompressed();
+      expect(result).assertFalse();
+    });
   });
 }

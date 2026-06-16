@@ -437,5 +437,76 @@ export default function StringToLocaleLowerCaseTest(): void {
       let result: string = text.toLocaleLowerCase("");
       expect(result).assertEqual("abc");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_2900
+     * @tc.name testToLocaleLowerCase029
+     * @tc.desc Verify toLocaleLowerCase() converts mixed ASCII around Unicode CJK
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("TEST\u4E2D\u6587");
+      let result: string = text.toLocaleLowerCase();
+      expect(result).assertEqual("test\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_3000
+     * @tc.name testToLocaleLowerCase030
+     * @tc.desc Verify toLocaleLowerCase() preserves email punctuation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("TEST@EXAMPLE.COM");
+      let result: string = text.toLocaleLowerCase();
+      expect(result).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_3100
+     * @tc.name testToLocaleLowerCase031
+     * @tc.desc Verify toLocaleLowerCase() handles literal malformed Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\u malformed");
+      let result: string = source.toLocaleLowerCase();
+      expect(result.length).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_3200
+     * @tc.name testToLocaleLowerCase032
+     * @tc.desc Verify ToLocaleLowerCase handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.toLocaleLowerCase();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALELOWERCASE_3300
+     * @tc.name testToLocaleLowerCase033
+     * @tc.desc Verify ToLocaleLowerCase handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleLowerCase033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.toLocaleLowerCase();
+      expect(result).assertEqual("テスト 테스트 test 測試 абвгд الاختبار");
+    });
   });
 }

@@ -403,5 +403,104 @@ export default function StringStartsWithTest(): void {
       expect(text.startsWith("Hello")).assertTrue();
       expect(text.includes("Hello")).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_2700
+     * @tc.name testStartsWith027
+     * @tc.desc Verify startsWith() detects Unicode escape CJK prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587Test");
+      let result: boolean = text.startsWith("\u4E2D");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_2800
+     * @tc.name testStartsWith028
+     * @tc.desc Verify startsWith() detects zero-width space prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u200Bhidden");
+      let result: boolean = text.startsWith("\u200B");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_2900
+     * @tc.name testStartsWith029
+     * @tc.desc Verify startsWith() rejects phone prefix on email string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: boolean = text.startsWith("138");
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_3000
+     * @tc.name testStartsWith030
+     * @tc.desc Verify startsWith() detects hexadecimal prefix in token
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let result: boolean = text.startsWith("0x");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_3100
+     * @tc.name testStartsWith031
+     * @tc.desc Verify startsWith() handles illegal UTF-8 single-byte spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4");
+      let result: boolean = source.startsWith("\\x");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_3200
+     * @tc.name testStartsWith032
+     * @tc.desc Verify StartsWith handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.startsWith("!@#$%^&*()");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STARTSWITH_3300
+     * @tc.name testStartsWith033
+     * @tc.desc Verify StartsWith handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStartsWith033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.startsWith("テスト");
+      expect(result).assertTrue();
+    });
   });
 }

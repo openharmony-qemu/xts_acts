@@ -502,5 +502,48 @@ export default function StringContainsTest(): void {
       expect(text.contains(present, 0)).assertTrue();
       expect(text.contains(absent, 0)).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_3300
+     * @tc.name testContains033
+     * @tc.desc Verify contains() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContains033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: boolean = source.contains(new String("\uFFFD"), 0);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_3400
+     * @tc.name testContains034
+     * @tc.desc Verify Contains handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContains034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.contains(new String("\u6D4B\u8BD5 \u5206\u5272\u7B26"), 0);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTAINS_3500
+     * @tc.name testContains035
+     * @tc.desc Verify Contains handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContains035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.contains(new String("АБВГД"), 0);
+      expect(result).assertTrue();
+    });
   });
 }

@@ -395,5 +395,104 @@ export default function StringToLocaleUpperCaseTest(): void {
       let result: string = text.toLocaleUpperCase("");
       expect(result).assertEqual("ABC");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2600
+     * @tc.name testToLocaleUpperCase026
+     * @tc.desc Verify toLocaleUpperCase() converts mixed ASCII around Unicode CJK
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test\u4E2D\u6587");
+      let result: string = text.toLocaleUpperCase();
+      expect(result).assertEqual("TEST\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2700
+     * @tc.name testToLocaleUpperCase027
+     * @tc.desc Verify toLocaleUpperCase() preserves email punctuation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: string = text.toLocaleUpperCase();
+      expect(result).assertEqual("TEST@EXAMPLE.COM");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2800
+     * @tc.name testToLocaleUpperCase028
+     * @tc.desc Verify toLocaleUpperCase() preserves date-format digits
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: string = text.toLocaleUpperCase();
+      expect(result).assertEqual("2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_2900
+     * @tc.name testToLocaleUpperCase029
+     * @tc.desc Verify toLocaleUpperCase() preserves zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("a\u200Bb");
+      let result: string = text.toLocaleUpperCase();
+      expect(result).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_3000
+     * @tc.name testToLocaleUpperCase030
+     * @tc.desc Verify toLocaleUpperCase() preserves replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFDabc");
+      let result: string = text.toLocaleUpperCase();
+      expect(result).assertEqual("\uFFFDABC");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_3100
+     * @tc.name testToLocaleUpperCase031
+     * @tc.desc Verify ToLocaleUpperCase handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.toLocaleUpperCase();
+      expect(result).assertEqual(source.toString().toUpperCase());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOCALEUPPERCASE_3200
+     * @tc.name testToLocaleUpperCase032
+     * @tc.desc Verify ToLocaleUpperCase handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLocaleUpperCase032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.toLocaleUpperCase();
+      expect(result).assertEqual("テスト 테스트 TEST 測試 АБВГД الاختبار");
+    });
   });
 }

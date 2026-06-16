@@ -397,5 +397,117 @@ export default function StringEndsWithTest(): void {
       expect(text.endsWith("world", 5)).assertFalse();
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_2600
+     * @tc.name testEndsWith026
+     * @tc.desc Verify endsWith() detects Unicode escape CJK suffix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Test\u4E2D\u6587");
+      let result: boolean = text.endsWith("\u6587");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_2700
+     * @tc.name testEndsWith027
+     * @tc.desc Verify endsWith() detects zero-width space suffix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("hidden\u200B");
+      let result: boolean = text.endsWith("\u200B");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_2800
+     * @tc.name testEndsWith028
+     * @tc.desc Verify endsWith() detects date suffix in path-like string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("log-2026-03-05");
+      let result: boolean = text.endsWith("2026-03-05");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_2900
+     * @tc.name testEndsWith029
+     * @tc.desc Verify endsWith() rejects hexadecimal suffix on binary-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0b1010");
+      let result: boolean = text.endsWith("0x");
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_3000
+     * @tc.name testEndsWith030
+     * @tc.desc Verify endsWith() detects CRLF line ending
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("Header: ok\r\n");
+      let result: boolean = text.endsWith("\r\n");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_3100
+     * @tc.name testEndsWith031
+     * @tc.desc Verify endsWith() handles ISO-8859-1 question-mark garbled text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("????");
+      let result: boolean = source.endsWith(source.toString());
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_3200
+     * @tc.name testEndsWith032
+     * @tc.desc Verify EndsWith handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.endsWith("\u8F6C\u4E49\u7B26");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ENDSWITH_3300
+     * @tc.name testEndsWith033
+     * @tc.desc Verify EndsWith handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEndsWith033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.endsWith("الاختبار");
+      expect(result).assertTrue();
+    });
   });
 }

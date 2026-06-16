@@ -53,6 +53,7 @@ export default function StringToLowerCaseTest(): void {
       let result: String = str.toLowerCase();
       expect(result.toString()).assertEqual("hello world");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0200
      * @tc.name testToLowerCase002
@@ -66,6 +67,7 @@ export default function StringToLowerCaseTest(): void {
       let result: String = str.toLowerCase();
       expect(result.toString()).assertEqual("");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0300
      * @tc.name testToLowerCase003
@@ -79,6 +81,7 @@ export default function StringToLowerCaseTest(): void {
       let result: String = str.toLowerCase();
       expect(result.toString()).assertEqual("arkts");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0400
      * @tc.name testToLowerCase004
@@ -92,6 +95,7 @@ export default function StringToLowerCaseTest(): void {
       let result: String = str.toLowerCase();
       expect(result.toString()).assertEqual("12345");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0500
      * @tc.name testToLowerCase005
@@ -105,6 +109,7 @@ export default function StringToLowerCaseTest(): void {
       let result: String = str.toLowerCase();
       expect(result.toString()).assertEqual("ａｂｃ");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_0600
      * @tc.name testToLowerCase006
@@ -455,6 +460,63 @@ export default function StringToLowerCaseTest(): void {
       const text = new String("!@#$%^&*()");
       let result: String = text.toLowerCase();
       expect(result.toString()).assertEqual("!@#$%^&*()");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_3100
+     * @tc.name testToLowerCase031
+     * @tc.desc Verify toLowerCase() handles mixed text with literal Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLowerCase031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("test \\u4e2d\\u6587");
+      let result: string = source.toLowerCase();
+      expect(result.length).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_3200
+     * @tc.name testToLowerCase032
+     * @tc.desc Verify toLowerCase() handles literal malformed Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLowerCase032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\u malformed");
+      let result: string = source.toLowerCase();
+      expect(result.length).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_3300
+     * @tc.name testToLowerCase033
+     * @tc.desc Verify ToLowerCase handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLowerCase033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.toLowerCase();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOLOWERCASE_3400
+     * @tc.name testToLowerCase034
+     * @tc.desc Verify ToLowerCase handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToLowerCase034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.toLowerCase();
+      expect(result).assertEqual("テスト 테스트 test 測試 абвгд الاختبار");
     });
   });
 }

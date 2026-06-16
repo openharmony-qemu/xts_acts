@@ -53,6 +53,7 @@ export default function StringToUpperCaseTest(): void {
       let result: String = str.toUpperCase();
       expect(result.toString()).assertEqual("ARKTS");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0200
      * @tc.name testToUpperCase002
@@ -66,6 +67,7 @@ export default function StringToUpperCaseTest(): void {
       let result: String = str.toUpperCase();
       expect(result.toString()).assertEqual("");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0300
      * @tc.name testToUpperCase003
@@ -79,6 +81,7 @@ export default function StringToUpperCaseTest(): void {
       let result: String = str.toUpperCase();
       expect(result.toString()).assertEqual("ARKTS");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0400
      * @tc.name testToUpperCase004
@@ -92,6 +95,7 @@ export default function StringToUpperCaseTest(): void {
       let result: String = str.toUpperCase();
       expect(result.toString()).assertEqual("ABC123XYZ");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_0500
      * @tc.name testToUpperCase005
@@ -470,6 +474,63 @@ export default function StringToUpperCaseTest(): void {
       const text = new String("café");
       let result: String = text.toUpperCase();
       expect(result.toString()).assertEqual("CAFÉ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_3200
+     * @tc.name testToUpperCase032
+     * @tc.desc Verify toUpperCase() handles GBK-to-UTF8 garbled text spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToUpperCase032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("æµè¯");
+      let result: string = source.toUpperCase();
+      expect(result.length).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_3300
+     * @tc.name testToUpperCase033
+     * @tc.desc Verify toUpperCase() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToUpperCase033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.toUpperCase();
+      expect(result.length).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_3400
+     * @tc.name testToUpperCase034
+     * @tc.desc Verify ToUpperCase handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToUpperCase034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.toUpperCase();
+      expect(result).assertEqual(source.toString().toUpperCase());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOUPPERCASE_3500
+     * @tc.name testToUpperCase035
+     * @tc.desc Verify ToUpperCase handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToUpperCase035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.toUpperCase();
+      expect(result).assertEqual("テスト 테스트 TEST 測試 АБВГД الاختبار");
     });
   });
 }

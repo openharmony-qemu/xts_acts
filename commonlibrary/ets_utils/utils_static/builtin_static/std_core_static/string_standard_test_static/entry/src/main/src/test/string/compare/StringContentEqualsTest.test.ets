@@ -333,5 +333,188 @@ export default function StringContentEqualsTest(): void {
       let result: boolean = text.contentEquals(sb);
       expect(result).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2100
+     * @tc.name testContentEquals021
+     * @tc.desc Verify contentEquals() returns true for Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let builder = new StringBuilder("\u4E2D\u6587");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2200
+     * @tc.name testContentEquals022
+     * @tc.desc Verify contentEquals() detects missing zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let builder = new StringBuilder("AB");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2300
+     * @tc.name testContentEquals023
+     * @tc.desc Verify contentEquals() returns true for date-format string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let builder = new StringBuilder("2026-03-05");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2400
+     * @tc.name testContentEquals024
+     * @tc.desc Verify contentEquals() distinguishes fullwidth dash from halfwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let builder = new StringBuilder("-");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2500
+     * @tc.name testContentEquals025
+     * @tc.desc Verify contentEquals() returns true for Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let builder = new StringBuilder("\u0627\u0628");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2600
+     * @tc.name testContentEquals026
+     * @tc.desc Verify contentEquals() returns true for replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let builder = new StringBuilder("\uFFFD");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2700
+     * @tc.name testContentEquals027
+     * @tc.desc Verify contentEquals() distinguishes CRLF and LF text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let builder = new StringBuilder("A\nB");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2800
+     * @tc.name testContentEquals028
+     * @tc.desc Verify contentEquals() returns true for masked bank card string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let builder = new StringBuilder("622202********1234");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_2900
+     * @tc.name testContentEquals029
+     * @tc.desc Verify contentEquals() returns true for hexadecimal-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let builder = new StringBuilder("0x123");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_3000
+     * @tc.name testContentEquals030
+     * @tc.desc Verify contentEquals() detects trailing invisible space difference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("value ");
+      let builder = new StringBuilder("value");
+      let result: boolean = text.contentEquals(builder);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_3100
+     * @tc.name testContentEquals031
+     * @tc.desc Verify ContentEquals handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const source = new String(expected);
+      let builder = new StringBuilder(expected);
+      let result: boolean = source.contentEquals(builder);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONTENTEQUALS_3200
+     * @tc.name testContentEquals032
+     * @tc.desc Verify ContentEquals handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testContentEquals032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const source = new String(expected);
+      let builder = new StringBuilder(expected);
+      let result: boolean = source.contentEquals(builder);
+      expect(result).assertTrue();
+    });
   });
 }

@@ -345,5 +345,148 @@ export default function StringIsEmptyTest(): void {
       expect(parts.length).assertEqual(1);
       expect(parts[0].isEmpty()).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2300
+     * @tc.name testIsEmpty023
+     * @tc.desc Verify isEmpty() returns false for zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u200B");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2400
+     * @tc.name testIsEmpty024
+     * @tc.desc Verify isEmpty() returns true after trimming only CRLF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\r\n");
+      let trimmed: string = text.trim();
+      const normalized = new String(trimmed);
+      let result: boolean = normalized.isEmpty();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2500
+     * @tc.name testIsEmpty025
+     * @tc.desc Verify isEmpty() returns false for replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2600
+     * @tc.name testIsEmpty026
+     * @tc.desc Verify isEmpty() returns false for Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2700
+     * @tc.name testIsEmpty027
+     * @tc.desc Verify isEmpty() returns false for date-format string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2800
+     * @tc.name testIsEmpty028
+     * @tc.desc Verify isEmpty() returns false for literal backslash-u text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\\u4e2d");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_2900
+     * @tc.name testIsEmpty029
+     * @tc.desc Verify isEmpty() returns false for emoji surrogate pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_3000
+     * @tc.name testIsEmpty030
+     * @tc.desc Verify isEmpty() returns false for hexadecimal-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let result: boolean = text.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_3100
+     * @tc.name testIsEmpty031
+     * @tc.desc Verify IsEmpty handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.isEmpty();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISEMPTY_3200
+     * @tc.name testIsEmpty032
+     * @tc.desc Verify IsEmpty handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsEmpty032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.isEmpty();
+      expect(result).assertFalse();
+    });
   });
 }
