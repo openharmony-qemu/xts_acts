@@ -32,7 +32,8 @@ import {
   $r,
   OnSelectCallback,
   Select,
-  Margin
+  Margin,
+  ResourceColor
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import testsuite from '../../../../src/test/List.test';
@@ -47,7 +48,7 @@ struct SelectExample {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: number = 0xCCCCCC
+  @State fontColor: ResourceColor = 0xCCCCCC
   @State spaceValue: number = 8
   @State spaceValueString: string = '50.00vp'
   @State arrowPosition: ArrowPosition = ArrowPosition.END
