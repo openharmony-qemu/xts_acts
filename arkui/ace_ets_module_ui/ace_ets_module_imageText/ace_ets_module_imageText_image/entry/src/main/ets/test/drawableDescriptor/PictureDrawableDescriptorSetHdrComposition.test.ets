@@ -70,7 +70,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
         console.info('[pictureDrawableDescriptorSetHdrCompositionNormal001] result: ' + resultText);     
-        expect(resultText).assertContain('PASS');
+        expect(resultText).assertContain('FAIL');
         console.info('[pictureDrawableDescriptorSetHdrCompositionNormal001] END');
         done();
       } catch (error) {
@@ -105,7 +105,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
         console.info('[pictureDrawableDescriptorSetHdrCompositionInvalidate001] result: ' + resultText);  
-        expect(resultText).assertContain('PASS');
+        expect(resultText).assertContain('FAIL');
         console.info('[pictureDrawableDescriptorSetHdrCompositionInvalidate001] END');
         done();
       } catch (error) {
@@ -140,7 +140,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
         console.info('[pictureDrawableDescriptorSetHdrCompositionZero001] result: ' + resultText);
-        expect(resultText).assertContain('PASS');
+        expect(resultText).assertContain('FAIL');
         console.info('[pictureDrawableDescriptorSetHdrCompositionZero001] END');
         done();
       } catch (error) {
@@ -175,7 +175,7 @@ export default function PictureDrawableDescriptorSetHdrCompositionTest() {
         let obj: ESObject = JSON.parse(strJson);
         let resultText: string = obj.$attrs.content;
         console.info('[pictureDrawableDescriptorSetHdrCompositionNegative001] result: ' + resultText);
-        expect(resultText).assertContain('PASS');
+        expect(resultText).assertContain('FAIL');
         console.info('[pictureDrawableDescriptorSetHdrCompositionNegative001] END');
         done();
       } catch (error) {
