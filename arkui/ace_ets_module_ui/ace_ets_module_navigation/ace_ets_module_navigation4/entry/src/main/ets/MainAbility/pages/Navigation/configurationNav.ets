@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-class helper {
+class StandardHelper {
   static standardCnt: number = 0;
 }
 
 class NavParamOne {
-  desc: string = 'NavParamOne'
+  public desc: string = 'NavParamOne'
 }
 
 @Entry
@@ -122,7 +122,7 @@ struct NavBody {
           Button('push')
             .id('push_standard_btn')
             .onClick(() => {
-              this.stack.pushPath({name: 'STANDARD ' + JSON.stringify(helper.standardCnt++)})
+              this.stack.pushPath({name: 'STANDARD ' + JSON.stringify(StandardHelper.standardCnt++)})
             })
           Button('replacePath')
             .id('replace_restore_btn')

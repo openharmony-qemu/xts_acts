@@ -12,13 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { TabsModifier } from "@ohos.arkui.modifier";
+import { TabsModifier } from '@ohos.arkui.modifier';
 
 class MyTabContentModifier implements AttributeModifier<TabContentAttribute> {
-  indicatorWidth: number = 40;
-  indicatorHeight: number = 10;
-  indicatorBorderRadius: number = 5;
-  indicatorSpace: number = 10;
+  public indicatorWidth: number = 40;
+  public indicatorHeight: number = 10;
+  public indicatorBorderRadius: number = 5;
+  public indicatorSpace: number = 10;
 
   applyNormalAttribute(instance: TabContentAttribute): void {
     instance.tabBar(SubTabBarStyle.of('文本1')
