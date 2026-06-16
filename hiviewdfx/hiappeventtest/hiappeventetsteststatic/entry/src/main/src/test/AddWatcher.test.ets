@@ -694,6 +694,11 @@ export default function addWatcherTest() {
       hilog.info(logDomain, tag, 'testHiAppEventSub02 start')
       let holder1 = hiAppEvent.addWatcher({
         name: "watcher521",
+        appEventFilters: [
+          {
+            domain: hiAppEvent.domain.OS,
+          }
+        ],
       });
       hiAppEvent.write({
         domain: hiAppEvent.domain.OS,
@@ -750,7 +755,7 @@ export default function addWatcherTest() {
       Utils.msSleep(5000);
       if (holder1 != null) {
         let eventPkg = holder1.takeNext();
-        while ((eventPkg = holder.takeNext()) != null) {
+        while ((eventPkg = holder1.takeNext()) != null) {
           hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
           hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
           hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
