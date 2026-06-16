@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { afterAll, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { Component, Driver, MouseButton, ON, BY, WindowMode } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { ThemeControl } from '@ohos.arkui.theme';
 import { Theme } from '@ohos.arkui.theme';
@@ -38,9 +39,11 @@ export default function themeTokenType() {
           await Utils.sleep(2000);
         }
       } catch (err) {
-        console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
+        console.error('push themeTokenType page error:' + err);
       }
-    })
+      console.info('themeTokenType beforeEach end');
+      done();
+    });
 
     /**
      * @tc.name   themeTokenType_0100

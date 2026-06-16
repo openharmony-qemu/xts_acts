@@ -16,6 +16,7 @@
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import { Component, Driver, MouseButton, ON, BY, WindowMode } from '@ohos.UiTest';
 
 export default function configurationNav() {
   describe('configurationNav', () => {
