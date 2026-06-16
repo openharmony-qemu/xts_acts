@@ -1912,6 +1912,856 @@ export default function DeepcopyTest(): void {
       expect(result === s).assertTrue()
     })
 
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_8500
+     * @tc.name testDeepcopy0085
+     * @tc.desc Verify deepcopy of function returns identical reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const greet: () => string = (): string => { return "hi" }
+      let result = deepcopy(greet)
+      expect(result === greet).assertTrue()
+    })
 
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_8600
+     * @tc.name testDeepcopy0086
+     * @tc.desc Verify deepcopy of enum returns same reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result = deepcopy(Color086.Red)
+      expect(result === Color086.Red).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_8700
+     * @tc.name testDeepcopy0087
+     * @tc.desc Verify deepcopy of empty object returns new instance with default values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: Empty087 = new Empty087()
+      let result = deepcopy(e)
+      expect(result!.val).assertEqual(0)
+      expect(result === e).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9100
+     * @tc.name testDeepcopy0091
+     * @tc.desc Verify deepcopy return type matches source type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Typed091 = new Typed091()
+      obj.val = "typed"
+      let result: Typed091 | null | undefined = deepcopy<Typed091>(obj)
+      expect(result instanceof Typed091).assertTrue()
+      expect(result!.val).assertEqual("typed")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9200
+     * @tc.name testDeepcopy0092
+     * @tc.desc Verify deepcopy preserves generic type in return value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let numResult = deepcopy<number>(42)
+      expect(typeof numResult === 'number').assertTrue()
+      let strResult = deepcopy<string>("hello")
+      expect(typeof strResult === 'string').assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9300
+     * @tc.name testDeepcopy0093
+     * @tc.desc Verify wrapper type returns new instance with equal value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let original: Int = new Int(100)
+      let result = deepcopy(original)
+      expect(result!.toInt()).assertEqual(original.toInt())
+      original = new Int(200)
+      expect(result!.toInt()).assertEqual(100)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9400
+     * @tc.name testDeepcopy0094
+     * @tc.desc Verify Date returns new instance with same timestamp
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let date: Date = new Date(2026, 5, 9)
+      let result = deepcopy(date)
+      expect(result!.getTime()).assertEqual(date.getTime())
+      expect(result === date).assertFalse()
+      expect(result instanceof Date).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9500
+     * @tc.name testDeepcopy0095
+     * @tc.desc Verify deepcopy preserves prototype chain with instanceof
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Dog095 = new Dog095()
+      d.name = "Buddy"
+      d.breed = "Labrador"
+      let result = deepcopy(d)
+      expect(result instanceof Dog095).assertTrue()
+      expect(result instanceof Animal095).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9600
+     * @tc.name testDeepcopy0096
+     * @tc.desc Verify deepcopy of object with many properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let l: Large096 = new Large096()
+      let result = deepcopy(l)
+      expect(result!.f1).assertEqual(1)
+      expect(result!.f8).assertEqual("8")
+      expect(result === l).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9700
+     * @tc.name testDeepcopy0097
+     * @tc.desc Verify deepcopy of deeply nested object with 10 plus levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let root: Deep097 = new Deep097()
+      let current: Deep097 = root
+      for (let i = 0; i < 10; i++) {
+        let next: Deep097 = new Deep097()
+        next.val = i
+        current.child = next
+        current = next
+      }
+      current.child = current
+      let result: Deep097 | null = deepcopy(root)!
+      let c: Deep097 | null = result
+      for (let i = 0; i < 10; i++) {
+        expect(c !== null).assertTrue()
+        c = c!.child
+      }
+      expect(c !== null).assertTrue()
+      expect(c!.child === c).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9800
+     * @tc.name testDeepcopy0098
+     * @tc.desc Verify deepcopy of circular reference maintains structure
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: Node098 = new Node098()
+      n.val = 1
+      n.next = n
+      let result = deepcopy(n)
+      expect(result!.val).assertEqual(1)
+      expect(result!.next === result).assertTrue()
+      expect(result!.next!.next === result).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_9900
+     * @tc.name testDeepcopy0099
+     * @tc.desc Verify deepcopy throws error for unsupported source type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let source = new NoDefault107(1)
+        deepcopy(source)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0000
+     * @tc.name testDeepcopy0100
+     * @tc.desc Verify error message contains descriptive information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let source = new NoDefault107(1)
+        deepcopy(source)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        let e = error as Error
+        expect(e.message.length > 0).assertTrue()
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0101
+     * @tc.name testDeepcopy0101
+     * @tc.desc Verify deepcopy throws error when Cloneable is implemented without clone override
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let bc = new BadClone101()
+        bc.x = 10
+        deepcopy(bc)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0201
+     * @tc.name testDeepcopy0102
+     * @tc.desc Verify deepcopy throws error when subclass inherits Cloneable without own clone
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let c: Child102 = new Child102()
+        c.x = 1
+        c.y = 2
+        deepcopy(c)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0301
+     * @tc.name testDeepcopy0103
+     * @tc.desc Verify deepcopy throws error for class without default constructor or Cloneable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let nd = new NoDefault103(1)
+        deepcopy(nd)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0401
+     * @tc.name testDeepcopy0104
+     * @tc.desc Verify deepcopy throws error for class with only parameterized constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let wp = new WithParams104("test", 20)
+        deepcopy(wp)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0501
+     * @tc.name testDeepcopy0105
+     * @tc.desc Verify error handling with try-catch-finally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let finallyExecuted: boolean = false
+      let caught = false
+      try {
+        let nd = new NoDefault105(1)
+        deepcopy(nd)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      } finally {
+        finallyExecuted = true
+      }
+      expect(caught).assertTrue()
+      expect(finallyExecuted).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0601
+     * @tc.name testDeepcopy0106
+     * @tc.desc Verify caught Error object has complete properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false
+      try {
+        let source = new BadClone106()
+        source.x = 10
+        deepcopy(source)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0701
+     * @tc.name testDeepcopy0107
+     * @tc.desc Verify deepcopy works normally after previous error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false;
+      try {
+        deepcopy(new NoDefault107(1))
+        let n: Normal107 = new Normal107()
+        n.val = 42
+        let result = deepcopy(n)
+      } catch (error) {
+        caught = true;
+        expect(error.name.length > 0).assertTrue();
+      }
+      expect(caught).assertTrue();
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0801
+     * @tc.name testDeepcopy0108
+     * @tc.desc Verify deepcopy throws error when nested object is not copyable
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let o: Outer108 = new Outer108()
+      o.inner = new BadInner108(1)
+      let caught = false
+      try {
+        deepcopy(o)
+      } catch (error) {
+        expect(error.name.length > 0).assertTrue();
+        caught = true
+      }
+      expect(caught).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_0901
+     * @tc.name testDeepcopy0109
+     * @tc.desc Verify Boolean valueOf creates new instance with equal value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b1: Boolean = new Boolean(true)
+      let b2: Boolean = new Boolean(false)
+      let r1 = deepcopy(b1)
+      let r2 = deepcopy(b2)
+      expect(r1!.valueOf()).assertTrue()
+      expect(r2!.valueOf() == false).assertTrue()
+      expect(r1 != null).assertTrue()
+      expect(r2 != null).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1001
+     * @tc.name testDeepcopy0110
+     * @tc.desc Verify Int wrapper boundary values after deepcopy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxI: Int = new Int(2147483647)
+      let minI: Int = new Int(-2147483648)
+      let zeroI: Int = new Int(0)
+      let r1 = deepcopy(maxI)
+      let r2 = deepcopy(minI)
+      let r3 = deepcopy(zeroI)
+      expect(r1!.toInt()).assertEqual(2147483647)
+      expect(r2!.toInt()).assertEqual(-2147483648)
+      expect(r3!.toInt()).assertEqual(0)
+      expect(r1 != null).assertTrue()
+      expect(r2 != null).assertTrue()
+      expect(r3 != null).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1101
+     * @tc.name testDeepcopy0111
+     * @tc.desc Verify wrapper type zero value deepcopy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let bz: Byte = new Byte(Int.toByte(0))
+      let sz: Short = new Short(Int.toShort(0))
+      let iz: Int = new Int(0)
+      let lz: Long = new Long(Int.toLong(0))
+      let fz: Float = new Float(Double.toFloat(0.0))
+      let dz: Double = new Double(0.0)
+      expect(deepcopy(bz)!.toByte()).assertEqual(Int.toByte(0))
+      expect(deepcopy(sz)!.toShort()).assertEqual(Int.toShort(0))
+      expect(deepcopy(iz)!.toInt()).assertEqual(0)
+      expect(deepcopy(lz)!.toLong()).assertEqual(Int.toLong(0))
+      expect(deepcopy(fz)!.toFloat()).assertEqual(Double.toFloat(0.0))
+      expect(deepcopy(dz)!.toDouble()).assertEqual(0.0)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1201
+     * @tc.name testDeepcopy0112
+     * @tc.desc Verify array nested objects are independent after deepcopy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Item112[] = [new Item112(), new Item112()]
+      arr[0].val = "first"
+      arr[1].val = "second"
+      let copy = deepcopy(arr)
+      arr[0].val = "changed"
+      expect(copy![0].val).assertEqual("first")
+      expect(copy![1].val).assertEqual("second")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1301
+     * @tc.name testDeepcopy0113
+     * @tc.desc Verify nested arrays are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[][] = [[1, 2], [3, 4]]
+      let copy = deepcopy(arr)
+      arr[0].push(99)
+      expect(copy![0].join(",")).assertEqual("1,2")
+      expect(copy![1].join(",")).assertEqual("3,4")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1401
+     * @tc.name testDeepcopy0114
+     * @tc.desc Verify array containing Map elements is recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Map<string, number>[] = [new Map<string, number>()]
+      arr[0].set("key", 1)
+      let copy = deepcopy(arr)
+      arr[0].set("key", 999)
+      expect(copy![0].get("key")).assertEqual(1)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1501
+     * @tc.name testDeepcopy0115
+     * @tc.desc Verify array containing Set elements is recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Set<string>[] = [new Set<string>(["a", "b"])]
+      let copy = deepcopy(arr)
+      arr[0].add("c")
+      expect(copy![0].has("a")).assertTrue()
+      expect(copy![0].has("b")).assertTrue()
+      expect(copy![0].has("c")).assertFalse()
+      expect(copy![0].size).assertEqual(2)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1601
+     * @tc.name testDeepcopy0116
+     * @tc.desc Verify Set nested objects are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Rec116 = new Rec116()
+      r.val = 42
+      let set: Set<Rec116> = new Set<Rec116>([r])
+      let copy = deepcopy(set)
+      r.val = 99
+      let copyArr = Array.from(copy!)
+      expect(copyArr[0].val).assertEqual(42)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1701
+     * @tc.name testDeepcopy0117
+     * @tc.desc Verify Set containing arrays is recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3]
+      let set: Set<number[]> = new Set<number[]>([arr])
+      let copy = deepcopy(set)
+      arr.push(4)
+      let copyArr = Array.from(copy!)[0]
+      expect(copyArr.join(",")).assertEqual("1,2,3")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1801
+     * @tc.name testDeepcopy0118
+     * @tc.desc Verify Map keys are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let k: KeyObj118 = new KeyObj118()
+      k.id = 1
+      let map: Map<KeyObj118, string> = new Map<KeyObj118, string>()
+      map.set(k, "value")
+      let copy = deepcopy(map)
+      let origKeys = Array.from(map.keys())
+      let copyKeys = Array.from(copy!.keys())
+      expect(copyKeys[0].id).assertEqual(1)
+      expect(copyKeys[0] === origKeys[0]).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_1901
+     * @tc.name testDeepcopy0119
+     * @tc.desc Verify Map nested values are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: Nested119 = new Nested119()
+      n.inner = "deep"
+      let map: Map<string, Nested119> = new Map<string, Nested119>()
+      map.set("key", n)
+      let copy = deepcopy(map)
+      n.inner = "changed"
+      expect(copy!.get("key")!.inner).assertEqual("deep")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2001
+     * @tc.name testDeepcopy0120
+     * @tc.desc Verify Map with object keys and values are both recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let k: K120 = new K120()
+      k.id = 1
+      let v: V120 = new V120()
+      v.name = "val"
+      let map: Map<K120, V120> = new Map<K120, V120>()
+      map.set(k, v)
+      let copy = deepcopy(map)
+      let ck = Array.from(copy!.keys())[0]
+      let cv = Array.from(copy!.values())[0]
+      expect(ck.id).assertEqual(1)
+      expect(cv.name).assertEqual("val")
+      expect(ck === k).assertFalse()
+      expect(cv === v).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2101
+     * @tc.name testDeepcopy0121
+     * @tc.desc Verify Date copy has same timestamp after deepcopy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let date: Date = new Date(2026, 5, 9, 12, 30, 0)
+      let copy = deepcopy(date)
+      expect(copy!.getTime()).assertEqual(date.getTime())
+      expect(copy === date).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2201
+     * @tc.name testDeepcopy0122
+     * @tc.desc Verify modifying source Date does not affect deepcopy result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let date: Date = new Date(2026, 0, 1)
+      let copy = deepcopy(date)
+      date.setTime(0)
+      expect(copy!.getTime() != 0).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2301
+     * @tc.name testDeepcopy0123
+     * @tc.desc Verify FixedArray recursive copy with sufficient depth
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fa: FixedArray<Item123> = [new Item123(), new Item123(), new Item123()]
+      fa[0].val = 10
+      fa[1].val = 20
+      fa[2].val = 30
+      let copy = deepcopy(fa, -1)
+      expect(copy![0].val).assertEqual(10)
+      expect(copy![1].val).assertEqual(20)
+      expect(copy![2].val).assertEqual(30)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2401
+     * @tc.name testDeepcopy0124
+     * @tc.desc Verify FixedArray returns original when depth is insufficient
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fa: FixedArray<Item124> = [new Item124(), new Item124(), new Item124()]
+      fa[0].val = 10
+      let copy = deepcopy(fa, 0)
+      expect(copy![0].val).assertEqual(10)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2501
+     * @tc.name testDeepcopy0125
+     * @tc.desc Verify inherited fields are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c: ChildClass125 = new ChildClass125()
+      c.parentVal = "p"
+      c.childVal = 42
+      let result = deepcopy(c)
+      expect(result!.parentVal).assertEqual("p")
+      expect(result!.childVal).assertEqual(42)
+      expect(result === c).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2601
+     * @tc.name testDeepcopy0126
+     * @tc.desc Verify all levels of multi-level inheritance fields are copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: C126 = new C126()
+      obj.a = 1
+      obj.b = 2
+      obj.c = 3
+      let result = deepcopy(obj)
+      expect(result!.a).assertEqual(1)
+      expect(result!.b).assertEqual(2)
+      expect(result!.c).assertEqual(3)
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2701
+     * @tc.name testDeepcopy0127
+     * @tc.desc Verify container type fields are recursively copied
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let h: Holder127 = new Holder127()
+      h.arr = [1, 2, 3]
+      h.set = new Set<string>(["a", "b"])
+      h.map.set("k", "v")
+      let result = deepcopy(h)
+      h.arr.push(4)
+      h.set.add("c")
+      h.map.set("k", "changed")
+      expect(result!.arr.join(",")).assertEqual("1,2,3")
+      expect(result!.set.has("c")).assertFalse()
+      expect(result!.map.get("k")).assertEqual("v")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2801
+     * @tc.name testDeepcopy0128
+     * @tc.desc Verify deepcopy uses clone method for Cloneable implementation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let gc: GoodClone128 = new GoodClone128()
+      gc.x = 10
+      gc.y = 20
+      let result = deepcopy(gc)
+      expect(result!.x).assertEqual(10)
+      expect(result!.y).assertEqual(20)
+      expect(result === gc).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_2901
+     * @tc.name testDeepcopy0129
+     * @tc.desc Verify Cloneable copy is independent from source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: ClonableObj129 = new ClonableObj129()
+      obj.val = "original"
+      let copy = deepcopy(obj)
+      obj.val = "modified"
+      expect(copy!.val).assertEqual("original")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_3001
+     * @tc.name testDeepcopy0130
+     * @tc.desc Verify depth 0 shallow copy behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let o: Outer130 = new Outer130()
+      o.inner.val = "deep"
+      o.ownVal = 42
+      let result = deepcopy(o, 0)
+      expect(result!.ownVal).assertEqual(42)
+      expect(result!.inner.val).assertEqual("deep")
+      expect(result === o).assertTrue()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_3101
+     * @tc.name testDeepcopy0131
+     * @tc.desc Verify depth 1 copies root and first level of nesting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: L1_131 = new L1_131()
+      obj.child.val = "inner"
+      let result = deepcopy(obj, 1)
+      expect(result!.child.val).assertEqual("inner")
+      expect(result === obj).assertFalse()
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_3201
+     * @tc.name testDeepcopy0132
+     * @tc.desc Verify depth limit effect on nested arrays with objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Item132[][] = [[new Item132()]]
+      arr[0][0].name = "deep"
+      let result = deepcopy(arr, 1)
+      expect(result!.length).assertEqual(1)
+      expect(result![0][0].name).assertEqual("deep")
+    })
+
+    /**
+     * @tc.number DPCPY_SPEC_ITEM_CHK_3301
+     * @tc.name testDeepcopy0133
+     * @tc.desc Verify FixedArray behavior difference with depth 0 and depth -1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testDeepcopy0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let fa: FixedArray<Elem133> = [new Elem133(), new Elem133()]
+      fa[0].v = 10
+      fa[1].v = 20
+      let fullCopy = deepcopy(fa, -1)
+      let shallowCopy = deepcopy(fa, 0)
+      expect(fullCopy![0].v).assertEqual(10)
+      expect(shallowCopy![1].v).assertEqual(20)
+    })
   })
 }
