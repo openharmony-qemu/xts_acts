@@ -20,7 +20,7 @@ const TAG = 'PackToDataWithOptions';
 
 async function packToDataWithPixelMap(testName: string, packOpts: image.PackingOption, 
     pixelFormat0: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888): Promise<boolean> {
-    let result false;
+    let result = false;
     try{
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = 
