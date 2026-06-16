@@ -28,6 +28,8 @@ group("uiabilitycontext") {
       "actsspecifiedabilityrely2:ActsSpecifiedAbilityRely2",
       "actsspecifiedabilityrely3:ActsSpecifiedAbilityRely3",
       "actsspecifiedabilitytest:ActsSpecifiedAbilityTest",
+      "actsstartselfuiabilityinchildprocesstest:ActsStartSelfUIAbilityInChildProcessTest",
+      "actsstartselfuiabilityinchildprocessteststatic:ActsStartSelfUIAbilityInChildProcessStaticTest",
     ]
   }
 }
