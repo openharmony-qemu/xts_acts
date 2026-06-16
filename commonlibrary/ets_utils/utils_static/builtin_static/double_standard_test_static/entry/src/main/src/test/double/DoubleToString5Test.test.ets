@@ -289,7 +289,7 @@ export default function DoubleToString5Test(): void {
     /**
      * @tc.number DBL_TO_STRNG_5_CHK_4800
      * @tc.name testDoubleToStringFIVE0048
-     * @tc.desc Verify toString with multiple decimal places
+     * @tc.desc Verify Double.toString returns value with multiple fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

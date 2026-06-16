@@ -31,7 +31,7 @@ export default function DoubleToFixedTwoTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_TWO_0500
      * @tc.name testDoubleToFixed0005
-     * @tc.desc Verify passing integer double value 0.0 as decimal places
+     * @tc.desc Verify Double.toFixed keeps 0 fraction digits when passing 0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +213,7 @@ export default function DoubleToFixedTwoTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_TWO_2800
      * @tc.name testDoubleToFixed0028
-     * @tc.desc Verify normal double value formatted to specified decimal places returns correct string
+     * @tc.desc Verify Double.toFixed formats value to specified fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

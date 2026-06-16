@@ -66,7 +66,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_0400
      * @tc.name testDoubleToFixedImpl0004
-     * @tc.desc Verify d=0.0 keeps 0 decimal places
+     * @tc.desc Verify Double.toFixedImpl keeps 0 fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -94,7 +94,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_0700
      * @tc.name testDoubleToFixedImpl0007
-     * @tc.desc Verify d=10.0 keeps 10 decimal places
+     * @tc.desc Verify Double.toFixedImpl keeps 10 fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -109,7 +109,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_0800
      * @tc.name testDoubleToFixedImpl0008
-     * @tc.desc Verify d=50.0 keeps 50 decimal places
+     * @tc.desc Verify Double.toFixedImpl keeps 50 fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -124,7 +124,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_0900
      * @tc.name testDoubleToFixedImpl0009
-     * @tc.desc Verify d=99.0 keeps 99 decimal places
+     * @tc.desc Verify Double.toFixedImpl keeps 99 fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -138,7 +138,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_1000
      * @tc.name testDoubleToFixedImpl0010
-     * @tc.desc Verify d=100.0 keeps 100 decimal places as upper bound
+     * @tc.desc Verify Double.toFixedImpl keeps 100 fraction digits as upper bound
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,7 +152,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_1200
      * @tc.name testDoubleToFixedImpl0012
-     * @tc.desc Verify d=100.0 as upper bound with maximum decimal places
+     * @tc.desc Verify Double.toFixedImpl(100) as upper bound with maximum fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -283,7 +283,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_2000
      * @tc.name testDoubleToFixedImpl0020
-     * @tc.desc Verify d=0.5 as non-integer decimal places within valid range
+     * @tc.desc Verify Double.toFixedImpl handles non-integer fraction digits within valid range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -517,7 +517,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_4100
      * @tc.name testDoubleToFixedImpl0041
-     * @tc.desc Verify d=3.0 returns exactly 3 decimal places
+     * @tc.desc Verify Double.toFixedImpl returns exactly 3 fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -531,7 +531,7 @@ export default function DoubleToFixedImplTest(): void {
     /**
      * @tc.number DBL_TO_FIXED_IMPL_4200
      * @tc.name testDoubleToFixedImpl0042
-     * @tc.desc Verify d=5.0 returns exactly 5 decimal places with zero padding
+     * @tc.desc Verify Double.toFixedImpl returns correct result with five fraction digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
