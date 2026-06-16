@@ -358,5 +358,185 @@ export default function StringGetBytesTest(): void {
       expect(bytes[0]).assertEqual(10);
       expect(bytes[1]).assertEqual(9);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2200
+     * @tc.name testGetBytes022
+     * @tc.desc Verify getBytes() returns bytes for hexadecimal-looking ASCII string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes.length).assertEqual(5);
+      expect(bytes[1]).assertEqual(120);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2300
+     * @tc.name testGetBytes023
+     * @tc.desc Verify getBytes() returns bytes for business date string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes.length).assertEqual(10);
+      expect(bytes[4]).assertEqual(45);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2400
+     * @tc.name testGetBytes024
+     * @tc.desc Verify getBytes() returns bytes for email at sign
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes[4]).assertEqual(64);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2500
+     * @tc.name testGetBytes025
+     * @tc.desc Verify getBytes() returns bytes for masked bank card asterisk
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let bytes: byte[] = text.getBytes(6, 10);
+      expect(bytes.length).assertEqual(4);
+      expect(bytes[0]).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2600
+     * @tc.name testGetBytes026
+     * @tc.desc Verify getBytes() returns bytes for CRLF pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let bytes: byte[] = text.getBytes(1, 3);
+      expect(bytes.length).assertEqual(2);
+      expect(bytes[0]).assertEqual(13);
+      expect(bytes[1]).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2700
+     * @tc.name testGetBytes027
+     * @tc.desc Verify getBytes() returns byte for literal backslash in escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\\u4e2d");
+      let bytes: byte[] = text.getBytes(0, 1);
+      expect(bytes.length).assertEqual(1);
+      expect(bytes[0]).assertEqual(92);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2800
+     * @tc.name testGetBytes028
+     * @tc.desc Verify getBytes() returns bytes for binary-looking ASCII string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0b1010");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes.length).assertEqual(6);
+      expect(bytes[1]).assertEqual(98);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_2900
+     * @tc.name testGetBytes029
+     * @tc.desc Verify getBytes() returns bytes for scientific notation token
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("123.45e6");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes.length).assertEqual(8);
+      expect(bytes[3]).assertEqual(46);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_3000
+     * @tc.name testGetBytes030
+     * @tc.desc Verify getBytes() returns byte for halfwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("-");
+      let bytes: byte[] = text.getBytes(0, text.length);
+      expect(bytes.length).assertEqual(1);
+      expect(bytes[0]).assertEqual(45);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_3100
+     * @tc.name testGetBytes031
+     * @tc.desc Verify getBytes() handles ISO-8859-1 question-mark garbled text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("????");
+      let result: byte[] = source.getBytes(0, source.length);
+      expect(result.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_3200
+     * @tc.name testGetBytes032
+     * @tc.desc Verify GetBytes handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: byte[] = source.getBytes(0, source.length);
+      expect(result.length).assertEqual(74);
+      expect(result[0]).assertEqual(33);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETBYTES_3300
+     * @tc.name testGetBytes033
+     * @tc.desc Verify GetBytes handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetBytes033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: byte[] = source.getBytes(0, source.length);
+      expect(result.length).assertEqual(source.length);
+      expect(result[0]).assertEqual(-58);
+    });
   });
 }

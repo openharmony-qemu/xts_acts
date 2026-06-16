@@ -675,5 +675,47 @@ export default function StringConstructorTest(): void {
       let result: string = String(obj);
       expect(result).assertEqual('[object Object]');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_4600
+     * @tc.name testConstructor046
+     * @tc.desc Verify constructor() handles illegal UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4\\x3f\\xad");
+      expect(source.toString()).assertEqual("\\xe4\\x3f\\xad");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_4700
+     * @tc.name testConstructor047
+     * @tc.desc Verify Constructor handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConstructor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const result = new String(expected);
+      expect(result.toString()).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONSTRUCTOR_4800
+     * @tc.name testConstructor048
+     * @tc.desc Verify Constructor handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConstructor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const result = new String(expected);
+      expect(result.toString()).assertEqual(expected);
+    });
   });
 }

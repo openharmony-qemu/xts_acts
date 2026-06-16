@@ -320,5 +320,202 @@ export default function StringGetCharsTest(): void {
       expect(text.toString()).assertEqual("ABC");
       expect(chars[0].toString()).assertEqual("Z");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2000
+     * @tc.name testGetChars020
+     * @tc.desc Verify getChars() includes zero-width space as one char
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(3);
+      expect(chars[1].toString()).assertEqual("\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2100
+     * @tc.name testGetChars021
+     * @tc.desc Verify getChars() includes replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(1);
+      expect(chars[0].toString()).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2200
+     * @tc.name testGetChars022
+     * @tc.desc Verify getChars() includes fullwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(1);
+      expect(chars[0].toString()).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2300
+     * @tc.name testGetChars023
+     * @tc.desc Verify getChars() includes Arabic letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2400
+     * @tc.name testGetChars024
+     * @tc.desc Verify getChars() includes business date separators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(10);
+      expect(chars[4].toString()).assertEqual("-");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2500
+     * @tc.name testGetChars025
+     * @tc.desc Verify getChars() includes masked bank card asterisks
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(18);
+      expect(chars[6].toString()).assertEqual("*");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2600
+     * @tc.name testGetChars026
+     * @tc.desc Verify getChars() includes CRLF as two chars
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(4);
+      expect(chars[1].toString()).assertEqual("\r");
+      expect(chars[2].toString()).assertEqual("\n");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2700
+     * @tc.name testGetChars027
+     * @tc.desc Verify getChars() includes literal escape spelling characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\\u4e2d");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(6);
+      expect(chars[0].toString()).assertEqual("\\");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2800
+     * @tc.name testGetChars028
+     * @tc.desc Verify getChars() includes Korean text characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD14C\uC2A4\uD2B8");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_2900
+     * @tc.name testGetChars029
+     * @tc.desc Verify getChars() includes scientific notation punctuation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("123.45e6");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(8);
+      expect(chars[3].toString()).assertEqual(".");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_3000
+     * @tc.name testGetChars030
+     * @tc.desc Verify getChars() includes NUL between ASCII chars
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let chars: char[] = text.getChars();
+      expect(chars.length).assertEqual(3);
+      expect(chars[1].toString()).assertEqual("\0");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_3100
+     * @tc.name testGetChars031
+     * @tc.desc Verify GetChars handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: char[] = source.getChars();
+      expect(result.length).assertEqual(74);
+      expect(result[0].toString()).assertEqual("!");
+      expect(result[result.length - 1].toString()).assertEqual("符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETCHARS_3200
+     * @tc.name testGetChars032
+     * @tc.desc Verify GetChars handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetChars032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: char[] = source.getChars();
+      expect(result.length).assertEqual(30);
+      expect(result[0].toString()).assertEqual("テ");
+      expect(result[result.length - 1].toString()).assertEqual("ر");
+    });
   });
 }

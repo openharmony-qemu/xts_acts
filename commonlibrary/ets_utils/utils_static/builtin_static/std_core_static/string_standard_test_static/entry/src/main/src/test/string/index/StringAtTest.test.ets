@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -335,6 +334,175 @@ export default function StringAtTest(): void {
         chars.push(text.at(i)!);
       }
       expect(chars.join("")).assertEqual("ABC");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2100
+     * @tc.name testAt021
+     * @tc.desc Verify at() reads zero-width space by positive index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: string | undefined = text.at(1);
+      expect(result!).assertEqual("\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2200
+     * @tc.name testAt022
+     * @tc.desc Verify at() reads final date digit by negative index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: string | undefined = text.at(-1);
+      expect(result!).assertEqual("5");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2300
+     * @tc.name testAt023
+     * @tc.desc Verify at() reads first Unicode escape CJK character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: string | undefined = text.at(0);
+      expect(result!).assertEqual("\u4E2D");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2400
+     * @tc.name testAt024
+     * @tc.desc Verify at() reads replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: string | undefined = text.at(0);
+      expect(result!).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2500
+     * @tc.name testAt025
+     * @tc.desc Verify at() reads fullwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: string | undefined = text.at(0);
+      expect(result!).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2600
+     * @tc.name testAt026
+     * @tc.desc Verify at() reads Arabic character from end
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: string | undefined = text.at(-1);
+      expect(result!).assertEqual("\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2700
+     * @tc.name testAt027
+     * @tc.desc Verify at() returns undefined beyond masked card length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: string | undefined = text.at(18);
+      expect(result === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2800
+     * @tc.name testAt028
+     * @tc.desc Verify at() reads CR character in protocol line
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\n");
+      let result: string | undefined = text.at(1);
+      expect(result!).assertEqual("\r");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_2900
+     * @tc.name testAt029
+     * @tc.desc Verify at() reads literal backslash in malformed escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\\u");
+      let result: string | undefined = text.at(0);
+      expect(result!).assertEqual("\\");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_3000
+     * @tc.name testAt030
+     * @tc.desc Verify at() reads decimal point in scientific-notation-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("123.45e6");
+      let result: string | undefined = text.at(3);
+      expect(result!).assertEqual(".");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_3100
+     * @tc.name testAt031
+     * @tc.desc Verify At handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string | undefined = source.at(0);
+      expect(result!).assertEqual("!");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_AT_3200
+     * @tc.name testAt032
+     * @tc.desc Verify At handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string | undefined = source.at(0);
+      expect(result!).assertEqual("テ");
     });
   });
 }

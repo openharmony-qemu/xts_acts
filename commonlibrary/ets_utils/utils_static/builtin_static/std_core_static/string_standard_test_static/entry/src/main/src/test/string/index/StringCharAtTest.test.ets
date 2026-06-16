@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -211,6 +210,7 @@ export default function StringCharAtTest(): void {
       const text = new String("   ");
       expect(text.charAt(0).toString()).assertEqual(" ");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_1300
      * @tc.name testCharAt013
@@ -436,6 +436,77 @@ export default function StringCharAtTest(): void {
       } catch (error) {
         expect(error.name).assertEqual("StringIndexOutOfBoundsError");
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2800
+     * @tc.name testCharAt028
+     * @tc.desc Verify charAt() reads zero-width space by positive index
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: char = text.charAt(1);
+      expect(result.toString()).assertEqual("\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_2900
+     * @tc.name testCharAt029
+     * @tc.desc Verify charAt() reads replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: char = text.charAt(0);
+      expect(result.toString()).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_3000
+     * @tc.name testCharAt030
+     * @tc.desc Verify charAt() reads fullwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: char = text.charAt(0);
+      expect(result.toString()).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_3100
+     * @tc.name testCharAt031
+     * @tc.desc Verify CharAt handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: char = source.charAt(1);
+      expect(result).assertEqual(c'@');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARAT_3200
+     * @tc.name testCharAt032
+     * @tc.desc Verify CharAt handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: char = source.charAt(0);
+      expect(result).assertEqual(c'テ');
     });
   });
 }

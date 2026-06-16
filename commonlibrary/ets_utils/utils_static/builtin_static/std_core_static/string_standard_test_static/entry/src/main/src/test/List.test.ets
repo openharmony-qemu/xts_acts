@@ -83,6 +83,7 @@ import StringTrimStartTest from './string/trim/StringTrimStartTest.test';
 import StringTrimEndTest from './string/trim/StringTrimEndTest.test';
 import StringTrimLeftTest from './string/trim/StringTrimLeftTest.test';
 import StringTrimRightTest from './string/trim/StringTrimRightTest.test';
+import StringIncludesTest from './string/compare/StringIncludesTest.test';
 
 export default function testsuite(): void {
   StringAnchorTest();
@@ -153,4 +154,5 @@ export default function testsuite(): void {
   StringPadRightTest();
   StringAtTest();
   StringContentEqualsTest();
+  StringIncludesTest();
 }

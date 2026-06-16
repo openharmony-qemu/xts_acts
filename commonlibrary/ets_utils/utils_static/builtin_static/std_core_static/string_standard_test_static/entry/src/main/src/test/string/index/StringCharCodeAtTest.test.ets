@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -400,6 +399,119 @@ export default function StringCharCodeAtTest(): void {
         }
       }
       expect(maxCode).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2500
+     * @tc.name testCharCodeAt025
+     * @tc.desc Verify charCodeAt() reads zero-width space code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: number = text.charCodeAt(1);
+      expect(result).assertEqual(0x200B);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2600
+     * @tc.name testCharCodeAt026
+     * @tc.desc Verify charCodeAt() reads replacement character code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: number = text.charCodeAt(0);
+      expect(result).assertEqual(0xFFFD);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2700
+     * @tc.name testCharCodeAt027
+     * @tc.desc Verify charCodeAt() reads fullwidth dash code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: number = text.charCodeAt(0);
+      expect(result).assertEqual(0x2014);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2800
+     * @tc.name testCharCodeAt028
+     * @tc.desc Verify charCodeAt() reads Arabic alef code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627");
+      let result: number = text.charCodeAt(0);
+      expect(result).assertEqual(0x0627);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_2900
+     * @tc.name testCharCodeAt029
+     * @tc.desc Verify charCodeAt() reads backslash from malformed escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\\u");
+      let result: number = text.charCodeAt(0);
+      expect(result).assertEqual(92);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_3000
+     * @tc.name testCharCodeAt030
+     * @tc.desc Verify charCodeAt() reads asterisk in masked bank card
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: number = text.charCodeAt(6);
+      expect(result).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_3100
+     * @tc.name testCharCodeAt031
+     * @tc.desc Verify CharCodeAt handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: number = source.charCodeAt(2);
+      expect(result).assertEqual(35);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CHARCODEAT_3200
+     * @tc.name testCharCodeAt032
+     * @tc.desc Verify CharCodeAt handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCharCodeAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: number = source.charCodeAt(0);
+      expect(result).assertEqual(0x30C6);
     });
   });
 }

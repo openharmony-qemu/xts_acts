@@ -105,7 +105,7 @@ export default function StringCodePointAtTest(): void {
      * @tc.level Level 2
      */
     it('testCodePointAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("😀");
+      const text = new String("\uD83D\uDE00");
       let result: int | undefined = text.codePointAt(1);
       expect(result!).assertEqual(56832);
     });
@@ -259,7 +259,7 @@ export default function StringCodePointAtTest(): void {
      * @tc.level Level 2
      */
     it('testCodePointAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("😀");
+      const text = new String("\uD83D\uDE00");
       let cp: int | undefined = text.codePointAt(0);
       let cc: number = text.charCodeAt(0);
       expect(cp!).assertEqual(0x1F600);
@@ -325,6 +325,231 @@ export default function StringCodePointAtTest(): void {
       expect(c0!).assertEqual(84);
       expect(c4!).assertEqual(83);
       expect(c9!).assertEqual(116);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2100
+     * @tc.name testCodePointAt021
+     * @tc.desc Verify codePointAt() reads zero-width space code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: int | undefined = text.codePointAt(1);
+      expect(result!).assertEqual(0x200B);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2200
+     * @tc.name testCodePointAt022
+     * @tc.desc Verify codePointAt() reads replacement character code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0xFFFD);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2300
+     * @tc.name testCodePointAt023
+     * @tc.desc Verify codePointAt() reads fullwidth dash code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x2014);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2400
+     * @tc.name testCodePointAt024
+     * @tc.desc Verify codePointAt() reads Arabic alef code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x0627);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2500
+     * @tc.name testCodePointAt025
+     * @tc.desc Verify codePointAt() reads emoji code point from surrogate pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x1F600);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2600
+     * @tc.name testCodePointAt026
+     * @tc.desc Verify codePointAt() reads low surrogate when indexing second code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00");
+      let result: int | undefined = text.codePointAt(1);
+      expect(result!).assertEqual(0xDE00);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2700
+     * @tc.name testCodePointAt027
+     * @tc.desc Verify codePointAt() reads CJK character after ASCII prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u4E2D");
+      let result: int | undefined = text.codePointAt(1);
+      expect(result!).assertEqual(0x4E2D);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2800
+     * @tc.name testCodePointAt028
+     * @tc.desc Verify codePointAt() returns undefined at date string length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: int | undefined = text.codePointAt(10);
+      expect(result === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_2900
+     * @tc.name testCodePointAt029
+     * @tc.desc Verify codePointAt() reads NUL code point inside string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let result: int | undefined = text.codePointAt(1);
+      expect(result!).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3000
+     * @tc.name testCodePointAt030
+     * @tc.desc Verify codePointAt() reads Korean text code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD14C");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0xD14C);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3100
+     * @tc.name testCodePointAt031
+     * @tc.desc Verify CodePointAt handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: int | undefined = source.codePointAt(3);
+      expect(result!).assertEqual(36);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3200
+     * @tc.name testCodePointAt032
+     * @tc.desc Verify CodePointAt handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: int | undefined = source.codePointAt(0);
+      expect(result!).assertEqual(0x30C6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3300
+     * @tc.name testCodePointAt033
+     * @tc.desc Verify codePointAt() reads lowercase ASCII from Unicode escape
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0061");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x0061);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3400
+     * @tc.name testCodePointAt034
+     * @tc.desc Verify codePointAt() reads NUL from Unicode escape
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0000");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x0000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3500
+     * @tc.name testCodePointAt035
+     * @tc.desc Verify codePointAt() reads noncharacter code point from Unicode escape
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFE");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0xFFFE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTAT_3600
+     * @tc.name testCodePointAt036
+     * @tc.desc Verify codePointAt() reads glowing star emoji from Unicode escape pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointAt036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83C\uDF1F");
+      let result: int | undefined = text.codePointAt(0);
+      expect(result!).assertEqual(0x1F31F);
     });
   });
 }

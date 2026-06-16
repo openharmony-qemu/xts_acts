@@ -14,15 +14,31 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../../hypium/index';
 import Utils from './../../Util.test';
 
 export default function StringFromCodePointTest(): void {
   describe('StringFromCodePointTest', (): void => {
-    beforeAll((): void => { });
-    beforeEach(async (): Promise<void> => { await Utils.msSleep(30); });
-    afterEach((): void => { });
-    afterAll((): void => { });
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_0100
@@ -345,6 +361,113 @@ export default function StringFromCodePointTest(): void {
     it('testFromCodePoint024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(0x001B);
       expect(result.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2500
+     * @tc.name testFromCodePoint025
+     * @tc.desc Verify String.fromCodePoint() builds Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(0x4E2D, 0x6587);
+      expect(result).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2600
+     * @tc.name testFromCodePoint026
+     * @tc.desc Verify String.fromCodePoint() builds zero-width space between ASCII letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(65, 0x200B, 66);
+      expect(result).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2700
+     * @tc.name testFromCodePoint027
+     * @tc.desc Verify String.fromCodePoint() builds replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(0xFFFD);
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2800
+     * @tc.name testFromCodePoint028
+     * @tc.desc Verify String.fromCodePoint() builds fullwidth dash U+2014
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(0x2014);
+      expect(result).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_2900
+     * @tc.name testFromCodePoint029
+     * @tc.desc Verify String.fromCodePoint() builds Arabic letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(0x0627, 0x0628);
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_3000
+     * @tc.name testFromCodePoint030
+     * @tc.desc Verify String.fromCodePoint() builds star emoji U+1F31F
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCodePoint(0x1F31F);
+      expect(result.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_3100
+     * @tc.name testFromCodePoint031
+     * @tc.desc Verify FromCodePoint handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      let result: string = String.fromCodePoint(33, 64, 35, 36, 60, 62, 92);
+      expect(result).assertEqual("!@#$<>\\");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCODEPOINT_3200
+     * @tc.name testFromCodePoint032
+     * @tc.desc Verify FromCodePoint handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCodePoint032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = String.fromCodePoint(0x0410, 0x0411, 0x0412, 0x0413, 0x0414);
+      expect(result).assertEqual("АБВГД");
     });
   });
 }

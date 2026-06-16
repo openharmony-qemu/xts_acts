@@ -363,5 +363,146 @@ export default function StringCodePointCountTest(): void {
       let result: int = text.codePointCount(start, end);
       expect(result).assertEqual(5);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2300
+     * @tc.name testCodePointCount023
+     * @tc.desc Verify codePointCount() counts zero-width space as one code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2400
+     * @tc.name testCodePointCount024
+     * @tc.desc Verify codePointCount() counts replacement character as one
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2500
+     * @tc.name testCodePointCount025
+     * @tc.desc Verify codePointCount() counts fullwidth dash as one
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2600
+     * @tc.name testCodePointCount026
+     * @tc.desc Verify codePointCount() counts Arabic letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2700
+     * @tc.name testCodePointCount027
+     * @tc.desc Verify codePointCount() counts business date string characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2800
+     * @tc.name testCodePointCount028
+     * @tc.desc Verify codePointCount() counts emoji pair and CJK character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00\u4E2D");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_2900
+     * @tc.name testCodePointCount029
+     * @tc.desc Verify codePointCount() counts masked bank card display characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(18);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_3000
+     * @tc.name testCodePointCount030
+     * @tc.desc Verify codePointCount() counts NUL inside ASCII text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let result: int = text.codePointCount(0, text.length);
+      expect(result).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_3100
+     * @tc.name testCodePointCount031
+     * @tc.desc Verify CodePointCount handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: int = source.codePointCount(0, source.length);
+      expect(result).assertEqual(source.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CODEPOINTCOUNT_3200
+     * @tc.name testCodePointCount032
+     * @tc.desc Verify CodePointCount handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testCodePointCount032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: int = source.codePointCount(0, source.length);
+      expect(result).assertEqual(source.length);
+    });
   });
 }

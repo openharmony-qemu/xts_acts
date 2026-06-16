@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -453,6 +452,61 @@ export default function StringGetLengthTest(): void {
       const text = new String("a\r\nb");
       expect(text.getLength()).assertEqual(4);
       expect(text.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_3100
+     * @tc.name testGetLength031
+     * @tc.desc Verify getLength() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: int = source.getLength();
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_3200
+     * @tc.name testGetLength032
+     * @tc.desc Verify GetLength handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      expect(source.length).assertEqual(74);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_3300
+     * @tc.name testGetLength033
+     * @tc.desc Verify GetLength handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      expect(source.length).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_GETLENGTH_3400
+     * @tc.name testGetLength034
+     * @tc.desc Verify getLength() counts glowing star emoji escape pair as two code units
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetLength034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83C\uDF1F");
+      expect(text.getLength()).assertEqual(2);
+      expect(text.length).assertEqual(2);
     });
   });
 }
