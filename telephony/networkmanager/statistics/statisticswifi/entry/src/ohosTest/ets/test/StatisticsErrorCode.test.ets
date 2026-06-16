@@ -579,7 +579,7 @@ export default function StatisticsErrorCodeTest() {
           });
         } catch (error) {
           console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-          ExpectTrue(Number(err.code) === 401);
+          ExpectTrue(Number(error.code) === 401);
           done();
         }
       });
@@ -607,7 +607,7 @@ export default function StatisticsErrorCodeTest() {
         })
       } catch (error) {
         console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(Number(err.code) === 401);
+        ExpectTrue(Number(error.code) === 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -815,7 +815,7 @@ export default function StatisticsErrorCodeTest() {
         });
       } catch (error) {
         console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
-        ExpectTrue(Number(err.code) === 401);
+        ExpectTrue(Number(error.code) === 401);
         done();
       }
     });
@@ -843,7 +843,7 @@ export default function StatisticsErrorCodeTest() {
         })
       } catch (error) {
         console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(Number(err.code) === 401);
+        ExpectTrue(Number(error.code) === 401);
         console.info(`${caseName}---End`);
         done();
       }
