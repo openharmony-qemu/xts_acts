@@ -392,6 +392,7 @@ export default function StringMatchTest(): void {
       expect(notNull).assertTrue();
       expect(m![0]).assertEqual("cat");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_2300
      * @tc.name testMatch023
