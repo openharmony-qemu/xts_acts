@@ -18,7 +18,10 @@ import formInfo  from '@ohos.app.form.formInfo';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import formProvider from '@ohos.app.form.formProvider';
 import { BusinessError } from '@kit.BasicServicesKit';
+import hilog from '@ohos.hilog';
 
+const COMMON_TAG = 'OverflowApiCover';
+const DOMAIN = 0xF811;
 const INTERVAL_TIME = 2500;
 const ERROR_CODE0 = 202;
 const ERROR_CODE1 = 16500050;
@@ -46,8 +49,8 @@ export default function overflowApiCoverTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100';
-      console.info(`${name} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         let rect: formInfo.Rect = {
             left: -30,
@@ -61,10 +64,10 @@ export default function overflowApiCoverTest() {
           useDefaultAnimation: true
         };
         formProvider.requestOverflow("1", overflowInfo).then(() => {
-          console.info(`${name} requestOverflow succeed`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} requestOverflow succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -82,10 +85,10 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
-        console.info(`${name} catch error: ${JSON.stringify(error)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
       done();
     });
  
@@ -98,14 +101,14 @@ export default function overflowApiCoverTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100';
-      console.info(`${name} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.cancelOverflow("1").then(() => {
-          console.info(`${name} cancelOverflow succeed`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} cancelOverflow succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -123,10 +126,10 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
-        console.info(`${name} catch error: ${JSON.stringify(error)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
       done();
     });
  
@@ -139,14 +142,14 @@ export default function overflowApiCoverTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100';
-      console.info(`${name} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.activateSceneAnimation("1").then(() => {
-          console.info(`${name} activateSceneAnimation succeed`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} activateSceneAnimation succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE0) {
             expect(error.code).assertEqual(ERROR_CODE0);
           } else if (error.code === ERROR_CODE5) {
@@ -156,10 +159,10 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
-        console.info(`${name} catch error: ${JSON.stringify(error)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
       done();
     });
  
@@ -172,14 +175,14 @@ export default function overflowApiCoverTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100';
-      console.info(`${name} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.deactivateSceneAnimation("1").then(() => {
-          console.info(`${name} deactivateSceneAnimation succeed`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} deactivateSceneAnimation succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE0) {
             expect(error.code).assertEqual(ERROR_CODE0);
           } else if (error.code === ERROR_CODE5) {
@@ -189,10 +192,10 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
-        console.info(`${name} catch error: ${JSON.stringify(error)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
       done();
     });
 
@@ -205,14 +208,14 @@ export default function overflowApiCoverTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100`, 0, async (done:Function) => {
-      let name: string = 'SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100';
-      console.info(`${name} start`);
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       try {
         formProvider.getFormRect("1").then(() => {
-          console.info(`${name} getFormRect succeed`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} getFormRect succeed`);
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          console.info(`${name} catch BusinessError: ${JSON.stringify(error)}`);
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch BusinessError: ${JSON.stringify(error)}`);
           if (error.code === ERROR_CODE1) {
             expect(error.code).assertEqual(ERROR_CODE1);
           } else if (error.code === ERROR_CODE2) {
@@ -228,10 +231,10 @@ export default function overflowApiCoverTest() {
           }
         })
       } catch (error) {
-        console.info(`${name} catch error: ${JSON.stringify(error)}`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} catch error: ${JSON.stringify(error)}`);
         expect().assertFail();
       }
-      console.info(`${name} end`);
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
       done();
     });
   })
