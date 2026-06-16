@@ -364,7 +364,7 @@ export default function DoubleParseIntOneTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseIntOne0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseInt("四十�?);
+      let result: double = Double.parseInt("四十二");
       expect(Double.isNaN(result)).assertTrue();
     });
 
@@ -377,7 +377,7 @@ export default function DoubleParseIntOneTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseIntOne0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseInt("テス�?);
+      let result: double = Double.parseInt("テスト");
       expect(Double.isNaN(result)).assertTrue();
     });
 

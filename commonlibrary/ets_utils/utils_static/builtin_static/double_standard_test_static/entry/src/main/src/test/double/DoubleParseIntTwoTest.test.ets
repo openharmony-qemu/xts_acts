@@ -284,7 +284,7 @@ export default function DoubleParseIntTwoTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseIntTwo0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseInt("テス�?, 10);
+      let result: double = Double.parseInt("テスト", 10);
       expect(Double.isNaN(result)).assertTrue();
     });
 

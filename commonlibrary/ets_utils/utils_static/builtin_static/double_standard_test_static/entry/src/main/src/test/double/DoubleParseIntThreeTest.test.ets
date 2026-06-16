@@ -298,7 +298,7 @@ export default function DoubleParseIntThreeTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseIntThree0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseInt("テス�?, 10.0);
+      let result: double = Double.parseInt("テスト", 10.0);
       expect(result).assertNaN();
     });
 

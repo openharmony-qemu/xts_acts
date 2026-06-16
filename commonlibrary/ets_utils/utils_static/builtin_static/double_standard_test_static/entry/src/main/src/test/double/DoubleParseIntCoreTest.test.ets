@@ -350,7 +350,7 @@ export default function DoubleParseIntCoreTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseIntCore0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseIntCore("テス�?, 10);
+      let result: double = Double.parseIntCore("テスト", 10);
       expect(Double.isNaN(result)).assertTrue();
     });
 

@@ -337,7 +337,7 @@ export default function DoubleParseFloatTest(): void {
      * @tc.level Level 2
      */
     it('testDoubleParseFloat0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result: double = Double.parseFloat("テス�?);
+      let result: double = Double.parseFloat("テスト");
       expect(Double.isNaN(result)).assertEqual(true);
     });
 
