@@ -15,14 +15,15 @@
     "MainAbility/pages/datePickerNullUndefined/DatePickerDisappearTextStyleNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerLunarNullUndefined",
     "MainAbility/pages/datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsDisplayMode",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsDateMode",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsTimeFormat",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsResult",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsLoop",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsEnableHapticFeedback",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsStartEndSelected",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsLunar",
-    "MainAbility/pages/DatePickerComponent/DatePickerComponentsUseMilitaryTime"
+    "MainAbility/pages/datePickerComponent/DatePickerComponentConstructor",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDisplayMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentDateMode",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLunar",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentLoop",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentEnableHapticFeedback",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentTimeFormat",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnChange",
+    "MainAbility/pages/datePickerComponent/DatePickerComponentOnScrollStop"
   ]
 }
