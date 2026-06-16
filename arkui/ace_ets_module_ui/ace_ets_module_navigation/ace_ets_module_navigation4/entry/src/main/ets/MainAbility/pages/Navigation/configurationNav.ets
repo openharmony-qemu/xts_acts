@@ -14,7 +14,7 @@
  */
 
 class StandardHelper {
-  static standardCnt: number = 0;
+  public static standardCnt: number = 0;
 }
 
 class NavParamOne {
