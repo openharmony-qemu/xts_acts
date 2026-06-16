@@ -507,6 +507,8 @@ export default function StringGetLengthTest(): void {
       const text = new String("\uD83C\uDF1F");
       expect(text.getLength()).assertEqual(2);
       expect(text.length).assertEqual(2);
+      expect(text.charCodeAt(0)).assertEqual(0xD83C);
+      expect(text.charCodeAt(1)).assertEqual(0xDF1F);
     });
   });
 }

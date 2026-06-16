@@ -294,6 +294,7 @@ export default function StringToStringTest(): void {
       let str: String = new String("a\0b");
       let result: String = str.toString();
       expect(result.getLength()).assertEqual(3);
+      expect(result.charCodeAt(1)).assertEqual(0);
     });
 
     /**

@@ -1421,7 +1421,7 @@ export default function StringAnchorTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9950
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_1000
      * @tc.name testAnchor100
      * @tc.desc Verify Anchor handles multilingual mixed encoded content
      * @tc.size MediumTest

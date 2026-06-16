@@ -697,6 +697,7 @@ export default function StringMatchTest(): void {
       const source = new String("????");
       let result: RegExpMatchArray | null = source.match(new RegExp("\\?\\?"));
       expect(result !== null).assertTrue();
+      expect(result![0]).assertEqual("??");
     });
 
     /**

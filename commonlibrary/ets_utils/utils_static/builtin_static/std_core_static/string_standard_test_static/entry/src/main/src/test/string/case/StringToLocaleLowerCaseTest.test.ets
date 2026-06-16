@@ -478,6 +478,7 @@ export default function StringToLocaleLowerCaseTest(): void {
       const source = new String("\\u malformed");
       let result: string = source.toLocaleLowerCase();
       expect(result.length).assertEqual(source.length);
+      expect(result).assertEqual("\\u malformed");
     });
 
     /**

@@ -506,6 +506,9 @@ export default function StringGetBytesTest(): void {
       const source = new String("????");
       let result: byte[] = source.getBytes(0, source.length);
       expect(result.length).assertLarger(0);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(63);
+      expect(result[3]).assertEqual(63);
     });
 
     /**

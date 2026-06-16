@@ -353,6 +353,8 @@ export default function StringValueOfTest(): void {
       let str: String = new String("line1\nline2");
       let result: String = str.valueOf();
       expect(result.getLength()).assertEqual(11);
+      expect(result.charCodeAt(5)).assertEqual(10);
+      expect(result).assertEqual("line1\nline2");
     });
 
     /**

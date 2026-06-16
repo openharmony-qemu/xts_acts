@@ -348,6 +348,7 @@ export default function StringFromCodePointTest(): void {
     it('testFromCodePoint023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(0x10FFFF);
       expect(result.length).assertLarger(0);
+      expect(result.codePointAt(0)!).assertEqual(0x10FFFF);
     });
 
     /**
@@ -361,6 +362,7 @@ export default function StringFromCodePointTest(): void {
     it('testFromCodePoint024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(0x001B);
       expect(result.length).assertEqual(1);
+      expect(result.charCodeAt(0)).assertEqual(0x001B);
     });
 
     /**
@@ -439,6 +441,7 @@ export default function StringFromCodePointTest(): void {
     it('testFromCodePoint030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = String.fromCodePoint(0x1F31F);
       expect(result.length).assertEqual(2);
+      expect(result.codePointAt(0)!).assertEqual(0x1F31F);
     });
 
     /**

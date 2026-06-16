@@ -474,6 +474,7 @@ export default function StringToLowerCaseTest(): void {
       const source = new String("test \\u4e2d\\u6587");
       let result: string = source.toLowerCase();
       expect(result.length).assertEqual(source.length);
+      expect(result).assertEqual("test \\u4e2d\\u6587");
     });
 
     /**
@@ -488,6 +489,7 @@ export default function StringToLowerCaseTest(): void {
       const source = new String("\\u malformed");
       let result: string = source.toLowerCase();
       expect(result.length).assertEqual(source.length);
+      expect(result).assertEqual("\\u malformed");
     });
 
     /**

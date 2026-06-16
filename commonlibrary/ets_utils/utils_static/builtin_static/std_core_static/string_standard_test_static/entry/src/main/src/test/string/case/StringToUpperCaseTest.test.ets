@@ -488,6 +488,9 @@ export default function StringToUpperCaseTest(): void {
       const source = new String("æµè¯");
       let result: string = source.toUpperCase();
       expect(result.length).assertEqual(source.length);
+      expect(result.charCodeAt(0)).assertEqual(0x00C6);
+      expect(result.charCodeAt(1)).assertEqual(0x039C);
+      expect(result.charCodeAt(2)).assertEqual(0x00C8);
     });
 
     /**
@@ -502,6 +505,7 @@ export default function StringToUpperCaseTest(): void {
       const source = new String("\uFFFD");
       let result: string = source.toUpperCase();
       expect(result.length).assertEqual(source.length);
+      expect(result.charCodeAt(0)).assertEqual(0xFFFD);
     });
 
     /**

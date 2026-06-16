@@ -412,6 +412,7 @@ export default function StringStringTypeTest(): void {
     it('testStringType027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("A\u200BB");
       expect(text.getLength()).assertEqual(3);
+      expect(text.charCodeAt(1)).assertEqual(0x200B);
     });
 
     /**
@@ -438,6 +439,7 @@ export default function StringStringTypeTest(): void {
     it('testStringType029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("2026-03-05");
       expect(text.getLength()).assertEqual(10);
+      expect(text.toString()).assertEqual("2026-03-05");
     });
 
     /**
@@ -451,6 +453,8 @@ export default function StringStringTypeTest(): void {
     it('testStringType030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text = new String("\u0627\u0628");
       expect(text.getLength()).assertEqual(2);
+      expect(text.charCodeAt(0)).assertEqual(0x0627);
+      expect(text.charCodeAt(1)).assertEqual(0x0628);
     });
 
     /**

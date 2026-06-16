@@ -378,6 +378,8 @@ export default function StringGetCharsTest(): void {
       const text = new String("\u0627\u0628");
       let chars: char[] = text.getChars();
       expect(chars.length).assertEqual(2);
+      expect(chars[0].toString().charCodeAt(0)).assertEqual(0x0627);
+      expect(chars[1].toString().charCodeAt(0)).assertEqual(0x0628);
     });
 
     /**
@@ -453,6 +455,9 @@ export default function StringGetCharsTest(): void {
       const text = new String("\uD14C\uC2A4\uD2B8");
       let chars: char[] = text.getChars();
       expect(chars.length).assertEqual(3);
+      expect(chars[0].toString().charCodeAt(0)).assertEqual(0xD14C);
+      expect(chars[1].toString().charCodeAt(0)).assertEqual(0xC2A4);
+      expect(chars[2].toString().charCodeAt(0)).assertEqual(0xD2B8);
     });
 
     /**

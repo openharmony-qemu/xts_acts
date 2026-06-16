@@ -546,6 +546,7 @@ export default function StringConstructorTest(): void {
     it('testConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const s = new String(new String("a\rb"));
       expect(s.length).assertEqual(3);
+      expect(s.charCodeAt(1)).assertEqual(13);
     });
 
     /**
