@@ -42,7 +42,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with exact domain lower bound 1.0 for positive zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0;
@@ -57,7 +57,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with exact float domain lower bound 1.0f for positive zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 1.0f;
@@ -72,7 +72,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with double input just above 1.0 for tiny finite positive result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0000000001;
@@ -89,7 +89,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with float input just above 1.0f for finite positive result within float tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 1.0001f;
@@ -107,7 +107,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with representative double input 2.0 for expected hyperbolic inverse result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 2.0;
@@ -123,7 +123,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with representative float input 2.0f for expected inverse result within float tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 2.0f;
@@ -140,7 +140,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with variable-passed double input 3.0 for normal call path correctness
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 3.0;
@@ -156,7 +156,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with variable-passed float input 3.0f for normal float call path correctness
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = 3.0f;
@@ -173,7 +173,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with mathematical constant Math.E for non-integer representative input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Math.E;
@@ -189,7 +189,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with mathematical constant Math.SQRT2 for irrational input handling
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Math.SQRT2;
@@ -205,7 +205,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with increasing double inputs for monotonic growth on domain [1,+Infinity)
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lower: double = Math.acosh(1.5);
@@ -221,7 +221,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method composed with cosh on double input 10.0 for inverse relationship stability
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 10.0;
@@ -237,7 +237,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method composed with cosh on float input 10.0f for inverse relationship within float tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 10.0f;
@@ -254,7 +254,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with very large double input 1e15 for finite logarithmic-scale growth
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1e15;
@@ -271,7 +271,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with huge double input 1e200 for finite result and no overflow
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1e200;
@@ -288,7 +288,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with Double.MAX_VALUE input for largest finite double boundary result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Double.MAX_VALUE;
@@ -306,7 +306,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with Float.MAX_VALUE input for largest finite float boundary result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = Float.MAX_VALUE;
@@ -324,7 +324,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with Double.MIN_VALUE input for NaN result below domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = Double.MIN_VALUE;
@@ -338,7 +338,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with Float.MIN_VALUE input for NaN result below float domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = Float.MIN_VALUE;
@@ -352,7 +352,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with positive zero double input returns NaN below the domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveZeroResult: double = Math.acosh(0.0);
@@ -365,7 +365,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with negative zero double input returns NaN below the domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeZeroResult: double = Math.acosh(-0.0);
@@ -378,7 +378,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with positive zero float input returns NaN below the float domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveZeroResult: float = Math.acosh(0.0f);
@@ -391,7 +391,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with negative zero float input returns NaN below the float domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeZeroInput: float = Double.toFloat(-0.0);
@@ -405,7 +405,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with double input 0.5 returns NaN below the domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let halfResult: double = Math.acosh(0.5);
@@ -418,7 +418,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with double input 0.999999 returns NaN below the domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nearBoundaryResult: double = Math.acosh(0.999999);
@@ -431,7 +431,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with float input 0.5 returns NaN below the float domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let halfResult: float = Math.acosh(0.5f);
@@ -444,7 +444,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with float input 0.99999 returns NaN below the float domain lower bound
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nearBoundaryResult: float = Math.acosh(0.99999f);
@@ -457,7 +457,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method widened byte input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 12;
@@ -472,7 +472,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method Int.toByte constructed input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = Int.toByte(0x0C);
@@ -487,7 +487,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method widened short input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = 2048;
@@ -502,7 +502,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method widened int input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0x1234;
@@ -517,7 +517,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method widened long input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = Long.toLong(10000000000);
@@ -532,7 +532,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with double input 1.25 matches natural log of 2 within tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.25;
@@ -548,7 +548,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify runtime compatibility for illegal undefined argument construction: cast to double throws ClassCastError before Math.acosh evaluation
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -565,7 +565,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify runtime compatibility for illegal null argument construction: cast to double throws ClassCastError before Math.acosh evaluation
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -582,7 +582,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify runtime compatibility for illegal boolean argument construction: cast to double throws ClassCastError before Math.acosh evaluation
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -599,7 +599,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method accepts number typed variable input and follows double precision path
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: number = 12.5;
@@ -615,7 +615,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method recovers original nonnegative argument from cosh generated input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let original: double = 4.5;
@@ -631,7 +631,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with negative double input -0.5 returns NaN outside the domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallNegative: double = Math.acosh(-0.5);
@@ -644,7 +644,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with large negative double input returns NaN outside the domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeNegative: double = Math.acosh(-1e200);
@@ -657,7 +657,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with negative float input -0.5 returns NaN outside the float domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallNegative: float = Math.acosh(-0.5f);
@@ -670,7 +670,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method with float input -2.0 returns NaN outside the float domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mediumNegative: float = Math.acosh(-2.0f);
@@ -683,7 +683,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method propagates Double.NaN input to NaN output
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanResult: double = Math.acosh(Double.NaN);
@@ -696,7 +696,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method preserves Double.POSITIVE_INFINITY input as positive infinity output
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveInfinityResult: double = Math.acosh(Double.POSITIVE_INFINITY);
@@ -709,7 +709,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method maps Double.NEGATIVE_INFINITY input to NaN outside the domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeInfinityResult: double = Math.acosh(Double.NEGATIVE_INFINITY);
@@ -722,7 +722,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method propagates Float.NaN input to NaN output
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanResult: float = Math.acosh(Float.NaN);
@@ -735,7 +735,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method preserves Float.POSITIVE_INFINITY input as positive infinity output
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveInfinityResult: float = Math.acosh(Float.POSITIVE_INFINITY);
@@ -748,7 +748,7 @@ export default function mathAcoshTest(): void {
      * @tc.desc Verify acosh method maps Float.NEGATIVE_INFINITY input to NaN outside the float domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcosh048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeInfinityResult: float = Math.acosh(Float.NEGATIVE_INFINITY);

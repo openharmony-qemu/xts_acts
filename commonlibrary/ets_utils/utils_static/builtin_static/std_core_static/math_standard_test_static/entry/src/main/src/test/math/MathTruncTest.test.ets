@@ -46,7 +46,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method removes the positive fractional part toward zero for a representative finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(3.7);
@@ -58,7 +58,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method removes the negative fractional part toward zero for a representative finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-3.7);
@@ -70,7 +70,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method returns positive zero for a positive fractional double input whose magnitude is less than one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(0.618);
@@ -83,7 +83,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method returns negative zero for a negative fractional double input whose magnitude is less than one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-0.618);
@@ -96,7 +96,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method preserves positive zero for a positive zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(0.0);
@@ -109,7 +109,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method preserves negative zero for a negative zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-0.0);
@@ -122,7 +122,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method leaves a positive integral double input unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(5.0);
@@ -134,7 +134,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method leaves a negative integral double input unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-5.0);
@@ -146,7 +146,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method removes only the fractional tail for a positive double input just above an integer boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(2.0000000001);
@@ -158,7 +158,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method stays below the next integer for a positive double input just under that boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(1.9999999999);
@@ -170,7 +170,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method moves toward zero for a negative double input just below an integral boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-2.0000000001);
@@ -182,7 +182,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method moves toward zero for a negative double input just above the next lower integer
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-2.9999999999);
@@ -194,7 +194,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method returns positive zero for the smallest positive subnormal double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(Double.MIN_VALUE);
@@ -207,7 +207,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method returns negative zero for the smallest negative subnormal double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-Double.MIN_VALUE);
@@ -220,7 +220,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method leaves the largest finite positive double input unchanged and finite
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(Double.MAX_VALUE);
@@ -233,7 +233,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method leaves the largest finite negative double input unchanged and finite
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(-Double.MAX_VALUE);
@@ -246,7 +246,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method propagates NaN for a double NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.trunc(Double.NaN);
@@ -258,7 +258,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method leaves positive and negative infinity unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Math.trunc(Double.POSITIVE_INFINITY)).assertEqual(Double.POSITIVE_INFINITY);
@@ -270,7 +270,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method matches floor for a positive finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = Math.PI;
@@ -283,7 +283,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method matches ceil for a negative finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -Math.PI;
@@ -296,7 +296,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method is odd for mirrored finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.trunc(2.75);
@@ -309,7 +309,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method is monotonic nondecreasing for ordered positive finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smaller: double = Math.trunc(1.1);
@@ -322,7 +322,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method is idempotent when applied repeatedly to the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.trunc(3.14159);
@@ -336,7 +336,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a number typed helper input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildTruncNumberFromHelper();
@@ -349,7 +349,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened positive float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = 3.7f;
@@ -362,7 +362,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened negative float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = -2.7f;
@@ -375,7 +375,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(7);
@@ -388,7 +388,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened short input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-7);
@@ -401,7 +401,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = Int.MAX_VALUE;
@@ -414,7 +414,7 @@ export default function mathTruncTest(): void {
      * @tc.desc Verify trunc method accepts a widened long input whose value remains exactly representable as a double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTrunc030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(1234567890123);

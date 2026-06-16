@@ -59,7 +59,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method preserves positive zero for a positive zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(0.0);
@@ -72,7 +72,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method preserves negative zero for a negative zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(-0.0);
@@ -85,7 +85,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns one over square-root-three for the PI over six standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(Math.PI / 6.0);
@@ -97,7 +97,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns one for the PI over four standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(Math.PI / 4.0);
@@ -109,7 +109,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns square-root-three for the PI over three standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(Math.PI / 3.0);
@@ -121,7 +121,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns a near-zero value for PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(Math.PI);
@@ -134,7 +134,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns negative one for three PI over four
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(3.0 * Math.PI / 4.0);
@@ -147,7 +147,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns one again after adding one full period
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(5.0 * Math.PI / 4.0);
@@ -160,7 +160,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method is odd for mirrored finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.tan(0.5);
@@ -174,7 +174,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method is periodic across inputs separated by PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.3;
@@ -189,7 +189,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method follows the small-angle approximation for a tiny positive double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e-10;
@@ -204,7 +204,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method keeps an extremely large finite input finite after argument reduction
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(1000000.0);
@@ -216,7 +216,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method produces a large positive value just to the left of PI over two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = Math.PI / 2.0 - 1.0e-6;
@@ -229,7 +229,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method produces a large negative value just to the right of PI over two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = Math.PI / 2.0 + 1.0e-6;
@@ -242,7 +242,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method produces opposite large signs around negative PI over two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let leftResult: double = Math.tan(-Math.PI / 2.0 - 1.0e-6);
@@ -256,7 +256,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method stays within tolerance of sine divided by cosine for a regular finite angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
@@ -271,7 +271,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method stays within tolerance of the double-angle identity for a finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.3;
@@ -287,7 +287,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method stays within tolerance of the sum-angle identity for two finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: double = 0.2;
@@ -305,7 +305,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method propagates NaN for a double NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tan(Double.NaN);
@@ -317,7 +317,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns NaN for positive and negative infinity inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Utils.isNaNValue(Math.tan(Double.POSITIVE_INFINITY))).assertTrue();
@@ -329,7 +329,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a number typed helper input that evaluates to PI over six
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildTanNumberFromHelper();
@@ -343,7 +343,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a widened float finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.27);
@@ -358,7 +358,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method preserves negative zero for a widened float negative zero input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.0);
@@ -375,7 +375,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method propagates NaN for a widened float NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -390,7 +390,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method returns NaN for a widened float positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.POSITIVE_INFINITY;
@@ -405,7 +405,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(1);
@@ -418,7 +418,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a widened short input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1);
@@ -431,7 +431,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 2;
@@ -444,7 +444,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method accepts a widened long input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(-2);
@@ -457,7 +457,7 @@ export default function mathTanTest(): void {
      * @tc.desc Verify tan method remains stable across repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTan030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.tan(0.4);

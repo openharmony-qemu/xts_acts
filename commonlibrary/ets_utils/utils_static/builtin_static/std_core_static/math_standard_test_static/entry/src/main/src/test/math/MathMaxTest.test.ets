@@ -46,7 +46,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with no arguments returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max();
@@ -58,7 +58,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single positive double argument returns the same value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Math.PI;
@@ -71,7 +71,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single negative double argument returns the same value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -Math.E;
@@ -84,7 +84,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single negative zero argument preserves negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.0;
@@ -98,7 +98,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with positive and negative zero returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeZero: double = -0.0;
@@ -113,7 +113,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single NaN argument propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.NaN;
@@ -126,7 +126,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single positive Infinity argument returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.POSITIVE_INFINITY;
@@ -139,7 +139,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with a single negative Infinity argument returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.NEGATIVE_INFINITY;
@@ -152,7 +152,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with two finite positive doubles returns the larger value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 123.456;
@@ -166,7 +166,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with two negative doubles returns the value closer to zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = -5.0;
@@ -180,7 +180,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with mixed sign doubles returns the positive value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = -99.99;
@@ -194,7 +194,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with equal double arguments returns the shared value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 99.99;
@@ -207,7 +207,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with NaN in the second binary position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = 100.0;
@@ -221,7 +221,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with NaN in the first binary position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = 100.0;
@@ -235,7 +235,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with NaN in a middle variadic position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanValue: double = Double.NaN;
@@ -248,7 +248,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with positive Infinity and Double.MAX_VALUE returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max(Double.POSITIVE_INFINITY, Double.MAX_VALUE);
@@ -260,7 +260,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with negative Infinity and a finite value returns the finite value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = -5.0;
@@ -273,7 +273,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with mixed variadic finite values returns the greatest element
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max(-50.5, 0.0, 123.456, -2.5, 78.9);
@@ -285,7 +285,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method is commutative for finite double pairs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 5.0;
@@ -301,7 +301,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify nested max composition matches the direct variadic maximum
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = Math.max(3.0, 7.0);
@@ -315,7 +315,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with Double.MIN_VALUE and positive zero returns Double.MIN_VALUE
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max(Double.MIN_VALUE, 0.0);
@@ -327,7 +327,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with Double.MAX_VALUE and a finite negative value returns Double.MAX_VALUE
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max(Double.MAX_VALUE, -1.0);
@@ -339,7 +339,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with Float.MIN_VALUE and negative zero returns the widened float minimum
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallestFloat: float = Float.MIN_VALUE;
@@ -353,7 +353,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with Float.MAX_VALUE and a finite double returns the widened float maximum
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largestFloat: float = Float.MAX_VALUE;
@@ -367,7 +367,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts widened byte input and returns the larger comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteValue: byte = Int.toByte(12);
@@ -380,7 +380,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts widened short input and returns the larger comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let shortValue: short = Int.toShort(1024);
@@ -393,7 +393,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts widened int input and returns the larger comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intValue: int = 2048;
@@ -406,7 +406,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts widened long input and returns the larger comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longValue: long = Long.toLong(10000000000);
@@ -419,7 +419,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts a number typed variable input and returns the larger candidate
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let variableInput: number = 12.5;
@@ -432,7 +432,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method accepts helper function return typed as number and preserves the helper value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let helperInput: number = buildMaxNumberInputFromHelper();
@@ -445,7 +445,7 @@ export default function mathMaxTest(): void {
      * @tc.desc Verify max method with Math constants returns PI over E
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMax031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.max(Math.E, Math.PI);

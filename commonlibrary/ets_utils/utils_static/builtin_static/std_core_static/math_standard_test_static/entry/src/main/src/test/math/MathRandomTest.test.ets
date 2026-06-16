@@ -46,7 +46,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method with a single call returns a value within [0,1)
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = Math.random();
@@ -60,7 +60,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method returns a finite non-NaN value on a single call
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = Math.random();
@@ -74,7 +74,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method values remain within range across a for-loop sample set
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iterations: int = 256;
@@ -91,7 +91,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method values remain finite and non-NaN across repeated calls
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iterations: int = 128;
@@ -108,7 +108,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method output as an auxiliary branch source against a helper threshold
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let threshold: number = buildRandomThresholdFromHelper();
@@ -127,7 +127,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method output can be assigned through a number typed variable without leaving range
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: number = Math.random();
@@ -142,7 +142,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method output can participate in arithmetic and stay within derived bounds
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = Math.random();
@@ -160,7 +160,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method can fill a fixed-length array with in-range values
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let values: double[] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
@@ -177,7 +177,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method keeps the minimum of a small sample set within the valid range
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let minValue: double = 1.0;
@@ -197,7 +197,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method keeps the maximum of a small sample set below one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let maxValue: double = 0.0;
@@ -217,7 +217,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method keeps the sum of ten samples finite and below ten
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum: double = 0.0;
@@ -236,7 +236,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Verify random method keeps the product of three samples finite and below one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.random();
@@ -254,7 +254,7 @@ export default function mathRandomTest(): void {
      * @tc.desc Observe whether random method sample set exposes at least two distinct in-range values as an implementation-quality sentinel for constant-result regressions
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRandom013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let minValue: double = 1.0;

@@ -59,7 +59,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method preserves positive zero for a positive zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(0.0);
@@ -72,7 +72,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method preserves negative zero for a negative zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(-0.0);
@@ -85,7 +85,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method preserves positive zero for a positive zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.0);
@@ -101,7 +101,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method preserves negative zero for a negative zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.0);
@@ -117,7 +117,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns exact integer roots for representative perfect squares
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Math.sqrt(1.0)).assertEqual(1.0);
@@ -132,7 +132,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns one-half for the finite quarter input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(0.25);
@@ -144,7 +144,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns square-root-one-half for the finite one-half input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(0.5);
@@ -156,7 +156,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns square-root-two for the finite input two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(2.0);
@@ -168,7 +168,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns the expected finite value for the Math.PI constant input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Math.PI);
@@ -180,7 +180,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method preserves the smallest positive subnormal magnitude as a positive finite value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Double.MIN_VALUE);
@@ -194,7 +194,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns the expected largest finite boundary root for Double.MAX_VALUE
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Double.MAX_VALUE);
@@ -209,7 +209,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method is monotonic for ordered non-negative finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smaller: double = Math.sqrt(2.0);
@@ -222,7 +222,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method composes back to the original non-negative value when squared
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 3.0;
@@ -237,7 +237,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns the magnitude when applied to a squared finite value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -12.5;
@@ -250,7 +250,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns NaN for representative negative finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Utils.isNaNValue(Math.sqrt(-0.5))).assertTrue();
@@ -263,7 +263,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method propagates NaN for a double NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Double.NaN);
@@ -275,7 +275,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns positive infinity for a positive infinity double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Double.POSITIVE_INFINITY);
@@ -287,7 +287,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns NaN for a negative infinity double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sqrt(Double.NEGATIVE_INFINITY);
@@ -299,7 +299,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a number typed helper input that evaluates to one-quarter
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildSqrtNumberFromHelper();
@@ -313,7 +313,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a widened float finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.5);
@@ -328,7 +328,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method propagates NaN for a float NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -343,7 +343,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns positive infinity for a float positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.POSITIVE_INFINITY;
@@ -358,7 +358,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method returns NaN for a representative negative finite float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.5);
@@ -373,7 +373,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(1);
@@ -386,7 +386,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a widened short input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(4);
@@ -399,7 +399,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 9;
@@ -412,7 +412,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method accepts a widened long input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(16);
@@ -425,7 +425,7 @@ export default function mathSqrtTest(): void {
      * @tc.desc Verify sqrt method remains stable across repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSqrt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.sqrt(0.5);

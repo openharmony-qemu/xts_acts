@@ -46,7 +46,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with a positive fractional input greater than one-half rounds up
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(3.7);
@@ -58,7 +58,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with a positive fractional input less than one-half rounds down
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(3.3);
@@ -70,7 +70,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with a negative fractional input greater in magnitude than one-half rounds away from zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-3.7);
@@ -82,7 +82,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with a negative fractional input less in magnitude than one-half rounds toward negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-0.25);
@@ -95,7 +95,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method keeps a positive integral double unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 5.0;
@@ -108,7 +108,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method keeps a negative integral double unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -5.0;
@@ -121,7 +121,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with positive zero preserves positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(0.0);
@@ -134,7 +134,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with negative zero preserves negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-0.0);
@@ -147,7 +147,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with positive one-half rounds to positive one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(0.5);
@@ -159,7 +159,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with negative one-half rounds to negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-0.5);
@@ -172,7 +172,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method rounds a large positive finite value with fractional part to the next integer
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(99999.999);
@@ -184,7 +184,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method rounds a large negative finite value according to the nearest integer rule
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-99999.001);
@@ -196,7 +196,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method preserves an extremely large positive finite value that has no fractional precision left
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1e+100;
@@ -209,7 +209,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method preserves an extremely large negative finite value that has no fractional precision left
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -1e+100;
@@ -222,7 +222,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with the smallest positive subnormal returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(Double.MIN_VALUE);
@@ -235,7 +235,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with the negated smallest positive subnormal returns negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(-Double.MIN_VALUE);
@@ -248,7 +248,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with NaN input propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(Double.NaN);
@@ -260,7 +260,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with positive Infinity returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(Double.POSITIVE_INFINITY);
@@ -272,7 +272,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method with negative Infinity returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.round(Double.NEGATIVE_INFINITY);
@@ -284,7 +284,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method is idempotent for repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 3.14159;
@@ -299,7 +299,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts a number typed helper input and rounds it to the nearest integer
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildRoundNumberFromHelper();
@@ -312,7 +312,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened float input and rounds it through the double result path
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -325,7 +325,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened float positive half input and rounds to one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.5);
@@ -338,7 +338,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened float negative half input and returns negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.5);
@@ -352,7 +352,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened byte input and rounds the equivalent integer value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(12);
@@ -365,7 +365,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened short input and rounds the equivalent integer value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1024);
@@ -378,7 +378,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened int input and preserves Int.MAX_VALUE exactly
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = Int.MAX_VALUE;
@@ -391,7 +391,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method accepts widened long input and rounds the equivalent integer value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(10000000000);
@@ -404,7 +404,7 @@ export default function mathRoundTest(): void {
      * @tc.desc Verify round method rounds both Math.PI and Math.E to three
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathRound029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let piRounded: double = Math.round(Math.PI);

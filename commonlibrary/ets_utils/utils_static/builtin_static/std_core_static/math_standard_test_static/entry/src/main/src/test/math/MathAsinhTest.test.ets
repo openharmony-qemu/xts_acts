@@ -60,7 +60,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with exact zero double input 0.0 for precise positive zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.0;
@@ -75,7 +75,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with float zero input via Double.toFloat(0.0) for precise positive float zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(0.0);
@@ -91,7 +91,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with double negative zero input -0.0 for precise negative zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.0;
@@ -106,7 +106,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with float negative zero input for precise negative float zero return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(-0.0);
@@ -122,7 +122,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with variable-sourced positive double input 0.5 for precise IEEE754 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.5;
@@ -136,7 +136,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with variable-sourced positive double input 1.0 for precise IEEE754 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 1.0;
@@ -150,7 +150,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with variable-sourced positive double input 10.0 for precise IEEE754 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 10.0;
@@ -164,7 +164,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with representative negative double inputs for precise IEEE754 returns
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       assertDoubleApprox(Math.asinh(-0.5), -0.48121182505960347);
@@ -178,7 +178,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method with representative float inputs for approximate float-tolerance returns
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       assertFloatApprox(Math.asinh(Double.toFloat(0.5)), Double.toFloat(0.48121182505960347));
@@ -192,7 +192,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method is odd for representative double inputs across small and large magnitudes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallPositive: double = 0.75;
@@ -207,7 +207,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method remains near-linear for tiny double inputs around zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       assertDoubleApprox(Math.asinh(1e-10), 1e-10, 1.0e-20);
@@ -222,7 +222,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method preserves smallest positive float and double boundary inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let minDoubleResult: double = Math.asinh(Double.MIN_VALUE);
@@ -240,7 +240,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method returns finite logarithmic-growth results for largest float and double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let maxFloatResult: float = Math.asinh(Float.MAX_VALUE);
@@ -257,7 +257,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method propagates NaN and preserves signed infinity for double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Utils.isNaNValue(Math.asinh(Double.NaN))).assertTrue();
@@ -271,7 +271,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method propagates NaN and preserves signed infinity for float inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Utils.isNaNFloat(Math.asinh(Float.NaN))).assertTrue();
@@ -285,7 +285,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method accepts widened byte and short inputs and matches equivalent double results
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteInput: byte = Int.toByte(12);
@@ -300,7 +300,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method accepts widened int and long inputs and matches equivalent double results
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intInput: int = 2048;
@@ -315,7 +315,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method accepts number typed variables and helper-returned number inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let literalNumberInput: number = 0.75;
@@ -330,7 +330,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method recovers the expected inverse-image value from helper generated number input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let generatedInput: number = buildAsinhGeneratedInput();
@@ -344,7 +344,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method is monotonic for increasing positive constants Math.SQRT2, Math.E and Math.PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sqrt2Result: double = Math.asinh(Math.SQRT2);
@@ -363,7 +363,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method composes with sinh to recover representative finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nearZeroInput: double = 0.25;
@@ -380,7 +380,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method keeps very large finite double inputs finite with correct sign and magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largePositiveResult: double = Math.asinh(1e100);
@@ -399,7 +399,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method argument runtime cast from undefined to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -416,7 +416,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method argument runtime cast from null to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -433,7 +433,7 @@ export default function mathAsinhTest(): void {
      * @tc.desc Verify asinh method argument runtime cast from boolean to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAsinh025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {

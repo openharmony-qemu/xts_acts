@@ -46,7 +46,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with byte zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = 0;
@@ -60,7 +60,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with short zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: short = 0;
@@ -74,7 +74,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = 0;
@@ -88,7 +88,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with long zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Int.toLong(0);
@@ -102,7 +102,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with float zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Double.toFloat(0.0);
@@ -116,7 +116,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with double zero input for zero return value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = 0.0;
@@ -130,7 +130,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive byte input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = 42;
@@ -144,7 +144,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive short input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: short = 1000;
@@ -158,7 +158,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive int input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = 100000;
@@ -172,7 +172,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive long input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Int.toLong(1000000);
@@ -186,7 +186,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive float input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Double.toFloat(2.5);
@@ -200,7 +200,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive double input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = 2.5;
@@ -214,7 +214,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative byte input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = -42;
@@ -228,7 +228,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative short input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: short = -1000;
@@ -242,7 +242,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative int input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = -100000;
@@ -256,7 +256,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative long input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Int.toLong(-1000000);
@@ -270,7 +270,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative float input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Double.toFloat(-2.5);
@@ -284,7 +284,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative double input returns the positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = -2.5;
@@ -298,7 +298,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with byte minimum input preserves documented overflow semantics without crash
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = -128;
@@ -312,7 +312,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with short minimum input preserves documented overflow semantics without crash
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: short = -32768;
@@ -326,7 +326,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int minimum input preserves documented overflow semantics without crash
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = Int.MIN_VALUE;
@@ -340,7 +340,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with long minimum input preserves documented overflow semantics without crash
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Long.toLong(-9223372036854775808);
@@ -354,7 +354,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with byte maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = 127;
@@ -368,7 +368,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with short maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: short = 32767;
@@ -382,7 +382,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = Int.MAX_VALUE;
@@ -396,7 +396,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with long maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Long.toLong(9223372036854775807);
@@ -410,7 +410,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with float maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Float.MAX_VALUE;
@@ -424,7 +424,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with double maximum input returns the original value unchanged
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = Double.MAX_VALUE;
@@ -438,7 +438,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with float negative zero returns positive zero per IEEE 754
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Double.toFloat(-0.0);
@@ -453,7 +453,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with double negative zero returns positive zero per IEEE 754
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = -0.0;
@@ -468,7 +468,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with float NaN input returns NaN using isNaN predicate
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = Float.NaN;
@@ -482,7 +482,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with double NaN input returns NaN using isNaN predicate
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = Double.NaN;
@@ -496,7 +496,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with float positive and negative infinity returns positive infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let posInf: float = Float.POSITIVE_INFINITY;
@@ -511,7 +511,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with double positive and negative infinity returns positive infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let posInf: double = Double.POSITIVE_INFINITY;
@@ -526,7 +526,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with byte hexadecimal and octal literals returns expected absolute values
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hexValue: byte = 0x0A;
@@ -541,7 +541,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with short hexadecimal and octal literals preserves expected values
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hexValue: short = 0x7FF;
@@ -556,7 +556,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int hexadecimal literal returns the expected absolute value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hexValue: int = 0x1234;
@@ -569,7 +569,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int binary literal returns the expected absolute value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let binaryValue: int = 0b1010;
@@ -582,7 +582,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative int octal literal returns the expected absolute value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let octalValue: int = -0o123;
@@ -595,7 +595,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with long hexadecimal literal returns the expected absolute value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hexValue: long = Long.toLong(0x1234);
@@ -608,7 +608,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method remains stable across repeated invocation for the same int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: int = -50;
@@ -625,7 +625,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method supports nested invocation for an int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: int = Math.abs(Math.abs(-15));
@@ -638,7 +638,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method remains stable across repeated invocation for the same double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = -3.14159;
@@ -655,7 +655,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method applied to each element in int array returns normalized element values
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputArr: int[] = [-5, 10, -15, 0, -20];
@@ -676,7 +676,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with int and double subtraction scenarios returns positive difference magnitudes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intDiffPositive: int = Math.abs(100 - 30);
@@ -693,7 +693,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method captures floating-point error magnitude and keeps it within tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let expectedVal: double = 0.3;
@@ -710,7 +710,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method output can be reused in a threshold comparison for a byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: byte = -5;
@@ -725,7 +725,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method output can be reused for minimum absolute value selection between int inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absA: int = Math.abs(-10);
@@ -742,7 +742,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method supports long aggregation scenarios with normalized operand magnitudes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: long = Int.toLong(-12345);
@@ -757,7 +757,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method supports short array element access scenarios
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let values: short[] = [Int.toShort(-42)];
@@ -771,7 +771,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method supports int summation scenarios with normalized addends
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum: int = Math.abs(-3) + Math.abs(-7);
@@ -784,7 +784,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with number alias input preserves double semantics for positive result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: number = -12.75;
@@ -798,7 +798,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative float and double minimum subnormal inputs returns positive minimum values
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeFloatMin: float = -Float.MIN_VALUE;
@@ -815,7 +815,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with explicitly converted long input beyond int range preserves long positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: long = Long.toLong(-0x100000000);
@@ -829,7 +829,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method argument runtime cast from undefined to int throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -846,7 +846,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method argument runtime cast from null to int throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -863,7 +863,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method argument runtime cast from boolean to int throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -880,7 +880,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method accepts tuple element values typed as number and preserves expected magnitudes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let triple: [number, number, number] = [-8.5, 0.0, 13.25];
@@ -898,7 +898,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method accepts readonly array element values typed as number without mutating source data
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let values: readonly number[] = [-4.5, 2.0, -0.25];
@@ -917,7 +917,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method accepts helper function return value typed as number and preserves expected magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let deltaA: number = buildAbsDelta(5.5, 11.75);
@@ -934,7 +934,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method accepts number values returned by standard library functions and preserves expected magnitudes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let minValue: number = Math.min(4.5, -7.25, -3.0);
@@ -951,7 +951,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive long business magnitude preserves the original value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveBusinessValue: long = Long.toLong(10000000000);
@@ -964,7 +964,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative long business magnitude returns the normalized positive value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeBusinessValue: long = Long.toLong(-10000000000);
@@ -977,7 +977,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive float scientific notation preserves the original magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let scientificPositive: float = Double.toFloat(1.0e3);
@@ -990,7 +990,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative float scientific notation returns the normalized positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let scientificNegative: float = Double.toFloat(-1.0e3);
@@ -1003,7 +1003,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with Float.MIN_VALUE input preserves the smallest positive float boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let subnormalMin: float = Float.MIN_VALUE;
@@ -1016,7 +1016,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with tiny negative float input returns the corresponding positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tinyNegative: float = Double.toFloat(-1.0e-10);
@@ -1029,7 +1029,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with positive double scientific notation preserves the original magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let scientificPositive: double = 1.0e6;
@@ -1042,7 +1042,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with tiny negative double input returns the corresponding positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let tinyNegative: double = -1.0e-300;
@@ -1055,7 +1055,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with large negative double input returns the normalized positive magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeNegative: double = -1.0e200;
@@ -1068,7 +1068,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative Math.PI constant returns the positive constant value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let piNegative: double = -Math.PI;
@@ -1081,7 +1081,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative float maximum input returns the positive maximum finite boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: float = -Float.MAX_VALUE;
@@ -1095,7 +1095,7 @@ export default function mathAbsTest(): void {
      * @tc.desc Verify abs method with negative double maximum input returns the positive maximum finite boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAbs073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: double = -Double.MAX_VALUE;

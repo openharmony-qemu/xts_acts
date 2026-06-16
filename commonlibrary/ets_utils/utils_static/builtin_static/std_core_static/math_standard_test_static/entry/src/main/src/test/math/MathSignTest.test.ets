@@ -50,7 +50,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for a positive fractional double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(3.14);
@@ -62,7 +62,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for a negative fractional double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-3.14);
@@ -74,7 +74,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for a positive integral double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(42.0);
@@ -86,7 +86,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for a negative integral double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-42.0);
@@ -98,7 +98,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method preserves positive zero for a positive zero input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(0.0);
@@ -111,7 +111,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for the smallest positive subnormal double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Double.MIN_VALUE);
@@ -123,7 +123,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for the negated smallest positive subnormal double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-Double.MIN_VALUE);
@@ -135,7 +135,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for the largest finite positive double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Double.MAX_VALUE);
@@ -147,7 +147,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for the largest finite negative double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-Double.MAX_VALUE);
@@ -159,7 +159,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method propagates NaN for a NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Double.NaN);
@@ -171,7 +171,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for positive infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Double.POSITIVE_INFINITY);
@@ -183,7 +183,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for negative infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Double.NEGATIVE_INFINITY);
@@ -195,7 +195,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a number typed helper input that evaluates to a positive value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildPositiveSignNumberFromHelper();
@@ -208,7 +208,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a number typed helper input that evaluates to a negative value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildNegativeSignNumberFromHelper();
@@ -221,7 +221,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened float positive input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.25);
@@ -234,7 +234,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened float negative input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.25);
@@ -247,7 +247,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(12);
@@ -260,7 +260,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened short input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1024);
@@ -273,7 +273,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened int input at the positive boundary
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = Int.MAX_VALUE;
@@ -286,7 +286,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method accepts a widened long input with a negative value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(-10000000000);
@@ -299,7 +299,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for Math.PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Math.PI);
@@ -311,7 +311,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for the negated Math.PI constant
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-Math.PI);
@@ -323,7 +323,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns one for Math.E
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(Math.E);
@@ -335,7 +335,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method returns negative one for the negated Math.E constant
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sign(-Math.E);
@@ -347,7 +347,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method is odd for mirrored nonzero finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.sign(7.25);
@@ -362,7 +362,7 @@ export default function mathSignTest(): void {
      * @tc.desc Verify sign method remains stable when applied repeatedly to its own nonzero result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSign026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.sign(-8.5);

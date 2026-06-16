@@ -564,7 +564,7 @@ export default function mathLogTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG_3700
      * @tc.name testMathLog037
-     * @tc.desc Verify log method with double NaN输入 input for expected semantic behavior
+     * @tc.desc Verify log method with double NaN input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -578,7 +578,7 @@ export default function mathLogTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG_3800
      * @tc.name testMathLog038
-     * @tc.desc Verify log method with float NaN输入 input for expected semantic behavior
+     * @tc.desc Verify log method with float NaN input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -593,7 +593,7 @@ export default function mathLogTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG_3900
      * @tc.name testMathLog039
-     * @tc.desc Verify log method with double正无穷输入 input for expected semantic behavior
+     * @tc.desc Verify log method with double positive Infinity input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -606,7 +606,7 @@ export default function mathLogTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG_4000
      * @tc.name testMathLog040
-     * @tc.desc Verify log method with double负无穷输入 input for expected semantic behavior
+     * @tc.desc Verify log method with double negative Infinity input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2

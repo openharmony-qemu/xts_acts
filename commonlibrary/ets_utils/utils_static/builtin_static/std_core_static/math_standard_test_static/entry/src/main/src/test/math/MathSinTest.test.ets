@@ -46,7 +46,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method preserves positive zero for a positive zero input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(0.0);
@@ -59,7 +59,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method preserves negative zero for a negative zero input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(-0.0);
@@ -72,7 +72,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns one-half for the PI over six standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Math.PI / 6.0);
@@ -85,7 +85,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns square-root-one-half for the PI over four standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Math.PI / 4.0);
@@ -98,7 +98,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns one for the PI over two standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Math.PI / 2.0);
@@ -111,7 +111,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns a near-zero value for PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Math.PI);
@@ -124,7 +124,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns negative one for three PI over two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(1.5 * Math.PI);
@@ -137,7 +137,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns a near-zero value after one full period
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(2.0 * Math.PI);
@@ -150,7 +150,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns negative one-half for the negated PI over six standard angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(-Math.PI / 6.0);
@@ -163,7 +163,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method is odd for mirrored nonzero finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.sin(0.5);
@@ -177,7 +177,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method is periodic across inputs separated by two PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
@@ -192,7 +192,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method with cosine keeps the Pythagorean sum of squares within tolerance of one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
@@ -208,7 +208,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method follows the small-angle approximation for a tiny finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e-8;
@@ -222,7 +222,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method preserves the smallest positive subnormal magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Double.MIN_VALUE);
@@ -236,7 +236,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method keeps an extremely large finite input within the closed range from minus one to one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Double.MAX_VALUE);
@@ -250,7 +250,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method propagates NaN for a NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Double.NaN);
@@ -262,7 +262,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns NaN for positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Double.POSITIVE_INFINITY);
@@ -274,7 +274,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns NaN for negative infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Double.NEGATIVE_INFINITY);
@@ -286,7 +286,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a number typed helper input that evaluates to PI over six
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildSinNumberFromHelper();
@@ -300,7 +300,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a widened float finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.5);
@@ -314,7 +314,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method preserves negative zero for a widened float negative zero input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.0);
@@ -328,7 +328,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method propagates NaN for a widened float NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -341,7 +341,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns NaN for a widened float positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.POSITIVE_INFINITY;
@@ -354,7 +354,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(1);
@@ -368,7 +368,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a widened short input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1);
@@ -382,7 +382,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 2;
@@ -396,7 +396,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method accepts a widened long input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(-2);
@@ -410,7 +410,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method returns the expected value for the Math.E constant input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sin(Math.E);
@@ -423,7 +423,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method supports degree to radian conversion for a thirty degree input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let radians: double = 30.0 * Math.PI / 180.0;
@@ -437,7 +437,7 @@ export default function mathSinTest(): void {
      * @tc.desc Verify sin method remains stable across repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSin030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.sin(0.5);

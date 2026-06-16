@@ -53,7 +53,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method preserves positive zero for a positive zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(0.0);
@@ -67,7 +67,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method preserves negative zero for a negative zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(-0.0);
@@ -81,7 +81,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method preserves positive zero for a positive zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.0);
@@ -96,7 +96,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method preserves negative zero for a negative zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.0);
@@ -111,7 +111,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a positive double input of one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 0.5;
@@ -127,7 +127,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a negative double input of one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(-0.5);
@@ -141,7 +141,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a positive double input of one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0;
@@ -157,7 +157,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a negative double input of one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(-1.0);
@@ -171,7 +171,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a positive double input of two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 2.0;
@@ -187,7 +187,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns the expected finite value for a negative double input of two
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(-2.0);
@@ -201,7 +201,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method follows the small-angle approximation for a tiny positive double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e-8;
@@ -216,7 +216,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method follows the small-angle approximation for a tiny negative double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -1.0e-8;
@@ -231,7 +231,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method preserves the smallest positive subnormal magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(Double.MIN_VALUE);
@@ -245,7 +245,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method is odd for mirrored finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.sinh(1.25);
@@ -260,7 +260,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method is monotonic for ordered positive finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smaller: double = Math.sinh(1.0);
@@ -274,7 +274,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method matches the exponential definition for a moderate finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0;
@@ -290,7 +290,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method overflows to positive infinity for a large positive double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(1000.0);
@@ -303,7 +303,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method overflows to negative infinity for a large negative double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(-1000.0);
@@ -316,7 +316,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method propagates NaN for a double NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(Double.NaN);
@@ -329,7 +329,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns positive infinity for a positive infinity double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(Double.POSITIVE_INFINITY);
@@ -342,7 +342,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method returns negative infinity for a negative infinity double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(Double.NEGATIVE_INFINITY);
@@ -355,7 +355,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a number typed helper input that evaluates to one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildSinhNumberFromHelper();
@@ -370,7 +370,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a widened float finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.5);
@@ -384,7 +384,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method overflows to positive infinity for a large positive float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(100.0);
@@ -398,7 +398,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method overflows to negative infinity for a large negative float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-100.0);
@@ -412,7 +412,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method propagates NaN for a float NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -426,7 +426,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(1);
@@ -442,7 +442,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a widened short input and preserves the expected sign after widening
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1);
@@ -456,7 +456,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 2;
@@ -472,7 +472,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method accepts a widened long input and preserves the expected sign after widening
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(-2);
@@ -486,7 +486,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method produces a positive finite value for the Math.PI constant input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.sinh(Math.PI);
@@ -500,7 +500,7 @@ export default function mathSinhTest(): void {
      * @tc.desc Verify sinh method remains stable across repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathSinh032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.sinh(0.5);

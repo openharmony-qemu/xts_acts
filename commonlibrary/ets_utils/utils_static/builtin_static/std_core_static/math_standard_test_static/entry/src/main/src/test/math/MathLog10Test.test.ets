@@ -564,7 +564,7 @@ export default function mathLog10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG10_3700
      * @tc.name testMathLog10037
-     * @tc.desc Verify log10 method with double NaN输入 input for expected semantic behavior
+     * @tc.desc Verify log10 method with double NaN input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -578,7 +578,7 @@ export default function mathLog10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG10_3800
      * @tc.name testMathLog10038
-     * @tc.desc Verify log10 method with float NaN输入 input for expected semantic behavior
+     * @tc.desc Verify log10 method with float NaN input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -593,7 +593,7 @@ export default function mathLog10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG10_3900
      * @tc.name testMathLog10039
-     * @tc.desc Verify log10 method with double正无穷输入 input for expected semantic behavior
+     * @tc.desc Verify log10 method with double positive Infinity input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
@@ -606,7 +606,7 @@ export default function mathLog10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_LOG10_4000
      * @tc.name testMathLog10040
-     * @tc.desc Verify log10 method with double负无穷输入 input for expected semantic behavior
+     * @tc.desc Verify log10 method with double negative Infinity input for expected semantic behavior
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2

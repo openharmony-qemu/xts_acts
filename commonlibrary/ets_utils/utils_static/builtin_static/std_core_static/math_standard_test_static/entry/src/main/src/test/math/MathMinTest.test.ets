@@ -46,7 +46,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with no arguments returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min();
@@ -58,7 +58,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single positive double argument returns the same value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Math.PI;
@@ -71,7 +71,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single negative double argument returns the same value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -Math.E;
@@ -84,7 +84,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single positive zero argument preserves positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.0;
@@ -98,7 +98,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with negative and positive zero returns negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negativeZero: double = -0.0;
@@ -113,7 +113,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single NaN argument propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.NaN;
@@ -126,7 +126,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single positive Infinity argument returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.POSITIVE_INFINITY;
@@ -139,7 +139,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with a single negative Infinity argument returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.NEGATIVE_INFINITY;
@@ -152,7 +152,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with two finite positive doubles returns the smaller value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 123.456;
@@ -166,7 +166,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with two negative doubles returns the value farther from zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = -5.0;
@@ -180,7 +180,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with mixed sign doubles returns the negative value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = -99.99;
@@ -194,7 +194,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with equal double arguments returns the shared value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 99.99;
@@ -207,7 +207,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with NaN in the second binary position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = 100.0;
@@ -221,7 +221,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with NaN in the first binary position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = 100.0;
@@ -235,7 +235,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with NaN in a middle variadic position propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanValue: double = Double.NaN;
@@ -248,7 +248,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with positive Infinity and Double.MAX_VALUE returns Double.MAX_VALUE
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min(Double.POSITIVE_INFINITY, Double.MAX_VALUE);
@@ -260,7 +260,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with negative Infinity and a finite value returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finiteValue: double = -5.0;
@@ -273,7 +273,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with mixed variadic finite values returns the least element
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min(-50.5, 0.0, 123.456, -2.5, 78.9);
@@ -285,7 +285,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method is commutative for finite double pairs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 5.0;
@@ -301,7 +301,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify nested min composition matches the direct variadic minimum
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = Math.min(3.0, 7.0);
@@ -315,7 +315,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with Double.MIN_VALUE and positive zero returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min(Double.MIN_VALUE, 0.0);
@@ -328,7 +328,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with Double.MAX_VALUE and a finite negative value returns the finite negative value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min(Double.MAX_VALUE, -1.0);
@@ -340,7 +340,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with Float.MIN_VALUE and negative zero returns negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smallestFloat: float = Float.MIN_VALUE;
@@ -354,7 +354,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with Float.MAX_VALUE and a finite double returns the finite double
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largestFloat: float = Float.MAX_VALUE;
@@ -367,7 +367,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts widened byte input and returns the smaller comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteValue: byte = Int.toByte(12);
@@ -380,7 +380,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts widened short input and returns the smaller comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let shortValue: short = Int.toShort(1024);
@@ -393,7 +393,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts widened int input and returns the smaller comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intValue: int = 2048;
@@ -406,7 +406,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts widened long input and returns the smaller comparison result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longValue: long = Long.toLong(10000000000);
@@ -419,7 +419,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts a number typed variable input and returns the smaller candidate
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let variableInput: number = -12.5;
@@ -432,7 +432,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method accepts helper function return typed as number and preserves the helper value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let helperInput: number = buildMinNumberInputFromHelper();
@@ -445,7 +445,7 @@ export default function mathMinTest(): void {
      * @tc.desc Verify min method with Math constants returns E over PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathMin031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.min(Math.E, Math.PI);

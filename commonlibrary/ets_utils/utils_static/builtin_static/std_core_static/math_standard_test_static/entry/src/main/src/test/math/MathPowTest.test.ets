@@ -50,7 +50,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a positive integer exponent returns the exact power value
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(2.0, 3.0);
@@ -62,7 +62,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with exponent zero returns one for a finite nonzero base
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(5.0, 0.0);
@@ -74,7 +74,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with base one returns one regardless of a finite exponent
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(1.0, 100.0);
@@ -86,7 +86,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a negative integer exponent returns the reciprocal power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(2.0, -3.0);
@@ -98,7 +98,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with exponent one returns the original finite base
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: double = 7.5;
@@ -111,7 +111,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a fractional exponent computes the principal square root for a positive base
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(9.0, 0.5);
@@ -123,7 +123,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a negative base and odd integer exponent preserves the negative sign
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-2.0, 3.0);
@@ -135,7 +135,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a negative base and even integer exponent returns a positive result
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-2.0, 4.0);
@@ -147,7 +147,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a negative base and fractional exponent propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-2.0, 0.5);
@@ -159,7 +159,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a NaN base and nonzero exponent propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(Double.NaN, 2.0);
@@ -171,7 +171,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a NaN exponent and a finite base propagates NaN
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(2.0, Double.NaN);
@@ -183,7 +183,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a NaN base and zero exponent returns one per ECMAScript semantics
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(Double.NaN, 0.0);
@@ -195,7 +195,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with positive Infinity base and positive exponent returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(Double.POSITIVE_INFINITY, 2.0);
@@ -207,7 +207,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with positive Infinity base and negative exponent returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(Double.POSITIVE_INFINITY, -1.0);
@@ -220,7 +220,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with zero base and positive exponent returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(0.0, 2.0);
@@ -233,7 +233,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with zero base and negative exponent returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(0.0, -1.0);
@@ -245,7 +245,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with zero base and zero exponent returns one per ECMAScript semantics
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(0.0, 0.0);
@@ -257,7 +257,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with negative zero base and odd positive exponent returns negative zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-0.0, 3.0);
@@ -270,7 +270,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with negative zero base and even positive exponent returns positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-0.0, 2.0);
@@ -283,7 +283,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with negative zero base and odd negative exponent returns negative Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-0.0, -3.0);
@@ -295,7 +295,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with negative zero base and even negative exponent returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(-0.0, -2.0);
@@ -307,7 +307,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method is not commutative for unequal finite arguments
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let leftFirst: double = Math.pow(2.0, 3.0);
@@ -322,7 +322,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method matches repeated multiplication for a small positive integer exponent
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: double = 3.0;
@@ -336,7 +336,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method computes reciprocal symmetry between positive and negative exponents
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveExponentResult: double = Math.pow(5.0, 2.0);
@@ -349,7 +349,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with an overflowing exponent returns positive Infinity
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(2.0, 1024.0);
@@ -361,7 +361,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with a large positive exponent on one-half underflows to positive zero
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(0.5, 1075.0);
@@ -374,7 +374,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method preserves IEEE 754 rounding for decimal base 0.2 squared
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(0.2, 2.0);
@@ -388,7 +388,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method preserves IEEE 754 rounding for decimal base 1.1 cubed
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.pow(1.1, 3.0);
@@ -402,7 +402,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts widened byte base input and returns the exact integer power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: byte = Int.toByte(3);
@@ -415,7 +415,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts widened short exponent input and returns the exact power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let exponent: short = Int.toShort(4);
@@ -428,7 +428,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts widened int base input and returns the exact integer power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: int = 12;
@@ -441,7 +441,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts widened long exponent input and returns the exact power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let exponent: long = Long.toLong(3);
@@ -454,7 +454,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts a number typed base variable input and returns the exact finite power
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: number = 2.5;
@@ -467,7 +467,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method accepts helper function number inputs for both base and exponent
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: number = buildPowBaseFromHelper();
@@ -481,7 +481,7 @@ export default function mathPowTest(): void {
      * @tc.desc Verify pow method with Math constants returns PI squared over E squared
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathPow035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let piSquared: double = Math.pow(Math.PI, 2.0);

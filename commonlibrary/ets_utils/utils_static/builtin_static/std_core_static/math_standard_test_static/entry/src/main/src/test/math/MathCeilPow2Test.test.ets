@@ -46,7 +46,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 0 for expected return 0
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 0;
@@ -60,7 +60,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 1 for expected return 1
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 1;
@@ -74,7 +74,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 2 for expected return 2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 2;
@@ -88,7 +88,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 3 for expected return 4
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 3;
@@ -102,7 +102,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 7 for expected return 8
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 7;
@@ -116,7 +116,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 8 for expected return 8
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 8;
@@ -130,7 +130,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 9 for expected return 16
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 9;
@@ -144,7 +144,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 31 for expected return 32
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 31;
@@ -158,7 +158,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 32 for expected return 32
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 32;
@@ -172,7 +172,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 33 for smallest power-of-two return 64
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 33;
@@ -187,7 +187,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int variable input 42 for expected return 64
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 42;
@@ -201,7 +201,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int expression input 17 for expected return 32
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: int = 16;
@@ -217,7 +217,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with function-return int input 100 for expected return 128
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = buildCeilPow2Input();
@@ -231,7 +231,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 127 for expected return 128
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 127;
@@ -245,7 +245,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 128 for expected return 128
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 128;
@@ -259,7 +259,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 129 for expected return 256
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 129;
@@ -273,7 +273,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 1073741823 for expected return 1073741824
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 1073741823;
@@ -287,7 +287,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with int input 1073741824 for expected return 1073741824
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 1073741824;
@@ -301,7 +301,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with negative int input -1 throws RangeError via try-catch
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nNeg: int = -1;
@@ -319,7 +319,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 method with negative int input Int.MIN_VALUE throws RangeError via try-catch
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nNeg: int = Int.MIN_VALUE;
@@ -337,7 +337,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 keeps equal results across repeated same-input calls for int input 42
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nPositive: int = 42;
@@ -354,7 +354,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 return values remain powers of two for representative positive int inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let testValues: int[] = [1, 3, 5, 31, 33, 127, 129, 1023];
@@ -370,7 +370,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 return values are not smaller than representative positive int inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let testValues: int[] = [1, 3, 5, 31, 33, 127, 129, 1023];
@@ -386,7 +386,7 @@ export default function mathCeilPow2Test(): void {
      * @tc.desc Verify ceilPow2 is monotonic across boundary inputs 31, 32, and 33
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathCeilPow2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputs: int[] = [31, 32, 33];

@@ -50,7 +50,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double upper bound 1.0 for exact 0.0 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 1.0;
@@ -64,7 +64,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double lower bound -1.0 for exact PI return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -1.0;
@@ -78,7 +78,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double zero 0.0 for exact PI/2 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.0;
@@ -92,7 +92,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with negative zero -0.0 for exact PI/2 return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.0;
@@ -106,7 +106,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double input 0.5 for approximate PI/3 return within floating tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.5;
@@ -122,7 +122,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double input -0.5 for approximate 2PI/3 return within floating tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.5;
@@ -138,7 +138,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double input Math.SQRT1_2 for approximate PI/4 return within floating tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Math.SQRT1_2;
@@ -154,7 +154,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double near-upper-bound 0.9999999999999999 for finite positive return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.9999999999999999;
@@ -170,7 +170,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double near-boundary valid input -0.9999999999999999 for finite positive return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = -0.9999999999999999;
@@ -186,7 +186,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double out-of-domain upper values for NaN return without exception
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputNearUpper: double = 1.0 + 1.0e-15;
@@ -201,7 +201,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double out-of-domain lower values for NaN return without exception
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputNearLower: double = -1.0 - 1.0e-15;
@@ -216,7 +216,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with double special values NaN positive Infinity and negative Infinity for NaN return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanInput: double = Double.NaN;
@@ -233,7 +233,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float upper bound 1.0f for exact 0.0f return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = 1.0f;
@@ -247,7 +247,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float lower bound -1.0f for valid positive return near PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = -1.0f;
@@ -264,7 +264,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float zero 0.0f for valid positive return near PI/2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = 0.0f;
@@ -281,7 +281,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float input 0.5f for valid positive non-NaN return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = 0.5f;
@@ -298,7 +298,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float special values NaN positive Infinity and negative Infinity for NaN return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanInput: float = Float.NaN;
@@ -315,7 +315,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float out-of-domain values for NaN return
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let upperInvalid: float = 1.0001f;
@@ -330,7 +330,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened byte input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: byte = Int.toByte(1);
@@ -344,7 +344,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened long input follows the same result path as equivalent double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: long = Int.toLong(1);
@@ -358,7 +358,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method accepts number typed variable input and follows double precision path
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: number = 0.75;
@@ -374,7 +374,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method accepts helper function return value typed as number and preserves expected angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: number = buildAcosInputFromHelper();
@@ -390,7 +390,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos and cos inverse relationship cos(acos(x)) approximately recovers signed double inputs within tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input1: double = -0.8;
@@ -410,7 +410,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos domain symmetry where acos(x) plus acos(-x) stays within tolerance of PI
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.6;
@@ -425,7 +425,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with ascending double inputs for strict monotonic decreasing results
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input1: double = -0.8;
@@ -444,7 +444,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method repeated double calls with the same input return identical results
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.5;
@@ -461,7 +461,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos in law-of-cosines triangle angle calculation with sides 3-4-5 for right angle PI/2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sideA: double = 3.0;
@@ -478,7 +478,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos in dot-product vector angle calculation between (1,0) and (1,1) for PI/4 within tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v1x: double = 1.0;
@@ -501,7 +501,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float negative zero input for valid return near PI/2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(-0.0);
@@ -518,7 +518,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with Double.MIN_VALUE stays finite and remains effectively equal to PI/2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = Double.MIN_VALUE;
@@ -533,7 +533,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with Float.MIN_VALUE stays finite and slightly below PI/2
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Float.MIN_VALUE;
@@ -551,7 +551,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method accepts helper function return value typed as float and preserves expected angle
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = buildFloatAcosInputFromHelper();
@@ -568,7 +568,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos principal-range composition acos(cos(theta)) recovers an obtuse theta within tolerance
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let theta: double = 2.0 * Math.PI / 3.0;
@@ -583,7 +583,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos correctly calculates obtuse angle when cosine is negative with triangle sides 2-3-4
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sideA: double = 2.0;
@@ -604,7 +604,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened byte minimum value returns NaN outside the valid domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: byte = Int.toByte(-128);
@@ -617,7 +617,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened byte maximum value returns NaN outside the valid domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: byte = Int.toByte(127);
@@ -630,7 +630,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened long minimum value returns NaN outside the valid domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: long = Long.toLong(-9223372036854775808);
@@ -643,7 +643,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method widened long maximum value returns NaN outside the valid domain
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: long = Long.toLong(9223372036854775807);
@@ -656,7 +656,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method argument runtime cast from undefined to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -673,7 +673,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method argument runtime cast from null to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -690,7 +690,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method argument runtime cast from boolean to double throws ClassCastError before evaluation completes
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
@@ -707,7 +707,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float input -0.5f for valid positive return near 2PI/3
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = -0.5f;
@@ -724,7 +724,7 @@ export default function mathAcosTest(): void {
      * @tc.desc Verify acos method with float input converted from Math.SQRT1_2 for valid return near PI/4
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathAcos043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: float = Double.toFloat(Math.SQRT1_2);

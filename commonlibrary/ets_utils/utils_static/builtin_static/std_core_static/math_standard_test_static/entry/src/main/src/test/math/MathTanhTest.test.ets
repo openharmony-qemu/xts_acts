@@ -65,7 +65,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method preserves positive zero for a positive zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(0.0);
@@ -79,7 +79,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method preserves negative zero for a negative zero double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(-0.0);
@@ -93,7 +93,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method preserves positive zero for a positive zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.0);
@@ -108,7 +108,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method preserves negative zero for a negative zero float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-0.0);
@@ -123,7 +123,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns the expected finite value for a positive double input of one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 0.5;
@@ -138,7 +138,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns the expected finite value for a positive double input of one
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0;
@@ -153,7 +153,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns the expected finite value for a positive double input of two and one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 2.5;
@@ -168,7 +168,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method saturates near one for a large positive finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 10.0;
@@ -184,7 +184,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method saturates exactly to one for a very large positive finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(1000.0);
@@ -197,7 +197,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method follows the small-angle approximation for a tiny positive double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.0e-10;
@@ -213,7 +213,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method preserves the smallest positive subnormal magnitude
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Double.MIN_VALUE);
@@ -227,7 +227,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method stays within the closed interval from minus one to one for the largest finite double input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Double.MAX_VALUE);
@@ -241,7 +241,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method is odd for mirrored finite double inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let positiveResult: double = Math.tanh(0.75);
@@ -256,7 +256,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method is monotonic for ordered positive finite inputs
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let smaller: double = Math.tanh(0.5);
@@ -270,7 +270,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method matches the exponential definition for a moderate finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = 1.25;
@@ -288,7 +288,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method produces a positive finite value for the Math.PI constant input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Math.PI);
@@ -303,7 +303,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method propagates NaN for a double NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Double.NaN);
@@ -316,7 +316,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns one for a positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Double.POSITIVE_INFINITY);
@@ -329,7 +329,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns minus one for a negative infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: double = Math.tanh(Double.NEGATIVE_INFINITY);
@@ -342,7 +342,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a number typed helper input that evaluates to one-half
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: number = buildTanhNumberFromHelper();
@@ -357,7 +357,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a widened float finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(0.5);
@@ -371,7 +371,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method saturates to one for a large positive float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(100.0);
@@ -385,7 +385,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method saturates to minus one for a large negative float input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Double.toFloat(-100.0);
@@ -399,7 +399,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method propagates NaN for a float NaN input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NaN;
@@ -413,7 +413,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns one for a float positive infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.POSITIVE_INFINITY;
@@ -427,7 +427,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method returns minus one for a float negative infinity input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: float = Float.NEGATIVE_INFINITY;
@@ -441,7 +441,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a widened byte input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: byte = Int.toByte(1);
@@ -456,7 +456,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a widened short input and preserves the expected sign after widening
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: short = Int.toShort(-1);
@@ -470,7 +470,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a widened int input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: int = 2;
@@ -485,7 +485,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method accepts a widened long input and preserves the expected sign after widening
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: long = Long.toLong(-2);
@@ -499,7 +499,7 @@ export default function mathTanhTest(): void {
      * @tc.desc Verify tanh method remains stable across repeated calls with the same finite input
      * @tc.type Function
      * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it('testMathTanh031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first: double = Math.tanh(0.5);
