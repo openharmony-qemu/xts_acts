@@ -989,5 +989,222 @@ export default function requestCacheDownloadStaticTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3400
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3400
+     * @tc.desc   setGlobalTimeoutOptions with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3400',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3400 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalTimeoutOptions(undefined);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3400 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3500
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3500
+     * @tc.desc   setGlobalTimeoutOptions with no parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3500',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3500 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalTimeoutOptions();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3500 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3600
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3600
+     * @tc.desc   setGlobalTimeoutOptions with empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3600',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3600 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3600 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3700
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3700
+     * @tc.desc   setGlobalTimeoutOptions with networkCheckTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3700',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3700 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3700 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3800
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3800
+     * @tc.desc   setGlobalTimeoutOptions with httpTotalTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3800',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3800 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          httpTotalTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3800 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_3900
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_3900
+     * @tc.desc   setGlobalTimeoutOptions with both networkCheckTimeout and httpTotalTimeout undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_3900',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_3900 is starting-----------------------");
+      try {
+        let timeoutOptions: cacheDownload.TimeoutOptions = {
+          networkCheckTimeout: undefined,
+          httpTotalTimeout: undefined,
+        }
+        cacheDownload.setGlobalTimeoutOptions(timeoutOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_3900 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_4000
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_4000
+     * @tc.desc   setGlobalRetryOptions with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_4000',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_4000 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalRetryOptions(undefined);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_4000 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_4100
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_4100
+     * @tc.desc   setGlobalRetryOptions with no parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_4100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_4100 is starting-----------------------");
+      try {
+        cacheDownload.setGlobalRetryOptions();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_4100 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_4200
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_4200
+     * @tc.desc   setGlobalRetryOptions with empty object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_4200',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_4200 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_4200 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_Static_4300
+     * @tc.number SUB_Request_cacheDownload_Supplemental_Static_4300
+     * @tc.desc   setGlobalRetryOptions with maxRetryCount undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_Static_4300',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_Supplemental_Static_4300 is starting-----------------------");
+      try {
+        let retryOptions: cacheDownload.RetryOptions = {
+          maxRetryCount: undefined,
+        }
+        cacheDownload.setGlobalRetryOptions(retryOptions);
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_Supplemental_Static_4300 catch err code:" + err.code + "err message:" + err.message);
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 }
