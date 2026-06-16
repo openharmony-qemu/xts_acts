@@ -67,15 +67,15 @@ export default function DatePickerComponentOnChangeTest() {
       let datePickerComp: Component = await driver.findComponent(ON.id('datePickerComponent_onChange'));
       await CommonFunc.sleep(500);
       let bounds = await datePickerComp.getBounds();
-      let centerX: number = (bounds.left + bounds.right) / 2;
-      let centerY: number = bounds.top + (bounds.bottom - bounds.top) * 0.3;
+      let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
+      let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
       await driver.swipe(centerX, centerY, centerX, centerY + 50, 600);
       await CommonFunc.sleep(1500);
 
-      strJson = getInspectorByKey('text_onChange_triggered');
-      obj = JSON.parse(strJson);
-      console.info('DatePickerComponentOnChangeTest_0100 after swipe triggered: ' + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertContain('onChangeTriggered: true');
+      let strJson1 = getInspectorByKey('text_onChange_triggered');
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info('DatePickerComponentOnChangeTest_0100 after swipe triggered: ' + JSON.stringify(obj1));
+      expect(obj1.$attrs.content).assertContain('onChangeTriggered: true');
 
       console.info('DatePickerComponentOnChangeTest_0100 END');
       done();

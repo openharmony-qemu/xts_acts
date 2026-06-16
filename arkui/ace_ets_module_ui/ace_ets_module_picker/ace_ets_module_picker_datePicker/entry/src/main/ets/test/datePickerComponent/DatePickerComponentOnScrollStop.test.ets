@@ -67,15 +67,15 @@ export default function DatePickerComponentOnScrollStopTest() {
       let datePickerComp: Component = await driver.findComponent(ON.id('datePickerComponent_onScrollStop'));
       await CommonFunc.sleep(500);
       let bounds = await datePickerComp.getBounds();
-      let centerX: number = (bounds.left + bounds.right) / 2;
-      let centerY: number = bounds.top + (bounds.bottom - bounds.top) * 0.3;
+      let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
+      let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
       await driver.swipe(centerX, centerY, centerX, centerY + 100, 600);
       await CommonFunc.sleep(2000);
 
-      strJson = getInspectorByKey('text_onScrollStop_triggered');
-      obj = JSON.parse(strJson);
-      console.info('DatePickerComponentOnScrollStopTest_0100 after swipe triggered: ' + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertContain('onScrollStopTriggered: true');
+      let strJson1 = getInspectorByKey('text_onScrollStop_triggered');
+      let obj1: ESObject = JSON.parse(strJson1);
+      console.info('DatePickerComponentOnScrollStopTest_0100 after swipe triggered: ' + JSON.stringify(obj1));
+      expect(obj1.$attrs.content).assertContain('onScrollStopTriggered: true');
 
       console.info('DatePickerComponentOnScrollStopTest_0100 END');
       done();
