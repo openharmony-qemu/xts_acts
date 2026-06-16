@@ -50,11 +50,11 @@ struct PersistenceV2TypeMismatch {
         .height('5%')
         .onClick(() => {
           try {
-            const obj = { 
-              childId: 1, 
-              groupId: 1, 
-              set: new ClsPersistenceV2TypeMismatch() 
-              } as ESObject as SampleChildPersistenceV2TypeMismatch;
+            const obj = {
+              childId: 1,
+              groupId: 1,
+              set: new ClsPersistenceV2TypeMismatch()
+            } as ESObject as SampleChildPersistenceV2TypeMismatch;
             this.p.father = obj;
             this.resultText = 'SUCCESS: Type mismatch handled';
           } catch (err) {
@@ -63,13 +63,16 @@ struct PersistenceV2TypeMismatch {
         })
       Text(`Father set: ${JSON.stringify(this.p.father.set)}`)
         .height('5%')
+        .margin({top:5})
         .id('text_father_set')
       Text(`Result: ${this.resultText}`)
         .id('text_result')
         .height('5%')
+        .margin({top:5})
       Text(`ChildId: ${this.p.father.childId}`)
         .id('text_childId')
         .height('5%')
+        .margin({top:5})
     }
     .height('100%')
     .width('100%')

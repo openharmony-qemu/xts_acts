@@ -43,5 +43,8 @@ struct ComputedLocal {
         this.age++; // cannot trigger Computed
       }).id('computedLocalButton2')
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

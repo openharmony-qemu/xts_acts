@@ -84,5 +84,7 @@ struct AppStorageV20010 {
         .id('tvKeys')
         .fontSize(9)
     }
+    .padding(5)
+    .margin(5)
   }
 }

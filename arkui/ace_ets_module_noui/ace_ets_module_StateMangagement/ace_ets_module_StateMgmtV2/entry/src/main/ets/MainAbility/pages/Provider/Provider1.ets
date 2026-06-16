@@ -139,7 +139,7 @@ struct Provider1 {
             this.message9 += 1
           }).fontSize(9).id('parent')
         ProviderChild()
-      }.width('100%')
+      }.width('100%').justifyContent(FlexAlign.Center)
     }.width('100%').height('100%').align(Alignment.Top).scrollBar(BarState.Off)
   }
   pageTransition() {

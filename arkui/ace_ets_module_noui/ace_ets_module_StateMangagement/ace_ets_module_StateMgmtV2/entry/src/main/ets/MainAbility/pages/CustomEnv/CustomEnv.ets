@@ -105,6 +105,11 @@ struct Index {
       .customEnv(testKey10, this.classVal)
       .customEnv(testKey11, this.stringVal)
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .margin(5)
+    .padding(5)
   }
 }
 

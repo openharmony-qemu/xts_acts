@@ -38,6 +38,9 @@ struct Param5 {
         flag: this.flag
       })
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }
 

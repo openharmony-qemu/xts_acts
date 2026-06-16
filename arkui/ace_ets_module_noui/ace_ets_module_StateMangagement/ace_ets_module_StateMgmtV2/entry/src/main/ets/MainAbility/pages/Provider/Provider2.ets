@@ -29,6 +29,9 @@ struct Provider2 {
         .id('button1')
       Child1()
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }
 

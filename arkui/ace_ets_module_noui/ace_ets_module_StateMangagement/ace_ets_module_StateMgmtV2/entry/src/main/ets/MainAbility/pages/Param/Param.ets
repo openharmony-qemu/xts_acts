@@ -27,8 +27,12 @@ struct paramqitaIndex {
         .onClick(() => {
           this.count = undefined;
         })
+        .margin(10)
         .id('ParamButton')
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }
 

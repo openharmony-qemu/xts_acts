@@ -133,6 +133,8 @@ struct ParamOnceChild {
         .height('3%')
         .fontSize(9)
     }
+    .margin(10)
+    .padding(10)
     .borderWidth(2)
     .borderColor(Color.Red)
   }

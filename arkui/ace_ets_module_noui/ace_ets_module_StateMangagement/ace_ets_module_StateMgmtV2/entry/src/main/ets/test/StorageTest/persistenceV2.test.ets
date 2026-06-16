@@ -12,133 +12,135 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { PersistenceV2, Type } from '@ohos.arkui.StateManagement';
 import router from '@ohos.router';
-import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
 
-export default function persistenceV2() {
-  describe('persistenceV2', () => {
-    beforeEach(async (done: Function) => {
-      console.info("persistenceV2 beforeEach start");
-      let options: router.RouterOptions = {
-        url: "MainAbility/pages/Storage/persistenceV2",
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info("get persistenceV2 state pages:" + JSON.stringify(pages));
-        if (!("persistenceV2" == pages.name)) {
-          console.info("get persistenceV2 pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push persistenceV2 page result:" + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push persistenceV2 page error:" + err);
-      }
-      console.info("persistenceV2 beforeEach end");
-      done();
-    });
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
-      console.info("persistenceV2 after each called");
-    });
+@ObservedV2
+class PerSampleChild {
+  @Trace p1: number = 0;
+  p2: number = 10;
+}
 
-    /**
-     * @tc.name   persistenceV2_0100
-     * @tc.number persistenceV2_0100
-     * @tc.desc   all keys in PersistenceV2.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('persistenceV2_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('[persistenceV2_0100] START');
-      await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('persistenceV2_keys');
-      let obj: ESObject = JSON.parse(strJson);
-      console.info("[persistenceV2_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertContain('keys in PersistenceV2: PerSample');
-      console.info('[persistenceV2_0100] END');
-      done();
-    });
+@ObservedV2
+export class PerSample {
+  // 对于复杂对象需要@Type修饰，确保序列化成功
+  @Type(PerSampleChild)
+  @Trace f: PerSampleChild = new PerSampleChild();
+}
 
-    /**
-     * @tc.name   persistenceV2_0200
-     * @tc.number persistenceV2_0200
-     * @tc.desc   Persistently store UI related data
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('persistenceV2_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('[persistenceV2_0200] START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn1: Component = await driver.findComponent(ON.id("persistenceV2_p1"));
-      await btn1.click();
-      await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('persistenceV2_p1');
-      let obj1: ESObject = JSON.parse(strJson1);
-      console.info("[persistenceV2_0200] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[persistenceV2_0200] content: " + JSON.stringify(obj1.$attrs.content));
-      expect(obj1.$attrs.content).assertEqual('prop.p1: 2');
+// 接受序列化失败的回调
+PersistenceV2.notifyOnError((key: string, reason: string, msg: string) => {
+  console.error(`notifyOnError key: ${key}, reason: ${reason}, message: ${msg}`);
+});
 
-      let btn2: Component = await driver.findComponent(ON.id("router_appStorageV2"));
-      await btn2.click();
-      await CommonFunc.sleep(2000);
-      let btn3: Component = await driver.findComponent(ON.id("router_persistenceV2"));
-      await btn3.click();
-      await CommonFunc.sleep(1000);
+@Entry
+@ComponentV2
+struct PersistenceV2Page1 {
+  @Local a: number = 0
+  // 在PersistenceV2中创建一个key为PerSample的键值对（如果存在，则返回PersistenceV2中的数据），并且和prop关联
+  @Local prop: PerSample = PersistenceV2.connect(PerSample, () => new PerSample())!;
 
-      let strJson2 = getInspectorByKey('persistenceV2_p1');
-      let obj2: ESObject = JSON.parse(strJson2);
-      console.info("[persistenceV2_0200] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[persistenceV2_0200] content2: " + JSON.stringify(obj2.$attrs.content));
-      expect(obj2.$attrs.content).assertEqual('prop.p1: 2');
-      console.info('[persistenceV2_0200] END');
-      done();
-    });
+  build() {
+    Column() {
+      Button('Go to page1')
+        .id('router_appStorageV2')
+        .width('10%')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          router.pushUrl({
+            url: 'MainAbility/pages/Storage/appStorageV2'
+          })
+        })
+      Button('connect the key PerSample')
+        .id('persistenceV2_connect')
+        .width('10%')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          // 在PersistenceV2中创建一个key为PerSample的键值对（如果存在，则返回PersistenceV2中的数据），并且和prop关联
+          // 不建议对prop属性换connect的对象
+          try {
+            this.prop = PersistenceV2.connect(PerSample, 'PerSample', () => new PerSample())!;
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.connect error')
+          }
+        })
 
-    /**
-     * @tc.name   persistenceV2_0300
-     * @tc.number persistenceV2_0300
-     * @tc.desc   When the tested value is not the observed object
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('persistenceV2_0300', Level.LEVEL0, async (done: Function) => {
-      console.info('[persistenceV2_0300] START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      let btn1: Component = await driver.findComponent(ON.id("persistenceV2_p2"));
-      await btn1.click();
-      await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('persistenceV2_p2');
-      let obj1: ESObject = JSON.parse(strJson1);
-      console.info("[persistenceV2_0300] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[persistenceV2_0300] content: " + JSON.stringify(obj1.$attrs.content));
-      expect(obj1.$attrs.content).assertEqual('prop.p2: 11a: 2');
+      Button('remove the key PerSample')
+        .id('persistenceV2_remove')
+        .width('10%')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          // 从PersistenceV2中删除后，prop将不会再与key为PerSample的值关联
+          try {
+            PersistenceV2.remove(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.remove error')
+          }
+        })
 
-      let btn2: Component = await driver.findComponent(ON.id("persistenceV2_remove"));
-      await btn2.click();
-      await CommonFunc.sleep(1000);
-      let btn3: Component = await driver.findComponent(ON.id("persistenceV2_connect"));
-      await btn3.click();
-      await CommonFunc.sleep(1000);
+      Button('Clear Create keys')
+        .id('btnPersistenceV2ClearKeys')
+        .width('10%')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          try {
+            if (PersistenceV2.keys().includes('PerSample')) {
+              PersistenceV2.remove('PerSample')
+            }
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2 error')
+          }
+        })
 
-      let strJson2 = getInspectorByKey('persistenceV2_p2');
-      let obj2: ESObject = JSON.parse(strJson2);
-      console.info("[persistenceV2_0300] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[persistenceV2_0300] content2: " + JSON.stringify(obj2.$attrs.content));
-      expect(obj2.$attrs.content).assertEqual('prop.p2: 10a: 2');
-      let btn6: Component = await driver.findComponent(ON.id("btnPersistenceV2ClearKeys"));
-      await CommonFunc.sleep(1000);
-      await btn6.click();
-      console.info('[persistenceV2_0300] END');
-      done();
-    });
-  })
+      Button('save the key PerSample')
+        .id('persistenceV2_save')
+        .width('10%')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          // 如果处于connect状态，持久化key为PerSample的键值对
+          try {
+            PersistenceV2.save(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.save error')
+          }
+        })
+
+      Text(`prop.p1: ${this.prop.f.p1}`)
+        .id('persistenceV2_p1')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          this.prop.f.p1 += 2;
+        })
+
+      Text(`prop.p2: ${this.prop.f.p2}a: ${this.a}`)
+        .id('persistenceV2_p2')
+        .height('3%')
+        .fontSize(9)
+        .onClick(() => {
+          //p2不是观察对象，它的变化需要save保存
+          this.prop.f.p2++;
+          try {
+            PersistenceV2.save(PerSample);
+          } catch (err) {
+            console.error('PersistenceV2Page1 PersistenceV2.save error')
+          }
+          this.a += 2
+        })
+
+      // 获取当前PersistenceV2里面的所有key
+      Text(`keys in PersistenceV2: ${PersistenceV2.keys()}`)
+        .id('persistenceV2_keys')
+        .height('3%')
+        .fontSize(9)
+    }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+  }
 }
