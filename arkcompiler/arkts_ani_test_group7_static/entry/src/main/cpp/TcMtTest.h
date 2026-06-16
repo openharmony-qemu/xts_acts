@@ -40,20 +40,14 @@ inline ani_string MtNewString(ani_env *env, const std::string &value)
 {
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
     return result;
 }
 inline ani_object MtBoxInt(ani_env *env, ani_int value)
 {
     ani_object result {};
     ani_status status = env->Primitive_Box_Int(value, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Box_Int failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Primitive_Box_Int failed");
     return result;
 }
 ani_error MtCreateError(ani_env *env, const std::string &message)
@@ -63,23 +57,14 @@ ani_error MtCreateError(ani_env *env, const std::string &message)
     if (status != ANI_OK) {
         status = env->FindClass("escompat.Error", &errorCls);
     }
-    if (status != ANI_OK) {
-        std::cerr << "Find Error class failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find Error class failed");
     ani_method ctor {};
     status = env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Find Error constructor failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find Error constructor failed");
     ani_string msg = MtNewString(env, message);
     ani_object errObj {};
     status = env->Object_New(errorCls, ctor, &errObj, msg);
-    if (status != ANI_OK) {
-        std::cerr << "Create Error object failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create Error object failed");
     return static_cast<ani_error>(errObj);
 }
 }
@@ -89,15 +74,10 @@ ani_object test_MtCreateAndResolvePromise(ani_env *env, ani_object object)
     ani_resolver resolver {};
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
-    if (status != ANI_OK) {
-        std::cerr << "Promise_New failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_object value = ani_tc_mt::MtBoxInt(env, ani_tc_mt::MT_PROMISE_RESOLVE_VALUE);
     status = env->PromiseResolver_Resolve(resolver, static_cast<ani_ref>(value));
-    if (status != ANI_OK) {
-        std::cerr << "PromiseResolver_Resolve failed, status: " << status << std::endl;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, promise, "PromiseResolver_Resolve failed");
     return promise;
 }
 ani_object test_MtCreateAndRejectPromise(ani_env *env, ani_object object)
@@ -106,15 +86,10 @@ ani_object test_MtCreateAndRejectPromise(ani_env *env, ani_object object)
     ani_resolver resolver {};
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
-    if (status != ANI_OK) {
-        std::cerr << "Promise_New failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_error error = ani_tc_mt::MtCreateError(env, "Native promise rejected");
     status = env->PromiseResolver_Reject(resolver, error);
-    if (status != ANI_OK) {
-        std::cerr << "PromiseResolver_Reject failed, status: " << status << std::endl;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, promise, "PromiseResolver_Reject failed");
     return promise;
 }
 ani_object test_MtAsyncWorkInThread(ani_env *env, ani_object object)
@@ -123,31 +98,19 @@ ani_object test_MtAsyncWorkInThread(ani_env *env, ani_object object)
     ani_resolver resolver {};
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
-    if (status != ANI_OK) {
-        std::cerr << "Promise_New failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_vm *vm = nullptr;
     status = env->GetVM(&vm);
-    if (status != ANI_OK) {
-        std::cerr << "GetVM failed, status: " << status << std::endl;
-        return promise;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, promise, "GetVM failed");
     std::thread([vm, resolver]() {
         ani_env *threadEnv = nullptr;
         ani_status attachStatus = vm->AttachCurrentThread(nullptr, ANI_VERSION_1, &threadEnv);
         if (attachStatus != ANI_OK || threadEnv == nullptr) {
-            std::cerr << "AttachCurrentThread failed in TC_MT_003, status: "
-                      << attachStatus << std::endl;
             return;
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(ani_tc_mt::MT_SLEEP_SHORT_MS));
         ani_object value = ani_tc_mt::MtBoxInt(threadEnv, ani_tc_mt::MT_THREAD_PROMISE_VALUE);
-        ani_status resolveStatus = threadEnv->PromiseResolver_Resolve(resolver, static_cast<ani_ref>(value));
-        if (resolveStatus != ANI_OK) {
-            std::cerr << "Resolve promise in native thread failed, status: "
-                      << resolveStatus << std::endl;
-        }
+        threadEnv->PromiseResolver_Resolve(resolver, static_cast<ani_ref>(value));
         vm->DetachCurrentThread();
     }).detach();
     return promise;
@@ -168,7 +131,6 @@ ani_boolean test_MtUseEnvAcrossThread(ani_env *env, ani_object object)
         ani_string str {};
         ani_status status = capturedEnv->String_NewUTF8("bad-env-cross-thread",
             std::strlen("bad-env-cross-thread"), &str);
-        std::cerr << "Cross-thread env String_NewUTF8 status: " << status << std::endl;
         finished = status == ANI_OK ? ANI_TRUE : ANI_FALSE;
     }).join();
     return finished;
@@ -228,8 +190,7 @@ ani_boolean test_MtAttachWithoutDetach(ani_env *env, ani_object object, ani_int 
             ani_env *threadEnv = nullptr;
             ani_status attachStatus = ani_tc_mt::g_mtVm->AttachCurrentThread(
                 nullptr, ANI_VERSION_1, &threadEnv);
-            std::cerr << "Attach without detach status: " << attachStatus << std::endl;
-            if (threadEnv == nullptr) {
+            if (attachStatus != ANI_OK || threadEnv == nullptr) {
                 return;
             }
             ani_string str {};
@@ -342,8 +303,7 @@ ani_object test_MtResolvePromiseOnOtherThread(ani_env *env, ani_object object)
             return;
         }
         ani_object value = ani_tc_mt::MtBoxInt(threadEnv, ani_tc_mt::MT_OTHER_THREAD_PROMISE_VALUE);
-        ani_status resolveStatus = threadEnv->PromiseResolver_Resolve(resolver, static_cast<ani_ref>(value));
-        std::cerr << "Resolve promise on other thread status: " << resolveStatus << std::endl;
+        threadEnv->PromiseResolver_Resolve(resolver, static_cast<ani_ref>(value));
         vm->DetachCurrentThread();
     }).detach();
     return promise;
@@ -376,8 +336,6 @@ ani_int test_MtFindClassInNativeThread(ani_env *env, ani_object object)
         ani_status stringStatus = threadEnv->FindClass("std.core.String", &stringCls);
         ani_class appCls {};
         ani_status appStatus = threadEnv->FindClass("entry.src.main.src.ets.Index.MyClass", &appCls);
-        std::cerr << "Find std.core.String in native thread status: " << stringStatus << std::endl;
-        std::cerr << "Find app MyClass in native thread status: " << appStatus << std::endl;
         if (stringStatus == ANI_OK && appStatus != ANI_OK) {
             result = ani_tc_mt::MT_FIND_CLASS_SYSTEM_ONLY;
         } else if (stringStatus == ANI_OK && appStatus == ANI_OK) {

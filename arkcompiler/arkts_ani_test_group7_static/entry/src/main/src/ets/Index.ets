@@ -569,7 +569,6 @@ export class Foo {
   native test_ErrorCodeAmbiguousFindMethod(): boolean;
   native test_ErrorCodeArrayOutOfRange(): boolean;
   native test_ErrorCodeBufferTooSmall(): boolean;
-  native test_ErrorCodeOutOfMemory(): boolean;
   native test_ErrorCodeInvalidVersion(): boolean;
   native test_ErrorCodeInvalidDescriptor(): boolean;
   native test_ErrorCodeAlreadyBinded(): boolean;

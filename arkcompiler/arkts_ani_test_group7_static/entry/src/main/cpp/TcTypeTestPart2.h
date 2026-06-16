@@ -101,10 +101,7 @@ ani_string test_CallWithCallback(ani_env *env, ani_object object, ani_fn_object 
     }
     ani_ref result {};
     ani_status status = env->FunctionalObject_Call(callback, 0, nullptr, &result);
-    if (status != ANI_OK) {
-        std::cerr << "FunctionalObject_Call failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FunctionalObject_Call failed");
     return static_cast<ani_string>(result);
 }
 ani_int test_GetEnumValue(ani_env *env, ani_object object, ani_enum_item color)
@@ -115,10 +112,7 @@ ani_int test_GetEnumValue(ani_env *env, ani_object object, ani_enum_item color)
     }
     ani_int value = ani_tc_type::TYPE_ERROR_INT_RETURN;
     ani_status status = env->EnumItem_GetValue_Int(color, &value);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetValue_Int failed, status: " << status << std::endl;
-        return ani_tc_type::TYPE_ERROR_INT_RETURN;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_type::TYPE_ERROR_INT_RETURN, "EnumItem_GetValue_Int failed");
     return value;
 }
 #endif

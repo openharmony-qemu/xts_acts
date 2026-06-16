@@ -26,8 +26,6 @@ ani_boolean test_LifecycleGetEnvWithoutAttach(ani_env *env, ani_object object)
     std::thread worker([vm, &failedAsExpected]() {
         ani_env *threadEnv = nullptr;
         ani_status status = vm->GetEnv(ANI_VERSION_1, &threadEnv);
-        std::cerr << "GetEnv without AttachCurrentThread status: " << status
-                  << ", env: " << threadEnv << std::endl;
         failedAsExpected.store(status != ANI_OK || threadEnv == nullptr);
     });
     worker.join();
@@ -48,8 +46,6 @@ ani_boolean test_LifecycleFindAppClassInAttachedThread(ani_env *env, ani_object 
         }
         ani_class cls = nullptr;
         ani_status status = threadEnv->FindClass(tc_lifecycle_test::LIFECYCLE_FOO_CLASS, &cls);
-        std::cerr << "FindClass app class in attached native thread status: " << status
-                  << ", cls: " << cls << std::endl;
         failedAsExpected.store(status != ANI_OK || cls == nullptr);
         if (status != ANI_OK) {
             threadEnv->ResetError();
@@ -102,8 +98,6 @@ ani_boolean test_LifecycleUseCachedClassInAttachedThread(ani_env *env, ani_objec
         if (ctorStatus == ANI_OK) {
             newStatus = threadEnv->Object_New(cachedCls, ctor, &obj);
         }
-        std::cerr << "Use cached class in attached thread, ctorStatus: " << ctorStatus
-                  << ", newStatus: " << newStatus << ", obj: " << obj << std::endl;
         ok.store(ctorStatus == ANI_OK && newStatus == ANI_OK && obj != nullptr);
         vm->DetachCurrentThread();
     });
@@ -129,7 +123,6 @@ ani_boolean test_LifecycleAttachWithInteropOption(ani_env *env, ani_object objec
             &option
         };
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &threadEnv);
-        std::cerr << "AttachCurrentThread with --interop=enable status: " << status << std::endl;
         if (status == ANI_OK && threadEnv != nullptr) {
             ani_string str = nullptr;
             ani_status stringStatus = threadEnv->String_NewUTF8("interop-enabled",
@@ -156,7 +149,6 @@ ani_boolean test_LifecycleCreateVmWithLoggerOption(ani_env *env, ani_object obje
     };
     ani_vm *newVm = nullptr;
     ani_status status = tc_lifecycle_test::CallANICreateVM(&options, ANI_VERSION_1, &newVm);
-    std::cerr << "ANI_CreateVM with --logger status: " << status << ", vm: " << newVm << std::endl;
     if (status == ANI_OK && newVm != nullptr) {
         newVm->DestroyVM();
         return ANI_TRUE;
@@ -177,13 +169,11 @@ ani_boolean test_LifecycleCreateVmWithVerifyAniAndMisuse(ani_env *env, ani_objec
     };
     ani_vm *newVm = nullptr;
     ani_status status = tc_lifecycle_test::CallANICreateVM(&options, ANI_VERSION_1, &newVm);
-    std::cerr << "ANI_CreateVM with --verify:ani status: " << status << ", vm: " << newVm << std::endl;
     if (status == ANI_OK && newVm != nullptr) {
         ani_env *newEnv = nullptr;
         ani_status envStatus = newVm->GetEnv(ANI_VERSION_1, &newEnv);
-        std::cerr << "GetEnv on verify VM status: " << envStatus << std::endl;
         newVm->DestroyVM();
-        return ANI_TRUE;
+        return envStatus == ANI_OK ? ANI_TRUE : ANI_FALSE;
     }
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
@@ -201,8 +191,6 @@ ani_boolean test_LifecycleCreateVmWithVerifyAniNoCrashOption(ani_env *env, ani_o
     };
     ani_vm *newVm = nullptr;
     ani_status status = tc_lifecycle_test::CallANICreateVM(&options, ANI_VERSION_1, &newVm);
-    std::cerr << "ANI_CreateVM with no-crash verify option status: " << status
-              << ", vm: " << newVm << std::endl;
     if (status == ANI_OK && newVm != nullptr) {
         newVm->DestroyVM();
         return ANI_TRUE;
@@ -223,12 +211,9 @@ ani_boolean test_LifecycleCreateVmWithBootPandaFiles(ani_env *env, ani_object ob
     };
     ani_vm *newVm = nullptr;
     ani_status status = tc_lifecycle_test::CallANICreateVM(&options, ANI_VERSION_1, &newVm);
-    std::cerr << "ANI_CreateVM with --ext:boot-panda-files status: " << status
-              << ", vm: " << newVm << std::endl;
     if (status == ANI_OK && newVm != nullptr) {
         ani_env *newEnv = nullptr;
         ani_status envStatus = newVm->GetEnv(ANI_VERSION_1, &newEnv);
-        std::cerr << "GetEnv for boot-panda-files VM status: " << envStatus << std::endl;
         newVm->DestroyVM();
         return envStatus == ANI_OK ? ANI_TRUE : ANI_FALSE;
     }
@@ -253,7 +238,6 @@ ani_boolean test_LifecycleAttachWithBootPandaFilesOption(ani_env *env, ani_objec
             &option
         };
         ani_status status = vm->AttachCurrentThread(&options, ANI_VERSION_1, &threadEnv);
-        std::cerr << "AttachCurrentThread with --ext:boot-panda-files status: " << status << std::endl;
         if (status == ANI_OK && threadEnv != nullptr) {
             vm->DetachCurrentThread();
             failedOrIgnored.store(true);
@@ -268,9 +252,7 @@ ani_boolean test_LifecycleNestedLocalScopes(ani_env *env, ani_object object)
 {
     (void)object;
     ani_status outerStatus = env->CreateLocalScope(8);
-    if (outerStatus != ANI_OK) {
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(outerStatus, ANI_OK, ANI_FALSE, "Create outer local scope failed");
     ani_string outerString = tc_lifecycle_test::NewString(env, "outer");
     if (outerString == nullptr) {
         env->DestroyLocalScope();
@@ -279,8 +261,8 @@ ani_boolean test_LifecycleNestedLocalScopes(ani_env *env, ani_object object)
     ani_status innerStatus = env->CreateLocalScope(8);
     if (innerStatus != ANI_OK) {
         env->DestroyLocalScope();
-        return ANI_FALSE;
     }
+    ASSERT_EQ_MSG(innerStatus, ANI_OK, ANI_FALSE, "Create inner local scope failed");
     ani_string innerString = tc_lifecycle_test::NewString(env, "inner");
     if (innerString == nullptr) {
         env->DestroyLocalScope();
@@ -288,10 +270,8 @@ ani_boolean test_LifecycleNestedLocalScopes(ani_env *env, ani_object object)
         return ANI_FALSE;
     }
     ani_status destroyInner = env->DestroyLocalScope();
-    std::cerr << "Destroy inner local scope status: " << destroyInner << std::endl;
     std::string outerValue = tc_lifecycle_test::ToStdString(env, outerString);
     ani_status destroyOuter = env->DestroyLocalScope();
-    std::cerr << "Destroy outer local scope status: " << destroyOuter << std::endl;
     return destroyInner == ANI_OK && destroyOuter == ANI_OK && outerValue == "outer" ? ANI_TRUE : ANI_FALSE;
 }
 ani_boolean test_LifecycleUseDeletedGlobalRef(ani_env *env, ani_object object)
@@ -307,9 +287,7 @@ ani_boolean test_LifecycleUseDeletedGlobalRef(ani_env *env, ani_object object)
         return ANI_FALSE;
     }
     ani_status deleteStatus = env->GlobalReference_Delete(gref);
-    std::cerr << "Delete global ref status: " << deleteStatus << std::endl;
     ani_int value = tc_lifecycle_test::ReadFooFactor(env, reinterpret_cast<ani_object>(gref));
-    std::cerr << "Read factor from deleted global ref value: " << value << std::endl;
     return deleteStatus == ANI_OK && value < 0 ? ANI_TRUE : ANI_FALSE;
 }
 ani_boolean test_LifecycleAttachWithoutDetachLeak(ani_env *env, ani_object object, ani_int count)

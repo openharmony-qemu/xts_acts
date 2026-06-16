@@ -39,17 +39,11 @@ std::string TypeAniStringToStdString(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
     std::vector<char> buffer(size + 1, 0);
     ani_size writtenSize = 0;
     status = env->String_GetUTF8(str, buffer.data(), buffer.size(), &writtenSize);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8 failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8 failed");
     return std::string(buffer.data(), writtenSize);
 }
 inline ani_string TypeStdStringToAniString(ani_env *env, const std::string &value)
@@ -59,10 +53,7 @@ inline ani_string TypeStdStringToAniString(ani_env *env, const std::string &valu
     }
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
     return result;
 }
 inline void TypeClearPendingError(ani_env *env)
@@ -84,36 +75,27 @@ ani_status TypeThrowError(ani_env *env, const char *message)
     }
     ani_string msg {};
     ani_status status = env->String_NewUTF8(message, std::strlen(message), &msg);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed when creating error message, status: "
-                  << status << std::endl;
-        return status;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, status, "String_NewUTF8 failed when creating error message");
     ani_class errorCls {};
     status = env->FindClass(TYPE_ERROR_CLASS, &errorCls);
-    if (status != ANI_OK || errorCls == nullptr) {
-        std::cerr << "FindClass escompat.Error failed, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, status, "FindClass escompat.Error failed");
+    if (errorCls == nullptr) {
         return status;
     }
     ani_method ctor {};
     status = env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor);
-    if (status != ANI_OK || ctor == nullptr) {
-        std::cerr << "Class_FindMethod escompat.Error constructor failed, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, status, "Class_FindMethod escompat.Error constructor failed");
+    if (ctor == nullptr) {
         return status;
     }
     ani_object errorObj {};
     status = env->Object_New(errorCls, ctor, &errorObj, msg);
-    if (status != ANI_OK || errorObj == nullptr) {
-        std::cerr << "Object_New escompat.Error failed, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, status, "Object_New escompat.Error failed");
+    if (errorObj == nullptr) {
         return status;
     }
     status = env->ThrowError(reinterpret_cast<ani_error>(errorObj));
-    if (status != ANI_OK) {
-        std::cerr << "ThrowError failed, status: " << status << std::endl;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, status, "ThrowError failed");
     return status;
 }
 ani_boolean TypeObjectInstanceOf(ani_env *env, ani_object object, const char *className)
@@ -124,19 +106,15 @@ ani_boolean TypeObjectInstanceOf(ani_env *env, ani_object object, const char *cl
     ani_class cls {};
     ani_status status = env->FindClass(className, &cls);
     if (status != ANI_OK) {
-        std::cerr << "FindClass failed, className: " << className
-                  << ", status: " << status << std::endl;
         TypeClearPendingError(env);
-        return ANI_FALSE;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "FindClass failed");
     ani_boolean result = ANI_FALSE;
     status = env->Object_InstanceOf(object, cls, &result);
     if (status != ANI_OK) {
-        std::cerr << "Object_InstanceOf failed, className: " << className
-                  << ", status: " << status << std::endl;
         TypeClearPendingError(env);
-        return ANI_FALSE;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_InstanceOf failed");
     return result;
 }
 ani_double TypeUnboxDoubleObject(ani_env *env, ani_ref ref)
@@ -147,10 +125,9 @@ ani_double TypeUnboxDoubleObject(ani_env *env, ani_ref ref)
     ani_double value = 0.0;
     ani_status status = env->Primitive_Unbox_Double(static_cast<ani_object>(ref), &value);
     if (status != ANI_OK) {
-        std::cerr << "Primitive_Unbox_Double failed, status: " << status << std::endl;
         TypeClearPendingError(env);
-        return 0.0;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, 0.0, "Primitive_Unbox_Double failed");
     return value;
 }
 ani_int TypeUnboxIntObject(ani_env *env, ani_ref ref)
@@ -161,10 +138,9 @@ ani_int TypeUnboxIntObject(ani_env *env, ani_ref ref)
     ani_int value = 0;
     ani_status status = env->Primitive_Unbox_Int(static_cast<ani_object>(ref), &value);
     if (status != ANI_OK) {
-        std::cerr << "Primitive_Unbox_Int failed, status: " << status << std::endl;
         TypeClearPendingError(env);
-        return 0;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, 0, "Primitive_Unbox_Int failed");
     return value;
 }
 ani_boolean TypeIsUndefined(ani_env *env, ani_ref ref)
@@ -175,10 +151,9 @@ ani_boolean TypeIsUndefined(ani_env *env, ani_ref ref)
     ani_boolean result = ANI_FALSE;
     ani_status status = env->Reference_IsUndefined(ref, &result);
     if (status != ANI_OK) {
-        std::cerr << "Reference_IsUndefined failed, status: " << status << std::endl;
         TypeClearPendingError(env);
-        return ANI_FALSE;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Reference_IsUndefined failed");
     return result;
 }
 bool TypeFindAndCacheClass(ani_env *env, const char *className, ani_ref *globalRef)
@@ -186,16 +161,18 @@ bool TypeFindAndCacheClass(ani_env *env, const char *className, ani_ref *globalR
     ani_class cls {};
     ani_status status = env->FindClass(className, &cls);
     if (status != ANI_OK || cls == nullptr) {
-        std::cerr << "FindClass failed, className: " << className
-                  << ", status: " << status << std::endl;
         TypeClearPendingError(env);
+    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "FindClass failed");
+    if (cls == nullptr) {
         return false;
     }
     status = env->GlobalReference_Create(cls, globalRef);
     if (status != ANI_OK || *globalRef == nullptr) {
-        std::cerr << "GlobalReference_Create failed, className: " << className
-                  << ", status: " << status << std::endl;
         TypeClearPendingError(env);
+    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "GlobalReference_Create failed");
+    if (*globalRef == nullptr) {
         return false;
     }
     return true;
@@ -205,10 +182,9 @@ bool TypeArrayHasInstance(ani_env *env, ani_array array, ani_class cls)
     ani_size length = 0;
     ani_status status = env->Array_GetLength(array, &length);
     if (status != ANI_OK) {
-        std::cerr << "Array_GetLength failed, status: " << status << std::endl;
         TypeClearPendingError(env);
-        return false;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "Array_GetLength failed");
     for (ani_size i = 0; i < length; i++) {
         ani_ref item {};
         status = env->Array_Get(array, i, &item);
@@ -298,12 +274,9 @@ void test_WriteToBuffer(ani_env *env, ani_object object, ani_arraybuffer buffer,
     ani_size size = 0;
     ani_status status = env->ArrayBuffer_GetInfo(buffer, &data, &size);
     if (status != ANI_OK) {
-        std::cerr << "ArrayBuffer_GetInfo failed, status: " << status << std::endl;
         return;
     }
     if (data == nullptr || offset < 0 || static_cast<ani_size>(offset) >= size) {
-        std::cerr << "ArrayBuffer write offset out of range, offset: "
-                  << offset << ", size: " << size << std::endl;
         return;
     }
     auto *bytes = static_cast<uint8_t *>(data);
@@ -317,19 +290,12 @@ ani_double test_TypeSumArray(ani_env *env, ani_object object, ani_array array)
     }
     ani_size length = 0;
     ani_status status = env->Array_GetLength(array, &length);
-    if (status != ANI_OK) {
-        std::cerr << "Array_GetLength failed, status: " << status << std::endl;
-        return 0.0;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, 0.0, "Array_GetLength failed");
     ani_double sum = 0.0;
     for (ani_size i = 0; i < length; i++) {
         ani_ref element {};
         status = env->Array_Get(array, i, &element);
-        if (status != ANI_OK) {
-            std::cerr << "Array_Get failed, index: " << i
-                      << ", status: " << status << std::endl;
-            return sum;
-        }
+        ASSERT_EQ_MSG(status, ANI_OK, sum, "Array_Get failed");
         sum += ani_tc_type::TypeUnboxDoubleObject(env, element);
     }
     return sum;
@@ -342,19 +308,12 @@ ani_int test_SumFixedArray(ani_env *env, ani_object object, ani_fixedarray_int a
     }
     ani_size length = 0;
     ani_status status = env->FixedArray_GetLength(array, &length);
-    if (status != ANI_OK) {
-        std::cerr << "FixedArray_GetLength failed, status: " << status << std::endl;
-        return 0;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, 0, "FixedArray_GetLength failed");
     ani_int sum = 0;
     for (ani_size i = 0; i < length; i++) {
         ani_int value = 0;
         status = env->FixedArray_GetRegion_Int(array, i, 1, &value);
-        if (status != ANI_OK) {
-            std::cerr << "FixedArray_GetRegion_Int failed, index: " << i
-                      << ", status: " << status << std::endl;
-            return sum;
-        }
+        ASSERT_EQ_MSG(status, ANI_OK, sum, "FixedArray_GetRegion_Int failed");
         sum += value;
     }
     return sum;
@@ -384,32 +343,18 @@ ani_object test_CreateObjectWithInt(ani_env *env, ani_object object, ani_int val
     }
     ani_class objectCls {};
     ani_status status = env->FindClass(ani_tc_type::TYPE_OBJECT_CLASS, &objectCls);
-    if (status != ANI_OK) {
-        std::cerr << "FindClass std.core.Object failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindClass std.core.Object failed");
     ani_method ctor {};
     status = env->Class_FindMethod(objectCls, "<ctor>", ":", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Class_FindMethod Object ctor failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Class_FindMethod Object ctor failed");
     ani_object result {};
     status = env->Object_New(objectCls, ctor, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Object_New failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Object_New failed");
     ani_object boxed {};
     status = env->Primitive_Box_Int(value, &boxed);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Box_Int failed, status: " << status << std::endl;
-        return result;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, result, "Primitive_Box_Int failed");
     status = env->Object_SetPropertyByName_Ref(result, "value", boxed);
-    if (status != ANI_OK) {
-        std::cerr << "Object_SetPropertyByName_Ref failed, status: " << status << std::endl;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, result, "Object_SetPropertyByName_Ref failed");
     return result;
 }
 #include "TcTypeTestPart2.h"

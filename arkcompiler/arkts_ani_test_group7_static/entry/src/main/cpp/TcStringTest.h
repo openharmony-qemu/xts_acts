@@ -42,15 +42,11 @@ std::string ReadAniStringUtf8(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
     std::vector<char> buffer(size + 1, '\0');
     ani_size written = 0;
     status = env->String_GetUTF8(str, buffer.data(), buffer.size(), &written);
     if (status != ANI_OK && status != ANI_BUFFER_TO_SMALL) {
-        std::cerr << "String_GetUTF8 failed, status: " << status << std::endl;
         return "";
     }
     if (written > buffer.size()) {
@@ -62,23 +58,17 @@ bool CreateAndCheckRoundTrip(ani_env *env, const std::string &source)
 {
     ani_string aniStr = nullptr;
     ani_status status = env->String_NewUTF8(source.data(), source.size(), &aniStr);
-    if (status != ANI_OK || aniStr == nullptr) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, false, "String_NewUTF8 failed");
+    if (aniStr == nullptr) {
         return false;
     }
     ani_size size = 0;
     status = env->String_GetUTF8Size(aniStr, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed, status: " << status << std::endl;
-        return false;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "String_GetUTF8Size failed");
     std::vector<char> buffer(size + 1, '\0');
     ani_size written = 0;
     status = env->String_GetUTF8(aniStr, buffer.data(), buffer.size(), &written);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8 failed, status: " << status << std::endl;
-        return false;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "String_GetUTF8 failed");
     std::string actual(buffer.data(), written);
     std::cout << "String round trip source size: " << source.size()
               << ", ani size: " << size
@@ -98,23 +88,17 @@ ani_boolean test_StringEmptyRoundTrip(ani_env *env, ani_object object)
     std::string source = "";
     ani_string aniStr = nullptr;
     ani_status status = env->String_NewUTF8(source.data(), ani_tc_string::STRING_EMPTY_SIZE, &aniStr);
-    if (status != ANI_OK || aniStr == nullptr) {
-        std::cerr << "String_NewUTF8 for empty string failed, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 for empty string failed");
+    if (aniStr == nullptr) {
         return ANI_FALSE;
     }
     ani_size size = 1;
     status = env->String_GetUTF8Size(aniStr, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size for empty string failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_GetUTF8Size for empty string failed");
     std::vector<char> buffer(1, '\0');
     ani_size written = 1;
     status = env->String_GetUTF8(aniStr, buffer.data(), buffer.size(), &written);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8 for empty string failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_GetUTF8 for empty string failed");
     return size == 0 && written == 0 &&
         std::string(buffer.data(), written).empty() ? ANI_TRUE : ANI_FALSE;
 }
@@ -130,16 +114,13 @@ ani_int test_StringUtf8Size(ani_env *env, ani_object object)
     std::string source = ani_tc_string::STRING_UTF8_SIZE_SOURCE;
     ani_string aniStr = nullptr;
     ani_status status = env->String_NewUTF8(source.data(), source.size(), &aniStr);
-    if (status != ANI_OK || aniStr == nullptr) {
-        std::cerr << "String_NewUTF8 failed in UTF8 size test, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "String_NewUTF8 failed in UTF8 size test");
+    if (aniStr == nullptr) {
         return -1;
     }
     ani_size size = 0;
     status = env->String_GetUTF8Size(aniStr, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed in UTF8 size test, status: " << status << std::endl;
-        return -1;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "String_GetUTF8Size failed in UTF8 size test");
     return static_cast<ani_int>(size);
 }
 ani_boolean test_StringInvalidUtf8NoCrash(ani_env *env, ani_object object)
@@ -151,29 +132,24 @@ ani_boolean test_StringInvalidUtf8NoCrash(ani_env *env, ani_object object)
     };
     ani_string aniStr = nullptr;
     ani_status status = env->String_NewUTF8(invalidBytes, sizeof(invalidBytes), &aniStr);
-    if (status != ANI_OK || aniStr == nullptr) {
-        std::cerr << "String_NewUTF8 returned non-OK for invalid UTF-8, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 returned non-OK for invalid UTF-8");
+    if (aniStr == nullptr) {
         return ANI_FALSE;
     }
     ani_size size = 0;
     status = env->String_GetUTF8Size(aniStr, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed after invalid UTF-8 creation, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_GetUTF8Size failed after invalid UTF-8 creation");
     std::vector<char> buffer(size + 1, '\0');
     ani_size written = 0;
     status = env->String_GetUTF8(aniStr, buffer.data(), buffer.size(), &written);
     if (status != ANI_OK && status != ANI_BUFFER_TO_SMALL) {
-        std::cerr << "String_GetUTF8 failed after invalid UTF-8 creation, status: " << status << std::endl;
         return ANI_FALSE;
     }
     ani_string followUp = nullptr;
     std::string normal = ani_tc_string::STRING_NORMAL_SOURCE;
     status = env->String_NewUTF8(normal.data(), normal.size(), &followUp);
-    if (status != ANI_OK || followUp == nullptr) {
-        std::cerr << "Following String_NewUTF8 failed after invalid UTF-8 test, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Following String_NewUTF8 failed after invalid UTF-8 test");
+    if (followUp == nullptr) {
         return ANI_FALSE;
     }
     return ANI_TRUE;
@@ -182,7 +158,6 @@ ani_boolean test_StringLongStringRoundTrip(ani_env *env, ani_object object, ani_
 {
     (void)object;
     if (size <= 0) {
-        std::cerr << "Invalid long string size: " << size << std::endl;
         return ANI_FALSE;
     }
     std::string source(static_cast<size_t>(size), ani_tc_string::STRING_LONG_CHAR);
@@ -204,8 +179,8 @@ ani_boolean test_StringSmallBuffer(ani_env *env, ani_object object)
         ani_tc_string::STRING_SMALL_BUFFER_CHAR);
     ani_string aniStr = nullptr;
     ani_status status = env->String_NewUTF8(source.data(), source.size(), &aniStr);
-    if (status != ANI_OK || aniStr == nullptr) {
-        std::cerr << "String_NewUTF8 failed in small buffer test, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 failed in small buffer test");
+    if (aniStr == nullptr) {
         return ANI_FALSE;
     }
     char buffer[ani_tc_string::STRING_SMALL_BUFFER_SIZE] = {};
@@ -222,35 +197,29 @@ ani_boolean test_StringLocalScopeRecycle(ani_env *env, ani_object object, ani_in
 {
     (void)object;
     if (count <= 0) {
-        std::cerr << "Invalid local scope string count: " << count << std::endl;
         return ANI_FALSE;
     }
     ani_status status = env->CreateLocalScope(static_cast<ani_size>(count + 1));
-    if (status != ANI_OK) {
-        std::cerr << "CreateLocalScope failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "CreateLocalScope failed");
     for (ani_int i = 0; i < count; i++) {
         std::string value = std::string(ani_tc_string::STRING_LOCAL_PREFIX) + std::to_string(i);
         ani_string str = nullptr;
         status = env->String_NewUTF8(value.data(), value.size(), &str);
         if (status != ANI_OK || str == nullptr) {
-            std::cerr << "String_NewUTF8 failed in local scope loop, index: "
-                      << i << ", status: " << status << std::endl;
             env->DestroyLocalScope();
+        }
+        ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 failed in local scope loop");
+        if (str == nullptr) {
             return ANI_FALSE;
         }
     }
     status = env->DestroyLocalScope();
-    if (status != ANI_OK) {
-        std::cerr << "DestroyLocalScope failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "DestroyLocalScope failed");
     ani_string check = nullptr;
     std::string finalValue = ani_tc_string::STRING_AFTER_SCOPE_SOURCE;
     status = env->String_NewUTF8(finalValue.data(), finalValue.size(), &check);
-    if (status != ANI_OK || check == nullptr) {
-        std::cerr << "String_NewUTF8 failed after DestroyLocalScope, status: " << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 failed after DestroyLocalScope");
+    if (check == nullptr) {
         return ANI_FALSE;
     }
     return ANI_TRUE;
@@ -266,16 +235,14 @@ ani_boolean test_StringSaveGlobalRef(ani_env *env, ani_object object)
     std::string source = ani_tc_string::STRING_GLOBAL_REF_CONTENT;
     ani_string str = nullptr;
     ani_status status = env->String_NewUTF8(source.data(), source.size(), &str);
-    if (status != ANI_OK || str == nullptr) {
-        std::cerr << "String_NewUTF8 failed before GlobalReference_Create, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 failed before GlobalReference_Create");
+    if (str == nullptr) {
         return ANI_FALSE;
     }
     status = env->GlobalReference_Create(reinterpret_cast<ani_ref>(str),
         &ani_tc_string::g_stringGlobalRef);
-    if (status != ANI_OK || ani_tc_string::g_stringGlobalRef == nullptr) {
-        std::cerr << "GlobalReference_Create for string failed, status: " << status << std::endl;
-        ani_tc_string::g_stringGlobalRef = nullptr;
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "GlobalReference_Create for string failed");
+    if (ani_tc_string::g_stringGlobalRef == nullptr) {
         return ANI_FALSE;
     }
     return ANI_TRUE;
@@ -284,7 +251,6 @@ ani_string test_StringUseGlobalRef(ani_env *env, ani_object object)
 {
     (void)object;
     if (ani_tc_string::g_stringGlobalRef == nullptr) {
-        std::cerr << "String global reference is null" << std::endl;
         ani_string empty = nullptr;
         const char *value = "";
         env->String_NewUTF8(value, 0, &empty);
@@ -302,10 +268,7 @@ ani_boolean test_StringDeleteGlobalRef(ani_env *env, ani_object object)
         return ANI_TRUE;
     }
     ani_status status = env->GlobalReference_Delete(ani_tc_string::g_stringGlobalRef);
-    if (status != ANI_OK) {
-        std::cerr << "GlobalReference_Delete for string failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "GlobalReference_Delete for string failed");
     ani_tc_string::g_stringGlobalRef = nullptr;
     return ANI_TRUE;
 }

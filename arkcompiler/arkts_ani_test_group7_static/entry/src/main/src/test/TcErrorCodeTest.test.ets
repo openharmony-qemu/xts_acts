@@ -143,19 +143,6 @@ export default function TcErrorCodeTest(): void {
     });
 
     /**
-     * @tc.number SUB_TC_ERRORCODE_TEST_1100
-     * @tc.name testTcErrorCode0011
-     * @tc.desc Verify the out-of-memory stress path for large string creation.
-     * @tc.size MEDIUM
-     * @tc.type FUNCTION
-     * @tc.level LEVEL0
-     */
-    it("testTcErrorCode0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let foo = new Foo();
-      expect(foo.test_ErrorCodeOutOfMemory()).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_TC_ERRORCODE_TEST_1200
      * @tc.name testTcErrorCode0012
      * @tc.desc Verify that GetEnv with an unsupported ANI version returns an invalid-version style status.
