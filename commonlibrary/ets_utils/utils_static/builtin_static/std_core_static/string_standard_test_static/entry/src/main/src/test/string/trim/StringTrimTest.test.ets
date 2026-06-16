@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -412,6 +411,105 @@ export default function StringTrimTest(): void {
       const text1 = new String(cleaned);
       let padded: string = text1.padEnd(8, ".");
       expect(padded).assertEqual("data....");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_2700
+     * @tc.name testTrim027
+     * @tc.desc Verify trim removes BOM and spaces around JSON text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String(" \uFEFF{\"id\":1} ");
+      let result: string = text.trim();
+      expect(result).assertEqual("{\"id\":1}");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_2800
+     * @tc.name testTrim028
+     * @tc.desc Verify trim removes CRLF around protocol status
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\r\nOK\r\n");
+      let result: string = text.trim();
+      expect(result).assertEqual("OK");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_2900
+     * @tc.name testTrim029
+     * @tc.desc Verify trim preserves zero-width spaces at both ends
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\u200Bvalue\u200B");
+      let result: string = text.trim();
+      expect(result).assertEqual("\u200Bvalue\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_3000
+     * @tc.name testTrim030
+     * @tc.desc Verify trim trims phone number field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  13800138000  ");
+      let result: string = text.trim();
+      expect(result).assertEqual("13800138000");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_3100
+     * @tc.name testTrim031
+     * @tc.desc Verify trim() handles illegal UTF-8 single-byte spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4");
+      let result: string = source.trim();
+      expect(result).assertEqual("\\xe4");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_3200
+     * @tc.name testTrim032
+     * @tc.desc Verify Trim handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = ("  " + source + "  ").trim();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIM_3300
+     * @tc.name testTrim033
+     * @tc.desc Verify Trim handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrim033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = ("  " + source + "  ").trim();
+      expect(result).assertEqual(source.toString());
     });
   });
 }

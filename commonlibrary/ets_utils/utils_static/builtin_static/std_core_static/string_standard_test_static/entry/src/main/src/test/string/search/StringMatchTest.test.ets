@@ -683,5 +683,50 @@ export default function StringMatchTest(): void {
       }
       expect(thrown).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_4100
+     * @tc.name testMatch041
+     * @tc.desc Verify match() handles ISO-8859-1 question-mark garbled text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("????");
+      let result: RegExpMatchArray | null = source.match(new RegExp("\\?\\?"));
+      expect(result !== null).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_4200
+     * @tc.name testMatch042
+     * @tc.desc Verify Match handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: RegExpMatchArray | null = source.match(new RegExp("<script>"));
+      expect(result !== null).assertTrue();
+      expect(result![0]).assertEqual("<script>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCH_4300
+     * @tc.name testMatch043
+     * @tc.desc Verify Match handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatch043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: RegExpMatchArray | null = source.match(new RegExp("АБВ"));
+      expect(result !== null).assertTrue();
+      expect(result![0]).assertEqual("АБВ");
+    });
   });
 }

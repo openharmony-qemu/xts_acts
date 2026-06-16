@@ -354,5 +354,174 @@ export default function StringTrimEndTest(): void {
       let direct: string = text.trim();
       expect(stepwise).assertEqual(direct);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2300
+     * @tc.name testTrimEnd023
+     * @tc.desc Verify trimEnd removes trailing Unicode BOM after JSON text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("{\"id\":1}\uFEFF");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("{\"id\":1}");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2400
+     * @tc.name testTrimEnd024
+     * @tc.desc Verify trimEnd preserves leading tab when only right side is trimmed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\tID\t");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("\tID");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2500
+     * @tc.name testTrimEnd025
+     * @tc.desc Verify trimEnd removes trailing CRLF after protocol status
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("OK\r\n");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("OK");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2600
+     * @tc.name testTrimEnd026
+     * @tc.desc Verify trimEnd preserves zero-width space because it is not whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("value\u200B");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("value\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2700
+     * @tc.name testTrimEnd027
+     * @tc.desc Verify trimEnd removes trailing blanks after phone number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("13800138000  ");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("13800138000");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2800
+     * @tc.name testTrimEnd028
+     * @tc.desc Verify trimEnd preserves leading spaces in date field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  2026-03-05  ");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("  2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_2900
+     * @tc.name testTrimEnd029
+     * @tc.desc Verify trimEnd handles trailing form-feed after email
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("test@example.com\f");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_3000
+     * @tc.name testTrimEnd030
+     * @tc.desc Verify trimEnd preserves internal newline before trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("A\nB  ");
+      let result: string = text.trimEnd();
+      expect(result).assertEqual("A\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_3100
+     * @tc.name testTrimEnd031
+     * @tc.desc Verify trimEnd() handles GBK-to-UTF8 garbled text spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("æµè¯");
+      let result: string = source.trimEnd();
+      expect(result).assertEqual("æµè¯");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_3200
+     * @tc.name testTrimEnd032
+     * @tc.desc Verify trimEnd() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.trimEnd();
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_3300
+     * @tc.name testTrimEnd033
+     * @tc.desc Verify TrimEnd handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = ("  " + source + "  ").trimEnd();
+      expect(result).assertEqual("  " + source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMEND_3400
+     * @tc.name testTrimEnd034
+     * @tc.desc Verify TrimEnd handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimEnd034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = ("  " + source + "  ").trimEnd();
+      expect(result).assertEqual("  " + source.toString());
+    });
   });
 }

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -586,6 +585,63 @@ export default function StringIndexOfTest(): void {
       const text = new String("A\uD83D\uDE00B");
       let pos: int = text.indexOf("\uDE00");
       expect(pos).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_3900
+     * @tc.name testIndexOf039
+     * @tc.desc Verify indexOf() handles mixed text with literal Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("test \\u4e2d\\u6587");
+      let result: int = source.indexOf("\\u4e2d");
+      expect(result).assertLargerOrEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_4000
+     * @tc.name testIndexOf040
+     * @tc.desc Verify indexOf() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: int = source.indexOf("\uFFFD");
+      expect(result).assertLargerOrEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_4100
+     * @tc.name testIndexOf041
+     * @tc.desc Verify IndexOf handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: int = source.indexOf("<script>alert(1)</script>");
+      expect(result).assertEqual(11);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_INDEXOF_4200
+     * @tc.name testIndexOf042
+     * @tc.desc Verify IndexOf handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIndexOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: int = source.indexOf("АБВГД");
+      expect(result).assertEqual(16);
     });
   });
 }

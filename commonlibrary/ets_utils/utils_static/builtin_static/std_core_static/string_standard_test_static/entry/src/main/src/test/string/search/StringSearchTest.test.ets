@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -814,6 +813,49 @@ export default function StringSearchTest(): void {
       const text = new String("\u4E2D\u6587^$\u6D4B\u8BD5");
       let pos: int = text.search(new RegExp("^\\u4E2D\\u6587$"));
       expect(pos).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5600
+     * @tc.name testSearch056
+     * @tc.desc Verify search() handles isolated low surrogate U+DC04
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uDC04");
+      let result: int = source.search("\uDC04");
+      expect(result).assertLargerOrEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5700
+     * @tc.name testSearch057
+     * @tc.desc Verify Search handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: int = source.search(new RegExp("\\u56DE\\u8F66\\u6362\\u884C"));
+      expect(result).assertEqual(60);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SEARCH_5800
+     * @tc.name testSearch058
+     * @tc.desc Verify Search handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSearch058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: int = source.search(new RegExp("الا"));
+      expect(result).assertEqual(22);
     });
   });
 }

@@ -394,5 +394,132 @@ export default function StringLastIndexOfTest(): void {
       let pos: int = text.lastIndexOf("A\u4E2D");
       expect(pos).assertEqual(3);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2600
+     * @tc.name testLastIndexOf026
+     * @tc.desc Verify lastIndexOf() finds final zero-width space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB\u200B");
+      let result: int = text.lastIndexOf("\u200B");
+      expect(result).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2700
+     * @tc.name testLastIndexOf027
+     * @tc.desc Verify lastIndexOf() finds date separator near the end
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: int = text.lastIndexOf("-");
+      expect(result).assertEqual(7);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2800
+     * @tc.name testLastIndexOf028
+     * @tc.desc Verify lastIndexOf() finds repeated CJK character from Unicode escape
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D-A-\u4E2D");
+      let result: int = text.lastIndexOf("\u4E2D");
+      expect(result).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_2900
+     * @tc.name testLastIndexOf029
+     * @tc.desc Verify lastIndexOf() returns -1 for absent fullwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A-B");
+      let result: int = text.lastIndexOf("\u2014");
+      expect(result).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_3000
+     * @tc.name testLastIndexOf030
+     * @tc.desc Verify lastIndexOf() finds final asterisk in masked bank card
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: int = text.lastIndexOf("*");
+      expect(result).assertEqual(13);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_3100
+     * @tc.name testLastIndexOf031
+     * @tc.desc Verify lastIndexOf() handles GBK-to-UTF8 garbled text spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("æµè¯");
+      let result: int = source.lastIndexOf("æµ");
+      expect(result).assertLargerOrEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_3200
+     * @tc.name testLastIndexOf032
+     * @tc.desc Verify lastIndexOf() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: int = source.lastIndexOf("\uFFFD");
+      expect(result).assertLargerOrEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_3300
+     * @tc.name testLastIndexOf033
+     * @tc.desc Verify LastIndexOf handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: int = source.lastIndexOf("\u6D4B\u8BD5");
+      expect(result).assertEqual(66);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LASTINDEXOF_3400
+     * @tc.name testLastIndexOf034
+     * @tc.desc Verify LastIndexOf handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLastIndexOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: int = source.lastIndexOf("الاختبار");
+      expect(result).assertEqual(22);
+    });
   });
 }

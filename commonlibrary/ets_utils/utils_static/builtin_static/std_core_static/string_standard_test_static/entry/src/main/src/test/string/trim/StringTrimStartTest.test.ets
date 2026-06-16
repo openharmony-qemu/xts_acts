@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -341,6 +340,175 @@ export default function StringTrimStartTest(): void {
       const text = new String("  hello  ");
       let result: string = text.trimStart();
       expect(result).assertEqual("hello  ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2200
+     * @tc.name testTrimStart022
+     * @tc.desc Verify trimStart removes leading Unicode BOM before XML text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\uFEFF<root/>");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("<root/>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2300
+     * @tc.name testTrimStart023
+     * @tc.desc Verify trimStart preserves trailing tab when only left side is trimmed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\tID\t");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("ID\t");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2400
+     * @tc.name testTrimStart024
+     * @tc.desc Verify trimStart removes leading CRLF before protocol status
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\r\nOK");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("OK");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2500
+     * @tc.name testTrimStart025
+     * @tc.desc Verify trimStart preserves zero-width space because it is not whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\u200Bvalue");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("\u200Bvalue");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2600
+     * @tc.name testTrimStart026
+     * @tc.desc Verify trimStart removes leading blanks before phone number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  13800138000");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("13800138000");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2700
+     * @tc.name testTrimStart027
+     * @tc.desc Verify trimStart preserves trailing spaces in date field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  2026-03-05  ");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("2026-03-05  ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2800
+     * @tc.name testTrimStart028
+     * @tc.desc Verify trimStart handles leading form-feed before email
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\ftest@example.com");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_2900
+     * @tc.name testTrimStart029
+     * @tc.desc Verify trimStart preserves internal newline after leading spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  A\nB");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("A\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_3000
+     * @tc.name testTrimStart030
+     * @tc.desc Verify trimStart removes leading spaces before Japanese text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  \u30C6\u30B9\u30C8");
+      let result: string = text.trimStart();
+      expect(result).assertEqual("\u30C6\u30B9\u30C8");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_3100
+     * @tc.name testTrimStart031
+     * @tc.desc Verify trimStart() handles isolated low surrogate U+DC04
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uDC04");
+      let result: string = source.trimStart();
+      expect(result).assertEqual("\uDC04");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_3200
+     * @tc.name testTrimStart032
+     * @tc.desc Verify TrimStart handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = ("  " + source).trimStart();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMSTART_3300
+     * @tc.name testTrimStart033
+     * @tc.desc Verify TrimStart handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimStart033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = ("  " + source).trimStart();
+      expect(result).assertEqual(source.toString());
     });
   });
 }

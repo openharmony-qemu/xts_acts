@@ -512,7 +512,7 @@ export default function StringMatchAllTest(): void {
      * @tc.level Level 2
      */
     it('testMatchAll026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Iterator exhausted → all next() after done return done=true
+      // Iterator exhausted -> all next() after done return done=true
       const text = new String("ab");
       let all: IterableIterator<RegExpMatchArray> = text.matchAll(new RegExp("\\w", "g"));
       let n1 = all.next();
@@ -823,6 +823,52 @@ export default function StringMatchAllTest(): void {
       expect(second.value![0]).assertEqual("Caf\u00E9");
       expect(second.value!.index).assertEqual(10);
       expect(third.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCHALL_4200
+     * @tc.name testMatchAll042
+     * @tc.desc Verify matchAll() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatchAll042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let matches: IterableIterator<RegExpMatchArray> = source.matchAll(new RegExp("\uFFFD", "g"));
+      let first = matches.next();
+      expect(first.done).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCHALL_4300
+     * @tc.name testMatchAll043
+     * @tc.desc Verify MatchAll handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatchAll043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let matches: IterableIterator<RegExpMatchArray> = source.matchAll(new RegExp("\\u6D4B\\u8BD5", "g"));
+      let first = matches.next();
+      expect(first.done).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_MATCHALL_4400
+     * @tc.name testMatchAll044
+     * @tc.desc Verify MatchAll handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testMatchAll044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let matches: IterableIterator<RegExpMatchArray> = source.matchAll(new RegExp("テスト", "g"));
+      let first = matches.next();
+      expect(first.done).assertFalse();
     });
   });
 }

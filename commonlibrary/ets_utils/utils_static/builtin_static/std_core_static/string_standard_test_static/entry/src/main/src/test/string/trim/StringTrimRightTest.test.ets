@@ -293,5 +293,216 @@ export default function StringTrimRightTest(): void {
       let result: string = text.trimRight();
       expect(result).assertEqual("token");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_1900
+     * @tc.name testTrimRight019
+     * @tc.desc Verify trimRight removes trailing Unicode BOM after JSON text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("{\"id\":1}\uFEFF");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("{\"id\":1}");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2000
+     * @tc.name testTrimRight020
+     * @tc.desc Verify trimRight preserves leading tab when only right side is trimmed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\tID\t");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("\tID");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2100
+     * @tc.name testTrimRight021
+     * @tc.desc Verify trimRight removes trailing CRLF after protocol status
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("OK\r\n");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("OK");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2200
+     * @tc.name testTrimRight022
+     * @tc.desc Verify trimRight preserves zero-width space because it is not whitespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("value\u200B");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("value\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2300
+     * @tc.name testTrimRight023
+     * @tc.desc Verify trimRight removes trailing blanks after phone number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("13800138000  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("13800138000");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2400
+     * @tc.name testTrimRight024
+     * @tc.desc Verify trimRight preserves leading spaces in date field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("  2026-03-05  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("  2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2500
+     * @tc.name testTrimRight025
+     * @tc.desc Verify trimRight handles trailing form-feed after email
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("test@example.com\f");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2600
+     * @tc.name testTrimRight026
+     * @tc.desc Verify trimRight preserves internal newline before trailing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("A\nB  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("A\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2700
+     * @tc.name testTrimRight027
+     * @tc.desc Verify trimRight removes trailing spaces after Japanese text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\u30C6\u30B9\u30C8  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("\u30C6\u30B9\u30C8");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2800
+     * @tc.name testTrimRight028
+     * @tc.desc Verify trimRight removes trailing spaces after Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("\u0627\u0628  ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_2900
+     * @tc.name testTrimRight029
+     * @tc.desc Verify trimRight keeps all non-trailing whitespace untouched
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String(" \t A");
+      let result: string = text.trimRight();
+      expect(result).assertEqual(" \t A");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_3000
+     * @tc.name testTrimRight030
+     * @tc.desc Verify trimRight removes trailing spaces after binary-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text: String = new String("0b1010   ");
+      let result: string = text.trimRight();
+      expect(result).assertEqual("0b1010");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_3100
+     * @tc.name testTrimRight031
+     * @tc.desc Verify trimRight() handles ISO-8859-1 question-mark garbled text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("????");
+      let result: string = source.trimRight();
+      expect(result).assertEqual("????");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_3200
+     * @tc.name testTrimRight032
+     * @tc.desc Verify TrimRight handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = (source + "  ").trimRight();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TRIMRIGHT_3300
+     * @tc.name testTrimRight033
+     * @tc.desc Verify TrimRight handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testTrimRight033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = (source + "  ").trimRight();
+      expect(result).assertEqual(source.toString());
+    });
   });
 }
