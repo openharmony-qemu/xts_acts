@@ -354,5 +354,304 @@ export default function StringIteratorTest(): void {
       expect(it.next().done).assertTrue();
       expect(it.next().done).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1800
+     * @tc.name testIterator018
+     * @tc.desc Verify $_iterator() yields Unicode escape CJK characters as two items
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let third = iterator.next();
+      let firstValue: String = first.value as Object as String;
+      let secondValue: String = second.value as Object as String;
+      expect(firstValue.toString()).assertEqual("\u4E2D");
+      expect(secondValue.toString()).assertEqual("\u6587");
+      expect(third.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_1900
+     * @tc.name testIterator019
+     * @tc.desc Verify $_iterator() keeps zero-width space as an item
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let third = iterator.next();
+      let secondValue: String = second.value as Object as String;
+      expect(first.done).assertFalse();
+      expect(secondValue.toString()).assertEqual("\u200B");
+      expect(third.done).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2000
+     * @tc.name testIterator020
+     * @tc.desc Verify $_iterator() yields replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let value: String = first.value as Object as String;
+      expect(value.toString()).assertEqual("\uFFFD");
+      expect(second.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2100
+     * @tc.name testIterator021
+     * @tc.desc Verify $_iterator() counts business date characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextValue = iterator.next();
+      while (!nextValue.done) {
+        count = count + 1;
+        nextValue = iterator.next();
+      }
+      expect(count).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2200
+     * @tc.name testIterator022
+     * @tc.desc Verify $_iterator() yields tab and newline as separate items
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\t\n");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let tab = iterator.next();
+      let newline = iterator.next();
+      let done = iterator.next();
+      let tabValue: String = tab.value as Object as String;
+      let newlineValue: String = newline.value as Object as String;
+      expect(tabValue.toString()).assertEqual("\t");
+      expect(newlineValue.toString()).assertEqual("\n");
+      expect(done.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2300
+     * @tc.name testIterator023
+     * @tc.desc Verify $_iterator() handles hexadecimal-looking string length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextValue = iterator.next();
+      while (!nextValue.done) {
+        count = count + 1;
+        nextValue = iterator.next();
+      }
+      expect(count).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2400
+     * @tc.name testIterator024
+     * @tc.desc Verify $_iterator() yields Korean text by code point
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD14C\uC2A4\uD2B8");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextValue = iterator.next();
+      while (!nextValue.done) {
+        count = count + 1;
+        nextValue = iterator.next();
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2500
+     * @tc.name testIterator025
+     * @tc.desc Verify $_iterator() keeps ASCII punctuation order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("!@#");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let third = iterator.next();
+      let firstValue: String = first.value as Object as String;
+      let secondValue: String = second.value as Object as String;
+      let thirdValue: String = third.value as Object as String;
+      expect(firstValue.toString()).assertEqual("!");
+      expect(secondValue.toString()).assertEqual("@");
+      expect(thirdValue.toString()).assertEqual("#");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2600
+     * @tc.name testIterator026
+     * @tc.desc Verify $_iterator() yields Arabic letters as individual items
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let done = iterator.next();
+      let firstValue: String = first.value as Object as String;
+      let secondValue: String = second.value as Object as String;
+      expect(firstValue.toString()).assertEqual("\u0627");
+      expect(secondValue.toString()).assertEqual("\u0628");
+      expect(done.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2700
+     * @tc.name testIterator027
+     * @tc.desc Verify $_iterator() counts masked bank card string characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextValue = iterator.next();
+      while (!nextValue.done) {
+        count = count + 1;
+        nextValue = iterator.next();
+      }
+      expect(count).assertEqual(18);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2800
+     * @tc.name testIterator028
+     * @tc.desc Verify $_iterator() handles CR character between fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\rB");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let cr = iterator.next();
+      let third = iterator.next();
+      let crValue: String = cr.value as Object as String;
+      expect(first.done).assertFalse();
+      expect(crValue.toString()).assertEqual("\r");
+      expect(third.done).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_2900
+     * @tc.name testIterator029
+     * @tc.desc Verify $_iterator() treats fullwidth dash as one item
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u2014");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let first = iterator.next();
+      let second = iterator.next();
+      let value: String = first.value as Object as String;
+      expect(value.toString()).assertEqual("\u2014");
+      expect(second.done).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_3000
+     * @tc.name testIterator030
+     * @tc.desc Verify $_iterator() handles binary-looking string characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0b1010");
+      let iterator: IterableIterator<String> = text.$_iterator();
+      let count: int = 0;
+      let nextValue = iterator.next();
+      while (!nextValue.done) {
+        count = count + 1;
+        nextValue = iterator.next();
+      }
+      expect(count).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_3100
+     * @tc.name testIterator031
+     * @tc.desc Verify Iterator handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let count: int = 0;
+      for (let item of source) {
+        if (item === "<") {
+          count++;
+        }
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITERATOR_3200
+     * @tc.name testIterator032
+     * @tc.desc Verify Iterator handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let count: int = 0;
+      for (let item of source) {
+        if (item === "ا") {
+          count++;
+        }
+      }
+      expect(count).assertEqual(3);
+    });
   });
 }

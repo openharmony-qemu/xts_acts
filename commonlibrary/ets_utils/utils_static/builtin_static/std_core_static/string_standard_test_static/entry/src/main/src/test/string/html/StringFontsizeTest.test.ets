@@ -645,5 +645,48 @@ export default function StringFontsizeTest(): void {
       let result: string = "Hi 世界 😀".fontsize(4);
       expect(result).assertEqual('<font size="4">Hi 世界 😀</font>');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4400
+     * @tc.name testFontsize044
+     * @tc.desc Verify fontsize() handles illegal UTF-8 single-byte spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontsize044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4");
+      let result: string = source.fontsize("3");
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4500
+     * @tc.name testFontsize045
+     * @tc.desc Verify Fontsize handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontsize045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.fontsize(3);
+      expect(result).assertEqual("<font size=\"3\">" + source.toString() + "</font>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTSIZE_4600
+     * @tc.name testFontsize046
+     * @tc.desc Verify Fontsize handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontsize046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.fontsize(4);
+      expect(result).assertEqual("<font size=\"4\">" + source.toString() + "</font>");
+    });
   });
 }

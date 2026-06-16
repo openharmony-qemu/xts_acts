@@ -339,5 +339,160 @@ export default function StringToWellFormedTest(): void {
       const repaired = new String(result);
       expect(repaired.isWellFormed()).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2200
+     * @tc.name testToWellFormed022
+     * @tc.desc Verify toWellFormed() preserves Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2300
+     * @tc.name testToWellFormed023
+     * @tc.desc Verify toWellFormed() replaces isolated low surrogate with U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uDC04");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2400
+     * @tc.name testToWellFormed024
+     * @tc.desc Verify toWellFormed() keeps zero-width space unchanged
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2500
+     * @tc.name testToWellFormed025
+     * @tc.desc Verify toWellFormed() preserves replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2600
+     * @tc.name testToWellFormed026
+     * @tc.desc Verify toWellFormed() replaces isolated high surrogate before date text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD8002026-03-05");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\uFFFD2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2700
+     * @tc.name testToWellFormed027
+     * @tc.desc Verify toWellFormed() preserves Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2800
+     * @tc.name testToWellFormed028
+     * @tc.desc Verify toWellFormed() preserves Japanese text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u30C6\u30B9\u30C8");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("\u30C6\u30B9\u30C8");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_2900
+     * @tc.name testToWellFormed029
+     * @tc.desc Verify toWellFormed() preserves C0 NUL in ASCII text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("A\0B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_3000
+     * @tc.name testToWellFormed030
+     * @tc.desc Verify toWellFormed() replaces high surrogate after email text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com\uD800");
+      let result: string = text.toWellFormed();
+      expect(result).assertEqual("test@example.com\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_3100
+     * @tc.name testToWellFormed031
+     * @tc.desc Verify ToWellFormed handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.toWellFormed();
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_TOWELLFORMED_3200
+     * @tc.name testToWellFormed032
+     * @tc.desc Verify ToWellFormed handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testToWellFormed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.toWellFormed();
+      expect(result).assertEqual(source.toString());
+    });
   });
 }

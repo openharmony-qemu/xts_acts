@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 import {
   afterAll,
   afterEach,
@@ -466,6 +465,49 @@ export default function StringFixedTest(): void {
     it('testFixed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "Hi 世界 😀".fixed();
       expect(result).assertEqual("<tt>Hi 世界 😀</tt>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_3200
+     * @tc.name testFixed032
+     * @tc.desc Verify fixed() handles ISO-8859-1 question-mark garbled text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFixed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("????");
+      let result: string = source.fixed();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_3300
+     * @tc.name testFixed033
+     * @tc.desc Verify Fixed handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFixed033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.fixed();
+      expect(result).assertEqual("<tt>" + source.toString() + "</tt>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FIXED_3400
+     * @tc.name testFixed034
+     * @tc.desc Verify Fixed handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFixed034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.fixed();
+      expect(result).assertEqual("<tt>" + source.toString() + "</tt>");
     });
   });
 }

@@ -544,5 +544,48 @@ export default function StringFontcolorTest(): void {
       let result: string = "text".fontcolor("#");
       expect(result).assertEqual('<font color="#">text</font>');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_3900
+     * @tc.name testFontcolor039
+     * @tc.desc Verify fontcolor() handles isolated low surrogate U+DC04
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontcolor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uDC04");
+      let result: string = source.fontcolor("red");
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_4000
+     * @tc.name testFontcolor040
+     * @tc.desc Verify Fontcolor handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontcolor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.fontcolor("red");
+      expect(result).assertEqual("<font color=\"red\">" + source.toString() + "</font>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FONTCOLOR_4100
+     * @tc.name testFontcolor041
+     * @tc.desc Verify Fontcolor handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFontcolor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.fontcolor("blue");
+      expect(result).assertEqual("<font color=\"blue\">" + source.toString() + "</font>");
+    });
   });
 }

@@ -514,5 +514,62 @@ export default function StringStrikeTest(): void {
       let result: string = "a\0b".strike();
       expect(result).assertEqual("<strike>a\0b</strike>");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_3500
+     * @tc.name testStrike035
+     * @tc.desc Verify strike() handles mixed text with literal Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStrike035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("test \\u4e2d\\u6587");
+      let result: string = source.strike();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_3600
+     * @tc.name testStrike036
+     * @tc.desc Verify strike() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStrike036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.strike();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_3700
+     * @tc.name testStrike037
+     * @tc.desc Verify Strike handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStrike037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.strike();
+      expect(result).assertEqual("<strike>" + source.toString() + "</strike>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_STRIKE_3800
+     * @tc.name testStrike038
+     * @tc.desc Verify Strike handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStrike038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.strike();
+      expect(result).assertEqual("<strike>" + source.toString() + "</strike>");
+    });
   });
 }

@@ -579,5 +579,62 @@ export default function StringLinkTest(): void {
       let result: string = "Hi 世界 😀".link("https://example.com");
       expect(result).assertEqual('<a href="https://example.com">Hi 世界 😀</a>');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_3900
+     * @tc.name testLink039
+     * @tc.desc Verify link() handles overlong UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLink039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xc0\\x81");
+      let result: string = source.link("https://example.com");
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_4000
+     * @tc.name testLink040
+     * @tc.desc Verify link() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLink040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.link("https://example.com");
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_4100
+     * @tc.name testLink041
+     * @tc.desc Verify Link handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLink041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.link("https://example.com?q=<script>");
+      expect(result).assertEqual("<a href=\"https://example.com?q=<script>\">" + source.toString() + "</a>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_LINK_4200
+     * @tc.name testLink042
+     * @tc.desc Verify Link handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testLink042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.link("https://example.com/lang");
+      expect(result).assertEqual("<a href=\"https://example.com/lang\">" + source.toString() + "</a>");
+    });
   });
 }

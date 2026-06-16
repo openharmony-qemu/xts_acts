@@ -674,5 +674,48 @@ export default function StringItalicsTest(): void {
       let result: string = "<".italics();
       expect(result).assertEqual("<i><</i>");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_4600
+     * @tc.name testItalics046
+     * @tc.desc Verify italics() handles illegal UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testItalics046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4\\x3f\\xad");
+      let result: string = source.italics();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_4700
+     * @tc.name testItalics047
+     * @tc.desc Verify Italics handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testItalics047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.italics();
+      expect(result).assertEqual("<i>" + source.toString() + "</i>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ITALICS_4800
+     * @tc.name testItalics048
+     * @tc.desc Verify Italics handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testItalics048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.italics();
+      expect(result).assertEqual("<i>" + source.toString() + "</i>");
+    });
   });
 }

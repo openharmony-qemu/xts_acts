@@ -278,5 +278,202 @@ export default function StringIsWellFormedTest(): void {
       const text = new String("\uD83D\uDE00\uD83D\uDE03 ready");
       expect(text.isWellFormed()).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_1900
+     * @tc.name testIsWellFormed019
+     * @tc.desc Verify isWellFormed() accepts Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2000
+     * @tc.name testIsWellFormed020
+     * @tc.desc Verify isWellFormed() accepts zero-width space text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2100
+     * @tc.name testIsWellFormed021
+     * @tc.desc Verify isWellFormed() rejects isolated low surrogate in encoded text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uDC04");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2200
+     * @tc.name testIsWellFormed022
+     * @tc.desc Verify isWellFormed() accepts replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2300
+     * @tc.name testIsWellFormed023
+     * @tc.desc Verify isWellFormed() accepts maximum BMP noncharacter U+FFFF
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFF");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2400
+     * @tc.name testIsWellFormed024
+     * @tc.desc Verify isWellFormed() rejects high surrogate before space
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD800 ");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2500
+     * @tc.name testIsWellFormed025
+     * @tc.desc Verify isWellFormed() accepts emoji followed by CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00\u4E2D");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2600
+     * @tc.name testIsWellFormed026
+     * @tc.desc Verify isWellFormed() accepts Japanese Katakana text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u30C6\u30B9\u30C8");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2700
+     * @tc.name testIsWellFormed027
+     * @tc.desc Verify isWellFormed() accepts Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2800
+     * @tc.name testIsWellFormed028
+     * @tc.desc Verify isWellFormed() rejects isolated high surrogate at end of phone field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("13800138000\uD800");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_2900
+     * @tc.name testIsWellFormed029
+     * @tc.desc Verify isWellFormed() accepts date-format ASCII field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_3000
+     * @tc.name testIsWellFormed030
+     * @tc.desc Verify isWellFormed() accepts escaped NUL inside ASCII text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\0B");
+      let result: boolean = text.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_3100
+     * @tc.name testIsWellFormed031
+     * @tc.desc Verify IsWellFormed handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: boolean = source.isWellFormed();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ISWELLFORMED_3200
+     * @tc.name testIsWellFormed032
+     * @tc.desc Verify IsWellFormed handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsWellFormed032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: boolean = source.isWellFormed();
+      expect(result).assertTrue();
+    });
   });
 }

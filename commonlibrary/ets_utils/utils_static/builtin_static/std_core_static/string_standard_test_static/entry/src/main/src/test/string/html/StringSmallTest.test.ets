@@ -65,6 +65,7 @@ export default function StringSmallTest(): void {
       let result: string = "Hi 世界 😀".small();
       expect(result).assertEqual("<small>Hi 世界 😀</small>");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_0300
      * @tc.name testSmall003
@@ -748,6 +749,49 @@ export default function StringSmallTest(): void {
     it('testSmall052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result: string = "/usr/local/bin".small();
       expect(result).assertEqual("<small>/usr/local/bin</small>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5300
+     * @tc.name testSmall053
+     * @tc.desc Verify small() handles literal malformed Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSmall053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\u malformed");
+      let result: string = source.small();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5400
+     * @tc.name testSmall054
+     * @tc.desc Verify Small handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSmall054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.small();
+      expect(result).assertEqual("<small>" + source.toString() + "</small>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SMALL_5500
+     * @tc.name testSmall055
+     * @tc.desc Verify Small handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSmall055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.small();
+      expect(result).assertEqual("<small>" + source.toString() + "</small>");
     });
   });
 }

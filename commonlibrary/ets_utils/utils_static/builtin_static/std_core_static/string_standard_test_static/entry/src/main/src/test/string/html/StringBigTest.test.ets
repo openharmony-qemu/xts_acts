@@ -953,5 +953,62 @@ export default function StringBigTest(): void {
       let result: string = "[sec]{val}".big();
       expect(result).assertEqual("<big>[sec]{val}</big>");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_6900
+     * @tc.name testBig069
+     * @tc.desc Verify big() handles mixed text with literal Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBig069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("test \\u4e2d\\u6587");
+      let result: string = source.big();
+      expect(result.includes(source.toString())).assertTrue();
     });
-  }
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_7000
+     * @tc.name testBig070
+     * @tc.desc Verify big() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBig070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.big();
+      expect(result.includes(source.toString())).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_7100
+     * @tc.name testBig071
+     * @tc.desc Verify Big handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBig071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.big();
+      expect(result).assertEqual("<big>" + source.toString() + "</big>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_BIG_7200
+     * @tc.name testBig072
+     * @tc.desc Verify Big handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBig072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.big();
+      expect(result).assertEqual("<big>" + source.toString() + "</big>");
+    });
+  });
+}

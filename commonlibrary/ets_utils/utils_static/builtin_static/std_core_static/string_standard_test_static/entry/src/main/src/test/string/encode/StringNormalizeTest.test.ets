@@ -374,5 +374,146 @@ export default function StringNormalizeTest(): void {
       expect(result.endsWith("-01")).assertTrue();
       expect(result.length).assertEqual(9);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2300
+     * @tc.name testNormalize023
+     * @tc.desc Verify normalize() preserves Unicode escape CJK text under NFC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2400
+     * @tc.name testNormalize024
+     * @tc.desc Verify normalize() preserves zero-width space under NFC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2500
+     * @tc.name testNormalize025
+     * @tc.desc Verify normalize() preserves replacement character under NFC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2600
+     * @tc.name testNormalize026
+     * @tc.desc Verify normalize() preserves Arabic text under NFC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0628");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2700
+     * @tc.name testNormalize027
+     * @tc.desc Verify normalize() preserves date-format ASCII under NFKC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: string = text.normalize("NFKC");
+      expect(result).assertEqual("2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2800
+     * @tc.name testNormalize028
+     * @tc.desc Verify normalize() converts fullwidth letters under NFKC
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFF21\uFF22\uFF23");
+      let result: string = text.normalize("NFKC");
+      expect(result).assertEqual("ABC");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_2900
+     * @tc.name testNormalize029
+     * @tc.desc Verify normalize() preserves CRLF sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("A\r\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_3000
+     * @tc.name testNormalize030
+     * @tc.desc Verify normalize() preserves emoji surrogate pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uD83D\uDE00");
+      let result: string = text.normalize("NFC");
+      expect(result).assertEqual("\uD83D\uDE00");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_3100
+     * @tc.name testNormalize031
+     * @tc.desc Verify Normalize handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.normalize("NFC");
+      expect(result).assertEqual(source.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_NORMALIZE_3200
+     * @tc.name testNormalize032
+     * @tc.desc Verify Normalize handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testNormalize032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.normalize("NFC");
+      expect(result).assertEqual(source.toString());
+    });
   });
 }

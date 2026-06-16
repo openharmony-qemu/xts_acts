@@ -300,5 +300,164 @@ export default function StringFromCharCodeTest(): void {
       let result: string = String.fromCharCode(50, 48, 50, 54, 45, 48, 54, 45, 49, 50);
       expect(result).assertEqual("2026-06-12");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2100
+     * @tc.name testFromCharCode021
+     * @tc.desc Verify String.fromCharCode() builds Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(0x4E2D, 0x6587);
+      expect(result).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2200
+     * @tc.name testFromCharCode022
+     * @tc.desc Verify String.fromCharCode() builds zero-width space between ASCII letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(65, 0x200B, 66);
+      expect(result).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2300
+     * @tc.name testFromCharCode023
+     * @tc.desc Verify String.fromCharCode() builds replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(0xFFFD);
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2400
+     * @tc.name testFromCharCode024
+     * @tc.desc Verify String.fromCharCode() builds hexadecimal-looking token
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(48, 120, 49, 50, 51);
+      expect(result).assertEqual("0x123");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2500
+     * @tc.name testFromCharCode025
+     * @tc.desc Verify String.fromCharCode() builds email separator at sign
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(116, 64, 101);
+      expect(result).assertEqual("t@e");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2600
+     * @tc.name testFromCharCode026
+     * @tc.desc Verify String.fromCharCode() builds CRLF sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(13, 10);
+      expect(result).assertEqual("\r\n");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2700
+     * @tc.name testFromCharCode027
+     * @tc.desc Verify String.fromCharCode() builds fullwidth dash U+2014
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(0x2014);
+      expect(result).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2800
+     * @tc.name testFromCharCode028
+     * @tc.desc Verify String.fromCharCode() builds Arabic letters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(0x0627, 0x0628);
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_2900
+     * @tc.name testFromCharCode029
+     * @tc.desc Verify String.fromCharCode() builds masked-card asterisk sequence
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(42, 42, 42, 42);
+      expect(result).assertEqual("****");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_3000
+     * @tc.name testFromCharCode030
+     * @tc.desc Verify String.fromCharCode() truncates 0x1F600 to low 16-bit code unit
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let result: string = String.fromCharCode(0x1F600);
+      expect(result.charCodeAt(0)).assertEqual(0xF600);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_3100
+     * @tc.name testFromCharCode031
+     * @tc.desc Verify FromCharCode handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      let result: string = String.fromCharCode(33, 64, 35, 36);
+      expect(result).assertEqual("!@#$");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_FROMCHARCODE_3200
+     * @tc.name testFromCharCode032
+     * @tc.desc Verify FromCharCode handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFromCharCode032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = String.fromCharCode(0x30C6, 0x30B9, 0x30C8);
+      expect(result).assertEqual("テスト");
+    });
   });
 }

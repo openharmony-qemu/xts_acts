@@ -368,5 +368,134 @@ export default function StringValueOfTest(): void {
       let val: String = str.valueOf();
       expect(val.toString()).assertEqual("test");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2400
+     * @tc.name testValueOf024
+     * @tc.desc Verify valueOf preserves Unicode escape CJK text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2500
+     * @tc.name testValueOf025
+     * @tc.desc Verify valueOf preserves zero-width space in mixed content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2600
+     * @tc.name testValueOf026
+     * @tc.desc Verify valueOf preserves date-format business string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2700
+     * @tc.name testValueOf027
+     * @tc.desc Verify valueOf preserves hexadecimal-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("0x123");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2800
+     * @tc.name testValueOf028
+     * @tc.desc Verify valueOf preserves email-format string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_2900
+     * @tc.name testValueOf029
+     * @tc.desc Verify valueOf preserves replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_3000
+     * @tc.name testValueOf030
+     * @tc.desc Verify valueOf preserves Arabic text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u0627\u0644\u0627\u062E\u062A\u0628\u0627\u0631");
+      let result: String = text.valueOf();
+      expect(result.toString()).assertEqual("\u0627\u0644\u0627\u062E\u062A\u0628\u0627\u0631");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_3100
+     * @tc.name testValueOf031
+     * @tc.desc Verify ValueOf handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const source = new String(expected);
+      let result: string = source.valueOf();
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_VALUEOF_3200
+     * @tc.name testValueOf032
+     * @tc.desc Verify ValueOf handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testValueOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const source = new String(expected);
+      let result: string = new String(source).valueOf();
+      expect(result).assertEqual(expected);
+    });
   });
 }

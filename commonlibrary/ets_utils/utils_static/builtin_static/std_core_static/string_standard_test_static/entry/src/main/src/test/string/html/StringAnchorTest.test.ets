@@ -1404,5 +1404,34 @@ export default function StringAnchorTest(): void {
       let result: string = "text".anchor("a;b");
       expect(result).assertEqual('<a name="a;b">text</a>');
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9900
+     * @tc.name testAnchor099
+     * @tc.desc Verify Anchor handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAnchor099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.anchor("specialAnchor");
+      expect(result).assertEqual("<a name=\"specialAnchor\">" + source.toString() + "</a>");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_ANCHOR_9950
+     * @tc.name testAnchor100
+     * @tc.desc Verify Anchor handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testAnchor100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.anchor("multiLang");
+      expect(result).assertEqual("<a name=\"multiLang\">" + source.toString() + "</a>");
+    });
   });
 }
