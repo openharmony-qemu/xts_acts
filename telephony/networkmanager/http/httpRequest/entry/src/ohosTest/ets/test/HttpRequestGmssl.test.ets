@@ -20,7 +20,7 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-const TLCP_TARGET_URL: string = 'https://test.gmssl.cn'; 
+const TLCP_TARGET_URL: string = 'https://smtest.moyufangge.com';
 const TLS_TARGET_URL: string = 'https://www.baidu.com';
 
 interface CertConfig {
