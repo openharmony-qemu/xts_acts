@@ -19,7 +19,7 @@ import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_ILLEGAL: string = "abc";
 
-export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";
 const ExpectFail = () => {
   try {
     expect().assertFail();
