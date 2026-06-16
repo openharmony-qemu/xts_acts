@@ -243,6 +243,7 @@ import ImageHeifsTest from './image/ImageHeifMetadataTest.test';
 import SendImageTest from './image/SendImageTest.test';
 import MetaDataSetBlobTest from './image/MetaDataSetBlobTest.test';
 import ImageSupplementTest from './image/ImageSupplementTest.test';
+import packBinaryImageToTiffTest from './image/packBinaryImageToTiff.test';
 
 
 export default function testsuite() {
@@ -473,5 +474,5 @@ export default function testsuite() {
   PicturePackToFileTestFourSupp();
   imageReadImageMetadataTestSupp();
   ImageSupplementTest();
-
+  packBinaryImageToTiffTest();
 }
