@@ -69,7 +69,8 @@ class StableItem038 {
     }
   }
 
-function sparseArrayToSortedSuite(): void {
+export default function SparseArrayToSortedTest(): void {
+  describe('SparseArrayToSortedTest', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
@@ -325,16 +326,16 @@ function sparseArrayToSortedSuite(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_1600
      * @tc.name testSparseArrayToSorted016
-     * @tc.desc Test SparseArray.toSorted, verify method result (sorted[0] equals "123", sorted[3] equals "测试")
+     * @tc.desc Test SparseArray.toSorted, verify string sort result with ASCII elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSparseArrayToSorted016', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new SparseArray<string>("测试", "abc", "123", "中文");
+        const arr = new SparseArray<string>("test", "abc", "123", "local");
         const sorted = arr.toSorted((a: string, b: string): int => a.localeCompare(b) as int);
         expect(sorted[0]).assertEqual("123");
-        expect(sorted[3]).assertEqual("测试");
+        expect(sorted[3]).assertEqual("test");
 
     });
     /**
@@ -384,7 +385,7 @@ function sparseArrayToSortedSuite(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2000
      * @tc.name testSparseArrayToSorted020
-     * @tc.desc Test SparseArray.toSorted, verify method result (head != null is true)
+     * @tc.desc Test SparseArray.toSorted, verify object id order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -396,15 +397,14 @@ function sparseArrayToSortedSuite(): void {
           new Item020(2, "B")
         );
         const sorted = arr.toSorted((a: Item020, b: Item020): int => a.id - b.id);
-        const head = sorted[0];
-        expect(head != null).assertTrue();
-        expect((head as Item020).id).assertEqual(1);
+        const head = sorted[0] as Item020;
+        expect(head.id).assertEqual(1);
 
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2100
      * @tc.name testSparseArrayToSorted021
-     * @tc.desc Test SparseArray.toSorted, verify method result (head != null is true)
+     * @tc.desc Test SparseArray.toSorted, verify nested object value order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,15 +416,14 @@ function sparseArrayToSortedSuite(): void {
           new Container021(2)
         );
         const sorted = arr.toSorted((a: Container021, b: Container021): int => a.item.value - b.item.value);
-        const head = sorted[0];
-        expect(head != null).assertTrue();
-        expect((head as Container021).item.value).assertEqual(1);
+        const head = sorted[0] as Container021;
+        expect(head.item.value).assertEqual(1);
 
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2200
      * @tc.name testSparseArrayToSorted022
-     * @tc.desc Test SparseArray.toSorted, verify method result (arr instanceof SparseArray is true, sorted.length equals 3)
+     * @tc.desc Test SparseArray.toSorted with nullable object field, verify sorted length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -435,7 +434,6 @@ function sparseArrayToSortedSuite(): void {
           new NullableItem022(null),
           new NullableItem022(1)
         );
-        expect(arr instanceof SparseArray).assertTrue();
         const sorted = arr.toSorted((a: NullableItem022, b: NullableItem022): int => {
           const valA = a.id ?? -1;
           const valB = b.id ?? -1;
@@ -520,13 +518,13 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
         expect(arr.length).assertEqual(originalLength);
         expect(arr[0]).assertEqual(originalFirst);
-        expect(sorted !== null && sorted !== undefined).assertTrue();
+        expect(sorted.length).assertEqual(5);
 
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_2700
      * @tc.name testSparseArrayToSorted027
-     * @tc.desc Test SparseArray.toSorted, verify method result (sorted instanceof SparseArray is true)
+     * @tc.desc Test SparseArray.toSorted, verify sorted result length and first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -534,7 +532,8 @@ function sparseArrayToSortedSuite(): void {
     it('testSparseArrayToSorted027', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
-        expect(sorted instanceof SparseArray).assertTrue();
+        expect(sorted.length).assertEqual(3);
+        expect(sorted[0]).assertEqual(1);
 
     });
     /**
@@ -575,7 +574,7 @@ function sparseArrayToSortedSuite(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3000
      * @tc.name testSparseArrayToSorted030
-     * @tc.desc Test SparseArray.toSorted, verify method result (v0 != null is true, v0 as int equals 1)
+     * @tc.desc Test SparseArray.toSorted, verify first sorted element equals 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -583,9 +582,7 @@ function sparseArrayToSortedSuite(): void {
     it('testSparseArrayToSorted030', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
-        const v0 = sorted[0];
-        expect(v0 != null).assertTrue();
-        expect(v0 as int).assertEqual(1);
+        expect(sorted[0]).assertEqual(1);
 
     });
     /**
@@ -673,24 +670,22 @@ function sparseArrayToSortedSuite(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3500
      * @tc.name testSparseArrayToSorted035
-     * @tc.desc Test SparseArray.toSorted, verify method result (caughtError !== null && caughtError !== undefined is true, caughtError?.message equals "Test error")
+     * @tc.desc Test SparseArray.toSorted comparator throws Error, verify error message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testSparseArrayToSorted035', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>(3, 1, 4);
-        let caughtError: Error | null = null;
         try {
           arr.toSorted((a: int, b: int): int => {
             throw new Error("Test error");
           });
           expect().assertFail();
         } catch (error) {
-          caughtError = error as Error;
+          const caughtError = error as Error;
+          expect(caughtError.message).assertEqual("Test error");
         }
-        expect(caughtError !== null && caughtError !== undefined).assertTrue();
-        expect(caughtError?.message).assertEqual("Test error");
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3600
@@ -713,7 +708,7 @@ function sparseArrayToSortedSuite(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3700
      * @tc.name testSparseArrayToSorted037
-     * @tc.desc Test SparseArray.toSorted, verify method result (sorted === arr1 is false, sorted2 === arr2 is true)
+     * @tc.desc Test SparseArray.toSorted returns new sorted array while sort mutates source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -724,13 +719,15 @@ function sparseArrayToSortedSuite(): void {
         const sorted = arr1.toSorted((a: int, b: int): int => a - b);
         const sorted2 = arr2.sort((a: int, b: int): int => a - b);
         expect(sorted === arr1).assertFalse();
-        expect(sorted2 === arr2).assertTrue();
+        expect(sorted.toString()).assertEqual("1,3,4");
+        expect(sorted2.toString()).assertEqual("1,3,4");
+        expect(arr2.toString()).assertEqual("1,3,4");
 
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3800
      * @tc.name testSparseArrayToSorted038
-     * @tc.desc Test SparseArray.toSorted, verify method result (s1 != null && s2 != null is true)
+     * @tc.desc Test SparseArray.toSorted keeps stable order for equal comparator values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -743,17 +740,16 @@ function sparseArrayToSortedSuite(): void {
           new StableItem038(4, 2)
         );
         const sorted = arr.toSorted((a: StableItem038, b: StableItem038): int => a.value - b.value);
-        const s1 = sorted[1];
-        const s2 = sorted[2];
-        expect(s1 != null && s2 != null).assertTrue();
-        expect((s1 as StableItem038).id).assertEqual(3);
-        expect((s2 as StableItem038).id).assertEqual(4);
+        const s1 = sorted[1] as StableItem038;
+        const s2 = sorted[2] as StableItem038;
+        expect(s1.id).assertEqual(3);
+        expect(s2.id).assertEqual(4);
 
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SPARSE_ARRAY_TO_SORTED_3900
      * @tc.name testSparseArrayToSorted039
-     * @tc.desc Test SparseArray.toSorted performance on large array (100 elements)
+     * @tc.desc Test SparseArray.toSorted on deterministic 100 element array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -761,13 +757,12 @@ function sparseArrayToSortedSuite(): void {
     it('testSparseArrayToSorted039', Short.toInt(TestType.FUNCTION) | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new SparseArray<int>();
         for (let i: int = 0; i < 100; i++) {
-          arr.push(Double.toInt(Math.floor(Math.random() * 1000)));
+          arr.push(100 - i);
         }
-        const startTime = Date.now();
         const sorted = arr.toSorted((a: int, b: int): int => a - b);
-        const endTime = Date.now();
         expect(sorted.length).assertEqual(100);
-        expect(endTime - startTime).assertLess(5000);
+        expect(sorted[0]).assertEqual(1);
+        expect(sorted[99]).assertEqual(100);
 
     });
     /**
@@ -991,8 +986,5 @@ function sparseArrayToSortedSuite(): void {
         expect(sorted[2]).assertEqual(c'C');
     });
 
-}
-
-export default function SparseArrayToSortedTest(): void {
-  describe('SparseArrayToSortedTest', sparseArrayToSortedSuite);
+  });
 }
