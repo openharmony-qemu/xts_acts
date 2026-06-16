@@ -848,7 +848,7 @@ export default function packBinaryImageToTiff() {
                 done();
             } catch(error){
                 console.info(`${testName} failed; error: ${error}, ${error.code}`);
-                expect(error.code).assertEqual(7800301);
+                expect(error.code).assertEqual(7800202);
                 done();
             }
         });
