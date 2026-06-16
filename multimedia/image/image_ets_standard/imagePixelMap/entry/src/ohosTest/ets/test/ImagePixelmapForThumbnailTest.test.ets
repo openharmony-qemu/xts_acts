@@ -1579,8 +1579,10 @@ export default function imagePixelMapForThumbnail() {
         maxGeneratedPixelDimension: 320,
         generateThumbnailIfAbsent: false
       };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image.createImageSource(filePath);
       let pixelMap: image.PixelMap | undefined = undefined;
-      let imageSource = undefined
+      await imageSource.release();
       try {
         pixelMap = await imageSource.createThumbnail(decodingOptions);
         expect(pixelMap == undefined).assertTrue();
@@ -1606,8 +1608,10 @@ export default function imagePixelMapForThumbnail() {
         maxGeneratedPixelDimension: 320,
         generateThumbnailIfAbsent: false
       };
+      const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+      let imageSource = image.createImageSource(filePath);
       let pixelMap: image.PixelMap | undefined = undefined;
-      let imageSource = undefined
+      await imageSource.release();
       try {
         pixelMap = await imageSource.createThumbnailSync(decodingOptions);
         expect(pixelMap == undefined).assertTrue();
