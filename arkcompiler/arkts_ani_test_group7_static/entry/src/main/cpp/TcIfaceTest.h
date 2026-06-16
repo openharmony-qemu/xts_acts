@@ -285,7 +285,6 @@ ani_boolean test_IfaceCleanupNativeData(ani_env *env, ani_object object)
 {
     (void)env;
     (void)object;
-
     delete ani_tc_iface::g_ifaceNativeData;
     ani_tc_iface::g_ifaceNativeData = nullptr;
     return ANI_TRUE;

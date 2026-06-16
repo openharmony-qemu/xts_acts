@@ -252,7 +252,9 @@ ani_boolean test_LifecycleNestedLocalScopes(ani_env *env, ani_object object)
 {
     (void)object;
     ani_status outerStatus = env->CreateLocalScope(8);
-    ASSERT_EQ_MSG(outerStatus, ANI_OK, ANI_FALSE, "Create outer local scope failed");
+    if (!AssertEqMsg(outerStatus, ANI_OK, "Create outer local scope failed")) {
+        return ANI_FALSE;
+    }
     ani_string outerString = tc_lifecycle_test::NewString(env, "outer");
     if (outerString == nullptr) {
         env->DestroyLocalScope();
@@ -262,7 +264,9 @@ ani_boolean test_LifecycleNestedLocalScopes(ani_env *env, ani_object object)
     if (innerStatus != ANI_OK) {
         env->DestroyLocalScope();
     }
-    ASSERT_EQ_MSG(innerStatus, ANI_OK, ANI_FALSE, "Create inner local scope failed");
+    if (!AssertEqMsg(innerStatus, ANI_OK, "Create inner local scope failed")) {
+        return ANI_FALSE;
+    }
     ani_string innerString = tc_lifecycle_test::NewString(env, "inner");
     if (innerString == nullptr) {
         env->DestroyLocalScope();

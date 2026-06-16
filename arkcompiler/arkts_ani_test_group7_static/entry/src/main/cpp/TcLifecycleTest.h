@@ -46,33 +46,47 @@ std::string ToStdString(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_GetUTF8Size failed")) {
+        return "";
+    }
     std::string result(size, '\0');
     ani_size written = 0;
     status = env->String_GetUTF8(str, result.data(), size + 1, &written);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_GetUTF8 failed")) {
+        return "";
+    }
     return result;
 }
 inline ani_string NewString(ani_env *env, const std::string &value)
 {
     ani_string result = nullptr;
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_NewUTF8 failed")) {
+        return nullptr;
+    }
     return result;
 }
 ani_object CreateFooObject(ani_env *env, ani_int factor)
 {
     ani_class cls {};
     ani_status status = env->FindClass(LIFECYCLE_FOO_CLASS, &cls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindClass Foo failed");
+    if (!AssertEqMsg(status, ANI_OK, "FindClass Foo failed")) {
+        return nullptr;
+    }
     ani_method ctor {};
     status = env->Class_FindMethod(cls, "<ctor>", nullptr, &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Class_FindMethod Foo.<ctor> failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_FindMethod Foo.<ctor> failed")) {
+        return nullptr;
+    }
     ani_object obj {};
     status = env->Object_New(cls, ctor, &obj);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Object_New Foo failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_New Foo failed")) {
+        return nullptr;
+    }
     status = env->Object_SetFieldByName_Int(obj, "factor", factor);
-    ASSERT_EQ_MSG(status, ANI_OK, obj, "Object_SetFieldByName_Int factor failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_SetFieldByName_Int factor failed")) {
+        return obj;
+    }
     return obj;
 }
 inline ani_int ReadFooFactor(ani_env *env, ani_object obj)
@@ -82,7 +96,9 @@ inline ani_int ReadFooFactor(ani_env *env, ani_object obj)
         return value;
     }
     ani_status status = env->Object_GetFieldByName_Int(obj, "factor", &value);
-    ASSERT_EQ_MSG(status, ANI_OK, LIFECYCLE_INVALID_FACTOR, "Object_GetFieldByName_Int factor failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_GetFieldByName_Int factor failed")) {
+        return LIFECYCLE_INVALID_FACTOR;
+    }
     return value;
 }
 inline void MyLifecycleLogger(FILE *stream, int logLevel, const char *component, const char *message)
@@ -163,7 +179,9 @@ ani_boolean test_LifecycleCreateGlobalObject(ani_env *env, ani_object object)
     }
     ani_ref gref = nullptr;
     ani_status status = env->GlobalReference_Create(reinterpret_cast<ani_ref>(obj), &gref);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "GlobalReference_Create failed");
+    if (!AssertEqMsg(status, ANI_OK, "GlobalReference_Create failed")) {
+        return ANI_FALSE;
+    }
     std::lock_guard<std::mutex> lock(tc_lifecycle_test::g_lifecycleMutex);
     if (tc_lifecycle_test::g_savedGlobalObject != nullptr) {
         env->GlobalReference_Delete(tc_lifecycle_test::g_savedGlobalObject);
@@ -190,7 +208,9 @@ ani_boolean test_LifecycleDeleteGlobalObject(ani_env *env, ani_object object)
         return ANI_FALSE;
     }
     ani_status status = env->GlobalReference_Delete(tc_lifecycle_test::g_savedGlobalObject);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "GlobalReference_Delete failed");
+    if (!AssertEqMsg(status, ANI_OK, "GlobalReference_Delete failed")) {
+        return ANI_FALSE;
+    }
     tc_lifecycle_test::g_savedGlobalObject = nullptr;
     return ANI_TRUE;
 }
@@ -292,7 +312,9 @@ ani_boolean test_LifecycleArkCallLocalRefsAutoManaged(ani_env *env, ani_object o
         std::string text = "ark-call-local-ref-" + std::to_string(i);
         ani_string str = nullptr;
         ani_status status = env->String_NewUTF8(text.c_str(), text.size(), &str);
-        ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "String_NewUTF8 in ArkTS native call failed");
+        if (!AssertEqMsg(status, ANI_OK, "String_NewUTF8 in ArkTS native call failed")) {
+            return ANI_FALSE;
+        }
         if (str == nullptr) {
             return ANI_FALSE;
         }

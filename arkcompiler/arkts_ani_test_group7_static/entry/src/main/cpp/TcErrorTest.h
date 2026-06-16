@@ -30,7 +30,9 @@ ani_string ErrorNewString(ani_env *env, const std::string &value)
     }
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed in TcErrorTest");
+    if (!AssertEqMsg(status, ANI_OK, "String_NewUTF8 failed in TcErrorTest")) {
+        return nullptr;
+    }
     return result;
 }
 }

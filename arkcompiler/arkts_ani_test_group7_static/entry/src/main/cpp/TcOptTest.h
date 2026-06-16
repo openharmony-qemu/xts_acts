@@ -35,11 +35,15 @@ std::string OptAniStringToStdString(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "TC_OPT String_GetUTF8Size failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT String_GetUTF8Size failed")) {
+        return "";
+    }
     std::vector<char> buffer(size + 1, 0);
     ani_size written = 0;
     status = env->String_GetUTF8(str, buffer.data(), buffer.size(), &written);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "TC_OPT String_GetUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT String_GetUTF8 failed")) {
+        return "";
+    }
     return std::string(buffer.data(), written);
 }
 }
@@ -55,7 +59,9 @@ ani_string test_OptDirectGetString(ani_env *env, [[maybe_unused]] ani_object obj
     const char *value = "direct string";
     ani_string result = nullptr;
     ani_status status = env->String_NewUTF8(value, std::strlen(value), &result);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "TC_OPT_002 String_NewUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_002 String_NewUTF8 failed")) {
+        return nullptr;
+    }
     return result;
 }
 ani_int test_OptQuickProcessArray(ani_env *env,
@@ -68,14 +74,18 @@ ani_int test_OptQuickProcessArray(ani_env *env,
     }
     ani_size actualLength = 0;
     ani_status status = env->FixedArray_GetLength(arr, &actualLength);
-    ASSERT_EQ_MSG(status, ANI_OK, -1, "TC_OPT_003 FixedArray_GetLength failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 FixedArray_GetLength failed")) {
+        return -1;
+    }
     ani_size readLength = static_cast<ani_size>(length);
     if (readLength > actualLength) {
         readLength = actualLength;
     }
     std::vector<ani_boolean> values(readLength);
     status = env->FixedArray_GetRegion_Boolean(arr, 0, readLength, values.data());
-    ASSERT_EQ_MSG(status, ANI_OK, -1, "TC_OPT_003 FixedArray_GetRegion_Boolean failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_003 FixedArray_GetRegion_Boolean failed")) {
+        return -1;
+    }
     ani_int trueCount = 0;
     for (ani_boolean value : values) {
         if (value == ANI_TRUE) {
@@ -92,7 +102,9 @@ ani_string test_OptDefaultCreateString(ani_env *env,
     std::string output = "default:" + input;
     ani_string result = nullptr;
     ani_status status = env->String_NewUTF8(output.c_str(), output.size(), &result);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "TC_OPT_004 String_NewUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "TC_OPT_004 String_NewUTF8 failed")) {
+        return nullptr;
+    }
     return result;
 }
 ani_int test_OptDirectSleep([[maybe_unused]] ani_env *env, ani_int value)

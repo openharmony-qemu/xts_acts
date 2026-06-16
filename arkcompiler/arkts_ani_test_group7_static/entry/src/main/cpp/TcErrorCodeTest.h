@@ -42,7 +42,9 @@ inline ani_string NewUtf8String(ani_env *env, const std::string &value)
 {
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_NewUTF8 failed")) {
+        return nullptr;
+    }
     return result;
 }
 inline void ClearPendingErrorIfNeeded(ani_env *env)

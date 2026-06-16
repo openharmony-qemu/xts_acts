@@ -64,14 +64,18 @@ ani_int GetArrayBufferByteLengthByProperty(ani_env *env, ani_object buffer)
     }
     ani_ref byteLengthRef {};
     status = env->Object_GetPropertyByName_Ref(buffer, "byteLength", &byteLengthRef);
-    ASSERT_EQ_MSG(status, ANI_OK, 0, "Object_GetPropertyByName_Ref byteLength failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_GetPropertyByName_Ref byteLength failed")) {
+        return 0;
+    }
     if (byteLengthRef == nullptr) {
         return 0;
     }
     ani_int unboxed = 0;
     ani_status unboxStatus = env->Primitive_Unbox_Int(
         static_cast<ani_object>(byteLengthRef), &unboxed);
-    ASSERT_EQ_MSG(unboxStatus, ANI_OK, 0, "Primitive_Unbox_Int byteLength failed");
+    if (!AssertEqMsg(unboxStatus, ANI_OK, "Primitive_Unbox_Int byteLength failed")) {
+        return 0;
+    }
     std::cout << "Object_GetPropertyByName_Ref byteLength unbox success: "
               << unboxed << std::endl;
     return unboxed;
@@ -81,7 +85,9 @@ ani_int GetArrayBufferByteLengthByInfo(ani_env *env, ani_object buffer)
     void *data = nullptr;
     ani_size size = 0;
     ani_status status = env->ArrayBuffer_GetInfo(static_cast<ani_arraybuffer>(buffer), &data, &size);
-    ASSERT_EQ_MSG(status, ANI_OK, 0, "ArrayBuffer_GetInfo fallback failed");
+    if (!AssertEqMsg(status, ANI_OK, "ArrayBuffer_GetInfo fallback failed")) {
+        return 0;
+    }
     std::cout << "ArrayBuffer_GetInfo fallback byteLength success: "
               << size << std::endl;
     return static_cast<ani_int>(size);
@@ -101,13 +107,17 @@ ani_object TryCreateArrayBufferByIntCtor(ani_env *env, ani_class cls, ani_int le
 {
     ani_method ctor {};
     ani_status status = env->Class_FindMethod(cls, "<ctor>", "i:", &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Class_FindMethod ArrayBuffer ctor i: failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_FindMethod ArrayBuffer ctor i: failed")) {
+        return nullptr;
+    }
     if (ctor == nullptr) {
         return nullptr;
     }
     ani_object buffer {};
     status = env->Object_New(cls, ctor, &buffer, length);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Object_New ArrayBuffer by i: failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_New ArrayBuffer by i: failed")) {
+        return nullptr;
+    }
     if (buffer == nullptr) {
         return nullptr;
     }
@@ -123,19 +133,25 @@ ani_object TryCreateArrayBufferByOptionalCtor(ani_env *env, ani_class cls, ani_i
 {
     ani_method ctor {};
     ani_status status = env->Class_FindMethod(cls, "<ctor>", "iC{std.core.Int}:", &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Class_FindMethod ArrayBuffer ctor iC{std.core.Int}: failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_FindMethod ArrayBuffer ctor iC{std.core.Int}: failed")) {
+        return nullptr;
+    }
     if (ctor == nullptr) {
         return nullptr;
     }
     ani_object maxByteLength {};
     ani_status boxStatus = env->Primitive_Box_Int(length, &maxByteLength);
-    ASSERT_EQ_MSG(boxStatus, ANI_OK, nullptr, "Primitive_Box_Int maxByteLength failed");
+    if (!AssertEqMsg(boxStatus, ANI_OK, "Primitive_Box_Int maxByteLength failed")) {
+        return nullptr;
+    }
     if (maxByteLength == nullptr) {
         return nullptr;
     }
     ani_object buffer {};
     status = env->Object_New(cls, ctor, &buffer, length, maxByteLength);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Object_New ArrayBuffer by iC{std.core.Int}: failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_New ArrayBuffer by iC{std.core.Int}: failed")) {
+        return nullptr;
+    }
     if (buffer == nullptr) {
         return nullptr;
     }
@@ -154,7 +170,9 @@ ani_object CreateArrayBufferWithLength(ani_env *env, ani_int length)
     }
     ani_class cls {};
     ani_status status = env->FindClass(CREATE_ARRAYBUFFER_CLASS, &cls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindClass std.core.ArrayBuffer failed");
+    if (!AssertEqMsg(status, ANI_OK, "FindClass std.core.ArrayBuffer failed")) {
+        return nullptr;
+    }
     if (cls == nullptr) {
         return nullptr;
     }
@@ -170,13 +188,19 @@ ani_boolean test_CreateArrayBufferIsView(ani_env *env, ani_object object, ani_ob
     (void)object;
     ani_class cls {};
     ani_status status = env->FindClass(ani_tc_create::CREATE_ARRAYBUFFER_CLASS, &cls);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "FindClass std.core.ArrayBuffer failed");
+    if (!AssertEqMsg(status, ANI_OK, "FindClass std.core.ArrayBuffer failed")) {
+        return ANI_FALSE;
+    }
     ani_static_method method {};
     status = env->Class_FindStaticMethod(cls, "isView", "C{std.core.Object}:z", &method);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Class_FindStaticMethod isView failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_FindStaticMethod isView failed")) {
+        return ANI_FALSE;
+    }
     ani_boolean result = ANI_FALSE;
     status = env->Class_CallStaticMethod_Boolean(cls, method, &result, value);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Class_CallStaticMethod_Boolean isView failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_CallStaticMethod_Boolean isView failed")) {
+        return ANI_FALSE;
+    }
     return result;
 }
 ani_int test_CreateArrayBufferByLength(ani_env *env, ani_object object, ani_int length)
@@ -368,13 +392,19 @@ ani_boolean test_CreateFindStaticMethod(ani_env *env, ani_object object, ani_obj
     (void)object;
     ani_class cls {};
     ani_status status = env->FindClass(ani_tc_create::CREATE_ARRAYBUFFER_CLASS, &cls);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "FindClass std.core.ArrayBuffer failed");
+    if (!AssertEqMsg(status, ANI_OK, "FindClass std.core.ArrayBuffer failed")) {
+        return ANI_FALSE;
+    }
     ani_static_method method {};
     status = env->Class_FindStaticMethod(cls, "isView", "C{std.core.Object}:z", &method);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Class_FindStaticMethod isView failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_FindStaticMethod isView failed")) {
+        return ANI_FALSE;
+    }
     ani_boolean result = ANI_FALSE;
     status = env->Class_CallStaticMethod_Boolean(cls, method, &result, value);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Class_CallStaticMethod_Boolean isView failed");
+    if (!AssertEqMsg(status, ANI_OK, "Class_CallStaticMethod_Boolean isView failed")) {
+        return ANI_FALSE;
+    }
     return result;
 }
 ani_int test_CreateFindInstanceMethod(ani_env *env, ani_object object, ani_int length)

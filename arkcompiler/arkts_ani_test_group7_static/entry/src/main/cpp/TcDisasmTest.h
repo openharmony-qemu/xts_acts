@@ -29,11 +29,15 @@ std::string DisasmAniStringToStd(ani_env *env, ani_string value)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(value, &size);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_GetUTF8Size failed")) {
+        return "";
+    }
     std::vector<char> buffer(size + 1, 0);
     ani_size writtenSize = 0;
     status = env->String_GetUTF8(value, buffer.data(), buffer.size(), &writtenSize);
-    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8 failed");
+    if (!AssertEqMsg(status, ANI_OK, "String_GetUTF8 failed")) {
+        return "";
+    }
     return std::string(buffer.data(), writtenSize);
 }
 }
