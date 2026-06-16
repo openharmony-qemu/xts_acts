@@ -52,6 +52,13 @@ const ani_int TEST_INT_VAL2 = 6;
             return ANI_FALSE;                                     \
         }                                                         \
     } while (0)
+#define ASSERT_EQ_MSG(a, b, ret, msg) \
+    do { \
+        if ((a) != (b)) { \
+            OH_LOG_INFO(LOG_APP, "%s: %d != %d", msg, (a), (b)); \
+            return (ret); \
+        } \
+    } while (0)
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
 {
     ani_class cls {};

@@ -50,53 +50,34 @@ inline ani_string BigIntStdStringToAni(ani_env *env, const std::string &value)
 ani_object CreateBigIntByLong(ani_env *env, ani_long value)
 {
     ani_class cls = nullptr;
-    if (env->FindClass(BIGINT_CLASS_NAME, &cls) != ANI_OK) {
-        std::cerr << "Find std.core.BigInt failed." << std::endl;
-        return nullptr;
-    }
+    ani_status status = env->FindClass(BIGINT_CLASS_NAME, &cls);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find std.core.BigInt failed");
     ani_method ctor = nullptr;
-    ani_status status = env->Class_FindMethod(cls, "<ctor>", "l:", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Find BigInt long constructor failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    status = env->Class_FindMethod(cls, "<ctor>", "l:", &ctor);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find BigInt long constructor failed");
     ani_object result = nullptr;
     status = env->Object_New(cls, ctor, &result, value);
-    if (status != ANI_OK) {
-        std::cerr << "Create BigInt by long failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create BigInt by long failed");
     return result;
 }
 ani_object CreateBigIntByString(ani_env *env, ani_string value)
 {
     ani_class cls = nullptr;
-    if (env->FindClass(BIGINT_CLASS_NAME, &cls) != ANI_OK) {
-        std::cerr << "Find std.core.BigInt failed." << std::endl;
-        return nullptr;
-    }
+    ani_status status = env->FindClass(BIGINT_CLASS_NAME, &cls);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find std.core.BigInt failed");
     ani_method ctor = nullptr;
-    ani_status status = env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}:", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Find BigInt string constructor failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    status = env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}:", &ctor);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find BigInt string constructor failed");
     ani_object result = nullptr;
     status = env->Object_New(cls, ctor, &result, value);
-    if (status != ANI_OK) {
-        std::cerr << "Create BigInt by string failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create BigInt by string failed");
     return result;
 }
 inline ani_long GetBigIntLongValue(ani_env *env, ani_object obj)
 {
     ani_long result = 0;
     ani_status status = env->Object_CallMethodByName_Long(obj, "getLong", ":l", &result);
-    if (status != ANI_OK) {
-        std::cerr << "Call BigInt.getLong failed, status: " << status << std::endl;
-        return 0;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, 0, "Call BigInt.getLong failed");
     return result;
 }
 }
@@ -133,10 +114,7 @@ ani_boolean test_BigIntCheckType(ani_env *env, ani_object object, ani_object val
     }
     ani_boolean result = ANI_FALSE;
     ani_status status = env->Object_InstanceOf(value, cls, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Object_InstanceOf BigInt failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_InstanceOf BigInt failed");
     return result;
 }
 ani_boolean test_BigIntGetLongRangeCheck(ani_env *env, ani_object object, ani_object num)

@@ -31,56 +31,35 @@ std::string ExceptionAniStringToStdString(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
     std::vector<char> buffer(size + 1, 0);
     ani_size written = 0;
     status = env->String_GetUTF8(str, buffer.data(), buffer.size(), &written);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8 failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8 failed");
     return std::string(buffer.data(), written);
 }
 inline ani_string ExceptionStdStringToAniString(ani_env *env, const std::string &value)
 {
     ani_string result = nullptr;
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
     return result;
 }
 ani_error CreateErrorByClass(ani_env *env, const char *className, const std::string &message)
 {
     ani_class errorCls {};
     ani_status status = env->FindClass(className, &errorCls);
-    if (status != ANI_OK) {
-        std::cerr << "FindClass failed for error class: " << className
-                  << ", status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindClass failed for error class");
     ani_method ctor {};
     status = env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Class_FindMethod failed for error constructor, class: "
-                  << className << ", status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Class_FindMethod failed for error constructor");
     ani_string msg = ExceptionStdStringToAniString(env, message);
     if (msg == nullptr) {
         return nullptr;
     }
     ani_object errorObj {};
     status = env->Object_New(errorCls, ctor, &errorObj, msg);
-    if (status != ANI_OK) {
-        std::cerr << "Object_New failed for error class: " << className
-                  << ", status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Object_New failed for error class");
     return static_cast<ani_error>(errorObj);
 }
 inline ani_error CreateStandardError(ani_env *env, const std::string &message)
@@ -106,9 +85,8 @@ std::string ReadErrorMessage(ani_env *env, ani_error error)
     ani_ref messageRef {};
     ani_status status = env->Object_GetPropertyByName_Ref(
         static_cast<ani_object>(error), "message", &messageRef);
-    if (status != ANI_OK || messageRef == nullptr) {
-        std::cerr << "Object_GetPropertyByName_Ref(message) failed, status: "
-                  << status << std::endl;
+    ASSERT_EQ_MSG(status, ANI_OK, "", "Object_GetPropertyByName_Ref(message) failed");
+    if (messageRef == nullptr) {
         return "";
     }
     return ExceptionAniStringToStdString(env, static_cast<ani_string>(messageRef));
@@ -167,10 +145,9 @@ ani_object test_ExceptionPromiseRejectWithCatch(ani_env *env, ani_object object)
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
     if (status != ANI_OK) {
-        std::cerr << "Promise_New failed, status: " << status << std::endl;
         ani_tc_exception::ThrowStandardError(env, "Promise_New failed");
-        return nullptr;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_error error = ani_tc_exception::CreateStandardError(env, "Promise rejected from native");
     if (error == nullptr) {
         ani_tc_exception::ThrowStandardError(env, "Failed to create promise rejection error");
@@ -187,10 +164,9 @@ ani_object test_ExceptionPromiseRejectWithoutCatch(ani_env *env, ani_object obje
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
     if (status != ANI_OK) {
-        std::cerr << "Promise_New failed, status: " << status << std::endl;
         ani_tc_exception::ThrowStandardError(env, "Promise_New failed");
-        return nullptr;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_error error = ani_tc_exception::CreateStandardError(env, "Unhandled promise rejection from native");
     if (error == nullptr) {
         ani_tc_exception::ThrowStandardError(env, "Failed to create unhandled rejection error");

@@ -72,48 +72,36 @@ void ThrowAsyncError(ani_env *env, const char *message)
     ani_method ctor {};
     ani_object errorObj {};
     if (env->FindClass("std.core.Error", &errorCls) != ANI_OK) {
-        std::cerr << "Find std.core.Error failed while throwing async error." << std::endl;
         return;
     }
     if (env->Class_FindMethod(errorCls, "<ctor>", "C{std.core.String}:", &ctor) != ANI_OK) {
-        std::cerr << "Find Error constructor failed while throwing async error." << std::endl;
         return;
     }
     if (env->Object_New(errorCls, ctor, &errorObj, msg) != ANI_OK) {
-        std::cerr << "Create Error object failed while throwing async error." << std::endl;
         return;
     }
     ani_error error = static_cast<ani_error>(errorObj);
-    if (env->ThrowError(error) != ANI_OK) {
-        std::cerr << "ThrowError failed." << std::endl;
-    }
+    env->ThrowError(error);
 }
 ani_object CreateResolvedPromiseWithInt(ani_env *env, ani_int value)
 {
     ani_resolver resolver {};
     ani_object promise {};
-    if (env->Promise_New(&resolver, &promise) != ANI_OK) {
-        std::cerr << "Promise_New failed." << std::endl;
-        return nullptr;
-    }
+    ani_status status = env->Promise_New(&resolver, &promise);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_object boxedValue {};
-    if (env->Primitive_Box_Int(value, &boxedValue) != ANI_OK) {
-        std::cerr << "Primitive_Box_Int failed." << std::endl;
-        return promise;
-    }
-    if (env->PromiseResolver_Resolve(resolver, boxedValue) != ANI_OK) {
-        std::cerr << "PromiseResolver_Resolve failed." << std::endl;
-    }
+    status = env->Primitive_Box_Int(value, &boxedValue);
+    ASSERT_EQ_MSG(status, ANI_OK, promise, "Primitive_Box_Int failed");
+    status = env->PromiseResolver_Resolve(resolver, boxedValue);
+    ASSERT_EQ_MSG(status, ANI_OK, promise, "PromiseResolver_Resolve failed");
     return promise;
 }
 ani_object CreateRejectedPromise(ani_env *env, const char *message)
 {
     ani_resolver resolver {};
     ani_object promise {};
-    if (env->Promise_New(&resolver, &promise) != ANI_OK) {
-        std::cerr << "Promise_New failed." << std::endl;
-        return nullptr;
-    }
+    ani_status status = env->Promise_New(&resolver, &promise);
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
     ani_string msg = AsyncStdToAniString(env, message);
     ani_class errorCls {};
     ani_method ctor {};
@@ -127,9 +115,8 @@ ani_object CreateRejectedPromise(ani_env *env, const char *message)
     if (env->Object_New(errorCls, ctor, &errorObj, msg) != ANI_OK) {
         return promise;
     }
-    if (env->PromiseResolver_Reject(resolver, static_cast<ani_error>(errorObj)) != ANI_OK) {
-        std::cerr << "PromiseResolver_Reject failed." << std::endl;
-    }
+    ani_status rejectStatus = env->PromiseResolver_Reject(resolver, static_cast<ani_error>(errorObj));
+    ASSERT_EQ_MSG(rejectStatus, ANI_OK, promise, "PromiseResolver_Reject failed");
     return promise;
 }
 inline int Fibonacci(int n)
@@ -137,7 +124,7 @@ inline int Fibonacci(int n)
     if (n <= ASYNC_FIBONACCI_BASE_MAX) {
         return n;
     }
-    return Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_ONE) + Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_TWO);
+    return Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_ONE) +Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_TWO);
 }
 }
 ani_int test_AsyncHeavyTask(ani_env *env, ani_object object, ani_int input)
@@ -220,7 +207,6 @@ ani_int test_AsyncGetRaceCounter(ani_env *env, ani_object object)
     (void)object;
     return ani_tc_async::g_asyncRaceCounter.load();
 }
-
 void test_AsyncResetRaceCounter(ani_env *env, ani_object object)
 {
     (void)env;

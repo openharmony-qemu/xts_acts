@@ -73,58 +73,40 @@ inline ani_object ArrayBoxInt(ani_env *env, ani_int value)
 {
     ani_object result {};
     ani_status status = env->Primitive_Box_Int(value, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Box_Int failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Primitive_Box_Int failed");
     return result;
 }
 inline ani_object ArrayBoxDouble(ani_env *env, ani_double value)
 {
     ani_object result {};
     ani_status status = env->Primitive_Box_Double(value, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Box_Double failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Primitive_Box_Double failed");
     return result;
 }
 inline ani_object ArrayBoxBoolean(ani_env *env, ani_boolean value)
 {
     ani_object result {};
     ani_status status = env->Primitive_Box_Boolean(value, &result);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Box_Boolean failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Primitive_Box_Boolean failed");
     return result;
 }
 inline ani_string ArrayNewString(ani_env *env, const std::string &value)
 {
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
     return result;
 }
 inline bool ArrayUnboxInt(ani_env *env, ani_ref ref, ani_int *value)
 {
     ani_status status = env->Primitive_Unbox_Int(static_cast<ani_object>(ref), value);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Unbox_Int failed, status: " << status << std::endl;
-        return false;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "Primitive_Unbox_Int failed");
     return true;
 }
 inline bool ArrayUnboxDouble(ani_env *env, ani_ref ref, ani_double *value)
 {
     ani_status status = env->Primitive_Unbox_Double(static_cast<ani_object>(ref), value);
-    if (status != ANI_OK) {
-        std::cerr << "Primitive_Unbox_Double failed, status: " << status << std::endl;
-        return false;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, false, "Primitive_Unbox_Double failed");
     return true;
 }
 ani_array ArrayCreateWithInts(ani_env *env, const std::vector<ani_int> &values)
@@ -132,16 +114,11 @@ ani_array ArrayCreateWithInts(ani_env *env, const std::vector<ani_int> &values)
     ani_array array {};
     ani_ref undefinedRef = ArrayGetUndefined(env);
     ani_status status = env->Array_New(values.size(), undefinedRef, &array);
-    if (status != ANI_OK) {
-        std::cerr << "Array_New failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Array_New failed");
     for (ani_size i = 0; i < values.size(); i++) {
         ani_object boxed = ArrayBoxInt(env, values[i]);
         status = env->Array_Set(array, i, static_cast<ani_ref>(boxed));
-        if (status != ANI_OK) {
-            std::cerr << "Array_Set failed, index: " << i << ", status: " << status << std::endl;
-        }
+        ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Array_Set failed");
     }
     return array;
 }
@@ -152,9 +129,7 @@ ani_array test_ArrayCreateEmpty(ani_env *env, ani_object object)
     ani_array array {};
     ani_status status = env->Array_New(
         ani_tc_array::ARRAY_EMPTY_LENGTH, ani_tc_array::ArrayGetUndefined(env), &array);
-    if (status != ANI_OK) {
-        std::cerr << "Array_New empty failed, status: " << status << std::endl;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Array_New empty failed");
     return array;
 }
 ani_int test_ArrayGetLength(ani_env *env, ani_object object, ani_array array)
@@ -162,10 +137,7 @@ ani_int test_ArrayGetLength(ani_env *env, ani_object object, ani_array array)
     (void)object;
     ani_size length = 0;
     ani_status status = env->Array_GetLength(array, &length);
-    if (status != ANI_OK) {
-        std::cerr << "Array_GetLength failed, status: " << status << std::endl;
-        return ani_tc_array::ARRAY_ERROR_RETURN;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_array::ARRAY_ERROR_RETURN, "Array_GetLength failed");
     return static_cast<ani_int>(length);
 }
 ani_array test_ArrayCreateAndSetGet(ani_env *env, ani_object object)
@@ -227,10 +199,7 @@ ani_int test_ArrayPop(ani_env *env, ani_object object)
     });
     ani_ref popped {};
     ani_status status = env->Array_Pop(array, &popped);
-    if (status != ANI_OK) {
-        std::cerr << "Array_Pop failed, status: " << status << std::endl;
-        return ani_tc_array::ARRAY_ERROR_RETURN;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_array::ARRAY_ERROR_RETURN, "Array_Pop failed");
     ani_int value = 0;
     if (!ani_tc_array::ArrayUnboxInt(env, popped, &value)) {
         return ani_tc_array::ARRAY_ERROR_RETURN;
@@ -249,9 +218,7 @@ ani_boolean test_ArrayPopEmptyIsUndefined(ani_env *env, ani_object object)
     env->Array_New(ani_tc_array::ARRAY_EMPTY_LENGTH, ani_tc_array::ArrayGetUndefined(env), &array);
     ani_ref popped {};
     ani_status status = env->Array_Pop(array, &popped);
-    if (status != ANI_OK) {
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_array::ARRAY_ERROR_RETURN, "Array_Pop failed");
     ani_boolean isUndefined = ANI_FALSE;
     env->Reference_IsUndefined(popped, &isUndefined);
     return isUndefined;
@@ -277,10 +244,7 @@ ani_boolean test_ArrayGetOutOfRangeIsUndefined(ani_env *env, ani_object object)
     });
     ani_ref ref {};
     ani_status status = env->Array_Get(array, ani_tc_array::ARRAY_OUT_OF_RANGE_INDEX, &ref);
-    if (status != ANI_OK) {
-        std::cerr << "Array_Get out-of-range status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Array_Get out-of-range failed");
     ani_boolean isUndefined = ANI_FALSE;
     env->Reference_IsUndefined(ref, &isUndefined);
     return isUndefined;

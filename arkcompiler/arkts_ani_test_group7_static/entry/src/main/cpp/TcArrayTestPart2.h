@@ -78,12 +78,10 @@ ani_boolean test_ArrayNewInvalidLength(ani_env *env, ani_object object)
     ani_array array {};
     ani_status status = env->Array_New(static_cast<ani_size>(-1),
         ani_tc_array::ArrayGetUndefined(env), &array);
-    std::cerr << "Array_New invalid length status: " << status << std::endl;
     if (status != ANI_OK) {
         ani_boolean hasError = ANI_FALSE;
         ani_status errorStatus = env->ExistUnhandledError(&hasError);
         if (errorStatus == ANI_OK && hasError == ANI_TRUE) {
-            std::cerr << "Array_New invalid length produced a pending error." << std::endl;
             env->DescribeError();
             env->ResetError();
         }
@@ -92,7 +90,6 @@ ani_boolean test_ArrayNewInvalidLength(ani_env *env, ani_object object)
     ani_boolean hasError = ANI_FALSE;
     ani_status errorStatus = env->ExistUnhandledError(&hasError);
     if (errorStatus == ANI_OK && hasError == ANI_TRUE) {
-        std::cerr << "Array_New invalid length produced a pending error with ANI_OK status." << std::endl;
         env->DescribeError();
         env->ResetError();
         return ANI_TRUE;
@@ -103,14 +100,12 @@ ani_boolean test_ArraySetNonArray(ani_env *env, ani_object object)
 {
     ani_status status = env->Array_Set(static_cast<ani_array>(object), 0,
         static_cast<ani_ref>(ani_tc_array::ArrayBoxInt(env, ani_tc_array::ARRAY_VALUE_ONE)));
-    std::cerr << "Array_Set non-array status: " << status << std::endl;
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 ani_boolean test_ArrayGetNonArray(ani_env *env, ani_object object)
 {
     ani_ref ref {};
     ani_status status = env->Array_Get(static_cast<ani_array>(object), 0, &ref);
-    std::cerr << "Array_Get non-array status: " << status << std::endl;
     return status != ANI_OK ? ANI_TRUE : ANI_FALSE;
 }
 ani_boolean test_ArrayNullAndUndefined(ani_env *env, ani_object object)
@@ -164,22 +159,13 @@ ani_array test_ArrayObjectElement(ani_env *env, ani_object object)
     (void)object;
     ani_class pointCls {};
     ani_status status = env->FindClass(ani_tc_array::ARRAY_POINT_CLASS, &pointCls);
-    if (status != ANI_OK) {
-        std::cerr << "Find ArrayPoint failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find ArrayPoint failed");
     ani_method ctor {};
     status = env->Class_FindMethod(pointCls, "<ctor>", "i:", &ctor);
-    if (status != ANI_OK) {
-        std::cerr << "Find ArrayPoint constructor failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find ArrayPoint constructor failed");
     ani_object point {};
     status = env->Object_New(pointCls, ctor, &point, ani_tc_array::ARRAY_VALUE_TEN);
-    if (status != ANI_OK) {
-        std::cerr << "Create ArrayPoint failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create ArrayPoint failed");
     ani_array array {};
     env->Array_New(ani_tc_array::ARRAY_EMPTY_LENGTH, ani_tc_array::ArrayGetUndefined(env), &array);
     env->Array_Push(array, static_cast<ani_ref>(point));
@@ -195,16 +181,10 @@ ani_boolean test_ArrayCheckObjectElement(ani_env *env, ani_object object, ani_ar
     }
     ani_object point = static_cast<ani_object>(ref);
     status = env->Object_SetFieldByName_Int(point, "x", ani_tc_array::ARRAY_VALUE_NINETY_NINE);
-    if (status != ANI_OK) {
-        std::cerr << "Object_SetFieldByName_Int failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_SetFieldByName_Int failed");
     ani_int value = 0;
     status = env->Object_GetFieldByName_Int(point, "x", &value);
-    if (status != ANI_OK) {
-        std::cerr << "Object_GetFieldByName_Int failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_GetFieldByName_Int failed");
     return value == ani_tc_array::ARRAY_VALUE_NINETY_NINE ? ANI_TRUE : ANI_FALSE;
 }
 ani_array test_ArrayCreateMatrix(ani_env *env, ani_object object)

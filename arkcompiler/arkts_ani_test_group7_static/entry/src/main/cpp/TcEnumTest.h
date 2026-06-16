@@ -36,10 +36,7 @@ inline ani_string EnumNewUtf8String(ani_env *env, const std::string &value)
 {
     ani_string result {};
     ani_status status = env->String_NewUTF8(value.c_str(), value.size(), &result);
-    if (status != ANI_OK) {
-        std::cerr << "String_NewUTF8 failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "String_NewUTF8 failed");
     return result;
 }
 std::string EnumAniStringToStd(ani_env *env, ani_string str)
@@ -49,58 +46,39 @@ std::string EnumAniStringToStd(ani_env *env, ani_string str)
     }
     ani_size size = 0;
     ani_status status = env->String_GetUTF8Size(str, &size);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8Size failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8Size failed");
     std::vector<char> buffer(size + 1, '\0');
     ani_size written = 0;
     status = env->String_GetUTF8(str, buffer.data(), buffer.size(), &written);
-    if (status != ANI_OK) {
-        std::cerr << "String_GetUTF8 failed, status: " << status << std::endl;
-        return "";
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, "", "String_GetUTF8 failed");
     return std::string(buffer.data(), written);
 }
 inline ani_enum EnumFindColorIntEnum(ani_env *env)
 {
     ani_enum enumType {};
     ani_status status = env->FindEnum(ENUM_COLOR_INT_DESC, &enumType);
-    if (status != ANI_OK) {
-        std::cerr << "FindEnum COLORINT failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindEnum COLORINT failed");
     return enumType;
 }
 inline ani_enum EnumFindColorStringEnum(ani_env *env)
 {
     ani_enum enumType {};
     ani_status status = env->FindEnum(ENUM_COLOR_STRING_DESC, &enumType);
-    if (status != ANI_OK) {
-        std::cerr << "FindEnum COLORSTRING failed, status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "FindEnum COLORSTRING failed");
     return enumType;
 }
 inline ani_enum_item EnumGetItemByName(ani_env *env, ani_enum enumType, const char *name)
 {
     ani_enum_item item {};
     ani_status status = env->Enum_GetEnumItemByName(enumType, name, &item);
-    if (status != ANI_OK) {
-        std::cerr << "Enum_GetEnumItemByName failed, name: " << name
-                  << ", status: " << status << std::endl;
-        return nullptr;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Enum_GetEnumItemByName failed");
     return item;
 }
 inline ani_int EnumGetItemIntValue(ani_env *env, ani_enum_item item)
 {
     ani_int value = 0;
     ani_status status = env->EnumItem_GetValue_Int(item, &value);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetValue_Int failed, status: " << status << std::endl;
-        return 0;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, 0, "EnumItem_GetValue_Int failed");
     return value;
 }
 inline void EnumClearPendingError(ani_env *env)
@@ -136,10 +114,7 @@ ani_boolean test_EnumGetGreenIntByIndexCompare(ani_env *env, ani_object object)
     ani_enum_item itemByIndex {};
     ani_status status = env->Enum_GetEnumItemByIndex(
         enumType, ani_tc_enum::ENUM_GREEN_INDEX, &itemByIndex);
-    if (status != ANI_OK) {
-        std::cerr << "Enum_GetEnumItemByIndex failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Enum_GetEnumItemByIndex failed");
     ani_enum_item itemByName = ani_tc_enum::EnumGetItemByName(env, enumType, "GREENINT");
     if (itemByName == nullptr) {
         return ANI_FALSE;
@@ -148,10 +123,7 @@ ani_boolean test_EnumGetGreenIntByIndexCompare(ani_env *env, ani_object object)
     ani_int valueByName = ani_tc_enum::EnumGetItemIntValue(env, itemByName);
     ani_string nameByIndex {};
     status = env->EnumItem_GetName(itemByIndex, &nameByIndex);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetName failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "EnumItem_GetName failed");
     std::string name = ani_tc_enum::EnumAniStringToStd(env, nameByIndex);
     return (valueByIndex == valueByName && name == "GREENINT") ? ANI_TRUE : ANI_FALSE;
 }
@@ -168,10 +140,7 @@ ani_int test_EnumGetBlueIntIndex(ani_env *env, ani_object object)
     }
     ani_size index = 0;
     ani_status status = env->EnumItem_GetIndex(item, &index);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetIndex failed, status: " << status << std::endl;
-        return -1;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "EnumItem_GetIndex failed");
     return static_cast<ani_int>(index);
 }
 ani_string test_EnumGetGreenIntName(ani_env *env, ani_object object)
@@ -187,10 +156,7 @@ ani_string test_EnumGetGreenIntName(ani_env *env, ani_object object)
     }
     ani_string name {};
     ani_status status = env->EnumItem_GetName(item, &name);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetName failed, status: " << status << std::endl;
-        return ani_tc_enum::EnumNewUtf8String(env, "");
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_enum::EnumNewUtf8String(env, ""), "EnumItem_GetName failed");
     return name;
 }
 ani_boolean test_EnumGetEnumFromItem(ani_env *env, ani_object object)
@@ -206,10 +172,7 @@ ani_boolean test_EnumGetEnumFromItem(ani_env *env, ani_object object)
     }
     ani_enum retrievedEnum {};
     ani_status status = env->EnumItem_GetEnum(item, &retrievedEnum);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetEnum failed, status: " << status << std::endl;
-        return ANI_FALSE;
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "EnumItem_GetEnum failed");
     ani_enum_item itemFromRetrieved = ani_tc_enum::EnumGetItemByName(env, retrievedEnum, "BLUEINT");
     if (itemFromRetrieved == nullptr) {
         return ANI_FALSE;
@@ -230,10 +193,7 @@ ani_string test_EnumGetColorStringValue(ani_env *env, ani_object object)
     }
     ani_string value {};
     ani_status status = env->EnumItem_GetValue_String(item, &value);
-    if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetValue_String failed, status: " << status << std::endl;
-        return ani_tc_enum::EnumNewUtf8String(env, "");
-    }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_enum::EnumNewUtf8String(env, ""), "EnumItem_GetValue_String failed");
     return value;
 }
 ani_boolean test_EnumGetStringValueFromIntItemFails(ani_env *env, ani_object object)
@@ -267,10 +227,9 @@ ani_int test_EnumFindModuleEnum(ani_env *env, ani_object object)
     ani_enum enumType {};
     ani_status status = env->FindEnum(ani_tc_enum::ENUM_COLOR_INT_DESC, &enumType);
     if (status != ANI_OK) {
-        std::cerr << "FindEnum module-level enum failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return -1;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "FindEnum module-level enum failed");
     ani_enum_item item = ani_tc_enum::EnumGetItemByName(env, enumType, "GREENINT");
     if (item == nullptr) {
         return -1;
@@ -283,10 +242,9 @@ ani_int test_EnumFindNamespaceEnum(ani_env *env, ani_object object)
     ani_enum enumType {};
     ani_status status = env->FindEnum(ani_tc_enum::ENUM_NS_COLOR_INT_DESC, &enumType);
     if (status != ANI_OK) {
-        std::cerr << "FindEnum namespace enum failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return -1;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "FindEnum namespace enum failed");
     ani_enum_item item = ani_tc_enum::EnumGetItemByName(env, enumType, "GREENINT");
     if (item == nullptr) {
         return -1;
@@ -299,17 +257,15 @@ ani_enum_item test_EnumProcessIntNext(ani_env *env, ani_object object, ani_enum_
     ani_enum enumType {};
     ani_status status = env->EnumItem_GetEnum(color, &enumType);
     if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetEnum failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return color;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, color, "EnumItem_GetEnum failed");
     ani_size index = 0;
     status = env->EnumItem_GetIndex(color, &index);
     if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetIndex failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return color;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, color, "EnumItem_GetIndex failed");
     ani_size nextIndex = index + 1;
     if (nextIndex > ani_tc_enum::ENUM_LAST_INDEX) {
         nextIndex = ani_tc_enum::ENUM_FIRST_INDEX;
@@ -317,10 +273,9 @@ ani_enum_item test_EnumProcessIntNext(ani_env *env, ani_object object, ani_enum_
     ani_enum_item nextItem {};
     status = env->Enum_GetEnumItemByIndex(enumType, nextIndex, &nextItem);
     if (status != ANI_OK) {
-        std::cerr << "Enum_GetEnumItemByIndex next failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return color;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, color, "Enum_GetEnumItemByIndex next failed");
     return nextItem;
 }
 ani_enum_item test_EnumReturnBlueInt(ani_env *env, ani_object object)
@@ -401,10 +356,9 @@ ani_string test_EnumGetUnicodeStringValue(ani_env *env, ani_object object)
     ani_string value {};
     ani_status status = env->EnumItem_GetValue_String(item, &value);
     if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetValue_String unicode failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return ani_tc_enum::EnumNewUtf8String(env, "");
     }
+    ASSERT_EQ_MSG(status, ANI_OK, ani_tc_enum::EnumNewUtf8String(env, ""), "EnumItem_GetValue_String unicode failed");
     return value;
 }
 ani_enum_item test_EnumGetOtherItemFromInput(ani_env *env, ani_object object, ani_enum_item color)
@@ -413,17 +367,15 @@ ani_enum_item test_EnumGetOtherItemFromInput(ani_env *env, ani_object object, an
     ani_enum enumType {};
     ani_status status = env->EnumItem_GetEnum(color, &enumType);
     if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetEnum from input failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return color;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, color, "EnumItem_GetEnum from input failed");
     ani_enum_item otherItem {};
     status = env->Enum_GetEnumItemByName(enumType, "BLUEINT", &otherItem);
     if (status != ANI_OK) {
-        std::cerr << "Enum_GetEnumItemByName BLUEINT failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return color;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, color, "Enum_GetEnumItemByName BLUEINT failed");
     return otherItem;
 }
 ani_boolean test_EnumFindAfterLoadLibrary(ani_env *env, ani_object object)
@@ -432,8 +384,10 @@ ani_boolean test_EnumFindAfterLoadLibrary(ani_env *env, ani_object object)
     ani_enum enumType {};
     ani_status status = env->FindEnum(ani_tc_enum::ENUM_COLOR_INT_DESC, &enumType);
     if (status != ANI_OK || enumType == nullptr) {
-        std::cerr << "FindEnum after loadLibrary failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
+    }
+    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "FindEnum after loadLibrary failed");
+    if (enumType == nullptr) {
         return ANI_FALSE;
     }
     ani_enum_item item = ani_tc_enum::EnumGetItemByName(env, enumType, "REDINT");
@@ -445,10 +399,9 @@ ani_int test_EnumComputeValue(ani_env *env, ani_object object, ani_enum_item col
     ani_int value = 0;
     ani_status status = env->EnumItem_GetValue_Int(color, &value);
     if (status != ANI_OK) {
-        std::cerr << "EnumItem_GetValue_Int compute failed, status: " << status << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
-        return -1;
     }
+    ASSERT_EQ_MSG(status, ANI_OK, -1, "EnumItem_GetValue_Int compute failed");
     return value + ani_tc_enum::ENUM_COMPUTE_OFFSET;
 }
 ani_boolean test_EnumFindByDescriptorFormats(ani_env *env, ani_object object)
@@ -457,8 +410,10 @@ ani_boolean test_EnumFindByDescriptorFormats(ani_env *env, ani_object object)
     ani_enum correctEnum {};
     ani_status correctStatus = env->FindEnum(ani_tc_enum::ENUM_COLOR_INT_DESC, &correctEnum);
     if (correctStatus != ANI_OK || correctEnum == nullptr) {
-        std::cerr << "FindEnum correct descriptor failed, status: " << correctStatus << std::endl;
         ani_tc_enum::EnumClearPendingError(env);
+    }
+    ASSERT_EQ_MSG(correctStatus, ANI_OK, ANI_FALSE, "FindEnum correct descriptor failed");
+    if (correctEnum == nullptr) {
         return ANI_FALSE;
     }
     ani_enum wrongEnum {};
