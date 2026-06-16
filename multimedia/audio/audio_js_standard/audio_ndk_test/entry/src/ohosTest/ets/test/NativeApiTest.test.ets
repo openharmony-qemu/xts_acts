@@ -5739,6 +5739,21 @@ export default function audioNDK() {
  	     done();
  	   })
 
+     /** 
+     * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100 
+     * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100 
+     * @tc.desc   SetIndependentAudioSessionStrategy 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL0 
+     */ 
+     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => { 
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100(); 
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100 : ${result}`); 
+      expect(result).assertEqual(TEST_PASS); 
+      done(); 
+    })
+
     /**
     * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200
     * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200
