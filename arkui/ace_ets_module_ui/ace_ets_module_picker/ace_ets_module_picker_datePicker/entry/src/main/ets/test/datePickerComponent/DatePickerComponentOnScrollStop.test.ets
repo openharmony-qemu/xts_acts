@@ -68,7 +68,7 @@ export default function DatePickerComponentOnScrollStopTest() {
       await CommonFunc.sleep(500);
       let bounds = await datePickerComp.getBounds();
       let centerX: number = (bounds.left + bounds.right) / 2;
-      let centerY: number = bounds.top + bounds.height * 0.3;
+      let centerY: number = bounds.top + (bounds.bottom - bounds.top) * 0.3;
       await driver.swipe(centerX, centerY, centerX, centerY + 100, 600);
       await CommonFunc.sleep(2000);
 
