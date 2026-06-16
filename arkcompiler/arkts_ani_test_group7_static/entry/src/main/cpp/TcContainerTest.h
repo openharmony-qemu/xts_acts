@@ -69,14 +69,20 @@ ani_object CreatePersonInfo(ani_env *env, const std::string &name, ani_double ag
 {
     ani_class cls = nullptr;
     ani_status status = env->FindClass(INDEX_PERSON_INFO_CLASS, &cls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find PersonInfo failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find PersonInfo failed")) {
+        return nullptr;
+    }
     ani_method ctor = nullptr;
     status = env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}d:", &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find PersonInfo constructor failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find PersonInfo constructor failed")) {
+        return nullptr;
+    }
     ani_string aniName = ContainerStdStringToAni(env, name);
     ani_object result = nullptr;
     status = env->Object_New(cls, ctor, &result, aniName, age);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create PersonInfo failed");
+    if (!AssertEqMsg(status, ANI_OK, "Create PersonInfo failed")) {
+        return nullptr;
+    }
     return result;
 }
 bool CheckPersonInfo(ani_env *env, ani_object person, const std::string &expectedName,
@@ -87,13 +93,17 @@ bool CheckPersonInfo(ani_env *env, ani_object person, const std::string &expecte
     if (status != ANI_OK) {
         status = env->Object_GetPropertyByName_Ref(person, "name", &nameRef);
     }
-    ASSERT_EQ_MSG(status, ANI_OK, false, "Read PersonInfo.name failed");
+    if (!AssertEqMsg(status, ANI_OK, "Read PersonInfo.name failed")) {
+        return false;
+    }
     ani_double age = 0.0;
     status = env->Object_GetFieldByName_Double(person, "age", &age);
     if (status != ANI_OK) {
         status = env->Object_GetPropertyByName_Double(person, "age", &age);
     }
-    ASSERT_EQ_MSG(status, ANI_OK, false, "Read PersonInfo.age failed");
+    if (!AssertEqMsg(status, ANI_OK, "Read PersonInfo.age failed")) {
+        return false;
+    }
     std::string actualName = ContainerAniStringToStd(env, reinterpret_cast<ani_string>(nameRef));
     return actualName == expectedName && std::fabs(age - expectedAge) < CONTAINER_EPSILON;
 }
@@ -101,20 +111,28 @@ ani_method FindRecordGetter(ani_env *env, const char *signature)
 {
     ani_class recordCls = nullptr;
     ani_status status = env->FindClass(RECORD_CLASS_NAME, &recordCls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find escompat.Record failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find escompat.Record failed")) {
+        return nullptr;
+    }
     ani_method getter = nullptr;
     status = env->Class_FindIndexableGetter(recordCls, signature, &getter);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find Record indexable getter failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find Record indexable getter failed")) {
+        return nullptr;
+    }
     return getter;
 }
 ani_method FindRecordSetter(ani_env *env, const char *signature)
 {
     ani_class recordCls = nullptr;
     ani_status status = env->FindClass(RECORD_CLASS_NAME, &recordCls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find escompat.Record failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find escompat.Record failed")) {
+        return nullptr;
+    }
     ani_method setter = nullptr;
     status = env->Class_FindIndexableSetter(recordCls, signature, &setter);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find Record indexable setter failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find Record indexable setter failed")) {
+        return nullptr;
+    }
     return setter;
 }
 ani_object RecordGetByStringKey(ani_env *env, ani_object record, const std::string &key)
@@ -126,7 +144,9 @@ ani_object RecordGetByStringKey(ani_env *env, ani_object record, const std::stri
     ani_string aniKey = ContainerStdStringToAni(env, key);
     ani_ref result = nullptr;
     ani_status status = env->Object_CallMethod_Ref(record, getter, &result, aniKey);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Record getter call failed");
+    if (!AssertEqMsg(status, ANI_OK, "Record getter call failed")) {
+        return nullptr;
+    }
     return reinterpret_cast<ani_object>(result);
 }
 bool RecordSetByStringKey(ani_env *env, ani_object record, const std::string &key, ani_object value)
@@ -137,7 +157,9 @@ bool RecordSetByStringKey(ani_env *env, ani_object record, const std::string &ke
     }
     ani_string aniKey = ContainerStdStringToAni(env, key);
     ani_status status = env->Object_CallMethod_Void(record, setter, aniKey, value);
-    ASSERT_EQ_MSG(status, ANI_OK, false, "Record setter call failed");
+    if (!AssertEqMsg(status, ANI_OK, "Record setter call failed")) {
+        return false;
+    }
     return true;
 }
 }
@@ -170,13 +192,17 @@ ani_boolean test_ContainerRecordKeys(ani_env *env, ani_object object, ani_object
     ani_ref iteratorRef = nullptr;
     ani_status status = env->Object_CallMethodByName_Ref(record, "keys",
         ":C{escompat.IterableIterator}", &iteratorRef);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Call Record.keys failed");
+    if (!AssertEqMsg(status, ANI_OK, "Call Record.keys failed")) {
+        return ANI_FALSE;
+    }
     bool foundChloe = false;
     for (int i = 0; i < ani_tc_container::CONTAINER_KEYS_MAX_ITERATION; i++) {
         ani_ref nextRef = nullptr;
         status = env->Object_CallMethodByName_Ref(reinterpret_cast<ani_object>(iteratorRef), "next",
             ":C{std.core.Object}", &nextRef);
-        ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Call iterator.next failed");
+        if (!AssertEqMsg(status, ANI_OK, "Call iterator.next failed")) {
+            return ANI_FALSE;
+        }
         ani_boolean done = ANI_FALSE;
         status = env->Object_GetPropertyByName_Boolean(reinterpret_cast<ani_object>(nextRef), "done", &done);
         if (status == ANI_OK && done == ANI_TRUE) {
@@ -209,7 +235,9 @@ ani_double test_ContainerTupleDouble(ani_env *env, ani_object object, ani_tuple_
     for (ani_size i = 0; i < ani_tc_container::CONTAINER_TUPLE_DOUBLE_COUNT; i++) {
         ani_double value = 0.0;
         ani_status status = env->TupleValue_GetItem_Double(tuple, i, &value);
-        ASSERT_EQ_MSG(status, ANI_OK, 0.0, "TupleValue_GetItem_Double failed");
+        if (!AssertEqMsg(status, ANI_OK, "TupleValue_GetItem_Double failed")) {
+        return 0.0;
+    }
         sum += value;
     }
     return sum;
@@ -225,10 +253,18 @@ ani_boolean test_ContainerTupleMixed(ani_env *env, ani_object object, ani_tuple_
     ani_status s1 = env->TupleValue_GetItem_Ref(tuple, ani_tc_container::CONTAINER_INDEX_ONE, &strRef);
     ani_status s2 = env->TupleValue_GetItem_Double(tuple, ani_tc_container::CONTAINER_INDEX_TWO, &doubleVal);
     ani_status s3 = env->TupleValue_GetItem_Boolean(tuple, ani_tc_container::CONTAINER_INDEX_THREE, &boolVal);
-    ASSERT_EQ_MSG(s0, ANI_OK, ANI_FALSE, "TupleValue_GetItem_Int failed");
-    ASSERT_EQ_MSG(s1, ANI_OK, ANI_FALSE, "TupleValue_GetItem_Ref failed");
-    ASSERT_EQ_MSG(s2, ANI_OK, ANI_FALSE, "TupleValue_GetItem_Double failed");
-    ASSERT_EQ_MSG(s3, ANI_OK, ANI_FALSE, "TupleValue_GetItem_Boolean failed");
+    if (!AssertEqMsg(s0, ANI_OK, "TupleValue_GetItem_Int failed")) {
+        return ANI_FALSE;
+    }
+    if (!AssertEqMsg(s1, ANI_OK, "TupleValue_GetItem_Ref failed")) {
+        return ANI_FALSE;
+    }
+    if (!AssertEqMsg(s2, ANI_OK, "TupleValue_GetItem_Double failed")) {
+        return ANI_FALSE;
+    }
+    if (!AssertEqMsg(s3, ANI_OK, "TupleValue_GetItem_Boolean failed")) {
+        return ANI_FALSE;
+    }
     std::string str = ani_tc_container::ContainerAniStringToStd(env, reinterpret_cast<ani_string>(strRef));
     return intVal == ani_tc_container::CONTAINER_EXPECT_INT_42 && str == "hello" &&
         std::fabs(doubleVal - ani_tc_container::CONTAINER_EXPECT_DOUBLE_PI) <
@@ -248,7 +284,9 @@ ani_boolean test_ContainerTupleObject(ani_env *env, ani_object object, ani_tuple
     (void)object;
     ani_ref objRef = nullptr;
     ani_status status = env->TupleValue_GetItem_Ref(tuple, ani_tc_container::CONTAINER_INDEX_ZERO, &objRef);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "TupleValue_GetItem_Ref failed");
+    if (!AssertEqMsg(status, ANI_OK, "TupleValue_GetItem_Ref failed")) {
+        return ANI_FALSE;
+    }
     return ani_tc_container::CheckPersonInfo(
         env, reinterpret_cast<ani_object>(objRef), "Bob",
         ani_tc_container::CONTAINER_EXPECT_AGE_BOB) ? ANI_TRUE : ANI_FALSE;
@@ -262,10 +300,14 @@ ani_object test_ContainerCreateRecord(ani_env *env, ani_object object)
     }
     ani_method ctor = nullptr;
     ani_status status = env->Class_FindMethod(recordCls, "<ctor>", ":", &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find Record default constructor failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find Record default constructor failed")) {
+        return nullptr;
+    }
     ani_object record = nullptr;
     status = env->Object_New(recordCls, ctor, &record);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create Record failed");
+    if (!AssertEqMsg(status, ANI_OK, "Create Record failed")) {
+        return nullptr;
+    }
     ani_object person = ani_tc_container::CreatePersonInfo(
         env, "Native", ani_tc_container::CONTAINER_EXPECT_AGE_NATIVE);
     if (person != nullptr) {
@@ -316,7 +358,9 @@ ani_boolean test_ContainerNumberKeyRecord(ani_env *env, ani_object object, ani_o
     }
     ani_ref resultRef = nullptr;
     ani_status status = env->Object_CallMethod_Ref(record, getter, &resultRef, key);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Get Record<number, string> item failed");
+    if (!AssertEqMsg(status, ANI_OK, "Get Record<number, string> item failed")) {
+        return ANI_FALSE;
+    }
     std::string value = ani_tc_container::ContainerAniStringToStd(env, reinterpret_cast<ani_string>(resultRef));
     return value == "one" ? ANI_TRUE : ANI_FALSE;
 }

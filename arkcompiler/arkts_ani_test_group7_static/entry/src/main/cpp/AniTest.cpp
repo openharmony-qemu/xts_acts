@@ -757,7 +757,9 @@ static ani_status BindInstanceMethods(ani_env *env, ani_class cls,
 {
     for (size_t i = 0; i < size; i++) {
         ani_status status = env->Class_BindNativeMethods(cls, &methods[i], 1);
-        ASSERT_EQ_MSG(status, ANI_OK, status, "Bind instance native method failed");
+        if (!AssertEqMsg(status, ANI_OK, "Bind instance native method failed")) {
+            return status;
+        }
         std::cout << "Bind instance native method success, name: "
                   << methods[i].name << std::endl;
     }
@@ -768,7 +770,9 @@ static ani_status BindStaticMethods(ani_env *env, ani_class cls,
 {
     for (size_t i = 0; i < size; i++) {
         ani_status status = env->Class_BindStaticNativeMethods(cls, &methods[i], 1);
-        ASSERT_EQ_MSG(status, ANI_OK, status, "Bind static native method failed");
+        if (!AssertEqMsg(status, ANI_OK, "Bind static native method failed")) {
+        return status;
+    }
         std::cout << "Bind static native method success, name: "
                   << methods[i].name << std::endl;
     }
@@ -779,7 +783,9 @@ static ani_status BindModuleMethods(ani_env *env, ani_module module,
 {
     for (size_t i = 0; i < size; i++) {
         ani_status status = env->Module_BindNativeFunctions(module, &methods[i], 1);
-        ASSERT_EQ_MSG(status, ANI_OK, status, "Bind module native function failed");
+        if (!AssertEqMsg(status, ANI_OK, "Bind module native function failed")) {
+        return status;
+    }
         std::cout << "Bind module native function success, name: "
                   << methods[i].name << std::endl;
     }
@@ -801,7 +807,9 @@ static ani_status BindNamespaceMethods(ani_env *env, ani_namespace ns,
 {
     for (size_t i = 0; i < size; i++) {
         ani_status status = env->Namespace_BindNativeFunctions(ns, &methods[i], 1);
-        ASSERT_EQ_MSG(status, ANI_OK, status, "Bind namespace native function failed");
+        if (!AssertEqMsg(status, ANI_OK, "Bind namespace native function failed")) {
+        return status;
+    }
         std::cout << "Bind namespace native function success, name: "
                   << methods[i].name << std::endl;
     }
@@ -811,67 +819,109 @@ static ani_status FindBindTargets(ani_env *env, const char *clsName,
     ani_class *cls, ani_module *module, ani_namespace *ns)
 {
     ani_status status = env->FindClass(clsName, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, static_cast<ani_status>(ANI_RES_INVALID_ARGS), "Not found class");
+    if (!AssertEqMsg(status, ANI_OK, "Not found class")) {
+        return static_cast<ani_status>(ANI_RES_INVALID_ARGS);
+    }
     status = env->FindModule(MODULE_NAME, module);
-    ASSERT_EQ_MSG(status, ANI_OK, static_cast<ani_status>(ANI_RES_INVALID_ARGS), "Not found module");
+    if (!AssertEqMsg(status, ANI_OK, "Not found module")) {
+        return static_cast<ani_status>(ANI_RES_INVALID_ARGS);
+    }
     status = env->FindNamespace(NAMESPACE_NAME, ns);
-    ASSERT_EQ_MSG(status, ANI_OK, static_cast<ani_status>(ANI_RES_INVALID_ARGS), "Not found namespace");
+    if (!AssertEqMsg(status, ANI_OK, "Not found namespace")) {
+        return static_cast<ani_status>(ANI_RES_INVALID_ARGS);
+    }
     return ANI_OK;
 }
 static ani_status BindCommonCases(ani_env *env, ani_class cls, ani_module module, ani_namespace ns)
 {
     ani_status status = BindInstanceMethods(env, cls, bindInstanceMethods.data(), bindInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind bindInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind bindInstanceMethods failed")) {
+        return status;
+    }
     status = BindStaticMethods(env, cls, bindStaticMethods.data(), bindStaticMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind bindStaticMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind bindStaticMethods failed")) {
+        return status;
+    }
     status = BindNamespaceMethods(env, ns, bindNamespaceMethods.data(), bindNamespaceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind bindNamespaceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind bindNamespaceMethods failed")) {
+        return status;
+    }
     status = BindModuleMethods(env, module, bindModuleMethods.data(), bindModuleMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind bindModuleMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind bindModuleMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindManglingTypeParamCreateCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindInstanceMethods(env, cls, manglingInstanceMethods.data(), manglingInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind manglingInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind manglingInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, typeInstanceMethods.data(), typeInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind typeInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind typeInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, paramInstanceMethods.data(), paramInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind paramInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind paramInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, createInstanceMethods.data(), createInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind createInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind createInstanceMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindIfaceFuncAsyncMtCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindInstanceMethods(env, cls, ifaceInstanceMethods.data(), ifaceInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind ifaceInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind ifaceInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, funcInstanceMethods.data(), funcInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind funcInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind funcInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, asyncInstanceMethods.data(), asyncInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind asyncInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind asyncInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, mtInstanceMethods.data(), mtInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind mtInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind mtInstanceMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindArrayAndEnumCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindInstanceMethods(env, cls, arrayInstanceMethods.data(), arrayInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind arrayInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind arrayInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, fixedArrayInstanceMethods.data(), fixedArrayInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind fixedArrayInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind fixedArrayInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, arrayBufferInstanceMethods.data(), arrayBufferInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind arrayBufferInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind arrayBufferInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, enumInstanceMethods.data(), enumInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind enumInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind enumInstanceMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindErrorCodeAndFaqCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindInstanceMethods(env, cls, errorCodeInstanceMethods.data(), errorCodeInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind errorCodeInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind errorCodeInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, faqInstanceMethods.data(), faqInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind faqInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind faqInstanceMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindDisabledBigIntAndContainerCases(ani_env *env, ani_class cls)
@@ -883,13 +933,21 @@ static ani_status BindDisabledBigIntAndContainerCases(ani_env *env, ani_class cl
 static ani_status BindLifecycleExceptionStringOptCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindInstanceMethods(env, cls, lifecycleInstanceMethods.data(), lifecycleInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind lifecycleInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind lifecycleInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, exceptionInstanceMethods.data(), exceptionInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind exceptionInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind exceptionInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, stringInstanceMethods.data(), stringInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind stringInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind stringInstanceMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, optInstanceMethods.data(), optInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind optInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind optInstanceMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindDisabledOptStaticAndModuleCases(ani_env *env, ani_class cls, ani_module module)
@@ -903,74 +961,115 @@ static ani_status BindOptNamespaceCases(ani_env *env)
 {
     ani_namespace optNs {};
     ani_status status = env->FindNamespace("entry.src.main.src.ets.Index.OptNamespace", &optNs);
-    ASSERT_EQ_MSG(status, ANI_OK, static_cast<ani_status>(ANI_RES_INVALID_ARGS),
-        "Not found namespace 'entry.src.main.src.ets.Index.OptNamespace'");
+    if (!AssertEqMsg(status, ANI_OK, "Not found namespace 'entry.src.main.src.ets.Index.OptNamespace'")) {
+        return static_cast<ani_status>(ANI_RES_INVALID_ARGS);
+    }
     return BindNamespaceMethods(env, optNs, optNamespaceMethods.data(), optNamespaceMethods.size());
 }
 static ani_status BindLoadLibErrorAndDisasmCases(ani_env *env, ani_class cls, ani_module module)
 {
     ani_status status = BindModuleMethods(env, module, loadLibModuleMethods.data(), loadLibModuleMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind loadLibModuleMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind loadLibModuleMethods failed")) {
+        return status;
+    }
     status = BindModuleMethods(env, module, errorModuleMethods.data(), errorModuleMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind errorModuleMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind errorModuleMethods failed")) {
+        return status;
+    }
     status = BindExpectedFailureModuleMethods(env, module,
         errorExpectedFailureModuleMethods.data(), errorExpectedFailureModuleMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind errorExpectedFailureModuleMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind errorExpectedFailureModuleMethods failed")) {
+        return status;
+    }
     status = BindInstanceMethods(env, cls, disasmInstanceMethods.data(), disasmInstanceMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind disasmInstanceMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind disasmInstanceMethods failed")) {
+        return status;
+    }
     status = BindStaticMethods(env, cls, disasmStaticMethods.data(), disasmStaticMethods.size());
-    ASSERT_EQ_MSG(status, ANI_OK, status, "Bind disasmStaticMethods failed");
+    if (!AssertEqMsg(status, ANI_OK, "Bind disasmStaticMethods failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindScenarioCases(ani_env *env, ani_class cls)
 {
     ani_status status = BindManglingTypeParamCreateCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindManglingTypeParamCreateCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindManglingTypeParamCreateCases failed")) {
+        return status;
+    }
     status = BindIfaceFuncAsyncMtCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindIfaceFuncAsyncMtCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindIfaceFuncAsyncMtCases failed")) {
+        return status;
+    }
     status = BindArrayAndEnumCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindArrayAndEnumCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindArrayAndEnumCases failed")) {
+        return status;
+    }
     status = BindErrorCodeAndFaqCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindErrorCodeAndFaqCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindErrorCodeAndFaqCases failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status BindRemainingCases(ani_env *env, ani_class cls, ani_module module)
 {
     ani_status status = BindDisabledBigIntAndContainerCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindDisabledBigIntAndContainerCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindDisabledBigIntAndContainerCases failed")) {
+        return status;
+    }
     status = BindLifecycleExceptionStringOptCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindLifecycleExceptionStringOptCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindLifecycleExceptionStringOptCases failed")) {
+        return status;
+    }
     status = BindDisabledOptStaticAndModuleCases(env, cls, module);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindDisabledOptStaticAndModuleCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindDisabledOptStaticAndModuleCases failed")) {
+        return status;
+    }
     status = BindOptNamespaceCases(env);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindOptNamespaceCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindOptNamespaceCases failed")) {
+        return status;
+    }
     status = BindLoadLibErrorAndDisasmCases(env, cls, module);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindLoadLibErrorAndDisasmCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindLoadLibErrorAndDisasmCases failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 static ani_status bindCase(ani_vm *vm, const char *clsName)
 {
     ani_env *env = nullptr;
     ani_status status = vm->GetEnv(ANI_VERSION_1, &env);
-    ASSERT_EQ_MSG(status, ANI_OK, static_cast<ani_status>(ANI_RES_OUT_OF_REF), "Unsupported ANI_VERSION_1");
+    if (!AssertEqMsg(status, ANI_OK, "Unsupported ANI_VERSION_1")) {
+        return static_cast<ani_status>(ANI_RES_OUT_OF_REF);
+    }
     ani_class cls {};
     ani_module module {};
     ani_namespace ns {};
     status = FindBindTargets(env, clsName, &cls, &module, &ns);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "FindBindTargets failed");
+    if (!AssertEqMsg(status, ANI_OK, "FindBindTargets failed")) {
+        return status;
+    }
     status = BindCommonCases(env, cls, module, ns);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindCommonCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindCommonCases failed")) {
+        return status;
+    }
     status = BindScenarioCases(env, cls);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindScenarioCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindScenarioCases failed")) {
+        return status;
+    }
     status = BindRemainingCases(env, cls, module);
-    ASSERT_EQ_MSG(status, ANI_OK, status, "BindRemainingCases failed");
+    if (!AssertEqMsg(status, ANI_OK, "BindRemainingCases failed")) {
+        return status;
+    }
     return ANI_OK;
 }
 ANI_EXPORT ani_status ANI_Constructor(ani_vm *vm, uint32_t *result)
 {
     std::cout << "testTag : entering libentry.so's ANI_Constructor" << std::endl;
     ani_status status = bindCase(vm, "entry.src.main.src.ets.Index.Foo");
-    ASSERT_EQ_MSG(status, ANI_OK, status, "bindCase failed");
+    if (!AssertEqMsg(status, ANI_OK, "bindCase failed")) {
+        return status;
+    }
     *result = ANI_VERSION_1;
     return ANI_OK;
 }

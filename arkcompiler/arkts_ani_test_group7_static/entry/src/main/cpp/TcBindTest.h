@@ -142,7 +142,6 @@ ani_boolean test_CheckLog(ani_env *env, ani_object object)
     ani_tc_bind::g_logCallCount.store(0);
     ani_tc_bind::g_logFirstCallOk.store(false);
     ani_tc_bind::g_logSecondCallOk.store(false);
-
     return result ? ANI_TRUE : ANI_FALSE;
 }
 #endif

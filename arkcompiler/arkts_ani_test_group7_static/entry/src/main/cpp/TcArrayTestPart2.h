@@ -159,13 +159,19 @@ ani_array test_ArrayObjectElement(ani_env *env, ani_object object)
     (void)object;
     ani_class pointCls {};
     ani_status status = env->FindClass(ani_tc_array::ARRAY_POINT_CLASS, &pointCls);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find ArrayPoint failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find ArrayPoint failed")) {
+        return nullptr;
+    }
     ani_method ctor {};
     status = env->Class_FindMethod(pointCls, "<ctor>", "i:", &ctor);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Find ArrayPoint constructor failed");
+    if (!AssertEqMsg(status, ANI_OK, "Find ArrayPoint constructor failed")) {
+        return nullptr;
+    }
     ani_object point {};
     status = env->Object_New(pointCls, ctor, &point, ani_tc_array::ARRAY_VALUE_TEN);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Create ArrayPoint failed");
+    if (!AssertEqMsg(status, ANI_OK, "Create ArrayPoint failed")) {
+        return nullptr;
+    }
     ani_array array {};
     env->Array_New(ani_tc_array::ARRAY_EMPTY_LENGTH, ani_tc_array::ArrayGetUndefined(env), &array);
     env->Array_Push(array, static_cast<ani_ref>(point));
@@ -181,10 +187,14 @@ ani_boolean test_ArrayCheckObjectElement(ani_env *env, ani_object object, ani_ar
     }
     ani_object point = static_cast<ani_object>(ref);
     status = env->Object_SetFieldByName_Int(point, "x", ani_tc_array::ARRAY_VALUE_NINETY_NINE);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_SetFieldByName_Int failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_SetFieldByName_Int failed")) {
+        return ANI_FALSE;
+    }
     ani_int value = 0;
     status = env->Object_GetFieldByName_Int(point, "x", &value);
-    ASSERT_EQ_MSG(status, ANI_OK, ANI_FALSE, "Object_GetFieldByName_Int failed");
+    if (!AssertEqMsg(status, ANI_OK, "Object_GetFieldByName_Int failed")) {
+        return ANI_FALSE;
+    }
     return value == ani_tc_array::ARRAY_VALUE_NINETY_NINE ? ANI_TRUE : ANI_FALSE;
 }
 ani_array test_ArrayCreateMatrix(ani_env *env, ani_object object)

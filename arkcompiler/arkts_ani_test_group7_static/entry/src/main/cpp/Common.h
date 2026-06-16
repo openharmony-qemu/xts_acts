@@ -52,13 +52,18 @@ const ani_int TEST_INT_VAL2 = 6;
             return ANI_FALSE;                                     \
         }                                                         \
     } while (0)
-#define ASSERT_EQ_MSG(a, b, ret, msg) \
-    do { \
-        if ((a) != (b)) { \
-            OH_LOG_INFO(LOG_APP, "%s: %d != %d", msg, (a), (b)); \
-            return (ret); \
-        } \
-    } while (0)
+template<typename T, typename U>
+inline bool AssertEqMsg(const T &actual, const U &expected, const char *msg)
+{
+    if (actual != expected) {
+        OH_LOG_INFO(LOG_APP, "%s: %d != %d",
+            msg,
+            static_cast<int>(actual),
+            static_cast<int>(expected));
+        return false;
+    }
+    return true;
+}
 ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls)
 {
     ani_class cls {};

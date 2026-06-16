@@ -88,12 +88,18 @@ ani_object CreateResolvedPromiseWithInt(ani_env *env, ani_int value)
     ani_resolver resolver {};
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
+    if (!AssertEqMsg(status, ANI_OK, "Promise_New failed")) {
+        return nullptr;
+    }
     ani_object boxedValue {};
     status = env->Primitive_Box_Int(value, &boxedValue);
-    ASSERT_EQ_MSG(status, ANI_OK, promise, "Primitive_Box_Int failed");
+    if (!AssertEqMsg(status, ANI_OK, "Primitive_Box_Int failed")) {
+        return promise;
+    }
     status = env->PromiseResolver_Resolve(resolver, boxedValue);
-    ASSERT_EQ_MSG(status, ANI_OK, promise, "PromiseResolver_Resolve failed");
+    if (!AssertEqMsg(status, ANI_OK, "PromiseResolver_Resolve failed")) {
+        return promise;
+    }
     return promise;
 }
 ani_object CreateRejectedPromise(ani_env *env, const char *message)
@@ -101,7 +107,9 @@ ani_object CreateRejectedPromise(ani_env *env, const char *message)
     ani_resolver resolver {};
     ani_object promise {};
     ani_status status = env->Promise_New(&resolver, &promise);
-    ASSERT_EQ_MSG(status, ANI_OK, nullptr, "Promise_New failed");
+    if (!AssertEqMsg(status, ANI_OK, "Promise_New failed")) {
+        return nullptr;
+    }
     ani_string msg = AsyncStdToAniString(env, message);
     ani_class errorCls {};
     ani_method ctor {};
@@ -116,7 +124,9 @@ ani_object CreateRejectedPromise(ani_env *env, const char *message)
         return promise;
     }
     ani_status rejectStatus = env->PromiseResolver_Reject(resolver, static_cast<ani_error>(errorObj));
-    ASSERT_EQ_MSG(rejectStatus, ANI_OK, promise, "PromiseResolver_Reject failed");
+    if (!AssertEqMsg(rejectStatus, ANI_OK, "PromiseResolver_Reject failed")) {
+        return promise;
+    }
     return promise;
 }
 inline int Fibonacci(int n)
@@ -124,7 +134,7 @@ inline int Fibonacci(int n)
     if (n <= ASYNC_FIBONACCI_BASE_MAX) {
         return n;
     }
-    return Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_ONE) +Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_TWO);
+    return Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_ONE) + Fibonacci(n - ASYNC_FIBONACCI_PREVIOUS_TWO);
 }
 }
 ani_int test_AsyncHeavyTask(ani_env *env, ani_object object, ani_int input)
