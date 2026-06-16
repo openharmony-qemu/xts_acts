@@ -1,0 +1,12 @@
+{
+  "devices": {
+    "general": [
+      "SystemCapability.HiviewDFX.HiLog"
+    ]
+  },
+  "development": {
+    "general": [
+      "SystemCapability.HiviewDFX.HiLog"
+    ]
+  }
+}
