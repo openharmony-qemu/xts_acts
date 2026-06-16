@@ -793,7 +793,8 @@ export default function StringSplitTest(): void {
      * @tc.level Level 2
      */
     it('testSplit050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text = new String("\u4E2D\u6587\u3001Latin\u3001\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC\u3001\u0627\u0644\u0639\u0631\u0628\u064A\u0629");
+      const text =
+        new String("\u4E2D\u6587\u3001Latin\u3001\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC\u3001\u0627\u0644\u0639\u0631\u0628\u064A\u0629");
       let result: String[] = text.split(new RegExp("\u3001"));
       expect(result.length).assertEqual(4);
       expect(result[0].toString()).assertEqual("\u4E2D\u6587");
@@ -839,6 +840,72 @@ export default function StringSplitTest(): void {
       }
       expect(splitSucceeded).assertFalse();
       expect(isThrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_5300
+     * @tc.name testSplit053
+     * @tc.desc Verify split() handles overlong UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xc0\\x81");
+      let result: String[] = source.split("|");
+      expect(result.length).assertEqual(1);
+      expect(result[0].toString()).assertEqual("\\xc0\\x81");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_5400
+     * @tc.name testSplit054
+     * @tc.desc Verify split() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: String[] = source.split("|");
+      expect(result.length).assertEqual(1);
+      expect(result[0].toString()).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_5500
+     * @tc.name testSplit055
+     * @tc.desc Verify Split handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string[] = source.split("\u6D4B\u8BD5");
+      expect(result.length).assertEqual(5);
+      expect(result[0]).assertEqual("!@#$%^&*() <script>alert(1)</script> ");
+      expect(result[1]).assertEqual(" 分割符  ");
+      expect(result[2]).assertEqual(" \n 换行  ");
+      expect(result[3]).assertEqual(" \r\n 回车换行  ");
+      expect(result[4]).assertEqual(" \\ 转义符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SPLIT_5600
+     * @tc.name testSplit056
+     * @tc.desc Verify Split handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSplit056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string[] = source.split(" ");
+      expect(result.length).assertEqual(6);
+      expect(result[4]).assertEqual("АБВГД");
+      expect(result[5]).assertEqual("الاختبار");
     });
   });
 }

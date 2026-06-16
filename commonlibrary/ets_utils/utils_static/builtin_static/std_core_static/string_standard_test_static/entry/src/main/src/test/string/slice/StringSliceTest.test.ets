@@ -349,5 +349,161 @@ export default function StringSliceTest(): void {
       expect(r1).assertEqual("");
       expect(r2).assertEqual("");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2200
+     * @tc.name testSlice022
+     * @tc.desc Verify slice() extracts zero-width space from mixed string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: string = text.slice(1, 2);
+      expect(result).assertEqual("\u200B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2300
+     * @tc.name testSlice023
+     * @tc.desc Verify slice() extracts date month segment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: string = text.slice(5, 7);
+      expect(result).assertEqual("03");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2400
+     * @tc.name testSlice024
+     * @tc.desc Verify slice() extracts Unicode escape CJK suffix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("ID-\u4E2D\u6587");
+      let result: string = text.slice(3);
+      expect(result).assertEqual("\u4E2D\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2500
+     * @tc.name testSlice025
+     * @tc.desc Verify slice() extracts replacement character
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\uFFFDB");
+      let result: string = text.slice(1, 2);
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2600
+     * @tc.name testSlice026
+     * @tc.desc Verify slice() extracts fullwidth dash between fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u2014B");
+      let result: string = text.slice(1, 2);
+      expect(result).assertEqual("\u2014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2700
+     * @tc.name testSlice027
+     * @tc.desc Verify slice() extracts email domain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let atIndex: int = text.indexOf("@");
+      let result: string = text.slice(atIndex + 1);
+      expect(result).assertEqual("example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2800
+     * @tc.name testSlice028
+     * @tc.desc Verify slice() extracts masked bank card tail
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202********1234");
+      let result: string = text.slice(-4);
+      expect(result).assertEqual("1234");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_2900
+     * @tc.name testSlice029
+     * @tc.desc Verify slice() extracts CRLF pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\r\nB");
+      let result: string = text.slice(1, 3);
+      expect(result).assertEqual("\r\n");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_3000
+     * @tc.name testSlice030
+     * @tc.desc Verify slice() extracts Arabic text segment
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("X\u0627\u0628Y");
+      let result: string = text.slice(1, 3);
+      expect(result).assertEqual("\u0627\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_3100
+     * @tc.name testSlice031
+     * @tc.desc Verify Slice handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.slice(0, 10);
+      expect(result).assertEqual("!@#$%^&*()");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SLICE_3200
+     * @tc.name testSlice032
+     * @tc.desc Verify Slice handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSlice032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.slice(0, 3);
+      expect(result).assertEqual("テスト");
+    });
   });
 }

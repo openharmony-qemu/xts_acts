@@ -482,5 +482,50 @@ export default function StringRepeatTest(): void {
       expect(r0).assertEqual("");
       expect(r3).assertEqual("xxx");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPEAT_3100
+     * @tc.name testRepeat031
+     * @tc.desc Verify repeat() handles illegal UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRepeat031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4\\x3f\\xad");
+      let result: string = source.repeat(1);
+      expect(result).assertEqual("\\xe4\\x3f\\xad");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPEAT_3200
+     * @tc.name testRepeat032
+     * @tc.desc Verify Repeat handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRepeat032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      const source = new String(expected);
+      let result: string = source.repeat(1);
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPEAT_3300
+     * @tc.name testRepeat033
+     * @tc.desc Verify Repeat handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRepeat033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const expected: string = "テスト 테스트 Test 測試 АБВГД الاختبار";
+      const source = new String(expected);
+      let result: string = source.repeat(1);
+      expect(result).assertEqual(expected);
+    });
   });
 }

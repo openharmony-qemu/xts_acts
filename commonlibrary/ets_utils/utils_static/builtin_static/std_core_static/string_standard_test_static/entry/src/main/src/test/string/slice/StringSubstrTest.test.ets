@@ -465,5 +465,48 @@ export default function StringSubstrTest(): void {
       let inc: boolean = sub.includes("world");
       expect(inc).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTR_3100
+     * @tc.name testSubstr031
+     * @tc.desc Verify substr() handles literal malformed Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstr031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\u malformed");
+      let result: string = source.substr(0, source.length);
+      expect(result).assertEqual("\\u malformed");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTR_3200
+     * @tc.name testSubstr032
+     * @tc.desc Verify Substr handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstr032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.substr(0, 10);
+      expect(result).assertEqual("!@#$%^&*()");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTR_3300
+     * @tc.name testSubstr033
+     * @tc.desc Verify Substr handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstr033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.substr(0, 3);
+      expect(result).assertEqual("テスト");
+    });
   });
 }

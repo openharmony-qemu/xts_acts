@@ -470,7 +470,51 @@ export default function StringConcatTest(): void {
       let suffix: string = "b".repeat(100);
       let result: String = text.concat(suffix);
       expect(result.getLength()).assertEqual(101);
-      expect(result.charAt(0)).assertEqual(c'A');
+      expect(result.charAt(0)).assertEqual(c'A')
+      ;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_3100
+     * @tc.name testConcat031
+     * @tc.desc Verify concat() handles illegal UTF-8 single-byte spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xe4");
+      let result: string = source.concat("");
+      expect(result).assertEqual("\\xe4");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_3200
+     * @tc.name testConcat032
+     * @tc.desc Verify Concat handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.concat(" END");
+      expect(result).assertEqual(source.toString() + " END");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_CONCAT_3300
+     * @tc.name testConcat033
+     * @tc.desc Verify Concat handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testConcat033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.concat(" END");
+      expect(result).assertEqual(source.toString() + " END");
     });
   });
 }

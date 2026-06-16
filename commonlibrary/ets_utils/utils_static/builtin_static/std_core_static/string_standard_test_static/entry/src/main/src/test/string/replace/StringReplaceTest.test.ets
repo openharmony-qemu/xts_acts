@@ -1024,5 +1024,47 @@ export default function StringReplaceTest(): void {
       let result: string = text.replace(new RegExp("\\u4E2D"), "ZH");
       expect(result).assertEqual("code=\\u4E2D");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_7100
+     * @tc.name testReplace071
+     * @tc.desc Verify replace() handles literal malformed Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\u malformed");
+      let result: string = source.replace("missing-marker", "replacement");
+      expect(result).assertEqual("\\u malformed");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_7200
+     * @tc.name testReplace072
+     * @tc.desc Verify Replace handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.replace("<script>alert(1)</script>", "[xss]");
+      expect(result).assertEqual("!@#$%^&*() [xss] 测试 分割符  测试 \n 换行  测试 \r\n 回车换行  测试 \\ 转义符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACE_7300
+     * @tc.name testReplace073
+     * @tc.desc Verify Replace handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplace073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.replace("테스트", "KO");
+      expect(result).assertEqual("テスト KO Test 測試 АБВГД الاختبار");
+    });
   });
 }

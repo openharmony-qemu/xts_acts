@@ -501,5 +501,62 @@ export default function StringSubstringTest(): void {
       let result: string = text.substring(1, 6);
       expect(result).assertEqual("\u4E2D\u0391\u0410\u0627\u05D0");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_3300
+     * @tc.name testSubstring033
+     * @tc.desc Verify substring() handles mixed text with literal Unicode escape spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstring033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("test \\u4e2d\\u6587");
+      let result: string = source.substring(0, source.length);
+      expect(result).assertEqual("test \\u4e2d\\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_3400
+     * @tc.name testSubstring034
+     * @tc.desc Verify substring() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstring034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.substring(0, source.length);
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_3500
+     * @tc.name testSubstring035
+     * @tc.desc Verify Substring handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstring035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.substring(0, 10);
+      expect(result).assertEqual("!@#$%^&*()");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_SUBSTRING_3600
+     * @tc.name testSubstring036
+     * @tc.desc Verify Substring handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testSubstring036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.substring(0, 3);
+      expect(result).assertEqual("テスト");
+    });
   });
 }

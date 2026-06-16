@@ -909,6 +909,7 @@ export default function StringReplaceAllTest(): void {
       let result: string = text.replaceAll("$", "USD ").replaceAll("¥", "JPY ");
       expect(result).assertEqual("USD 100 and JPY 1000");
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6200
      * @tc.name testReplaceAll062
@@ -977,6 +978,63 @@ export default function StringReplaceAllTest(): void {
       const text = new String("hex=\\x41; hex=\\x41");
       let result: string = text.replaceAll(new RegExp("\\x41", "g"), "A");
       expect(result).assertEqual("hex=\\x41; hex=\\x41");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6700
+     * @tc.name testReplaceAll067
+     * @tc.desc Verify replaceAll() handles overlong UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\\xc0\\x81");
+      let result: string = source.replaceAll("missing-marker", "replacement");
+      expect(result).assertEqual("\\xc0\\x81");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6800
+     * @tc.name testReplaceAll068
+     * @tc.desc Verify replaceAll() handles replacement character U+FFFD
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uFFFD");
+      let result: string = source.replaceAll("missing-marker", "replacement");
+      expect(result).assertEqual("\uFFFD");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_6900
+     * @tc.name testReplaceAll069
+     * @tc.desc Verify ReplaceAll handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.replaceAll("<script>alert(1)</script>", "[xss]");
+      expect(result).assertEqual("!@#$%^&*() [xss] 测试 分割符  测试 \n 换行  测试 \r\n 回车换行  测试 \\ 转义符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACEALL_7000
+     * @tc.name testReplaceAll070
+     * @tc.desc Verify ReplaceAll handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceAll070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.replaceAll("テスト", "JP");
+      expect(result).assertEqual("JP 테스트 Test 測試 АБВГД الاختبار");
     });
   });
 }

@@ -375,5 +375,149 @@ export default function StringJoinTest(): void {
       let result: String = String.join(values, ";");
       expect(result.toString()).assertEqual("");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2400
+     * @tc.name testJoin024
+     * @tc.desc Verify String.join() joins Unicode escape CJK fields with comma
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("\u4E2D"), new String("\u6587")];
+      let result: String = String.join(values, ",");
+      expect(result.toString()).assertEqual("\u4E2D,\u6587");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2500
+     * @tc.name testJoin025
+     * @tc.desc Verify String.join() joins business date parts with hyphen
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("2026"), new String("03"), new String("05")];
+      let result: String = String.join(values, "-");
+      expect(result.toString()).assertEqual("2026-03-05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2600
+     * @tc.name testJoin026
+     * @tc.desc Verify String.join() joins email local and domain with at sign
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("test"), new String("example.com")];
+      let result: String = String.join(values, "@");
+      expect(result.toString()).assertEqual("test@example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2700
+     * @tc.name testJoin027
+     * @tc.desc Verify String.join() joins fields with CRLF separator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("A"), new String("B")];
+      let result: String = String.join(values, "\r\n");
+      expect(result.toString()).assertEqual("A\r\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2800
+     * @tc.name testJoin028
+     * @tc.desc Verify String.join() joins zero-width separator between ASCII fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("A"), new String("B")];
+      let result: String = String.join(values, "\u200B");
+      expect(result.toString()).assertEqual("A\u200BB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_2900
+     * @tc.name testJoin029
+     * @tc.desc Verify String.join() joins masked card segments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("622202"), new String("********"), new String("1234")];
+      let result: String = String.join(values, "");
+      expect(result.toString()).assertEqual("622202********1234");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_3000
+     * @tc.name testJoin030
+     * @tc.desc Verify String.join() joins Arabic fields with slash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("\u0627"), new String("\u0628")];
+      let result: String = String.join(values, "/");
+      expect(result.toString()).assertEqual("\u0627/\u0628");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_3100
+     * @tc.name testJoin031
+     * @tc.desc Verify join() handles illegal UTF-8 sequence spelling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: String[] = [new String("\\xe4\\x3f\\xad")];
+      let result: String = String.join(values, ",");
+      expect(result.toString()).assertEqual("\\xe4\\x3f\\xad");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_3200
+     * @tc.name testJoin032
+     * @tc.desc Verify Join handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: string =
+        "!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26";
+      let values: string[] = ["!@#$%^&*()", "<script>alert(1)</script>", "\u6D4B\u8BD5 \u5206\u5272\u7B26",
+        "\u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26"];
+      let result: String = String.join(values, "|");
+      expect(result.toString()).assertEqual("!@#$%^&*()|<script>alert(1)</script>|测试 分割符|测试 \\ 转义符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_JOIN_3300
+     * @tc.name testJoin033
+     * @tc.desc Verify Join handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testJoin033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let values: string[] = ["テスト", "테스트", "Test 測試", "АБВГД", "الاختبار"];
+      let result: String = String.join(values, "|");
+      expect(result.toString()).assertEqual("テスト|테스트|Test 測試|АБВГД|الاختبار");
+    });
   });
 }

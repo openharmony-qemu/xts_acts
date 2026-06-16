@@ -364,5 +364,134 @@ export default function StringReplaceCharTest(): void {
       let result: String = text.replaceChar(c'\r', c'\n');
       expect(result.toString()).assertEqual("line1\nline2");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2400
+     * @tc.name testReplaceChar024
+     * @tc.desc Verify replaceChar() replaces zero-width space with underscore
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u200BB");
+      let result: String = text.replaceChar(c'\u200B', c'_');
+      expect(result.toString()).assertEqual("A_B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2500
+     * @tc.name testReplaceChar025
+     * @tc.desc Verify replaceChar() replaces fullwidth dash with halfwidth dash
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\u2014B");
+      let result: String = text.replaceChar(c'\u2014', c'-');
+      expect(result.toString()).assertEqual("A-B");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2600
+     * @tc.name testReplaceChar026
+     * @tc.desc Verify replaceChar() replaces replacement character with question mark
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\uFFFD");
+      let result: String = text.replaceChar(c'\uFFFD', c'?');
+      expect(result.toString()).assertEqual("?");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2700
+     * @tc.name testReplaceChar027
+     * @tc.desc Verify replaceChar() replaces hyphen in date string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: String = text.replaceChar(c'-', c'/');
+      expect(result.toString()).assertEqual("2026/03/05");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2800
+     * @tc.name testReplaceChar028
+     * @tc.desc Verify replaceChar() replaces at sign in email string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: String = text.replaceChar(c'@', c'#');
+      expect(result.toString()).assertEqual("test#example.com");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_2900
+     * @tc.name testReplaceChar029
+     * @tc.desc Verify replaceChar() replaces asterisk in masked bank card string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("622202**1234");
+      let result: String = text.replaceChar(c'*', c'X');
+      expect(result.toString()).assertEqual("622202XX1234");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_3000
+     * @tc.name testReplaceChar030
+     * @tc.desc Verify replaceChar() replaces carriage return with line feed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A\rB");
+      let result: String = text.replaceChar(c'\r', c'\n');
+      expect(result.toString()).assertEqual("A\nB");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_3100
+     * @tc.name testReplaceChar031
+     * @tc.desc Verify ReplaceChar handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: String = source.replaceChar(c'!', c'?');
+      expect(result.toString())
+        .assertEqual("?@#$%^&*() <script>alert(1)</script> 测试 分割符  测试 \n 换行  测试 \r\n 回车换行  测试 \\ 转义符");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_REPLACECHAR_3200
+     * @tc.name testReplaceChar032
+     * @tc.desc Verify ReplaceChar handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testReplaceChar032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: String = source.replaceChar(c'テ', c'J');
+      expect(result.toString()).assertEqual("Jスト 테스트 Test 測試 АБВГД الاختبار");
+    });
+
   });
 }

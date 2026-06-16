@@ -368,5 +368,146 @@ export default function StringPadEndTest(): void {
       let result: string = text.padEnd(10);
       expect(result).assertEqual("left      ");
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2400
+     * @tc.name testPadEnd024
+     * @tc.desc Verify padEnd pads business date string with spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("2026-03-05");
+      let result: string = text.padEnd(12, " ");
+      expect(result).assertEqual("2026-03-05  ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2500
+     * @tc.name testPadEnd025
+     * @tc.desc Verify padEnd pads hexadecimal-looking string with zeros
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0x123");
+      let result: string = text.padEnd(7, "0");
+      expect(result).assertEqual("0x12300");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2600
+     * @tc.name testPadEnd026
+     * @tc.desc Verify padEnd pads email string only when target is longer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("test@example.com");
+      let result: string = text.padEnd(18, ".");
+      expect(result.length).assertEqual(18);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2700
+     * @tc.name testPadEnd027
+     * @tc.desc Verify padEnd with zero-width pad string uses it as content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("A");
+      let result: string = text.padEnd(3, "\u200B");
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2800
+     * @tc.name testPadEnd028
+     * @tc.desc Verify padEnd pads binary-looking string with underscore
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("0b1010");
+      let result: string = text.padEnd(8, "_");
+      expect(result).assertEqual("0b1010__");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_2900
+     * @tc.name testPadEnd029
+     * @tc.desc Verify padEnd keeps CJK source content before padding boundary check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("\u4E2D\u6587");
+      let result: string = text.padEnd(4, "*");
+      expect(result.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_3000
+     * @tc.name testPadEnd030
+     * @tc.desc Verify padEnd pads scientific-notation-looking string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const text = new String("123.45e6");
+      let result: string = text.padEnd(10, " ");
+      expect(result.length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_3100
+     * @tc.name testPadEnd031
+     * @tc.desc Verify padEnd() handles isolated low surrogate U+DC04
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("\uDC04");
+      let result: string = source.padEnd(source.length, "#");
+      expect(result).assertEqual("\uDC04");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_3200
+     * @tc.name testPadEnd032
+     * @tc.desc Verify PadEnd handles combined special characters without losing content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source =
+        new String("!@#$%^&*() <script>alert(1)</script> \u6D4B\u8BD5 \u5206\u5272\u7B26  \u6D4B\u8BD5 \n \u6362\u884C  \u6D4B\u8BD5 \r\n \u56DE\u8F66\u6362\u884C  \u6D4B\u8BD5 \\ \u8F6C\u4E49\u7B26");
+      let result: string = source.padEnd(source.length + 2, "!");
+      expect(result).assertEqual(source.toString() + "!!");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRING_PADEND_3300
+     * @tc.name testPadEnd033
+     * @tc.desc Verify PadEnd handles multilingual mixed encoded content
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testPadEnd033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new String("テスト 테스트 Test 測試 АБВГД الاختبار");
+      let result: string = source.padEnd(source.length + 1, "!");
+      expect(result).assertEqual(source.toString() + "!");
+    });
   });
 }
