@@ -212,7 +212,7 @@ export default function DisplayTest():void {
                 // }
             } catch (err) {
                 
-                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed, code: ' + err.code 'message:'+ err.message);
+                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed, code: ' + err.code + 'message:'+ err.message);
                 hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
                 if(err.code == 801){
                     code = 801;
@@ -678,7 +678,7 @@ export default function DisplayTest():void {
                 expect(data!.waterfallDisplayAreaRects.bottom.height).assertLargerOrEqual(0);
                 done();
             }).catch((error: Error) =>{
-                hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + error.code + ', message:' + err.message);
+                hilog.error(0x0000, '[ANI]',msgStr + 'failed in getting cutoutInfo. cause: ' + error.code + ', message:' + error.message);
                 expect(false).assertTrue();
                 done()
             });
@@ -1293,7 +1293,7 @@ export default function DisplayTest():void {
                 expect().assertFail();
                 done();
             } catch (error) {
-                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + error.code + ', message:' + err.message);
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + error.code + ', message:' + error.message);
                 expect(error.code).assertEqual(1400004);
                 done();
             }
@@ -3248,7 +3248,7 @@ export default function DisplayTest():void {
         })
         }catch (err) {
         
-        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code + ', message: ' + e.message);
+        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code + ', message: ' + err.message);
             if (err.code === 801) {
                     hilog.info(domain, tag, caseName + 'device not support makeUnique');
                     done();
@@ -3737,7 +3737,7 @@ export default function DisplayTest():void {
             }
 
         } catch (e) {
-            console.error(`${caseName} Failed. Cause: ` + e!.code `, message:` + e!.message);
+            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
             if (e.code === 801) {
                 done();
             } else {
