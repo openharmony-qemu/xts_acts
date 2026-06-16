@@ -53,8 +53,8 @@ export default function tabContentModifier() {
       console.info("ArkUI_Tabs_Divider_0300 start");
       let strJson = getInspectorByKey('tabContent_modifier_text');
       let obj: ESObject = JSON.parse(strJson);
-      console.log('tabContentModifier_0100 text: ' + JSON.stringify(JSON.parse(json).$attrs.text))
-      console.log('tabContentModifier_0100 tabBar: ' + JSON.stringify(JSON.parse(json).$attrs.tabBar))
+      console.log('tabContentModifier_0100 text: ' + JSON.stringify(JSON.parse(strJson).$attrs.text))
+      console.log('tabContentModifier_0100 tabBar: ' + JSON.stringify(JSON.parse(strJson).$attrs.tabBar))
       expect(JSON.parse(strJson).$attrs.text).assertEqual('文本1');
       done();
     });
@@ -62,7 +62,7 @@ export default function tabContentModifier() {
     /**
      * @tc.name   tabContentModifier_0200
      * @tc.number SUB_ARKUI_TABCONTENT_MODIFIER_PARAM_0200
-     * @tc.desc   Test TabContent Modifier
+     * @tc.desc   Test TabContent Modifier indicator
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -70,8 +70,8 @@ export default function tabContentModifier() {
     it('tabContentModifier_0200', Level.LEVEL0, async (done: Function) => {
       console.info("tabContentModifier_0200 start");
       let strJson = getInspectorByKey('tabContent_modifier_text');
-      console.log('tabContentModifier_0200 tabBar: ' + JSON.stringify(JSON.parse(json).$attrs.tabBar))
-      console.log('tabContentModifier_0200 indicator: ' + JSON.stringify(JSON.parse(json).$attrs.tabBar.indicator))
+      console.log('tabContentModifier_0200 tabBar: ' + JSON.stringify(JSON.parse(strJson).$attrs.tabBar))
+      console.log('tabContentModifier_0200 indicator: ' + JSON.stringify(JSON.parse(strJson).$attrs.tabBar.indicator))
       expect(JSON.parse(strJson).$attrs.tabBar.indicator.width).assertEqual("40.00vp");
       expect(JSON.parse(strJson).$attrs.tabBar.indicator.height).assertEqual("10.00vp");
       done();

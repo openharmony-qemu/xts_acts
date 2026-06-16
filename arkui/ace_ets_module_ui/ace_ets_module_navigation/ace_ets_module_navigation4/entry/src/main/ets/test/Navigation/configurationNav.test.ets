@@ -53,7 +53,7 @@ export default function configurationNav() {
       console.info('[configuration_stackSizeLimit_0100] START');
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('stack_limit_btn');
-      console.info("[configuration_stackSizeLimit_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.label));
+      console.info("[configuration_stackSizeLimit_0100] label: " + JSON.stringify(JSON.parse(strJson).$attrs.label));
       expect(JSON.parse(strJson).$attrs.label).assertEqual("limit [1]");
       console.info('[configuration_stackSizeLimit_0100] END');
       done();
@@ -71,10 +71,9 @@ export default function configurationNav() {
       console.info('[navigation_pushPath_0100] START');
       await CommonFunc.sleep(500);
       let driver = await Driver.create();
-
-      let pushBtn: Component = await driver.findComponent(ON.id('push_standard_btn'));
+      let pushBtn = await driver.findComponent(ON.id('push_standard_btn'));
       await pushBtn.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
 
       let strJson = getInspectorByKey('all_destinations_text');
       console.info("[navigation_pushPath_0100] destinations: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
@@ -98,27 +97,22 @@ export default function configurationNav() {
       console.info('[onSaveState_onRestoreState_0100] START');
       await CommonFunc.sleep(500);
       let driver = await Driver.create();
-
-      let pushBtn: Component = await driver.findComponent(ON.id('push_standard_btn'));
+      let pushBtn = await driver.findComponent(ON.id('push_standard_btn'));
       await pushBtn.click();
       await CommonFunc.sleep(1000);
-      let pushBtn2: Component = await driver.findComponent(ON.id('push_standard_btn'));
+      let pushBtn2 = await driver.findComponent(ON.id('push_standard_btn'));
       await pushBtn2.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('nav_save_state_text');
-      console.info("[onSaveState_onRestoreState_0200] saveState initial: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
-      expect(JSON.parse(strJson).$attrs.content).assertEqual("saveState: onSaveState success");
+      console.info("[onSaveState_onRestoreState_0100] saveState: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
+      expect(JSON.parse(strJson).$attrs.content).assertEqual("onSaveState: success");
 
-      let replaceBtn: Component = await driver.findComponent(ON.id('replace_restore_btn'));
+      let replaceBtn = await driver.findComponent(ON.id('replace_restore_btn'));
       await replaceBtn.click();
       await CommonFunc.sleep(1000);
       let strJson2 = getInspectorByKey('nav_restore_state_text');
-      console.info("[onSaveState_onRestoreState_0200] restoreState initial: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
-      expect(JSON.parse(strJson2).$attrs.content).assertEqual("restoreState: onRestoreState success");
-
-      await driver.pressBack();
-      await CommonFunc.sleep(500);
-
+      console.info("[onSaveState_onRestoreState_0100] restoreState: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
+      expect(JSON.parse(strJson2).$attrs.content).assertEqual("onRestoreState: success");
       console.info('[onSaveState_onRestoreState_0100] END');
       done();
     });

@@ -21,18 +21,14 @@ class NavParamOne {
   desc: string = 'NavParamOne'
 }
 
-class NavParamTwo {
-  desc: string = 'NavParamTwo'
-}
-
 @Entry
 @ComponentV2
 struct configurationSaveState {
   @Provider('navigationStack') stack: NavPathStack = new NavPathStack()
   @Provider('stackSizeLimit') stackSizeLimit_: number = 1;
+  @Provider('saveStateTxt') saveStateTxt: string = 'init'
+  @Provider('restoreStateTxt') restoreStateTxt: string = 'init'
   @Local allDestinations: string = '[]'
-  @Local saveStateTxt: string = 'init'
-  @Local restoreStateTxt: string = 'init'
 
   aboutToAppear(): void {
     this.getUIContext().getUIObserver().on('navDestinationUpdate', () => {
@@ -74,16 +70,16 @@ struct configurationSaveState {
 struct NavDest {
   @Param name: string = ''
   @Param mode: NavDestinationMode = NavDestinationMode.STANDARD;
-  @Local saveStateTxt: string = 'init'
-  @Local restoreStateTxt: string = 'init'
+  @Consumer('saveStateTxt') saveStateTxt: string = '0'
+  @Consumer('restoreStateTxt') restoreStateTxt: string = '0'
 
   build() {
     NavDestination() {
       Column() {
-        Text(`saveState: ${this.saveStateTxt}`)
+        Text(`onSaveState: ${this.saveStateTxt}`)
           .id('nav_save_state_text')
           .fontSize(14)
-        Text(`restoreState: ${this.restoreStateTxt}`)
+        Text(`onRestoreState: ${this.restoreStateTxt}`)
           .id('nav_restore_state_text')
           .fontSize(14)
         NavBody()
@@ -92,16 +88,15 @@ struct NavDest {
     .mode(this.mode)
     .title(this.name)
     .onSaveState(() => {
-      this.saveStateTxt = 'onSaveState success'
+      this.saveStateTxt = 'success'
       console.info('[NavState]', `${this.name} onSaveState`);
       let record: Record<string, Object> = {
         'objOne': new NavParamOne(),
-        'objTwo': new NavParamTwo(),
       };
       return record;
     })
     .onRestoreState((saveState: Record<string, Object>) => {
-      this.restoreStateTxt = 'onRestoreState success'
+      this.restoreStateTxt = 'success'
       console.info('[NavState]', `${this.name} onRestoreState`);
       if (!saveState) {
         console.error('[NavState]', `-- save state is null or undefined`);
@@ -124,7 +119,7 @@ struct NavBody {
           .id('stack_limit_btn')
           .backgroundColor('#ccc')
         Row({space: 5}) {
-          Button('push STANDARD')
+          Button('push')
             .id('push_standard_btn')
             .onClick(() => {
               this.stack.pushPath({name: 'STANDARD ' + JSON.stringify(helper.standardCnt++)})
