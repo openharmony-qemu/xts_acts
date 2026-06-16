@@ -17,7 +17,7 @@ import { Component, Driver, MouseButton, ON, BY, WindowMode } from '@ohos.UiTest
 import router from '@ohos.router';
 import { ThemeControl } from '@ohos.arkui.theme';
 import { Theme } from '@ohos.arkui.theme';
-import Utils from '../Utils';
+import { frameTime, sleep } from '../../test/Utils';
 import { checkColorTokens } from '../../MainAbility/themes/checkSystemTokens/CheckColorTokens';
 import { Colors } from '../../MainAbility/themes/checkSystemTokens/colorValues/ColorsTokens';
 
@@ -36,7 +36,7 @@ export default function themeTokenType() {
         if (!("themeTokenType" == pages.name)) {
           console.info("get themeTokenType state pages.name: " + JSON.stringify(pages.name));
           await router.pushUrl(options);
-          await Utils.sleep(2000);
+          await sleep(2000);
         }
       } catch (err) {
         console.error('push themeTokenType page error:' + err);
@@ -55,39 +55,39 @@ export default function themeTokenType() {
      */
     it('themeTokenType_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[themeTokenType_0100] START');
-      await Utils.sleep(500);
+      await sleep(500);
       let driver = await Driver.create()
       let btn = await driver.findComponent(ON.id('theme_primary_btn'));
       await btn.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson = getInspectorByKey('theme_tokenType_text');
       console.info("[themeTokenType_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content).assertEqual("TokenType: 0");
 
       let btn1 = await driver.findComponent(ON.id('theme_string_btn'));
       await btn1.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson1 = getInspectorByKey('theme_primary_text');
       console.info("[themeTokenType_0100] content1: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("primary: #ffff0000");
 
       let btn2 = await driver.findComponent(ON.id('theme_number_btn'));
       await btn2.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson2 = getInspectorByKey('theme_primary_text');
       console.info("[themeTokenType_0100] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual("primary: ff00");
 
       let btn3 = await driver.findComponent(ON.id('theme_color_btn'));
       await btn3.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson3 = getInspectorByKey('theme_primary_text');
       console.info("[themeTokenType_0100] content3: " + JSON.stringify(JSON.parse(strJson3).$attrs.content));
       expect(JSON.parse(strJson3).$attrs.content).assertEqual("primary: #ffffa500");
 
       let btn4 = await driver.findComponent(ON.id('theme_resource_btn'));
       await btn4.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson4 = getInspectorByKey('theme_primary_text');
       console.info("[themeTokenType_0100] content4: " + JSON.stringify(JSON.parse(strJson4).$attrs.content));
       expect(JSON.parse(strJson4).$attrs.content !== undefined).assertTrue();
@@ -105,39 +105,39 @@ export default function themeTokenType() {
      */
     it('themeTokenType_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[themeTokenType_0200] START');
-      await Utils.sleep(500);
+      await sleep(500);
       let driver = await Driver.create()
       let btn = await driver.findComponent(ON.id('theme_onPrimary_btn'));
       await btn.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson = getInspectorByKey('theme_tokenType_text');
       console.info("[themeTokenType_0200] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content).assertEqual("TokenType: 1");
 
       let btn1 = await driver.findComponent(ON.id('theme_string_btn'));
       await btn1.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson1 = getInspectorByKey('theme_onPrimary_text');
       console.info("[themeTokenType_0200] content1: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("onPrimary: #ffff0000");
 
       let btn2 = await driver.findComponent(ON.id('theme_number_btn'));
       await btn2.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson2 = getInspectorByKey('theme_onPrimary_text');
       console.info("[themeTokenType_0200] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual("onPrimary: ff00");
 
       let btn3 = await driver.findComponent(ON.id('theme_color_btn'));
       await btn3.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson3 = getInspectorByKey('theme_onPrimary_text');
       console.info("[themeTokenType_0200] content3: " + JSON.stringify(JSON.parse(strJson3).$attrs.content));
       expect(JSON.parse(strJson3).$attrs.content).assertEqual("onPrimary: #ffffa500");
 
       let btn4 = await driver.findComponent(ON.id('theme_resource_btn'));
       await btn4.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson4 = getInspectorByKey('theme_onPrimary_text');
       console.info("[themeTokenType_0200] content4: " + JSON.stringify(JSON.parse(strJson4).$attrs.content));
       expect(JSON.parse(strJson4).$attrs.content !== undefined).assertTrue();
@@ -155,39 +155,39 @@ export default function themeTokenType() {
      */
     it('themeTokenType_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[themeTokenType_0300] START');
-      await Utils.sleep(500);
+      await sleep(500);
       let driver = await Driver.create()
       let btn = await driver.findComponent(ON.id('theme_container_btn'));
       await btn.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson = getInspectorByKey('theme_tokenType_text');
       console.info("[themeTokenType_0300] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content).assertEqual("TokenType: 2");
 
       let btn1 = await driver.findComponent(ON.id('theme_string_btn'));
       await btn1.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson1 = getInspectorByKey('theme_container_text');
       console.info("[themeTokenType_0300] content1: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual("container: #ffff0000");
 
       let btn2 = await driver.findComponent(ON.id('theme_number_btn'));
       await btn2.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson2 = getInspectorByKey('theme_container_text');
       console.info("[themeTokenType_0300] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual("container: ff00");
 
       let btn3 = await driver.findComponent(ON.id('theme_color_btn'));
       await btn3.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson3 = getInspectorByKey('theme_container_text');
       console.info("[themeTokenType_0300] content3: " + JSON.stringify(JSON.parse(strJson3).$attrs.content));
       expect(JSON.parse(strJson3).$attrs.content).assertEqual("container: #ffffa500");
 
       let btn4 = await driver.findComponent(ON.id('theme_resource_btn'));
       await btn4.click();
-      await Utils.sleep(1000);
+      await sleep(1000);
       let strJson4 = getInspectorByKey('theme_container_text');
       console.info("[themeTokenType_0300] content4: " + JSON.stringify(JSON.parse(strJson4).$attrs.content));
       expect(JSON.parse(strJson4).$attrs.content !== undefined).assertTrue();
