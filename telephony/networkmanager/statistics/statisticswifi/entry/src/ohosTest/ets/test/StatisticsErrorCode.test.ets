@@ -81,7 +81,7 @@ export default function StatisticsErrorCodeTest() {
 
     /**
      * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0300
-     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0300
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0300
      * @tc.desc   Parameter error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -91,7 +91,7 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0300';
       console.info(`${caseName} test start`);
       try {
-        statistics.getUidTxBytes(undefined, (error: BusinessError, stats: number) => {
+        statistics.getUidRxBytes(null, (error: BusinessError, stats: number) => {
           if(error){
             console.log(`${caseName} err in `,JSON.stringify(error));
             ExpectTrue(error.code == 401)
@@ -110,6 +110,122 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0400
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0400
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrStatisticsGetUidRxBytesErrCo0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0400';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getUidRxBytes(null).then((stats: number) => {
+          console.log(`${caseName} get stats success`,JSON.stringify(stats));
+          ExpectTrue(false);
+        })
+          .catch((err:BusinessError)=>{
+            console.log(`${caseName} err in`,JSON.stringify(err));
+            ExpectTrue(false);
+          })
+        done();
+      }catch (err){
+        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0100
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0100
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrStatisticsGetUidTxBytesErrCo0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0100';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getUidTxBytes(undefined, (error: BusinessError, stats: number) => {
+          if(error){
+            console.log(`${caseName} err in `,JSON.stringify(error));
+            ExpectTrue(false);
+          }
+          else{
+            console.log(`${caseName} GetUidTxBytes success `,JSON.stringify(stats));
+            ExpectTrue(false)
+          }
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0200
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0200
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrStatisticsGetUidTxBytesErrCo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0200';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getUidTxBytes(undefined).then((stats: number) => {
+          console.log(`${caseName} get stats success`,JSON.stringify(stats));
+          ExpectTrue(false);
+        })
+          .catch((err:BusinessError)=>{
+            console.log(`${caseName} err in`,JSON.stringify(err));
+            ExpectTrue(false);
+          })
+        done();
+      }catch (err){
+        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0300
+     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0300
+     * @tc.desc   Parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrStatisticsGetUidTxBytesErrCo0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0300';
+      console.info(`${caseName} test start`);
+      try {
+        statistics.getUidTxBytes(null, (error: BusinessError, stats: number) => {
+          if(error){
+            console.log(`${caseName} err in `,JSON.stringify(error));
+            ExpectTrue(false);
+          }
+          else{
+            console.log(`${caseName} GetUidTxBytes success `,JSON.stringify(stats));
+            ExpectTrue(false);
+          }
+          done();
+        });
+      }catch (err){
+        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0400
      * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0400
      * @tc.desc   Parameter error
@@ -121,7 +237,7 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0400';
       console.info(`${caseName} test start`);
       try {
-        statistics.getUidTxBytes(undefined).then((stats: number) => {
+        statistics.getUidTxBytes(null).then((stats: number) => {
           console.log(`${caseName} get stats success`,JSON.stringify(stats));
           ExpectTrue(false);
         })
@@ -438,6 +554,65 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
+      /**
+       * @tc.name   testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0700
+       * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_CallbackErrCo_0700
+       * @tc.desc   Test getSockfdTxBytes property
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it("testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesCallbackErrCo0700";
+        console.info(`${caseName}---start`);
+        try {
+          statistics.getSockfdTxBytes(null, (err, data) => {
+            if (err) {
+              console.info(`${caseName} getSockfdTxBytes failed, err: ${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            } else {
+              console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
+              ExpectFail();
+              done();
+            }
+          });
+        } catch (error) {
+          console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+          ExpectTrue(Number(err.code) === 401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0800
+     * @tc.number SUB_NetManager_Statistics_GetSockfdTxBytes_PromiseErrCo_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0800";
+      console.info(`${caseName}---start`);
+      try {
+        statistics.getSockfdTxBytes(null).then((data)=>{
+          console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError)=>{
+          console.log(`${caseName} getSockfdTxBytes err is : ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(Number(err.code) === 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.name   testNetManagerStatisticsGetSockfdRxBytesCallBackErrCo0100
      * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_CallBackErrCo_0100
@@ -615,8 +790,64 @@ export default function StatisticsErrorCodeTest() {
       }
     });
 
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0700
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_CallbackErrCo_0700
+     * @tc.desc   Test getSockfdTxBytes property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesCallbackErrCo0700";
+      console.info(`${caseName}---start`);
+      try {
+        statistics.getSockfdRxBytes(null, (err, data) => {
+          if (err) {
+            console.info(`${caseName} getSockfdTxBytes failed, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
+            ExpectFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.log(`${caseName} catch error, expect error: [${error.code}, ${error.message}]`);
+        ExpectTrue(Number(err.code) === 401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0800
+     * @tc.number SUB_NetManager_Statistics_GetSockfdRxBytes_PromiseErrCo_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0800";
+      console.info(`${caseName}---start`);
+      try {
+        statistics.getSockfdRxBytes(null).then((data)=>{
+          console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
+          ExpectFail();
+          done();
+        }).catch((err: BusinessError)=>{
+          console.log(`${caseName} getSockfdTxBytes err is : ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(Number(err.code) === 401);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
 
   })
 }
-
-
