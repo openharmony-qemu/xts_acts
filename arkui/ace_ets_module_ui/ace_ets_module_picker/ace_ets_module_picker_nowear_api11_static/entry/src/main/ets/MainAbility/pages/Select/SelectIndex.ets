@@ -47,7 +47,7 @@ struct SelectExample {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: int = 0xCCCCCC as int
+  @State fontColor: number = 0xCCCCCC
   @State spaceValue: number = 8
   @State spaceValueString: string = '50.00vp'
   @State arrowPosition: ArrowPosition = ArrowPosition.END
@@ -57,7 +57,7 @@ struct SelectExample {
     console.info("selectTest stateChangCallBack before:" + JSON.stringify(eventData));
     if (eventData != null) {
 
-      const data = eventData.data as Record<String,RecordData>
+      const data = eventData.data as Record<string, RecordData>
       if (data['spaceValue'] != null) {
         this.spaceValue = data['spaceValue'] as number ;
         console.info("select page state change called after spaceValue:" + this.spaceValue);
@@ -107,7 +107,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('selectTest')
-        .onSelect((index: int, text?: undefined | string) => {
+        .onSelect((index: number, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValue)
@@ -136,7 +136,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('SelectIndex_selectTest2')
-        .onSelect((index: int, text?: undefined | string) => {
+        .onSelect((index: number, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValueString)
@@ -164,7 +164,7 @@ struct SelectExample {
           style: FontStyle.Normal
         })
         .key('SelectIndex_selectTest3')
-        .onSelect((index: int, text?: undefined | string) => {
+        .onSelect((index: number, text?: undefined | string) => {
           console.info("Select:" + index)
         } as OnSelectCallback)
         .space(this.spaceValueResource)
