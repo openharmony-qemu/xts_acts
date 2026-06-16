@@ -91,6 +91,80 @@ export default function photoExtraSuppTest() {
       }
     })
     /**
+     * @tc.name   SUB_MEDIA_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_TEST_0010
+     * @tc.number SUB_MEDIA_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_TEST_0010
+     * @tc.desc   phAccessHelper.PreferredCompatibleMode-enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_TEST_0010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_PHOTO_ACCESS_HELPER_PREFERRED_COMPATIBLE_MODE_TEST_0010';
+      try {
+        expect(photoAccessHelper.PreferredCompatibleMode.CURRENT).assertEqual(1);
+        expect(photoAccessHelper.PreferredCompatibleMode.COMPATIBLE).assertEqual(2);
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MEDIA_PHOTO_ASSET_CHANGE_INFO_TEST_0010
+     * @tc.number SUB_MEDIA_PHOTO_ASSET_CHANGE_INFO_TEST_0010
+     * @tc.desc   phAccessHelper.photoAssetChangeInfo-property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MEDIA_PHOTO_ASSET_CHANGE_INFO_TEST_0010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_PHOTO_ASSET_CHANGE_INFO_TEST_0010';
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptions: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      let isCallbackCalled = false;
+      let onCallback = (changeData: photoAccessHelper.PhotoAssetChangeInfos) => {
+        console.info(TAG,testName,'onCallback success, changData: ' + JSON.stringify(changeData));
+        if(!isEmpty(changeData.assetChangeDatas) && changeData.assetChangeDatas!.length > 0) {
+          let data = changeData.assetChangeDatas![0];
+          let isFav = data.assetBeforeChange?.isFavorite;
+          expect(isEmpty(isFav)).assertFalse();
+          isCallbackCalled = true;
+        }
+      }
+      try {
+        let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+          await phAccessHelper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.IMAGE);
+        let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await album.getAssets(fetchOptions);
+        let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        phAccessHelper.on('photoChange',onCallback);
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+          new photoAccessHelper.MediaAssetChangeRequest(asset);
+        let newTitle: string = 'newTitle';
+        assetChangeRequest.setTitle(newTitle);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        const startTime = Date.now();
+        const timeoutMs = 15000;
+        while (!isCallbackCalled && (Date.now() - startTime) < timeoutMs) {
+          await sleep(100)
+        }
+        expect(isCallbackCalled).assertTrue();
+        phAccessHelper.off('photoChange');
+        done();
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   SUB_MEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_EXTRA_TEST_0010
      * @tc.number SUB_MEDIA_PHOTO_ACCESS_HELPER_CREATE_ASSET_EXTRA_TEST_0010
      * @tc.desc   phAccessHelper.createAsset-no options-callback-第二个参数为null
