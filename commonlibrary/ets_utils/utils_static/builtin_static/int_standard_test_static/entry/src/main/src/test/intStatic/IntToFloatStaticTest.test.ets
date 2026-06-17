@@ -54,7 +54,6 @@ export default function IntToFloatStaticTest(): void {
       expect(result).assertEqual(0.0);
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_0400
      * @tc.name testIntToFloatStatic0004
@@ -93,7 +92,6 @@ export default function IntToFloatStaticTest(): void {
       const result = Int.toFloat(-5000);
       expect(result).assertEqual(-5000.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_0800
@@ -173,8 +171,6 @@ export default function IntToFloatStaticTest(): void {
       expect(result).assertEqual(65.0);
     });
 
-
-
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_1600
      * @tc.name testIntToFloatStatic0016
@@ -187,7 +183,6 @@ export default function IntToFloatStaticTest(): void {
       const result = Int.toFloat(123);
       expect(result).assertEqual(123.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_1800
@@ -228,9 +223,6 @@ export default function IntToFloatStaticTest(): void {
       const result = Int.toFloat(456);
       expect(typeof result).assertEqual("float");
     });
-
-
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_2400
@@ -297,7 +289,6 @@ export default function IntToFloatStaticTest(): void {
       expect(result).assertEqual(-1.0);
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_3000
      * @tc.name testIntToFloatStatic0030
@@ -362,7 +353,6 @@ export default function IntToFloatStaticTest(): void {
       const result = Int.toFloat(123456789);
       expect(Math.abs((result) - (123456789.0)) <= 10.0).assertTrue();
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_3600
@@ -460,7 +450,6 @@ export default function IntToFloatStaticTest(): void {
       const result = Int.toFloat((10 * 10) - 5);
       expect(result).assertEqual(95.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_4400
@@ -585,7 +574,6 @@ export default function IntToFloatStaticTest(): void {
       expect((distance) < (224)).assertTrue();
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_5300
      * @tc.name testIntToFloatStatic0053
@@ -630,7 +618,6 @@ export default function IntToFloatStaticTest(): void {
       expect(Int.toFloat(65)).assertEqual(65.0);
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_5700
      * @tc.name testIntToFloatStatic0057
@@ -644,7 +631,6 @@ export default function IntToFloatStaticTest(): void {
       const result = a * 0.5;
       expect(result).assertEqual(50.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_5900
@@ -730,7 +716,6 @@ export default function IntToFloatStaticTest(): void {
       const rounded = Math.round(f);
       expect(rounded).assertEqual(33);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_6600
@@ -848,7 +833,6 @@ export default function IntToFloatStaticTest(): void {
       expect(floats.length).assertEqual(4);
       expect(floats[2]).assertEqual(2000.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_S_CHK_7500

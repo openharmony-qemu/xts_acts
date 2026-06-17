@@ -205,7 +205,6 @@ export default function IntToLongTest(): void {
       expect(a.toLong()).assertEqual(-1);
     });
 
-
     /**
      * @tc.number INT_TO_LONG_CHK_1500
      * @tc.name testIntToLong0015
@@ -641,7 +640,6 @@ export default function IntToLongTest(): void {
       const a = new Int(500);
       expect(a.toLong()).assertEqual(500);
     });
-
 
     /**
      * @tc.number INT_TO_LONG_CHK_5000

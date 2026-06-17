@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -326,7 +326,6 @@ export default function IntToCharTest(): void {
       expect(result).assertEqual(c'B');
     });
 
-
     /**
      * @tc.number INT_TO_CHAR_CHK_2200
      * @tc.name testIntToChar0022
@@ -642,9 +641,6 @@ export default function IntToCharTest(): void {
       expect(result.length).assertEqual(1000);
     });
 
-
-
-
     /**
      * @tc.number INT_TO_CHAR_CHK_4400
      * @tc.name testIntToChar0044
@@ -659,8 +655,6 @@ export default function IntToCharTest(): void {
       expect(typeof result).assertEqual("char");
       expect(result).assertEqual(c'B');
     });
-
-
 
     /**
      * @tc.number INT_TO_CHAR_CHK_4700

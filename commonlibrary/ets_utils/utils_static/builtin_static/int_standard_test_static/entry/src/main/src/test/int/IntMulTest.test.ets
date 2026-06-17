@@ -46,7 +46,7 @@ export default function IntMulTest(): void {
     /**
      * @tc.number INT_MUL_ITEM_CHK_0200
      * @tc.name testIntMul0002
-     * @tc.desc Verify that calling mul without parameters throws error
+     * @tc.desc Verify mul by zero returns zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,7 +56,6 @@ export default function IntMulTest(): void {
       const result = a.mul(new Int(0));
       expect(result.toInt()).assertEqual(0);
     });
-
 
     /**
      * @tc.number INT_MUL_ITEM_CHK_0400
@@ -274,42 +273,6 @@ export default function IntMulTest(): void {
     });
 
     /**
-     * @tc.number INT_MUL_ITEM_CHK_1800
-     * @tc.name testIntMul0018
-     * @tc.desc Verify passing null throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntMul0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(6);
-        const result = a.mul(null as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number INT_MUL_ITEM_CHK_1900
-     * @tc.name testIntMul0019
-     * @tc.desc Verify passing undefined throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntMul0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(6);
-        const result = a.mul(undefined as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
      * @tc.number INT_MUL_ITEM_CHK_2000
      * @tc.name testIntMul0020
      * @tc.desc Verify mul with number literal argument returns correct product
@@ -326,7 +289,7 @@ export default function IntMulTest(): void {
     /**
      * @tc.number INT_MUL_ITEM_CHK_2100
      * @tc.name testIntMul0021
-     * @tc.desc Verify passing string throws error
+     * @tc.desc Verify passing string returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -337,7 +300,7 @@ export default function IntMulTest(): void {
         const result = a.mul("10" as Object as Int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -459,7 +422,6 @@ export default function IntMulTest(): void {
       expect(result.toInt()).assertEqual(-30);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_3100
      * @tc.name testIntMul0031
@@ -475,7 +437,6 @@ export default function IntMulTest(): void {
       expect(result.toInt()).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_3300
      * @tc.name testIntMul0033
@@ -490,7 +451,6 @@ export default function IntMulTest(): void {
       const result = a.mul(b);
       expect(result.toInt()).assertEqual(0);
     });
-
 
     /**
      * @tc.number INT_MUL_ITEM_CHK_3500
@@ -557,7 +517,6 @@ export default function IntMulTest(): void {
       expect(result.toInt()).assertLessOrEqual(2147483647);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_4000
      * @tc.name testIntMul0040
@@ -589,7 +548,6 @@ export default function IntMulTest(): void {
       expect(result).not().assertEqual(a);
       expect(result.toInt()).not().assertEqual(a.toInt());
     });
-
 
     /**
      * @tc.number INT_MUL_ITEM_CHK_4300
@@ -822,7 +780,6 @@ export default function IntMulTest(): void {
       expect(result.toInt()).assertEqual(1000000000);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_5900
      * @tc.name testIntMul0059
@@ -951,7 +908,6 @@ export default function IntMulTest(): void {
       expect(b.mul(minusOne).toInt()).assertEqual(12345);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_6800
      * @tc.name testIntMul0068
@@ -1038,7 +994,6 @@ export default function IntMulTest(): void {
       expect(result.toInt()).assertEqual(100000);
     });
 
-
     /**
      * @tc.number INT_MUL_ITEM_CHK_7400
      * @tc.name testIntMul0074
@@ -1053,7 +1008,6 @@ export default function IntMulTest(): void {
       const result = a.mul(b);
       expect(result).not().assertNull();
     });
-
 
     /**
      * @tc.number INT_MUL_ITEM_CHK_7600

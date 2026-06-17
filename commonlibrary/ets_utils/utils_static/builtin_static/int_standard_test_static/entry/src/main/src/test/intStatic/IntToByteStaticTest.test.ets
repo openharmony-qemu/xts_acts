@@ -29,11 +29,10 @@ export default function IntToByteStaticTest(): void {
       afterAll((): void => {
       });
 
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0100
      * @tc.name testIntToByteStatic0001
-     * @tc.desc Vxrify that value parameter must bx providxd
+     * @tc.desc Verify that value parameter must be provided
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -46,7 +45,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0200
      * @tc.name testIntToByteStatic0002
-     * @tc.desc Vxrify error whxn no parameter is passxd
+     * @tc.desc Verify error when no parameter is passxd
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,11 +55,10 @@ export default function IntToByteStaticTest(): void {
       expect(result).assertEqual(2);
     });
 
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0400
      * @tc.name testIntToByteStatic0004
-     * @tc.desc Vxrify convxrsion with normal rangx intxgxr value
+     * @tc.desc Verify conversion with normal range integer value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -73,7 +71,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0500
      * @tc.name testIntToByteStatic0005
-     * @tc.desc Vxrify convxrsion with positivx value
+     * @tc.desc Verify conversion with positive value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -86,7 +84,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0600
      * @tc.name testIntToByteStatic0006
-     * @tc.desc Vxrify convxrsion with nxgativx value
+     * @tc.desc Verify conversion with negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -99,7 +97,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0700
      * @tc.name testIntToByteStatic0007
-     * @tc.desc Vxrify convxrsion with zxro value
+     * @tc.desc Verify conversion with zero value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -112,7 +110,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0800
      * @tc.name testIntToByteStatic0008
-     * @tc.desc Vxrify convxrsion with int maximum value
+     * @tc.desc Verify conversion with int maximum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -126,7 +124,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_0900
      * @tc.name testIntToByteStatic0009
-     * @tc.desc Vxrify convxrsion with int minimum value
+     * @tc.desc Verify conversion with int minimum value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -140,7 +138,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1000
      * @tc.name testIntToByteStatic0010
-     * @tc.desc Vxrify convxrsion with hxxadxcimal positivx intxgxr
+     * @tc.desc Verify conversion with hexadecimal positive integer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -153,7 +151,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1100
      * @tc.name testIntToByteStatic0011
-     * @tc.desc Vxrify convxrsion with hxxadxcimal nxgativx boundary
+     * @tc.desc Verify conversion with hexadecimal negative boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -167,7 +165,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1200
      * @tc.name testIntToByteStatic0012
-     * @tc.desc Vxrify convxrsion with octal value
+     * @tc.desc Verify conversion with octal value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -180,7 +178,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1300
      * @tc.name testIntToByteStatic0013
-     * @tc.desc Vxrify convxrsion with binary value
+     * @tc.desc Verify conversion with binary value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -193,7 +191,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1400
      * @tc.name testIntToByteStatic0014
-     * @tc.desc Vxrify error whxn passing null
+     * @tc.desc Verify error when passing null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -203,14 +201,14 @@ export default function IntToByteStaticTest(): void {
         const result = Int.toByte(null as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1500
      * @tc.name testIntToByteStatic0015
-     * @tc.desc Vxrify error whxn passing undefined
+     * @tc.desc Verify error when passing undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -220,14 +218,14 @@ export default function IntToByteStaticTest(): void {
         const result = Int.toByte(undefined as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1600
      * @tc.name testIntToByteStatic0016
-     * @tc.desc Vxrify bxhavior whxn passing float value
+     * @tc.desc Verify behavior when passing float value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,7 +237,7 @@ export default function IntToByteStaticTest(): void {
         const result = Int.toByte(value);
         expect(result).assertEqual(123);
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
         expect(error.toString()).assertEqual("Error: Invalid parameter type");
       }
     });
@@ -247,7 +245,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1700
      * @tc.name testIntToByteStatic0017
-     * @tc.desc Vxrify error whxn passing string value
+     * @tc.desc Verify error when passing string value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -257,14 +255,14 @@ export default function IntToByteStaticTest(): void {
         const result = Int.toByte("123" as Object as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1800
      * @tc.name testIntToByteStatic0018
-     * @tc.desc Vxrify error whxn passing boolean value
+     * @tc.desc Verify error when passing boolean value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -274,14 +272,14 @@ export default function IntToByteStaticTest(): void {
         const result = Int.toByte(true as Object as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number INT_TO_BYTE_S_CHK_1900
      * @tc.name testIntToByteStatic0019
-     * @tc.desc Vxrify rxturn value of byte convxrsion
+     * @tc.desc Verify return value of byte conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -295,7 +293,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2000
      * @tc.name testIntToByteStatic0020
-     * @tc.desc Vxrify rxturn value is byte type
+     * @tc.desc Verify return value is byte type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -309,7 +307,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2100
      * @tc.name testIntToByteStatic0021
-     * @tc.desc Vxrify normal positivx intxgxr convxrsion
+     * @tc.desc Verify normal positive integer conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -322,7 +320,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2200
      * @tc.name testIntToByteStatic0022
-     * @tc.desc Vxrify small positivx intxgxr convxrsion
+     * @tc.desc Verify small positive integer conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -332,11 +330,10 @@ export default function IntToByteStaticTest(): void {
       expect(result).assertEqual(1);
     });
 
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2400
      * @tc.name testIntToByteStatic0024
-     * @tc.desc Vxrify normal nxgativx intxgxr convxrsion
+     * @tc.desc Verify normal negative integer conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +346,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2500
      * @tc.name testIntToByteStatic0025
-     * @tc.desc Vxrify nxgativx boundary value convxrsion
+     * @tc.desc Verify negative boundary value conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -358,7 +355,6 @@ export default function IntToByteStaticTest(): void {
       const result = Int.toByte(-128);
       expect(result).assertEqual(-128);
     });
-
 
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2700
@@ -376,7 +372,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2800
      * @tc.name testIntToByteStatic0028
-     * @tc.desc Vxrify value xxcxxding byte maximum 128
+     * @tc.desc Verify value exceeding byte maximum 128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -390,7 +386,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_2900
      * @tc.name testIntToByteStatic0029
-     * @tc.desc Vxrify value xxcxxding byte minimum -129
+     * @tc.desc Verify value exceeding byte minimum -129
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -404,7 +400,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3000
      * @tc.name testIntToByteStatic0030
-     * @tc.desc Vxrify largx positivx number convxrsion
+     * @tc.desc Verify large positive number conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -418,7 +414,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3100
      * @tc.name testIntToByteStatic0031
-     * @tc.desc Vxrify largx nxgativx number convxrsion
+     * @tc.desc Verify large negative number conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,13 +425,10 @@ export default function IntToByteStaticTest(): void {
       expect(result).assertLess(128);
     });
 
-
-
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3500
      * @tc.name testIntToByteStatic0035
-     * @tc.desc Vxrify convxrsion of value -1
+     * @tc.desc Verify conversion of value -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -448,7 +441,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3600
      * @tc.name testIntToByteStatic0036
-     * @tc.desc Vxrify convxrsion of 255 with ovxrflow
+     * @tc.desc Verify conversion of 255 with ovxrflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -462,7 +455,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3700
      * @tc.name testIntToByteStatic0037
-     * @tc.desc Vxrify convxrsion of 256 with ovxrflow
+     * @tc.desc Verify conversion of 256 with ovxrflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -475,7 +468,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_3800
      * @tc.name testIntToByteStatic0038
-     * @tc.desc Vxrify rxturn value is number type
+     * @tc.desc Verify return value is number type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -485,11 +478,10 @@ export default function IntToByteStaticTest(): void {
       expect(typeof result).assertEqual("byte");
     });
 
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4000
      * @tc.name testIntToByteStatic0040
-     * @tc.desc Vxrify static call through Int class
+     * @tc.desc Verify static call through Int class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -502,7 +494,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4100
      * @tc.name testIntToByteStatic0041
-     * @tc.desc Vxrify static toByte matchxs instancx toByte result
+     * @tc.desc Verify static toByte matches instancx toByte result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -517,7 +509,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4200
      * @tc.name testIntToByteStatic0042
-     * @tc.desc Vxrify toByte rxturn value can bx usxd in furthxr opxrations
+     * @tc.desc Verify toByte return value can be used in further operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -531,7 +523,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4300
      * @tc.name testIntToByteStatic0043
-     * @tc.desc Vxrify largx number truncation to low 8 bits
+     * @tc.desc Verify large number truncation to low 8 bits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -545,7 +537,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4400
      * @tc.name testIntToByteStatic0044
-     * @tc.desc Vxrify nxgativx largx number truncation
+     * @tc.desc Verify negative large number truncation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -559,7 +551,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4500
      * @tc.name testIntToByteStatic0045
-     * @tc.desc Vxrify truncation bxhavior consistxncy
+     * @tc.desc Verify truncation behavior consistxncy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -573,7 +565,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4600
      * @tc.name testIntToByteStatic0046
-     * @tc.desc Vxrify consistxnt results for multiplx convxrsions of samx value
+     * @tc.desc Verify consistent results for multiple conversions of same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -587,7 +579,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4700
      * @tc.name testIntToByteStatic0047
-     * @tc.desc Vxrify arithmxtic xxprxssion result as parameter
+     * @tc.desc Verify arithmetic expression result as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -600,7 +592,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4800
      * @tc.name testIntToByteStatic0048
-     * @tc.desc Vxrify complxx xxprxssion as parameter
+     * @tc.desc Verify complex expression as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -613,7 +605,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_4900
      * @tc.name testIntToByteStatic0049
-     * @tc.desc Vxrify constant as parameter
+     * @tc.desc Verify constant as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -627,7 +619,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5000
      * @tc.name testIntToByteStatic0050
-     * @tc.desc Vxrify toByte rangx is smallxr than toShort
+     * @tc.desc Verify toByte range is smaller than toShort
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -642,7 +634,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5100
      * @tc.name testIntToByteStatic0051
-     * @tc.desc Vxrify toInt rxturns original value
+     * @tc.desc Verify toInt returns original value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -656,7 +648,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5200
      * @tc.name testIntToByteStatic0052
-     * @tc.desc Vxrify usagx in byte array opxrations
+     * @tc.desc Verify usage in byte array opxrations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -671,7 +663,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5300
      * @tc.name testIntToByteStatic0053
-     * @tc.desc Vxrify bitmask opxration
+     * @tc.desc Verify bitmask opxration
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -683,12 +675,10 @@ export default function IntToByteStaticTest(): void {
       expect(lowByte).assertLess(128);
     });
 
-
-
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5600
      * @tc.name testIntToByteStatic0056
-     * @tc.desc Vxrify normal pxrformancx for multiplx toByte calls
+     * @tc.desc Verify normal performance for multiple toByte calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -704,7 +694,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5700
      * @tc.name testIntToByteStatic0057
-     * @tc.desc Vxrify documxntation xxamplx output 65
+     * @tc.desc Verify documentation example output 65
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -717,14 +707,14 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5800
      * @tc.name testIntToByteStatic0058
-     * @tc.desc Vxrify static toByte matchxs instancx toByte in all casxs
+     * @tc.desc Verify static toByte matches instancx toByte in all cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIntToByteStatic0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const txstValuxs: int[] = [0, 1, -1, 100, -100, 127, -128, 1000, -1000];
-      txstValuxs.forEach((v: int): void => {
+      const testValues: int[] = [0, 1, -1, 100, -100, 127, -128, 1000, -1000];
+      testValues.forEach((v: int): void => {
         const a = new Int(v);
         expect(Int.toByte(v)).assertEqual(a.toByte());
       });
@@ -733,7 +723,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_5900
      * @tc.name testIntToByteStatic0059
-     * @tc.desc Vxrify valid input rangx
+     * @tc.desc Verify valid input range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -747,14 +737,14 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6000
      * @tc.name testIntToByteStatic0060
-     * @tc.desc Vxrify consistxnt bxhavior for out-of-rangx values
+     * @tc.desc Verify consistent behavior for out-of-range values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testIntToByteStatic0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const txstValuxs: int[] = [128, 256, 512, 1000];
-      txstValuxs.forEach((v: int): void => {
+      const testValues: int[] = [128, 256, 512, 1000];
+      testValues.forEach((v: int): void => {
         const result = Int.toByte(v);
         expect(result).assertLargerOrEqual(-128);
         expect(result).assertLess(128);
@@ -764,7 +754,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6100
      * @tc.name testIntToByteStatic0061
-     * @tc.desc Vxrify round-trip convxrsion
+     * @tc.desc Verify round-trip conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -779,7 +769,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6200
      * @tc.name testIntToByteStatic0062
-     * @tc.desc Vxrify combinxd usagx of valueOf and static toByte
+     * @tc.desc Verify combined usage of valueOf and static toByte
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -794,7 +784,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6300
      * @tc.name testIntToByteStatic0063
-     * @tc.desc Vxrify static propxrty as parameter
+     * @tc.desc Verify static property as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -809,7 +799,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6400
      * @tc.name testIntToByteStatic0064
-     * @tc.desc Vxrify xxprxssion as parameter
+     * @tc.desc Verify expression as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -824,7 +814,7 @@ export default function IntToByteStaticTest(): void {
     /**
      * @tc.number INT_TO_BYTE_S_CHK_6500
      * @tc.name testIntToByteStatic0065
-     * @tc.desc Vxrify batch array convxrsion
+     * @tc.desc Verify batch array conversion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

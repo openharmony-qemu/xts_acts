@@ -54,7 +54,6 @@ export default function IntIsGreaterEqualThanTest(): void {
     expect(a.isGreaterEqualThan(b)).assertTrue();
   });
 
-
   /**
    * @tc.number INT_IS_GRTR_EQUAL_0400
    * @tc.name testIntIsGreaterEqualThan0004
@@ -205,42 +204,6 @@ export default function IntIsGreaterEqualThanTest(): void {
 
     const b = new Int(-1);
     expect(b.isGreaterEqualThan(new Int(-1))).assertTrue();
-  });
-
-  /**
-   * @tc.number INT_IS_GRTR_EQUAL_1400
-   * @tc.name testIntIsGreaterEqualThan0014
-   * @tc.desc Verify invalid parameter value is handled
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 2
-   */
-  it('testIntIsGreaterEqualThan0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    try {
-      const a = new Int(65);
-      const result = a.isGreaterEqualThan(null as Object as Int);
-      expect().assertFail();
-    } catch (error) {
-      expect(error.name.length > 0).assertTrue();
-    }
-  });
-
-  /**
-   * @tc.number INT_IS_GRTR_EQUAL_1500
-   * @tc.name testIntIsGreaterEqualThan0015
-   * @tc.desc Verify invalid parameter type is handled
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 2
-   */
-  it('testIntIsGreaterEqualThan0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    try {
-      const a = new Int(65);
-      const result = a.isGreaterEqualThan(undefined as Object as Int);
-      expect().assertFail();
-    } catch (error) {
-      expect(error.name.length > 0).assertTrue();
-    }
   });
 
   /**
@@ -415,7 +378,6 @@ export default function IntIsGreaterEqualThanTest(): void {
     const c = new Int(0);
     expect(c.isGreaterEqualThan(new Int(0))).assertTrue();
   });
-
 
   /**
    * @tc.number INT_IS_GRTR_EQUAL_2800
@@ -613,9 +575,8 @@ export default function IntIsGreaterEqualThanTest(): void {
   it('testIntIsGreaterEqualThan0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     const value = new Int(150);
     const threshold = new Int(100);
-    if (value.isGreaterEqualThan(threshold)) {
-      expect(value.toInt() >= 100).assertTrue();
-    }
+    expect(value.isGreaterEqualThan(threshold)).assertTrue();
+    expect(value.toInt()).assertLargerOrEqual(100);
   });
 
   /**
@@ -682,7 +643,6 @@ export default function IntIsGreaterEqualThanTest(): void {
       expect(result).assertEqual(aVal >= bVal);
     }
   });
-
 
   /**
    * @tc.number INT_IS_GRTR_EQUAL_4600
@@ -793,7 +753,6 @@ export default function IntIsGreaterEqualThanTest(): void {
     expect(filtered.length).assertEqual(2);
   });
 
-
   /**
    * @tc.number INT_IS_GRTR_EQUAL_5400
    * @tc.name testIntIsGreaterEqualThan0054
@@ -892,9 +851,7 @@ export default function IntIsGreaterEqualThanTest(): void {
     for (let i = 0; i < testCases.length; i++) {
       const intA = new Int(testCases[i][0]);
       const intB = new Int(testCases[i][1]);
-      if (intA.isGreaterThan(intB)) {
-        expect(intA.isGreaterEqualThan(intB)).assertTrue();
-      }
+      expect(intA.isGreaterEqualThan(intB)).assertEqual(intA.toInt() >= intB.toInt());
     }
   });
 

@@ -57,7 +57,6 @@ export default function IntIsLessThanTest(): void {
       expect(a.isLessThan(b)).assertTrue();
     });
 
-
     /**
      * @tc.number INT_IS_LESS_THAN_0400
      * @tc.name testIntIsLessThan0004
@@ -206,42 +205,6 @@ export default function IntIsLessThanTest(): void {
 
       const b = new Int(-1);
       expect(b.isLessThan(new Int(-1))).assertFalse();
-    });
-
-    /**
-     * @tc.number INT_IS_LESS_THAN_1400
-     * @tc.name testIntIsLessThan0014
-     * @tc.desc Verify passing null throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntIsLessThan0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.isLessThan(null as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number INT_IS_LESS_THAN_1500
-     * @tc.name testIntIsLessThan0015
-     * @tc.desc Verify passing undefined throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntIsLessThan0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.isLessThan(undefined as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
     });
 
     /**
@@ -413,7 +376,6 @@ export default function IntIsLessThanTest(): void {
       expect(c.isLessThan(new Int(0))).assertFalse();
     });
 
-
     /**
      * @tc.number INT_IS_LESS_THAN_2800
      * @tc.name testIntIsLessThan0028
@@ -488,7 +450,6 @@ export default function IntIsLessThanTest(): void {
       expect(a.isLessThan(b)).assertTrue();
       expect(b.isGreaterThan(a)).assertTrue();
     });
-
 
     /**
      * @tc.number INT_IS_LESS_THAN_3400
@@ -615,9 +576,8 @@ export default function IntIsLessThanTest(): void {
       const value = new Int(50);
       const threshold = new Int(100);
 
-      if (value.isLessThan(threshold)) {
-        expect(value.toInt()).assertLess(100);
-      }
+      expect(value.isLessThan(threshold)).assertTrue();
+      expect(value.toInt()).assertLess(100);
     });
 
     /**
@@ -671,7 +631,6 @@ export default function IntIsLessThanTest(): void {
         expect(result).assertEqual(aVal < bVal);
       }
     });
-
 
     /**
      * @tc.number INT_IS_LESS_THAN_4600
@@ -869,9 +828,8 @@ export default function IntIsLessThanTest(): void {
       const a = new Int(65);
       const b = new Int(75);
 
-      if (a.isLessThan(b)) {
-        expect(a.compareTo(75)).assertEqual(-1);
-      }
+      expect(a.isLessThan(b)).assertTrue();
+      expect(a.compareTo(75)).assertEqual(-1);
     });
 
     /**

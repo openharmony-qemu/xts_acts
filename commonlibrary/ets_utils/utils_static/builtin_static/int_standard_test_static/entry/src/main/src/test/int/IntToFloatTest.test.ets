@@ -42,7 +42,6 @@ export default function IntToFloatTest(): void {
       expect(result).assertEqual(65.0);
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_CHK_0300
      * @tc.name testIntToFloat0003
@@ -177,7 +176,6 @@ export default function IntToFloatTest(): void {
       const a = new Int(-1);
       expect(a.toFloat()).assertEqual(-1.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_CHK_1400
@@ -576,7 +574,6 @@ export default function IntToFloatTest(): void {
       expect(Math.abs((result) - (123456789.0)) <= 10.0).assertTrue();
     });
 
-
     /**
      * @tc.number INT_TO_FLOAT_CHK_4200
      * @tc.name testIntToFloat0042
@@ -606,7 +603,6 @@ export default function IntToFloatTest(): void {
       const a = new Int(500);
       expect(a.toFloat()).assertEqual(500.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_CHK_4500
@@ -679,7 +675,6 @@ export default function IntToFloatTest(): void {
       const a = new Int(65);
       expect(a.toFloat()).assertEqual(65.0);
     });
-
 
     /**
      * @tc.number INT_TO_FLOAT_CHK_5100

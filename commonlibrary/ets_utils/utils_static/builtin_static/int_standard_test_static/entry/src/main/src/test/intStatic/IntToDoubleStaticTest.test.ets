@@ -54,7 +54,6 @@ export default function IntToDoubleStaticTest(): void {
       expect(result).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_TO_DBL_S_CHK_0400
      * @tc.name testIntToDoubleStatic0004
@@ -93,7 +92,6 @@ export default function IntToDoubleStaticTest(): void {
       const result = Int.toDouble(-500);
       expect(result).assertEqual(-500);
     });
-
 
     /**
      * @tc.number INT_TO_DBL_S_CHK_0800
@@ -199,8 +197,6 @@ export default function IntToDoubleStaticTest(): void {
       expect(result).assertEqual(-1);
     });
 
-
-
     /**
      * @tc.number INT_TO_DBL_S_CHK_1800
      * @tc.name testIntToDoubleStatic0018
@@ -213,8 +209,6 @@ export default function IntToDoubleStaticTest(): void {
       const result = Int.toDouble(123);
       expect(result).assertEqual(123);
     });
-
-
 
     /**
      * @tc.number INT_TO_DBL_S_CHK_2100
@@ -258,8 +252,6 @@ export default function IntToDoubleStaticTest(): void {
       expect(result).assertEqual(9999);
     });
 
-
-
     /**
      * @tc.number INT_TO_DBL_S_CHK_2600
      * @tc.name testIntToDoubleStatic0026
@@ -272,11 +264,6 @@ export default function IntToDoubleStaticTest(): void {
       const result = Int.toDouble(-9999);
       expect(result).assertEqual(-9999);
     });
-
-
-
-
-
 
     /**
      * @tc.number INT_TO_DBL_S_CHK_3200

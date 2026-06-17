@@ -214,7 +214,6 @@ export default function IntToString2Test(): void {
       expect(result.length > 0).assertTrue();
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_R_CHK_1600
      * @tc.name testIntToString20016
@@ -359,7 +358,6 @@ export default function IntToString2Test(): void {
       expect(a.toString(36)).assertEqual("a");
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_R_CHK_2800
      * @tc.name testIntToString20028
@@ -466,11 +464,10 @@ export default function IntToString2Test(): void {
       expect(a.toString(2)).assertEqual("100");
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_R_CHK_3700
      * @tc.name testIntToString20037
-     * @tc.desc Verify invalid radix zero throws error
+     * @tc.desc Verify invalid radix zero returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -491,7 +488,7 @@ export default function IntToString2Test(): void {
     /**
      * @tc.number INT_TO_STRNG_R_CHK_3800
      * @tc.name testIntToString20038
-     * @tc.desc Verify invalid radix one throws error
+     * @tc.desc Verify invalid radix one returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -512,7 +509,7 @@ export default function IntToString2Test(): void {
     /**
      * @tc.number INT_TO_STRNG_R_CHK_3900
      * @tc.name testIntToString20039
-     * @tc.desc Verify invalid radix thirty-seven throws error
+     * @tc.desc Verify invalid radix thirty-seven returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -533,7 +530,7 @@ export default function IntToString2Test(): void {
     /**
      * @tc.number INT_TO_STRNG_R_CHK_4000
      * @tc.name testIntToString20040
-     * @tc.desc Verify negative radix throws error
+     * @tc.desc Verify negative radix returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -550,10 +547,6 @@ export default function IntToString2Test(): void {
       }
       expect(caught).assertTrue();
     });
-
-
-
-
 
     /**
      * @tc.number INT_TO_STRNG_R_CHK_4500
@@ -921,7 +914,6 @@ export default function IntToString2Test(): void {
       expect(a1.toString(16)).assertEqual(a2.toString(16));
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_R_CHK_6900
      * @tc.name testIntToString20069
@@ -1229,8 +1221,6 @@ export default function IntToString2Test(): void {
       expect(a.toString(36).length > 0).assertTrue();
     });
 
-
-
     /**
      * @tc.number INT_TO_STRNG_R_CHK_9100
      * @tc.name testIntToString20091
@@ -1263,8 +1253,6 @@ export default function IntToString2Test(): void {
       expect(a.toString(8)).assertEqual("377");
       expect(a.toString(2)).assertEqual("11111111");
     });
-
-
 
     /**
      * @tc.number INT_TO_STRNG_R_CHK_9500

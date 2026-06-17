@@ -54,7 +54,6 @@ export default function IntToCharStaticTest(): void {
       expect(result).assertEqual(c'\u0000');
     });
 
-
     /**
      * @tc.number INT_TO_CHAR_S_CHK_0400
      * @tc.name testIntToCharStatic0004
@@ -99,7 +98,6 @@ export default function IntToCharStaticTest(): void {
       expect(result0).assertEqual(c'0');
       expect(result9).assertEqual(c'9');
     });
-
 
     /**
      * @tc.number INT_TO_CHAR_S_CHK_0800
@@ -387,7 +385,6 @@ export default function IntToCharStaticTest(): void {
       expect(result != null).assertTrue();
     });
 
-
     /**
      * @tc.number INT_TO_CHAR_S_CHK_3100
      * @tc.name testIntToCharStatic0031
@@ -401,8 +398,6 @@ export default function IntToCharStaticTest(): void {
       expect(result != null).assertTrue();
     });
 
-
-
     /**
      * @tc.number INT_TO_CHAR_S_CHK_3400
      * @tc.name testIntToCharStatic0034
@@ -415,7 +410,6 @@ export default function IntToCharStaticTest(): void {
       const result = Int.toChar(Double.toInt(65.5));
       expect(result).assertEqual(c'A');
     });
-
 
     /**
      * @tc.number INT_TO_CHAR_S_CHK_3600
@@ -532,10 +526,6 @@ export default function IntToCharStaticTest(): void {
       }
     });
 
-
-
-
-
     /**
      * @tc.number INT_TO_CHAR_S_CHK_4800
      * @tc.name testIntToCharStatic0048
@@ -600,8 +590,6 @@ export default function IntToCharStaticTest(): void {
       const result = Int.toChar(0x0430);
       expect(result != null).assertTrue();
     });
-
-
 
     /**
      * @tc.number INT_TO_CHAR_S_CHK_5500
@@ -885,7 +873,6 @@ export default function IntToCharStaticTest(): void {
       }
     });
 
-
     /**
      * @tc.number INT_TO_CHAR_S_CHK_7600
      * @tc.name testIntToCharStatic0076
@@ -973,7 +960,6 @@ export default function IntToCharStaticTest(): void {
       const result = Int.toChar(0x4E2D);
       expect(result != c'\u0000').assertTrue();
     });
-
 
     /**
      * @tc.number INT_TO_CHAR_S_CHK_8300

@@ -150,7 +150,6 @@ export default function IntToShortTest(): void {
       expect(a.toShort()).assertEqual(-32768);
     });
 
-
     /**
      * @tc.number INT_TO_SHORT_CHK_1100
      * @tc.name testIntToShort0011
@@ -253,7 +252,6 @@ export default function IntToShortTest(): void {
       expect(result).assertLargerOrEqual(-32768);
       expect(result).assertLess(32768);
     });
-
 
     /**
      * @tc.number INT_TO_SHORT_CHK_1900
@@ -595,8 +593,6 @@ export default function IntToShortTest(): void {
       expect(lowShort).assertLargerOrEqual(-32768);
       expect(lowShort).assertLess(32768);
     });
-
-
 
     /**
      * @tc.number INT_TO_SHORT_CHK_4400

@@ -45,7 +45,7 @@ export default function IntToByteTest(): void {
     /**
      * @tc.number INT_TO_BYTE_CHK_0200
      * @tc.name testIntToByte0002
-     * @tc.desc Verify toByte throws error when passing arguments
+     * @tc.desc Verify toByte returns correct byte value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -150,7 +150,6 @@ export default function IntToByteTest(): void {
       expect(num.toByte()).assertEqual(-128);
     });
 
-
     /**
      * @tc.number INT_TO_BYTE_CHK_1100
      * @tc.name testIntToByte0011
@@ -254,7 +253,6 @@ export default function IntToByteTest(): void {
       expect(result).assertLess(128);
     });
 
-
     /**
      * @tc.number INT_TO_BYTE_CHK_1900
      * @tc.name testIntToByte0019
@@ -310,7 +308,6 @@ export default function IntToByteTest(): void {
       const result = num.toByte();
       expect(typeof result).assertEqual("byte");
     });
-
 
     /**
      * @tc.number INT_TO_BYTE_CHK_2400
@@ -567,8 +564,6 @@ export default function IntToByteTest(): void {
       expect(lowByte).assertLargerOrEqual(-128);
       expect(lowByte).assertLess(128);
     });
-
-
 
     /**
      * @tc.number INT_TO_BYTE_CHK_4300

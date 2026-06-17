@@ -53,7 +53,6 @@ export default function IntToLongStaticTest(): void {
       expect(Int.toLong(0)).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_TO_LONG_S_CHK_0400
      * @tc.name testIntToLongStatic0004
@@ -184,8 +183,6 @@ export default function IntToLongStaticTest(): void {
       expect(result).assertEqual(65);
     });
 
-
-
     /**
      * @tc.number INT_TO_LONG_S_CHK_1600
      * @tc.name testIntToLongStatic0016
@@ -198,8 +195,6 @@ export default function IntToLongStaticTest(): void {
       const result = Int.toLong(Double.toInt(123.45));
       expect(result).assertEqual(123);
     });
-
-
 
     /**
      * @tc.number INT_TO_LONG_S_CHK_1900
@@ -254,7 +249,6 @@ export default function IntToLongStaticTest(): void {
       const result = Int.toLong(1);
       expect(result).assertEqual(1);
     });
-
 
     /**
      * @tc.number INT_TO_LONG_S_CHK_2400
@@ -336,9 +330,6 @@ export default function IntToLongStaticTest(): void {
       expect(result).assertEqual(-1);
     });
 
-
-
-
     /**
      * @tc.number INT_TO_LONG_S_CHK_3300
      * @tc.name testIntToLongStatic0033
@@ -351,7 +342,6 @@ export default function IntToLongStaticTest(): void {
       const result = Int.toLong(100000);
       expect(typeof result).assertEqual("long");
     });
-
 
     /**
      * @tc.number INT_TO_LONG_S_CHK_3500
@@ -474,7 +464,6 @@ export default function IntToLongStaticTest(): void {
       const result = Int.toLong((1000 * 100) - 50);
       expect(result).assertEqual(99950);
     });
-
 
     /**
      * @tc.number INT_TO_LONG_S_CHK_4500

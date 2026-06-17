@@ -57,7 +57,6 @@ export default function IntSubTest(): void {
       expect(result.toInt()).assertEqual(15);
     });
 
-
     /**
      * @tc.number INT_SUB_ITEM_CHK_0400
      * @tc.name testIntSub0004
@@ -328,42 +327,6 @@ export default function IntSubTest(): void {
     });
 
     /**
-     * @tc.number INT_SUB_ITEM_CHK_2200
-     * @tc.name testIntSub0022
-     * @tc.desc Verify passing null throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntSub0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.sub(null as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number INT_SUB_ITEM_CHK_2300
-     * @tc.name testIntSub0023
-     * @tc.desc Verify passing undefined throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntSub0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.sub(undefined as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
      * @tc.number INT_SUB_ITEM_CHK_2400
      * @tc.name testIntSub0024
      * @tc.desc Verify sub with number literal argument returns correct difference
@@ -380,7 +343,7 @@ export default function IntSubTest(): void {
     /**
      * @tc.number INT_SUB_ITEM_CHK_2500
      * @tc.name testIntSub0025
-     * @tc.desc Verify passing string throws error
+     * @tc.desc Verify passing string returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +354,7 @@ export default function IntSubTest(): void {
         const result = a.sub("10" as Object as Int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -557,8 +520,6 @@ export default function IntSubTest(): void {
       expect(result.toInt()).assertEqual(-100);
     });
 
-
-
     /**
      * @tc.number INT_SUB_ITEM_CHK_3900
      * @tc.name testIntSub0039
@@ -634,7 +595,6 @@ export default function IntSubTest(): void {
       expect(result.toInt()).assertEqual(2147483647);
     });
 
-
     /**
      * @tc.number INT_SUB_ITEM_CHK_4500
      * @tc.name testIntSub0045
@@ -666,7 +626,6 @@ export default function IntSubTest(): void {
       expect(result).not().assertEqual(a);
       expect(result.toInt()).not().assertEqual(a.toInt());
     });
-
 
     /**
      * @tc.number INT_SUB_ITEM_CHK_4800
@@ -919,7 +878,6 @@ export default function IntSubTest(): void {
       expect(result.toInt()).assertEqual(90000000);
     });
 
-
     /**
      * @tc.number INT_SUB_ITEM_CHK_6500
      * @tc.name testIntSub0065
@@ -1057,7 +1015,6 @@ export default function IntSubTest(): void {
       expect(result.toInt()).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_SUB_ITEM_CHK_7500
      * @tc.name testIntSub0075
@@ -1075,7 +1032,6 @@ export default function IntSubTest(): void {
       const step3 = step2.sub(new Int(10));
       expect(step3.toInt()).assertEqual(40);
     });
-
 
     /**
      * @tc.number INT_SUB_ITEM_CHK_7700

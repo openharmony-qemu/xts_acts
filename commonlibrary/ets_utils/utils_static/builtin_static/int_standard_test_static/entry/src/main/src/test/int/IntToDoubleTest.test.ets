@@ -42,7 +42,6 @@ export default function IntToDoubleTest(): void {
       expect(result).assertEqual(65.0);
     });
 
-
     /**
      * @tc.number INT_TO_DBL_CHK_0300
      * @tc.name testIntToDouble0003
@@ -177,7 +176,6 @@ export default function IntToDoubleTest(): void {
       const a = new Int(-1);
       expect(a.toDouble()).assertEqual(-1.0);
     });
-
 
     /**
      * @tc.number INT_TO_DBL_CHK_1400
@@ -434,7 +432,6 @@ export default function IntToDoubleTest(): void {
       expect(result).assertEqual(30000.0);
     });
 
-
     /**
      * @tc.number INT_TO_DBL_CHK_3300
      * @tc.name testIntToDouble0033
@@ -529,7 +526,6 @@ export default function IntToDoubleTest(): void {
       expect(Math.abs((f) - (123456789.0)) <= 10.0).assertTrue();
     });
 
-
     /**
      * @tc.number INT_TO_DBL_CHK_4000
      * @tc.name testIntToDouble0040
@@ -621,7 +617,6 @@ export default function IntToDoubleTest(): void {
       expect(a.toDouble()).assertEqual(500.0);
     });
 
-
     /**
      * @tc.number INT_TO_DBL_CHK_4700
      * @tc.name testIntToDouble0047
@@ -695,7 +690,6 @@ export default function IntToDoubleTest(): void {
       expect(a.toDouble()).assertEqual(65.0);
     });
 
-
     /**
      * @tc.number INT_TO_DBL_CHK_5300
      * @tc.name testIntToDouble0053
@@ -723,7 +717,6 @@ export default function IntToDoubleTest(): void {
       const result = (a.toDouble() * 1.5 + 50) / 2;
       expect(result).assertEqual(100.0);
     });
-
 
     /**
      * @tc.number INT_TO_DBL_CHK_5600

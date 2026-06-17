@@ -42,7 +42,6 @@ export default function IntToIntTest(): void {
       expect(result).assertEqual(65);
     });
 
-
     /**
      * @tc.number INT_TO_ITEM_CHK_0300
      * @tc.name testIntToInt0003
@@ -203,7 +202,6 @@ export default function IntToIntTest(): void {
       const a = new Int(-1);
       expect(a.toInt()).assertEqual(-1);
     });
-
 
     /**
      * @tc.number INT_TO_ITEM_CHK_1600

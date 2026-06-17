@@ -55,7 +55,6 @@ export default function IntToString1Test(): void {
       expect(a.toString()).assertEqual("65");
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_CHK_0400
      * @tc.name testIntToString10004
@@ -429,7 +428,6 @@ export default function IntToString1Test(): void {
       expect(new Int(-99).toString().length).assertEqual(3);
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_CHK_3200
      * @tc.name testIntToString10032
@@ -739,7 +737,6 @@ export default function IntToString1Test(): void {
       expect(strings[2]).assertEqual("200");
     });
 
-
     /**
      * @tc.number INT_TO_STRNG_CHK_5400
      * @tc.name testIntToString10054
@@ -832,7 +829,6 @@ export default function IntToString1Test(): void {
         expect(a.toString()).assertEqual(v.toString());
       });
     });
-
 
     /**
      * @tc.number INT_TO_STRNG_CHK_6100
@@ -937,8 +933,6 @@ export default function IntToString1Test(): void {
       expect(str).assertEqual("1000");
       expect(typeof str).assertEqual("string");
     });
-
-
 
     /**
      * @tc.number INT_TO_STRNG_CHK_7000

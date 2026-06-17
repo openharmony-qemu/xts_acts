@@ -61,7 +61,6 @@ export default function IntToIntStaticTest(): void {
       expect(Int.toInt(0)).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_TO_INT_S_CHK_0400
      * @tc.name testIntToIntStatic0004
@@ -281,12 +280,6 @@ export default function IntToIntStaticTest(): void {
       expect(Int.toInt(2048)).assertEqual(2048);
     });
 
-
-
-
-
-
-
     /**
      * @tc.number INT_TO_INT_S_CHK_2600
      * @tc.name testIntToIntStatic0026
@@ -358,8 +351,6 @@ export default function IntToIntStaticTest(): void {
       expect(result).assertEqual(9999);
     });
 
-
-
     /**
      * @tc.number INT_TO_INT_S_CHK_3300
      * @tc.name testIntToIntStatic0033
@@ -386,8 +377,6 @@ export default function IntToIntStaticTest(): void {
       expect(result).assertEqual(-2147483648);
     });
 
-
-
     /**
      * @tc.number INT_TO_INT_S_CHK_3700
      * @tc.name testIntToIntStatic0037
@@ -400,8 +389,6 @@ export default function IntToIntStaticTest(): void {
       expect(Int.toInt(Int.MAX_VALUE - 1)).assertEqual(2147483646);
       expect(Int.toInt(Int.MIN_VALUE + 1)).assertEqual(-2147483647);
     });
-
-
 
     /**
      * @tc.number INT_TO_INT_S_CHK_4000
@@ -831,7 +818,6 @@ export default function IntToIntStaticTest(): void {
       });
     });
 
-
     /**
      * @tc.number INT_TO_INT_S_CHK_7100
      * @tc.name testIntToIntStatic0071
@@ -964,7 +950,6 @@ export default function IntToIntStaticTest(): void {
       const sum = ints.reduce((a: int, b: int): int => a + b, 0);
       expect(sum).assertEqual(150);
     });
-
 
     /**
      * @tc.number INT_TO_INT_S_CHK_8100

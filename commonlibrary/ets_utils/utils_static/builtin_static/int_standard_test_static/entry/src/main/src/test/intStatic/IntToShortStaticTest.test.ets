@@ -53,7 +53,6 @@ export default function IntToShortStaticTest(): void {
       expect(Int.toShort(0)).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_TO_SHORT_S_CHK_0400
      * @tc.name testIntToShortStatic0004
@@ -187,8 +186,6 @@ export default function IntToShortStaticTest(): void {
       expect(result).assertEqual(64);
     });
 
-
-
     /**
      * @tc.number INT_TO_SHORT_S_CHK_1600
      * @tc.name testIntToShortStatic0016
@@ -201,8 +198,6 @@ export default function IntToShortStaticTest(): void {
       const result = Int.toShort(Double.toInt(123.45));
       expect(result).assertEqual(123);
     });
-
-
 
     /**
      * @tc.number INT_TO_SHORT_S_CHK_1900
@@ -258,7 +253,6 @@ export default function IntToShortStaticTest(): void {
       expect(result).assertEqual(1);
     });
 
-
     /**
      * @tc.number INT_TO_SHORT_S_CHK_2400
      * @tc.name testIntToShortStatic0024
@@ -284,7 +278,6 @@ export default function IntToShortStaticTest(): void {
       const result = Int.toShort(-32768);
       expect(result).assertEqual(-32768);
     });
-
 
     /**
      * @tc.number INT_TO_SHORT_S_CHK_2700
@@ -382,7 +375,6 @@ export default function IntToShortStaticTest(): void {
       expect(result).assertLargerOrEqual(-32768);
       expect(result).assertLess(32768);
     });
-
 
     /**
      * @tc.number INT_TO_SHORT_S_CHK_3500
@@ -575,7 +567,6 @@ export default function IntToShortStaticTest(): void {
       expect(result).assertEqual(9950);
     });
 
-
     /**
      * @tc.number INT_TO_SHORT_S_CHK_5000
      * @tc.name testIntToShortStatic0050
@@ -651,8 +642,6 @@ export default function IntToShortStaticTest(): void {
       expect(lowShort).assertLargerOrEqual(-32768);
       expect(lowShort).assertLess(32768);
     });
-
-
 
     /**
      * @tc.number INT_TO_SHORT_S_CHK_5700
