@@ -30,6 +30,17 @@ import DatePickerLunarNullUndefinedTest from './datePickerNullUndefined/DatePick
 import DatePickerSelectedTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerSelectedTextStyleNullUndefined.test';
 import DatePickerTextStyleNullUndefinedTest from './datePickerNullUndefined/DatePickerTextStyleNullUndefined.test';
 
+import DatePickerComponentConstructorTest from './datePickerComponent/DatePickerComponentConstructor.test';
+import DatePickerComponentDisplayModeTest from './datePickerComponent/DatePickerComponentDisplayMode.test';
+import DatePickerComponentDateModeTest from './datePickerComponent/DatePickerComponentDateMode.test';
+import DatePickerComponentLunarTest from './datePickerComponent/DatePickerComponentLunar.test';
+import DatePickerComponentLoopTest from './datePickerComponent/DatePickerComponentLoop.test';
+import DatePickerComponentEnableHapticFeedbackTest from './datePickerComponent/DatePickerComponentEnableHapticFeedback.test';
+import DatePickerComponentTimeFormatTest from './datePickerComponent/DatePickerComponentTimeFormat.test';
+import DatePickerComponentUseMilitaryTimeTest from './datePickerComponent/DatePickerComponentUseMilitaryTime.test';
+import DatePickerComponentOnChangeTest from './datePickerComponent/DatePickerComponentOnChange.test';
+import DatePickerComponentOnScrollStopTest from './datePickerComponent/DatePickerComponentOnScrollStop.test';
+
 export default function testsuite() {
   DatePickerCanLoopTest();
   datePickerMode();
@@ -46,4 +57,14 @@ export default function testsuite() {
   DatePickerLunarNullUndefinedTest();
   DatePickerSelectedTextStyleNullUndefinedTest();
   DatePickerTextStyleNullUndefinedTest();
+  DatePickerComponentConstructorTest();
+  DatePickerComponentDisplayModeTest();
+  DatePickerComponentDateModeTest();
+  DatePickerComponentLunarTest();
+  DatePickerComponentLoopTest();
+  DatePickerComponentEnableHapticFeedbackTest();
+  DatePickerComponentTimeFormatTest();
+  DatePickerComponentUseMilitaryTimeTest();
+  DatePickerComponentOnChangeTest();
+  DatePickerComponentOnScrollStopTest();
 }
