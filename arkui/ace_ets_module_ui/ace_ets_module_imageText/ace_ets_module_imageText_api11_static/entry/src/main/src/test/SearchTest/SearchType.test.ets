@@ -58,7 +58,7 @@ export default function SearchTypeTest() {
         }
       } catch (err) {
         console.error("push SearchTypeTest page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

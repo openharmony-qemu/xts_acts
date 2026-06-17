@@ -71,11 +71,12 @@ class TestDuplex extends stream.Duplex {
 
 export default function Stream2Test() {
   describe('Stream2Test', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
+      await sleep(50);
       new Resettable();
     })
     afterEach(async () => {
-      await sleep(20);
+      await sleep(50);
     })
 
     /**

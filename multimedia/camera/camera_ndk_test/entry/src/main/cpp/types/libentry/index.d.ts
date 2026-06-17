@@ -686,3 +686,31 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getEnumNotificationName: (index: number) => number;
+
+export const getEnumProximityStateForFocus: (index: number) => number;
+
+export const registerNotificationReceivedCallback: (index: number) => number;
+
+export const unregisterNotificationReceivedCallback: (index: number) => number;
+
+export const getNotificationName: (index: number) => number;
+
+export const getProximityStateForFocus: (index: number) => number;
+
+export const destroyCameraNotificationInfo: (index: number) => number;
+
+export const createPhotoCaptureSettingExt: (index: number) => number;
+
+export const destroyPhotoCaptureSettingExt: (index: number) => number;
+
+export const setCompressionQuality: (index: number, compression: number) => number;
+
+export const setImageRotation: (index: number, rotation: number) => number;
+
+export const setMirror: (index: number, isMirror: boolean) => number;
+
+export const setLocation: (index: number, latitude: number, longitude: number, altitude: number) => number;
+
+export const captureWithCaptureSettingExt: (index: number) => number;

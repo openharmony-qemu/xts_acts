@@ -15,7 +15,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_js_app_suite("ActsDataIdentifyTest") {
   test_hap = true
   testonly = true
-  certificate_profile = "./signature/lhnopenharmony_sx.p7b"
+  certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsDataIdentifyTest"
  subsystem_name = "security"
   part_name = "dlp_permission_service"

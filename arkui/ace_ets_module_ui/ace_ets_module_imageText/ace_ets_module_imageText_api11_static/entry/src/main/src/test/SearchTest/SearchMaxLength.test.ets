@@ -71,7 +71,7 @@ export default function search_maxLength() {
         }
       } catch (err) {
         console.error("push search_maxLength page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

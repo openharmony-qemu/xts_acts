@@ -60,7 +60,7 @@ export default function checkboxJsunit() {
           expect(JSON.parse(obj.$attrs.mark).size).assertEqual('50.00vp');
           console.info('ArkUX_Stage_Checkbox_0100 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Checkbox_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -85,7 +85,7 @@ export default function checkboxJsunit() {
           expect(obj.$attrs.unselectedColor).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Checkbox_0400 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Checkbox_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -113,7 +113,7 @@ export default function checkboxJsunit() {
 
           console.info('ArkUX_Stage_Checkbox_0300 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Checkbox_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -138,7 +138,7 @@ export default function checkboxJsunit() {
           expect(obj.$attrs.selectedColor).assertEqual("#FFED6F21");
           console.info('ArkUX_Stage_Checkbox_attrs_0200 END ');
         } catch (err) {
-          expect().assertFail();
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Checkbox_attrs_0200 ERR  ' + JSON.stringify(err));
         }
         done();

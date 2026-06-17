@@ -76,6 +76,14 @@
         "srcEntrance": "./ets/InputMethodEngineNew/InputNewService.ts",
         "type": "inputMethod",
         "visible": true
+      },
+      {
+        "description": "HotAreaDemo",
+        "icon": "$media:icon",
+        "name": "InputHotAreaService",
+        "srcEntrance": "./ets/InputMethodEngineHotArea/InputHotAreaService.ts",
+        "type": "inputMethod",
+        "visible": true
       }
     ],
     "requestPermissions": [

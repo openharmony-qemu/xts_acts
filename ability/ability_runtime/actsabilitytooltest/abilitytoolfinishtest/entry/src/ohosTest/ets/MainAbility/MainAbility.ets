@@ -48,9 +48,13 @@ export default class MainAbility extends Ability {
     console.log('MainAbility onCreate');
     let cmd: string;
     let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
+    let user = abilityDelegatorArguments.parameters["-u"];
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20600 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20600 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20600 stdResult = ' + data.stdResult);
@@ -71,6 +75,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s class ' +
       'AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20700 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20700 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20700 stdResult = ' + data.stdResult);
@@ -91,6 +98,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20800 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20800 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20800 stdResult = ' + data.stdResult);
@@ -111,6 +121,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s class ' +
       'AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20900 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20900 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_20900 stdResult = ' + data.stdResult);
@@ -131,6 +144,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21000 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21000 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21000 stdResult = ' + data.stdResult);
@@ -151,6 +167,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely -s ' +
       'class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21300 stdResult = ' + data.stdResult);
@@ -170,6 +189,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21400 stdResult = ' + data.stdResult);
@@ -189,6 +211,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21500 stdResult = ' + data.stdResult);
@@ -208,6 +233,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21600 stdResult = ' + data.stdResult);
@@ -227,6 +255,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21700 stdResult = ' + data.stdResult);
@@ -246,6 +277,9 @@ export default class MainAbility extends Ability {
 
     cmd = 'aa test -m entry_test -b com.acts.abilitytoolrely ' +
       '-s class AbilityToolRelyTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800 -s unittest OpenHarmonyTestRunner';
+    if(user !== undefined){
+        cmd += ' -u ' + user;
+    }
     abilityDelegator.executeShellCommand(cmd, async (err, data) => {
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800 start err: ' + JSON.stringify(err));
       console.log('SUB_Ability_AbilityTools_AbilityDelegator_Stage_01_21800 stdResult = ' + data.stdResult);

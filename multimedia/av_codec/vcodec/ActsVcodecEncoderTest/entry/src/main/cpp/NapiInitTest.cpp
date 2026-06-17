@@ -359,7 +359,11 @@ static std::vector<TestFunction> GetFuncTest2Part2()
     VideoEncodeHevcCapability2700Test,
     VideoEncodeHevcCapability2800Test,
     VideoEncodeHevcCapability2900Test,
-    VideoEncodeHevcCapability3000Test
+    VideoEncodeHevcCapability3000Test,
+    VideoEncodeSetMaxFrameDelayCount0100Test,
+    VideoEncodeSetMaxFrameDelayCount0200Test,
+    VideoEncodeSetMaxFrameDelayCount0300Test,
+    VideoEncodeSetMaxFrameDelayCount0400Test
     };
 }
 
@@ -716,7 +720,9 @@ static std::vector<TestFunction> GetFunc2TestPart2()
     VideoEncodeSyncFormat0010Test,
     VideoEncodeAnother0010Test,
     VideoCapabilityConfig0010Test,
-    VideoCapabilityConfig0020Test
+    VideoCapabilityConfig0020Test,
+    VideoEncoderSetXPS0010Test,
+    VideoEncoderSetXPS0020Test
     };
 }
 

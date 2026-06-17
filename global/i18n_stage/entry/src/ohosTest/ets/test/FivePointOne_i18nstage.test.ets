@@ -780,7 +780,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
     })
 
     /**
@@ -797,7 +797,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("2024/12/13 上午 6:30:25")
+      expect(dateFormatted).assertEqual("2024/12/13 上午6:30:25")
     })
 
     /**
@@ -814,7 +814,7 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
     })
 
     /**

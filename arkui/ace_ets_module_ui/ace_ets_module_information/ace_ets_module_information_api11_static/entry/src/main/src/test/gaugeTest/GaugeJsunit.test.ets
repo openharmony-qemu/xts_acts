@@ -55,6 +55,7 @@ export default function gaugeJsunit() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push gauge page error " + err);
       }
     });
@@ -95,6 +96,7 @@ it('testGauge_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       try {
         AppStorage.setOrCreate<number>('gaugeValue',10)
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge002] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -118,6 +120,7 @@ it('testGauge_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<string>('strokeWidthValue',"30")
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge003] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -141,6 +144,7 @@ it('testGauge_static_004', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<number>('startAngleValue',200)
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge004] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -164,6 +168,7 @@ it('testGauge_static_005', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<number>('endAngleValue',200)
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge005] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -185,9 +190,10 @@ it('testGauge_static_006', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       try {
         AppStorage.setOrCreate<string>('colorValues',JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]]))
-
+        await CommonFunc.sleep(1000);
+        expect(AppStorage.get<string>('colorValues')).not().assertUndefined();
       } catch (err) {
-        expect().assertFail();
+        expect(false).assertEqual(true);
         console.log("[testGauge006] change component data error: " + (err as BusinessError).message);
       }
       done()
@@ -206,6 +212,7 @@ it('testGauge_static_007', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<number>('gaugeValue',-10)
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge007] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -229,6 +236,7 @@ it('testGauge_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<string>('strokeWidthValue','-30')
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge008] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -252,6 +260,7 @@ it('testGauge_static_009', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<number>('startAngleValue',-10)
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge009] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -275,6 +284,7 @@ it('testGauge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<number>('endAngleValue',-10)
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge010] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
@@ -297,6 +307,7 @@ it('testGauge_static_011', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<string>('strokeWidthValue',"121111111")
 
       } catch (err) {
+        expect(false).assertEqual(true);
         console.log("[testGauge011] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);

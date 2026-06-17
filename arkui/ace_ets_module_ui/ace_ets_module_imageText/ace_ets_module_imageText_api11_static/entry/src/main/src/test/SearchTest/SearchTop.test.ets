@@ -72,7 +72,7 @@ export default function search_top() {
         }
       } catch (err) {
         console.error("push search_top page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
     });
 

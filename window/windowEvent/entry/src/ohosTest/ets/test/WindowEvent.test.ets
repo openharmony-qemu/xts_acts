@@ -1154,26 +1154,26 @@ export default function windowEventTest() {
         ctx: context
       };
 
-      let subWindow: window.Window;
-      subWindow = await window.createWindow(config);
-      console.info(caseName + ' createWindow success');
+      let subWindow: window.Window | undefined;
       try {
-        await subWindow.setUIContent('testability/pages/Index1');
+        subWindow = await window.createWindow(config);
+        console.info(caseName + ' createWindow success');
+        await subWindow?.setUIContent('testability/pages/Index1');
         console.info(caseName + ' setUIContent success');
-        await subWindow.showWindow();
+        await subWindow?.showWindow();
         console.info(caseName + ' showWindow success');
         await sleep(300);
 
-        let windowLimits = subWindow.getWindowLimits();
+        let windowLimits = subWindow?.getWindowLimits();
         let minWidth = windowLimits.minWidth as number;
         let minHeight = windowLimits.minHeight as number;
         console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
-        await subWindow.resize(minWidth, minHeight);
+        await subWindow?.resize(minWidth, minHeight);
         console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
         await sleep(500);
 
-        let maskWidth = subWindow.getWindowProperties().windowRect.width;
-        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        let maskWidth = subWindow?.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow?.getWindowProperties().windowRect.height;
         console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
 
         let windowMask = new Uint8Array(maskWidth * maskHeight);
@@ -1184,26 +1184,22 @@ export default function windowEventTest() {
         }
         console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
 
-        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        await subWindow?.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
         console.info(caseName + ' setWindowMaskWithAlpha success');
-        await subWindow.destroyWindow();
+        await subWindow?.destroyWindow();
         console.info(caseName + ' destroyWindow success');
         done();
       } catch (err) {
         err = err as BusinessError;
         console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
         if (subWindow) {
-          await subWindow.destroyWindow();
+          await subWindow?.destroyWindow();
           console.info(caseName + ' destroyWindow in catch');
         }
-        if (err.code === 801) {
-          if (!canIUseRes) {
-            expect(err.code).assertEqual(801);
-          } else {
-            expect().assertFail();
-          }
+        if (canIUseRes){
+          expect(err.code).assertEqual(1300002)
         } else {
-          expect().assertFail();
+          expect(err.code).assertEqual(801)
         }
         done();
       }

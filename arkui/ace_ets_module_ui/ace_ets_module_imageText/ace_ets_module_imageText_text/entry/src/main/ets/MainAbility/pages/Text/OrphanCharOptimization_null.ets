@@ -23,16 +23,23 @@ struct orphanCharOptimizationExample001{
   build() {
     Column() {
       Row() {
+        Button('nu')
+          .onClick(() => {
+            this.orphanCharOptimizationXTS = null;
+          })
+          .id('null')
+      }.height('5%')
+      Row() {
         Text(this.message)
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsText')
+          .id('jsText_null')
         TextArea({ text: this.message })
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsTextArea')
+          .id('jsTextArea_null')
       }
 
       Row() {
@@ -40,7 +47,7 @@ struct orphanCharOptimizationExample001{
           .fontSize(20)
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
-          .id('jsTextInput')
+          .id('jsTextInput_null')
         RichEditor({ controller: this.controller })
           .onReady(() => {
             this.controller.addTextSpan('凤舞龙飞凤舞龙飞凤舞',
@@ -51,18 +58,12 @@ struct orphanCharOptimizationExample001{
                 },
               })
           })
-          .id('jsRichEditor')
+          .id('jsRichEditor_null')
           .width('38%')
           .orphanCharOptimization(this.orphanCharOptimizationXTS)
       }
 
-      Row() {
-        Button('nu')
-          .onClick(() => {
-            this.orphanCharOptimizationXTS = null;
-          })
-          .id('null')
-      }
+
     }.height('100%').width('100%')
   }
 }

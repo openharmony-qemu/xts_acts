@@ -19,6 +19,7 @@ import dynamicXmlTest1 from './dynamicXml/DynamicXml1.test';
 import dynamicXmlTest2 from './dynamicXml/DynamicXml2.test';
 import actsXml3Test from './xml/Xml3.test';
 import actsXml4Test from './xml/Xml4.test';
+import XmlSAXParserTest from './xml/XmlSAXParser.test';
 
 import XmlTest_01 from './xml/XmlTest01.test';
 import XmlTest_02 from './xml/XmlTest02.test';
@@ -44,4 +45,5 @@ export default function testsuite(): void {
   XmlTest_07();
   XmlTest_08();
 
+  XmlSAXParserTest();
 }

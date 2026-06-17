@@ -60,7 +60,7 @@ export default function SheetTypeTest() {
       let col = await driver.findComponent(ON.id('col'))
       let height = await  col.getBoundsCenter()
 
-      let strJson1 : string = getInspectorByKey('DismissReason');
+      let strJson1 : string = getInspectorByKey('sheetTypeSide_DismissReason');
       let btn4 = await driver.findComponent(ON.id('side'))
       let rect = await btn4.getBounds()
       console.info(`rect is: ` + JSON.stringify(rect))

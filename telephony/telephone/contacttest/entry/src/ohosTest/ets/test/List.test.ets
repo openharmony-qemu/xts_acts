@@ -34,6 +34,7 @@ import EmptyParamCardTest from './EmptyParamCardTest.test';
 import HasMatchedCallLogTest from './HasMatchedCallLog.test';
 import { deviceInfo } from '@kit.BasicServicesKit'
 import sim from '@ohos.telephony.sim';
+import ContactSyncTest from './ContactSync.test';
 
 export default function testsuite() {
   AddContactTest();
@@ -56,4 +57,5 @@ export default function testsuite() {
   EmptyParamTest();
   EmptyParamCardTest();
   HasMatchedCallLogTest();
+  ContactSyncTest();
 }

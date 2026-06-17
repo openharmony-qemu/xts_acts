@@ -113,7 +113,7 @@ export default function popupKeyboardAvoidMode() {
                 console.info("[popupKeyboardAvoidMode_0100] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
                 await confirm.click()
-                await driver.triggerKey(2070)
+                
             }
             console.info("[popupKeyboardAvoidMode_0100] END")
             done()
@@ -148,7 +148,7 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.text("confirm"))
 
                 expect(confirm != null).assertFalse()
-                await driver.triggerKey(2070)
+                
             }
             console.info("[popupKeyboardAvoidMode_0200] END")
             done()
@@ -194,7 +194,7 @@ export default function popupKeyboardAvoidMode() {
 
                 console.info("[popupKeyboardAvoidMode_0300] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
-                await driver.triggerKey(2070)
+                
             }
             console.info("[popupKeyboardAvoidMode_0300] END")
             done()
@@ -231,7 +231,7 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.id("text"))
 
                 expect(confirm != null).assertFalse()
-                await driver.triggerKey(2070)
+                
             }
             console.info("[popupKeyboardAvoidMode_0400] END")
             done()

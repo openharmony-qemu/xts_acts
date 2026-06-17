@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,9 +19,10 @@ import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDi
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest} from '../Util.test'
+
 
 export default function columnMonopolize() {
   describe('columnMonopolize', () => {
@@ -56,51 +57,51 @@ export default function columnMonopolize() {
       console.log("columnMonopolize after each called");
     });
 
-    
 
-    
 
-/**
+
+
+    /**
      * @tc.number   columnMonopolize_static_001
      * @tc.name     columnMonopolize_static_001
      * @tc.desc     columnMonopolize_static_001
      * @tc.level    Level.LEVEL0
      */
-it('columnMonopolize_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('columnMonopolize_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log('[columnMonopolize_001] START');
-      // get column left and top on screen
-      await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let column2 = await (scrollBar?.scrollSearch(ON.id('column2')) as Promise<Component | null>);
-      let column1 = await (scrollBar?.scrollSearch(ON.id('column1')) as Promise<Component | null>);
-
+      let column1 = await driver.findComponent(ON.id('column1True'));
       await CommonFunc.sleep(200);
-      await (column1?.longClick() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (column2?.click() as Promise<void>);
-      let strJson1 = inspector.getInspectorByKey('columnText');
-      console.log("[columnMonopolize_001] component obj is: " , JSON.stringify(JSON.parseJsonElement(strJson1)));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('LongPressGesture onAction success;');
-      await CommonFunc.sleep(1000);
-      let button = await (scrollBar?.scrollSearch(ON.id('buttonBoolean')) as Promise<Component | null>);
-      let button_clean = await (scrollBar?.scrollSearch(ON.id('button_clean')) as Promise<Component | null>);
-
-      await (button_clean?.click() as Promise<void>);
+      await (column1?.click() as Promise<void>);
       await CommonFunc.sleep(500);
-      // change the status of monopolize Attribute
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (column1?.longClick() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (column2?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let strJson2 = inspector.getInspectorByKey('columnText');
+      let strJson1 = inspector.getInspectorByKey("text1True");
+      console.log("[columnMonopolize_001] component obj1 is: " , JSON.stringify(JSON.parseJsonElement(strJson1)));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('inner column touch down');
+      let strJson2 = inspector.getInspectorByKey('text2True');
       console.log("[columnMonopolize_001] component obj2 is: " , JSON.stringify(JSON.parseJsonElement(strJson2)));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('LongPressGesture onAction success;TapGesture success');
-      await CommonFunc.sleep(3000);
-      await (button_clean?.click() as Promise<void>);
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('inner column touch down');
+      await CommonFunc.sleep(1000);
+
+      let button1 = await driver.findComponent(ON.id('button1True'));
+      let button2 = await driver.findComponent(ON.id('button2True'));
+      await (button1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      await (button2?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJson3 = inspector.getInspectorByKey('textTrue');
+      console.log("[columnMonopolize_001] component obj3 is: " , JSON.stringify(JSON.parseJsonElement(strJson3)));
+      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual('set monopolizeEvents true');
+      await CommonFunc.sleep(1000);
+
+      await (column1?.click() as Promise<void>);
+      await CommonFunc.sleep(500);
+      let strJson4 = inspector.getInspectorByKey('text1True');
+      console.log("[columnMonopolize_001] component obj4 is: " , JSON.stringify(JSON.parseJsonElement(strJson4)));
+      expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content')).assertEqual(' ');
+      let strJson5 = inspector.getInspectorByKey('text2True');
+      console.log("[columnMonopolize_001] component obj5 is: " , JSON.stringify(JSON.parseJsonElement(strJson5)));
+      expect(JSON.parseJsonElement(strJson5).getElement('$attrs').getString('content')).assertEqual('inner column touch down');
       console.log('[columnMonopolize_001] END');
       done();
     });
