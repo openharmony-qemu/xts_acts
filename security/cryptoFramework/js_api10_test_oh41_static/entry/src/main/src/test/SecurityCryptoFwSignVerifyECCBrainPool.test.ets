@@ -18,7 +18,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import cryptoFrameworkfrom '@ohos.security.cryptoFramework';
+import cryptoFramework from '@ohos.security.cryptoFramework';
 import cpFw from '@ohos.security.cryptoFramework';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
