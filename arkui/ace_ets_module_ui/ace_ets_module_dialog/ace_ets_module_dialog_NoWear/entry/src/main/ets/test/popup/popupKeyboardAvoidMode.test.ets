@@ -83,12 +83,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.name   popupKeyboardAvoidMode_0100
-         * @tc.number popupKeyboardAvoidMode_0100
-         * @tc.desc   set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number    popupKeyboardAvoidMode_0100
+         * @tc.name      popupKeyboardAvoidMode_0100
+         * @tc.desc      set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
+         * @tc.level:    Level 1
+         * @tc.type :
+         * @tc.size :
          */
         it("popupKeyboardAvoidMode_0100", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0100 START")
@@ -114,7 +114,6 @@ export default function popupKeyboardAvoidMode() {
                 console.info("[popupKeyboardAvoidMode_0100] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
                 await confirm.click()
-                // await driver.triggerKey(2070)
                 await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0100] END")
@@ -122,12 +121,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.name   popupKeyboardAvoidMode_0200
-         * @tc.number popupKeyboardAvoidMode_0200
-         * @tc.desc   set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number    popupKeyboardAvoidMode_0200
+         * @tc.name      popupKeyboardAvoidMode_0200
+         * @tc.desc      set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
+         * @tc.level:    Level 1
+         * @tc.type :
+         * @tc.size :
          */
         it("popupKeyboardAvoidMode_0200", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0200 START")
@@ -150,7 +149,6 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.text("confirm"))
 
                 expect(confirm != null).assertFalse()
-                // await driver.triggerKey(2070)
                 await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0200] END")
@@ -158,12 +156,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.name   popupKeyboardAvoidMode_0300
-         * @tc.number popupKeyboardAvoidMode_0300
-         * @tc.desc   set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number    popupKeyboardAvoidMode_0300
+         * @tc.name      popupKeyboardAvoidMode_0300
+         * @tc.desc      set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
+         * @tc.level:    Level 1
+         * @tc.type :
+         * @tc.size :
          */
         it("popupKeyboardAvoidMode_0300", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0300 START")
@@ -197,7 +195,6 @@ export default function popupKeyboardAvoidMode() {
 
                 console.info("[popupKeyboardAvoidMode_0300] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
-                // await driver.triggerKey(2070)
                 await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0300] END")
@@ -205,12 +202,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.name   popupKeyboardAvoidMode_0400
-         * @tc.number popupKeyboardAvoidMode_0400
-         * @tc.desc   set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number    popupKeyboardAvoidMode_0400
+         * @tc.name      popupKeyboardAvoidMode_0400
+         * @tc.desc      set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
+         * @tc.level:    Level 1
+         * @tc.type :
+         * @tc.size :
          */
         it("popupKeyboardAvoidMode_0400", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0400 START")
@@ -235,7 +232,6 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.id("text"))
 
                 expect(confirm != null).assertFalse()
-                // await driver.triggerKey(2070)
                 await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0400] END")
