@@ -18,9 +18,13 @@ import RichEditorHorizontalScrollingTest from './RichEditorTest/RichEditorHorizo
 import RichTextSpanSymbolBatchTest from './RichTextSpanSymbolBatchTest/RichTextSpanSymbolBatch.test';
 import RichEditorShaderStyleTest from './RichEditor26Test/RichEditorShaderStyle.test';
 import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJoinStyle.test';
+import RichEditorPunctuationOverflowTest from './RichEditor26Test/RichEditorPunctuationOverflow.test';
+import RichEditorScrollToVisibleTest from './RichEditor26Test/RichEditorScrollToVisible.test';
 
 export default function testsuite() {
   RichEditorTest();
   RichTextSpanSymbolBatchTest();
   RichEditorStrokeJoinStyleTest();
+  RichEditorPunctuationOverflowTest();
+  RichEditorScrollToVisibleTest();
 }
