@@ -21,6 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import notificationManager from '@ohos.notificationManager'
 import notificationSubscribe from '@ohos.notificationSubscribe'
 import wantAgent from '@ohos.app.ability.wantAgent'
+import wantagent from '@ohos.app.ability.wantAgent'
 import image from '@ohos.multimedia.image'
 import common from '@ohos.app.ability.common';
 import {
