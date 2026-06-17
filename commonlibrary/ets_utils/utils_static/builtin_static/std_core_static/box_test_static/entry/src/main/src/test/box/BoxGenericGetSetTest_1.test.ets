@@ -79,7 +79,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(ret.age).assertEqual(3);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_0400
      * @tc.name testBoxGenericGetSetA004
@@ -107,7 +106,6 @@ export default function BoxGenericGetSetTest1(): void {
       box.set(new RegExp("xyz", "i"));
       expect(box.get().source).assertEqual("xyz");
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_0600
@@ -164,7 +162,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(result[2]).assertEqual(6);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_0900
      * @tc.name testBoxGenericGetSetA009
@@ -196,7 +193,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().message).assertEqual("msg2");
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_1100
      * @tc.name testBoxGenericGetSetA011
@@ -227,7 +223,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().message).assertEqual("range");
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_1300
      * @tc.name testBoxGenericGetSetA013
@@ -256,7 +251,6 @@ export default function BoxGenericGetSetTest1(): void {
       let ret: bigint = box.set(999n);
       expect(ret).assertEqual(999n);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_1500
@@ -342,7 +336,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get() === c).assertTrue();
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_2000
      * @tc.name testBoxGenericGetSetA020
@@ -424,7 +417,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().age).assertEqual(3);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_2500
      * @tc.name testBoxGenericGetSetA025
@@ -502,7 +494,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().getTime()).assertEqual(300);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_3000
      * @tc.name testBoxGenericGetSetA030
@@ -579,7 +570,6 @@ export default function BoxGenericGetSetTest1(): void {
       box.set(new RegExp("final", "g"));
       expect(box.get().source).assertEqual("final");
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_3500
@@ -673,7 +663,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().get("k")).assertEqual(3);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4000
      * @tc.name testBoxGenericGetSetA040
@@ -766,7 +755,6 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get().has(3)).assertTrue();
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4500
      * @tc.name testBoxGenericGetSetA045
@@ -785,27 +773,12 @@ export default function BoxGenericGetSetTest1(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4600
      * @tc.name testBoxGenericGetSetA046
-     * @tc.desc Verify Box<int[]> set different array and verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBoxGenericGetSetA046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<int[]> = new Box<int[]>([1, 2]);
-      box.set([7, 8, 9, 10]);
-      expect(box.get().length).assertEqual(4);
-      expect(box.get()[3]).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4700
-     * @tc.name testBoxGenericGetSetA047
      * @tc.desc Verify Box<int[]> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<int[]> = new Box<int[]>([0]);
       let boxB: Box<int[]> = new Box<int[]>([0]);
       boxA.set([100, 200]);
@@ -815,14 +788,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4800
-     * @tc.name testBoxGenericGetSetA048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4700
+     * @tc.name testBoxGenericGetSetA047
      * @tc.desc Verify Box<int[]> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<int[]> = new Box<int[]>([0]);
       let arr: int[] = [5, 6, 7];
       let ret: int[] = box.set(arr);
@@ -830,14 +803,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4900
-     * @tc.name testBoxGenericGetSetA049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4800
+     * @tc.name testBoxGenericGetSetA048
      * @tc.desc Verify Box<int[]> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<int[]> = new Box<int[]>([-1]);
       box.set([1, 2]);
       box.set([3, 4]);
@@ -845,16 +818,15 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get()[0]).assertEqual(5);
     });
 
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5000
-     * @tc.name testBoxGenericGetSetA050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_4900
+     * @tc.name testBoxGenericGetSetA049
      * @tc.desc Verify Box<Promise<int>> set new promise and verify identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(1));
       let p: Promise<int> = Promise.resolve(2);
       box.set(p);
@@ -862,14 +834,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5100
-     * @tc.name testBoxGenericGetSetA051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5000
+     * @tc.name testBoxGenericGetSetA050
      * @tc.desc Verify Box<Promise<int>> set different promise and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(0));
       let p: Promise<int> = Promise.resolve(99);
       box.set(p);
@@ -877,14 +849,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5200
-     * @tc.name testBoxGenericGetSetA052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5100
+     * @tc.name testBoxGenericGetSetA051
      * @tc.desc Verify Box<Promise<int>> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(1));
       let boxB: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(2));
       let pA: Promise<int> = Promise.resolve(10);
@@ -897,14 +869,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5300
-     * @tc.name testBoxGenericGetSetA053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5200
+     * @tc.name testBoxGenericGetSetA052
      * @tc.desc Verify Box<Promise<int>> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(0));
       let p: Promise<int> = Promise.resolve(50);
       let ret: Promise<int> = box.set(p);
@@ -912,14 +884,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5400
-     * @tc.name testBoxGenericGetSetA054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5300
+     * @tc.name testBoxGenericGetSetA053
      * @tc.desc Verify Box<Promise<int>> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Promise<int>> = new Box<Promise<int>>(Promise.resolve(0));
       let pA: Promise<int> = Promise.resolve(1);
       let pB: Promise<int> = Promise.resolve(2);
@@ -930,44 +902,43 @@ export default function BoxGenericGetSetTest1(): void {
       expect(box.get() === pC).assertTrue();
     });
 
-
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5500
-     * @tc.name testBoxGenericGetSetA055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5400
+     * @tc.name testBoxGenericGetSetA054
      * @tc.desc Verify Box<Error> set new error and verify message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Error> = new Box<Error>(new Error("first"));
       box.set(new Error("second"));
       expect(box.get().message).assertEqual("second");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5600
-     * @tc.name testBoxGenericGetSetA056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5500
+     * @tc.name testBoxGenericGetSetA055
      * @tc.desc Verify Box<Error> set different error and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Error> = new Box<Error>(new Error("old"));
       box.set(new Error("newer"));
       expect(box.get().message).assertEqual("newer");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5700
-     * @tc.name testBoxGenericGetSetA057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5600
+     * @tc.name testBoxGenericGetSetA056
      * @tc.desc Verify Box<Error> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<Error> = new Box<Error>(new Error("a0"));
       let boxB: Box<Error> = new Box<Error>(new Error("b0"));
       boxA.set(new Error("errA"));
@@ -977,14 +948,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5800
-     * @tc.name testBoxGenericGetSetA058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5700
+     * @tc.name testBoxGenericGetSetA057
      * @tc.desc Verify Box<Error> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Error> = new Box<Error>(new Error("init"));
       let e: Error = new Error("retVal");
       let ret: Error = box.set(e);
@@ -993,14 +964,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5900
-     * @tc.name testBoxGenericGetSetA059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5800
+     * @tc.name testBoxGenericGetSetA058
      * @tc.desc Verify Box<Error> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<Error> = new Box<Error>(new Error("start"));
       box.set(new Error("a"));
       box.set(new Error("b"));
@@ -1009,9 +980,23 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_5900
+     * @tc.name testBoxGenericGetSetA059
+     * @tc.desc Verify Box<TypeError> set new TypeError and verify
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBoxGenericGetSetA059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let box: Box<TypeError> = new Box<TypeError>(new TypeError("invalid"));
+      box.set(new TypeError("invalid"));
+      expect(box.get().message).assertEqual("invalid");
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6000
      * @tc.name testBoxGenericGetSetA060
-     * @tc.desc Verify Box<TypeError> set new TypeError and verify
+     * @tc.desc Verify Box<TypeError> set different TypeError and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1025,26 +1010,12 @@ export default function BoxGenericGetSetTest1(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6100
      * @tc.name testBoxGenericGetSetA061
-     * @tc.desc Verify Box<TypeError> set different TypeError and verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBoxGenericGetSetA061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<TypeError> = new Box<TypeError>(new TypeError("invalid"));
-      box.set(new TypeError("invalid"));
-      expect(box.get().message).assertEqual("invalid");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6200
-     * @tc.name testBoxGenericGetSetA062
      * @tc.desc Verify Box<TypeError> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<TypeError> = new Box<TypeError>(new TypeError("invalid"));
       let boxB: Box<TypeError> = new Box<TypeError>(new TypeError("invalid"));
       boxA.set(new TypeError("invalid"));
@@ -1054,14 +1025,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6300
-     * @tc.name testBoxGenericGetSetA063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6200
+     * @tc.name testBoxGenericGetSetA062
      * @tc.desc Verify Box<TypeError> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<TypeError> = new Box<TypeError>(new TypeError("invalid"));
       let u: TypeError = new TypeError("invalid");
       let ret: TypeError = box.set(u);
@@ -1070,23 +1041,37 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6400
-     * @tc.name testBoxGenericGetSetA064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6300
+     * @tc.name testBoxGenericGetSetA063
      * @tc.desc Verify Box<TypeError> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<TypeError> = new Box<TypeError>(new TypeError("err_a"));
       box.set(new TypeError("err_b"));
       expect(box.get().message).assertEqual("err_b");
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6400
+     * @tc.name testBoxGenericGetSetA064
+     * @tc.desc Verify Box<RangeError> set new buffer and verify size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBoxGenericGetSetA064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let box: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
+      box.set(new RangeError("range"));
+      expect(box.get().message).assertEqual("range");
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6500
      * @tc.name testBoxGenericGetSetA065
-     * @tc.desc Verify Box<RangeError> set new buffer and verify size
+     * @tc.desc Verify Box<RangeError> set different buffer and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1100,26 +1085,12 @@ export default function BoxGenericGetSetTest1(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6600
      * @tc.name testBoxGenericGetSetA066
-     * @tc.desc Verify Box<RangeError> set different buffer and verify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBoxGenericGetSetA066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let box: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
-      box.set(new RangeError("range"));
-      expect(box.get().message).assertEqual("range");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6700
-     * @tc.name testBoxGenericGetSetA067
      * @tc.desc Verify Box<RangeError> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
       let boxB: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
       boxA.set(new RangeError("range"));
@@ -1129,14 +1100,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6800
-     * @tc.name testBoxGenericGetSetA068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6700
+     * @tc.name testBoxGenericGetSetA067
      * @tc.desc Verify Box<RangeError> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
       let buf: RangeError = new RangeError("range");
       let ret: RangeError = box.set(buf);
@@ -1145,14 +1116,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6900
-     * @tc.name testBoxGenericGetSetA069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6800
+     * @tc.name testBoxGenericGetSetA068
      * @tc.desc Verify Box<RangeError> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<RangeError> = new Box<RangeError>(new RangeError("range"));
       box.set(new RangeError("range"));
       box.set(new RangeError("range"));
@@ -1161,42 +1132,42 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7000
-     * @tc.name testBoxGenericGetSetA070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_6900
+     * @tc.name testBoxGenericGetSetA069
      * @tc.desc Verify Box<bigint> set new value and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(10n);
       box.set(20n);
       expect(box.get()).assertEqual(20n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7100
-     * @tc.name testBoxGenericGetSetA071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7000
+     * @tc.name testBoxGenericGetSetA070
      * @tc.desc Verify Box<bigint> set different value and verify
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(5n);
       box.set(500n);
       expect(box.get()).assertEqual(500n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7200
-     * @tc.name testBoxGenericGetSetA072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7100
+     * @tc.name testBoxGenericGetSetA071
      * @tc.desc Verify Box<bigint> instance isolation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxA: Box<bigint> = new Box<bigint>(1n);
       let boxB: Box<bigint> = new Box<bigint>(2n);
       boxA.set(100n);
@@ -1206,28 +1177,28 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7300
-     * @tc.name testBoxGenericGetSetA073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7200
+     * @tc.name testBoxGenericGetSetA072
      * @tc.desc Verify Box<bigint> set return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(0n);
       let ret: bigint = box.set(777n);
       expect(ret).assertEqual(777n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7400
-     * @tc.name testBoxGenericGetSetA074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7300
+     * @tc.name testBoxGenericGetSetA073
      * @tc.desc Verify Box<bigint> set chain: set a, set b, set c, verify c
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(0n);
       box.set(111n);
       box.set(222n);
@@ -1236,14 +1207,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7500
-     * @tc.name testBoxGenericGetSetA075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7400
+     * @tc.name testBoxGenericGetSetA074
      * @tc.desc Verify Box<bigint> set and get with value exceeding Number.MAX_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(0n);
       let ret: bigint = box.set(12345678901234567890n);
       expect(ret).assertEqual(12345678901234567890n);
@@ -1251,14 +1222,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7600
-     * @tc.name testBoxGenericGetSetA076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7500
+     * @tc.name testBoxGenericGetSetA075
      * @tc.desc Verify Box<bigint> arithmetic operations through get-set pattern
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(10000000000000000000n);
       box.set(box.get() + 1n);
       expect(box.get()).assertEqual(10000000000000000001n);
@@ -1271,14 +1242,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7700
-     * @tc.name testBoxGenericGetSetA077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7600
+     * @tc.name testBoxGenericGetSetA076
      * @tc.desc Verify Box<bigint> set return value used as input for subsequent set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(0n);
       let v: bigint = box.set(7n);
       v = box.set(v + 1n);
@@ -1287,14 +1258,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7800
-     * @tc.name testBoxGenericGetSetA078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7700
+     * @tc.name testBoxGenericGetSetA077
      * @tc.desc Verify Box<bigint> value preserved after try-finally execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(0n);
       try {
         box.set(10000000000000000000n);
@@ -1304,14 +1275,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7900
-     * @tc.name testBoxGenericGetSetA079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7800
+     * @tc.name testBoxGenericGetSetA078
      * @tc.desc Verify Box<bigint> value set in finally overrides catch block value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Box<bigint> = new Box<bigint>(100n);
       try {
         let x: int = 0;
@@ -1325,14 +1296,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_8000
-     * @tc.name testBoxGenericGetSetA080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_7900
+     * @tc.name testBoxGenericGetSetA079
      * @tc.desc Verify multiple Box<bigint> instances created via factory method remain independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box1: Box<bigint> = Box.box<bigint>(10000000000000000000n);
       let box2: Box<bigint> = Box.box<bigint>(20000000000000000000n);
       expect(box1.get()).assertEqual(10000000000000000000n);
@@ -1343,14 +1314,14 @@ export default function BoxGenericGetSetTest1(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_8100
-     * @tc.name testBoxGenericGetSetA081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_1_8000
+     * @tc.name testBoxGenericGetSetA080
      * @tc.desc Verify relational comparison between two independent Box<bigint> values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBoxGenericGetSetA081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBoxGenericGetSetA080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box1: Box<bigint> = new Box<bigint>(5000000000000000000n);
       let box2: Box<bigint> = new Box<bigint>(3000000000000000000n);
       expect(box1.get() > box2.get()).assertTrue();

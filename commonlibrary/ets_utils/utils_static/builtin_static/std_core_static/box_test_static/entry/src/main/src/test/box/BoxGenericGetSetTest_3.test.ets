@@ -505,7 +505,6 @@ export default function BoxGenericGetSetTest3(): void {
       expect(box.get()).assertEqual(77);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_2800
      * @tc.name testBoxGenericGetSetC028
@@ -575,7 +574,6 @@ export default function BoxGenericGetSetTest3(): void {
       expect(box.get() === pC).assertTrue();
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_3200
      * @tc.name testBoxGenericGetSetC032
@@ -638,7 +636,6 @@ export default function BoxGenericGetSetTest3(): void {
       box.set([new Box<int>(3)]);
       expect(box.get()[0].get()).assertEqual(3);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_3600
@@ -734,7 +731,6 @@ export default function BoxGenericGetSetTest3(): void {
       }
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_4000
      * @tc.name testBoxGenericGetSetC040
@@ -809,7 +805,6 @@ export default function BoxGenericGetSetTest3(): void {
       expect(box.get().has(cBox)).assertTrue();
       expect(box.get().size).assertEqual(3);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_4400
@@ -1006,7 +1001,6 @@ export default function BoxGenericGetSetTest3(): void {
       expect(box.get() === c).assertTrue();
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_5600
      * @tc.name testBoxGenericGetSetC056
@@ -1062,7 +1056,6 @@ export default function BoxGenericGetSetTest3(): void {
       box.set(false);
       expect(box.get()).assertEqual(false);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_6000
@@ -1145,7 +1138,6 @@ export default function BoxGenericGetSetTest3(): void {
       box.set(i2);
       expect(box.get() === i2).assertTrue();
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_6500
@@ -1409,7 +1401,6 @@ export default function BoxGenericGetSetTest3(): void {
       expect(box.get()).assertEqual(null);
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_6600
      * @tc.name testBoxGenericGetSetC080
@@ -1495,7 +1486,6 @@ export default function BoxGenericGetSetTest3(): void {
       box.set(2);
       expect(box.get()).assertEqual(2);
     });
-
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GENERIC_GETSET_3_6700
@@ -1712,6 +1702,5 @@ export default function BoxGenericGetSetTest3(): void {
       box.set(current + 1);
       expect(box.get()).assertEqual(1);
     });
-
   });
 }
