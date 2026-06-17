@@ -12,22 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } from '../../../hypium/index';
-import commonEventManager from '@ohos.commonEventManager';
-import hilog from '@ohos.hilog';
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } from "../../../hypium/index";
+import commonEventManager from '@ohos.commonEventManager'
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError, RecordData } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import notificationManager from '@ohos.notificationManager';
-import notificationSubscribe from '@ohos.notificationSubscribe';
-import WantAgent from '@ohos.app.ability.wantAgent';
-import wantagent from '@ohos.app.ability.wantAgent';
-import image from '@ohos.multimedia.image';
+import notificationManager from '@ohos.notificationManager'
+import notificationSubscribe from '@ohos.notificationSubscribe'
+import wantAgent from '@ohos.app.ability.wantAgent'
+import image from '@ohos.multimedia.image'
 import common from '@ohos.app.ability.common';
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
+import hilog from '@ohos.hilog';
+import wantagent from '@ohos.app.ability.wantAgent';
+import {
+  Component,
+  Driver,
+  ON,
+  On,
+  MatchPattern,
+  MouseButton,
+  WindowMode,
+  UIElementInfo,
+  UiDirection,
+  PointerMatrix,
+  DisplayRotation
+} from '@ohos.UiTest'
 import Utils from './Util.test';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 import wifiMg from '@ohos.wifiManager';
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext | undefined;
 let bundleName: string = 'com.example.systemAPI.static'
