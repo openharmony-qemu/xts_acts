@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1798,3 +1798,874 @@ it('testNumberFormatType118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      * @tc.desc Verify NumberFormat style currency without currency option
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testNumberFormatError119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        new Intl.NumberFormat("en-US", { style: "currency" });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1200
+     * @tc.name testNumberFormatError120
+     * @tc.desc Verify NumberFormat style unit without unit option
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testNumberFormatError120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        new Intl.NumberFormat("en-US", { style: "unit" });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1210
+     * @tc.name testNumberFormatError121
+     * @tc.desc Verify NumberFormat with invalid currency code
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testNumberFormatError121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      try {
+        new Intl.NumberFormat("en-US", { style: "currency", currency: "INVALID" });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1220
+     * @tc.name testPluralRulesConstructor122
+     * @tc.desc Verify PluralRules constructor with no parameters
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesConstructor122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules();
+      expect(typeof pr.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1230
+     * @tc.name testPluralRulesConstructor123
+     * @tc.desc Verify PluralRules constructor with locale
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesConstructor123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US");
+      expect(typeof pr.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1240
+     * @tc.name testPluralRulesConstructor124
+     * @tc.desc Verify PluralRules constructor with locale and type options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesConstructor124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US", { type: "cardinal" });
+      expect(typeof pr.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1250
+     * @tc.name testPluralRulesConstructor125
+     * @tc.desc Verify PluralRules constructor with only options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesConstructor125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules(undefined, { type: "ordinal" });
+      expect(typeof pr.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1270
+     * @tc.name testPluralRulesLocale127
+     * @tc.desc Verify PluralRules with various locale strings
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesLocale127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let prEN: Intl.PluralRules = new Intl.PluralRules("en-US");
+      let prZH: Intl.PluralRules = new Intl.PluralRules("zh-CN");
+      let prAR: Intl.PluralRules = new Intl.PluralRules("ar");
+      expect(typeof prEN.select(1) === "string").assertTrue();
+      expect(typeof prZH.select(1) === "string").assertTrue();
+      expect(typeof prAR.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1280
+     * @tc.name testPluralRulesLocale128
+     * @tc.desc Verify PluralRules with locale array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesLocale128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules(["en-US", "zh-CN"]);
+      expect(typeof pr.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1290
+     * @tc.name testPluralRulesType129
+     * @tc.desc Verify PluralRules with cardinal and ordinal types
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesType129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let prCard: Intl.PluralRules = new Intl.PluralRules("en-US", { type: "cardinal" });
+      let prOrd: Intl.PluralRules = new Intl.PluralRules("en-US", { type: "ordinal" });
+      expect(typeof prCard.select(1) === "string").assertTrue();
+      expect(typeof prOrd.select(1) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1300
+     * @tc.name testPluralRulesValue130
+     * @tc.desc Verify PluralRules select with various numeric values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesValue130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US");
+      expect(typeof pr.select(0) === "string").assertTrue();
+      expect(typeof pr.select(1) === "string").assertTrue();
+      expect(typeof pr.select(2) === "string").assertTrue();
+      expect(typeof pr.select(100) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1310
+     * @tc.name testPluralRulesReturn131
+     * @tc.desc Verify PluralRules select returns "one" for English 1
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesReturn131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US");
+      let selectResult: string = pr.select(1);
+      expect(selectResult).assertEqual("one");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1320
+     * @tc.name testPluralRulesReturn132
+     * @tc.desc Verify PluralRules Arabic plural rules return correct categories
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesReturn132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("ar");
+      expect(pr.select(0)).assertEqual("zero");
+      expect(pr.select(1)).assertEqual("one");
+      expect(pr.select(2)).assertEqual("two");
+      expect(pr.select(3)).assertEqual("few");
+      expect(pr.select(11)).assertEqual("many");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1330
+     * @tc.name testPluralRulesReturn133
+     * @tc.desc Verify PluralRules resolvedOptions returns object
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesReturn133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US", { type: "ordinal" });
+      let options = pr.resolvedOptions();
+      expect(options.locale).assertEqual("en-US");
+      expect(options.type).assertEqual("ordinal");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1340
+     * @tc.name testPluralRulesType134
+     * @tc.desc Verify PluralRules resolvedOptions returns object type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testPluralRulesType134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let pr: Intl.PluralRules = new Intl.PluralRules("en-US");
+      let prOptions = pr.resolvedOptions();
+      expect(typeof prOptions === "object").assertTrue();
+    });
+
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1350
+     * @tc.name testRelativeTimeFormatConstructor135
+     * @tc.desc Verify RelativeTimeFormat constructor with no parameters
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatConstructor135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat();
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1360
+     * @tc.name testRelativeTimeFormatConstructor136
+     * @tc.desc Verify RelativeTimeFormat constructor with locale
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatConstructor136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1370
+     * @tc.name testRelativeTimeFormatConstructor137
+     * @tc.desc Verify RelativeTimeFormat constructor with locale and options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatConstructor137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { numeric: "auto", style: "long" });
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1380
+     * @tc.name testRelativeTimeFormatConstructor138
+     * @tc.desc Verify RelativeTimeFormat constructor with only options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatConstructor138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat(undefined, { numeric: "always" });
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1390
+     * @tc.name testRelativeTimeFormatFormat139
+     * @tc.desc Verify RelativeTimeFormat format with 2 arguments
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatFormat139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1400
+     * @tc.name testRelativeTimeFormatFormatToParts140
+     * @tc.desc Verify RelativeTimeFormat formatToParts with 2 arguments
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatFormatToParts140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      let parts = rtf.formatToParts(-1, "day");
+      expect(parts.length > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1410
+     * @tc.name testRelativeTimeFormatLocale141
+     * @tc.desc Verify RelativeTimeFormat with various locale strings
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatLocale141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtfEN: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      let rtfZH: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("zh-CN");
+      let rtfJA: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("ja-JP");
+      expect(typeof rtfEN.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtfZH.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtfJA.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1420
+     * @tc.name testRelativeTimeFormatLocale142
+     * @tc.desc Verify RelativeTimeFormat with locale array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatLocale142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat(["en-US", "zh-CN"]);
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1430
+     * @tc.name testRelativeTimeFormatNumeric143
+     * @tc.desc Verify RelativeTimeFormat with numeric options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatNumeric143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtfAlways: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { numeric: "always" });
+      let rtfAuto: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { numeric: "auto" });
+      expect(typeof rtfAlways.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtfAuto.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1440
+     * @tc.name testRelativeTimeFormatStyle144
+     * @tc.desc Verify RelativeTimeFormat with style options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatStyle144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtfLong: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { style: "long" });
+      let rtfShort: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { style: "short" });
+      let rtfNarrow: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { style: "narrow" });
+      expect(typeof rtfLong.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtfShort.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtfNarrow.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1450
+     * @tc.name testRelativeTimeFormatValue145
+     * @tc.desc Verify RelativeTimeFormat format with negative and positive values
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatValue145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtf.format(1, "day") === "string").assertTrue();
+      expect(typeof rtf.format(0, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1460
+     * @tc.name testRelativeTimeFormatUnit146
+     * @tc.desc Verify RelativeTimeFormat format with various time units
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatUnit146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(typeof rtf.format(-1, "year") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "quarter") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "month") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "week") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "hour") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "minute") === "string").assertTrue();
+      expect(typeof rtf.format(-1, "second") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1470
+     * @tc.name testRelativeTimeFormatReturn147
+     * @tc.desc Verify RelativeTimeFormat format returns string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatReturn147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      let result: string = rtf.format(-1, "day");
+      expect(result).assertEqual("1 day ago");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1480
+     * @tc.name testRelativeTimeFormatReturn148
+     * @tc.desc Verify RelativeTimeFormat formatToParts returns array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatReturn148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      let parts = rtf.formatToParts(-1, "day");
+      expect(Array.isArray(parts)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1490
+     * @tc.name testRelativeTimeFormatReturn149
+     * @tc.desc Verify RelativeTimeFormat resolvedOptions returns locale, numeric, style
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatReturn149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US", { numeric: "auto", style: "short" });
+      let options = rtf.resolvedOptions();
+      expect(options.locale).assertEqual("en-US");
+      expect(options.numeric).assertEqual("auto");
+      expect(options.style).assertEqual("short");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1500
+     * @tc.name testRelativeTimeFormatType150
+     * @tc.desc Verify RelativeTimeFormat format returns string type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatType150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(typeof rtf.format(-1, "day") === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1510
+     * @tc.name testRelativeTimeFormatType151
+     * @tc.desc Verify RelativeTimeFormat formatToParts returns Array type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatType151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      expect(Array.isArray(rtf.formatToParts(-1, "day"))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1520
+     * @tc.name testRelativeTimeFormatType152
+     * @tc.desc Verify RelativeTimeFormat resolvedOptions returns object type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testRelativeTimeFormatType152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let rtf: Intl.RelativeTimeFormat = new Intl.RelativeTimeFormat("en-US");
+      let rtfOptions = rtf.resolvedOptions();
+      expect(typeof rtfOptions === "object").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1530
+     * @tc.name testSegmenterConstructor153
+     * @tc.desc Verify Segmenter constructor with no parameters
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterConstructor153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter();
+      expect(segmenter.resolvedOptions().granularity).assertEqual("grapheme");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1540
+     * @tc.name testSegmenterConstructor154
+     * @tc.desc Verify Segmenter constructor with only locale
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterConstructor154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US");
+      expect(segmenter.resolvedOptions().granularity).assertEqual("grapheme");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1550
+     * @tc.name testSegmenterConstructor155
+     * @tc.desc Verify Segmenter constructor with locale and granularity options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterConstructor155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      expect(segmenter.resolvedOptions().granularity === "word").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1560
+     * @tc.name testSegmenterConstructor156
+     * @tc.desc Verify Segmenter constructor with only options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterConstructor156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter(undefined, { granularity: "sentence" });
+      expect(segmenter.resolvedOptions().granularity === "sentence").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1570
+     * @tc.name testSegmenterSegment157
+     * @tc.desc Verify Segmenter segment method with string argument
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterSegment157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let segments = segmenter.segment("hello world");
+      let count: number = 0;
+      for (let seg of segments) {
+        count++;
+      }
+      expect(count > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1580
+     * @tc.name testSegmenterLocale158
+     * @tc.desc Verify Segmenter with various locale strings
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterLocale158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sEN: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let sZH: Intl.Segmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
+      let sJA: Intl.Segmenter = new Intl.Segmenter("ja-JP", { granularity: "word" });
+      expect(sEN.resolvedOptions().locale).assertEqual("en-US");
+      expect(sZH.resolvedOptions().locale).assertEqual("zh-CN");
+      expect(sJA.resolvedOptions().locale).assertEqual("ja-JP");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1590
+     * @tc.name testSegmenterLocale159
+     * @tc.desc Verify Segmenter with locale array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterLocale159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter(["en-US", "zh-CN"], { granularity: "word" });
+      let segments = segmenter.segment("hello");
+      let count: number = 0;
+      for (let seg of segments) {
+        count++;
+      }
+      expect(count > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1600
+     * @tc.name testSegmenterGranularity160
+     * @tc.desc Verify Segmenter with different granularity options
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterGranularity160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sGraph: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "grapheme" });
+      let sWord: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let sSent: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "sentence" });
+      expect(sGraph.resolvedOptions().granularity === "grapheme").assertTrue();
+      expect(sWord.resolvedOptions().granularity === "word").assertTrue();
+      expect(sSent.resolvedOptions().granularity === "sentence").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1610
+     * @tc.name testSegmenterText161
+     * @tc.desc Verify Segmenter segment with English and Chinese text
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterText161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sEN: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let sZH: Intl.Segmenter = new Intl.Segmenter("zh-CN", { granularity: "word" });
+      let segEN = sEN.segment("The quick brown fox");
+      let segZH = sZH.segment("你好世界测试分词");
+      let countEN: number = 0;
+      let countZH: number = 0;
+      for (let seg of segEN) {
+        countEN++;
+      }
+      for (let seg of segZH) {
+        countZH++;
+      }
+      expect(countEN > 0).assertTrue();
+      expect(countZH > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1620
+     * @tc.name testSegmenterText162
+     * @tc.desc Verify Segmenter segment with boundary string inputs
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterText162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let sWord: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let sGraph: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "grapheme" });
+      let segEmpty = sWord.segment("");
+      let segSimple = sGraph.segment("Hi !");
+      let countEmpty: number = 0;
+      let countSimple: number = 0;
+      for (let seg of segEmpty) {
+        countEmpty++;
+      }
+      for (let seg of segSimple) {
+        countSimple++;
+      }
+      expect(countEmpty === 0).assertTrue();
+      expect(countSimple > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1630
+     * @tc.name testSegmenterReturn163
+     * @tc.desc Verify Segmenter segment elements have correct properties
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterReturn163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let segments = segmenter.segment("hello world");
+      for (let seg of segments) {
+        expect(typeof seg.index === "int").assertTrue();
+        expect(typeof seg.isWordLike === "boolean").assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1640
+     * @tc.name testSegmenterReturn164
+     * @tc.desc Verify Segmenter resolvedOptions returns locale and granularity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterReturn164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let options = segmenter.resolvedOptions();
+      expect(options.locale).assertEqual("en-US");
+      expect(options.granularity).assertEqual("word");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1650
+     * @tc.name testSegmenterType165
+     * @tc.desc Verify Segmenter segment returns iterable type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterType165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let segments = segmenter.segment("hello");
+      let count: number = 0;
+      for (let seg of segments) {
+        count++;
+      }
+      expect(count > 0).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1660
+     * @tc.name testSegmenterType166
+     * @tc.desc Verify Segmenter resolvedOptions returns object type
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterType166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US");
+      let segmenterOptions = segmenter.resolvedOptions();
+      expect(typeof segmenterOptions === "object").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1670
+     * @tc.name testSegmenterMethod167
+     * @tc.desc Verify Segmenter word segments include expected segment and index
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+it('testSegmenterMethod167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let segments: Intl.Segments = segmenter.segment("Hello World");
+      let foundWorld: boolean = false;
+      for (let segment of segments) {
+        if (segment.segment === "World") {
+          expect(segment.index).assertEqual(6);
+          foundWorld = true;
+        }
+      }
+      expect(foundWorld).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1680
+     * @tc.name testDateTimeFormatFormatRangeToParts168
+     * @tc.desc Verify DateTimeFormat formatRangeToParts with two dates returns parts array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testDateTimeFormatFormatRangeToParts168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let dtf: Intl.DateTimeFormat = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+      let start: Date = new Date(2024, 0, 1);
+      let end: Date = new Date(2024, 11, 31);
+      let parts = dtf.formatRangeToParts(start, end);
+      expect(Array.isArray(parts)).assertTrue();
+      expect(parts.some((part: Intl.DateTimeRangeFormatPart): boolean => part.source === "startRange")).assertTrue();
+      expect(parts.some((part: Intl.DateTimeRangeFormatPart): boolean => part.source === "endRange")).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1690
+     * @tc.name testNumberFormatSpecialValues169
+     * @tc.desc Verify NumberFormat format with NaN/Infinity returns expected strings
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testNumberFormatSpecialValues169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nf: Intl.NumberFormat = new Intl.NumberFormat("en-US");
+      expect(typeof nf.format(NaN) === "string").assertTrue();
+      expect(typeof nf.format(Infinity) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1700
+     * @tc.name testNumberFormatRange170
+     * @tc.desc Verify NumberFormat formatRange with two numbers
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testNumberFormatRange170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nf: Intl.NumberFormat = new Intl.NumberFormat("en-US");
+      expect(typeof nf.formatRange(1, 100) === "string").assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1710
+     * @tc.name testNumberFormatRangeToParts171
+     * @tc.desc Verify NumberFormat formatRangeToParts returns parts array
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testNumberFormatRangeToParts171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nf: Intl.NumberFormat = new Intl.NumberFormat("en-US");
+      let parts = nf.formatRangeToParts(1, 100);
+      expect(Array.isArray(parts)).assertTrue();
+      expect(parts.some((part: Intl.NumberRangeFormatPart): boolean => part.type === "integer" && part.source === "startRange")).assertTrue();
+      expect(parts.some((part: Intl.NumberRangeFormatPart): boolean => part.type === "integer" && part.source === "endRange")).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1730
+     * @tc.name testSegmenterWordSegments173
+     * @tc.desc Verify Segmenter word granularity returns word segments
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testSegmenterWordSegments173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "word" });
+      let segments: Intl.Segments = segmenter.segment("Hello World");
+      let count: number = 0;
+      for (let seg of segments) {
+        if (count === 0) {
+          expect(seg.segment).assertEqual("Hello");
+          expect(seg.index).assertEqual(0);
+        }
+        if (seg.segment === "World") {
+          expect(seg.index).assertEqual(6);
+        }
+        count++;
+      }
+      expect(count).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1740
+     * @tc.name testSegmenterSentenceSegments174
+     * @tc.desc Verify Segmenter sentence granularity returns sentence segments
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testSegmenterSentenceSegments174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "sentence" });
+      let segments: Intl.Segments = segmenter.segment("Hello World. Goodbye World.");
+      let count: number = 0;
+      for (let seg of segments) {
+        if (count === 0) {
+          expect(seg.segment).assertEqual("Hello World. ");
+          expect(seg.index).assertEqual(0);
+        }
+        if (count === 1) {
+          expect(seg.segment).assertEqual("Goodbye World.");
+          expect(seg.index).assertEqual(13);
+        }
+        count++;
+      }
+      expect(count).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INTL_FORMATTER_INTERFACE_1750
+     * @tc.name testSegmenterEmptyString175
+     * @tc.desc Verify Segmenter with empty string returns no segments
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testSegmenterEmptyString175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let segmenter: Intl.Segmenter = new Intl.Segmenter("en-US", { granularity: "grapheme" });
+      let segments: Intl.Segments = segmenter.segment("");
+      let count: number = 0;
+      for (let seg of segments) {
+        count++;
+      }
+      expect(count).assertEqual(0);
+    });
+  });
+}
