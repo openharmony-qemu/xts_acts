@@ -220,12 +220,12 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache();
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_001 has failed for ' + JSON.stringify(e));
-        expect(false).assertTrue();
+        expect(e.code === 13900010).assertTrue();
       }
       done();
     });
@@ -241,12 +241,12 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_002 has failed for ' + JSON.stringify(e));
-        expect(false).assertTrue();
+        expect(e.code === 13900010).assertTrue();
       }
       done();
     });
@@ -262,13 +262,13 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
-        await fileCache.cleanFileCache()
+        await fileCache.cleanAllFileCache()
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_003 has failed for ' + JSON.stringify(e));
-        expect(false).assertTrue();
+        expect(e.code === 13900010).assertTrue();
       }
       done();
     });

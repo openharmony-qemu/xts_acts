@@ -387,12 +387,12 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_001', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache();
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
         console.error('test_CloudFileCache_getCachedTotalSize_001 has failed for ' + err.message + ', code: ' + err.code);
-        expect(false).assertTrue();
+        expect(err.code === 13900010).assertTrue();
       }
       done();
     });
@@ -408,12 +408,12 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_002', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
       } catch (err) {
         console.error('test_CloudFileCache_getCachedTotalSize_002 has failed for ' + err.message + ', code: ' + err.code);
-        expect(false).assertTrue();
+        expect(err.code === 13900010).assertTrue();
       }
       done();
     });
@@ -429,13 +429,13 @@ describe('cloud_file_test', () => {
     it('test_CloudFileCache_getCachedTotalSize_003', Level.LEVEL3, async (done: Function) => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
-		await fileCache.cleanFileCache();
+		    await fileCache.cleanAllFileCache();
         let size = await fileCache.getCachedTotalSize();
         expect(size == 0).assertTrue();
-        await fileCache.cleanFileCache()
+        await fileCache.cleanAllFileCache()
       } catch (err) {
         console.error('test_CloudFileCache_getCachedTotalSize_003 has failed for ' + err.message + ', code: ' + err.code);
-        expect(false).assertTrue();
+        expect(err.code === 13900010).assertTrue();
       }
       done();
     });
