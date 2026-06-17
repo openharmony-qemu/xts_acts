@@ -135,7 +135,7 @@ std::array manglingInstanceMethods = {
         "iC{std.core.Int}C{std.core.String}C{entry.src.main.src.ets.Index.A}:",
         reinterpret_cast<void *>(test_ComplexOptional)},
     ani_native_function{"test_CheckComplexOptional", ":z",
-        reinterpret_cast<void *>(test_ComplexOptional)},
+        reinterpret_cast<void *>(test_CheckComplexOptional)},
     ani_native_function{"test_OptionalBasicAndRef",
         "C{std.core.Int}C{std.core.String}C{entry.src.main.src.ets.Index.A}:",
         reinterpret_cast<void *>(test_OptionalBasicAndRef)},
