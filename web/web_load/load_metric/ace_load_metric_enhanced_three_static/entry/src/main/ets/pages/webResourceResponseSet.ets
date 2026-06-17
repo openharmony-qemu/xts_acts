@@ -14,27 +14,15 @@
  */
 
 
-import {
-  Entry,
-  Component,
-  Column,
-  Row,
-  Button,
-  ClickEvent,
-  Web,
-  UIContext,
-  WebResourceResponse,
-  WebResourceRequest,
-  Header
-} from '@ohos.arkui.component'
-import webview from '@ohos.web.webview'
+import { Entry, Component, Column, Row, Button, ClickEvent, Web, UIContext, WebResourceResponse, WebResourceRequest, Header } from '@ohos.arkui.component';
+import webview from '@ohos.web.webview';
 import { Hypium } from '../../../hypium/index';
 import emitter from '@ohos.events.emitter';
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';
-import { BusinessError,Callback, RecordData } from '@ohos.base'
-import { Callback } from '@ohos.base'
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { State } from '@ohos.arkui.stateManagement';
+// should be insert by ui-plugins
 
 export class StringFields {
   public str: string = '';

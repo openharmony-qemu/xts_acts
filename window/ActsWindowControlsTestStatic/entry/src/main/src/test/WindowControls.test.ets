@@ -13,30 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-
 import display from '@ohos.display';
-// import { MyCallback } from '../models/MyCallback';
-import window from '@ohos.window'
+import window from '@ohos.window';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import type { AsyncCallback, Callback} from '@ohos.base'
+import type { AsyncCallback, Callback } from '@ohos.base';
 import common from '@ohos.app.ability.common';
-
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
-import Utils from './Util.test';
-
 import { image } from '@kit.ImageKit';
 import deviceInfo from '@ohos.deviceInfo';
 import settings from '@ohos.settings';
 import Want from '@ohos.app.ability.Want';
-import StartOptions from '@ohos.app.ability.StartOptions'
-import { ImageFit } from '@ohos.arkui.component'
-import { canIUse } from "@internal.full.global";
-
+import StartOptions from '@ohos.app.ability.StartOptions';
+import { ImageFit } from '@ohos.arkui.component';
+import { canIUse } from '@internal.full.global';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
