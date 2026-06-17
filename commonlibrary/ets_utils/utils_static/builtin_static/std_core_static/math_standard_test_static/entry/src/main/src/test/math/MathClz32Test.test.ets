@@ -292,13 +292,13 @@ export default function mathClz32Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_2000
      * @tc.name testMathClz32020
-     * @tc.desc Verify clz32 method with int input 2147483647 for expected return 1
+     * @tc.desc Verify clz32 method with Int.MAX_VALUE input for expected return 1
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('testMathClz32020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input: int = 2147483647;
+      let input: int = Int.MAX_VALUE;
       let result: int = Math.clz32(input);
       expect(result).assertEqual(1);
     });
@@ -652,6 +652,19 @@ export default function mathClz32Test(): void {
       let input: int = 1000;
       let result: int = Math.clz32(input);
       expect(result).assertEqual(22);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CLZ32_4800
+     * @tc.name testMathClz32048
+     * @tc.desc Verify clz32 method with Int.MIN_VALUE input for expected return 0
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathClz32048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: int = Int.MIN_VALUE;
+      let result: int = Math.clz32(input);
+      expect(result).assertEqual(0);
     });
   });
 }

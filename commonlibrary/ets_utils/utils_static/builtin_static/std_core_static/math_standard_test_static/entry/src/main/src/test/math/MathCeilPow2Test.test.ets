@@ -402,5 +402,19 @@ export default function mathCeilPow2Test(): void {
       expect(first <= second).assertTrue();
       expect(second <= third).assertTrue();
     });
+
+    /**
+     * @tc.name testMathCeilPow2025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CEILPOW2_2500
+     * @tc.desc Verify ceilPow2 method with int input Int.MAX_VALUE for overflow return Int.MIN_VALUE
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathCeilPow2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let input: int = Int.MAX_VALUE;
+      let result: int = Math.ceilPow2(input);
+      expect(result).assertEqual(Int.MIN_VALUE);
+    });
   });
 }

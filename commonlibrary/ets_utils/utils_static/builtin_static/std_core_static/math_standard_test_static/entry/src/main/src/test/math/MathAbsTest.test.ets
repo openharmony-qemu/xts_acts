@@ -1108,5 +1108,193 @@ export default function mathAbsTest(): void {
       let result: double = Math.abs(value);
       expect(result).assertEqual(Double.MAX_VALUE);
     });
+
+    /**
+     * @tc.name testMathAbs074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7400
+     * @tc.desc Verify abs method with byte MAX_VALUE plus one overflow returns the byte minimum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: byte = Int.toByte(127 + 1);
+      let result: byte = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.toByte(-128));
+      expect(result).assertEqual(Int.toByte(-128));
+    });
+
+    /**
+     * @tc.name testMathAbs075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7500
+     * @tc.desc Verify abs method with byte MIN_VALUE minus one overflow returns the byte maximum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: byte = Int.toByte(-128 - 1);
+      let result: byte = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.toByte(127));
+      expect(result).assertEqual(Int.toByte(127));
+    });
+
+    /**
+     * @tc.name testMathAbs076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7600
+     * @tc.desc Verify abs method with short MAX_VALUE plus one overflow returns the short minimum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: short = Int.toShort(32767 + 1);
+      let result: short = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.toShort(-32768));
+      expect(result).assertEqual(Int.toShort(-32768));
+    });
+
+    /**
+     * @tc.name testMathAbs077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7700
+     * @tc.desc Verify abs method with short MIN_VALUE minus one overflow returns the short maximum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: short = Int.toShort(-32768 - 1);
+      let result: short = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.toShort(32767));
+      expect(result).assertEqual(Int.toShort(32767));
+    });
+
+    /**
+     * @tc.name testMathAbs078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7800
+     * @tc.desc Verify abs method with int MAX_VALUE plus one overflow returns the int minimum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: int = Int.MAX_VALUE;
+      let overflowedValue: int = maxValue + 1;
+      let result: int = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.MIN_VALUE);
+      expect(result).assertEqual(Int.MIN_VALUE);
+    });
+
+    /**
+     * @tc.name testMathAbs079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_7900
+     * @tc.desc Verify abs method with int MIN_VALUE minus one overflow returns the int maximum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let minValue: int = Int.MIN_VALUE;
+      let overflowedValue: int = minValue - 1;
+      let result: int = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Int.MAX_VALUE);
+      expect(result).assertEqual(Int.MAX_VALUE);
+    });
+
+    /**
+     * @tc.name testMathAbs080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8000
+     * @tc.desc Verify abs method with long MAX_VALUE plus one overflow returns the long minimum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maxValue: long = Long.toLong(9223372036854775807);
+      let overflowedValue: long = maxValue + Int.toLong(1);
+      let result: long = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Long.toLong(-9223372036854775808));
+      expect(result).assertEqual(Long.toLong(-9223372036854775808));
+    });
+
+    /**
+     * @tc.name testMathAbs081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8100
+     * @tc.desc Verify abs method with long MIN_VALUE minus one overflow returns the long maximum boundary
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let minValue: long = Long.toLong(-9223372036854775808);
+      let overflowedValue: long = minValue - Int.toLong(1);
+      let result: long = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Long.toLong(9223372036854775807));
+      expect(result).assertEqual(Long.toLong(9223372036854775807));
+    });
+
+    /**
+     * @tc.name testMathAbs082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8200
+     * @tc.desc Verify abs method with Float.MAX_VALUE multiplied by ten returns positive infinity
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: float = Double.toFloat(Float.MAX_VALUE * 10.0);
+      let result: float = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Float.POSITIVE_INFINITY);
+      expect(result).assertEqual(Float.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.name testMathAbs083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8300
+     * @tc.desc Verify abs method with Float.MIN_VALUE divided by ten underflows to positive zero
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let underflowedValue: float = Double.toFloat(Float.MIN_VALUE / 10.0);
+      let result: float = Math.abs(underflowedValue);
+      expect(underflowedValue).assertEqual(Double.toFloat(0.0));
+      expect(Utils.isPositiveZero(underflowedValue)).assertTrue();
+      expect(result).assertEqual(Double.toFloat(0.0));
+      expect(Utils.isPositiveZero(result)).assertTrue();
+    });
+
+    /**
+     * @tc.name testMathAbs084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8400
+     * @tc.desc Verify abs method with Double.MAX_VALUE multiplied by ten returns positive infinity
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let overflowedValue: double = Double.MAX_VALUE * 10.0;
+      let result: double = Math.abs(overflowedValue);
+      expect(overflowedValue).assertEqual(Double.POSITIVE_INFINITY);
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.name testMathAbs085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ABS_8500
+     * @tc.desc Verify abs method with Double.MIN_VALUE divided by ten underflows to positive zero
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testMathAbs085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let underflowedValue: double = Double.MIN_VALUE / 10.0;
+      let result: double = Math.abs(underflowedValue);
+      expect(underflowedValue).assertEqual(0.0);
+      expect(Utils.isPositiveZero(underflowedValue)).assertTrue();
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
+    });
   });
 }
