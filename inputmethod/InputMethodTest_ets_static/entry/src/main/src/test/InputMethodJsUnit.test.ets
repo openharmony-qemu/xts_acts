@@ -12,17 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import inputMethod from '@ohos.inputMethod'
-import InputMethodSubtype from '@ohos.InputMethodSubtype'
-import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel'
+import inputMethod from '@ohos.inputMethod';
+import InputMethodSubtype from '@ohos.InputMethodSubtype';
+import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function inputMethodTest() {
