@@ -101,7 +101,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               case 'testOnHttpErrorReceive004': {
                 try {
                   this.httpErrorReceive = 0;
-                  this.controller.loadUrl('www.example.com');
+                  this.controller.loadUrl('htt' + 'ps://www.example.com/123');
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60604);
                   }, 4000)
