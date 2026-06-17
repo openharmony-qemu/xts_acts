@@ -131,14 +131,14 @@ export default function composeListItemV2InteractionTest() {
     /**
      * @tc.number   composeListItemV2Interaction_static_0500
      * @tc.name     composeListItemV2Interaction_static_0500
-     * @tc.desc     Test accessibility for OperateIconV2
+     * @tc.desc     Test accessibility of operation icon component
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('composeListItemV2Interaction_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Interaction_static_0500] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Accessibility Icon'));
+      let primaryText = await driver.findComponent(ON.text('Accessibility Indicator'));
       expect(primaryText !== null).assertTrue();
       await driver.delayMs(1000);
       console.info('[composeListItemV2Interaction_static_0500] END');
@@ -148,14 +148,14 @@ export default function composeListItemV2InteractionTest() {
     /**
      * @tc.number   composeListItemV2Interaction_static_0600
      * @tc.name     composeListItemV2Interaction_static_0600
-     * @tc.desc     Test accessibility for OperateCheckV2
+     * @tc.desc     Test accessibility for list item interaction
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('composeListItemV2Interaction_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[composeListItemV2Interaction_static_0600] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
-      let primaryText = await driver.findComponent(ON.text('Accessibility Check'));
+      let primaryText = await driver.findComponent(ON.text('Accessibility Test'));
       expect(primaryText !== null).assertTrue();
       await driver.delayMs(1000);
       console.info('[composeListItemV2Interaction_static_0600] END');

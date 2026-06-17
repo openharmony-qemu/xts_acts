@@ -95,7 +95,7 @@ struct ComposeListItemV2InteractionExample {
         });
 
         ComposeListItemV2({
-          contentItemV2: new ContentItemV2({ primaryText: 'Accessibility Icon' }),
+          contentItemV2: new ContentItemV2({ primaryText: 'Accessibility Indicator' }),
           operateItemV2: new OperateItemV2({
             icon: new OperateIconV2({
               value: $r('sys.media.ohos_ic_public_more'),
@@ -107,7 +107,7 @@ struct ComposeListItemV2InteractionExample {
         });
 
         ComposeListItemV2({
-          contentItemV2: new ContentItemV2({ primaryText: 'Accessibility Check' }),
+          contentItemV2: new ContentItemV2({ primaryText: 'Accessibility Test' }),
           operateItemV2: new OperateItemV2({
             checkbox: new OperateCheckV2({
               isCheck: false,
