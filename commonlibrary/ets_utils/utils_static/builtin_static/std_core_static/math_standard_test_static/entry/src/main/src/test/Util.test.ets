@@ -12,7 +12,7 @@ export default class Utils {
     if (denominator < 0.0) {
       denominator = -denominator;
     }
-    if (denominator == 0.0) {
+    if (denominator === 0.0) {
       return Utils.getAbsDiff(a, b);
     }
     return Utils.getAbsDiff(a, b) / denominator;
@@ -35,11 +35,11 @@ export default class Utils {
   }
 
   static isPositiveZero(value: number): boolean {
-    return value == 0.0 && 1.0 / value == Double.POSITIVE_INFINITY;
+    return value === 0.0 && 1.0 / value === Double.POSITIVE_INFINITY;
   }
 
   static isNegativeZero(value: number): boolean {
-    return value == 0.0 && 1.0 / value == Double.NEGATIVE_INFINITY;
+    return value === 0.0 && 1.0 / value === Double.NEGATIVE_INFINITY;
   }
 
   static async msSleep(count: int): Promise<int> {
