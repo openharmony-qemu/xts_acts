@@ -3737,7 +3737,7 @@ export default function DisplayTest():void {
             }
 
         } catch (e) {
-            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+            console.error(`${caseName} Failed. Cause code: ${e.code}, message: ${e.message}`);
             if (e.code === 801) {
                 done();
             } else {
