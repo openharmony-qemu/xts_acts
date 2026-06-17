@@ -75,8 +75,10 @@ export default function AddMonitorSetPath() {
       let tagName = 'AddMonitorSetPath_static_0100';
       console.info('[' + tagName + '] START============================');
       let driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let btn_true = await driver.findComponent(ON.id('AddPathButton')) as Component;
-      await btn_true.click();
+      await CommonFunc.sleep(1000);
+      await (changePropABtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJsonNew = inspector.getInspectorByKey('AddPathText');
       console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
