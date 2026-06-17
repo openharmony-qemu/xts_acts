@@ -60,37 +60,41 @@ struct TreeViewV2Demo {
       icon: normalResource,
       selectedIcon: selectedResource,
       editIcon: editResource,
-      primaryTitle: "Root Node",
-      secondaryTitle: "6"
+      primaryTitle: 'Root Node',
+      secondaryTitle: '6'
     };
 
     this.treeControllerV2
       .addNode(nodeParam)
-      .addNode({parentNodeId:1, currentNodeId: 2, isFolder: false, primaryTitle: "项目1_1" })
-      .addNode({ parentNodeId:-1, currentNodeId: 7, isFolder: true, primaryTitle: "Folder 1" })
-      .addNode({ parentNodeId:7, currentNodeId: 71, isFolder: false, primaryTitle: "File 2" })
-      .addNode({ parentNodeId:-1, currentNodeId: 23, isFolder: true, icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: "目录3" })
-      .addNode({ parentNodeId:-1, currentNodeId: 24, isFolder: false, primaryTitle: "File 1" })
-      .addNode({ parentNodeId:-1, currentNodeId: 31, isFolder: true, icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: "目录5", secondaryTitle: "0" })
-      .addNode({ parentNodeId:-1, currentNodeId: 32, isFolder: true, icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: "目录6", secondaryTitle: "0" })
-      .addNode({ parentNodeId:32, currentNodeId: 35, isFolder: true, icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: "目录6-1", secondaryTitle: "0" })
-      .addNode({ parentNodeId:-1, currentNodeId: 33, isFolder: true, icon: normalResource, selectedIcon: selectedResource,
-        editIcon: editResource, primaryTitle: "目录7", secondaryTitle: "0" })
-      .addNode({ parentNodeId:33, currentNodeId: 34, isFolder: false, primaryTitle: "项目8" })
-      .addNode({ parentNodeId:-1, currentNodeId: 36, isFolder: false, primaryTitle: "项目9" })
+      .addNode({parentNodeId:1, currentNodeId: 2, isFolder: false, primaryTitle: '项目1_1' })
+      .addNode({ parentNodeId:-1, currentNodeId: 7, isFolder: true, primaryTitle: 'Folder 1' })
+      .addNode({ parentNodeId:7, currentNodeId: 71, isFolder: false, primaryTitle: 'File 2' })
+      .addNode({ parentNodeId:-1, currentNodeId: 23, isFolder: true,
+        icon: normalResource, selectedIcon: selectedResource,
+        editIcon: editResource, primaryTitle: '目录3' })
+      .addNode({ parentNodeId:-1, currentNodeId: 24, isFolder: false, primaryTitle: 'File 1' })
+      .addNode({ parentNodeId:-1, currentNodeId: 31, isFolder: true,
+        icon: normalResource, selectedIcon: selectedResource,
+        editIcon: editResource, primaryTitle: '目录5', secondaryTitle: '0' })
+      .addNode({ parentNodeId:-1, currentNodeId: 32, isFolder: true,
+        icon: normalResource, selectedIcon: selectedResource,
+        editIcon: editResource, primaryTitle: '目录6', secondaryTitle: '0' })
+      .addNode({ parentNodeId:32, currentNodeId: 35, isFolder: true,
+        icon: normalResource, selectedIcon: selectedResource,
+        editIcon: editResource, primaryTitle: '目录6-1', secondaryTitle: '0' })
+      .addNode({ parentNodeId:-1, currentNodeId: 33, isFolder: true,
+        icon: normalResource, selectedIcon: selectedResource,
+        editIcon: editResource, primaryTitle: '目录7', secondaryTitle: '0' })
+      .addNode({ parentNodeId:33, currentNodeId: 34, isFolder: false, primaryTitle: '项目8' })
+      .addNode({ parentNodeId:-1, currentNodeId: 36, isFolder: false, primaryTitle: '项目9' })
       .buildDone();
 
-    this.treeControllerV2.refreshNode(-1, "父节点", "子节点");
+    this.treeControllerV2.refreshNode(-1, '父节点', '子节点');
   }
 
   build(): void {
-    Column(){
-      SideBarContainer(SideBarContainerType.Embed)
-      {
+    Column() {
+      SideBarContainer(SideBarContainerType.Embed) {
         TreeViewV2({ treeControllerV2: this.treeControllerV2 })
         Row() {
           Divider().vertical(true).strokeWidth(2).color(0x000000).lineCap(LineCapStyle.Round)
