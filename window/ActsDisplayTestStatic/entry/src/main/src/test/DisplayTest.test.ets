@@ -60,7 +60,7 @@ async function getPermision(): Promise<void> {
         atManager.requestPermissionsFromUser(context, permissions,(err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
             hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
             hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-            hilog.info(domain, tag, "getPermissionRequestResult err" + err.code);
+            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
             hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
         });
     } catch (err) {
