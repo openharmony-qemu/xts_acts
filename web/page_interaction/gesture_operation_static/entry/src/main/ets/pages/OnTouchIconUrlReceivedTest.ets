@@ -13,27 +13,7 @@
  * limitations under the License.
  */
 
-import {
-  Button,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  OnLoadInterceptEvent,
-  OnFaviconReceivedEvent,
-  OnTouchIconUrlReceivedEvent,
-  OnScaleChangeEvent,
-  FileSelectorParam,
-  OnShowFileSelectorEvent,
-  Image,
-  Row,
-  Text,
-  Web,
-  WebKeyboardCallbackInfo,
-  WebKeyboardOptions,
-  CacheMode,
-  WebKeyboardAvoidMode
-} from '@ohos.arkui.component';
+import { Button, ClickEvent, Column, Component, Entry, OnLoadInterceptEvent, OnFaviconReceivedEvent, OnTouchIconUrlReceivedEvent, OnScaleChangeEvent, FileSelectorParam, OnShowFileSelectorEvent, Image, Row, Text, Web, WebKeyboardCallbackInfo, WebKeyboardOptions, CacheMode, WebKeyboardAvoidMode } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
@@ -42,14 +22,11 @@ import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import { FontWeight } from 'arkui.component.enums';
-import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { AppStorage } from 'arkui.stateManagement.storage.appStorage';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import { JsProxyObject } from '../../src/test/Interfaces';
-import image from '@ohos.multimedia.image';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   public str: string = '';
 }

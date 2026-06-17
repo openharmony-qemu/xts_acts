@@ -18,10 +18,8 @@ import window from '@ohos.window';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
-import { BusinessError,RecordData } from '@ohos.base';
-
 const TAG: string = 'testTag';
 const TEST_CASE_KEY: string = 'caseTag';
 

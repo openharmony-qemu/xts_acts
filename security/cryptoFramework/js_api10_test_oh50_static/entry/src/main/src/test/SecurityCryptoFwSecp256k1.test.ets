@@ -21,9 +21,27 @@ import { BusinessError } from '@ohos.base';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import buffer from '@ohos.buffer';
-import * as commonUtils, { createFullData, compareDataBlob } from './utils/common/commonUtils';
-import * as secp256k1, { createAsyKeyPromise, createAsyKeySync, digestSpec, doVerifyInitCallback, doVerifyUpdateCallback, doVerifyVerifyCallback, doSignInitCallback, doSignSignCallback, doSignUpdateCallback, doAgreementCallback, vectorTest } from './utils/secp256k1/secp256k1Utils';
+import  buffer  from '@ohos.buffer';
+import * as commonUtils from './utils/common/commonUtils';
+import * as secp256k1 from './utils/secp256k1/secp256k1Utils'
+import {
+  createFullData,
+  compareDataBlob,
+} from './utils/common/commonUtils';
+import {
+  createAsyKeyPromise,
+  createAsyKeySync,
+  digestSpec,
+  doVerifyInitCallback,
+  doVerifyUpdateCallback,
+  doVerifyVerifyCallback,
+  doSignInitCallback,
+  doSignSignCallback,
+  doSignUpdateCallback,
+  doAgreementCallback,
+  vectorTest,
+} from './utils/secp256k1/secp256k1Utils'
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;

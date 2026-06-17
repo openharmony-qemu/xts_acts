@@ -14,42 +14,11 @@
  * limitations under the License.
  */
 
-import { image } from '@kit.ImageKit'
-import { LengthMetrics } from '@kit.ArkUI'
+import { image } from '@kit.ImageKit';
+import { LengthMetrics } from '@kit.ArkUI';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  MutableStyledString,
-  TextController,
-  StyledStringKey,
-  DecorationStyle,
-  Resource,
-  PixelMap,
-  ColumnOptions,
-  ImageAttachment,
-  BorderRadiuses,
-  Margin,
-  Padding,
-  TextDecorationType,
-  CopyOptions,
-  TextDecorationStyle,
-  Image,
-  ImageSpanAlignment,
-  ImageFit,
-  AttachmentType
-} from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import { Entry, Column, Component, Button, Text, Row, Color, $r, MutableStyledString, TextController, StyledStringKey, DecorationStyle, Resource, PixelMap, ColumnOptions, ImageAttachment, BorderRadiuses, Margin, Padding, TextDecorationType, CopyOptions, TextDecorationStyle, Image, ImageSpanAlignment, ImageFit, AttachmentType, ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct styled_string_imageAttachment {

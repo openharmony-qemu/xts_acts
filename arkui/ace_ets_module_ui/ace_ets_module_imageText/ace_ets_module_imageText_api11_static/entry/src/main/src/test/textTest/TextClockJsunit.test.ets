@@ -14,22 +14,19 @@
  * limitations under the License.
  */
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { ResourceColor } from '@ohos.arkui.component'
+import { ResourceColor } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import { describe, beforeEach, afterEach, it, expect, Level,beforeAll } from "../../../../hypium/index";
+import inspector from '@ohos.arkui.inspector';
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;

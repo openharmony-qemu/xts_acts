@@ -13,38 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Padding,
-  Position,
-  Builder,
-  Image,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  NodeContainer,
-  DragPreviewMode
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, NodeContainer, DragPreviewMode, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { RenderNode, FrameNode, NodeController } from "@ohos.arkui.node"
-import { UIContext } from '@ohos.arkui.UIContext';
-
+import { RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';
 let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
 renderNode.backgroundColor = 0XFF00FF00.toInt()

@@ -15,45 +15,12 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import {
-  Entry,Builder,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ColumnOptions,
-  TextAlign,
-  Scroll,
-  Image,
-  Color,
-  $$,
-  SheetSize,
-  BlurStyle,
-  SheetType,
-  DismissSheetAction,
-  DismissReason,
-  SpringBackAction
-// $rawfile
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Builder, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, Scroll, Image, Color, $$, SheetSize, BlurStyle, SheetType, DismissSheetAction, DismissReason, SpringBackAction } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
-import testsuite from '../../../../src/test/List.test'
-import {
-  State
-} from '@ohos.arkui.stateManagement'
-
+import testsuite from '../../../../src/test/List.test';
 @Entry
 @Component
 struct springBackExample {

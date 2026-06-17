@@ -15,10 +15,9 @@
  */
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Column, Component, Text, Button, Navigation, NavigationTitleMode, ClickEvent, Margin, NavigationMode} from '@ohos.arkui.component'
+import { Entry, Column, Component, Text, Button, Navigation, NavigationTitleMode, ClickEvent, Margin, NavigationMode } from '@ohos.arkui.component';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { Router } from '@ohos.arkui.UIContext';
 import { RecordData } from '@ohos.base';
 let router1 = new Router()
 class RouteParam {
