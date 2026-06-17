@@ -32,11 +32,11 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityDefault')
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_HIGH)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -47,12 +47,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityIdle')
       eaWorker.setPriority(WorkerPriority.PRIORITY_IDLE)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_IDLE)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -63,12 +63,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityLow')
       eaWorker.setPriority(WorkerPriority.PRIORITY_LOW)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_LOW)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -79,12 +79,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityDefaultSet')
       eaWorker.setPriority(WorkerPriority.PRIORITY_DEFAULT)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -95,12 +95,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityHigh')
       eaWorker.setPriority(WorkerPriority.PRIORITY_HIGH)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_HIGH)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -111,12 +111,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityDeadline')
       eaWorker.setPriority(WorkerPriority.PRIORITY_DEADLINE_REQUEST)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_DEADLINE_REQUEST)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -127,12 +127,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityUserInter')
       eaWorker.setPriority(WorkerPriority.PRIORITY_USER_INTERACTION)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_USER_INTERACTION)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -143,7 +143,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('priorityMulti')
       eaWorker.setPriority(WorkerPriority.PRIORITY_LOW)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_LOW)
@@ -152,7 +152,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
       eaWorker.setPriority(WorkerPriority.PRIORITY_IDLE)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_IDLE)
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -163,7 +163,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let priorities: WorkerPriority[] = [
         WorkerPriority.PRIORITY_IDLE,
         WorkerPriority.PRIORITY_LOW,
@@ -183,7 +183,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
         expect(workers[i].getPriority()).assertEqual(priorities[i])
       }
       for (let i = 0; i < workers.length; i++) {
-        await workers[i].join()
+        workers[i].join().Await()
       }
     })
 
@@ -195,7 +195,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let workers: EAWorker[] = []
       for (let i = 0; i < 10; i++) {
         let worker = new EAWorker(`priority10_${i}`)
@@ -211,7 +211,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
       }
       expect(highCount).assertEqual(10)
       for (let i = 0; i < workers.length; i++) {
-        await workers[i].join()
+        workers[i].join().Await()
       }
     })
 
@@ -223,13 +223,13 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityBeforeStart')
       eaWorker.setPriority(WorkerPriority.PRIORITY_LOW)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_LOW)
       eaWorker.start()
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_LOW)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -240,12 +240,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityAfterStart')
       eaWorker.start()
       eaWorker.setPriority(WorkerPriority.PRIORITY_USER_INTERACTION)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_USER_INTERACTION)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -256,12 +256,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityType')
       let priority: WorkerPriority = eaWorker.getPriority()
       expect(typeof priority).assertEqual('int')
       eaWorker.start()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -272,12 +272,12 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let eaWorker = new EAWorker('priorityPerf')
       eaWorker.start()
       eaWorker.setPriority(WorkerPriority.PRIORITY_LOW)
       expect(eaWorker.getPriority()).assertEqual(WorkerPriority.PRIORITY_LOW)
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -288,7 +288,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('priorityOOB')
       eaWorker.start()
       let caught: boolean = false
@@ -298,7 +298,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
     /**
@@ -309,7 +309,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('BuiltinsEAWorkerWorkerPriorityTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('BuiltinsEAWorkerWorkerPriorityTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let eaWorker = new EAWorker('priorityNeg')
       eaWorker.start()
       let caught: boolean = false
@@ -319,7 +319,7 @@ export default function BuiltinsEAWorkerWorkerPriorityTest(): void {
         caught = true
       }
       expect(caught).assertTrue()
-      await eaWorker.join()
+      eaWorker.join().Await()
     })
 
   })

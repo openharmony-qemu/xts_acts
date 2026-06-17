@@ -20,7 +20,7 @@ import CombLockTest from "./CombLock.test";
 import MutexLockEnhancedTest from "./MutexLockEnhanced.test";
 import RWLockEnhancedTest from "./RWLockEnhanced.test";
 import CombLockEnhancedTest from "./CombLockEnhanced.test";
-export default function testsuite() {
+export default function testsuite(): void {
   MutexLockTest()
   RWLockTest()
   CombLockTest()

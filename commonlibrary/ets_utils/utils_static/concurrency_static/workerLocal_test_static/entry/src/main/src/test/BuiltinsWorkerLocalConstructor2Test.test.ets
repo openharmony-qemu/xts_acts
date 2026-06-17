@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 
 class DataClass {
@@ -851,14 +851,14 @@ export default function BuiltinsWorkerLocalConstructor2Test(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerLocalConstructor2Test4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalConstructor2Test4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       wl2_4400 = new WorkerLocal<number>(() => 42);
       expect(wl2_4400.get()).assertEqual(42);
       let eaWorker: EAWorker = new EAWorker("c2_4400");
       eaWorker.start();
-      let result: number = await eaWorker.run<number>(constructor2EAWorkerTask4400);
+      let result: number = eaWorker.run<number>(constructor2EAWorkerTask4400).Await();
       expect(result).assertEqual(42);
-      await eaWorker.join();
+      eaWorker.join();
     })
 
     /**
@@ -869,16 +869,16 @@ export default function BuiltinsWorkerLocalConstructor2Test(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('BuiltinsWorkerLocalConstructor2Test4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+    it('BuiltinsWorkerLocalConstructor2Test4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       wl2_4500 = new WorkerLocal<string>(() => "ea_init");
       wl2_4500.set("main_value");
       expect(wl2_4500.get()).assertEqual("main_value");
       let eaWorker: EAWorker = new EAWorker("c2_4500");
       eaWorker.start();
-      let result: string = await eaWorker.run<string>(constructor2EAWorkerTask4500);
+      let result: string = eaWorker.run<string>(constructor2EAWorkerTask4500).Await();
       expect(result).assertEqual("ea_modified");
       expect(wl2_4500.get()).assertEqual("main_value");
-      await eaWorker.join();
+      eaWorker.join();
     })
   })
 }
