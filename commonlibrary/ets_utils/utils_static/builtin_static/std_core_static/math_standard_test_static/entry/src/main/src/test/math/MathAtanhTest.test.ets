@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -30,12 +32,15 @@ import Utils from '../Util.test';
 
 export default function mathAtanhTest(): void {
   describe('MathAtanhTest', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
-
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATANH_0100

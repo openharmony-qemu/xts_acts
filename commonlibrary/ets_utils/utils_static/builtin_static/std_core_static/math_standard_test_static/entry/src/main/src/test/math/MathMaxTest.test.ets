@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -33,12 +35,15 @@ function buildMaxNumberInputFromHelper(): number {
 
 export default function mathMaxTest(): void {
   describe('MathMaxTest', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
-
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
     /**
      * @tc.name testMathMax001

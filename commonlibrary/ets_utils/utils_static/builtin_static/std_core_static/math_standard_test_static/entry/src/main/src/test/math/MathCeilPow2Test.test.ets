@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -33,11 +35,15 @@ function buildCeilPow2Input(): int {
 
 export default function mathCeilPow2Test(): void {
   describe('MathCeilPow2Test', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
 
     /**

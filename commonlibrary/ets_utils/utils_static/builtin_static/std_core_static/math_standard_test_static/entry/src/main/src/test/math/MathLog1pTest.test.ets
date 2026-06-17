@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -36,11 +38,15 @@ function expectLog1pClose(actual: double, expected: double, tolerance: double): 
 
 export default function mathLog1pTest(): void {
   describe('MathLog1pTest', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
 
     /**

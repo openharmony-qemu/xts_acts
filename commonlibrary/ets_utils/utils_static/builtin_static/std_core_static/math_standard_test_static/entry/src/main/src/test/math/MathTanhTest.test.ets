@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -52,11 +54,15 @@ function buildTanhNumberFromHelper(): number {
 
 export default function mathTanhTest(): void {
   describe('MathTanhTest', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
 
     /**

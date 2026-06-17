@@ -16,8 +16,10 @@
  */
 
 import {
+  beforeAll,
   afterEach,
   beforeEach,
+  afterAll,
   describe,
   it,
   expect,
@@ -40,12 +42,15 @@ function buildHypotNumberFromHelper(): number {
 
 export default function mathHypotTest(): void {
   describe('MathHypotTest', (): void => {
+    beforeAll(() => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     })
-
     afterEach(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
+    })
+    afterAll((): void => {
     })
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_HYPOT_0100
