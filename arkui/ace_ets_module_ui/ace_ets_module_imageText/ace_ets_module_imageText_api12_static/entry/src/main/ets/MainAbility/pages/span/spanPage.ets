@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Color,Resource,Length, Span,Text,ResourceStr, ScrollDirection,Column, Component, $r, Scroll, AttributeModifier, SpanAttribute, FontStyle, FontWeight, TextCase, TextDecorationType, ResourceColor, Font } from '@ohos.arkui.component'
-import {
-  State,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
-import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import { AppStorage,StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
+import { Entry, Color, Resource, Length, Span, Text, ResourceStr, ScrollDirection, Column, Component, $r, Scroll, AttributeModifier, SpanAttribute, FontStyle, FontWeight, TextCase, TextDecorationType, ResourceColor, Font } from '@ohos.arkui.component';
+import { State, AppStorage, StoragePropRef, Observed } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 import { RecordData } from '@ohos.base';
 @Observed

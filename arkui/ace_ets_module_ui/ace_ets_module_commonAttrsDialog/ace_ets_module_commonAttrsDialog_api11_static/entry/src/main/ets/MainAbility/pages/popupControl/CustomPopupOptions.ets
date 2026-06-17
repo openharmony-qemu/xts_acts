@@ -15,33 +15,11 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ClickEvent,
-  ColumnOptions,
-  TextAlign,
-  $rawfile,Image,Color,Position,Row,Placement,$r,ResourceStr,ArrowPointPosition,RowOptions,Padding,Dimension,Builder,CustomPopupOptions,PopupStateChangeParam
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage,State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, $rawfile, Image, Color, Position, Row, Placement, $r, ResourceStr, ArrowPointPosition, RowOptions, Padding, Dimension, Builder, CustomPopupOptions, PopupStateChangeParam } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
-// import testsuite from '../../../../src/test/List.test'
-
 @Entry
 @Component
 struct CustomPopupOptionsExample {

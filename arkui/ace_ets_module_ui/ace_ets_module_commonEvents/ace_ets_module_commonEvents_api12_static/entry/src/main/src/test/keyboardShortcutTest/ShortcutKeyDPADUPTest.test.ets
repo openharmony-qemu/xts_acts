@@ -15,26 +15,20 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
-import router from '@ohos.router'
-import { Driver, Component, ON } from '@ohos.UiTest'
+import router from '@ohos.router';
+import { Driver, Component, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
-import { Driver, ON } from '@ohos.UiTest';
-//import input from '@ohos.multimodalInput.keyCode';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest} from '../Util.test'
+import { UtilsTest } from '../Util.test';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;

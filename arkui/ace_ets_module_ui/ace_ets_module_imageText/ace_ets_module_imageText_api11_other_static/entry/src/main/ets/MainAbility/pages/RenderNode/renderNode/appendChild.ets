@@ -14,36 +14,9 @@
  * limitations under the License.
  */
 import { UIContext } from '@ohos.arkui.UIContext';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Padding,
-  Position,
-  Builder,
-  Image,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-    NodeContainer
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, NodeContainer, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
-import { UIContext } from '@ohos.arkui.UIContext';
-import { RenderNode, FrameNode, NodeController } from "@ohos.arkui.node"
-
+import { RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';
 const renderNode = new RenderNode();
 renderNode.size = { width: 150, height: 150 };
 

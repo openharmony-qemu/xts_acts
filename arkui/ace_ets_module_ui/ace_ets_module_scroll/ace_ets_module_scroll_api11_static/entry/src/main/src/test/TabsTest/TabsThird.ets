@@ -13,34 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Resource,
-  BarMode,
-  LayoutStyle,
-  VerticalAlign,
-  LayoutMode,
-  TextOverflow,
-  TextHeightAdaptivePolicy,
-  FontWeight,
-  FontStyle
-} from '@ohos.arkui.component'
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index'
+import { Resource, BarMode, LayoutStyle, VerticalAlign, LayoutMode, TextOverflow, TextHeightAdaptivePolicy, FontWeight, FontStyle, Color, $r } from '@ohos.arkui.component';
+import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
-import Utils from '../../../ets/MainAbility/common/Utils'
+import Utils from '../../../ets/MainAbility/common/Utils';
 import router from '@ohos.router';
-import inspector from '@ohos.arkui.inspector'
+import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
-import { RecordData } from '@ohos.base';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;

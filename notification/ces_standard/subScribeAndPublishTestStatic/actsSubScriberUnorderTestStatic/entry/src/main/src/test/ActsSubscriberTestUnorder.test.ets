@@ -13,17 +13,15 @@
  * limitations under the License.
  */
 import commonEventManager from '@ohos.commonEventManager';
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { BusinessError, RecordData } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import Utils from './Util.test';
-import { Component, Driver, ON } from '@ohos.UiTest'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
+import { Component, Driver, ON } from '@ohos.UiTest';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 const DOMAIN_NUMBER: int = 0xFF00;
 let bundle_name:string = "com.example.actssubscribertestunorder.static"
 let testAbilityContext:common.UIAbilityContext;

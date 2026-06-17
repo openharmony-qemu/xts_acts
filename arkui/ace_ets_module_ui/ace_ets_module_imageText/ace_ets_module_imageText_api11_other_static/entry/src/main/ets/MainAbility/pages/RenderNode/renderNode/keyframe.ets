@@ -15,36 +15,8 @@
  */
 
 import { UIContext } from '@ohos.arkui.UIContext';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  Text,
-  Row,
-  Color,
-  $r,
-  Margin,
-  ColumnOptions,
-  Flex,
-  Scroll,
-  Padding,
-  Position,
-  Builder,
-  Image,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  DragPreviewMode,
-  Circle
-} from '@ohos.arkui.component';
+import { Entry, Column, Component, Button, Text, Row, Color, $r, Margin, ColumnOptions, Flex, Scroll, Padding, Position, Builder, Image, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, DragPreviewMode, Circle, ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { ClickEvent } from '@ohos.arkui.component';
-import { UIContext } from '@ohos.arkui.UIContext';
-
 @Entry
 @Component
 struct KeyframeDemo {
