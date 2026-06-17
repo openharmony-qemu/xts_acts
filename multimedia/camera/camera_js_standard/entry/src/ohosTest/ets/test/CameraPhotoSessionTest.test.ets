@@ -2542,7 +2542,6 @@ export default function CameraPhotoSessionTest() {
       }
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0700")
-      await stopCameraSession();
       done();
     })
     
@@ -2584,7 +2583,6 @@ export default function CameraPhotoSessionTest() {
 
       //--------------------------------------------后置处理------------------------------------------------------
       console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800")
-      await stopCameraSession();
       done();
     })
 
