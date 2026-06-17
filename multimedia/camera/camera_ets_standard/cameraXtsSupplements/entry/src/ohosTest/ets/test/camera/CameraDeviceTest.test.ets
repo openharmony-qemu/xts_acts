@@ -874,6 +874,31 @@ export default function CameraDeviceTest() {
         expect().assertFail();
       }
     });
+    /**
+ 	    * @tc.name   SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100
+ 	    * @tc.number SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100
+ 	    * @tc.desc   automotiveCameraPosition normal test
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL1
+ 	    */
+ 	  it('SUB_MEDIA_CAMERA_CAMERA_DEVICE_0100',Level.LEVEL1, async () => {
+ 	    const testName = 'test010_automotiveCameraPosition'
+ 	    try {
+ 	      let position = camera.CameraPosition.CAMERA_POSITION_BACK;
+ 	      console.info(TAG,testName, 'position');
+ 	      let type = camera.CameraType.CAMERA_TYPE_WIDE_ANGLE;
+ 	      console.info(TAG,testName, 'type');
+ 	      if (mCameraDeviceArray.length > 0) {
+ 	        let automotiveCameraPosition = mCameraDeviceArray[0].automotiveCameraPosition;
+ 	        console.info(TAG,testName,'automotiveCameraPosition: ', automotiveCameraPosition);
+ 	        expect(automotiveCameraPosition).assertLargerOrEqual(0);
+ 	      }
+ 	    } catch (error) {
+ 	      console.error(TAG,testName, error, error.code)
+ 	      expect().assertFail();
+ 	    }
+ 	  });
   })
 }
 
