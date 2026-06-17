@@ -15,45 +15,10 @@
  */
 import drawing from '@ohos.graphics.drawing';
 import { AnimatorResult, AnimatorOptions } from '@ohos.animator';
-import { DrawModifier } from '@ohos.arkui.component';
-import { UIContext } from '@ohos.arkui.UIContext';
-import {  DrawContext } from "@kit.ArkUI";
+import { DrawModifier, Row, Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Scroll, ForEach, Search, SafeAreaType, ScrollDirection, BarState, Color, Flex, FlexOptions, Margin, FlexWrap, ItemAlign, FlexDirection } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import {
-  Row,
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Scroll,
-  ForEach,
-  Search,
-  SafeAreaType,
-  ScrollDirection,
-  BarState,
-  Color,
-  Flex,
-  FlexOptions,
-  Margin,
-  FlexWrap,
-  ItemAlign,
-  FlexDirection
-} from '@ohos.arkui.component'
-
-import {
-  State,
-  // StateDecoratedVariable,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
-
+import { DrawContext } from '@kit.ArkUI';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 export class MyFullDrawModifier extends DrawModifier {
   public scaleX: number = 1;
   public scaleY: number = 1;

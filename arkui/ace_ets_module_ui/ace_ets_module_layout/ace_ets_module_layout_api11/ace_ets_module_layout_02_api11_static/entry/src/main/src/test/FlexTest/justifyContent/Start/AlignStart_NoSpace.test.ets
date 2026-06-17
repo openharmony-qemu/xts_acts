@@ -15,7 +15,7 @@
  */
 
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level, afterEach, beforeAll } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -25,13 +25,11 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
+import { Alignment } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { BusinessError } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';

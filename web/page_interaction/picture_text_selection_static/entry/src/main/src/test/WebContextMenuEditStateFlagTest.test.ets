@@ -20,9 +20,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 let testAbilityContext:common.UIAbilityContext;
 
 export default function webContextMenuEditStateFlagTest() {

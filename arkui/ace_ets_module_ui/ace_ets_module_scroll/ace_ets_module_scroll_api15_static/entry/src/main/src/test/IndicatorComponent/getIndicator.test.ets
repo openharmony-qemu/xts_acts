@@ -13,21 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../Util.test'
-
+import { UtilsTest, startAbility } from '../Util.test';
 export default function getIndicator() {
   describe('getIndicator', () => {
     beforeAll(async (): Promise<void> => {

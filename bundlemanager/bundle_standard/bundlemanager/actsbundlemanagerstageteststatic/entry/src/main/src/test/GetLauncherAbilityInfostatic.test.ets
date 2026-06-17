@@ -13,16 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import bundleManager from '@ohos.bundle.bundleManager';
-import { BusinessError } from '@ohos.base'
+import { BusinessError } from '@ohos.base';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
 import { ShortcutInfo } from 'bundleManager.ShortcutInfo';
-import bundleManager from '@ohos.bundle.bundleManager';
-import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
-
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION | bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA;

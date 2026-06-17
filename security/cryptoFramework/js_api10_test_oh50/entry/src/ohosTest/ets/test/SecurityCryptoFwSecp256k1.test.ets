@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as commonUtils from './utils/common/commonUtils';
-import * as secp256k1 from './/utils/secp256k1/secp256k1Utils'
+import * as secp256k1 from './utils/secp256k1/secp256k1Utils'
 import { taskpool } from '@kit.ArkTS';
 import {
   createFullData,
@@ -33,7 +33,7 @@ import {
   doSignUpdateCallback,
   doAgreementCallback,
   vectorTest,
-} from './/utils/secp256k1/secp256k1Utils'
+} from './utils/secp256k1/secp256k1Utils'
 
 @Concurrent
 async function doSignVerifyByDigestSpecStub(algName: string, dataLen: number): Promise<boolean> {

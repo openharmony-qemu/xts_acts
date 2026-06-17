@@ -14,51 +14,13 @@
  * limitations under the License.
  */
 
-import  promptAction  from '@ohos.promptAction'
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ColumnOptions,
-  TextAlign,
-  Scroll,
-  Image,
-  Color,
-  $rawfile,
-  DragEvent,
-  $r,
-  ResourceStr,
-  HoverModeAreaType,
-  DismissDialogAction,
-  TextInput,
-  TextInputOptions,
-  DismissReason,
-  Offset,
-  Builder,
-  PopupOptions,
-  ClickEvent,
-  CustomPopupOptions,
-} from '@ohos.arkui.component';
-import { BusinessError } from "@ohos.base";
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, Link } from '@ohos.arkui.stateManagement';
+import promptAction from '@ohos.promptAction';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, Scroll, Image, Color, $rawfile, DragEvent, $r, ResourceStr, HoverModeAreaType, DismissDialogAction, TextInput, TextInputOptions, DismissReason, Offset, Builder, PopupOptions, CustomPopupOptions } from '@ohos.arkui.component';
+import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../../hypium/index';
-import { State } from '@ohos.arkui.stateManagement'
-
-
 @Entry
 @Component
 struct activeTest {

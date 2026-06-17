@@ -15,11 +15,10 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import CommonTest from "../common/CommonTest"
 import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { $r,Rectangle } from '@ohos.arkui.component'
+import { $r, Rectangle } from '@ohos.arkui.component';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -28,9 +27,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import {
-   Rectangle
-} from '@ohos.arkui.component'
 let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;

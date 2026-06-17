@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
+import { UtilsTest } from '../Util.test';
 import { LibUtil } from '../../../ets/pages/LibUtil';
-import { Driver, ON} from '@ohos.UiTest';
-
 export default function textInputMethodTest() {
 
   describe('textInputMethodTest', () => {

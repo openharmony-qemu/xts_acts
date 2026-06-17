@@ -1,48 +1,11 @@
 'use static'
 
-import { TabContentAnimatedTransition, ListScroller, LengthConstrain, AttributeModifier, UIGridEvent, ScrollSource,
-  NodeContainer, ImageAttribute, ScrollAttribute, GridAttribute, ListAttribute,  ResourceColor,
-  ScrollBarMargin,  TabContentTransitionProxy, FocusWrapMode, TabContentAnimatedTransition, TabsController,
-  CacheCountInfo,
-  BarPosition, Divider, EdgeEffect, BarMode, AnimationMode, Position, LocalizedEdgeColors, OutlineStyle,
-  WaterFlowAttribute,
-  EdgeOutlineStyles, EdgeOutlineWidths, EdgeColors, OutlineRadiuses, Circle ,ExpectedFrameRateRange ,PlayMode,
-  ListItemSwipeActionManager,
-  OnAlphabetIndexerRequestPopupDataCallback, OnAlphabetIndexerPopupSelectCallback,AlphabetIndexerOptions, Column,
-  ListItemSwipeActionDirection,
-  OnAlphabetIndexerSelectCallback ,IndexerAlign,TextAlign ,AlphabetIndexer, ListItem, Stack ,Color ,ButtonType ,
-  HoverModeAreaType ,Length ,SheetSize ,SheetType ,EffectEdge ,FontWeight ,FontStyle ,Font ,PopupOptions,
-  RefreshStatus,
-  PopupMessageOptions ,Placement ,LocalizedBorderRadiuses ,BorderRadiuses, LengthMetrics ,TextInput ,Margin,
-  $$ ,SheetKeyboardAvoidMode ,SheetOptions , SheetTitleOptions ,Orientation, ThemeColorMode ,BlurStyle, ScrollBar,
-  BackgroundBlurStyleOptions ,MoreButtonOptions ,BlurOptions ,AdaptiveColor ,BackgroundEffectOptions , ItemFillPolicy,
-  NavDestinationActiveReason ,$r,LengthMetrics,HorizontalAlign, ForEach, List,NavigationMode,Alignment, Refresh,
-  Entry, Builder, PopInfo,NavBarPosition, Callback, Text, TextAttribute,BarStyle,Image,Color, Row, Column,
-  ScrollBarDirection,
-  NavDestinationCommonTitle,Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation,
-  LayoutSafeAreaEdge, LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationMode,
-  NavigationOptions, NavigationTitleMode, NavigationCommonTitle, ScrollSnapAnimationSpeed, ScrollSnapAlign,
-  ScrollDirection,
-  NavDestinationMode, NavDestinationContext,Flex,FlexAlign } from '@ohos.arkui.component'
-import { State,Consume } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { UIContext } from '@ohos.arkui.UIContext'
-import { $r,LengthMetrics, HorizontalAlign,ColorMetrics,ScrollBarAttribute, ForEach, List,NavigationMode,Alignment,
-  Entry, Builder, PopInfo,
-  NavBarPosition, Callback, Text, TextAttribute,BarStyle,Image,Color, Row, Column, NavDestinationCommonTitle,
-  PresetFillType,
-  Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation, LayoutSafeAreaEdge,
-  LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationMode, NavigationOptions,
-  NavigationTitleMode, NavigationCommonTitle, NavDestinationMode, NavDestinationContext } from '@ohos.arkui.component'
-import { AppStorage,State,Consume,Observed} from '@ohos.arkui.stateManagement'
-import { Scroll,PinchGesture,GestureEvent,Visibility,WaterFlow,FlowItem,ItemDragInfo,
-  TextAlign,ScrollState,Scroller,LazyForEach,
-  Blank,GridDirection,BarState,GridItem,Grid,GridLayoutOptions,Component, Entry, Column, Row, Text, Navigation,
-  NavDestination, NavigationTitleMode, NavPathStack, Button, ClickEvent } from '@ohos.arkui.component'
-import { LengthUnit } from '@ohos.arkui.node';
-import {FrameNode, typeNode} from '@ohos.arkui.node'
+import { TabContentAnimatedTransition, ListScroller, LengthConstrain, AttributeModifier, UIGridEvent, ScrollSource, NodeContainer, ImageAttribute, ScrollAttribute, GridAttribute, ListAttribute, ResourceColor, ScrollBarMargin, TabContentTransitionProxy, FocusWrapMode, TabsController, CacheCountInfo, BarPosition, Divider, EdgeEffect, BarMode, AnimationMode, Position, LocalizedEdgeColors, OutlineStyle, WaterFlowAttribute, EdgeOutlineStyles, EdgeOutlineWidths, EdgeColors, OutlineRadiuses, Circle, ExpectedFrameRateRange, PlayMode, ListItemSwipeActionManager, OnAlphabetIndexerRequestPopupDataCallback, OnAlphabetIndexerPopupSelectCallback, AlphabetIndexerOptions, Column, ListItemSwipeActionDirection, OnAlphabetIndexerSelectCallback, IndexerAlign, TextAlign, AlphabetIndexer, ListItem, Stack, Color, ButtonType, HoverModeAreaType, Length, SheetSize, SheetType, EffectEdge, FontWeight, FontStyle, Font, PopupOptions, RefreshStatus, PopupMessageOptions, Placement, LocalizedBorderRadiuses, BorderRadiuses, LengthMetrics, TextInput, Margin, $$, SheetKeyboardAvoidMode, SheetOptions, SheetTitleOptions, Orientation, ThemeColorMode, BlurStyle, ScrollBar, BackgroundBlurStyleOptions, MoreButtonOptions, BlurOptions, AdaptiveColor, BackgroundEffectOptions, ItemFillPolicy, NavDestinationActiveReason, $r, HorizontalAlign, ForEach, List, NavigationMode, Alignment, Refresh, Entry, Builder, PopInfo, NavBarPosition, Callback, Text, TextAttribute, BarStyle, Image, Row, ScrollBarDirection, NavDestinationCommonTitle, Component, Button, ButtonAttribute, Scroll, ClickEvent, Curve, NavPathStack, Navigation, LayoutSafeAreaEdge, LaunchMode, NavigationMenuItem, NavPathInfo, NavDestination, LayoutSafeAreaType, NavigationOptions, NavigationTitleMode, NavigationCommonTitle, ScrollSnapAnimationSpeed, ScrollSnapAlign, ScrollDirection, NavDestinationMode, NavDestinationContext, Flex, FlexAlign, ColorMetrics, ScrollBarAttribute, PresetFillType, PinchGesture, GestureEvent, Visibility, WaterFlow, FlowItem, ItemDragInfo, ScrollState, Scroller, LazyForEach, Blank, GridDirection, BarState, GridItem, Grid, GridLayoutOptions } from '@ohos.arkui.component';
+import { State, Consume, AppStorage, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
+import { UIContext } from '@ohos.arkui.UIContext';
+import { LengthUnit, FrameNode, typeNode } from '@ohos.arkui.node';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 // 定义不同的 ListCachedCount Modifier 类
 @Observed
 export class ListCachedCountNormalModifier implements AttributeModifier<ListAttribute> {

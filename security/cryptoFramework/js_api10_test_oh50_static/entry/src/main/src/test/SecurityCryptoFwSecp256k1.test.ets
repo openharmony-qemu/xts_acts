@@ -24,7 +24,7 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import  buffer  from '@ohos.buffer';
 import * as commonUtils from './utils/common/commonUtils';
-import * as secp256k1 from './/utils/secp256k1/secp256k1Utils'
+import * as secp256k1 from './utils/secp256k1/secp256k1Utils'
 import {
   createFullData,
   compareDataBlob,
