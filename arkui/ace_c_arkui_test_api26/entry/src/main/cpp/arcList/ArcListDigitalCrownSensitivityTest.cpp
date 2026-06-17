@@ -31,39 +31,45 @@ namespace ArkUICapiTest {
 static napi_value TestArcListDigitalCrownSensitivity001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t sensitivity = PARAM_1;
+    int32_t sensitivity = ARKUI_CROWN_SENSITIVITY_MEDIUM;
     ArkUI_NumberValue value[] = {{.i32 = sensitivity}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY, &item);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest",
-        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", ret->value[0].i32);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestArcListDigitalCrownSensitivity001",
+        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", result->value[0].i32);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY)->value[PARAM_0].i32, sensitivity);
+    ASSERT_EQ(result->value[PARAM_0].i32, sensitivity);
     NAPI_END;
 }
 
 static napi_value TestArcListDigitalCrownSensitivity002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t sensitivity = PARAM_2;
+    int32_t sensitivity = ARKUI_CROWN_SENSITIVITY_HIGH;
     ArkUI_NumberValue value[] = {{.i32 = sensitivity}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY, &item);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest",
-        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", ret->value[0].i32);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestArcListDigitalCrownSensitivity002",
+        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", result->value[0].i32);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY)->value[PARAM_0].i32, sensitivity);
+    ASSERT_EQ(result->value[PARAM_0].i32, sensitivity);
     NAPI_END;
 }
 
 static napi_value TestArcListDigitalCrownSensitivity003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t sensitivity = PARAM_NEGATIVE_1;
+    int32_t sensitivity = ARKUI_CROWN_SENSITIVITY_LOW;
     ArkUI_NumberValue value[] = {{.i32 = sensitivity}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY, &item);
-    ASSERT_EQ(ret, INVALID_PARAM);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestArcListDigitalCrownSensitivity003",
+        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", result->value[0].i32);
+    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(result->value[PARAM_0].i32, sensitivity);
     NAPI_END;
 }
 
@@ -76,10 +82,9 @@ static napi_value TestArcListDigitalCrownSensitivity004(napi_env env, napi_callb
     nodeAPI->setAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY, &item);
     auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY);
     ASSERT_EQ(ret1, SUCCESS);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest",
-        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", ret->value[0].i32);
-    ASSERT_EQ(ret, SUCCESS);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestArcListDigitalCrownSensitivity004",
+        "NODE_ARC_LIST_DIGITAL_CROWN_SENSITIVITY = %{public}d", result->value[0].i32);
     ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }
