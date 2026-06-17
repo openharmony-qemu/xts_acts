@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 import { Holder013, SelfRefNode014, Color015, SignedData016, Success016, Failure016,
   IntSupplier017, BiFunction018, VoidFunction019, IntPredicate020, StringComparator021,
   BoxFactory022, BoxProcessor023, BigData024, Teacher025, Singleton026, Logger027, Config028 }
-  from './data/BoxGenericTypes';
+  from '../Util.test';
 
 export default function BoxGenericConstructorTest2(): void {
   describe('BoxGenericConstructorTest2', (): void => {

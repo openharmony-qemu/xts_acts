@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { EmptyClass001, Person002 } from './data/BoxGenericTypes';
+import { EmptyClass001, Person002 } from '../Util.test';
 
 export default function BoxGenericGetSetTest1(): void {
   describe('BoxGenericGetSetTest1', (): void => {

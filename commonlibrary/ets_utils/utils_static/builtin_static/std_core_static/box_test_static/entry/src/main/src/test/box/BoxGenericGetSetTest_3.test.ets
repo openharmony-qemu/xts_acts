@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 import { NullableInt029, NullableString030, IntOrString031, MultiUnion032,
   BoxIntArray034, StringBoxIntMap035, BoxStringSet036, BoxIntArray037,
   NestedBox038, MarkerInterface039, Person002 }
-  from './data/BoxGenericTypes';
+  from '../Util.test';
 
 class MarkerImpl039 implements MarkerInterface039 {}
 

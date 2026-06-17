@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { CHAR_BEL, CHAR_BS, CHAR_TAB, CHAR_LF, CHAR_VT, CHAR_FF, CHAR_CR, CHAR_DEL } from './data/UnicodeChars';
+import { CHAR_BEL, CHAR_BS, CHAR_TAB, CHAR_LF, CHAR_VT, CHAR_FF, CHAR_CR, CHAR_DEL } from '../Util.test';
 
 
 class CharBoxWrapper {

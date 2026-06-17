@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { CHAR_COPYRIGHT, CHAR_REGISTERED, CHAR_PLUS_MINUS, CHAR_CJK_ZHONG, CHAR_CJK_GUO, CHAR_CJK_HAN, CHAR_A_GRAVE, CHAR_N_TILDE, CHAR_CJK_ZI, CHAR_HANGUL_GA, CHAR_HANGUL_HIH, CHAR_BMP_MAX } from './data/UnicodeChars';
+import { CHAR_COPYRIGHT, CHAR_REGISTERED, CHAR_PLUS_MINUS, CHAR_CJK_ZHONG, CHAR_CJK_GUO, CHAR_CJK_HAN, CHAR_A_GRAVE, CHAR_N_TILDE, CHAR_CJK_ZI, CHAR_HANGUL_GA, CHAR_HANGUL_HIH, CHAR_BMP_MAX } from '../Util.test';
 
 
 class CharBoxWrapper {

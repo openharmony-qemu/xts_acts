@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { ReadonlyIntArray040, IntStringTuple041, Person042 } from './data/BoxGenericTypes';
+import { ReadonlyIntArray040, IntStringTuple041, Person042 } from '../Util.test';
 
 export default function BoxGenericGetSetTest4(): void {
   describe('BoxGenericGetSetTest4', (): void => {
