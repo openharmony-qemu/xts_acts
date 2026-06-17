@@ -66,7 +66,7 @@ struct VideoReset5 {
           .id('VideoReset5_reset')
 
         Button('stop').onClick(() => {
-          this.controller.reset()
+          this.controller.stop()
           console.log('testTag:' + 'stop' )
         })
           .id('VideoReset5_stop')
