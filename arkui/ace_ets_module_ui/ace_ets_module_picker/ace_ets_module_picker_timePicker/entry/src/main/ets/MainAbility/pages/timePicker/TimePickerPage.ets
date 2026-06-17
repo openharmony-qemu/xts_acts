@@ -71,7 +71,7 @@ struct TimePickerPage {
         })
       Text('hour:' + this.hour).fontSize(14).key('TimePickerPage_hour')
       Text('minute:' + this.minute).fontSize(14).key('TimePickerPage_minute')
-      Text('24hour:' + this.mode).fontSize(14).key('mode')
+      Text('24hour:' + this.mode).fontSize(14).key('TimePickerPage_mode')
     }.alignItems(HorizontalAlign.Center).width('100%').height('90%').margin({ top: 20 })
   }
 }

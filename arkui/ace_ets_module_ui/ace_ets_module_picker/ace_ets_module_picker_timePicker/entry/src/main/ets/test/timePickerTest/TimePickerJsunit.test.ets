@@ -131,7 +131,7 @@ export default function TimePickerJsunit() {
       let switchButton = await driver.findComponent(BY.key('TimePickerPage' + '_button'));
       await switchButton.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('mode');
+      let strJson = getInspectorByKey('TimePickerPage_mode');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[TimePickerJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('24hour:true');
@@ -139,7 +139,7 @@ export default function TimePickerJsunit() {
       // Verify switch 12-hour
       await switchButton.click();
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('mode');
+      let strJson1 = getInspectorByKey('TimePickerPage_mode');
       let obj1: Record<string, ESObject> = JSON.parse(strJson1);
       console.info("[TimePickerJsunit_0200] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('24hour:false');
