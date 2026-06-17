@@ -51,6 +51,20 @@ import PicturePackingPixelMapFirTestSupp
 import PicturePackToFileSuppImageSourceTestStatic
   from './testStatic/image/ImagerPackerSupplement/PicturePackToFileSuppStatic.test';
 import ImageSourceCreatePixelMapListSuppStatic from './testStatic/image/imageSource/ImageSourceCreatePixelMapListStatic.test';
+import imageGetAuxiliaryPictureStaticTest from './testStatic/image/Picture/getAuxiliaryPictureStatic.test';
+import getHdrComposedPixelmapStaticSuppTest from './testStatic/image/Picture/getHdrComposedPixelmapStatic.test';
+import imageGetMetaDataStaticTest from './testStatic/image/Picture/getMetadataStatic.test';
+import PictureGetGainmapPixelmapTest from './testStatic/image/Picture/PictureGetGainmapPixelmap.test';
+import ImageSetAuxiliaryPictureStaticTest from './testStatic/image/Picture/setAuxiliaryPictureStatic.test';
+import imageSetMetaDataStaticTest from './testStatic/image/Picture/setMetadataStatic.test';
+import imagePackerPackingSuppStaticTest from './testStatic/image/ImagePacker/packingStatic.test';
+import imagePackerPackToDataTestSuppStatic from './testStatic/image/ImagePacker/packToDataStatic.test';
+import AuxiliaryPictureGetAuxiliaryPictureInfoStaticTest
+  from './testStatic/image/AuxiliaryPicture/getAuxiliaryPictureInfoStatic.test';
+import AuxiliaryGetTypeStaticTest from './testStatic/image/AuxiliaryPicture/getTypeStatic.test';
+import setAuxiliaryPictureGetMetadataStaticTest
+  from './testStatic/image/AuxiliaryPicture/setAuxiliaryPictureInfoStatic.test';
+import SetMetadataAxuStaticTest from './testStatic/image/AuxiliaryPicture/setMetadataAxuStatic.test';
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -99,6 +113,14 @@ export default function testsuite(): void {
   PicturePackingPixelMapFirTestSupp();
   PicturePackToFileSuppImageSourceTestStatic();
   ImageSourceCreatePixelMapListSuppStatic();
+  getHdrComposedPixelmapStaticSuppTest();
+  SetMetadataAxuStaticTest();
+  imageGetMetaDataStaticTest();
+  PictureGetGainmapPixelmapTest();
+  ImageSetAuxiliaryPictureStaticTest();
+  imagePackerPackingSuppStaticTest();
+  imagePackerPackToDataTestSuppStatic();
+  setAuxiliaryPictureGetMetadataStaticTest();
 }
 
 
