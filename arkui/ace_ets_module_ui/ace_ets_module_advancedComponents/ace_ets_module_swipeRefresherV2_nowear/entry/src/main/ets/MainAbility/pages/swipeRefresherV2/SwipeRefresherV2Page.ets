@@ -43,7 +43,6 @@ struct SwipeRefresherV2Page {
           })
             .width('100%')
             .height(100)
-            .backgroundColor('#F0F0F0')
 
           Button('切换加载状态')
             .onClick(() => {
@@ -62,7 +61,6 @@ struct SwipeRefresherV2Page {
           })
             .width('100%')
             .height(100)
-            .backgroundColor('#E8E8E8')
 
           Divider()
 
@@ -76,7 +74,6 @@ struct SwipeRefresherV2Page {
           })
             .width('100%')
             .height(100)
-            .backgroundColor('#D8D8D8')
 
           Button('触发加载')
             .onClick(() => {
@@ -94,7 +91,6 @@ struct SwipeRefresherV2Page {
           })
             .width('100%')
             .height(100)
-            .backgroundColor('#C8C8C8')
 
           Divider()
 
@@ -108,7 +104,6 @@ struct SwipeRefresherV2Page {
           })
             .width('100%')
             .height(100)
-            .backgroundColor('#B8B8B8')
 
           Button('停止加载')
             .onClick(() => {
