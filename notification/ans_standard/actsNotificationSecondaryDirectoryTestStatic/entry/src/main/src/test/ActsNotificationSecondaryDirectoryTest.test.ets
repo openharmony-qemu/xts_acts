@@ -20,7 +20,6 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import wantagent from '@ohos.app.ability.wantAgent';
 import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
