@@ -13,61 +13,65 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcScrollBarDisplayModeSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcScrollBarDisplayMode001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(scrollBar, ARKUI_NODE_SCROLL_BAR);
+    NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
     int32_t displayMode = PARAM_1;
     ArkUI_NumberValue value[] = {{.i32 = displayMode}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE)->value[PARAM_0].i32, displayMode);
-    NAPI_END;
-}
-
-static napi_value TestArcScrollBarDisplayModeSet002(napi_env env, napi_callback_info info)
-{
-    NAPI_START(scrollBar, ARKUI_NODE_SCROLL_BAR);
-    int32_t displayMode = PARAM_2;
-    ArkUI_NumberValue value[] = {{.i32 = displayMode}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE)->value[PARAM_0].i32, displayMode);
-    NAPI_END;
-}
-
-static napi_value TestArcScrollBarDisplayModeSet003(napi_env env, napi_callback_info info)
-{
-    NAPI_START(scrollBar, ARKUI_NODE_SCROLL_BAR);
-    int32_t displayMode = PARAM_0;
-    ArkUI_NumberValue value[] = {{.i32 = displayMode}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE)->value[PARAM_0].i32, displayMode);
-    NAPI_END;
-}
-
-static napi_value TestArcScrollBarDisplayModeGet001(napi_env env, napi_callback_info info)
-{
-    NAPI_START(scrollBar, ARKUI_NODE_SCROLL_BAR);
-    int32_t displayMode = PARAM_1;
-    ArkUI_NumberValue value[] = {{.i32 = displayMode}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
     auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
     ASSERT_EQ(result->value[PARAM_0].i32, displayMode);
     NAPI_END;
 }
 
-static napi_value TestArcScrollBarDisplayModeGet002(napi_env env, napi_callback_info info)
+static napi_value TestArcScrollBarDisplayMode002(napi_env env, napi_callback_info info)
 {
-    NAPI_START(scrollBar, ARKUI_NODE_SCROLL_BAR);
+    NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
+    int32_t displayMode = PARAM_2;
+    ArkUI_NumberValue value[] = {{.i32 = displayMode}};
+    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
+    ASSERT_EQ(ret, SUCCESS);
+    auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
+    ASSERT_EQ(result->value[PARAM_0].i32, displayMode);
+    NAPI_END;
+}
+
+static napi_value TestArcScrollBarDisplayMode003(napi_env env, napi_callback_info info)
+{
+    NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
+    int32_t displayMode = PARAM_0;
+    ArkUI_NumberValue value[] = {{.i32 = displayMode}};
+    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE, &item);
+    ASSERT_EQ(ret, SUCCESS);
+    auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
+    ASSERT_EQ(result->value[PARAM_0].i32, displayMode);
+    NAPI_END;
+}
+
+static napi_value TestArcScrollBarDisplayMode004(napi_env env, napi_callback_info info)
+{
+    NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
+    auto ret1 = nodeAPI->resetAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
+    ASSERT_EQ(ret1, SUCCESS);
     auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_DISPLAY_MODE);
     ASSERT_EQ(result->value[PARAM_0].i32, PARAM_0);
     NAPI_END;

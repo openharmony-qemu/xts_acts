@@ -17,59 +17,27 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListChainAnimationTest() {
+export default function ArcListChainAnimationTest() {
 
   describe('ArcListChainAnimationTest', () => {
 
-    /**
-     * @tc.name   testArcListChainAnimationSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHAIN_ANIMATION_SET_0001
-     * @tc.desc   testing chain animation set for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChainAnimationSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChainAnimationSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListChainAnimation001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChainAnimation001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListChainAnimationSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHAIN_ANIMATION_SET_0002
-     * @tc.desc   testing chain animation set for arcList with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChainAnimationSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChainAnimationSet002()).assertEqual(0)
+    it('testArcListChainAnimation002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChainAnimation002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListChainAnimationGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHAIN_ANIMATION_GET_0001
-     * @tc.desc   testing chain animation get for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChainAnimationGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChainAnimationGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListChainAnimationGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHAIN_ANIMATION_GET_0002
-     * @tc.desc   testing chain animation get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChainAnimationGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChainAnimationGet002()).assertEqual(0)
+    it('testArcListChainAnimation003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChainAnimation003()).assertEqual(0)
       done()
     })
   })

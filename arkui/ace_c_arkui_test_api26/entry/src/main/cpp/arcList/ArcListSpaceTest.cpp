@@ -13,11 +13,22 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcListSpaceSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListSpace001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float space = PARAM_10;
@@ -25,11 +36,12 @@ static napi_value TestArcListSpaceSet001(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SPACE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE)->value[PARAM_0].f32, space);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE);
+    ASSERT_EQ(result->value[PARAM_0].f32, space);
     NAPI_END;
 }
 
-static napi_value TestArcListSpaceSet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListSpace002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float space = PARAM_20;
@@ -37,11 +49,12 @@ static napi_value TestArcListSpaceSet002(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SPACE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE)->value[PARAM_0].f32, space);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE);
+    ASSERT_EQ(result->value[PARAM_0].f32, space);
     NAPI_END;
 }
 
-static napi_value TestArcListSpaceSet003(napi_env env, napi_callback_info info)
+static napi_value TestArcListSpace003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float space = PARAM_NEGATIVE_1;
@@ -52,7 +65,7 @@ static napi_value TestArcListSpaceSet003(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
-static napi_value TestArcListSpaceSet004(napi_env env, napi_callback_info info)
+static napi_value TestArcListSpace004(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float space = PARAM_0;
@@ -60,26 +73,17 @@ static napi_value TestArcListSpaceSet004(napi_env env, napi_callback_info info)
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SPACE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE)->value[PARAM_0].f32, space);
-    NAPI_END;
-}
-
-static napi_value TestArcListSpaceGet001(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float space = PARAM_15;
-    ArkUI_NumberValue value[] = {{.f32 = space}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SPACE, &item);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE);
     ASSERT_EQ(result->value[PARAM_0].f32, space);
     NAPI_END;
 }
 
-static napi_value TestArcListSpaceGet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListSpace005(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
+    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_SPACE);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SPACE);
+    ASSERT_EQ(ret1, SUCCESS);
     ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }

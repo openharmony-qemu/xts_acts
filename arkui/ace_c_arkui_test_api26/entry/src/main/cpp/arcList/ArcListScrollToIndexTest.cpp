@@ -13,41 +13,51 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcListChildrenMainSizeSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollToIndex001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float childrenMainSize = PARAM_100;
-    ArkUI_NumberValue value[] = {{.f32 = childrenMainSize}};
+    int32_t index = PARAM_0;
+    ArkUI_NumberValue value[] = {{.i32 = index}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_CHILDREN_MAIN_SIZE, &item);
+    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_TO_INDEX, &item);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }
 
-static napi_value TestArcListChildrenMainSizeSet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollToIndex002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float childrenMainSize = PARAM_50;
-    ArkUI_NumberValue value[] = {{.f32 = childrenMainSize}};
+    int32_t index = PARAM_5;
+    ArkUI_NumberValue value[] = {{.i32 = index}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_CHILDREN_MAIN_SIZE, &item);
+    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_TO_INDEX, &item);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }
 
-static napi_value TestArcListChildrenMainSizeGet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollToIndex003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float childrenMainSize = PARAM_100;
-    ArkUI_NumberValue value[] = {{.f32 = childrenMainSize}};
+    int32_t index = PARAM_NEGATIVE_1;
+    ArkUI_NumberValue value[] = {{.i32 = index}};
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(arcList, NODE_ARC_LIST_CHILDREN_MAIN_SIZE, &item);
-    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_CHILDREN_MAIN_SIZE);
-    ASSERT_EQ(result->value[PARAM_0].f32, childrenMainSize);
+    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_TO_INDEX, &item);
+    ASSERT_EQ(ret, INVALID_PARAM);
     NAPI_END;
 }
 

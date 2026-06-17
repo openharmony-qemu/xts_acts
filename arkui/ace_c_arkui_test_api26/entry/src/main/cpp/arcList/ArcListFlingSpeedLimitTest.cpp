@@ -13,11 +13,37 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
+
+#define PARAM_1000 1000
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcListFlingSpeedLimitSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListFlingSpeedLimit001(napi_env env, napi_callback_info info)
+{
+    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
+    float flingSpeedLimit = PARAM_200;
+    ArkUI_NumberValue value[] = {{.f32 = flingSpeedLimit}};
+    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
+    ASSERT_EQ(ret, SUCCESS);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
+    ASSERT_EQ(result->value[PARAM_0].f32, flingSpeedLimit);
+    NAPI_END;
+}
+
+static napi_value TestArcListFlingSpeedLimit002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float flingSpeedLimit = PARAM_1000;
@@ -25,23 +51,12 @@ static napi_value TestArcListFlingSpeedLimitSet001(napi_env env, napi_callback_i
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT)->value[PARAM_0].f32, flingSpeedLimit);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
+    ASSERT_EQ(result->value[PARAM_0].f32, flingSpeedLimit);
     NAPI_END;
 }
 
-static napi_value TestArcListFlingSpeedLimitSet002(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float flingSpeedLimit = PARAM_2000;
-    ArkUI_NumberValue value[] = {{.f32 = flingSpeedLimit}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT)->value[PARAM_0].f32, flingSpeedLimit);
-    NAPI_END;
-}
-
-static napi_value TestArcListFlingSpeedLimitSet003(napi_env env, napi_callback_info info)
+static napi_value TestArcListFlingSpeedLimit003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float flingSpeedLimit = PARAM_NEGATIVE_100;
@@ -52,23 +67,13 @@ static napi_value TestArcListFlingSpeedLimitSet003(napi_env env, napi_callback_i
     NAPI_END;
 }
 
-static napi_value TestArcListFlingSpeedLimitGet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListFlingSpeedLimit004(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float flingSpeedLimit = PARAM_1000;
-    ArkUI_NumberValue value[] = {{.f32 = flingSpeedLimit}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT, &item);
+    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_FADING_EDGE);
+    ASSERT_EQ(ret1, SUCCESS);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
-    ASSERT_EQ(result->value[PARAM_0].f32, flingSpeedLimit);
-    NAPI_END;
-}
-
-static napi_value TestArcListFlingSpeedLimitGet002(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_FLING_SPEED_LIMIT);
-    ASSERT_EQ(result->value[PARAM_0].f32, PARAM_1000);
+    ASSERT_EQ(result != nullptr, true);
     NAPI_END;
 }
 

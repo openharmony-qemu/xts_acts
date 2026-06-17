@@ -17,46 +17,67 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListChildrenMainSizeTest() {
+export default function ArcListChildrenMainSizeTest() {
 
   describe('ArcListChildrenMainSizeTest', () => {
 
-    /**
-     * @tc.name   testArcListChildrenMainSizeSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHILDREN_MAIN_SIZE_SET_0001
-     * @tc.desc   testing children main size set for arcList with value 100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChildrenMainSizeSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChildrenMainSizeSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListChildrenMainSize001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListChildrenMainSizeSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHILDREN_MAIN_SIZE_SET_0002
-     * @tc.desc   testing children main size set for arcList with value 50
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChildrenMainSizeSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChildrenMainSizeSet002()).assertEqual(0)
+    it('testArcListChildrenMainSize002', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListChildrenMainSizeGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CHILDREN_MAIN_SIZE_GET_0001
-     * @tc.desc   testing children main size get for arcList with value 100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListChildrenMainSizeGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListChildrenMainSizeGet001()).assertEqual(0)
+    it('testArcListChildrenMainSize003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize003()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize004()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize005()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize006', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize006()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize007', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize007()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize008', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize008()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize009', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize009()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize010', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize010()).assertEqual(0)
+      done()
+    })
+
+    it('testArcListChildrenMainSize011', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListChildrenMainSize011()).assertEqual(0)
       done()
     })
   })

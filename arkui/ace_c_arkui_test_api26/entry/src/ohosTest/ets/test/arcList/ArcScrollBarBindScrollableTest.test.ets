@@ -17,59 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcScrollBarBindScrollableTest() {
+export default function ArcScrollBarBindScrollableTest() {
 
   describe('ArcScrollBarBindScrollableTest', () => {
 
-    /**
-     * @tc.name   testArcScrollBarBindScrollableSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_BIND_SCROLLABLE_SET_0001
-     * @tc.desc   testing bind scrollable set for scrollBar with arcList node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarBindScrollableSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarBindScrollableSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcScrollBarBindScrollable001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarBindScrollable001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarBindScrollableSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_BIND_SCROLLABLE_SET_0002
-     * @tc.desc   testing bind scrollable set for scrollBar with scroll node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarBindScrollableSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarBindScrollableSet002()).assertEqual(0)
+    it('testArcScrollBarBindScrollable002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarBindScrollable002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarBindScrollableGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_BIND_SCROLLABLE_GET_0001
-     * @tc.desc   testing bind scrollable get for scrollBar with arcList node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarBindScrollableGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarBindScrollableGet001()).assertEqual(0)
+    it('testArcScrollBarBindScrollable003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarBindScrollable003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarBindScrollableGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_BIND_SCROLLABLE_GET_0002
-     * @tc.desc   testing bind scrollable get for scrollBar default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarBindScrollableGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarBindScrollableGet002()).assertEqual(0)
+    it('testArcScrollBarBindScrollable004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarBindScrollable004()).assertEqual(0)
       done()
     })
   })

@@ -17,59 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListScrollBarTest() {
+export default function ArcListScrollBarTest() {
 
   describe('ArcListScrollBarTest', () => {
 
-    /**
-     * @tc.name   testArcListScrollBarSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_SET_0001
-     * @tc.desc   testing scroll bar set for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListScrollBar001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBar001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_SET_0002
-     * @tc.desc   testing scroll bar set for arcList with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarSet002()).assertEqual(0)
+    it('testArcListScrollBar002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBar002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_GET_0001
-     * @tc.desc   testing scroll bar get for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarGet001()).assertEqual(0)
+    it('testArcListScrollBar003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBar003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_GET_0002
-     * @tc.desc   testing scroll bar get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarGet002()).assertEqual(0)
+    it('testArcListScrollBar004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBar004()).assertEqual(0)
       done()
     })
   })

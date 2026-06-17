@@ -17,59 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListSetHeaderTest() {
+export default function ArcListSetHeaderTest() {
 
   describe('ArcListSetHeaderTest', () => {
 
-    /**
-     * @tc.name   testArcListSetHeaderSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SET_HEADER_SET_0001
-     * @tc.desc   testing set header for arcList with column node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSetHeaderSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSetHeaderSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListSetHeader001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSetHeader001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSetHeaderSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SET_HEADER_SET_0002
-     * @tc.desc   testing set header for arcList with text node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSetHeaderSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSetHeaderSet002()).assertEqual(0)
+    it('testArcListSetHeader002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSetHeader002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSetHeaderGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SET_HEADER_GET_0001
-     * @tc.desc   testing get header for arcList with column node
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSetHeaderGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSetHeaderGet001()).assertEqual(0)
+    it('testArcListSetHeader003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSetHeader003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSetHeaderGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SET_HEADER_GET_0002
-     * @tc.desc   testing get header for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSetHeaderGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSetHeaderGet002()).assertEqual(0)
+    it('testArcListSetHeader004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSetHeader004()).assertEqual(0)
       done()
     })
   })

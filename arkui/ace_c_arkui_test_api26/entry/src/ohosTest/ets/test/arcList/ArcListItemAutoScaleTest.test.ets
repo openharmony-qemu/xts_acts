@@ -17,59 +17,27 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListItemAutoScaleTest() {
+export default function ArcListItemAutoScaleTest() {
 
   describe('ArcListItemAutoScaleTest', () => {
 
-    /**
-     * @tc.name   testArcListItemAutoScaleSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_AUTO_SCALE_SET_0001
-     * @tc.desc   testing item auto scale set for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemAutoScaleSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemAutoScaleSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListItemAutoScale001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemAutoScale001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListItemAutoScaleSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_AUTO_SCALE_SET_0002
-     * @tc.desc   testing item auto scale set for arcList with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemAutoScaleSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemAutoScaleSet002()).assertEqual(0)
+    it('testArcListItemAutoScale002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemAutoScale002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListItemAutoScaleGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_AUTO_SCALE_GET_0001
-     * @tc.desc   testing item auto scale get for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemAutoScaleGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemAutoScaleGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListItemAutoScaleGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_AUTO_SCALE_GET_0002
-     * @tc.desc   testing item auto scale get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemAutoScaleGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemAutoScaleGet002()).assertEqual(0)
+    it('testArcListItemAutoScale003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemAutoScale003()).assertEqual(0)
       done()
     })
   })

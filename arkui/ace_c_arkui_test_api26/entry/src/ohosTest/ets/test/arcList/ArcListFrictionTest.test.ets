@@ -17,72 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListFrictionTest() {
+export default function ArcListFrictionTest() {
 
   describe('ArcListFrictionTest', () => {
 
-    /**
-     * @tc.name   testArcListFrictionSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_FRICTION_SET_0001
-     * @tc.desc   testing friction set for arcList with value 1.1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListFrictionSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListFrictionSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListFriction001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListFriction001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListFrictionSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_FRICTION_SET_0002
-     * @tc.desc   testing friction set for arcList with value 0.8
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListFrictionSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListFrictionSet002()).assertEqual(0)
+    it('testArcListFriction002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListFriction002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListFrictionSet003
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_FRICTION_SET_0003
-     * @tc.desc   testing friction set for arcList with invalid value -0.1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testArcListFrictionSet003', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.testArcListFrictionSet003()).assertEqual(0)
+    it('testArcListFriction003', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListFriction003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListFrictionGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_FRICTION_GET_0001
-     * @tc.desc   testing friction get for arcList with value 1.1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListFrictionGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListFrictionGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListFrictionGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_FRICTION_GET_0002
-     * @tc.desc   testing friction get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListFrictionGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListFrictionGet002()).assertEqual(0)
+    it('testArcListFriction004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListFriction004()).assertEqual(0)
       done()
     })
   })

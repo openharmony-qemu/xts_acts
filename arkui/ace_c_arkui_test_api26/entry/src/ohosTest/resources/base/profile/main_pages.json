@@ -9,5 +9,6 @@
     "MainAbility/pages/passThrough/PassThroughTest",
     "MainAbility/pages/getSizeLimitation/GetSizeLimitationTest",
     "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith"
+    "MainAbility/pages/arcList/ArcListEventCallbackTest"
   ]
 }

@@ -17,59 +17,27 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListEnableScrollInteractionTest() {
+export default function ArcListEnableScrollInteractionTest() {
 
   describe('ArcListEnableScrollInteractionTest', () => {
 
-    /**
-     * @tc.name   testArcListEnableScrollInteractionSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ENABLE_SCROLL_INTERACTION_SET_0001
-     * @tc.desc   testing enable scroll interaction set for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListEnableScrollInteractionSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListEnableScrollInteractionSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListEnableScrollInteraction001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListEnableScrollInteraction001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListEnableScrollInteractionSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ENABLE_SCROLL_INTERACTION_SET_0002
-     * @tc.desc   testing enable scroll interaction set for arcList with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListEnableScrollInteractionSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListEnableScrollInteractionSet002()).assertEqual(0)
+    it('testArcListEnableScrollInteraction002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListEnableScrollInteraction002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListEnableScrollInteractionGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ENABLE_SCROLL_INTERACTION_GET_0001
-     * @tc.desc   testing enable scroll interaction get for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListEnableScrollInteractionGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListEnableScrollInteractionGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListEnableScrollInteractionGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ENABLE_SCROLL_INTERACTION_GET_0002
-     * @tc.desc   testing enable scroll interaction get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListEnableScrollInteractionGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListEnableScrollInteractionGet002()).assertEqual(0)
+    it('testArcListEnableScrollInteraction003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListEnableScrollInteraction003()).assertEqual(0)
       done()
     })
   })

@@ -13,11 +13,22 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcListItemAutoScaleSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListItemAutoScale001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     int32_t itemAutoScale = PARAM_1;
@@ -25,11 +36,12 @@ static napi_value TestArcListItemAutoScaleSet001(napi_env env, napi_callback_inf
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE)->value[PARAM_0].i32, itemAutoScale);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE);
+    ASSERT_EQ(result->value[PARAM_0].i32, itemAutoScale);
     NAPI_END;
 }
 
-static napi_value TestArcListItemAutoScaleSet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListItemAutoScale002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     int32_t itemAutoScale = PARAM_0;
@@ -37,25 +49,16 @@ static napi_value TestArcListItemAutoScaleSet002(napi_env env, napi_callback_inf
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE)->value[PARAM_0].i32, itemAutoScale);
-    NAPI_END;
-}
-
-static napi_value TestArcListItemAutoScaleGet001(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    int32_t itemAutoScale = PARAM_1;
-    ArkUI_NumberValue value[] = {{.i32 = itemAutoScale}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE, &item);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE);
     ASSERT_EQ(result->value[PARAM_0].i32, itemAutoScale);
     NAPI_END;
 }
 
-static napi_value TestArcListItemAutoScaleGet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListItemAutoScale003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
+    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE);
+    ASSERT_EQ(ret1, SUCCESS);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_ITEM_AUTO_SCALE);
     ASSERT_EQ(result->value[PARAM_0].i32, PARAM_1);
     NAPI_END;

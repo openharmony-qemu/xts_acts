@@ -17,72 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcScrollBarDisplayModeTest() {
+export default function ArcScrollBarDisplayModeTest() {
 
   describe('ArcScrollBarDisplayModeTest', () => {
 
-    /**
-     * @tc.name   testArcScrollBarDisplayModeSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_DISPLAY_MODE_SET_0001
-     * @tc.desc   testing display mode set for scrollBar with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarDisplayModeSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarDisplayModeSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcScrollBarDisplayMode001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarDisplayMode001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarDisplayModeSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_DISPLAY_MODE_SET_0002
-     * @tc.desc   testing display mode set for scrollBar with value 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarDisplayModeSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarDisplayModeSet002()).assertEqual(0)
+    it('testArcScrollBarDisplayMode002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarDisplayMode002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarDisplayModeSet003
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_DISPLAY_MODE_SET_0003
-     * @tc.desc   testing display mode set for scrollBar with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarDisplayModeSet003', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarDisplayModeSet003()).assertEqual(0)
+    it('testArcScrollBarDisplayMode003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarDisplayMode003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcScrollBarDisplayModeGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_DISPLAY_MODE_GET_0001
-     * @tc.desc   testing display mode get for scrollBar with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarDisplayModeGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarDisplayModeGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcScrollBarDisplayModeGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_SCROLL_BAR_DISPLAY_MODE_GET_0002
-     * @tc.desc   testing display mode get for scrollBar default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcScrollBarDisplayModeGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcScrollBarDisplayModeGet002()).assertEqual(0)
+    it('testArcScrollBarDisplayMode004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcScrollBarDisplayMode004()).assertEqual(0)
       done()
     })
   })

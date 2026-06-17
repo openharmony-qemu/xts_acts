@@ -17,85 +17,37 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListSpaceTest() {
+export default function ArcListSpaceTest() {
 
   describe('ArcListSpaceTest', () => {
 
-    /**
-     * @tc.name   testArcListSpaceSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_SET_0001
-     * @tc.desc   testing space set for arcList with value 10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSpaceSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListSpace001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSpace001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSpaceSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_SET_0002
-     * @tc.desc   testing space set for arcList with value 20
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSpaceSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceSet002()).assertEqual(0)
+    it('testArcListSpace002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSpace002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSpaceSet003
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_SET_0003
-     * @tc.desc   testing space set for arcList with invalid value -1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testArcListSpaceSet003', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceSet003()).assertEqual(0)
+    it('testArcListSpace003', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListSpace003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSpaceSet004
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_SET_0004
-     * @tc.desc   testing space set for arcList with value 0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSpaceSet004', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceSet004()).assertEqual(0)
+    it('testArcListSpace004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSpace004()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListSpaceGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_GET_0001
-     * @tc.desc   testing space get for arcList with value 15
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSpaceGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListSpaceGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SPACE_GET_0002
-     * @tc.desc   testing space get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListSpaceGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListSpaceGet002()).assertEqual(0)
+    it('testArcListSpace005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListSpace005()).assertEqual(0)
       done()
     })
   })

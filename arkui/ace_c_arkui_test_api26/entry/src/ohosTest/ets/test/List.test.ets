@@ -27,13 +27,6 @@ import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
 import AccessibilityFocusIdTest from './accessibilityFocusId/AccessibilityFocusIdTest.test'
 import hoveredTest from './hovered/hovered.test'
 import shouldRecognizerParallelWith from "./shouldRecognizerParallelWith/shouldRecognizerParallelWith.test"
-import arcListOnDidScrollTest from './arcList/ArcListOnDidScrollTest.test'
-import arcListOnWillScrollTest from './arcList/ArcListOnWillScrollTest.test'
-import arcListOnScrollStopTest from './arcList/ArcListOnScrollStopTest.test'
-import arcListOnScrollStartTest from './arcList/ArcListOnScrollStartTest.test'
-import arcListOnReachEndTest from './arcList/ArcListOnReachEndTest.test'
-import arcListOnReachStartTest from './arcList/ArcListOnReachStartTest.test'
-import arcListOnScrollIndexTest from './arcList/ArcListOnScrollIndexTest.test'
 import arcListSpaceTest from './arcList/ArcListSpaceTest.test'
 import arcListCachedCountTest from './arcList/ArcListCachedCountTest.test'
 import arcListScrollToIndexTest from './arcList/ArcListScrollToIndexTest.test'
@@ -52,6 +45,7 @@ import arcListItemAutoScaleTest from './arcList/ArcListItemAutoScaleTest.test'
 import arcListDigitalCrownSensitivityTest from './arcList/ArcListDigitalCrownSensitivityTest.test'
 import arcScrollBarDisplayModeTest from './arcList/ArcScrollBarDisplayModeTest.test'
 import arcScrollBarBindScrollableTest from './arcList/ArcScrollBarBindScrollableTest.test'
+import ArcListEventCallbackTest from './arcList/ArcListEventCallbackTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -69,13 +63,6 @@ export default function testsuite() {
   AccessibilityFocusIdTest();
   hoveredTest();
   shouldRecognizerParallelWith();
-  arcListOnDidScrollTest()
-  arcListOnWillScrollTest()
-  arcListOnScrollStopTest()
-  arcListOnScrollStartTest()
-  arcListOnReachEndTest()
-  arcListOnReachStartTest()
-  arcListOnScrollIndexTest()
   arcListSpaceTest()
   arcListCachedCountTest()
   arcListScrollToIndexTest()
@@ -94,4 +81,5 @@ export default function testsuite() {
   arcListDigitalCrownSensitivityTest()
   arcScrollBarDisplayModeTest()
   arcScrollBarBindScrollableTest()
+  ArcListEventCallbackTest()
 }

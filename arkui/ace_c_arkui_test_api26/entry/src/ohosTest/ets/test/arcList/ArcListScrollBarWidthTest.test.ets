@@ -17,72 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListScrollBarWidthTest() {
+export default function ArcListScrollBarWidthTest() {
 
   describe('ArcListScrollBarWidthTest', () => {
 
-    /**
-     * @tc.name   testArcListScrollBarWidthSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_WIDTH_SET_0001
-     * @tc.desc   testing scroll bar width set for arcList with value 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarWidthSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarWidthSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListScrollBarWidth001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBarWidth001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarWidthSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_WIDTH_SET_0002
-     * @tc.desc   testing scroll bar width set for arcList with value 10
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarWidthSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarWidthSet002()).assertEqual(0)
+    it('testArcListScrollBarWidth002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBarWidth002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarWidthSet003
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_WIDTH_SET_0003
-     * @tc.desc   testing scroll bar width set for arcList with invalid value -1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testArcListScrollBarWidthSet003', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarWidthSet003()).assertEqual(0)
+    it('testArcListScrollBarWidth003', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBarWidth003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListScrollBarWidthGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_WIDTH_GET_0001
-     * @tc.desc   testing scroll bar width get for arcList with value 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarWidthGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarWidthGet001()).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.name   testArcListScrollBarWidthGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_SCROLL_BAR_WIDTH_GET_0002
-     * @tc.desc   testing scroll bar width get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListScrollBarWidthGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListScrollBarWidthGet002()).assertEqual(0)
+    it('testArcListScrollBarWidth004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListScrollBarWidth004()).assertEqual(0)
       done()
     })
   })

@@ -17,59 +17,32 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListItemSwipeActionTest() {
+export default function ArcListItemSwipeActionTest() {
 
   describe('ArcListItemSwipeActionTest', () => {
 
-    /**
-     * @tc.name   testArcListItemSwipeActionSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_SWIPE_ACTION_SET_0001
-     * @tc.desc   testing item swipe action set for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemSwipeActionSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemSwipeActionSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListItemSwipeAction001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemSwipeAction001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListItemSwipeActionSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_SWIPE_ACTION_SET_0002
-     * @tc.desc   testing item swipe action set for arcList with value 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemSwipeActionSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemSwipeActionSet002()).assertEqual(0)
+    it('testArcListItemSwipeAction002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemSwipeAction002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListItemSwipeActionGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_SWIPE_ACTION_GET_0001
-     * @tc.desc   testing item swipe action get for arcList with value 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemSwipeActionGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemSwipeActionGet001()).assertEqual(0)
+    it('testArcListItemSwipeAction003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemSwipeAction003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListItemSwipeActionGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_ITEM_SWIPE_ACTION_GET_0002
-     * @tc.desc   testing item swipe action get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListItemSwipeActionGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListItemSwipeActionGet002()).assertEqual(0)
+    it('testArcListItemSwipeAction004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListItemSwipeAction004()).assertEqual(0)
       done()
     })
   })

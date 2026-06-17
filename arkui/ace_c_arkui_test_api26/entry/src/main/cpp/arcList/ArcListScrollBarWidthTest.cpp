@@ -13,11 +13,22 @@
  * limitations under the License.
  */
 
-#include "common/common.h"
+#include "../common/common.h"
+#include "../manager/PluginManagerTest.h"
+
+#include <cstdint>
+#include <string>
+#include "napi/native_api.h"
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include <arkui/native_node.h>
+#include <arkui/native_animate.h>
+#include <arkui/native_node_napi.h>
+#include <arkui/native_type.h>
+#include <arkui/native_render.h>
 
 namespace ArkUICapiTest {
 
-static napi_value TestArcListScrollBarWidthSet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollBarWidth001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float scrollBarWidth = PARAM_4;
@@ -25,11 +36,12 @@ static napi_value TestArcListScrollBarWidthSet001(napi_env env, napi_callback_in
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH)->value[PARAM_0].f32, scrollBarWidth);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH);
+    ASSERT_EQ(result->value[PARAM_0].f32, scrollBarWidth);
     NAPI_END;
 }
 
-static napi_value TestArcListScrollBarWidthSet002(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollBarWidth002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float scrollBarWidth = SIZE_10;
@@ -37,11 +49,12 @@ static napi_value TestArcListScrollBarWidthSet002(napi_env env, napi_callback_in
     ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH, &item);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH)->value[PARAM_0].f32, scrollBarWidth);
+    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH);
+    ASSERT_EQ(result->value[PARAM_0].f32, scrollBarWidth);
     NAPI_END;
 }
 
-static napi_value TestArcListScrollBarWidthSet003(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollBarWidth003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     float scrollBarWidth = PARAM_NEGATIVE_1;
@@ -52,21 +65,11 @@ static napi_value TestArcListScrollBarWidthSet003(napi_env env, napi_callback_in
     NAPI_END;
 }
 
-static napi_value TestArcListScrollBarWidthGet001(napi_env env, napi_callback_info info)
+static napi_value TestArcListScrollBarWidth004(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    float scrollBarWidth = PARAM_4;
-    ArkUI_NumberValue value[] = {{.f32 = scrollBarWidth}};
-    ArkUI_AttributeItem item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH, &item);
-    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH);
-    ASSERT_EQ(result->value[PARAM_0].f32, scrollBarWidth);
-    NAPI_END;
-}
-
-static napi_value TestArcListScrollBarWidthGet002(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
+    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH);
+    ASSERT_EQ(ret1, SUCCESS);
     auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SCROLL_BAR_WIDTH);
     ASSERT_EQ(result->value[PARAM_0].f32, PARAM_4);
     NAPI_END;

@@ -17,72 +17,37 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
-export default function arcListCachedCountTest() {
+export default function ArcListCachedCountTest() {
 
   describe('ArcListCachedCountTest', () => {
 
-    /**
-     * @tc.name   testArcListCachedCountSet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CACHED_COUNT_SET_0001
-     * @tc.desc   testing cachedCount set for arcList with value 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListCachedCountSet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListCachedCountSet001()).assertEqual(0)
+    beforeEach(async (done: Function) => {
+      await Utils.sleep(100);
+      done();
+    });
+
+    it('testArcListCachedCount001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListCachedCount001()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListCachedCountSet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CACHED_COUNT_SET_0002
-     * @tc.desc   testing cachedCount set for arcList with value 5
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListCachedCountSet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListCachedCountSet002()).assertEqual(0)
+    it('testArcListCachedCount002', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListCachedCount002()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListCachedCountSet003
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CACHED_COUNT_SET_0003
-     * @tc.desc   testing cachedCount set for arcList with invalid value -1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testArcListCachedCountSet003', Level.LEVEL2, async (done: Function) => {
-      expect(nativeFunc.testArcListCachedCountSet003()).assertEqual(0)
+    it('testArcListCachedCount003', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testArcListCachedCount003()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListCachedCountGet001
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CACHED_COUNT_GET_0001
-     * @tc.desc   testing cachedCount get for arcList with value 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListCachedCountGet001', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListCachedCountGet001()).assertEqual(0)
+    it('testArcListCachedCount004', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListCachedCount004()).assertEqual(0)
       done()
     })
 
-    /**
-     * @tc.name   testArcListCachedCountGet002
-     * @tc.number SUB_ARKUI_CAPI_ARC_LIST_CACHED_COUNT_GET_0002
-     * @tc.desc   testing cachedCount get for arcList default value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArcListCachedCountGet002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.testArcListCachedCountGet002()).assertEqual(0)
+    it('testArcListCachedCount005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testArcListCachedCount005()).assertEqual(0)
       done()
     })
   })
