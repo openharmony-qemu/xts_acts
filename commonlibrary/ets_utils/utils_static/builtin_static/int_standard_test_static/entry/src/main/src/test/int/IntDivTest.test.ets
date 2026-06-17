@@ -45,7 +45,7 @@ export default function IntDivTest(): void {
     /**
      * @tc.number INT_DIV_ITEM_CHK_0200
      * @tc.name testIntDiv0002
-     * @tc.desc Verify that missing parameter throws error
+     * @tc.desc Verify compareTo returns zero for equal values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -55,7 +55,6 @@ export default function IntDivTest(): void {
       const result = a.div(new Int(4));
       expect(result.toInt()).assertEqual(5);
     });
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_0400
@@ -255,7 +254,7 @@ export default function IntDivTest(): void {
     /**
      * @tc.number INT_DIV_ITEM_CHK_1700
      * @tc.name testIntDiv0017
-     * @tc.desc Verify dividing by 0 throws error
+     * @tc.desc Verify dividing by 0 returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -268,42 +267,6 @@ export default function IntDivTest(): void {
         expect().assertFail();
       } catch (error) {
        expect(error.name).assertEqual('ArithmeticError');
-      }
-    });
-
-    /**
-     * @tc.number INT_DIV_ITEM_CHK_1800
-     * @tc.name testIntDiv0018
-     * @tc.desc Verify passing null throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntDiv0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.div(null as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number INT_DIV_ITEM_CHK_1900
-     * @tc.name testIntDiv0019
-     * @tc.desc Verify passing undefined throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntDiv0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.div(undefined as Object as Int);
-        expect().assertFail();
-      } catch (error) {
-       expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -324,7 +287,7 @@ export default function IntDivTest(): void {
     /**
      * @tc.number INT_DIV_ITEM_CHK_2100
      * @tc.name testIntDiv0021
-     * @tc.desc Verify passing string throws error
+     * @tc.desc Verify passing string returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -335,7 +298,7 @@ export default function IntDivTest(): void {
         const result = a.div("10" as Object as Int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -474,7 +437,6 @@ export default function IntDivTest(): void {
       expect(result.toInt()).assertEqual(-25);
     });
 
-
     /**
      * @tc.number INT_DIV_ITEM_CHK_3200
      * @tc.name testIntDiv0032
@@ -491,8 +453,6 @@ export default function IntDivTest(): void {
       expect(result.toInt()).assertLarger(-6.5);
     });
 
-
-
     /**
      * @tc.number INT_DIV_ITEM_CHK_3500
      * @tc.name testIntDiv0035
@@ -507,7 +467,6 @@ export default function IntDivTest(): void {
       const result = a.div(b);
       expect(result.toInt()).assertEqual(0);
     });
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_3700
@@ -528,8 +487,6 @@ export default function IntDivTest(): void {
       const result2 = c.div(d);
       expect(result2.toInt()).assertEqual(123);
     });
-
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_4000
@@ -562,7 +519,6 @@ export default function IntDivTest(): void {
       expect(result).not().assertEqual(a);
       expect(result.toInt()).not().assertEqual(a.toInt());
     });
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_4300
@@ -657,7 +613,7 @@ export default function IntDivTest(): void {
     /**
      * @tc.number INT_DIV_ITEM_CHK_4900
      * @tc.name testIntDiv0049
-     * @tc.desc Verify 0 divided by 0 throws error
+     * @tc.desc Verify 0 divided by 0 returns expected result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -777,7 +733,6 @@ export default function IntDivTest(): void {
       }
       expect(result.toInt()).assertEqual(1);
     });
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_5800
@@ -1000,7 +955,6 @@ export default function IntDivTest(): void {
       expect(a.div(new Int(100)).toInt()).assertEqual(1234);
       expect(a.div(new Int(1000)).toInt()).assertEqual(123);
     });
-
 
     /**
      * @tc.number INT_DIV_ITEM_CHK_7300

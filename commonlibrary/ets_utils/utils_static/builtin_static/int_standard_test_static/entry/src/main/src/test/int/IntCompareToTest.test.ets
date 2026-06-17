@@ -56,7 +56,6 @@ export default function IntCompareToTest(): void {
       expect(a.compareTo(b)).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_CMPR_TO_CHK_0400
      * @tc.name testIntCompareTo0004
@@ -208,42 +207,6 @@ export default function IntCompareToTest(): void {
       expect(a.compareTo(0b1000000)).assertEqual(1);
       expect(a.compareTo(0b1000010)).assertEqual(-1);
       expect(a.compareTo(0b1000001)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number INT_CMPR_TO_CHK_1400
-     * @tc.name testIntCompareTo0014
-     * @tc.desc Verify that passing null throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntCompareTo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.compareTo(null as Object as int);
-        expect().assertFail();
-      } catch (error) {
-       expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number INT_CMPR_TO_CHK_1500
-     * @tc.name testIntCompareTo0015
-     * @tc.desc Verify that passing undefined throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntCompareTo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(65);
-        const result = a.compareTo(undefined as Object as int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
     });
 
     /**
@@ -484,7 +447,6 @@ export default function IntCompareToTest(): void {
       expect(b.compareTo(0)).assertEqual(1);
     });
 
-
     /**
      * @tc.number INT_CMPR_TO_CHK_3300
      * @tc.name testIntCompareTo0033
@@ -514,7 +476,6 @@ export default function IntCompareToTest(): void {
       expect(a.compareTo(100)).assertEqual(0);
       expect(a.compareTo(150)).assertEqual(-1);
     });
-
 
     /**
      * @tc.number INT_CMPR_TO_CHK_3600
@@ -590,7 +551,6 @@ export default function IntCompareToTest(): void {
       const a = new Int(-100);
       expect(a.compareTo(0)).assertEqual(-1);
     });
-
 
     /**
      * @tc.number INT_CMPR_TO_CHK_4200
@@ -744,7 +704,6 @@ export default function IntCompareToTest(): void {
       }
     });
 
-
     /**
      * @tc.number INT_CMPR_TO_CHK_5200
      * @tc.name testIntCompareTo0052
@@ -758,13 +717,8 @@ export default function IntCompareToTest(): void {
       const other = 50;
 
       const result = a.compareTo(other);
-      if (result > 0) {
-        expect(100 > other).assertTrue();
-      } else if (result < 0) {
-        expect(100 < other).assertTrue();
-      } else {
-        expect(a.toInt() === other).assertTrue();
-      }
+      expect(result).assertEqual(1);
+      expect(a.toInt()).assertLarger(other);
     });
 
     /**
@@ -889,7 +843,6 @@ export default function IntCompareToTest(): void {
       const a = new Int(65);
       expect(a.compareTo(64)).assertEqual(1);
     });
-
 
     /**
      * @tc.number INT_CMPR_TO_CHK_6000

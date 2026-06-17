@@ -45,7 +45,7 @@ export default function IntEqualsTest(): void {
     /**
      * @tc.number INT_EQLS_ITEM_CHK_0200
      * @tc.name testIntEquals0002
-     * @tc.desc Verify that calling equals without parameters throws error
+     * @tc.desc Verify equals returns true for same numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -55,7 +55,6 @@ export default function IntEqualsTest(): void {
       const b = new Int(5);
       expect(a.equals(b)).assertTrue();
     });
-
 
     /**
      * @tc.number INT_EQLS_ITEM_CHK_0400
@@ -271,7 +270,6 @@ export default function IntEqualsTest(): void {
       expect(a.equals([123])).assertFalse();
     });
 
-
     /**
      * @tc.number INT_EQLS_ITEM_CHK_2100
      * @tc.name testIntEquals0021
@@ -483,7 +481,6 @@ export default function IntEqualsTest(): void {
       expect(a.equals(b)).assertTrue();
     });
 
-
     /**
      * @tc.number INT_EQLS_ITEM_CHK_3700
      * @tc.name testIntEquals0037
@@ -619,7 +616,6 @@ export default function IntEqualsTest(): void {
       expect(result1).assertEqual(result2);
       expect(result2).assertEqual(result3);
     });
-
 
     /**
      * @tc.number INT_EQLS_ITEM_CHK_4700

@@ -106,7 +106,7 @@ export default function IntConstructor1Test(): void {
      */
     it('testIntConstructor1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zero = new Int();
-      expect(zero).not().assertNull();
+      expect(zero instanceof Int).assertTrue();
     });
 
     /**
@@ -172,7 +172,6 @@ export default function IntConstructor1Test(): void {
     it('testIntConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Int.BYTE_SIZE).assertEqual(4);
     });
-
 
     /**
      * @tc.number INT_CNSTR_ITEM_CHK_1300

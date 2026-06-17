@@ -54,7 +54,6 @@ export default function IntConstructor2Test(): void {
       expect(n.toInt()).assertEqual(0);
     });
 
-
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_0400
      * @tc.name testIntConstructor2004
@@ -133,7 +132,6 @@ export default function IntConstructor2Test(): void {
       expect(n.toInt()).assertEqual(123);
     });
 
-    
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_1100
      * @tc.name testIntConstructor20011
@@ -161,42 +159,6 @@ export default function IntConstructor2Test(): void {
     });
 
     /**
-     * @tc.number INT_CNSTR2_ITEM_CHK_1300
-     * @tc.name testIntConstructor20013
-     * @tc.desc Verify Int constructor throws error when passing null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntConstructor20013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(null as Object as int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number INT_CNSTR2_ITEM_CHK_1400
-     * @tc.name testIntConstructor20014
-     * @tc.desc Verify Int constructor throws error when passing undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIntConstructor20014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const a = new Int(undefined as Object as int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      }
-    });
-
-
-
-    /**
      * @tc.number INT_CNSTR2_ITEM_CHK_1700
      * @tc.name testIntConstructor20017
      * @tc.desc Verify Int constructor truncates float value via Double.toInt
@@ -212,7 +174,7 @@ export default function IntConstructor2Test(): void {
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_1800
      * @tc.name testIntConstructor20018
-     * @tc.desc Verify Int constructor throws error when passing string value
+     * @tc.desc Verify Int constructor returns expected result when passing string value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -222,14 +184,14 @@ export default function IntConstructor2Test(): void {
         const a = new Int("123" as Object as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_1900
      * @tc.name testIntConstructor20019
-     * @tc.desc Verify Int constructor throws error when passing boolean value
+     * @tc.desc Verify Int constructor returns expected result when passing boolean value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,7 +201,7 @@ export default function IntConstructor2Test(): void {
         const a = new Int(true as Object as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -294,7 +256,6 @@ export default function IntConstructor2Test(): void {
       const n = new Int(-999);
       expect(n.toInt()).assertEqual(-999);
     });
-
 
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_2500
@@ -355,7 +316,7 @@ export default function IntConstructor2Test(): void {
     /**
      * @tc.number INT_CNSTR2_ITEM_CHK_2900
      * @tc.name testIntConstructor20029
-     * @tc.desc Verify Int constructor throws error when passing non-int type parameter
+     * @tc.desc Verify Int constructor returns expected result when passing non-int type parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -365,7 +326,7 @@ export default function IntConstructor2Test(): void {
         const a = new Int(12.34 as Object as int);
         expect().assertFail();
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

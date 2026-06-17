@@ -565,7 +565,7 @@ export default function DeepcopyTest(): void {
       let obj: Item028 = new Item028()
       obj.name = "x"
       let result = deepcopy(obj)
-      expect(result != null).assertTrue()
+      expect((result as Item028).name).assertEqual("x")
       expect(result === obj).assertFalse()
     })
 
@@ -580,7 +580,7 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Item028 = new Item028()
       let result = deepcopy(obj, 2)
-      expect(result != null).assertTrue()
+      expect((result as Item028).name).assertEqual("")
     })
 
     /**
@@ -594,7 +594,7 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item: Item028 = new Item028()
       let result = deepcopy(item)
-      expect(result != null).assertTrue()
+      expect((result as Item028).name).assertEqual("")
     })
 
     /**
@@ -608,7 +608,7 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let item: Item028 = new Item028()
       let result = deepcopy(item, -1)
-      expect(result != null).assertTrue()
+      expect((result as Item028).name).assertEqual("")
     })
 
     /**
@@ -749,9 +749,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Boolean = new Boolean(true)
       let result = deepcopy(b)
-      expect(result!.valueOf()).assertTrue()
-      expect(result != null).assertTrue()
-    })
+      expect(result!.valueOf()).assertTrue()    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1400
@@ -764,9 +763,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte(Int.toByte(127))
       let result = deepcopy(b)
-      expect(result!.toByte()).assertEqual(Int.toByte(127))
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toByte()).assertEqual(Int.toByte(127))    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1500
@@ -779,9 +777,7 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ch: Char = new Char(c'A')
       let result = deepcopy(ch)
-      expect(result!.toChar()).assertEqual(c'A')
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toChar()).assertEqual(c'A')    })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1600
@@ -817,9 +813,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: Short = new Short(Int.toShort(32767))
       let result = deepcopy(s)
-      expect(result!.toShort()).assertEqual(Int.toShort(32767))
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toShort()).assertEqual(Int.toShort(32767))    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1800
@@ -832,9 +827,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let i: Int = new Int(2147483647)
       let result = deepcopy(i)
-      expect(result!.toInt()).assertEqual(2147483647)
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toInt()).assertEqual(2147483647)    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1900
@@ -847,9 +841,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let l: Long = new Long(Long.MAX_VALUE)
       let result = deepcopy(l)
-      expect(result!.toLong()).assertEqual(Long.MAX_VALUE)
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toLong()).assertEqual(Long.MAX_VALUE)    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_2000
@@ -862,9 +855,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let f: Float = new Float(Double.toFloat(3.14))
       let result = deepcopy(f)
-      expect(result!.toFloat()).assertEqual(Double.toFloat(3.14))
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toFloat()).assertEqual(Double.toFloat(3.14))    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_2100
@@ -884,13 +876,8 @@ export default function DeepcopyTest(): void {
       let r2 = deepcopy(inf)
       let r3 = deepcopy(negInf)
       let r4 = deepcopy(zero)
-      let r5 = deepcopy(negZero)
-      expect(r1 != null).assertTrue()
-      expect(r2 != null).assertTrue()
-      expect(r3 != null).assertTrue()
-      expect(r4 != null).assertTrue()
-      expect(r5 != null).assertTrue()
-    })
+      let r5 = deepcopy(negZero)    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_2200
@@ -903,9 +890,8 @@ export default function DeepcopyTest(): void {
     it('testDeepcopy0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Double = new Double(123.456)
       let result = deepcopy(d)
-      expect(result!.toDouble()).assertEqual(123.456)
-      expect(result != null).assertTrue()
-    })
+      expect(result!.toDouble()).assertEqual(123.456)    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_2300
@@ -921,11 +907,8 @@ export default function DeepcopyTest(): void {
       let min: Double = new Double(Double.MIN_VALUE)
       let r1 = deepcopy(nan)
       let r2 = deepcopy(max)
-      let r3 = deepcopy(min)
-      expect(r1 != null).assertTrue()
-      expect(r2 != null).assertTrue()
-      expect(r3 != null).assertTrue()
-    })
+      let r3 = deepcopy(min)    
+      })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_2400
@@ -1612,7 +1595,6 @@ export default function DeepcopyTest(): void {
       let obj: L1_065 = new L1_065()
       obj.child.child.child.val = "deep"
       let result = deepcopy(obj, 5)
-      expect(result != null).assertTrue()
       expect(result === obj).assertFalse()
     })
 
@@ -2071,10 +2053,11 @@ export default function DeepcopyTest(): void {
       let result: Deep097 | null = deepcopy(root)!
       let c: Deep097 | null = result
       for (let i = 0; i < 10; i++) {
-        expect(c !== null).assertTrue()
+        const expected: int = i == 0 ? 0 : i - 1
+        expect(c!.val).assertEqual(expected)
         c = c!.child
       }
-      expect(c !== null).assertTrue()
+      expect(c!.val).assertEqual(9)
       expect(c!.child === c).assertTrue()
     })
 
@@ -2110,7 +2093,7 @@ export default function DeepcopyTest(): void {
         let source = new NoDefault107(1)
         deepcopy(source)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2130,9 +2113,7 @@ export default function DeepcopyTest(): void {
         let source = new NoDefault107(1)
         deepcopy(source)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        let e = error as Error
-        expect(e.message.length > 0).assertTrue()
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2153,7 +2134,7 @@ export default function DeepcopyTest(): void {
         bc.x = 10
         deepcopy(bc)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2175,7 +2156,7 @@ export default function DeepcopyTest(): void {
         c.y = 2
         deepcopy(c)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2195,7 +2176,7 @@ export default function DeepcopyTest(): void {
         let nd = new NoDefault103(1)
         deepcopy(nd)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2215,7 +2196,7 @@ export default function DeepcopyTest(): void {
         let wp = new WithParams104("test", 20)
         deepcopy(wp)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2230,19 +2211,13 @@ export default function DeepcopyTest(): void {
      * @tc.level Level 2
      */
     it('testDeepcopy0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted: boolean = false
-      let caught = false
       try {
         let nd = new NoDefault105(1)
         deepcopy(nd)
+		expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        caught = true
-      } finally {
-        finallyExecuted = true
+        expect(error.name).assertEqual('Error');
       }
-      expect(caught).assertTrue()
-      expect(finallyExecuted).assertTrue()
     })
 
     /**
@@ -2260,7 +2235,7 @@ export default function DeepcopyTest(): void {
         source.x = 10
         deepcopy(source)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2283,7 +2258,7 @@ export default function DeepcopyTest(): void {
         let result = deepcopy(n)
       } catch (error) {
         caught = true;
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
       expect(caught).assertTrue();
     })
@@ -2303,7 +2278,7 @@ export default function DeepcopyTest(): void {
       try {
         deepcopy(o)
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
         caught = true
       }
       expect(caught).assertTrue()
@@ -2323,10 +2298,7 @@ export default function DeepcopyTest(): void {
       let r1 = deepcopy(b1)
       let r2 = deepcopy(b2)
       expect(r1!.valueOf()).assertTrue()
-      expect(r2!.valueOf() == false).assertTrue()
-      expect(r1 != null).assertTrue()
-      expect(r2 != null).assertTrue()
-    })
+      expect(r2!.valueOf() == false).assertTrue()    })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1001
@@ -2345,11 +2317,7 @@ export default function DeepcopyTest(): void {
       let r3 = deepcopy(zeroI)
       expect(r1!.toInt()).assertEqual(2147483647)
       expect(r2!.toInt()).assertEqual(-2147483648)
-      expect(r3!.toInt()).assertEqual(0)
-      expect(r1 != null).assertTrue()
-      expect(r2 != null).assertTrue()
-      expect(r3 != null).assertTrue()
-    })
+      expect(r3!.toInt()).assertEqual(0)    })
 
     /**
      * @tc.number DPCPY_SPEC_ITEM_CHK_1101

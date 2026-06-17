@@ -657,11 +657,8 @@ export default function DoubleIsGreaterThanTest(): void {
     it('testDoubleIsGreaterThan0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Double = new Double(3.0);
       let other: Double = new Double(2.0);
-      let gt: boolean = d.isGreaterThan(other);
-      let cmp: int = d.compareTo(other);
-      if (gt) {
-        expect(cmp).assertEqual(1);
-      }
+      expect(d.isGreaterThan(other)).assertTrue();
+      expect(d.compareTo(other)).assertEqual(1);
     });
 
     /**
@@ -675,11 +672,8 @@ export default function DoubleIsGreaterThanTest(): void {
     it('testDoubleIsGreaterThan0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Double = new Double(1.0);
       let other: Double = new Double(2.0);
-      let gt: boolean = d.isGreaterThan(other);
-      let cmp: int = d.compareTo(other);
-      if (!gt) {
-        expect(cmp === -1 || cmp === 0).assertTrue();
-      }
+      expect(d.isGreaterThan(other)).assertFalse();
+      expect(d.compareTo(other)).assertEqual(-1);
     });
 
     /**

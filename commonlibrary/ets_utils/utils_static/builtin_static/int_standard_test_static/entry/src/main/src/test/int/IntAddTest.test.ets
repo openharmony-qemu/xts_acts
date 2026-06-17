@@ -45,7 +45,7 @@ export default function IntAddTest(): void {
     /**
      * @tc.number INT_ADD_ITEM_CHK_0200
      * @tc.name intAddParamCount00002
-     * @tc.desc Verify missing parameter throws error
+     * @tc.desc Verify add with zero parameter returns original value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -287,7 +287,7 @@ export default function IntAddTest(): void {
     /**
      * @tc.number INT_ADD_ITEM_CHK_1900
      * @tc.name intAddParamTypeAbnormal00001
-     * @tc.desc Verify passing null throws error
+     * @tc.desc Verify opposite values add to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

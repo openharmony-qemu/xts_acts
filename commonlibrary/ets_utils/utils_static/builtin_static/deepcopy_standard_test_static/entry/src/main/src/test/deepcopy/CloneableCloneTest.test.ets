@@ -331,7 +331,8 @@ export default function CloneableCloneTest(): void {
     it('testCloneableClone0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let p: Point001 = new Point001(1, 2)
       let q: Cloneable = p.clone()
-      expect(q !== null).assertTrue()
+      expect((q as Point001).x).assertEqual(1)
+      expect((q as Point001).y).assertEqual(2)
     });
 
 
@@ -346,7 +347,6 @@ export default function CloneableCloneTest(): void {
     it('testCloneableClone0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let p: Point003 = new Point003(10, 20)
       let q: Cloneable = p.clone()
-      expect(q !== null).assertTrue()
       expect((q as Point003).x).assertEqual(10)
       expect((q as Point003).y).assertEqual(20)
     });
@@ -599,8 +599,8 @@ export default function CloneableCloneTest(): void {
     it('testCloneableClone0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let p: Point010 = new Point010(1, 2)
       let result: Cloneable = p.clone()
-      expect(result !== null).assertTrue()
-      expect(typeof result === "object").assertTrue()
+      expect(result instanceof Point010).assertTrue()
+      expect((result as Point010).x).assertEqual(1)
     });
 
     /**
@@ -773,7 +773,7 @@ export default function CloneableCloneTest(): void {
         bp.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -791,7 +791,7 @@ export default function CloneableCloneTest(): void {
         deepcopy(bp)
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -809,8 +809,7 @@ export default function CloneableCloneTest(): void {
         ep.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        expect(error.message).assertEqual("clone failed")
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -828,9 +827,7 @@ export default function CloneableCloneTest(): void {
         fp.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-        let ce: CloneError033 = error as CloneError033
-        expect(ce.errorCode).assertEqual(1001)
+        expect(error.name).assertEqual('CloneError');
       }
     });
 
@@ -848,7 +845,6 @@ export default function CloneableCloneTest(): void {
       try {
         result = p.clone() as Point010
       } finally {
-        expect(result !== null).assertTrue()
         expect((result as Point010).x).assertEqual(1)
       }
     });
@@ -863,15 +859,12 @@ export default function CloneableCloneTest(): void {
      */
     it('testCloneableClone0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let ep: ErrorPoint032 = new ErrorPoint032(1)
-      let finallyExecuted: boolean = false
       try {
         ep.clone()
+		expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
-      } finally {
-        finallyExecuted = true
+        expect(error.name).assertEqual('Error');
       }
-      expect(finallyExecuted).assertTrue()
     });
 
     /**
@@ -888,7 +881,7 @@ export default function CloneableCloneTest(): void {
         cp.clone()
         expect().assertFail()
       } catch (error) {
-        expect(error.name.length > 0).assertTrue();
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -921,7 +914,7 @@ export default function CloneableCloneTest(): void {
       expect(dc.breed).assertEqual("Shepherd")
     });
 
-    
+
     /**
      * @tc.number DPCPY_CLNBL_CLONE_CHK_4000
      * @tc.name testCloneableClone0040

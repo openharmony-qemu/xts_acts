@@ -641,9 +641,8 @@ export default function DoubleEqualsTest(): void {
     it('testDoubleEquals0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Double = new Double(1.5);
       let b: Double = new Double(1.5);
-      if (a.equals(b)) {
-        expect(a.compareTo(b)).assertEqual(0);
-      }
+      expect(a.equals(b)).assertTrue();
+      expect(a.compareTo(b)).assertEqual(0);
     });
 
     /**

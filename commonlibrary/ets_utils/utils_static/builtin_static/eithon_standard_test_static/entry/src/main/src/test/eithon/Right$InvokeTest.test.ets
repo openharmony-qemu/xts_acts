@@ -58,9 +58,6 @@ export default function Right$InvokeTest(): void {
       expect(result !== null).assertTrue();
     });
 
-    
-    
-    
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_0500
      * @tc.name testRight$Invoke0005
@@ -177,8 +174,6 @@ export default function Right$InvokeTest(): void {
       let result = Right.$_invoke<string, number>(Number.NEGATIVE_INFINITY);
       expect(result !== null).assertTrue();
     });
-
-
 
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_1600
@@ -502,8 +497,6 @@ export default function Right$InvokeTest(): void {
       expect(result2 !== null).assertTrue();
     });
 
-
-
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_4200
      * @tc.name testRight$Invoke0042
@@ -650,7 +643,6 @@ export default function Right$InvokeTest(): void {
       expect(result.isRight()).assertTrue();
     });
 
-
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_5400
      * @tc.name testRight$Invoke0054
@@ -794,7 +786,6 @@ export default function Right$InvokeTest(): void {
       expect(result instanceof Right).assertTrue();
     });
 
-    
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_6600
      * @tc.name testRight$Invoke0066
@@ -888,7 +879,6 @@ export default function Right$InvokeTest(): void {
       }
     });
 
-
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_7300
      * @tc.name testRight$Invoke0073
@@ -902,10 +892,6 @@ export default function Right$InvokeTest(): void {
       expect(instance !== null).assertTrue()
     });
 
-
-
-
-
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_7800
      * @tc.name testRight$Invoke0078
@@ -918,7 +904,6 @@ export default function Right$InvokeTest(): void {
       let result = Right.$_invoke<string, boolean>(false);
       expect(result.isRight()).assertTrue();
     });
-
 
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_8100
@@ -945,11 +930,6 @@ export default function Right$InvokeTest(): void {
       let result = Right.$_invoke<number, string>("");
       expect(result.isRight()).assertTrue();
     });
-
-
-
-
-
 
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_8800
@@ -1002,8 +982,6 @@ export default function Right$InvokeTest(): void {
       let result = Right.$_invoke<string, number>(0);
       expect(result.isLeft()).assertFalse();
     });
-
-
 
     /**
      * @tc.number ETHN_RIGHT_INVK_CHK_9400
