@@ -121,16 +121,11 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0400';
       console.info(`${caseName} test start`);
       try {
-        statistics.getUidRxBytes(null).then((stats: number) => {
-          console.log(`${caseName} get stats success`,JSON.stringify(stats));
-          ExpectTrue(false);
-        })
-          .catch((err:BusinessError)=>{
-            console.log(`${caseName} err in`,JSON.stringify(err));
-            ExpectTrue(false);
-          })
+        let stats = await statistics.getUidRxBytes(null);
+        console.log(`${caseName} get stats success`, JSON.stringify(stats));
+        ExpectTrue(false);
         done();
-      }catch (err){
+      } catch (err) {
         console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
         ExpectTrue(Number(err.code) === 401);
         done();
@@ -179,16 +174,11 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0200';
       console.info(`${caseName} test start`);
       try {
-        statistics.getUidTxBytes(undefined).then((stats: number) => {
-          console.log(`${caseName} get stats success`,JSON.stringify(stats));
-          ExpectTrue(false);
-        })
-          .catch((err:BusinessError)=>{
-            console.log(`${caseName} err in`,JSON.stringify(err));
-            ExpectTrue(false);
-          })
+        let stats = await statistics.getUidTxBytes(undefined);
+        console.log(`${caseName} get stats success`, JSON.stringify(stats));
+        ExpectTrue(false);
         done();
-      }catch (err){
+      } catch (err) {
         console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
         ExpectTrue(Number(err.code) === 401);
         done();
@@ -237,16 +227,11 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0400';
       console.info(`${caseName} test start`);
       try {
-        statistics.getUidTxBytes(null).then((stats: number) => {
-          console.log(`${caseName} get stats success`,JSON.stringify(stats));
-          ExpectTrue(false);
-        })
-          .catch((err:BusinessError)=>{
-            console.log(`${caseName} err in`,JSON.stringify(err));
-            ExpectTrue(err.code == 401);
-          })
+        let stats = await statistics.getUidTxBytes(null);
+        console.log(`${caseName} get stats success`, JSON.stringify(stats));
+        ExpectTrue(false);
         done();
-      }catch (err){
+      } catch (err) {
         console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
         done();
@@ -596,15 +581,10 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = "testNetManagerStatisticsGetSockfdTxBytesPromiseErrCo0800";
       console.info(`${caseName}---start`);
       try {
-        statistics.getSockfdTxBytes(null).then((data)=>{
-          console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
-          ExpectFail();
-          done();
-        }).catch((err: BusinessError)=>{
-          console.log(`${caseName} getSockfdTxBytes err is : ${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        })
+        let data = await statistics.getSockfdTxBytes(null);
+        console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
+        ExpectFail();
+        done();
       } catch (error) {
         console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(Number(error.code) === 401);
@@ -832,15 +812,10 @@ export default function StatisticsErrorCodeTest() {
       let caseName: string = "testNetManagerStatisticsGetSockfdRxBytesPromiseErrCo0800";
       console.info(`${caseName}---start`);
       try {
-        statistics.getSockfdRxBytes(null).then((data)=>{
-          console.log(`${caseName} getSockfdTxBytes success, data: ${JSON.stringify(data)}`);
-          ExpectFail();
-          done();
-        }).catch((err: BusinessError)=>{
-          console.log(`${caseName} getSockfdTxBytes err is : ${JSON.stringify(err)}`);
-          ExpectFail();
-          done();
-        })
+        let data = await statistics.getSockfdRxBytes(null);
+        console.log(`${caseName} getSockfdRxBytes success, data: ${JSON.stringify(data)}`);
+        ExpectFail();
+        done();
       } catch (error) {
         console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
         ExpectTrue(Number(error.code) === 401);
