@@ -178,7 +178,7 @@ export class KeyboardControllerNew {
           portraitRect: portraitRect,
         };
         console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
-        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect);
+        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
         console.info(TAG + `====>adjustPanelRect success`);
       } else {
         let landscapeRect: window.Rect = {
@@ -198,7 +198,7 @@ export class KeyboardControllerNew {
           portraitRect: portraitRect,
         };
         console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect)}`);
-        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect);
+        await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
         console.info(TAG + `====>adjustPanelRect success`);
       }
       setTimeout(async () => {
