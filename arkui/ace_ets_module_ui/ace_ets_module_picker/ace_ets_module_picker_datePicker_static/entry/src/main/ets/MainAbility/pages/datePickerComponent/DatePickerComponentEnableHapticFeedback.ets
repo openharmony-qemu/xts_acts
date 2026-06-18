@@ -1,5 +1,5 @@
 'use static'
-/*
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Button, Text, Flex, FlexWrap, FlexAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, DateMode, TimeFormat } from '@kit.ArkUI'
+
+import {
+  Entry,
+  Component,
+  State,
+  Column,
+  Flex,
+  FlexWrap,
+  FlexAlign,
+  Button,
+  Text,
+  ColumnOptions,
+} from '@kit.ArkUI';
+
+import {
+  DatePickerComponent,
+  DatePickerComponentOptions,
+  DisplayMode,
+  DateMode,
+  TimeFormat,
+  DatePickerComponentResult,
+  CommonOptions,
+  DateOptions,
+  TimeOptions
+} from '@ohos.arkui.advanced.DatePickerComponent';
 
 @Entry
 @Component
 struct DatePickerComponentEnableHapticFeedback {
-  @State enableHaptic: boolean = true
-
-  aboutToAppear(): void {
-    const routerInstance = this.getUIContext().getRouter()
-    AppStorage.setOrCreate<Router>('router', routerInstance)
-  }
+  @State enableHaptic: boolean = true;
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 20 } as ColumnOptions) {
       DatePickerComponent({
         options: {
           displayMode: DisplayMode.DATE_TIME,
@@ -51,14 +66,14 @@ struct DatePickerComponentEnableHapticFeedback {
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
         Button('haptic_true')
           .onClick(() => {
-            this.enableHaptic = true
+            this.enableHaptic = true;
           })
           .id('button_haptic_true')
           .margin({ right: 10 })
 
         Button('haptic_false')
           .onClick(() => {
-            this.enableHaptic = false
+            this.enableHaptic = false;
           })
           .id('button_haptic_false')
           .margin({ right: 10 })
