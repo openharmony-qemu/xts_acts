@@ -88,6 +88,7 @@ import getAlpha from './GraphicsTest/getAlpha.test';
 import getBlue from './GraphicsTest/getBlue.test';
 import getGreen from './GraphicsTest/getGreen.test';
 import getRed from './GraphicsTest/getRed.test';
+import colorLengthMetrics from './GraphicsTest/colorLengthMetrics.test';
 import CornerTest from './GraphicsTest/GraphicsApiTest/CornerTest.test';
 import LengthMetricsUnitTest from './GraphicsTest/GraphicsApiTest/LengthMetricsUnitTest.test';
 import PercentReferenceTest from './GraphicsTest/GraphicsApiTest/PercentReferenceTest.test';
@@ -190,6 +191,7 @@ export default function testsuite() {
   getBlue();
   getGreen();
   getRed();
+  colorLengthMetrics();
   borderRadiuses();
   borderStyles();
   edgeColors();
