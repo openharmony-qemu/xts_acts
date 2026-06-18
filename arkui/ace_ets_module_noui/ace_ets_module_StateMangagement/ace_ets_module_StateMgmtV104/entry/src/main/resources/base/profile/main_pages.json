@@ -1,0 +1,11 @@
+{
+  "src": [
+    "MainAbility/pages/uiutils/GlobalReusePool",
+    "MainAbility/pages/uiutils/GlobalReusePool002",
+    "MainAbility/pages/Reusable/ReusableChildState1Test",
+    "MainAbility/pages/Reusable/ReusableChildState2Test",
+    "MainAbility/pages/Reusable/ReusableChildState3Test",
+    "MainAbility/pages/Reusable/ReusableChildState4Test",
+    "MainAbility/pages/index/index"
+  ]
+}
