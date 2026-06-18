@@ -51,10 +51,12 @@ export default function DatePickerComponentDisplayModeTest() {
       } catch (err) {
         console.error('DatePickerComponentDisplayModeTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentDisplayModeTest beforeEach end");
     })
 
     afterEach(async () => {
-      console.info('afterEach case')
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentDisplayModeTest after each called");
     })
 
     /**
@@ -63,9 +65,9 @@ export default function DatePickerComponentDisplayModeTest() {
      * @tc.desc Verify DatePickerComponent default displayMode text content contains 'displayMode: 0'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentDisplayMode_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentDisplayMode_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentDisplayMode_default_0100 START')
       try {
         let strJson = inspector.getInspectorByKey('text_displayMode_value');
@@ -86,9 +88,9 @@ export default function DatePickerComponentDisplayModeTest() {
      * @tc.desc Verify DatePickerComponent displayMode changes to TIME after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentDisplayMode_time_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentDisplayMode_time_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentDisplayMode_time_0200 START')
       try {
         let driver = Driver.create();

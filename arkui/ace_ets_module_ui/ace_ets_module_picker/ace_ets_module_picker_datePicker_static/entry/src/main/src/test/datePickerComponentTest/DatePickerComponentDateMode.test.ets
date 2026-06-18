@@ -65,9 +65,9 @@ export default function DatePickerComponentDateModeTest() {
      * @tc.desc Verify DatePickerComponent default dateMode text content contains 'dateMode: 0'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentDateMode_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentDateMode_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentDateMode_default_0100 START');
       try {
         let strJson = inspector.getInspectorByKey('text_dateMode_value');
@@ -88,9 +88,9 @@ export default function DatePickerComponentDateModeTest() {
      * @tc.desc Verify DatePickerComponent dateMode changes to YEAR_AND_MONTH after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentDateMode_yearAndMonth_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentDateMode_yearAndMonth_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentDateMode_yearAndMonth_0200 START')
       try {
         let driver = await Driver.create();

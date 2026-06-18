@@ -35,7 +35,7 @@ export default function DatePickerComponentLunarTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentLunar',
       }
@@ -51,60 +51,61 @@ export default function DatePickerComponentLunarTest() {
       } catch (err) {
         console.error('DatePickerComponentLunarTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentLunarTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentLunarTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_0100
-     * @tc.name DatePickerComponentLunar_default
+     * @tc.name DatePickerComponentLunar_default_0100
      * @tc.desc Verify DatePickerComponent default lunar text content contains 'lunar: false'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentLunar_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentLunar_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentLunar_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentLunar_default_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_lunar_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('lunar: false')
-        done()
+        let strJson = inspector.getInspectorByKey('text_lunar_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('lunar: false');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentLunar_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentLunar_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_LUNAR_0200
-     * @tc.name DatePickerComponentLunar_true
+     * @tc.name DatePickerComponentLunar_true_0200
      * @tc.desc Verify DatePickerComponent lunar changes to true after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentLunar_true', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentLunar_true START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentLunar_true_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentLunar_true_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_lunar_true'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_lunar_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('lunar: true')
-        done()
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_lunar_true'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_lunar_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('lunar: true');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentLunar_true error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentLunar_true_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })

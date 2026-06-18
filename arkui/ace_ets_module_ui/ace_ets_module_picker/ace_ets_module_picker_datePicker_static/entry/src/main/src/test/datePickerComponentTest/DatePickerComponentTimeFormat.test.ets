@@ -35,7 +35,7 @@ export default function DatePickerComponentTimeFormatTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentTimeFormat',
       }
@@ -51,60 +51,61 @@ export default function DatePickerComponentTimeFormatTest() {
       } catch (err) {
         console.error('DatePickerComponentTimeFormatTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentTimeFormatTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentTimeFormatTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_0100
-     * @tc.name DatePickerComponentTimeFormat_default
+     * @tc.name DatePickerComponentTimeFormat_default_0100
      * @tc.desc Verify DatePickerComponent default timeFormat text content contains 'timeFormat: 0'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentTimeFormat_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentTimeFormat_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentTimeFormat_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentTimeFormat_default_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_timeFormat_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('timeFormat: 0')
-        done()
+        let strJson = inspector.getInspectorByKey('text_timeFormat_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('timeFormat: 0');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentTimeFormat_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentTimeFormat_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_TIMEFORMAT_0200
-     * @tc.name DatePickerComponentTimeFormat_hourMinuteSecond
+     * @tc.name DatePickerComponentTimeFormat_hourMinuteSecond_0200
      * @tc.desc Verify DatePickerComponent timeFormat changes to HOUR_MINUTE_SECOND after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentTimeFormat_hourMinuteSecond', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentTimeFormat_hourMinuteSecond START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentTimeFormat_hourMinuteSecond_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentTimeFormat_hourMinuteSecond_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_timeFormat_hourMinuteSecond'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_timeFormat_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('timeFormat: 1')
-        done()
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_timeFormat_hourMinuteSecond'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_timeFormat_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('timeFormat: 1');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentTimeFormat_hourMinuteSecond error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentTimeFormat_hourMinuteSecond_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })

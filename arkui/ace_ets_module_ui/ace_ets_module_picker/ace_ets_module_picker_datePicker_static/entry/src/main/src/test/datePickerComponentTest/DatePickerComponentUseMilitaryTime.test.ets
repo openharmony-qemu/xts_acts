@@ -35,7 +35,7 @@ export default function DatePickerComponentUseMilitaryTimeTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime',
       }
@@ -51,60 +51,61 @@ export default function DatePickerComponentUseMilitaryTimeTest() {
       } catch (err) {
         console.error('DatePickerComponentUseMilitaryTimeTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentUseMilitaryTimeTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentUseMilitaryTimeTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_USEMILITARYTIME_0100
-     * @tc.name DatePickerComponentUseMilitaryTime_default
+     * @tc.name DatePickerComponentUseMilitaryTime_default_0100
      * @tc.desc Verify DatePickerComponent default useMilitaryTime text content contains 'useMilitaryTime: false'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentUseMilitaryTime_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentUseMilitaryTime_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentUseMilitaryTime_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentUseMilitaryTime_default_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_useMilitaryTime_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('useMilitaryTime: false')
-        done()
+        let strJson = inspector.getInspectorByKey('text_useMilitaryTime_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('useMilitaryTime: false');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentUseMilitaryTime_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentUseMilitaryTime_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_USEMILITARYTIME_0200
-     * @tc.name DatePickerComponentUseMilitaryTime_true
+     * @tc.name DatePickerComponentUseMilitaryTime_true_0200
      * @tc.desc Verify DatePickerComponent useMilitaryTime changes to true after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentUseMilitaryTime_true', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentUseMilitaryTime_true START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentUseMilitaryTime_true_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentUseMilitaryTime_true_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_military_true'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_useMilitaryTime_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('useMilitaryTime: true')
-        done()
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_military_true'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_useMilitaryTime_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('useMilitaryTime: true');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentUseMilitaryTime_true error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentUseMilitaryTime_true_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })

@@ -35,7 +35,7 @@ export default function DatePickerComponentEnableHapticFeedbackTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentEnableHapticFeedback',
       }
@@ -51,60 +51,61 @@ export default function DatePickerComponentEnableHapticFeedbackTest() {
       } catch (err) {
         console.error('DatePickerComponentEnableHapticFeedbackTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentEnableHapticFeedbackTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentEnableHapticFeedbackTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_0100
-     * @tc.name DatePickerComponentEnableHapticFeedback_default
+     * @tc.name DatePickerComponentEnableHapticFeedback_default_0100
      * @tc.desc Verify DatePickerComponent default enableHapticFeedback text content contains 'enableHapticFeedback: true'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentEnableHapticFeedback_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentEnableHapticFeedback_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentEnableHapticFeedback_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentEnableHapticFeedback_default_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_enableHapticFeedback_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('enableHapticFeedback: true')
-        done()
+        let strJson = inspector.getInspectorByKey('text_enableHapticFeedback_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('enableHapticFeedback: true');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentEnableHapticFeedback_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentEnableHapticFeedback_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ENABLEHAPTICFEEDBACK_0200
-     * @tc.name DatePickerComponentEnableHapticFeedback_false
+     * @tc.name DatePickerComponentEnableHapticFeedback_false_0200
      * @tc.desc Verify DatePickerComponent enableHapticFeedback changes to false after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentEnableHapticFeedback_false', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentEnableHapticFeedback_false START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentEnableHapticFeedback_false_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentEnableHapticFeedback_false_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_haptic_false'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_enableHapticFeedback_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('enableHapticFeedback: false')
-        done()
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_haptic_false'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_enableHapticFeedback_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('enableHapticFeedback: false');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentEnableHapticFeedback_false error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentEnableHapticFeedback_false_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })

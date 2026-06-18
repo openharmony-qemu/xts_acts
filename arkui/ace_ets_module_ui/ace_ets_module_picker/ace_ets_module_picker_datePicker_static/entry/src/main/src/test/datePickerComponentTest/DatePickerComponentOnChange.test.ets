@@ -18,7 +18,7 @@ import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '.
 import router from '@ohos.router'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import Utils from '../../../ets/MainAbility/common/Utils'
-import { Driver, ON, Component } from '@ohos.UiTest'
+import { Driver, ON, Component, Rect } from '@ohos.UiTest'
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -35,7 +35,7 @@ export default function DatePickerComponentOnChangeTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentOnChange',
       }
@@ -51,45 +51,47 @@ export default function DatePickerComponentOnChangeTest() {
       } catch (err) {
         console.error('DatePickerComponentOnChangeTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentOnChangeTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentOnChangeTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_ONCHANGE_0100
-     * @tc.name DatePickerComponentOnChange_trigger
+     * @tc.name DatePickerComponentOnChange_trigger_0100
      * @tc.desc Verify DatePickerComponent onChange callback triggered after swipe
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentOnChange_trigger', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentOnChange_trigger START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentOnChange_trigger_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentOnChange_trigger_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_onChange_triggered')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('onChangeTriggered: false')
+        let driver = await Driver.create();
+        let strJson = inspector.getInspectorByKey('text_onChange_triggered');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('onChangeTriggered: false');
 
-        let datePickerComp: Component = await driver.findComponent(ON.id('datePickerComponent_onChange'))
-        let bounds = await datePickerComp.getBounds()
-        let centerX: number = (bounds.left + bounds.right) / 2
-        let centerY: number = (bounds.top + bounds.bottom) / 2
-        await driver.swipe(centerX, centerY, centerX, centerY + 50, 600)
-        await CommonFunc.sleep(SLEEP_TIME_L)
+        let datePickerComp = await driver.findComponent(ON.id('datePickerComponent_onChange'));
+        let bounds = await (datePickerComp?.getBounds() as Promise<Rect>);
+        let centerX = Math.round(bounds.left + (bounds.right - bounds.left) / 2).toInt();
+        let centerY = Math.round(bounds.top + (bounds.bottom - bounds.top) / 2).toInt();
+        await driver.swipe(centerX, centerY, centerX, centerY + 50, 600);
+        await CommonFunc.sleep(SLEEP_TIME_L);
 
-        strJson = inspector.getInspectorByKey('text_onChange_triggered')
-        obj = JSON.parseJsonElement(strJson)
-        content = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('onChangeTriggered: true')
-        done()
+        let strJson1 = inspector.getInspectorByKey('text_onChange_triggered');
+        let obj1 = JSON.parseJsonElement(strJson1);
+        let content1 = obj1.getElement('$attrs').getString('content');
+        expect(content1).assertContain('onChangeTriggered: true');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentOnChange_trigger error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentOnChange_trigger_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })

@@ -35,7 +35,7 @@ export default function DatePickerComponentConstructorTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentConstructor',
       }
@@ -51,10 +51,12 @@ export default function DatePickerComponentConstructorTest() {
       } catch (err) {
         console.error('DatePickerComponentConstructorTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentConstructorTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentConstructorTest after each called");
     })
 
     /**
@@ -63,21 +65,20 @@ export default function DatePickerComponentConstructorTest() {
      * @tc.desc Verify default created DatePickerComponent text content contains 'DatePickerComponent_default_created'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentConstructor_default_created_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentConstructor_default_created_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentConstructor_default_created_0100 START')
-      const driver: Driver = Driver.create()
       try {
-        let strJson = inspector.getInspectorByKey('text_default_created')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('DatePickerComponent_default_created')
-        done()
+        let strJson = inspector.getInspectorByKey('text_default_created');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('DatePickerComponent_default_created');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentConstructor_default_created_0100 error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentConstructor_default_created_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
@@ -87,21 +88,20 @@ export default function DatePickerComponentConstructorTest() {
      * @tc.desc Verify explicit created DatePickerComponent text content contains 'DatePickerComponent_explicit_created'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL0
+     * @tc.level LEVEL2
      */
-    it('DatePickerComponentConstructor_explicit_created_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DatePickerComponentConstructor_explicit_created_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DatePickerComponentConstructor_explicit_created_0200 START')
-      const driver: Driver = Driver.create()
       try {
-        let strJson = inspector.getInspectorByKey('text_explicit_created')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('DatePickerComponent_explicit_created')
-        done()
+        let strJson = inspector.getInspectorByKey('text_explicit_created');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('DatePickerComponent_explicit_created');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentConstructor_explicit_created_0200 error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentConstructor_explicit_created_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })
