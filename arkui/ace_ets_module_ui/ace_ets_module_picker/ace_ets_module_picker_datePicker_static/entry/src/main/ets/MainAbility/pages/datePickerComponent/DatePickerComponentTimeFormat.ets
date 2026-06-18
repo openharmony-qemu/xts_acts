@@ -1,5 +1,5 @@
 'use static'
-/*
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Button, Text, Flex, FlexWrap, FlexAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, TimeFormat } from '@kit.ArkUI'
+
+import {
+  Entry,
+  Component,
+  State,
+  Column,
+  Flex,
+  FlexWrap,
+  FlexAlign,
+  Button,
+  Text,
+  ColumnOptions,
+} from '@kit.ArkUI';
+
+import {
+  DatePickerComponent,
+  DatePickerComponentOptions,
+  DisplayMode,
+  DateMode,
+  TimeFormat,
+  DatePickerComponentResult,
+  CommonOptions,
+  DateOptions,
+  TimeOptions
+} from '@ohos.arkui.advanced.DatePickerComponent';
 
 @Entry
 @Component
 struct DatePickerComponentTimeFormat {
-  @State currentTimeFormat: TimeFormat = TimeFormat.HOUR_MINUTE
-
-  aboutToAppear(): void {
-    const routerInstance = this.getUIContext().getRouter()
-    AppStorage.setOrCreate<Router>('router', routerInstance)
-  }
+  @State currentTimeFormat: TimeFormat = TimeFormat.HOUR_MINUTE;
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 20 } as ColumnOptions) {
       DatePickerComponent({
         options: {
           displayMode: DisplayMode.TIME,
@@ -47,14 +62,14 @@ struct DatePickerComponentTimeFormat {
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
         Button('HOUR_MINUTE')
           .onClick(() => {
-            this.currentTimeFormat = TimeFormat.HOUR_MINUTE
+            this.currentTimeFormat = TimeFormat.HOUR_MINUTE;
           })
           .id('button_timeFormat_hourMinute')
           .margin({ right: 10 })
 
         Button('HOUR_MINUTE_SECOND')
           .onClick(() => {
-            this.currentTimeFormat = TimeFormat.HOUR_MINUTE_SECOND
+            this.currentTimeFormat = TimeFormat.HOUR_MINUTE_SECOND;
           })
           .id('button_timeFormat_hourMinuteSecond')
           .margin({ right: 10 })
