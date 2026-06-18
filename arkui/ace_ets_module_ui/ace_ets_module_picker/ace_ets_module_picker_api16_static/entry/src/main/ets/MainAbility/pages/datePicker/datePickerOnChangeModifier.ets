@@ -70,7 +70,7 @@ struct TimePickerPage {
         .attributeModifier(this.modifier as DatePickerModifier)
         .attributeModifier(this.modifier1 as DatePickerModifier)
 
-      Text(this.onChangeOff.toString()).key('onChangeOff')
+      Text(this.onChangeOff.toString()).key('datePickerOnChangeModifier_onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onDateChangeOff')
     }
   }

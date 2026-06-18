@@ -90,7 +90,7 @@ struct TimePickerPage {
         .useMilitaryTime(this.isMilitaryTime)
         .attributeModifier(this.modifier as TimePickerModifier)
 
-      Text(this.onChangeOff.toString()).key('onChangeOff')
+      Text(this.onChangeOff.toString()).key('timePickerOnChangeModifier_onChangeOff')
     }
   }
 }
