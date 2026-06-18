@@ -1,5 +1,5 @@
 'use static'
-/*
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Text } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, DateMode, DatePickerComponentResult } from '@kit.ArkUI'
+
+import {
+  Entry,
+  Component,
+  State,
+  Column,
+  Text,
+  ColumnOptions,
+} from '@kit.ArkUI';
+
+import {
+  DatePickerComponent,
+  DatePickerComponentOptions,
+  DisplayMode,
+  DateMode,
+  TimeFormat,
+  DatePickerComponentResult,
+  CommonOptions,
+  DateOptions,
+  TimeOptions
+} from '@ohos.arkui.advanced.DatePickerComponent';
 
 @Entry
 @Component
 struct DatePickerComponentOnScrollStop {
-  @State onScrollStopResult: string = ''
-  @State onScrollStopTriggered: boolean = false
-
-  aboutToAppear(): void {
-    const routerInstance = this.getUIContext().getRouter()
-    AppStorage.setOrCreate<Router>('router', routerInstance)
-  }
+  @State onScrollStopResult: string = '';
+  @State onScrollStopTriggered: boolean = false;
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 20 } as ColumnOptions) {
       DatePickerComponent({
         options: {
           displayMode: DisplayMode.DATE,
@@ -41,8 +52,8 @@ struct DatePickerComponentOnScrollStop {
             end: new Date('2030-12-31'),
             selected: new Date('2025-06-01'),
             onScrollStop: (result: DatePickerComponentResult) => {
-              this.onScrollStopTriggered = true
-              this.onScrollStopResult = `year:${result.year},month:${result.month},day:${result.day}`
+              this.onScrollStopTriggered = true;
+              this.onScrollStopResult = `year:${result.year},month:${result.month},day:${result.day}`;
             }
           }
         }
