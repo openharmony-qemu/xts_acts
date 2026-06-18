@@ -1,5 +1,5 @@
 'use static'
-/*
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Button, Text, Flex, FlexWrap, FlexAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, DateMode } from '@kit.ArkUI'
+
+import {
+  Entry,
+  Component,
+  State,
+  Column,
+  Flex,
+  FlexWrap,
+  FlexAlign,
+  Button,
+  Text,
+  ColumnOptions,
+} from '@kit.ArkUI';
+
+import {
+  DatePickerComponent,
+  DatePickerComponentOptions,
+  DisplayMode,
+  DateMode,
+  TimeFormat,
+  DatePickerComponentResult,
+  CommonOptions,
+  DateOptions,
+  TimeOptions
+} from '@ohos.arkui.advanced.DatePickerComponent';
 
 @Entry
 @Component
 struct DatePickerComponentDisplayMode {
-  @State currentDisplayMode: DisplayMode = DisplayMode.DATE
-
-  aboutToAppear(): void {
-    const routerInstance = this.getUIContext().getRouter()
-    AppStorage.setOrCreate<Router>('router', routerInstance)
-  }
+  @State currentDisplayMode: DisplayMode = DisplayMode.DATE;
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 20 } as ColumnOptions) {
       DatePickerComponent({
         options: {
           displayMode: this.currentDisplayMode,
@@ -49,14 +64,14 @@ struct DatePickerComponentDisplayMode {
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
         Button('DATE')
           .onClick(() => {
-            this.currentDisplayMode = DisplayMode.DATE
+            this.currentDisplayMode = DisplayMode.DATE;
           })
           .id('button_displayMode_date')
           .margin({ right: 10 })
 
         Button('TIME')
           .onClick(() => {
-            this.currentDisplayMode = DisplayMode.TIME
+            this.currentDisplayMode = DisplayMode.TIME;
           })
           .id('button_displayMode_time')
           .margin({ right: 10 })
