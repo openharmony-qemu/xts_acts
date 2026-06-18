@@ -515,7 +515,127 @@ export default function ActsCellularDataAbnormalTest() {
         done();
         console.info(`${caseName}---End`);
       }
-    });    
+    });
+
+    /**
+     * @tc.name   testTelephonyDataSetPreferredApn_0100
+     * @tc.number SUB_Telephony_Data_SetPreferredApn_0100
+     * @tc.desc   setPreferredApn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataSetPreferredApn_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
+      let caseName: string = 'testTelephonyDataSetPreferredApn_0100';
+      console.info(`${caseName} test start `);
+      try {
+        await data.setPreferredApn(1).then((result:boolean)=>{
+          console.log(`${caseName}  setPreferredApn success `);
+          ExpectTrue(result === true);
+          done();
+        }).catch((err: BusinessError )=>{
+          console.log(`${caseName} catch error in`,err);
+          ExpectTrue(false);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} fall`,JSON.stringify(error));
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });;
+
+    /**
+     * @tc.name   testTelephonyDataQueryAllApns_0100
+     * @tc.number SUB_Telephony_Data_QueryAllApns_0100
+     * @tc.desc   QueryAllApns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyDataQueryAllApns_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testTelephonyDataQueryAllApns_0100';
+      console.info(`${caseName} test start `);
+      try {
+        await data.queryAllApns().then((apnInfos: Array<data.ApnInfo>)=>{
+          console.log(`${caseName}  get queryAllApns success `);
+          ExpectTrue(apnInfos.length > 0);
+          done();
+        }).catch((err: BusinessError )=>{
+          console.log(`${caseName} catch error in`,err)
+          ExpectTrue(false);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} fall`,JSON.stringify(error));
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataQueryApnIds_0100
+     * @tc.number SUB_Telephony_Data_QueryApnIds_0100
+     * @tc.desc   QueryApnIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyDataQueryApnIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testTelephonyDataQueryApnIds_0100';
+      console.info(`${caseName} test start `);
+      try {
+        await data.queryAllApns().then(async (apnInfos: Array<data.ApnInfo>)=>{
+          console.log(`${caseName}  get queryAllApns success `);
+          let result: Array<number> = await data.queryApnIds(apnInfos[1]);
+          ExpectTrue(result.length > 0);
+          done();
+        }).catch((err: BusinessError )=>{
+          console.log(`${caseName} catch error in`,err)
+          ExpectTrue(false);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} fall`,JSON.stringify(error));
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataQueryApnIds_0200
+     * @tc.number SUB_Telephony_Data_QueryApnIds_0200
+     * @tc.desc   QueryApnIds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyDataQueryApnIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testTelephonyDataQueryApnIds_0200';
+      console.info(`${caseName} test start `);
+      try {
+        await data.queryAllApns().then(async (apnInfos: Array<data.ApnInfo>)=>{
+          console.log(`${caseName}  get queryAllApns success `);
+          let apnInfos[0].apn = 'invalidApn';
+          let result: Array<number> = await data.queryApnIds(apnInfos[0]);
+          ExpectTrue(result.length === 0);
+          done();
+        }).catch((err: BusinessError )=>{
+          console.log(`${caseName} catch error in`,err)
+          ExpectTrue(false);
+          done();
+        })
+      } catch (error) {
+        console.info(`${caseName} fall`,JSON.stringify(error));
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
   });
 }
 
