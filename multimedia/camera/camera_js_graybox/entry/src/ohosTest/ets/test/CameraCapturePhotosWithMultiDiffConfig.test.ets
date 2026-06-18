@@ -26,6 +26,7 @@ import {
   offCaptureReady,
   getHelper,
   onPreviewOutputFrameStart,
+  waitPreviewOutputFrameStart,
   offPreviewOutputFrameStart,
   expectEqualPhotoCount,
   getAllPhotoAssetsCount,
