@@ -342,27 +342,21 @@ export default function ArrayForEachTest(): void {
     it('testArrayForEach013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createLargeNumberArray(10000);
       let forEachCount = 0;
-      let start1 = Date.now();
       arr.forEach((v: number): void => {
         if (v >= 0) {
           forEachCount++;
         }
       });
-      let end1 = Date.now();
 
       let forCount = 0;
-      let start2 = Date.now();
       for (let i: int = 0; i < arr.length; i++) {
         let value = arr[i];
         if (value >= 0) {
           forCount++;
         }
       }
-      let end2 = Date.now();
       expect(forEachCount).assertEqual(10000);
       expect(forCount).assertEqual(10000);
-      expect(end1 >= start1).assertTrue();
-      expect(end2 >= start2).assertTrue();
     });
 
     /**
@@ -643,7 +637,6 @@ export default function ArrayForEachTest(): void {
       let logged: Array<string> = new Array<string>();
       arr.forEach((v: number): void => {
         let line = 'Value: ' + v.toString();
-        console.info(line);
         logged.push(line);
       });
       expect(logged.length).assertEqual(3);

@@ -520,7 +520,6 @@ export default function ArrayToStringTest(): void {
     it('testArrayToString029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const output = arr.toString();
-      console.info(output);
       expect(output).assertEqual('1,2,3');
     });
 
