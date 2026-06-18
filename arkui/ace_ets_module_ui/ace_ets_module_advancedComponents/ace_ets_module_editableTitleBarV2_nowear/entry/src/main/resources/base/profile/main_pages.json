@@ -1,0 +1,7 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/editableTitleBarV2/EditableTitleBarV2Page",
+    "MainAbility/pages/editableTitleBarV2/EditableTitleBarV2Page02"
+  ]
+}
