@@ -21,6 +21,7 @@ import setBlanklessLoadingWithParamsTest from "./SetBlanklessLoadingWithParams.t
 import setBlanklessLoadingCacheCapacityTest from "./SetBlanklessLoadingCacheCapacity.test"
 import ndkBlanklessInfoWithKeyTest from "./NdkBlanklessInfoWithKey.test"
 import abilityTest from './Ability.test';
+import ExecuteAIPageCommandTest from './ExecuteAIPageCommand.test'
 
 export default function testsuite() {
   precompileJavaScript()
@@ -32,4 +33,5 @@ export default function testsuite() {
   setBlanklessLoadingWithParamsTest()
   setBlanklessLoadingCacheCapacityTest()
   ndkBlanklessInfoWithKeyTest()
+  ExecuteAIPageCommandTest()
 }

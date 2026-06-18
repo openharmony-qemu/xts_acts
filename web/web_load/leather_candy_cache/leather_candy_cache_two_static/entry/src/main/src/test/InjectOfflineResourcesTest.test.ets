@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function InjectOfflineResourcesTest() {
+export default function InjectOfflineResourcesTest() : void{
 
   describe('injectOfflineResourcesTest', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -88,14 +88,10 @@ export default function InjectOfflineResourcesTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testOfflineResourceType001", 10)
         await Utils.msSleep(500);
-        let num: byte = 3
-        Utils.registerEvent("testMODULE_JS", Type.of(num) + ' ' + num, 20003, done);
-        num = 2
-        Utils.registerEvent("testCLASSIC_JS", Type.of(num) + ' ' + num, 20004, done);
-        num = 1
-        Utils.registerEvent("testCSS", Type.of(num) + ' ' + num, 20005, done);
-        num = 0
-        Utils.registerEvent("testIMAGE", Type.of(num) + ' ' + num, 20006, done);
+        Utils.registerEvent("testMODULE_JS", "int 3", 20003, done);
+        Utils.registerEvent("testCLASSIC_JS", "int 2", 20004, done);
+        Utils.registerEvent("testCSS", "int 1", 20005, done);
+        Utils.registerEvent("testIMAGE", "int 0", 20006, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
         await Utils.msSleep(4000);

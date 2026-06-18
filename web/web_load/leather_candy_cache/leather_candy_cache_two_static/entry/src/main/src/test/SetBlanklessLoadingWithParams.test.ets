@@ -23,9 +23,10 @@ import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
 let testAbilityContext:common.UIAbilityContext;
 
-export default function SetBlanklessLoadingWithParams() {
+export default function SetBlanklessLoadingWithParams() : void{
   describe('SetBlanklessLoadingWithParams', (): void => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000)
