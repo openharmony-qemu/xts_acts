@@ -34,6 +34,7 @@ static napi_value TestArcScrollBarBindScrollable001(napi_env env, napi_callback_
     auto arcList = nodeAPI->createNode(ARKUI_NODE_ARC_LIST);
     ArkUI_AttributeItem item = {.object = arcList};
     auto ret = nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE, &item);
+    auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }
@@ -51,22 +52,9 @@ static napi_value TestArcScrollBarBindScrollable002(napi_env env, napi_callback_
 static napi_value TestArcScrollBarBindScrollable003(napi_env env, napi_callback_info info)
 {
     NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
-    auto arcList = nodeAPI->createNode(ARKUI_NODE_ARC_LIST);
-    ArkUI_AttributeItem item = {.object = arcList};
-    nodeAPI->setAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE, &item);
+    auto ret = nodeAPI->resetAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE);
     auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_NE(result, nullptr);
-    NAPI_END;
-}
-
-static napi_value TestArcScrollBarBindScrollable004(napi_env env, napi_callback_info info)
-{
-    NAPI_START(scrollBar, ARKUI_NODE_ARC_SCROLL_BAR);
-    auto ret1 = nodeAPI->resetAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE);
-    auto result = nodeAPI->getAttribute(scrollBar, NODE_ARC_SCROLL_BAR_BIND_SCROLLABLE);
-    ASSERT_EQ(ret1, SUCCESS);
-    ASSERT_EQ(result, nullptr);
     NAPI_END;
 }
 

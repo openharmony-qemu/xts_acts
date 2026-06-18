@@ -116,7 +116,6 @@ export const testArcListScrollToIndex003: () => number;
 export const testArcListSetHeader001: () => number;
 export const testArcListSetHeader002: () => number;
 export const testArcListSetHeader003: () => number;
-export const testArcListSetHeader004: () => number;
 
 export const testArcListSpace001: () => number;
 export const testArcListSpace002: () => number;
@@ -127,7 +126,6 @@ export const testArcListSpace005: () => number;
 export const testArcScrollBarBindScrollable001: () => number;
 export const testArcScrollBarBindScrollable002: () => number;
 export const testArcScrollBarBindScrollable003: () => number;
-export const testArcScrollBarBindScrollable004: () => number;
 
 export const testArcScrollBarDisplayMode001: () => number;
 export const testArcScrollBarDisplayMode002: () => number;

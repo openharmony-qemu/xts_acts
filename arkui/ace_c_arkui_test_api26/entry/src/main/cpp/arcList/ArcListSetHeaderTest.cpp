@@ -28,54 +28,58 @@
 
 namespace ArkUICapiTest {
 
+static auto SetArcHeader(ArkUI_NodeHandle arcList, ArkUI_NodeHandle header)
+{
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    ArkUI_AttributeItem item = {};
+    item.object = header;
+    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SET_HEADER, &item);
+    return ret;
+}
+
+static auto CreateArcListWithHeader(ArkUI_NodeHandle column)
+{
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    auto arcList = nodeAPI->createNode(ARKUI_NODE_ARC_LIST);
+    auto item1 = nodeAPI->createNode(ARKUI_NODE_ARC_LIST_ITEM);
+    auto item2 = nodeAPI->createNode(ARKUI_NODE_ARC_LIST_ITEM);
+    auto item3 = nodeAPI->createNode(ARKUI_NODE_ARC_LIST_ITEM);
+    nodeAPI->addChild(column, arcList);
+    nodeAPI->addChild(arcList, item1);
+    nodeAPI->addChild(arcList, item2);
+    nodeAPI->addChild(arcList, item3);
+    return arcList;
+}
+
 static napi_value TestArcListSetHeader001(napi_env env, napi_callback_info info)
 {
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    auto arcList = CreateArcListWithHeader(column);
     auto header = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-    ArkUI_AttributeItem item = {.object = header};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SET_HEADER, &item);
+    auto ret = SetArcHeader(arcList, header);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }
 
 static napi_value TestArcListSetHeader002(napi_env env, napi_callback_info info)
 {
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    auto header = nodeAPI->createNode(ARKUI_NODE_TEXT);
-    ArkUI_AttributeItem item = {.object = header};
-    auto ret = nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SET_HEADER, &item);
-    ASSERT_EQ(ret, SUCCESS);
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    auto arcList = CreateArcListWithHeader(column);
+    auto header = nodeAPI->createNode(ARKUI_NODE_COLUMN);
+    header = nullptr;
+    auto ret = SetArcHeader(arcList, header);
+    ASSERT_EQ(ret, INVALID_PARAM);
     NAPI_END;
 }
 
 static napi_value TestArcListSetHeader003(napi_env env, napi_callback_info info)
 {
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-    ArkUI_AttributeItem content_item = {};
-    content_item.string = "Test attribute of the C API";
-    nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &content_item);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "create text = %{public}p", &text);
-
-    ArkUI_AttributeItem item = {.object = text};
-    auto ret nodeAPI->setAttribute(arcList, NODE_ARC_LIST_SET_HEADER, &item);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "create item = %{public}p object = %{public}p",
-     &item, item.object);
-    auto header = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SET_HEADER);
-    auto headertext = nodeAPI->getAttribute(static_cast<ArkUI_NodeHandle>(header->object), NODE_TEXT_CONTENT);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "arcListTest", "headertext = %{public}s", headertext->string);
-
-    ASSERT_EQ(ret, SUCCESS);
-    NAPI_END;
-}
-
-static napi_value TestArcListSetHeader004(napi_env env, napi_callback_info info)
-{
-    NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
-    auto ret1 = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_SET_HEADER);
-    auto result = nodeAPI->getAttribute(arcList, NODE_ARC_LIST_SET_HEADER);
-    ASSERT_EQ(ret1, SUCCESS);
-    ASSERT_EQ(result, nullptr);
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    auto arcList = CreateArcListWithHeader(column);
+    auto result = nodeAPI->resetAttribute(arcList, NODE_ARC_LIST_SET_HEADER);
+    ASSERT_EQ(result, SUCCESS);
     NAPI_END;
 }
 

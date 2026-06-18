@@ -38,7 +38,7 @@ static auto SetArcChildrenMainSize(ArkUI_NodeHandle arcList, ArkUI_ListChildrenM
     return ret;
 }
 
-static ani_double TestArcListChildrenMainSize001(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize001(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -49,7 +49,7 @@ static ani_double TestArcListChildrenMainSize001(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize002(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize002(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = nullptr;
@@ -60,7 +60,7 @@ static ani_double TestArcListChildrenMainSize002(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize003(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize003(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -72,7 +72,7 @@ static ani_double TestArcListChildrenMainSize003(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize004(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize004(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -89,7 +89,7 @@ static ani_double TestArcListChildrenMainSize004(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize005(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize005(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -101,7 +101,7 @@ static ani_double TestArcListChildrenMainSize005(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize006(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize006(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -113,7 +113,7 @@ static ani_double TestArcListChildrenMainSize006(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize007(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize007(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -125,7 +125,7 @@ static ani_double TestArcListChildrenMainSize007(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize008(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize008(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -142,7 +142,7 @@ static ani_double TestArcListChildrenMainSize008(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize009(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize009(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -159,7 +159,7 @@ static ani_double TestArcListChildrenMainSize009(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize010(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize010(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();
@@ -176,7 +176,7 @@ static ani_double TestArcListChildrenMainSize010(ani_env* env, ani_object info)
     NAPI_END;
 }
 
-static ani_double TestArcListChildrenMainSize011(ani_env* env, ani_object info)
+static napi_value TestArcListChildrenMainSize011(napi_env env, napi_callback_info info)
 {
     NAPI_START(arcList, ARKUI_NODE_ARC_LIST);
     auto obj = OH_ArkUI_ListChildrenMainSizeOption_Create();

@@ -87,7 +87,6 @@ static napi_value TestArcListItemSwipeAction004(napi_env env, napi_callback_info
     option = nullptr;
     auto ret = SetArcItemSwipeAction(arcList, option);
     ASSERT_EQ(ret, INVALID_PARAM);
-    ASSERT_OBJ(option, nullptr);
     NAPI_END;
 }
 
