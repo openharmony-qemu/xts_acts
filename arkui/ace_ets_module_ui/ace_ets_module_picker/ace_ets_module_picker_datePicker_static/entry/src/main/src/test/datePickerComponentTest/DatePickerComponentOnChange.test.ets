@@ -81,7 +81,7 @@ export default function DatePickerComponentOnChangeTest() {
         let centerX = Math.round(bounds.left + (bounds.right - bounds.left) / 2).toInt();
         let centerY = Math.round(bounds.top + (bounds.bottom - bounds.top) / 2).toInt();
         await driver.swipe(centerX, centerY, centerX, centerY + 50, 600);
-        await CommonFunc.sleep(SLEEP_TIME_L);
+        await CommonFunc.sleep(SLEEP_TIME);
 
         let strJson1 = inspector.getInspectorByKey('text_onChange_triggered');
         let obj1 = JSON.parseJsonElement(strJson1);
