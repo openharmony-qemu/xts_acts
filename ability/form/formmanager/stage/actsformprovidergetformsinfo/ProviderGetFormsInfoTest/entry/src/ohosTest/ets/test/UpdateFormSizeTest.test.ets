@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { beforeAll, beforeEach, afterEach, describe, expect, it } from '@ohos/hy
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import hilog from '@ohos.hilog';
 
 interface onFormEvent {
     events: string[];
@@ -25,6 +26,8 @@ interface onFormEvent {
 
 const INTERVAL_TIME = 2500;
 const DELEGATOR: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+const COMMON_TAG: string = 'updateFormSize';
+const DOMAIN: number = 0xF811;
 
 let onUpdateSizeFormEvent: onFormEvent = {
     events: ["FMS_FormOnUpdateSize_commonEvent"],
@@ -40,7 +43,7 @@ let subscriberOnUpdateSize: CommonEventManager.CommonEventSubscriber;
 let subscriberonFormLocationChanged: CommonEventManager.CommonEventSubscriber;
 
 const unsubscribeCallback = (tcNumber: string)  => {
-    console.info(`====>${tcNumber} unsubscribeCallback====>`);
+    hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${tcNumber} unsubscribeCallback`);
 }
 
 let options:CommonEventManager.CommonEventPublishData = {
@@ -79,20 +82,21 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>UpdateFormSize_0100 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501001);
             
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -108,11 +112,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -124,19 +128,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -152,11 +157,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -168,19 +173,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -196,11 +202,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -212,19 +218,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501001);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -240,11 +247,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -256,19 +263,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(0);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -283,11 +291,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -299,19 +307,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501012);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -326,11 +335,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 0,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -342,19 +351,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(16501012);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -369,11 +379,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 5,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -385,19 +395,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onUpdateSizeCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 onUpdateSizeCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onUpdateSizeCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(401);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberOnUpdateSize, onUpdateSizeCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -413,11 +424,11 @@ export default function updateFormSizeTest() {
                 "newDimension" : 3,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
 
     /**
@@ -429,19 +440,20 @@ export default function updateFormSizeTest() {
      * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100`, 0, async (done:Function) => {
-        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 start`);
+        const TAG: string = 'SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100';
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
         let onFormLocationChangedCallBack = (_:BusinessError, data: CommonEventManager.CommonEventPublishData) => {
-            console.info("!!!====>SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 onFormLocationChangedCallBack data:====>" + JSON.stringify(data));
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} onFormLocationChangedCallBack data: ${JSON.stringify(data)}`);
             expect(data.code).assertEqual(0);
             commonEvent.publish(finishForm_Event, data, async (err) => {
-                console.info('SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 publish' + JSON.stringify(err));
+                hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} publish ${JSON.stringify(err)}`);
                 await sleep(2000);
                 done();
             });
         }
 
         commonEvent.subscribe(subscriberonFormLocationChanged, onFormLocationChangedCallBack);
-        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbility start`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility start`);
         await DELEGATOR.startAbility({
             bundleName: "com.example.formsystemhost",
             abilityName: "EntryAbility",
@@ -455,11 +467,11 @@ export default function updateFormSizeTest() {
                 "formLocation" : 0,
             }
         }).then(() => {
-            console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbilityhost end`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost end`);
         }).catch((err: BusinessError) => {
-            console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbilityhost error: ${JSON.stringify(err)}`);
+            hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbilityhost error: ${JSON.stringify(err)}`);
         });
-        console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 startAbility end`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} startAbility end`);
     });
   })
 }
