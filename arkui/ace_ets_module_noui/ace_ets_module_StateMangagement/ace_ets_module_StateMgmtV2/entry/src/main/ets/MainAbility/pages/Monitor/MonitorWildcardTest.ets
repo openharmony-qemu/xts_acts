@@ -104,7 +104,6 @@ struct MonitorWildcardTest {
         .id('callback_count_text')
         .height('3%')
 
-      //Divider().margin({ top: 5, bottom: 5 })
 
       Text('Array Wildcard Test')
         .height('3%')
@@ -130,8 +129,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      //Divider().margin({ top: 5, bottom: 5 })
-
       Text('Map Wildcard Test')
         .height('3%')
         .fontWeight(FontWeight.Medium)
@@ -156,7 +153,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      //Divider().margin({ top: 5, bottom: 5 })
 
       Text('Set Wildcard Test')
         .height('3%')
@@ -182,7 +178,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      //Divider().margin({ top: 5, bottom: 5 })
 
       Text('Date Wildcard Test')
         .height('3%')
@@ -208,7 +203,6 @@ struct MonitorWildcardTest {
           })
       }
 
-      //Divider().margin({ top: 5, bottom: 5 })
 
       Text('Person Wildcard Test')
         .height('3%')
