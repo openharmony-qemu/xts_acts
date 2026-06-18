@@ -854,9 +854,16 @@ export default function IsAsyncFunctionTest() {
      * @tc.type Function
      * @tc.level Level1
      */
-    it('testIsAsyncFunctionGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+it('testIsAsyncFunctionGetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      class TestGetterClass {
+        private _value: number = 10;
+        get value(): number {
+          return this._value;
+        }
+      }
+      const instance = new TestGetterClass();
       const type = new util.types();
-      expect(true).assertTrue();
+      expect(type.isAsyncFunction(instance.value)).assertFalse();
     });
 
     /**
@@ -867,9 +874,16 @@ export default function IsAsyncFunctionTest() {
      * @tc.type Function
      * @tc.level Level1
      */
-    it('testIsAsyncFunctionSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+it('testIsAsyncFunctionSetter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      class TestSetterClass {
+        private _value: number = 10;
+        set value(val: number) {
+          this._value = val;
+        }
+      }
+      const instance = new TestSetterClass();
       const type = new util.types();
-      expect(true).assertTrue();
+      expect(type.isAsyncFunction(instance.value)).assertFalse();
     });
 
     /**

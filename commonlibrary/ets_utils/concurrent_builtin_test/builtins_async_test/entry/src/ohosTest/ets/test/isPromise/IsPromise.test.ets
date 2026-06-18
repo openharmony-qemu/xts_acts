@@ -1499,7 +1499,9 @@ export default function isPromiseTest() {
 
         const instance: TestClassWithGetSet = new TestClassWithGetSet();
         instance.id = 10;
-        expect(true).assertTrue();
+        const type: util.types = new util.types();
+        const result: boolean = type.isPromise(instance.methodAfterGetSet());
+        expect(result).assertTrue();
 
         console.info(`${caseName} test end`);
         done();
