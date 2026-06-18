@@ -9,6 +9,7 @@ import asyncPerformanceTest from './async/AsyncPerformanceTest.test';
 import asyncRealWorldTest from './async/AsyncRealWorldTest.test';
 import asyncFirTest from './async/AsyncFirTest.test';
 import asyncSecTest from './async/AsyncSecTest.test';
+import IsAsyncFunctionTest from './isAsyncFunction/IsAsyncFunction.test';
 
 export default function testsuite() {
   asyncFunctionTest()
@@ -22,4 +23,5 @@ export default function testsuite() {
   asyncRealWorldTest()
   asyncFirTest()
   asyncSecTest()
+  IsAsyncFunctionTest();
 }
