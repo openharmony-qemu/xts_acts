@@ -330,22 +330,27 @@ export default function startAbilityForResultPermissionTest() {
           displayId: 0,
           windowFocused: true
         };
-
-        try {
-          await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
-            expect(data.resultCode).assertEqual(0);
-            done();
-          }).catch((err: BusinessError) => {
-            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+        if ((userAgentPC).includes('PC') || (userAgentPC).includes('Tablet')) {
+          try {
+            await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+              expect(data.resultCode).assertEqual(0);
+              done();
+            }).catch((err: BusinessError) => {
+              hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+              expect(err.code).assertEqual(201);
+              done();
+            });
+          } catch (err) {
+            hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
             expect(err.code).assertEqual(201);
             done();
-          });
-        } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
-          expect(err.code).assertEqual(201);
+          }
+      } else {
+          console.log('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0100-capability not supported');
+          expect(true).assertEqual(true);
           done();
-        }
+      }
       });
   });
 }
