@@ -1,5 +1,5 @@
 'use static'
-/*
+/**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Button, Text, Flex, FlexWrap, FlexAlign } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { Router } from '@ohos.arkui.UIContext'
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import { DatePickerComponent, DatePickerComponentOptions, DisplayMode, DateMode } from '@kit.ArkUI'
+
+import {
+  Entry,
+  Component,
+  State,
+  Column,
+  Flex,
+  FlexWrap,
+  FlexAlign,
+  Button,
+  Text,
+  ColumnOptions,
+} from '@kit.ArkUI';
+
+import {
+  DatePickerComponent,
+  DatePickerComponentOptions,
+  DisplayMode,
+  DateMode,
+  TimeFormat,
+  DatePickerComponentResult,
+  CommonOptions,
+  DateOptions,
+  TimeOptions
+} from '@ohos.arkui.advanced.DatePickerComponent';
 
 @Entry
 @Component
 struct DatePickerComponentLunar {
-  @State isLunar: boolean = false
-
-  aboutToAppear(): void {
-    const routerInstance = this.getUIContext().getRouter()
-    AppStorage.setOrCreate<Router>('router', routerInstance)
-  }
+  @State isLunar: boolean = false;
 
   build() {
-    Column({ space: 20 }) {
+    Column({ space: 20 } as ColumnOptions) {
       DatePickerComponent({
         options: {
           displayMode: DisplayMode.DATE,
@@ -47,14 +62,14 @@ struct DatePickerComponentLunar {
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.Center }) {
         Button('lunar_false')
           .onClick(() => {
-            this.isLunar = false
+            this.isLunar = false;
           })
           .id('button_lunar_false')
           .margin({ right: 10 })
 
         Button('lunar_true')
           .onClick(() => {
-            this.isLunar = true
+            this.isLunar = true;
           })
           .id('button_lunar_true')
           .margin({ right: 10 })
