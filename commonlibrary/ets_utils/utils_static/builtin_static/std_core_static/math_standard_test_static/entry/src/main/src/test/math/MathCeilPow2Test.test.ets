@@ -344,14 +344,14 @@ export default function mathCeilPow2Test(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCeilPow2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nPositive: int = 42;
-      let r1: int = Math.ceilPow2(nPositive);
-      let r2: int = Math.ceilPow2(nPositive);
-      let r3: int = Math.ceilPow2(nPositive);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let firstCallResult: int = Math.ceilPow2(nPositive);
+      let secondCallResult: int = Math.ceilPow2(nPositive);
+      let thirdCallResult: int = Math.ceilPow2(nPositive);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
 
     /**

@@ -51,9 +51,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 3;
-      let b: number = 4;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 3;
+      let rightOperand: number = 4;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(12);
     });
     /**
@@ -65,9 +65,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -3;
-      let b: number = -4;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -3;
+      let rightOperand: number = -4;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(12);
     });
     /**
@@ -79,9 +79,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -3;
-      let b: number = 4;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -3;
+      let rightOperand: number = 4;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-12);
     });
     /**
@@ -93,9 +93,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 3;
-      let b: number = -4;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 3;
+      let rightOperand: number = -4;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-12);
     });
     /**
@@ -107,9 +107,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 3.9;
-      let b: number = 4.1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 3.9;
+      let rightOperand: number = 4.1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(12);
     });
     /**
@@ -121,9 +121,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 0;
-      let b: number = 0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 0;
+      let rightOperand: number = 0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -135,9 +135,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 0;
-      let b: number = 5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 0;
+      let rightOperand: number = 5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -149,9 +149,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 5;
-      let b: number = 0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 5;
+      let rightOperand: number = 0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -163,9 +163,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 0.0 / 0.0;
-      let b: number = 5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 0.0 / 0.0;
+      let rightOperand: number = 5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -177,9 +177,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 5;
-      let b: number = 0.0 / 0.0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 5;
+      let rightOperand: number = 0.0 / 0.0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -191,9 +191,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 1.0 / 0.0;
-      let b: number = 5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 1.0 / 0.0;
+      let rightOperand: number = 5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -205,9 +205,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 5;
-      let b: number = 1.0 / 0.0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 5;
+      let rightOperand: number = 1.0 / 0.0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -219,9 +219,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -1.0 / 0.0;
-      let b: number = 5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -1.0 / 0.0;
+      let rightOperand: number = 5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -233,9 +233,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 2147483647;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 2147483647;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(2147483647);
     });
     /**
@@ -247,9 +247,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -2147483647;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -2147483647;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-2147483647);
     });
     /**
@@ -261,9 +261,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 2147483647;
-      let b: number = 0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 2147483647;
+      let rightOperand: number = 0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -275,9 +275,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -2147483647;
-      let b: number = 0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -2147483647;
+      let rightOperand: number = 0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -289,9 +289,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -1;
-      let b: number = 5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -1;
+      let rightOperand: number = 5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-5);
     });
     /**
@@ -303,9 +303,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -1;
-      let b: number = -5;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -1;
+      let rightOperand: number = -5;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(5);
     });
     /**
@@ -317,9 +317,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -1;
-      let b: number = 0;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -1;
+      let rightOperand: number = 0;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(0);
     });
     /**
@@ -331,9 +331,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 12345;
-      let b: number = 67890;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 12345;
+      let rightOperand: number = 67890;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(838102050);
     });
     /**
@@ -345,9 +345,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -3;
-      let b: number = 7;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -3;
+      let rightOperand: number = 7;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-21);
     });
     /**
@@ -359,9 +359,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 123.9;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 123.9;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(123);
     });
     /**
@@ -373,9 +373,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -456.7;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -456.7;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-456);
     });
     /**
@@ -387,9 +387,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 1;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 1;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(1);
     });
     /**
@@ -401,9 +401,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 2;
-      let b: number = 2;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 2;
+      let rightOperand: number = 2;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(4);
     });
     /**
@@ -415,9 +415,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 10;
-      let b: number = 10;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 10;
+      let rightOperand: number = 10;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(100);
     });
     /**
@@ -429,9 +429,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 100;
-      let b: number = 100;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 100;
+      let rightOperand: number = 100;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(10000);
     });
     /**
@@ -443,9 +443,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -10;
-      let b: number = 10;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -10;
+      let rightOperand: number = 10;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-100);
     });
     /**
@@ -457,9 +457,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 7;
-      let b: number = 8;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 7;
+      let rightOperand: number = 8;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(56);
     });
     /**
@@ -471,9 +471,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -7;
-      let b: number = -8;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -7;
+      let rightOperand: number = -8;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(56);
     });
     /**
@@ -485,9 +485,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 7;
-      let b: number = -8;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 7;
+      let rightOperand: number = -8;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-56);
     });
     /**
@@ -499,9 +499,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -7;
-      let b: number = 8;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -7;
+      let rightOperand: number = 8;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-56);
     });
     /**
@@ -513,9 +513,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 31;
-      let b: number = 31;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 31;
+      let rightOperand: number = 31;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(961);
     });
     /**
@@ -527,9 +527,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 127;
-      let b: number = 127;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 127;
+      let rightOperand: number = 127;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(16129);
     });
     /**
@@ -541,9 +541,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 255;
-      let b: number = 255;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 255;
+      let rightOperand: number = 255;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(65025);
     });
     /**
@@ -555,9 +555,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 1023;
-      let b: number = 1023;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 1023;
+      let rightOperand: number = 1023;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(1046529);
     });
     /**
@@ -569,9 +569,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 4095;
-      let b: number = 4095;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 4095;
+      let rightOperand: number = 4095;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(16769025);
     });
     /**
@@ -583,9 +583,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 17;
-      let b: number = 19;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 17;
+      let rightOperand: number = 19;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(323);
     });
     /**
@@ -597,9 +597,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 43;
-      let b: number = 47;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 43;
+      let rightOperand: number = 47;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(2021);
     });
     /**
@@ -611,9 +611,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 89;
-      let b: number = 97;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 89;
+      let rightOperand: number = 97;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(8633);
     });
     /**
@@ -625,9 +625,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 12;
-      let b: number = 34;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 12;
+      let rightOperand: number = 34;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(408);
     });
     /**
@@ -639,9 +639,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 56;
-      let b: number = 78;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 56;
+      let rightOperand: number = 78;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(4368);
     });
     /**
@@ -653,9 +653,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 45;
-      let b: number = 67;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 45;
+      let rightOperand: number = 67;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(3015);
     });
     /**
@@ -667,9 +667,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 89;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 89;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(89);
     });
     /**
@@ -681,9 +681,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 65535;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 65535;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(65535);
     });
     /**
@@ -695,9 +695,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 65535;
-      let b: number = -1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 65535;
+      let rightOperand: number = -1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-65535);
     });
     /**
@@ -709,9 +709,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 32767;
-      let b: number = 2;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 32767;
+      let rightOperand: number = 2;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(65534);
     });
     /**
@@ -723,9 +723,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = -32768;
-      let b: number = 2;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = -32768;
+      let rightOperand: number = 2;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(-65536);
     });
     /**
@@ -737,9 +737,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 1000;
-      let b: number = 1000;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 1000;
+      let rightOperand: number = 1000;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(1000000);
     });
     /**
@@ -751,9 +751,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 32767;
-      let b: number = 32767;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 32767;
+      let rightOperand: number = 32767;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(1073676289);
     });
     /**
@@ -765,9 +765,9 @@ export default function mathImulTest(): void {
      * @tc.level LEVEL2
      */
     it('testMathImul052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 32768;
-      let b: number = 1;
-      let result: number = Math.imul(a, b);
+      let leftOperand: number = 32768;
+      let rightOperand: number = 1;
+      let result: number = Math.imul(leftOperand, rightOperand);
       expect(result).assertEqual(32768);
     });
     /**
@@ -789,16 +789,16 @@ export default function mathImulTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathImul054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 3;
-      let b: number = 4;
-      let r1: number = Math.imul(a, b);
-      let r2: number = Math.imul(a, b);
-      let r3: number = Math.imul(a, b);
-      expect(r1).assertEqual(12);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let leftOperand: number = 3;
+      let rightOperand: number = 4;
+      let firstCallProduct: number = Math.imul(leftOperand, rightOperand);
+      let secondCallProduct: number = Math.imul(leftOperand, rightOperand);
+      let thirdCallProduct: number = Math.imul(leftOperand, rightOperand);
+      expect(firstCallProduct).assertEqual(12);
+      expect(firstCallProduct).assertEqual(secondCallProduct);
+      expect(secondCallProduct).assertEqual(thirdCallProduct);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_IMUL_5500
@@ -807,14 +807,14 @@ export default function mathImulTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathImul055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number = 12345;
-      let b: number = 67890;
-      let r1: number = Math.imul(a, b);
-      let r2: number = Math.imul(b, a);
-      expect(r1).assertEqual(838102050);
-      expect(r1).assertEqual(r2);
+      let leftOperand: number = 12345;
+      let rightOperand: number = 67890;
+      let forwardOrderProduct: number = Math.imul(leftOperand, rightOperand);
+      let swappedOrderProduct: number = Math.imul(rightOperand, leftOperand);
+      expect(forwardOrderProduct).assertEqual(838102050);
+      expect(forwardOrderProduct).assertEqual(swappedOrderProduct);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_IMUL_5600
@@ -823,16 +823,32 @@ export default function mathImulTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathImul056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hash: number = 5381;
-      let step1: number = Math.imul(33, hash);
-      hash = step1 + 65;
-      let step2: number = Math.imul(33, hash);
-      hash = step2 + 66;
-      let step3: number = Math.imul(33, hash);
-      hash = step3 + 67;
+      let firstHashProduct: number = Math.imul(33, hash);
+      hash = firstHashProduct + 65;
+      let secondHashProduct: number = Math.imul(33, hash);
+      hash = secondHashProduct + 66;
+      let thirdHashProduct: number = Math.imul(33, hash);
+      hash = thirdHashProduct + 67;
       expect(hash).assertEqual(193450027);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_IMUL_5700
+     * @tc.name testMathImul057
+     * @tc.desc Verify Math.imul with positive zero and negative zero returns positive zero
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testMathImul057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let positiveZero: number = 0.0;
+      let negativeZero: number = -0.0;
+      let result: number = Math.imul(positiveZero, negativeZero);
+      expect(result).assertEqual(0.0);
+      expect(Utils.isPositiveZero(result)).assertTrue();
+      expect(Utils.isNegativeZero(result)).assertFalse();
     });
   });
 }

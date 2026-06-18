@@ -387,15 +387,15 @@ export default function mathFloorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFloor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 3.14159;
-      let r1: double = Math.floor(x);
-      let r2: double = Math.floor(x);
-      let r3: double = Math.floor(x);
-      expect(r1).assertEqual(3);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let firstCallResult: double = Math.floor(x);
+      let secondCallResult: double = Math.floor(x);
+      let thirdCallResult: double = Math.floor(x);
+      expect(firstCallResult).assertEqual(3);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FLOOR_2800
@@ -404,14 +404,14 @@ export default function mathFloorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFloor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1: double = 3.14;
-      let v2: double = -3.14;
-      let v3: double = 100.001;
-      expect(Math.floor(v1) <= v1).assertTrue();
-      expect(Math.floor(v2) <= v2).assertTrue();
-      expect(Math.floor(v3) <= v3).assertTrue();
+      let positiveFractionInput: double = 3.14;
+      let negativeFractionInput: double = -3.14;
+      let largeFractionInput: double = 100.001;
+      expect(Math.floor(positiveFractionInput) <= positiveFractionInput).assertTrue();
+      expect(Math.floor(negativeFractionInput) <= negativeFractionInput).assertTrue();
+      expect(Math.floor(largeFractionInput) <= largeFractionInput).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FLOOR_2900
@@ -420,14 +420,14 @@ export default function mathFloorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFloor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i1: double = 5.0;
-      let i2: double = -5.0;
-      let i3: double = 100.0;
-      expect(Math.floor(i1)).assertEqual(i1);
-      expect(Math.floor(i2)).assertEqual(i2);
-      expect(Math.floor(i3)).assertEqual(i3);
+      let positiveIntegerInput: double = 5.0;
+      let negativeIntegerInput: double = -5.0;
+      let largeIntegerInput: double = 100.0;
+      expect(Math.floor(positiveIntegerInput)).assertEqual(positiveIntegerInput);
+      expect(Math.floor(negativeIntegerInput)).assertEqual(negativeIntegerInput);
+      expect(Math.floor(largeIntegerInput)).assertEqual(largeIntegerInput);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FLOOR_3000

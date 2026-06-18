@@ -51,9 +51,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = Math.PI / 4.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -67,9 +67,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 3.0 * Math.PI / 4.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -83,9 +83,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -3.0 * Math.PI / 4.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -99,9 +99,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -Math.PI / 4.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -115,9 +115,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       expect(result).assertEqual(0.0);
     });
     /**
@@ -129,9 +129,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = Math.PI;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -145,9 +145,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = 0.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = 0.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = Math.PI / 2.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -161,9 +161,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = 0.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = 0.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -Math.PI / 2.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -177,9 +177,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.0;
-      let x: double = 0.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.0;
+      let xCoordinate: double = 0.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       expect(result).assertEqual(0.0);
     });
     /**
@@ -191,9 +191,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(1.0);
-      let x: float = Double.toFloat(1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(1.0);
+      let xCoordinate: float = Double.toFloat(1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(0.7853981633974483);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -207,9 +207,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(1.0);
-      let x: float = Double.toFloat(-1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(1.0);
+      let xCoordinate: float = Double.toFloat(-1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(2.356194490192345);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -223,9 +223,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-1.0);
-      let x: float = Double.toFloat(-1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-1.0);
+      let xCoordinate: float = Double.toFloat(-1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-2.356194490192345);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -239,9 +239,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-1.0);
-      let x: float = Double.toFloat(1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-1.0);
+      let xCoordinate: float = Double.toFloat(1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-0.7853981633974483);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -255,9 +255,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(0.0);
-      let x: float = Double.toFloat(1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(0.0);
+      let xCoordinate: float = Double.toFloat(1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(0.0);
       expect(result).assertEqual(expected);
     });
@@ -270,9 +270,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(1.0);
-      let x: float = Double.toFloat(0.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(1.0);
+      let xCoordinate: float = Double.toFloat(0.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(1.5707963267948966);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();
@@ -286,9 +286,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 2.0;
-      let x: double = 3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 2.0;
+      let xCoordinate: double = 3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.5880026035475675;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -302,9 +302,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 5.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 5.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 1.373400766945016;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -318,9 +318,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.5;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.5;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.4636476090008061;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -334,9 +334,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 4.0;
-      let x: double = 3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 4.0;
+      let xCoordinate: double = 3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.9272952180016122;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -350,9 +350,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = 2.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = 2.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.4636476090008061;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -366,9 +366,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 100.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 100.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 1.5607966601082315;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -382,9 +382,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = 100.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = 100.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.009999666686665238;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -398,9 +398,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.25;
-      let x: double = 0.75;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.25;
+      let xCoordinate: double = 0.75;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 0.3217505543966422;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -414,9 +414,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 2.0;
-      let x: double = -3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 2.0;
+      let xCoordinate: double = -3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 2.5535900500422257;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -430,9 +430,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 5.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 5.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 1.7681918866447774;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -446,9 +446,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.5;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.5;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 2.677945044588987;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -462,9 +462,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 4.0;
-      let x: double = -3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 4.0;
+      let xCoordinate: double = -3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 2.214297435588181;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -478,9 +478,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = -2.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = -2.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 2.677945044588987;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -494,9 +494,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 100.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 100.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 1.5807959934815619;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -510,9 +510,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = -100.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = -100.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 3.131592986903128;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -526,9 +526,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 0.25;
-      let x: double = -0.75;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 0.25;
+      let xCoordinate: double = -0.75;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = 2.819842099193151;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -542,9 +542,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -2.0;
-      let x: double = -3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -2.0;
+      let xCoordinate: double = -3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -2.5535900500422257;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -558,9 +558,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -5.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -5.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -1.7681918866447774;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -574,9 +574,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -0.5;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -0.5;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -2.677945044588987;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -590,9 +590,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -4.0;
-      let x: double = -3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -4.0;
+      let xCoordinate: double = -3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -2.214297435588181;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -606,9 +606,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = -2.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = -2.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -2.677945044588987;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -622,9 +622,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -100.0;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -100.0;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -1.5807959934815619;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -638,9 +638,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = -100.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = -100.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -3.131592986903128;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -654,9 +654,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -0.25;
-      let x: double = -0.75;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -0.25;
+      let xCoordinate: double = -0.75;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -2.819842099193151;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -670,9 +670,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -2.0;
-      let x: double = 3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -2.0;
+      let xCoordinate: double = 3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.5880026035475675;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -686,9 +686,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -5.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -5.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -1.373400766945016;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -702,9 +702,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -0.5;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -0.5;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.4636476090008061;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -718,9 +718,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -4.0;
-      let x: double = 3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -4.0;
+      let xCoordinate: double = 3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.9272952180016122;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -734,9 +734,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = 2.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = 2.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.4636476090008061;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -750,9 +750,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -100.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -100.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -1.5607966601082315;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -766,9 +766,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1.0;
-      let x: double = 100.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1.0;
+      let xCoordinate: double = 100.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.009999666686665238;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -782,9 +782,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -0.25;
-      let x: double = 0.75;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -0.25;
+      let xCoordinate: double = 0.75;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = -0.3217505543966422;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-12).assertTrue();
@@ -798,9 +798,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(2.0);
-      let x: float = Double.toFloat(3.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(2.0);
+      let xCoordinate: float = Double.toFloat(3.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(0.5880026035475675);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -814,9 +814,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-2.0);
-      let x: float = Double.toFloat(3.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-2.0);
+      let xCoordinate: float = Double.toFloat(3.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-0.5880026035475675);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -830,9 +830,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-2.0);
-      let x: float = Double.toFloat(-3.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-2.0);
+      let xCoordinate: float = Double.toFloat(-3.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-2.5535900500422257);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -846,9 +846,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(0.5);
-      let x: float = Double.toFloat(1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(0.5);
+      let xCoordinate: float = Double.toFloat(1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(0.4636476090008061);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -862,9 +862,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(1.0);
-      let x: float = Double.toFloat(-0.5);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(1.0);
+      let xCoordinate: float = Double.toFloat(-0.5);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(2.0344439357957027);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -878,9 +878,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-0.5);
-      let x: float = Double.toFloat(-1.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-0.5);
+      let xCoordinate: float = Double.toFloat(-1.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-2.677945044588987);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -894,9 +894,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(4.0);
-      let x: float = Double.toFloat(3.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(4.0);
+      let xCoordinate: float = Double.toFloat(3.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(0.9272952180016122);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -910,9 +910,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(-1.0);
-      let x: float = Double.toFloat(-2.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(-1.0);
+      let xCoordinate: float = Double.toFloat(-2.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let expected: float = Double.toFloat(-2.677945044588987);
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-5).assertTrue();
@@ -927,8 +927,8 @@ export default function mathAtan2Test(): void {
      */
     it('testMathAtan2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nanY: double = 0.0 / 0.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(nanY, x);
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(nanY, xCoordinate);
       let isNaNResult: boolean = Utils.isNaNValue(result);
       expect(isNaNResult).assertTrue();
     });
@@ -941,9 +941,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
+      let yCoordinate: double = 1.0;
       let nanX: double = 0.0 / 0.0;
-      let result: double = Math.atan2(y, nanX);
+      let result: double = Math.atan2(yCoordinate, nanX);
       let isNaNResult: boolean = Utils.isNaNValue(result);
       expect(isNaNResult).assertTrue();
     });
@@ -973,8 +973,8 @@ export default function mathAtan2Test(): void {
     it('testMathAtan2059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fZero: float = Double.toFloat(0.0);
       let nanY: float = fZero / fZero;
-      let x: float = Double.toFloat(1.0);
-      let result: float = Math.atan2(nanY, x);
+      let xCoordinate: float = Double.toFloat(1.0);
+      let result: float = Math.atan2(nanY, xCoordinate);
       let isNaNResult: boolean = Utils.isNaNFloat(result);
       expect(isNaNResult).assertTrue();
     });
@@ -988,8 +988,8 @@ export default function mathAtan2Test(): void {
      */
     it('testMathAtan2060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let infY: double = 1.0 / 0.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(infY, x);
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(infY, xCoordinate);
       let expected: double = Math.PI / 2.0;
       expect(result).assertEqual(expected);
     });
@@ -1003,8 +1003,8 @@ export default function mathAtan2Test(): void {
      */
     it('testMathAtan2061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let negInfY: double = -1.0 / 0.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(negInfY, x);
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(negInfY, xCoordinate);
       let expected: double = -Math.PI / 2.0;
       expect(result).assertEqual(expected);
     });
@@ -1017,9 +1017,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
+      let yCoordinate: double = 1.0;
       let infX: double = 1.0 / 0.0;
-      let result: double = Math.atan2(y, infX);
+      let result: double = Math.atan2(yCoordinate, infX);
       expect(result).assertEqual(0.0);
     });
     /**
@@ -1031,9 +1031,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
+      let yCoordinate: double = 1.0;
       let negInfX: double = -1.0 / 0.0;
-      let result: double = Math.atan2(y, negInfX);
+      let result: double = Math.atan2(yCoordinate, negInfX);
       expect(result).assertEqual(Math.PI);
     });
     /**
@@ -1045,9 +1045,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1e-15;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1e-15;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let diff: double = Utils.getAbsDiff(result, Math.PI);
       expect(diff < 1.0e-10).assertTrue();
     });
@@ -1060,9 +1060,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -1e-15;
-      let x: double = -1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -1e-15;
+      let xCoordinate: double = -1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let diff: double = Utils.getAbsDiff(result, -Math.PI);
       expect(diff < 1.0e-10).assertTrue();
     });
@@ -1075,9 +1075,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1e100;
-      let x: double = 1e-100;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1e100;
+      let xCoordinate: double = 1e-100;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let diff: double = Utils.getAbsDiff(result, Math.PI / 2.0);
       expect(diff < 1.0e-10).assertTrue();
     });
@@ -1090,9 +1090,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1e-100;
-      let x: double = 1e100;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1e-100;
+      let xCoordinate: double = 1e100;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let diff: double = Utils.getAbsDiff(result, 0.0);
       expect(diff < 1.0e-10).assertTrue();
     });
@@ -1103,12 +1103,12 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAtan2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let r1: double = Math.atan2(y, 2.0);
-      let r2: double = Math.atan2(y, -2.0);
-      let sum: double = r1 + r2;
+      let yCoordinate: double = 1.0;
+      let rightHalfPlaneAngle: double = Math.atan2(yCoordinate, 2.0);
+      let leftHalfPlaneAngle: double = Math.atan2(yCoordinate, -2.0);
+      let sum: double = rightHalfPlaneAngle + leftHalfPlaneAngle;
       let diff: double = Utils.getAbsDiff(sum, Math.PI);
       expect(diff < 1.0e-15).assertTrue();
     });
@@ -1119,12 +1119,12 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAtan2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let px: double = 3.0;
-      let py: double = 4.0;
+      let pointX: double = 3.0;
+      let pointY: double = 4.0;
       let expected: double = Math.atan(4.0 / 3.0);
-      let angle: double = Math.atan2(py, px);
+      let angle: double = Math.atan2(pointY, pointX);
       let diff: double = Utils.getAbsDiff(angle, expected);
       expect(diff < 1.0e-14).assertTrue();
     });
@@ -1135,17 +1135,17 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAtan2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let angle0: double = Math.atan2(0.0, 1.0);
-      let angle90: double = Math.atan2(1.0, 0.0);
-      let angle180: double = Math.atan2(0.0, -1.0);
-      let angle270: double = Math.atan2(-1.0, 0.0);
-      expect(angle0).assertEqual(0.0);
+      let zeroDegreeAngle: double = Math.atan2(0.0, 1.0);
+      let ninetyDegreeAngle: double = Math.atan2(1.0, 0.0);
+      let oneEightyDegreeAngle: double = Math.atan2(0.0, -1.0);
+      let negativeNinetyDegreeAngle: double = Math.atan2(-1.0, 0.0);
+      expect(zeroDegreeAngle).assertEqual(0.0);
       let halfPi: double = Math.PI / 2.0;
-      expect(angle90).assertEqual(halfPi);
-      expect(angle180).assertEqual(Math.PI);
-      expect(angle270).assertEqual(-halfPi);
+      expect(ninetyDegreeAngle).assertEqual(halfPi);
+      expect(oneEightyDegreeAngle).assertEqual(Math.PI);
+      expect(negativeNinetyDegreeAngle).assertEqual(-halfPi);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_7100
@@ -1156,9 +1156,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 2.0;
-      let x: double = 3.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 2.0;
+      let xCoordinate: double = 3.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let isNaNResult: boolean = Utils.isNaNValue(result);
       expect(isNaNResult).assertFalse();
     });
@@ -1171,9 +1171,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: float = Double.toFloat(2.0);
-      let x: float = Double.toFloat(3.0);
-      let result: float = Math.atan2(y, x);
+      let yCoordinate: float = Double.toFloat(2.0);
+      let xCoordinate: float = Double.toFloat(3.0);
+      let result: float = Math.atan2(yCoordinate, xCoordinate);
       let isNaNResult: boolean = Utils.isNaNFloat(result);
       expect(isNaNResult).assertFalse();
     });
@@ -1198,13 +1198,13 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAtan2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1: double = Math.atan2(2.0, 2.0);
-      let result2: double = Math.atan2(2.0, 2.0);
-      let result3: double = Math.atan2(2.0, 2.0);
-      expect(result1).assertEqual(result2);
-      expect(result2).assertEqual(result3);
+      let firstCallResult: double = Math.atan2(2.0, 2.0);
+      let secondCallResult: double = Math.atan2(2.0, 2.0);
+      let thirdCallResult: double = Math.atan2(2.0, 2.0);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_7500
@@ -1213,13 +1213,13 @@ export default function mathAtan2Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAtan2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result1: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
-      let result2: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
-      let result3: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
-      expect(result1).assertEqual(result2);
-      expect(result2).assertEqual(result3);
+      let firstCallResult: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
+      let secondCallResult: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
+      let thirdCallResult: float = Math.atan2(Double.toFloat(2.0), Double.toFloat(2.0));
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ATAN2_7600
@@ -1230,9 +1230,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = -0.0;
-      let x: double = 1.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = -0.0;
+      let xCoordinate: double = 1.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       expect(result).assertEqual(-0.0);
       expect(Utils.isNegativeZero(result)).assertTrue();
     });
@@ -1245,9 +1245,9 @@ export default function mathAtan2Test(): void {
      * @tc.level LEVEL2
      */
     it('testMathAtan2077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: double = 1.0;
-      let x: double = -0.0;
-      let result: double = Math.atan2(y, x);
+      let yCoordinate: double = 1.0;
+      let xCoordinate: double = -0.0;
+      let result: double = Math.atan2(yCoordinate, xCoordinate);
       let expected: double = Math.PI / 2.0;
       let diff: double = Utils.getAbsDiff(result, expected);
       expect(diff < 1.0e-6).assertTrue();

@@ -180,12 +180,12 @@ export default function mathTanTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathTan010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.3;
-      let resultA: double = Math.tan(x);
-      let resultB: double = Math.tan(x + Math.PI);
-      let diff: double = Utils.getAbsDiff(resultA, resultB);
+      let baseAngleResult: double = Math.tan(x);
+      let shiftedAngleResult: double = Math.tan(x + Math.PI);
+      let diff: double = Utils.getAbsDiff(baseAngleResult, shiftedAngleResult);
       expect(diff < 1.0e-10).assertTrue();
     });
     /**
@@ -293,14 +293,14 @@ export default function mathTanTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathTan018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: double = 0.2;
-      let b: double = 0.3;
-      let lhs: double = Math.tan(a + b);
-      let ta: double = Math.tan(a);
-      let tb: double = Math.tan(b);
-      let rhs: double = (ta + tb) / (1.0 - ta * tb);
+      let firstAngle: double = 0.2;
+      let secondAngle: double = 0.3;
+      let lhs: double = Math.tan(firstAngle + secondAngle);
+      let firstAngleTan: double = Math.tan(firstAngle);
+      let secondAngleTan: double = Math.tan(secondAngle);
+      let rhs: double = (firstAngleTan + secondAngleTan) / (1.0 - firstAngleTan * secondAngleTan);
       let diff: double = Utils.getAbsDiff(lhs, rhs);
       expect(diff < 1.0e-10).assertTrue();
     });

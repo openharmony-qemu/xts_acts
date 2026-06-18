@@ -183,12 +183,12 @@ export default function mathSinTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathSin011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
-      let resultA: double = Math.sin(x);
-      let resultB: double = Math.sin(x + 2.0 * Math.PI);
-      let diff: double = Utils.getAbsDiff(resultA, resultB);
+      let baseAngleResult: double = Math.sin(x);
+      let shiftedAngleResult: double = Math.sin(x + 2.0 * Math.PI);
+      let diff: double = Utils.getAbsDiff(baseAngleResult, shiftedAngleResult);
       expect(diff < 1.0e-12).assertTrue();
     });
     /**

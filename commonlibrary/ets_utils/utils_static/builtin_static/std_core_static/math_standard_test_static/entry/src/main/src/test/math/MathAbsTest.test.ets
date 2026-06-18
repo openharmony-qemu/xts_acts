@@ -749,11 +749,11 @@ export default function mathAbsTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAbs049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: long = Int.toLong(-12345);
-      let y: long = Int.toLong(6789);
-      let total: long = Math.abs(x) + Math.abs(y);
+      let negativeOperand: long = Int.toLong(-12345);
+      let positiveOperand: long = Int.toLong(6789);
+      let total: long = Math.abs(negativeOperand) + Math.abs(positiveOperand);
       expect(total).assertEqual(Int.toLong(19134));
     });
 
@@ -924,14 +924,14 @@ export default function mathAbsTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAbs060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let deltaA: number = buildAbsDelta(5.5, 11.75);
       let deltaB: number = buildAbsDelta(-2.0, -7.0);
-      let resultA: number = Math.abs(deltaA);
-      let resultB: number = Math.abs(deltaB);
-      expect(resultA).assertEqual(6.25);
-      expect(resultB).assertEqual(5.0);
+      let firstDeltaMagnitude: number = Math.abs(deltaA);
+      let secondDeltaMagnitude: number = Math.abs(deltaB);
+      expect(firstDeltaMagnitude).assertEqual(6.25);
+      expect(secondDeltaMagnitude).assertEqual(5.0);
     });
 
     /**

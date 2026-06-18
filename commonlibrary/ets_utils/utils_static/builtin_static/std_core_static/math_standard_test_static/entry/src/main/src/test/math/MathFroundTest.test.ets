@@ -92,9 +92,7 @@ export default function mathFroundTest(): void {
     it('testMathFround004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input: double = -0.618;
       let result: double = Math.fround(input);
-      let diff: double = Utils.getAbsDiff(result, input);
-      let scale: double = Utils.getAbsDiff(input, 0.0) + 1.0;
-      expect(diff < scale * 1e-06).assertTrue();
+      expect(result).assertEqual(-0.6179999709129333);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_0500
@@ -391,15 +389,15 @@ export default function mathFroundTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFround027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 3.14159;
-      let r1: double = Math.fround(x);
-      let r2: double = Math.fround(x);
-      let r3: double = Math.fround(x);
-      expect(r1).assertEqual(3.141590118408203);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let firstCallResult: double = Math.fround(x);
+      let secondCallResult: double = Math.fround(x);
+      let thirdCallResult: double = Math.fround(x);
+      expect(firstCallResult).assertEqual(3.141590118408203);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2800
@@ -408,20 +406,20 @@ export default function mathFroundTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFround028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1: double = 3.14;
-      let v2: double = -3.14;
-      let v3: double = 1.0e20;
-      let r1: double = Math.fround(v1);
-      let r2: double = Math.fround(v2);
-      let r3: double = Math.fround(v3);
-      expect(Utils.isNaNValue(r1)).assertFalse();
-      expect(Utils.isNaNValue(r2)).assertFalse();
-      expect(Utils.isNaNValue(r3)).assertFalse();
-      expect(Utils.isFiniteValue(r1)).assertTrue();
-      expect(Utils.isFiniteValue(r2)).assertTrue();
-      expect(Utils.isFiniteValue(r3)).assertTrue();
+      let positiveFiniteInput: double = 3.14;
+      let negativeFiniteInput: double = -3.14;
+      let largeFiniteInput: double = 1.0e20;
+      let positiveFiniteResult: double = Math.fround(positiveFiniteInput);
+      let negativeFiniteResult: double = Math.fround(negativeFiniteInput);
+      let largeFiniteResult: double = Math.fround(largeFiniteInput);
+      expect(Utils.isNaNValue(positiveFiniteResult)).assertFalse();
+      expect(Utils.isNaNValue(negativeFiniteResult)).assertFalse();
+      expect(Utils.isNaNValue(largeFiniteResult)).assertFalse();
+      expect(Utils.isFiniteValue(positiveFiniteResult)).assertTrue();
+      expect(Utils.isFiniteValue(negativeFiniteResult)).assertTrue();
+      expect(Utils.isFiniteValue(largeFiniteResult)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_2900
@@ -430,14 +428,14 @@ export default function mathFroundTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathFround029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i1: double = 5.0;
-      let i2: double = -5.0;
-      let i3: double = 100.0;
-      expect(Math.fround(i1)).assertEqual(i1);
-      expect(Math.fround(i2)).assertEqual(i2);
-      expect(Math.fround(i3)).assertEqual(i3);
+      let positiveIntegerInput: double = 5.0;
+      let negativeIntegerInput: double = -5.0;
+      let largeIntegerInput: double = 100.0;
+      expect(Math.fround(positiveIntegerInput)).assertEqual(positiveIntegerInput);
+      expect(Math.fround(negativeIntegerInput)).assertEqual(negativeIntegerInput);
+      expect(Math.fround(largeIntegerInput)).assertEqual(largeIntegerInput);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_FROUND_3000

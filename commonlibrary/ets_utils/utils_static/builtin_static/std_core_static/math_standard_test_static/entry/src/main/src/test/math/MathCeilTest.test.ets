@@ -387,15 +387,15 @@ export default function mathCeilTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCeil027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 3.14159;
-      let r1: double = Math.ceil(x);
-      let r2: double = Math.ceil(x);
-      let r3: double = Math.ceil(x);
-      expect(r1).assertEqual(4);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let firstCallResult: double = Math.ceil(x);
+      let secondCallResult: double = Math.ceil(x);
+      let thirdCallResult: double = Math.ceil(x);
+      expect(firstCallResult).assertEqual(4);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CEIL_2800
@@ -404,14 +404,14 @@ export default function mathCeilTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCeil028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1: double = 3.14;
-      let v2: double = -3.14;
-      let v3: double = 100.001;
-      expect(Math.ceil(v1) >= v1).assertTrue();
-      expect(Math.ceil(v2) >= v2).assertTrue();
-      expect(Math.ceil(v3) >= v3).assertTrue();
+      let positiveFractionInput: double = 3.14;
+      let negativeFractionInput: double = -3.14;
+      let largeFractionInput: double = 100.001;
+      expect(Math.ceil(positiveFractionInput) >= positiveFractionInput).assertTrue();
+      expect(Math.ceil(negativeFractionInput) >= negativeFractionInput).assertTrue();
+      expect(Math.ceil(largeFractionInput) >= largeFractionInput).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CEIL_2900
@@ -420,14 +420,14 @@ export default function mathCeilTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCeil029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i1: double = 5.0;
-      let i2: double = -5.0;
-      let i3: double = 100.0;
-      expect(Math.ceil(i1)).assertEqual(i1);
-      expect(Math.ceil(i2)).assertEqual(i2);
-      expect(Math.ceil(i3)).assertEqual(i3);
+      let positiveIntegerInput: double = 5.0;
+      let negativeIntegerInput: double = -5.0;
+      let largeIntegerInput: double = 100.0;
+      expect(Math.ceil(positiveIntegerInput)).assertEqual(positiveIntegerInput);
+      expect(Math.ceil(negativeIntegerInput)).assertEqual(negativeIntegerInput);
+      expect(Math.ceil(largeIntegerInput)).assertEqual(largeIntegerInput);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_CEIL_3000

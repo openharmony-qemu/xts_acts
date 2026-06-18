@@ -291,14 +291,14 @@ export default function mathMaxTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathMax019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 5.0;
       let right: double = 10.0;
-      let result1: double = Math.max(left, right);
-      let result2: double = Math.max(right, left);
-      expect(result1).assertEqual(10.0);
-      expect(result1).assertEqual(result2);
+      let forwardOrderResult: double = Math.max(left, right);
+      let reverseOrderResult: double = Math.max(right, left);
+      expect(forwardOrderResult).assertEqual(10.0);
+      expect(forwardOrderResult).assertEqual(reverseOrderResult);
     });
     /**
      * @tc.name testMathMax020

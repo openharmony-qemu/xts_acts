@@ -397,17 +397,17 @@ export default function mathAcosTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAcos023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input1: double = -0.8;
-      let input2: double = 0.1;
-      let input3: double = 0.8;
-      let result1: double = Math.cos(Math.acos(input1));
-      let result2: double = Math.cos(Math.acos(input2));
-      let result3: double = Math.cos(Math.acos(input3));
-      expect(Utils.getAbsDiff(result1, input1) < 1.0e-14).assertTrue();
-      expect(Utils.getAbsDiff(result2, input2) < 1.0e-14).assertTrue();
-      expect(Utils.getAbsDiff(result3, input3) < 1.0e-14).assertTrue();
+      let negativeInput: double = -0.8;
+      let smallPositiveInput: double = 0.1;
+      let positiveInput: double = 0.8;
+      let recoveredNegativeInput: double = Math.cos(Math.acos(negativeInput));
+      let recoveredSmallPositiveInput: double = Math.cos(Math.acos(smallPositiveInput));
+      let recoveredPositiveInput: double = Math.cos(Math.acos(positiveInput));
+      expect(Utils.getAbsDiff(recoveredNegativeInput, negativeInput) < 1.0e-14).assertTrue();
+      expect(Utils.getAbsDiff(recoveredSmallPositiveInput, smallPositiveInput) < 1.0e-14).assertTrue();
+      expect(Utils.getAbsDiff(recoveredPositiveInput, positiveInput) < 1.0e-14).assertTrue();
     });
 
     /**
@@ -432,16 +432,16 @@ export default function mathAcosTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAcos025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input1: double = -0.8;
-      let input2: double = 0.0;
-      let input3: double = 0.8;
-      let result1: double = Math.acos(input1);
-      let result2: double = Math.acos(input2);
-      let result3: double = Math.acos(input3);
-      expect(result1 > result2).assertTrue();
-      expect(result2 > result3).assertTrue();
+      let negativeInput: double = -0.8;
+      let zeroInput: double = 0.0;
+      let positiveInput: double = 0.8;
+      let negativeInputResult: double = Math.acos(negativeInput);
+      let zeroInputResult: double = Math.acos(zeroInput);
+      let positiveInputResult: double = Math.acos(positiveInput);
+      expect(negativeInputResult > zeroInputResult).assertTrue();
+      expect(zeroInputResult > positiveInputResult).assertTrue();
     });
 
     /**
@@ -451,14 +451,14 @@ export default function mathAcosTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAcos026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inputValue: double = 0.5;
-      let result1: double = Math.acos(inputValue);
-      let result2: double = Math.acos(inputValue);
-      let result3: double = Math.acos(inputValue);
-      expect(result1).assertEqual(result2);
-      expect(result2).assertEqual(result3);
+      let firstCallResult: double = Math.acos(inputValue);
+      let secondCallResult: double = Math.acos(inputValue);
+      let thirdCallResult: double = Math.acos(inputValue);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
 
     /**
@@ -485,16 +485,16 @@ export default function mathAcosTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAcos028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1x: double = 1.0;
-      let v1y: double = 0.0;
-      let v2x: double = 1.0;
-      let v2y: double = 1.0;
-      let dotProduct: double = v1x * v2x + v1y * v2y;
-      let mag1: double = Math.sqrt(v1x * v1x + v1y * v1y);
-      let mag2: double = Math.sqrt(v2x * v2x + v2y * v2y);
-      let cosAngle: double = dotProduct / (mag1 * mag2);
+      let baseVectorX: double = 1.0;
+      let baseVectorY: double = 0.0;
+      let diagonalVectorX: double = 1.0;
+      let diagonalVectorY: double = 1.0;
+      let dotProduct: double = baseVectorX * diagonalVectorX + baseVectorY * diagonalVectorY;
+      let baseVectorMagnitude: double = Math.sqrt(baseVectorX * baseVectorX + baseVectorY * baseVectorY);
+      let diagonalVectorMagnitude: double = Math.sqrt(diagonalVectorX * diagonalVectorX + diagonalVectorY * diagonalVectorY);
+      let cosAngle: double = dotProduct / (baseVectorMagnitude * diagonalVectorMagnitude);
       let angle: double = Math.acos(cosAngle);
       let expected: double = Math.PI / 4.0;
       let diff: double = Utils.getAbsDiff(angle, expected);

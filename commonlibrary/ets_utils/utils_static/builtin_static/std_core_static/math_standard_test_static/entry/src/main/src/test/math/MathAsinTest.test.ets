@@ -254,21 +254,21 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input1: double = 1.0;
-      let input2: double = -1.0;
-      let input3: double = 0.0;
+      let upperBoundaryInput: double = 1.0;
+      let lowerBoundaryInput: double = -1.0;
+      let zeroInput: double = 0.0;
       let halfPi: double = Math.PI / 2.0;
-      let result1: double = Math.asin(input1);
-      let result2: double = Math.asin(input2);
-      let result3: double = Math.asin(input3);
-      expect(result1 <= halfPi).assertTrue();
-      expect(result1 >= -halfPi).assertTrue();
-      expect(result2 <= halfPi).assertTrue();
-      expect(result2 >= -halfPi).assertTrue();
-      expect(result3 <= halfPi).assertTrue();
-      expect(result3 >= -halfPi).assertTrue();
+      let upperBoundaryResult: double = Math.asin(upperBoundaryInput);
+      let lowerBoundaryResult: double = Math.asin(lowerBoundaryInput);
+      let zeroResult: double = Math.asin(zeroInput);
+      expect(upperBoundaryResult <= halfPi).assertTrue();
+      expect(upperBoundaryResult >= -halfPi).assertTrue();
+      expect(lowerBoundaryResult <= halfPi).assertTrue();
+      expect(lowerBoundaryResult >= -halfPi).assertTrue();
+      expect(zeroResult <= halfPi).assertTrue();
+      expect(zeroResult >= -halfPi).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1600
@@ -291,17 +291,17 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x1: double = 0.0;
-      let x2: double = 0.5;
-      let x3: double = 1.0;
-      let r1: double = Math.asin(x1);
-      let r2: double = Math.asin(x2);
-      let r3: double = Math.asin(x3);
-      expect(r1 != r2).assertTrue();
-      expect(r2 != r3).assertTrue();
-      expect(r1 != r3).assertTrue();
+      let zeroInput: double = 0.0;
+      let middleDomainInput: double = 0.5;
+      let upperBoundaryInput: double = 1.0;
+      let zeroInputResult: double = Math.asin(zeroInput);
+      let middleDomainResult: double = Math.asin(middleDomainInput);
+      let upperBoundaryResult: double = Math.asin(upperBoundaryInput);
+      expect(zeroInputResult != middleDomainResult).assertTrue();
+      expect(middleDomainResult != upperBoundaryResult).assertTrue();
+      expect(zeroInputResult != upperBoundaryResult).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1800
@@ -310,14 +310,14 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input1: double = 1.5;
-      let input2: double = 100.0;
-      let result1: double = Math.asin(input1);
-      let result2: double = Math.asin(input2);
-      expect(Utils.isNaNValue(result1)).assertTrue();
-      expect(Utils.isNaNValue(result2)).assertTrue();
+      let slightlyAboveDomainInput: double = 1.5;
+      let farAboveDomainInput: double = 100.0;
+      let slightlyAboveDomainResult: double = Math.asin(slightlyAboveDomainInput);
+      let farAboveDomainResult: double = Math.asin(farAboveDomainInput);
+      expect(Utils.isNaNValue(slightlyAboveDomainResult)).assertTrue();
+      expect(Utils.isNaNValue(farAboveDomainResult)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_1900
@@ -326,14 +326,14 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let input1: double = -1.5;
-      let input2: double = -100.0;
-      let result1: double = Math.asin(input1);
-      let result2: double = Math.asin(input2);
-      expect(Utils.isNaNValue(result1)).assertTrue();
-      expect(Utils.isNaNValue(result2)).assertTrue();
+      let slightlyBelowDomainInput: double = -1.5;
+      let farBelowDomainInput: double = -100.0;
+      let slightlyBelowDomainResult: double = Math.asin(slightlyBelowDomainInput);
+      let farBelowDomainResult: double = Math.asin(farBelowDomainInput);
+      expect(Utils.isNaNValue(slightlyBelowDomainResult)).assertTrue();
+      expect(Utils.isNaNValue(farBelowDomainResult)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2000
@@ -347,12 +347,12 @@ export default function mathAsinTest(): void {
       let nanInput: double = 0.0 / 0.0;
       let infInput: double = 1.0 / 0.0;
       let negInfInput: double = -1.0 / 0.0;
-      let r1: double = Math.asin(nanInput);
-      let r2: double = Math.asin(infInput);
-      let r3: double = Math.asin(negInfInput);
-      expect(Utils.isNaNValue(r1)).assertTrue();
-      expect(Utils.isNaNValue(r2)).assertTrue();
-      expect(Utils.isNaNValue(r3)).assertTrue();
+      let nanResult: double = Math.asin(nanInput);
+      let positiveInfinityResult: double = Math.asin(infInput);
+      let negativeInfinityResult: double = Math.asin(negInfInput);
+      expect(Utils.isNaNValue(nanResult)).assertTrue();
+      expect(Utils.isNaNValue(positiveInfinityResult)).assertTrue();
+      expect(Utils.isNaNValue(negativeInfinityResult)).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2100
@@ -454,14 +454,14 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
-      let result1: double = Math.asin(x);
-      let result2: double = Math.asin(x);
-      let result3: double = Math.asin(x);
-      expect(result1).assertEqual(result2);
-      expect(result2).assertEqual(result3);
+      let firstCallResult: double = Math.asin(x);
+      let secondCallResult: double = Math.asin(x);
+      let thirdCallResult: double = Math.asin(x);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2800
@@ -470,14 +470,14 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = Double.toFloat(0.5);
-      let result1: float = Math.asin(x);
-      let result2: float = Math.asin(x);
-      let result3: float = Math.asin(x);
-      expect(result1).assertEqual(result2);
-      expect(result2).assertEqual(result3);
+      let firstCallResult: float = Math.asin(x);
+      let secondCallResult: float = Math.asin(x);
+      let thirdCallResult: float = Math.asin(x);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_2900
@@ -486,15 +486,15 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 2.0;
-      let result1: double = Math.asin(x);
-      let result2: double = Math.asin(x);
-      let result3: double = Math.asin(x);
-      let allNaN: boolean = Utils.isNaNValue(result1)
-        && Utils.isNaNValue(result2)
-        && Utils.isNaNValue(result3);
+      let firstCallResult: double = Math.asin(x);
+      let secondCallResult: double = Math.asin(x);
+      let thirdCallResult: double = Math.asin(x);
+      let allNaN: boolean = Utils.isNaNValue(firstCallResult)
+        && Utils.isNaNValue(secondCallResult)
+        && Utils.isNaNValue(thirdCallResult);
       expect(allNaN).assertTrue();
     });
     /**
@@ -572,25 +572,25 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x1: double = 0.0;
-      let x2: double = 0.5;
-      let x3: double = -0.5;
-      let x4: double = 0.8;
+      let zeroInput: double = 0.0;
+      let positiveHalfInput: double = 0.5;
+      let negativeHalfInput: double = -0.5;
+      let upperMidInput: double = 0.8;
       let eps: double = 1.0e-14;
-      let r1: double = Math.sin(Math.asin(x1));
-      let r2: double = Math.sin(Math.asin(x2));
-      let r3: double = Math.sin(Math.asin(x3));
-      let r4: double = Math.sin(Math.asin(x4));
-      let diff1: double = r1 - x1;
-      let diff2: double = r2 - x2;
-      let diff3: double = r3 - x3;
-      let diff4: double = r4 - x4;
-      expect(diff1 < eps && diff1 > -eps).assertTrue();
-      expect(diff2 < eps && diff2 > -eps).assertTrue();
-      expect(diff3 < eps && diff3 > -eps).assertTrue();
-      expect(diff4 < eps && diff4 > -eps).assertTrue();
+      let zeroRoundTripResult: double = Math.sin(Math.asin(zeroInput));
+      let positiveHalfRoundTripResult: double = Math.sin(Math.asin(positiveHalfInput));
+      let negativeHalfRoundTripResult: double = Math.sin(Math.asin(negativeHalfInput));
+      let upperMidRoundTripResult: double = Math.sin(Math.asin(upperMidInput));
+      let zeroRoundTripDiff: double = zeroRoundTripResult - zeroInput;
+      let positiveHalfRoundTripDiff: double = positiveHalfRoundTripResult - positiveHalfInput;
+      let negativeHalfRoundTripDiff: double = negativeHalfRoundTripResult - negativeHalfInput;
+      let upperMidRoundTripDiff: double = upperMidRoundTripResult - upperMidInput;
+      expect(zeroRoundTripDiff < eps && zeroRoundTripDiff > -eps).assertTrue();
+      expect(positiveHalfRoundTripDiff < eps && positiveHalfRoundTripDiff > -eps).assertTrue();
+      expect(negativeHalfRoundTripDiff < eps && negativeHalfRoundTripDiff > -eps).assertTrue();
+      expect(upperMidRoundTripDiff < eps && upperMidRoundTripDiff > -eps).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3600
@@ -635,22 +635,22 @@ export default function mathAsinTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathAsin038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x1: double = 0.0;
-      let x2: double = 0.3;
-      let x3: double = 0.6;
-      let x4: double = 0.9;
-      let x5: double = 1.0;
-      let v1: double = Math.asin(x1);
-      let v2: double = Math.asin(x2);
-      let v3: double = Math.asin(x3);
-      let v4: double = Math.asin(x4);
-      let v5: double = Math.asin(x5);
-      expect(v1 < v2).assertTrue();
-      expect(v2 < v3).assertTrue();
-      expect(v3 < v4).assertTrue();
-      expect(v4 < v5).assertTrue();
+      let zeroInput: double = 0.0;
+      let lowPositiveInput: double = 0.3;
+      let middlePositiveInput: double = 0.6;
+      let highPositiveInput: double = 0.9;
+      let upperBoundaryInput: double = 1.0;
+      let zeroInputResult: double = Math.asin(zeroInput);
+      let lowPositiveResult: double = Math.asin(lowPositiveInput);
+      let middlePositiveResult: double = Math.asin(middlePositiveInput);
+      let highPositiveResult: double = Math.asin(highPositiveInput);
+      let upperBoundaryResult: double = Math.asin(upperBoundaryInput);
+      expect(zeroInputResult < lowPositiveResult).assertTrue();
+      expect(lowPositiveResult < middlePositiveResult).assertTrue();
+      expect(middlePositiveResult < highPositiveResult).assertTrue();
+      expect(highPositiveResult < upperBoundaryResult).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_ASIN_3900

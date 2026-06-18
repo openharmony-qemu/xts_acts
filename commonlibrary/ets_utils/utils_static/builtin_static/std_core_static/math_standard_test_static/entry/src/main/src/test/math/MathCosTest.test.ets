@@ -197,15 +197,15 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 1.0e-14;
-      let r1: double = Math.cos(0.0);
-      let r2: double = Math.cos(Math.PI);
-      let r3: double = Math.cos(2.0 * Math.PI);
-      expect(r1 > 1.0 - eps).assertTrue();
-      expect(r2 > -1.0 - eps && r2 < -1.0 + eps).assertTrue();
-      expect(r3 > 1.0 - eps).assertTrue();
+      let zeroAngleResult: double = Math.cos(0.0);
+      let piAngleResult: double = Math.cos(Math.PI);
+      let fullPeriodResult: double = Math.cos(2.0 * Math.PI);
+      expect(zeroAngleResult > 1.0 - eps).assertTrue();
+      expect(piAngleResult > -1.0 - eps && piAngleResult < -1.0 + eps).assertTrue();
+      expect(fullPeriodResult > 1.0 - eps).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1200
@@ -214,12 +214,12 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
-      let r1: double = Math.cos(x);
-      let r2: double = Math.cos(-x);
-      expect(r1).assertEqual(r2);
+      let positiveInputResult: double = Math.cos(x);
+      let negativeInputResult: double = Math.cos(-x);
+      expect(positiveInputResult).assertEqual(negativeInputResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_1300
@@ -293,12 +293,14 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r1: double = Math.cos(0.0);
-      let r2: double = Math.cos(0.5);
-      let r3: double = Math.cos(1.0);
-      let isFinite: boolean = Utils.isFiniteValue(r1) && Utils.isFiniteValue(r2) && Utils.isFiniteValue(r3);
+      let zeroInputResult: double = Math.cos(0.0);
+      let halfRadianResult: double = Math.cos(0.5);
+      let oneRadianResult: double = Math.cos(1.0);
+      let isFinite: boolean = Utils.isFiniteValue(zeroInputResult)
+        && Utils.isFiniteValue(halfRadianResult)
+        && Utils.isFiniteValue(oneRadianResult);
       expect(isFinite).assertTrue();
     });
     /**
@@ -308,12 +310,13 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let rA: double = Math.cos(0.3);
-      let rB: double = Math.cos(1.2);
-      let rA2: double = Math.cos(0.3);
-      expect(rA).assertEqual(rA2);
+      let firstInputResult: double = Math.cos(0.3);
+      let secondInputResult: double = Math.cos(1.2);
+      let repeatFirstInputResult: double = Math.cos(0.3);
+      expect(firstInputResult).assertEqual(repeatFirstInputResult);
+      expect(secondInputResult).assertEqual(Math.cos(1.2));
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2000
@@ -322,13 +325,13 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
       let twoPi: double = 2.0 * Math.PI;
-      let r1: double = Math.cos(x);
-      let r2: double = Math.cos(x + twoPi);
-      let diff: double = Utils.getAbsDiff(r1, r2);
+      let baseAngleResult: double = Math.cos(x);
+      let shiftedAngleResult: double = Math.cos(x + twoPi);
+      let diff: double = Utils.getAbsDiff(baseAngleResult, shiftedAngleResult);
       expect(diff < 1.0e-12).assertTrue();
     });
     /**
@@ -338,14 +341,14 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.5;
-      let r1: double = Math.cos(x);
-      let r2: double = Math.cos(x);
-      let r3: double = Math.cos(x);
-      expect(r1).assertEqual(r2);
-      expect(r2).assertEqual(r3);
+      let firstCallResult: double = Math.cos(x);
+      let secondCallResult: double = Math.cos(x);
+      let thirdCallResult: double = Math.cos(x);
+      expect(firstCallResult).assertEqual(secondCallResult);
+      expect(secondCallResult).assertEqual(thirdCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2200
@@ -354,16 +357,16 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x1: double = 0.3;
-      let x2: double = 1.1;
-      let a1: double = Math.cos(x1);
-      let a2: double = Math.cos(x1);
-      let b1: double = Math.cos(x2);
-      let b2: double = Math.cos(x2);
-      expect(a1).assertEqual(a2);
-      expect(b1).assertEqual(b2);
+      let smallerAngleInput: double = 0.3;
+      let largerAngleInput: double = 1.1;
+      let smallerAngleFirstCallResult: double = Math.cos(smallerAngleInput);
+      let smallerAngleSecondCallResult: double = Math.cos(smallerAngleInput);
+      let largerAngleFirstCallResult: double = Math.cos(largerAngleInput);
+      let largerAngleSecondCallResult: double = Math.cos(largerAngleInput);
+      expect(smallerAngleFirstCallResult).assertEqual(smallerAngleSecondCallResult);
+      expect(largerAngleFirstCallResult).assertEqual(largerAngleSecondCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2300
@@ -372,13 +375,13 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.4;
-      let r1: double = Math.cos(x);
-      let _: double = Math.cos(2.0);
-      let r2: double = Math.cos(x);
-      expect(r1).assertEqual(r2);
+      let beforeInterleavedCallResult: double = Math.cos(x);
+      Math.cos(2.0);
+      let afterInterleavedCallResult: double = Math.cos(x);
+      expect(beforeInterleavedCallResult).assertEqual(afterInterleavedCallResult);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2400
@@ -400,13 +403,13 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 0.01;
       let halfPi: double = Math.PI / 2.0;
-      let r1: double = Math.cos(halfPi + eps);
-      let r2: double = Math.cos(halfPi - eps);
-      let diff: double = Utils.getAbsDiff(r1, r2);
+      let rightOffsetResult: double = Math.cos(halfPi + eps);
+      let leftOffsetResult: double = Math.cos(halfPi - eps);
+      let diff: double = Utils.getAbsDiff(rightOffsetResult, leftOffsetResult);
       expect(diff < 0.05).assertTrue();
     });
     /**
@@ -416,13 +419,13 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eps: double = 1.0e-14;
-      let r0: double = Math.cos(0.0);
-      let r2: double = Math.cos(2.0 * Math.PI);
-      expect(r0 > 1.0 - eps).assertTrue();
-      expect(r2 > 1.0 - eps).assertTrue();
+      let zeroAngleResult: double = Math.cos(0.0);
+      let fullPeriodResult: double = Math.cos(2.0 * Math.PI);
+      expect(zeroAngleResult > 1.0 - eps).assertTrue();
+      expect(fullPeriodResult > 1.0 - eps).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_2700
@@ -486,17 +489,17 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let step: double = Math.PI / 4.0;
-      let v0: double = Math.cos(0.0);
-      let v1: double = Math.cos(step);
-      let v2: double = Math.cos(step * 2.0);
-      let v3: double = Math.cos(step * 3.0);
-      expect(v0 >= -1.0 && v0 <= 1.0).assertTrue();
-      expect(v1 >= -1.0 && v1 <= 1.0).assertTrue();
-      expect(v2 >= -1.0 && v2 <= 1.0).assertTrue();
-      expect(v3 >= -1.0 && v3 <= 1.0).assertTrue();
+      let zeroAngleResult: double = Math.cos(0.0);
+      let quarterPiResult: double = Math.cos(step);
+      let halfPiResult: double = Math.cos(step * 2.0);
+      let threeQuarterPiResult: double = Math.cos(step * 3.0);
+      expect(zeroAngleResult >= -1.0 && zeroAngleResult <= 1.0).assertTrue();
+      expect(quarterPiResult >= -1.0 && quarterPiResult <= 1.0).assertTrue();
+      expect(halfPiResult >= -1.0 && halfPiResult <= 1.0).assertTrue();
+      expect(threeQuarterPiResult >= -1.0 && threeQuarterPiResult <= 1.0).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MATH_COS_3200
@@ -505,12 +508,12 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.7;
-      let s: double = Math.sin(x);
-      let c: double = Math.cos(x);
-      let sum: double = s * s + c * c;
+      let sineResult: double = Math.sin(x);
+      let cosineResult: double = Math.cos(x);
+      let sum: double = sineResult * sineResult + cosineResult * cosineResult;
       let diff: double = Utils.getAbsDiff(sum, 1.0);
       expect(diff < 1.0e-12).assertTrue();
     });
@@ -536,12 +539,12 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.4;
       let lhs: double = Math.cos(2.0 * x);
-      let cx: double = Math.cos(x);
-      let rhs: double = 2.0 * cx * cx - 1.0;
+      let cosineResult: double = Math.cos(x);
+      let rhs: double = 2.0 * cosineResult * cosineResult - 1.0;
       let diff: double = Utils.getAbsDiff(lhs, rhs);
       expect(diff < 1.0e-12).assertTrue();
     });
@@ -552,12 +555,12 @@ export default function mathCosTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
-     */
+    */
     it('testMathCos035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: double = 0.3;
-      let b: double = 0.2;
-      let lhs: double = Math.cos(a + b);
-      let rhs: double = Math.cos(a) * Math.cos(b) - Math.sin(a) * Math.sin(b);
+      let firstAngle: double = 0.3;
+      let secondAngle: double = 0.2;
+      let lhs: double = Math.cos(firstAngle + secondAngle);
+      let rhs: double = Math.cos(firstAngle) * Math.cos(secondAngle) - Math.sin(firstAngle) * Math.sin(secondAngle);
       let diff: double = Utils.getAbsDiff(lhs, rhs);
       expect(diff < 1.0e-12).assertTrue();
     });

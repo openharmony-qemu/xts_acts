@@ -291,14 +291,14 @@ export default function mathMinTest(): void {
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
-     */
+    */
     it('testMathMin019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let left: double = 5.0;
       let right: double = 10.0;
-      let result1: double = Math.min(left, right);
-      let result2: double = Math.min(right, left);
-      expect(result1).assertEqual(5.0);
-      expect(result1).assertEqual(result2);
+      let forwardOrderResult: double = Math.min(left, right);
+      let reverseOrderResult: double = Math.min(right, left);
+      expect(forwardOrderResult).assertEqual(5.0);
+      expect(forwardOrderResult).assertEqual(reverseOrderResult);
     });
     /**
      * @tc.name testMathMin020
