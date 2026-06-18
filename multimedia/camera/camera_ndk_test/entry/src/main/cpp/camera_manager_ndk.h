@@ -184,6 +184,8 @@ public:
     Camera_ErrorCode GetCameraHostNameInspection(void);
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
+    Camera_ErrorCode GetAutomotiveCameraPosition(void);
+    Camera_ErrorCode GetAutomotiveCameraPositionErrorParameter(void);
     Camera_ErrorCode TestOHGetSensorPixelArraySizeWithoutCamera(void);
     Camera_ErrorCode TestOHGetSensorColorFilterArrangementWithoutCamera(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);

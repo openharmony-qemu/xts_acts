@@ -13,14 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '../../../hypium/index';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import ArrayList from '@ohos.util.ArrayList';
 import { TestConst } from './Const.test';
-import { BusinessError } from '@ohos.base';
-
 let TagFrmwk: string = "audioManagerEnhanceTest";
 let audioVolumeGroupManager: audio.AudioVolumeGroupManager | undefined;
 

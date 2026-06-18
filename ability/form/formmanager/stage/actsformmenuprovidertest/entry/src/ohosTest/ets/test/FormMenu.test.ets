@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,7 +20,7 @@ import { Driver, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 
-const TAG = 'AddFormMenuItem';
+const COMMON_TAG = 'FormMenu';
 const DOMAIN = 0xF811;
 const PUBLISH_BUNDLE_NAME = 'com.example.menuprovider';
 const cmd = 'hilog -x | grep AddFormMenuItemSuccessAndFormId';
@@ -50,7 +50,7 @@ export default function abilityTest() {
         abilityName: 'TestFormAbility'
       })
       await sleep(1000);
-      hilog.info(DOMAIN, TAG, '%{public}s', 'test start');
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 'test start');
     })
 
     /**
@@ -62,11 +62,12 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.log("SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100 start");
+      let TAG: string = 'SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100';
+      hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
       emitter.on({
         eventId: ERR_DEVICE_NOT_SUPPORTED 
       }, () => {
-        console.log(`SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100 emitter callback`);
+        hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} emitter callback`);
         done();
       });
       const descButton = await driver.findComponent(ON.text(await resourceManager.getStringValue($r('app.string.TestFormAbility_desc'))));
@@ -82,7 +83,7 @@ export default function abilityTest() {
       await sleep(1000);
       await abilityDelegator.executeShellCommand(cmd)
         .then((data) => {
-          hilog.info(DOMAIN, TAG, JSON.stringify(data));
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s', JSON.stringify(data));
           let firstFilter = JSON.stringify(data.stdResult).split("JSAPP: AddFormMenuItemSuccessAndFormId", 2)
           let secondFilter = JSON.stringify(firstFilter[1]).split("\FormID  ");
           let myFormId: string = secondFilter[0];
@@ -90,7 +91,7 @@ export default function abilityTest() {
           done();
         })
         .catch((error: BusinessError) => {
-          console.log("Test failed : " + JSON.stringify(error));
+          hilog.info(DOMAIN, COMMON_TAG, 'Test failed : %{public}s', JSON.stringify(error));
           expect().assertFail();
           done();
         });

@@ -22,8 +22,6 @@ import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils'
-
 export default function CalendarPickerDialogBGBlurStyleTest() {
   describe('CalendarPickerDialogBGBlurStyleTest', () => {
     beforeAll(async (): Promise<void> => {

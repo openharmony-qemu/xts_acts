@@ -12,20 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, afterAll, afterEach, beforeAll, beforeEach } from '../../../hypium/index';
 import { BusinessError } from '@ohos.base';
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  Level,
-  Size,
-  TestType
-} from "../../../hypium/index";
 import Utils from './Util.test';
 interface text1 {
   big: number;

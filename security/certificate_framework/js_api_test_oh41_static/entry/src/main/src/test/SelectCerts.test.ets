@@ -13,21 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import util from '@ohos.util';
-import * as certFunc from "./utils/collection/certFunc";
-import * as crlFunc from "./utils/collection/crlFunc";
+import * as certFunc from './utils/collection/certFunc';
+import * as crlFunc from './utils/collection/crlFunc';
 import { CERT_DATA_PEM, CERT_DATA_PEM_PARAMETERS, IS_CALLBACK, IS_PROMISE, PEM } from './utils/common/commonParam';
-
 export default function certFrameworkSelectCertsJsAPIFunctionTestUnit() {
   describe("certFrameworkSelectCertsJsAPIFunctionTestUnit", () => {
     console.info("##########start certFrameworkSelectCertsJsAPIFunctionTestUnit##########");

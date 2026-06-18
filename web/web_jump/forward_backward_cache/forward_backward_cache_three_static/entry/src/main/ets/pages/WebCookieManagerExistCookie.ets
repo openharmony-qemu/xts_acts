@@ -13,27 +13,14 @@
  * limitations under the License.
  */
 
-import {
-  Button,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Row,
-  Web,
-  Blank,
-  OnConsoleEvent,
-  WebResourceRequest
-} from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { Button, ClickEvent, Column, Component, Entry, Row, Web, Blank, OnConsoleEvent, WebResourceRequest } from '@ohos.arkui.component';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
-import Utils from '../../src/test/Util.test';
-import { Callback } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
-
+import Utils from '../../src/test/Util.test';
 export class StringFields {
   public str: string = '';
 }

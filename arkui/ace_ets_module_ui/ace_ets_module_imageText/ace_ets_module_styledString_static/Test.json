@@ -11,7 +11,7 @@
   "kits": [
     {
       "test-file-name": [
-        "ActsAceEtsModuleStyledStringStaticTest.hap"
+        "ActsAceEtsModuleTextStyledStringStaticTest.hap"
       ],
       "type": "AppInstallKit",
       "cleanup-apps": true

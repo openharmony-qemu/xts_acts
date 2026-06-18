@@ -50,6 +50,7 @@ import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystem
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
 import PopupColorMode from './popup/PopupColorMode.test';
 import PopupBackgroundEffectTest from './popup/PopupBackgroundEffect.test';
+import PopupLevelModeTest from './popup/PopupLevelModeTest.test';
 
 
 export default function testsuite() {
@@ -88,4 +89,5 @@ export default function testsuite() {
   // TipsOptionsSystemMaterial();
   PopupColorMode();
   PopupBackgroundEffectTest();
+  PopupLevelModeTest();
 }

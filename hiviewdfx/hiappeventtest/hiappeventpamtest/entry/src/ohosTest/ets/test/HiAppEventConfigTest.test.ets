@@ -351,6 +351,13 @@ export default function HiAppEventConfigTest() {
       {resourceOverlimitPolicy: {pageSwitchLogEnable: false}},
       {resourceOverlimitPolicy: {jsHeapLogtype: "event"}},
       {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap"}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event", useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap", useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event", useRefinedLogFileName: false}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: false, jsHeapLogtype: "event", useRefinedLogFileName: true}},
 
       // resourceOverlimitPolicy 成功场景 - 两参数组合
       {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event"}},
@@ -592,6 +599,18 @@ export default function HiAppEventConfigTest() {
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined}},
       {resourceOverlimitPolicy: {jsHeapLogtype: undefined}},
       {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined}},
+      {resourceOverlimitPolicy: {useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined, useRefinedLogFileName: true}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: "event_rawheap", useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: true, jsHeapLogtype: undefined, useRefinedLogFileName: undefined}},
+      {resourceOverlimitPolicy: {pageSwitchLogEnable: undefined, jsHeapLogtype: undefined, useRefinedLogFileName: undefined}},
 
       // addressSanitizerPolicy 401场景
       {addressSanitizerPolicy: {pageSwitchLogEnable: undefined}},

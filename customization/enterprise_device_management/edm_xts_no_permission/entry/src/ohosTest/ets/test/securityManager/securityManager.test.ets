@@ -34,7 +34,8 @@ const STRING_VALID_CERTIFICATEALIAS = 'test_cert_0.cer';
 const PASSWORD_POLICY: securityManager.PasswordPolicy = {
   complexityRegex: 'g',
   validityPeriod: 60 * 60 * 24 * 1000,
-  additionalDescription: '123'
+  additionalDescription: '123',
+  passwordAlgs: securityManager.PasswordAlgs.SCRYPT_HKDF_AES
 };
 
 const MAX_PASSWORD_POLICY: securityManager.PasswordPolicy = {

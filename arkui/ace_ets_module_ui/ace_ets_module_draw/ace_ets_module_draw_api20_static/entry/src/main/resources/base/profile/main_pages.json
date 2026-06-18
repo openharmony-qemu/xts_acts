@@ -38,6 +38,7 @@
         "MainAbility/pages/CanvasRenderingContext2D/CanvasRenderingContext2DShadowOffsetX",
         "MainAbility/pages/CanvasRenderingContext2D/CanvasRenderingContext2DShadowOffsetY",
         "MainAbility/pages/CanvasRenderingContext2D/CanvasRenderingContext2DTextAlign",
-        "MainAbility/pages/CanvasRenderingContext2D/CanvasRenderingContext2DTextBaseline"
+        "MainAbility/pages/CanvasRenderingContext2D/CanvasRenderingContext2DTextBaseline",
+        "MainAbility/pages/Circle/CircleStrokeColorMetrics"
     ]
 }

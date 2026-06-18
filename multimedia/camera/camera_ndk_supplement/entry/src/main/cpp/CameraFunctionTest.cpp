@@ -143,6 +143,24 @@ int32_t CameraFunctionTest::OHCameraDeviceGetHostDeviceTypeTest(int32_t caseCode
     return ret;
 }
 
+int32_t CameraFunctionTest::OHCameraDeviceGetAutomotiveCameraPositionTest(int32_t caseCode)
+{
+    int32_t ret = CAMERA_OK;
+    if (caseCode == CAMERA_OK) {
+        OH_Camera_AutomotiveCameraPosition position;
+        Camera_ErrorCode result = OH_CameraDevice_GetAutomotiveCameraPosition(cameras_, &position);
+        if (result == CAMERA_OK) {
+            ret = TEST_OK;
+        }
+    } else if (caseCode == CAMERA_SERVICE_FATAL_ERROR) {
+        Camera_ErrorCode result = OH_CameraDevice_GetAutomotiveCameraPosition(cameras_, nullptr);
+        if (result == CAMERA_SERVICE_FATAL_ERROR) {
+            ret = TEST_OK;
+        }
+    }
+    return ret;
+}
+
 int32_t CameraFunctionTest::OHCameraInputRegisterCallbackTest(int32_t caseCode)
 {
     int32_t ret = CAMERA_OK;

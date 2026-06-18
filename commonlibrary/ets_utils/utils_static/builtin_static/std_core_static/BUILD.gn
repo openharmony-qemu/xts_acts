@@ -47,6 +47,10 @@ group("std_core_static") {
       "string_standard_test_static:ActsStringCaseStaticTest",
       "type_standard_test_static:ActsTypeCaseStaticTest",
       "value_standard_test_static:ActsValueCaseStaticTest",
+      "long_standard_test_static:ActsLongStaticTest",
+      "math_standard_test_static:ActsMathCaseStaticTest",
+      "map_standard_test_static:ActsMapCaseStaticTest",
+      "blockingqueue_standard_test_static:ActsBlockingqueueCaseStaticTest",
     ]
   }
 }

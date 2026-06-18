@@ -15,29 +15,9 @@
  */
 //002 测试自定义组件冻结V2  Navigation
 import { PromptAction } from '@ohos.arkui.UIContext';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,NavigationMode,
-  ForEach,NavDestination,Navigation,ButtonType,
-  Text,Tabs,TabContent,NavPathStack,Builder,NavPathInfo,
-  Row,CommonAttribute,TextAttribute,TabsController,
-  List,AttributeModifier,ButtonAttribute,BorderStyle,
-  ListItem,GridLayoutOptions,Grid,GridItem,BarState,TextAlign,
-  Color,Scroller,Divider,Flex,ChildrenMainSize,ListScroller,
-  FlexAlign,ComponentV2,HorizontalAlign,FontWeight
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Provider,Consumer,IMonitor,
-  Link,Local,Trace,Track,PropRef,Monitor,Computed,Param,Require,
-  StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
-} from '@ohos.arkui.stateManagement'
-import { CommonModifier, TextModifier } from '@ohos.arkui.modifier'
-import { PromptAction } from '@ohos.arkui.UIContext'
-
+import { Entry, Column, Component, Button, ClickEvent, NavigationMode, ForEach, NavDestination, Navigation, ButtonType, Text, Tabs, TabContent, NavPathStack, Builder, NavPathInfo, Row, CommonAttribute, TextAttribute, TabsController, List, AttributeModifier, ButtonAttribute, BorderStyle, ListItem, GridLayoutOptions, Grid, GridItem, BarState, TextAlign, Color, Scroller, Divider, Flex, ChildrenMainSize, ListScroller, FlexAlign, ComponentV2, HorizontalAlign, FontWeight } from '@ohos.arkui.component';
+import { State, Watch, Provider, Consumer, IMonitor, Link, Local, Trace, Track, PropRef, Monitor, Computed, Param, Require, StorageLink, LocalStorage, UIUtils, Observed, ObservedV2 } from '@ohos.arkui.stateManagement';
+import { CommonModifier, TextModifier } from '@ohos.arkui.modifier';
 let prompt= new PromptAction()
 
 @Entry

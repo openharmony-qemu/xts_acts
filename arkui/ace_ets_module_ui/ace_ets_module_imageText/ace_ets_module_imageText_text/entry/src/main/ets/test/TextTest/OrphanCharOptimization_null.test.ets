@@ -62,22 +62,22 @@ export default function OrphanCharOptimizationnullTest() {
       await buttonFalse.click();
       await CommonFunc.sleep(1000);
 
-      let textFalse = getInspectorByKey('jsText');
+      let textFalse = getInspectorByKey('jsText_null');
       let ObjTextFalse: ESObject = JSON.parse(textFalse);
       expect(ObjTextFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let textAreaFalse = getInspectorByKey('jsTextArea');
+      let textAreaFalse = getInspectorByKey('jsTextArea_null');
       let ObjTextAreaFalse: ESObject = JSON.parse(textAreaFalse);
       expect(ObjTextAreaFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let textInputFalse = getInspectorByKey('jsTextInput');
+      let textInputFalse = getInspectorByKey('jsTextInput_null');
       let ObjTextInputFalse: ESObject = JSON.parse(textInputFalse);
       expect(ObjTextInputFalse.$attrs.orphanCharOptimization).assertEqual('false');
 
       await CommonFunc.sleep(1000);
-      let richEditorFalse = getInspectorByKey('jsRichEditor');
+      let richEditorFalse = getInspectorByKey('jsRichEditor_null');
       let ObjRichEditorFalse: ESObject = JSON.parse(richEditorFalse);
       expect(ObjRichEditorFalse.$attrs.orphanCharOptimization).assertEqual('false');
       console.info('[SUB_ACE_ARKUI_OPTIMIZATIONNULL_0100] END');
