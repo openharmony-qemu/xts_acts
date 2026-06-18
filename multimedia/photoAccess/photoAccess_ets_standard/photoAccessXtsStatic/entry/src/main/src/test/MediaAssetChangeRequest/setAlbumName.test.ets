@@ -604,8 +604,8 @@ export default function MediaAlbumChangeRequestSetAlbumNameStatic(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_ALBUM_CHANGE_REQUEST_SET_ALBUM_NAME_STATIC_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MEDIA_ALBUM_CHANGE_REQUEST_SET_ALBUM_NAME_STATIC_0210';
+    it('SUB_MEDIA_ALBUM_CHANGE_REQUEST_SET_ALBUM_NAME_STATIC_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MEDIA_ALBUM_CHANGE_REQUEST_SET_ALBUM_NAME_STATIC_0220';
       let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper!.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC);
       let album: photoAccessHelper.Album = await albumFetchResult.getFirstObject();
       let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
