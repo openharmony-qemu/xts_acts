@@ -18,6 +18,8 @@ import getThumbnailStaticTest from "./PhotoAsset/getThumbnail.test";
 import MediaAssetRequestImageSuppStatic from "./MediaAssetManager/requestImage.test";
 import AddResourceChangeRequestUrlSuppTest from "./AddResource/AddResourceUrl.test";
 import CommitModifySuppTest from "./AddResource/CommitModifyTest.test";
+import MediaAlbumChangeRequestSetAlbumNameStatic from "./MediaAssetChangeRequest/setAlbumName.test";
+import getTest from "./PhotoAsset/get.test";
 
 export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
@@ -40,4 +42,6 @@ export default function testsuite(): void {
   getAssetsStaticTest();
   AddResourceChangeRequestUrlSuppTest();
   CommitModifySuppTest();
+  MediaAlbumChangeRequestSetAlbumNameStatic();
+  getTest();
 }
