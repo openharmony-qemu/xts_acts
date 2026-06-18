@@ -59,14 +59,14 @@ export default function DatePickerComponentConstructorTest() {
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_CONSTRUCTOR_0100
-     * @tc.name DatePickerComponentConstructor_default_created
+     * @tc.name DatePickerComponentConstructor_default_created_0100
      * @tc.desc Verify default created DatePickerComponent text content contains 'DatePickerComponent_default_created'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentConstructor_default_created', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentConstructor_default_created START')
+    it('DatePickerComponentConstructor_default_created_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentConstructor_default_created_0100 START')
       const driver: Driver = Driver.create()
       try {
         let strJson = inspector.getInspectorByKey('text_default_created')
@@ -75,7 +75,7 @@ export default function DatePickerComponentConstructorTest() {
         expect(content).assertContain('DatePickerComponent_default_created')
         done()
       } catch (err) {
-        console.error('DatePickerComponentConstructor_default_created error: ' + err)
+        console.error('DatePickerComponentConstructor_default_created_0100 error: ' + err)
         expect().assertFail()
         done()
       }
@@ -83,14 +83,14 @@ export default function DatePickerComponentConstructorTest() {
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_CONSTRUCTOR_0200
-     * @tc.name DatePickerComponentConstructor_explicit_created
+     * @tc.name DatePickerComponentConstructor_explicit_created_0200
      * @tc.desc Verify explicit created DatePickerComponent text content contains 'DatePickerComponent_explicit_created'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentConstructor_explicit_created', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentConstructor_explicit_created START')
+    it('DatePickerComponentConstructor_explicit_created_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentConstructor_explicit_created_0200 START')
       const driver: Driver = Driver.create()
       try {
         let strJson = inspector.getInspectorByKey('text_explicit_created')
@@ -99,7 +99,7 @@ export default function DatePickerComponentConstructorTest() {
         expect(content).assertContain('DatePickerComponent_explicit_created')
         done()
       } catch (err) {
-        console.error('DatePickerComponentConstructor_explicit_created error: ' + err)
+        console.error('DatePickerComponentConstructor_explicit_created_0200 error: ' + err)
         expect().assertFail()
         done()
       }
