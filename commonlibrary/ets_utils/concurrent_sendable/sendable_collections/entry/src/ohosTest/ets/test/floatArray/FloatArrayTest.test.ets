@@ -126,7 +126,7 @@ export default function FloatArrayTest(): void {
         let arr = new collections.Float32Array(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -30,8 +30,10 @@ function modifyBitVectorFunc(bv: collections.BitVector): void {
 }
 
 @Concurrent
-function concurrentPushFunc(bv: collections.BitVector): void {
-  bv.push(1)
+async function concurrentPushFunc(bv: collections.BitVector, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    bv.push(1)
+  })
 }
 
 @Sendable
@@ -1310,16 +1312,13 @@ export default function BitVectorTest(): void {
      */
     it('BitVectorTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let bv = new collections.BitVector(16)
-      let task1 = new taskpool.Task(concurrentPushFunc, bv)
-      let task2 = new taskpool.Task(concurrentPushFunc, bv)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(concurrentPushFunc, bv, lock)
+      let task2 = new taskpool.Task(concurrentPushFunc, bv, lock)
       let p1 = taskpool.execute(task1)
       let p2 = taskpool.execute(task2)
-      try {
-        await Promise.all([p1, p2])
-        expect(bv.length).assertEqual(18)
-      } catch (e) {
-        expect(e.code).assertEqual(10200201)
-      }
+      await Promise.all([p1, p2])
+      expect(bv.length).assertEqual(18)
     })
 
     // ===== Inheritance Tests =====

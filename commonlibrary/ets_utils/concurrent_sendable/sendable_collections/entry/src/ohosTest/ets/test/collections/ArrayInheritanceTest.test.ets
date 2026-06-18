@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -182,9 +182,11 @@ function getDescFunc(arr: CustomPropArray): string {
 }
 
 @Concurrent
-function addValueFunc(arr: BasicArray, value: number): number {
-  arr.push(value)
-  return arr.length
+async function addValueFunc(arr: BasicArray, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(value)
+    return arr.length
+  })
 }
 
 @Concurrent
@@ -558,11 +560,12 @@ export default function ArrayInheritanceTest(): void {
      */
     it('ArrayInheritanceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let sharedArr = new BasicArray()
-      let p1 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 0))
-      let p2 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 10))
-      let p3 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 20))
-      let p4 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 30))
-      let p5 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 40))
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let p1 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 0, lock))
+      let p2 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 10, lock))
+      let p3 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 20, lock))
+      let p4 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 30, lock))
+      let p5 = taskpool.execute(new taskpool.Task(addValueFunc, sharedArr, 40, lock))
       await Promise.all([p1, p2, p3, p4, p5])
       expect(sharedArr.length).assertEqual(5)
     })

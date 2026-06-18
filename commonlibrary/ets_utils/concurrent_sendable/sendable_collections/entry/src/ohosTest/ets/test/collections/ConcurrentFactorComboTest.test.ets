@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -25,24 +25,30 @@ class FactorCounter {
   count: number = 0
 }
 
-// ===== @Concurrent Functions =====
+// ===== @Concurrent Functions (with AsyncLock protection for writes) =====
 
 @Concurrent
-function factorArrayPushFunc(arr: collections.Array<number>, value: number): number {
-  arr.push(value)
-  return arr.length
+async function factorArrayPushFunc(arr: collections.Array<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(value)
+    return arr.length
+  })
 }
 
 @Concurrent
-function factorMapSetFunc(map: collections.Map<string, number>, key: string, value: number): number {
-  map.set(key, value)
-  return map.size
+async function factorMapSetFunc(map: collections.Map<string, number>, key: string, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    map.set(key, value)
+    return map.size
+  })
 }
 
 @Concurrent
-function factorSetAddFunc(set: collections.Set<number>, value: number): number {
-  set.add(value)
-  return set.size
+async function factorSetAddFunc(set: collections.Set<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    set.add(value)
+    return set.size
+  })
 }
 
 @Concurrent
@@ -60,11 +66,13 @@ function factorReadFunc(arr: collections.Array<number>, index: number): number {
 }
 
 @Concurrent
-function factorBatchPushFunc(arr: collections.Array<number>, count: number): number {
-  for (let i = 0; i < count; i++) {
-    arr.push(i)
-  }
-  return arr.length
+async function factorBatchPushFunc(arr: collections.Array<number>, count: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    for (let i = 0; i < count; i++) {
+      arr.push(i)
+    }
+    return arr.length
+  })
 }
 
 @Concurrent
@@ -77,21 +85,25 @@ function factorProcessFunc(arr: collections.Array<number>, start: number, end: n
 }
 
 @Concurrent
-function factorTypedArrayFunc(buffer: collections.ArrayBuffer, size: number): number {
-  let view = new collections.Uint8Array(buffer)
-  for (let i = 0; i < size; i++) {
-    view[i] = i % 256
-  }
-  return view[0]
+async function factorTypedArrayFunc(buffer: collections.ArrayBuffer, size: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let view = new collections.Uint8Array(buffer)
+    for (let i = 0; i < size; i++) {
+      view[i] = i % 256
+    }
+    return view[0]
+  })
 }
 
 @Concurrent
-function factorFloatFunc(buffer: collections.ArrayBuffer, size: number): number {
-  let view = new collections.Float32Array(buffer)
-  for (let i = 0; i < size; i++) {
-    view[i] = i * 1.5
-  }
-  return view[0]
+async function factorFloatFunc(buffer: collections.ArrayBuffer, size: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let view = new collections.Float32Array(buffer)
+    for (let i = 0; i < size; i++) {
+      view[i] = i * 1.5
+    }
+    return view[0]
+  })
 }
 
 export default function ConcurrentFactorComboTest(): void {
@@ -115,7 +127,8 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      let task = new taskpool.Task(factorArrayPushFunc, arr, 42)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(factorArrayPushFunc, arr, 42, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(1)
       expect(arr[0]).assertEqual(42)
@@ -124,27 +137,24 @@ export default function ConcurrentFactorComboTest(): void {
     /**
      * @tc.name   ConcurrentFactorComboTest0200
      * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_0200
-     * @tc.desc   Verify 5 concurrent TaskPool push tasks on same Array
+     * @tc.desc   Verify 5 concurrent TaskPool push tasks on same Array with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ConcurrentFactorComboTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 5; i++) {
-          tasks.push(new taskpool.Task(factorArrayPushFunc, arr, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(arr.length).assertEqual(5)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 5; i++) {
+        tasks.push(new taskpool.Task(factorArrayPushFunc, arr, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(arr.length).assertEqual(5)
     })
 
     /**
@@ -212,20 +222,17 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 100; i++) {
-          tasks.push(new taskpool.Task(factorMapSetFunc, map, 'k' + i.toString(), i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(map.size).assertEqual(100)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 100; i++) {
+        tasks.push(new taskpool.Task(factorMapSetFunc, map, 'k' + i.toString(), i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(map.size).assertEqual(100)
     })
 
     // ===== Async Task Combinations (0600-1100) =====
@@ -240,13 +247,14 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      let t1 = new taskpool.Task(factorArrayPushFunc, arr, 10)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let t1 = new taskpool.Task(factorArrayPushFunc, arr, 10, lock)
       await taskpool.execute(t1)
       expect(arr.length).assertEqual(1)
       let popped = arr.pop()
       expect(popped).assertEqual(10)
       expect(arr.length).assertEqual(0)
-      let t2 = new taskpool.Task(factorArrayPushFunc, arr, 20)
+      let t2 = new taskpool.Task(factorArrayPushFunc, arr, 20, lock)
       await taskpool.execute(t2)
       expect(arr.length).assertEqual(1)
       expect(arr[0]).assertEqual(20)
@@ -264,9 +272,12 @@ export default function ConcurrentFactorComboTest(): void {
       let arr1 = new collections.Array<number>()
       let arr2 = new collections.Array<number>()
       let arr3 = new collections.Array<number>()
-      let t1 = new taskpool.Task(factorArrayPushFunc, arr1, 1)
-      let t2 = new taskpool.Task(factorArrayPushFunc, arr2, 2)
-      let t3 = new taskpool.Task(factorArrayPushFunc, arr3, 3)
+      let lock1 = new ArkTSUtils.locks.AsyncLock()
+      let lock2 = new ArkTSUtils.locks.AsyncLock()
+      let lock3 = new ArkTSUtils.locks.AsyncLock()
+      let t1 = new taskpool.Task(factorArrayPushFunc, arr1, 1, lock1)
+      let t2 = new taskpool.Task(factorArrayPushFunc, arr2, 2, lock2)
+      let t3 = new taskpool.Task(factorArrayPushFunc, arr3, 3, lock3)
       let p1 = taskpool.execute(t1)
       let p2 = taskpool.execute(t2)
       let p3 = taskpool.execute(t3)
@@ -279,28 +290,25 @@ export default function ConcurrentFactorComboTest(): void {
     /**
      * @tc.name   ConcurrentFactorComboTest0800
      * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_0800
-     * @tc.desc   Verify Promise.all with 20 concurrent tasks and result validation
+     * @tc.desc   Verify Promise.all with 20 concurrent tasks and result validation with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ConcurrentFactorComboTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 20; i++) {
-          tasks.push(new taskpool.Task(factorArrayPushFunc, arr, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        let results = await Promise.all(promises)
-        expect(results.length).assertEqual(20)
-        expect(arr.length).assertEqual(20)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 20; i++) {
+        tasks.push(new taskpool.Task(factorArrayPushFunc, arr, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      let results = await Promise.all(promises)
+      expect(results.length).assertEqual(20)
+      expect(arr.length).assertEqual(20)
     })
 
     /**
@@ -313,13 +321,14 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
-      let t1 = new taskpool.Task(factorMapSetFunc, map, 'dep1', 100)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let t1 = new taskpool.Task(factorMapSetFunc, map, 'dep1', 100, lock)
       await taskpool.execute(t1)
       expect(map.has('dep1')).assertTrue()
       expect(map.get('dep1')).assertEqual(100)
       map.delete('dep1')
       expect(map.has('dep1')).assertFalse()
-      let t2 = new taskpool.Task(factorMapSetFunc, map, 'dep2', 200)
+      let t2 = new taskpool.Task(factorMapSetFunc, map, 'dep2', 200, lock)
       await taskpool.execute(t2)
       expect(map.size).assertEqual(1)
       expect(map.get('dep2')).assertEqual(200)
@@ -335,9 +344,10 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
+      let lock = new ArkTSUtils.locks.AsyncLock()
       await new Promise<void>((resolve) => {
         setTimeout((): void => {
-          let task = new taskpool.Task(factorArrayPushFunc, arr, 999)
+          let task = new taskpool.Task(factorArrayPushFunc, arr, 999, lock)
           taskpool.execute(task).then(() => {
             resolve()
           })
@@ -471,7 +481,8 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
-      let task = new taskpool.Task(factorTypedArrayFunc, buffer, 1024)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(factorTypedArrayFunc, buffer, 1024, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(0)
       let view = new collections.Uint8Array(buffer)
@@ -489,7 +500,8 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(400)
-      let task = new taskpool.Task(factorFloatFunc, buffer, 100)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(factorFloatFunc, buffer, 100, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(0)
       let view = new collections.Float32Array(buffer)
@@ -509,7 +521,8 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      let task = new taskpool.Task(factorBatchPushFunc, arr, 50)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(factorBatchPushFunc, arr, 50, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(50)
       expect(arr.length).assertEqual(50)
@@ -525,7 +538,8 @@ export default function ConcurrentFactorComboTest(): void {
      */
     it('ConcurrentFactorComboTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(1024)
-      let task1 = new taskpool.Task(factorTypedArrayFunc, buffer, 512)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(factorTypedArrayFunc, buffer, 512, lock)
       let p1 = taskpool.execute(task1)
       await p1
       let view = new collections.Uint8Array(buffer)
@@ -537,7 +551,7 @@ export default function ConcurrentFactorComboTest(): void {
     /**
      * @tc.name   ConcurrentFactorComboTest2000
      * @tc.number SUB_CONCURRENT_FACTOR_COMBO_TEST_2000
-     * @tc.desc   Verify Map and Set combination with concurrent set operations
+     * @tc.desc   Verify Map and Set combination with concurrent set operations with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -545,28 +559,26 @@ export default function ConcurrentFactorComboTest(): void {
     it('ConcurrentFactorComboTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
       let set = new collections.Set<number>()
-      try {
-        let mapTasks: taskpool.Task[] = []
-        for (let i = 0; i < 10; i++) {
-          mapTasks.push(new taskpool.Task(factorMapSetFunc, map, 'key' + i.toString(), i))
-        }
-        let setTasks: taskpool.Task[] = []
-        for (let i = 0; i < 10; i++) {
-          setTasks.push(new taskpool.Task(factorSetAddFunc, set, i))
-        }
-        let allPromises: Promise<Object>[] = []
-        for (let i = 0; i < mapTasks.length; i++) {
-          allPromises.push(taskpool.execute(mapTasks[i]))
-        }
-        for (let i = 0; i < setTasks.length; i++) {
-          allPromises.push(taskpool.execute(setTasks[i]))
-        }
-        await Promise.all(allPromises)
-        expect(map.size).assertEqual(10)
-        expect(set.size).assertEqual(10)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let mapLock = new ArkTSUtils.locks.AsyncLock()
+      let setLock = new ArkTSUtils.locks.AsyncLock()
+      let mapTasks: taskpool.Task[] = []
+      for (let i = 0; i < 10; i++) {
+        mapTasks.push(new taskpool.Task(factorMapSetFunc, map, 'key' + i.toString(), i, mapLock))
       }
+      let setTasks: taskpool.Task[] = []
+      for (let i = 0; i < 10; i++) {
+        setTasks.push(new taskpool.Task(factorSetAddFunc, set, i, setLock))
+      }
+      let allPromises: Promise<Object>[] = []
+      for (let i = 0; i < mapTasks.length; i++) {
+        allPromises.push(taskpool.execute(mapTasks[i]))
+      }
+      for (let i = 0; i < setTasks.length; i++) {
+        allPromises.push(taskpool.execute(setTasks[i]))
+      }
+      await Promise.all(allPromises)
+      expect(map.size).assertEqual(10)
+      expect(set.size).assertEqual(10)
     })
 
     /**

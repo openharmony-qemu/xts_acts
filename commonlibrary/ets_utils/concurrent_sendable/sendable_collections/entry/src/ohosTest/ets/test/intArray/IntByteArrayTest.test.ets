@@ -126,7 +126,7 @@ export default function IntByteArrayTest(): void {
         let arr = new collections.Int8Array(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

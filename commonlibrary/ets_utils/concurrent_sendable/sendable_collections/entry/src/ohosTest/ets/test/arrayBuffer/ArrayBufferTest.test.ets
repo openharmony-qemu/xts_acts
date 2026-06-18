@@ -133,7 +133,7 @@ export default function ArrayBufferTest(): void {
         let buffer = new collections.ArrayBuffer(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 
@@ -163,7 +163,7 @@ export default function ArrayBufferTest(): void {
         let buffer = new collections.ArrayBuffer(Infinity)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

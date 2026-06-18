@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
@@ -25,51 +25,65 @@ class ConcurrentCounter {
   count: number = 0
 }
 
-// ===== @Concurrent Functions =====
+// ===== @Concurrent Functions (with AsyncLock protection) =====
 
 @Concurrent
-function pushToArrayFunc(arr: collections.Array<number>, value: number): number {
-  arr.push(value)
-  return arr.length
+async function pushToArrayFunc(arr: collections.Array<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(value)
+    return arr.length
+  })
 }
 
 @Concurrent
-function setToMapFunc(map: collections.Map<string, number>, key: string, value: number): number {
-  map.set(key, value)
-  return map.size
+async function setToMapFunc(map: collections.Map<string, number>, key: string, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    map.set(key, value)
+    return map.size
+  })
 }
 
 @Concurrent
-function addToSetFunc(set: collections.Set<number>, value: number): number {
-  set.add(value)
-  return set.size
+async function addToSetFunc(set: collections.Set<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    set.add(value)
+    return set.size
+  })
 }
 
 @Concurrent
-function concurrentPushFunc(arr: collections.Array<number>): void {
-  arr.push(1)
+async function concurrentPushFunc(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    arr.push(1)
+  })
 }
 
 @Concurrent
-function batchPushFunc(arr: collections.Array<number>, count: number): number {
-  for (let i = 0; i < count; i++) {
-    arr.push(i)
-  }
-  return arr.length
+async function batchPushFunc(arr: collections.Array<number>, count: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    for (let i = 0; i < count; i++) {
+      arr.push(i)
+    }
+    return arr.length
+  })
 }
 
 @Concurrent
-function sequentialPushFunc(arr: collections.Array<number>, value: number): number {
-  arr.push(value)
-  return arr.length
+async function sequentialPushFunc(arr: collections.Array<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(value)
+    return arr.length
+  })
 }
 
 @Concurrent
-function mapSetGetDeleteFunc(map: collections.Map<string, number>, key: string, value: number): boolean {
-  map.set(key, value)
-  let found: boolean = map.has(key)
-  map.delete(key)
-  return found
+async function mapSetGetDeleteFunc(map: collections.Map<string, number>, key: string, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<boolean> {
+  return await lock.lockAsync<boolean>(() => {
+    map.set(key, value)
+    let found: boolean = map.has(key)
+    map.delete(key)
+    return found
+  })
 }
 
 @Concurrent
@@ -194,7 +208,8 @@ export default function ContainerComboTest(): void {
      */
     it('ContainerComboTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>(1, 2, 3)
-      let task = new taskpool.Task(pushToArrayFunc, arr, 100)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(pushToArrayFunc, arr, 100, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(4)
       expect(arr.length).assertEqual(4)
@@ -204,105 +219,93 @@ export default function ContainerComboTest(): void {
     /**
      * @tc.name   ContainerComboTest0500
      * @tc.number SUB_CONTAINER_COMBO_TEST_0500
-     * @tc.desc   Verify 5 concurrent TaskPool push operations on same Array
+     * @tc.desc   Verify 5 concurrent TaskPool push operations on same Array with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ContainerComboTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 5; i++) {
-          tasks.push(new taskpool.Task(pushToArrayFunc, arr, i * 10))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(arr.length).assertEqual(5)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 5; i++) {
+        tasks.push(new taskpool.Task(pushToArrayFunc, arr, i * 10, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(arr.length).assertEqual(5)
     })
 
     /**
      * @tc.name   ContainerComboTest0600
      * @tc.number SUB_CONTAINER_COMBO_TEST_0600
-     * @tc.desc   Verify 10 concurrent TaskPool set operations on same Map
+     * @tc.desc   Verify 10 concurrent TaskPool set operations on same Map with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ContainerComboTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 10; i++) {
-          tasks.push(new taskpool.Task(setToMapFunc, map, 'key' + i.toString(), i * 100))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(map.size).assertEqual(10)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(setToMapFunc, map, 'key' + i.toString(), i * 100, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(map.size).assertEqual(10)
     })
 
     /**
      * @tc.name   ContainerComboTest0700
      * @tc.number SUB_CONTAINER_COMBO_TEST_0700
-     * @tc.desc   Verify 50 concurrent TaskPool add operations on same Set
+     * @tc.desc   Verify 50 concurrent TaskPool add operations on same Set with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ContainerComboTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let set = new collections.Set<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 50; i++) {
-          tasks.push(new taskpool.Task(addToSetFunc, set, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(set.size).assertEqual(50)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 50; i++) {
+        tasks.push(new taskpool.Task(addToSetFunc, set, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(set.size).assertEqual(50)
     })
 
     /**
      * @tc.name   ContainerComboTest0800
      * @tc.number SUB_CONTAINER_COMBO_TEST_0800
-     * @tc.desc   Verify 100 concurrent TaskPool map operations for high concurrency
+     * @tc.desc   Verify 100 concurrent TaskPool push operations for high concurrency with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ContainerComboTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 100; i++) {
-          tasks.push(new taskpool.Task(pushToArrayFunc, arr, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(arr.length).assertEqual(100)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 100; i++) {
+        tasks.push(new taskpool.Task(pushToArrayFunc, arr, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(arr.length).assertEqual(100)
     })
 
     /**
@@ -315,12 +318,13 @@ export default function ContainerComboTest(): void {
      */
     it('ContainerComboTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      let task1 = new taskpool.Task(sequentialPushFunc, arr, 10)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(sequentialPushFunc, arr, 10, lock)
       let r1 = await taskpool.execute(task1)
       expect(r1 as number).assertEqual(1)
       let popped = arr.pop()
       expect(popped).assertEqual(10)
-      let task2 = new taskpool.Task(sequentialPushFunc, arr, 20)
+      let task2 = new taskpool.Task(sequentialPushFunc, arr, 20, lock)
       let r2 = await taskpool.execute(task2)
       expect(r2 as number).assertEqual(1)
       expect(arr[0]).assertEqual(20)
@@ -339,8 +343,10 @@ export default function ContainerComboTest(): void {
     it('ContainerComboTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map1 = new collections.Map<string, number>()
       let map2 = new collections.Map<string, number>()
-      let task1 = new taskpool.Task(mapSetGetDeleteFunc, map1, 'key1', 100)
-      let task2 = new taskpool.Task(mapSetGetDeleteFunc, map2, 'key2', 200)
+      let lock1 = new ArkTSUtils.locks.AsyncLock()
+      let lock2 = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(mapSetGetDeleteFunc, map1, 'key1', 100, lock1)
+      let task2 = new taskpool.Task(mapSetGetDeleteFunc, map2, 'key2', 200, lock2)
       let p1 = taskpool.execute(task1)
       let p2 = taskpool.execute(task2)
       let results = await Promise.all([p1, p2])
@@ -351,28 +357,25 @@ export default function ContainerComboTest(): void {
     /**
      * @tc.name   ContainerComboTest1100
      * @tc.number SUB_CONTAINER_COMBO_TEST_1100
-     * @tc.desc   Verify Promise.all with 10 parallel Set add tasks
+     * @tc.desc   Verify Promise.all with 10 parallel Set add tasks with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('ContainerComboTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let set = new collections.Set<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 10; i++) {
-          tasks.push(new taskpool.Task(addToSetFunc, set, i * 100))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        let results = await Promise.all(promises)
-        expect(results.length).assertEqual(10)
-        expect(set.size).assertEqual(10)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 10; i++) {
+        tasks.push(new taskpool.Task(addToSetFunc, set, i * 100, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      let results = await Promise.all(promises)
+      expect(results.length).assertEqual(10)
+      expect(set.size).assertEqual(10)
     })
 
     // ===== Nested Scenarios (1200-1400) =====
@@ -460,7 +463,8 @@ export default function ContainerComboTest(): void {
      */
     it('ContainerComboTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      let task = new taskpool.Task(batchPushFunc, arr, 50)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(batchPushFunc, arr, 50, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(50)
       expect(arr.length).assertEqual(50)

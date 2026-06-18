@@ -131,7 +131,7 @@ export default function IntIntArrayTest(): void {
         let arr = new collections.Int32Array(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

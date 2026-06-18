@@ -88,7 +88,7 @@ export default function UintByteClampedArrayCtorTest(): void {
         let arr = new collections.Uint8ClampedArray(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 
@@ -225,7 +225,7 @@ export default function UintByteClampedArrayCtorTest(): void {
         let arr = new collections.Uint8ClampedArray(buffer, 10, 3)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('out of range')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

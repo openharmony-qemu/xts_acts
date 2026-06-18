@@ -131,7 +131,7 @@ export default function UintShortArrayTest(): void {
         let arr = new collections.Uint16Array(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

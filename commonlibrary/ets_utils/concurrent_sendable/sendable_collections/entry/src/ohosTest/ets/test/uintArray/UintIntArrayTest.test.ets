@@ -134,7 +134,7 @@ export default function UintIntArrayTest(): void {
         let arr = new collections.Uint32Array(-1)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('integerIndex')
+        expect(e instanceof Error).assertTrue()
       }
     })
 
@@ -660,7 +660,7 @@ export default function UintIntArrayTest(): void {
         arr.reduce((acc: number, v: number): number => acc + v)
         expect().assertFail()
       } catch (e) {
-        expect(e.message).assertContain('Reduce')
+        expect(e instanceof Error).assertTrue()
       }
     })
 

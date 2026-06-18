@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
 
-// ===== @Concurrent Functions =====
+// ===== @Concurrent Functions (with AsyncLock protection for writes) =====
 
 @Concurrent
 function chunkSumFunc(arr: collections.Array<number>, start: number, end: number): number {
@@ -30,15 +30,19 @@ function chunkSumFunc(arr: collections.Array<number>, start: number, end: number
 }
 
 @Concurrent
-function arrayRefPassFunc(arr: collections.Array<number>): number {
-  arr.push(999)
-  return arr.length
+async function arrayRefPassFunc(arr: collections.Array<number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(999)
+    return arr.length
+  })
 }
 
 @Concurrent
-function mapRefPassFunc(map: collections.Map<string, number>): number {
-  map.set('fromTask', 42)
-  return map.size
+async function mapRefPassFunc(map: collections.Map<string, number>, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    map.set('fromTask', 42)
+    return map.size
+  })
 }
 
 @Concurrent
@@ -48,45 +52,55 @@ function typedArrayReadFunc(buffer: collections.ArrayBuffer): number {
 }
 
 @Concurrent
-function processPixelsFunc(buffer: collections.ArrayBuffer, start: number, end: number): number {
-  let pixels = new collections.Uint8ClampedArray(buffer)
-  let count: number = 0
-  for (let i = start; i < end; i += 4) {
-    pixels[i] = Math.min(255, pixels[i] + 10)
-    count++
-  }
-  return count
+async function processPixelsFunc(buffer: collections.ArrayBuffer, start: number, end: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let pixels = new collections.Uint8ClampedArray(buffer)
+    let count: number = 0
+    for (let i = start; i < end; i += 4) {
+      pixels[i] = Math.min(255, pixels[i] + 10)
+      count++
+    }
+    return count
+  })
 }
 
 @Concurrent
-function flipBitFunc(bv: collections.BitVector, index: number): void {
-  bv.flipBitByIndex(index)
+async function flipBitFunc(bv: collections.BitVector, index: number, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    bv.flipBitByIndex(index)
+  })
 }
 
 @Concurrent
-function floatPrecisionFunc(buffer: collections.ArrayBuffer): number {
-  let view = new collections.Float32Array(buffer)
-  view[0] = 3.14
-  view[1] = 2.71
-  return view[0] + view[1]
+async function floatPrecisionFunc(buffer: collections.ArrayBuffer, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let view = new collections.Float32Array(buffer)
+    view[0] = 3.14
+    view[1] = 2.71
+    return view[0] + view[1]
+  })
 }
 
 @Concurrent
-function clampedWriteFunc(buffer: collections.ArrayBuffer): number {
-  let view = new collections.Uint8ClampedArray(buffer)
-  view[0] = 300
-  view[1] = -50
-  view[2] = 128
-  return view[0] + view[1] + view[2]
+async function clampedWriteFunc(buffer: collections.ArrayBuffer, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let view = new collections.Uint8ClampedArray(buffer)
+    view[0] = 300
+    view[1] = -50
+    view[2] = 128
+    return view[0] + view[1] + view[2]
+  })
 }
 
 @Concurrent
-function largeBufferFunc(buffer: collections.ArrayBuffer): number {
-  let view = new collections.Uint8Array(buffer)
-  for (let i = 0; i < view.length; i++) {
-    view[i] = i % 256
-  }
-  return view.length
+async function largeBufferFunc(buffer: collections.ArrayBuffer, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    let view = new collections.Uint8Array(buffer)
+    for (let i = 0; i < view.length; i++) {
+      view[i] = i % 256
+    }
+    return view.length
+  })
 }
 
 @Concurrent
@@ -176,7 +190,8 @@ export default function RealWorldComboTest(): void {
      */
     it('RealWorldComboTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>(1, 2, 3)
-      let task = new taskpool.Task(arrayRefPassFunc, arr)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(arrayRefPassFunc, arr, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(4)
       expect(arr.length).assertEqual(4)
@@ -194,7 +209,8 @@ export default function RealWorldComboTest(): void {
     it('RealWorldComboTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
       map.set('host', 1)
-      let task = new taskpool.Task(mapRefPassFunc, map)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(mapRefPassFunc, map, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(2)
       expect(map.has('fromTask')).assertTrue()
@@ -238,8 +254,9 @@ export default function RealWorldComboTest(): void {
         pixels[i] = 100
       }
       let halfPixel: number = pixelCount / 2
-      let task1 = new taskpool.Task(processPixelsFunc, imageBuffer, 0, halfPixel)
-      let task2 = new taskpool.Task(processPixelsFunc, imageBuffer, halfPixel, pixelCount)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task1 = new taskpool.Task(processPixelsFunc, imageBuffer, 0, halfPixel, lock)
+      let task2 = new taskpool.Task(processPixelsFunc, imageBuffer, halfPixel, pixelCount, lock)
       let p1 = taskpool.execute(task1)
       let p2 = taskpool.execute(task2)
       let results = await Promise.all([p1, p2])
@@ -250,28 +267,25 @@ export default function RealWorldComboTest(): void {
     /**
      * @tc.name   RealWorldComboTest0600
      * @tc.number SUB_REALWORLD_COMBO_TEST_0600
-     * @tc.desc   Verify BitVector concurrent state flipBitByIndex with 20 tasks
+     * @tc.desc   Verify BitVector concurrent state flipBitByIndex with 20 tasks with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('RealWorldComboTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let bv = new collections.BitVector(100)
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 20; i++) {
-          tasks.push(new taskpool.Task(flipBitFunc, bv, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        let bitCount = bv.getBitCountByRange(1, 0, 20)
-        expect(bitCount).assertEqual(20)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 20; i++) {
+        tasks.push(new taskpool.Task(flipBitFunc, bv, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      let bitCount = bv.getBitCountByRange(1, 0, 20)
+      expect(bitCount).assertEqual(20)
     })
 
     /**
@@ -304,7 +318,8 @@ export default function RealWorldComboTest(): void {
      */
     it('RealWorldComboTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(8)
-      let task = new taskpool.Task(floatPrecisionFunc, buffer)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(floatPrecisionFunc, buffer, lock)
       let result = await taskpool.execute(task)
       let sum = result as number
       expect(sum > 5.8).assertTrue()
@@ -321,7 +336,8 @@ export default function RealWorldComboTest(): void {
      */
     it('RealWorldComboTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let buffer = new collections.ArrayBuffer(4)
-      let task = new taskpool.Task(clampedWriteFunc, buffer)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(clampedWriteFunc, buffer, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(383)
       let view = new collections.Uint8ClampedArray(buffer)
@@ -343,7 +359,8 @@ export default function RealWorldComboTest(): void {
     it('RealWorldComboTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let bufferSize: number = 100 * 1024
       let buffer = new collections.ArrayBuffer(bufferSize)
-      let task = new taskpool.Task(largeBufferFunc, buffer)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(largeBufferFunc, buffer, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(bufferSize)
       let view = new collections.Uint8Array(buffer)

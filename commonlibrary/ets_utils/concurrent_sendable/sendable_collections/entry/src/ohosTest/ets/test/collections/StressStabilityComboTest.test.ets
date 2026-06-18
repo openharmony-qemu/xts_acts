@@ -13,35 +13,43 @@
  * limitations under the License.
  */
 
-import { collections } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep } from '../Utils';
 
-// ===== @Concurrent Functions =====
+// ===== @Concurrent Functions (with AsyncLock protection for writes) =====
 
 @Concurrent
-function stressArrayPushFunc(arr: collections.Array<number>, value: number): number {
-  arr.push(value)
-  return arr.length
+async function stressArrayPushFunc(arr: collections.Array<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    arr.push(value)
+    return arr.length
+  })
 }
 
 @Concurrent
-function stressMapSetFunc(map: collections.Map<string, number>, key: string, value: number): number {
-  map.set(key, value)
-  return map.size
+async function stressMapSetFunc(map: collections.Map<string, number>, key: string, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    map.set(key, value)
+    return map.size
+  })
 }
 
 @Concurrent
-function stressSetAddFunc(set: collections.Set<number>, value: number): number {
-  set.add(value)
-  return set.size
+async function stressSetAddFunc(set: collections.Set<number>, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    set.add(value)
+    return set.size
+  })
 }
 
 @Concurrent
-function stressTypedArrayFunc(buffer: collections.ArrayBuffer, offset: number, value: number): void {
-  let view = new collections.Int32Array(buffer)
-  view[offset] = value
+async function stressTypedArrayFunc(buffer: collections.ArrayBuffer, offset: number, value: number, lock: ArkTSUtils.locks.AsyncLock): Promise<void> {
+  await lock.lockAsync<void>(() => {
+    let view = new collections.Int32Array(buffer)
+    view[offset] = value
+  })
 }
 
 @Concurrent
@@ -54,14 +62,16 @@ function stressForEachFunc(arr: collections.Array<number>): number {
 }
 
 @Concurrent
-function stressPushPopFunc(arr: collections.Array<number>, iterations: number): number {
-  for (let i = 0; i < iterations; i++) {
-    arr.push(i)
-    if (arr.length > 100) {
-      arr.pop()
+async function stressPushPopFunc(arr: collections.Array<number>, iterations: number, lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync<number>(() => {
+    for (let i = 0; i < iterations; i++) {
+      arr.push(i)
+      if (arr.length > 100) {
+        arr.pop()
+      }
     }
-  }
-  return arr.length
+    return arr.length
+  })
 }
 
 @Concurrent
@@ -95,87 +105,79 @@ export default function StressStabilityComboTest(): void {
      */
     it('StressStabilityComboTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let arr = new collections.Array<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 100; i++) {
-          tasks.push(new taskpool.Task(stressArrayPushFunc, arr, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(arr.length).assertEqual(100)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 100; i++) {
+        tasks.push(new taskpool.Task(stressArrayPushFunc, arr, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(arr.length).assertEqual(100)
     })
 
     /**
      * @tc.name   StressStabilityComboTest0200
      * @tc.number SUB_STRESS_STABILITY_COMBO_TEST_0200
-     * @tc.desc   Verify 100 concurrent Map set operations complete correctly
+     * @tc.desc   Verify 100 concurrent Map set operations complete correctly with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('StressStabilityComboTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let map = new collections.Map<string, number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 100; i++) {
-          tasks.push(new taskpool.Task(stressMapSetFunc, map, 'key' + i.toString(), i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(map.size).assertEqual(100)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 100; i++) {
+        tasks.push(new taskpool.Task(stressMapSetFunc, map, 'key' + i.toString(), i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(map.size).assertEqual(100)
     })
 
     /**
      * @tc.name   StressStabilityComboTest0300
      * @tc.number SUB_STRESS_STABILITY_COMBO_TEST_0300
-     * @tc.desc   Verify 100 concurrent Set add operations with unique values
+     * @tc.desc   Verify 100 concurrent Set add operations with unique values with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('StressStabilityComboTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let set = new collections.Set<number>()
-      try {
-        let tasks: taskpool.Task[] = []
-        for (let i = 0; i < 100; i++) {
-          tasks.push(new taskpool.Task(stressSetAddFunc, set, i))
-        }
-        let promises: Promise<Object>[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          promises.push(taskpool.execute(tasks[i]))
-        }
-        await Promise.all(promises)
-        expect(set.size).assertEqual(100)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let tasks: taskpool.Task[] = []
+      for (let i = 0; i < 100; i++) {
+        tasks.push(new taskpool.Task(stressSetAddFunc, set, i, lock))
       }
+      let promises: Promise<Object>[] = []
+      for (let i = 0; i < tasks.length; i++) {
+        promises.push(taskpool.execute(tasks[i]))
+      }
+      await Promise.all(promises)
+      expect(set.size).assertEqual(100)
     })
 
     /**
      * @tc.name   StressStabilityComboTest0400
      * @tc.number SUB_STRESS_STABILITY_COMBO_TEST_0400
-     * @tc.desc   Verify 50 concurrent TypedArray write operations on shared buffer
+     * @tc.desc   Verify 50 concurrent TypedArray write operations on shared buffer with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('StressStabilityComboTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let buffer = new collections.ArrayBuffer(200)
+      let lock = new ArkTSUtils.locks.AsyncLock()
       let tasks: taskpool.Task[] = []
       for (let i = 0; i < 50; i++) {
-        tasks.push(new taskpool.Task(stressTypedArrayFunc, buffer, i, i * 100))
+        tasks.push(new taskpool.Task(stressTypedArrayFunc, buffer, i, i * 100, lock))
       }
       let promises: Promise<Object>[] = []
       for (let i = 0; i < tasks.length; i++) {
@@ -235,7 +237,8 @@ export default function StressStabilityComboTest(): void {
      */
     it('StressStabilityComboTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let arr = new collections.Array<number>()
-      let task = new taskpool.Task(stressPushPopFunc, arr, 10000)
+      let lock = new ArkTSUtils.locks.AsyncLock()
+      let task = new taskpool.Task(stressPushPopFunc, arr, 10000, lock)
       let result = await taskpool.execute(task)
       expect(result as number).assertEqual(100)
     })
@@ -245,24 +248,17 @@ export default function StressStabilityComboTest(): void {
     /**
      * @tc.name   StressStabilityComboTest0800
      * @tc.number SUB_STRESS_STABILITY_COMBO_TEST_0800
-     * @tc.desc   Verify concurrent modify error recovery with sequential fallback
+     * @tc.desc   Verify sequential TaskPool execution with AsyncLock protection completes correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('StressStabilityComboTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let arr = new collections.Array<number>()
-      let errorCaught: boolean = false
+      let lock = new ArkTSUtils.locks.AsyncLock()
       for (let i = 0; i < 50; i++) {
-        try {
-          let task = new taskpool.Task(stressArrayPushFunc, arr, i)
-          await taskpool.execute(task)
-        } catch (e) {
-          errorCaught = true
-        }
-      }
-      for (let i = arr.length; i < 50; i++) {
-        arr.push(i)
+        let task = new taskpool.Task(stressArrayPushFunc, arr, i, lock)
+        await taskpool.execute(task)
       }
       expect(arr.length).assertEqual(50)
     })
@@ -415,7 +411,7 @@ export default function StressStabilityComboTest(): void {
     /**
      * @tc.name   StressStabilityComboTest1500
      * @tc.number SUB_STRESS_STABILITY_COMBO_TEST_1500
-     * @tc.desc   Verify mixed container stress with Array Map Set concurrent operations
+     * @tc.desc   Verify mixed container stress with Array Map Set concurrent operations with AsyncLock protection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -424,23 +420,22 @@ export default function StressStabilityComboTest(): void {
       let arr = new collections.Array<number>()
       let map = new collections.Map<string, number>()
       let set = new collections.Set<number>()
-      try {
-        let allPromises: Promise<Object>[] = []
-        for (let i = 0; i < 30; i++) {
-          let arrTask = new taskpool.Task(stressArrayPushFunc, arr, i)
-          let mapTask = new taskpool.Task(stressMapSetFunc, map, 'k' + i.toString(), i)
-          let setTask = new taskpool.Task(stressSetAddFunc, set, i)
-          allPromises.push(taskpool.execute(arrTask))
-          allPromises.push(taskpool.execute(mapTask))
-          allPromises.push(taskpool.execute(setTask))
-        }
-        await Promise.all(allPromises)
-        expect(arr.length).assertEqual(30)
-        expect(map.size).assertEqual(30)
-        expect(set.size).assertEqual(30)
-      } catch (e) {
-        expect(e.message).assertContain('Concurrent modification')
+      let arrLock = new ArkTSUtils.locks.AsyncLock()
+      let mapLock = new ArkTSUtils.locks.AsyncLock()
+      let setLock = new ArkTSUtils.locks.AsyncLock()
+      let allPromises: Promise<Object>[] = []
+      for (let i = 0; i < 30; i++) {
+        let arrTask = new taskpool.Task(stressArrayPushFunc, arr, i, arrLock)
+        let mapTask = new taskpool.Task(stressMapSetFunc, map, 'k' + i.toString(), i, mapLock)
+        let setTask = new taskpool.Task(stressSetAddFunc, set, i, setLock)
+        allPromises.push(taskpool.execute(arrTask))
+        allPromises.push(taskpool.execute(mapTask))
+        allPromises.push(taskpool.execute(setTask))
       }
+      await Promise.all(allPromises)
+      expect(arr.length).assertEqual(30)
+      expect(map.size).assertEqual(30)
+      expect(set.size).assertEqual(30)
     })
   })
 }
