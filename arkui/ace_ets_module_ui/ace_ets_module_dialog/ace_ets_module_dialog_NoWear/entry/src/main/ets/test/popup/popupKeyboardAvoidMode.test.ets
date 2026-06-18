@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { inputMethod } from '@kit.IMEKit';
 import {
     describe,
     beforeAll,
@@ -113,7 +114,7 @@ export default function popupKeyboardAvoidMode() {
                 console.info("[popupKeyboardAvoidMode_0100] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
                 await confirm.click()
-                
+                await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0100] END")
             done()
@@ -148,7 +149,7 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.text("confirm"))
 
                 expect(confirm != null).assertFalse()
-                
+                await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0200] END")
             done()
@@ -194,7 +195,7 @@ export default function popupKeyboardAvoidMode() {
 
                 console.info("[popupKeyboardAvoidMode_0300] height1 " + height1)
                 expect(height - height1 > 0).assertTrue()
-                
+                await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0300] END")
             done()
@@ -231,7 +232,7 @@ export default function popupKeyboardAvoidMode() {
                 let confirm = await driver.findComponent(ON.id("text"))
 
                 expect(confirm != null).assertFalse()
-                
+                await inputMethod.getController().stopInputSession();
             }
             console.info("[popupKeyboardAvoidMode_0400] END")
             done()
