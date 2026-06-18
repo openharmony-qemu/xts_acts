@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-interface EnumOrderStatus{
+export interface EnumOrderStatus{
   Pending: string,
   Shipped: string,
   Delivered: string,
