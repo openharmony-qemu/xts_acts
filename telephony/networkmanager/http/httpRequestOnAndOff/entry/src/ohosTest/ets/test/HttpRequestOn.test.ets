@@ -3197,7 +3197,7 @@ export default function HttpRequestOnOffTest() {
                 await sleep(100);
                 console.info(`${caseName} request sunccess, data: ${JSON.stringify(res)}`);
                 console.info(`${caseName} called: ${called}`);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 2);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {
