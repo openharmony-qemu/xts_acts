@@ -9,6 +9,10 @@ import asyncPerformanceTest from './async/AsyncPerformanceTest.test';
 import asyncRealWorldTest from './async/AsyncRealWorldTest.test';
 import asyncFirTest from './async/AsyncFirTest.test';
 import asyncSecTest from './async/AsyncSecTest.test';
+import IsAsyncFunctionTest from './isAsyncFunction/IsAsyncFunction.test';
+import IsPromiseTest from './isPromise/IsPromise.test';
+import IsSharedArrayBufferTest from './isSharedArrayBuffer/IsSharedArrayBuffer.test';
+import PromiseChainTest from './promise/PromiseChain.test';
 
 export default function testsuite() {
   asyncFunctionTest()
@@ -22,4 +26,8 @@ export default function testsuite() {
   asyncRealWorldTest()
   asyncFirTest()
   asyncSecTest()
+  IsAsyncFunctionTest();
+  IsPromiseTest();
+  IsSharedArrayBufferTest();
+  PromiseChainTest();
 }
