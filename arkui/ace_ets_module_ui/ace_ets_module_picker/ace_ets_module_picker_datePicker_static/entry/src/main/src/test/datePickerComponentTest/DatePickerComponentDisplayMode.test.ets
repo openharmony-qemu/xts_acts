@@ -35,7 +35,7 @@ export default function DatePickerComponentDisplayModeTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentDisplayMode',
       }
@@ -53,58 +53,57 @@ export default function DatePickerComponentDisplayModeTest() {
       }
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       console.info('afterEach case')
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_0100
-     * @tc.name DatePickerComponentDisplayMode_default
+     * @tc.name DatePickerComponentDisplayMode_default_0100
      * @tc.desc Verify DatePickerComponent default displayMode text content contains 'displayMode: 0'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentDisplayMode_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentDisplayMode_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentDisplayMode_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDisplayMode_default_0100 START')
       try {
-        let strJson = inspector.getInspectorByKey('text_displayMode_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('displayMode: 0')
-        done()
+        let strJson = inspector.getInspectorByKey('text_displayMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('displayMode: 0');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentDisplayMode_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentDisplayMode_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DISPLAYMODE_0200
-     * @tc.name DatePickerComponentDisplayMode_time
+     * @tc.name DatePickerComponentDisplayMode_time_0200
      * @tc.desc Verify DatePickerComponent displayMode changes to TIME after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentDisplayMode_time', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentDisplayMode_time START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentDisplayMode_time_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDisplayMode_time_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_displayMode_time'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_displayMode_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('displayMode: 1')
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.id('button_displayMode_time'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_displayMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('displayMode: 1');
         done()
       } catch (err) {
-        console.error('DatePickerComponentDisplayMode_time error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentDisplayMode_time_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })
