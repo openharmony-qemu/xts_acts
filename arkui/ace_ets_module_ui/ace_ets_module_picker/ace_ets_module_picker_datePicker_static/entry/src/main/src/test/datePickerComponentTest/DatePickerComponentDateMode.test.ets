@@ -35,7 +35,7 @@ export default function DatePickerComponentDateModeTest() {
       await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentDateMode',
       }
@@ -51,60 +51,61 @@ export default function DatePickerComponentDateModeTest() {
       } catch (err) {
         console.error('DatePickerComponentDateModeTest pushUrl error: ' + err)
       }
+      console.info("DatePickerComponentDateModeTest beforeEach end");
     })
 
-    afterEach(() => {
-      console.info('afterEach case')
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME_L)
+      console.info("DatePickerComponentDateModeTest after each called");
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_0100
-     * @tc.name DatePickerComponentDateMode_default
+     * @tc.name DatePickerComponentDateMode_default_0100
      * @tc.desc Verify DatePickerComponent default dateMode text content contains 'dateMode: 0'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentDateMode_default', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentDateMode_default START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentDateMode_default_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDateMode_default_0100 START');
       try {
-        let strJson = inspector.getInspectorByKey('text_dateMode_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('dateMode: 0')
-        done()
+        let strJson = inspector.getInspectorByKey('text_dateMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('dateMode: 0');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentDateMode_default error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentDateMode_default_0100 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
 
     /**
      * @tc.number SUB_ARKUI_DATEPICKERCOMPONENT_DATEMODE_0200
-     * @tc.name DatePickerComponentDateMode_yearAndMonth
+     * @tc.name DatePickerComponentDateMode_yearAndMonth_0200
      * @tc.desc Verify DatePickerComponent dateMode changes to YEAR_AND_MONTH after clicking button
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('DatePickerComponentDateMode_yearAndMonth', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('DatePickerComponentDateMode_yearAndMonth START')
-      const driver: Driver = Driver.create()
+    it('DatePickerComponentDateMode_yearAndMonth_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('DatePickerComponentDateMode_yearAndMonth_0200 START')
       try {
-        let button: Component = await driver.findComponent(ON.id('button_dateMode_yearAndMonth'))
-        await button?.click()
-        await CommonFunc.sleep(SLEEP_TIME_L)
-        let strJson = inspector.getInspectorByKey('text_dateMode_value')
-        let obj = JSON.parseJsonElement(strJson)
-        let content: string = obj.getElement('$attrs').getString('content')
-        expect(content).assertContain('dateMode: 1')
-        done()
+        let driver = await Driver.create();
+        let button = await driver.findComponent(ON.id('button_dateMode_yearAndMonth'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(SLEEP_TIME_L);
+        let strJson = inspector.getInspectorByKey('text_dateMode_value');
+        let obj = JSON.parseJsonElement(strJson);
+        let content: string = obj.getElement('$attrs').getString('content');
+        expect(content).assertContain('dateMode: 1');
+        done();
       } catch (err) {
-        console.error('DatePickerComponentDateMode_yearAndMonth error: ' + err)
-        expect().assertFail()
-        done()
+        console.error('DatePickerComponentDateMode_yearAndMonth_0200 error: ' + err);
+        expect().assertFail();
+        done();
       }
     })
   })
