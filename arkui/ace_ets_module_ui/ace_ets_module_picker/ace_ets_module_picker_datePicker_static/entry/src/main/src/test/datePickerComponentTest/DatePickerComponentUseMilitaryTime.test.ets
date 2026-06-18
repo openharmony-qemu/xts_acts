@@ -20,42 +20,41 @@ import CommonFunc from '../../../ets/MainAbility/common/Common'
 import Utils from '../../../ets/MainAbility/common/Utils'
 import { Driver, ON, Component } from '@ohos.UiTest'
 import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentUseMilitaryTimeTest() {
   describe('DatePickerComponentUseMilitaryTimeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentUseMilitaryTimeTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentUseMilitaryTime',
       }
-      await Utils.sleep(SLEEP_TIME_L)
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
         routerInstance.clear()
-        let pages = routerInstance.getState()
-        if (!('DatePickerComponentUseMilitaryTime' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        let pages = routerInstance.getState();
+        console.info('DatePickerComponentUseMilitaryTimeTest state pages: ' + JSON.stringify(pages));
+        if (pages.name !== 'DatePickerComponentUseMilitaryTime') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentUseMilitaryTimeTest pushUrl error: ' + err)
+        console.error('DatePickerComponentUseMilitaryTimeTest replaceUrl error: ' + err);
+        expect().assertFail();
       }
       console.info("DatePickerComponentUseMilitaryTimeTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentUseMilitaryTimeTest after each called");
     })
 
@@ -96,7 +95,7 @@ export default function DatePickerComponentUseMilitaryTimeTest() {
         let driver = await Driver.create();
         let button = await driver.findComponent(ON.id('button_military_true'));
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_L);
+        await CommonFunc.sleep(SLEEP_TIME);
         let strJson = inspector.getInspectorByKey('text_useMilitaryTime_value');
         let obj = JSON.parseJsonElement(strJson);
         let content: string = obj.getElement('$attrs').getString('content');

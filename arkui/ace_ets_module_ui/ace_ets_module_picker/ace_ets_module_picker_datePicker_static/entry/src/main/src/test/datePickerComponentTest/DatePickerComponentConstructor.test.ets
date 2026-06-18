@@ -24,38 +24,37 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentConstructorTest() {
   describe('DatePickerComponentConstructorTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentConstructorTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
+      console.info('DatePickerComponentConstructorTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentConstructor',
       }
-      await Utils.sleep(SLEEP_TIME_L)
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
         routerInstance.clear()
         let pages = routerInstance.getState()
-        if (!('DatePickerComponentConstructor' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        if (pages.name !== 'DatePickerComponentConstructor') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentConstructorTest pushUrl error: ' + err)
+        console.error('DatePickerComponentConstructorTest replaceUrl error: ' + err)
+        expect().assertFail();
       }
       console.info("DatePickerComponentConstructorTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentConstructorTest after each called");
     })
 

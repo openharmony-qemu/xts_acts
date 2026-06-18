@@ -24,38 +24,37 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentEnableHapticFeedbackTest() {
   describe('DatePickerComponentEnableHapticFeedbackTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentEnableHapticFeedbackTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
+      console.info('DatePickerComponentEnableHapticFeedbackTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentEnableHapticFeedback',
-      }
-      await Utils.sleep(SLEEP_TIME_L)
+      };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
         routerInstance.clear()
         let pages = routerInstance.getState()
-        if (!('DatePickerComponentEnableHapticFeedback' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        if (pages.name !== 'DatePickerComponentEnableHapticFeedback') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentEnableHapticFeedbackTest pushUrl error: ' + err)
+        console.error('DatePickerComponentEnableHapticFeedbackTest replaceUrl error: ' + err);
+        expect().assertFail();
       }
       console.info("DatePickerComponentEnableHapticFeedbackTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentEnableHapticFeedbackTest after each called");
     })
 
@@ -96,7 +95,7 @@ export default function DatePickerComponentEnableHapticFeedbackTest() {
         let driver = await Driver.create();
         let button = await driver.findComponent(ON.id('button_haptic_false'));
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_L);
+        await CommonFunc.sleep(SLEEP_TIME);
         let strJson = inspector.getInspectorByKey('text_enableHapticFeedback_value');
         let obj = JSON.parseJsonElement(strJson);
         let content: string = obj.getElement('$attrs').getString('content');

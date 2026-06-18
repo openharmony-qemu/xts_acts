@@ -24,38 +24,38 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentOnScrollStopTest() {
   describe('DatePickerComponentOnScrollStopTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentOnScrollStopTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
+      console.info('DatePickerComponentOnScrollStopTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentOnScrollStop',
       }
-      await Utils.sleep(SLEEP_TIME_L)
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router
         routerInstance.clear()
         let pages = routerInstance.getState()
-        if (!('DatePickerComponentOnScrollStop' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        console.info('DatePickerComponentOnScrollStopTest state pages: ' + JSON.stringify(pages));
+        if (pages.name !== 'DatePickerComponentOnScrollStop') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentOnScrollStopTest pushUrl error: ' + err)
+        console.error('DatePickerComponentOnScrollStopTest replaceUrl error: ' + err);
+        expect().assertFail();
       }
       console.info("DatePickerComponentOnScrollStopTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentOnScrollStopTest after each called");
     })
 
@@ -81,7 +81,7 @@ export default function DatePickerComponentOnScrollStopTest() {
         let centerX = Math.round(bounds.left + (bounds.right - bounds.left) / 2).toInt();
         let centerY = Math.round(bounds.top + (bounds.bottom - bounds.top) / 2).toInt();
         await driver.swipe(centerX, centerY, centerX, centerY + 100, 600);
-        await CommonFunc.sleep(SLEEP_TIME_L);
+        await CommonFunc.sleep(SLEEP_TIME);
 
         let strJson1 = inspector.getInspectorByKey('text_onScrollStop_triggered');
         let obj1 = JSON.parseJsonElement(strJson1);

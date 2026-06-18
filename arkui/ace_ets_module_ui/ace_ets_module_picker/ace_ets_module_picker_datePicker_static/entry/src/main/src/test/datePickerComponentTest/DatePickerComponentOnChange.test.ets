@@ -24,38 +24,38 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentOnChangeTest() {
   describe('DatePickerComponentOnChangeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentOnChangeTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
+      console.info('DatePickerComponentOnChangeTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentOnChange',
       }
-      await Utils.sleep(SLEEP_TIME_L)
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router
-        routerInstance.clear()
-        let pages = routerInstance.getState()
-        if (!('DatePickerComponentOnChange' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info('DatePickerComponentOnChangeTest state pages: ' + JSON.stringify(pages));
+        if (pages.name !== 'DatePickerComponentOnChange') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentOnChangeTest pushUrl error: ' + err)
+        console.error('DatePickerComponentOnChangeTest replaceUrl error: ' + err);
+        expect().assertFail();
       }
       console.info("DatePickerComponentOnChangeTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentOnChangeTest after each called");
     })
 

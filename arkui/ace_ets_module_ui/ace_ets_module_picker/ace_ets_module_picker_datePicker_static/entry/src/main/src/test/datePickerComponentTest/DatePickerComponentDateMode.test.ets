@@ -24,38 +24,38 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UtilsTest } from '../Util.test'
 
-const SLEEP_TIME_L = 1000
-const SLEEP_TIME_S = 100
+const SLEEP_TIME = 1000
 
 export default function DatePickerComponentDateModeTest() {
   describe('DatePickerComponentDateModeTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('DatePickerComponentDateModeTest beforeAll start')
       await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-      await UtilsTest.msSleep(SLEEP_TIME_L)
     })
 
     beforeEach(async (): Promise<void> => {
+      console.info('DatePickerComponentDateModeTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePickerComponent/DatePickerComponentDateMode',
-      }
-      await Utils.sleep(SLEEP_TIME_L)
+      };
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router
-        routerInstance.clear()
-        let pages = routerInstance.getState()
-        if (!('DatePickerComponentDateMode' == pages.name)) {
-          routerInstance.pushUrl(options)
-          await Utils.sleep(SLEEP_TIME_L)
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info('DatePickerComponentDateModeTest state pages: ' + JSON.stringify(pages));
+        if (pages.name !== 'DatePickerComponentDateMode') {
+          routerInstance.replaceUrl(options)
         }
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
-        console.error('DatePickerComponentDateModeTest pushUrl error: ' + err)
+        console.error('DatePickerComponentDateModeTest replaceUrl error: ' + err)
+        expect().assertFail();
       }
       console.info("DatePickerComponentDateModeTest beforeEach end");
     })
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME_L)
+      await CommonFunc.sleep(SLEEP_TIME);
       console.info("DatePickerComponentDateModeTest after each called");
     })
 
@@ -96,7 +96,7 @@ export default function DatePickerComponentDateModeTest() {
         let driver = await Driver.create();
         let button = await driver.findComponent(ON.id('button_dateMode_yearAndMonth'));
         await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_L);
+        await CommonFunc.sleep(SLEEP_TIME);
         let strJson = inspector.getInspectorByKey('text_dateMode_value');
         let obj = JSON.parseJsonElement(strJson);
         let content: string = obj.getElement('$attrs').getString('content');
