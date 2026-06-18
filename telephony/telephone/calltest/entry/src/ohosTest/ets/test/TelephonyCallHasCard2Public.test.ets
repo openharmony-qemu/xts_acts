@@ -1754,20 +1754,21 @@ export default function HasCard2PublicTest() {
     it("Telephony_Call_Call_MakeCallWithToken_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCallWithToken_0100";
       console.log(`==========> ${caseName} Test start ==========>`);
-      try {
-        if(!sim.hasSimCardSync(0)){
-          console.info(`${caseName} failed, NO SIM`);
-          console.info(`${caseName} test end`);
+      if(!sim.hasSimCardSync(0)){
+        console.info(`${caseName} failed, NO SIM`);
+        console.info(`${caseName} test end`);
+        done();
+      } else {
+        try {
+          await call.makeCallWithToken("");
+          console.log("makeCallWithToken promise resolve unexpectedly");
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
+          expect(err.code).assertEqual(8300001);
           done();
         }
-        await call.makeCallWithToken("");
-        console.log("makeCallWithToken promise resolve unexpectedly");
-        expect(false).assertTrue();
-        done();
-      } catch (err) {
-        console.log("makeCallWithToken throw: err->" + JSON.stringify(err));
-        expect(err.code).assertEqual(8300001);
-        done();
       }
       console.log(`==========> ${caseName} Test end ==========>`);
     });
