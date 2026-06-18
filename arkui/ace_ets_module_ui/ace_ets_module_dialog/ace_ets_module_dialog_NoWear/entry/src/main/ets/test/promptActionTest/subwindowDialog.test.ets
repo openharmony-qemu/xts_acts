@@ -121,7 +121,8 @@ export default function subwindowDialog() {
       expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
-      let menuBtn = await uiDriver.findComponent(ON.text('菜单选项'));
+      let driver: Driver = Driver.create();
+      let menuBtn = await driver.findComponent(ON.text('菜单选项'));
       await CommonFunc.sleep(1000);
       await menuBtn.click();
       await CommonFunc.sleep(2000);
