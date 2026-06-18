@@ -2886,8 +2886,8 @@ export default function abilityTest():void {
       let rectChanged: boolean = false;
       let onRectChange = (info: floatView.FloatViewRectChangeInfo) => {
         console.info(CaseName + ' Float view rectChange: ' + JSON.stringify(info));
-        expect(typeof info.windowRect.left === 'number').assertTrue();
-        expect(typeof info.windowRect.top === 'number').assertTrue();
+        expect(info.windowRect.left).assertLargerOrEqual(0);
+        expect(info.windowRect.top).assertLargerOrEqual(0);
         expect(info.windowRect.width).assertLarger(0);
         expect(info.windowRect.height).assertLarger(0);
         expect(info.windowScale).assertLarger(0);
