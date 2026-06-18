@@ -17,7 +17,7 @@ import http from '@ohos.net.http';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 
-export const ADDR_TEST_STREAM_HTTPS = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
+export const ADDR_TEST_STREAM_HTTPS = "https://httpbin.moyufangge.com/image/svg";
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
 

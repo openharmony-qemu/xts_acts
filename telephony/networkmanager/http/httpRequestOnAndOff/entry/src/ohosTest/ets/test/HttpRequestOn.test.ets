@@ -17,7 +17,7 @@ import http from '@ohos.net.http';
 import { describe, expect, it, Level, Size, TestType  } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 
-export const ADDR_TEST_STREAM_HTTPS = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
+export const ADDR_TEST_STREAM_HTTPS = "https://httpbin.moyufangge.com/image/svg";
 
 /**
  * @description assert whether the input argument is true
@@ -3197,7 +3197,7 @@ export default function HttpRequestOnOffTest() {
                 await sleep(100);
                 console.info(`${caseName} request sunccess, data: ${JSON.stringify(res)}`);
                 console.info(`${caseName} called: ${called}`);
-                ExpectTrue(called == 1);
+                ExpectTrue(called === 2);
                 httpRequest.destroy();
                 done();
               }).catch((error: BusinessError) => {

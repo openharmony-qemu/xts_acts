@@ -43,7 +43,7 @@ function sleep(time:number):Promise<string> {
 export default function HttpRequestOffTest() {
   describe('HttpRequestOffTest', () => {
     let XTS_TEST_HTTP_URL: string = 'https://www.baidu.com/';
-    let XTS_TEST_STREAM_HTTPS_URL: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
+    let XTS_TEST_STREAM_HTTPS_URL: string = "https://httpbin.moyufangge.com/image/svg";
     /**
      * @tc.name   testNetworkMgrHttpHttpRequestOff0100
      * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0100
@@ -1139,7 +1139,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 3);
                 httpRequest.destroy();
                 httpRequest.off("dataReceive");
                 done();
@@ -1191,7 +1191,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count == 2);
+                ExpectTrue(count === 3);
                 httpRequest.destroy();
                 httpRequest.off("dataReceive");
                 done();
@@ -2337,7 +2337,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 3);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
@@ -2385,7 +2385,7 @@ export default function HttpRequestOffTest() {
             httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL).then(async() => {
               await sleep(100);
               console.info(`${caseName} count---${count}`);
-              ExpectTrue(count == 2);
+              ExpectTrue(count === 3);
               httpRequest.destroy();
               done();
             }).catch((err: Error) => {
