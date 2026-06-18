@@ -80,8 +80,15 @@ struct MonitorNull {
   }
 
   build() {
-    Text(`${this.class001.class002 === null ? 'null' : 'ww'}`)
-      .id('Monitor_Null_001')
+    Column() {
+      Text(`${this.class001.class002 === null ? 'null' : 'ww'}`)
+        .id('Monitor_Null_001')
+    }
+    .width('100%')
+    .height('100%')
+    .padding(5)
+    .margin(5)
+    .justifyContent(FlexAlign.Center)
   }
 }
 
