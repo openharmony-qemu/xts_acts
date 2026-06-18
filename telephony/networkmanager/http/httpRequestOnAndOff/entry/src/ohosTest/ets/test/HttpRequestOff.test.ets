@@ -1139,7 +1139,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count === 2);
+                ExpectTrue(count === 3);
                 httpRequest.destroy();
                 httpRequest.off("dataReceive");
                 done();
@@ -1191,7 +1191,7 @@ export default function HttpRequestOffTest() {
               } else {
                 await sleep(100);
                 console.info(`${caseName} count: ${count}`);
-                ExpectTrue(count === 2);
+                ExpectTrue(count === 3);
                 httpRequest.destroy();
                 httpRequest.off("dataReceive");
                 done();
