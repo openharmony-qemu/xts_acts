@@ -17,7 +17,7 @@ import router from '@ohos.router';
 import Utils from '../../src/test/Utils.test';
 import { URL, URL2 } from '../../src/test/Config.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
@@ -26,16 +26,12 @@ import web_webview from '@ohos.web.webview';
 import webView from '@ohos.web.webview';
 import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement';
 import { canIUse } from '@internal.full.global';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
-import { Want } from '@kit.AbilityKit';
-import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState,
-  GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog,
-  CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { Want, StartOptions } from '@kit.AbilityKit';
+import { Entry, Component, Column, MicrophoneCaptureState, MicrophoneCaptureStateChangeInfo, CameraCaptureState, GestureFocusMode, CameraCaptureStateChangeInfo, Button, Web, $rawfile, MixedMode, CustomDialog, CustomDialogController, NavigationPolicy, ClickEvent, OnDataResubmittedEvent } from '@ohos.arkui.component';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 @CustomDialog
 struct NewWebViewComp {
   controller?: CustomDialogController
@@ -64,7 +60,7 @@ struct NewWebViewComp {
   }
 }
 
-let startAbilityForResultTestMode: boolean = false;
+let startAbilityForResultTestMode: string = '';
 
 export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
   onConnectNative(info: ConnectionInfo): void {
@@ -73,20 +69,50 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
       abilityName: 'EntryAbility'
     };
     try {
-      const context = this.context; // Obtain the WebNativeMessagingExtensionContext instance.
-      if (startAbilityForResultTestMode) {
-        startAbilityForResultTestMode = false;
-        (async () => {
-          try {
-            const result = await context.startAbilityForResult(abilityWant);
-            console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
-            Utils.emitEvent(0, 20260401);
-          } catch (err) {
-            const error = err as BusinessError;
-            console.error(`startAbilityForResult failed. Code: ${error.code}, Message: ${error.message}`);
-            Utils.emitEvent(error.code, 20260401);
-          }
-        })();
+      const context = this.context;
+      if (startAbilityForResultTestMode != '') {
+        let mode = startAbilityForResultTestMode;
+        startAbilityForResultTestMode = '';
+
+        if (mode == 'test001') {
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant);
+              console.info('startAbilityForResult test001 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260401);
+            } catch (err) {
+              console.error(`startAbilityForResult test001 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260401);
+            }
+          })();
+        } else if (mode == 'test002') {
+          let options: StartOptions = { displayId: 0 };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(abilityWant, options);
+              console.info('startAbilityForResult test002 success: ' + JSON.stringify(result));
+              Utils.emitEvent(result.resultCode, 20260402);
+            } catch (err) {
+              console.error(`startAbilityForResult test002 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260402);
+            }
+          })();
+        } else if (mode == 'test003') {
+          let invalidWant: Want = {
+            bundleName: 'com.invalid.nonexistent.bundle',
+            abilityName: 'NonExistentAbility'
+          };
+          (async () => {
+            try {
+              const result = await context.startAbilityForResult(invalidWant);
+              console.info('startAbilityForResult test003 unexpected success');
+              Utils.emitEvent(-1, 20260403);
+            } catch (err) {
+              console.error(`startAbilityForResult test003 error: ${err.code}`);
+              Utils.emitEvent(err.code, 20260403);
+            }
+          })();
+        }
       } else {
         context.startAbility(abilityWant);
         console.info('Ability started successfully');
@@ -551,23 +577,29 @@ struct Index {
             }
 
             case 'emitStartAbilityForResultStatic001': {
-              try {
-                startAbilityForResultTestMode = true;
-                setTimeout(() => {
-                  this.controller.runJavaScript('connectNative()');
-                  console.log('connectNative for startAbilityForResult 已调用');
-                }, 1000);
-                setTimeout(() => {
-                  if (startAbilityForResultTestMode) {
-                    startAbilityForResultTestMode = false;
-                    console.log('startAbilityForResult fallback timeout: emitting 201');
-                    Utils.emitEvent(201, 20260401);
-                  }
-                }, 4000);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(201, 20260401);
-              }
+              startAbilityForResultTestMode = 'test001';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test001');
+              }, 1000);
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic002': {
+              startAbilityForResultTestMode = 'test002';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test002');
+              }, 1000);
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic003': {
+              startAbilityForResultTestMode = 'test003';
+              setTimeout(() => {
+                this.controller.runJavaScript('connectNative()');
+                console.log('connectNative for startAbilityForResult test003');
+              }, 1000);
               break;
             }
 

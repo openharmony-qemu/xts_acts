@@ -15,6 +15,10 @@
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import buffer from "@ohos.fastbuffer";
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export default function ActsFastBufferTest() {
   describe("ActsFastBufferTest", () => {
     /**

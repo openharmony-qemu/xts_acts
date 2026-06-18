@@ -1,15 +1,7 @@
 'use static';
-import { Entry, Text, Column, Component, Button, ClickEvent, Flex, Row, HorizontalAlign, Font,
-  TextClockController, TextClock, Button, FlexDirection, FlexAlign, ItemAlign, Margin,
-  DateTimeOptions, ShadowOptions, Color, FontWeight, FontStyle, UIContext, $rawfile} from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import {
-  ShapePoint,Line,LineAttribute,Entry, Component, Column, Button, Flex, FlexDirection, ItemAlign, FlexAlign,
-  Margin, ColumnOptions, TextClock, TextClockController, Color,
-  AttributeModifier, CommonAttribute, TextClockAttribute
-} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-
+import { Entry, Text, Column, Component, Button, ClickEvent, Flex, Row, HorizontalAlign, Font, TextClockController, TextClock, FlexDirection, FlexAlign, ItemAlign, Margin, DateTimeOptions, ShadowOptions, Color, FontWeight, FontStyle, UIContext, $rawfile, ShapePoint, Line, LineAttribute, ColumnOptions, AttributeModifier, CommonAttribute, TextClockAttribute } from '@ohos.arkui.component';
+import hilog from '@ohos.hilog';
+import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
 export class MyEnableModifier implements AttributeModifier<LineAttribute> {
   public change: boolean | undefined = true;

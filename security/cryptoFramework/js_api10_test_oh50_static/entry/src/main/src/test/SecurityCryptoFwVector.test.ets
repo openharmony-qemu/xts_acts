@@ -12,27 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
-import  buffer  from '@ohos.buffer';
+import buffer from '@ohos.buffer';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as commonUtils from './utils/common/commonUtils';
 import * as v from './utils/vectors/vectors';
-import {
-  genIvParamsSpec,
-  genGcmOrCcmParamsSpec,
-  encryptDecryptMessageSync,
-  tagGcmEncryptDecryptMessageSync,
-  dataGcmSpec,
-  dataSpec,
-} from './utils/syncSymEncAndDec/syncSymEncAndDecUtils'
+import { genIvParamsSpec, genGcmOrCcmParamsSpec, encryptDecryptMessageSync, tagEncryptDecryptMessageSync, dataGcmOrCCMSpec, dataSpec } from './utils/syncSymEncAndDec/syncSymEncAndDecUtils';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext:common.UIAbilityContext;
@@ -253,7 +245,7 @@ export default function SecurityCryptoFwVectorTestUnit() {
             let paramSpec: cryptoFramework.GcmParamsSpec = genGcmOrCcmParamsSpec(iv, aad, tag, specAlgName);
             let expectCipher: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.cipherText);
             let plainText: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.plainText)
-            let cipherData: dataGcmSpec = tagGcmEncryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
+            let cipherData: dataGcmOrCCMSpec = tagEncryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
             console.info("################### cipherData.paramSpec.authTag:" + commonUtils.decToHexString({data:cipherData.paramSpec.authTag.data}))
             console.info("################### tag                         :" + tag)
             console.info("################### expectCipher                :" + expectCipher.data)

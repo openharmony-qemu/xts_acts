@@ -24,6 +24,7 @@ const TAG: string = 'printExtensionTestXTS';
 
 export class PrintExtension extends PrintExtensionAbility {
   onCreate(want: Want): void {
+    let context = this.context;
     hilog.info(DOMAIN, TAG, 'PrintExtension onCreate');
   }
 
@@ -89,7 +90,8 @@ export default function printExtensionTest(): void {
                 bundleName: 'com.ohos.printxtstest',
                 abilityName: 'PrintExtension'
             }
-            printExtension.onCreate(want);
+            const ability : PrintExtensionAbility = new PrintExtensionAbility();
+            ability.onCreate(want);
         } catch (err) {
             hilog.error(DOMAIN, TAG, 'printExtension_function_0100 error');
             expect().assertFail();

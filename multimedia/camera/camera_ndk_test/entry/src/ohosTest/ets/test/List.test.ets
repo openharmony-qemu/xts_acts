@@ -39,6 +39,7 @@ import CameraSessionSystemPressureLevelTest from './CameraSessionSystemPressureT
 import CameraSessionControlCenterTest from './CameraSessionControlCenterTest.test.ets';
 import CameraPhotoSesionProfessionAbilityTest from './CameraPhotoSesionProfessionAbilityTest.test'
 import CameraDevicePropertyTest from './CameraDevicePropertyTest.test'
+import CameraPhotoSesionCaptureWithPhotoSettingExt from './CameraPhotoSesionCaptureWithPhotoSettingExt.test'
 
 let voice = call.hasVoiceCapability()
 
@@ -53,6 +54,7 @@ export default function testsuite() {
   CameraSessionMacroTest();
   CameraPhotoSesionProfessionAbilityTest();
   CameraDevicePropertyTest();
+  CameraPhotoSesionCaptureWithPhotoSettingExt();
 
   if (voice){
     CameraSessionExposureTest();

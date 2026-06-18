@@ -50,7 +50,7 @@ export default function MovingPhotoViewApi13Test() {
         }
       } catch (err) {
         console.error("push MovingPhotoViewApi13Test page error: " + err);
-        expect().assertFail();
+        expect(false).assertEqual(true);
       }
       done();
     });

@@ -893,6 +893,7 @@ import textInputOnTextSelectionAllChangeTest from './textinput/TextInputOnTextSe
 import customComponentSecondaryLayoutTest from "./customcomponent/CustomComponentSecondaryLayoutTest.test"
 import requirementRouterPageStateTest from './requirement/RequirementRouterPageStateTest.test'
 import resourceNapiValueTest from './resourcenapivalue/ResourceNapiValueTest.test'
+import customDialogSetSystemMaterialTest from "./customdialog/CustomDialogSetSystemMaterialTest.test"
 
 export default function testsuite() {
   customComponentShadowTest()
@@ -1772,4 +1773,5 @@ export default function testsuite() {
   commonAttrsOutlineColorTest()
   textSelectedBackgroundColorTest()
   waterFlowScrollOffsetTest()
+  customDialogSetSystemMaterialTest()
 }

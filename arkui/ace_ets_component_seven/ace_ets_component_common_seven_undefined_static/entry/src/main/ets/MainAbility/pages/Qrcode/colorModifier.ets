@@ -1,12 +1,7 @@
 'use static';
-import { Entry, Text, Column, Component, Button, ClickEvent, Flex,
-  FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign,
-  AttributeModifier, ButtonAttribute} from '@ohos.arkui.component'
-import { State, Observed} from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import { QRCodeAttribute,ResourceColor, Color, QRCode, Entry, Text, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'
-
-
+import { Entry, Text, Column, Component, Button, ClickEvent, Flex, FlexAlign, Padding, Margin, Row, Visibility, ColumnOptions, HorizontalAlign, AttributeModifier, ButtonAttribute, QRCodeAttribute, ResourceColor, Color, QRCode } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class MyEnableModifier implements AttributeModifier<QRCodeAttribute> {
   public change: boolean | undefined = true;

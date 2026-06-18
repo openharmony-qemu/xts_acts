@@ -270,8 +270,9 @@ int VideoEncodeHevcCapability3700Test()
 {
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
     if (cap_hevc != nullptr && InitHEVCCodecName()) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(false, OH_AVCapability_AreVideoSizeAndFrameRateSupported(cap, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
+        ASSERT_NE(nullptr, cap_hevc);
+        ASSERT_EQ(true, OH_AVCapability_AreVideoSizeAndFrameRateSupported(
+            cap_hevc, DEFAULT_WIDTH, 0, FRAME_RATE_30_INT));
         return 0;
     } else {
         return 0;
@@ -336,7 +337,7 @@ int VideoEncodeHevcCapability4100Test()
 
 int VideoEncodeHevcCapability4200Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *pixelFormat = nullptr;
         uint32_t pixelFormatNum = 0;
@@ -406,7 +407,7 @@ int VideoEncodeHevcCapability4400Test()
 
 int VideoEncodeHevcCapability4500Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *profiles = nullptr;
         uint32_t profileNum = 0;
@@ -455,12 +456,12 @@ int VideoEncodeHevcCapability4500Test()
 
 int VideoEncodeHevcCapability4600Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t **levels = nullptr;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, 1, levels, &levelNum);
+        ASSERT_NE(nullptr, cap_hevc);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, 1, levels, &levelNum);
         ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
         return 0;
     } else {
@@ -470,11 +471,11 @@ int VideoEncodeHevcCapability4600Test()
 
 int VideoEncodeHevcCapability4700Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, nullptr, &levelNum);
+        ASSERT_NE(nullptr, cap_hevc);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, nullptr, &levelNum);
         ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
         return 0;
     } else {
@@ -484,11 +485,11 @@ int VideoEncodeHevcCapability4700Test()
 
 int VideoEncodeHevcCapability4800Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *levels = nullptr;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, &levels, nullptr);
+        ASSERT_NE(nullptr, cap_hevc);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, &levels, nullptr);
         ASSERT_EQ(AV_ERR_INVALID_VAL, ret);
         return 0;
     } else {
@@ -498,12 +499,12 @@ int VideoEncodeHevcCapability4800Test()
 
 int VideoEncodeHevcCapability4900Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         const int32_t *levels = nullptr;
         uint32_t levelNum = 0;
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap, HEVC_PROFILE_MAIN, &levels, &levelNum);
+        ASSERT_NE(nullptr, cap_hevc);
+        ret = OH_AVCapability_GetSupportedLevelsForProfile(cap_hevc, HEVC_PROFILE_MAIN, &levels, &levelNum);
         ASSERT_EQ(AV_ERR_OK, ret);
         ASSERT_NE(nullptr, levels);
         ASSERT_GT(levelNum, 0);
@@ -518,11 +519,11 @@ int VideoEncodeHevcCapability4900Test()
 
 int VideoEncodeHevcCapability5000Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
         int32_t profile = HEVC_PROFILE_MAIN_10_HDR10_PLUS + 1;
         int32_t level = HEVC_LEVEL_62 + 1;
-        ASSERT_NE(true, OH_AVCapability_AreProfileAndLevelSupported(cap, profile, level));
+        ASSERT_NE(true, OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, profile, level));
         return 0;
     } else {
         return 0;
@@ -531,9 +532,9 @@ int VideoEncodeHevcCapability5000Test()
 
 int VideoEncodeHevcCapability5100Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
-        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(cap, HEVC_PROFILE_MAIN, 1));
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(cap_hevc, HEVC_PROFILE_MAIN, 1));
         return 0;
     } else {
         return 0;
@@ -655,7 +656,7 @@ int VideoEncodeCapability9000Test()
 
 int VideoEncodeHevcCapability5500Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -682,7 +683,7 @@ int VideoEncodeHevcCapability5500Test()
 
 int VideoEncodeHevcCapability5600Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -705,7 +706,7 @@ int VideoEncodeHevcCapability5600Test()
 
 int VideoEncodeHevcCapability5700Test()
 {
-    if (cap) {
+    if (cap_hevc) {
             venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
             ASSERT_NE(nullptr, venc_);
             format = OH_AVFormat_Create();
@@ -728,7 +729,7 @@ int VideoEncodeHevcCapability5700Test()
 
 int VideoEncodeHevcCapability5800Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         int64_t min = 1;
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
@@ -756,7 +757,7 @@ int VideoEncodeHevcCapability5800Test()
 
 int VideoEncodeHevcCapability5900Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         int64_t max = 100000001;
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);

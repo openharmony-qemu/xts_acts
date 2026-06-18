@@ -12,21 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
-import notificationManager from '@ohos.notificationManager'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
+import notificationManager from '@ohos.notificationManager';
 import image from '@ohos.multimedia.image';
-import {BusinessError, RecordData} from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import WantAgent, { WantAgent as _WantAgent} from '@ohos.app.ability.wantAgent';
+import WantAgent, { WantAgent as _WantAgent } from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-
 let bundleName: string = 'com.example.systemliveView.static'
 let count: int = 0;
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

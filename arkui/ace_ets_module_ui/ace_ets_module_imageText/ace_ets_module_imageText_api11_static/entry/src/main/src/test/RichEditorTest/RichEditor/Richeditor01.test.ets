@@ -115,7 +115,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0100 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0100 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -139,7 +139,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0200 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0200 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -163,7 +163,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0300 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0300 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -187,7 +187,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0400 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0400 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -218,7 +218,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0500 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0500 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -242,7 +242,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0600 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0600 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -266,7 +266,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0700 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0700 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -290,7 +290,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_0800 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_0800 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -324,7 +324,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_0900 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_0900 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -353,7 +353,7 @@ export default function ActsRichEditorTest() {
     //     // expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1000 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1000 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -374,7 +374,7 @@ export default function ActsRichEditorTest() {
     //     // expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1100 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1100 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -398,7 +398,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1200 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1200 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -419,7 +419,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1300 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1300 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -440,7 +440,7 @@ export default function ActsRichEditorTest() {
     //     expect(res).assertUndefined()
     //     console.info('Stage_RichEditor_Test_1400 END ');
     //   } catch (err) {
-    //     expect().assertFail()
+    //     expect(false).assertEqual(true);
     //     console.info('Stage_RichEditor_Test_1400 ERR  ' + JSON.stringify(err));
     //   }
     //   done();
@@ -465,7 +465,7 @@ export default function ActsRichEditorTest() {
         await CommonFunc.sleep(1500)
         console.info('Stage_RichEditor_Test_1500 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_1500 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -488,7 +488,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_1600 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_1600 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -511,7 +511,7 @@ export default function ActsRichEditorTest() {
         expect(res).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_1700 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_1700 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -538,7 +538,7 @@ export default function ActsRichEditorTest() {
         expect(get).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_1800 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_1800 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -566,7 +566,7 @@ export default function ActsRichEditorTest() {
         expect(get).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_1900 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_1900 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -593,7 +593,7 @@ export default function ActsRichEditorTest() {
         expect(get).assertEqual(undefined)
         console.info('Stage_RichEditor_Test_2000 END ');
       } catch (err) {
-        expect().assertFail()
+        expect(false).assertEqual(true);
         console.info('Stage_RichEditor_Test_2000 ERR  ' + JSON.stringify(err));
       }
       done();
@@ -697,7 +697,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2100 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       
     //       console.info('Stage_RichEditor_Test_2100 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -724,7 +724,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2200 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2200 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -764,7 +764,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2300 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -796,7 +796,7 @@ export default function ActsRichEditorTest() {
     //
     //       console.info('Stage_RichEditor_Test_2400 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2400 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -823,7 +823,7 @@ export default function ActsRichEditorTest() {
     //       expect(RichEditorSelection.spans).assertEqual(null)
     //       console.info('Stage_RichEditor_Test_2500 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -866,7 +866,7 @@ export default function ActsRichEditorTest() {
     //       expect(RichEditorImageSpanResult.offsetInSpan[1]).assertEqual(100)
     //       console.info('Stage_RichEditor_Test_2600 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('Stage_RichEditor_Test_2600 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -907,7 +907,7 @@ export default function ActsRichEditorTest() {
           expect(RichEditorImageSpan.spanPosition.spanRange[1]).assertEqual(10)
           console.info('Stage_RichEditor_Test_2700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_RichEditor_Test_2700 ERR  ' + JSON.stringify(err));
         }
         done();

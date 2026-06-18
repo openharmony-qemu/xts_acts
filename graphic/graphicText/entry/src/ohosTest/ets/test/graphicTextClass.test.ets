@@ -49,13 +49,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testlayoutSync
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0100
      * @tc.desc   To test Paragraph layoutSyncSync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutSync"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -68,13 +68,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testPaint
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0200
      * @tc.desc   To test Paragraph Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testPaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testPaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testPaint"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -88,13 +88,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetMaxWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0300
      * @tc.desc   To test Paragraph GetMaxWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMaxWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMaxWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -108,13 +108,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetHeight
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0400
      * @tc.desc   To test Paragraph GetHeight interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetHeight"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -128,13 +128,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetLongestLine
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0500
      * @tc.desc   To test Paragraph GetLongestLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLongestLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLongestLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLongestLine"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -149,13 +149,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testGetMinIntrinsicWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0600
      * @tc.desc   To test Paragraph GetMinIntrinsicWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMinIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMinIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMinIntrinsicWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -169,13 +169,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetMaxIntrinsicWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0700
      * @tc.desc   To test Paragraph GetMaxIntrinsicWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetMaxIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetMaxIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetMaxIntrinsicWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -189,13 +189,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetAlphabeticBaseline
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0800
      * @tc.desc   To test Paragraph GetAlphabeticBaseline interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetAlphabeticBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetAlphabeticBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetAlphabeticBaseline"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -210,13 +210,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testGetIdeographicBaseline
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_0900
      * @tc.desc   To test Paragraph GetIdeographicBaseline interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetIdeographicBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetIdeographicBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetIdeographicBaseline"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -230,13 +230,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetRectsForRange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1000
      * @tc.desc   To test Paragraph GetRectsForRange interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetRectsForRange"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -253,13 +253,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetRectsForPlaceholders
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1100
      * @tc.desc   To test Paragraph GetRectsForPlaceholders interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetRectsForPlaceholders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetRectsForPlaceholders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetRectsForPlaceholders"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -273,13 +273,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetGlyphPositionAtCoordinate
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1200
      * @tc.desc   To To test Paragraph GetGlyphPositionAtCoordinate interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetGlyphPositionAtCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetGlyphPositionAtCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetGlyphPositionAtCoordinate"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -293,13 +293,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetWordBoundary
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1300
      * @tc.desc   To test Paragraph GetWordBoundary interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetWordBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetWordBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetWordBoundary"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -313,13 +313,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetLineCount
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1400
      * @tc.desc   To test Paragraph GetLineCount interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineCount"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -333,13 +333,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetLineHeight
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_015
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1500
      * @tc.desc   To test Paragraph GetLineHeight interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineHeight"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -353,13 +353,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testGetLineWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_016
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1600
      * @tc.desc   To test Paragraph GetLineWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testGetLineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testGetLineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testGetLineWidth"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -373,13 +373,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testDidExceedMaxLines
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_017
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1700
      * @tc.desc   To test Paragraph DidExceedMaxLines interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testDidExceedMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testDidExceedMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testDidExceedMaxLines"
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -393,13 +393,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testTextLine_GetGlyphCount
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_018
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0100
      * @tc.desc   test TextLine GlyphCount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testText_GetGlyphCount"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -423,13 +423,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testTextLine_GetTextRange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_019
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0200
      * @tc.desc   test TextLine GetTextRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextLine_GetTextRange"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -453,13 +453,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testTextLine_Paint
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_020
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0300
      * @tc.desc   test TextLine Paint
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testTextLine_Paint"
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -483,13 +483,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testParagraphBuilder_AonstructorAndAddText
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_021
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0400
      * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testParagraphBuilder_AonstructorAndAddText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testParagraphBuilder_AonstructorAndAddText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
       console.info(msg + 'begin');
       let myTextStyle: text.TextStyle = {
@@ -566,13 +566,13 @@ export default function graphicTextClass() {
     })
     /**
      * @tc.name   testTexRun_GetGlyphCount
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_022
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0500
      * @tc.desc   To test Run GetGlyphCount interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTexRun_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTexRun_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphCount';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -600,13 +600,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetGlyphs
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_023
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0600
      * @tc.desc   To test Run GetGlyphs interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel);
@@ -633,13 +633,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetPositions
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_024
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0700
      * @tc.desc   To test Run GetPositions interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetPositions';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -666,13 +666,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetOffsets
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_025
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0800
      * @tc.desc   To test Run GetOffsets interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetOffsets';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -699,13 +699,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetFont
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_026
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_0900
      * @tc.desc   To test Run GetFont interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetFont', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetFont', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetFont';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -732,13 +732,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_Paint
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_027
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1000
      * @tc.desc   To test Run Paint interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_Paint';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -764,13 +764,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetGlyphsAdapt001
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_028
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1100
      * @tc.desc   To test Run GetGlyphs interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetGlyphsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetGlyphsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -826,13 +826,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_GetPositionsAdapt001
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_029
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1200
      * @tc.desc   To test Run GetPositions interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_GetPositionsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_GetPositionsAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_GetPositions';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -888,13 +888,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_getStringIndices
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_030
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1300
      * @tc.desc   To test Run getStringIndices interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getStringIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=>{
+    it('testTextRun_getStringIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=>{
       let msg = 'testTextRun_getStringIndices';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -956,13 +956,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_getStringRange
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_031
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1400
      * @tc.desc   To test Run getStringRange interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getStringRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getStringRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getStringRange';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -990,13 +990,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_getImageBounds
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_032
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1500
      * @tc.desc   To test Run getImageBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getImageBounds';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -1029,13 +1029,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextRun_getTypographicBounds
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_033
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1600
      * @tc.desc   To test Run getTypographicBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextRun_getTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextRun_getTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextRun_getTypographicBounds';
       console.info(msg + 'begin');
       let textTitle = "123";
@@ -1080,13 +1080,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_1
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0034
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1800
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_1 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1100,13 +1100,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_2
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0035
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_1900
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_2 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1121,13 +1121,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_3
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0036
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2000
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_3 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1142,13 +1142,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_4
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0037
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2100
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_4 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1163,13 +1163,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_5
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0038
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2200
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_5 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1183,13 +1183,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_6
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0039
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2300
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_6 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1203,13 +1203,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_7
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0040
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2400
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_7 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1223,13 +1223,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_8
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0041
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2500
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_8 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1243,13 +1243,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testlayoutByPromise_9
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0042
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICTEXT_API_2600
      * @tc.desc   To test Paragraph layoutAsync interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testlayoutByPromise_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testlayoutByPromise_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testlayoutByPromise_9 "
       console.info(msg + 'begin');
       let paragraph: text.Paragraph = buildParagraph();
@@ -1264,13 +1264,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_1
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_043
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1700
      * @tc.desc   Constructs a LineTypeset object test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_1"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1318,13 +1318,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_2
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_044
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1800
      * @tc.desc   getLineBreak interface abnormal parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_2"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1366,13 +1366,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_3
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_045
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_1900
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_3"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1438,13 +1438,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_4
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_046
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2000
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_4"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1486,13 +1486,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_5
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_047
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2100
      * @tc.desc   getLineBreak interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_5"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1534,13 +1534,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_6
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_048
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2200
      * @tc.desc   Constructs a LineTypeset object test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_6"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1582,13 +1582,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_7
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_049
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2300
      * @tc.desc   createLine interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1654,13 +1654,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testLineTypeset_BuildLineTypeset_8
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_050
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2400
      * @tc.desc   createLine interface parameter test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLineTypeset_BuildLineTypeset_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testLineTypeset_BuildLineTypeset_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
       console.info(msg + 'begin');
       let textStyle: text.TextStyle = {
@@ -1718,13 +1718,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_CreateTruncatedLine
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_051
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2500
      * @tc.desc   To test Line CreateTruncatedLine interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_CreateTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_CreateTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_CreateTruncatedLine';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1811,13 +1811,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetTypographicBounds
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_052
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2600
      * @tc.desc   To test Line GetTypographicBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetTypographicBounds';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1859,13 +1859,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetImageBounds
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_053
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2700
      * @tc.desc   To test Line GetImageBounds interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetImageBounds';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1907,13 +1907,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetTrailingSpaceWidth
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_054
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2800
      * @tc.desc   To test Line GetTrailingSpaceWidth interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetTrailingSpaceWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetTrailingSpaceWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetTrailingSpaceWidth';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1937,13 +1937,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetStringIndexForPosition
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_055
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_2900
      * @tc.desc   To test Line GetStringIndexForPosition interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetStringIndexForPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetStringIndexForPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetStringIndexForPosition';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -1998,13 +1998,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetOffsetForStringIndex
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_056
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_3000
      * @tc.desc   To test Line GetOffsetForStringIndex interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetOffsetForStringIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetOffsetForStringIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetOffsetForStringIndex';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -2056,13 +2056,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_EnumerateCaretOffsets
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_057
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_3100
      * @tc.desc   To test Line EnumerateCaretOffsets interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_EnumerateCaretOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_EnumerateCaretOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_EnumerateCaretOffsets';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)
@@ -2120,13 +2120,13 @@ export default function graphicTextClass() {
 
     /**
      * @tc.name   testTextLine_GetAlignmentOffset
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_058
+     * @tc.number SUB_GRAPHIC_Text_XTS_GRAPHICDRAWING_API_3200
      * @tc.desc   To test Line GetAlignmentOffset interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testTextLine_GetAlignmentOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
+    it('testTextLine_GetAlignmentOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ()=> {
       let msg = 'testTextLine_GetAlignmentOffset';
       console.info(msg + 'begin');
       let canvas = new drawing.Canvas(pixel)

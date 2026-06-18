@@ -792,26 +792,30 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         let pixelMap = await getPixelMap();
+        console.log('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090 getCallMetadata pixelMap is:' + pixelMap + JSON.stringify(pixelMap));
         let readBuffer0 = new ArrayBuffer(96);
         await pixelMap.readPixelsToBuffer(readBuffer0);
         let bufferArr0 = new Uint8Array(readBuffer0);
-        let callMetadata8: ESObject = {
+        let callMetadata8: avSession.CallMetadata = {
           avatar: pixelMap
         };
-        session.setCallMetadata(callMetadata8, (err: BusinessError, data: ESObject) => {
+        console.log('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090 getCallMetadata callMetadata8 is:' + callMetadata8 + JSON.stringify(callMetadata8));
+        session.setCallMetadata(callMetadata8, (err: BusinessError, setdata: ESObject) => {
           if (err) {
             console.info(`${TAG}: setCallMetadataCallback set avatar error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
+            done();
           } else {
+            console.log('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090 getCallMetadata setdata is:' + setdata + JSON.stringify(setdata));
             console.info(`${TAG}: setCallMetadataCallback set avatar successfully`);
-            let pixMap: ESObject;
             controller.getCallMetadata((err: BusinessError, data: ESObject) => {
               if (err) {
                 console.info(`${TAG}: getCallMetadataCallback error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
               } else {
-                pixMap = data.avatar;
+                console.log('SUB_MULTIMEDIA_AVSESSION_SETCALLMETADATA_CALLBACK_0090 getCallMetadata data is:' + data + JSON.stringify(data));
+                let pixMap: ESObject= data.avatar;
                 let pixelSize: ESObject = pixMap.getPixelBytesNumber();
                 console.info(`${TAG}: pixelSize is: ${pixelSize}`);
                 let readBuffer = new ArrayBuffer(pixelSize);
@@ -820,6 +824,7 @@ export default function abilityTest() {
                 for (let i = 0; i < bufferArr2.length; i++) {
                   expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
                 }
+                done();
               }
             })
           }

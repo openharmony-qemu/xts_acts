@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import { $r } from '@ohos.arkui.component'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { $r } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
-// import { resourceManager } from '@kit.LocalizationKit';
-// import { BusinessError } from '@kit.BasicServicesKit';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -37,8 +34,6 @@ export default function textSpanFontTest() {
   describe('textSpanFontTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("textSpanFontTest beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
 
     });
@@ -59,11 +54,11 @@ export default function textSpanFontTest() {
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
+        expect(false).assertEqual(true);
         console.error("push textSpanFontTest page error:" + err);
       }
       console.info("textSpanFontTest beforeEach end");
     });
-
 
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
@@ -74,8 +69,6 @@ export default function textSpanFontTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-
 
     /**
      * @tc.number   ArkUX_Stage_Text_Font_FontWeight_static_0100
@@ -96,7 +89,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -126,7 +119,7 @@ export default function textSpanFontTest() {
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0200 END ');
         } catch (err) {
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail()
+          expect(false).assertEqual(true);
         }
         done();
       }, 500)
@@ -154,7 +147,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("100");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -183,7 +176,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("900");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -211,7 +204,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("700");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -239,7 +232,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Bolder");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -267,7 +260,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -295,7 +288,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0800 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -323,7 +316,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0900 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -351,7 +344,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1000 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -379,7 +372,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -407,7 +400,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontWeight_static_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -435,7 +428,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -463,7 +456,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -491,7 +484,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("100");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -519,7 +512,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("900");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -547,7 +540,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("700");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -575,7 +568,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Bolder");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -603,7 +596,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -631,7 +624,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0800 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -659,7 +652,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0900 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -687,7 +680,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1000 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -715,7 +708,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -743,7 +736,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('weight')).assertEqual("FontWeight.Normal");
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontWeight_static_1200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -771,7 +764,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("0.00px");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -799,7 +792,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("16.00fp");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -827,7 +820,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00px");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -855,7 +848,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00vp");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -883,7 +876,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00lpx");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -914,7 +907,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -945,7 +938,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -975,8 +968,9 @@ export default function textSpanFontTest() {
           // let resourceSize = context?.resourceManager.getDouble($r('sys.float.ohos_id_text_font_size').id) as double
           // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0800 END ');
+          expect(uiContext).not().assertUndefined();
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -995,7 +989,7 @@ export default function textSpanFontTest() {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Text_Font_FontSize_static_0900');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0900 START  :' + JSON.stringify(strJson));
-
+          expect(strJson).not().assertUndefined();
           console.info("ArkUX_Stage_Text_Font_FontSize_static_0900 JSON.parseJsonElement(strJson).getElement('$attrs').getString('')JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
 
@@ -1007,7 +1001,7 @@ export default function textSpanFontTest() {
           // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0900 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1035,7 +1029,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("20.00fp");
           console.info('ArkUX_Stage_Text_Font_FontSize_static_1000 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontSize_static_1000 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1063,7 +1057,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("0.00fp");
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1091,7 +1085,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("16.00fp");
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1119,7 +1113,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00px");
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1147,7 +1141,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00vp");
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1175,7 +1169,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("30.00lpx");
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1206,7 +1200,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1232,9 +1226,10 @@ export default function textSpanFontTest() {
           console.info("ArkUX_Stage_Span_Font_FontSize_static_0700 JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')) is: " +
           JSON.stringify(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font'))));
           // expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext.px2fp(resourceSize)+'.00fp');
+          expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).not().assertUndefined();
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0700 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1265,7 +1260,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0800 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0800 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1296,7 +1291,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual(uiContext!.px2fp(resourceSize)+'.00fp');
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0900 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontSize_static_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1324,7 +1319,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('size')).assertEqual("20.00fp");
     //       console.info('ArkUX_Stage_Span_Font_FontSize_static_1000 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontSize_static_1000 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1352,7 +1347,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1380,7 +1375,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Normal");
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1408,7 +1403,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0300 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1436,7 +1431,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Normal");
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1464,7 +1459,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0500 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Text_Font_FontStyle_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1492,7 +1487,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontStyle_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1520,7 +1515,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1548,7 +1543,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Normal");
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1576,7 +1571,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0300 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0300 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1604,7 +1599,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Normal");
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1632,7 +1627,7 @@ export default function textSpanFontTest() {
     //       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0500 END ');
     //     } catch (err) {
-    //       expect().assertFail()
+    //       expect(false).assertEqual(true);
     //       console.info('ArkUX_Stage_Span_Font_FontStyle_static_0500 ERR  ' + JSON.stringify(err));
     //     }
     //     done();
@@ -1660,7 +1655,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('style')).assertEqual("FontStyle.Italic");
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontStyle_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1688,7 +1683,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("zidingyi");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1716,7 +1711,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1744,7 +1739,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1772,7 +1767,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1800,7 +1795,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1828,7 +1823,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1857,7 +1852,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("Arial, sans-serif");
           console.info('ArkUX_Stage_Text_Font_FontFamily_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Text_Font_FontFamily_0900 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1885,7 +1880,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("zidingyi");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1913,7 +1908,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1941,7 +1936,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1969,7 +1964,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -1997,7 +1992,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -2025,7 +2020,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("HarmonyOS Sans");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0600 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0600 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -2053,7 +2048,7 @@ export default function textSpanFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('font')).getString('family')).assertEqual("Arial, sans-serif");
           console.info('ArkUX_Stage_Span_Font_FontFamily_static_0700 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Span_Font_FontFamily_0900 ERR  ' + JSON.stringify(err));
         }
         done();

@@ -12,28 +12,15 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import {
-  describe,
-  beforeAll,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  expect,
-  Level,
-  Size,
-  TestType
-} from '../../../hypium';
-import factory from '@ohos.data.distributedKVStore'
-import common from "@ohos.app.ability.common";
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium';
+import factory from '@ohos.data.distributedKVStore';
 import common from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import { distributedDeviceManager } from '@kit.DistributedServiceKit';
-
 const KEY_TEST_INT_ELEMENT = 'key_test_int';
 const KEY_TEST_FLOAT_ELEMENT = 'key_test_float';
 const KEY_TEST_BOOLEAN_ELEMENT = 'key_test_boolean';

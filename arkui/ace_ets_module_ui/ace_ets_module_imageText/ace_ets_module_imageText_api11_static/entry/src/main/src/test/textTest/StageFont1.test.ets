@@ -15,14 +15,13 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router, Font } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
+import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
@@ -98,7 +97,7 @@ export default function stageFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('labelStyle')).getString('font')).getString('family')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_Font_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -124,7 +123,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_Font_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -148,7 +147,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_Font_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -174,7 +173,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_Font_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -200,7 +199,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          expect(false).assertEqual(true);
           console.info('Stage_Font_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();

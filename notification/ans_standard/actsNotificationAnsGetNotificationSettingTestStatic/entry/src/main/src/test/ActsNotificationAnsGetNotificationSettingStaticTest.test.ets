@@ -13,11 +13,10 @@
 * limitations under the License.
 */
 import Utils from './Util.test';
-import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
 import emitter from '@ohos.events.emitter'
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, Callback } from '@ohos.base';
+import { Callback } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import notificationManager from '@ohos.notificationManager';
 import {
@@ -89,7 +88,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
     })
 
     afterEach(async()=>{
-      await Utils.msSleep(5000)
+      await Utils.msSleep(8000)
     })
 
     /**

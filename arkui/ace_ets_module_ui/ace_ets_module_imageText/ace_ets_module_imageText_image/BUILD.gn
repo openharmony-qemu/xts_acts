@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsAceEtsModuleImageTextImageTestMain") {
+ohos_app_assist_suite("ActsAceEtsModuleImageTestMain") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleImageTextImageTestMain"
+  hap_name = "ActsAceEtsModuleImageTestMain"
   part_name = "ace_engine"
   subsystem_name = "arkui"
 }
 
-ohos_js_app_suite("ActsAceEtsModuleImageTextImageTest") {
+ohos_js_app_suite("ActsAceEtsModuleImageTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAceEtsModuleImageTextImageTest"
+  hap_name = "ActsAceEtsModuleImageTest"
   part_name = "ace_engine"
   subsystem_name = "arkui"
-  deps = [ ":ActsAceEtsModuleImageTextImageTestMain" ]
+  deps = [ ":ActsAceEtsModuleImageTestMain" ]
 }

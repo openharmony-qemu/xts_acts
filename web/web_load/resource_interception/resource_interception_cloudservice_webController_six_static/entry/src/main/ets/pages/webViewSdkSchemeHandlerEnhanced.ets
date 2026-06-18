@@ -112,6 +112,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                         console.log('[schemeHandler] onRequestStart postDataStream isChunked:' + stream.isChunked());
                         console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
                         console.log('[schemeHandler] onRequestStart postDataStream isInMemory:' + stream.isInMemory());
+                        return true;
                    if(stream.isEof() == false) {
                      this.test = true;
                    }

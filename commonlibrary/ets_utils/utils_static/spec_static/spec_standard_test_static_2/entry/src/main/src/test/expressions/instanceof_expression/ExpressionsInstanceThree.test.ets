@@ -100,7 +100,7 @@ type T5 = (x: number, y: string) => undefined
 let func4: T5
 
 func2 = (x: Object) => { return "s" }
-func3 = (x: number[]) => {}
+func3 = (x: number[]) => {return null}
 func4 = (x: number, y: string) => { return undefined }
 
 type T6 = (x: number, y: string) => undefined

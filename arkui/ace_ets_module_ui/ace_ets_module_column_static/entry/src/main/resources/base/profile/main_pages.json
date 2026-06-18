@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/Column/ColumnBuilderIndex"
+    "MainAbility/pages/Column/ColumnBuilderIndex",
+    "MainAbility/pages/Column/WithEnvDirection"
   ]
 }

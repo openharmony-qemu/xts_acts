@@ -19,11 +19,9 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import {Entry, Component, WebDarkMode, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image,OnClientAuthenticationEvent, OnSearchResultReceiveEvent,AudioSessionType,OnRefreshAccessedHistoryEvent,WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-import { Callback } from '@ohos.base'
-
+import { Entry, Component, WebDarkMode, Column, Row, Button, ClickEvent, Web, Menu, MenuType, Image, OnClientAuthenticationEvent, OnSearchResultReceiveEvent, AudioSessionType, OnRefreshAccessedHistoryEvent, WebContextMenuResult, Resource, Builder, ImageFit, MenuItem, Color, WebElementType, WebResponseType, OnContextMenuShowEvent } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 interface PreviewBuilderParam {
   previewImage: Resource | string | undefined;
   width: number;

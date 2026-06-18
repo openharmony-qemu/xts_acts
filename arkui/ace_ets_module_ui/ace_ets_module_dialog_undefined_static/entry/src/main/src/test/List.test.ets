@@ -20,7 +20,6 @@ import menuItemUndefinedTest from './menuItemTest/menuItemUndefined.test';
 import menuUndefinedTest from './menuTest/menuUndefined.test';
 import ratingModifierUndefinedTest from './ratingTest/ratingModifierUndefined.test';
 import ratingContentModifierUndefinedTest from './ratingTest/ratingContentModifierUndefined.test';
-import ratingModifierUndefinedTest from './ratingTest/ratingModifierUndefined.test';
 import checkBoxUndefinedTest from './CheckBoxTest/checkBoxUndefined.test';
 import checkboxGroupUndefined from './CheckBoxGroupTest/checkboxGroupUndefined.test';
 import checkboxGroupModifierUndefined from './CheckBoxGroupTest/checkboxGroupModifierUndefined.test';
@@ -47,7 +46,6 @@ import selectUndefined from './SelectTest/selectUndefined.test';
 import selectUndefinedTwoTest from './SelectTest/selectUndefinedTwoTest.test';
 import checkboxDemoOneXTS from './CheckBoxTest/checkboxDemoOne.test';
 import checkboxModifierDemoOneXTS from './CheckBoxTest/checkboxModiferDemoOne.test';
-
 export default function testsuite() {
     selectUndefinedFour();
     selectUndefinedOne();

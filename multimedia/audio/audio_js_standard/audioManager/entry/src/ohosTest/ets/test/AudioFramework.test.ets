@@ -22,6 +22,8 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import { BY, UiDriver } from '@ohos.UiTest';
 import { deviceInfo } from "@kit.BasicServicesKit";
+import { Driver, ON } from '@kit.TestKit';
+import { MatchPattern } from '@ohos.UiTest'
 
 let deviceTypeInfo: string = deviceInfo.deviceType
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -140,9 +142,25 @@ export default function audioFramework() {
 
   describe('audioFramework', () => {
     beforeAll(async () => {
-      sleep(1000);
+      sleep(500);
       await getAudioManager();
       await getVolumeGroupManager();
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device => 
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          await audioManager.setVolume(audioMedia, maxVolPc);
+      }
+      console.info(`come in driveFn`);
+      let driver = await Driver.create();
+      console.info(`driver is ${JSON.stringify(driver)}`);
+      await sleep(500);
+      let power = await driver?.waitForComponent(ON.text('提高音量', MatchPattern.EQUALS), 2000);
+      await power?.click();
+      await sleep(1000);
       console.info('TestLog: Start Testing AudioFrameworkTest Interfaces');
     })
 
@@ -156,7 +174,7 @@ export default function audioFramework() {
       await sleep(100);
     })
 
-    afterAll(() => {
+    afterAll(async () => {
       console.info(`${TagFrmwk}: afterAll: Test suite-level cleanup condition`);
     })
 

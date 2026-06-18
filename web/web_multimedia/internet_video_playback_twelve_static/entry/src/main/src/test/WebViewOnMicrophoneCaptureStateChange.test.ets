@@ -20,10 +20,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
-
 let testAbilityContext:common.UIAbilityContext;
 const driver = Driver.create();
 

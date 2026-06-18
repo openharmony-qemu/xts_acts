@@ -15,40 +15,12 @@
  */
 
 import CommonFunc from '../../../MainAbility/common/Common';
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,
-  Row,
-  Scroll,
-  ButtonType,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  FontWeight,
-  Profiler,
-  setAppBgColor,Color,
-  FlexWrap,Resource
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  PropRef,Provide,Consume
-} from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Button, ClickEvent, Text, Row, Scroll, ButtonType, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, FontWeight, Profiler, setAppBgColor, Color, FlexWrap, Resource } from '@ohos.arkui.component';
+import { State, Link, PropRef, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
-
 @Entry
 @Component
 struct link {

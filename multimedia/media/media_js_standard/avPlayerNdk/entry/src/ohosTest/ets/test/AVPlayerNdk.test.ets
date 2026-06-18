@@ -2545,5 +2545,20 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMProcessorMaxLen_0500
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_PROCESSOR_MAXLEN_0500
+     * @tc.desc   test OH_AVPlayer_SetPCMProcessorMaxLen value is 0
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMProcessorMaxLen_0500', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMProcessorMaxLenValError();
+      console.info(`testOhAvPlayerSetPCMProcessorMaxLen_0500 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

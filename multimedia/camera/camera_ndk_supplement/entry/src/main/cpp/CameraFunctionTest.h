@@ -33,6 +33,7 @@ public:
     int32_t OHCameraDeviceGetCameraOrientationTest(int32_t caseCode);
     int32_t OHCameraDeviceGetHostDeviceNameTest(int32_t caseCode);
     int32_t OHCameraDeviceGetHostDeviceTypeTest(int32_t caseCode);
+    int32_t OHCameraDeviceGetAutomotiveCameraPositionTest(int32_t caseCode);
     int32_t OHCameraInputRegisterCallbackTest(int32_t caseCode);
     int32_t OHCameraInputUnregisterCallbackTest(int32_t caseCode);
     int32_t OHCameraInputOpenTest(int32_t caseCode);

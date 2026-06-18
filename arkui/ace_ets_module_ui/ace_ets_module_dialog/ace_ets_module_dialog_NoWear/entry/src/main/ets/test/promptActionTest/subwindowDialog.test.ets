@@ -121,6 +121,10 @@ export default function subwindowDialog() {
       expect(!!buttonSubwindowMenu).assertTrue();
       await buttonSubwindowMenu.longClick();
       await CommonFunc.sleep(1000);
+      let menuBtn = await uiDriver.findComponent(ON.text('菜单选项'));
+      await CommonFunc.sleep(1000);
+      await menuBtn.click();
+      await CommonFunc.sleep(2000);
 
       let buttonCloseDialog = await uiDriver.findComponent(BY.key(KEY_CLICK_CLOSE));
       if (buttonCloseDialog) {

@@ -14,1301 +14,350 @@
  */
 import { beforeAll, describe, Level, Size, TestType, it, expect } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { GetAesGenerateOptions, GetEccGenerateOptions, GetMlDsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { SetParam, SetInData, MergeOptions, CheckSoftware, GetParam } from './utils/huks/HuksOptionsUtils';
+import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { SetParam, SetInData, MergeOptions, CheckSoftware } from './utils/huks/HuksOptionsUtils';
 import { StringToUint8Array, Uint8ArrayToString } from './utils/common/CommonUtils';
 import { Logger } from './utils/common/Logger';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
-import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
 import {
   Agree,
-  Derive,
   GetDeriveAgreeFinishOptions,
   GetEcdhAgreeOptions,
   GetHkdfDeriveOptions,
-  GetHmacMacOptions,
-  GetSha256Options,
-  Mac
+  GetSha256Options
 } from './utils/huks/DeriveAgreeUtils';
-import { BuildSignVerifyData, GetSha256SignOptions, SignVerify } from './utils/huks/SignVerifyUtils';
-import { BuildCipherData, Cipher, GetCbcPkcs7Options } from './utils/huks/CipherUtils';
+import { BuildCipherData, Cipher, CipherData, GetCbcPkcs7Options, MergeCipherData } from './utils/huks/CipherUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
-import { HuksDefaultKeyVersion, HuksDefaultOsPatchLevel, HuksDefaultOsVersion, HuksMaxGroupId, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
+import { HuksMinGroupId } from './utils/huks/HuksCommonUtils';
+import * as huksCallbackUtils from './utils/huks/HuksCallbackUtils'
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
-import { GetAccessGroupOptions } from './utils/huks/AccessControlUtils';
 
-export default function abilityTest() {
+export default function SecurityHuksGroupAPI23Test() {
   let useSoftware: boolean = true;
-  describe('SecurityHuksGroupTest', () => {
+
+  describe('SecurityHuksGroupAPI23Test', () => {
     beforeAll(async () => {
       useSoftware = await CheckSoftware();
     })
+
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0100
-     * @tc.desc   test generateKeyItem group succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6800
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6800
+     * @tc.desc   test generateKeyItem group not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0100";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6800";
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
+          expect(null).assertFail()
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0200
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0200
-     * @tc.desc   test importKeyItem group succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6810
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6810
+     * @tc.desc   test generateKeyItem group not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0200";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6810";
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
+        try {
+          await huksCallbackUtils.generateKeyItem(testNumber, genGroupKeyOptions);
+          expect(null).assertFail()
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6900
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6900
+     * @tc.desc   test importKeyItem group not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6900";
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
+          expect(null).assertFail()
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0300
-     * @tc.desc   test importWrappedKeyItem group succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6910
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6910
+     * @tc.desc   test importKeyItem group not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0300";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        importWrappedKeyOption.inData = wrappedKeyData;
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6910";
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
+          await huksCallbackUtils.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
+          expect(null).assertFail()
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0500
-     * @tc.desc   test alias DeriveAgree group_alias succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7000
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7000
+     * @tc.desc   test importWrappedKeyItem group not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0500";
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7000";
+        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
+        let wrappedKeyData = new Uint8Array([1, 1, 1]);
+        let importWrappedKeyOption = GetAesGenerateOptions(128);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
+          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        importWrappedKeyOption.inData = wrappedKeyData;
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        try {
+          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7010
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7010
+     * @tc.desc   test importWrappedKeyItem group not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7010";
+        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
+        let wrappedKeyData = new Uint8Array([1, 1, 1]);
+        let importWrappedKeyOption = GetAesGenerateOptions(128);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
+          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        importWrappedKeyOption.inData = wrappedKeyData;
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        try {
+          await huksCallbackUtils.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7200
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7200
+     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7200";
         let genKeyOptions = GetEccGenerateOptions(256);
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
         let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
         let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
         SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
+        await huks.generateKeyItem(testNumber, genKeyOptions);
+        await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
+        let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
+        agreeInitOptions.inData = res.outData;
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
           await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
+          expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0600
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0600
-     * @tc.desc   test alias Agree group_alias succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7210
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7210
+     * @tc.desc   test alias Derive group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0600";
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7210";
+        let genKeyOptions = GetEccGenerateOptions(256);
+        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
+        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
+        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
+        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
+        await huksCallbackUtils.generateKeyItem(testNumber, genKeyOptions);
+        await huksCallbackUtils.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
+        let res = await huksCallbackUtils.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
+        agreeInitOptions.inData = res.outData;
+        let handle: number = (await huksCallbackUtils.initSession(testNumber, agreeInitOptions)).handle;
+        await huksCallbackUtils.updateSession(handle, agreeInitOptions);
+        try {
+          await huksCallbackUtils.finishSession(handle, agreeFinishOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7300
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7300
+     * @tc.desc   test alias DeriveAgree group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7300";
         let genKeyOptions = GetAesGenerateOptions(256);
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
         let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
         let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
         SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
+        await huks.generateKeyItem(testNumber, genKeyOptions);
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
+          await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
+          expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0700
-     * @tc.desc   test exportKeyItem group succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7400
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7400
+     * @tc.desc   test exportKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0700";
-        let genKeyOptions = GetEccGenerateOptions(256);
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7400";
+        let genKeyOptions = GetAesGenerateOptions(256);
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber, genKeyOptions);
-          expect(res.outData).not().assertNull();
+          await huks.exportKeyItem(testNumber, genKeyOptions);
+          expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(12000018);
         }
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_0900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_0900
-     * @tc.desc   test Cipher group succ
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7410
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7410
+     * @tc.desc   test exportKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0900";
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7410";
+        let genKeyOptions = GetAesGenerateOptions(256);
+        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        try {
+          await huksCallbackUtils.exportKeyItem(testNumber, genKeyOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7500
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7500
+     * @tc.desc   test exportKeyItem group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7500";
+        let genKeyOptions = GetAesGenerateOptions(256);
+        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        try {
+          await huks.wrapKeyItem(testNumber, genKeyOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          if (useSoftware || err.code == 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect(err.code).assertEqual(12000018);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7600
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7600
+     * @tc.desc   test Cipher group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7600";
         let genKeyOptions = GetAesGenerateOptions(128);
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         let cipherData = BuildCipherData([16]);
         try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await Cipher(testNumber, cipherOptions, cipherData);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1000
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1000
-     * @tc.desc   test SignVerify group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1000";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let signOptions = MergeOptions(GetEccGenerateOptions(256), GetSha256SignOptions());
-        SetParam(signOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let signData = BuildSignVerifyData([16]);
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await SignVerify(testNumber, signOptions, signData);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1100
-     * @tc.desc   test Mac group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1100";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC);
-        let macOptions = MergeOptions(GetHmacMacOptions(), GetSha256Options());
-        SetParam(macOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        macOptions.inData = StringToUint8Array("12345678")
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await Mac(testNumber, macOptions);
-          expect(res.outData).not().assertNull();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1200
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1200
-     * @tc.desc   test group_alias Derive succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1200";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        SetParam(agreeInitOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1300
-     * @tc.desc   test group_alias Agree succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1300";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        SetParam(agreeInitOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1400
-     * @tc.desc   test alias Agree succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1400";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        SetParam(deriveInitOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1500
-     * @tc.desc   test alias Agree succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1500";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        SetParam(deriveInitOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Agree(testNumber, deriveInitOptions, deriveFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1700
-     * @tc.desc   test anonAttestKeyItem group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        if (!useSoftware) {
-          await CheckWifiInfo();
-        }
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.anonAttestKeyItem(testNumber, attestOptions);
-          expect(res.certChains?.length).assertEqual(3);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1800
-     * @tc.desc   test getKeyItemProperties group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1800";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.getKeyItemProperties(testNumber, genKeyOptions);
-          expect(res.properties?.length).assertLarger(0);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1900
-     * @tc.desc   test hasKeyItem group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1900";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.hasKeyItem(testNumber, genKeyOptions);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_1910
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_1910
-     * @tc.desc   test isKeyItemExist group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1910";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.isKeyItemExist(testNumber, genKeyOptions);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2000
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2000
-     * @tc.desc   test listAliases group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2000";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.listAliases(genKeyOptions);
-          expect(res.keyAliases.length).assertLarger(0);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2100
-     * @tc.desc   test deleteKeyItem group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2100";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.deleteKeyItem(testNumber, genKeyOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2300
-     * @tc.desc   test generateKeyItem group127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2400
-     * @tc.desc   test importKeyItem group127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2500
-     * @tc.desc   test importWrappedKeyItem group127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2500";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        importWrappedKeyOption.inData = wrappedKeyData;
-        try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2700
-     * @tc.desc   test alias DeriveAgree group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2700";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2800
-     * @tc.desc   test alias Agree group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2800";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_2900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_2900
-     * @tc.desc   test exportKeyItem group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2900";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber, genKeyOptions);
-          expect(res.outData).not().assertNull();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3100
-     * @tc.desc   test Cipher group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3100";
-        let genKeyOptions = GetAesGenerateOptions(128);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        let cipherData = BuildCipherData([16]);
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await Cipher(testNumber, cipherOptions, cipherData);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3300
-     * @tc.desc   test anonAttestKeyItem group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        if (!useSoftware) {
-          await CheckWifiInfo();
-        }
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3300";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.anonAttestKeyItem(testNumber, attestOptions);
-          expect(res.certChains?.length).assertEqual(3);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3400
-     * @tc.desc   test getKeyItemProperties group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3400";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.getKeyItemProperties(testNumber, genKeyOptions);
-          expect(res.properties?.length).assertLarger(0);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3500
-     * @tc.desc   test hasKeyItem group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3500";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.hasKeyItem(testNumber, genKeyOptions);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3510
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3510
-     * @tc.desc   test isKeyItemExist group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3510";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.isKeyItemExist(testNumber, genKeyOptions);
-          expect(res).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3600
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3600
-     * @tc.desc   test listAliases group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3600";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          let res = await huks.listAliases(genKeyOptions);
-          expect(res.keyAliases.length).assertLarger(0);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3700
-     * @tc.desc   test deleteKeyItem group_alias127 succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.deleteKeyItem(testNumber, genKeyOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3800
-     * @tc.desc   test generateKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3800";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_3900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_3900
-     * @tc.desc   test importKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3900";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4000
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4000
-     * @tc.desc   test importWrappedKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4000";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        importWrappedKeyOption.inData = wrappedKeyData;
-        try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4200
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4200
-     * @tc.desc   test alias DeriveAgree group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4200";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4300
-     * @tc.desc   test alias Agree group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4300";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4400
-     * @tc.desc   test exportKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4400";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.exportKeyItem(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4600
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4600
-     * @tc.desc   test Cipher group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4600";
-        let genKeyOptions = GetAesGenerateOptions(128);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        let cipherData = BuildCipherData([16]);
-        try {
-          await Cipher(testNumber, cipherOptions, cipherData);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4800
-     * @tc.desc   test anonAttestKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        if (!useSoftware) {
-          await CheckWifiInfo();
-        }
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4800";
-        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.anonAttestKeyItem(testNumber, attestOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_4900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_4900
-     * @tc.desc   test getKeyItemProperties group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4900";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.getKeyItemProperties(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5000
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5000
-     * @tc.desc   test hasKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5000";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.hasKeyItem(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5010
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5010
-     * @tc.desc   test isKeyItemExist group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5010";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.isKeyItemExist(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5100
-     * @tc.desc   test listAliases group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5100";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.listAliases(genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5200
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5200
-     * @tc.desc   test deleteKeyItem group_aliasNull, errcode 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5200";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
-        try {
-          await huks.deleteKeyItem(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(401);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5300
-     * @tc.desc   test generateKeyItem group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        try {
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5400
-     * @tc.desc   test importKeyItem group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        try {
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5500
-     * @tc.desc   test importWrappedKeyItem group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5500";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        importWrappedKeyOption.inData = wrappedKeyData;
-        try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5700
-     * @tc.desc   test alias Derive group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5700";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5800
-     * @tc.desc   test alias DeriveAgree group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5800";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_5900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_5900
-     * @tc.desc   test exportKeyItem group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5900";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        try {
-          await huks.exportKeyItem(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000018);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6100
-     * @tc.desc   test Cipher group_alias not exist, errcode 12000018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6100";
-        let genKeyOptions = GetAesGenerateOptions(128);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
-        let cipherData = BuildCipherData([16]);
-        try {
           await Cipher(testNumber, cipherOptions, cipherData);
           expect(null).assertFail();
         } catch (err) {
@@ -1318,20 +367,44 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6300
-     * @tc.desc   test anonAttestKeyItem group_alias not exist, errcode 12000018
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7610
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7610
+     * @tc.desc   test Cipher group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        if (!useSoftware) {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7610";
+        let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+        try {
+          await huksCallbackUtils.initSession(testNumber, cipherOptions)
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7800
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7800
+     * @tc.desc   test anonAttestKeyItem group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        if(!useSoftware){
           await CheckWifiInfo();
         }
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6300";
-        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7800";
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.anonAttestKeyItem(testNumber, attestOptions);
           expect(null).assertFail();
@@ -1342,17 +415,43 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6400
-     * @tc.desc   test getKeyItemProperties group_alias not exist, errcode 12000018
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7810
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7810
+     * @tc.desc   test anonAttestKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6400";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        if(!useSoftware){
+          await CheckWifiInfo();
+        }
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7810";
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
+        try {
+          await huksCallbackUtils.anonAttestKeyItem(testNumber, attestOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7900
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7900
+     * @tc.desc   test getKeyItemProperties group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7900";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.getKeyItemProperties(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1363,17 +462,40 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6500
-     * @tc.desc   test hasKeyItem group_alias not exist, errcode 12000018
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_7910
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_7910
+     * @tc.desc   test getKeyItemProperties group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_7910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6500";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_7910";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
+        try {
+          await huksCallbackUtils.getKeyItemProperties(testNumber, genKeyOptions);
+          expect(null).assertFail();
+        } catch (err) {
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000018);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8000
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8000
+     * @tc.desc   test hasKeyItem group_alias not configured, errcode 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8000";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1384,19 +506,20 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6510
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6510
-     * @tc.desc   test hasKeyItem group_alias not exist, errcode 12000018
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8010
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8010
+     * @tc.desc   test hasKeyItem group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6510";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8010";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
-          await huks.isKeyItemExist(testNumber, genKeyOptions);
+          await huksCallbackUtils.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
@@ -1405,17 +528,18 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6600
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6600
-     * @tc.desc   test listAliases group_alias not exist, errcode 12000018
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8100
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8100
+     * @tc.desc   test listAliases group_alias not configured, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6600";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8100";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
           await huks.listAliases(genKeyOptions);
           expect(null).assertFail();
@@ -1426,19 +550,20 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_6700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_6700
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8200
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8200
      * @tc.desc   test deleteKeyItem group_alias not exist, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8200";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
-          await huks.deleteKeyItem(testNumber, genKeyOptions);
+          await huksCallbackUtils.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
@@ -1447,392 +572,25 @@ export default function abilityTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8300
-     * @tc.desc   test deleteKeyItem group_alias override false, errcode 12000017
+     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8210
+     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8210
+     * @tc.desc   test deleteKeyItem group_alias not exist, errcode 12000018
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
+        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8210";
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
+          StringToUint8Array(HuksMinGroupId));
         try {
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
+          await huks.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
         } catch (err) {
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000017);
+          expect(err.code).assertEqual(12000018);
         }
       })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8400
-     * @tc.desc   test importKeyItem group_alias override false, errcode 12000017
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
-        try {
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000017);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8500
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8500
-     * @tc.desc   test importWrappedKeyItem group_alias override false, errcode 12000017
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8500";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
-        importWrappedKeyOption.inData = wrappedKeyData;
-        try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000017);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8700
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8700
-     * @tc.desc   test alias DeriveAgree group_alias override false, errcode 12000017
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8700";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000017);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8800
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8800
-     * @tc.desc   test agree group_alias override false, errcode 12000017
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8800";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000017);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_8900
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_8900
-     * @tc.desc   test generateKeyItem group_alias override succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8900";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
-        try {
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-          await huks.generateKeyItem(testNumber, genGroupKeyOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_9000
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_9000
-     * @tc.desc   test importKeyItem group_alias override succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_9000";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
-        try {
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-          await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_9100
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_9100
-     * @tc.desc   test importWrappedKeyItem group_alias override succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_9100";
-        let deviceAKeyPairAlias: string = testNumber + "_deviceAKeyPairAlias";
-        let wrappedKeySize = 192;
-        let genKeyPairOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
-        SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
-        let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
-        let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
-        importWrappedKeyOption.inData = wrappedKeyData;
-        try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-          await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_9300
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_9300
-     * @tc.desc   test exportKeyItem group_alias override succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_9300";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
-        let agreeInitOptions: huks.HuksOptions = GetEcdhAgreeOptions(256);
-        let agreeFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(agreeFinishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
-        MergeOptions(agreeFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_agreed"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await huks.generateKeyItem(testNumber + "_deviceB", genKeyOptions);
-          let res = await huks.exportKeyItem(testNumber + "_deviceB", genKeyOptions);
-          agreeInitOptions.inData = res.outData;
-          await Agree(testNumber, agreeInitOptions, agreeFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Group_API23_Func_9400
-     * @tc.number SUB_Security_HUKS_AccessControl_Group_API23_Func_9400
-     * @tc.desc   test agree group_alias override succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Group_API23_Func_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_9400";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DERIVE);
-        let deriveInitOptions: huks.HuksOptions = MergeOptions(GetHkdfDeriveOptions(256 / 8), GetSha256Options());
-        let deriveFinishOptions: huks.HuksOptions = GetAesGenerateOptions(256);
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        SetParam(deriveFinishOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
-        MergeOptions(deriveFinishOptions, GetDeriveAgreeFinishOptions(testNumber + "_derived"));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          await Derive(testNumber, deriveInitOptions, deriveFinishOptions);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Groups_API23_Func_1300
-     * @tc.number SUB_Security_HUKS_AccessControl_Groups_API23_Func_1300
-     * @tc.desc   test exportKeyItem another group, errcode 12000011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Groups_API23_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Groups_API23_Func_1300";
-        let genKeyOptions = GetEccGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        try {
-          await huks.generateKeyItem(testNumber, genKeyOptions);
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
-          await huks.exportKeyItem(testNumber, genKeyOptions);
-          expect(null).assertFail();
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000011);
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_AccessControl_Groups_API23_Func_1700
-     * @tc.number SUB_Security_HUKS_AccessControl_Groups_API23_Func_1700
-     * @tc.desc   test Cipher A/C/D group succ
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_Security_HUKS_AccessControl_Groups_API23_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async () => {
-        let testNumber: string = "SUB_Security_HUKS_AccessControl_Groups_API23_Func_1700";
-        let genKeyOptions = GetAesGenerateOptions(256);
-        SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let cipherOptions = MergeOptions(GetAesGenerateOptions(128), GetCbcPkcs7Options(12));
-        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
-        let cipherData = BuildCipherData([16]);
-        try {
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
-          await huks.generateKeyItem(testNumber + "_de", genKeyOptions);
-          let res1 = await Cipher(testNumber + "_de", cipherOptions, cipherData);
-          expect(res1).assertEqual(true);
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
-          await huks.generateKeyItem(testNumber + "_ce", genKeyOptions);
-          let res2 = await Cipher(testNumber + "_ce", cipherOptions, cipherData);
-          expect(res2).assertEqual(true);
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
-          await huks.generateKeyItem(testNumber + "_ece", genKeyOptions);
-          let res3 = await Cipher(testNumber + "_ece", cipherOptions, cipherData);
-          expect(res3).assertEqual(true);
-        } catch (err) {
-          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(null).assertFail();
-        }
-      })
-
-    /**
-     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400
-     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400
-     * @tc.desc   Generate ML-DSA 44 key with group id, verify key properties, export and delete
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400";
-
-      let generateKeyOptions = MergeOptions(GetMlDsaGenerateOptions(44), GetAccessGroupOptions("group01"));
-      let baseKeyOptions = GetAccessGroupOptions("group01");
-
-      try {
-        await huks.generateKeyItem(testNumber, generateKeyOptions);
-        let isKeyExistRes = await huks.isKeyItemExist(testNumber, baseKeyOptions);
-        expect(isKeyExistRes).assertEqual(true);
-        let getKeyPropertiesRes = await huks.getKeyItemProperties(testNumber, baseKeyOptions);
-        let keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
-        Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(getKeyPropertiesRes.properties)}`);
-        expect(getKeyPropertiesRes.properties?.length).assertEqual(12);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_ML_DSA);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(44);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE))
-          .assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL)).assertEqual(huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
-
-        let data1 = GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP) as Uint8Array;
-        let data2 = GetParam(keyProperties, 1342177804) as Uint8Array;
-        Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(new Uint8Array([99, 99]))}`);
-        Logger.error(`${testNumber} getKeyProperties ${Uint8ArrayToString(new Uint8Array(data1))}`);
-        Logger.error(`${testNumber} getKeyProperties ${Uint8ArrayToString(new Uint8Array(data2))}`);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PROCESS_NAME)).not().assertNull();
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP)).not().assertNull();
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_USER_ID)).assertLarger(99);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_VERSION)).assertEqual(HuksDefaultKeyVersion);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_OS_VERSION)).assertEqual(HuksDefaultOsVersion);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_OS_PATCHLEVEL)).assertEqual(HuksDefaultOsPatchLevel);
-        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
-        let exportKeyRes = await huks.exportKeyItem(testNumber, baseKeyOptions);
-        expect(exportKeyRes.outData?.length).assertLarger(0);
-        await huks.deleteKeyItem(testNumber, baseKeyOptions);
-        let hasKeyRes = await huks.hasKeyItem(testNumber, baseKeyOptions);
-        expect(hasKeyRes).assertEqual(false);
-      } catch (err) {
-        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
-        expect(null).assertFail();
-      }
-    })
   })
 }

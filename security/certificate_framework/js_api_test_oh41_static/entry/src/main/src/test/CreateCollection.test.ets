@@ -13,22 +13,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '../../../hypium/index';
+import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import cert from '@ohos.security.cert';
 import util from '@ohos.util';
-import * as certFunc from "./utils/collection/certFunc";
-import * as crlFunc from "./utils/collection/crlFunc";
-import * as collectionFunc from "./utils/collection/collectionFunc";
-
-
+import * as certFunc from './utils/collection/certFunc';
+import * as crlFunc from './utils/collection/crlFunc';
+import * as collectionFunc from './utils/collection/collectionFunc';
 export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
   describe("certFrameworkCreateCollectionJsAPIFunctionTestUnit", () => {
     console.info("##########start certFrameworkCreateCollectionJsAPIFunctionTestUnit##########");

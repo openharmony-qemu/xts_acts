@@ -96,7 +96,7 @@ struct blankLessInfoWithKeyTest {
               let key = 'blankLessInfoWithKey';
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoOne = this.controller.getBlanklessInfoWithKey(key);
@@ -108,7 +108,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoTwo = this.controller.getBlanklessInfoWithKey(key);
@@ -120,7 +120,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
+                this.controller.loadUrl($rawfile('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoThree = this.controller.getBlanklessInfoWithKey(key);
@@ -562,7 +562,7 @@ struct blankLessInfoWithKeyTest {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
+      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0

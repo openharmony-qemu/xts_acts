@@ -14,15 +14,13 @@
  */
 
 import webView from '@ohos.web.webview';
-import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { $rawfile, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base'
-import { UIContext, Router } from '@ohos.arkui.UIContext'
-
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class StringFields {
   str: string = '';
 }

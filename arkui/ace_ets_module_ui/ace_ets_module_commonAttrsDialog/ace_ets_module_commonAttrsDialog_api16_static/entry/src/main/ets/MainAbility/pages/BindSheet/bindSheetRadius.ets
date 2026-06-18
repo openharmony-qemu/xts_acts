@@ -15,34 +15,11 @@
  */
 
 import { LengthMetrics } from '@kit.ArkUI';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FlexOptions,
-  ColumnOptions,
-  TextAlign,
-  Scroll,
-  Image,
-  $r,$$,SheetType,BindOptions,SheetOptions,Builder,TripleLengthDetents,SheetSize
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, Link } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin, FlexOptions, ColumnOptions, TextAlign, Scroll, Image, $r, $$, SheetType, BindOptions, SheetOptions, Builder, TripleLengthDetents, SheetSize } from '@ohos.arkui.component';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, State } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
-import { State } from '@ohos.arkui.stateManagement'
-
 @Entry
 @Component
 struct SheetTransitionExample {

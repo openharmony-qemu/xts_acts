@@ -96,6 +96,7 @@
         "MainAbility/pages/ImageColorFilter/ImageColorFilterTestPage",
         "MainAbility/pages/ImageReloadKey/ImageReloadKeyTest",
         "MainAbility/pages/DrawableDescriptorRelease/DrawableDescriptorReleaseTest",
-        "MainAbility/pages/DrawableDescriptorRelease/PixelMapDrawableDescriptorConstructorTest"
+        "MainAbility/pages/DrawableDescriptorRelease/PixelMapDrawableDescriptorConstructorTest",
+        "MainAbility/pages/DrawableDescriptorRelease/PictureDrawableDescriptorSetHdrCompositionTest"
     ]
 }
