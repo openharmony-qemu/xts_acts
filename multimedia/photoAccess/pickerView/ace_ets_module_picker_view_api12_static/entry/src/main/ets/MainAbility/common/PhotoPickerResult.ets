@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import photoAccessHelper from '@ohos.file.photoAccessHelper';
 
 export class PhotoPickerResult {
   public checkBoxColor: string = '';
@@ -27,4 +28,6 @@ export class PhotoPickerResult {
   public maxVideoSelectNumber: int = 500;
   public itemType: string = '';
   public checkboxTextColor: string = '';
+  public preselectedUris: Array<string> = [];
+  public isPreviewForSingleSelectionSupported: boolean = false;
 }

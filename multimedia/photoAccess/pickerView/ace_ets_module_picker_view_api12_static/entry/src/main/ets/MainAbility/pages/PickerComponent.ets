@@ -107,6 +107,9 @@ struct PickerComponent {
     result.maxSelectCount = this.pickerOptions.maxSelectNumber ?? 500;
     result.maxPhotoSelectNumber = this.pickerOptions.maxPhotoSelectNumber ?? 500;
     result.maxVideoSelectNumber = this.pickerOptions.maxVideoSelectNumber ?? 500;
+    result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
+    result.isPreviewForSingleSelectionSupported =
+      this.pickerOptions.isPreviewForSingleSelectionSupported ?? false;
     return result;
   }
 
@@ -154,6 +157,8 @@ struct PickerComponent {
   }
 
   private onAlbumClick(albumInfo: AlbumInfo): boolean {
+    const albumName: string = albumInfo.albumName ?? '';
+    console.info('onAlbumClick albumName: ' + albumName);
     this.isShowAlbum = false;
     console.info('onAlbumClick' + JSON.stringify(albumInfo?.uri));
     this.sendEvent(albumInfo, EventType.ALBUM_INFO);
