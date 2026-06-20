@@ -149,6 +149,7 @@ export default function ActsCommonEventManagerSupportTest() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, `Sub_Notification_Ces_Publish_Support_Static_0500 START`)
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_ADDED.valueOf()).assertEqual('usual.event.PACKAGE_ADDED')
+        expect(commonEventManager.Support.COMMON_EVENT_SKILL_CHANGED.valueOf()).assertEqual('usual.event.SKILL_CHANGED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_INSTALLATION_STARTED.valueOf())
           .assertEqual('usual.event.PACKAGE_INSTALLATION_STARTED')
         expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_REPLACED.valueOf())

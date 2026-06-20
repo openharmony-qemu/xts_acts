@@ -104,6 +104,7 @@ export default function ActsCommonEventManagerSupportTest() {
     it('Sub_Notification_Ces_Publish_Support_0500', Level.LEVEL0, async function () {
       console.info(`${TAG} Sub_Notification_Ces_Publish_Support_0500 START`)
       expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_ADDED).assertEqual('usual.event.PACKAGE_ADDED')
+      expect(commonEventManager.Support.COMMON_EVENT_SKILL_CHANGED).assertEqual('usual.event.SKILL_CHANGED')
       expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_INSTALLATION_STARTED)
         .assertEqual('usual.event.PACKAGE_INSTALLATION_STARTED')
       expect(commonEventManager.Support.COMMON_EVENT_PACKAGE_REPLACED).assertEqual('usual.event.PACKAGE_REPLACED')
