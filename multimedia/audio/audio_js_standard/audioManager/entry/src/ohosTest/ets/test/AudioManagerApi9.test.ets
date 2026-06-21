@@ -1613,6 +1613,7 @@ export default function audioManagerApi9() {
           done();
           return
         }
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
                     Promise returned to indicate that the device is set to the active status.`);
@@ -1708,6 +1709,7 @@ export default function audioManagerApi9() {
           done();
           return
         }
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400
                     Promise returned to indicate that the device is set to the active status.`);
