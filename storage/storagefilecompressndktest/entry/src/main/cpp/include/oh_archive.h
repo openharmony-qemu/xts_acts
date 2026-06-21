@@ -19,7 +19,6 @@
 
 #ifdef __cplusplus
 extern "C" {
-
 #endif
 
 typedef struct ArchiveWriteCtx *OH_Archive_Writer_Ctx;
