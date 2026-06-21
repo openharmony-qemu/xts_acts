@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class GnSample001 {
@@ -119,13 +131,11 @@ class GnNameObject037 {
 }
 
 enum GnNameColor038 {
-  RED = 0,
-  BLUE = 1
+  RED = 0, BLUE = 1
 }
 
 enum GnNameStatus038 {
-  OK = "OK",
-  FAIL = "FAIL"
+  OK = "OK", FAIL = "FAIL"
 }
 
 class GnNameEnum038 {
@@ -203,7 +213,7 @@ export default function FieldGetNameTest(): void {
   describe('FieldGetNameTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -372,8 +382,8 @@ export default function FieldGetNameTest(): void {
       const name2: string = field.getName();
       const name3: string = field.getName();
       expect(name1).assertEqual("count");
-      expect(name1).assertEqual(name2);
-      expect(name2).assertEqual(name3);
+      expect(name2).assertEqual("count");
+      expect(name3).assertEqual("count");
     });
 
     /**
@@ -433,7 +443,7 @@ export default function FieldGetNameTest(): void {
         classType.getFieldByName("nonExistent");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        expect((e as Error).name).assertEqual('TypeError');
       }
       expect(classType.getFieldByName("count").getName()).assertEqual("count");
     });

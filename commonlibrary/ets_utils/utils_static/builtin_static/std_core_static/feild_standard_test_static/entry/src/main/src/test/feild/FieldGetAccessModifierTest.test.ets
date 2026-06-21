@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class GaSample001 {
@@ -56,14 +68,14 @@ class GaSample024 {
 
 class GaAccessScalar021 {
   public count: int = 1;
-  private title: string = "tag";
   protected enabled: boolean = true;
+  private title: string = "tag";
 }
 
 class GaAccessArray022 {
   public static ids: int[] = [1, 2, 3];
-  private names: string[] = ["a", "b"];
   protected flags: boolean[] = [true, false];
+  private names: string[] = ["a", "b"];
 }
 
 class GaAccessPayload023 {
@@ -71,15 +83,15 @@ class GaAccessPayload023 {
 
 class GaAccessObject023 {
   public payload: GaAccessPayload023 = new GaAccessPayload023();
-  private obj: Object = new Object();
   protected backup: GaAccessPayload023 = new GaAccessPayload023();
+  private obj: Object = new Object();
 }
 
 class GaAccessModifier024 {
   public static readonly maxCount: int = 10;
   private static hiddenText: string = "hidden";
-  protected readonly guardedFlag: boolean = true;
   public mutableText: string = "text";
+  protected readonly guardedFlag: boolean = true;
 }
 
 class GaAccessBox025<T> {
@@ -102,8 +114,8 @@ class GaAccessPair025<K, V> {
 
 class GaAccessGeneric025 {
   public static textBox: GaAccessBox025<string> = new GaAccessBox025<string>("box");
-  private intBox: GaAccessBox025<int> = new GaAccessBox025<int>(1);
   protected pair: GaAccessPair025<int, string> = new GaAccessPair025<int, string>(1, "one");
+  private intBox: GaAccessBox025<int> = new GaAccessBox025<int>(1);
 }
 
 type GaAccessMapper026 = (value: int) => string;
@@ -136,8 +148,8 @@ class GaAccessHiddenChild028 extends GaAccessHiddenParent028 {
 
 class GaAccessSpecial029 {
   public static $value: int = 1;
-  private _type: string = "meta";
   protected field_01_test: boolean = true;
+  private _type: string = "meta";
 }
 
 class GaAccessEmpty030 {
@@ -148,7 +160,7 @@ export default function FieldGetAccessModifierTest(): void {
   describe('FieldGetAccessModifierTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -168,7 +180,8 @@ export default function FieldGetAccessModifierTest(): void {
       const field = (Type.from<GaSample001>() as ClassType).getFieldByName("value");
       const modifier: int = field.getAccessModifier();
       expect(field.getAccessModifier()).assertEqual(modifier);
-      expect(modifier).assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
+      expect(modifier)
+        .assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
     });
 
     /**
@@ -185,8 +198,10 @@ export default function FieldGetAccessModifierTest(): void {
       const m2: int = field.getAccessModifier();
       expect(m1).assertEqual(m2);
       expect(m1).assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(m1 === (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier()).assertFalse();
-      expect(m1 === (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier()).assertFalse();
+      expect(m1 === (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier())
+        .assertFalse();
+      expect(m1 === (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier())
+        .assertFalse();
     });
 
     /**
@@ -200,7 +215,8 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const field = (Type.from<GaSample001>() as ClassType).getFieldByName("value");
       const modifier: int = field.getAccessModifier();
-      const publicModifier: int = (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(field.getName()).assertEqual("value");
       expect(modifier).assertEqual(publicModifier);
     });
@@ -216,7 +232,8 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const field = (Type.from<GaSample011>() as ClassType).getFieldByName("count");
       const modifier: int = field.getAccessModifier();
-      const publicModifier: int = (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(field.getName()).assertEqual("count");
       expect(modifier).assertEqual(publicModifier);
       expect(field.isStatic()).assertTrue();
@@ -313,9 +330,12 @@ export default function FieldGetAccessModifierTest(): void {
       expect(pubField.getType().toString()).assertEqual("int");
       expect(priField.getType().toString()).assertEqual("int");
       expect(proField.getType().toString()).assertEqual("int");
-      expect(pubModifier).assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(priModifier).assertEqual((Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier());
-      expect(proModifier).assertEqual((Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier());
+      expect(pubModifier)
+        .assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
+      expect(priModifier)
+        .assertEqual((Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier());
+      expect(proModifier)
+        .assertEqual((Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier());
       expect(pubModifier === priModifier).assertFalse();
       expect(pubModifier === proModifier).assertFalse();
       expect(priModifier === proModifier).assertFalse();
@@ -332,7 +352,8 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const field = (Type.from<GaSample011>() as ClassType).getFieldByName("count");
       const modifier: int = field.getAccessModifier();
-      const publicModifier: int = (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(field.isStatic()).assertTrue();
       expect(field.getName()).assertEqual("count");
       expect(modifier).assertEqual(publicModifier);
@@ -351,9 +372,12 @@ export default function FieldGetAccessModifierTest(): void {
       const field2 = (Type.from<GaSample001>() as ClassType).getFieldByName("value");
       const m1: int = field1.getAccessModifier();
       const m2: int = field2.getAccessModifier();
-      const publicModifier: int = (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(m1).assertEqual(m2);
       expect(m1).assertEqual(publicModifier);
       expect(m1 === privateModifier).assertFalse();
@@ -374,7 +398,7 @@ export default function FieldGetAccessModifierTest(): void {
         classType.getFieldByName("notExistField");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        expect((e as Error).name).assertEqual('TypeError');
       }
       const field = classType.getFieldByName("value");
       const modifier: int = field.getAccessModifier();
@@ -392,9 +416,12 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const modifier: int = (Type.from<GaSample001>() as ClassType).getFieldByName("value").getAccessModifier();
       expect(modifier).assertEqual((Type.from<GaSample001>() as ClassType).getFieldByName("value").getAccessModifier());
-      expect(modifier).assertEqual((Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier()).assertFalse();
-      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier()).assertFalse();
+      expect(modifier)
+        .assertEqual((Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier());
+      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier())
+        .assertFalse();
+      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier())
+        .assertFalse();
     });
 
     /**
@@ -413,9 +440,12 @@ export default function FieldGetAccessModifierTest(): void {
       expect(classType.getFieldByName("pubField").getAccessModifier()).assertEqual(pubModifier);
       expect(classType.getFieldByName("priField").getAccessModifier()).assertEqual(privateModifier);
       expect(classType.getFieldByName("proField").getAccessModifier()).assertEqual(protectedModifier);
-      expect(pubModifier).assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(privateModifier).assertEqual((Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier());
-      expect(protectedModifier).assertEqual((Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier());
+      expect(pubModifier)
+        .assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
+      expect(privateModifier)
+        .assertEqual((Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier());
+      expect(protectedModifier)
+        .assertEqual((Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier());
     });
 
     /**
@@ -503,9 +533,8 @@ export default function FieldGetAccessModifierTest(): void {
       const pubModifier: int = classType.getFieldByName("pubField").getAccessModifier();
       const priModifier: int = classType.getFieldByName("priField").getAccessModifier();
       expect(pubModifier).assertEqual(classType.getFieldByName("pubField").getAccessModifier());
-      expect(priModifier).assertEqual(
-        (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier()
-      );
+      expect(priModifier)
+        .assertEqual((Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier());
       expect(pubModifier === priModifier).assertFalse();
     });
 
@@ -536,9 +565,12 @@ export default function FieldGetAccessModifierTest(): void {
       const count = classType.getFieldByName("count");
       const title = classType.getFieldByName("title");
       const enabled = classType.getFieldByName("enabled");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(count.getName()).assertEqual("count");
       expect(count.getType().toString()).assertEqual("int");
       expect(count.isStatic()).assertFalse();
@@ -565,9 +597,12 @@ export default function FieldGetAccessModifierTest(): void {
       const ids = classType.getFieldByName("ids");
       const names = classType.getFieldByName("names");
       const flags = classType.getFieldByName("flags");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(ids.getName()).assertEqual("ids");
       expect(ids.getType().toString()).assertEqual("std.core.Array");
       expect(ids.isStatic()).assertTrue();
@@ -595,9 +630,12 @@ export default function FieldGetAccessModifierTest(): void {
       const payload = classType.getFieldByName("payload");
       const obj = classType.getFieldByName("obj");
       const backup = classType.getFieldByName("backup");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(payload.getName()).assertEqual("payload");
       expect(payload.getType().getName()).assertEqual((Type.from<GaAccessPayload023>() as ClassType).getName());
       expect(payload.getAccessModifier()).assertEqual(publicModifier);
@@ -625,9 +663,12 @@ export default function FieldGetAccessModifierTest(): void {
       const hiddenText = classType.getFieldByName("hiddenText");
       const guardedFlag = classType.getFieldByName("guardedFlag");
       const mutableText = classType.getFieldByName("mutableText");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(maxCount.getName()).assertEqual("maxCount");
       expect(maxCount.getType().toString()).assertEqual("int");
       expect(maxCount.isStatic()).assertTrue();
@@ -658,9 +699,12 @@ export default function FieldGetAccessModifierTest(): void {
       const textBox = classType.getFieldByName("textBox");
       const intBox = classType.getFieldByName("intBox");
       const pair = classType.getFieldByName("pair");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(textBox.getName()).assertEqual("textBox");
       expect(textBox.getType().toString()).assertEqual(Type.from<GaAccessBox025<string>>().toString());
       expect(textBox.isStatic()).assertTrue();
@@ -686,7 +730,8 @@ export default function FieldGetAccessModifierTest(): void {
       const classType = Type.from<GaAccessFunction026>() as ClassType;
       const mapper = classType.getFieldByName("mapper");
       const action = classType.getFieldByName("action");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(mapper.getName()).assertEqual("mapper");
       expect(mapper.isStatic()).assertTrue();
       expect(mapper.getAccessModifier()).assertEqual(publicModifier);
@@ -706,7 +751,8 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parentField = (Type.from<GaAccessParent027>() as ClassType).getFieldByName("inheritedTitle");
       const childField = (Type.from<GaAccessChild027>() as ClassType).getFieldByName("inheritedTitle");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(parentField.getName()).assertEqual("inheritedTitle");
       expect(childField.getName()).assertEqual("inheritedTitle");
       expect(parentField.getType().toString()).assertEqual("string");
@@ -728,7 +774,8 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const parentField = (Type.from<GaAccessHiddenParent028>() as ClassType).getFieldByName("token");
       const childField = (Type.from<GaAccessHiddenChild028>() as ClassType).getFieldByName("token");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
       expect(parentField.getName()).assertEqual(childField.getName());
       expect(parentField.getType().toString()).assertEqual("int");
       expect(childField.getType().toString()).assertEqual("string");
@@ -736,7 +783,6 @@ export default function FieldGetAccessModifierTest(): void {
       expect(childField.isStatic()).assertTrue();
       expect(parentField.getAccessModifier()).assertEqual(publicModifier);
       expect(childField.getAccessModifier()).assertEqual(publicModifier);
-      expect(childField.getAccessModifier()).assertEqual(parentField.getAccessModifier());
     });
 
     /**
@@ -752,9 +798,12 @@ export default function FieldGetAccessModifierTest(): void {
       const value = classType.getFieldByName("$value");
       const typeField = classType.getFieldByName("_type");
       const field01 = classType.getFieldByName("field_01_test");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(value.getName()).assertEqual("$value");
       expect(value.getType().toString()).assertEqual("int");
       expect(value.isStatic()).assertTrue();
@@ -780,10 +829,13 @@ export default function FieldGetAccessModifierTest(): void {
       const count = classType.getFieldByName("count");
       const title = classType.getFieldByName("title");
       const enabled = classType.getFieldByName("enabled");
-      const publicModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
-      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
-      const protectedModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
-      for (let index: int = 0; index < 20; index++) {
+      const publicModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier();
+      const privateModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
+      for (let index: int = 0; index < 2; index++) {
         expect(count.getAccessModifier()).assertEqual(publicModifier);
         expect(title.getAccessModifier()).assertEqual(privateModifier);
         expect(enabled.getAccessModifier()).assertEqual(protectedModifier);

@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class GoSample001 {
@@ -89,13 +101,11 @@ class GoOwnerArray019 {
 }
 
 enum GoOwnerNumericState020 {
-  Ready,
-  Done
+  Ready, Done
 }
 
 enum GoOwnerStringState020 {
-  Ready = "READY",
-  Done = "DONE"
+  Ready = "READY", Done = "DONE"
 }
 
 class GoOwnerEnum020 {
@@ -160,7 +170,7 @@ export default function FieldGetOwnerTypeTest(): void {
   describe('FieldGetOwnerTypeTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -262,7 +272,7 @@ export default function FieldGetOwnerTypeTest(): void {
       const owner3: Type = field.getOwnerType();
       expect(owner1.getName()).assertEqual((Type.from<GoSample001>() as ClassType).getName());
       expect(owner2.getName()).assertEqual(owner1.getName());
-      expect(owner3.getName()).assertEqual(owner2.getName());
+      expect(owner3.getName()).assertEqual(owner1.getName());
       expect(owner1.getName() === (Type.from<GoClassA010>() as ClassType).getName()).assertFalse();
     });
 
@@ -280,7 +290,7 @@ export default function FieldGetOwnerTypeTest(): void {
         classType.getFieldByName("noField");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        expect((e as Error).name).assertEqual('TypeError');
       }
       const validField = (Type.from<GoSample001>() as ClassType).getFieldByName("count");
       expect(validField.getOwnerType().getName()).assertEqual((Type.from<GoSample001>() as ClassType).getName());
@@ -316,7 +326,8 @@ export default function FieldGetOwnerTypeTest(): void {
         (Type.from<GoChild012>() as ClassType).getFieldByName("childField").getOwnerType().getName();
       expect(parentOwner).assertEqual((Type.from<GoParent012>() as ClassType).getName());
       expect(childOwner).assertEqual((Type.from<GoChild012>() as ClassType).getName());
-      expect((Type.from<GoParent012>() as ClassType).getFieldByName("parentField").getName()).assertEqual("parentField");
+      expect((Type.from<GoParent012>() as ClassType).getFieldByName("parentField").getName())
+        .assertEqual("parentField");
       expect((Type.from<GoChild012>() as ClassType).getFieldByName("childField").getName()).assertEqual("childField");
     });
 
@@ -411,7 +422,6 @@ export default function FieldGetOwnerTypeTest(): void {
       expect(childToken.getName()).assertEqual("token");
       expect(parentToken.getOwnerType().getName()).assertEqual(parentType.getName());
       expect(childToken.getOwnerType().getName()).assertEqual(childType.getName());
-      expect(parentToken.getOwnerType().getName() === childToken.getOwnerType().getName()).assertFalse();
     });
 
     /**

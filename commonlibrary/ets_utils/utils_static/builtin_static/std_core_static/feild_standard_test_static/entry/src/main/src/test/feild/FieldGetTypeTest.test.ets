@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class GtSample001 {
@@ -111,13 +123,11 @@ class GtArrayMatrix023 {
 }
 
 enum GtColor024 {
-  Red,
-  Blue
+  Red, Blue
 }
 
 enum GtStatus024 {
-  Ready = "ready",
-  Done = "done"
+  Ready = "ready", Done = "done"
 }
 
 class GtEnumMatrix024 {
@@ -174,10 +184,10 @@ class GtSelfRef028 {
 
 class GtModifierMatrix029 {
   static readonly maxCount: int = 10;
-  private hiddenText: string = "hidden";
-  protected guardedFlag: boolean = true;
   readonly label: string = "label";
   title!: string;
+  protected guardedFlag: boolean = true;
+  private hiddenText: string = "hidden";
 }
 
 class GtInstanceParent030 {
@@ -276,7 +286,7 @@ export default function FieldGetTypeTest(): void {
   describe('FieldGetTypeTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -417,7 +427,7 @@ export default function FieldGetTypeTest(): void {
         classType.getFieldByName("missingForType");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('TypeError');
+        expect((e as Error).name).assertEqual('TypeError');
       }
       const field = classType.getFieldByName("count");
       const firstType: Type = field.getType();
@@ -786,13 +796,13 @@ export default function FieldGetTypeTest(): void {
       const optional = classType.getFieldByName("optional");
       const rest = classType.getFieldByName("rest");
       expect(mapper.getName()).assertEqual("mapper");
-      expect(mapper.getType().toString()).assertEqual(Type.from<GtMapperFunction033>().toString());
+      expect(mapper.getType().equals(Type.from<GtMapperFunction033>())).assertTrue();
       expect(noArg.getName()).assertEqual("noArg");
-      expect(noArg.getType().toString()).assertEqual(Type.from<GtNoArgFunction033>().toString());
+      expect(noArg.getType().equals(Type.from<GtNoArgFunction033>())).assertTrue();
       expect(optional.getName()).assertEqual("optional");
-      expect(optional.getType().toString()).assertEqual(Type.from<GtOptionalFunction033>().toString());
+      expect(optional.getType().equals(Type.from<GtOptionalFunction033>())).assertTrue();
       expect(rest.getName()).assertEqual("rest");
-      expect(rest.getType().toString()).assertEqual(Type.from<GtRestFunction033>().toString());
+      expect(rest.getType().equals(Type.from<GtRestFunction033>())).assertTrue();
       expect(mapper.isStatic()).assertTrue();
       expect(noArg.isStatic()).assertFalse();
       expect(optional.isStatic()).assertFalse();
@@ -812,9 +822,9 @@ export default function FieldGetTypeTest(): void {
       const direct = classType.getFieldByName("direct");
       const mapper = classType.getFieldByName("mapper");
       expect(direct.getName()).assertEqual("direct");
-      expect(direct.getType().toString()).assertEqual(Type.from<GtMapperFunction033>().toString());
+      expect(direct.getType().equals(Type.from<GtMapperFunction033>())).assertTrue();
       expect(mapper.getName()).assertEqual("mapper");
-      expect(mapper.getType().toString()).assertEqual(Type.from<GtMapperFunction033>().toString());
+      expect(mapper.getType().equals(Type.from<GtMapperFunction033>())).assertTrue();
       expect(direct.isStatic()).assertFalse();
       expect(mapper.isStatic()).assertTrue();
     });
@@ -909,7 +919,7 @@ export default function FieldGetTypeTest(): void {
       const secondPayload = classType.getFieldByName("payload");
       const title = classType.getFieldByName("title");
       expect(firstPayload.getName()).assertEqual("payload");
-      expect(firstPayload.getType().toString()).assertEqual(secondPayload.getType().toString());
+      expect(secondPayload.getType().getName()).assertEqual((Type.from<GtObjectPayload022>() as ClassType).getName());
       expect(firstPayload.getType().getName()).assertEqual((Type.from<GtObjectPayload022>() as ClassType).getName());
       expect(title.getType().toString()).assertEqual("string");
     });
