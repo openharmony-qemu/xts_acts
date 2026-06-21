@@ -23,6 +23,7 @@ import {
   describe,
   expect,
   it,
+  xitReason,
   Level,
   Size,
   TestType
@@ -614,24 +615,26 @@ export default function FieldEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_EQUALS_2500
      * @tc.name testEquals2500
-     * @tc.desc Verify union-typed field equals returns false for duplicate lookups and false for different fields
+     * @tc.desc Verify union-typed field equals returns true for duplicate lookups and false for different fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      * @tc.knownIssue union-typed field duplicate lookups return false instead of true, unlike other field types
      */
-    it('testEquals2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const classType = Type.from<EqUnionTypeMatrix>() as ClassType;
-      const textOrCount = classType.getFieldByName("textOrCount");
-      const textOrCountAgain = classType.getFieldByName("textOrCount");
-      const flagOrText = classType.getFieldByName("flagOrText");
-      expect(textOrCount.getName()).assertEqual("textOrCount");
-      expect(flagOrText.getName()).assertEqual("flagOrText");
-      expect(textOrCount.isStatic()).assertTrue();
-      expect(flagOrText.isStatic()).assertTrue();
-      expect(textOrCount.equals(textOrCountAgain)).assertFalse();
-      expect(textOrCount.equals(flagOrText)).assertFalse();
-    });
+    xitReason('union-typed field duplicate lookups currently return false instead of true')(
+      'testEquals2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const classType = Type.from<EqUnionTypeMatrix>() as ClassType;
+        const textOrCount = classType.getFieldByName("textOrCount");
+        const textOrCountAgain = classType.getFieldByName("textOrCount");
+        const flagOrText = classType.getFieldByName("flagOrText");
+        expect(textOrCount.getName()).assertEqual("textOrCount");
+        expect(flagOrText.getName()).assertEqual("flagOrText");
+        expect(textOrCount.isStatic()).assertTrue();
+        expect(flagOrText.isStatic()).assertTrue();
+        expect(textOrCount.equals(textOrCountAgain)).assertTrue();
+        expect(textOrCount.equals(flagOrText)).assertFalse();
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIELD_EQUALS_2600
