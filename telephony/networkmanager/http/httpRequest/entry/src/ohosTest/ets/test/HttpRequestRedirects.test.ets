@@ -29,7 +29,7 @@ export default function HttpRequestMaxAutoRedirectsTest() {
   describe('HttpRequest_MaxAutoRedirects_Test', () => {
     let httpRequest: http.HttpRequest;
     // Test server address
-    const BASE_URL = 'http://23.106.128.32:1088/redirect';
+    const BASE_URL = 'https://httpbin.moyufangge.com/redirect';
 
     beforeEach(() => {
       console.info('[HttpRequest_MaxAutoRedirects] beforeEach: create new HttpRequest');

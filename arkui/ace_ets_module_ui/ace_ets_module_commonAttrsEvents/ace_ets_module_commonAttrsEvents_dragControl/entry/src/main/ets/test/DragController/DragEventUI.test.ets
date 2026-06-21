@@ -62,9 +62,9 @@ export default function DragEventUITest() {
       let button = await driver.findComponent(ON.id('10001'));
       let button2 = await driver.findComponent(ON.id('401'));
       await button.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       await button2.click();
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info("[DragEventUI_0010] dragPreviewOptions: " + JSON.stringify(AppStorage.get('executeDrag10001')));
       console.info("[DragEventUI_0010] dragPreviewOptions: " + JSON.stringify(AppStorage.get('getRectangleById')));
       console.info("[DragEventUI_0010] dragPreviewOptions: " + JSON.stringify(AppStorage.get('executeDrag401')));
