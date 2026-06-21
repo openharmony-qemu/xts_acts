@@ -277,7 +277,7 @@ export default function FieldGetAttributesTest(): void {
       expect(instanceFieldObj.isStatic()).assertFalse();
       expect(staticAttrs).assertEqual(staticBaselineAttrs);
       expect(instanceAttrs).assertEqual(instanceBaselineAttrs);
-      expect(staticAttrs != instanceAttrs).assertTrue();
+      expect(staticAttrs !== instanceAttrs).assertTrue();
     });
 
     /**

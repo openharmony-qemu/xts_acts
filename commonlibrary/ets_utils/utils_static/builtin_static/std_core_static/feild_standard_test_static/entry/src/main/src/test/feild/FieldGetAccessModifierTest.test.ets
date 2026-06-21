@@ -179,7 +179,6 @@ export default function FieldGetAccessModifierTest(): void {
     it('testGetAccessModifier0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const field = (Type.from<GaSample001>() as ClassType).getFieldByName("value");
       const modifier: int = field.getAccessModifier();
-      expect(field.getAccessModifier()).assertEqual(modifier);
       expect(modifier)
         .assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
     });
@@ -196,12 +195,13 @@ export default function FieldGetAccessModifierTest(): void {
       const field = (Type.from<GaSample001>() as ClassType).getFieldByName("value");
       const m1: int = field.getAccessModifier();
       const m2: int = field.getAccessModifier();
+      const privateModifier: int = (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(m1).assertEqual(m2);
       expect(m1).assertEqual((Type.from<GaSample007>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(m1 === (Type.from<GaSample008>() as ClassType).getFieldByName("priField").getAccessModifier())
-        .assertFalse();
-      expect(m1 === (Type.from<GaSample009>() as ClassType).getFieldByName("proField").getAccessModifier())
-        .assertFalse();
+      expect(m1 === privateModifier).assertFalse();
+      expect(m1 === protectedModifier).assertFalse();
     });
 
     /**
@@ -415,13 +415,14 @@ export default function FieldGetAccessModifierTest(): void {
      */
     it('testGetAccessModifier1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const modifier: int = (Type.from<GaSample001>() as ClassType).getFieldByName("value").getAccessModifier();
+      const privateModifier: int = (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier();
+      const protectedModifier: int =
+        (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier();
       expect(modifier).assertEqual((Type.from<GaSample001>() as ClassType).getFieldByName("value").getAccessModifier());
       expect(modifier)
         .assertEqual((Type.from<GaSample010>() as ClassType).getFieldByName("pubField").getAccessModifier());
-      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("priField").getAccessModifier())
-        .assertFalse();
-      expect(modifier === (Type.from<GaSample010>() as ClassType).getFieldByName("proField").getAccessModifier())
-        .assertFalse();
+      expect(modifier === privateModifier).assertFalse();
+      expect(modifier === protectedModifier).assertFalse();
     });
 
     /**
@@ -494,9 +495,11 @@ export default function FieldGetAccessModifierTest(): void {
       const classType = Type.from<GaSample022>() as ClassType;
       const fixedField = classType.getFieldByName("fixed");
       const hiddenField = classType.getFieldByName("hidden");
+      const fixedModifier: int = fixedField.getAccessModifier();
+      const hiddenModifier: int = hiddenField.getAccessModifier();
       expect(fixedField.isStatic()).assertTrue();
       expect(fixedField.isReadonly()).assertTrue();
-      expect(fixedField.getAccessModifier() === hiddenField.getAccessModifier()).assertFalse();
+      expect(fixedModifier === hiddenModifier).assertFalse();
     });
 
     /**
@@ -513,11 +516,13 @@ export default function FieldGetAccessModifierTest(): void {
       const hidden = classType.getFieldByName("hidden");
       const guarded = classType.getFieldByName("guarded");
       const visibleModifier: int = visible.getAccessModifier();
+      const hiddenModifier: int = hidden.getAccessModifier();
+      const guardedModifier: int = guarded.getAccessModifier();
       expect(visible.getName()).assertEqual("visible");
       expect(hidden.getType().toString()).assertEqual("int");
-      expect(hidden.getAccessModifier() === visibleModifier).assertFalse();
-      expect(guarded.getAccessModifier() === visibleModifier).assertFalse();
-      expect(hidden.getAccessModifier() === guarded.getAccessModifier()).assertFalse();
+      expect(hiddenModifier === visibleModifier).assertFalse();
+      expect(guardedModifier === visibleModifier).assertFalse();
+      expect(hiddenModifier === guardedModifier).assertFalse();
     });
 
     /**
