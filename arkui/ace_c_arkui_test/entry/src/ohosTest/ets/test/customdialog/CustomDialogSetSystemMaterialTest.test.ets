@@ -130,5 +130,18 @@ export default function customDialogSetSystemMaterialTest() {
       done()
     })
 
+    /**
+     * @tc.name   testCustomDialogSetSystemMaterialInOptions005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_SETSYSTEMMATERIALINOPTIONS_0500
+     * @tc.desc   testing SetSystemMaterialInOptions with null material
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCustomDialogSetSystemMaterialInOptions005', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.testCustomDialogSetSystemMaterialInOptions005()).assertEqual(0)
+      done()
+    })
+
   })
 }
