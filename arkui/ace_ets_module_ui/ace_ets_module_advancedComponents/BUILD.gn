@@ -80,6 +80,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_swipeRefresher_nowear_static:ActsAceEtsModuleAdvancedSwipeRefresherNoWearStaticTest",
       "ace_ets_module_swipeRefresherV2_nowear_static:ActsAceEtsModuleAdvancedSwipeRefresherV2NoWearStaticTest",
       "ace_ets_module_treeView_nowear_static:ActsAceEtsModuleAdvancedTreeViewNoWearStaticTest",
+      "ace_ets_module_treeViewV2_nowear_static:ActsAceEtsModuleAdvancedTreeViewV2NoWearStaticTest",
       "ace_ets_module_popupV2_nowear:ActsAceEtsModulePopupV2NoWearTest"
     ]
   }

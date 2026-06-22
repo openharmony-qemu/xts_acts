@@ -1,0 +1,6 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/treeViewV2/treeViewV2Page"
+  ]
+}
