@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import DataManagerHasCardTest from './DataManagerHasCard.test';
+import dataHasCardNoDataTest from './DataManagerNoCard.test';
 import EmptyTest from './Empty.test'
 import sim from '@ohos.telephony.sim';
 import connection from '@ohos.net.connection';
@@ -24,7 +24,7 @@ export default function testsuite() {
   if (sim.getMaxSimCount() != 0 ) {
     if(sim.hasSimCardSync(0) && isNet == 0){
         if(simState != sim.SimState.SIM_STATE_UNKNOWN)
-            DataManagerHasCardTest()
+            dataHasCardNoDataTest()
         else
             EmptyTest();
     } else {
