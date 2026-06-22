@@ -1,56 +1,56 @@
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 
-export default function ArrayConcurrentQueueStressTest() {
-  describe('ArrayConcurrentQueueStressTest', (): void => {
+export default function ArrayBlockingQueueStressTest(): void {
+  describe('ArrayBlockingQueueStressTest', (): void => {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_BLOCKING_0100
-    * @tc.name Array_Concurrent_Queue_Push_Blocking_When_Full_static_0100
-    * @tc.desc Verify that ArrayConcurrentQueue push method blocks when queue is full
+     * @tc.name Array_Blocking_Queue_Push_Blocking_When_Full_static_0100
+     * @tc.desc Verify that ArrayBlockingQueue push method blocks when queue is full
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Push_Blocking_When_Full_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Push_Blocking_When_Full_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(1);
-        await queue.push(1);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(1);
+        queue.push(1);
 
-        let pushTask: taskpool.Task = new taskpool.Task(async (q: containers.stackless.ArrayConcurrentQueue<number>): Promise<number> => {
+        let pushTask: taskpool.Task = new taskpool.Task((q: containers.ArrayBlockingQueue<number>): number => {
           let val: number = 999;
-          await q.push(val);
+          q.push(val);
           return val;
         }, queue);
 
         let pushPromise: Promise<Any> = taskpool.execute(pushTask);
 
-        await queue.pop();
+        queue.pop();
         let pushValue: number = await pushPromise as number;
 
         expect(pushValue).assertEqual(999);
         expect(queue.size).assertEqual(1);
-        expect(await queue.pop()).assertEqual(999);
+        expect(queue.pop()).assertEqual(999);
       });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_POP_BLOCKING_0200
-    * @tc.name Array_Concurrent_Queue_Pop_Blocking_When_Empty_static_0200
-    * @tc.desc Verify that ArrayConcurrentQueue pop method blocks when queue is empty
+     * @tc.name Array_Blocking_Queue_Pop_Blocking_When_Empty_static_0200
+     * @tc.desc Verify that ArrayBlockingQueue pop method blocks when queue is empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Pop_Blocking_When_Empty_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Pop_Blocking_When_Empty_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(10);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(10);
 
-        let popTask: taskpool.Task = new taskpool.Task(async (q: containers.stackless.ArrayConcurrentQueue<number>): Promise<number> => {
-          return await q.pop();
+        let popTask: taskpool.Task = new taskpool.Task((q: containers.ArrayBlockingQueue<number>): number => {
+          return q.pop();
         }, queue);
 
         let popPromise: Promise<Any> = taskpool.execute(popTask);
 
-        await queue.push(888);
+        queue.push(888);
 
         let popValue: number = await popPromise as number;
 
@@ -59,15 +59,15 @@ export default function ArrayConcurrentQueueStressTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PRODUCER_CONSUMER_0300
-    * @tc.name Array_Concurrent_Queue_Producer_Consumer_static_0300
-    * @tc.desc Test ConcurrentQueue correctness in producer-consumer pattern
+     * @tc.name Array_Blocking_Queue_Producer_Consumer_static_0300
+     * @tc.desc Test BlockingQueue correctness in producer-consumer pattern
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Producer_Consumer_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Producer_Consumer_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(50);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(50);
         let producerCount: number = 10;
         let consumerCount: number = 10;
         let itemsPerProducer: number = 100;
@@ -76,16 +76,16 @@ export default function ArrayConcurrentQueueStressTest() {
 
         let tasks: taskpool.Task[] = [];
         let workers: EAWorker[] = [];
-        let jobs: Promise<Promise<number>>[] = [];
+        let jobs: Promise<number>[] = [];
 
         for (let i: number = 0; i < producerCount; i++) {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let job = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, id: number, count: number): Promise<number> => {
+          let job = eaw.run<number>((q: containers.ArrayBlockingQueue<number>, id: number, count: number): number => {
             let produced: number = 0;
             for (let j: number = 0; j < count; j++) {
-              await q.push(id * count + j);
+              q.push(id * count + j);
               produced++;
             }
             return produced;
@@ -97,10 +97,10 @@ export default function ArrayConcurrentQueueStressTest() {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let job = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, count: number): Promise<number> => {
+          let job = eaw.run<number>((q: containers.ArrayBlockingQueue<number>, count: number): number => {
             let consumed: number = 0;
             for (let j: number = 0; j < count; j++) {
-              await q.pop();
+              q.pop();
               consumed++;
             }
             return consumed;
@@ -108,11 +108,7 @@ export default function ArrayConcurrentQueueStressTest() {
           jobs.push(job);
         }
 
-        let results: number[] = []
-        for (let i = 0; i < jobs.length; i++) {
-          let res = await jobs[i];
-          results.push(res);
-        }
+        let results: number[] = await Promise.all(jobs)
         for (let i: int = 0; i < producerCount; i++) {
           totalProduced += results[i] as number;
         }
@@ -130,42 +126,38 @@ export default function ArrayConcurrentQueueStressTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_STRESS_CONCURRENT_0700
-    * @tc.name Array_Concurrent_Queue_Concurrent_Operations_static_0700
+     * @tc.name Array_Blocking_Queue_Concurrent_Operations_static_0700
      * @tc.desc Verify thread safety of concurrent push/pop operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Concurrent_Operations_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Concurrent_Operations_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(100);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
         let threadCount: number = 10;
         let operationsPerThread: number = 100;
         let totalOperations: number = 0;
 
-        let tasks: Promise<Promise<number>>[] = [];
+        let tasks: Promise<number>[] = [];
         let workers: EAWorker[] = [];
         for (let i: number = 0; i < threadCount; i++) {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let task: Promise<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>): Promise<number> => {
+          let task: Promise<number> = eaw.run<number>((q: containers.ArrayBlockingQueue<number>): number => {
             let ops: number = 0;
             for (let j: number = 0; j < 100; j++) {
-              await q.push(j);
+              q.push(j);
               ops++;
-              await q.pop();
+              q.pop();
               ops++;
             }
             return ops;
           }, queue);
           tasks.push(task);
         }
-        let results: number[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          let res = await tasks[i];
-          results.push(res);
-        }
+        let results: number[] = await Promise.all(tasks)
         workers.forEach((eaw) => {
           eaw.quit();
         })
@@ -181,29 +173,29 @@ export default function ArrayConcurrentQueueStressTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_STRESS_ALTERNATING_1300
-    * @tc.name Array_Concurrent_Queue_Alternating_Push_Pop_static_1300
+     * @tc.name Array_Blocking_Queue_Alternating_Push_Pop_static_1300
      * @tc.desc Verify alternating push and pop operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Alternating_Push_Pop_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Alternating_Push_Pop_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(500);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(500);
         let threadCount: number = 10;
         let totalPushOps: number = 0;
         let totalPollOps: number = 0;
 
-        let tasks: Promise<Promise<number>>[] = [];
+        let tasks: Promise<number>[] = [];
         let workers: EAWorker[] = [];
         for (let i: number = 0; i < threadCount; i++) {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let task: Promise<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, id: number): Promise<number> => {
+          let task: Promise<number> = eaw.run<number>((q: containers.ArrayBlockingQueue<number>, id: number): number => {
             let ops: number = 0;
             for (let j: number = 0; j < 50; j++) {
-              await q.push(id * 50 + j);
+              q.push(id * 50 + j);
               ops++;
               if (j % 2 === 0) {
                 q.poll();
@@ -213,11 +205,7 @@ export default function ArrayConcurrentQueueStressTest() {
           }, queue, i);
           tasks.push(task);
         }
-        let results: number[] = []
-        for (let i = 0; i < tasks.length; i++) {
-          let res = await tasks[i];
-          results.push(res);
-        }
+        let results: number[] = await Promise.all(tasks)
         workers.forEach((eaw) => {
           eaw.quit();
         })
@@ -234,25 +222,25 @@ export default function ArrayConcurrentQueueStressTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONCURRENT_DATA_INTEGRITY_1700
-    * @tc.name Array_Concurrent_Queue_Concurrent_Data_Integrity_static_1700
+     * @tc.name Array_Blocking_Queue_Concurrent_Data_Integrity_static_1700
      * @tc.desc Verify data integrity in concurrent scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL1
      */
-    it("Array_Concurrent_Queue_Concurrent_Data_Integrity_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("Array_Blocking_Queue_Concurrent_Data_Integrity_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (): Promise<void> => {
-        let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(100);
+        let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(100);
         let itemCount: number = 1000;
         let sumProduced: number = 0;
         let sumConsumed: number = 0;
         let eaw = new EAWorker()
         eaw.start()
-        let producerTask: Promise<Promise<number>> =
-          eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, count: number): Promise<number> => {
+        let producerTask: Promise<number> =
+          eaw.run<number>((q: containers.ArrayBlockingQueue<number>, count: number): number => {
             let sum: number = 0;
             for (let i: number = 0; i < count; i++) {
-              await q.push(i);
+              q.push(i);
               sum += i;
             }
             return sum;
@@ -260,12 +248,14 @@ export default function ArrayConcurrentQueueStressTest() {
 
         let eaw2 = new EAWorker()
         eaw2.start()
-        let consumerTask: Promise<Promise<number>> =
-          eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, count: number): Promise<number> => {
+        let consumerTask: Promise<number> =
+          eaw.run<number>((q: containers.ArrayBlockingQueue<number>, count: number): number => {
             let sum: number = 0;
             for (let i: number = 0; i < count; i++) {
-              let val: number = await q.pop();
-              sum += val;
+              let val: number | undefined = q.pop();
+              if (val !== undefined) {
+                sum += val;
+              }
             }
             return sum;
           }, queue, itemCount);

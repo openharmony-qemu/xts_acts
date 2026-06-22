@@ -5,92 +5,92 @@ class TestClass {
 }
 
 interface QueueItem {
-    key: string;
-    value: number;
+  key: string;
+  value: number;
 }
 
 interface QueueItem2 {
-    key: string;
+  key: string;
 }
 
-function createAddTask(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, data: int): taskpool.Task {
-    return new taskpool.Task((queue: containers.stackless.ArrayConcurrentQueue<int>, v: int) => {
-        queue.add(v);
-    }, queueTemp, data);
+function createAddTask(queueTemp: containers.ArrayBlockingQueue<int>, data: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, v: int) => {
+    queue.add(v);
+  }, queueTemp, data);
 }
 
-function createPushTask(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, data: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, v: int) => {
-        await queue.push(v);
-    }, queueTemp, data);
+function createPushTask(queueTemp: containers.ArrayBlockingQueue<int>, data: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, v: int) => {
+    queue.push(v);
+  }, queueTemp, data);
 }
 
-function createPushTaskStart(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i = 0; i < s; i++) {
-            await queue.push(i);
-        }
-    }, queueTemp, start);
+function createPushTaskStart(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i = 0; i < s; i++) {
+      queue.push(i);
+    }
+  }, queueTemp, start);
 }
 
-function createPushTaskStartLoopTen(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i = s; i < s + 10; i++) {
-            await queue.push(i);
-        }
-    }, queueTemp, start);
+function createPushTaskStartLoopTen(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i = s; i < s + 10; i++) {
+      queue.push(i);
+    }
+  }, queueTemp, start);
 }
 
-function createPopTaskStart(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i: int = 0; i < s; i++) {
-            await queue.pop();
-        }
-    }, queueTemp, start);
+function createPopTaskStart(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i: int = 0; i < s; i++) {
+      queue.pop();
+    }
+  }, queueTemp, start);
 }
 
-function createPollTask(queueTemp: containers.stackless.ArrayConcurrentQueue<int>): taskpool.Task {
-    return new taskpool.Task((queue: containers.stackless.ArrayConcurrentQueue<int>) => {
-        queue.poll();
-    }, queueTemp);
+function createPollTask(queueTemp: containers.ArrayBlockingQueue<int>): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>) => {
+    queue.poll();
+  }, queueTemp);
 }
 
-function createPollTaskHundred(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task((queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i: int = s; i < s + hundredTimes; i++) {
-            queue.poll();
-        }
-    }, queueTemp, start);
+function createPollTaskHundred(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i: int = s; i < s + hundredTimes; i++) {
+      queue.poll();
+    }
+  }, queueTemp, start);
 }
 
-function createAddTaskHundred(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task((queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i: int = s; i < s + hundredTimes; i++) {
-            queue.add(i);
-        }
-    }, queueTemp, start);
+function createAddTaskHundred(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i: int = s; i < s + hundredTimes; i++) {
+      queue.add(i);
+    }
+  }, queueTemp, start);
 }
 
-function createPopTask(queueTemp: containers.stackless.ArrayConcurrentQueue<int>): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>) => {
-        await queue.pop();
-    }, queueTemp);
+function createPopTask(queueTemp: containers.ArrayBlockingQueue<int>): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>) => {
+    queue.pop();
+  }, queueTemp);
 }
 
-function createPopTaskHundred(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i: int = s; i < s + hundredTimes; i++) {
-            await queue.pop();
-        }
-    }, queueTemp, start);
+function createPopTaskHundred(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i: int = s; i < s + hundredTimes; i++) {
+      queue.pop();
+    }
+  }, queueTemp, start);
 }
 
-function createPushTaskHundred(queueTemp: containers.stackless.ArrayConcurrentQueue<int>, start: int): taskpool.Task {
-    return new taskpool.Task(async (queue: containers.stackless.ArrayConcurrentQueue<int>, s: int) => {
-        for (let i: int = s; i < s + hundredTimes; i++) {
-            await queue.push(i);
-        }
-    }, queueTemp, start);
+function createPushTaskHundred(queueTemp: containers.ArrayBlockingQueue<int>, start: int): taskpool.Task {
+  return new taskpool.Task((queue: containers.ArrayBlockingQueue<int>, s: int) => {
+    for (let i: int = s; i < s + hundredTimes; i++) {
+      queue.push(i);
+    }
+  }, queueTemp, start);
 }
 
 // The expected value is 100 and to prevent runtime timeout, change the value to 10.
@@ -100,22 +100,24 @@ const thousandTimes: int = 100;
 // The expected value is 10 and to prevent runtime timeout, change the value to 2.
 const loopTenTimes: int = 2;
 
-export default function ArrayConcurrentQueuetest() {
+const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
 
-    const thousandElementsArray = new Array<Int>()
+export default function ArrayBlockingQueuetest() {
 
-    describe("ArrayConcurrentQueue", (): void => {
+  const thousandElementsArray = new Array<Int>()
 
-        beforeAll((): void => {
-            // Presets an action, which is performed only once before all test cases of the test suite start.
-            // This API supports only one parameter: preset action function.
-            for (let i = 0; i < 1000; i++) {
-                thousandElementsArray.push(i);
-            }
-        })
+  describe("ArrayBlockingQueue", (): void => {
+
+    beforeAll((): void => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+      for (let i = 0; i < 1000; i++) {
+        thousandElementsArray.push(i);
+      }
+    })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ACTUALCAPACITYTEST_0100
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_ACTUAL_CAPACITY_TEST_0100
          * @tc.name actual_Capacity_Test_static
          * @tc.desc Verify queue capacity initialization
          * @tc.size MediumTest
@@ -124,12 +126,12 @@ export default function ArrayConcurrentQueuetest() {
          */
         it("actual_Capacity_Test_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             const initialCapacity = 10;
-            const queue = new containers.stackless.ArrayConcurrentQueue<number>(initialCapacity);
+            const queue = new containers.ArrayBlockingQueue<number>(initialCapacity);
             expect(queue.capacity).assertEqual(initialCapacity);
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYINITIALIZATIONTEST_0105
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_INITIALIZATION_TEST_0105
          * @tc.name property_Initialization_Test_static_0105
          * @tc.desc Verify queue property initialization
          * @tc.size MediumTest
@@ -137,12 +139,12 @@ export default function ArrayConcurrentQueuetest() {
          * @tc.level Level 0
          */
         it("property_Initialization_Test_static_0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
+            const queue = new containers.ArrayBlockingQueue<number>(10);
             expect(String(queue.capacity)).assertEqual('10');
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTY_CAPACITYSINGLEELEMENT_0108
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_CAPACITY_SINGLE_ELEMENT_0108
          * @tc.name property_Capacity_Single_Element_Test_static_0108
          * @tc.desc Verify queue with single element capacity
          * @tc.size MediumTest
@@ -150,20 +152,19 @@ export default function ArrayConcurrentQueuetest() {
          * @tc.level Level 0
          */
         it('property_Capacity_Single_Element_Test_static_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(1);
                 expect(String(queue.capacity)).assertEqual('1');
                 try {
-                    await queue.push(1);
+                    queue.push(1);
                 } catch (error) {
                     expect(false).assertEqual(true);
                 }
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYCAPACITYOVERFLOW_0110
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_CAPACITY_OVERFLOW_0110
          * @tc.name property_Capacity_Overflow_Test_static_0110
          * @tc.desc Verify queue creation with overflow capacity throws error
          * @tc.size MediumTest
@@ -174,7 +175,7 @@ export default function ArrayConcurrentQueuetest() {
             (): void => {
                 const TAG = 'propertyCapacityOverflow';
                 try {
-                    const queue = new containers.stackless.ArrayConcurrentQueue<number>(Int.MAX_VALUE + 1);
+                    const queue = new containers.ArrayBlockingQueue<number>(Int.MAX_VALUE + 1);
                     expect().assertFail();
                 } catch (error) {
                     expect(error instanceof Error).assertTrue();
@@ -183,7 +184,7 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_EMPTYQUEUETEST_0111
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_EMPTY_QUEUE_TEST_0111
          * @tc.name empty_Queue_Test_static_011
          * @tc.desc Verify empty queue size
          * @tc.size MediumTest
@@ -191,622 +192,596 @@ export default function ArrayConcurrentQueuetest() {
          * @tc.level Level 0
          */
         it("empty_Queue_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-            const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
+            const queue = new containers.ArrayBlockingQueue<number>(10);
             expect(String(queue.size)).assertEqual('0');
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHFILLTEST_0112
-         * @tc.name Array_Concurrent_Queue_PushFill_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_FILL_TEST_0112
+         * @tc.name Array_Blocking_Queue_PushFill_Test_static_001
          * @tc.desc Verify blocking behavior when pushing to full queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
-                await queue.push(1);
+        it("Array_Blocking_Queue_PushFill_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(1);
+                queue.push(1);
 
                 let isBlocked = false;
-                setTimeout(async () => {
-                    await queue.push(2);
+                setTimeout(() => {
+                    queue.push(2);
                     isBlocked = true;
                 }, 10);
 
                 expect(isBlocked).assertFalse();
-                await queue.pop();
+                queue.pop();
                 setTimeout(() => {
                     expect(isBlocked).assertTrue();
-                    done();
                 }, 20);
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHMANYTEST_0113
-         * @tc.name Array_Concurrent_Queue_PushMany_Test_static_002
-         * @tc.desc Verify pushing multiple non-empty-compatible string values
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_MANY_TEST_0113
+         * @tc.name Array_Blocking_Queue_PushMany_Test_static_002
+         * @tc.desc Verify pushing multiple values including null and undefined
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_PushMany_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
-                await queue.push("");
-                await queue.push("@@");
+        it("Array_Blocking_Queue_PushMany_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
+                queue.push("");
+                queue.push(null);
+                queue.push(undefined);
+                queue.push("@@");
 
-                expect(String(queue.size)).assertEqual('2');
-                expect(await queue.pop()).assertEqual("");
-                done();
+                expect(String(queue.size)).assertEqual('4');
+                expect(queue.pop()).assertEqual("");
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHSTRINGTEST_0114
-         * @tc.name Array_Concurrent_Queue_PushString_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_STRING_TEST_0114
+         * @tc.name Array_Blocking_Queue_PushString_Test_static_003
          * @tc.desc Verify pushing and popping string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_PushString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(3);
-                await queue.push("hello");
-                expect(await queue.pop()).assertEqual("hello");
-                done();
+        it("Array_Blocking_Queue_PushString_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<string>(3);
+                queue.push("hello");
+                expect(queue.pop()).assertEqual("hello");
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHBIGINTTEST_0115
-         * @tc.name Array_Concurrent_Queue_PushString_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_BIGINT_TEST_0115
+         * @tc.name Array_Blocking_Queue_PushString_Test_static_004
          * @tc.desc Verify pushing and popping bigint values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_PushString_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<bigint>(2);
+        it("Array_Blocking_Queue_PushString_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<bigint>(2);
                 const bigIntNum = BigInt(9007199254740991);
-                await queue.push(bigIntNum);
-                expect(String(await queue.pop())).assertEqual('9007199254740991');
-                done();
+                queue.push(bigIntNum);
+                expect(String(queue.pop())).assertEqual('9007199254740991');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHBOOLEANTEST_0116
-         * @tc.name Array_Concurrent_Queue_PushString_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_BOOLEAN_TEST_0116
+         * @tc.name Array_Blocking_Queue_PushString_Test_static_005
          * @tc.desc Verify pushing and popping boolean values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_PushString_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
-                await queue.push(true);
-                expect(await queue.pop()).assertTrue();
-                done();
+        it("Array_Blocking_Queue_PushString_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<boolean>(1);
+                queue.push(true);
+                expect(queue.pop()).assertTrue();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHCLASSTEST_0117
-         * @tc.name Array_Concurrent_Queue_Push_Class_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_CLASS_TEST_0117
+         * @tc.name Array_Blocking_Queue_Push_Class_Test_static_006
          * @tc.desc Verify pushing and popping class instances
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_Push_Class_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<TestClass>(1);
+        it("Array_Blocking_Queue_Push_Class_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<TestClass>(1);
                 const obj = new TestClass();
-                await queue.push(obj);
-                expect(await queue.pop()).assertEqual(obj);
-                done();
+                queue.push(obj);
+                expect(queue.pop()).assertEqual(obj);
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHEMPTYTEST_0118
-         * @tc.name Array_Concurrent_Queue_Push_Empty_Test_static_007
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_EMPTY_TEST_0118
+         * @tc.name Array_Blocking_Queue_Push_Empty_Test_static_007
          * @tc.desc Verify pushing single element to empty queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_Push_Empty_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
-                await queue.push(1);
+        it("Array_Blocking_Queue_Push_Empty_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(10);
+                queue.push(1);
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHEMPTYTEST_0119
-         * @tc.name Array_Concurrent_Queue_Push_Only_One_Test_static_008
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_EMPTY_TEST_0119
+         * @tc.name Array_Blocking_Queue_Push_Only_One_Test_static_008
          * @tc.desc Verify pushing single element to queue with capacity 1
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_Push_Only_One_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(1);
-                await queue.push("single");
+        it("Array_Blocking_Queue_Push_Only_One_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<string>(1);
+                queue.push("single");
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueuePUSHTENTEST_0120
-         * @tc.name Array_Concurrent_Queue_Push_Ten_Test_static_009
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PUSH_TEN_TEST_0120
+         * @tc.name Array_Blocking_Queue_Push_Ten_Test_static_009
          * @tc.desc Verify pushing multiple elements to fill queue capacity
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_Push_Ten_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_Push_Ten_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
-                await queue.push(1);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
+                queue.push(1);
                 expect(String(queue.size)).assertEqual('1');
                 for (let i = 2; i <= capacity; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
                 expect(String(queue.size)).assertEqual(String(capacity));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSPECIALVALUES_0121
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_SPECIAL_VALUES_0121
          * @tc.name property_Push_SpecialValues_static
-         * @tc.desc Verify pushing and popping special string marker values
+         * @tc.desc Verify pushing and popping special values (empty string, null, undefined)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_SpecialValues_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<string> =
-                new containers.stackless.ArrayConcurrentQueue<string>(4);
+        it('property_Push_SpecialValues_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<string | null | undefined> =
+                new containers.ArrayBlockingQueue<string | null | undefined>(4);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('4');
 
-            await queue.push("");
+            queue.push("");
             let sizeAfterEmptyString = queue.size;
             expect(String(sizeAfterEmptyString)).assertEqual('1');
 
-            await queue.push('null');
+            queue.push(null);
             let sizeAfterNull = queue.size;
             expect(String(sizeAfterNull)).assertEqual('2');
 
-            await queue.push('undefined');
+            queue.push(undefined);
             let sizeAfterUndefined = queue.size;
             expect(String(sizeAfterUndefined)).assertEqual('3');
 
             const specialChar = '!@#$%^&*';
-            await queue.push(specialChar);
+            queue.push(specialChar);
             let sizeAfterSpecialChar = queue.size;
             expect(String(sizeAfterSpecialChar)).assertEqual('4');
 
-            let poppedEmptyString = await queue.pop();
+            let poppedEmptyString = queue.pop();
             expect(String(poppedEmptyString)).assertEqual("");
 
-            let poppedNull = await queue.pop();
+            let poppedNull = queue.pop();
             expect(String(poppedNull)).assertEqual('null');
 
-            let poppedUndefined = await queue.pop();
+            let poppedUndefined = queue.pop();
             expect(String(poppedUndefined)).assertEqual('undefined');
 
-            let poppedSpecialChar = await queue.pop();
+            let poppedSpecialChar = queue.pop();
             expect(String(poppedSpecialChar)).assertEqual(String(specialChar));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHNUMBER_0122
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_NUMBER_0122
          * @tc.name property_Push_Number_static
          * @tc.desc Verify pushing and popping number values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Number_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<number> = new containers.stackless.ArrayConcurrentQueue<number>(1);
+        it('property_Push_Number_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<number> = new containers.ArrayBlockingQueue<number>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const num = 123;
-            await queue.push(num);
+            queue.push(num);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHSTRING_0123
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_STRING_0123
          * @tc.name property_Push_String_static
          * @tc.desc Verify pushing and popping string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_String_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<string> = new containers.stackless.ArrayConcurrentQueue<string>(1);
+        it('property_Push_String_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<string> = new containers.ArrayBlockingQueue<string>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const str = "Hello, World!";
-            await queue.push(str);
+            queue.push(str);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedString = await queue.pop();
+            let poppedString = queue.pop();
             expect(String(poppedString)).assertEqual(String(str));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBIGINT_0124
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_BIGINT_0124
          * @tc.name property_Push_Bigint_static
          * @tc.desc Verify pushing and popping bigint values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Bigint_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<bigint> = new containers.stackless.ArrayConcurrentQueue<bigint>(1);
+        it('property_Push_Bigint_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<bigint> = new containers.ArrayBlockingQueue<bigint>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const bigIntNum = BigInt(9007199254740991);
-            await queue.push(bigIntNum);
+            queue.push(bigIntNum);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedBigInt = await queue.pop();
+            let poppedBigInt = queue.pop();
             expect(String(poppedBigInt)).assertEqual(String(bigIntNum));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHBOOLEAN_0125
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_BOOLEAN_0125
          * @tc.name property_Push_Boolean_static
          * @tc.desc Verify pushing and popping boolean values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Boolean_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<boolean> = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
+        it('property_Push_Boolean_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<boolean> = new containers.ArrayBlockingQueue<boolean>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const bool = true;
-            await queue.push(bool);
+            queue.push(bool);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedBoolean = await queue.pop();
+            let poppedBoolean = queue.pop();
             expect(String(poppedBoolean)).assertEqual(String(bool));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHARRAY_0126
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_ARRAY_0126
          * @tc.name property_Push_Array_static
          * @tc.desc Verify pushing and popping array values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Array_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<number[]> = new containers.stackless.ArrayConcurrentQueue<number[]>(1);
+        it('property_Push_Array_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const arr: number[] = [1, 2, 3];
-            await queue.push(arr);
+            queue.push(arr);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedArray = await queue.pop();
+            let poppedArray = queue.pop();
             expect(String(poppedArray)).assertEqual(String(arr));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHCLASS_0127
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_CLASS_0127
          * @tc.name property_Push_Class_static
          * @tc.desc Verify pushing and popping class instances
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Class_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<Date> = new containers.stackless.ArrayConcurrentQueue<Date>(1);
+        it('property_Push_Class_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
 
             const dateInstance = new Date();
-            await queue.push(dateInstance);
+            queue.push(dateInstance);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedDate = await queue.pop();
+            let poppedDate = queue.pop();
             expect(String(poppedDate.getTime())).assertEqual(String(dateInstance.getTime()));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_PROPERTYPUSHOBJECT_0128
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_PROPERTY_PUSH_OBJECT_0128
          * @tc.name property_Push_Object_static
          * @tc.desc Verify pushing and popping object values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it('property_Push_Object_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let queue: containers.stackless.ArrayConcurrentQueue<QueueItem> = new containers.stackless.ArrayConcurrentQueue<QueueItem>(1);
+        it('property_Push_Object_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            let queue: containers.ArrayBlockingQueue<QueueItem> = new containers.ArrayBlockingQueue<QueueItem>(1);
             let initialCapacity = queue.capacity;
             expect(String(initialCapacity)).assertEqual('1');
             const obj: QueueItem = {
                 key: 'testKey', value: 123
             };
-            await queue.push(obj);
+            queue.push(obj);
             let sizeAfterPush = queue.size;
             expect(String(sizeAfterPush)).assertEqual('1');
 
-            let poppedObject = await queue.pop();
+            let poppedObject = queue.pop();
             expect(String(poppedObject.key)).assertEqual(String(obj.key));
             expect(String(poppedObject.value)).assertEqual(String(obj.value));
-            done();
         });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0129
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0129
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_001
          * @tc.desc Verify initial size of empty queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Push_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
+                const queue = new containers.ArrayBlockingQueue<number>(1);
                 expect(String(queue.size)).assertEqual('0');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0130
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0130
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_002
          * @tc.desc Verify size after pushing single element
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
-                await queue.push(1);
+        it("Array_Blocking_Queue_With_Push_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(1);
+                queue.push(1);
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0131
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0131
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_003
          * @tc.desc Verify size after pushing multiple elements
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Push_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
                 expect(String(queue.size)).assertEqual(String(capacity - 1));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0132
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0132
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_004
          * @tc.desc Verify size after pushing single element to empty queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
-                await queue.push(1);
+        it("Array_Blocking_Queue_With_Push_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(10);
+                queue.push(1);
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0133
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0133
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_005
          * @tc.desc Verify size after pushing multiple elements to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Push_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
                 expect(String(queue.size)).assertEqual(String(capacity - 1));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPUSHTEST_0134
-         * @tc.name Array_Concurrent_Queue_With_Push_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_PUSH_TEST_0134
+         * @tc.name Array_Blocking_Queue_With_Push_Test_static_006
          * @tc.desc Verify size after filling queue to capacity
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Push_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Push_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
                 expect(String(queue.size)).assertEqual(String(capacity));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0135
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0135
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_001
          * @tc.desc Verify popping element from filled queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Pop_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
-                const firstElement = await queue.pop();
+                const firstElement = queue.pop();
                 expect(String(firstElement)).assertEqual('0');
                 expect(String(queue.size)).assertEqual(String(capacity - 1));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0136
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0136
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_002
          * @tc.desc Verify popping element from filled queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Pop_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
-                const firstElement = await queue.pop();
-                const secondElement = await queue.pop();
+                const firstElement = queue.pop();
+                const secondElement = queue.pop();
                 expect(String(secondElement)).assertEqual('1');
                 expect(String(queue.size)).assertEqual(String(capacity - 2));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0137
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0137
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_003
          * @tc.desc Verify popping special values (empty string, null)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Pop_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(capacity);
-                await queue.push("");
-                await queue.push("null");
-                await queue.push("@@@");
-                expect(await queue.pop()).assertEqual("");
-                expect(String(await queue.pop())).assertEqual("null");
-                expect(await queue.pop()).assertEqual("@@@");
-                done();
+                const queue = new containers.ArrayBlockingQueue<string | null>(capacity);
+                queue.push("");
+                queue.push(null);
+                queue.push("@@@");
+                expect(queue.pop()).assertEqual("");
+                expect(String(queue.pop())).assertEqual("null");
+                expect(queue.pop()).assertEqual("@@@");
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0138
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0138
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_004
          * @tc.desc Verify popping string values including "undefined"
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Pop_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(capacity);
-                await queue.push("");
-                await queue.push("undefined");
-                expect(await queue.pop()).assertEqual("");
-                expect(String(await queue.pop())).assertEqual("undefined");
-                done();
+                const queue = new containers.ArrayBlockingQueue<string | undefined>(capacity);
+                queue.push("");
+                queue.push("undefined");
+                expect(queue.pop()).assertEqual("");
+                expect(String(queue.pop())).assertEqual("undefined");
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0139
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0139
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_005
          * @tc.desc Verify popping single element from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
-                await queue.push(100);
-                expect(String(await queue.pop())).assertEqual('100');
+        it("Array_Blocking_Queue_With_Pop_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(1);
+                queue.push(100);
+                expect(String(queue.pop())).assertEqual('100');
                 expect(String(queue.size)).assertEqual('0');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOPTEST_0140
-         * @tc.name Array_Concurrent_Queue_With_Pop_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POP_TEST_0140
+         * @tc.name Array_Blocking_Queue_With_Pop_Test_static_006
          * @tc.desc Verify popping all elements from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Pop_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("Array_Blocking_Queue_With_Pop_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
-                    await queue.push(i);
+                    queue.push(i);
                 }
                 expect(String(queue.size)).assertEqual(String(capacity - 1));
-                const firstElement = await queue.pop();
+                const firstElement = queue.pop();
                 expect(String(firstElement)).assertEqual('0');
                 expect(String(queue.size)).assertEqual(String(capacity - 2));
                 for (let i = 1; i < capacity - 1; i++) {
-                    expect(String(await queue.pop())).assertEqual(String(i));
+                    expect(String(queue.pop())).assertEqual(String(i));
                     expect(String(queue.size)).assertEqual(String(capacity - 2 - i));
                 }
                 expect(String(queue.size)).assertEqual('0');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0141
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0141
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_001
          * @tc.desc Verify add operation when queue is full
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
+                const queue = new containers.ArrayBlockingQueue<number>(10);
                 for (let i = 0; i < capacity; i++) {
                     queue.add(i);
                 }
@@ -815,17 +790,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0142
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0142
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_002
          * @tc.desc Verify adding special string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
+                const queue = new containers.ArrayBlockingQueue<string>(5);
                 expect(String(queue.add(""))).assertEqual('true');
                 expect(queue.add('null')).assertTrue();
                 expect(queue.add('undefined')).assertTrue();
@@ -834,31 +809,31 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0143
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0143
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_003
          * @tc.desc Verify adding single element to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(1);
+                const queue = new containers.ArrayBlockingQueue<string>(1);
                 expect(String(queue.add('hello'))).assertEqual('true');
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0144
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0144
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_004
          * @tc.desc Verify adding bigint value to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<bigint>(1);
+                const queue = new containers.ArrayBlockingQueue<bigint>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
                 const bigIntNum = BigInt(9007199254740991);
@@ -867,16 +842,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0145
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0145
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_005
          * @tc.desc Verify adding boolean value to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
+                const queue = new containers.ArrayBlockingQueue<boolean>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
                 expect(String(queue.add(false))).assertEqual('true');
@@ -884,16 +859,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0146
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0146
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_006
          * @tc.desc Verify adding array to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number[]>(1);
+                const queue = new containers.ArrayBlockingQueue<number[]>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
 
@@ -903,16 +878,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0147
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_007
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0147
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_007
          * @tc.desc Verify adding and popping array from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                let queue: containers.stackless.ArrayConcurrentQueue<number[]> = new containers.stackless.ArrayConcurrentQueue<number[]>(1);
+        it("Array_Blocking_Queue_With_Add_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                let queue: containers.ArrayBlockingQueue<number[]> = new containers.ArrayBlockingQueue<number[]>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
                 const arr: number[] = [1, 2, 3];
@@ -920,22 +895,21 @@ export default function ArrayConcurrentQueuetest() {
                 let sizeAfterPush = queue.size;
                 expect(String(sizeAfterPush)).assertEqual('1');
 
-                let poppedArray = await queue.pop();
+                let poppedArray = queue.pop();
                 expect(String(poppedArray)).assertEqual(String(arr));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0148
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_008
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0148
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_008
          * @tc.desc Verify adding and popping Date object from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                let queue: containers.stackless.ArrayConcurrentQueue<Date> = new containers.stackless.ArrayConcurrentQueue<Date>(1);
+        it("Array_Blocking_Queue_With_Add_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                let queue: containers.ArrayBlockingQueue<Date> = new containers.ArrayBlockingQueue<Date>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
 
@@ -944,23 +918,22 @@ export default function ArrayConcurrentQueuetest() {
                 let sizeAfterPush = queue.size;
                 expect(String(sizeAfterPush)).assertEqual('1');
 
-                let poppedDate = await queue.pop();
+                let poppedDate = queue.pop();
                 expect(String(poppedDate.getTime())).assertEqual(String(dateInstance.getTime()));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0149
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_0009
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0149
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_0009
          * @tc.desc Verify adding object with key-value pair to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
 
-                let queue: containers.stackless.ArrayConcurrentQueue<QueueItem2> = new containers.stackless.ArrayConcurrentQueue<QueueItem2>(1);
+                let queue: containers.ArrayBlockingQueue<QueueItem2> = new containers.ArrayBlockingQueue<QueueItem2>(1);
                 let initialCapacity = queue.capacity;
                 expect(String(initialCapacity)).assertEqual('1');
 
@@ -973,16 +946,16 @@ export default function ArrayConcurrentQueuetest() {
 
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0151
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_0011
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0151
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_0011
          * @tc.desc Verify adding elements to full queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
+                const queue = new containers.ArrayBlockingQueue<number>(1);
                 expect(queue.add(1)).assertTrue();
                 expect(String(queue.size)).assertEqual('1');
                 expect(queue.add(2)).assertFalse();
@@ -990,17 +963,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0152
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_0012
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0152
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_0012
          * @tc.desc Verify adding multiple elements to queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
                     expect(queue.add(i)).assertTrue();
                 }
@@ -1008,17 +981,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHADDTEST_0153
-         * @tc.name Array_Concurrent_Queue_With_Add_Test_static_0013
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_ADD_TEST_0153
+         * @tc.name Array_Blocking_Queue_With_Add_Test_static_0013
          * @tc.desc Verify adding elements to fill queue capacity
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Add_Test_static_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Add_Test_static_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 expect(queue.add(1)).assertTrue();
                 expect(String(queue.size)).assertEqual('1');
                 for (let i = 0; i < capacity - 1; i++) {
@@ -1030,16 +1003,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOLLTEST_0155
-         * @tc.name Array_Concurrent_Queue_With_Poll_Test_static_0002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POLL_TEST_0155
+         * @tc.name Array_Blocking_Queue_With_Poll_Test_static_0002
          * @tc.desc Verify polling from single element queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Poll_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Poll_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
+                const queue = new containers.ArrayBlockingQueue<number>(1);
                 queue.add(100);
                 expect(queue.poll()).assertEqual(100);
                 expect(String(queue.size)).assertEqual('0');
@@ -1047,19 +1020,19 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOLLTEST_0156
-         * @tc.name Array_Concurrent_Queue_With_Poll_Test_static_0003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POLL_TEST_0156
+         * @tc.name Array_Blocking_Queue_With_Poll_Test_static_0003
          * @tc.desc Verify polling special string values from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Poll_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Poll_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
+                const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
                 queue.add("");
-                queue.add('null');
-                queue.add('undefined');
+                queue.add(null);
+                queue.add(undefined);
                 queue.add("huiafyef23@y8#");
                 expect(queue.poll()).assertEqual("");
                 expect(String(queue.poll())).assertEqual("null");
@@ -1069,17 +1042,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOLLTEST_0157
-         * @tc.name Array_Concurrent_Queue_With_Poll_Test_static_0004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POLL_TEST_0157
+         * @tc.name Array_Blocking_Queue_With_Poll_Test_static_0004
          * @tc.desc Verify polling and adding elements dynamically
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Poll_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Poll_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
                     queue.add(i);
                 }
@@ -1089,17 +1062,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOLLTEST_0158
-         * @tc.name Array_Concurrent_Queue_With_Poll_Test_static_0005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POLL_TEST_0158
+         * @tc.name Array_Blocking_Queue_With_Poll_Test_static_0005
          * @tc.desc Verify polling all elements from filled queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Poll_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Poll_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity; i++) {
                     queue.add(i * 10);
                 }
@@ -1118,16 +1091,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHPOLLTEST_0159
-         * @tc.name Array_Concurrent_Queue_With_Poll_Test_static_0006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_POLL_TEST_0159
+         * @tc.name Array_Blocking_Queue_With_Poll_Test_static_0006
          * @tc.desc Verify polling elements in FIFO order
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Poll_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Poll_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(3);
+                const queue = new containers.ArrayBlockingQueue<string>(3);
                 queue.add("first");
                 queue.add("second");
 
@@ -1138,16 +1111,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_016
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0016
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0001
          * @tc.desc Verify getting first element from filled queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(3);
+                const queue = new containers.ArrayBlockingQueue<number>(3);
                 queue.add(10);
                 queue.add(20);
                 queue.add(30);
@@ -1157,52 +1130,52 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_0161
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0161
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0002
          * @tc.desc Verify getting first element with special string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
+                const queue = new containers.ArrayBlockingQueue<string | null | undefined>(5);
                 queue.add("");
-                queue.add('null');
-                queue.add('undefined');
+                queue.add(null);
+                queue.add(undefined);
                 queue.add("yihahah111");
                 expect(queue.getFirst()).assertEqual("");
                 expect(queue.size).assertEqual(4);
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_0163
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0163
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0004
          * @tc.desc Verify getting first element from single element queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(1);
+                const queue = new containers.ArrayBlockingQueue<string>(1);
                 queue.add("1");
                 expect(String(queue.getFirst())).assertEqual("1");
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_0164
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0164
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0005
          * @tc.desc Verify getting first element after adding elements
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
                     queue.add(i);
                 }
@@ -1214,16 +1187,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_0165
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0165
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0006
          * @tc.desc Verify getting first boolean element from queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
+                const queue = new containers.ArrayBlockingQueue<boolean>(1);
                 queue.add(true);
                 expect(queue.getFirst()).assertTrue();
                 expect(String(queue.size)).assertEqual('1');
@@ -1231,17 +1204,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHGETFIRSTTEST_0166
-         * @tc.name Array_Concurrent_Queue_With_GetFirst_Test_static_0007
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_GET_FIRST_TEST_0166
+         * @tc.name Array_Blocking_Queue_With_GetFirst_Test_static_0007
          * @tc.desc Verify getting first element after filling queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_GetFirst_Test_static_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_GetFirst_Test_static_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(111);
                 expect(String(queue.getFirst())).assertEqual('111');
                 expect(String(queue.size)).assertEqual('1');
@@ -1254,17 +1227,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHCAPACITYTEST_0169
-         * @tc.name Array_Concurrent_Queue_With_Capacity_Test_static_0003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_CAPACITY_TEST_0169
+         * @tc.name Array_Blocking_Queue_With_Capacity_Test_static_0003
          * @tc.desc Verify single capacity queue behavior
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_Capacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("Array_Blocking_Queue_With_Capacity_Test_static_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 1;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(123);
                 expect(String(queue.capacity)).assertEqual('1');
                 expect(String(queue.size)).assertEqual('1');
@@ -1273,18 +1246,18 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHREMAININGCAPACITYTEST_0170
-         * @tc.name Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_REMAINING_CAPACITY_TEST_0170
+         * @tc.name Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001
          * @tc.desc Verify remaining capacity of full queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0001",
+        it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0001",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 3;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(123);
                 queue.add(456);
                 queue.add(789);
@@ -1294,35 +1267,35 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BBASE_containers.stackless.ArrayConcurrentQueueWITHREMAININGCAPACITYTEST_0171
-         * @tc.name Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_REMAINING_CAPACITY_TEST_0171
+         * @tc.name Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002
          * @tc.desc Verify remaining capacity after adding elements
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0002",
+        it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0002",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 expect(queue.remainingCapacity()).assertEqual(capacity);
                 expect(queue.add(1)).assertTrue();
                 expect(queue.remainingCapacity()).assertEqual(capacity - 1);
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHREMAININGCAPACITYTEST_0172
-         * @tc.name Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_REMAINING_CAPACITY_TEST_0172
+         * @tc.name Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003
          * @tc.desc Verify remaining capacity changes after operations
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0003",
+        it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0003",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
+                const queue = new containers.ArrayBlockingQueue<boolean>(1);
                 expect(String(queue.remainingCapacity())).assertEqual('1');
                 queue.add(true);
                 expect(String(queue.remainingCapacity())).assertEqual('0');
@@ -1331,18 +1304,18 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueWITHREMAININGCAPACITYTEST_0173
-         * @tc.name Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_WITH_REMAINING_CAPACITY_TEST_0173
+         * @tc.name Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004
          * @tc.desc Verify remaining capacity when nearly full
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("Array_Concurrent_Queue_With_RemainingCapacity_Test_static_0004",
+        it("Array_Blocking_Queue_With_RemainingCapacity_Test_static_0004",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 4;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(10);
                 queue.add(20);
                 queue.add(30);
@@ -1352,17 +1325,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueREMAININGCAPACITYTENTEST_0174
-         * @tc.name ArrayConcurrentQueueRemainingCapacityTen_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_REMAINING_CAPACITY_TEN_TEST_0174
+         * @tc.name ArrayBlockingQueueRemainingCapacityTen_Test_static_005
          * @tc.desc Verify remaining capacity changes in large queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueRemainingCapacityTen_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueRemainingCapacityTen_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(capacity);
+                const queue = new containers.ArrayBlockingQueue<string>(capacity);
                 queue.add("A");
                 expect(String(queue.remainingCapacity())).assertEqual(String(capacity - 1));
                 for (let i = 1; i < capacity; i++) {
@@ -1374,17 +1347,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueREMAININGCAPACITYTENTEST_0175
-         * @tc.name ArrayConcurrentQueueRemainingCapacityDynamic_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_REMAINING_CAPACITY_TEN_TEST_0175
+         * @tc.name ArrayBlockingQueueRemainingCapacityDynamic_Test_static_006
          * @tc.desc Verify dynamic remaining capacity changes
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueRemainingCapacityDynamic_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueRemainingCapacityDynamic_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 expect(String(queue.remainingCapacity())).assertEqual(String(capacity));
                 queue.add(1);
                 queue.add(2);
@@ -1401,134 +1374,128 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETSIZEDYNAMICTEST_0176
-         * @tc.name ArrayConcurrentQueueGetSizeDynamic_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_SIZE_DYNAMIC_TEST_0176
+         * @tc.name ArrayBlockingQueueGetSizeDynamic_Test_static_001
          * @tc.desc Verify size after filling queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetSizeDynamic_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
+        it("ArrayBlockingQueueGetSizeDynamic_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
                 const capacity = 3;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
-                await queue.push(1);
-                await queue.push(2);
-                await queue.push(3);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
+                queue.push(1);
+                queue.push(2);
+                queue.push(3);
 
                 expect(String(queue.size)).assertEqual('3');
                 expect(String(queue.capacity)).assertEqual(String(capacity));
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETSIZEDYNAMICTEST_0179
-         * @tc.name ArrayConcurrentQueueGetSizeOne_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_SIZE_DYNAMIC_TEST_0179
+         * @tc.name ArrayBlockingQueueGetSizeOne_Test_static_004
          * @tc.desc Verify size changes in single capacity queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetSizeOne_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            const queue = new containers.stackless.ArrayConcurrentQueue<boolean>(1);
+        it("ArrayBlockingQueueGetSizeOne_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+            const queue = new containers.ArrayBlockingQueue<boolean>(1);
             expect(String(queue.size)).assertEqual('0');
-            await queue.push(true);
+            queue.push(true);
             expect(String(queue.size)).assertEqual('1');
-            await queue.pop();
+            queue.pop();
             expect(String(queue.size)).assertEqual('0');
-            done();
         });
 
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueISEMPTYTRUETEST_0181
-         * @tc.name ArrayConcurrentQueueIsEmptyFalse_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_IS_EMPTY_TRUE_TEST_0181
+         * @tc.name ArrayBlockingQueueIsEmptyFalse_Test_static_002
          * @tc.desc Verify isEmpty on non-empty queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueIsEmptyFalse_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(2);
-                await queue.push("data");
+        it("ArrayBlockingQueueIsEmptyFalse_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<string>(2);
+                queue.push("data");
                 expect(String(queue.isEmpty())).assertEqual('false');
                 expect(String(queue.size)).assertEqual('1');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueISEMPTYCHANGETEST_0183
-         * @tc.name ArrayConcurrentQueueIsEmptyBoundary_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_IS_EMPTY_CHANGE_TEST_0183
+         * @tc.name ArrayBlockingQueueIsEmptyBoundary_Test_static_004
          * @tc.desc Verify isEmpty on single capacity queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueIsEmptyBoundary_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1);
+        it("ArrayBlockingQueueIsEmptyBoundary_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(1);
                 expect(queue.isEmpty()).assertEqual(true);
-                await queue.push(1);
+                queue.push(1);
                 expect(queue.isEmpty()).assertEqual(false);
-                await queue.pop();
+                queue.pop();
                 expect(queue.isEmpty()).assertEqual(true);
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueISEMPTYCHANGETEST_0184
-         * @tc.name ArrayConcurrentQueueIsEmptyMixed_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_IS_EMPTY_CHANGE_TEST_0184
+         * @tc.name ArrayBlockingQueueIsEmptyMixed_Test_static_005
          * @tc.desc Verify isEmpty with mixed operations
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueIsEmptyMixed_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(3);
-                await queue.push("a");
-                await queue.pop();
+        it("ArrayBlockingQueueIsEmptyMixed_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<string>(3);
+                queue.push("a");
+                queue.pop();
                 expect(String(queue.isEmpty())).assertEqual('true');
 
                 queue.add("b");
-                await queue.pop();
+                queue.pop();
                 expect(String(queue.isEmpty())).assertEqual('true');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueISEMPTYCHANGETEST_0185
-         * @tc.name ArrayConcurrentQueueIsEmptyConcurrent_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_IS_EMPTY_CHANGE_TEST_0185
+         * @tc.name ArrayBlockingQueueIsEmptyConcurrent_Test_static_006
          * @tc.desc Verify isEmpty with concurrent operations
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueIsEmptyConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-            async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
-                await queue.push(1);
-                await queue.pop();
-                await queue.push(2);
+        it("ArrayBlockingQueueIsEmptyConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+            (): void => {
+                const queue = new containers.ArrayBlockingQueue<number>(10);
+                queue.push(1);
+                queue.pop();
+                queue.push(2);
                 expect(String(queue.isEmpty())).assertEqual('false');
-                await queue.pop();
+                queue.pop();
                 expect(String(queue.isEmpty())).assertEqual('true');
-                done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0186
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0186
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_001
          * @tc.desc Verify getEnd on filled queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity; i++) {
                     queue.add(i);
                 }
@@ -1537,32 +1504,32 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0187
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_002
-         * @tc.desc Verify getEnd with special string marker values
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0187
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_002
+         * @tc.desc Verify getEnd with special values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 5;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(capacity);
+                const queue = new containers.ArrayBlockingQueue<string | null | undefined>(capacity);
                 queue.add("");
-                queue.add('null');
-                queue.add('undefined');
+                queue.add(null);
+                queue.add(undefined);
                 queue.add("@#$");
 
                 expect(String(queue.getEnd())).assertEqual('@#$');
                 expect(queue.size).assertEqual(4);
 
                 queue.poll();
-                queue.add('null');
-                expect(queue.getEnd()).assertEqual('null');
+                queue.add(null);
+                expect(queue.getEnd()).assertEqual(null);
 
                 queue.poll();
-                queue.add('undefined');
-                expect(queue.getEnd()).assertEqual('undefined');
+                queue.add(undefined);
+                expect(queue.getEnd()).assertEqual(undefined);
 
                 queue.poll();
                 queue.add("");
@@ -1570,67 +1537,67 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0188
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0188
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_003
          * @tc.desc Verify getEnd on empty queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 expect(String(queue.getEnd()).toString()).assertEqual('undefined');
                 expect(String(queue.size)).assertEqual('0');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0189
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0189
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_004
          * @tc.desc Verify getEnd on single element queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 1;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(100)
                 expect(String(queue.getEnd())).assertEqual('100');
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0190
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0190
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_005
          * @tc.desc Verify getEnd on single element queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 1;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 queue.add(100)
                 expect(String(queue.getEnd())).assertEqual('100');
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0191
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0191
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_006
          * @tc.desc Verify getEnd after filling queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
                 for (let i = 0; i < capacity - 1; i++) {
                     queue.add(i)
                 }
@@ -1639,17 +1606,17 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0192
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_007
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0192
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_007
          * @tc.desc Verify getEnd after filling queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 10;
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(capacity);
+                const queue = new containers.ArrayBlockingQueue<number>(capacity);
 
                 queue.add(1);
                 expect(String(queue.size)).assertEqual('1');
@@ -1667,33 +1634,33 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0193
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_008
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0193
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_008
          * @tc.desc Verify getEnd with string value
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
                 const capacity = 1;
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(capacity);
+                const queue = new containers.ArrayBlockingQueue<string>(capacity);
                 queue.add('hahah')
                 expect(String(queue.getEnd())).assertEqual('hahah');
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0194
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_009
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0194
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_009
          * @tc.desc Verify getEnd with multiple string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
+                const queue = new containers.ArrayBlockingQueue<string>(5);
                 queue.add('hahah')
                 queue.add('xixixi')
                 expect(String(queue.getEnd())).assertEqual('xixixi');
@@ -1701,16 +1668,16 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0195
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_0010
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0195
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_0010
          * @tc.desc Verify getEnd with duplicate string values
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<string>(5);
+                const queue = new containers.ArrayBlockingQueue<string>(5);
                 queue.add('hahah')
                 queue.add('hahah')
                 expect(String(queue.getEnd())).assertEqual('hahah');
@@ -1718,85 +1685,85 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0196
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_011
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0196
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_011
          * @tc.desc Verify getEnd with MAX_SAFE_INTEGER value
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(5);
+                const queue = new containers.ArrayBlockingQueue<number>(5);
                 queue.add(Number.MAX_SAFE_INTEGER);
                 expect(String(queue.getEnd())).assertEqual(String(Number.MAX_SAFE_INTEGER));
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueGETENDCONCURRENTTEST_0197
-         * @tc.name ArrayConcurrentQueueGetEndConcurrent_Test_static_012
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_GET_END_CONCURRENT_TEST_0197
+         * @tc.name ArrayBlockingQueueGetEndConcurrent_Test_static_012
          * @tc.desc Verify getEnd with MIN_SAFE_INTEGER value
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueGetEndConcurrent_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueGetEndConcurrent_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(5);
+                const queue = new containers.ArrayBlockingQueue<number>(5);
                 queue.add(Number.MIN_SAFE_INTEGER);
                 expect(String(queue.getEnd())).assertEqual(String(Number.MIN_SAFE_INTEGER));
                 expect(String(queue.size)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_containers.stackless.ArrayConcurrentQueueCONSTRUCTORCONCURRENTTEST_0199
-         * @tc.name ArrayConcurrentQueueConstructorConcurrent_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_CONCURRENT_TEST_0199
+         * @tc.name ArrayBlockingQueueConstructorConcurrent_Test_static_002
          * @tc.desc Verify constructor with empty array and single capacity
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorConcurrent_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             (): void => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(1, new Array<number>());
+                const queue = new containers.ArrayBlockingQueue<number>(1, new Array<number>());
                 expect(queue.isEmpty()).assertTrue();
                 expect(String(queue.size)).assertEqual('0');
                 expect(String(queue.capacity)).assertEqual('1');
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_200
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0200
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_001
          * @tc.desc The test uses an empty array to initialize the queue (capacity = 0)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                try {
-                    const emptyArray = new Array<Int>();
-                    const queue = new containers.stackless.ArrayConcurrentQueue<int>(0, emptyArray);
-                    expect().assertFail();
-                } catch (error) {
-                    expect(error instanceof Error).assertTrue();
-                }
-                done();
+            try {
+                const emptyArray = new Array<Int>();
+                const queue = new containers.ArrayBlockingQueue<int>(0, emptyArray);
+                expect().assertFail();
+            } catch (error) {
+                expect(error instanceof Error).assertTrue();
+            }
+            done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_201
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0201
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_002
          * @tc.desc The test uses an empty array to initialize the queue (capacity = 1)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const emptyArray = new Array<Int>();
-                const queue = new containers.stackless.ArrayConcurrentQueue<int>(1, emptyArray);
+                const queue = new containers.ArrayBlockingQueue<int>(1, emptyArray);
                 expect(queue.isEmpty()).assertTrue();
                 expect(String(queue.size)).assertEqual('0');
                 expect(String(queue.capacity)).assertEqual('1');
@@ -1804,39 +1771,39 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_203
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_004
-         * @tc.desc The test initializes the queue with a single integer element (capacity = 1)
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0203
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_004
+         * @tc.desc The test initializes the queue with an array containing one element (capacity = 1)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const oneElementArray = Array.create<Int>(1, 42);
-                const queue = new containers.stackless.ArrayConcurrentQueue<int>(1, oneElementArray);
-                expect(queue.isEmpty()).assertFalse();
-                expect(queue.size).assertEqual(1);
-                expect(queue.getFirst()).assertEqual(42);
-                expect(queue.poll()).assertEqual(42);
+                const oneElementArray = Array.create<Int | undefined>(42, undefined);
+                const queue = new containers.ArrayBlockingQueue<int | undefined>(1, oneElementArray);
+                expect(queue.isEmpty()).assertTrue();
+                expect(queue.size).assertEqual(0);
+                expect(queue.getFirst()).assertUndefined();
+                expect(queue.poll()).assertUndefined();
                 expect(queue.isEmpty()).assertTrue();
                 expect(queue.capacity).assertEqual(1);
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_206
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_007
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0206
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_007
          * @tc.desc The test uses an array with 1000 elements to initialize the queue (capacity = 0)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 try {
-                    const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                        new containers.stackless.ArrayConcurrentQueue<int>(0, thousandElementsArray);
+                    const queue: containers.ArrayBlockingQueue<int> =
+                        new containers.ArrayBlockingQueue<int>(0, thousandElementsArray);
                     expect().assertFail();
                 } catch (error) {
                     expect(error instanceof Error).assertTrue();
@@ -1845,54 +1812,51 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_207
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_008
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0207
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_008
          * @tc.desc The test uses an array with 1000 elements to initialize the queue (capacity = 1)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                try {
-                    const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                        new containers.stackless.ArrayConcurrentQueue<int>(1, thousandElementsArray);
-                    expect().assertFail();
-                } catch (error) {
-                    expect(error instanceof RangeError).assertTrue();
-                }
+                const queue: containers.ArrayBlockingQueue<int> =
+                    new containers.ArrayBlockingQueue<int>(1, thousandElementsArray);
+                expect(queue.size).assertEqual(1);
+                expect(queue.capacity).assertEqual(1);
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_208
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_009
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0208
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_009
          * @tc.desc The test uses an array with 1000 elements to initialize the queue (capacity = 1000)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(1000, thousandElementsArray);
+                const queue: containers.ArrayBlockingQueue<int> =
+                    new containers.ArrayBlockingQueue<int>(1000, thousandElementsArray);
                 expect(String(queue.capacity)).assertEqual('1000');
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_210
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_011
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0210
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_011
          * @tc.desc The test uses an empty set to initialize the queue (capacity = 1)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const emptySet = new Set<int>();
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(1, emptySet.values());
+                const queue: containers.ArrayBlockingQueue<int> =
+                    new containers.ArrayBlockingQueue<int>(1, emptySet.values());
                 expect(queue.isEmpty()).assertTrue();
                 expect(String(queue.size)).assertEqual('0');
                 expect(String(queue.capacity)).assertEqual('1');
@@ -1900,37 +1864,37 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_212
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_013
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0212
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_013
          * @tc.desc The test uses undefined as the iterable object to initialize the queue (capacity = 1)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const map = new Set<int>()
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(1, map.values());
+                const map = new Set<int | undefined>()
+                const queue: containers.ArrayBlockingQueue<int | undefined> =
+                    new containers.ArrayBlockingQueue<int | undefined>(1, map.values());
                 expect(String(queue.size)).assertEqual('0');
                 expect(String(queue.capacity)).assertEqual('1');
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_213
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_014
-         * @tc.desc The test uses a non-empty integer array to initialize the queue (capacity = 0)
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0213
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_014
+         * @tc.desc The test uses an array containing null/undefined to initialize the queue (capacity = 0)
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 try {
-                    const integerArray = new Array<Int>(1, 2, 3)
-                    const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                        new containers.stackless.ArrayConcurrentQueue<int>(0, integerArray);
+                    const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
+                    const queue: containers.ArrayBlockingQueue<int | null | undefined> =
+                        new containers.ArrayBlockingQueue<int | null | undefined>(0, arrayWithNulls);
                     expect().assertFail();
                 } catch (error) {
                     expect(error instanceof Error).assertTrue();
@@ -1939,99 +1903,99 @@ export default function ArrayConcurrentQueuetest() {
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_214
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_015
-         * @tc.desc The test uses an integer array to initialize the queue
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0214
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_015
+         * @tc.desc The test uses an array containing null/undefined to initialize the queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const integerArray = new Array<Int>(1, 2, 3)
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(10, integerArray);
-                expect(queue.size).assertEqual(3);
+                const arrayWithNulls = new Array<Int | null | undefined>(1, null, 2, undefined, 3)
+                const queue: containers.ArrayBlockingQueue<int | null | undefined> =
+                    new containers.ArrayBlockingQueue<int | null | undefined>(10, arrayWithNulls);
+                expect(queue.size).assertEqual(4);
                 expect(queue.capacity).assertEqual(10);
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_215
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_016
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0215
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_016
          * @tc.desc Tests initializing the queue using an iterable object with Int.MAX_VALUE elements
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                try {
-                    const arr = new Map<int, int>();
-                    let maxCapacity = Int.MAX_VALUE
-                    const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                        new containers.stackless.ArrayConcurrentQueue<int>(maxCapacity, arr.values());
-                    expect().assertFail();
-                } catch (error) {
-                    expect(error instanceof Error).assertTrue();
-                }
-                done();
+            try {
+                const arr = new Map<int, int>();
+                let maxCapacity = Int.MAX_VALUE
+                const queue: containers.ArrayBlockingQueue<int> =
+                    new containers.ArrayBlockingQueue<int>(maxCapacity, arr.values());
+                expect().assertFail();
+            } catch (error) {
+                expect(error instanceof Error).assertTrue();
+            }
+            done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_216
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_017
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0216
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_017
          * @tc.desc To test the use of Map to initialize the queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const map = new Map<int, int>();
                 map.set(1, 100);
                 map.set(2, 200);
                 map.set(3, 300);
-                const queue: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(3, map.values());
+                const queue: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(3, map.values());
                 expect(String(queue.size)).assertEqual('3');
                 expect(String(queue.capacity)).assertEqual('3');
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTORWITHSETTEST_217
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_018
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0217
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_018
          * @tc.desc To test initializing queues using nested arrays
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const nestedArray = new Map<int, int[]>();
                 nestedArray.set(1, [1, 2]);
                 nestedArray.set(2, [3, 4]);
                 nestedArray.set(3, [5, 6]);
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(3, nestedArray.keys());
+                const queue: containers.ArrayBlockingQueue<int> =
+                    new containers.ArrayBlockingQueue<int>(3, nestedArray.keys());
                 expect(String(queue.size)).assertEqual('3');
                 expect(String(queue.capacity)).assertEqual('3');
                 done();
             });
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueuePerformanceTest_218
-         * @tc.name ArrayConcurrentQueuePerformance_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_PERFORMANCE_TEST_0218
+         * @tc.name ArrayBlockingQueuePerformance_Test_static_001
          * @tc.desc 10 concurrent operations simultaneously add elements to the container.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueuePerformance_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueuePerformance_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const threadCount = 10;
                 const taskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(threadCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(threadCount);
                 for (let i: int = 0; i < threadCount; i++) {
                     taskGroup.addTask(createAddTask(queueInt, i));
                 }
@@ -2042,24 +2006,24 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueuePerformanceTest_219
-         * @tc.name ArrayConcurrentQueuePerformance_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_PERFORMANCE_TEST_0219
+         * @tc.name ArrayBlockingQueuePerformance_Test_static_002
          * @tc.desc Initial container 100 elements, 10 concurrent simultaneous operation of the container to delete and remove elements
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueuePerformance_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueuePerformance_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                const numbers: Array<int> = new Array<int>();
-                for (let i: int = 0; i < totalCount; i++) {
+                const numbers: Array<int> = Array.create<int>(10, 0);
+                for (let i = 0; i < totalCount; i++) {
                     numbers.push(i);
                 }
                 const threadCount = 10;
                 const taskGroup = new taskpool.TaskGroup();
                 let iter = numbers.values();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount, iter);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount, iter);
                 for (let i: int = 0; i < threadCount; i++) {
                     taskGroup.addTask(createPopTask(queueInt));
                 }
@@ -2070,24 +2034,24 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueuePerformanceTest_220
-         * @tc.name ArrayConcurrentQueuePerformance_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_PERFORMANCE_TEST_0220
+         * @tc.name ArrayBlockingQueuePerformance_Test_static_003
          * @tc.desc Initial container with 100 elements. Ten concurrent operations simultaneously operate on the container to perform element deletion (poll operation).
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueuePerformance_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueuePerformance_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                const numbers: Array<int> = new Array<int>();
-                for (let i: int = 0; i < totalCount; i++) {
+                const numbers: Array<int> = Array.create<int>(100, 0);
+                for (let i = 0; i < totalCount; i++) {
                     numbers.push(i);
                 }
                 const threadCount = 10;
                 const taskGroup = new taskpool.TaskGroup();
                 let iter = numbers.values();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount, iter);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount, iter);
                 for (let i: int = 0; i < threadCount; i++) {
                     taskGroup.addTask(createPollTask(queueInt));
                 }
@@ -2098,19 +2062,19 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueuePerformanceTest_221
-         * @tc.name ArrayConcurrentQueuePerformance_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_PERFORMANCE_TEST_0221
+         * @tc.name ArrayBlockingQueuePerformance_Test_static_004
          * @tc.desc Push 100 data, poll 100 data.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueuePerformance_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueuePerformance_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i: int = 0; i < totalCount; i++) {
-                    await queueInt.push(i);
+                    queueInt.push(i);
                 }
                 for (let i: int = 0; i < totalCount; i++) {
                     queueInt.poll();
@@ -2121,22 +2085,22 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueuePerformanceTest_222
-         * @tc.name ArrayConcurrentQueuePerformance_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_PERFORMANCE_TEST_0222
+         * @tc.name ArrayBlockingQueuePerformance_Test_static_005
          * @tc.desc add 100 pieces of data, pop 100 pieces of data.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueuePerformance_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueuePerformance_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i: int = 0; i < totalCount; i++) {
                     queueInt.add(i);
                 }
                 for (let i: int = 0; i < totalCount; i++) {
-                    await queueInt.pop();
+                    queueInt.pop();
                 }
                 expect(JSON.stringify(queueInt.size)).assertEqual('0');
                 expect(queueInt.isEmpty()).assertTrue();
@@ -2144,18 +2108,18 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_223
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_001
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0223
+         * @tc.name ArrayBlockingQueueAsync_Test_static_001
          * @tc.desc The host thread adds 1000 pieces of data, and 10 threads poll out the data at the same time
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i: int = 0; i < totalCount; i++) {
                     queueInt.add(i);
                 }
@@ -2170,20 +2134,20 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_224
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_002
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0224
+         * @tc.name ArrayBlockingQueueAsync_Test_static_002
          * @tc.desc Multi-thread (10) push inserts a total of 1000 data, and the host thread pops out the data
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i: int = 0; i < totalCount; i++) {
-                    await queueInt.push(i);
+                    queueInt.push(i);
                 }
                 expect(JSON.stringify(queueInt.size)).assertEqual(JSON.stringify(totalCount));
                 for (let i: int = 0; i < 10; i++) {
@@ -2196,18 +2160,18 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_225
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0225
+         * @tc.name ArrayBlockingQueueAsync_Test_static_003
          * @tc.desc Multi-threaded operation. Thread A inserts data, and thread B takes out data.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = 100;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 taskGroup.addTask(createPushTaskStart(queueInt, totalCount));
                 taskGroup.addTask(createPopTaskStart(queueInt, totalCount));
                 await taskpool.execute(taskGroup);
@@ -2217,17 +2181,17 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_226
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_004
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0226
+         * @tc.name ArrayBlockingQueueAsync_Test_static_004
          * @tc.desc Threads add elements simultaneously to verify the thread safety of the queue.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(100);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(100);
                 for (let i = 0; i < 10; i++) {
                     taskGroup.addTask(createPushTaskStartLoopTen(queueInt, i));
                 }
@@ -2238,18 +2202,18 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_227
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_005
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0227
+         * @tc.name ArrayBlockingQueueAsync_Test_static_005
          * @tc.desc Preset 1000 pieces of data, 10 threads remove elements at the same time, verify the thread safety of the queue
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i = 0; i < totalCount; i++) {
                     queueInt.add(i);
                 }
@@ -2264,18 +2228,18 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_228
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_006
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0228
+         * @tc.name ArrayBlockingQueueAsync_Test_static_006
          * @tc.desc 10 threads at the same time: loop 1000 times, after add getFirst, isEmpty, get size, push, pop, remove, remainingCapacity combined call
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
                 for (let i = 0; i < totalCount; i++) {
                     queueInt.add(i);
                 }
@@ -2292,19 +2256,19 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_229
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_007
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0229
+         * @tc.name ArrayBlockingQueueAsync_Test_static_007
          * @tc.desc 10 thread A and 10 thread B. Each thread calls add(element) or poll() 1,000 times.
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
                 const taskGroupPoll: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
 
                 for (let i = 0; i < loopTenTimes; i++) {
                     taskGroup.addTask(createAddTaskHundred(queueInt, i * hundredTimes));
@@ -2320,19 +2284,19 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_containers.stackless.ArrayConcurrentQueueAsyncTest_230
-         * @tc.name ArrayConcurrentQueueAsync_Test_static_008
+         * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ARRAY_BLOCKING_QUEUE_ASYNC_TEST_0230
+         * @tc.name ArrayBlockingQueueAsync_Test_static_008
          * @tc.desc 10 threads A and 10 threads B, each calling push (element) or pop () 1,000 times
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueAsync_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueAsync_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
                 const totalCount: int = thousandTimes;
                 const taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
                 const taskPopGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
-                let queueInt: containers.stackless.ArrayConcurrentQueue<int> = new containers.stackless.ArrayConcurrentQueue<int>(totalCount);
+                let queueInt: containers.ArrayBlockingQueue<int> = new containers.ArrayBlockingQueue<int>(totalCount);
 
                 for (let i = 0; i < loopTenTimes; i++) {
                     taskGroup.addTask(createPushTaskHundred(queueInt, i * hundredTimes));
@@ -2348,25 +2312,25 @@ export default function ArrayConcurrentQueuetest() {
             })
 
         /**
-         * @tc.number SUB_COMMON_LIBRARY_UTIL_BASE_containers.stackless.ArrayConcurrentQueueCONSTRUCTOR_WITH_SET_TEST_234
-         * @tc.name ArrayConcurrentQueueConstructorWith_Test_static_003
+         * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_BLOCKING_QUEUE_CONSTRUCTOR_WITH_SET_TEST_0234
+         * @tc.name ArrayBlockingQueueConstructorWith_Test_static_003
          * @tc.desc Blocks until the queue has an element to take out
          * @tc.size MediumTest
          * @tc.type Function
          * @tc.level Level 0
          */
-        it("ArrayConcurrentQueueConstructorWith_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        it("ArrayBlockingQueueConstructorWith_Test_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const queue = new containers.stackless.ArrayConcurrentQueue<number>(10);
+                const queue = new containers.ArrayBlockingQueue<number>(10);
                 let popCompleted = false;
                 let popResult: number = 0;
-                const popTask = new taskpool.Task(async () => {
-                    popResult = await queue.pop();
+                const popTask = new taskpool.Task(() => {
+                    popResult = queue.pop();
                     popCompleted = true;
                 });
-                const pushTask = new taskpool.Task(async () => {
-                    setTimeout(async () => {
-                        await queue.push(42);
+                const pushTask = new taskpool.Task(() => {
+                    setTimeout(() => {
+                        queue.push(42);
                     }, 5);
                 });
                 let p1 = taskpool.execute(popTask);
@@ -2380,5 +2344,5 @@ export default function ArrayConcurrentQueuetest() {
                 done();
             });
 
-    });
+  });
 }
