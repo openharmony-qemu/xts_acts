@@ -32,7 +32,7 @@ group("security") {
       "dlp_errorcode_func:ActsDlpErrorCodeTest",
       "dlp_permission_service:DlpTest",
       "dlp_enterprise_service_xts:DlpEnterpriseServiceTest",
-	  "dlp_enterprise_service_xts_permission:DlpEnterpriseServicePermissionTest"
+      "dlp_enterprise_service_xts_permission:DlpEnterpriseServicePermissionTest"
       "huks",
       "security_component",
       "sandbox",
