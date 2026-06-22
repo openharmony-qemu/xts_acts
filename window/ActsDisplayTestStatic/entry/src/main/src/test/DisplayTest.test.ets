@@ -3948,7 +3948,7 @@ export default function DisplayTest():void {
                 windowClass!.recover();
                 displayClass.offAvailableAreaChange(callback);
                 done();
-            } else if (!isFreeWindowMode && isSupportRotate) {
+            } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
                 displayClass.onAvailableAreaChange(callback);
                 await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                 await Utils.msSleep(1000);
