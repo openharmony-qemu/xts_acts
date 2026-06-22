@@ -306,7 +306,6 @@ export default function ImageGetComponentSupp() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(async () => {
       console.info('beforeEach case');
