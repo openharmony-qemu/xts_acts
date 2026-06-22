@@ -65,6 +65,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_advancedDialog_static:ActsAceEtsModuleAdvancedDialogStaticTest",
       "ace_ets_module_advancedDialogV2_static:ActsAceEtsModuleAdvancedDialogV2StaticTest",
       "ace_ets_module_editableTitleBar_nowear_static:ActsAceEtsModuleAdvancedEditableTitleBarNowearStaticTest",
+      "ace_ets_module_editableTitleBarV2_nowear_static:ActsAceEtsModuleAdvancedEditableTitleBarV2NoWearStaticTest",
       "ace_ets_module_progressButton_nowear_static:ActsAceEtsModuleAdvancedProgressButtonNowearStaticTest",
       "ace_ets_module_progressButtonV2_nowear_static:ActsAceEtsModuleAdvancedProgressButtonV2NowearStaticTest",
       "ace_ets_module_splitLayout_nowear_static:ActsAceEtsModuleAdvancedSplitLayoutNoWearStaticTest",
