@@ -90,7 +90,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
     })
 
     afterEach(async()=>{
-      await Utils.msSleep(5000)
+      await Utils.msSleep(8000)
     })
 
     /**
@@ -141,32 +141,24 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonOne).assertContain('允许通知')
         }
-        await Utils.msSleep(1500)
-        for (let i :int = 0; i < 3; i++) {
-          if (content == 1) {
-            console.info(`${testNum} buttonClick click success`);
-            break;
-          } else {
-            let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
-            console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
-            if (buttonTwo !== null) {
-              await Utils.msSleep(1500)
-              await buttonTwo.click();
-              let buttonClick = await buttonTwo.click();
-              console.info(`${testNum} buttonClick click is ${buttonClick}`);
-              if(buttonClick == true){
-                console.info(`${testNum} buttonClick be success`);
-                content++
-              }else{
-                continue;
-              }
-              await Utils.msSleep(1500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(buttonTwo).assertContain('桌面角标')
-            }
-          }  
+        await Utils.msSleep(3000)
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(1000)
+        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
+        console.info(`${testNum} buttonTwo is ${JSON.stringify(buttonTwo)}`);
+        if (buttonTwo !== null) {
+          await Utils.msSleep(1500)
+          await buttonTwo.click();
+          await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonTwo).assertContain('桌面角标')
         }
+        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
+        await scrollBar1?.scrollToTop()
         await Utils.msSleep(1500)
         let buttonZero = await driver.findComponent(ON.type('Toggle').isAfter(ON.text("允许通知")));
         console.info(`${testNum} buttonZero is ${JSON.stringify(buttonZero)}`);
@@ -267,6 +259,10 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        await scrollBar?.scrollToBottom()
+        await Utils.msSleep(500)
         let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
         console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
         if (buttonTwo !== null) {
