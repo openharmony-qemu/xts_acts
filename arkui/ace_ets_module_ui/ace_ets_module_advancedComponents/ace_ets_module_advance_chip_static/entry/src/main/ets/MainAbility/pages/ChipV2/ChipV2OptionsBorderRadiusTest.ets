@@ -61,7 +61,7 @@ struct ChipV2OptionsBorderRadiusExample {
           }) as ChipV2PrefixImageIcon,
           label: new ChipV2Label({ text: 'Chip0' }),
           backgroundColor: ColorMetrics.resourceColor(Color.Red),
-          borderRadius: undefined
+          borderRadius: LengthMetrics.vp(18)
         })
       })
       ChipV2({
@@ -72,7 +72,7 @@ struct ChipV2OptionsBorderRadiusExample {
           }) as ChipV2PrefixImageIcon,
           label: new ChipV2Label({ text: 'Chip1' }),
           backgroundColor: ColorMetrics.resourceColor(Color.Green),
-          borderRadius: undefined
+          borderRadius: LengthMetrics.vp(18)
         })
       })
       ChipV2({
