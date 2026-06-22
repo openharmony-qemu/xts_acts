@@ -58,6 +58,17 @@ class ForEachItemA {
   value: number = 0;
 }
 
+function sumAnyNumberArrayByForEach(value: Any): number {
+  const arr = value as Array<number>;
+  let total = 0;
+  arr.forEach((item: number): void => {
+    total += item;
+  });
+  return total;
+}
+
+type arrStr = Array<string | arrStr>;
+
 function collectText<T>(arr: Array<T>, mapper: (value: T) => string): string {
   let text = '';
   arr.forEach((value: T): void => {
@@ -100,7 +111,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0010
      * @tc.name testArrayForEach001
      * @tc.desc Verify forEach accepts a callback function
      * @tc.size MediumTest
@@ -117,7 +128,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0020
      * @tc.name testArrayForEach002
      * @tc.desc Verify callback receives value index and array parameters
      * @tc.size MediumTest
@@ -136,7 +147,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0030
      * @tc.name testArrayForEach003
      * @tc.desc Verify forEach callbacks can produce side effects by closing over external state
      * @tc.size MediumTest
@@ -153,7 +164,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0040
      * @tc.name testArrayForEach004
      * @tc.desc Verify forEach returns void after iteration
      * @tc.size MediumTest
@@ -163,14 +174,13 @@ export default function ArrayForEachTest(): void {
     it('testArrayForEach004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
       let result = arr.forEach((v: number): void => {
-        let current = v;
-        expect(current > 0).assertTrue();
+        expect(v > 0).assertTrue();
       });
       expect(result).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0050
      * @tc.name testArrayForEach005
      * @tc.desc Verify forEach does not change the original array length
      * @tc.size MediumTest
@@ -187,7 +197,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0060
      * @tc.name testArrayForEach006
      * @tc.desc Verify callback can update array elements in place
      * @tc.size MediumTest
@@ -205,7 +215,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0070
      * @tc.name testArrayForEach007
      * @tc.desc Verify forEach skips execution for an empty array
      * @tc.size MediumTest
@@ -222,7 +232,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0080
      * @tc.name testArrayForEach008
      * @tc.desc Verify forEach visits every element in the source array
      * @tc.size MediumTest
@@ -240,7 +250,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0090
      * @tc.name testArrayForEach009
      * @tc.desc Verify forEach iterates over object array elements
      * @tc.size MediumTest
@@ -266,7 +276,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0100
      * @tc.name testArrayForEach010
      * @tc.desc Verify forEach handles arrays containing nullish values
      * @tc.size MediumTest
@@ -285,7 +295,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0110
      * @tc.name testArrayForEach011
      * @tc.desc Verify forEach and for loops can produce the same result
      * @tc.size MediumTest
@@ -309,7 +319,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0120
      * @tc.name testArrayForEach012
      * @tc.desc Verify forEach cannot break early from the callback
      * @tc.size MediumTest
@@ -332,7 +342,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0130
      * @tc.name testArrayForEach013
      * @tc.desc Verify forEach and for loops can both process large arrays
      * @tc.size MediumTest
@@ -342,31 +352,25 @@ export default function ArrayForEachTest(): void {
     it('testArrayForEach013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = createLargeNumberArray(10000);
       let forEachCount = 0;
-      let start1 = Date.now();
       arr.forEach((v: number): void => {
         if (v >= 0) {
           forEachCount++;
         }
       });
-      let end1 = Date.now();
 
       let forCount = 0;
-      let start2 = Date.now();
       for (let i: int = 0; i < arr.length; i++) {
         let value = arr[i];
         if (value >= 0) {
           forCount++;
         }
       }
-      let end2 = Date.now();
       expect(forEachCount).assertEqual(10000);
       expect(forCount).assertEqual(10000);
-      expect(end1 >= start1).assertTrue();
-      expect(end2 >= start2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0140
      * @tc.name testArrayForEach014
      * @tc.desc Verify forEach can process each element for side effects
      * @tc.size MediumTest
@@ -384,7 +388,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0150
      * @tc.name testArrayForEach015
      * @tc.desc Verify forEach can accumulate state in an outer variable
      * @tc.size MediumTest
@@ -401,7 +405,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0160
      * @tc.name testArrayForEach016
      * @tc.desc Verify forEach can build object style index mappings
      * @tc.size MediumTest
@@ -425,7 +429,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0170
      * @tc.name testArrayForEach017
      * @tc.desc Verify forEach does not return a new transformed array
      * @tc.size MediumTest
@@ -445,7 +449,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0180
      * @tc.name testArrayForEach018
      * @tc.desc Verify callback can use the current index parameter
      * @tc.size MediumTest
@@ -465,7 +469,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0190
      * @tc.name testArrayForEach019
      * @tc.desc Verify callback can access the original array parameter
      * @tc.size MediumTest
@@ -484,7 +488,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0200
      * @tc.name testArrayForEach020
      * @tc.desc Verify forEach supports concise arrow callbacks
      * @tc.size MediumTest
@@ -499,7 +503,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0210
      * @tc.name testArrayForEach021
      * @tc.desc Verify forEach accepts arrow callbacks that capture visited values
      * @tc.size MediumTest
@@ -517,7 +521,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0220
      * @tc.name testArrayForEach022
      * @tc.desc Verify forEach executes callbacks synchronously in order
      * @tc.size MediumTest
@@ -535,7 +539,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0230
      * @tc.name testArrayForEach023
      * @tc.desc Verify added elements are not visited during current forEach
      * @tc.size MediumTest
@@ -557,7 +561,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0240
      * @tc.name testArrayForEach024
      * @tc.desc Verify removing elements can change later callback visits
      * @tc.size MediumTest
@@ -578,7 +582,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0250
      * @tc.name testArrayForEach025
      * @tc.desc Verify ReadonlyArray values can be iterated with forEach
      * @tc.size MediumTest
@@ -595,7 +599,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0260
      * @tc.name testArrayForEach026
      * @tc.desc Verify forEach returns undefined after visiting transformed values
      * @tc.size MediumTest
@@ -613,7 +617,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0270
      * @tc.name testArrayForEach027
      * @tc.desc Verify forEach is suitable for side effect operations
      * @tc.size MediumTest
@@ -631,7 +635,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0280
      * @tc.name testArrayForEach028
      * @tc.desc Verify forEach can drive repeated logging style work
      * @tc.size MediumTest
@@ -651,7 +655,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0290
      * @tc.name testArrayForEach029
      * @tc.desc Verify forEach side effects can match map transformation results
      * @tc.size MediumTest
@@ -670,7 +674,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0300
      * @tc.name testArrayForEach030
      * @tc.desc Verify forEach can sum the numeric triple 1, 2, 3
      * @tc.size MediumTest
@@ -687,7 +691,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0310
      * @tc.name testArrayForEach031
      * @tc.desc Verify forEach visits indexes in ascending order
      * @tc.size MediumTest
@@ -704,7 +708,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0320
      * @tc.name testArrayForEach032
      * @tc.desc Verify forEach accumulates a numeric sum from a direct array
      * @tc.size MediumTest
@@ -721,7 +725,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0330
      * @tc.name testArrayForEach033
      * @tc.desc Verify forEach can read values from a reversed copy while preserving ascending callback indexes
      * @tc.size MediumTest
@@ -738,7 +742,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0340
      * @tc.name testArrayForEach034
      * @tc.desc Verify forEach exposes the same source array instance to the callback
      * @tc.size MediumTest
@@ -757,7 +761,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0350
      * @tc.name testArrayForEach035
      * @tc.desc Verify forEach can gather string lengths
      * @tc.size MediumTest
@@ -774,7 +778,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0360
      * @tc.name testArrayForEach036
      * @tc.desc Verify forEach can count true booleans
      * @tc.size MediumTest
@@ -793,7 +797,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0370
      * @tc.name testArrayForEach037
      * @tc.desc Verify forEach can concatenate bigint text in visit order
      * @tc.size MediumTest
@@ -810,7 +814,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0380
      * @tc.name testArrayForEach038
      * @tc.desc Verify forEach can iterate over a slice result
      * @tc.size MediumTest
@@ -827,7 +831,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0390
      * @tc.name testArrayForEach039
      * @tc.desc Verify forEach can iterate over a filter result
      * @tc.size MediumTest
@@ -844,7 +848,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0400
      * @tc.name testArrayForEach040
      * @tc.desc Verify forEach can iterate over a concatenated array
      * @tc.size MediumTest
@@ -861,7 +865,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0410
      * @tc.name testArrayForEach041
      * @tc.desc Verify forEach can update object fields by reference
      * @tc.size MediumTest
@@ -882,7 +886,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0420
      * @tc.name testArrayForEach042
      * @tc.desc Verify forEach leaves the source array text unchanged when the callback is pure
      * @tc.size MediumTest
@@ -899,7 +903,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0430
      * @tc.name testArrayForEach043
      * @tc.desc Verify forEach skips the callback for an empty array
      * @tc.size MediumTest
@@ -916,7 +920,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0440
      * @tc.name testArrayForEach044
      * @tc.desc Verify forEach calls the callback once for a single-element array
      * @tc.size MediumTest
@@ -933,7 +937,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0450
      * @tc.name testArrayForEach045
      * @tc.desc Verify forEach can iterate over a toReversed copy
      * @tc.size MediumTest
@@ -952,7 +956,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0460
      * @tc.name testArrayForEach046
      * @tc.desc Verify forEach can iterate over a with replacement copy
      * @tc.size MediumTest
@@ -969,7 +973,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0470
      * @tc.name testArrayForEach047
      * @tc.desc Verify updates to unvisited elements are observed by later callbacks
      * @tc.size MediumTest
@@ -989,7 +993,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0480
      * @tc.name testArrayForEach048
      * @tc.desc Verify shrinking the array length during traversal skips removed later indexes
      * @tc.size MediumTest
@@ -1010,7 +1014,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0490
      * @tc.name testArrayForEach049
      * @tc.desc Verify removing the tail during traversal prevents the removed value from being visited
      * @tc.size MediumTest
@@ -1031,7 +1035,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0500
      * @tc.name testArrayForEach050
      * @tc.desc Verify an exception thrown from the callback stops later visits and propagates
      * @tc.size MediumTest
@@ -1058,7 +1062,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0510
      * @tc.name testArrayForEach051
      * @tc.desc Verify nested forEach calls preserve outer then inner visit order
      * @tc.size MediumTest
@@ -1078,7 +1082,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0520
      * @tc.name testArrayForEach052
      * @tc.desc Verify forEach preserves visit order for a mixed-value union array
      * @tc.size MediumTest
@@ -1095,7 +1099,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0530
      * @tc.name testArrayForEach053
      * @tc.desc Verify forEach can iterate a tuple-typed value collection
      * @tc.size MediumTest
@@ -1113,7 +1117,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0540
      * @tc.name testArrayForEach054
      * @tc.desc Verify forEach can be used inside a generic helper for string arrays
      * @tc.size MediumTest
@@ -1126,7 +1130,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0550
      * @tc.name testArrayForEach055
      * @tc.desc Verify forEach visits undefined elements
      * @tc.size MediumTest
@@ -1143,7 +1147,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0560
      * @tc.name testArrayForEach056
      * @tc.desc Verify forEach visits null elements
      * @tc.size MediumTest
@@ -1160,7 +1164,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0570
      * @tc.name testArrayForEach057
      * @tc.desc Verify forEach visits NaN values without filtering them out
      * @tc.size MediumTest
@@ -1182,7 +1186,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0580
      * @tc.name testArrayForEach058
      * @tc.desc Verify forEach visits empty string elements
      * @tc.size MediumTest
@@ -1199,7 +1203,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0590
      * @tc.name testArrayForEach059
      * @tc.desc Verify forEach can visit function references as values
      * @tc.size MediumTest
@@ -1216,7 +1220,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0600
      * @tc.name testArrayForEach060
      * @tc.desc Verify forEach visits promise references without awaiting them
      * @tc.size MediumTest
@@ -1234,7 +1238,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0610
      * @tc.name testArrayForEach061
      * @tc.desc Verify callback return values are ignored by forEach
      * @tc.size MediumTest
@@ -1253,7 +1257,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0620
      * @tc.name testArrayForEach062
      * @tc.desc Verify returning early only exits the current callback body
      * @tc.size MediumTest
@@ -1273,7 +1277,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0630
      * @tc.name testArrayForEach063
      * @tc.desc Verify modifying an already visited element does not rewrite recorded visits
      * @tc.size MediumTest
@@ -1294,7 +1298,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0640
      * @tc.name testArrayForEach064
      * @tc.desc Verify shrinking array length during traversal stops visits beyond the new tail
      * @tc.size MediumTest
@@ -1314,7 +1318,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0650
      * @tc.name testArrayForEach065
      * @tc.desc Verify replacing a later element with undefined changes the later callback value
      * @tc.size MediumTest
@@ -1334,7 +1338,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0660
      * @tc.name testArrayForEach066
      * @tc.desc Verify rebinding the outer array variable does not affect the active traversal source
      * @tc.size MediumTest
@@ -1360,7 +1364,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0670
      * @tc.name testArrayForEach067
      * @tc.desc Verify multiple forEach calls on the same array are independent
      * @tc.size MediumTest
@@ -1382,7 +1386,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0680
      * @tc.name testArrayForEach068
      * @tc.desc Verify an exception from a nested inner forEach stops the outer traversal
      * @tc.size MediumTest
@@ -1414,7 +1418,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0690
      * @tc.name testArrayForEach069
      * @tc.desc Verify a pure callback leaves the original array identical to a saved snapshot
      * @tc.size MediumTest
@@ -1432,7 +1436,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0700
      * @tc.name testArrayForEach070
      * @tc.desc Verify forEach works on an Array.of result
      * @tc.size MediumTest
@@ -1449,7 +1453,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0710
      * @tc.name testArrayForEach071
      * @tc.desc Verify forEach works on an Array.from result
      * @tc.size MediumTest
@@ -1466,7 +1470,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0720
      * @tc.name testArrayForEach072
      * @tc.desc Verify forEach visits the new order after reverse mutates the array
      * @tc.size MediumTest
@@ -1484,7 +1488,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0730
      * @tc.name testArrayForEach073
      * @tc.desc Verify forEach visits values in sorted order after sort mutates the array
      * @tc.size MediumTest
@@ -1502,7 +1506,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0740
      * @tc.name testArrayForEach074
      * @tc.desc Verify forEach reports the expected value and index for a single-element array
      * @tc.size MediumTest
@@ -1519,7 +1523,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0750
      * @tc.name testArrayForEach075
      * @tc.desc Verify forEach reports both values and indexes for a two-element array
      * @tc.size MediumTest
@@ -1536,7 +1540,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0760
      * @tc.name testArrayForEach076
      * @tc.desc Verify forEach preserves duplicate values and visits each occurrence
      * @tc.size MediumTest
@@ -1555,7 +1559,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0770
      * @tc.name testArrayForEach077
      * @tc.desc Verify forEach preserves order for negative zero and positive values
      * @tc.size MediumTest
@@ -1572,7 +1576,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0780
      * @tc.name testArrayForEach078
      * @tc.desc Verify forEach receives the original object references from the source array
      * @tc.size MediumTest
@@ -1583,19 +1587,18 @@ export default function ArrayForEachTest(): void {
       const first = new ForEachItemA();
       const second = new ForEachItemA();
       const arr = new Array<ForEachItemA>(first, second);
-      let sameRefs = true;
+      let sameRefs = false;
       arr.forEach((value: ForEachItemA, index: int): void => {
         if (index === 0) {
-          sameRefs = sameRefs && value === first;
+          expect(value === first).assertTrue();
         } else {
-          sameRefs = sameRefs && value === second;
+          expect(value === second).assertTrue();
         }
       });
-      expect(sameRefs).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0790
      * @tc.name testArrayForEach079
      * @tc.desc Verify forEach can build index-value text output in visit order
      * @tc.size MediumTest
@@ -1612,7 +1615,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0800
      * @tc.name testArrayForEach080
      * @tc.desc Verify forEach can collect even-number flags in a side-effect array
      * @tc.size MediumTest
@@ -1629,7 +1632,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0810
      * @tc.name testArrayForEach081
      * @tc.desc Verify shift during traversal changes later observed values
      * @tc.size MediumTest
@@ -1650,7 +1653,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0820
      * @tc.name testArrayForEach082
      * @tc.desc Verify unshift during traversal can cause a moved value to be visited again
      * @tc.size MediumTest
@@ -1671,7 +1674,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0830
      * @tc.name testArrayForEach083
      * @tc.desc Verify splice can remove a later element before its callback executes
      * @tc.size MediumTest
@@ -1692,7 +1695,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0840
      * @tc.name testArrayForEach084
      * @tc.desc Verify splice can insert a new element that is later visited within the initial length
      * @tc.size MediumTest
@@ -1713,7 +1716,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0850
      * @tc.name testArrayForEach085
      * @tc.desc Verify changing the current element does not alter the already received callback value
      * @tc.size MediumTest
@@ -1734,7 +1737,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0860
      * @tc.name testArrayForEach086
      * @tc.desc Verify setting length to zero stops all remaining callbacks
      * @tc.size MediumTest
@@ -1755,7 +1758,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0870
      * @tc.name testArrayForEach087
      * @tc.desc Verify pushOne during traversal does not extend the current traversal count
      * @tc.size MediumTest
@@ -1777,7 +1780,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0880
      * @tc.name testArrayForEach088
      * @tc.desc Verify forEach can iterate over a toSorted result
      * @tc.size MediumTest
@@ -1794,7 +1797,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0890
      * @tc.name testArrayForEach089
      * @tc.desc Verify forEach can iterate over a toSpliced result
      * @tc.size MediumTest
@@ -1811,7 +1814,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0900
      * @tc.name testArrayForEach090
      * @tc.desc Verify forEach can iterate over a copyWithin-mutated array
      * @tc.size MediumTest
@@ -1829,7 +1832,7 @@ export default function ArrayForEachTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0910
      * @tc.name testArrayForEach091
      * @tc.desc Verify forEach visits repeated references for every array position
      * @tc.size MediumTest
@@ -1846,6 +1849,210 @@ export default function ArrayForEachTest(): void {
       });
       expect(visits).assertEqual(3);
       expect(item.value).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0920
+     * @tc.name testArrayForEach092
+     * @tc.desc Verify arrays built with T plus [] syntax can call forEach normally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: string[] = ['a', 'b', 'c'];
+      let text = '';
+      arr.forEach((value: string, index: int, source: Array<string>): void => {
+        expect(source.length).assertEqual(3);
+        text += index.toString() + value;
+      });
+      expect(text).assertEqual('0a1b2c');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0930
+     * @tc.name testArrayForEach093
+     * @tc.desc Verify arrays built with Array type plus [] literal syntax can call forEach normally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [2, 4, 6];
+      let total = 0;
+      arr.forEach((value: number, index: int): void => {
+        total += value + index;
+      });
+      expect(total).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0940
+     * @tc.name testArrayForEach094
+     * @tc.desc Verify forEach can visit Array collection objects as element values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first: Array<number> = [1, 2];
+      const second: Array<number> = [3, 4, 5];
+      const arr: Array<Array<number>> = [first, second];
+      let lengths = new Array<number>();
+      let total = 0;
+      arr.forEach((value: Array<number>): void => {
+        lengths.pushOne(value.length);
+        value.forEach((item: number): void => {
+          total += item;
+        });
+      });
+      expect(lengths.toString()).assertEqual('2,3');
+      expect(total).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0950
+     * @tc.name testArrayForEach095
+     * @tc.desc Verify forEach can visit Set collection objects as element values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first = new Set<number>(new Array<number>(1, 2, 2));
+      const second = new Set<number>(new Array<number>(3, 4));
+      const arr: Array<Set<number>> = [first, second];
+      let sizes = new Array<number>();
+      let total = 0;
+      arr.forEach((value: Set<number>): void => {
+        const values = Array.from<number>(value);
+        sizes.pushOne(values.length);
+        values.forEach((item: number): void => {
+          total += item;
+        });
+      });
+      expect(sizes.toString()).assertEqual('2,2');
+      expect(total).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0960
+     * @tc.name testArrayForEach096
+     * @tc.desc Verify forEach can visit Map collection objects as element values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first = new Map<string, number>();
+      first.set('a', 1);
+      first.set('b', 2);
+      const second = new Map<string, number>();
+      second.set('c', 3);
+      const arr: Array<Map<string, number>> = [first, second];
+      let sizes = new Array<number>();
+      let total = 0;
+      arr.forEach((value: Map<string, number>): void => {
+        const values = Array.from<number>(value.values());
+        sizes.pushOne(values.length);
+        values.forEach((item: number): void => {
+          total += item;
+        });
+      });
+      expect(sizes.toString()).assertEqual('2,1');
+      expect(total).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0970
+     * @tc.name testArrayForEach097
+     * @tc.desc Verify forEach can visit Function and arrow-void function object values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arrowExecuted = false;
+      const named: Function = compareNumberAsc;
+      const arrow: () => void = (): void => {
+        arrowExecuted = true;
+      };
+      const arr: Array<Function | (() => void)> = [named, arrow];
+      let count = 0;
+      arr.forEach((value: Function | (() => void), index: int): void => {
+        expect(value instanceof Function).assertTrue();
+        if (index === 1) {
+          (value as () => void)();
+        }
+        count++;
+      });
+      expect(count).assertEqual(2);
+      expect(arrowExecuted).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0980
+     * @tc.name testArrayForEach098
+     * @tc.desc Verify recursive array type aliases can call forEach on nested array values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const child: arrStr = ['b', ['c']];
+      const arr: arrStr = ['a', child];
+      let text = '';
+      let nestedCount = 0;
+      arr.forEach((value: string | arrStr): void => {
+        if (typeof value === 'string') {
+          text += value;
+        } else {
+          nestedCount++;
+          let nested = value as arrStr;
+          nested.forEach((inner: string | arrStr): void => {
+            if (typeof inner === 'string') {
+              text += inner;
+            } else {
+              let deeper = inner as arrStr;
+              expect(deeper.length).assertEqual(1);
+              nestedCount++;
+            }
+          });
+        }
+      });
+      expect(text).assertEqual('ab');
+      expect(nestedCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_0990
+     * @tc.name testArrayForEach099
+     * @tc.desc Verify forEach works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(sumAnyNumberArrayByForEach(anyValue)).assertEqual(6);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOR_EACH_1000
+     * @tc.name testArrayForEach100
+     * @tc.desc Verify forEach supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayForEach100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      let trace = '';
+      anyArr.forEach((_value: Any, index: int): void => {
+        trace += index.toString();
+      });
+      expect(trace).assertEqual('012');
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
   });
 }

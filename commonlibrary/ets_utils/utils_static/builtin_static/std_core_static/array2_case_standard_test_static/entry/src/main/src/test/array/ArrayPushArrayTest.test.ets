@@ -62,6 +62,12 @@ function createLargeNumberArray(size: int): Array<number> {
   return arr;
 }
 
+function pushArrayOnAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  arr.pushArray(3, 4);
+  return arr.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayPushArrayTest(): void {
   describe('ArrayPushArrayTest', (): void => {
     beforeAll((): void => {
@@ -975,10 +981,10 @@ export default function ArrayPushArrayTest(): void {
      */
     it('testArrayPushArray056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
-      const result = arr.pushArray('🌍', '👩‍💻');
+      const result = arr.pushArray('🌍', '👩‍�?);
       expect(result).assertEqual(2);
       expect(arr[0]).assertEqual('🌍');
-      expect(arr[1]).assertEqual('👩‍💻');
+      expect(arr[1]).assertEqual('👩‍�?);
     });
 
     /**
@@ -1202,6 +1208,34 @@ export default function ArrayPushArrayTest(): void {
       const result = arr.pushArray(6, 7);
       expect(result).assertEqual(4);
       expect(arr.toString()).assertEqual('4,5,6,7');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7100
+     * @tc.name testArrayPushArray071
+     * @tc.desc Verify pushArray works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPushArray071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2);
+      expect(pushArrayOnAnyNumberArray(anyValue)).assertEqual('1,2,3,4|4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ARRAY_7200
+     * @tc.name testArrayPushArray072
+     * @tc.desc Verify pushArray supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPushArray072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1);
+      const length = anyArr.pushArray('two', true);
+      expect(length).assertEqual(3);
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
 
   });

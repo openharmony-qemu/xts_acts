@@ -56,6 +56,11 @@ function createLargeStringArray045(size: int): Array<string> {
   return arr;
 }
 
+function joinAnyNumberArray(value: Any, separator: string): string {
+  const arr = value as Array<number>;
+  return arr.join(separator);
+}
+
 export default function ArrayJoinTest(): void {
   describe('ArrayJoinTest', (): void => {
     beforeAll((): void => {
@@ -408,15 +413,15 @@ export default function ArrayJoinTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_0240
      * @tc.name testArrayJoin024
-     * @tc.desc Verify omitted separator uses a comma for number arrays
+     * @tc.desc Verify omitted separator uses a comma between object string representations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayJoin024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<number>(1, 2, 3);
+      let arr = new Array<Item022>(new Item022(), new Item022());
       let result = arr.join();
-      expect(result).assertEqual('1,2,3');
+      expect(result).assertEqual('Item,Item');
     });
 
     /**
@@ -925,9 +930,9 @@ export default function ArrayJoinTest(): void {
      * @tc.level Level 2
      */
     it('testArrayJoin059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('🌍', '👩‍💻');
+      const arr = new Array<string>('🌍', '👩‍�?);
       const result = arr.join('-');
-      expect(result).assertEqual('🌍-👩‍💻');
+      expect(result).assertEqual('🌍-👩‍�?);
     });
 
     /**
@@ -940,7 +945,7 @@ export default function ArrayJoinTest(): void {
      */
     it('testArrayJoin060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b');
-      const result = arr.join('👩‍💻');
+      const result = arr.join('👩‍�?);
       expect(result).assertEqual('a👩‍💻b');
     });
 
@@ -1500,6 +1505,112 @@ export default function ArrayJoinTest(): void {
     it('testArrayJoin101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.of<number>(7, 8, 9);
       expect(arr.join('.')).assertEqual('7.8.9');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1020
+     * @tc.name testArrayJoin102
+     * @tc.desc Verify join preserves Chinese string elements and punctuation separators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('\u4e2d\u6587', '\u6d4b\u8bd5', '\u6570\u7ec4');
+      expect(arr.join('\u3001')).assertEqual('\u4e2d\u6587\u3001\u6d4b\u8bd5\u3001\u6570\u7ec4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1030
+     * @tc.name testArrayJoin103
+     * @tc.desc Verify join preserves string elements containing whitespace and invisible characters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('', ' ', '\t', '\n', '\r', '\u200B');
+      const result = arr.join('|');
+      expect(result).assertEqual('| |\t|\n|\r|\u200B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1040
+     * @tc.name testArrayJoin104
+     * @tc.desc Verify join preserves string elements containing special characters and script-like text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('!@#$%^&*()', '<script>alert(1)</script>', 'line\\ntext');
+      expect(arr.join('~')).assertEqual('!@#$%^&*()~<script>alert(1)</script>~line\\ntext');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1050
+     * @tc.name testArrayJoin105
+     * @tc.desc Verify join preserves business style string formats such as phone email and date text
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('13800138000', 'test@example.com', '2026-03-05');
+      expect(arr.join(',')).assertEqual('13800138000,test@example.com,2026-03-05');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1060
+     * @tc.name testArrayJoin106
+     * @tc.desc Verify join preserves multilingual string elements in source order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('\u65e5\u672c\u8a9e', '\ud55c\uad6d\uc5b4', 'Test\u6df7\u6392');
+      expect(arr.join('/')).assertEqual('\u65e5\u672c\u8a9e/\ud55c\uad6d\uc5b4/Test\u6df7\u6392');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1070
+     * @tc.name testArrayJoin107
+     * @tc.desc Verify join can preserve long string elements without truncation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longText = 'very-long-string-value-for-join-boundary-check';
+      const arr = new Array<string>('prefix', longText, 'suffix');
+      expect(arr.join('|')).assertEqual('prefix|very-long-string-value-for-join-boundary-check|suffix');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1080
+     * @tc.name testArrayJoin108
+     * @tc.desc Verify join works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(joinAnyNumberArray(anyValue, '-')).assertEqual('1-2-3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_JOIN_1090
+     * @tc.name testArrayJoin109
+     * @tc.desc Verify join supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayJoin109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      expect(anyArr.join('|')).assertEqual('1|two|true');
     });
 
   });

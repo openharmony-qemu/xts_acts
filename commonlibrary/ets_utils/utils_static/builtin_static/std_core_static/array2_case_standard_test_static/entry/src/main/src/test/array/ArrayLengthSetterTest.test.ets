@@ -44,6 +44,12 @@ function createSequentialArray(size: int): Array<number> {
   return arr;
 }
 
+function trimAnyNumberArrayByLength(value: Any, target: int): string {
+  const arr = value as Array<number>;
+  arr.length = target;
+  return arr.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayLengthSetterTest(): void {
   describe('ArrayLengthSetterTest', (): void => {
     beforeAll((): void => {
@@ -244,20 +250,17 @@ export default function ArrayLengthSetterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_1200
      * @tc.name testArrayLengthSetter012
-     * @tc.desc Verify assigning a numeric string cast to int causes a runtime cast failure
+     * @tc.desc Verify a binary literal value can be assigned as a new length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayLengthSetter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>(1, 2, 3);
-      let invalid: Object = '2' as Object;
-      try {
-        arr.length = invalid as int;
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
+      let newLen: int = 0b10;
+      arr.length = newLen;
+      expect(arr.length).assertEqual(2);
+      expect(arr[1]).assertEqual(2);
     });
 
     /**
@@ -1124,6 +1127,34 @@ export default function ArrayLengthSetterTest(): void {
       expect(removed).assertEqual(42);
       expect(arr.length).assertEqual(3);
       expect(arr.toString()).assertEqual('21,40,41');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_6500
+     * @tc.name testArrayLengthSetter065
+     * @tc.desc Verify length setter works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLengthSetter065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3, 4);
+      expect(trimAnyNumberArrayByLength(anyValue, 2)).assertEqual('1,2|2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_SETTER_6600
+     * @tc.name testArrayLengthSetter066
+     * @tc.desc Verify length setter supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLengthSetter066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      anyArr.length = 2;
+      expect(anyArr.length).assertEqual(2);
+      expect(anyArr.toString()).assertEqual('1,two');
     });
 
   });

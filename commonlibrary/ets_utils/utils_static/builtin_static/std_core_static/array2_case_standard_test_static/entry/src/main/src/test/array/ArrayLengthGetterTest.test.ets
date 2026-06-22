@@ -46,6 +46,11 @@ class LenItem017 {
   value: number = 0;
 }
 
+function getLengthFromAnyNumberArray(value: Any): int {
+  const arr = value as Array<number>;
+  return arr.length;
+}
+
 export default function ArrayLengthGetterTest(): void {
   describe('ArrayLengthGetterTest', (): void => {
     beforeAll((): void => {
@@ -1579,6 +1584,32 @@ export default function ArrayLengthGetterTest(): void {
       const arr = new Array<number>(1, 2, 3);
       arr.pushArray();
       expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_GETTER_9800
+     * @tc.name testArrayLengthGetter098
+     * @tc.desc Verify length getter works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLengthGetter098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3, 4);
+      expect(getLengthFromAnyNumberArray(anyValue)).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LENGTH_GETTER_9900
+     * @tc.name testArrayLengthGetter099
+     * @tc.desc Verify length getter supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLengthGetter099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      expect(anyArr.length).assertEqual(3);
     });
 
   });

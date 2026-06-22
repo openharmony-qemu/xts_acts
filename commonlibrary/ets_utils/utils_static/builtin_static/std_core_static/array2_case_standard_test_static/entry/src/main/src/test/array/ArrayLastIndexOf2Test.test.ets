@@ -40,6 +40,11 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function lastIndexOfInAnyNumberArrayTwo(value: Any, target: number, fromIndex: int): int {
+  const arr = value as Array<number>;
+  return arr.lastIndexOf(target, fromIndex);
+}
+
 export default function ArrayLastIndexOf2Test(): void {
   describe('ArrayLastIndexOf2Test', (): void => {
     beforeAll((): void => {
@@ -1208,6 +1213,34 @@ export default function ArrayLastIndexOf2Test(): void {
       arr[1] = undefined;
       const result = arr.lastIndexOf(undefined);
       expect(result).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_TWO_8100
+     * @tc.name testArrayLastIndexOfTwo081
+     * @tc.desc Verify lastIndexOf with fromIndex works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLastIndexOfTwo081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 1);
+      expect(lastIndexOfInAnyNumberArrayTwo(anyValue, 1, 1)).assertEqual(0);
+      expect(lastIndexOfInAnyNumberArrayTwo(anyValue, 9, 2)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_LAST_INDEX_OF_TWO_8200
+     * @tc.name testArrayLastIndexOfTwo082
+     * @tc.desc Verify lastIndexOf with fromIndex supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayLastIndexOfTwo082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true, 'two');
+      expect(anyArr.lastIndexOf('two', 2)).assertEqual(1);
+      expect(anyArr.lastIndexOf(1, 0)).assertEqual(0);
     });
 
   });

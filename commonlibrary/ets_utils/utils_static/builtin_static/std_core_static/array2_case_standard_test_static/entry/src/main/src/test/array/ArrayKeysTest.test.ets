@@ -60,6 +60,11 @@ function assertSequentialKeys(iterator: IterableIterator<int>, expectedLength: i
   expect(completed.value).assertUndefined();
 }
 
+function keysFromAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  return collectKeys(arr.keys()).toString();
+}
+
 function createLargeIntArray(size: int): Array<int> {
   let arr = new Array<int>();
   for (let i: int = 0; i < size; i++) {
@@ -371,7 +376,7 @@ export default function ArrayKeysTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_1700
      * @tc.name testArrayKeys017
-     * @tc.desc Verify keys iteration includes every index in a dense array with explicit undefined values
+     * @tc.desc Verify explicit undefined values do not affect manual next progression of keys iterators
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -380,11 +385,11 @@ export default function ArrayKeysTest(): void {
       let arr = new Array<int | undefined>(3, (_index) => undefined);
       arr[0] = 10;
       arr[2] = 30;
-      let keys = collectKeys(arr.keys());
-      expect(keys.length).assertEqual(3);
-      expect(keys[0]).assertEqual(0);
-      expect(keys[1]).assertEqual(1);
-      expect(keys[2]).assertEqual(2);
+      let iterator = arr.keys();
+      expect(iterator.next().value).assertEqual(0);
+      expect(iterator.next().value).assertEqual(1);
+      expect(iterator.next().value).assertEqual(2);
+      expect(iterator.next().done).assertTrue();
     });
 
     /**
@@ -1692,6 +1697,34 @@ export default function ArrayKeysTest(): void {
       const objectKeys = Object.keys(arr);
       expect(keys.toString()).assertEqual('0,1,2,3');
       expect(objectKeys.toString()).assertEqual('0,1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_9700
+     * @tc.name testArrayKeys097
+     * @tc.desc Verify keys works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayKeys097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(keysFromAnyNumberArray(anyValue)).assertEqual('0,1,2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_KEYS_9800
+     * @tc.name testArrayKeys098
+     * @tc.desc Verify keys supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayKeys098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const keys = collectKeys(anyArr.keys());
+      expect(keys.toString()).assertEqual('0,1,2');
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
 
   });

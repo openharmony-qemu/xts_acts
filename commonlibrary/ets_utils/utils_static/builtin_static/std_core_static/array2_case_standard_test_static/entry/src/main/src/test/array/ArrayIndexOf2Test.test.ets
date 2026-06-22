@@ -40,6 +40,11 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function indexOfInAnyNumberArrayTwo(value: Any, target: number, fromIndex: int): int {
+  const arr = value as Array<number>;
+  return arr.indexOf(target, fromIndex);
+}
+
 export default function ArrayIndexOf2Test(): void {
   describe('ArrayIndexOf2Test', (): void => {
     beforeAll((): void => {
@@ -806,7 +811,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('🌍', '👩‍💻');
+      const arr = new Array<string>('🌍', '👩‍�?);
       expect(arr.indexOf('🌍')).assertEqual(0);
     });
 
@@ -819,7 +824,7 @@ export default function ArrayIndexOf2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayIndexOfTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('👩‍💻');
+      const arr = new Array<string>('👩‍�?);
       expect(arr.indexOf('👩')).assertEqual(-1);
     });
 
@@ -860,6 +865,34 @@ export default function ArrayIndexOf2Test(): void {
     it('testArrayIndexOfTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b');
       expect(arr.indexOf('B'.toLowerCase())).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_TWO_5700
+     * @tc.name testArrayIndexOfTwo057
+     * @tc.desc Verify indexOf with fromIndex works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIndexOfTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 1);
+      expect(indexOfInAnyNumberArrayTwo(anyValue, 1, 1)).assertEqual(2);
+      expect(indexOfInAnyNumberArrayTwo(anyValue, 3, 0)).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INDEX_OF_TWO_5800
+     * @tc.name testArrayIndexOfTwo058
+     * @tc.desc Verify indexOf with fromIndex supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIndexOfTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true, 'two');
+      expect(anyArr.indexOf('two', 2)).assertEqual(3);
+      expect(anyArr.indexOf(1, 1)).assertEqual(-1);
     });
 
   });

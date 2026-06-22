@@ -78,6 +78,12 @@ function createLargeNumberArray(size: int): Array<number> {
   return arr;
 }
 
+function pushOneOnAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  arr.pushOne(3);
+  return arr.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayPushOneTest(): void {
   describe('ArrayPushOneTest', (): void => {
     beforeAll((): void => {
@@ -379,7 +385,7 @@ export default function ArrayPushOneTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_1900
      * @tc.name testArrayPushOne019
-     * @tc.desc Verify pushing into an empty array returns length one
+     * @tc.desc Verify the first pushOne on an empty array creates a single readable tail element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -388,7 +394,8 @@ export default function ArrayPushOneTest(): void {
       let arr = new Array<number>();
       let result = arr.pushOne(100);
       expect(result).assertEqual(1);
-      expect(arr[0]).assertEqual(100);
+      expect(arr[result - 1]).assertEqual(100);
+      expect(arr.join()).assertEqual('100');
     });
 
     /**
@@ -1135,6 +1142,34 @@ export default function ArrayPushOneTest(): void {
       const result = arr.pushOne(3);
       expect(result).assertEqual(3);
       expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6500
+     * @tc.name testArrayPushOne065
+     * @tc.desc Verify pushOne works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPushOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2);
+      expect(pushOneOnAnyNumberArray(anyValue)).assertEqual('1,2,3|3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_ONE_6600
+     * @tc.name testArrayPushOne066
+     * @tc.desc Verify pushOne supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPushOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two');
+      const length = anyArr.pushOne(true);
+      expect(length).assertEqual(3);
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
   });
 }

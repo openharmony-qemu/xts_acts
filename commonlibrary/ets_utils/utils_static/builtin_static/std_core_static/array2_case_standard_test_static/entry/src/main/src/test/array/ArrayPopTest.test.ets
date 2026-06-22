@@ -53,6 +53,15 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function popAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  const removed = arr.pop();
+  if (removed == undefined) {
+    return 'undefined|' + arr.length.toString();
+  }
+  return removed.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayPopTest(): void {
   describe('ArrayPopTest', (): void => {
     beforeAll((): void => {
@@ -366,14 +375,13 @@ export default function ArrayPopTest(): void {
      */
     it('testArrayPop019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<number>();
-      let caught = false;
       try {
         let result = arr.pop();
         expect(result).assertUndefined();
-      } catch (error) {
-        caught = error instanceof Error;
+        expect(arr.length).assertEqual(0);
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
       }
-      expect(caught).assertFalse();
     });
 
     /**
@@ -1629,6 +1637,34 @@ export default function ArrayPopTest(): void {
       const arr = new Array<number>(4, 5, 6);
       arr.pop();
       expect(arr[arr.length - 1]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_POP_1010
+     * @tc.name testArrayPop101
+     * @tc.desc Verify pop works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPop101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(popAnyNumberArray(anyValue)).assertEqual('3|2');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_POP_1020
+     * @tc.name testArrayPop102
+     * @tc.desc Verify pop supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPop102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const removed = anyArr.pop();
+      expect(removed == true).assertTrue();
+      expect(anyArr.toString()).assertEqual('1,two');
     });
 
   });

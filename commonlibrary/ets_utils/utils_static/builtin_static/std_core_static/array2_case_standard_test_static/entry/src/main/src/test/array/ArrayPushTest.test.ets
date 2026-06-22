@@ -62,6 +62,12 @@ function createLargePushArray(size: int): Array<number> {
   return arr;
 }
 
+function pushOnAnyNumberArray(value: Any): string {
+  const arr = value as Array<number>;
+  arr.push(3, 4);
+  return arr.toString() + '|' + arr.length.toString();
+}
+
 export default function ArrayPushTest(): void {
   describe('ArrayPushTest', (): void => {
     beforeAll((): void => {
@@ -1003,6 +1009,34 @@ export default function ArrayPushTest(): void {
       const result = arr.push(3);
       expect(result).assertEqual(3);
       expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_5900
+     * @tc.name testArrayPush059
+     * @tc.desc Verify push works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPush059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2);
+      expect(pushOnAnyNumberArray(anyValue)).assertEqual('1,2,3,4|4');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_PUSH_6000
+     * @tc.name testArrayPush060
+     * @tc.desc Verify push supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayPush060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1);
+      const length = anyArr.push('two', true);
+      expect(length).assertEqual(3);
+      expect(anyArr.toString()).assertEqual('1,two,true');
     });
   });
 }

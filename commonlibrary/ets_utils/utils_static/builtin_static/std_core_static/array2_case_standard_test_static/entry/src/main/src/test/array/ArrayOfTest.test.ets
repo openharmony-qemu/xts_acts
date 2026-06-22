@@ -804,13 +804,13 @@ export default function ArrayOfTest(): void {
      * @tc.level Level 2
      */
     it('testArrayOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '娴ｇ姴銈芥稉鏍櫕');
+      let arr = Array.of<string>('', 'a', 'long-string-value', '\u0000', '娴ｇ姴銈芥稉鏍�?);
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual('');
       expect(arr[1]).assertEqual('a');
       expect(arr[2]).assertEqual('long-string-value');
       expect(arr[3]).assertEqual('\u0000');
-      expect(arr[4]).assertEqual('娴ｇ姴銈芥稉鏍櫕');
+      expect(arr[4]).assertEqual('娴ｇ姴銈芥稉鏍�?);
     });
 
     /**
@@ -1317,6 +1317,35 @@ export default function ArrayOfTest(): void {
       expect(arr[1]).assertEqual('a');
       expect(arr[2]).assertFalse();
       expect(arr[3]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_OF_8400
+     * @tc.name testArrayOf084
+     * @tc.desc Verify Array.of can accept a direct Any value as an element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayOf084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = 5;
+      const result = Array.of<Any>(anyValue);
+      expect(result.length).assertEqual(1);
+      expect(result.toString()).assertEqual('5');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_OF_8500
+     * @tc.name testArrayOf085
+     * @tc.desc Verify Array.of supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayOf085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result = Array.of<Any>(1, 'two', true);
+      expect(result.length).assertEqual(3);
+      expect(result.toString()).assertEqual('1,two,true');
     });
 
   });

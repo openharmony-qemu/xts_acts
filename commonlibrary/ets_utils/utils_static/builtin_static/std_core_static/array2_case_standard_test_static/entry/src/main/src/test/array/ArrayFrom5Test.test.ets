@@ -83,6 +83,9 @@ export default function ArrayFrom5Test(): void {
   const invokeArrayFromFixedArray = (source: Any): Array<int> => {
     return Array.from<int>(source as FixedArray<int>);
   };
+  const invokeArrayFromNumberArray = (source: Any): Array<number> => {
+    return Array.from<number>(source as Array<number>);
+  };
 
   describe('ArrayFrom5Test', (): void => {
     beforeAll((): void => {
@@ -1338,6 +1341,36 @@ export default function ArrayFrom5Test(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_7900
+     * @tc.name testArrayFromFive079
+     * @tc.desc Verify Array.from works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayFromFive079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      const result = invokeArrayFromNumberArray(anyValue);
+      expect(result.toString()).assertEqual('1,2,3');
+      expect(result.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FROM_FIVE_8000
+     * @tc.name testArrayFromFive080
+     * @tc.desc Verify Array.from supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayFromFive080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const result = Array.from<Any>(anyArr);
+      expect(result.toString()).assertEqual('1,two,true');
+      expect(result.length).assertEqual(3);
     });
 
   });

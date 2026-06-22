@@ -46,6 +46,11 @@ function createRangeArray(size: int): Array<number> {
   return arr;
 }
 
+function includesInAnyNumberArray(value: Any, target: number): boolean {
+  const arr = value as Array<number>;
+  return arr.includes(target);
+}
+
 export default function ArrayIncludesTest(): void {
   describe('ArrayIncludesTest', (): void => {
     beforeAll((): void => {
@@ -1655,6 +1660,34 @@ export default function ArrayIncludesTest(): void {
       arr.push(3, 6, 9);
       expect(arr.includes(6)).assertTrue();
       expect(arr.includes(1)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1080
+     * @tc.name testArrayIncludes108
+     * @tc.desc Verify includes works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIncludes108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(includesInAnyNumberArray(anyValue, 2)).assertTrue();
+      expect(includesInAnyNumberArray(anyValue, 9)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INCLUDES_1090
+     * @tc.name testArrayIncludes109
+     * @tc.desc Verify includes supports arrays whose element type is Any
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayIncludes109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      expect(anyArr.includes('two')).assertTrue();
+      expect(anyArr.includes(false)).assertFalse();
     });
 
   });

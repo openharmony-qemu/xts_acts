@@ -60,6 +60,11 @@ function createLargeNumberArray(size: int): Array<number> {
   return arr;
 }
 
+function mapNumberArrayFromAny(value: Any): string {
+  const arr = value as Array<number>;
+  return arr.map((item: number): number => item * 10).toString();
+}
+
 export default function ArrayMapTest(): void {
   describe('ArrayMapTest', (): void => {
     beforeAll((): void => {
@@ -76,7 +81,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0010
      * @tc.name testArrayMap001
      * @tc.desc Verify map accepts a required callback parameter
      * @tc.size MediumTest
@@ -92,7 +97,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0020
      * @tc.name testArrayMap002
      * @tc.desc Verify map accepts a callback with value index and array parameters
      * @tc.size MediumTest
@@ -109,7 +114,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0030
      * @tc.name testArrayMap003
      * @tc.desc Verify map applies a valid arrow callback to every element
      * @tc.size MediumTest
@@ -123,7 +128,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0040
      * @tc.name testArrayMap004
      * @tc.desc Verify the callback receives the current element value
      * @tc.size MediumTest
@@ -140,7 +145,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0050
      * @tc.name testArrayMap005
      * @tc.desc Verify the callback receives the current int index
      * @tc.size MediumTest
@@ -157,7 +162,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0060
      * @tc.name testArrayMap006
      * @tc.desc Verify the callback receives the original array reference
      * @tc.size MediumTest
@@ -174,7 +179,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0070
      * @tc.name testArrayMap007
      * @tc.desc Verify the callback parameter order is value index and array
      * @tc.size MediumTest
@@ -193,7 +198,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0080
      * @tc.name testArrayMap008
      * @tc.desc Verify map returns a new array instance
      * @tc.size MediumTest
@@ -208,7 +213,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0090
      * @tc.name testArrayMap009
      * @tc.desc Verify map does not modify the original array
      * @tc.size MediumTest
@@ -223,7 +228,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0100
      * @tc.name testArrayMap010
      * @tc.desc Verify map returns transformed values in the new array
      * @tc.size MediumTest
@@ -240,7 +245,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0110
      * @tc.name testArrayMap011
      * @tc.desc Verify map can return an array with a different element type
      * @tc.size MediumTest
@@ -255,7 +260,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0120
      * @tc.name testArrayMap012
      * @tc.desc Verify map returns an empty array for an empty source array
      * @tc.size MediumTest
@@ -269,7 +274,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0130
      * @tc.name testArrayMap013
      * @tc.desc Verify map works with a single element array
      * @tc.size MediumTest
@@ -284,7 +289,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0140
      * @tc.name testArrayMap014
      * @tc.desc Verify map handles large arrays
      * @tc.size MediumTest
@@ -300,7 +305,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0150
      * @tc.name testArrayMap015
      * @tc.desc Verify map can return undefined values
      * @tc.size MediumTest
@@ -315,7 +320,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0160
      * @tc.name testArrayMap016
      * @tc.desc Verify map can return null values
      * @tc.size MediumTest
@@ -330,7 +335,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0170
      * @tc.name testArrayMap017
      * @tc.desc Verify map transforms number arrays
      * @tc.size MediumTest
@@ -344,7 +349,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0180
      * @tc.name testArrayMap018
      * @tc.desc Verify map transforms string arrays
      * @tc.size MediumTest
@@ -358,7 +363,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0190
      * @tc.name testArrayMap019
      * @tc.desc Verify map transforms boolean arrays
      * @tc.size MediumTest
@@ -372,7 +377,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0200
      * @tc.name testArrayMap020
      * @tc.desc Verify map transforms object arrays into new objects
      * @tc.size MediumTest
@@ -395,7 +400,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0210
      * @tc.name testArrayMap021
      * @tc.desc Verify map can convert number arrays into string arrays
      * @tc.size MediumTest
@@ -410,7 +415,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0220
      * @tc.name testArrayMap022
      * @tc.desc Verify map supports a named callback variable without function expressions
      * @tc.size MediumTest
@@ -427,7 +432,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0230
      * @tc.name testArrayMap023
      * @tc.desc Verify map callbacks can use the index parameter
      * @tc.size MediumTest
@@ -441,7 +446,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0240
      * @tc.name testArrayMap024
      * @tc.desc Verify map callbacks can use the array parameter
      * @tc.size MediumTest
@@ -455,7 +460,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0250
      * @tc.name testArrayMap025
      * @tc.desc Verify map callbacks can contain branch logic
      * @tc.size MediumTest
@@ -474,7 +479,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0260
      * @tc.name testArrayMap026
      * @tc.desc Verify the source array remains unchanged after map completes
      * @tc.size MediumTest
@@ -491,7 +496,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0270
      * @tc.name testArrayMap027
      * @tc.desc Verify the returned array is independent from the source array
      * @tc.size MediumTest
@@ -506,7 +511,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0280
      * @tc.name testArrayMap028
      * @tc.desc Verify each map call returns a distinct new array
      * @tc.size MediumTest
@@ -522,7 +527,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0290
      * @tc.name testArrayMap029
      * @tc.desc Verify mutating the source array in the callback does not extend current map traversal
      * @tc.size MediumTest
@@ -542,7 +547,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0300
      * @tc.name testArrayMap030
      * @tc.desc Verify map can be used for basic data conversion
      * @tc.size MediumTest
@@ -556,7 +561,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0310
      * @tc.name testArrayMap031
      * @tc.desc Verify map supports repeated math transformations
      * @tc.size MediumTest
@@ -572,7 +577,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0320
      * @tc.name testArrayMap032
      * @tc.desc Verify map can extract multiple properties from object arrays
      * @tc.size MediumTest
@@ -594,7 +599,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0330
      * @tc.name testArrayMap033
      * @tc.desc Verify map can participate in filter map slice chains
      * @tc.size MediumTest
@@ -610,7 +615,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0340
      * @tc.name testArrayMap034
      * @tc.desc Verify same type mappings preserve number results
      * @tc.size MediumTest
@@ -624,7 +629,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0350
      * @tc.name testArrayMap035
      * @tc.desc Verify map supports multiple output types from the same numeric source array
      * @tc.size MediumTest
@@ -640,7 +645,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0360
      * @tc.name testArrayMap036
      * @tc.desc Verify map supports complex object results
      * @tc.size MediumTest
@@ -662,7 +667,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0370
      * @tc.name testArrayMap037
      * @tc.desc Verify map handles large array transformations efficiently
      * @tc.size MediumTest
@@ -677,7 +682,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0380
      * @tc.name testArrayMap038
      * @tc.desc Verify map allocates a new array rather than reusing the original reference
      * @tc.size MediumTest
@@ -693,7 +698,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0390
      * @tc.name testArrayMap039
      * @tc.desc Verify map works after filter in a method chain
      * @tc.size MediumTest
@@ -708,7 +713,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0400
      * @tc.name testArrayMap040
      * @tc.desc Verify reduce can consume map results
      * @tc.size MediumTest
@@ -723,7 +728,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0410
      * @tc.name testArrayMap041
      * @tc.desc Verify sort can consume mapped values
      * @tc.size MediumTest
@@ -746,7 +751,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0420
      * @tc.name testArrayMap042
      * @tc.desc Verify slice can consume mapped values
      * @tc.size MediumTest
@@ -760,7 +765,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0430
      * @tc.name testArrayMap043
      * @tc.desc Verify map supports longer chains with multiple array methods
      * @tc.size MediumTest
@@ -777,7 +782,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0440
      * @tc.name testArrayMap044
      * @tc.desc Verify callback exceptions are propagated by map
      * @tc.size MediumTest
@@ -804,7 +809,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0450
      * @tc.name testArrayMap045
      * @tc.desc Verify map preserves explicit undefined values in dense arrays
      * @tc.size MediumTest
@@ -825,7 +830,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0460
      * @tc.name testArrayMap046
      * @tc.desc Verify map visits explicit undefined elements and preserves the result length
      * @tc.size MediumTest
@@ -854,7 +859,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0470
      * @tc.name testArrayMap047
      * @tc.desc Verify explicitly typed result arrays can receive mapped string values
      * @tc.size MediumTest
@@ -868,7 +873,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0480
      * @tc.name testArrayMap048
      * @tc.desc Verify callback return values determine the numeric result type
      * @tc.size MediumTest
@@ -884,7 +889,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0490
      * @tc.name testArrayMap049
      * @tc.desc Verify map can format data for output
      * @tc.size MediumTest
@@ -898,7 +903,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0500
      * @tc.name testArrayMap050
      * @tc.desc Verify map supports batch calculations across all elements
      * @tc.size MediumTest
@@ -914,7 +919,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0510
      * @tc.name testArrayMap051
      * @tc.desc Verify map can extract fields from complex data
      * @tc.size MediumTest
@@ -936,7 +941,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0520
      * @tc.name testArrayMap052
      * @tc.desc Verify map can validate and convert text values
      * @tc.size MediumTest
@@ -953,7 +958,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0530
      * @tc.name testArrayMap053
      * @tc.desc Verify map returns a new array while forEach does not
      * @tc.size MediumTest
@@ -973,7 +978,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0540
      * @tc.name testArrayMap054
      * @tc.desc Verify map is preferable for transformations while forEach is suitable for side effects
      * @tc.size MediumTest
@@ -992,7 +997,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0550
      * @tc.name testArrayMap055
      * @tc.desc Verify map can combine values from multiple arrays by using the index
      * @tc.size MediumTest
@@ -1007,7 +1012,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0560
      * @tc.name testArrayMap056
      * @tc.desc Verify map can apply conditional transformations
      * @tc.size MediumTest
@@ -1026,7 +1031,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0570
      * @tc.name testArrayMap057
      * @tc.desc Verify map callbacks can capture external state
      * @tc.size MediumTest
@@ -1041,7 +1046,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0580
      * @tc.name testArrayMap058
      * @tc.desc Verify map can use dynamically generated callbacks
      * @tc.size MediumTest
@@ -1057,7 +1062,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0590
      * @tc.name testArrayMap059
      * @tc.desc Verify map can return stringified numeric values through the built-in String callback
      * @tc.size MediumTest
@@ -1071,7 +1076,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0600
      * @tc.name testArrayMap060
      * @tc.desc Verify map can coerce numeric values through the built-in Number callback
      * @tc.size MediumTest
@@ -1085,7 +1090,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0610
      * @tc.name testArrayMap061
      * @tc.desc Verify map can coerce numeric values through the built-in Boolean callback
      * @tc.size MediumTest
@@ -1099,7 +1104,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0620
      * @tc.name testArrayMap062
      * @tc.desc Verify map exposes all three callback arguments to classic functions
      * @tc.size MediumTest
@@ -1115,7 +1120,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0630
      * @tc.name testArrayMap063
      * @tc.desc Verify map can return object literals from arrow callbacks
      * @tc.size MediumTest
@@ -1134,7 +1139,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0640
      * @tc.name testArrayMap064
      * @tc.desc Verify map can wrap each element into a nested array
      * @tc.size MediumTest
@@ -1150,7 +1155,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0650
      * @tc.name testArrayMap065
      * @tc.desc Verify parseFloat ignores the extra callback arguments passed by map
      * @tc.size MediumTest
@@ -1164,7 +1169,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0660
      * @tc.name testArrayMap066
      * @tc.desc Verify parseInt receives the index as radix when passed directly as the callback
      * @tc.size MediumTest
@@ -1180,7 +1185,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0670
      * @tc.name testArrayMap067
      * @tc.desc Verify parseInt can produce mixed numeric and NaN results because the index becomes the radix
      * @tc.size MediumTest
@@ -1196,7 +1201,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0680
      * @tc.name testArrayMap068
      * @tc.desc Verify map can update not-yet-visited elements and observe the new value later in traversal
      * @tc.size MediumTest
@@ -1215,7 +1220,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0690
      * @tc.name testArrayMap069
      * @tc.desc Verify map does not revisit already-processed elements when earlier slots are modified
      * @tc.size MediumTest
@@ -1235,7 +1240,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0700
      * @tc.name testArrayMap070
      * @tc.desc Verify map can return the original object references unchanged
      * @tc.size MediumTest
@@ -1251,7 +1256,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0710
      * @tc.name testArrayMap071
      * @tc.desc Verify map can create fresh object references for every element
      * @tc.size MediumTest
@@ -1272,7 +1277,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0720
      * @tc.name testArrayMap072
      * @tc.desc Verify map can return closures that capture each iteration value independently
      * @tc.size MediumTest
@@ -1290,7 +1295,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0730
      * @tc.name testArrayMap073
      * @tc.desc Verify map can return NaN values without failing the iteration
      * @tc.size MediumTest
@@ -1304,7 +1309,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0740
      * @tc.name testArrayMap074
      * @tc.desc Verify map preserves negative zero when the callback returns the original numeric value
      * @tc.size MediumTest
@@ -1318,7 +1323,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0750
      * @tc.name testArrayMap075
      * @tc.desc Verify map can transform nested arrays through an inner map call
      * @tc.size MediumTest
@@ -1334,7 +1339,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0760
      * @tc.name testArrayMap076
      * @tc.desc Verify map can return Promise objects as ordinary mapped values
      * @tc.size MediumTest
@@ -1350,7 +1355,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0770
      * @tc.name testArrayMap077
      * @tc.desc Verify map can transform bigint arrays with bigint arithmetic
      * @tc.size MediumTest
@@ -1365,7 +1370,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0780
      * @tc.name testArrayMap078
      * @tc.desc Verify map preserves string values that look like symbol text
      * @tc.size MediumTest
@@ -1379,7 +1384,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0790
      * @tc.name testArrayMap079
      * @tc.desc Verify map can derive string lengths through a property access callback
      * @tc.size MediumTest
@@ -1393,7 +1398,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0800
      * @tc.name testArrayMap080
      * @tc.desc Verify map can convert nullable objects into booleans through logical coercion
      * @tc.size MediumTest
@@ -1407,7 +1412,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0810
      * @tc.name testArrayMap081
      * @tc.desc Verify map callback exceptions stop later elements from being processed
      * @tc.size MediumTest
@@ -1434,7 +1439,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0820
      * @tc.name testArrayMap082
      * @tc.desc Verify map can preserve explicit undefined values while still invoking the callback
      * @tc.size MediumTest
@@ -1448,7 +1453,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0830
      * @tc.name testArrayMap083
      * @tc.desc Verify map can process explicit null values through the callback
      * @tc.size MediumTest
@@ -1462,7 +1467,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0840
      * @tc.name testArrayMap084
      * @tc.desc Verify map can compose parseInt safely when the radix is fixed inside a closure
      * @tc.size MediumTest
@@ -1476,7 +1481,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0850
      * @tc.name testArrayMap085
      * @tc.desc Verify map can read the first source element from the array callback parameter
      * @tc.size MediumTest
@@ -1490,7 +1495,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0860
      * @tc.name testArrayMap086
      * @tc.desc Verify map can return a constant boolean for every element
      * @tc.size MediumTest
@@ -1504,7 +1509,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0870
      * @tc.name testArrayMap087
      * @tc.desc Verify map can keep the identity transform on a single-element array
      * @tc.size MediumTest
@@ -1518,7 +1523,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0880
      * @tc.name testArrayMap088
      * @tc.desc Verify map can build a new array of arrays without flattening the structure
      * @tc.size MediumTest
@@ -1534,7 +1539,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0890
      * @tc.name testArrayMap089
      * @tc.desc Verify map can read string lengths while preserving the source strings
      * @tc.size MediumTest
@@ -1549,7 +1554,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0900
      * @tc.name testArrayMap090
      * @tc.desc Verify map can transform booleans into descriptive text values
      * @tc.size MediumTest
@@ -1563,7 +1568,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0910
      * @tc.name testArrayMap091
      * @tc.desc Verify map can stringify bigint values without losing iteration order
      * @tc.size MediumTest
@@ -1577,7 +1582,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0920
      * @tc.name testArrayMap092
      * @tc.desc Verify map can convert every value to undefined explicitly
      * @tc.size MediumTest
@@ -1593,7 +1598,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0930
      * @tc.name testArrayMap093
      * @tc.desc Verify map can convert every value to null explicitly
      * @tc.size MediumTest
@@ -1609,7 +1614,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0940
      * @tc.name testArrayMap094
      * @tc.desc Verify map can keep array length aligned with object extraction results
      * @tc.size MediumTest
@@ -1630,7 +1635,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0950
      * @tc.name testArrayMap095
      * @tc.desc Verify map can use a branch that omits an explicit value on one side and returns undefined there
      * @tc.size MediumTest
@@ -1650,7 +1655,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0960
      * @tc.name testArrayMap096
      * @tc.desc Verify map can transform all values to the same object reference when the callback returns a shared object
      * @tc.size MediumTest
@@ -1667,7 +1672,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0970
      * @tc.name testArrayMap097
      * @tc.desc Verify map can create distinct object wrappers for each element
      * @tc.size MediumTest
@@ -1687,7 +1692,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0980
      * @tc.name testArrayMap098
      * @tc.desc Verify map can return a stable array length when the callback appends to the source during traversal
      * @tc.size MediumTest
@@ -1707,7 +1712,7 @@ export default function ArrayMapTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_0990
      * @tc.name testArrayMap099
      * @tc.desc Verify map can still return the original prefix when callback mutates the source length by pushing
      * @tc.size MediumTest
@@ -1724,6 +1729,49 @@ export default function ArrayMapTest(): void {
       });
       expect(result.toString()).assertEqual('1,2,3');
       expect(arr.toString()).assertEqual('1,2,3,4,5');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1000
+     * @tc.name testArrayMap100
+     * @tc.desc Verify map supports consecutive chained calls that keep producing new arrays
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayMap100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3);
+      const result = arr.map((value: number): number => value * 2).map((value: number): number => value + 1);
+      expect(result.toString()).assertEqual('3,5,7');
+      expect(arr.toString()).assertEqual('1,2,3');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1010
+     * @tc.name testArrayMap101
+     * @tc.desc Verify map works after narrowing an Any value back to Array<number>
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayMap101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyValue: Any = new Array<number>(1, 2, 3);
+      expect(mapNumberArrayFromAny(anyValue)).assertEqual('10,20,30');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_1020
+     * @tc.name testArrayMap102
+     * @tc.desc Verify Array<Any> values can preserve mixed elements during map-related handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayMap102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const anyArr = new Array<Any>(1, 'two', true);
+      const result = anyArr.map((_: Any, index: int, source: Array<Any>): Any => source[index]);
+      expect(result.length).assertEqual(3);
+      expect(result.toString()).assertEqual('1,two,true');
     });
 
   });
