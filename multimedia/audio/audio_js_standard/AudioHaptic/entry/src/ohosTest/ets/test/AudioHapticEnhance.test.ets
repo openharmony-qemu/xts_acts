@@ -107,6 +107,7 @@ async function RegisterSource() {
 export default function AudioHapticTest() {
   describe('AudioHapticEnhanceTest', () => {
     let tag = 'AudioHapticEnhanceTest';
+    let isSupportHaptic: boolean;
     let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
 
     let driveFn = async () => {
@@ -131,6 +132,18 @@ export default function AudioHapticTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      isSupportHaptic = await fs.access('/system/resource/media/sound/').then((res: boolean) => {
+        if (res) {
+          console.log('file exists');
+          return true;
+        } else {
+          console.log('file not exists');
+          return false;
+        }
+      }).catch((err: BusinessError) => {
+        console.error('access failed with error massage: ' + err.message + ',error code: ' + err.code);
+        return false;
+      })
       console.log(`beforeall come in`);
     })
     beforeEach(() => {
@@ -254,6 +267,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
 
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
@@ -370,6 +388,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let errorType: ESObject = 3;
@@ -434,6 +457,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let errorType: ESObject = 3;
@@ -495,6 +523,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
@@ -613,6 +646,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let errorType: ESObject = 3;
@@ -677,6 +715,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let errorType: ESObject = 3;
@@ -738,6 +781,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
@@ -856,6 +904,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let errorType: ESObject = 3;
@@ -917,6 +970,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
@@ -1095,6 +1153,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.PHOTO_SHUTTER;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1148,6 +1211,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
@@ -1207,6 +1275,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_END;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1260,6 +1333,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
@@ -1326,6 +1404,11 @@ export default function AudioHapticTest() {
           done();
           return;
         }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
+          done();
+          return;
+        }
         let systemSoundPlayer: systemSoundManager.SystemSoundPlayer | null = null;
         let systemSoundType: systemSoundManager.SystemSoundType = systemSoundManager.SystemSoundType.VIDEO_RECORDING_BEGIN;
         let data = await systemSoundManager.createSystemSoundPlayer();
@@ -1386,6 +1469,11 @@ export default function AudioHapticTest() {
           flag = true;
         }
         if (flag){
+          done();
+          return;
+        }
+        if (!isSupportHaptic) {
+          console.log('file not exists');
           done();
           return;
         }
