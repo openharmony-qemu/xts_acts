@@ -32,6 +32,7 @@
     "MainAbility/pages/orphanCharOptimization/orphanCharOptimization",
     "MainAbility/pages/orphanCharOptimization/orphanCharOptimization_undefined",
     "MainAbility/pages/hoveredAttribute/HoveredAttributeTestPage",
-    "MainAbility/pages/enableEventPassthrough/EnableEventPassthroughPage"
+    "MainAbility/pages/enableEventPassthrough/EnableEventPassthroughPage",
+    "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith_undefined"
   ]
 }
