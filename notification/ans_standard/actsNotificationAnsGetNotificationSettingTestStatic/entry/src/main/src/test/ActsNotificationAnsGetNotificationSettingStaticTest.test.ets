@@ -1,3 +1,4 @@
+'use static';
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -89,7 +90,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
     })
 
     afterEach(async()=>{
-      await Utils.msSleep(3000)
+      await Utils.msSleep(8000)
     })
 
     /**
@@ -106,7 +107,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
       let bundle: notificationManager.BundleOption = {
         bundle: bundleName,
       };
-      let content : int = 0
+      let content : int =0
       let driver = Driver.create();
       let buttonName:string[]=['桌面角标','允许通知','确定']
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
@@ -140,8 +141,10 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonOne).assertContain('允许通知')
         }
-        for (let i = 0; i < 3; i++) {
+        await Utils.msSleep(1500)
+        for (let i :int = 0; i < 3; i++) {
           if (content == 1) {
+            console.info(`${testNum} buttonClick click success`);
             break;
           } else {
             let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
@@ -149,15 +152,21 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
             if (buttonTwo !== null) {
               await Utils.msSleep(1500)
               await buttonTwo.click();
-              console.info(`${testNum} buttonTwo click success`);
-              content++
+              let buttonClick = await buttonTwo.click();
+              console.info(`${testNum} buttonClick click is ${buttonClick}`);
+              if(buttonClick == true){
+                console.info(`${testNum} buttonClick be success`);
+                content++
+              }else{
+                continue;
+              }
               await Utils.msSleep(1500)
             } else {
               console.info(`${testNum} null button`);
               expect(buttonTwo).assertContain('桌面角标')
             }
           }  
-        }  
+        }
         await Utils.msSleep(1500)
         let buttonZero = await driver.findComponent(ON.type('Toggle').isAfter(ON.text("允许通知")));
         console.info(`${testNum} buttonZero is ${JSON.stringify(buttonZero)}`);
