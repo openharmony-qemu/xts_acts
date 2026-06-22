@@ -1,41 +1,9 @@
 'use static';
 
-import {
-  Entry,
-  Text,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Stack,
-  FontWeight,
-  Color,
-  ClickEvent,
-  Row,
-  ButtonAttribute,
-  Scroll,
-  Margin
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-import {
-  EmitterParticleOptions,
-  Particles,
-  ParticleType,
-  Particle,
-  ParticleEmitterShape,
-  ParticleUpdater,
-  Curve,
-  Padding,
-  Alignment,
-  RippleFieldOptions,
-  DisturbanceFieldShape,
-  FieldRegion,
-  ColumnOptions,
-  ParticleAttribute,
-  ParticleOptions
-} from '@kit.ArkUI'
-
+import { Entry, Text, Column, Component, Button, ClickEvent, Stack, FontWeight, Color, Row, ButtonAttribute, Scroll, Margin } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
+import { EmitterParticleOptions, Particles, ParticleType, Particle, ParticleEmitterShape, ParticleUpdater, Curve, Padding, Alignment, RippleFieldOptions, DisturbanceFieldShape, FieldRegion, ColumnOptions, ParticleAttribute, ParticleOptions } from '@kit.ArkUI';
 @Entry
 @Component
 struct VelocityFields {

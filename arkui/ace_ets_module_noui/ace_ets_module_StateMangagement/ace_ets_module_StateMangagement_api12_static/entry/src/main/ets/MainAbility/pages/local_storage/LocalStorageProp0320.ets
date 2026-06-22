@@ -13,27 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,
-  Color,
-  FlexAlign,ComponentV2,TabsController,Tabs,Builder,ResourceColor
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,
-  StorageLink,LocalStorage,LocalStoragePropRef, LocalStoragePropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Color, FlexAlign, ComponentV2, TabsController, Tabs, Builder, ResourceColor } from '@ohos.arkui.component';
+import { State, Watch, Link, StorageLink, LocalStorage, LocalStoragePropRef } from '@ohos.arkui.stateManagement';
 let storageLink0320:LocalStorage = new LocalStorage()
 storageLink0320.setOrCreate('LocalStorageProp0320Set', new Set<number>([0, 0, 0]))
 let storageLink0320Map: Map<string, string> = new Map<string, string>()

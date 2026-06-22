@@ -15,34 +15,8 @@
  */
 
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
-import {
-  Entry,
-  Text,
-  Column,
-  Row,
-  Component,
-  Scroller,
-  Scroll,
-  ForEach,
-  Color,
-  Button,
-  ClickEvent,
-  EdgeEffect,
-  BarState,
-  GridDirection,
-  OnScrollFrameBeginHandlerResult,
-  Grid,
-  ItemDragInfo,
-  ScrollState,
-  GridItem,
-  TextAlign,
-  Margin,
-  ScrollState
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-
-
-
+import { Entry, Text, Column, Row, Component, Scroller, Scroll, ForEach, Color, Button, ClickEvent, EdgeEffect, BarState, GridDirection, OnScrollFrameBeginHandlerResult, Grid, ItemDragInfo, ScrollState, GridItem, TextAlign, Margin } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct GridCallbackPage {

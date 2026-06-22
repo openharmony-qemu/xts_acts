@@ -13,13 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
-  Slider,SliderChangeMode,SliderConfiguration,
-  ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration
-,ContentModifier,SliderConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT
-} from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, Text, Button, ClickEvent, ButtonRole, Checkbox, Position, XComponent, Slider, SliderChangeMode, SliderConfiguration, ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign, RatingConfiguration, ContentModifier, WrappedBuilder, wrapBuilder, CustomBuilderT } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Builder function buildSlider(config: SliderConfiguration) {
   Column({space: 5} as ColumnOptions) {
     Button('triggerChange')

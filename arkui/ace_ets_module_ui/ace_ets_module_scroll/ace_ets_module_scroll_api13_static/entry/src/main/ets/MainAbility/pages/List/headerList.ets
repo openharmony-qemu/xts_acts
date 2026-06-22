@@ -14,38 +14,8 @@
  * limitations under the License.
  */
 import { ComponentContent } from '@ohos.arkui.node';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  ClickEvent,
-  Scroller,
-  Color,
-  ResourceColor,
-  OnScrollFrameBeginHandlerResult,
-  Image,
-  TextAlign,
-  Scroll,
-  ScrollState,
-  ForEach,
-  EdgeEffect,
-  Resource,
-  Builder,
-  Padding,
-  $r,
-  StickyStyle,
-  Text,
-  Button,
-  ClickEvent,
-  List,
-  ListItem,
-  ListItemGroup,
-  BarState,
-  wrapBuilder,CustomBuilderT
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color, ResourceColor, OnScrollFrameBeginHandlerResult, Image, TextAlign, Scroll, ScrollState, ForEach, EdgeEffect, Resource, Builder, Padding, $r, StickyStyle, Text, Button, List, ListItem, ListItemGroup, BarState, wrapBuilder, CustomBuilderT } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 export class HeadBuilderParams {
   public text: string | Resource;
   public colorMode: boolean = false

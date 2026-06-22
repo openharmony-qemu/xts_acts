@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox,
-  ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio,RadioConfiguration,RadioConfiguration,CustomBuilderT,
-  WrappedBuilder,wrapBuilder,ContentModifier
-} from '@ohos.arkui.component'
-
+import { Entry, Column, Component, Row, Toggle, Text, Button, ClickEvent, ButtonRole, Checkbox, ColumnOptions, Shape, Path, Flex, Builder, Margin, Radio, RadioConfiguration, CustomBuilderT, WrappedBuilder, wrapBuilder, ContentModifier } from '@ohos.arkui.component';
 class MyRadioStyle implements ContentModifier<RadioConfiguration> {
   constructor() {}
   applyContent(): WrappedBuilder<CustomBuilderT<RadioConfiguration>>{

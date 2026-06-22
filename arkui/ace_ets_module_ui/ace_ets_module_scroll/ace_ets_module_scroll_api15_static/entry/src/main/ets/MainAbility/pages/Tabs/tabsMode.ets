@@ -14,21 +14,8 @@
  * limitations under the License.
  */
 import { MyBasicSource } from '../../../MainAbility/pages/data/MyBasicSource';
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,FlexAlign,DataChangeListener,DataOperation,
-  Text,TabsController,AnimationMode,Builder,BarPosition,ClickEvent,LazyForEach,
-  Color,Button,Tabs,TabContent,SubTabBarStyle,BarMode,Alignment,BarPosition,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, FlexAlign, DataChangeListener, DataOperation, Text, TabsController, AnimationMode, Builder, BarPosition, ClickEvent, LazyForEach, Color, Button, Tabs, TabContent, SubTabBarStyle, BarMode, Alignment } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 @Entry

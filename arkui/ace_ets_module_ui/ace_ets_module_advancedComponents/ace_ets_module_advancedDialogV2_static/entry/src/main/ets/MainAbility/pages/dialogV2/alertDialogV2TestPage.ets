@@ -15,34 +15,11 @@
  */
 
 import { AlertDialogV2, AdvancedDialogV2Button } from '@ohos.arkui.advanced.DialogV2';
-import { ComponentContent } from '@ohos.arkui.node'
+import { ComponentContent } from '@ohos.arkui.node';
 import promptAction from '@ohos.promptAction';
-import {
-  Entry,
-  CustomBuilder,
-  WrappedBuilder,
-  Column,
-  ComponentV2,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Builder,
-  SizeOptions,
-  Margin,
-  ClickEvent,
-  ButtonRole,
-  wrapBuilder,
-} from '@ohos.arkui.component';
-// import { CustomDialogOptions } from '@ohos.promptAction'
+import { Entry, CustomBuilder, WrappedBuilder, Column, ComponentV2, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Builder, SizeOptions, Margin, ButtonRole, wrapBuilder } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-
 @Entry
 @ComponentV2
 struct Index {

@@ -13,40 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Text,
-  List,
-  ForEach,
-  ListItem,
-  TextAlign,
-  Axis,
-  Button,
-  ScrollSource,
-  OffsetResult,
-  Padding,
-  ScrollDirection,
-  EdgeEffect,
-  ColumnOptions,
-  ClickEvent,
-  Edge,
-  Stack,
-  Alignment,
-  ScrollState,
-  ScrollResult,
-  Margin,
-  Row,
-  BarState,
-  Color,
-  ScrollAlign,
-  ClickEvent,
-  Scroller,
-  Scroll
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Text, List, ForEach, ListItem, TextAlign, Axis, Button, ScrollSource, OffsetResult, Padding, ScrollDirection, EdgeEffect, ColumnOptions, ClickEvent, Edge, Stack, Alignment, ScrollState, ScrollResult, Margin, Row, BarState, Color, ScrollAlign, Scroller, Scroll } from '@ohos.arkui.component';
+import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct scrollXOffsetExample {

@@ -13,25 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,BorderImageOption,BorderOptions,AdaptiveColor,
-  BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,
-  MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,
-  ButtonType,EdgeWidths,
-  FlexDirection,Padding,HitTestMode,BorderRadiuses,EdgeColors,
-  ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,
-  Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign,
-  CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition,ImageRepeat,
-  Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,SafeAreaEdge,BlendMode,BlendApplyType,
-  CommonAttribute,ThemeColorMode, Rectangle,SafeAreaType,SafeAreaEdge,BlendMode,BlendApplyType,
-  DragPreviewMode,BackgroundBlurStyleOptions,SizeOptions,Position,Visibility,Position,
-  AlphabetIndexer} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef
-} from '@ohos.arkui.stateManagement';
-import { CommonModifier } from "@ohos.arkui.modifier";
-
+import { Entry, Component, $r, Column, ColumnOptions, BorderImageOption, BorderOptions, AdaptiveColor, BackgroundEffectOptions, BorderStyle, RepeatMode, GradientDirection, Image, Checkbox, Blank, MarkStyle, ResourceColor, CheckboxGroup, Text, Toggle, ToggleType, FlexAlign, Color, Flex, ButtonType, EdgeWidths, FlexDirection, Padding, HitTestMode, BorderRadiuses, EdgeColors, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Margin, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, ImageRepeat, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, SafeAreaEdge, BlendMode, BlendApplyType, CommonAttribute, ThemeColorMode, Rectangle, SafeAreaType, DragPreviewMode, BackgroundBlurStyleOptions, SizeOptions, Position, Visibility, AlphabetIndexer } from '@ohos.arkui.component';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { CommonModifier } from '@ohos.arkui.modifier';
 export class CustomModifier extends CommonModifier {
   applyNormalAttribute(instance: CommonAttribute): void {
     // super.applyNormalAttribute?.(instance);

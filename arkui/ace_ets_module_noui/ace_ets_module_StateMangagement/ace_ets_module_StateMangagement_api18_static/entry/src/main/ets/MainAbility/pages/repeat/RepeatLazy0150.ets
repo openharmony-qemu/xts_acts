@@ -13,33 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,List,
-  FontWeight,RowOptions,ComponentV2,Scroller,Repeat,ListItem,
-  Axis,AlertDialogParamWithButtons,DialogAlignment,DialogButtonStyle,DialogAlignment,
-  Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
-  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,AppStorage,Local
-} from '@ohos.arkui.stateManagement';
-
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, List, FontWeight, RowOptions, ComponentV2, Scroller, Repeat, ListItem, Axis, AlertDialogParamWithButtons, DialogAlignment, DialogButtonStyle, Margin, TransitionEffect, FlexAlign, TransitionEdge, AlertDialogParamWithConfirm, PickerTextStyle, CalendarAlign, CalendarPicker, Builder, TextOverflow, TextHeightAdaptivePolicy, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage, Local } from '@ohos.arkui.stateManagement';
 @Entry
 @ComponentV2
 struct RepeatLazy0150 {

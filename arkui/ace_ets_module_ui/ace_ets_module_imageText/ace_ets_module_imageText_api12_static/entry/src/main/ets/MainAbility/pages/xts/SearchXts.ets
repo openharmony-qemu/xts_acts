@@ -13,39 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
-import {
-  Entry,
-  Component,
-  Column,
-  ColumnOptions,
-  Text,
-  Rating,
-  Margin,
-  Row,
-  ClickEvent,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Alignment,
-  TextAlign,
-  TextOverflow,
-  Color,
-  $r,
-  SearchController,
-  Scroller,
-  Scroll,
-  Search,
-  ScrollDirection,
-  BarState,
-  EdgeEffect,
-  TextAreaController,
-  Scroller,
-  Scroll,
-  Padding
-} from '@ohos.arkui.component';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import events_emitter from '@ohos.events.emitter';
+import { Entry, Component, Column, ColumnOptions, Text, Rating, Margin, Row, ClickEvent, Flex, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, Color, $r, SearchController, Scroller, Scroll, Search, ScrollDirection, BarState, EdgeEffect, TextAreaController, Padding } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct SearchXts {

@@ -13,43 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics } from '@ohos.arkui.node'
-import image from "@ohos.multimedia.image";
-import { MyCustomSpan } from '../../common/MyCustomSpan'
-import CommonFunc from '../../common/Common'
-
-import {
-  Entry,
-  Component,ImageAttachmentInterface,ImageSpanAlignment,ImageFit,
-  Column,
-  Row,SpanStyle,
-  Text,
-  ColumnOptions,
-  TouchType,
-  CustomBuilder,
-  DragItemInfo,
-  Color,
-  Button,
-  TouchEvent,
-  Margin,
-  Scroller,
-  GestureRecognizer,
-  PanRecognizer,
-  GestureEvent,
-  ScrollableTargetInfo,
-  Stack,
-  Alignment,
-  Scroll,
-  TextAlign,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  EdgeEffect,
-  GestureControl,
-  PanGesture,
-GestureRecognizerState,RichEditorController,RichEditor,RichEditorChangeValue,RichEditorTextSpanResult,RichEditorOptions,RichEditorLayoutStyle,LongPressGesture,Direction,RichEditorRange,ClickEvent,$r,LayoutManager,RichEditorOptions,MutableStyledString,TextStyle,StyledString,RichEditorStyledStringController,Resource,ImageAttachment,FontWeight,FontStyle,StyledStringKey,RichEditorStyledStringOptions,TextEditControllerEx,TextMenuItem,TextRange,TextMenuItemId,CopyOptions,RichEditorInsertValue,Builder
-} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { LengthMetrics } from '@ohos.arkui.node';
+import image from '@ohos.multimedia.image';
+import { MyCustomSpan } from '../../common/MyCustomSpan';
+import CommonFunc from '../../common/Common';
+import { Entry, Component, ImageAttachmentInterface, ImageSpanAlignment, ImageFit, Column, Row, SpanStyle, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin, Scroller, GestureRecognizer, PanRecognizer, GestureEvent, ScrollableTargetInfo, Stack, Alignment, Scroll, TextAlign, ForEach, ScrollDirection, BarState, EdgeEffect, GestureControl, PanGesture, GestureRecognizerState, RichEditorController, RichEditor, RichEditorChangeValue, RichEditorTextSpanResult, RichEditorOptions, RichEditorLayoutStyle, LongPressGesture, Direction, RichEditorRange, ClickEvent, $r, LayoutManager, MutableStyledString, TextStyle, StyledString, RichEditorStyledStringController, Resource, ImageAttachment, FontWeight, FontStyle, StyledStringKey, RichEditorStyledStringOptions, TextEditControllerEx, TextMenuItem, TextRange, TextMenuItemId, CopyOptions, RichEditorInsertValue, Builder } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 @Entry

@@ -15,13 +15,9 @@
  * limitations under the License.
  */
 
-import { Entry, Text, Column, Component, TextInput, Search, ColumnOptions, Row, ClickEvent, Button,AttributeModifier,
-  TextInputAttribute, SearchAttribute, SearchAttribute,
-  TextDecorationOptions, TextDecorationType, TextDecorationStyle,
-  EllipsisMode, TextOverflow, $r,Color } from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
-
+import { Entry, Text, Column, Component, TextInput, Search, ColumnOptions, Row, ClickEvent, Button, AttributeModifier, TextInputAttribute, SearchAttribute, TextDecorationOptions, TextDecorationType, TextDecorationStyle, EllipsisMode, TextOverflow, $r, Color } from '@ohos.arkui.component';
+import { State, Observed } from '@ohos.arkui.stateManagement';
+import hilog from '@ohos.hilog';
 @Observed
 export class SearchModifier implements AttributeModifier<SearchAttribute> {
   public state: boolean = false;

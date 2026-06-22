@@ -14,38 +14,8 @@
  * limitations under the License.
  */
 // xxx.ets
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Image,
-  SizeOptions,
-  ImageSize,
-  Position,
-  Alignment,
-  Row,
-  Padding,
-  ThemeColorMode,
-  BlurStyle,
-  ImageSize,
-  AdaptiveColor,
-  Resource,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  GradientDirection,
-  RowOptions,
-} from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  PropRef,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Image, SizeOptions, ImageSize, Position, Alignment, Row, Padding, ThemeColorMode, BlurStyle, AdaptiveColor, Resource, Flex, FlexDirection, ItemAlign, GradientDirection, RowOptions } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 @Entry

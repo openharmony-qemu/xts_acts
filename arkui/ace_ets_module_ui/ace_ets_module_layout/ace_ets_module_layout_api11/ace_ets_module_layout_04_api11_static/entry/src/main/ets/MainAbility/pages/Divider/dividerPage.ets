@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, Row, Divider, LineCapStyle, AttributeModifier, DividerAttribute, ResourceColor, ResourceColor, Color, Text } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Column, Row, Divider, LineCapStyle, AttributeModifier, DividerAttribute, ResourceColor, Color, Text } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
-
 export class DividerModifier implements AttributeModifier<DividerAttribute> {
   color: ResourceColor = "#FF000000";
   lineCap: LineCapStyle = LineCapStyle.Butt

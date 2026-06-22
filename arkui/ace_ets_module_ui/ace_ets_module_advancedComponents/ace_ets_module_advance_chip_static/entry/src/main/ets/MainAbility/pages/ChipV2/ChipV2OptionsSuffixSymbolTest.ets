@@ -14,40 +14,10 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  ComponentV2,
-  Scroll,
-  Column,
-  ColumnOptions,
-  Text,
-  Row,
-  FontWeight,
-  LocalizedPadding,
-  ShadowStyle,
-  BlurStyle,
-  FlexAlign,
-  ClickEvent,
-  $r,
-  Color,
-  LengthMetrics
-} from '@ohos.arkui.component';
+import { Entry, ComponentV2, Scroll, Column, ColumnOptions, Text, Row, FontWeight, LocalizedPadding, ShadowStyle, BlurStyle, FlexAlign, ClickEvent, $r, Color, LengthMetrics } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
-import {
-  ChipV2,
-  ChipV2Options,
-  ChipV2Size,
-  ChipV2PrefixImageIcon,
-  ChipV2SuffixSymbolIcon,
-  ChipV2Label,
-  ChipV2PrefixImageIconConfig,
-  ChipV2SuffixSymbolIconConfig,
-  ChipV2PrefixImageIconConfig,
-  ChipV2ImageIconConfig,
-  ColorMetrics
-} from '@kit.ArkUI';
+import { ChipV2, ChipV2Options, ChipV2Size, ChipV2PrefixImageIcon, ChipV2SuffixSymbolIcon, ChipV2Label, ChipV2PrefixImageIconConfig, ChipV2SuffixSymbolIconConfig, ChipV2ImageIconConfig, ColorMetrics } from '@kit.ArkUI';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-
 @Entry
 @ComponentV2
 struct ChipV2OptionsSuffixSymbolExample {

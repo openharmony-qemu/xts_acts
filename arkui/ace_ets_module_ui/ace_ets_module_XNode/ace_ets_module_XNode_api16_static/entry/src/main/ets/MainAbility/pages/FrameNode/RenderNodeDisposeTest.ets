@@ -14,20 +14,12 @@
  * limitations under the License.
  */
 
-import { ColorMetrics } from '@kit.ArkUI';
+import { ColorMetrics, ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
-import { ComponentContent } from '@kit.ArkUI';
-import { BuilderNode, FrameNode, NodeController,typeNode, RenderNode } from '@ohos.arkui.node'
-import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
-  HorizontalAlign,ColumnOptions,Stack,Row,Position
-
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { BuilderNode, FrameNode, NodeController, typeNode, RenderNode } from '@ohos.arkui.node';
+import { Entry, Column, Component, Builder, Text, ColumnOptions, Margin, Button, NodeContainer, Visibility, wrapBuilder, FontWeight, Color, WrappedBuilder, Scroll, Scroller, HorizontalAlign, Stack, Row, Position, ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
 const renderNode = new RenderNode();
 renderNode.frame = { x: 0, y: 0, width: 100, height: 50 };
 renderNode.backgroundColor = 0xffff0000.toInt();

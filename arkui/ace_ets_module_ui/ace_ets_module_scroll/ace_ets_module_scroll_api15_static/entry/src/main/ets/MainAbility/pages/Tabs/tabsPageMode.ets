@@ -13,38 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MyDataSource } from '../../../MainAbility/pages/data/BasicDataSource'
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  FlexAlign,
-  PageFlipMode,
-  TabsAttribute,
-  AttributeModifier,
-  Text,
-  TabsController,
-  AnimationMode,
-  Builder,
-  BarPosition,
-  ClickEvent,
-  LazyForEach,
-  Color,
-  Button,
-  Tabs,
-  TabContent,
-  SubTabBarStyle,
-  BarMode,
-  Alignment,
-  BarPosition,
-} from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { MyDataSource } from '../../../MainAbility/pages/data/BasicDataSource';
+import { Entry, Component, $r, Column, ColumnOptions, FlexAlign, PageFlipMode, TabsAttribute, AttributeModifier, Text, TabsController, AnimationMode, Builder, BarPosition, ClickEvent, LazyForEach, Color, Button, Tabs, TabContent, SubTabBarStyle, BarMode, Alignment } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 export class MyTabsModifier implements AttributeModifier<TabsAttribute> {
   public isDark: boolean = false
 

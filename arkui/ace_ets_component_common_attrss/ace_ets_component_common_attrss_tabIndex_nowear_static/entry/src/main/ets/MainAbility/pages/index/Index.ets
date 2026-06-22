@@ -14,32 +14,10 @@
  * limitations under the License.
  */
 
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import {
-  Entry,
-  Text,
-  TextAttribute,
-  Column,
-  Component,
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Image,
-  ImageFit,
-  Scroller,
-  Flex,
-  Margin,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin,
-  FontWeight
-} from '@ohos.arkui.component'
-import { Hypium } from '../../../../../hypium/index'
-import testsuite from '../../../../src/test/List.test'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image, ImageFit, Scroller, Flex, Margin, FlexDirection, ItemAlign, FlexAlign, FontWeight, ButtonType } from '@ohos.arkui.component';
+import { Hypium } from '../../../../../hypium/index';
+import testsuite from '../../../../src/test/List.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';

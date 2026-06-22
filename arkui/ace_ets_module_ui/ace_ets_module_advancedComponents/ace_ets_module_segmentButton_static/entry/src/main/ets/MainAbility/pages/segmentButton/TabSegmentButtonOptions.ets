@@ -14,17 +14,9 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges, ColumnOptions,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, ColumnOptions, Row, BlurStyle, LengthMetrics,
-  LocalizedPadding, Direction,
-} from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
-import { SegmentButtonOptions, ItemRestriction, SegmentButtonIconTextItem, SegmentButton, SegmentButtonItemOptions,
-  CapsuleSegmentButtonConstructionOptions, BorderRadiusMode, SegmentButtonIconItem, CommonSegmentButtonOptions,
-  SegmentButtonTextItem
-} from '@ohos.arkui.advanced.SegmentButton';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges, ColumnOptions, Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, Row, BlurStyle, LengthMetrics, LocalizedPadding, Direction } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { SegmentButtonOptions, ItemRestriction, SegmentButtonIconTextItem, SegmentButton, SegmentButtonItemOptions, CapsuleSegmentButtonConstructionOptions, BorderRadiusMode, SegmentButtonIconItem, CommonSegmentButtonOptions, SegmentButtonTextItem } from '@ohos.arkui.advanced.SegmentButton';
 @Entry
 @Component
 struct TabSegmentButtonOptions1 {

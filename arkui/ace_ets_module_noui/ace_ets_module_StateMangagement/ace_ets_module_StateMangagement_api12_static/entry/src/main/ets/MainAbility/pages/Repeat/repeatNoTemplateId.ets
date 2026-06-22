@@ -14,27 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,
-  ListItem,Image,Stack,Repeat,Swiper,
-  Color,ColumnOptions,RepeatItem,Repeat,
-  FlexAlign,ComponentV2,TabsController,Tabs,Scroller
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Param,
-  Link,Monitor,Trace,ObservedV2,Event,Consumer,
-  StorageLink,IMonitor,IMonitorValue,Local,Provider
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, ListItem, Image, Stack, Repeat, Swiper, Color, ColumnOptions, RepeatItem, FlexAlign, ComponentV2, TabsController, Tabs, Scroller } from '@ohos.arkui.component';
+import { State, Watch, Param, Link, Monitor, Trace, ObservedV2, Event, Consumer, StorageLink, IMonitor, IMonitorValue, Local, Provider } from '@ohos.arkui.stateManagement';
 @ObservedV2
 export class ArrayCount {
   @Trace public arr: Array<number> = [];

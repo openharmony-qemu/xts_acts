@@ -24,7 +24,6 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
-import { Component, Driver, ON } from '@ohos.UiTest'
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识

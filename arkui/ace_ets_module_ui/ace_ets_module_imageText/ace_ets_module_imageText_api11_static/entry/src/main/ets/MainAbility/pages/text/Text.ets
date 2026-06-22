@@ -13,37 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Flex,
-  Text,
-  Padding,
-  Margin,
-  TextAlign,
-  TextOverflow,
-  TextCase,
-  Color,
-  Length,
-  Alignment,
-  Direction,
-  Position,
-  ItemAlign,
-  BorderStyle,
-  ImageSize,
-  Visibility,
-  FontStyle,
-  FontWeight,
-  FlexDirection,
-  FlexAlign,
-  FontWeight,
-  TextDecorationType
-} from '@ohos.arkui.component'
-import {
-  State,
-} from '@ohos.arkui.stateManagement'
+import { Entry, Component, Flex, Text, Padding, Margin, TextAlign, TextOverflow, TextCase, Color, Length, Alignment, Direction, Position, ItemAlign, BorderStyle, ImageSize, Visibility, FontStyle, FontWeight, FlexDirection, FlexAlign, TextDecorationType } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 const router = AppStorage.get<Router>("router") as Router
 

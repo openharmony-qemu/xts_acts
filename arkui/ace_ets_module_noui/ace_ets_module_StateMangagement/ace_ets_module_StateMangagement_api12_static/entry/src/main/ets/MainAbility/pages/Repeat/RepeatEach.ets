@@ -13,27 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,
-  List,Scroll,
-  ListItem,Image,Stack,Repeat,Swiper,
-  Color,ColumnOptions,RepeatItem,Repeat,
-  FlexAlign,ComponentV2,TabsController,Tabs,Scroller
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,Param,PropRef,
-  Link,Monitor,Trace,ObservedV2,Event,Consumer,
-  StorageLink,IMonitor,IMonitorValue,Local,Provider,PropRef
-} from '@ohos.arkui.stateManagement'
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, List, Scroll, ListItem, Image, Stack, Repeat, Swiper, Color, ColumnOptions, RepeatItem, FlexAlign, ComponentV2, TabsController, Tabs, Scroller } from '@ohos.arkui.component';
+import { State, Watch, Param, PropRef, Link, Monitor, Trace, ObservedV2, Event, Consumer, StorageLink, IMonitor, IMonitorValue, Local, Provider } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RepeatParent {

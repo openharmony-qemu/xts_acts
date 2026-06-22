@@ -17,49 +17,12 @@
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { LengthMetrics } from '@ohos.arkui.node';
-import mediaquery from '@ohos.mediaquery'
-import display from '@ohos.display'
-import {
-  Entry,
-  Component,
-  $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Row,
-  Margin,
-  TextAlign,
-  Button,
-  ClickEvent,
-  MenuItemConfiguration,
-  WrappedBuilder,
-  ContentModifier,
-  GestureEvent,
-  SelectOption,
-  AvoidanceMode,
-  NavDestination,
-  AvoidanceMode,
-  ArrowPosition,
-  FlexAlign,
-  VerticalAlign,
-  Image,
-  SymbolGlyph,
-  Padding,
-  Builder,
-  wrapBuilder,
-  Select,
-  RowOptions,
-  Position,
-  PanGesture,
-  MenuAlignType,
-  Curve,
-  CustomBuilderT
-} from '@ohos.arkui.component';
+import mediaquery from '@ohos.mediaquery';
+import display from '@ohos.display';
+import { Entry, Component, $r, Column, ColumnOptions, Text, Color, Row, Margin, TextAlign, Button, ClickEvent, MenuItemConfiguration, WrappedBuilder, ContentModifier, GestureEvent, SelectOption, AvoidanceMode, NavDestination, ArrowPosition, FlexAlign, VerticalAlign, Image, SymbolGlyph, Padding, Builder, wrapBuilder, Select, RowOptions, Position, PanGesture, MenuAlignType, Curve, CustomBuilderT } from '@ohos.arkui.component';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
 class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
   private modifierText: string = '';
 

@@ -13,19 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ColorMetrics } from '@kit.ArkUI';
+import { ColorMetrics, ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
-import { ComponentContent } from '@kit.ArkUI';
-import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.node'
-import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
-  HorizontalAlign,ColumnOptions,Stack
-} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
-import { ClickEvent } from '@ohos.arkui.component';
+import { BuilderNode, FrameNode, NodeController, typeNode } from '@ohos.arkui.node';
+import { Entry, Column, Component, Builder, Text, ColumnOptions, Margin, Button, NodeContainer, Visibility, wrapBuilder, FontWeight, Color, WrappedBuilder, Scroll, Scroller, HorizontalAlign, Stack, ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct Index {

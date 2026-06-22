@@ -15,29 +15,9 @@
  */
 
 
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  ForEach,
-  Text,
-  Row,CommonAttribute,TextAttribute,
-  List,AttributeModifier,ButtonAttribute,BorderStyle,
-  ListItem,GridLayoutOptions,Grid,GridItem,BarState,TextAlign,
-  Color,Scroller,Divider,Flex,ChildrenMainSize,ListScroller,
-  FlexAlign,ComponentV2,HorizontalAlign,TextAttribute,
-} from '@ohos.arkui.component'
-import {
-  State,
-  Watch,
-  Link,Local,Trace,Track,PropRef,Monitor,Computed,Param,Require,IMonitor,
-  StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
-} from '@ohos.arkui.stateManagement'
-import { TextModifier } from '@ohos.arkui.modifier'
-
-
+import { Entry, Column, Component, Button, ClickEvent, ForEach, Text, Row, CommonAttribute, TextAttribute, List, AttributeModifier, ButtonAttribute, BorderStyle, ListItem, GridLayoutOptions, Grid, GridItem, BarState, TextAlign, Color, Scroller, Divider, Flex, ChildrenMainSize, ListScroller, FlexAlign, ComponentV2, HorizontalAlign } from '@ohos.arkui.component';
+import { State, Watch, Link, Local, Trace, Track, PropRef, Monitor, Computed, Param, Require, IMonitor, StorageLink, LocalStorage, UIUtils, Observed, ObservedV2 } from '@ohos.arkui.stateManagement';
+import { TextModifier } from '@ohos.arkui.modifier';
 class MyModifier extends TextModifier {
   applyNormalAttribute(instance: TextAttribute): void {
     // super.applyNormalAttribute?.(instance);

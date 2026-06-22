@@ -13,70 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Builder,
-  Component,
-  Scroller,
-  GridRow,
-  Scroll,
-  BreakpointsReference,
-  GridRowDirection,
-  GridCol,
-  GridItem,
-  Grid,
-  List,
-  Video,
-  Image,
-  BarPosition,
-  ButtonAttribute,
-  Resource,
-  $r,
-  FlexAlign,
-  Divider,
-  Tabs,
-  TabContent,
-  TabsController,
-  TextPicker,
-  TextAreaController,
-  PlaybackSpeed,
-  $rawfile,
-  Column,
-  Margin,
-  ColumnOptions,
-  Text,
-  Color,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer,
-  GridColAttribute
-} from '@ohos.arkui.component';
+import { Entry, Builder, Component, Scroller, GridRow, Scroll, BreakpointsReference, GridRowDirection, GridCol, GridItem, Grid, List, Video, Image, BarPosition, ButtonAttribute, Resource, $r, FlexAlign, Divider, Tabs, TabContent, TabsController, TextPicker, TextAreaController, PlaybackSpeed, $rawfile, Column, Margin, ColumnOptions, Text, Color, Flex, FlexDirection, ItemAlign, Row, Button, ClickEvent, Week, FontWeight, Axis, Swiper, ForEach, PickerTextStyle, CalendarAlign, CalendarPicker, EdgeEffect, Curve, SwiperDisplayMode, ArrowPosition, Select, BlurStyle, MenuAlignType, TextInputController, TextAlign, AlphabetIndexer, GridColAttribute } from '@ohos.arkui.component';
 import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
-import { GridColModifier } from "@ohos.arkui.modifier";
-
-
+import { GridColModifier } from '@ohos.arkui.modifier';
 class CustomModifier extends GridColModifier {
   applyGridColAttribute(instance: GridColAttribute): void {
     // super.applyNormalAttribute?.(instance);

@@ -14,20 +14,10 @@
  * limitations under the License.
  */
 
-import { LengthMetrics, LengthUnit } from '@ohos.arkui.node'
-
-import {Entry,Component,TextStyle,GestureStyle,Color,MutableStyledString,DecorationStyle,TextShadowStyle,BaselineOffsetStyle,LetterSpacingStyle,UrlStyle,
-  ResourceColor,RichEditorStyledStringController,RichEditorStyledStringOptions,ResourceColor,StyledStringKey,Column,Text,RichEditor,Button,
-  ColumnOptions,StyleOptions,TextDecorationType,ShadowOptions,ShadowType, Margin
-} from '@ohos.arkui.component';
+import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
+import { Entry, Component, TextStyle, GestureStyle, Color, MutableStyledString, DecorationStyle, TextShadowStyle, BaselineOffsetStyle, LetterSpacingStyle, UrlStyle, ResourceColor, RichEditorStyledStringController, RichEditorStyledStringOptions, StyledStringKey, Column, Text, RichEditor, Button, ColumnOptions, StyleOptions, TextDecorationType, ShadowOptions, ShadowType, Margin, ClickEvent } from '@ohos.arkui.component';
 import { PromptAction } from '@ohos.arkui.UIContext';
-import { ClickEvent } from '@ohos.arkui.component';
-
-import {
-  State,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
-
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RichEditorStyledStringTest {

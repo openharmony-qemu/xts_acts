@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Color,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker, TextPicker, Text,
-  HorizontalAlign,TextAlign} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, Color, Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker, TextPicker, HorizontalAlign, TextAlign } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State } from '@ohos.arkui.stateManagement'
-
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TextPickerSelectedAreaExample {

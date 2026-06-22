@@ -15,31 +15,10 @@
  */
 
 import { LoadingDialogV2 } from '@ohos.arkui.advanced.DialogV2';
-import  promptAction from '@ohos.promptAction';
-import {
-  Entry,
-  Column,
-  ComponentV2,
-  TextAlign,
-  Text,
-  Color,
-  Row,
-  ClickEvent,
-  Stack,
-  Alignment,
-  Button,
-  Alignment,
-  Scroll,
-  HorizontalAlign,
-  Margin,
-  Divider,
-  SizeOptions,
-  Builder,
-  DialogAlignment
-} from '@ohos.arkui.component';
+import promptAction from '@ohos.promptAction';
+import { Entry, Column, ComponentV2, TextAlign, Text, Color, Row, ClickEvent, Stack, Alignment, Button, Scroll, HorizontalAlign, Margin, Divider, SizeOptions, Builder, DialogAlignment } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-
 @Entry
 @ComponentV2
 struct Index {

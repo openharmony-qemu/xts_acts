@@ -14,30 +14,11 @@
  * limitations under the License.
  */
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { sendKeyEvent } from "@ohos.arkui.Test";
+import { sendKeyEvent } from '@ohos.arkui.Test';
 import router from '@ohos.router';
-import {
-  KeyEvent,
-  KeySource,
-  KeyType,
-  Color,
-  HorizontalAlign,
-  Padding,
-  GestureEvent,
-  ColumnOptions,
-  Entry,
-  Column,
-  Text,
-  Button,
-  ClickEvent,
-  Component,
-  Margin,
-  SourceTool,
-  KeySource
-} from '@ohos.arkui.component'
-
+import { KeyEvent, KeySource, KeyType, Color, HorizontalAlign, Padding, GestureEvent, ColumnOptions, Entry, Column, Text, Button, ClickEvent, Component, Margin, SourceTool } from '@ohos.arkui.component';
 @Entry
 @Component
 struct KeyEventExample {

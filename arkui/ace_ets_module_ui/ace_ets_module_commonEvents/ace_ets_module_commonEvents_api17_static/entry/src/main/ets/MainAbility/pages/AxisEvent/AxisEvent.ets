@@ -13,36 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  $r,
-  Margin,
-  Column,
-  ColumnOptions,
-  Text,
-  HorizontalAlign,
-  Color,
-  Line,
-  Swiper,
-  Scroll,
-  List,
-  Grid,
-  Flex,
-  Image,
-  Checkbox,
-  ForEach,
-  ColumnOptions,
-  Margin,
-  Padding,
-  AxisEvent,
-  AxisAction,
-} from '@ohos.arkui.component';
-import { State, Link, PropRef, } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, $r, Margin, Column, ColumnOptions, Text, HorizontalAlign, Color, Line, Swiper, Scroll, List, Grid, Flex, Image, Checkbox, ForEach, Padding, AxisEvent, AxisAction } from '@ohos.arkui.component';
+import { State, Link, PropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-
 @Entry
 @Component
 struct Index {

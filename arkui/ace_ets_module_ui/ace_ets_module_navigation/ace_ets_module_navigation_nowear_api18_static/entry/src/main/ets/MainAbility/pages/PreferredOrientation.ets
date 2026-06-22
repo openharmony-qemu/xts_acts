@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-import { Entry, Column,Builder, Component, Stack,Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, NavPathStack, ColumnOptions,Alignment,Color,
-  NavDestination, Navigation, NavDestinationContext, ColumnOptions, LayoutSafeAreaType, LayoutSafeAreaEdge,NavPathInfo} from '@ohos.arkui.component'
+import { Entry, Column, Builder, Component, Stack, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, Row, ClickEvent, Margin, ButtonType, NavPathStack, ColumnOptions, Alignment, Color, NavDestination, Navigation, NavDestinationContext, LayoutSafeAreaType, LayoutSafeAreaEdge, NavPathInfo } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { State, Provide, Consume } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, Provide, Consume } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import display from '@ohos.display';
-
 @Component
 struct PortraitPage {
   private stack: NavPathStack | undefined = undefined;

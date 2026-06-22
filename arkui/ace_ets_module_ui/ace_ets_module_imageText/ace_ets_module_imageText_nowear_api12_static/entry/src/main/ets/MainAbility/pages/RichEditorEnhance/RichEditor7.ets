@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, RichEditor, Text, Margin, Grid, ForEach, GridItem, EnterKeyType, RichEditorController, Builder, Button, ClickEvent,
-  Color, Row, FontWeight, TextAlign, RichEditorOptions, EnterKeyType, RichEditorSelection, SubmitEvent, HitTestMode, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Column, Component, RichEditor, Text, Margin, Grid, ForEach, GridItem, EnterKeyType, RichEditorController, Builder, Button, ClickEvent, Color, Row, FontWeight, TextAlign, RichEditorOptions, RichEditorSelection, SubmitEvent, HitTestMode } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RichEditor7 {

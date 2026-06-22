@@ -13,30 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  List,
-  ColumnOptions,
-  ListItem,
-  Text,
-  Column,
-  Button,
-  Margin,
-  ForEach,
-  ClickEvent,
-  Color,
-  Axis,
-  BarState,
-  Scroller,
-  ColumnOptions,
-  EdgeEffect,
-  ListItemAlign,
-  Padding,
-  TextAlign
-} from '@ohos.arkui.component'
+import { Entry, Component, List, ColumnOptions, ListItem, Text, Column, Button, Margin, ForEach, ClickEvent, Color, Axis, BarState, Scroller, EdgeEffect, ListItemAlign, Padding, TextAlign } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct ListFlingCallback {

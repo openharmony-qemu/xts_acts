@@ -13,50 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { LengthMetrics } from '@ohos.arkui.node'
-import {
-  Entry,
-  MutableStyledString,
-  ColorFilter,
-  ClickEvent,
-  Component,
-  RichEditor,
-  Column,
-  Text,
-  ImageSpan,
-  Visibility,
-  $r,
-  FlexAlign,
-  HorizontalAlign,
-  RichEditorStyledStringController,
-  RichEditorStyledStringOptions,
-  ColumnOptions,
-  ImageAttachment,
-  Button,
-  Row,
-  Margin,
-  Scroller,
-  AnimationStatus,
-  Stack,
-  Alignment,
-  Scroll,
-  ImageAnimator,
-  ForEach,
-  ScrollDirection,
-  BarState,
-  TextAlign,
-  Color,
-  EdgeEffect,
-  RowOptions,
-  Button,
-  Padding,
-  ScrollState,
-  Edge,
-  FillMode
-} from '@ohos.arkui.component';
+import { LengthMetrics } from '@ohos.arkui.node';
+import { Entry, MutableStyledString, ColorFilter, ClickEvent, Component, RichEditor, Column, Text, ImageSpan, Visibility, $r, FlexAlign, HorizontalAlign, RichEditorStyledStringController, RichEditorStyledStringOptions, ColumnOptions, ImageAttachment, Button, Row, Margin, Scroller, AnimationStatus, Stack, Alignment, Scroll, ImageAnimator, ForEach, ScrollDirection, BarState, TextAlign, Color, EdgeEffect, RowOptions, Padding, ScrollState, Edge, FillMode } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-
 @Entry
 @Component
 struct ImageAnimatorAutoPauseTest {

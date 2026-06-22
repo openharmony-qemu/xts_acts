@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
-import { beforeAll, beforeEach, TestType,afterEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, TestType,afterEach, describe, it, Size, Level } from '../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../test/Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
