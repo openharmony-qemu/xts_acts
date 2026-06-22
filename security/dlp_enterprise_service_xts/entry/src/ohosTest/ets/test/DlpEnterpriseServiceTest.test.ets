@@ -427,7 +427,7 @@ export default function DlpEnterpriseServiceTest() {
     /**
      * @tc.name   SUB_SECURITY_DLP_getControlledAppLists_0100
      * @tc.number Test_getControlledAppLists_001
-     * @tc.desc   getControlledAppLists without permission, return 201 or 801.
+     * @tc.desc   getControlledAppLists with permission, return 201 or 801.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -443,6 +443,7 @@ export default function DlpEnterpriseServiceTest() {
           console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
           expect(err.code).assertEqual(801);
         } else {
+		  expect(null).assertFail();
           console.info(curTag, "getControlledAppLists failed," + err.code + err.message);
         }
       }
