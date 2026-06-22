@@ -97,7 +97,7 @@ struct ExecuteAIPageCommandTest {
     Column() {
       Row() {
         Button('ExecuteAIPageCommandTest click').key('ExecuteAIPageCommandTestButton').onClick((e: ClickEvent) => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
           switch (this.str) {
             case 'testExecuteAIPageCommand001': {
               let msg = 'testExecuteAIPageCommand001'
