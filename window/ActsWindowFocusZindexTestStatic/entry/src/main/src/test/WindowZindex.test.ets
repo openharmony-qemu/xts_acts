@@ -2013,7 +2013,7 @@ TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Pr
   };
   let dialogWindow: window.Window = await window.createWindow(config);
   try {
-    dialogWindow.raiseToAppTop(async (err: BusinessError<void> | null): void => {
+    dialogWindow.raiseToAppTop((err: BusinessError<void> | null): void => {
         (async () => {
             const errCode: number = err!.code;
             if (errCode) {
