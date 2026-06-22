@@ -1232,10 +1232,6 @@ export default function DisplayNdkTest() {
           console.log(`${caseName} result: ${JSON.stringify(result)}`);
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
-          if (!isSyscapSessionManagerSupported) {
-            expect(result).assertEqual(801)
-            done();
-          }
           expect(result).assertEqual(0);
           if (isFreeWindowMode) {
             let cap:string = displayClass.getDisplayCapability();
@@ -1269,7 +1265,7 @@ export default function DisplayNdkTest() {
             expect(count).assertLarger(0);
             windowClass!.recover();
             done()
-          } else if (!isFreeWindowMode && isSupportRotate) {
+            } else if (!isFreeWindowMode && isSupportRotate && isSyscapSessionManagerSupported) {
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
@@ -1286,11 +1282,7 @@ export default function DisplayNdkTest() {
           done()
         } catch (err) {
           console.log(caseName + ': fail:' + err + ' ' + err.code);
-          if (!isSyscapSessionManagerSupported) {
-            expect(err.code).assertEqual(801)
-          } else {
-            expect(false).assertTrue();
-          }
+          expect(false).assertTrue();
           done();
           }
       })
